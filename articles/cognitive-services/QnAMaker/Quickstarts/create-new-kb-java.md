@@ -34,7 +34,7 @@ Na parte superior de `CreateKB.java`, adicione as seguintes linhas para adiciona
 [!code-java[Add the required dependencies](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=1-5 "Add the required dependencies")]
 
 ## <a name="add-the-required-constants"></a>Adicionar as constantes necessárias
-Após as dependências necessárias mencionadas acima, adicione as constantes necessárias à classe `CreateKB` para acessar o QnA Maker. Substitua o valor da variável `subscriptionKey` pela sua chave do QnA Maker. Você não precisa adicionar o colchete final para encerrar a classe; é o trecho de código final no final deste início rápido.
+Após as dependências necessárias mencionadas acima, adicione as constantes necessárias à classe `CreateKB` para acessar o QnA Maker. Substitua o valor da variável `subscriptionKey` pela sua chave do QnA Maker. Você não precisa adicionar o colchete final para encerrar a classe; é o snippet de código final no final deste início rápido.
 
 [!code-java[Add the required constants](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=26-34 "Add the required constants")]
 

@@ -22,7 +22,7 @@ Neste tutorial, você aproveita a praticidade dos conjuntos de dados abertos do 
 
 Neste tutorial, você aprende as seguintes tarefas:
 
-- Configurar um espaço de trabalho do serviço Azure Machine Learning
+- Configurar um workspace do serviço Azure Machine Learning
 - Configurar um ambiente do Python local
 - Acessar, transformar e adicionar dados usando conjuntos de dados abertos do Azure
 - Treinar um modelo de regressão com aprendizado de máquina automatizado

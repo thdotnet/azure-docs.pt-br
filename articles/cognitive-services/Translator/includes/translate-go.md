@@ -20,7 +20,7 @@ Este início rápido requer:
 
 ## <a name="create-a-project-and-import-required-modules"></a>Criar um projeto e importar os módulos necessários
 
-Crie um novo projeto Go usando seu IDE ou editor favorito. Em seguida, copie esse trecho de código para seu projeto em um arquivo denominado `translate-text.go`.
+Crie um novo projeto Go usando seu IDE ou editor favorito. Em seguida, copie esse snippet de código para seu projeto em um arquivo denominado `translate-text.go`.
 
 ```go
 package main

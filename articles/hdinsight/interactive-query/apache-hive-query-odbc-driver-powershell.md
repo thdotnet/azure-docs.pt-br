@@ -109,7 +109,7 @@ function Get-ODBC-Data {
 }
 ```
 
-O trecho de código a seguir usa a função acima para executar uma consulta no cluster Consulta Interativa que você criou no início do tutorial. Substitua `DATASOURCENAME` pelo **Nome da Fonte de Dados** que você especificou na tela **Configuração de DSN do Driver ODBC do Microsoft Hive**. Quando solicitado a fornecer credenciais, digite o nome de usuário e a senha que você inseriu em **Nome de usuário de logon do cluster** e **Senha de logon do cluster** quando criou o cluster.
+O snippet de código a seguir usa a função acima para executar uma consulta no cluster Consulta Interativa que você criou no início do tutorial. Substitua `DATASOURCENAME` pelo **Nome da Fonte de Dados** que você especificou na tela **Configuração de DSN do Driver ODBC do Microsoft Hive**. Quando solicitado a fornecer credenciais, digite o nome de usuário e a senha que você inseriu em **Nome de usuário de logon do cluster** e **Senha de logon do cluster** quando criou o cluster.
 
 ```powershell
 

@@ -72,7 +72,7 @@ Neste artigo, você aprende sobre como usar o .NET SDK para fazer a autenticaç�
     ```     
 
 ## <a name="end-user-authentication"></a>Autenticação do usuário final
-Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo nativo do Azure AD (listado como pré-requisito). Este trecho de código permite autenticar seu aplicativo **interativamente** com Gen1 de armazenamento do Data Lake, que significa que você for solicitado a inserir suas credenciais do Azure.
+Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo nativo do Azure AD (listado como pré-requisito). Este snippet permite autenticar seu aplicativo **interativamente** com Gen1 de armazenamento do Data Lake, que significa que você for solicitado a inserir suas credenciais do Azure.
 
 Para facilitar o uso, o snippet a seguir usa valores padrão para a ID do cliente e o URI de redirecionamento que são válidos com qualquer assinatura do Azure. No snippet a seguir, você só precisa fornecer o valor da sua ID de locatário. Você pode recuperar a ID de locatário usando as instruções fornecidas em [Obter a ID de locatário](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
     
@@ -96,7 +96,7 @@ Para facilitar o uso, o snippet a seguir usa valores padrão para a ID do client
 
 Algumas informações importantes sobre o snippet de código anterior:
 
-* O trecho de código anterior usa funções auxiliares `GetTokenCache` e `GetCreds_User_Popup`. O código para essas funções auxiliares está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#gettokencache).
+* O snippet anterior usa funções auxiliares `GetTokenCache` e `GetCreds_User_Popup`. O código para essas funções auxiliares está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#gettokencache).
 * Para ajudá-lo a concluir o tutorial mais rapidamente, o snippet de código usa uma ID de cliente de aplicativo nativa disponível por padrão a todas as assinaturas do Azure. Portanto, você pode **usar o snippet de código como está em seu aplicativo**.
 * No entanto, se você quiser usar sua própria ID de cliente de aplicativo e o domínio do Azure AD, crie um aplicativo nativo Azure AD e use a ID de locatário do Azure AD, a ID de cliente e o URI de redirecionamento para o aplicativo que você criou. Consulte [Criar um aplicativo do Active Directory para autenticação do usuário final com o Data Lake Storage Gen1](data-lake-store-end-user-authenticate-using-active-directory.md) para obter instruções.
 

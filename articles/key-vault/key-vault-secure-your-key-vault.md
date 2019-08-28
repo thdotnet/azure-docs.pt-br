@@ -138,7 +138,7 @@ Para saber mais sobre como implantar certificados, chaves de acesso e segredos v
 
 É possível conceder a maioria das permissões de acesso usando o portal do Azure. Para conceder permissões granulares, você pode usar o Azure PowerShell ou a CLI do Azure.
 
-Os trechos do PowerShell nesta seção são criados com as seguintes suposições:
+Os snippets do PowerShell nesta seção são criados com as seguintes suposições:
 - O administrador do Azure Active Directory criou grupos de segurança para representar as três funções: Equipe de segurança, DevOps de aplicativo e Auditores de aplicativo da Contoso. O administrador adicionou os usuários aos respectivos grupos.
 - Todos os recursos estão localizados no grupo de recursos **ContosoAppRG**.
 - Os logs do Key Vault são armazenados na conta de armazenamento **contosologstorage**. 

@@ -19,7 +19,7 @@ Este início rápido requer:
 
 ## <a name="create-a-project-and-import-required-modules"></a>Criar um projeto e importar os módulos necessários
 
-Crie um novo projeto Python usando seu IDE ou editor favorito. Em seguida, copie esse trecho de código para seu projeto em um arquivo denominado `get-languages.py`.
+Crie um novo projeto Python usando seu IDE ou editor favorito. Em seguida, copie esse snippet de código para seu projeto em um arquivo denominado `get-languages.py`.
 
 ```python
 # -*- coding: utf-8 -*-
@@ -51,7 +51,7 @@ constructed_url = base_url + path
 
 A solicitação para obter linguagens com suporte não requer autenticação. Defina o `Content-type` como `application/json` e adicione `X-ClientTraceId` para identificar sua solicitação com exclusividade.
 
-Copie este trecho de código no seu projeto:
+Copie este snippet de código no seu projeto:
 
 ```python
 headers = {
@@ -73,7 +73,7 @@ response = request.json()
 
 ## <a name="print-the-response"></a>Imprima a resposta
 
-A última etapa é imprimir os resultados. Este trecho de código embeleza os resultados classificando as chaves, definindo o recuo e declarando os separadores de item e chave.
+A última etapa é imprimir os resultados. Este snippet de código embeleza os resultados classificando as chaves, definindo o recuo e declarando os separadores de item e chave.
 
 ```python
 print(json.dumps(response, sort_keys=True, indent=4,
@@ -94,7 +94,7 @@ Se você quiser comparar seu código com o nosso, o exemplo completo está dispo
 
 Localize a abreviação do país/região nesta [lista de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
-Este exemplo foi truncado para mostrar um trecho do resultado:
+Este exemplo foi truncado para mostrar um snippet do resultado:
 
 ```json
 {

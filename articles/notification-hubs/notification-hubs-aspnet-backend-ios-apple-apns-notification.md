@@ -312,7 +312,7 @@ Se desejar usar os Aplicativos Móveis como seu serviço de back-end, veja [Mobi
     ```
 
     > [!NOTE]
-    > O trecho a seguir não é um esquema de autenticação seguro, você deve substituir a implementação de `createAndSetAuthenticationHeaderWithUsername:AndPassword:` pelo seu mecanismo de autenticação específico que gera um token de autenticação a ser consumido pela classe de cliente do registro, por exemplo, OAuth, Active Directory.
+    > O snippet a seguir não é um esquema de autenticação seguro, você deve substituir a implementação de `createAndSetAuthenticationHeaderWithUsername:AndPassword:` pelo seu mecanismo de autenticação específico que gera um token de autenticação a ser consumido pela classe de cliente do registro, por exemplo, OAuth, Active Directory.
 
 10. Em seguida, na seção `@implementation` do `ViewController.m`, adicione o seguinte código que adiciona a implementação para definir o cabeçalho de autenticação e o token do dispositivo.
 

@@ -47,11 +47,11 @@ Use o processo descrito em [soluções de adicionar o Azure Monitor da Galeria d
 
 ### <a name="configure-azure-sql-databases-elastic-pools-and-managed-instances-to-stream-diagnostics-telemetry"></a>Configurar Bancos de Dados SQL do Azure, pools elásticos e Instâncias Gerenciadas para transmitir a telemetria de diagnóstico
 
-Depois que você criou uma solução de Análise de SQL do Azure em seu espaço de trabalho, você precisará **configurar cada** recurso que você deseja monitorar para transmitir sua telemetria de diagnóstico à solução. Siga as instruções detalhadas nesta página:
+Depois que você criou uma solução de Análise de SQL do Azure em seu workspace, você precisará **configurar cada** recurso que você deseja monitorar para transmitir sua telemetria de diagnóstico à solução. Siga as instruções detalhadas nesta página:
 
 - Habilite o Diagnóstico do Azure para o Banco de Dados SQL do Azure para [telemetria de diagnóstico de fluxo para a Análise de SQL do Azure](../../sql-database/sql-database-metrics-diag-logging.md).
 
-A página acima também fornece instruções sobre como habilitar o suporte para monitorar várias assinaturas do Azure em um único espaço de trabalho da Análise de SQL do Azure como um único painel de controle.
+A página acima também fornece instruções sobre como habilitar o suporte para monitorar várias assinaturas do Azure em um único workspace da Análise de SQL do Azure como um único painel de controle.
 
 ## <a name="using-the-solution"></a>Usando a solução
 
@@ -287,7 +287,7 @@ AzureDiagnostics
 
 ### <a name="pricing"></a>Preços
 
-Enquanto a solução for gratuita para usar, aplica-se o consumo de telemetria de diagnóstico acima das unidades gratuitas de ingestão de dados alocados por mês, consulte [Preço do Log Analytics](https://azure.microsoft.com/pricing/details/monitor). As unidades gratuitas de ingestão de dados fornecidas habilitam o monitoramento gratuito de vários bancos de dados por mês. Observe que os bancos de dados mais ativos, com cargas de trabalho mais pesadas, vão ingerir mais dados em comparação com os bancos de dados ociosos. Você pode monitorar facilmente o consumo de ingestão de dados na solução selecionando o espaço de trabalho do OMS no menu de navegação da Análise de SQL do Azure e, em seguida, selecionando Uso e custos estimados.
+Enquanto a solução for gratuita para usar, aplica-se o consumo de telemetria de diagnóstico acima das unidades gratuitas de ingestão de dados alocados por mês, consulte [Preço do Log Analytics](https://azure.microsoft.com/pricing/details/monitor). As unidades gratuitas de ingestão de dados fornecidas habilitam o monitoramento gratuito de vários bancos de dados por mês. Observe que os bancos de dados mais ativos, com cargas de trabalho mais pesadas, vão ingerir mais dados em comparação com os bancos de dados ociosos. Você pode monitorar facilmente o consumo de ingestão de dados na solução selecionando o workspace do OMS no menu de navegação da Análise de SQL do Azure e, em seguida, selecionando Uso e custos estimados.
 
 ## <a name="next-steps"></a>Próximas etapas
 

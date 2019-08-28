@@ -31,7 +31,7 @@ ms.locfileid: "68727848"
 | **ADFS** | <ul><li>[Implementar o logoff apropriado usando métodos WsFederation ao usar o ADFS](#wsfederation-logout)</li></ul> |
 | **Identity Server** | <ul><li>[Implementar o logoff adequado ao usar o Servidor de identidade](#proper-logout)</li></ul> |
 | **Aplicativo Web** | <ul><li>[Os aplicativos disponíveis via HTTPS devem usar cookies seguros](#https-secure-cookies)</li><li>[Todo aplicativo baseado em http deve especificar http somente para definição de cookie](#cookie-definition)</li><li>[Atenuar ataques CSRF (solicitação intersite forjada) em páginas Web ASP.NET](#csrf-asp)</li><li>[Configurar sessão para tempo de vida de inatividade](#inactivity-lifetime)</li><li>[Implementar o logoff apropriado do aplicativo](#proper-app-logout)</li></ul> |
-| **API da Web** | <ul><li>[Atenuar ataques CSRF (solicitação intersite forjada) em APIs da Web ASP.NET](#csrf-api)</li></ul> |
+| **API da Web** | <ul><li>[Atenuar ataques CSRF (solicitação intersite forjada) em ASP.NET Web APIs](#csrf-api)</li></ul> |
 
 ## <a id="logout-adal"></a>Implementar o logoff apropriado usando métodos ADAL ao usar o Azure AD
 
@@ -450,7 +450,7 @@ Set-ADFSRelyingPartyTrust -TargetName “<RelyingPartyWebApp>” -ClaimsProvider
 | **Referências**              | N/D  |
 | **Etapas** | Execute uma Saída adequada do aplicativo, quando o usuário pressionar o botão logoff. Após o logoff, o aplicativo deve destruir a sessão do usuário e também redefinir e anular o valor do cookie de sessão, juntamente com a redefinição e anulação do valor do cookie de autenticação. Além disso, quando várias sessões estiverem vinculadas a uma única identidade de usuário, elas deverão ser coletivamente encerradas no lado do servidor no momento do tempo limite ou no logoff. Por fim, certifique-se de que a funcionalidade de Logoff esteja disponível em cada página. |
 
-## <a id="csrf-api"></a>Atenuar ataques CSRF (solicitação intersite forjada) em APIs da Web ASP.NET
+## <a id="csrf-api"></a>Atenuar ataques CSRF (solicitação intersite forjada) em ASP.NET Web APIs
 
 | Título                   | Detalhes      |
 | ----------------------- | ------------ |
@@ -467,7 +467,7 @@ Set-ADFSRelyingPartyTrust -TargetName “<RelyingPartyWebApp>” -ClaimsProvider
 | **Fase do SDL**               | Build |  
 | **Tecnologias aplicáveis** | MVC5, MVC6 |
 | **Atributos**              | N/D  |
-| **Referências**              | [Impedir ataques CSRF (solicitação intersite forjada) em APIs da Web ASP.NET](https://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) |
+| **Referências**              | [Impedir ataques CSRF (solicitação intersite forjada) em ASP.NET Web APIs](https://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) |
 | **Etapas** | Anti-CSRF e AJAX: O token de formulário pode ser um problema para solicitações AJAX, porque uma solicitação AJAX pode enviar dados JSON, não dados de formulário HTML. Uma solução é enviar os tokens em um cabeçalho HTTP personalizado. O código a seguir usa a sintaxe Razor para gerar os tokens e adiciona os tokens a uma solicitação AJAX. |
 
 ### <a name="example"></a>Exemplo
@@ -555,7 +555,7 @@ Filtro de autorização que verifica se:
 | **Tecnologias aplicáveis** | MVC5, MVC6 |
 | **Atributos**              | Provedor de Identidade - ADFS, Provedor de Identidade - Azure AD |
 | **Referências**              | [Proteger uma API Web com contas individuais e logon local na ASP.NET Web API 2.2](https://www.asp.net/web-api/overview/security/individual-accounts-in-web-api) |
-| **Etapas** | Se a API Web for protegida usando OAuth 2.0, ela esperará um token de portador no cabeçalho de solicitação de Autorização e a concederá o acesso à solicitação somente se o token for válido. Diferentemente da autenticação baseada em cookie, os navegadores não anexam os tokens de portador às solicitações. O cliente solicitante deve anexar explicitamente o token de portador no cabeçalho da solicitação. Portanto, para APIs Web ASP.NET protegidas usando o OAuth 2.0, os tokens de portador são considerados uma defesa contra ataques de CSRF. Observe que, se a parte MVC do aplicativo usar a autenticação de formulários (ou seja, cookies), será necessário usar tokens antifalsificação pelo aplicativo Web do MVC. |
+| **Etapas** | Se a API Web for protegida usando OAuth 2.0, ela esperará um token de portador no cabeçalho de solicitação de Autorização e a concederá o acesso à solicitação somente se o token for válido. Diferentemente da autenticação baseada em cookie, os navegadores não anexam os tokens de portador às solicitações. O cliente solicitante deve anexar explicitamente o token de portador no cabeçalho da solicitação. Portanto, para ASP.NET Web APIs protegidos usando o OAuth 2.0, os tokens de portador são considerados uma defesa contra ataques de CSRF. Observe que, se a parte MVC do aplicativo usar a autenticação de formulários (ou seja, cookies), será necessário usar tokens antifalsificação pelo aplicativo Web do MVC. |
 
 ### <a name="example"></a>Exemplo
 A API Web precisa ser informada para confiar SOMENTE em tokens de portador e não em cookies. Isso pode ser feito pela configuração a seguir no `WebApiConfig.Register` método:

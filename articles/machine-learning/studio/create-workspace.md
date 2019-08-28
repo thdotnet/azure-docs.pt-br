@@ -1,7 +1,7 @@
 ---
 title: Criar um workspace do Machine Learning Studio
 titleSuffix: Azure Machine Learning Studio
-description: Para usar o Azure Machine Learning Studio é necessário ter um espaço de trabalho do Machine Learning Studio. Esse workspace contém as ferramentas necessárias para criar, gerenciar e publicar testes.
+description: Para usar o Azure Machine Learning Studio é necessário ter um workspace do Machine Learning Studio. Esse workspace contém as ferramentas necessárias para criar, gerenciar e publicar testes.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -17,9 +17,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "62109341"
 ---
-# <a name="create-and-share-an-azure-machine-learning-studio-workspace"></a>Criar e compartilhar um espaço de trabalho do Azure Machine Learning Studio
+# <a name="create-and-share-an-azure-machine-learning-studio-workspace"></a>Criar e compartilhar um workspace do Azure Machine Learning Studio
 
-Para usar o Azure Machine Learning Studio é necessário ter um espaço de trabalho do Machine Learning Studio. Esse workspace contém as ferramentas necessárias para criar, gerenciar e publicar testes.
+Para usar o Azure Machine Learning Studio é necessário ter um workspace do Machine Learning Studio. Esse workspace contém as ferramentas necessárias para criar, gerenciar e publicar testes.
 
 ## <a name="create-a-studio-workspace"></a>Criar um workspace do Studio
 
@@ -60,7 +60,7 @@ Após a implantação do workspace, abra-o no Machine Learning Studio.
     ![Experimentos abertos](./media/create-workspace/my-experiments.png)
 
 Para saber mais sobre como gerenciar seu workspace do Studio, confira [Gerenciar um workspace do Azure Machine Learning Studio](manage-workspace.md).
-Se você encontrar um problema ao criar seu espaço de trabalho, consulte [Guia de solução de problemas: Criar e conectar-se a um workspace do Machine Learning Studio](troubleshooting-creating-ml-workspace.md).
+Se você encontrar um problema ao criar seu workspace, consulte [Guia de solução de problemas: Criar e conectar-se a um workspace do Machine Learning Studio](troubleshooting-creating-ml-workspace.md).
 
 
 ## <a name="share-an-azure-machine-learning-studio-workspace"></a>Compartilhar um workspace do Azure Machine Learning Studio

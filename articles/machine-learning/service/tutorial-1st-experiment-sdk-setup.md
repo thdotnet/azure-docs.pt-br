@@ -71,7 +71,7 @@ Depois que sua VM estiver em execução, use a seção **VMs de Notebook** para 
 1. Na página da Web do Jupyter notebook, o nome da pasta superior é o seu nome de usuário.  Selecione esta pasta.
 
     > [!TIP]
-    > Esta pasta está localizada no [contêiner de armazenamento](concept-workspace.md#resources) em seu espaço de trabalho, não na VM do notebook.  Você pode excluir a VM do notebook e ainda manter todo o seu trabalho.  Quando você criar uma nova VM do notebook posteriormente, ela será carregada dessa mesma pasta. Se você compartilhar seu workspace com outras pessoas, elas verão sua pasta e você verá as pastas delas.
+    > Esta pasta está localizada no [contêiner de armazenamento](concept-workspace.md#resources) em seu workspace, não na VM do notebook.  Você pode excluir a VM do notebook e ainda manter todo o seu trabalho.  Quando você criar uma nova VM do notebook posteriormente, ela será carregada dessa mesma pasta. Se você compartilhar seu workspace com outras pessoas, elas verão sua pasta e você verá as pastas delas.
 
 1. Abra o subdiretório `samples-*` e, em seguida, abra `tutorials/tutorial-1st-experiment-sdk-train.ipynb` para executar a **parte dois** do tutorial.
 

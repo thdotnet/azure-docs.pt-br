@@ -28,7 +28,7 @@ Os artigos a seguir descrevem como configurar os vários ambientes de ciência d
 
 * [Azure storage-account](../../storage/common/storage-quickstart-create-account.md)
 * [Cluster do HDInsight (Hadoop)](customize-hadoop-cluster.md)
-* [Espaço de trabalho do Azure Machine Learning Studio](../studio/create-workspace.md)
+* [Workspace do Azure Machine Learning Studio](../studio/create-workspace.md)
 
 O **DSVM (Máquina Virtual de ciência de dados da Microsoft)** também está disponível como uma imagem de VM (máquina virtual) do Azure. Essa VM é pré-instalada e configurada com diversas ferramentas populares que são usadas para a análise de dados e o aprendizado de máquina. O DSVM está disponível no Windows e no Linux. Para obter mais informações, consulte [Introdução à Máquina Virtual de Ciência de Dados baseada em nuvem para Linux e Windows](../data-science-virtual-machine/overview.md).
 

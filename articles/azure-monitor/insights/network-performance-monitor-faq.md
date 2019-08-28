@@ -72,7 +72,7 @@ O script configura apenas o firewall do windows localmente. Se você tiver o fir
 Você deve usar pelo menos um agente para cada sub-rede que deseja monitorar.
 
 ### <a name="what-is-the-maximum-number-of-agents-i-can-use-or-i-see-error--youve-reached-your-configuration-limit"></a>Qual é o número máximo de agentes que posso usar ou que eu vejo o erro ".... Você atingiu seu limite de configuração "?
-O NPM limita o número de IPs a 5000 IPs por espaço de trabalho. Se um nó tiver ambos os endereços IPv4 e IPv6, isso contará como 2 IPs para esse nó. Portanto, esse limite de 5000 IPs determinaria o limite superior do número de agentes. Você pode excluir os agentes inativos da guia Nós no NPM >> Configurar. O NPM também mantém o histórico de todos os IPs que já foram atribuídos à VM que hospeda o agente e cada um é contado como um IP separado, contribuindo para esse limite superior de 5000 IPs. Para liberar IPs para seu espaço de trabalho, você pode usar a página nós para excluir os IPs que não estão em uso.
+O NPM limita o número de IPs a 5000 IPs por workspace. Se um nó tiver ambos os endereços IPv4 e IPv6, isso contará como 2 IPs para esse nó. Portanto, esse limite de 5000 IPs determinaria o limite superior do número de agentes. Você pode excluir os agentes inativos da guia Nós no NPM >> Configurar. O NPM também mantém o histórico de todos os IPs que já foram atribuídos à VM que hospeda o agente e cada um é contado como um IP separado, contribuindo para esse limite superior de 5000 IPs. Para liberar IPs para seu espaço de trabalho, você pode usar a página nós para excluir os IPs que não estão em uso.
 
 ## <a name="monitoring"></a>Monitorando
 
@@ -128,10 +128,10 @@ Para informações de nível de circuito, use a consulta mencionada abaixo
     | project CircuitName,PrimaryBytesInPerSecond, PrimaryBytesOutPerSecond,SecondaryBytesInPerSecond,SecondaryBytesOutPerSecond
 
 ### <a name="which-regions-are-supported-for-npms-performance-monitor"></a>Quais regiões têm suporte para o Monitor de desempenho do NPM?
-O NPM pode monitorar a conectividade entre redes em qualquer parte do mundo, de um espaço de trabalho que está hospedado em uma das [regiões com suporte](../../azure-monitor/insights/network-performance-monitor.md#supported-regions)
+O NPM pode monitorar a conectividade entre redes em qualquer parte do mundo, de um workspace que está hospedado em uma das [regiões com suporte](../../azure-monitor/insights/network-performance-monitor.md#supported-regions)
 
 ### <a name="which-regions-are-supported-for-npms-service-connectivity-monitor"></a>Quais regiões têm suporte para o Monitor de Conectividade do Serviço do NPM?
-NPM pode monitorar a conectividade para serviços em qualquer parte do mundo, de espaço de trabalho que está hospedado em uma das [regiões com suporte](../../azure-monitor/insights/network-performance-monitor.md#supported-regions)
+NPM pode monitorar a conectividade para serviços em qualquer parte do mundo, de workspace que está hospedado em uma das [regiões com suporte](../../azure-monitor/insights/network-performance-monitor.md#supported-regions)
 
 ### <a name="which-regions-are-supported-for-npms-expressroute-monitor"></a>Quais regiões têm suporte para o Monitor do ExpressRoute do NPM?
 O NPM pode monitorar seus circuitos do ExpressRoute localizados em qualquer região do Azure. Para carregar no NPM, você precisará de um espaço de trabalho do Log Analytics que deve ser hospedado em uma das [regiões com suporte](/azure/expressroute/how-to-npm)

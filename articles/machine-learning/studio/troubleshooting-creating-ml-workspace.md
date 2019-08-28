@@ -1,7 +1,7 @@
 ---
 title: Solução de problemas de um espaço de trabalho
 titleSuffix: Azure Machine Learning Studio
-description: Este guia fornece soluções para alguns desafios encontrados com frequência quando você configura espaços de trabalho do Azure Machine Learning Studio.
+description: Este guia fornece soluções para alguns desafios encontrados com frequência quando você configura workspaces do Azure Machine Learning Studio.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
@@ -18,7 +18,7 @@ ms.lasthandoff: 06/13/2019
 ms.locfileid: "60193795"
 ---
 # <a name="troubleshooting-guide-create-and-connect-to-an-azure-machine-learning-studio-workspace"></a>Guia de Solução de Problemas: Criar e conectar a um workspace do Azure Machine Learning Studio
-Este guia fornece soluções para alguns desafios encontrados com frequência quando você configura espaços de trabalho do Azure Machine Learning Studio.
+Este guia fornece soluções para alguns desafios encontrados com frequência quando você configura workspaces do Azure Machine Learning Studio.
 
 
 

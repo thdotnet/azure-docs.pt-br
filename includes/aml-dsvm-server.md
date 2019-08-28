@@ -26,7 +26,7 @@ ms.locfileid: "68857306"
 
 1. Adicione um arquivo de configuração do workspace ao diretório clonado usando um destes métodos:
 
-    * No [portal do Azure](https://ms.portal.azure.com), selecione **Baixar config.json** na seção **Visão geral** do seu espaço de trabalho. 
+    * No [portal do Azure](https://ms.portal.azure.com), selecione **Baixar config.json** na seção **Visão geral** do seu workspace. 
 
     ![Baixe o config.json](./media/aml-dsvm-server/download-config.png)
 

@@ -34,7 +34,7 @@ Nas etapas a seguir, você criará um [pipeline de Machine Learning](concept-ml-
 
 - Configure seu ambiente de desenvolvimento para instalar o SDK do Azure Machine Learning. Para saber mais, consulte [Configurar um ambiente de desenvolvimento para o Azure Machine Learning](how-to-configure-environment.md).
 
-- Crie um espaço de trabalho do Azure Machine Learning que manterá todos os recursos de seu pipeline. Você pode usar o código a seguir ou, para obter mais opções, consulte [Criar um arquivo de configuração do espaço de trabalho](how-to-configure-environment.md#workspace).
+- Crie um workspace do Azure Machine Learning que manterá todos os recursos de seu pipeline. Você pode usar o código a seguir ou, para obter mais opções, consulte [Criar um arquivo de configuração do workspace](how-to-configure-environment.md#workspace).
 
   ```python
   from azureml.core import Workspace
@@ -59,7 +59,7 @@ As etapas a seguir configurarão os recursos necessários para executar um pipel
 
 Primeiro, acesse o repositório de dados que possui o modelo, os rótulos e as imagens.
 
-Use um contêiner de blob público, chamado *SampleData*, na conta *pipelinedata* que contém imagens do conjunto de avaliação ImageNet. O nome do repositório de dados desse contêiner público é *images_datastore*. Registre esse repositório de dados em seu espaço de trabalho:
+Use um contêiner de blob público, chamado *SampleData*, na conta *pipelinedata* que contém imagens do conjunto de avaliação ImageNet. O nome do repositório de dados desse contêiner público é *images_datastore*. Registre esse repositório de dados em seu workspace:
 
 ```python
 from azureml.core import Datastore
@@ -77,7 +77,7 @@ batchscore_blob = Datastore.register_azure_blob_container(ws,
 
 Em seguida, configure para usar o armazenamento de dados padrão para as saídas.
 
-Ao criar seu espaço de trabalho, [Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) e [armazenamento de Blob](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) são conectados ao espaço de trabalho por padrão. Arquivos do Azure é o armazenamento de dados padrão para um espaço de trabalho, mas também é possível usar o armazenamento de Blob como um armazenamento de dados. Para obter mais informações, consulte [Opções de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
+Ao criar seu workspace, [Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) e [armazenamento de Blob](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) são conectados ao workspace por padrão. Arquivos do Azure é o armazenamento de dados padrão para um workspace, mas também é possível usar o armazenamento de Blob como um armazenamento de dados. Para obter mais informações, consulte [Opções de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
 
 ```python
 def_data_store = ws.get_default_datastore()
@@ -150,7 +150,7 @@ else:
 
 ## <a name="prepare-the-model"></a>Preparar o modelo
 
-Antes de usar o modelo previamente treinado, você precisa fazer o download do modelo e registrá-lo em seu espaço de trabalho.
+Antes de usar o modelo previamente treinado, você precisa fazer o download do modelo e registrá-lo em seu workspace.
 
 ### <a name="download-the-pretrained-model"></a>Fazer o download do modelo previamente treinado
 
@@ -278,7 +278,7 @@ batch_size_param = PipelineParameter(
 
 ### <a name="create-the-pipeline-step"></a>Criar a etapa do pipeline
 
-Crie a etapa do pipeline usando o script, a configuração do ambiente e os parâmetros. Especifique o destino de computação que você já anexou ao seu espaço de trabalho como o destino de execução do script. Use [PythonScriptStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py) para criar a etapa do pipeline.
+Crie a etapa do pipeline usando o script, a configuração do ambiente e os parâmetros. Especifique o destino de computação que você já anexou ao seu workspace como o destino de execução do script. Use [PythonScriptStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py) para criar a etapa do pipeline.
 
 ```python
 from azureml.pipeline.steps import PythonScriptStep

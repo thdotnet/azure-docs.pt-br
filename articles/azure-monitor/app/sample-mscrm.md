@@ -38,7 +38,7 @@ Para monitorar seu aplicativo, você adiciona um SDK do Application Insights a e
     ![Clique em +, Serviços de Desenvolvedor, Application Insights.](./media/sample-mscrm/01.png)
 
     Escolha ASP.NET como o tipo de aplicativo.
-3. Siga as instruções para [obter o script de SDK JavaScript para seu aplicativo](../../azure-monitor/app/javascript.md), copie o trecho de JavaScript e substitua a Chave de Instrumentação pelo valor correto para seu recurso do Application Insights.
+3. Siga as instruções para [obter o script de SDK JavaScript para seu aplicativo](../../azure-monitor/app/javascript.md), copie o snippet de JavaScript e substitua a Chave de Instrumentação pelo valor correto para seu recurso do Application Insights.
 
 ### <a name="create-a-javascript-web-resource-in-microsoft-dynamics-crm"></a>Criar um recurso da Web em JavaScript no Microsoft Dynamics CRM
 1. Abra sua instância do CRM Online e faça logon com privilégios de administrador.

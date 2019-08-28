@@ -267,7 +267,7 @@ A resposta se assemelha à seguinte, mostrando o segredo. No código, analise es
 
 ## <a name="enable-managed-identity-using-resource-manager-template"></a>Habilitar a identidade gerenciada usando o modelo do Resource Manager
 
-Para habilitar uma identidade gerenciada em um grupo de contêiner usando um [modelo do Resource Manager](container-instances-multi-container-group.md), defina a propriedade `identity` do objeto `Microsoft.ContainerInstance/containerGroups` com um objeto `ContainerGroupIdentity`. Os trechos de código a seguir mostram a propriedade `identity` configurada para cenários diferentes. Defina a [referência de modelo do Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Especifique um `apiVersion` de `2018-10-01`.
+Para habilitar uma identidade gerenciada em um grupo de contêiner usando um [modelo do Resource Manager](container-instances-multi-container-group.md), defina a propriedade `identity` do objeto `Microsoft.ContainerInstance/containerGroups` com um objeto `ContainerGroupIdentity`. Os snippets a seguir mostram a propriedade `identity` configurada para cenários diferentes. Defina a [referência de modelo do Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Especifique um `apiVersion` de `2018-10-01`.
 
 ### <a name="user-assigned-identity"></a>Identidade atribuída pelo usuário
 

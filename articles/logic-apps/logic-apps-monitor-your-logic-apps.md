@@ -92,7 +92,7 @@ Antes de iniciar, é necessário ter um espaço de trabalho do Log Analytics. Sa
 
    1. Selecione **Enviar para o Log Analytics**. 
    2. Em **Log Analytics**, escolha **Configurar**. 
-   3. Em **Espaços de trabalho do OMS**, selecione o espaço de trabalho a ser usado para registro em log.
+   3. Em **Workspaces do OMS**, selecione o workspace a ser usado para registro em log.
       > [!NOTE]
       > Os workspaces do OMS agora são chamados de workspaces do Log Analytics.
    4. Em **Log**, selecione a categoria **WorkflowRuntime**.

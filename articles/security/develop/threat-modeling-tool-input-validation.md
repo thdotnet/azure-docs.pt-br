@@ -565,7 +565,7 @@ AS
 | **Tecnologias aplicáveis** | MVC5, MVC6 |
 | **Atributos**              | N/D  |
 | **Referências**              | [Validação de modelo no ASP.NET Web API](https://www.asp.net/web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api) |
-| **Etapas** | Quando um cliente envia dados a uma API Web, é obrigatório validar os dados antes de executar qualquer processamento. Para APIs Web do ASP.NET que aceitam modelos como entrada, use anotações de dados em modelos para definir regras de validação nas propriedades do modelo.|
+| **Etapas** | Quando um cliente envia dados a uma API Web, é obrigatório validar os dados antes de executar qualquer processamento. Para ASP.NET Web APIs que aceitam modelos como entrada, use anotações de dados em modelos para definir regras de validação nas propriedades do modelo.|
 
 ### <a name="example"></a>Exemplo
 O código a seguir demonstra o mesmo: 

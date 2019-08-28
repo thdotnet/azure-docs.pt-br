@@ -106,7 +106,7 @@ Para usar Azure Machine Learning recursos de experimentação com Azure Key Vaul
 Para usar uma instância de computação Azure Machine Learning em uma rede virtual, os requisitos de rede a seguir devem ser atendidos:
 
 > [!div class="checklist"]
-> * A rede virtual deve estar na mesma assinatura e região que o espaço de trabalho do Serviço do Azure Machine Learning.
+> * A rede virtual deve estar na mesma assinatura e região que o workspace do Serviço do Azure Machine Learning.
 > * A sub-rede especificada para o cluster de computação deve ter endereços IP não atribuídos suficientes para acomodar o número de VMs que são destinadas ao cluster. Se a sub-rede não tiver endereços IP não atribuídos suficientes, o cluster será parcialmente alocado.
 > * Verifique se as políticas de segurança ou os bloqueios na assinatura ou no grupo de recursos da rede virtual restringem as permissões para gerenciar a rede virtual. Se você planeja proteger a rede virtual restringindo o tráfego, deixe algumas portas abertas para o serviço de computação. Para obter mais informações, consulte a seção [portas necessárias](#mlcports) .
 > * Se você for colocar vários clusters de computação em uma rede virtual, talvez seja necessário solicitar um aumento de cota para um ou mais dos seus recursos.
@@ -272,7 +272,7 @@ Para usar uma máquina virtual ou um cluster do Azure HDInsight em uma rede virt
 
     Se você não quiser usar as regras de saída padrão e quiser limitar o acesso de saída de sua rede virtual, consulte a seção [limitar a conectividade de saída da rede virtual](#limiting-outbound-from-vnet) .
 
-1. Anexe a VM ou o cluster do HDInsight ao seu espaço de trabalho do Serviço do Azure Machine Learning. Para obter mais informações, consulte [Configurar destinos de computação para treinamento do modelo](how-to-set-up-training-targets.md).
+1. Anexe a VM ou o cluster do HDInsight ao seu workspace do Serviço do Azure Machine Learning. Para obter mais informações, consulte [Configurar destinos de computação para treinamento do modelo](how-to-set-up-training-targets.md).
 
 <a id="aksvnet"></a>
 

@@ -17,7 +17,7 @@ ms.locfileid: "61447484"
 ---
 # <a name="predictive-maintenance-solution-accelerator-overview"></a>Visão geral do acelerador de solução de Manutenção Preditiva
 
-O acelerador de solução de Manutenção Preditiva é uma solução de ponta a ponta para um cenário comercial e prevê o ponto no qual há a probabilidade de ocorrer uma falha. Você pode usar esse acelerador de solução de forma pró-ativa para atividades como a manutenção de otimização. A solução combina os principais serviços de aceleradores de solução de IoT do Azure, como Hub IoT e um espaço de trabalho do [Aprendizado de Máquina do Azure][lnk-machine-learning]. Esse workspace contém um modelo, com base em um conjunto de dados de exemplo público, para prever a RUL (Vida Útil Restante) de um motor de aeronave. A solução implementa totalmente o cenário de negócios IoT como um ponto de partida para você planejar e implementar uma solução que atenda aos seus requisitos de negócios específicos.
+O acelerador de solução de Manutenção Preditiva é uma solução de ponta a ponta para um cenário comercial e prevê o ponto no qual há a probabilidade de ocorrer uma falha. Você pode usar esse acelerador de solução de forma pró-ativa para atividades como a manutenção de otimização. A solução combina os principais serviços de aceleradores de solução de IoT do Azure, como Hub IoT e um workspace do [Aprendizado de Máquina do Azure][lnk-machine-learning]. Esse workspace contém um modelo, com base em um conjunto de dados de exemplo público, para prever a RUL (Vida Útil Restante) de um motor de aeronave. A solução implementa totalmente o cenário de negócios IoT como um ponto de partida para você planejar e implementar uma solução que atenda aos seus requisitos de negócios específicos.
 
 O código do acelerador da solução de Manutenção Preditiva [está disponível no GitHub](https://github.com/Azure/azure-iot-predictive-maintenance).
 
@@ -39,7 +39,7 @@ No portal do Azure, navegue até o grupo de recursos com o nome da solução esc
 
 ![Recursos do acelerador][img-resource-group]
 
-Quando você provisiona o acelerador da solução, recebe um email com um link para o workspace de Machine Learning. Você também pode navegar até o espaço de trabalho Aprendizado de Máquina da página [Aceleradores de Solução IoT do Microsoft Azure][lnk-azureiotsolutions]. Um bloco fica disponível nessa página quando a solução entra no estado **pronto**.
+Quando você provisiona o acelerador da solução, recebe um email com um link para o workspace de Machine Learning. Você também pode navegar até o workspace do Machine Learning da página [Aceleradores de Solução IoT do Microsoft Azure][lnk-azureiotsolutions]. Um bloco fica disponível nessa página quando a solução entra no estado **pronto**.
 
 ![Modelo de Machine Learning][img-machine-learning]
 
@@ -68,7 +68,7 @@ O Hub IoT fornece reconhecimento de comando do dispositivo.
 * A segunda calcula os valores médios do sensor em uma janela deslizante de dois minutos e envia esses dados por meio do Hub de Eventos para um **processador de eventos**.
 
 ## <a name="event-processor"></a>Processador de eventos
-O **host do processador de eventos** é executado em um trabalho de Web do Azure. O **processador de eventos** obtém os valores do sensor médios para um ciclo completo. Em seguida, ele passa esses valores para um modelo treinado que calcula o RUL para um mecanismo. Uma API fornece acesso ao modelo em um espaço de trabalho de Aprendizado de Máquina que faz parte da solução.
+O **host do processador de eventos** é executado em um trabalho de Web do Azure. O **processador de eventos** obtém os valores do sensor médios para um ciclo completo. Em seguida, ele passa esses valores para um modelo treinado que calcula o RUL para um mecanismo. Uma API fornece acesso ao modelo em um workspace do Machine Learning que faz parte da solução.
 
 ## <a name="machine-learning"></a>Machine Learning
 O componente de Machine Learning usa um modelo derivado dos dados coletados de mecanismos de aeronave real. Você pode navegar até o espaço de trabalho do Machine Learning do bloco da sua solução na [azureiotsolutions.com] [ lnk-azureiotsolutions] página. O bloco fica disponível quando a solução fica no estado **Pronto**.

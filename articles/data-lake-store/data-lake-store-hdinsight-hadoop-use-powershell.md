@@ -181,7 +181,7 @@ Nesta seção, você executará as etapas para criar uma entidade de serviço pa
         $servicePrincipal = New-AzADServicePrincipal -ApplicationId $applicationId
 
         $objectId = $servicePrincipal.Id
-3. Conceda o acesso à entidade de serviço para a pasta do Data Lake armazenamento Gen1 e o arquivo que você acessará do cluster HDInsight. O trecho a seguir fornece acesso à raiz da conta do Data Lake armazenamento Gen1 (onde você copiou o arquivo de dados de exemplo) e o próprio arquivo.
+3. Conceda o acesso à entidade de serviço para a pasta do Data Lake armazenamento Gen1 e o arquivo que você acessará do cluster HDInsight. O snippet a seguir fornece acesso à raiz da conta do Data Lake armazenamento Gen1 (onde você copiou o arquivo de dados de exemplo) e o próprio arquivo.
 
         Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
         Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /vehicle1_09142014.csv -AceType User -Id $objectId -Permissions All

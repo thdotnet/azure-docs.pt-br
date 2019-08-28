@@ -33,7 +33,7 @@ Este início rápido requer:
 
 ## <a name="create-a-project-and-require-dependencies"></a>Criar um projeto e exigir dependências
 
-Crie um novo projeto Node.js usando seu editor ou IDE favorito. Em seguida, copie esse trecho de código para seu projeto em um arquivo denominado `get-voices.js`.
+Crie um novo projeto Node.js usando seu editor ou IDE favorito. Em seguida, copie esse snippet de código para seu projeto em um arquivo denominado `get-voices.js`.
 
 ```javascript
 // Requires request and request-promise for HTTP requests

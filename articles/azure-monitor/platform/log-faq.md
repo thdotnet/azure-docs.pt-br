@@ -199,8 +199,8 @@ Em **Azure Log Analytics (OMS)** , remova todos os workspaces listados.
 
 ### <a name="q-why-am-i-getting-an-error-when-i-try-to-move-my-workspace-from-one-azure-subscription-to-another"></a>P: Por que estou recebendo um erro ao tentar mover meu workspace de uma assinatura do Azure para outra?
 
-R: Para mover uma área de trabalho para uma assinatura ou grupo de recursos diferente, primeiro é necessário desvincular a conta de Automação na área de trabalho. Desvincular uma conta de Automação requer a remoção destas soluções, se estiverem instaladas no espaço de trabalho: Gerenciamento de Atualizações, Controle de Alterações ou Iniciar/Parar VMs fora do horário comercial. Depois que essas soluções forem removidas, desmarque a conta de Automação do Azure selecionando **Espaços de trabalho vinculados** no painel esquerdo no recurso de conta de automação e clique em **Desvincular a área de trabalho** na faixa de opções.
- > As soluções removidas precisam ser reinstaladas no espaço de trabalho, e o link de Automação do Azure para o espaço de trabalho precisa ser atualizado após a movimentação.
+R: Para mover um workspace para uma assinatura ou grupo de recursos diferente, primeiro é necessário desvincular a conta de Automação no workspace. Desvincular uma conta de Automação requer a remoção destas soluções, se estiverem instaladas no workspace: Gerenciamento de Atualizações, Controle de Alterações ou Iniciar/Parar VMs fora do horário comercial. Depois que essas soluções forem removidas, desmarque a conta de Automação do Azure selecionando **Workspaces vinculados** no painel esquerdo no recurso de conta de automação e clique em **Desvincular o workspace** na faixa de opções.
+ > As soluções removidas precisam ser reinstaladas no workspace, e o link de Automação do Azure para o workspace precisa ser atualizado após a movimentação.
 
 Verifique se você tem permissão em ambas as assinaturas do Azure.
 

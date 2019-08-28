@@ -70,7 +70,7 @@ A resposta do Detector de Anomalias é um objeto [LastDetectResponse](https://do
 
 ## <a name="code-examples"></a>Exemplos de código 
 
-Estes snippets de códigos mostram como fazer o seguinte com a biblioteca de clientes do Detector de Anomalias para .NET:
+Esses snippets de códigos mostram como fazer o seguinte com a biblioteca de clientes do Detector de Anomalias para .NET:
 
 * [Autenticar o cliente](#authenticate-the-client)
 * [Carregar um conjunto de dados de série temporal de um arquivo](#load-time-series-data-from-a-file)

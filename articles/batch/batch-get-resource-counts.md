@@ -96,7 +96,7 @@ foreach (var nodeCounts in batchClient.PoolOperations.ListPoolNodeCounts())
     Console.WriteLine("Low-priority node count in Preempted state: {0}", nodeCounts.LowPriority.Preempted);
 }
 ```
-O trecho de código C# a seguir mostra como listar contagens de nós para um determinado pool na conta atual.
+O snippet C# a seguir mostra como listar contagens de nós para um determinado pool na conta atual.
 
 ```csharp
 foreach (var nodeCounts in batchClient.PoolOperations.ListPoolNodeCounts(new ODATADetailLevel(filterClause: "poolId eq 'testpool'")))

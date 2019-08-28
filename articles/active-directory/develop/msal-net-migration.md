@@ -169,7 +169,7 @@ Por exemplo, para acessar no nome de usuário uma API Web v1.0 cujo URI de ID do
 var scopes = new [] {  ResourceId+"/user_impersonation"};
 ```
 
-Se você quiser ler e escrever com o Azure Active Directory da MSAL.NET usando a API do grafo do Azure Active Directory (https://graph.windows.net/) , você criaria uma lista de escopos, como no trecho a seguir:
+Se você quiser ler e escrever com o Azure Active Directory da MSAL.NET usando a API do grafo do Azure Active Directory (https://graph.windows.net/) , você criaria uma lista de escopos, como no snippet a seguir:
 
 ```csharp
 ResourceId = "https://graph.windows.net/";

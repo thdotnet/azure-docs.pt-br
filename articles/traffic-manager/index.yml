@@ -1,91 +1,90 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Gerenciador de Tráfego
+### YamlMime:Landing
+title: Documentação do Gerenciador de Tráfego
+summary: Saiba como usar o Gerenciador de Tráfego do Azure. Guias de início rápido, tutoriais, exemplos e muito mais mostram como gerenciar o tráfego de entrada para ter um melhor desempenho dos aplicativos e como distribuir o tráfego para pontos de extremidade de serviço do Azure ou externos.
 metadata:
-  document_id: null
-  title: Gerenciador de Tráfego
-  meta.description: 'Learn how to use Traffic Manager to route incoming traffic for optimal application performance and reliability. Quickstarts, tutorials, samples, and more, show how to manage traffic to Azure or external service endpoints.'
+  title: Documentação do Gerenciador de Tráfego
+  description: Saiba como usar o Gerenciador de Tráfego para rotear o tráfego de entrada para confiabilidade e melhor desempenho dos aplicativos. Inícios rápidos, tutoriais, exemplos e mais mostram como gerenciar o tráfego para pontos de extremidade de serviço do Azure ou externo.
   services: traffic-manager
-  author: asudbring
-  manager: twooley
-  layout: LandingPage
   ms.service: traffic-manager
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
-  ms.date: 02/28/2019
+  ms.collection: collection
+  author: asudbring
   ms.author: allensu
-abstract:
-  description: 'Saiba como usar o Gerenciador de Tráfego do Azure. Guias de início rápido, tutoriais, exemplos e muito mais mostram como gerenciar o tráfego de entrada para ter um melhor desempenho dos aplicativos e como distribuir o tráfego para pontos de extremidade de serviço do Azure ou externos.'
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Saiba como gerenciar o tráfego da Web para seus pontos de extremidade de serviço usando o Gerenciador de Tráfego.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_portal.svg'
-            text: Portal do Azure
-            href: /azure/traffic-manager/quickstart-create-traffic-manager-profile
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
-            text: Azure PowerShell
-            href: /azure/traffic-manager/quickstart-create-traffic-manager-profile-powershell
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: Saiba como rotear o tráfego com base em diferentes métodos de roteamento disponíveis no Gerenciador de Tráfego.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/traffic-manager/traffic-manager-configure-geographic-routing-method">Rotear o tráfego com base na localização geográfica do ponto de extremidade</a>
-          - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-improve-website-response">Rotear tráfego de baixa latência</a>
-          - html: <a href="/azure/traffic-manager/traffic-manager-configure-weighted-routing-method">Distribuir tráfego para um conjunto de pontos de extremidade</a>
-          - html: <a href="/azure/traffic-manager/traffic-manager-configure-priority-routing-method">Rotear tráfego para um ponto de extremidade de prioridade</a>
-          - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-weighted-endpoint-routing">Controlar o tráfego com pontos de extremidade ponderados</a>
-          - html: <a href="/azure/traffic-manager/tutorial-traffic-manager-subnet-routing">Rotear o tráfego com base na sub-rede do usuário</a>
-  - title: Treinamento em Vídeo Pluralsight gratuito
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Administrador do Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012827'
-          - title: Arquitetura de solução do Azure
-            href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://go.microsoft.com/fwlink/?linkid=2012824'
-          - title: Administração do Azure para Administradores do AWS
-            href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://app.pluralsight.com/library/courses/azure-administration-aws-administrators/table-of-contents'
-  - title: Exemplos
-    items:
-      - type: paragraph
-        text: Exemplos de script para tarefas comuns.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/traffic-manager/cli-samples">CLI do Azure</a>
-          - html: <a href="/azure/traffic-manager/powershell-samples">PowerShell</a>
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Linha de comando
-            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.trafficmanager/#traffic_manager">PowerShell</a></p><p><a href="/cli/azure/network/traffic-manager">CLI do Azure</a></p>'
-          - title: Languages
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/virtual-network?view=azure-dotnet">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.trafficmanager">Java</a></p><p><a href="https://azure.github.io/azure-sdk-for-node/azure-arm-trafficmanager/latest/">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/overview/azure/traffic-manager">Python</a></p>'
-          - title: REST
-            html: <p><a href="/rest/api/trafficmanager/">referência da API REST (a página pode estar em inglês)</a></p>
+  ms.date: 08/19/2019
+  ms.openlocfilehash: e0990e15a10d18d836daddc1d5fba83af95948d8
+  ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/27/2019
+  ms.locfileid: "70051970"
+landingContent:
+- title: Sobre o Gerenciador de Tráfego
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o Gerenciador de Tráfego?
+      url: traffic-manager-overview.md
+  - linkListType: concept
+    links:
+    - text: Métodos de roteamento do Gerenciador de Tráfego
+      url: traffic-manager-routing-methods.md
+  - linkListType: learn
+    links:
+    - text: Aprimorar a disponibilidade do serviço e a localidade dos dados
+      url: https://docs.microsoft.com/learn/modules/distribute-load-with-traffic-manager/
+- title: Introdução
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Criar um perfil do Gerenciador de Tráfego usando o portal do Azure
+      url: quickstart-create-traffic-manager-profile.md
+  - linkListType: tutorial
+    links:
+    - text: Melhorar a resposta do site
+      url: tutorial-traffic-manager-improve-website-response.md
+    - text: Configurar o método de roteamento de tráfego geográfico
+      url: traffic-manager-configure-geographic-routing-method.md
+    - text: Configurar o método de roteamento de tráfego ponderado
+      url: traffic-manager-configure-weighted-routing-method.md
+    - text: Configurar o método de roteamento de tráfego de prioridade
+      url: traffic-manager-configure-priority-routing-method.md
+    - text: Direcionar tráfego a pontos de extremidade específicos com base na sub-rede do usuário
+      url: tutorial-traffic-manager-subnet-routing.md
+- title: Gerenciar
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Perfis aninhados do Gerenciador de Tráfego
+      url: traffic-manager-nested-profiles.md
+    - text: Pontos de extremidade do Gerenciador de Tráfego
+      url: traffic-manager-endpoint-types.md
+    - text: Monitoramento de ponto de extremidade do Gerenciador de Tráfego
+      url: traffic-manager-monitoring.md
+  - linkListType: how-to-guide
+    links:
+    - text: Adicionar, desabilitar, habilitar ou excluir pontos de extremidade
+      url: traffic-manager-manage-endpoints.md
+    - text: Gerenciar um perfil do Gerenciador de Tráfego
+      url: traffic-manager-manage-profiles.md
+    - text: Usando os serviços de balanceamento de carga no Azure
+      url: traffic-manager-load-balancing-azure.md
+    - text: Apontar um domínio de Internet da empresa para um domínio do Gerenciador de Tráfego do Azure
+      url: traffic-manager-point-internet-domain.md
+    - text: Considerações sobre o desempenho
+      url: traffic-manager-performance-considerations.md
+- title: Solucionar problemas
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Habilitar registro em log de diagnóstico
+      url: traffic-manager-diagnostic-logs.md
+    - text: Solucionar problemas de estado degradado
+      url: traffic-manager-troubleshooting-degraded.md
+- title: Referência
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.trafficmanager/?view=azps-2.5.0
+    - text: CLI do Azure
+      url: https://docs.microsoft.com/cli/azure/network/traffic-manager?view=azure-cli-latest

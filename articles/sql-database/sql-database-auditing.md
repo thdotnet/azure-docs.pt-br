@@ -13,14 +13,14 @@ ms.reviewer: vanto
 ms.date: 04/16/2019
 ms.openlocfilehash: 69fe3287083523a3a47975a3db51d7241681f5c4
 ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/12/2019
 ms.locfileid: "68569511"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Introdução à auditoria do banco de dados SQL
 
-A auditoria do [Banco de Dados SQL](sql-database-technical-overview.md) e do [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) do Azure rastreia eventos do banco de dados e os grava em um log de auditoria na sua conta de armazenamento do Azure, espaço de trabalho do OMS ou Hub de Eventos. A auditoria também:
+A auditoria do [Banco de Dados SQL](sql-database-technical-overview.md) e do [SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) do Azure rastreia eventos do banco de dados e os grava em um log de auditoria na sua conta de armazenamento do Azure, workspace do OMS ou Hub de Eventos. A auditoria também:
 
 - Ajuda você a manter a conformidade regulatória, entender a atividade do banco de dados e obter informações sobre discrepâncias e anomalias que podem indicar preocupações para os negócios ou suspeitas de violações de segurança.
 

@@ -21,7 +21,7 @@ O [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/what-is-a
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Criar um cluster e um banco de dados no Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal).
-- [Criar um espaço de trabalho no Azure Databricks](/azure/azure-databricks/quickstart-create-databricks-workspace-portal#create-an-azure-databricks-workspace). Em **Serviço do Azure Databricks**, na lista suspensa **Tipo de preço**, selecione **Premium**. Essa seleção permite que você use os segredos do Azure Databricks para armazenar suas credenciais e mencioná-las em notebooks e trabalhos.
+- [Criar um workspace no Azure Databricks](/azure/azure-databricks/quickstart-create-databricks-workspace-portal#create-an-azure-databricks-workspace). Em **Serviço do Azure Databricks**, na lista suspensa **Tipo de preço**, selecione **Premium**. Essa seleção permite que você use os segredos do Azure Databricks para armazenar suas credenciais e mencioná-las em notebooks e trabalhos.
 
 - [Crie um cluster](https://docs.azuredatabricks.net/user-guide/clusters/create.html) em bancos de dados do Azure Databricks com as seguintes especificações (configurações mínimas necessárias para executar os blocos de notas de amostra):
 
@@ -31,7 +31,7 @@ O [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/what-is-a
 
 Como instalar a [biblioteca do Python](/azure/kusto/api/python/kusto-python-client-library) em seu cluster do Azure Databricks:
 
-1. Acesse o espaço de trabalho do Azure Databricks e [crie uma biblioteca](https://docs.azuredatabricks.net/user-guide/libraries.html#create-a-library).
+1. Acesse o workspace do Azure Databricks e [crie uma biblioteca](https://docs.azuredatabricks.net/user-guide/libraries.html#create-a-library).
 2. [Carregue um pacote de PyPI Python ou Python Egg](https://docs.azuredatabricks.net/user-guide/libraries.html#upload-a-python-pypi-package-or-python-egg).
    - Carregue, instale e anexe a biblioteca ao seu cluster do Databricks.
    - Digite o nome do PyPi: **azure-kusto-data**.

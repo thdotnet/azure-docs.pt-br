@@ -84,7 +84,7 @@ pip install azure-datalake-store
 
 ## <a name="service-to-service-authentication-with-client-secret-for-account-management"></a>Autenticação de serviço a serviço com o segredo do cliente para gerenciamento de conta
 
-Use esse trecho de código para autenticar com Azure AD para operações de gerenciamento de contas no Data Lake Storage Gen1, como criar uma conta do Data Lake Storage Gen1, excluir uma conta do Data Lake Storage Gen1, etc. O snippet a seguir pode ser usado para autenticar seu aplicativo de forma não interativa, usando segredo do cliente para entidade de serviço/aplicativo de um aplicativo "Web App" existente do Azure AD.
+Use esse snippet para autenticar com Azure AD para operações de gerenciamento de contas no Data Lake Storage Gen1, como criar uma conta do Data Lake Storage Gen1, excluir uma conta do Data Lake Storage Gen1, etc. O snippet a seguir pode ser usado para autenticar seu aplicativo de forma não interativa, usando segredo do cliente para entidade de serviço/aplicativo de um aplicativo "Web App" existente do Azure AD.
 
     authority_host_uri = 'https://login.microsoftonline.com'
     tenant = '<TENANT>'
@@ -99,7 +99,7 @@ Use esse trecho de código para autenticar com Azure AD para operações de gere
 
 ## <a name="service-to-service-authentication-with-client-secret-for-filesystem-operations"></a>Autenticação de serviço a serviço com o segredo do cliente para operações do sistema de arquivos
 
-Use o trecho de código a seguir para autenticar com Azure AD para operações do sistema de arquivos no Data Lake Storage Gen1 como criar pasta, carregar arquivo, etc. O snippet a seguir pode ser usado para autenticar seu aplicativo de forma não interativa, usando segredo do cliente para entidade de segurança/aplicativo. Use-o com o aplicativo "Aplicativo Web" Azure AD existente.
+Use o snippet a seguir para autenticar com Azure AD para operações do sistema de arquivos no Data Lake Storage Gen1 como criar pasta, carregar arquivo, etc. O snippet a seguir pode ser usado para autenticar seu aplicativo de forma não interativa, usando segredo do cliente para entidade de segurança/aplicativo. Use-o com o aplicativo "Aplicativo Web" Azure AD existente.
 
     tenant = '<TENANT>'
     RESOURCE = 'https://datalake.azure.net/'

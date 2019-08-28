@@ -68,7 +68,7 @@ Como determino a proporção de usuários por laboratório e o número total de 
 
 Você também precisará considerar os limites geográficos. Por exemplo, os desenvolvedores na região nordeste dos EUA (Estados Unidos) podem usar um laboratório provisionado no Leste dos EUA 2. E os desenvolvedores em Dallas, Texas e em Denver, Colorado podem ser direcionados para usar um recurso no Centro-Sul dos EUA. Se houver um esforço colaborativo com terceiros, eles poderão ser atribuídos a um laboratório não usado por desenvolvedores internos. 
 
-Você também pode usar um laboratório para um projeto específico em projetos DevOps do Azure. Em seguida, você aplica a segurança por meio de um grupo especificado do Azure Active Directory, o que permite o acesso a ambos os conjunto de recursos. A rede virtual atribuída ao laboratório pode ser outro limite para consolidar os usuários.
+Você também pode usar um laboratório para um projeto específico em projetos do Azure DevOps. Em seguida, você aplica a segurança por meio de um grupo especificado do Azure Active Directory, o que permite o acesso a ambos os conjunto de recursos. A rede virtual atribuída ao laboratório pode ser outro limite para consolidar os usuários.
 
 ## <a name="deletion-of-resources"></a>Exclusão de recursos
 

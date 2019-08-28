@@ -197,7 +197,7 @@ Uma instância gerenciada não pode acessar arquivos, portanto, os provedores cr
 
 ### <a name="collation"></a>Ordenação
 
-O agrupamento de instância padrão é `SQL_Latin1_General_CP1_CI_AS` e pode ser especificado como um parâmetro de criação. Consulte [Ordenações](https://docs.microsoft.com/sql/t-sql/statements/collations).
+A ordenação de instância padrão é `SQL_Latin1_General_CP1_CI_AS` e pode ser especificada como um parâmetro de criação. Consulte [Ordenações](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
 ### <a name="compatibility-levels"></a>Níveis de compatibilidade
 

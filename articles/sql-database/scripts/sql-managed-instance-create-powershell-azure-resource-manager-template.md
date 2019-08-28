@@ -34,9 +34,9 @@ Os comandos do PowerShell do Azure podem começar a implantação usando o model
 - Nome de usuário do administrador do SQL e senha.
 - Tamanho da instância (número de núcleos e o tamanho máximo de armazenamento).
 - Rede virtual e sub-rede onde a instância será colocada.
-- Agrupamento de nível de servidor da instância (versão prévia).
+- Ordenação de nível de servidor da instância (versão prévia).
 
-O nome da instância, o nome de usuário do administrador do SQL, a rede virtual/sub-rede e o agrupamento não podem ser alterados posteriormente. As outras propriedades da instância podem ser alteradas.
+O nome da instância, o nome de usuário do administrador do SQL, a rede virtual/sub-rede e a ordenação não podem ser alterados posteriormente. As outras propriedades da instância podem ser alteradas.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

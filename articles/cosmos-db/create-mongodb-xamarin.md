@@ -76,7 +76,7 @@ Se não quiser usar o git, você também pode [baixar o projeto como um arquivo 
 
 Esta etapa é opcional. Se você estiver interessado em aprender como os recursos de banco de dados são criados no código, poderá examinar os snippets de código a seguir. Caso contrário, você poderá pular para [Atualizar sua cadeia de conexão](#update-your-connection-string).
 
-Os trechos de código a seguir foram todos obtidos da classe `MongoService`, encontrada no seguinte caminho: src/TaskList.Core/Services/MongoService.cs.
+Os snippets a seguir foram todos obtidos da classe `MongoService`, encontrada no seguinte caminho: src/TaskList.Core/Services/MongoService.cs.
 
 * Inicialize o cliente Mongo.
     ```cs

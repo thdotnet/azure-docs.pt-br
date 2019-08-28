@@ -58,7 +58,7 @@ As [exibições no Azure Monitor](platform/view-designer.md) permitem que você 
 ### <a name="advantages"></a>Vantagens
 - Visualizações ricas para dados de log.
 - Exporte e importe visualizações para transferi-las para outros grupos de recursos e assinaturas.
-- Integra-se no modelo de gerenciamento do Azure Monitor com espaços de trabalho e soluções de monitoramento.
+- Integra-se no modelo de gerenciamento do Azure Monitor com workspaces e soluções de monitoramento.
 - [Filtros](platform/view-designer-filters.md) para parâmetros personalizados.
 - Interativo, suporta drill-in de vários níveis (veja as brocas em outra visão)
 

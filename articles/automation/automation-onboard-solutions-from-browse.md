@@ -115,19 +115,19 @@ Ao integrar várias máquinas, pode haver máquinas que mostrem como **Não é p
 
 ### <a name="vm-reports-to-a-different-workspace-workspacename--change-configuration-to-use-it-for-enabling"></a>Relatórios de VM para outro workspace: '\<workspaceName\>'.  Alterar a configuração para usá-lo para ativar
 
-**Causa**: este erro mostra a máquina virtual em que você está tentando carregar relatórios para outro espaço de trabalho.
+**Causa**: este erro mostra a máquina virtual em que você está tentando carregar relatórios para outro workspace.
 
 **Solução**: Clique em **Usar como configuração**  para alterar o espaço de trabalho da conta de automação e do Log Analytics.
 
 ### <a name="vm-reports-to-a-workspace-that-is-not-available-in-this-subscription"></a>Relatórios VM para um workspace que não está disponível nesta assinatura
 
-**Causa**: o espaço de trabalho ao qual a máquina virtual se reporta:
+**Causa**: o workspace ao qual a máquina virtual se reporta:
 
 * Está em uma assinatura diferente ou
 * Não existe mais, ou
 * Está em um grupo de recursos que você não tem as permissões de acesso
 
-**Solução**: localizar a conta de automação associada ao espaço de trabalho ao qual a máquina virtual se reporta e integrar a máquina virtual ao alterar a configuração do escopo.
+**Solução**: localizar a conta de automação associada ao workspace ao qual a máquina virtual se reporta e integrar a máquina virtual ao alterar a configuração do escopo.
 
 ### <a name="vm-operating-system-version-or-distribution-is-not-supported"></a>A versão ou distribuição do sistema operacional VM não é suportada
 

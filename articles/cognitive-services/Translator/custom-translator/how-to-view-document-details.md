@@ -1,7 +1,7 @@
 ---
 title: Detalhes do documento - Tradutor personalizado
 titleSuffix: Azure Cognitive Services
-description: A página de lista de documentos mostra os primeiros 10 documentos no espaço de trabalho. Para cada um dos documentos, ela exibe o nome, pareamento, tipo, idioma, carimbo de data/hora do upload e endereço de email do usuário que carregou o documento.
+description: A página de lista de documentos mostra os primeiros 10 documentos no workspace. Para cada um dos documentos, ela exibe o nome, pareamento, tipo, idioma, carimbo de data/hora do upload e endereço de email do usuário que carregou o documento.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -18,7 +18,7 @@ ms.locfileid: "68595585"
 ---
 # <a name="view-document-details"></a>Exibir detalhes do documento
 
-A página de lista de documentos mostra os primeiros 10 documentos no espaço de trabalho. Para cada um dos documentos, ela exibe o nome, pareamento, tipo, idioma, carimbo de data/hora do upload e endereço de email do usuário que carregou o documento.
+A página de lista de documentos mostra os primeiros 10 documentos no workspace. Para cada um dos documentos, ela exibe o nome, pareamento, tipo, idioma, carimbo de data/hora do upload e endereço de email do usuário que carregou o documento.
 
 Clique em um documento individual para exibir a página de detalhes do documento. A página de detalhes de documento exibe a lista de frases extraídas do documento.
 
@@ -29,7 +29,7 @@ Clique em um documento individual para exibir a página de detalhes do documento
 
 ## <a name="delete-a-document"></a>Excluir um documento
 
-Para excluir um documento, o usuário deverá ser um proprietário do espaço de trabalho. Além disso, se um documento estiver em uso por um modelo, ou seja, em qualquer parte do processo de treinamento ou em qualquer parte do processo de implantação, o documento não poderá ser excluído.
+Para excluir um documento, o usuário deverá ser um proprietário do workspace. Além disso, se um documento estiver em uso por um modelo, ou seja, em qualquer parte do processo de treinamento ou em qualquer parte do processo de implantação, o documento não poderá ser excluído.
 
 1. Acessar a página de documento
 2.  Passe o mouse sobre qualquer registro de documento e clique no ícone da lixeira.

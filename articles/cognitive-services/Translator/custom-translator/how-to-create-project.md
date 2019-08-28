@@ -18,7 +18,7 @@ ms.locfileid: "68595760"
 ---
 # <a name="create-a-project"></a>Criar um projeto
 
-Um projeto é um contêiner para modelos, documentos e testes. Cada projeto inclui automaticamente todos os documentos que são carregados nesse espaço de trabalho que possuem o par de idiomas correto.
+Um projeto é um contêiner para modelos, documentos e testes. Cada projeto inclui automaticamente todos os documentos que são carregados nesse workspace que possuem o par de idiomas correto.
 
 Criar um projeto é o primeiro passo para construir um modelo.
 
@@ -48,7 +48,7 @@ Criar um projeto é o primeiro passo para construir um modelo.
 
 ## <a name="view-project-details"></a>Exibir detalhes do projeto
 
-A página de entrada do Custom Translator mostra os primeiros 10 projetos em sua área de trabalho. Ele exibe o nome do projeto, o par de idiomas, a categoria, o status e a pontuação da BLEU.
+A página de entrada do Custom Translator mostra os primeiros 10 projetos em seu workspace. Ele exibe o nome do projeto, o par de idiomas, a categoria, o status e a pontuação da BLEU.
 
 Depois de selecionar um projeto, você verá o seguinte na página do projeto:
 

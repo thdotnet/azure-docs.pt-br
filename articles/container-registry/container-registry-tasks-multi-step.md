@@ -52,7 +52,7 @@ Uma tarefa de várias etapas nas Tarefas do ACR é definida como uma série de e
 * [`push`](container-registry-tasks-reference-yaml.md#push): Envie por push imagens criadas para um registro de contêiner. Registros privados como o Registro de Contêiner do Azure são compatíveis, o mesmo se aplica ao Hub do Docker público.
 * [`cmd`](container-registry-tasks-reference-yaml.md#cmd): Execute um contêiner, de modo que ele possa operar como uma função dentro do contexto da tarefa em execução. Você pode passar parâmetros para o `[ENTRYPOINT]` do contêiner e especificar propriedades como env, detach e outros parâmetros de `docker run` familiares. O tipo de etapa `cmd` permite testes de unidade e funcionais, com execução simultânea em contêineres.
 
-Os trechos de código a seguir mostram como combinar esses tipos de etapa da tarefa. Tarefas de várias etapas podem ser tão simples quanto a criação de uma única imagem de um Dockerfile e enviar por push para seu registro, com um arquivo YAML semelhante a:
+Os snippets a seguir mostram como combinar esses tipos de etapa da tarefa. Tarefas de várias etapas podem ser tão simples quanto a criação de uma única imagem de um Dockerfile e enviar por push para seu registro, com um arquivo YAML semelhante a:
 
 ```yml
 version: v1.0.0

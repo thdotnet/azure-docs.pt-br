@@ -115,7 +115,7 @@ Crie um modelo de solução de C# que possa ser personalizado com seu próprio c
 
     ![Criar nova solução 4](./media/data-box-edge-create-iot-edge-module/create-new-solution-4.png)
 
-5. Procure e aponte para a pasta **EdgeSolution** que você criou anteriormente. A janela do VS Code carrega seu espaço de trabalho da solução IoT Edge com seus cinco componentes de nível superior. Você não editará a pasta **.vscode**, o arquivo **.gitignore**, o arquivo **.env** e o **deployment.template.json** neste artigo.
+5. Procure e aponte para a pasta **EdgeSolution** que você criou anteriormente. A janela do VS Code carrega seu workspace da solução IoT Edge com seus cinco componentes de nível superior. Você não editará a pasta **.vscode**, o arquivo **.gitignore**, o arquivo **.env** e o **deployment.template.json** neste artigo.
     
     O único componente que você modificará é a pasta de módulos. Essa pasta tem o código C# do módulo e os arquivos do Docker para compilar seu módulo como uma imagem de contêiner.
 

@@ -121,7 +121,7 @@ O exemplo de sensor simula os valores de dados aleatórios para dois sensores. E
 
      [![Obter espaços disponíveis com ar fresco](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png)](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png#lightbox)
 
-Para entender o que aconteceu neste início rápido e quais APIs foram chamadas, abra o [Visual Studio Code](https://code.visualstudio.com/Download) com o projeto de espaço de trabalho do código encontrado em digital-twins-samples-csharp. Use o seguinte comando:
+Para entender o que aconteceu neste início rápido e quais APIs foram chamadas, abra o [Visual Studio Code](https://code.visualstudio.com/Download) com o projeto de workspace do código encontrado em digital-twins-samples-csharp. Use o seguinte comando:
 
 ```plaintext
 <path>\occupancy-quickstart\src>code ..\..\digital-twins-samples.code-workspace

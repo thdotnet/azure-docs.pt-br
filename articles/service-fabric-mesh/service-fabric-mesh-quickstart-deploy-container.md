@@ -53,7 +53,7 @@ az mesh deployment create --resource-group myResourceGroup --template-uri https:
 
 O comando anterior implanta um aplicativo Linux usando o [modelo linux.json](https://raw.githubusercontent.com/Azure-Samples/service-fabric-mesh/master/templates/helloworld/helloworld.linux.json). Se desejar implantar um aplicativo do Windows, use o [modelo windows.json](https://raw.githubusercontent.com/Azure-Samples/service-fabric-mesh/master/templates/helloworld/helloworld.windows.json). Imagens de contêiner do Windows são maiores do que as imagens de contêiner do Linux e podem levar mais tempo para implantar.
 
-Este comando produzirá um trecho JSON mostrado abaixo. Na seção ```outputs``` da saída JSON, copie a propriedade ```publicIPAddress```.
+Este comando produzirá um snippet JSON mostrado abaixo. Na seção ```outputs``` da saída JSON, copie a propriedade ```publicIPAddress```.
 
 ```json
 "outputs": {

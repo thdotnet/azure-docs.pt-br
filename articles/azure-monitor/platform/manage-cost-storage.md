@@ -39,7 +39,7 @@ O custo dos dados pode ser considerável dependendo dos fatores a seguir:
     - Tipo de dados coletados de cada recurso monitorado 
 - O período de tempo que decidir reter seus dados 
 
-## <a name="understand-your-workspaces-usage-and-estimated-cost"></a>Reconhecer o uso do espaço de trabalho e o custo estimado
+## <a name="understand-your-workspaces-usage-and-estimated-cost"></a>Reconhecer o uso do workspace e o custo estimado
 
 Os logs de Azure Monitor facilitam a compreensão do que os custos são prováveis com base em padrões de uso recentes. Para fazer isso, use **log Analytics uso e custos estimados** para revisar e analisar o uso de dados. A mostra quantos dados são coletados por cada solução, quantos dados estão sendo retidos e uma estimativa de seus custos com base na quantidade de dados ingeridos e em qualquer retenção adicional além do valor incluído.
 
@@ -146,7 +146,7 @@ Quando a coleta de dados é interrompida, o OperationStatus é **aviso**. Quando
 |Motivo para a interrupção da coleta| Solução| 
 |-----------------------|---------|
 |Limite diário de tipo de preço gratuito herdado atingido |Aguarde até o dia seguinte para que a coleta seja reiniciada automaticamente ou altere para um tipo de preço pago.|
-|O limite diário do seu espaço de trabalho foi atingido|Aguarde para a coleta ser reiniciada automaticamente ou aumente o limite diário de volume de dados descrito em Gerenciar o volume máximo de dados diário. O tempo de redefinição de limite diário é exibido na página **Gerenciamento de volume de dados**. |
+|O limite diário do seu workspace foi atingido|Aguarde para a coleta ser reiniciada automaticamente ou aumente o limite diário de volume de dados descrito em Gerenciar o volume máximo de dados diário. O tempo de redefinição de limite diário é exibido na página **Gerenciamento de volume de dados**. |
 |Assinatura do Azure está em um estado suspenso devido a:<br> A avaliação gratuita terminou<br> O Azure Pass expirou<br> Limite de gastos mensal atingido (por exemplo, em uma assinatura do MSDN ou do Visual Studio)|Converter para uma assinatura paga<br> Remova o limite ou espere o limite ser redefinido|
 
 Para ser notificado quando a coleta de dados for interrompida, use as etapas descritas em criar alerta de *limite de dados diários* para ser notificado quando a coleta de dados parar. Use as etapas descritas em [criar um grupo de ações](action-groups.md) para configurar uma ação de email, webhook ou runbook para a regra de alerta. 

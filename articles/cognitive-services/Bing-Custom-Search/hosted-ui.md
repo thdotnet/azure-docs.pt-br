@@ -19,7 +19,7 @@ ms.locfileid: "68854081"
 ---
 # <a name="configure-your-hosted-ui-experience"></a>Configurar a experiência de interface do usuário hospedada
 
-A Pesquisa Personalizada do Bing oferece uma interface de usuário hospedada que pode ser facilmente integrada aos seus aplicativos e páginas da Web como um trecho de código JavaScript. Usando o portal de Pesquisa Personalizada do Bing, configure o layout, a cor e as opções de pesquisa da interface do usuário.
+A Pesquisa Personalizada do Bing oferece uma interface de usuário hospedada que pode ser facilmente integrada aos seus aplicativos e páginas da Web como um snippet de código JavaScript. Usando o portal de Pesquisa Personalizada do Bing, configure o layout, a cor e as opções de pesquisa da interface do usuário.
 
 
 
@@ -38,7 +38,7 @@ Para configurar uma interface do usuário hospedada para os aplicativos Web, sig
     |  |  |
     |---------|---------|
     |Barra de pesquisa e resultados (padrão)    | Exibe uma caixa de pesquisa com os resultados da pesquisa abaixo dela.         |
-    |Somente os resultados     | Exibe apenas os resultados da pesquisa sem uma caixa de pesquisa. Ao usar esse layout, forneça a consulta de pesquisa (`&q=<query string>`). Adicione o parâmetro de consulta para a URL solicitada no trecho de JavaScript ou o link de ponto de extremidade de HTML.        |
+    |Somente os resultados     | Exibe apenas os resultados da pesquisa sem uma caixa de pesquisa. Ao usar esse layout, forneça a consulta de pesquisa (`&q=<query string>`). Adicione o parâmetro de consulta para a URL solicitada no snippet de JavaScript ou o link de ponto de extremidade de HTML.        |
     |Pop-over     | Fornece uma caixa de pesquisa e exibe os resultados da pesquisa em uma sobreposição deslizante.        |
     
 5. Selecione um tema de cor. Personalize as cores de acordo com seu aplicativo clicando em **Personalizar tema**. Para alterar uma cor, insira o valor RGB HEX da cor (por exemplo, `#366eb8`) ou clique na caixa de texto correspondente.

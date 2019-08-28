@@ -32,14 +32,14 @@ Neste artigo, você aprenderá como configurar o Insight do Aplicativo do Azure 
 
 * Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Teste hoje mesmo a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree).
 
-* Um espaço de trabalho do Azure Machine Learning, um diretório local que contém seus scripts e o SDK de Aprendizado de Máquina do Azure para Python instalado. Para saber como obter esses pré-requisitos, consulte [como configurar um ambiente de desenvolvimento](how-to-configure-environment.md).
+* Um workspace do Azure Machine Learning, um diretório local que contém seus scripts e o SDK de Aprendizado de Máquina do Azure para Python instalado. Para saber como obter esses pré-requisitos, consulte [como configurar um ambiente de desenvolvimento](how-to-configure-environment.md).
 * Um modelo de aprendizado de máquina treinado para ser implantado para o serviço de Kubernetes do Azure (AKS) ou Instância de Contêiner do Azure (ACI). Se você não tiver um, consulte o tutorial [Modelo de classificação de imagem de trem](tutorial-train-models-with-aml.md).
 
 
 ## <a name="use-sdk-to-configure"></a>Usar o SDK para configurar 
 
 ### <a name="update-a-deployed-service"></a>Atualizar um serviço implantado
-1. Identificar o serviço no seu espaço de trabalho. O valor de `ws` é o nome do seu espaço de trabalho.
+1. Identificar o serviço no seu workspace. O valor de `ws` é o nome do seu workspace.
 
     ```python
     from azureml.core.webservice import Webservice
@@ -81,7 +81,7 @@ Para desabilitar o Application Insights, use o seguinte código:
 
 Você pode ativar e desativar o Application Insights no portal do Azure.
 
-1. No [portal do Azure](https://portal.azure.com), abra o espaço de trabalho.
+1. No [portal do Azure](https://portal.azure.com), abra o workspace.
 
 1. Na guia **Implantações**, selecione o serviço no qual você deseja ativar o Application Insights.
 
@@ -98,7 +98,7 @@ Você pode ativar e desativar o Application Insights no portal do Azure.
 1. Selecione **Atualizar** na parte inferior da tela para aplicar as alterações. 
 
 ### <a name="disable"></a>Desabilitar
-1. No [portal do Azure](https://portal.azure.com), abra o espaço de trabalho.
+1. No [portal do Azure](https://portal.azure.com), abra o workspace.
 1. Selecione **implantações**, selecione o serviço e selecione **editar**.
 
    [![Use o botão Editar](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
@@ -113,7 +113,7 @@ Você pode ativar e desativar o Application Insights no portal do Azure.
 ## <a name="evaluate-data"></a>Avaliar dados
 Os dados do seu serviço são armazenados em sua conta do Application Insights, dentro do mesmo grupo de recursos que o serviço do Azure Machine Learning.
 Para exibi-lo:
-1. Acesse o espaço de trabalho do serviço do Machine Learning no [portal do Azure](https://portal.azure.com) e clique no link do Application Insights.
+1. Acesse o workspace do serviço do Machine Learning no [portal do Azure](https://portal.azure.com) e clique no link do Application Insights.
 
     [![AppInsightsLoc](media/how-to-enable-app-insights/AppInsightsLoc.png)](./media/how-to-enable-app-insights/AppInsightsLoc.png#lightbox)
 

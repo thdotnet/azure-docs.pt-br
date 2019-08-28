@@ -165,7 +165,7 @@ Otimize as execuções para maximizar a "precisão".  Certifique-se de fazer ess
 
 O script de treinamento para o seu modelo deve fazer as métricas relevantes durante o treinamento de modelo. Quando você configurar o ajuste de hiperparâmetro, você pode especificar a métrica principal a ser usada para avaliar o desempenho de execução. (Veja [Especificar uma métrica primária para otimizar](#specify-primary-metric-to-optimize)).  No seu script de treinamento, você deve fazer essa métrica para que esteja disponível para o processo de ajuste de hiperparâmetro.
 
-Essa métrica de log em seu script de treinamento com o seguinte trecho de exemplo:
+Essa métrica de log em seu script de treinamento com o seguinte snippet de exemplo:
 
 ```Python
 from azureml.core.run import Run
@@ -304,11 +304,11 @@ experiment = Experiment(workspace, experiment_name)
 hyperdrive_run = experiment.submit(hyperdrive_run_config)
 ```
 
-`experiment_name` é o nome atribuído ao seu experimento, de ajuste de hiperparâmetro e `workspace` é o espaço de trabalho no qual você deseja criar o experimento (para obter mais informações sobre experimentos, consulte [Como funciona o serviço do Azure Machine Learning?](concept-azure-machine-learning-architecture.md))
+`experiment_name` é o nome atribuído ao seu experimento, de ajuste de hiperparâmetro e `workspace` é o workspace no qual você deseja criar o experimento (para obter mais informações sobre experimentos, consulte [Como funciona o serviço do Azure Machine Learning?](concept-azure-machine-learning-architecture.md))
 
 ## <a name="visualize-experiment"></a>Visualizar o experimento
 
-O SDK do Azure Machine Learning fornece um [Widget de bloco de anotações](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets.rundetails?view=azure-ml-py) que visualiza o progresso de suas execuções de treinamento. O trecho a seguir visualiza todas as execuções em um único lugar em um bloco de anotações do Jupyter de ajuste de seu parâmetro:
+O SDK do Azure Machine Learning fornece um [Widget de bloco de anotações](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets.rundetails?view=azure-ml-py) que visualiza o progresso de suas execuções de treinamento. O snippet a seguir visualiza todas as execuções em um único lugar em um bloco de anotações do Jupyter de ajuste de seu parâmetro:
 
 ```Python
 from azureml.widgets import RunDetails

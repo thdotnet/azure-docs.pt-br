@@ -939,7 +939,7 @@ O portal do Azure para o serviço de AML tem as seguintes atualizações:
 ### <a name="azure-machine-learning-sdk-for-python-v0168"></a>SDK de aprendizado de máquina do Azure para Python v0.1.68
 
 + **Novos recursos**
-  * Suporte a vários locatários ao criar novo espaço de trabalho.
+  * Suporte a vários locatários ao criar novo workspace.
 
 + **Bugs corrigidos**
   * Você não precisa fixar a versão da biblioteca pynacl ao implantar o serviço web.

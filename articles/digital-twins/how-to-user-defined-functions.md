@@ -77,7 +77,7 @@ A criação de uma função definida pelo usuário envolve fazer uma solicitaç�
 
 [!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
 
-Depois que os correspondentes forem criados, carregue o trecho de código de função com a seguinte solicitação HTTP POST de várias partes autenticada:
+Depois que os correspondentes forem criados, carregue o snippet de função com a seguinte solicitação HTTP POST de várias partes autenticada:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/userdefinedfunctions

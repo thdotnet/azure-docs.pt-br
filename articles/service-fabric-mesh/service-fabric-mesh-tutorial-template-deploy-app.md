@@ -360,7 +360,7 @@ Para implantar o aplicativo, faça o seguinte:
 az mesh deployment create --resource-group myResourceGroup --template-file c:\temp\mesh_rp.windows.json --parameters c:\temp\mesh_rp.windows.parameters.json
 ```
 
-Este comando produzirá um trecho JSON mostrado abaixo. Na seção ```outputs``` da saída JSON, copie a propriedade ```publicIPAddress```.
+Este comando produzirá um snippet JSON mostrado abaixo. Na seção ```outputs``` da saída JSON, copie a propriedade ```publicIPAddress```.
 
 ```json
 "outputs": {

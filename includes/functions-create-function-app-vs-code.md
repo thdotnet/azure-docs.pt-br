@@ -17,10 +17,10 @@ O modelo de projeto do Azure Functions no Visual Studio Code cria um projeto que
 
 1. No Visual Studio Code, pressione F1 para abrir a paleta de comandos. Na paleta de comandos, pesquise e selecione `Azure Functions: Create new project...`.
 
-1. Escolha um local de diretório para o espaço de trabalho do projeto e escolha **Selecionar**.
+1. Escolha um local de diretório para o workspace do projeto e escolha **Selecionar**.
 
     > [!NOTE]
-    > Estas etapas foram projetadas para serem concluídas fora de um espaço de trabalho. Nesse caso, não selecione uma pasta de projeto que faz parte de um workspace.
+    > Estas etapas foram projetadas para serem concluídas fora de um workspace. Nesse caso, não selecione uma pasta de projeto que faz parte de um workspace.
 
 1. Após os prompts, forneça as seguintes informações:
 
@@ -31,7 +31,7 @@ O modelo de projeto do Azure Functions no Visual Studio Code cria um projeto que
     | Forneça um nome de função | HttpTrigger | Pressione Enter para usar o nome padrão. |
     | Forneça um namespace | My.Functions | (Somente C#) As bibliotecas de classe C# devem ter um namespace.  |
     | Nível de autorização | Função | Requer uma [tecla de função](../articles/azure-functions/functions-bindings-http-webhook.md#authorization-keys) para chamar o ponto de extremidade HTTP da função. |
-    | Selecione como você gostaria de abrir seu projeto | Adicionar ao espaço de trabalho | Cria o aplicativo de funções no espaço de trabalho atual. |
+    | Selecione como você gostaria de abrir seu projeto | Adicionar ao workspace | Cria o aplicativo de funções no workspace atual. |
 
 O Visual Studio Code cria o projeto de aplicativo de função em um novo workspace. Este projeto contém os arquivos de configuração [host.json](../articles/azure-functions/functions-host-json.md) e [local.settings.json](../articles/azure-functions/functions-run-local.md#local-settings-file), além de quaisquer arquivos de projeto específicos a uma linguagem. 
 

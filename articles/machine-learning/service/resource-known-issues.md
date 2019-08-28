@@ -59,7 +59,7 @@ Que cria um ambiente Conda usando o Python 3.7.3, que não tem o problema de ins
 
 ## <a name="trouble-creating-azure-machine-learning-compute"></a>Problemas ao criar a computação do Azure Machine Learning
 
-Há uma chance rara que alguns usuários que criaram seu espaço de trabalho do Machine Learning do Azure no portal do Azure antes da versão GA não consigam criar a computação do Azure Machine Learning nesse espaço de trabalho. Você pode gerar uma solicitação de suporte no serviço ou criar um novo espaço de trabalho por meio do Portal ou do SDK para desbloqueio imediato.
+Há uma chance rara que alguns usuários que criaram seu workspace do Azure Machine Learning no portal do Azure antes da versão GA não consigam criar a computação do Azure Machine Learning nesse workspace. Você pode gerar uma solicitação de suporte no serviço ou criar um novo workspace por meio do Portal ou do SDK para desbloqueio imediato.
 
 ## <a name="image-building-failure"></a>Falha na criação da imagem
 
@@ -136,7 +136,7 @@ Se você vir um `FailToSendFeather` erro ao ler dados no cluster Azure Databrick
 
 ## <a name="azure-portal"></a>Portal do Azure
 
-Se você for diretamente exibir seu espaço de trabalho a partir de um link de compartilhamento do SDK ou do portal, não poderá exibir a página de Visão Geral normal com as informações de assinatura na extensão. Você também não poderá alternar para outro espaço de trabalho. Se você precisar exibir outro workspace, a solução alternativa será ir diretamente para o [portal do Azure](https://portal.azure.com) e procurar o nome do workspace.
+Se você for diretamente exibir seu workspace a partir de um link de compartilhamento do SDK ou do portal, não poderá exibir a página de Visão Geral normal com as informações de assinatura na extensão. Você também não poderá alternar para outro workspace. Se você precisar exibir outro workspace, a solução alternativa será ir diretamente para o [portal do Azure](https://portal.azure.com) e procurar o nome do workspace.
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
 

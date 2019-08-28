@@ -193,7 +193,7 @@ Outros são valores atribuídos pelo Azure ML:
 Consulte a classe `SourceDataset` para saber mais sobre os metadados disponíveis.
 
 ### <a name="read-contents"></a>Ler conteúdo
-Os trechos de código fornecidos pelo Machine Learning Studio baixam e desserializam automaticamente o conjunto de dados para um objeto DataFrame do pandas. Isso é feito com o método `to_dataframe` :
+Os snippets de código fornecidos pelo Machine Learning Studio baixam e desserializam automaticamente o conjunto de dados para um objeto DataFrame do pandas. Isso é feito com o método `to_dataframe` :
 
     frame = ds.to_dataframe()
 

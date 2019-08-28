@@ -72,7 +72,7 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 ```
 
 ## <a name="service-to-service-authentication-with-client-secret"></a>Autenticação serviço a serviço com o segredo do cliente
-Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo Web do Azure AD (listado como um pré-requisito). Este trecho de código permite autenticar seu aplicativo **forma não interativa** com Data Lake armazenamento Gen1 usando a chave/segredo do cliente para o aplicativo web do Azure AD.
+Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo Web do Azure AD (listado como um pré-requisito). Este snippet permite autenticar seu aplicativo **forma não interativa** com Data Lake armazenamento Gen1 usando a chave/segredo do cliente para o aplicativo web do Azure AD.
 
 ```csharp
 private static void Main(string[] args)
@@ -89,11 +89,11 @@ private static void Main(string[] args)
 }
 ```
 
-O trecho de código anterior usa uma função auxiliar `GetCreds_SPI_SecretKey`. O código dessa função auxiliar está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#getcreds_spi_secretkey).
+O snippet anterior usa uma função auxiliar `GetCreds_SPI_SecretKey`. O código dessa função auxiliar está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#getcreds_spi_secretkey).
 
 ## <a name="service-to-service-authentication-with-certificate"></a>Autenticação serviço a serviço com certificado
 
-Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo Web do Azure AD (listado como um pré-requisito). Este trecho de código permite autenticar seu aplicativo **forma não interativa** com Gen1 de armazenamento do Data Lake usando o certificado para um aplicativo de web do Azure AD. Para obter instruções sobre como criar um aplicativo do Azure AD, consulte [Criar entidade de serviço com certificados](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate).
+Adicione este snippet no aplicativo cliente do .NET. Substitua os valores de espaço reservado pelos valores recuperados de um aplicativo Web do Azure AD (listado como um pré-requisito). Este snippet permite autenticar seu aplicativo **forma não interativa** com Gen1 de armazenamento do Data Lake usando o certificado para um aplicativo de web do Azure AD. Para obter instruções sobre como criar um aplicativo do Azure AD, consulte [Criar entidade de serviço com certificados](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate).
 
 ```csharp
 private static void Main(string[] args)
@@ -110,7 +110,7 @@ private static void Main(string[] args)
 }
 ```
 
-O trecho de código anterior usa uma função auxiliar `GetCreds_SPI_Cert`. O código dessa função auxiliar está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#getcreds_spi_cert).
+O snippet anterior usa uma função auxiliar `GetCreds_SPI_Cert`. O código dessa função auxiliar está disponível [aqui no GitHub](https://github.com/Azure-Samples/data-lake-analytics-dotnet-auth-options#getcreds_spi_cert).
 
 ## <a name="next-steps"></a>Próximas etapas
 Neste artigo, você aprendeu como usar a autenticação de serviço a serviço para autenticar com o Data Lake Storage Gen1 usando o .NET SDK. Agora você pode ver os artigos a seguir que falam sobre como usar o .NET SDK para trabalhar com o Data Lake Storage Gen1.

@@ -313,7 +313,7 @@ Os códigos de status possíveis são:
 | 429 | Muitas solicitações (limitadas), de acordo com a [limitação do Hub IOT](iot-hub-devguide-quotas-throttling.md) |
 | 5** | Erros do servidor |
 
-O trecho de código python abaixo, demonstra o processo de atualização de propriedades relatadas de gêmeos sobre MQTT (usando o cliente Paho MQTT):
+O snippet de código python abaixo, demonstra o processo de atualização de propriedades relatadas de gêmeos sobre MQTT (usando o cliente Paho MQTT):
 
 ```python
 from paho.mqtt import client as mqtt

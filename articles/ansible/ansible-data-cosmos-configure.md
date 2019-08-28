@@ -37,7 +37,7 @@ O [Azure Cosmos DB](/azure/cosmos-db/) é um serviço de banco de dados que dá 
 
 ## <a name="create-a-random-postfix"></a>Criar um sufixo aleatório
 
-O trecho de código do guia estratégico de exemplo cria um sufixo aleatório. O sufixo é usado como parte do nome da conta do Azure Cosmos DB.
+O snippet do guia estratégico de exemplo cria um sufixo aleatório. O sufixo é usado como parte do nome da conta do Azure Cosmos DB.
 
 ```yml
   - hosts: localhost
@@ -50,7 +50,7 @@ O trecho de código do guia estratégico de exemplo cria um sufixo aleatório. O
 
 ## <a name="create-resource-group"></a>Criar grupo de recursos 
 
-O trecho de código do guia estratégico de exemplo cria um grupo de recursos do Azure. Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.
+O snippet do guia estratégico de exemplo cria um grupo de recursos do Azure. Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.
 
 ```yml
   - name: Create a resource group
@@ -131,7 +131,7 @@ O código a seguir busca as chaves para uso no aplicativo.
 
 ## <a name="delete-the-azure-cosmos-db-account"></a>Excluir a conta do Azure Cosmos DB
 
-Por fim, o último trecho de código mostra como excluir uma conta do Azure Cosmos DB.
+Por fim, o último snippet mostra como excluir uma conta do Azure Cosmos DB.
 
 ```yml
   - name: Delete instance of Cosmos DB Account

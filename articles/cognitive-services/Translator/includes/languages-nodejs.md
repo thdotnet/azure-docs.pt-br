@@ -19,7 +19,7 @@ Este início rápido requer:
 
 ## <a name="create-a-project-and-import-required-modules"></a>Criar um projeto e importar os módulos necessários
 
-Crie um novo projeto usando seu IDE ou editor favorito. Em seguida, copie esse trecho de código para seu projeto em um arquivo denominado `get-languages.js`.
+Crie um novo projeto usando seu IDE ou editor favorito. Em seguida, copie esse snippet de código para seu projeto em um arquivo denominado `get-languages.js`.
 
 ```javascript
 const request = require('request');
@@ -33,7 +33,7 @@ Esses módulos são necessários para construir a solicitação HTTP e criar um 
 
 ## <a name="configure-the-request"></a>Configurar a solicitação
 
-O método `request()`, disponibilizado por meio do módulo de solicitação, nos permite passar o método HTTP, a URL, os parâmetros de solicitação, os cabeçalhos e o JSON do corpo como um objeto `options`. Neste trecho de código, configuraremos a solicitação:
+O método `request()`, disponibilizado por meio do módulo de solicitação, nos permite passar o método HTTP, a URL, os parâmetros de solicitação, os cabeçalhos e o JSON do corpo como um objeto `options`. Neste snippet de código, configuraremos a solicitação:
 
 >[!NOTE]
 > Para saber mais sobre pontos de extremidade, rotas e parâmetros de solicitação, confira [API de Tradução de Texto 3.0: idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
@@ -83,7 +83,7 @@ Se você quiser comparar seu código com o nosso, o exemplo completo está dispo
 
 Localize a abreviação do país/região nesta [lista de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
-Este exemplo foi truncado para mostrar um trecho do resultado:
+Este exemplo foi truncado para mostrar um snippet do resultado:
 
 ```json
 {

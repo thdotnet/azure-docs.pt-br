@@ -71,7 +71,7 @@ Remove-HybridRunbookWorker -url <URL> -key <PrimaryAccessKey> -machineName <Comp
 
 ### <a name="linux"></a>Linux
 
-Você pode usar o comando `ls /var/opt/microsoft/omsagent` no Hybrid Runbook Worker para obter a workspaceid. Há uma pasta no diretório em que o nome da pasta é a ID do espaço de trabalho.
+Você pode usar o comando `ls /var/opt/microsoft/omsagent` no Hybrid Runbook Worker para obter a workspaceid. Há uma pasta no diretório em que o nome da pasta é a ID do workspace.
 
 ```bash
 sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessKey>" --groupname="Example" --workspaceid="<workspaceId>"

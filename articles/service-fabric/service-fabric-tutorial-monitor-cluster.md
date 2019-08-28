@@ -240,7 +240,7 @@ Selecione o recurso **ServiceFabric(mysfomsworkspace)** , em seguida, **Espaço 
 
 Clique em **Dados**, depois clique em **Contadores de Desempenho Windows**. Há uma lista de contadores padrão que você pode habilitar, além de também poder definir o intervalo de coleta. Você pode também adicionar [contadores de desempenho adicionais](service-fabric-diagnostics-event-generation-perf.md) para coletar. O formato correto é referenciado neste [artigo](/windows/desktop/PerfCtrs/specifying-a-counter-path). Clique em **Salvar**, depois em **OK**.
 
-Feche a folha de Configurações Avançadas e selecione **Resumo de espaço de trabalho** no título **Geral**. Para cada uma das soluções habilitadas existe é um bloco de gráfico, incluindo um para o Service Fabric. Clique no grafo **Service Fabric** para ir para a solução de Análise do Service Fabric.
+Feche a folha de Configurações Avançadas e selecione **Resumo de workspace** no título **Geral**. Para cada uma das soluções habilitadas existe é um bloco de gráfico, incluindo um para o Service Fabric. Clique no grafo **Service Fabric** para ir para a solução de Análise do Service Fabric.
 
 Há blocos gráficos para o canal operacional e eventos de serviços confiáveis. A representação gráfica dos dados que fluem para os contadores selecionados aparecerá nas **Métricas de Nó**. 
 

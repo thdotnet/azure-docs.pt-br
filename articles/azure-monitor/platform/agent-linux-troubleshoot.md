@@ -50,7 +50,7 @@ Se nenhuma dessas etapas funcionar para você, os seguintes canais de suporte ta
  Configurações adicionais | `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.d/*.conf`
 
  >[!NOTE]
- >A edição de arquivos de configuração para contadores de desempenho e Syslog será sobrescrita se a coleta for configurada no [menu de dados Configurações Avançadas do Log Analytics](../../azure-monitor/platform/agent-data-sources.md#configuring-data-sources) no portal do Azure para sua área de trabalho. Para desativar a configuração para todos os agentes, desative a coleta em **Configurações Avançadas** do Log Analytics ou, para um único agente, execute o seguinte:  
+ >A edição de arquivos de configuração para contadores de desempenho e Syslog será sobrescrita se a coleção for configurada no [menu de dados Configurações Avançadas do Log Analytics](../../azure-monitor/platform/agent-data-sources.md#configuring-data-sources) no portal do Azure para seu workspace. Para desativar a configuração para todos os agentes, desative a coleta em **Configurações Avançadas** do Log Analytics ou, para um único agente, execute o seguinte:  
 > `sudo su omsagent -c /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable`
 
 ## <a name="installation-error-codes"></a>Códigos de erro de instalação
@@ -183,7 +183,7 @@ Abaixo do plug-in de saída, remova o comentário da seção a seguir removendo 
 
 1. Verifique a hora no servidor Linux com o comando date. Se a hora for +/-15 minutos da hora atual, a integração falhará. Para corrigir esse problema, atualize a data e/ou o fuso horário do servidor Linux. 
 2. Verifique se que você instalou a versão mais recente do agente do Log Analytics para Linux.  A versão mais recente agora notifica se a distorção de horário está causando a falha de integração.
-3. Reintegração usando a ID do espaço de trabalho correto e a chave de espaço de trabalho seguindo as instruções de instalação no início deste artigo.
+3. Reintegração usando a ID do workspace correto e a chave de workspace seguindo as instruções de instalação no início deste artigo.
 
 ## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Problema: Você recebe os erros 404 e 500 no arquivo de log imediatamente após a integração
 Esse é um problema conhecido que ocorre durante o primeiro upload de dados do Linux em um espaço de trabalho do Log Analytics. Isso não afeta os dados sendo enviados ou a experiência do serviço.
@@ -413,7 +413,7 @@ Esse erro indica que a extensão de diagnóstico do Linux (LAD) é instalada lad
 Há um problema conhecido com uma condição de corrida com o agente do Log Analytics para a versão do Linux anterior a 1.1.0-217. Após atualizar para o agente mais recente, execute o seguinte comando para obter a versão mais recente do plug-in de saída `sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.conf /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf`.
 
 ## <a name="issue-you-are-trying-to-reonboard-to-a-new-workspace"></a>Problema: Você está tentando se integrar novamente em um novo workspace
-Quando você tenta re-inserir um agente em um novo espaço de trabalho, a configuração do agente do Log Analytics precisa ser limpa antes de reenquadrar. Para limpar a configuração antiga do agente, execute o pacote do shell com `--purge`
+Quando você tenta re-inserir um agente em um novo workspace, a configuração do agente do Log Analytics precisa ser limpa antes de reenquadrar. Para limpar a configuração antiga do agente, execute o pacote do shell com `--purge`
 
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge

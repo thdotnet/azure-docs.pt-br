@@ -37,7 +37,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
     # az account set --subscription "SUBSCRIPTIONID"
     ```
 
-2. Configure as variáveis de ambiente. O uso de variáveis neste início rápido baseia-se em Bash. Pequenas variações serão necessárias para outros ambientes. Substitua RESOURCEGROUPNAME, LOCATION, CLUSTERNAME, STORAGEACCOUNTNAME e PASSWORD no trecho de código abaixo com os valores desejados. Em seguida, insira os comandos da CLI para definir as variáveis de ambiente.
+2. Configure as variáveis de ambiente. O uso de variáveis neste início rápido baseia-se em Bash. Pequenas variações serão necessárias para outros ambientes. Substitua RESOURCEGROUPNAME, LOCATION, CLUSTERNAME, STORAGEACCOUNTNAME e PASSWORD no snippet de código abaixo com os valores desejados. Em seguida, insira os comandos da CLI para definir as variáveis de ambiente.
 
     ```azurecli-interactive
     export resourceGroupName=RESOURCEGROUPNAME

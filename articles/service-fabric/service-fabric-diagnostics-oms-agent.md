@@ -88,7 +88,7 @@ Agora que você adicionou o agente do Log Analytics, vá direto para o portal do
 
 6. Feche a folha Configurações Avançadas.
 
-7. No título em geral, clique em **Resumo de espaço de trabalho**.
+7. No título em geral, clique em **Resumo de workspace**.
 
 8. Quando você estiver usando o portal, verá um bloco na forma de um grafo para cada uma das soluções habilitadas, inclusive uma para Service Fabric. Clique no grafo **Service Fabric** para ir para a solução de Análise do Service Fabric.
 

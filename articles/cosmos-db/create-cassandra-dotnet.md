@@ -68,7 +68,7 @@ Agora, vamos trabalhar com o código. Vamos clonar um aplicativo de API Cassandr
 
 ## <a name="review-the-code"></a>Examine o código
 
-Esta etapa é opcional. Se você estiver interessado em aprender como o código cria os recursos de banco de dados, examine os trechos de código a seguir. Os trechos de código são todos obtidos do `Program.cs` arquivo instalado na pasta `C:\git-samples\azure-cosmos-db-cassandra-dotnet-getting-started\CassandraQuickStartSample`. Caso contrário, você poderá pular para [Atualizar sua cadeia de conexão](#update-your-connection-string).
+Esta etapa é opcional. Se você estiver interessado em aprender como o código cria os recursos de banco de dados, examine os snippets a seguir. Os snippets são todos obtidos do `Program.cs` arquivo instalado na pasta `C:\git-samples\azure-cosmos-db-cassandra-dotnet-getting-started\CassandraQuickStartSample`. Caso contrário, você poderá pular para [Atualizar sua cadeia de conexão](#update-your-connection-string).
 
 * Inicialize a sessão conectando-se a um ponto de extremidade do cluster Cassandra. A API Cassandra no Azure Cosmos DB tem suporte apenas para TLSv1.2. 
 

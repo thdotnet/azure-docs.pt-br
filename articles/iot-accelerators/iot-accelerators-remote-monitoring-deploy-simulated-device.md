@@ -65,7 +65,7 @@ Nesta seção, você configura o Docker para carregar os arquivos de modelo de d
     sudo nano /app/docker-compose.yml
     ```
 
-    Localize as configurações do contêiner **devicesimulation** e edite a configuração de **volumes**, conforme mostrado no trecho de código a seguir:
+    Localize as configurações do contêiner **devicesimulation** e edite a configuração de **volumes**, conforme mostrado no snippet a seguir:
 
     ```yml
     devicesimulation:

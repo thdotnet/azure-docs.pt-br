@@ -62,7 +62,7 @@ Para usar a CLI do Maven, as seguintes condições devem ser instalados em seu c
 
 A CLI do Maven do Service Fabric ainda está em versão prévia. 
 
-Para usar o plugin do Maven em seu aplicativo Maven Java, adicione o seguinte trecho de código ao seu arquivo pom.xml:
+Para usar o plugin do Maven em seu aplicativo Maven Java, adicione o seguinte snippet ao seu arquivo pom.xml:
 
 ```XML
 <project>

@@ -24,9 +24,9 @@ Este artigo fornece instruções passo a passo para criar um sistema de traduç�
 
 1. Para entrar e usar o Portal do [Tradutor Personalizado](https://portal.customtranslator.azure.ai), você precisará de uma [conta da Microsoft](https://signup.live.com) ou de uma [conta do Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) (conta da organização hospedada no Azure).
 
-2. Uma assinatura da API de Tradução de Texto pelo portal do Azure. Você precisará da chave de assinatura da API de Tradução de Texto para associar ao seu espaço de trabalho no Tradutor Personalizado. Confira [Como inscrever-se na API de Tradução de Texto](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
+2. Uma assinatura da API de Tradução de Texto pelo portal do Azure. Você precisará da chave de assinatura da API de Tradução de Texto para associar ao seu workspace no Tradutor Personalizado. Confira [Como inscrever-se na API de Tradução de Texto](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
 
-3. Assim que você atender aos dois requisitos acima, entre no portal do [Tradutor Personalizado](https://portal.customtranslator.azure.ai). Quando estiver no portal do Tradutor Personalizado, navegue até a página Configurações, na qual você pode associar sua chave de assinatura da API de Tradução de Texto da Microsoft ao seu espaço de trabalho.
+3. Assim que você atender aos dois requisitos acima, entre no portal do [Tradutor Personalizado](https://portal.customtranslator.azure.ai). Quando estiver no portal do Tradutor Personalizado, navegue até a página Configurações, na qual você pode associar sua chave de assinatura da API de Tradução de Texto da Microsoft ao seu workspace.
 
 ## <a name="create-a-project"></a>Criar um projeto
 
@@ -73,4 +73,4 @@ Os modelos implantados podem ser acessados através da [API de Tradução de Tex
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba como navegar pelo [espaço de trabalho do Tradutor Personalizado e gerenciar seus projetos](workspace-and-project.md).
+- Saiba como navegar pelo [workspace do Tradutor Personalizado e gerenciar seus projetos](workspace-and-project.md).

@@ -1,56 +1,75 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação do RBAC para recursos do Azure
+summary: O RBAC (controle de acesso baseado em função) é um sistema que fornece um gerenciamento de acesso refinado dos recursos do Azure. Com o RBAC, você pode separar as tarefas dentro de sua equipe e conceder somente a quantidade de acesso que os usuários precisam para realizar seus trabalhos.
 metadata:
-  document_id: null
-  title: Documentação do RBAC (controle de acesso baseado em função) para recursos do Azure | Microsoft Docs
-  description: 'Saiba mais sobre o controle de acesso baseado em funções (RBAC) para gerenciar quem tem acesso aos recursos do Azure, o que pode fazer com esses recursos e a quais áreas tem acesso.'
-  services: active-directory
-  author: rolyon
-  manager: mtillman
+  title: Documentação do RBAC (controle de acesso baseado em função) para recursos do Azure
+  description: Saiba mais sobre o controle de acesso baseado em funções (RBAC) para gerenciar quem tem acesso aos recursos do Azure, o que pode fazer com esses recursos e a quais áreas tem acesso.
+  services: role-based-access-control
   ms.service: role-based-access-control
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: na
   ms.topic: landing-page
-  ms.date: 02/16/2019
+  ms.collection: na
+  author: rolyon
   ms.author: rolyon
-abstract:
-  description: 'O RBAC (controle de acesso baseado em função) é um sistema que fornece um gerenciamento de acesso refinado dos recursos do Azure. Com o RBAC, você pode separar as tarefas dentro de sua equipe e conceder somente a quantidade de acesso que os usuários precisam para realizar seus trabalhos.'
-  aside:
-    image:
-      alt: null
-      height: 112
-      src: media/index/video-thumb-get-started.png
-      width: 200
-    title: 'Bloquear acesso ao Azure (1:16)'
-    href: 'https://www.youtube.com/embed/FKBoWWKRnvI'
-    width: 200
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/role-based-access-control/check-access">Ver o acesso de um usuário</a>
-  - title: Tutoriais passo a passo
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/role-based-access-control/quickstart-assign-role-user-portal">Conceder acesso a um usuário – Portal</a>
-          - html: <a href="/azure/role-based-access-control/tutorial-role-assignments-group-powershell">Conceder acesso a um grupo – PowerShell</a>
-          - html: <a href="/azure/role-based-access-control/tutorial-custom-role-powershell">Criar uma função personalizada - PowerShell</a>
-          - html: <a href="/azure/role-based-access-control/tutorial-custom-role-cli">Crie uma função personalizada - CLI</a>
-  - title: Desenvolva suas habilidades com o Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Proteger seus recursos do Azure com o controle de acesso baseado em função (RBAC)
-            href: /learn/modules/secure-azure-resources-with-rbac/
-            image:
-              src: /learn/achievements/secure-azure-resources-with-rbac.svg
-              href: /learn/modules/secure-azure-resources-with-rbac/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-active-directory">Mais aprendizado interativo...</a>
+  ms.date: 08/26/2019
+  ms.openlocfilehash: cd4628ef5e7d56f03590899fe514141d415c8f01
+  ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/27/2019
+  ms.locfileid: "70052016"
+landingContent:
+- title: Sobre o RBAC para recursos do Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o RBAC?
+      url: overview.md
+    - text: Entender as diferentes funções
+      url: rbac-and-directory-admin-roles.md
+  - linkListType: video
+    links:
+    - text: 'Microsoft Ignite: bloquear acesso ao Azure'
+      url: https://www.youtube.com/embed/FKBoWWKRnvI
+- title: Introdução
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Ver o acesso de um usuário
+      url: check-access.md
+  - linkListType: tutorial
+    links:
+    - text: Conceder acesso a um usuário – Portal
+      url: quickstart-assign-role-user-portal.md
+    - text: Conceder acesso a um grupo – PowerShell
+      url: tutorial-role-assignments-group-powershell.md
+  - linkListType: learn
+    links:
+    - text: Proteger seus recursos do Azure com RBAC
+      url: https://docs.microsoft.com/learn/modules/secure-azure-resources-with-rbac/
+- title: Gerenciar acesso
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Portal
+      url: role-assignments-portal.md
+    - text: PowerShell
+      url: role-assignments-powershell.md
+    - text: CLI do Azure
+      url: role-assignments-cli.md
+    - text: API REST
+      url: role-assignments-rest.md
+    - text: Modelo
+      url: role-assignments-template.md
+- title: Criar funções personalizadas
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Funções personalizadas
+      url: custom-roles.md
+  - linkListType: tutorial
+    links:
+    - text: Criar uma função personalizada - PowerShell
+      url: tutorial-custom-role-powershell.md
+    - text: Criar uma função personalizada - CLI
+      url: tutorial-custom-role-cli.md

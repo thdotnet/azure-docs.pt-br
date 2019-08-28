@@ -17,7 +17,7 @@ ms.locfileid: "66236527"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Usar o cluster do Azure HDInsight Spark para leitura e gravação dos dados no Banco de Dados SQL do Azure
 
-Saiba como conectar um cluster Apache Spark no Microsoft Azure HDInsight com um Banco de Dados SQL do Azure e, em seguida, ler, gravar e transmitir dados no Banco de Dados SQL. As instruções neste artigo usam um [Jupyter Notebook](https://jupyter.org/) para executar os trechos de código do Scala. No entanto, você pode criar um aplicativo autônomo em Scala ou Python e realizar as mesmas tarefas.
+Saiba como conectar um cluster Apache Spark no Microsoft Azure HDInsight com um Banco de Dados SQL do Azure e, em seguida, ler, gravar e transmitir dados no Banco de Dados SQL. As instruções neste artigo usam um [Jupyter Notebook](https://jupyter.org/) para executar os snippets de código do Scala. No entanto, você pode criar um aplicativo autônomo em Scala ou Python e realizar as mesmas tarefas.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

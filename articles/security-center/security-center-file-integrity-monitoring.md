@@ -133,7 +133,7 @@ A guia **Alterações** (mostrada abaixo) lista todas as alterações no workspa
 
    ![Configurações][11]
 
-   **Configuração do Espaço de trabalho** é aberta exibindo três guias: **Registro do Windows**, **Arquivos do Windows**, e **Arquivos Linux**. Cada guia lista as entidades que você pode editar nessa categoria. Para cada entidade listada, a Central de Segurança identifica se o FIM está habilitado (true) ou não está habilitado (false).  Editar a entidade permite que você habilite ou desabilite o FIM.
+   **Configuração do Workspace** é aberta exibindo três guias: **Registro do Windows**, **Arquivos do Windows**, e **Arquivos Linux**. Cada guia lista as entidades que você pode editar nessa categoria. Para cada entidade listada, a Central de Segurança identifica se o FIM está habilitado (true) ou não está habilitado (false).  Editar a entidade permite que você habilite ou desabilite o FIM.
 
    ![Configuração do workspace][12]
 

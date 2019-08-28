@@ -1632,9 +1632,9 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Action | Microsoft.Databricks/locations/getNetworkPolicies/action | Obter políticas de intenção de rede para uma sub-rede com base no local usado pelo NRP |
 > | Action | Microsoft.Databricks/register/action | Registre-se no Databricks. |
 > | Action | Microsoft.Databricks/workspaces/delete | Remove um workspace do Databricks. |
-> | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/read | Define as configurações de diagnóstico disponíveis para o workspace do Databricks |
+> | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/read | Define as configurações de diagnóstico disponíveis para o workspace Databricks |
 > | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/diagnosticSettings/write | Adicionar ou modificar configurações de diagnóstico. |
-> | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/logDefinitions/read | Recebe as definições de log disponíveis para o workspace do Databricks |
+> | Action | Microsoft.Databricks/workspaces/providers/Microsoft.Insights/logDefinitions/read | Obtém as definições de log disponíveis para o workspace do Databricks |
 > | Action | Microsoft.Databricks/workspaces/read | Recupera uma lista de workspaces do Databricks. |
 > | Action | Microsoft.Databricks/workspaces/write | Cria um workspace do Databricks. |
 
@@ -3961,7 +3961,7 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Action | Microsoft.OperationalInsights/workspaces/datasources/read | Obter fontes de dados em um workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/datasources/write | Criar/atualizar fontes de dados em um workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/delete | Excluir um workspace. Se o workspace foi vinculado a um workspace existente no momento da criação, o workspace a que ele foi vinculado não será excluído. |
-> | Action | Microsoft.OperationalInsights/workspaces/gateways/delete | Remove um gateway configurado para o espaço de trabalho. |
+> | Action | Microsoft.OperationalInsights/workspaces/gateways/delete | Remove um gateway configurado para o workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/generateregistrationcertificate/action | Gerar certificado de registro para o workspace. Esse certificado é usado para conectar o Microsoft System Center Operations Manager ao workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/intelligencepacks/disable/action | Desabilitar um pacote de inteligência para determinado workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/intelligencepacks/enable/action | Habilitar um pacote de inteligência para determinado workspace. |
@@ -4198,7 +4198,7 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Action | Microsoft.OperationalInsights/workspaces/query/WUDOAggregatedStatus/read | Ler dados da tabela WUDOAggregatedStatus |
 > | Action | Microsoft.OperationalInsights/workspaces/query/WUDOStatus/read | Ler dados da tabela WUDOStatus |
 > | Action | Microsoft.OperationalInsights/workspaces/read | Obter um workspace existente |
-> | Action | Microsoft.OperationalInsights/workspaces/regeneratesharedkey/action | Regenera a chave compartilhada do espaço de trabalho especificado |
+> | Action | Microsoft.OperationalInsights/workspaces/regeneratesharedkey/action | Regenera a chave compartilhada do workspace especificado |
 > | Action | microsoft.operationalinsights/workspaces/rules/read | Obtenha todas as regras de alerta. |
 > | Action | Microsoft.OperationalInsights/workspaces/savedSearches/delete | Excluir uma consulta de pesquisa salva |
 > | Action | Microsoft.OperationalInsights/workspaces/savedSearches/read | Obter uma consulta de pesquisa salva |
@@ -4218,7 +4218,7 @@ As operações do provedor de recursos estão sempre em evolução. Para obter a
 > | Action | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/delete | Excluir uma configuração de armazenamento. Isso interromperá a leitura dos dados da conta de armazenamento pelo Insights Operacionais. |
 > | Action | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/read | Obter uma configuração de armazenamento. |
 > | Action | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/write | Criar uma nova configuração de armazenamento. Essas configurações são usadas para extrair dados de um local em uma conta de armazenamento existente. |
-> | Action | Microsoft.OperationalInsights/workspaces/upgradetranslationfailures/read | Obter o log de falha de tradução de atualização da pesquisa para o espaço de trabalho |
+> | Action | Microsoft.OperationalInsights/workspaces/upgradetranslationfailures/read | Obter o log de falha de tradução de atualização da pesquisa para o workspace |
 > | Action | Microsoft.OperationalInsights/workspaces/usages/read | Obter dados de uso de um workspace e a quantidade de dados lidos pelo workspace. |
 > | Action | Microsoft.OperationalInsights/workspaces/write | Criar um novo workspace ou links para um workspace existente fornecendo a ID do cliente do workspace existente. |
 

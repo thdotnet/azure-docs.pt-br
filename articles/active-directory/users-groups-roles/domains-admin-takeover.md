@@ -114,7 +114,7 @@ Embora o RMS para pessoas seja projetado para oferecer suporte à autenticação
 
 #### <a name="more-information-about-power-bi"></a>Mais informações sobre Power BI
 
-Ao executar uma tomada de controle externa, o conteúdo do Power BI que foi criado antes da tomada de controle é colocado em um [Espaço de trabalho Arquivado do Power BI](/power-bi/service-admin-power-bi-archived-workspace). Você deve migrar manualmente qualquer conteúdo que desejar usar no novo locatário.
+Ao executar uma tomada de controle externa, o conteúdo do Power BI que foi criado antes da tomada de controle é colocado em um [Workspace Arquivado do Power BI](/power-bi/service-admin-power-bi-archived-workspace). Você deve migrar manualmente qualquer conteúdo que desejar usar no novo locatário.
 
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Cmdlets do Azure AD PowerShell para a opção ForceTakeover
 Você pode ver esses cmdlets usados no [exemplo do PowerShell](#powershell-example).

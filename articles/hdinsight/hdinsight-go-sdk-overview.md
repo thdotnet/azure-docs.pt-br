@@ -97,7 +97,7 @@ As informações da entidade de serviço são exibidas como JSON.
   "managementEndpointUrl": "https://management.core.windows.net/"
 }
 ```
-Copie o trecho abaixo e preencha `TENANT_ID`, `CLIENT_ID`, `CLIENT_SECRET` e `SUBSCRIPTION_ID` com as cadeias de caracteres do JSON que foi retornado após a execução do comando para criar a entidade de serviço.
+Copie o snippet abaixo e preencha `TENANT_ID`, `CLIENT_ID`, `CLIENT_SECRET` e `SUBSCRIPTION_ID` com as cadeias de caracteres do JSON que foi retornado após a execução do comando para criar a entidade de serviço.
 
 ```golang
 package main

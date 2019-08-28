@@ -68,7 +68,7 @@ Para exibir suas políticas de segurança na Central de Segurança:
 
     ![O painel Gerenciamento de Política](./media/security-center-policies/security-center-policy-mgt.png)
 
-   Na tela **Gerenciamento de políticas**, você pode ver o número de grupos de gerenciamento, assinaturas e áreas de trabalho, bem como a estrutura do grupo de gerenciamento.
+   Na tela **Gerenciamento de políticas**, você pode ver o número de grupos de gerenciamento, assinaturas e workspaces, bem como a estrutura do grupo de gerenciamento.
 
    > [!NOTE]
    > O painel da Central de Segurança pode mostrar um número maior de inscrições em **Cobertura de assinatura** do que o número de inscrições mostrado em **Gerenciamento de políticas**. Cobertura de assinatura mostra o número de assinaturas Padrão, Gratuitas e “não cobertas”. As assinaturas "não cobertas" não têm o Security Center ativado e não são exibidas em **Gerenciamento de políticas**.

@@ -72,7 +72,7 @@ Siga estas diretrizes ao personalizar a interface do seu aplicativo usando JavaS
 
 ### <a name="show-or-hide-a-password"></a>Mostrar ou ocultar uma senha
 
-É uma maneira comum para ajudar seus clientes a obterem êxito nas inscrições deles e permitir que eles vejam o que inseriram como a senha. Essa opção ajuda os usuários a inscrever-se, permitindo que eles vejam e façam correções em suas senhas, caso necessário. Qualquer campo de digitação de senha tem uma caixa de seleção com um rótulo **Mostrar senha**.  Isso permite que o usuário veja a senha em texto sem formatação. Inclua este trecho de código em seu modelo de inscrição ou entrada para uma página autodeclarada:
+É uma maneira comum para ajudar seus clientes a obterem êxito nas inscrições deles e permitir que eles vejam o que inseriram como a senha. Essa opção ajuda os usuários a inscrever-se, permitindo que eles vejam e façam correções em suas senhas, caso necessário. Qualquer campo de digitação de senha tem uma caixa de seleção com um rótulo **Mostrar senha**.  Isso permite que o usuário veja a senha em texto sem formatação. Inclua este snippet de código em seu modelo de inscrição ou entrada para uma página autodeclarada:
 
 ```Javascript
 function makePwdToggler(pwd){

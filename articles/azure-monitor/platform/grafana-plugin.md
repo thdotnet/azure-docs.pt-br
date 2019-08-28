@@ -96,7 +96,7 @@ Depois de fazer logon com êxito, você deverá ver que o plug-in de fonte de da
 4. Selecione a fonte de dados do Azure Monitor que você configurou.
    * Coletando métricas do Monitor do Azure - selecione **Azure Monitor** na lista suspensa de serviços. Uma lista de seletores é exibida, onde você pode selecionar os recursos e a métrica a serem monitorados neste gráfico. Para coletar métricas de uma VM, use o namespace **Microsoft.Compute / VirtualMachines**. Depois de selecionar VMs e métricas, você pode começar a visualizar os dados no painel.
      ![Configuração de gráfico do Grafana para o Monitor do Azure](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
-   * Coletando dados de log de Azure Monitor-selecione **log Analytics do Azure** na lista suspensa serviço. Selecione o espaço de trabalho que você deseja consultar e defina o texto da consulta. Você pode copiar aqui qualquer consulta de log que já tenha ou criar uma nova. À medida que você digita sua consulta, o IntelliSense aparecerá e sugerirá opções de preenchimento automático. Selecione o tipo de visualização **Série temporal** **Tabela** e execute a consulta.
+   * Coletando dados de log de Azure Monitor-selecione **log Analytics do Azure** na lista suspensa serviço. Selecione o workspace que você deseja consultar e defina o texto da consulta. Você pode copiar aqui qualquer consulta de log que já tenha ou criar uma nova. À medida que você digita sua consulta, o IntelliSense aparecerá e sugerirá opções de preenchimento automático. Selecione o tipo de visualização **Série temporal** **Tabela** e execute a consulta.
     
      > [!NOTE]
      >

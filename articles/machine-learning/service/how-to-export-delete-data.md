@@ -18,7 +18,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "65023970"
 ---
-# <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Exportar ou excluir dados do espaço de trabalho no serviço do Machine Learning 
+# <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Exportar ou excluir dados do workspace no serviço do Machine Learning 
 
 No Azure Machine Learning, você pode exportar ou excluir seus dados de workspace com a API REST autenticada. Este artigo informa como fazer isso.
 

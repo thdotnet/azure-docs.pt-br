@@ -162,9 +162,9 @@ Os logs são armazenados localmente em cada hybrid worker, em C:\ProgramData\Mic
 
 #### <a name="issue"></a>Problema
 
-Sua máquina Hybrid Runbook Worker está em execução, mas você não verá dados de pulsação para a máquina no espaço de trabalho.
+Sua máquina Hybrid Runbook Worker está em execução, mas você não verá dados de pulsação para a máquina no workspace.
 
-A consulta de exemplo a seguir mostra as máquinas em um espaço de trabalho e sua última pulsação:
+A consulta de exemplo a seguir mostra as máquinas em um workspace e sua última pulsação:
 
 ```loganalytics
 // Last heartbeat of each computer

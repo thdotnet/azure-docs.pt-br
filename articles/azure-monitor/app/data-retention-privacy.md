@@ -154,7 +154,7 @@ Por meio de arquivo de configuração:
 Por meio de código:
 
 - Remover ServerTelemetryChannel do arquivo de configuração
-- Adicione este trecho de código à configuração:
+- Adicione este snippet à configuração:
   ```csharp
   ServerTelemetryChannel channel = new ServerTelemetryChannel();
   channel.StorageFolder = @"D:\NewTestFolder";
@@ -166,7 +166,7 @@ Por meio de código:
 
 Por padrão, `ServerTelemetryChannel` usa a pasta de dados do aplicativo local do usuário atual `%localAppData%\Microsoft\ApplicationInsights` ou a pasta temporária `%TMP%`. (Consulte a [implementação](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/91e9c91fcea979b1eec4e31ba8e0fc683bf86802/src/ServerTelemetryChannel/Implementation/ApplicationFolderProvider.cs#L54-L84) aqui.) Em um ambiente Linux, o armazenamento local será desabilitado, exceto se uma pasta de armazenamento estiver especificada.
 
-O trecho de código a seguir mostra como definir `ServerTelemetryChannel.StorageFolder` no método `ConfigureServices()` da classe `Startup.cs`:
+O snippet de código a seguir mostra como definir `ServerTelemetryChannel.StorageFolder` no método `ConfigureServices()` da classe `Startup.cs`:
 
 ```csharp
 services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {StorageFolder = "/tmp/myfolder"});

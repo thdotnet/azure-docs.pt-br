@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Documentação de ajuda do usuário
+summary: Como funcionário, trabalhador de TI ou usuário final, configure a autenticação para sua conta corporativa ou de estudante, redefina sua própria senha, configure e ingresse dispositivos, configure o aplicativo Microsoft Authenticator e use os vários portais.
+metadata:
+  title: Ajuda do usuário para autenticação, aplicativos e dispositivos
+  description: Como funcionário ou usuário final, saiba como configurar e usar a autenticação, o aplicativo Microsoft Authenticator e o portal Meus Aplicativos.
+  services: active-directory
+  ms.service: active-directory
+  ms.subservice: user-help
+  ms.topic: landing-page
+  ms.collection: M365-identity-device-management
+  author: eross-msft
+  ms.author: lizross
+  ms.date: 08/26/2019
+  ms.openlocfilehash: 687ae4b276b4e975c9b9de9d688f23180deaeebc
+  ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/27/2019
+  ms.locfileid: "70062198"
+landingContent:
+- title: Configurar e usar o aplicativo Microsoft Authenticator
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o aplicativo Microsoft Authenticator?
+      url: user-help-auth-app-overview.md
+  - linkListType: download
+    links:
+    - text: Baixar e instalar o aplicativo
+      url: user-help-auth-app-download-install.md
+  - linkListType: how-to-guide
+    links:
+    - text: Informações da conta de backup e de recuperação
+      url: user-help-auth-app-backup-recovery.md
+    - text: Entrar usando o aplicativo
+      url: user-help-auth-app-sign-in.md
+- title: Configurar e usar a verificação em duas etapas
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é a verificação de dois fatores?
+      url: user-help-two-step-verification-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Configurar métodos de verificação
+      url: multi-factor-authentication-end-user-first-time.md
+    - text: Gerenciar configurações
+      url: multi-factor-authentication-end-user-manage-settings.md
+    - text: Obter ajuda
+      url: multi-factor-authentication-end-user-troubleshoot.md
+- title: Configurar e usar o portal Meus Aplicativos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o portal Meus Aplicativos?
+      url: my-apps-portal-end-user-access.md
+  - linkListType: how-to-guide
+    links:
+    - text: Atualizar suas informações
+      url: my-apps-portal-end-user-update-profile.md
+    - text: Obter ajuda
+      url: my-apps-portal-end-user-troubleshoot.md
+- title: Configurar e usar informações de segurança (versão prévia)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são informações de segurança (versão prévia)?
+      url: user-help-security-info-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Configurar seus métodos de informações de segurança
+      url: security-info-add-update-methods-overview.md
+    - text: Adicionar informações durante o prompt de conexão
+      url: security-info-setup-signin.md
+- title: Configurar e usar o Meu Perfil (versão prévia)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o portal Meu Perfil (versão prévia)?
+      url: myprofile-portal-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Gerenciar suas organizações
+      url: myprofile-portal-organizations-page.md
+    - text: Gerenciar seus dispositivos conectados
+      url: myprofile-portal-devices-page.md
+- title: Redefinir sua própria senha
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é redefinição de senha?
+      url: user-help-password-reset-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Inscrever-separa redefinição de senha
+      url: active-directory-passwords-reset-register.md
+    - text: Redefinir sua senha
+      url: user-help-reset-password.md

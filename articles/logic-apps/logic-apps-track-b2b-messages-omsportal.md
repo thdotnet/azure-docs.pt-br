@@ -67,9 +67,9 @@ Antes que você possa fazer com que os logs de Azure Monitor acompanhem mensagen
 
    ![Escolha "Criar" para B2B de aplicativos lógicos](media/logic-apps-track-b2b-messages-omsportal/create-b2b-solution.png)
 
-   Se você não quiser usar um espaço de trabalho existente, também poderá criar um novo espaço de trabalho neste momento.
+   Se você não quiser usar um workspace existente, também poderá criar um novo workspace neste momento.
 
-1. Quando terminar, volte para a página **Visão geral** do seu espaço de trabalho. 
+1. Quando terminar, volte para a página **Visão geral** do seu workspace. 
 
    A solução B2B do Logic Apps agora aparece na página Visão geral. 
    Quando mensagens B2B são processadas, a contagem de mensagens nesta página é atualizada.
@@ -80,7 +80,7 @@ Antes que você possa fazer com que os logs de Azure Monitor acompanhem mensagen
 
 Depois que as mensagens B2B são processadas, você pode visualizar o status e os detalhes dessas mensagens no bloco **Logic Apps B2B**.
 
-1. Vá para seu espaço de trabalho de análise de lógica e abra a página de visão geral. Escolha **Logic Apps B2B**.
+1. Vá para seu workspace de análise de lógica e abra a página de visão geral. Escolha **Logic Apps B2B**.
 
    ![Contagem de mensagens atualizada](media/logic-apps-track-b2b-messages-omsportal/b2b-overview-tile.png)
 

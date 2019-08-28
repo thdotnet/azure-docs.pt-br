@@ -31,7 +31,7 @@ A expressão `workspace` é usada em uma consulta do Azure Monitor para recupera
 
 ## <a name="arguments"></a>Argumentos
 
-- *Identificador*: reconhece o espaço de trabalho usando um dos formatos na tabela a seguir.
+- *Identificador*: reconhece o workspace usando um dos formatos na tabela a seguir.
 
 | Identificador | DESCRIÇÃO | Exemplo
 |:---|:---|:---|

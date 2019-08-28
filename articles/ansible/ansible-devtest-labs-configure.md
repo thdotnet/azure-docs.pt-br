@@ -45,7 +45,7 @@ ms.locfileid: "65230966"
 
 ## <a name="create-resource-group"></a>Criar grupo de recursos
 
-O trecho de código do guia estratégico de exemplo cria um grupo de recursos do Azure. Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.
+O snippet do guia estratégico de exemplo cria um grupo de recursos do Azure. Um grupo de recursos é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.
 
 ```yml
   - name: Create a resource group
@@ -97,7 +97,7 @@ Você pode definir as configurações da política do laboratório. Os seguintes
 
 A tarefa de exemplo nesta seção configura o agendamento do laboratório. 
 
-No trecho de código a seguir, o valor `lab_vms_startup` é usado para especificar o tempo de inicialização da VM. Da mesma forma, definir o valor `lab_vms_shutdown` estabelece o tempo de desligamento da VM do laboratório.
+No snippet de código a seguir, o valor `lab_vms_startup` é usado para especificar o tempo de inicialização da VM. Da mesma forma, definir o valor `lab_vms_shutdown` estabelece o tempo de desligamento da VM do laboratório.
 
 ```yml
 - name: Set the lab schedule

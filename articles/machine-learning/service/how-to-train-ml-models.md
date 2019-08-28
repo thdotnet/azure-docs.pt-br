@@ -54,7 +54,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
                    conda_packages=['scikit-learn'])
 ```
 
-Este trecho de código especifica os seguintes parâmetros para o `Estimator` construtor.
+Este snippet de código especifica os seguintes parâmetros para o `Estimator` construtor.
 
 Parâmetro | Descrição
 --|--

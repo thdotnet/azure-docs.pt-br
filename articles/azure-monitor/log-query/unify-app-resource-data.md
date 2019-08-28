@@ -32,9 +32,9 @@ ApplicationInsights
 | summarize by ApplicationName
 ```
 
-Crie uma função usando o operador de união com a lista de aplicativos e, em seguida, salve a consulta em seu espaço de trabalho como uma função com o alias *applicationsScoping*. 
+Crie uma função usando o operador de união com a lista de aplicativos e, em seguida, salve a consulta em seu workspace como uma função com o alias *applicationsScoping*. 
 
-Você pode modificar os aplicativos listados a qualquer momento navegando até o Gerenciador de consultas no seu espaço de trabalho e selecionando a função para editar e salvar, ou então, usando o cmdlet `SavedSearch` do PowerShell. 
+Você pode modificar os aplicativos listados a qualquer momento navegando até o Gerenciador de consultas no seu workspace e selecionando a função para editar e salvar, ou então, usando o cmdlet `SavedSearch` do PowerShell. 
 
 >[!NOTE]
 >Esse método não pode ser usado com alertas de log porque a validação de acesso dos recursos de regra de alerta, incluindo espaços de trabalho e aplicativos, é executada no momento da criação do alerta. Não há suporte para a adição de novos recursos à função após a criação do alerta. Se preferir usar a função para o escopo de recursos em alertas de log, você precisará editar a regra de alerta no portal ou com um modelo do Resource Manager para atualizar os recursos com escopo. Como alternativa, você pode incluir a lista de recursos na consulta de alerta de log.

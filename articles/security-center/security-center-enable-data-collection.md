@@ -16,7 +16,7 @@ ms.date: 10/06/2019
 ms.author: v-mohabe
 ms.openlocfilehash: e87ea5f6d8a92f18fc1b289ebf9ffd1cc0326812
 ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/08/2019
 ms.locfileid: "68845908"
@@ -145,11 +145,11 @@ Ao selecionar um workspace para armazenar os dados, todos os workspaces em todas
 
 
 ## <a name="data-collection-tier"></a>Camada de coleta de dados
-A seleção de uma camada de coleta de dados na Central de Segurança do Azure afetará apenas o armazenamento de eventos de segurança no espaço de trabalho do Log Analytics. O agente de Log Analytics ainda coletará e analisará os eventos de segurança necessários para as detecções de ameaças da central de segurança do Azure, independentemente da camada de eventos de segurança que você escolher armazenar em seu espaço de trabalho Log Analytics (se houver). A escolha de armazenar eventos de segurança na área de trabalho permitirá investigar, pesquisar e auditar esses eventos na área de trabalho. 
+A seleção de uma camada de coleta de dados na Central de Segurança do Azure afetará apenas o armazenamento de eventos de segurança no espaço de trabalho do Log Analytics. O agente de Log Analytics ainda coletará e analisará os eventos de segurança necessários para as detecções de ameaças da central de segurança do Azure, independentemente da camada de eventos de segurança que você escolher armazenar em seu espaço de trabalho Log Analytics (se houver). A escolha de armazenar eventos de segurança no seu workspace permitirá investigar, pesquisar e auditar esses eventos no workspace. 
 > [!NOTE]
 > O armazenamento de dados no log Analytics pode incorrer em encargos adicionais para o armazenamento de dados. Para obter mais detalhes, consulte a [página de preços](https://azure.microsoft.com/pricing/details/security-center/).
 > 
-> É possível escolher a diretiva de filtragem correta para assinaturas e espaços de trabalho de quatro conjuntos de eventos a serem armazenados na área de trabalho: 
+> É possível escolher a diretiva de filtragem correta para assinaturas e workspaces de quatro conjuntos de eventos a serem armazenados no workspace: 
 
 - **Nenhum** – Desabilitar armazenamento de eventos de segurança. Esta é a configuração padrão.
 - **Mínimo** – um conjunto menor de eventos, para clientes que desejam minimizar o volume de eventos.

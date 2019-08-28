@@ -107,7 +107,7 @@ ACCT_NAME=<computervision-account-name>
 
 Se você não se lembrar do seu ponto de extremidade e da chave, poderá usar o seguinte método para encontrá-los. Se você precisar criar uma chave e um ponto de extremidade, poderá usar o método de [proprietários de assinatura do Azure](#if-you-have-an-azure-subscription) ou para [usuários sem uma assinatura do Azure](#if-you-dont-have-an-azure-subscription).
 
-Use o snippet da [CLI do Azure][cloud_shell] abaixo para preencher duas variáveis de ambiente com o **ponto de extremidade** da conta de Pesquisa Visual Computacional e uma de suas **chaves** (também é possível localizar esses valores no [portal do Azure][azure_portal]). O trecho é formatado para o shell do Bash.
+Use o snippet da [CLI do Azure][cloud_shell] abaixo para preencher duas variáveis de ambiente com o **ponto de extremidade** da conta de Pesquisa Visual Computacional e uma de suas **chaves** (também é possível localizar esses valores no [portal do Azure][azure_portal]). O snippet é formatado para o shell do Bash.
 
 ```Bash
 RES_GROUP=<resourcegroup-name>

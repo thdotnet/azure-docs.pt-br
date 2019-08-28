@@ -15,7 +15,7 @@ ms.date: 06/14/2019
 ms.author: magoedte
 ms.openlocfilehash: 8ca87f18a91af3937f8b4dd1148ecad8507e0dd5
 ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/08/2019
 ms.locfileid: "68849059"
@@ -99,7 +99,7 @@ A tabela a seguir destaca os parâmetros específicos com suporte pela configura
 |---------------------------------------|--------------|
 | NOAPM=1                               | Parâmetro opcional. Instala o agente sem Monitoramento de Desempenho de Aplicativos .NET.|   
 |ADD_OPINSIGHTS_WORKSPACE               | 1 = configurar o agente para reportar a um workspace                |
-|OPINSIGHTS_WORKSPACE_ID                | ID do espaço de trabalho (guid) para o espaço de trabalho para adicionar                    |
+|OPINSIGHTS_WORKSPACE_ID                | ID do workspace (guid) para o workspace para adicionar                    |
 |OPINSIGHTS_WORKSPACE_KEY               | Chave do workspace usada para autenticar inicialmente com o workspace |
 |OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE  | Especifique o ambiente de nuvem no qual o workspace está <br> 0 = nuvem comercial do Azure (padrão) <br> 1 = Azure Governamental |
 |OPINSIGHTS_PROXY_URL               | URI do proxy a ser usado |

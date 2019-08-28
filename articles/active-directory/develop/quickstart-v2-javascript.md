@@ -191,7 +191,7 @@ Para saber mais sobre opções configuráveis disponíveis, confira [Inicializar
 
 ### <a name="sign-in-users"></a>Conectar usuários
 
-O trecho de código a seguir mostra como realizar a conexão de usuários:
+O snippet de código a seguir mostra como realizar a conexão de usuários:
 
 ```javascript
 var requestObj = {

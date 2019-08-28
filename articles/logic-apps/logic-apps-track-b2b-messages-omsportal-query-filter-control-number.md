@@ -45,7 +45,7 @@ Para encontrar mensagens com base em propriedades ou valores específicos, você
 
    ![Selecione o Espaço de Trabalho do Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/select-log-analytics-workspace.png)
 
-1. No menu da sua área de trabalho, em **Geral**, selecione **Logs (clássico)** ou **Logs**. 
+1. No menu do seu workspace, em **Geral**, selecione **Logs (clássico)** ou **Logs**. 
 
    Este exemplo mostra como usar a exibição clássica de logs. 
    Se você escolher **Exibir logs** na seção **Maximizar sua experiência do Log Analytics**, em **Pesquisar e analisar logs**, você receberá os **logs (visualização clássica)** . 
@@ -118,7 +118,7 @@ Para salvar sua consulta no modo de exibição **Logs (clássico)** , siga estas
 
    ![Selecione o Espaço de Trabalho do Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/select-log-analytics-workspace.png)
 
-1. No menu da sua área de trabalho, em **Geral**, selecione **Logs (clássico)** ou **Logs**. 
+1. No menu do seu workspace, em **Geral**, selecione **Logs (clássico)** ou **Logs**. 
 
    Este exemplo mostra como usar a exibição clássica de logs. 
 

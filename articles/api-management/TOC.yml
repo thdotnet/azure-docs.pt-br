@@ -207,6 +207,8 @@
           href: api-management-configuration-repository-git.md
         - name: Use o controle de acesso baseado em função
           href: api-management-role-based-access-control.md
+        - name: Migrar instâncias do Gerenciamento de API
+          href: api-management-howto-migrate.md
         - name: Usar identidades gerenciadas para recursos do Azure
           href: api-management-howto-use-managed-service-identity.md
         - name: Integrar com o Service Fabric

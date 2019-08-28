@@ -79,7 +79,7 @@ O SDK usa a biblioteca de E/S [Netty](https://netty.io/) biblioteca para se comu
 
 Os threads de E/S Netty destinam-se somente a serem usados para o trabalho de E/S Netty sem bloqueio. O SDK retorna o resultado da invocação de API em um dos threads de E/S Netty para o código de aplicativos. Se o aplicativo executa uma operação de longa duração, depois de receber os resultados no thread de Netty, o SDK pode não ter threads de E/S suficientes para realizar seu trabalho de E/S interno. Essa codificação de aplicativo pode resultar em baixa taxa de transferência, latência alta e `io.netty.handler.timeout.ReadTimeoutException` falhas. A solução alternativa é mudar o thread quando você sabe que a operação levará tempo.
 
-Por exemplo, dê uma olhada no seguinte trecho de código. Você pode executar o trabalho de longa duração que leva mais de alguns milissegundos no thread de Netty. Nesse caso, você, eventualmente, pode colocar em um estado em que nenhum thread de e/s do Netty está presente para processar o trabalho de e/s. Como resultado, você obterá uma falha de ReadTimeoutException.
+Por exemplo, dê uma olhada no seguinte snippet de código. Você pode executar o trabalho de longa duração que leva mais de alguns milissegundos no thread de Netty. Nesse caso, você, eventualmente, pode colocar em um estado em que nenhum thread de e/s do Netty está presente para processar o trabalho de e/s. Como resultado, você obterá uma falha de ReadTimeoutException.
 ```java
 @Test
 public void badCodeWithReadTimeoutException() throws Exception {

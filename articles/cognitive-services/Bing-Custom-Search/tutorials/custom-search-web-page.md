@@ -174,7 +174,7 @@ O restante deste tutorial ilustra a **Opção 1: Snippet de JavaScript**.
    <div id="customSearch"></div>
    ```  
   
-4. Na página **Hosted UI**, role para baixo até a seção intitulada **Consuming the UI**. Clique no *Endpoints* para acessar o snippet de JavaScript. Você também pode obter o trecho de código clicando **produção** e, em seguida, a guia **hospedado de interface do usuário**.
+4. Na página **Hosted UI**, role para baixo até a seção intitulada **Consuming the UI**. Clique no *Endpoints* para acessar o snippet de JavaScript. Você também pode obter o snippet clicando **produção** e, em seguida, a guia **hospedado de interface do usuário**.
   
    <!-- Get new screenshot after prod gets new bits
    ![Screenshot of the Hosted UI save button](./media/custom-search-hosted-ui-consuming-ui.png)  

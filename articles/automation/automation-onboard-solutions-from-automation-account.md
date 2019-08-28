@@ -51,17 +51,17 @@ Selecione **Gerenciamento de atualizações** em **GERENCIAMENTO DE ATUALIZAÇÕ
 
 Cada solução usa uma Configuração de Escopo dentro do workspace para direcionar os computadores que recebem a solução. A Configuração de Escopo é um grupo de uma ou mais pesquisas salvas utilizada para limitar o escopo da solução em computadores específicos. Para acessar as Configurações de Escopo, na sua conta de Automação, em **RECURSOS RELACIONADOS**, selecione **Workspace**. Em seguida, no workspace em **FONTES DE DADOS DO WORKSPACE**, selecione **Configurações de Escopo**.
 
-Se a área de trabalho selecionada ainda não tiver as soluções Gerenciamento de atualizações ou Controle de alterações, as seguintes configurações de escopo serão criadas:
+Se o workspace selecionado ainda não tiver as soluções Gerenciamento de atualizações ou Controle de alterações, as seguintes configurações de escopo serão criadas:
 
 * **MicrosoftDefaultScopeConfig-ChangeTracking**
 
 * **MicrosoftDefaultScopeConfig-Updates**
 
-Se a área de trabalho selecionada já tiver a solução, a solução não será reimplantada e a configuração do escopo não será adicionada a ela.
+Se o workspace selecionado já tiver a solução, a solução não será reimplantada e a configuração do escopo não será adicionada a ela.
 
 ## <a name="saved-searches"></a>Pesquisas salvas
 
-Quando um computador é adicionado às soluções Gerenciamento de Atualizações ou Rastreamento de Mudanças e Inventário, elas são adicionadas a uma das duas pesquisas salvas em sua área de trabalho. Essas pesquisas salvas são consultas que contêm os computadores segmentados para essas soluções.
+Quando um computador é adicionado às soluções Gerenciamento de Atualizações ou Rastreamento de Mudanças e Inventário, elas são adicionadas a uma das duas pesquisas salvas em seu workspace. Essas pesquisas salvas são consultas que contêm os computadores segmentados para essas soluções.
 
 Navegue para a conta de Automação e selecione **Pesquisas salvas** em **Geral**. As duas pesquisas salvas usadas por essas soluções podem ser vistas na tabela a seguir:
 
@@ -86,11 +86,11 @@ Clique em **+Adicionar VMs do Azure**, selecione uma ou mais VMs na lista. Máqu
 
 Computadores que não estão no Azure precisam ser adicionados manualmente. Na sua conta de Automação do Azure, selecione **Inventário** ou **Controle de alterações** em **GERENCIAMENTO DE CONFIGURAÇÃO** ou **Gerenciamento de atualizações** em **GERENCIAMENTO DE ATUALIZAÇÕES**.
 
-Clique em **Adicionar computador não Azure**. Esta ação abre uma nova janela do navegador com as instruções [sobre como instalar e configurar o Microsoft Monitoring Agent na máquina](../azure-monitor/platform/log-analytics-agent.md) para que a máquina possa começar a gerar relatórios para a solução. Se você estiver integrando uma máquina que atualmente é gerenciada pelo System Center Operations Manager, um novo agente não é necessário, as informações do espaço de trabalho são inseridas no agente existente.
+Clique em **Adicionar computador não Azure**. Esta ação abre uma nova janela do navegador com as instruções [sobre como instalar e configurar o Microsoft Monitoring Agent na máquina](../azure-monitor/platform/log-analytics-agent.md) para que a máquina possa começar a gerar relatórios para a solução. Se você estiver integrando uma máquina que atualmente é gerenciada pelo System Center Operations Manager, um novo agente não é necessário, as informações do workspace são inseridas no agente existente.
 
 ## <a name="onboard-machines-in-the-workspace"></a>Integrar computadores no workspace
 
-Máquinas ou máquinas instaladas manualmente que já estão se reportando ao seu espaço de trabalho devem ser adicionadas ao Automação do Azure para que a solução seja habilitada. Na sua conta de Automação do Azure, selecione **Inventário** ou **Controle de alterações** em **GERENCIAMENTO DE CONFIGURAÇÃO** ou **Gerenciamento de atualizações** em **GERENCIAMENTO DE ATUALIZAÇÕES**.
+Máquinas ou máquinas instaladas manualmente que já estão se reportando ao seu workspace devem ser adicionadas ao Automação do Azure para que a solução seja habilitada. Na sua conta de Automação do Azure, selecione **Inventário** ou **Controle de alterações** em **GERENCIAMENTO DE CONFIGURAÇÃO** ou **Gerenciamento de atualizações** em **GERENCIAMENTO DE ATUALIZAÇÕES**.
 
 Selecione **Gerenciar computadores**. Esta ação abre a página **Gerenciar Máquinas**. Esta página permite habilitar a solução em um conjunto selecionado de computadores, todos os computadores disponíveis ou habilitar a solução para todos os computadores atuais e habilitá-la em todos os computadores futuros. O botão **Gerenciar máquinas** pode ficar esmaecido se você escolheu anteriormente a opção **Ativar em todas as máquinas disponíveis e futuras**.
 
@@ -102,7 +102,7 @@ Para habilitar a solução a todos os computadores disponíveis, selecione **Hab
 
 ### <a name="all-available-and-future-machines"></a>Todos os computadores disponíveis e futuros
 
-Para ativar a solução para todas as máquinas disponíveis e futuras máquinas, selecione **Ativar em todas as máquinas disponíveis e futuras**. Essa opção exclui as pesquisas salvas e as Configurações de Escopo do workspace. Esta ação abre a solução para todas as máquinas do Azure e não do Azure que estão relatando para o espaço de trabalho. Quando selecionada, essa ação desabilita o botão **Gerenciar Máquinas** permanentemente, pois não há configuração de escopo à esquerda.
+Para ativar a solução para todas as máquinas disponíveis e futuras máquinas, selecione **Ativar em todas as máquinas disponíveis e futuras**. Essa opção exclui as pesquisas salvas e as Configurações de Escopo do workspace. Esta ação abre a solução para todas as máquinas do Azure e não do Azure que estão relatando para o workspace. Quando selecionada, essa ação desabilita o botão **Gerenciar Máquinas** permanentemente, pois não há configuração de escopo à esquerda.
 
 Você pode adicionar as configurações de escopo de volta adicionando as pesquisas iniciais salvas de volta. Para obter mais informações, consulte [pesquisas salvas](#saved-searches).
 
@@ -125,7 +125,7 @@ Depois de remover essas soluções, você pode concluir as etapas a seguir para 
 > [!NOTE]
 > Algumas soluções, incluindo versões anteriores da solução de monitoramento do Azure SQL, podem ter criado ativos de automação e também podem precisar ser removidas antes de desvincular o workspace.
 
-1. No portal do Azure, abra sua conta de automação e, na página da conta de automação, selecione **Área de trabalho vinculada** na seção rotulada **Recursos relacionados** à esquerda.
+1. No portal do Azure, abra sua conta de automação e, na página da conta de automação, selecione **Workspace vinculado** na seção rotulada **Recursos relacionados** à esquerda.
 
 2. Na página Desvincular o workspace, clique em **Desvincular o workspace**.
 

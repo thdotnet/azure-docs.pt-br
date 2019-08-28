@@ -112,7 +112,7 @@ Você pode implantar um modelo como um serviço Web no FPGAs com Azure Machine L
 
     Se você não tiver cota, envie uma solicitação em [https://aka.ms/accelerateAI](https://aka.ms/accelerateAI).
 
-- Um espaço de trabalho do serviço do Machine Learning do Azure e o SDK do Azure Machine Learning para Python instalados. Para obter mais informações, consulte [criar um espaço de trabalho](how-to-manage-workspace.md).
+- Um workspace do serviço do Machine Learning do Azure e o SDK do Azure Machine Learning para Python instalados. Para obter mais informações, consulte [criar um espaço de trabalho](how-to-manage-workspace.md).
  
 - O SDK do Python para modelos com aceleração de hardware:
 

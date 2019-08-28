@@ -107,9 +107,9 @@ Você pode ler esses eventos de Syslog em uma ferramenta de monitoramento, como 
 4. Configure Local0 como o recurso para acompanhar. Você pode adicionar outro recurso, se você alterar as configurações em fabricSettings
 
     ![Configurar Syslog](media/service-fabric-diagnostics-oms-syslog/syslog-configure.png)
-5. Vá para o Gerenciador de consultas clicando `Logs` no menu do recurso do espaço de trabalho para começar a consultar
+5. Vá para o Gerenciador de consultas clicando `Logs` no menu do recurso do workspace para começar a consultar
 
-    ![Logs do espaço de trabalho](media/service-fabric-diagnostics-oms-syslog/workspace-logs.png)
+    ![Logs do workspace](media/service-fabric-diagnostics-oms-syslog/workspace-logs.png)
 6. Você pode consultar a `Syslog` tabela procurando `ServiceFabric` como ProcessName. A consulta a seguir é um exemplo de como analisar o JSON no evento e exibir seu conteúdo
 
 ```kusto

@@ -206,11 +206,11 @@ Para acessar rapidamente os dados do blob:
 
 ### <a name="analyzing-model-data-using-databricks"></a>Analisando dados do modelo usando Databricks
 
-1. Criar uma [espaço de trabalho do Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal). 
+1. Criar uma [workspace do Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal). 
 
-1. Vá para seu espaço de trabalho do Databricks. 
+1. Vá para seu workspace do Databricks. 
 
-1. Na área de trabalho do seu banco de dados, selecione **Upload Data**.
+1. No seu workspace do Databricks, selecione **Upload Data**.
 
     [![Carregamento de banco de dados](media/how-to-enable-data-collection/dbupload.png)](./media/how-to-enable-data-collection/dbupload.png#lightbox)
 

@@ -74,7 +74,7 @@ Para saber mais sobre como criar a entidade de serviço e conceder acesso, confi
 
 ### <a name="extracting-a-certificate-from-azure-keyvault-for-use-in-cluster-creation"></a>Extrair um certificado do Azure Key Vault para uso na criação do cluster
 
-Se você quiser configurar o Azure Data Lake Storage Gen1 como seu armazenamento padrão para um novo cluster e o certificado da sua entidade de serviço estiver armazenado no Azure Key Vault, será necessário executar algumas etapas adicionais para converter o certificado no formato correto. Os trechos de código a seguir mostram como executar a conversão.
+Se você quiser configurar o Azure Data Lake Storage Gen1 como seu armazenamento padrão para um novo cluster e o certificado da sua entidade de serviço estiver armazenado no Azure Key Vault, será necessário executar algumas etapas adicionais para converter o certificado no formato correto. Os snippets de código a seguir mostram como executar a conversão.
 
 Primeiro, baixe o certificado do Key Vault e extraia o `SecretValueText`.
 
@@ -92,7 +92,7 @@ $certBytes = $certObject.Export([System.Security.Cryptography.X509Certificates.X
 $identityCertificate = [System.Convert]::ToBase64String($certBytes)
 ```
 
-Depois, use o `$identityCertificate` para implantar um novo cluster, como no trecho a seguir:
+Depois, use o `$identityCertificate` para implantar um novo cluster, como no snippet a seguir:
 
 ```powershell
 New-AzResourceGroupDeployment `

@@ -88,7 +88,7 @@ KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
 ### <a name="consumerjava"></a>Consumer.java
 
-O cliente se comunica com os hosts de broker Kafka (nós de trabalho) e lê registros em um loop. O seguinte trecho de código do arquivo [Consumer.java](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/blob/master/Producer-Consumer/src/main/java/com/microsoft/example/Consumer.java) define as propriedades do consumidor:
+O cliente se comunica com os hosts de broker Kafka (nós de trabalho) e lê registros em um loop. O seguinte snippet de código do arquivo [Consumer.java](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/blob/master/Producer-Consumer/src/main/java/com/microsoft/example/Consumer.java) define as propriedades do consumidor:
 
 ```java
 KafkaConsumer<String, String> consumer;

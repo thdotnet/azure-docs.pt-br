@@ -1,7 +1,7 @@
 ---
 title: Como gerenciar configurações? -Tradutor personalizado
 titleSuffix: Azure Cognitive Services
-description: Como gerenciar configurações, criar espaço de trabalho, compartilhar espaço de trabalho e gerenciar a chave de assinatura no Tradutor Personalizado.
+description: Como gerenciar configurações, criar workspace, compartilhar workspace e gerenciar a chave de assinatura no Tradutor Personalizado.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -18,7 +18,7 @@ ms.locfileid: "68595773"
 ---
 # <a name="how-to-manage-settings"></a>Como gerenciar configurações
 
-Na página de configurações do Custom Translator, você pode criar um novo espaço de trabalho, compartilhar seu espaço de trabalho e adicionar ou modificar sua chave de assinatura do Microsoft Translation.
+Na página de configurações do Custom Translator, você pode criar um novo workspace, compartilhar seu workspace e adicionar ou modificar sua chave de assinatura do Microsoft Translation.
 
 Para acessar a página de configurações:
 
@@ -29,7 +29,7 @@ Para acessar a página de configurações:
 
 ## <a name="associating-microsoft-translator-subscription"></a>Associando a assinatura do Microsoft Translator
 
-Você precisa ter uma chave de assinatura do API de Tradução de Texto associada ao seu espaço de trabalho para treinar ou implantar modelos.
+Você precisa ter uma chave de assinatura do API de Tradução de Texto associada ao seu workspace para treinar ou implantar modelos.
 
 Se você não tem uma assinatura, siga as etapas abaixo:
 
@@ -39,7 +39,7 @@ Se você não tem uma assinatura, siga as etapas abaixo:
 
 ### <a name="add-existing-key"></a>Adicionar chave existente
 
-1.  Navegue até a página "Configurações" do seu espaço de trabalho.
+1.  Navegue até a página &quot;Configurações&quot; do seu workspace.
 2.  Clique em Adicionar chave
 
     ![Como adicionar chave de assinatura](media/how-to/how-to-add-subscription-key.png)
@@ -51,49 +51,49 @@ Se você não tem uma assinatura, siga as etapas abaixo:
 
     ![Chave de assinatura depois de adicionar](media/how-to/subscription-key-after-add.png)
 
-## <a name="manage-your-workspace"></a>Gerenciar seu espaço de trabalho
+## <a name="manage-your-workspace"></a>Gerenciar seu workspace
 
-Um espaço de trabalho é uma área de trabalho para compor e construir seu sistema de tradução personalizado. Um espaço de trabalho pode conter vários projetos, modelos e documentos.
+Um workspace é uma área de trabalho para compor e construir seu sistema de tradução personalizado. Um workspace pode conter vários projetos, modelos e documentos.
 
-Se uma parte diferente do seu trabalho precisar ser compartilhada com pessoas diferentes, a criação de vários espaços de trabalho poderá ser útil.
+Se uma parte diferente do seu trabalho precisar ser compartilhada com pessoas diferentes, a criação de vários workspaces poderá ser útil.
 
 ## <a name="create-a-new-workspace"></a>Criar um novo workspace
 
-1.  Navegue até a página "Configurações" do espaço de trabalho.
-2.  Clique no botão “Novo Espaço de trabalho” na seção “Criar Novo Espaço de trabalho”.
+1.  Navegue até a página &quot;Configurações&quot; do workspace.
+2.  Clique no botão “Novo Workspace” na seção “Criar Novo Workspace”.
 
-    ![Criar novo espaço de trabalho](media/how-to/create-new-workspace.png)
+    ![Criar novo workspace](media/how-to/create-new-workspace.png)
 
-4.  Na caixa de diálogo, insira o nome da nova área de trabalho.
+4.  Na caixa de diálogo, insira o nome do novo workspace.
 5.  Clique em "Criar".
 
-    ![Criar caixa de diálogo do novo espaço de trabalho](media/how-to/create-new-workspace-dialog.png)
+    ![Criar caixa de diálogo do novo workspace](media/how-to/create-new-workspace-dialog.png)
 
-## <a name="share-your-workspace"></a>Compartilhe seu espaço de trabalho
+## <a name="share-your-workspace"></a>Compartilhe seu workspace
 
-No tradutor Personalizado você pode compartilhar seu espaço de trabalho com outras pessoas, se diferentes partes do seu trabalho precisarem ser compartilhadas com pessoas diferentes.
+No tradutor Personalizado você pode compartilhar seu workspace com outras pessoas, se diferentes partes do seu trabalho precisarem ser compartilhadas com pessoas diferentes.
 
-1.  Navegue até a página "Configurações" do espaço de trabalho.
+1.  Navegue até a página &quot;Configurações&quot; do workspace.
 2.  Clique no botão "Compartilhar" na seção "Configurações de compartilhamento".
 
-    ![Compartilhar o espaço de trabalho](media/how-to/share-workspace.png)
+    ![Compartilhar o workspace](media/how-to/share-workspace.png)
 
-3.  Na caixa de diálogo, insira uma lista separada por vírgulas de endereços de e-mail com os quais você deseja compartilhar essa área de trabalho. Não se esqueça de compartilhar com o endereço de e-mail que a pessoa usa para fazer login no Custom Translator com. Em seguida, selecione o nível apropriado de permissão de compartilhamento.
+3.  Na caixa de diálogo, insira uma lista separada por vírgulas de endereços de e-mail com os quais você deseja compartilhar esse workspace. Não se esqueça de compartilhar com o endereço de e-mail que a pessoa usa para fazer login no Custom Translator com. Em seguida, selecione o nível apropriado de permissão de compartilhamento.
 
-4.  Se o seu espaço de trabalho ainda tiver o nome padrão "Meu espaço de trabalho", você deverá alterá-lo antes de compartilhar seu espaço de trabalho.
+4.  Se o seu workspace ainda tiver o nome padrão &quot;Meu workspace&quot;, você deverá alterá-lo antes de compartilhar seu workspace.
 5.  Clique em "Salvar".
 
 ## <a name="sharing-permissions"></a>Permissões de compartilhamento
 
 1.  **Leitor:** um leitor no workspace poderá exibir todas as informações no workspace.
 
-2.  **Editor:** um editor no workspace poderá adicionar documentos, treinar modelos e excluir documentos e projetos. Eles podem adicionar uma chave de assinatura, mas não podem modificar com quem a área de trabalho é compartilhada, excluir a área de trabalho ou alterar o nome da área de trabalho.
+2.  **Editor:** um editor no workspace poderá adicionar documentos, treinar modelos e excluir documentos e projetos. Eles podem adicionar uma chave de assinatura, mas não podem modificar com quem o workspace é compartilhado, excluir o workspace ou alterar o nome do workspace.
 
 3.  **Proprietário:** um proprietário tem permissões totais para o workspace.
 
 ## <a name="change-sharing-permission"></a>Altere a permissão de compartilhamento
 
-Quando uma área de trabalho é compartilhada, a seção “Configurações de compartilhamento” mostra todos os endereços de e-mail com os quais essa área de trabalho é compartilhada. Você pode alterar a permissão de compartilhamento existente para cada endereço de e-mail se tiver acesso de proprietário ao espaço de trabalho.
+Quando um workspace é compartilhado, a seção “Configurações de compartilhamento” mostra todos os endereços de e-mail com os quais esse workspace é compartilhado. Você pode alterar a permissão de compartilhamento existente para cada endereço de e-mail se tiver acesso de proprietário ao workspace.
 
 1.  Na seção "Configurações de compartilhamento" de cada e-mail, um menu suspenso mostra o nível de permissão atual.
 
@@ -103,4 +103,4 @@ Quando uma área de trabalho é compartilhada, a seção “Configurações de c
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Aprenda [como migrar sua área de trabalho e projeto](how-to-migrate.md) de [Microsoft Translator Hub](https://hub.microsofttranslator.com)
+- Aprenda [como migrar seu workspace e projeto](how-to-migrate.md) de [Microsoft Translator Hub](https://hub.microsofttranslator.com)

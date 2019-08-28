@@ -51,7 +51,7 @@ O portal do Azure tem um assistente que ajuda você por meio da criação de man
 
    * **Módulo IoT Edge** - a opção padrão.
    * **Módulo Azure Stream Analytics** - apenas módulos gerados da carga de trabalho do Azure Stream Analytics.
-   * **Módulo do Azure Machine Learning** - somente imagens de modelo geradas a partir de um espaço de trabalho do Azure Machine Learning.
+   * **Módulo do Azure Machine Learning** - somente imagens de modelo geradas a partir de um workspace do Azure Machine Learning.
 
 1. Selecione o **Módulo IoT Edge**.
 

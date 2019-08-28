@@ -76,7 +76,7 @@ sudo /opt/microsoft/omsagent/bin/service_control restart
 
 ### <a name="multihoming"></a>Hospedagem múltipla
 
-Essa verificação determina se o agente está se comunicando com vários espaços de trabalho. Não há suporte para hospedagem múltipla pelo Gerenciamento de Atualizações.
+Essa verificação determina se o agente está se comunicando com vários workspaces. Não há suporte para hospedagem múltipla pelo Gerenciamento de Atualizações.
 
 ### <a name="hybrid-runbook-worker"></a>Hybrid Runbook Worker
 

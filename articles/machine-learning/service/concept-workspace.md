@@ -26,7 +26,7 @@ Quando você tiver um modelo que desejar, registre-o no espaço de trabalho. Em 
 
 O diagrama a seguir é uma taxonomia do workspace:
 
-[![Taxonomia de espaço de trabalho](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
+[![Taxonomia de workspace](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png)](./media/concept-azure-machine-learning-architecture/azure-machine-learning-taxonomy.png#lightbox)
 
 O diagrama mostra os seguintes componentes de um espaço de trabalho:
 

@@ -39,11 +39,11 @@ A exclusão de um grupo de recursos também exclui todos os recursos criados na 
 
 O destino de computação que você criou aqui é *dimensionado automaticamente* para zero nós quando não estiver sendo usado. Isso serve para minimizar os encargos. Se você quiser excluir o destino de computação, siga estas etapas:
 
-1. No [portal do Azure](https://portal.azure.com), abra o espaço de trabalho.
+1. No [portal do Azure](https://portal.azure.com), abra o workspace.
 
     ![Excluir o destino de computação](./media/aml-ui-cleanup/delete-compute-target.png)
 
-1. Na seção **Computação** do seu espaço de trabalho, selecione o recurso.
+1. Na seção **Computação** do seu workspace, selecione o recurso.
 
 1. Selecione **Excluir**.
 

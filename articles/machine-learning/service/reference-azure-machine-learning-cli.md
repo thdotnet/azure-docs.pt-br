@@ -86,7 +86,7 @@ Os comandos a seguir demonstram como usar a CLI para gerenciar recursos usados p
     az group create -n myresourcegroup -l westus2
     ```
 
-+ Crie uma área de trabalho do Azure Machine Learning:
++ Crie um workspace do Azure Machine Learning:
 
     ```azurecli-interactive
     az ml workspace create -w myworkspace -g myresourcegroup

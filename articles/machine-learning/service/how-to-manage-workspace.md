@@ -1,7 +1,7 @@
 ---
-title: Crie e gerencie os espaços de trabalho
+title: Crie e gerencie os workspaces
 titleSuffix: Azure Machine Learning service
-description: Saiba como criar, exibir e excluir espaços de trabalho do Azure Machine Learning no portal do Azure.
+description: Saiba como criar, exibir e excluir workspaces do Azure Machine Learning no portal do Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -18,9 +18,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 08/16/2019
 ms.locfileid: "69534860"
 ---
-# <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Criar e gerenciar espaços de trabalho de serviço do Azure Machine Learning
+# <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Criar e gerenciar workspaces de serviço do Azure Machine Learning
 
-Neste artigo, você vai criar, exibir e excluir [**Espaços de trabalho do Azure Machine Learning**](concept-workspace.md) no portal do Azure para o [serviço do Azure Machine Learning](overview-what-is-azure-ml.md).  O portal é a maneira mais fácil de começar com espaços de trabalho, mas conforme suas necessidades mudam ou requisitos para aumentar a automação, você também pode criar e excluir espaços de trabalho [usando a CLI](reference-azure-machine-learning-cli.md), [com código Python](https://aka.ms/aml-sdk) ou [por meio da extensão vs Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
+Neste artigo, você vai criar, exibir e excluir [**Workspaces do Azure Machine Learning**](concept-workspace.md) no portal do Azure para o [serviço do Azure Machine Learning](overview-what-is-azure-ml.md).  O portal é a maneira mais fácil de começar com espaços de trabalho, mas conforme suas necessidades mudam ou requisitos para aumentar a automação, você também pode criar e excluir espaços de trabalho [usando a CLI](reference-azure-machine-learning-cli.md), [com código Python](https://aka.ms/aml-sdk) ou [por meio da extensão vs Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 
 ## <a name="create-a-workspace"></a>Criar um espaço de trabalho
 

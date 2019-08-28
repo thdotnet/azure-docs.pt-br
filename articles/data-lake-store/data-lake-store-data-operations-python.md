@@ -91,7 +91,7 @@ Nesta seção, falamos sobre as diferentes maneiras de autenticação com o Azur
 
 ## <a name="create-filesystem-client"></a>Criar cliente do sistema de arquivos
 
-O trecho de código a seguir primeiro cria o cliente da conta do Data Lake Storage Gen1. Ele usa o objeto cliente para criar uma conta do Data Lake Storage Gen1. Finalmente, o snippet de código cria um objeto de cliente do sistema de arquivos.
+O snippet a seguir primeiro cria o cliente da conta do Data Lake Storage Gen1. Ele usa o objeto cliente para criar uma conta do Data Lake Storage Gen1. Finalmente, o snippet de código cria um objeto de cliente do sistema de arquivos.
 
     ## Declare variables
     subscriptionId = 'FILL-IN-HERE'

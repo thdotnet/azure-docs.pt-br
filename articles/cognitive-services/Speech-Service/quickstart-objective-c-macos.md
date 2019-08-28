@@ -69,11 +69,11 @@ Nas caixas de diálogo que seguem, faça as seguintes seleções:
 1. Instale o gerenciador de dependência do CocoaPod conforme descrito nas [instruções de instalação](https://guides.cocoapods.org/using/getting-started.html).
 1. Navegue até o diretório de seu aplicativo de exemplo (`helloworld`). Colocar um arquivo de texto com o nome `Podfile` e o seguinte conteúdo nesse diretório:  
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/Podfile)]
-1. Navegue até o diretório `helloworld` em um terminal e execute o comando `pod install`. Isso gerará um espaço de trabalho do Xcode `helloworld.xcworkspace` que contém o aplicativo de exemplo e o SDK de fala como uma dependência. Este espaço de trabalho será usado nas seções a seguir.
+1. Navegue até o diretório `helloworld` em um terminal e execute o comando `pod install`. Isso gerará um workspace do Xcode `helloworld.xcworkspace` que contém o aplicativo de exemplo e o SDK de fala como uma dependência. Este workspace será usado nas seções a seguir.
 
 ## <a name="add-the-sample-code"></a>Adicione o código de amostra
 
-1. Abra o espaço de trabalho `helloworld.xcworkspace` no Xcode.
+1. Abra o workspace `helloworld.xcworkspace` no Xcode.
 1. Substitua o conteúdo do arquivo `AppDelegate.m` gerado automaticamente por:  
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/helloworld/AppDelegate.m#code)]
 1. Substitua a cadeia de caracteres `YourSubscriptionKey` pela chave de assinatura.

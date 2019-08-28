@@ -84,11 +84,11 @@ Para criar um espaço de trabalho e adicionar seu primeiro experimento:
    [![Criar um espaço de trabalho](./media/vscode-tools-for-ai/CreateaWorkspace.gif)](./media/vscode-tools-for-ai/CreateaWorkspace.gif#lightbox)
 
 
-1. Clique com o botão direito do mouse em sua assinatura do Azure e selecione **Criar Espaço de Trabalho**. É exibida uma lista. Na imagem animada de exemplo, o nome da assinatura é **avaliação gratuita**e o espaço de trabalho é **TeamWorkspace**. 
+1. Clique com o botão direito do mouse em sua assinatura do Azure e selecione **Criar Workspace**. É exibida uma lista. Na imagem animada de exemplo, o nome da assinatura é **avaliação gratuita**e o espaço de trabalho é **TeamWorkspace**. 
 
 1. Selecione um grupo de recursos na lista ou crie um novo usando o assistente na paleta de comandos.
 
-1. No campo, digite um nome exclusivo e claro para o novo espaço de trabalho. Na imagem de exemplo, o espaço de trabalho é denominado **TeamWorkspace**.
+1. No campo, digite um nome exclusivo e claro para o novo workspace. Na imagem de exemplo, o espaço de trabalho é denominado **TeamWorkspace**.
 
 1. Selecione Enter para criar o novo espaço de trabalho. Ele aparece na árvore, abaixo do nome da assinatura.
 
@@ -117,9 +117,9 @@ Para criar um destino de computação:
 
 1. Na barra de atividade do Visual Studio Code, selecione o ícone do Azure. A barra lateral Azure Machine Learning é exibida.
 
-2. No modo de exibição de árvore, expanda sua assinatura do Azure e o espaço de trabalho do Azure Machine Learning. Na imagem de exemplo a seguir, o nome da assinatura é **avaliação gratuita**e o espaço de trabalho é **TeamWorkspace**. 
+2. No modo de exibição de árvore, expanda sua assinatura do Azure e o workspace do Azure Machine Learning. Na imagem de exemplo a seguir, o nome da assinatura é **avaliação gratuita**e o espaço de trabalho é **TeamWorkspace**. 
 
-3. No nó do espaço de trabalho, clique com o botão direito do mouse no nó **Computação** e escolha **Criar Computação**.
+3. No nó do workspace, clique com o botão direito do mouse no nó **Computação** e escolha **Criar Computação**.
 
 4. Escolha o tipo de destino de computação na lista. 
 
@@ -147,7 +147,7 @@ Para executar seu experimento localmente usando Azure Machine Learning:
 
 1. Na barra de atividade do Visual Studio Code, selecione o ícone do Azure. A barra lateral Azure Machine Learning é exibida.
 
-1. No modo de exibição de árvore, expanda sua assinatura do Azure e o espaço de trabalho do Azure Machine Learning. 
+1. No modo de exibição de árvore, expanda sua assinatura do Azure e o workspace do Azure Machine Learning. 
 
 1. No nó do espaço de trabalho, expanda o nó **computação** e clique com o botão direito do mouse na **configuração de execução** da computação que você deseja usar. 
 
@@ -196,7 +196,7 @@ Para executar seu experimento com Azure Machine Learning em um destino de comput
 
 1. Na barra de atividade do Visual Studio Code, selecione o ícone do Azure. A barra lateral Azure Machine Learning é exibida.
 
-1. No modo de exibição de árvore, expanda sua assinatura do Azure e o espaço de trabalho do Azure Machine Learning. 
+1. No modo de exibição de árvore, expanda sua assinatura do Azure e o workspace do Azure Machine Learning. 
 
 1. Na janela do editor, clique com o botão direito do mouse em seu **script Python e selecione AML: executar como experimento no Azure**. 
 
@@ -224,9 +224,9 @@ Para registrar seu modelo:
 
 1. Na barra de atividade do Visual Studio Code, selecione o ícone do Azure. A barra lateral Azure Machine Learning é exibida.
 
-1. No modo de exibição de árvore, expanda sua assinatura do Azure e o espaço de trabalho do Azure Machine Learning.
+1. No modo de exibição de árvore, expanda sua assinatura do Azure e o workspace do Azure Machine Learning.
 
-1. No nó do espaço de trabalho, clique com o botão direito do mouse em **Modelos** e escolha **Registrar Modelo**.
+1. No nó do workspace, clique com o botão direito do mouse em **Modelos** e escolha **Registrar Modelo**.
 
 1. Na paleta de comandos, no campo, insira um nome de modelo. 
 
@@ -253,9 +253,9 @@ Para implantar um serviço Web:
 
 1. Na barra de atividade do Visual Studio Code, selecione o ícone do Azure. A barra lateral Azure Machine Learning é exibida.
 
-1. No modo de exibição de árvore, expanda sua assinatura do Azure e o espaço de trabalho do Azure Machine Learning.
+1. No modo de exibição de árvore, expanda sua assinatura do Azure e o workspace do Azure Machine Learning.
 
-1. No nó do espaço de trabalho, expanda o nó **Modelos**.
+1. No nó do workspace, expanda o nó **Modelos**.
 
 1. Clique com o botão direito do mouse no modelo que você deseja implantar e escolha **implantar serviço do modelo registrado** no menu de contexto.
 

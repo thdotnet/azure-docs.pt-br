@@ -43,7 +43,7 @@ Para registrar erros e eventos de conexão do dispositivo, ative o diagnóstico 
 
 Para obter mais informações, consulte [monitorar a integridade do IoT Hub do Azure e diagnosticar problemas rapidamente](iot-hub-monitor-resource-health.md).
 
-### <a name="set-up-alerts-for-the-connected-devices-count-metric"></a>Configurar alertas para a métrica de contagem de _dispositivos conectados_
+### <a name="set-up-alerts-for-the-_connected-devices_-count-metric"></a>Configurar alertas para a métrica de contagem de _dispositivos conectados_
 
 Para obter alertas quando os dispositivos se desconectar, configurar alertas sobre o **(visualização) de dispositivos conectados** métrica.
 
@@ -65,7 +65,7 @@ Para saber mais, consulte [O que são alertas clássicos no Microsoft Azure?](..
 
 Quando você ativa logs de diagnóstico e alertas para dispositivos conectados, você recebe alertas quando ocorrem erros. Esta seção descreve como resolver problemas comuns quando você recebe um alerta. As etapas a seguir pressupõem que você configurou os logs do Azure Monitor para seus logs de diagnóstico.
 
-1. Vá para sua área de trabalho para **Log Analytics** no portal do Azure.
+1. Vá para seu workspace para **Log Analytics** no portal do Azure.
 
 2. Selecione **Pesquisa de Logs**.
 

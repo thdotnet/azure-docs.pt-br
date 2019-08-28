@@ -59,7 +59,7 @@ ms.locfileid: "67537699"
 
 ## <a name="usage"></a>Uso
 
-Para usar o plugin do Maven em seu aplicativo Maven Java, adicione o seguinte trecho de código ao seu arquivo pom.xml:
+Para usar o plugin do Maven em seu aplicativo Maven Java, adicione o seguinte snippet ao seu arquivo pom.xml:
 
 ```XML
 <project>

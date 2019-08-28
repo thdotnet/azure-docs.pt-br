@@ -30,9 +30,9 @@ Este "como" mostra exemplos das seguintes tarefas:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para usar datastores, primeiro você precisa de uma [área de trabalho](concept-workspace.md).
+Para usar datastores, primeiro você precisa de um [workspace](concept-workspace.md).
 
-Início das [criando um novo espaço de trabalho](how-to-manage-workspace.md) ou recuperar um existente:
+Início das [criando um novo workspace](how-to-manage-workspace.md) ou recuperar um existente:
 
 ```Python
 import azureml.core

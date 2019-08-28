@@ -249,7 +249,7 @@ O modelo principal se chama azuredeploy.json.
       "properties": {}
     },
     ```
-3. Adicione o seguinte trecho de json ao local em que você tinha a definição da conta de armazenamento:
+3. Adicione o seguinte snippet de json ao local em que você tinha a definição da conta de armazenamento:
 
     ```json
     {

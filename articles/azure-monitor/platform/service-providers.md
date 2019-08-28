@@ -35,7 +35,7 @@ Há três arquiteturas possíveis para os provedores de serviços em relação a
 
 ### <a name="1-distributed---logs-are-stored-in-workspaces-located-in-the-customers-tenant"></a>1. Distribuído – os logs são armazenados em workspaces localizados no locatário do cliente 
 
-Nesta arquitetura, um espaço de trabalho é implantado no locatário do cliente que é usado para todos os logs desse cliente. Os administradores do provedor de serviços recebem acesso a esse workspace usando [os usuários convidados do Azure Active Directory (B2B)](https://docs.microsoft.com/azure/active-directory/b2b/what-is-b2b). Os administradores do provedor de serviços precisarão alternar para o diretório do cliente no portal do Azure para conseguir acessar esses espaços de trabalho.
+Nesta arquitetura, um workspace é implantado no locatário do cliente que é usado para todos os logs desse cliente. Os administradores do provedor de serviços recebem acesso a esse workspace usando [os usuários convidados do Azure Active Directory (B2B)](https://docs.microsoft.com/azure/active-directory/b2b/what-is-b2b). Os administradores do provedor de serviços precisarão alternar para o diretório do cliente no portal do Azure para conseguir acessar esses workspaces.
 
 As vantagens dessa arquitetura são:
 * O cliente pode gerenciar o acesso aos logs usando seu próprio [acesso baseado em função](https://docs.microsoft.com/azure/role-based-access-control/overview).
@@ -49,7 +49,7 @@ As desvantagens dessa arquitetura são:
 * Os administradores do provedor de serviços devem estar provisionados no diretório do cliente.
 * O provedor de serviços não pode analisar os dados em seus clientes.
 
-### <a name="2-central---logs-are-stored-in-a-workspace-located-in-the-service-provider-tenant"></a>2. Central – os logs são armazenados em um espaço de trabalho localizado no locatário do provedor de serviços
+### <a name="2-central---logs-are-stored-in-a-workspace-located-in-the-service-provider-tenant"></a>2. Central – os logs são armazenados em um workspace localizado no locatário do provedor de serviços
 
 Nessa arquitetura, os logs não são armazenados nos locatários do cliente, mas apenas em um local central em uma das assinaturas do provedor de serviços. Os agentes que estão instalados nas VMs do cliente são configurados para enviar seus logs para esse workspace usando a ID de workspace e a chave secreta.
 
@@ -67,7 +67,7 @@ As desvantagens dessa arquitetura são:
 
 * Todos os dados de todos os clientes serão armazenados na mesma região com uma única fatura e as mesmas definições de retenção e configuração.
 
-* Os serviços de PaaS e de malha do Azure, como o Diagnóstico do Azure e os Logs de Auditoria do Azure, exigem que o espaço de trabalho esteja no mesmo locatário do recurso; portanto, eles não podem enviar os logs para o espaço de trabalho central.
+* Os serviços de PaaS e de malha do Azure, como o Diagnóstico do Azure e os Logs de Auditoria do Azure, exigem que o workspace esteja no mesmo locatário do recurso; portanto, eles não podem enviar os logs para o workspace central.
 
 * Todos os agentes de VM de todos os clientes serão autenticados no workspace central usando a mesma ID e chave do workspace. Não há nenhum método para bloquear os logs de um cliente específico sem interromper outros clientes.
 

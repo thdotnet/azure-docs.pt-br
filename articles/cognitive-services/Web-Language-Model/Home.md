@@ -44,7 +44,7 @@ A API de Modelo de Linguagem da Web dá suporte a quatro operações de pesquisa
 1. Assine o serviço.
 2. Baixe o [SDK](https://www.github.com/microsoft/cognitive-weblm-windows).
 3. Execute o código de exemplo do SDK.
-4. Consulte a [Referência da API](https://web.archive.org/web/20170503191852/westus.dev.cognitive.microsoft.com/docs/services/55de9ca4e597ed1fd4e2f104/operations/55de9ca4e597ed19b0de8a51) para obter detalhes completos dos pontos de extremidade, incluindo trechos de código em uma variedade de linguagens.
+4. Consulte a [Referência da API](https://web.archive.org/web/20170503191852/westus.dev.cognitive.microsoft.com/docs/services/55de9ca4e597ed1fd4e2f104/operations/55de9ca4e597ed19b0de8a51) para obter detalhes completos dos pontos de extremidade, incluindo snippets de código em uma variedade de linguagens.
 
 ## <a name="underlying-technology"></a>A tecnologia subjacente
 

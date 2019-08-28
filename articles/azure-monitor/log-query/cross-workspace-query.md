@@ -96,7 +96,7 @@ A identificação de um aplicativo no Application Insights pode ser realizada co
     ```
 
 ### <a name="performing-a-query-across-multiple-resources"></a>Executar uma consulta em vários recursos
-Você pode consultar vários recursos de qualquer uma das suas instâncias de recursos, que podem ser espaços de trabalho e aplicativos combinados.
+Você pode consultar vários recursos de qualquer uma das suas instâncias de recursos, que podem ser workspaces e aplicativos combinados.
     
 Exemplo de consulta em dois workspaces:    
 

@@ -43,7 +43,7 @@ Para o Banco de Dados SQL do Azure, o monitoramento e o alerta estão disponíve
 
 Para cenários de alto volume, você pode usar logs de Azure Monitor para monitoramento e alertas. Azure Monitor é um serviço do Azure separado que permite a análise em logs de diagnóstico e telemetria coletados em um espaço de trabalho de potencialmente muitos serviços. Os logs de Azure Monitor fornecem uma linguagem de consulta interna e ferramentas de visualização de dados que permitem a análise de dados operacional. A solução Análise do SQL fornece várias exibições e consultas de monitoramento e alertas de pools elásticos e bancos de dados. Os logs de Azure Monitor também fornecem um designer de exibição personalizado.
 
-Os workspaces do OMS agora são chamados de workspaces do Log Analytics. As áreas de trabalho do Log Analytics e as soluções de análise são abertas no portal do Azure. O portal do Azure é o ponto de acesso mais novo, mas pode ser o que está por trás do portal do Operations Management Suite em algumas áreas.
+Os workspaces do OMS agora são chamados de workspaces do Log Analytics. Os workspaces do Log Analytics e as soluções de análise são abertas no portal do Azure. O portal do Azure é o ponto de acesso mais novo, mas pode ser o que está por trás do portal do Operations Management Suite em algumas áreas.
 
 ### <a name="create-performance-diagnostic-data-by-simulating-a-workload-on-your-tenants"></a>Criar dados de diagnóstico de desempenho simulando uma carga de trabalho em seus locatários 
 

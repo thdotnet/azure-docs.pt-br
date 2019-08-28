@@ -20,7 +20,7 @@ Este início rápido requer:
 
 ## <a name="create-a-project-and-import-required-modules"></a>Criar um projeto e importar os módulos necessários
 
-Crie um novo projeto usando seu IDE ou editor favorito. Em seguida, copie esse trecho de código para seu projeto em um arquivo denominado `sentence-length.js`.
+Crie um novo projeto usando seu IDE ou editor favorito. Em seguida, copie esse snippet de código para seu projeto em um arquivo denominado `sentence-length.js`.
 
 ```javascript
 const request = require('request');
@@ -53,7 +53,7 @@ if (!subscriptionKey) {
 
 ## <a name="configure-the-request"></a>Configurar a solicitação
 
-O método `request()`, disponibilizado por meio do módulo de solicitação, nos permite passar o método HTTP, a URL, os parâmetros de solicitação, os cabeçalhos e o JSON do corpo como um objeto `options`. Neste trecho de código, configuraremos a solicitação:
+O método `request()`, disponibilizado por meio do módulo de solicitação, nos permite passar o método HTTP, a URL, os parâmetros de solicitação, os cabeçalhos e o JSON do corpo como um objeto `options`. Neste snippet de código, configuraremos a solicitação:
 
 >[!NOTE]
 > Para saber mais sobre pontos de extremidade, rotas e parâmetros de solicitação, confira [API de Tradução de Texto 3.0: Interromper a frase](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence).

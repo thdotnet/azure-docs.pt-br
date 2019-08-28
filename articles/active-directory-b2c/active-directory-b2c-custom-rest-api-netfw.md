@@ -60,7 +60,7 @@ Visão geral:
 
 Conclua as etapas no artigo [Introdução às políticas personalizadas](active-directory-b2c-get-started-custom.md).
 
-## <a name="step-1-create-an-aspnet-web-api"></a>Etapa 1: Criar uma API Web ASP.NET
+## <a name="step-1-create-an-aspnet-web-api"></a>Etapa 1: Criar um ASP.NET Web API
 
 1. No Visual Studio, crie um projeto selecionando **Arquivo** > **Novo** > **Projeto**.
 1. Na janela **Novo Projeto**, selecione **Visual C#**  > **Web** > **Aplicativo Web ASP.NET (.NET Framework)** .

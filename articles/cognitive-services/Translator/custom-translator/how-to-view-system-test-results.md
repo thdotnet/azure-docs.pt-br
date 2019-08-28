@@ -103,5 +103,5 @@ Para atualizar configurações de implantação:
 ## <a name="next-steps"></a>Próximas etapas
 
 - Comece a usar o modelo de tradução personalizado implantado por meio da [API de Tradução de Texto V3 da Microsoft](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
-- Saiba mais [como gerenciar configurações](how-to-manage-settings.md) para compartilhar seu espaço de trabalho, gerenciar a chave de assinatura.
-- Aprenda [como migrar sua área de trabalho e projeto](how-to-migrate.md) de [Microsoft Translator Hub](https://hub.microsofttranslator.com)
+- Saiba mais [como gerenciar configurações](how-to-manage-settings.md) para compartilhar seu workspace, gerenciar a chave de assinatura.
+- Aprenda [como migrar seu workspace e projeto](how-to-migrate.md) de [Microsoft Translator Hub](https://hub.microsofttranslator.com)

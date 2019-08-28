@@ -39,5 +39,5 @@ ms.locfileid: "69534413"
 
    Pode demorar um pouco para o workspace ser criado.
 
-   Quando o processo é finalizado, será exibida uma mensagem de êxito da implantação. Para exibir o novo espaço de trabalho, selecione **Ir para o recurso**.
+   Quando o processo é finalizado, será exibida uma mensagem de êxito da implantação. Para exibir o novo workspace, selecione **Ir para o recurso**.
 

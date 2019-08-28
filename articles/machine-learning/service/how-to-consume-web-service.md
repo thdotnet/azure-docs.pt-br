@@ -59,7 +59,7 @@ Existem três maneiras de recuperar essas informações para serviços da Web im
     print(service.swagger_uri)
     ```
 
-* Você pode usar `Webservice.list` para recuperar uma lista de serviços da Web implementados para modelos em sua área de trabalho. Você pode adicionar filtros para restringir a lista de informações retornadas. Para obter mais informações sobre o que pode ser filtrado, consulte a documentação de referência do [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
+* Você pode usar `Webservice.list` para recuperar uma lista de serviços da Web implementados para modelos em seu workspace. Você pode adicionar filtros para restringir a lista de informações retornadas. Para obter mais informações sobre o que pode ser filtrado, consulte a documentação de referência do [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
 
     ```python
     services = Webservice.list(ws)
@@ -67,7 +67,7 @@ Existem três maneiras de recuperar essas informações para serviços da Web im
     print(services[0].swagger_uri)
     ```
 
-* Se você souber o nome do serviço implantado, você pode criar uma nova instância de `Webservice` e fornecer o nome do espaço de trabalho e o serviço como parâmetros. O novo objeto contém informações sobre o serviço implantado.
+* Se você souber o nome do serviço implantado, você pode criar uma nova instância de `Webservice` e fornecer o nome do workspace e o serviço como parâmetros. O novo objeto contém informações sobre o serviço implantado.
 
     ```python
     service = Webservice(workspace=ws, name='myservice')

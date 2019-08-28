@@ -41,7 +41,7 @@ Um certificado de codificação de dados é usado estritamente para criptografia
 O certificado precisa ser instalado em cada nó no cluster em `/var/lib/sfcerts`. A conta de usuário na qual o serviço está em execução (sfuser por padrão) **deve ter acesso de leitura** ao certificado instalado (ou seja, `/var/lib/sfcerts/TestCert.pem` no exemplo atual).
 
 ## <a name="encrypt-secrets"></a>Criptografar segredos
-O trecho a seguir pode ser usado para criptografar um segredo. Esse trecho só criptografa o valor; ele **não** assina o texto da codificação. **Você precisa usar** o mesmo certificado de codificação instalado no seu cluster para produzir texto codificado para valores do segredo.
+O snippet a seguir pode ser usado para criptografar um segredo. Esse snippet só criptografa o valor; ele **não** assina o texto da codificação. **Você precisa usar** o mesmo certificado de codificação instalado no seu cluster para produzir texto codificado para valores do segredo.
 
 ```console
 user@linux:$ echo "Hello World!" > plaintext.txt

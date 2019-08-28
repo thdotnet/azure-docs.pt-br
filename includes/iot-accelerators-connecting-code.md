@@ -19,7 +19,7 @@ ms.locfileid: "67172357"
 
 Esta seção descreve algumas das partes principais do código de exemplo e explica como se relacionam com o acelerador de solução de monitoramento remoto.
 
-O trecho de código a seguir mostra como as propriedades relatadas que descrevem os recursos do dispositivo são definidas. Essas propriedades incluem:
+O snippet a seguir mostra como as propriedades relatadas que descrevem os recursos do dispositivo são definidas. Essas propriedades incluem:
 
 - A localização do dispositivo para permitir que o acelerador de solução adicione o dispositivo ao mapa.
 - A versão atual do firmware.
@@ -37,15 +37,15 @@ O exemplo inclui várias funções de retorno de chamada que imprimem informaç�
 - **reported_state_callback**
 - **device_method_callback**
 
-O trecho de código a seguir mostra a função **device_method_callback**. Essa função determina a ação a ser tomada quando uma chamada de método é recebida do acelerador de solução. A função recebe uma referência para a estrutura de dados do **Resfriador** no parâmetro **userContextCallback**. O valor de **userContextCallback** é definido quando a função de retorno de chamada é configurada na função **principal**:
+O snippet a seguir mostra a função **device_method_callback**. Essa função determina a ação a ser tomada quando uma chamada de método é recebida do acelerador de solução. A função recebe uma referência para a estrutura de dados do **Resfriador** no parâmetro **userContextCallback**. O valor de **userContextCallback** é definido quando a função de retorno de chamada é configurada na função **principal**:
 
 [!code-cpp[Device method callback](~/iot-samples-c/samples/solutions/remote_monitoring_client/remote_monitoring.c?name=devicemethodcallback "Device method callback")]
 
-Quando o acelerador de solução chama o método de atualização de firmware, o exemplo desserializa a carga JSON e inicia um thread de segundo plano para concluir o processo de atualização. O trecho de código a seguir mostra o **do_firmware_update** que executa no thread:
+Quando o acelerador de solução chama o método de atualização de firmware, o exemplo desserializa a carga JSON e inicia um thread de segundo plano para concluir o processo de atualização. O snippet a seguir mostra o **do_firmware_update** que executa no thread:
 
 [!code-cpp[Firmware update thread](~/iot-samples-c/samples/solutions/remote_monitoring_client/remote_monitoring.c?name=firmwareupdate "Firmware update thread")]
 
-O trecho de código a seguir mostra como o cliente envia uma mensagem de telemetria ao acelerador de solução. As propriedades da mensagem incluem o esquema de mensagem para ajudar o acelerador de solução a exibir a telemetria no painel:
+O snippet a seguir mostra como o cliente envia uma mensagem de telemetria ao acelerador de solução. As propriedades da mensagem incluem o esquema de mensagem para ajudar o acelerador de solução a exibir a telemetria no painel:
 
 [!code-cpp[Send telemetry](~/iot-samples-c/samples/solutions/remote_monitoring_client/remote_monitoring.c?name=sendmessage "Send telemetry")]
 

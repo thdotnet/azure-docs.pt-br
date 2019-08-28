@@ -7,12 +7,12 @@ ms.service: governance
 ms.date: 04/22/2019
 ms.author: rithorn
 ms.topic: overview
-ms.openlocfilehash: 6ca8351e7294c5a9cdd9f594eb4524d04a27b5c1
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: c9bc02959c64baecf11e2d1651051cd9bdda61d7
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68516984"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060626"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Organizar seus recursos com grupos de gerenciamento do Azure
 
@@ -26,7 +26,7 @@ Por exemplo, aplique políticas a um grupo de gerenciamento que limite as regiõ
 
 ![Exemplo de uma árvore de hierarquia do grupo de gerenciamento](./media/tree.png)
 
-Crie uma hierarquia para que você possa aplicar uma política. Por exemplo, limitar as localizações de VM à região Oeste dos EUA no grupo "Produção". Essa política herdará as assinaturas do EA nesse grupo de gerenciamento e será aplicada a todas as VMs nessas assinaturas. Essa política de segurança não pode ser alterada pelo recurso ou pelo proprietário da assinatura, permitindo uma governança aprimorada.
+É possível criar uma hierarquia que aplica uma política, por exemplo, que limite os locais de VM à Região Oeste dos EUA no grupo chamado “Produção”. Essa política herdará as assinaturas do EA nesse grupo de gerenciamento e será aplicada a todas as VMs nessas assinaturas. Essa política de segurança não pode ser alterada pelo recurso ou pelo proprietário da assinatura, permitindo uma governança aprimorada.
 
 Outro cenário em que você usaria grupos de gerenciamento é fornecer acesso de usuário a várias assinaturas. Ao mover várias assinaturas nesse grupo de gerenciamento, você poderá criar uma atribuição de [RBAC](../../role-based-access-control/overview.md) (controle de acesso baseado em função) no grupo de gerenciamento, que herdará esse acesso a todas as assinaturas.
 Uma atribuição no grupo de gerenciamento pode permitir que os usuários tenham acesso a tudo o que precisam em vez de fazer script de atribuições de RBAC em várias assinaturas.
@@ -55,7 +55,7 @@ Esse grupo de gerenciamento raiz é compilado na hierarquia para que todos os gr
   - As novas assinaturas usam como padrão automaticamente o grupo de gerenciamento raiz quando criadas.
 - Todos os clientes do Azure podem ver o grupo de gerenciamento raiz, mas nem todos os clientes têm acesso para gerenciá-lo.
   - Qualquer pessoa que tenha acesso a uma assinatura pode ver o contexto no qual essa assinatura está na hierarquia.  
-  - Ninguém recebeu o acesso padrão ao grupo de gerenciamento raiz. Os administradores globais do Azure AD são os únicos usuários que podem se elevar para obter acesso.  Depois de obter acesso, os administradores globais podem atribuir qualquer função de RBAC a outros usuários para o gerenciamento.  
+  - Ninguém recebeu o acesso padrão ao grupo de gerenciamento raiz. Os administradores globais do Azure AD são os únicos usuários que podem se elevar para obter acesso.  Depois de obter acesso ao grupo de gerenciamento raiz, os administradores globais podem atribuir qualquer função de RBAC a outros usuários para gerenciá-la.  
 
 > [!IMPORTANT]
 > Qualquer atribuição de acesso de usuário ou atribuição de política no grupo de gerenciamento raiz **se aplica a todos os recursos do diretório**.

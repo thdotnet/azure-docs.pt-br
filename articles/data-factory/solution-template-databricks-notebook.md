@@ -37,15 +37,15 @@ Para manter esse modelo simples, não é criado um gatilho agendado. Você pode 
 
 1.  Crie uma **conta de armazenamento de blobs** e um contêiner chamado `sinkdata` para ser usado como **coletor**. Anote o **nome da conta de armazenamento**, o **nome do contêiner** e a **chave de acesso**, pois eles são utilizados posteriormente no modelo.
 
-2.  Verifique se você tem um **espaço de trabalho do Azure Databricks** ou crie um novo.
+2.  Verifique se você tem um **workspace do Azure Databricks** ou crie um novo.
 
-1.  **Importe o notebook para ETL**. Importe o notebook Transform abaixo para o espaço de trabalho Databricks. (Não precisa estar no mesmo local que abaixo, mas lembre-se do caminho que você escolher para uso posterior.) Importe o notebook da seguinte URL inserindo-a no campo URL: `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`. Selecione **Importar**.
+1.  **Importe o notebook para ETL**. Importe o notebook Transform abaixo para o workspace Databricks. (Não precisa estar no mesmo local que abaixo, mas lembre-se do caminho que você escolher para uso posterior.) Importe o notebook da seguinte URL inserindo-a no campo URL: `https://adflabstaging1.blob.core.windows.net/share/Transformations.html`. Selecione **Importar**.
 
     ![2](media/solution-template-Databricks-notebook/Databricks-tutorial-image02.png)
 
     ![3](media/solution-template-Databricks-notebook/Databricks-tutorial-image03.png)  
 
-1.  Agora vamos atualizar o notebook **Transformation** com suas **informações de conexão de armazenamento** (nome e chave de acesso). Acesse **comando 5** no notebook importado acima, substitua-o pelo trecho de código abaixo depois de substituir os valores destacados. Assegure-se de que essa conta seja a mesma conta de armazenamento criada anteriormente e que tenha o contêiner `sinkdata`.
+1.  Agora vamos atualizar o notebook **Transformation** com suas **informações de conexão de armazenamento** (nome e chave de acesso). Acesse **comando 5** no notebook importado acima, substitua-o pelo snippet de código abaixo depois de substituir os valores destacados. Assegure-se de que essa conta seja a mesma conta de armazenamento criada anteriormente e que tenha o contêiner `sinkdata`.
 
     ```python
     # Supply storageName and accessKey values  

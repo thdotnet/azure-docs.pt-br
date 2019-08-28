@@ -109,7 +109,7 @@ Antes de definir o trabalho do Stream Analytics, você deve preparar os dados, q
 
     ![Crie o nome do projeto](./media/quick-create-vs-code/create-project-name.png)
 
-3. O novo projeto será adicionado ao seu espaço de trabalho. Um projeto ASA consiste no script de consulta **(*.asaql)**, um arquivo **JobConfig.json** e um arquivo de configuração **asaproj.json**.
+3. O novo projeto será adicionado ao seu workspace. Um projeto ASA consiste no script de consulta **(*.asaql)** , um arquivo **JobConfig.json** e um arquivo de configuração **asaproj.json**.
 
    ![Arquivos do projeto do Stream Analytics no VS Code](./media/quick-create-vs-code/asa-project-files.png)
 
@@ -185,7 +185,7 @@ A compilação de scripts faz duas coisas: verificar a sintaxe e gerar os modelo
 
 Há duas maneiras para disparar a compilação de scripts:
 
-1. Selecione o script do espaço de trabalho e, em seguida, dispare a compilação na paleta de comandos. 
+1. Selecione o script do workspace e, em seguida, dispare a compilação na paleta de comandos. 
 
    ![Usar a paleta de comandos do VS Code para compilar o script](./media/quick-create-vs-code/compile-script1.png)
 

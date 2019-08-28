@@ -162,7 +162,7 @@ O arquivo **provisionSample.yaml** contém os seguintes nós:
               hardwareId: SAMPLE_SENSOR_TEMPERATURE
     ```
     > [!NOTE]
-    > Verifique se as chaves `dataType` e `hardwareId` também estão alinhadas com as instruções acima desse trecho de código. Verifique também se o editor não substitui espaços por tabulações. 
+    > Verifique se as chaves `dataType` e `hardwareId` também estão alinhadas com as instruções acima desse snippet. Verifique também se o editor não substitui espaços por tabulações. 
 
 Salve e feche o arquivo provisionSample.yaml. No próximo tutorial, você adicionará outras informações a esse arquivo e provisionará o prédio de exemplo dos Gêmeos Digitais do Azure.
 

@@ -85,7 +85,7 @@ Você pode usar e modificar [este modelo de exemplo](https://github.com/Azure-Sa
 
 * Cria um cluster do Service Fabric de cinco nós
 * Cria um espaço de trabalho do Log Analytics e a solução do Service Fabric
-* Configura o agente do Log Analytics para coletar e enviar contadores de desempenho de exemplo 2 para o espaço de trabalho
+* Configura o agente do Log Analytics para coletar e enviar contadores de desempenho de exemplo 2 para o workspace
 * Configura o WAD para coletar o Service Fabric e as envia-o para as tabelas de armazenamento do Azure (WADServiceFabric*EventTable)
 * Configura o espaço de trabalho do Log Analytics para ler os eventos dessas tabelas
 

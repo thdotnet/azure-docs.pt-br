@@ -77,7 +77,7 @@ Siga estas etapas para configurar a conta de armazenamento para o cofre dos Serv
 
 ## <a name="view-reports-in-power-bi"></a>Exibir relatórios no Power BI
 Depois de configurar uma conta de armazenamento para relatórios usando um cofre dos Serviços de Recuperação, leva cerca de 24 horas para os dados de relatório começarem a fluir. Após 24 horas da configuração da conta de armazenamento, siga as etapas a seguir para exibir relatórios no Power BI.
-Se você quiser personalizar e compartilhar o relatório, criar um espaço de trabalho e execute as seguintes etapas
+Se você quiser personalizar e compartilhar o relatório, criar um workspace e execute as seguintes etapas
 
 1. [Entre](https://powerbi.microsoft.com/landing/signin/) no Power BI.
 2. Navegue até **aplicativos > obter mais aplicativos do Microsoft Appsource**. Siga as etapas na documentação do [Power BI para se conectar a um serviço](https://powerbi.microsoft.com/documentation/powerbi-content-packs-services/).

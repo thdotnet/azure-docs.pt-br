@@ -529,7 +529,7 @@ O intervalo de tempo padrão é definido para 10 segundos. Como essa configuraç
 
 ## <a name="configure-the-runtime-to-remove-unused-container-images"></a>Configurar a execução para remover as imagens de contêiner não utilizadas
 
-Você pode configurar o cluster do Service Fabric para remover as imagens de contêiner não utilizadas do nó. Essa configuração permite que o espaço em disco seja recapturado se houver imagens de contêiner demais no nó. Para habilitar esse recurso, atualize a seção [Hosting](service-fabric-cluster-fabric-settings.md#hosting) no manifesto do cluster, conforme mostrado no seguinte trecho: 
+Você pode configurar o cluster do Service Fabric para remover as imagens de contêiner não utilizadas do nó. Essa configuração permite que o espaço em disco seja recapturado se houver imagens de contêiner demais no nó. Para habilitar esse recurso, atualize a seção [Hosting](service-fabric-cluster-fabric-settings.md#hosting) no manifesto do cluster, conforme mostrado no seguinte snippet: 
 
 
 ```json

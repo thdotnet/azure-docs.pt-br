@@ -1,7 +1,7 @@
 ---
-title: Migrar espaço de trabalho e projetos do Hub do Microsoft Translator? - Tradutor Personalizado
+title: Migrar workspace e projetos do Hub do Microsoft Translator? - Tradutor Personalizado
 titleSuffix: Azure Cognitive Services
-description: Migre o espaço de trabalho e os projetos do Hub para o Tradutor Personalizado.
+description: Migre o workspace e os projetos do Hub para o Tradutor Personalizado.
 author: swmachan
 manager: nitinme
 ms.service: cognitive-services
@@ -16,9 +16,9 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 07/29/2019
 ms.locfileid: "68595741"
 ---
-# <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Migrar espaço de trabalho e projetos do Hub para o Tradutor Personalizado
+# <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Migrar workspace e projetos do Hub para o Tradutor Personalizado
 
-É possível migrar o espaço de trabalho e os projetos do [Hub do Microsoft Translator](https://hub.microsofttranslator.com/) facilmente para o Tradutor Personalizado. A migração é iniciada no Hub da Microsoft selecionando um espaço de trabalho ou um projeto, selecionando um espaço de trabalho no Tradutor Personalizado e, em seguida, selecionando os treinamentos que você deseja transferir. Depois que a migração é iniciada, as configurações de treinamento selecionadas serão transferidas com todos os documentos relevantes. Modelos implantados são treinados e podem ser implantados automaticamente após a conclusão.
+É possível migrar o workspace e os projetos do [Hub do Microsoft Translator](https://hub.microsofttranslator.com/) facilmente para o Tradutor Personalizado. A migração é iniciada no Hub da Microsoft selecionando um workspace ou um projeto, selecionando um workspace no Tradutor Personalizado e, em seguida, selecionando os treinamentos que você deseja transferir. Depois que a migração é iniciada, as configurações de treinamento selecionadas serão transferidas com todos os documentos relevantes. Modelos implantados são treinados e podem ser implantados automaticamente após a conclusão.
 
 Estas ações são executadas durante a migração:
 * Todos os documentos e as definições do projeto terão seus nomes transferidos com a adição de "hub_" como prefixo no nome. Os dados de teste e ajuste gerados automaticamente serão denominados hub_systemtune_\<modelid> ou hub_systemtest_\<modelid>.
@@ -29,19 +29,19 @@ Estas ações são executadas durante a migração:
 > [!Note]
 > Para que um treinamento tenha sucesso, o tradutor personalizado requer um mínimo de 10.000 frases extraídas exclusivas. O tradutor personalizado não pode conduzir um treinamento com menos do que o [mínimo sugerido](sentence-alignment.md#suggested-minimum-number-of-extracted-and-aligned-sentences).
 
-## <a name="find-custom-translator-workspace-id"></a>Encontrar a ID do espaço de trabalho do Tradutor Personalizado
+## <a name="find-custom-translator-workspace-id"></a>Encontrar a ID do workspace do Tradutor Personalizado
 
-Para migrar o espaço de trabalho do [Hub do Microsoft Translator](https://hub.microsofttranslator.com/), será necessária uma ID do espaço de trabalho de destino no Tradutor Personalizado. O espaço de trabalho de destino no Tradutor Personalizado é onde todos os espaços de trabalho e projetos do Hub deverão ser migrados.
+Para migrar o workspace do [Hub do Microsoft Translator](https://hub.microsofttranslator.com/), será necessária uma ID do workspace de destino no Tradutor Personalizado. O workspace de destino no Tradutor Personalizado é onde todos os workspaces e projetos do Hub deverão ser migrados.
 
-Você encontrará a ID do espaço de trabalho de destino na página Configurações do Tradutor Personalizado:
+Você encontrará a ID do workspace de destino na página Configurações do Tradutor Personalizado:
 
 1. Acesse a página "Configuração" no portal do Tradutor Personalizado.
 
-2. Você encontrará a ID do espaço de trabalho na seção Informações Básicas.
+2. Você encontrará a ID do workspace na seção Informações Básicas.
 
-    ![Como localizar a ID do espaço de trabalho de destino](media/how-to/how-to-find-destination-ws-id.png)
+    ![Como localizar a ID do workspace de destino](media/how-to/how-to-find-destination-ws-id.png)
 
-3. Mantenha a ID do espaço de trabalho de destino para consultar durante o processo de migração.
+3. Mantenha a ID do workspace de destino para consultar durante o processo de migração.
 
 ## <a name="migrate-a-project"></a>Migrar um projeto
 
@@ -58,17 +58,17 @@ Para migrar um projeto:
     ![Como migrar do Hub](media/how-to/how-to-migrate-from-hub.png)
 
 4. Ao pressionar o link de migração, você verá um formulário permitindo:
-   * Especificar o espaço de trabalho que deseja transferir para o Tradutor Personalizado
+   * Especificar o workspace que deseja transferir para o Tradutor Personalizado
    * Indicar se deseja transferir todos os treinamentos bem-sucedidos ou apenas os treinamentos implantados. Por padrão, todos os treinamentos bem-sucedidos serão transferidos.
    * Indicar se deseja que o treinamento seja implantado automaticamente após a conclusão. Por padrão, o treinamento não será implantado automaticamente após a conclusão.
 
 5. Clique em "Enviar Solicitação".
 
-## <a name="migrate-a-workspace"></a>Migrar um espaço de trabalho
+## <a name="migrate-a-workspace"></a>Migrar um workspace
 
-Além de migrar um único projeto, você também poderá migrar todos os projetos com treinamentos bem-sucedidos em um espaço de trabalho. Isso fará com que cada projeto no espaço de trabalho seja avaliado como se o link de migração tivesse sido pressionado. Esse recurso é adequado para usuários com vários projetos que desejam migrar todos eles para o Tradutor Personalizado com as mesmas configurações. Uma migração de espaço de trabalho pode ser iniciada na página Configurações do Hub de Tradução.
+Além de migrar um único projeto, você também poderá migrar todos os projetos com treinamentos bem-sucedidos em um workspace. Isso fará com que cada projeto no workspace seja avaliado como se o link de migração tivesse sido pressionado. Esse recurso é adequado para usuários com vários projetos que desejam migrar todos eles para o Tradutor Personalizado com as mesmas configurações. Uma migração de workspace pode ser iniciada na página Configurações do Hub de Tradução.
 
-Para migrar um espaço de trabalho:
+Para migrar um workspace:
 
 1. Entre no Hub do Microsoft Translator.
 
@@ -84,7 +84,7 @@ Para migrar um espaço de trabalho:
 
     b. Todos os treinamentos bem-sucedidos: selecionar essa opção migrará todos os treinamentos e documentos relacionados.
 
-    c. Insira a ID do espaço de trabalho de destino no Tradutor Personalizado.
+    c. Insira a ID do workspace de destino no Tradutor Personalizado.
 
     ![Como migrar do Hub](media/how-to/how-to-migrate-from-hub-screen.png)
 
@@ -92,7 +92,7 @@ Para migrar um espaço de trabalho:
 
 ## <a name="migration-history"></a>Histórico de migração
 
-Após solicitar a migração do espaço de trabalho/projeto do Hub, você localizará o histórico de migração na página Configurações do Tradutor Personalizado.
+Após solicitar a migração do workspace/projeto do Hub, você localizará o histórico de migração na página Configurações do Tradutor Personalizado.
 
 Para exibir o histórico de migração, siga estas etapas:
 
