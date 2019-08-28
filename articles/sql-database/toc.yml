@@ -238,7 +238,7 @@
     - name: Plataforma como serviço
       items:
         - name: Documentação da plataforma como serviço
-          href: sql-database-paas.yml
+          href: sql-database-paas-index.yml
         - name: Continuidade dos negócios
           href: sql-database-business-continuity.md
         - name: Alta disponibilidade
