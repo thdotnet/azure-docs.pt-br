@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
-ms.openlocfilehash: dcbec817f771324219a68de96eb5dd262a887fc1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d8ecfb53b78277e4b0e4a85d60fb6712d0bc2292
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449040"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114828"
 ---
 # <a name="example-use-the-large-scale-feature"></a>Exemplo: Use o recurso de larga escala
 
@@ -32,7 +32,7 @@ Os exemplos são gravados em C#, usando a biblioteca de clientes da API de Detec
 
 Quando você usa uma biblioteca de clientes da API de Detecção Facial, a chave de assinatura e o ponto de extremidade de assinatura são passados para o construtor da classe FaceClient. Por exemplo:
 
-```CSharp
+```csharp
 string SubscriptionKey = "<Subscription Key>";
 // Use your own subscription endpoint corresponding to the subscription key.
 string SubscriptionEndpoint = "https://westus.api.cognitive.microsoft.com";
@@ -73,7 +73,7 @@ Adicione todas as faces e pessoas do PersonGroup ao novo LargePersonGroup. Para 
 
 A tabela anterior é uma comparação de operações de nível de lista entre FaceList e LargeFaceList. Como demonstrado, o LargeFaceList vem com novas operações, Treinar e Obter Status de Treinamento, quando comparado ao FaceList. O treinamento do LargeFaceList é um requisito para a operação [FindSimilar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). O treinamento não é obrigatório para FaceList. O snippet a seguir é uma função auxiliar para aguardar o treinamento de um LargeFaceList:
 
-```CSharp
+```csharp
 /// <summary>
 /// Helper function to train LargeFaceList and wait for finish.
 /// </summary>
@@ -123,7 +123,7 @@ private static async Task TrainLargeFaceList(
 
 Anteriormente, um uso típico do FaceList com adição de faces e FindSimilar era semelhante ao seguinte:
 
-```CSharp
+```csharp
 // Create a FaceList.
 const string FaceListId = "myfacelistid_001";
 const string FaceListName = "MyFaceListDisplayName";
@@ -156,7 +156,7 @@ using (Stream stream = File.OpenRead(QueryImagePath))
 
 Ao migrá-lo para o LargeFaceList, ele deve se tornar o seguinte:
 
-```CSharp
+```csharp
 // Create a LargeFaceList.
 const string LargeFaceListId = "mylargefacelistid_001";
 const string LargeFaceListName = "MyLargeFaceListDisplayName";
@@ -233,7 +233,7 @@ Se uma latência relativamente longa for aceitável, não será necessário acio
 
 Digamos que haja uma função `TrainLargePersonGroup` semelhante a `TrainLargeFaceList`. Uma implementação típica de treinamento autônomo em um objeto LargePersonGroup invocando a classe [`Timer`](https://msdn.microsoft.com/library/system.timers.timer(v=vs.110).aspx), em `System.Timers`, seria:
 
-```CSharp
+```csharp
 private static void Main()
 {
     // Create a LargePersonGroup.

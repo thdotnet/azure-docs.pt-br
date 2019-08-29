@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: e5088cfa417c76933be6785188f2b173b7b461d0
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 2ea124ecf6786142ac1703dab1e267b225751079
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68772568"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035935"
 ---
 # <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Explore o serviço do Azure Machine Learning com notebooks Jupyter
 
@@ -67,4 +67,4 @@ Explore os [notebooks de exemplo](https://aka.ms/aml-notebooks) para descobrir o
 
 - [Treinar e implantar um modelo de classificação de imagem com MNIST](tutorial-train-models-with-aml.md)
 
-- [Preparar os dados e usar aprendizado de máquina automatizado para treinar um modelo de regressão com o conjunto de dados de táxi de NYC](tutorial-data-prep.md)
+- [Preparar os dados e usar aprendizado de máquina automatizado para treinar um modelo de regressão com o conjunto de dados de táxi de NYC](tutorial-auto-train-models.md)

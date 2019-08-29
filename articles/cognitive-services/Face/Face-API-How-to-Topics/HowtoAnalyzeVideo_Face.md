@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: b175e68277ab456bea7eaa7b82619d61e45bf722
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e2166354fb45d24e117156e917f4da726ee8406f
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442736"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114337"
 ---
 # <a name="example-how-to-analyze-videos-in-real-time"></a>Exemplo: Como analisar vídeos em tempo real
 
@@ -36,7 +36,7 @@ Há várias maneiras de resolver o problema de execução da análise quase em t
 
 O design mais simples para um sistema de análise em tempo quase real é um loop infinito, no qual cada iteração captura um quadro, analisa-o e, em seguida, consome o resultado:
 
-```CSharp
+```csharp
 while (true)
 {
     Frame f = GrabFrame();
@@ -54,7 +54,7 @@ Se nossa análise consistiu em um algoritmo leve do lado do cliente, essa aborda
 
 Enquanto um loop single-threaded simples faz sentido para um algoritmo leve do lado do cliente, ele não se ajusta bem à latência envolvida em chamadas à API na nuvem. A solução para esse problema é permitir que as chamadas à API de execução longa sejam executadas em paralelo com a captura de quadros. No C#, podemos conseguir isso usando o paralelismo baseado em Tarefa, por exemplo:
 
-```CSharp
+```csharp
 while (true)
 {
     Frame f = GrabFrame();
@@ -75,7 +75,7 @@ Esse código inicia cada análise em uma Tarefa separada, que pode ser executada
 
 Em nosso sistema final "produtor-consumidor", temos um thread produtor que se assemelha ao nosso loop infinito anterior. No entanto, em vez de consumir os resultados da análise assim que estiverem disponíveis, o produtor simplesmente coloca as tarefas em uma fila para acompanhá-las.
 
-```CSharp
+```csharp
 // Queue that will contain the API call tasks. 
 var taskQueue = new BlockingCollection<Task<ResultWrapper>>();
      
@@ -112,7 +112,7 @@ while (true)
 
 Também temos um thread consumidor que remove as tarefas da fila, aguarda sua conclusão e exibe o resultado ou aciona a exceção gerada. Usando a fila, podemos garantir que os resultados sejam consumidos um de cada vez, na ordem correta, sem limitar a taxa máxima de quadros do sistema.
 
-```CSharp
+```csharp
 // Consumer thread. 
 while (true)
 {
@@ -144,7 +144,7 @@ A biblioteca contém a classe FrameGrabber, que implementa o sistema produtor-co
 
 Para ilustrar algumas das possibilidades, há dois aplicativos de exemplo que usam a biblioteca. O primeiro é um aplicativo de console simples e uma versão simplificada do que é reproduzido abaixo. Ele captura quadros da webcam padrão e envia-os para a API de Detecção Facial para a detecção facial.
 
-```CSharp
+```csharp
 using System;
 using VideoFrameAnalyzer;
 using Microsoft.ProjectOxford.Face;

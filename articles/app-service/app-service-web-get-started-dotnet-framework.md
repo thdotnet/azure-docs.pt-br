@@ -10,17 +10,16 @@ ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 8dc062a1c9490a03aa5369dc103db750d7531140
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 6c32415e750964e94129a4a6f9cf3812fe9117b5
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635265"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70067272"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Criar um aplicativo Web do ASP.NET Framework no Azure
 
@@ -43,7 +42,7 @@ Se você já instalou o Visual Studio 2017:
 
 No Visual Studio, crie um projeto selecionando **Arquivo > Novo > Projeto**. 
 
-Na caixa de diálogo **Novo Projeto**, clique em **Visual C# > Web > Aplicativo Web ASP.NET (.NET Framework)**.
+Na caixa de diálogo **Novo Projeto**, clique em **Visual C# > Web > Aplicativo Web ASP.NET (.NET Framework)** .
 
 Nomeie o aplicativo como _myFirstAzureWebApp_ e clique em **OK**.
    
@@ -101,7 +100,7 @@ Na caixa de diálogo **Configurar Plano de Hospedagem**, use as configurações 
 | Configuração | Valor sugerido | DESCRIÇÃO |
 |-|-|-|
 |Plano do Serviço de Aplicativo| myAppServicePlan | O nome do plano do Serviço de Aplicativo. |
-| Local padrão | Europa Ocidental | O datacenter onde o aplicativo Web está hospedado. |
+| Location | Europa Ocidental | O datacenter onde o aplicativo Web está hospedado. |
 | Tamanho | Grátis | O [Tipo de preço](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) determina os recursos de hospedagem. |
 
 Selecione **OK**.

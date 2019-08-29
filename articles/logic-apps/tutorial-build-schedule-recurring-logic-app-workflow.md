@@ -6,16 +6,17 @@ ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
+ms.manager: carmonm
 ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/12/2018
-ms.openlocfilehash: ebc6388f1ebc7546ffda07095ead50797bde4e8b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ec29eef7e733155b205d4feda844883bbc4496c9
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58884679"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051753"
 ---
 # <a name="check-traffic-on-a-schedule-with-azure-logic-apps"></a>Verificar o tráfego em uma agenda com os Aplicativos Lógicos do Azure
 
@@ -35,17 +36,17 @@ Quando terminar, o aplicativo lógico ficará parecido com este fluxo de trabalh
 
 ![Aplicativo lógico de alto nível](./media/tutorial-build-scheduled-recurring-logic-app-workflow/check-travel-time-overview.png)
 
-Caso você não tenha uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">crie uma conta gratuita do Azure</a> antes de começar.
+Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Uma conta de email de qualquer provedor de email compatível com os Aplicativos Lógicos, como o Outlook do Office 365, o Outlook.com ou o Gmail. Para outros provedores, [revise a lista de conectores aqui](https://docs.microsoft.com/connectors/). Este guia de início rápido usa uma conta do Outlook.com. Se você usar uma conta de email diferente, as etapas gerais serão as mesmas, mas a interface do usuário poderá parecer um pouco diferente.
 
-* Para obter o tempo de viagem de uma rota, você precisará de uma chave de acesso para a API do Bing Mapas. Para obter essa chave, siga as etapas para saber <a href="https://msdn.microsoft.com/library/ff428642.aspx" target="_blank">como obter uma chave do Bing Mapas</a>. 
+* Para obter o tempo de viagem de uma rota, você precisará de uma chave de acesso para a API do Bing Mapas. Para obter essa chave, siga as etapas para saber [como obter uma chave do Bing Mapas](https://msdn.microsoft.com/library/ff428642.aspx). 
 
 ## <a name="sign-in-to-the-azure-portal"></a>Entre no Portal do Azure
 
-Entre no <a href="https://portal.azure.com" target="_blank">portal do Azure</a> com suas credenciais da conta do Azure.
+Entre no [portal do Azure](https://portal.azure.com) com suas credenciais da conta do Azure.
 
 ## <a name="create-your-logic-app"></a>Criar seu aplicativo lógico
 
@@ -78,7 +79,7 @@ Em seguida, adicione o [gatilho](../logic-apps/logic-apps-overview.md#logic-app-
 
    ![Localizar e adicionar o gatilho “Agenda – Recorrência”](./media/tutorial-build-scheduled-recurring-logic-app-workflow/add-schedule-recurrence-trigger.png)
 
-2. Na forma **Recorrência**, escolha o botão de **reticências** (**...** ) e escolha **Renomear**. Renomeie o gatilho com esta descrição:```Check travel time every weekday morning```
+2. Na forma **Recorrência**, escolha o botão de **reticências** ( **...** ) e escolha **Renomear**. Renomeie o gatilho com esta descrição:```Check travel time every weekday morning```
 
    ![Renomear gatilho](./media/tutorial-build-scheduled-recurring-logic-app-workflow/rename-recurrence-schedule-trigger.png)
 
@@ -126,7 +127,7 @@ Agora que você tem um gatilho, adicione uma [ação](../logic-apps/logic-apps-o
    | Configuração | Valor | DESCRIÇÃO |
    | ------- | ----- | ----------- |
    | **Nome da Conexão** | BingMapsConnection | Forneça um nome para a conexão. | 
-   | **Chave de API** | <*your-Bing-Maps-key*> | Insira a chave do Bing Mapas que você recebeu anteriormente. Se você não tiver uma chave do Bing Mapas, saiba <a href="https://msdn.microsoft.com/library/ff428642.aspx" target="_blank">como obter uma chave</a>. | 
+   | **Chave de API** | <*your-Bing-Maps-key*> | Insira a chave do Bing Mapas que você recebeu anteriormente. Se você não tiver uma chave do Bing Mapas, saiba [como obter uma chave](https://msdn.microsoft.com/library/ff428642.aspx). | 
    | | | |  
 
 4. Renomeie a ação com esta descrição:```Get route and travel time with traffic```
@@ -194,7 +195,7 @@ Por padrão, a ação **Obter rota** anterior retorna o tempo de viagem atual co
 
       ![Digite esta expressão: "div(,60)"](./media/tutorial-build-scheduled-recurring-logic-app-workflow/initialize-variable-action-settings-2.png)
 
-   3. Coloque o cursor dentro da expressão entre o parêntese esquerdo (**(**) e a vírgula (**,**). 
+   3. Coloque o cursor dentro da expressão entre o parêntese esquerdo ( **(** ) e a vírgula ( **,** ). 
    Escolha **Conteúdo dinâmico**.
 
       ![Posicione o cursor, escolha "Conteúdo dinâmico"](./media/tutorial-build-scheduled-recurring-logic-app-workflow/initialize-variable-action-settings-3.png)
@@ -283,7 +284,7 @@ Agora, adicione uma ação que envia email quando o tempo de viagem excede seu l
 
       ![Inserir a expressão para calcular o adicional de tempo de viagem em minutos](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-2.png)
 
-   4. Coloque o cursor dentro da expressão entre o parêntese esquerdo (**(**) e a vírgula (**,**). Escolha **Conteúdo dinâmico**.
+   4. Coloque o cursor dentro da expressão entre o parêntese esquerdo ( **(** ) e a vírgula ( **,** ). Escolha **Conteúdo dinâmico**.
 
       ![Continuar a criar a expressão para calcular o adicional de tempo de viagem em minutos](./media/tutorial-build-scheduled-recurring-logic-app-workflow/send-email-body-settings-3.png)
 

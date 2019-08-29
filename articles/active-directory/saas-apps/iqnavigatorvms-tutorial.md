@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 579b35a06b74ffcef47ca0b41ff60bfdc4e0eb2b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dba50c984984363682efce1f09ef462b3c0c5def
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67099793"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078495"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqnavigator-vms"></a>Tutorial: Integração do Azure Active Directory ao IQNavigator VMS
 
@@ -114,7 +114,7 @@ Para configurar o logon único do Azure AD com o IQNavigator VMS, siga estas eta
     d. Na caixa de texto **Estado de Retransmissão**, digite uma URL usando o seguinte padrão: `https://<subdomain>.iqnavigator.com`
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com a URL de Resposta e o estado de Retransmissão reais. Contate a [equipe de suporte ao Cliente do IQNavigator VMS](https://www.beeline.com/iqn-product-support/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Esses valores não são reais. Atualize esses valores com a URL de Resposta e o estado de Retransmissão reais. Contate a [equipe de suporte ao Cliente do IQNavigator VMS](https://www.beeline.com/support-iqn/) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 5. O aplicativo IQNavigator espera o valor do identificador de usuário único na declaração do Identificador de Nome. O cliente pode mapear o valor correto para a declaração do Identificador de Nome. Nesse caso, mapeamos o UserPrincipalName do usuário para a finalidade da demonstração. Porém, de acordo com as configurações de sua organização, você deve mapear o valor correto para ele.
 
@@ -126,7 +126,7 @@ Para configurar o logon único do Azure AD com o IQNavigator VMS, siga estas eta
 
 ### <a name="configure-iqnavigator-vms-single-sign-on"></a>Configurar logon único do IQNavigator VMS
 
-Para configurar o logon único no lado do **IQNavigator VMS**, é necessário enviar a **URL de metadados de Federação do Aplicativo** para a [equipe de suporte do IQNavigator VMS](https://www.beeline.com/iqn-product-support/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **IQNavigator VMS**, é necessário enviar a **URL de metadados de Federação do Aplicativo** para a [equipe de suporte do IQNavigator VMS](https://www.beeline.com/support-iqn/). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -181,7 +181,7 @@ Nesta seção, você permite que Brenda Fernandes use o logon único do Azure co
 
 ### <a name="create-iqnavigator-vms-test-user"></a>Criar usuário de teste do IQNavigator VMS
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no IQNavigator VMS. Trabalhe com a  [equipe de suporte do IQNavigator VMS](https://www.beeline.com/iqn-product-support/) para adicionar os usuários na plataforma do IQNavigator VMS. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado Brenda Fernandes no IQNavigator VMS. Trabalhe com a  [equipe de suporte do IQNavigator VMS](https://www.beeline.com/support-iqn/) para adicionar os usuários na plataforma do IQNavigator VMS. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 
@@ -195,4 +195,4 @@ Ao clicar no bloco do IQNavigator VMS no Painel de Acesso, você deverá entrar 
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

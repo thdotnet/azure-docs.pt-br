@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: sngun
-ms.openlocfilehash: b1d8d2539ae89dfdb8feb2e38f00bf4440411d8a
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 9824e1468604763834e37abe94290d68d81077ab
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815146"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020119"
 ---
 # <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Tutorial: Desenvolver um aplicativo Web ASP.NET Core MVC com o Azure Cosmos DB usando o SDK do .NET 
 
@@ -120,22 +120,6 @@ Agora vamos adicionar os modelos, as exibições e os controladores ao aplicativ
    
    Os dados armazenados no Azure Cosmos DB são transferidos e armazenados como JSON. Para controlar a forma como os objetos são serializados/desserializados pelo JSON.NET, use o atributo **JsonProperty**, como demonstrado na classe **Item** criada. Além de poder controlar o formato do nome da propriedade inserido no JSON, você também pode renomear as propriedades do .NET, como fez com a propriedade **Concluído**. 
 
-### <a name="add-a-controller"></a>Adicionar um controlador
-
-1. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta **Controladores**, selecione **Adicionar** e **Controlador**. A caixa de diálogo **Adicionar Scaffold** aparecerá.
-
-1. Selecione **Controlador MVC – Vazio** e **Adicionar**.
-
-   ![Captura de tela da caixa de diálogo Adicionar Scaffold com a opção Controlador MVC – Vazio realçada](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
-
-1. Nomeie o novo controlador, **ItemController**, e substitua o código nesse arquivo pelo seguinte código:
-
-   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
-
-   O atributo **ValidateAntiForgeryToken** é usado aqui para ajudar a proteger esse aplicativo contra ataques de solicitação intersite forjada. Isso envolve mais do que apenas adicionar esse atributo, pois as exibições também precisam trabalhar com esse token antifalsificação. Para saber mais sobre o assunto e ver exemplos de como implementar isso corretamente, confira [Impedir solicitação intersite forjada][Preventing Cross-Site Request Forgery]. O código-fonte fornecido no [GitHub][GitHub] tem a implementação completa estabelecida.
-
-   Também usamos o atributo **Bind** no parâmetro de método para ajudar na proteção contra ataques overposting. Para obter mais detalhes, confira [Operações CRUD básicas no ASP.NET MVC][Basic CRUD Operations in ASP.NET MVC].
-
 ### <a name="add-views"></a>Adicionar exibições
 
 Em seguida, vamos criar as três exibições abaixo: 
@@ -190,6 +174,22 @@ E, finalmente, adicione um modo de exibição para editar um item com as seguint
    * Selecione **Adicionar**.
 
 Feito isso, feche todos os documentos cshtml no Visual Studio, já que você voltará a essas exibições mais tarde.
+
+### <a name="add-a-controller"></a>Adicionar um controlador
+
+1. No **Gerenciador de Soluções**, clique com o botão direito do mouse na pasta **Controladores**, selecione **Adicionar** e **Controlador**. A caixa de diálogo **Adicionar Scaffold** aparecerá.
+
+1. Selecione **Controlador MVC – Vazio** e **Adicionar**.
+
+   ![Captura de tela da caixa de diálogo Adicionar Scaffold com a opção Controlador MVC – Vazio realçada](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
+
+1. Nomeie o novo controlador, **ItemController**, e substitua o código nesse arquivo pelo seguinte código:
+
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
+
+   O atributo **ValidateAntiForgeryToken** é usado aqui para ajudar a proteger esse aplicativo contra ataques de solicitação intersite forjada. Isso envolve mais do que apenas adicionar esse atributo, pois as exibições também precisam trabalhar com esse token antifalsificação. Para saber mais sobre o assunto e ver exemplos de como implementar isso corretamente, confira [Impedir solicitação intersite forjada][Preventing Cross-Site Request Forgery]. O código-fonte fornecido no [GitHub][GitHub] tem a implementação completa estabelecida.
+
+   Também usamos o atributo **Bind** no parâmetro de método para ajudar na proteção contra ataques overposting. Para obter mais detalhes, confira [Operações CRUD básicas no ASP.NET MVC][Basic CRUD Operations in ASP.NET MVC].
 
 ## <a name="connect-to-cosmosdb"></a>Etapa 5: Conectar-se ao Azure Cosmos DB 
 

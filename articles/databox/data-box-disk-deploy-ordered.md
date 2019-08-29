@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 39d39b313cd2e65989989080d4cb0729b0be1e65
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: c1626542aba71f971ad96fe9f187ce9f1c1a99f3
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561462"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012936"
 ---
 # <a name="tutorial-order-an-azure-data-box-disk"></a>Tutorial: Solicitar um Azure Data Box Disk
 
@@ -68,7 +68,7 @@ Faça o seguinte para solicitar o Data Box Disk.
 
     |Configuração|Valor|
     |---|---|
-    |Assinatura|Selecione a assinatura para a qual o serviço Data Box está habilitado.<br> A assinatura está vinculada à sua conta de cobrança. |
+    |Subscription|Selecione a assinatura para a qual o serviço Data Box está habilitado.<br> A assinatura está vinculada à sua conta de cobrança. |
     |Tipo de transferência| Importar para o Azure|
     |País de origem | Selecione o país/região em que os dados residem no momento.|
     |Região do Azure de destino|Selecione a região do Azure para onde você deseja transferir dados.|
@@ -83,7 +83,7 @@ Faça o seguinte para solicitar o Data Box Disk.
     |Configuração|Valor|
     |---|---|
     |NOME|Forneça um nome amigável para acompanhar o pedido.<br> O nome pode ter entre 3 e 24 caracteres que podem ser letras, números e hífens. <br> O nome deve começar e terminar com uma letra ou um número. |
-    |Grupo de recursos| Use um grupo existente ou crie um novo. <br> Um grupo de recursos é um contêiner lógico para os recursos que podem ser gerenciados ou implantados juntos. |
+    |Resource group| Use um grupo existente ou crie um novo. <br> Um grupo de recursos é um contêiner lógico para os recursos que podem ser gerenciados ou implantados juntos. |
     |Região do Azure de destino| Selecione uma região para sua conta de armazenamento.<br> Atualmente, há suporte para contas de armazenamento em todas as regiões nos EUA, na Europa Setentrional e na Europa Ocidental, no Canadá e na Austrália. |
     |Tamanho estimado de dados em TB| Insira uma estimativa em TB. <br>Com base no tamanho dos dados, a Microsoft envia um número apropriado de SSDs de 8 TB (7 TB de capacidade utilizável). <br>A capacidade máxima de uso de 5 discos é de 35 TB. |
     |Chave de acesso do disco| Forneça a chave de acesso do disco se você marcar **Usar chave personalizada em vez da chave de acesso gerada pelo Azure**. <br> Forneça uma chave de 12 a 32 caracteres alfanuméricos que tenha pelo menos um caractere numérico e um caractere especial. Os caracteres especiais permitidos são `@?_+`. <br> Você pode optar por ignorar essa opção e usar a chave de acesso gerada pelo Azure para desbloquear os discos.|
@@ -97,11 +97,11 @@ Faça o seguinte para solicitar o Data Box Disk.
 
     |Configuração  |Valor  |
     |---------|---------|
-    |Grupo de recursos     | Se você pretende criar discos gerenciados de VHDs locais, crie um novo grupo de recursos. Use um grupo de recursos existente apenas se ele tiver sido criado para ordem do Data Box Disk para disco gerenciado pelo serviço Data Box. <br> Há suporte para apenas um grupo de recursos.|
+    |Resource group     | Se você pretende criar discos gerenciados de VHDs locais, crie um novo grupo de recursos. Use um grupo de recursos existente apenas se ele tiver sido criado para ordem do Data Box Disk para disco gerenciado pelo serviço Data Box. <br> Há suporte para apenas um grupo de recursos.|
 
     ![Ordem do Data Box Disk para o disco gerenciado](media/data-box-disk-deploy-ordered/order-managed-disks.png)
 
-    A conta de armazenamento especificada para os discos gerenciados é usada como uma conta de armazenamento de preparo. O serviço do Data Box faz upload dos VHDs na conta de armazenamento de preparo e, em seguida, os converte em discos gerenciados e os move para o grupo de recursos. Para obter mais informações, confira [Verificar o upload de dados para o Azure](data-box-disk-deploy-picked-up.md#verify-data-upload-to-azure).
+    A conta de armazenamento especificada para os discos gerenciados é usada como uma conta de armazenamento de preparo. O serviço do Data Box faz upload dos VHDs na conta de armazenamento de preparo e, em seguida, os converte em discos gerenciados e os move para o grupo de recursos. Para obter mais informações, confira [Verificar o upload de dados para o Azure](data-box-disk-deploy-upload-verify.md#verify-data-upload-to-azure).
 
 13. Clique em **Próximo**.
 

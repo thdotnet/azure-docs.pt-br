@@ -9,17 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 02/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 68c516ee7ca2d76339760ce0ad95590686250603
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 5dec08bd4bc0a63a419d2bdc63383348a69b02db
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521930"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70067462"
 ---
 # <a name="transform-and-protect-your-api"></a>Transformar e proteger sua API
 
@@ -75,8 +74,8 @@ A resposta original deve se parecer com esta:
 1. Selecione **API de Conferência de Demonstração**.
 2. Na parte superior da tela, selecione a guia **Design**.
 3. Selecione **Todas as operações**.
-4. Na seção **Processamento de saída**, clique no ícone **</>**.
-5. Posicione o cursor dentro do elemento **&lt;outbound&gt;**.
+4. Na seção **Processamento de saída**, clique no ícone **</>** .
+5. Posicione o cursor dentro do elemento **&lt;outbound&gt;** .
 6. Na janela à direita, em **Políticas de transformação**, clique em **+ Definir cabeçalho HTTP** duas vezes (para inserir dois snippets de código de política).
 
    ![Políticas](./media/transform-api/transform-api.png)
@@ -112,10 +111,10 @@ Para ver a resposta original:
 1.  Selecione **API de Conferência de Demonstração**.
 2.  Selecione **Todas as operações**.
 3.  Na parte superior da tela, selecione a guia **Design**.
-4.  Na seção **Processamento de saída**, clique no ícone **</>**.
-5.  Posicione o cursor dentro do elemento **&lt;outbound&gt;**.
+4.  Na seção **Processamento de saída**, clique no ícone **</>** .
+5.  Posicione o cursor dentro do elemento **&lt;outbound&gt;** .
 6.  Na janela à direita, em **Políticas de transformação**, clique em **+ Localizar e substituir cadeia de caracteres no corpo**.
-7.  Modifique seu código **find-and-replace** (no elemento **\<outbound\>**) para substituir a URL para corresponder ao gateway de APIM. Por exemplo: 
+7.  Modifique seu código **find-and-replace** (no elemento **\<outbound\>** ) para substituir a URL para corresponder ao gateway de APIM. Por exemplo:
 
         <find-and-replace from="://conferenceapi.azurewebsites.net" to="://apiphany.azure-api.net/conference"/>
 
@@ -128,10 +127,10 @@ Esta seção mostra como adicionar a proteção para a API de back-end configura
 1.  Selecione **API de Conferência de Demonstração**.
 2.  Selecione **Todas as operações**.
 3.  Na parte superior da tela, selecione a guia **Design**.
-4.  Na seção **Processamento de entrada**, clique no ícone **</>**.
-5.  Posicione o cursor dentro do elemento **&lt;inbound&gt;**.
-6.  Na janela à direita, em **Políticas de restrição de acesso**, clique em **+ Limit call rate per key (+ Limitar taxa de chamada por chave)**.
-7.  Mude o código **rate-limit-by-key** (no elemento **\<inbound\>**) para o código a seguir:
+4.  Na seção **Processamento de entrada**, clique no ícone **</>** .
+5.  Posicione o cursor dentro do elemento **&lt;inbound&gt;** .
+6.  Na janela à direita, em **Políticas de restrição de acesso**, clique em **+ Limit call rate per key (+ Limitar taxa de chamada por chave)** .
+7.  Mude o código **rate-limit-by-key** (no elemento **\<inbound\>** ) para o código a seguir:
 
         <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
 

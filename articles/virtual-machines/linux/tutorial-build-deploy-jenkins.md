@@ -6,19 +6,18 @@ manager: jpconnock
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: jenkins
 ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 7cd7b8f7b49915db9fcf17602429e47c1b9da95d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a62a302748cb7e60b6a857c686d1833ad499cc7a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901416"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70081664"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Tutorial: implantar seu aplicativo em máquinas virtuais do Linux no Azure usando o Jenkins e o Azure DevOps Services
 
@@ -133,7 +132,7 @@ Um ponto de extremidade de serviço permite que o Azure DevOps Services se conec
 
 1. Abra a guia **Versões** do hub **Build &amp; Versão**, abra **Grupos de implantação** e selecione **+ Novo**.
 2. Insira um nome para o grupo de implantação e uma descrição opcional. Em seguida, selecione **Criar**.
-3. Escolha o sistema operacional para sua máquina virtual de destino de implantação. Por exemplo, selecione **Ubuntu 16.04+**.
+3. Escolha o sistema operacional para sua máquina virtual de destino de implantação. Por exemplo, selecione **Ubuntu 16.04+** .
 4. Selecione **Usar um token de acesso pessoal no script para autenticação**.
 5. Selecione o link **Pré-requisitos do sistema**. Instale os pré-requisitos para seu sistema operacional.
 6. Selecione **Copiar script para área de transferência** para copiar o script.
@@ -166,7 +165,7 @@ Para criar um pipeline de lançamento no Azure Pipelines:
 2. Selecione o build concluído na lista suspensa realçada e selecione **Fila**.
 3. Escolha o link de versão na mensagem pop-up. Por exemplo:  "A versão **Versão-1** foi criada."
 4. Abra a guia **Logs** para observar a saída do console de versão.
-5. No navegador, abra a URL de um dos servidores adicionados ao grupo de implantação. Por exemplo, insira **http://{your-server-ip-address}**.
+5. No navegador, abra a URL de um dos servidores adicionados ao grupo de implantação. Por exemplo, insira **http://{your-server-ip-address}** .
 6. Acesse o repositório do Git de origem e modifique o conteúdo do título **h1** no arquivo app/views/index.jade com um texto alterado.
 7. Confirme a alteração.
 8. Depois de alguns minutos, você verá uma nova versão criada na página **Versões** do Azure DevOps. Abra a versão para ver a implantação acontecendo. Parabéns!

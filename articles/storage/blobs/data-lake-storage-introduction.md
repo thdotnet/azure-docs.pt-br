@@ -8,12 +8,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 3dea4dfc58bf087b8f6bc0a3f45646da5cb597ad
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: de2dc5068dc454925744688a43f49a855aac42f3
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847235"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991841"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Introdução ao Azure Data Lake Storage Gen2
 
@@ -64,7 +64,7 @@ A seguir estão as entidades equivalentes, conforme descrito pelos diferentes co
 | Conceito                                | Organização de nível superior | Organização de nível inferior                                            | Contêiner de dados |
 |----------------------------------------|------------------------|---------------------------------------------------------------------|----------------|
 | Blobs – Armazenamento de objetos de uso geral | Contêiner              | Diretório virtual (SDK somente – não fornece a manipulação atômica) | Blob           |
-| ADLS Gen2 – Armazenamento de Análise          | Sistema de arquivos             | Diretório                                                           | Arquivo           |
+| ADLS Gen2 – Armazenamento de Análise          | Contêiner            | Diretório                                                           | Arquivo           |
 
 ## <a name="supported-open-source-platforms"></a>Plataformas de software livre com suporte
 
