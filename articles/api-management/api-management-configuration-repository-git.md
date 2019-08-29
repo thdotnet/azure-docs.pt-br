@@ -9,16 +9,15 @@ editor: mattfarm
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: c371333dcc7db0b60ffa5f94d6e2d55ae500a4f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b4ee4ca2ede2e0a2d6d1af906cc34051c76353bd
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66241179"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073753"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Como salvar e definir a configuração de seu serviço de Gerenciamento de API usando o Git
 
@@ -53,7 +52,7 @@ Para exibir e definir as configurações do Git, clique no menu **Segurança** e
 ![Habilitar o GIT][api-management-enable-git]
 
 > [!IMPORTANT]
-> Quaisquer segredos que não estão definidos como valores chamado serão armazenados no repositório e permanecerão no seu histórico até que você desabilitar e reabilitar o acesso do Git. Valores nomeados fornecem um local seguro para gerenciar valores de constante de cadeia de caracteres, incluindo segredos, em todas as configurações de API e políticas, para que você não precise armazená-los diretamente em suas instruções de política. Para obter mais informações, consulte [como usar valores nomeados nas políticas de gerenciamento de API do Azure](api-management-howto-properties.md).
+> Os segredos que não estiverem definidos como valores nomeados serão armazenados no repositório e permanecerão em seu histórico até você desabilitar e reabilitar o acesso ao git. Os valores nomeados fornecem um local seguro para gerenciar valores de cadeia de caracteres constantes, incluindo segredos, em todas as políticas e configuração de API, para que você não precise armazená-los diretamente em suas instruções de política. Para obter mais informações, consulte [como usar valores nomeados em políticas de gerenciamento de API do Azure](api-management-howto-properties.md).
 >
 >
 
@@ -149,7 +148,7 @@ Para saber mais sobre como executar essa operação usando a API REST, confira [
 
 Os arquivos e pastas no repositório git local contêm as informações de configuração sobre a instância do serviço.
 
-| item | DESCRIÇÃO |
+| Item | Descrição |
 | --- | --- |
 | pasta api-management raiz |Contém a configuração de nível superior da instância do serviço |
 | pasta apis |Contém a configuração das APIs na instância do serviço |

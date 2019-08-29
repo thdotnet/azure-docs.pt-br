@@ -10,25 +10,24 @@ ms.assetid: f82eb283-a6e7-4923-a00b-4b4ccf7c4b5b
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2016
 ms.author: stefsch
 ms.custom: seodec18
-ms.openlocfilehash: aea51234d26e5dbaef836419c2a13a12f8083e6f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: adb7c246a9f8c8d202d45b58f4d22eeb8d51a773
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130697"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069971"
 ---
 # <a name="connect-securely-to-back-end-resources-from-an-app-service-environment"></a>Conectar-se com segurança a recursos de back-end em um Ambiente do Serviço de Aplicativo
 ## <a name="overview"></a>Visão geral
-Como um Ambiente do Serviço de Aplicativo sempre é criado **ou** em uma rede virtual do Azure Resource Manager, **ou** em uma [rede virtual][virtualnetwork] do modelo de implantação clássico, as conexões de saída de um Ambiente do Serviço de Aplicativo com outros recursos de back-end podem fluir exclusivamente pela rede virtual.  Com uma alteração recente feita em junho de 2016, os ASEs agora podem ser implantados nas redes virtuais que usam os intervalos de endereço público ou espaços de endereço RFC1918 (ou seja, endereços privados).  
+Como uma Ambiente do Serviço de Aplicativo é sempre criada em uma rede virtual Azure Resource Manager **ou** em uma [rede virtual][virtualnetwork]do modelo de implantação clássico, as conexões de saída de um ambiente do serviço de aplicativo para outros recursos de back-end pode fluir exclusivamente pela rede virtual.  Com uma alteração recente feita em junho de 2016, os ASEs agora podem ser implantados nas redes virtuais que usam os intervalos de endereço público ou espaços de endereço RFC1918 (ou seja, endereços privados).  
 
 Por exemplo, pode haver um SQL Server em execução em um cluster de máquinas virtuais com a porta 1433 bloqueada.  O ponto de extremidade pode ser ACLd, para permitir apenas acesso de outros recursos na mesma rede virtual.  
 
-Como outro exemplo, pontos de extremidade confidenciais podem ser executados localmente e conectados ao Azure via conexões [Site a Site][SiteToSite] ou do [Azure ExpressRoute][ExpressRoute].  Como resultado, apenas os recursos nas redes virtuais conectadas a túneis Site a Site ou de ExpressRoute poderão acessar pontos de extremidade locais.
+Como outro exemplo, pontos de extremidade confidenciais podem ser executados localmente e conectados ao Azure por meio de conexões [site a site][SiteToSite] ou [do Azure ExpressRoute][ExpressRoute] .  Como resultado, apenas os recursos nas redes virtuais conectadas a túneis Site a Site ou de ExpressRoute poderão acessar pontos de extremidade locais.
 
 Para todos esses cenários, aplicativos em execução em um ambiente do serviço de aplicativo serão capazes de se conectar com segurança aos diversos servidores e recursos.  Tráfego de saída de aplicativos que são executados em um ambiente do serviço de aplicativo para pontos de extremidade privados na mesma rede virtual (ou conectados à mesma rede virtual) passará apenas pela rede virtual.  O tráfego de saída para pontos de extremidade privados não passará pela Internet pública.
 
@@ -50,7 +49,7 @@ Uma configuração comum do SQL Server tem um ponto de extremidade escutando na 
 
 Há duas abordagens para restringir o tráfego para esse ponto de extremidade:
 
-* [Listas de controle de acesso a redes][NetworkAccessControlLists] (ACLs de rede)
+* [Listas de controle de acesso à rede][NetworkAccessControlLists] (ACLs de rede)
 * [Grupos de segurança de rede][NetworkSecurityGroups]
 
 ## <a name="restricting-access-with-a-network-acl"></a>Restringindo o acesso com uma ACL de rede
@@ -86,9 +85,9 @@ O resultado final é um conjunto de regras de segurança que bloqueiam o acesso 
 ![Regras de segurança de rede padrão][DefaultNetworkSecurityRules]
 
 ## <a name="getting-started"></a>Introdução
-Para começar a usar Ambientes de Serviço de Aplicativo, veja [Introdução ao ambiente de Serviço de Aplicativo][IntroToAppServiceEnvironment]
+Para se familiarizar com os ambientes de serviço de aplicativo, consulte [Introdução ao ambiente do serviço de aplicativo][IntroToAppServiceEnvironment]
 
-Para obter detalhes sobre como controlar o tráfego de entrada para seu Ambiente do Serviço de Aplicativo, confira [Como controlar o tráfego de entrada para um Ambiente do Serviço de Aplicativo][ControlInboundASE]
+Para obter detalhes sobre como controlar o tráfego de entrada para seu Ambiente do Serviço de Aplicativo, consulte controlando o [tráfego de entrada para um ambiente do serviço de aplicativo][ControlInboundASE]
 
 [!INCLUDE [app-service-web-try-app-service](../../../includes/app-service-web-try-app-service.md)]
 

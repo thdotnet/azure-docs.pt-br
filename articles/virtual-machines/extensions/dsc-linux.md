@@ -8,18 +8,17 @@ manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 4b0cd88cbb3729a3e81aeb5d6f43f417c8cb2f17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c37b81e08e5d9f150081a9dc12af51175e3f590c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64682760"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084713"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Extensão de DSC para Linux (Microsoft.OSTCExtensions.DSCForLinux)
 
@@ -42,7 +41,7 @@ A extensão DSCForLinux é publicada e suportada pela Microsoft. A extensão ins
 
 A extensão DSC Linux dá suporte a todas as [distribuições do Linux endossadas no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) exceto:
 
-| Distribuição | Versão |
+| Distribuição | Version |
 |---|---|
 | Debian | todas as versões |
 | Ubuntu| 18.04 |
@@ -67,7 +66,7 @@ Aqui estão todos os parâmetros de configuração pública com suporte:
 * `ConfigurationModeFrequencyMins`: (opcional, int) Especifica a frequência (em minutos) DSC garante que a configuração está no estado desejado.
 
 > [!NOTE]
-> Se você estiver usando uma versão < 2.3, parâmetro modo é o mesmo que ExtensionAction. Modo parece ser um termo sobrecarregado. Portanto, para evitar a confusão, ExtensionAction está sendo usado na versão 2.3 em diante. Para compatibilidade com versões anteriores, a extensão dá suporte ao modo e ExtensionAction. 
+> Se você estiver usando uma versão < 2.3, parâmetro modo é o mesmo que ExtensionAction. O modo parece ser um termo sobrecarregado. Portanto, para evitar a confusão, ExtensionAction está sendo usado na versão 2.3 em diante. Para compatibilidade com versões anteriores, a extensão dá suporte ao modo e ExtensionAction. 
 >
 
 ### <a name="12-protected-configuration"></a>1.2 Configuração protegida
@@ -304,7 +303,7 @@ Para saber a versão mais recente da extensão disponível, execute:
 $ azure vm extension list
 ```
 
-#### <a name="212-resource-manager"></a>2.1.2. Gerenciador de Recursos
+#### <a name="212-resource-manager"></a>2.1.2. Resource Manager
 Você pode mudar para o modo do Gerenciador de Recursos do Azure executando:
 ```
 $ azure config mode arm

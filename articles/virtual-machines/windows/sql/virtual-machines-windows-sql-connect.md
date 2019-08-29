@@ -8,19 +8,18 @@ manager: craigg
 tags: azure-resource-manager
 ms.assetid: aa5bf144-37a3-4781-892d-e0e300913d03
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 70e478ac70b7ab53f1357394f3a3cb0d92f41f00
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ae5c4cdd76f164d13da349c355a30d8b6dc83058
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075773"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102097"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Conecte-se a uma máquina virtual do SQL Server no Azure
 
@@ -40,9 +39,9 @@ Se você provisionar uma VM do SQL Server no Portal do Azure, terá a opção de
 
 As opções de conectividade incluem:
 
-| Opção | DESCRIÇÃO |
+| Opção | Descrição |
 |---|---|
-| **Pública** | Conectar-se ao SQL Server pela Internet |
+| **Público** | Conectar-se ao SQL Server pela Internet |
 | **Privada** | Conectar-se ao SQL Server na mesma rede virtual |
 | **Local** | Conectar-se ao SQL Server localmente, na mesma máquina virtual | 
 
@@ -102,7 +101,7 @@ Você pode alterar as configurações de conectividade de sua máquina de virtua
 
 2. Selecione sua VM do SQL Server.
 
-3. Sob **as configurações**, selecione **segurança**.
+3. Em **configurações**, selecione **segurança**.
 
 4. Altere o **Nível de conectividade do SQL** para sua configuração exigida. Como opção, você pode usar essa área para alterar a porta do SQL Server ou as configurações da Autenticação SQL.
 
@@ -136,7 +135,7 @@ Embora o portal forneça opções para configurar a conectividade automaticament
 
 A tabela a seguir lista os requisitos para conectar-se ao SQL Server em execução em uma VM do Azure.
 
-| Requisito | DESCRIÇÃO |
+| Requisito | Descrição |
 |---|---|
 | [Habilitar o modo de autenticação do SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/change-server-authentication-mode#SSMSProcedure) | A autenticação do SQL Server é necessária para conectar-se remotamente à VM, a menos que o Active Directory esteja configurado em uma Rede Virtual. |
 | [Criar um logon do SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | Se você estiver usando a autenticação do SQL, será necessário um logon do SQL com um nome de usuário e uma senha que também tenha permissões para o banco de dados de destino. |

@@ -3,15 +3,15 @@ title: Localizar o encargo de RU (Unidade de Solicitação) no Azure Cosmos DB
 description: Saiba como encontrar o preço de RU (Unidade de Solicitação) para qualquer operação executada em um contêiner do Azure Cosmos.
 author: ThomasWeiss
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 06/14/2019
 ms.author: thweiss
-ms.openlocfilehash: 96c36067456a49a5760d6fde488dcb4ad8311a90
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: 682273524269682f62cd386de1c9161888747f16
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356452"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093718"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Encontrar o preço de Unidade de Solicitação no Azure Cosmos DB
 
@@ -81,7 +81,7 @@ Os objetos retornados do [SDK do .NET v3](https://www.nuget.org/packages/Microso
 
 [!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/CustomDocsSampleCode.cs?name=GetRequestCharge)]
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo Web do .NET usando uma conta da API do SQL no Azure Cosmos DB](create-sql-api-dotnet.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo Web do .NET usando uma conta da API do SQL no Azure Cosmos DB](create-sql-api-dotnet.md).
 
 ### <a name="use-the-java-sdk"></a>Usar o SDK do Java
 
@@ -111,7 +111,7 @@ feedResponse.forEach(result -> {
 });
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo Java usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-java.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo Java usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-java.md).
 
 ### <a name="use-the-nodejs-sdk"></a>Usar o SDK do Node.js
 
@@ -146,7 +146,7 @@ while (query.hasMoreResults()) {
 }
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo do Node.js usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-nodejs.md). 
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo do Node.js usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-nodejs.md). 
 
 ### <a name="use-the-python-sdk"></a>Usar o SDK do Python
 
@@ -162,7 +162,7 @@ response = client.ExecuteStoredProcedure(
 request_charge = client.last_response_headers['x-ms-request-charge']
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo do Python usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-python.md). 
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo do Python usando uma conta da API do SQL do Azure Cosmos DB](create-sql-api-python.md). 
 
 ## <a name="azure-cosmos-db-api-for-mongodb"></a>API do Azure Cosmos DB para MongoDB
 
@@ -203,7 +203,7 @@ Dictionary<string, object> stats = database.RunCommand(new GetLastRequestStatist
 double requestCharge = (double)stats["RequestCharge"];
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo Web do .NET usando uma API do Azure Cosmos DB para MongoDB](create-mongodb-dotnet.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo Web do .NET usando uma API do Azure Cosmos DB para MongoDB](create-mongodb-dotnet.md).
 
 ### <a name="use-the-mongodb-java-driver"></a>Usar o driver do Java do MongoDB
 
@@ -215,7 +215,7 @@ Document stats = database.runCommand(new Document("getLastRequestStatistics", 1)
 Double requestCharge = stats.getDouble("RequestCharge");
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo Web usando a API do Azure Cosmos DB para MongoDB e o SDK do Java](create-mongodb-java.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo Web usando a API do Azure Cosmos DB para MongoDB e o SDK do Java](create-mongodb-java.md).
 
 ### <a name="use-the-mongodb-nodejs-driver"></a>Usar o driver do Node.js do MongoDB
 
@@ -228,7 +228,7 @@ db.command({ getLastRequestStatistics: 1 }, function(err, result) {
 });
 ```
 
-Para saber mais, confira [Início Rápido: Migrar um aplicativo Web do Node.js do MongoDB existente para o Azure Cosmos DB](create-mongodb-nodejs.md).
+Para obter mais informações, confira [Início Rápido: Migrar um aplicativo Web do Node.js do MongoDB existente para o Azure Cosmos DB](create-mongodb-nodejs.md).
 
 ## <a name="cassandra-api"></a>API Cassandra
 
@@ -243,7 +243,7 @@ RowSet rowSet = session.Execute("SELECT table_name FROM system_schema.tables;");
 double requestCharge = BitConverter.ToDouble(rowSet.Info.IncomingPayload["RequestCharge"].Reverse().ToArray(), 0);
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo do Cassandra usando o SDK do .NET e o Azure Cosmos DB](create-cassandra-dotnet.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo do Cassandra usando o SDK do .NET e o Azure Cosmos DB](create-cassandra-dotnet.md).
 
 ### <a name="use-the-java-sdk"></a>Usar o SDK do Java
 
@@ -254,7 +254,7 @@ ResultSet resultSet = session.execute("SELECT table_name FROM system_schema.tabl
 Double requestCharge = resultSet.getExecutionInfo().getIncomingPayload().get("RequestCharge").getDouble();
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo do Cassandra usando o SDK do Java e o Azure Cosmos DB](create-cassandra-java.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo do Cassandra usando o SDK do Java e o Azure Cosmos DB](create-cassandra-java.md).
 
 ## <a name="gremlin-api"></a>API do Gremlin
 
@@ -273,7 +273,7 @@ ResultSet<dynamic> results = client.SubmitAsync<dynamic>("g.V().count()").Result
 double requestCharge = (double)results.StatusAttributes["x-ms-request-charge"];
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo do .NET Framework ou do Core usando uma conta da API do Gremlin do Azure Cosmos DB](create-graph-dotnet.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo do .NET Framework ou do Core usando uma conta da API do Gremlin do Azure Cosmos DB](create-graph-dotnet.md).
 
 ### <a name="use-the-java-sdk"></a>Usar o SDK do Java
 
@@ -284,7 +284,7 @@ ResultSet results = client.submit("g.V().count()");
 Double requestCharge = (Double)results.statusAttributes().get().get("x-ms-request-charge");
 ```
 
-Para saber mais, confira [Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o SDK do Java](create-graph-java.md).
+Para obter mais informações, confira [Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o SDK do Java](create-graph-java.md).
 
 ## <a name="table-api"></a>API de Tabela
 
@@ -299,7 +299,7 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 }
 ```
 
-Para saber mais, confira [Início Rápido: Criar um aplicativo de API de Tabela usando o SDK do .NET e o Azure Cosmos DB](create-table-dotnet.md).
+Para obter mais informações, confira [Início Rápido: Criar um aplicativo de API de Tabela usando o SDK do .NET e o Azure Cosmos DB](create-table-dotnet.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

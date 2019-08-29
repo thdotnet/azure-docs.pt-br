@@ -6,20 +6,19 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 79af90d1c2c5b698ee7394f7fb20486b3069038c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33d1b410119e631e0ccc9941beac1062d4ec30f9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66751952"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70087339"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Lidando com erros nas Funções Duráveis (Azure Functions)
 
-Orquestrações de Funções Duráveis são implementadas no código e podem usar os recursos de tratamento de erros da linguagem de programação. Com isso em mente, realmente não existem novos conceitos que você precisa saber sobre como incorporar a compensação e tratamento de erros em suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
+Orquestrações de Funções Duráveis são implementadas no código e podem usar os recursos de tratamento de erros da linguagem de programação. Com isso em mente, realmente não há nenhum novo conceito que você precisa saber sobre a incorporação de tratamento de erros e a compensação em suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
 
 ## <a name="errors-in-activity-functions"></a>Erros em funções de atividade
 
@@ -139,7 +138,7 @@ module.exports = df.orchestrator(function*(context) {
 
 A API `CallActivityWithRetryAsync` (.NET) ou `callActivityWithRetry` (JavaScript) usa um parâmetro `RetryOptions`. As chamadas de suborquestração usando a API `CallSubOrchestratorWithRetryAsync` (.NET) ou `callSubOrchestratorWithRetry` (JavaScript) podem usar essas mesmas políticas de repetição.
 
-Há várias opções para personalizar a política de repetição automática. São elas:
+Há várias opções para personalizar a política de repetição automática. Elas incluem o seguinte:
 
 * **Número máximo de tentativas**: O número máximo de tentativas de repetição.
 * **Intervalo da primeira repetição**: O tempo de espera antes de fazer a primeira tentativa.

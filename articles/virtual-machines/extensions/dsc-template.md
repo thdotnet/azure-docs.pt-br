@@ -8,18 +8,17 @@ tags: azure-resource-manager
 keywords: dsc
 ms.assetid: b5402e5a-1768-4075-8c19-b7f7402687af
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: 1bcec37e7642ae0cb5bd68de1426c8cc62085d38
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 458ba61adba294af99f2265e4907e874ed3a6956
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475517"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084589"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Extensão de configuração de estado desejado com os modelos do Azure Resource Manager
 
@@ -178,7 +177,7 @@ Para obter uma lista de argumentos disponíveis para o script de configuração 
 
 ## <a name="details"></a>Detalhes
 
-| Nome da propriedade | Type | DESCRIÇÃO |
+| Nome da propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | settings.wmfVersion |string |Especifica a versão do Windows Management Framework (WMF) que deve ser instalada em sua VM. Configurar essa propriedade como **latest** instala a versão mais recente de WMF. Atualmente, os únicos valores possíveis para essa propriedade são **4.0**, **5.0**, **5.1** e **o mais recente**. Esses valores possíveis estão sujeitos a atualizações. O valor padrão é **latest**. |
 | settings.configuration.url |string |Especifica o local da URL de onde baixar seu arquivo .zip de configuração DSC. Se a URL fornecida exigir um token SAS para acesso, defina a propriedade **protectedSettings.configurationUrlSasToken** como o valor do seu token de SAS. Esta propriedade será necessária se **settings.configuration.script** ou **settings.configuration.function** estiverem definidas. Se nenhum valor for fornecido para essas propriedades, a extensão chama o script de configuração padrão para definir os metadados do LCM (Location Configuration Manager) e os argumentos devem ser fornecidos. |
@@ -197,7 +196,7 @@ Para obter uma lista de argumentos disponíveis para o script de configuração 
 Para obter mais informações sobre os seguintes valores, consulte [Configurações Básicas do Local Configuration Manager](/powershell/dsc/metaconfig#basic-settings).
 Você pode usar o script de configuração padrão de extensão DSC para configurar apenas as propriedades do LCM que são listadas na tabela a seguir.
 
-| Nome da propriedade | Type | DESCRIÇÃO |
+| Nome da propriedade | Tipo | Descrição |
 | --- | --- | --- |
 | protectedSettings.configurationArguments.RegistrationKey |PSCredential |Propriedade exigida. Especifica a chave que é usada para um nó para registrar com o serviço de Automação do Azure como a senha de um objeto de credencial do PowerShell. Esse valor pode ser descoberto automaticamente usando o método **listkeys** em relação à conta de Automação.  Veja o [exemplo](#example-using-referenced-azure-automation-registration-values). |
 | settings.configurationArguments.RegistrationUrl |string |Propriedade exigida. Especifica a URL do ponto de extremidade de Automação em que o nó tenta registrar. Esse valor pode ser descoberto automaticamente usando o método de **referência** em relação à conta de Automação. |
@@ -254,7 +253,7 @@ Os argumentos de configuração são passados para o script de configuração pa
 
 O exemplo a seguir é da [visão geral de manipulador de extensão de DSC](dsc-overview.md).
 Este exemplo usa modelos do Resource Manager, em vez de cmdlets para implantar a extensão.
-Salvar a configuração de IisInstall.ps1, coloque-o em um arquivo. zip (exemplo: `iisinstall.zip`) e, em seguida, carregue o arquivo em uma URL acessível.
+Salve a configuração IisInstall. ps1, coloque-a em um arquivo. zip (exemplo `iisinstall.zip`:) e, em seguida, carregue o arquivo em uma URL acessível.
 Este exemplo usa o Armazenamento de Blobs do Azure, mas você pode baixar os arquivos .zip de qualquer local aleatório.
 
 No modelo do Resource Manager, o código a seguir instrui a VM a baixar o arquivo correto e, em seguida, executar a função apropriada do PowerShell:
@@ -344,7 +343,7 @@ Veja como formato anterior se adapta ao formato atual:
 | protectedSettings.configurationUrlSasToken |settings.SasToken |
 | protectedSettings.configurationDataUrlSasToken |Token SAS de protectedSettings.DataBlobUri |
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Confira alguns erros que você pode encontrar e como corrigi-los.
 
@@ -364,7 +363,7 @@ Para saber mais, consulte a tabela em [Detalhes](#details).
 
 "ConfigurationData.url é '{0}'. Essa não é uma URL válida" "DataBlobUri é '{0}'. Essa não é uma URL válida" "Configuration.url é '{0}'. Essa não é uma URL válida"
 
-**Problema**: Uma URL fornecida não é válido.
+**Problema**: Uma URL fornecida não é válida.
 
 **Solução**: Verifique todas as URLs fornecidas.
 Certifique-se de que todas as URLs resolvem para locais válidos que a extensão pode acessar no computador remoto.
@@ -373,9 +372,9 @@ Certifique-se de que todas as URLs resolvem para locais válidos que a extensão
 
 “Tipo inválido para o parâmetro RegistrationKey do tipo PSCredential.”
 
-**Problema**: O *RegistrationKey* valor em protectedSettings.configurationArguments não pode ser fornecido como qualquer tipo que não seja uma PSCredential.
+**Problema**: O valor de *RegistrationKey* em ProtectedSettings. configurationArguments não pode ser fornecido como um tipo diferente de um PSCredential.
 
-**Solução**: Altere a entrada de protectedSettings.configurationArguments para RegistrationKey para um tipo PSCredential usando o seguinte formato:
+**Solução**: Altere sua entrada protectedSettings. configurationArguments para RegistrationKey para um tipo PSCredential usando o seguinte formato:
 
 ```json
 "configurationArguments": {
@@ -390,16 +389,16 @@ Certifique-se de que todas as URLs resolvem para locais válidos que a extensão
 
 "Tipo configurationArgument inválido {0}"
 
-**Problema**: O *ConfigurationArguments* propriedade não pode ser resolvida para um **tabela de Hash** objeto.
+**Problema**: A propriedade *ConfigurationArguments* não pode ser resolvida para um objeto de **tabela de hash** .
 
-**Solução**: Verifique sua *ConfigurationArguments* propriedade um **tabela de Hash**.
+**Solução**: Torne sua propriedade *ConfigurationArguments* uma **tabela de hash**.
 Siga o formato fornecido no exemplo anterior. Fique atento às chaves, vírgulas e aspas.
 
 ### <a name="duplicate-configurationarguments"></a>ConfigurationArguments duplicado
 
 "Argumentos '{0}' duplicados encontrados em configurationArguments públicos e protegidos"
 
-**Problema**: O *ConfigurationArguments* nas configurações públicas e o *ConfigurationArguments* nas configurações protegidas têm propriedades com o mesmo nome.
+**Problema**: O *ConfigurationArguments* em configurações públicas e *ConfigurationArguments* nas configurações protegidas têm propriedades com o mesmo nome.
 
 **Solução**: Remova uma das propriedades duplicadas.
 

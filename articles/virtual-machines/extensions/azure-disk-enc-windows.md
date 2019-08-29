@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: 9a3e135172f0744c053da816b3c77762dbe783c3
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 11394f692765cc1df5db0eb5c0dd06425026505d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706108"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092640"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Azure Disk Encryption para Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -41,13 +40,13 @@ Para obter uma lista das versões do Windows no momento, consulte [Pré-requisit
 O Azure Disk Encryption exige conectividade com a Internet para acesso ao Active Directory, o Cofre de chaves, armazenamento e pontos de extremidade de gerenciamento de pacote.  Para saber mais sobre configurações de segurança de rede, consulte [Pré-requisitos do Azure Disk Encryption](
 ../../security/azure-security-disk-encryption-prerequisites.md).
 
-## <a name="extension-schemata"></a>Esquemas de extensão
+## <a name="extension-schemata"></a>Schemata de extensão
 
-Há dois esquemas para o Azure Disk Encryption: v 1.1, um esquema mais recente, é recomendado que não usa as propriedades do Azure Active Directory (AAD) e v0.1, um esquema mais antigo que exija propriedades do AAD. Você deve usar a versão de esquema correspondente para a extensão que você está usando: v1.1 de esquema para a versão da extensão 1.1, v0.1 de esquema para a versão da extensão 0,1 AzureDiskEncryption AzureDiskEncryption.
+Há duas Schemata para Azure Disk Encryption: v 1.1, um esquema mais novo e recomendado que não usa as propriedades do AAD (Azure Active Directory) e v 0.1, um esquema mais antigo que requer Propriedades do AAD. Você deve usar a versão do esquema correspondente à extensão que está usando: esquema v 1.1 para a extensão AzureDiskEncryption versão 1,1, esquema v 0.1 para a extensão AzureDiskEncryption versão 0,1.
 
-### <a name="schema-v11-no-aad-recommended"></a>Schema v1.1: Não há AAD (recomendado)
+### <a name="schema-v11-no-aad-recommended"></a>Esquema v 1.1: Sem AAD (recomendado)
 
-O esquema de v1.1 é recomendado e não requer propriedades do Active Directory do Azure.
+O esquema v 1.1 é recomendado e não requer Azure Active Directory Propriedades.
 
 ```json
 {
@@ -74,9 +73,9 @@ O esquema de v1.1 é recomendado e não requer propriedades do Active Directory 
 ```
 
 
-### <a name="schema-v01-with-aad"></a>Esquema v0.1: com o AAD 
+### <a name="schema-v01-with-aad"></a>Esquema v 0,1: com o AAD 
 
-O esquema de 0,1 requer `aadClientID` e qualquer um dos `aadClientSecret` ou `AADClientCertificate`.
+O esquema 0,1 requer `aadClientID` o e `aadClientSecret` o `AADClientCertificate`ou o.
 
 Usando `aadClientSecret`:
 
@@ -146,16 +145,16 @@ Usando `AADClientCertificate`:
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
 | type | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0.1, 1.1 | int |
-| (esquema de 0,1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (esquema de 0,1) AADClientSecret | password | string |
-| (esquema de 0,1) AADClientCertificate | thumbprint | string |
+| typeHandlerVersion | 0,1, 1,1 | int |
+| (esquema 0,1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
+| (esquema 0,1) AADClientSecret | password | string |
+| (esquema 0,1) AADClientCertificate | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Dicionário JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | KeyVaultURL | url | string |
-| (opcional) Frase secreta | password | string | 
+| adicional Senha | password | string | 
 | SequenceVersion | uniqueidentifier | string |
 | VolumeType | Sistema operacional, Dados, Tudo | string |
 

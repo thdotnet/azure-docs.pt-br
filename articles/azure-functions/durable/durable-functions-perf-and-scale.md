@@ -6,16 +6,15 @@ author: cgillum
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: azfuncdf
-ms.openlocfilehash: e6ae4cc527ae0828f530ab7f3904d2b3c64c910b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed0fe22903412d4164fb3a85dbd9afafdc7023e6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60733226"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097991"
 ---
 # <a name="performance-and-scale-in-durable-functions-azure-functions"></a>Desempenho e escala nas Funções Duráveis (Azure Functions)
 
@@ -51,16 +50,16 @@ Filas de controle contêm uma variedade de tipos de mensagem de ciclo de vida de
 
 ### <a name="queue-polling"></a>Sondagem de fila
 
-A extensão de tarefa durável implementa um algoritmo exponencial aleatório de retirada para reduzir o efeito de sondagem nos custos das transações de armazenamento de fila ociosa. Quando uma mensagem for encontrada, o tempo de execução imediatamente verifica outra mensagem; Quando nenhuma mensagem for encontrada, ele aguarda um período de tempo antes de tentar novamente. Após subsequentes tentativas com falha para obter uma mensagem da fila, o tempo de espera continua a aumentar até atingir o tempo de espera máximo, cujo padrão é 30 segundos.
+A extensão de tarefa durável implementa um algoritmo de retirada exponencial aleatória para reduzir o efeito da sondagem de fila ociosa nos custos de transação de armazenamento. Quando uma mensagem é encontrada, o tempo de execução verifica imediatamente se há outra mensagem; quando nenhuma mensagem é encontrada, ela aguarda um período de tempo antes de tentar novamente. Após as tentativas subsequentes falharem em obter uma mensagem da fila, o tempo de espera continuará aumentando até atingir o tempo de espera máximo, cujo padrão é 30 segundos.
 
-O atraso máximo de sondagem é configurável por meio de `maxQueuePollingInterval` propriedade no [arquivo host. JSON](../functions-host-json.md#durabletask). Definir isso como um valor mais alto pode resultar em maior latências de processamento de mensagens. Latências mais altas deve ser esperadas somente após períodos de inatividade. Definir isso como um valor mais baixo pode resultar em custos de armazenamento maiores devido às transações de armazenamento maior.
+O atraso máximo de sondagem é configurável `maxQueuePollingInterval` por meio da propriedade no [arquivo host. JSON](../functions-host-json.md#durabletask). Definir isso para um valor mais alto pode resultar em latências de processamento de mensagens mais altas. As latências mais altas seriam esperadas somente após períodos de inatividade. Definir isso com um valor mais baixo pode resultar em custos de armazenamento mais altos devido a maiores transações de armazenamento.
 
 > [!NOTE]
-> Quando em execução nos planos de consumo do Azure Functions e Premium, o [controlador de escala do Azure Functions](../functions-scale.md#how-the-consumption-and-premium-plans-work) irá sondar cada fila de controle e de item de trabalho uma vez a cada 10 segundos. Essa pesquisa adicional é necessária para determinar quando ativar instâncias do aplicativo de função e para tomar decisões de dimensionamento. No momento da escrita, esse intervalo de 10 segundos é constante e não pode ser configurado.
+> Durante a execução nos planos de consumo Azure Functions e Premium, o [controlador de escala de Azure Functions](../functions-scale.md#how-the-consumption-and-premium-plans-work) sondará cada controle e a fila de itens de trabalho uma vez a cada 10 segundos. Essa sondagem adicional é necessária para determinar quando ativar instâncias do aplicativo de funções e tomar decisões de escala. No momento da gravação, esse intervalo de 10 segundos é constante e não pode ser configurado.
 
 ## <a name="storage-account-selection"></a>Seleção da conta de armazenamento
 
-As filas, tabelas e blobs usados pelas funções duráveis são criados em uma conta de armazenamento do Azure configurada. A conta a ser usada pode ser especificada usando a configuração do arquivo `durableTask/azureStorageConnectionStringName` em **host.json** arquivo.
+As filas, as tabelas e os BLOBs usados pelo Durable Functions são criados em uma conta de armazenamento do Azure configurada. A conta a ser usada pode ser especificada usando a configuração do arquivo `durableTask/azureStorageConnectionStringName` em **host.json** arquivo.
 
 ### <a name="functions-1x"></a>Funções 1.x
 

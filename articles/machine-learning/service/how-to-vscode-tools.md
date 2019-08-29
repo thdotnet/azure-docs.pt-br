@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: shwinne
-author: swinner95
+ms.author: ronglu
+author: ronglums
 ms.date: 7/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3b49def1af7f13e38c3a9daea32d56bf3c633261
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: b1d18006e6ec3ff1659f8fb80f8cf6766797d76b
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67871757"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114425"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Introdução ao Azure Machine Learning para Visual Studio Code
 
@@ -27,7 +27,7 @@ Você também pode implantar esses modelos para suas necessidades de teste e pro
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-+ Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do serviço de Azure Machine Learning](https://aka.ms/AMLFree).
++ Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do serviço do Azure Machine Learning](https://aka.ms/AMLFree).
 
 + O Visual Studio Code deve ser instalado. Visual Studio Code é um editor de código-fonte leve, mas poderoso, que é executado em sua área de trabalho. Ele vem com suporte interno para Python e outras linguagens de programação. Se você ainda não instalou o Visual Studio Code, [Descubra como](https://code.visualstudio.com/docs/setup/setup-overview).
 

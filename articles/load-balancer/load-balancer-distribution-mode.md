@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 98fdf76dc2e1cb8171e7b0b37216d5f5405a1e6a
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 0d3ddf2e005338a19972cfcdef025579764f7f23
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275430"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114712"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Configurar o modo de distribuição para o Azure Load Balancer
 
@@ -32,7 +32,7 @@ O modo de distribuição padrão para o Azure Load Balancer é um hash de 5 tupl
 
 ## <a name="source-ip-affinity-mode"></a>Modo de afinidade de IP de origem
 
-O Load Balancer também pode ser configurado usando o modo de distribuição de afinidade do IP de origem. Esse modo de distribuição também é conhecido como afinidade de sessão ou afinidade do IP do cliente. O modo usa um hash de 2 tuplas (IP de origem e IP de destino) ou de 3 tuplas (IP de origem, IP de destino e tipo de protocolo) para mapear o tráfego para os servidores disponíveis. Ao usar a afinidade do IP de origem, as conexões iniciadas no mesmo computador cliente vão para o mesmo ponto de extremidade DIP.
+O Load Balancer também pode ser configurado usando o modo de distribuição de afinidade do IP de origem. Esse modo de distribuição também é conhecido como afinidade de sessão ou afinidade do IP do cliente. O modo usa um hash de 2 tuplas (IP de origem e IP de destino) ou de 3 tuplas (IP de origem, IP de destino e tipo de protocolo) para mapear o tráfego para os servidores disponíveis. Ao usar a afinidade de IP de origem, as conexões iniciadas no mesmo computador cliente vão para o mesmo ponto de extremidade DIP.
 
 A figura a seguir ilustra uma configuração de 2 tuplas. Observe como o de 2 tuplas é executado por meio do balanceador de carga para a VM1 (máquina virtual 1). O backup da VM1 é feito pela VM2 e VM3.
 
@@ -50,9 +50,26 @@ Outro cenário de caso de uso é o upload de mídia. O upload de dados ocorre po
 
 ## <a name="configure-source-ip-affinity-settings"></a>Definir configurações de afinidade do IP de origem
 
-Para máquinas virtuais implantadas com o Resource Manager, use o Azure PowerShell para alterar as configurações de distribuição do balanceador de carga em uma regra de balanceamento de carga existente. Isso atualiza o modo de distribuição: 
+### <a name="azure-portal"></a>Portal do Azure
 
-```powershell
+Você pode alterar a configuração do modo de distribuição modificando a regra de balanceamento de carga no Portal.
+
+1. Entre no portal do Azure e localize o grupo de recursos que contém o balanceador de carga que você deseja alterar clicando em **grupos de recursos**.
+2. Na folha visão geral do balanceador de carga, clique em **regras de balanceamento de carga** em **configurações**.
+3. Na folha regras de balanceamento de carga, clique na regra de balanceamento de carga em que você deseja alterar o modo de distribuição.
+4. Sob a regra, o modo de distribuição é alterado alterando a caixa suspensa de **persistência da sessão** .  As seguintes opções estão disponíveis:
+    
+    * **Nenhum (baseado em hash)** – especifica que as solicitações sucessivas do mesmo cliente podem ser tratadas por qualquer máquina virtual.
+    * **IP do cliente (afinidade de IP de origem 2-tupla)** – especifica que as solicitações sucessivas do mesmo endereço IP do cliente serão tratadas pela mesma máquina virtual.
+    * **IP do cliente e protocolo (afinidade de IP de origem 3-tupla)** – especifica que solicitações sucessivas do mesmo endereço IP do cliente e combinação de protocolos serão manipuladas pela mesma máquina virtual.
+
+5. Escolha o modo de distribuição e, em seguida, clique em **salvar**.
+
+### <a name="azure-powershell"></a>Azure PowerShell
+
+Para máquinas virtuais implantadas com o Gerenciador de recursos, use o PowerShell para alterar as configurações de distribuição do balanceador de carga em uma regra de balanceamento de carga existente. O seguinte comando atualiza o modo de distribuição: 
+
+```azurepowershell-interactive
 $lb = Get-AzLoadBalancer -Name MyLb -ResourceGroupName MyLbRg
 $lb.LoadBalancingRules[0].LoadDistribution = 'sourceIp'
 Set-AzLoadBalancer -LoadBalancer $lb
@@ -60,7 +77,7 @@ Set-AzLoadBalancer -LoadBalancer $lb
 
 Para máquinas virtuais clássicas, use o Azure PowerShell para alterar as configurações de distribuição. Adicione um ponto de extremidade do Azure a uma máquina virtual e configure o modo de distribuição do balanceador de carga:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 ```
 
@@ -88,13 +105,13 @@ Recupere uma configuração de modo de distribuição do balanceador de carga do
     IdleTimeoutInMinutes : 15
     LoadBalancerDistribution : sourceIP
 
-Quando o elemento `LoadBalancerDistribution` não está presente, o Azure Load Balancer usa o algoritmo padrão de 5 tuplas.
+Quando o `LoadBalancerDistribution` elemento não está presente, Azure Load Balancer usa o algoritmo padrão de 5 tuplas.
 
 ### <a name="configure-distribution-mode-on-load-balanced-endpoint-set"></a>Configurar o modo de distribuição no conjunto do ponto de extremidade com balanceamento de carga
 
 Quando os pontos de extremidade formarem parte de um conjunto de pontos de extremidade com balanceamento de carga, o modo de distribuição deverá ser configurado no conjunto de pontos de extremidade com balanceamento de carga:
 
-```azurepowershell
+```azurepowershell-interactive
 Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol TCP -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution sourceIP
 ```
 
@@ -130,7 +147,7 @@ O exemplo a seguir mostra como reconfigurar o modo de distribuição do balancea
 
 Use o modelo de implantação clássico do Azure para alterar uma configuração de implantação existente. Adicione o cabeçalho `x-ms-version` e defina o valor para a versão 2014-09-01 ou posterior.
 
-#### <a name="request"></a>Solicitação
+#### <a name="request"></a>Solicitar
 
     POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
     Content-Type: application/xml
@@ -155,7 +172,7 @@ Use o modelo de implantação clássico do Azure para alterar uma configuração
 
 Conforme descrito anteriormente, defina o elemento `LoadBalancerDistribution` como sourceIP para afinidade de 2 tuplas, sourceIPProtocol para afinidade de 3 tuplas ou nenhum para nenhuma afinidade (afinidade de 5 tuplas).
 
-#### <a name="response"></a>Response
+#### <a name="response"></a>Resposta
 
     HTTP/1.1 202 Accepted
     Cache-Control: no-cache

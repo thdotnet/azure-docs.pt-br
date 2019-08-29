@@ -9,23 +9,22 @@ editor: ''
 tags: azure-service-management
 ms.assetid: a4e2f175-fe56-4218-86c7-a43fb916cc64
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
-ms.openlocfilehash: c089d54544217cf72f81a2535ceede50d25b9b61
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 89f731062ce46969c73f745d62b289b3b3483d8c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60362179"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100367"
 ---
 # <a name="configure-the-always-on-availability-group-on-an-azure-vm-with-powershell"></a>Configurar o grupo de disponibilidade Always On em uma VM do Azure com o PowerShell
 > [!div class="op_single_selector"]
-> * [Clássico: UI](../classic/portal-sql-alwayson-availability-groups.md)
-> * [Clássico: PowerShell](../classic/ps-sql-alwayson-availability-groups.md)
+> * [Clássico UI](../classic/portal-sql-alwayson-availability-groups.md)
+> * [Clássico PowerShell](../classic/ps-sql-alwayson-availability-groups.md)
 <br/>
 
 Antes de começar, considere que agora você pode concluir esta tarefa no modelo do Azure Resource Manager. O modelo do Azure Resource Manager é recomendável para novas implantações. Confira, [Introdução aos grupos de disponibilidade Always On do SQL Server em máquinas virtuais do Azure](../sql/virtual-machines-windows-portal-sql-availability-group-overview.md).
@@ -239,7 +238,7 @@ O servidor do controlador de domínio foi provisionado com êxito. Em seguida, v
         $acl.AddAccessRule($ace1)
         Set-Acl -Path "DC=corp,DC=contoso,DC=com" -AclObject $acl
 
-    O GUID especificado acima é o GUID para o tipo de objeto de computador. A conta **CORP\Install** precisa das permissões **Ler Todas as Propriedades** e **Criar Objetos de Computador** para criar objetos do Active Direct para o cluster de failover. A permissão **Ler Todas as Propriedades** já foi fornecida a CORP\Install por padrão, portanto, você não precisa concedê-la explicitamente. Para obter mais informações sobre as permissões necessárias para criar o cluster de failover, consulte [guia do passo a passo de Cluster de Failover: Configurando contas no Active Directory](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx).
+    O GUID especificado acima é o GUID para o tipo de objeto de computador. A conta **CORP\Install** precisa das permissões **Ler Todas as Propriedades** e **Criar Objetos de Computador** para criar objetos do Active Direct para o cluster de failover. A permissão **Ler Todas as Propriedades** já foi fornecida a CORP\Install por padrão, portanto, você não precisa concedê-la explicitamente. Para obter mais informações sobre as permissões necessárias para criar o cluster de failover, [consulte Guia passo a passo do cluster de failover: Configurando contas](https://technet.microsoft.com/library/cc731002%28v=WS.10%29.aspx)no Active Directory.
 
     Concluída a configuração do Active Directory e dos objetos de usuário, você criará duas VMs do SQL Server e as ingressará nesse domínio.
 
@@ -380,15 +379,15 @@ O servidor do controlador de domínio foi provisionado com êxito. Em seguida, v
 ## <a name="initialize-the-failover-cluster-vms"></a>Inicializar as VMs do cluster de failover
 Nesta seção, você precisa modificar os três servidores que usará no cluster de failover e na instalação do SQL Server. Especificamente:
 
-* Todos os servidores: Você precisa instalar o **Clustering de Failover** recurso.
-* Todos os servidores: Você precisa adicionar **CORP\Install** como a máquina **administrador**.
-* Somente ContosoSQL1 e ContosoSQL2: Você precisa adicionar **CORP\Install** como um **sysadmin** função no banco de dados padrão.
-* Somente ContosoSQL1 e ContosoSQL2: Você precisa adicionar **NT AUTHORITY\System** como uma entrada com as seguintes permissões:
+* Todos os servidores: Você precisa instalar o recurso de clustering de **failover** .
+* Todos os servidores: Você precisa adicionar o **CORP\Install** como o **administrador**da máquina.
+* Somente ContosoSQL1 e ContosoSQL2: Você precisa adicionar **CORP\Install** como uma função **sysadmin** no banco de dados padrão.
+* Somente ContosoSQL1 e ContosoSQL2: Você precisa adicionar **NT AUTHORITY\SYSTEM** como uma entrada com as seguintes permissões:
 
   * Alterar qualquer grupo de disponibilidade
   * Conectar o SQL
   * Exibir o estado do servidor
-* Somente ContosoSQL1 e ContosoSQL2: O **TCP** protocolo já está habilitado na VM do SQL Server. No entanto, ainda é necessário abrir o firewall para o acesso remoto do SQL Server.
+* Somente ContosoSQL1 e ContosoSQL2: O protocolo **TCP** já está habilitado na VM SQL Server. No entanto, ainda é necessário abrir o firewall para o acesso remoto do SQL Server.
 
 Agora você está pronto para começar. Começando com o **ContosoQuorum**, siga as etapas abaixo:
 

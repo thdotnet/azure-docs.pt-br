@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5182b621779cf31f3c7da99674ab24fe6efe702d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b912743c758f33173b568944341fab4e815300ed
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60835253"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099982"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Implantação do DBMS de Máquinas Virtuais do Azure para carga de trabalho do SAP
 
@@ -319,7 +318,7 @@ O software Oracle tem suporte pela Oracle para ser executado no Microsoft Azure.
 
 As Notas de SAP a seguir estão relacionadas ao SAP no Azure.
 
-| Número da observação | Title |
+| Número da observação | Título |
 | --- | --- |
 | [1928533] |Aplicativos SAP no Azure: produtos com suporte e tipos de VM do Azure |
 | [2015553] |SAP no Microsoft Azure: pré-requisitos de suporte |
@@ -367,7 +366,7 @@ As unidades de rede ou de compartilhamentos remoto como os serviços de arquivo 
 
 Se você estiver usando discos baseados no armazenamento de blobs de páginas do Azure ou Managed Disks, as declarações nas [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md) também se aplicarão a implantações com o Oracle Database.
 
-Existem cotas na taxa de transferência IOPS para discos do Azure. Este conceito é explicado nas [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). As cotas exatas dependem do tipo de VM usado. Uma lista dos tipos de VMs com suas cotas pode ser encontrada em [Tamanhos para máquinas virtuais do Windows no Azure][virtual-machines-sizes-windows].
+Existem cotas na taxa de transferência IOPS para discos do Azure. Este conceito é explicado nas [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). As cotas exatas dependem do tipo de VM usado. Uma lista de tipos de VM com suas cotas pode ser encontrada em [tamanhos para máquinas virtuais do Windows no Azure][virtual-machines-sizes-windows].
 
 Para identificar os tipos de VM do Azure com suporte, confira a Nota SAP [1928533].
 
@@ -379,7 +378,7 @@ A configuração mínima é a seguinte:
 | \oracle\<SID>\origlogaB & mirrlogA | Premium | Nenhum | Não é necessário |
 | \oracle\<SID>\sapdata1...n | Premium | Somente leitura | Pode ser usado |
 | \oracle\<SID>\oraarch | Standard | Nenhum | Não é necessário |
-| Oracle Home, saptrace, ... | Disco do sistema operacional | | Não é necessário |
+| Oracle Home, saptrace, ... | Disco de SO | | Não é necessário |
 
 
 A seleção de discos para hospedagem de logs de restauração online deve ser controlada pelos requisitos de IOPs. É possível armazenar todos os sapdata1... n (espaços de tabela) em um único disco montado, desde que o tamanho, o IOPS e a taxa de transferência atendam aos requisitos. 
@@ -395,7 +394,7 @@ A configuração de desempenho é a seguinte:
 | \oracle\<SID>\sapdata1...n | Premium | Somente leitura | Recomendado  |
 | \oracle\SID\sapdata(n+1)* | Premium | Nenhum | Pode ser usado |
 | \oracle\<SID>\oraarch* | Premium | Nenhum | Não é necessário |
-| Oracle Home, saptrace, ... | Disco do sistema operacional | Não é necessário |
+| Oracle Home, saptrace, ... | Disco de SO | Não é necessário |
 
 *(n+1): hospedagem dos espaços de tabela SYSTEM, TEMP e UNDO. O padrão de E/S dos espaços de tabela System e Undo são diferentes dos outros espaços de tabela que hospedam dados de aplicativo. “Sem cache” é a melhor opção para o desempenho dos espaços de tabela System e Undo.
 
@@ -419,7 +418,7 @@ O Oracle Data Guard tem suporte para fins de recuperação de desastre e alta di
 
 Para saber mais sobre a recuperação de desastres para bancos de dados Oracle no Azure, confira [Recuperação de desastre para um banco de dados Oracle Database 12c em um ambiente do Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Redes aceleradas
+### <a name="accelerated-networking"></a>Rede acelerada
 Para implantações do Oracle no Windows, é altamente recomendável usar a rede acelerada, como descrito em [Rede acelerada do Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Também considere as recomendações feitas em [Considerações para implantação de DBMS de Máquinas Virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). 
 ### <a name="other"></a>Outros
 As [Considerações para implantação de DBMS de Máquinas Virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md) descrevem outros conceitos importantes relacionados às implantações de VMs com o Oracle Database, incluindo os conjuntos de disponibilidade do Azure e o monitoramento do SAP.
@@ -457,7 +456,7 @@ As unidades de rede ou de compartilhamentos remoto como os serviços de arquivo 
 
 Caso esteja usando discos baseados no Armazenamento de blob de página do Azure ou Managed Disks, as declarações feitas nas [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md) também se aplicarão a implantações com o Oracle Database.
 
- Existem cotas na taxa de transferência IOPS para discos do Azure. Esse conceito é explicado em [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). As cotas exatas dependem do tipo de VM usado. Para obter uma lista dos tipos de VM com suas cotas, confira [Tamanhos para máquinas virtuais Linux no Azure][virtual-machines-sizes-linux].
+ Existem cotas na taxa de transferência IOPS para discos do Azure. Esse conceito é explicado em [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). As cotas exatas dependem do tipo de VM usado. Para obter uma lista de tipos de VM com suas cotas, consulte [tamanhos de máquinas virtuais do Linux no Azure][virtual-machines-sizes-linux].
 
 Para identificar os tipos de VM do Azure com suporte, confira a Nota SAP [1928533].
 
@@ -465,11 +464,11 @@ Configuração mínima:
 
 | Componente | Disco | Cache | Stripping* |
 | --- | ---| --- | --- |
-| /Oracle/\<SID > / origlogaA & mirrlogB | Premium | Nenhum | Não é necessário |
-| /Oracle/\<SID > / origlogaB & mirrlogA | Premium | Nenhum | Não é necessário |
-| /Oracle/\<SID > / sapdata1... n | Premium | Somente leitura | Pode ser usado |
-| /Oracle/\<SID > / oraarch | Standard | Nenhum | Não é necessário |
-| Oracle Home, saptrace, ... | Disco do sistema operacional | | Não é necessário |
+| /Oracle/\<Sid >/origlogaA & mirrlogB | Premium | Nenhum | Não é necessário |
+| /Oracle/\<Sid >/origlogaB & mirrlogA | Premium | Nenhum | Não é necessário |
+| /Oracle/\<Sid >/sapdata1... p | Premium | Somente leitura | Pode ser usado |
+| /Oracle/\<Sid >/oraarch | Standard | Nenhum | Não é necessário |
+| Oracle Home, saptrace, ... | Disco de SO | | Não é necessário |
 
 *Stripping: Faixa de LVM ou MDADM usando RAID0
 
@@ -479,14 +478,14 @@ Configuração de desempenho:
 
 | Componente | Disco | Cache | Stripping* |
 | --- | ---| --- | --- |
-| /Oracle/\<SID > / origlogaA | Premium | Nenhum | Pode ser usado  |
-| /Oracle/\<SID > / origlogaB | Premium | Nenhum | Pode ser usado |
-| /Oracle/\<SID > / mirrlogAB | Premium | Nenhum | Pode ser usado |
-| /Oracle/\<SID > / mirrlogBA | Premium | Nenhum | Pode ser usado |
-| /Oracle/\<SID > / sapdata1... n | Premium | Somente leitura | Recomendado  |
+| /Oracle/\<Sid >/origlogaA | Premium | Nenhum | Pode ser usado  |
+| /Oracle/\<Sid >/origlogaB | Premium | Nenhum | Pode ser usado |
+| /Oracle/\<Sid >/mirrlogAB | Premium | Nenhum | Pode ser usado |
+| /Oracle/\<Sid >/mirrlogBA | Premium | Nenhum | Pode ser usado |
+| /Oracle/\<Sid >/sapdata1... p | Premium | Somente leitura | Recomendado  |
 | /oracle/\<SID>/sapdata(n+1)* | Premium | Nenhum | Pode ser usado |
-| /oracle/\<SID>/oraarch* | Premium | Nenhum | Não é necessário |
-| Oracle Home, saptrace, ... | Disco do sistema operacional | Não é necessário |
+| /Oracle/\<Sid >/oraarch * | Premium | Nenhum | Não é necessário |
+| Oracle Home, saptrace, ... | Disco de SO | Não é necessário |
 
 *Stripping: Faixa de LVM ou MDADM usando RAID0
 
@@ -513,7 +512,7 @@ O Oracle Data Guard tem suporte para fins de recuperação de desastre e alta di
 
 Aspectos da recuperação de desastres para bancos de dados Oracle no Azure são apresentados no artigo [recuperação de desastre para um banco de dados banco de dados Oracle 12c em um ambiente do Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Redes aceleradas
+### <a name="accelerated-networking"></a>Rede acelerada
 Suporte para rede acelerada do Azure no Oracle Linux é fornecido com o Oracle Linux 7 atualização 5 (Oracle Linux 7.5). Se você não puder atualizar para a versão mais recente do Oracle Linux 7.5, poderá haver uma solução alternativa usando o RHCK (RedHat Compatible Kernel) em vez do kernel da Oracle UEK. 
 
 Usando o kernel RHEL no Oracle Linux tem suporte de acordo com a nota SAP [#1565179](https://launchpad.support.sap.com/#/notes/1565179). Para a Rede Acelerada do Azure, a versão mínima do kernel do RHCKL precisa ser 3.10.0-862.13.1.el7. Se você usar o kernel do UEK no Oracle Linux em conjunto com a [Rede Acelerada do Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/), será necessário usar a versão 5 do kernel do Oracle UEK.

@@ -7,17 +7,16 @@ author: craigshoemaker
 manager: gwallace
 keywords: azure functions, funções, processamento de eventos, computação dinâmica, arquitetura sem servidor
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c63b81e5461af5407d260651b79ec80e79fc9b4d
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 32f987caed915aff8c581b974dec7689fc90b007
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479982"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114367"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Associação de Twilio para o Azure Functions
 
@@ -122,7 +121,7 @@ public static void Run(string myQueueItem, out SMSMessage message,  TraceWriter 
 }
 ```
 
-Você não pode usar os parâmetros em código síncrono. Aqui está um exemplo de código de script C# assíncrono:
+Você não pode usar os parâmetros em código assíncrono. Aqui está um exemplo de código de script C# assíncrono:
 
 ```cs
 #r "Newtonsoft.Json"
@@ -298,7 +297,7 @@ public static void Run(string myQueueItem, out CreateMessageOptions message,  IL
 }
 ```
 
-Você não pode usar os parâmetros em código síncrono. Aqui está um exemplo de código de script C# assíncrono:
+Você não pode usar os parâmetros em código assíncrono. Aqui está um exemplo de código de script C# assíncrono:
 
 ```cs
 #r "Newtonsoft.Json"
@@ -397,7 +396,7 @@ Para ver um exemplo completo, consulte [Exemplo de C#](#c-example).
 
 ## <a name="configuration"></a>Configuração
 
-A tabela a seguir explica as propriedades de configuração de associação que você define no arquivo *function.json* e no `TwilioSms` atributo.
+A tabela a seguir explica as propriedades de configuração de associação que você define no arquivo *function.json* e no atributo `TwilioSms`.
 
 | propriedade function.json v1 | propriedade function.json v2 | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|---------|----------------------|
@@ -406,8 +405,8 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 |**name**|**name**| Nome da variável usada no código de função para a mensagem de texto SMS do Twilio. |
 |**accountSid**|**accountSidSetting**| **AccountSidSetting**| Esse valor deve ser definido como o nome de uma Configuração de aplicativo que contém a SID da sua conta do Twilio, por exemplo, TwilioAccountSid. Se não configurado, o nome da configuração do aplicativo padrão será "AzureWebJobsTwilioAccountSid". |
 |**authToken**|**authTokenSetting**|**AuthTokenSetting**| Esse valor deve ser definido como o nome de uma Configuração de aplicativo que contém seu token de autenticação do Twilio por exemplo, TwilioAccountAuthToken. Se não configurado, o nome da configuração do aplicativo padrão será "AzureWebJobsTwilioAuthToken". |
-|**to**| N/D – especificar no código | **Para**| Esse valor é definido como o número de telefone para o qual será enviada a mensagem de texto SMS.|
-|**from**|**from** | **De**| Esse valor é definido como o número de telefone com o qual será enviada a mensagem de texto SMS.|
+|**to**| N/D – especificar no código | **To**| Esse valor é definido como o número de telefone para o qual será enviada a mensagem de texto SMS.|
+|**from**|**from** | **From**| Esse valor é definido como o número de telefone com o qual será enviada a mensagem de texto SMS.|
 |**body**|**body** | **Corpo**| Esse valor pode ser usado para fixar a mensagem de texto SMS no código se você não precisa defini-la dinamicamente no código de sua função. |  
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]

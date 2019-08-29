@@ -10,17 +10,16 @@ ms.assetid: ad9a1e00-d5e5-413e-be47-e21e5b285dbf
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 88f100bc780d8df0202cfcce9b390085a71fc905
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 65d62df954dbbfbdd221adb33eccd82f73588fae
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130595"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069891"
 ---
 # <a name="using-an-internal-load-balancer-with-an-app-service-environment"></a>Como usar um Balanceador de Carga Interno com um Ambiente do Serviço do Aplicativo
 
@@ -28,7 +27,7 @@ ms.locfileid: "62130595"
 > Este artigo é sobre o Ambiente do Serviço de Aplicativo v1. Há uma versão mais recente do Ambiente de Serviço de Aplicativo que é mais fácil de usar e é executado na infraestrutura mais avançada. Para saber mais sobre a nova versão, comece com [Introdução ao Ambiente do Serviço de Aplicativo](intro.md).
 >
 
-O recurso ASE (Ambiente do Serviço de Aplicativo) é uma opção de serviço Premium do Serviço de Aplicativo do Azure que fornece uma capacidade configuração avançada não disponível em carimbos com vários locatários. Essencialmente, o recurso ASE implanta o Serviço de Aplicativo do Azure em sua VNet (Rede virtual do Azure). Para obter uma maior compreensão dos recursos oferecidos pelos ambientes do serviço de aplicativo, leia a documentação [O que é um ambiente do serviço de aplicativo][WhatisASE]. Se você não conhece os benefícios de operar em uma VNet, leia as [Perguntas frequentes de Rede Virtual do Azure][virtualnetwork]. 
+O recurso ASE (Ambiente do Serviço de Aplicativo) é uma opção de serviço Premium do Serviço de Aplicativo do Azure que fornece uma capacidade configuração avançada não disponível em carimbos com vários locatários. Essencialmente, o recurso ASE implanta o Serviço de Aplicativo do Azure em sua VNet (Rede virtual do Azure). Para obter uma compreensão maior dos recursos oferecidos pelos ambientes do serviço de aplicativo, leia a documentação [o que é uma ambiente do serviço de aplicativo][WhatisASE] . Se você não souber os benefícios de operar em uma VNet, leia as [perguntas frequentes sobre a rede virtual do Azure][virtualnetwork]. 
 
 ## <a name="overview"></a>Visão geral
 Um ASE pode ser implantado com um ponto de extremidade acessível da internet ou com um endereço IP em sua VNet. Para definir o endereço IP como um endereço de VNet, você precisa implantar seu ASE com um ILB (Balanceador de Carga Interno). Quando seu ASE é configurado com um ILB, você fornece:
@@ -51,7 +50,7 @@ Há algumas coisas que você não pode fazer ao usar um ASE com ILB. Entre elas:
 * comprar e usar um certificado com um aplicativo por meio do portal. Obviamente, você ainda pode obter certificados diretamente com uma Autoridade de Certificação e usá-los com seus aplicativos, mas não através do Portal do Azure.
 
 ## <a name="creating-an-ilb-ase"></a>Criar um ILB do ASE
-A criação de um ILB do ASE não é muito diferente da criação normal de um ASE. Para uma discussão mais detalhada sobre a criação de um ASE, consulte [Como criar um Ambiente do Serviço de Aplicativo][HowtoCreateASE]. O processo de criação de um ILB do ASE é o mesmo tanto para a criação de uma VNet durante a criação do ASE quanto para a seleção de uma VNet pré-existente. Para criar um ASE ILB: 
+A criação de um ILB do ASE não é muito diferente da criação normal de um ASE. Para obter uma discussão mais aprofundada sobre como criar um ASE, consulte [como criar um ambiente do serviço de aplicativo][HowtoCreateASE]. O processo de criação de um ILB do ASE é o mesmo tanto para a criação de uma VNet durante a criação do ASE quanto para a seleção de uma VNet pré-existente. Para criar um ASE ILB: 
 
 1. No Portal do Azure, selecione **Criar um recurso -> Web + Celular -> Ambiente do Serviço de Aplicativo**.
 2. Selecione sua assinatura.
@@ -108,18 +107,18 @@ O endereço IP de seu ILB está listado nas Propriedades como o Endereço IP Vir
 
 ![][4]
 
-## <a name="using-an-ilb-ase"></a>Como usar um ASE com ILB
+## <a name="using-an-ilb-ase"></a>Usando um ILB ASE
 #### <a name="network-security-groups"></a>Grupos de segurança de rede
 Um ASE ILB permite isolamento de rede para seus aplicativos. Os aplicativos não são acessíveis ou mesmo conhecidos pela internet. Essa abordagem é excelente para hospedar sites da Intranet, como aplicativos de linha de negócios. Quando for necessário restringir ainda mais o acesso, você ainda poderá usar os NSGs (Grupos de Segurança de Rede) para controlar o acesso no nível da rede. 
 
-Se você quiser usar os NSGs para restringir ainda mais o acesso, deverá certificar-se de que a comunicação necessária para o ASE operar não será interrompida. Mesmo que o acesso HTTP/HTTPS seja somente através do ILB usado pelo ASE, o ASE ainda depende de recursos fora da VNet. Para ver o acesso à rede ainda necessário, consulte [Controlar o Tráfego de Entrada para um Ambiente do Serviço de Aplicativo][ControlInbound] e  [Detalhes da configuração da rede para Ambientes do Serviço de Aplicativo com ExpressRoute][ExpressRoute]. 
+Se você quiser usar os NSGs para restringir ainda mais o acesso, deverá certificar-se de que a comunicação necessária para o ASE operar não será interrompida. Mesmo que o acesso HTTP/HTTPS seja somente através do ILB usado pelo ASE, o ASE ainda depende de recursos fora da VNet. Para ver qual acesso à rede ainda é necessário, consulte controlando o [tráfego de entrada para um ambiente do serviço de aplicativo][ControlInbound] e [detalhes de configuração de rede para ambientes do serviço de aplicativo com o ExpressRoute][ExpressRoute]. 
 
 Para configurar os NSGs, é necessário conhecer o endereço IP utilizado pelo Azure para gerenciar o ASE. Esse endereço IP também será o endereço IP de saída de seu ASE se ele fizer solicitações da internet. O endereço IP de saída para o ASE permanece estático durante o ciclo de vida do seu ASE. Se você excluir e recriar seu ASE, você obterá um novo endereço IP. Para localizar o endereço IP, acesse **Configurações -> Propriedades** e localize o **Endereço IP de Saída**. 
 
 ![][5]
 
 #### <a name="general-ilb-ase-management"></a>Gerenciamento geral do ASE com ILB
-O gerenciamento de um ASE com ILB é basicamente o mesmo que gerenciar um ASE normalmente. É necessário escalar verticalmente seus pools de trabalho para hospedar mais instâncias ASP e escalar verticalmente os servidores front-end para lidar com quantidades aumentadas de tráfego HTTP/HTTPS. Para obter informações gerais sobre como gerenciar a configuração de um ASE, consulte [Configurar um Ambiente do Serviço de Aplicativo][ASEConfig]. 
+O gerenciamento de um ASE com ILB é basicamente o mesmo que gerenciar um ASE normalmente. É necessário escalar verticalmente seus pools de trabalho para hospedar mais instâncias ASP e escalar verticalmente os servidores front-end para lidar com quantidades aumentadas de tráfego HTTP/HTTPS. Para obter informações gerais sobre como gerenciar a configuração de um ASE, consulte Configurando [um ambiente do serviço de aplicativo][ASEConfig]. 
 
 Os itens adicionais de gerenciamento são gerenciamento de certificados e gerenciamento de DNS. É necessário obter e carregar o certificado usado para HTTPS após a criação do ASE com ILB e substitui-lo antes que expire. Como Azure é proprietário do domínio de base, ele pode fornecer certificados para ASEs com um VIP Externo. Como o subdomínio usado por um ASE com ILB pode ser qualquer coisa, é necessário fornecer seu próprio certificado para HTTPS. 
 
@@ -131,7 +130,7 @@ Ao usar um VIP Externo, o DNS é gerenciado pelo Azure. Qualquer aplicativo cria
 
 
 ## <a name="getting-started"></a>Introdução
-Para se familiarizar com os ambientes de serviço de aplicativo, consulte [Introdução aos ambientes de Serviço de Aplicativo][WhatisASE]
+Para começar a usar os ambientes do serviço de aplicativo, consulte [introdução aos ambientes do serviço de aplicativo][WhatisASE]
 
 [!INCLUDE [app-service-web-try-app-service](../../../includes/app-service-web-try-app-service.md)]
 

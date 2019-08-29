@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 461f6127111e745fe4a81958aaa225ed1dc4392a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c493f79a066f872be6b38d127622cc757ab3c1cc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707712"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100235"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Fazer backup e recuperar um banco de dados Oracle Database 12c em uma máquina virtual Linux do Azure
 
@@ -133,7 +132,7 @@ Antes de começar, verifique se a CLI do Azure está instalada. Para obter mais 
     RMAN> backup database plus archivelog;
     ```
 
-### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Etapa 4: Backup consistente com aplicativo para VMs do Linux
+### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Etapa 4: Backup consistente com o aplicativo para VMs Linux
 
 Os backups consistentes com aplicativo são um novo recurso do Backup do Azure. Você pode criar e selecione os scripts para serem executados antes e depois do instantâneo da VM (pré-instantâneo e pós-instantâneo).
 
@@ -266,7 +265,7 @@ Os backups consistentes com aplicativo são um novo recurso do Backup do Azure. 
 Para saber mais, consulte [Backup consistente com aplicativo para VMs Linux](https://azure.microsoft.com/blog/announcing-application-consistent-backup-for-linux-vms-using-azure-backup/).
 
 
-### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Etapa 5: Cofres dos serviços de recuperação do uso do Azure para fazer backup da VM
+### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Etapa 5: Usar cofres dos serviços de recuperação do Azure para fazer backup da VM
 
 1.  No Portal do Azure, pesquise por **Cofres dos Serviços de Recuperação**.
 
@@ -307,7 +306,7 @@ Para saber mais, consulte [Backup consistente com aplicativo para VMs Linux](htt
 
     ![Comando Fazer backup agora dos cofres dos Serviços de Recuperação](./media/oracle-backup-recovery/recovery_service_09.png)
 
-10. Clique no botão **Backup**. Aguarde o processo de backup ser concluído. Em seguida, vá para [etapa 6: Remover os arquivos de banco de dados](#step-6-remove-the-database-files).
+10. Clique no botão **Backup**. Aguarde o processo de backup ser concluído. Em seguida, vá [para a etapa 6: Remova os arquivos](#step-6-remove-the-database-files)de banco de dados.
 
     Para exibir o status do trabalho de backup, clique em **Trabalhos**.
 
@@ -458,7 +457,7 @@ Em vez de restaurar os arquivos excluídos dos cofres dos Serviços de Recupera�
 
     ![Comando Excluir cofre](./media/oracle-backup-recovery/recover_vm_01.png)
 
-### <a name="step-2-recover-the-vm"></a>Etapa 2: Recupere a VM
+### <a name="step-2-recover-the-vm"></a>Etapa 2: Recuperar a VM
 
 1.  Vá para os **cofres dos Serviços de Recuperação**e selecione **myVault**.
 
@@ -496,7 +495,7 @@ Em vez de restaurar os arquivos excluídos dos cofres dos Serviços de Recupera�
 
     ![Status do processo de restauração](./media/oracle-backup-recovery/recover_vm_09.png)
 
-### <a name="step-3-set-the-public-ip-address"></a>Etapa 3: Defina o endereço IP público
+### <a name="step-3-set-the-public-ip-address"></a>Etapa 3: Definir o endereço IP público
 Depois que a VM for restaurada, configure o endereço IP público.
 
 1.  Na caixa de pesquisa, digite **endereços IP públicos**.
@@ -537,9 +536,9 @@ Depois que a VM for restaurada, configure o endereço IP público.
     ```
 
     > [!IMPORTANT]
-    > Se o banco de dados **inicialização** comando gera um erro, para recuperar o banco de dados, consulte [etapa 6: Use RMAN para recuperar o banco de dados](#step-6-optional-use-rman-to-recover-the-database).
+    > Se o comando de **inicialização** do banco de dados gerar um erro, para recuperar [o banco de dados, consulte a etapa 6: Use o RMAN para recuperar o](#step-6-optional-use-rman-to-recover-the-database)banco de dados.
 
-### <a name="step-6-optional-use-rman-to-recover-the-database"></a>Etapa 6: (Opcional) Use RMAN para recuperar o banco de dados
+### <a name="step-6-optional-use-rman-to-recover-the-database"></a>Etapa 6: Adicional Usar o RMAN para recuperar o banco de dados
 *   Use o script a seguir para recuperar o banco de dados:
 
     ```bash

@@ -8,16 +8,15 @@ manager: cfowler
 editor: ''
 ms.service: azure-functions
 ms.workload: na
-ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: 6057fa52cd2f1e9b9fd525723f96ab66983fb5d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d5959acc7719e2b02d529bca8261bc09d5b93634
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61020291"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085322"
 ---
 # <a name="how-to-troubleshoot-functions-runtime-is-unreachable"></a>Como solucionar o problema "Functions Runtime inacessível"
 
@@ -30,7 +29,7 @@ Este documento é indicado para solucionar o erro a seguir quando exibido no por
 ### <a name="summary"></a>Resumo
 Esse problema ocorre quando o Azure Functions Runtime não pode ser iniciado. O motivo mais comum para que esse erro ocorra é quando o aplicativo de funções perde o acesso à sua conta de armazenamento. [Leia mais sobre os requisitos da conta de armazenamento aqui](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal#storage-account-requirements)
 
-### <a name="troubleshooting"></a>solução de problemas
+### <a name="troubleshooting"></a>Solução de problemas
 Vamos percorrer os quatro casos de erro mais comuns e aprender como identificar e resolver cada caso.
 
 1. Conta de armazenamento excluída
@@ -55,7 +54,7 @@ Na etapa anterior, se não havia uma cadeia de conexão da conta de armazenament
 
 ### <a name="required-application-settings"></a>Configurações de aplicativo obrigatórias
 
-* Obrigatório
+* Necessário
     * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
 * Obrigatório para funções de plano de consumo
     * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
@@ -66,7 +65,7 @@ Na etapa anterior, se não havia uma cadeia de conexão da conta de armazenament
 ### <a name="guidance"></a>Diretrizes
 
 * Não marque "configuração de slot" para nenhuma dessas configurações. Quando você trocar os slots de implantação, a função será interrompida.
-* Não modifique essas configurações como parte de implantações automatizadas.
+* Não modifique essas configurações como parte das implantações automatizadas.
 * Essas configurações precisam ser fornecidas e estarem válidas no momento da criação. Uma implantação automatizada que não contenha essas configurações resultará em um aplicativo não funcional, mesmo se as configurações forem adicionadas após o fato.
 
 ## <a name="storage-account-credentials-invalid"></a>Credenciais da conta de armazenamento inválidas

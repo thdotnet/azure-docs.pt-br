@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 5b406f9c7f8c16038561853170896d2cd95dc383
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 852530910f7a8c6c815493d0dbcc57f67695d6de
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444856"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066099"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Implantar o contêiner de detecção de idioma no Serviço de Kubernetes do Azure
 
@@ -62,19 +62,19 @@ Para implantar o contêiner no Serviço de Kubernetes do Azure, as imagens do co
 
 1. Fazer logon na CLI do Azure
 
-    ```azurecli
+    ```azurecli-interactive
     az login
     ```
 
 1. Crie um grupo de recursos denominado `cogserv-container-rg` para manter todos os recursos criados neste procedimento.
 
-    ```azurecli
+    ```azurecli-interactive
     az group create --name cogserv-container-rg --location westus
     ```
 
 1. Crie seu próprio Registro de Contêiner do Azure com o formato de seu nome e, em seguida, `registry`, como em `pattyregistry`. Não use caracteres de traços ou sublinhado no nome.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
     ```
 
@@ -104,7 +104,7 @@ Para implantar o contêiner no Serviço de Kubernetes do Azure, as imagens do co
 
 1. Faça o logon em seu registro de contêiner. Você precisa fazer logon antes de efetuar push das imagens no registro.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr login --name pattyregistry
     ```
 
@@ -174,7 +174,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 1. Crie uma entidade de serviço.
 
-    ```azurecli
+    ```azurecli-interactive
     az ad sp create-for-rbac --skip-assignment
     ```
 
@@ -193,7 +193,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 1. Obtenha a ID do registro de contêiner.
 
-    ```azurecli
+    ```azurecli-interactive
     az acr show --resource-group cogserv-container-rg --name pattyregistry --query "id" --o table
     ```
 
@@ -208,7 +208,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 1. Para conceder o acesso correto para que o cluster do AKS use as imagens armazenadas no registro de contêiner, crie uma atribuição de função. Substitua `<appId>` e `<acrId>` pelos valores coletados nas duas etapas anteriores.
 
-    ```azurecli
+    ```azurecli-interactive
     az role assignment create --assignee <appId> --scope <acrId> --role Reader
     ```
 
@@ -216,7 +216,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 1. Crie o cluster de Kubernetes. Todos os valores de parâmetro são das seções anteriores, exceto o parâmetro name. Escolha um nome que indique quem criou e sua finalidade, como `patty-kube`.
 
-    ```azurecli
+    ```azurecli-interactive
     az aks create --resource-group cogserv-container-rg --name patty-kube --node-count 2  --service-principal <appId>  --client-secret <client-secret>  --generate-ssh-keys
     ```
 
@@ -284,7 +284,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 1. Obtenha as credenciais do cluster de Kubernetes.
 
-    ```azurecli
+    ```azurecli-interactive
     az aks get-credentials --resource-group cogserv-container-rg --name patty-kube
     ```
 
@@ -397,7 +397,7 @@ Altere a URL no navegador para o IP externo do contêiner `language-frontend` us
 
 Quando você concluir o cluster, exclua o grupo de recursos do Azure.
 
-```azure-cli
+```azurecli-interactive
 az group delete --name cogserv-container-rg
 ```
 
@@ -408,7 +408,7 @@ az group delete --name cogserv-container-rg
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Contêineres de serviços cognitivos](../cognitive-services-container-support.md)
+> [Contêineres de serviços cognitivas](../cognitive-services-container-support.md)
 
 <!--
 kubectl get secrets

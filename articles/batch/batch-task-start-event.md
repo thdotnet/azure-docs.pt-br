@@ -6,18 +6,17 @@ author: laurenhughes
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
-ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: lahugh
-ms.openlocfilehash: 76100f1457123ac88055fddd55eb22a102201adf
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: efad9e71b986156c6d8e95208d50ac8d5a4d7e7f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322814"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70094360"
 ---
 # <a name="task-start-event"></a>Evento de início da tarefa
 
@@ -50,21 +49,21 @@ ms.locfileid: "68322814"
 
 |Nome do elemento|Tipo|Observações|
 |------------------|----------|-----------|
-|jobId|Cadeia de caracteres|A ID do trabalho que contém a tarefa.|
-|id|Cadeia de caracteres|A ID da tarefa.|
-|taskType|Cadeia de caracteres|O tipo de tarefa. Pode ser “JobManager” indicando que é uma tarefa do gerenciador de trabalhos ou “Usuário”, indicando que não é uma tarefa do gerenciador de trabalhos.|
+|jobId|Cadeia|A ID do trabalho que contém a tarefa.|
+|id|Cadeia|A ID da tarefa.|
+|taskType|Cadeia|O tipo de tarefa. Pode ser “JobManager” indicando que é uma tarefa do gerenciador de trabalhos ou “Usuário”, indicando que não é uma tarefa do gerenciador de trabalhos.|
 |systemTaskVersion|Int32|Esse é o contador interno de repetição de uma tarefa. Internamente, o serviço em lotes pode repetir uma tarefa para contabilizar problemas transitórios. Esses problemas podem incluir erros internos de agendamento ou tentativa de recuperar nós de computação em estado inválido.|
 |[nodeInfo](#nodeInfo)|Tipo complexo|Contém informações sobre o nó de computação em que a tarefa é executada.|
-|[multiInstanceSettings](#multiInstanceSettings)|Tipo complexo|Especifica que a tarefa é uma tarefa com várias instâncias que precisa de vários nós de computação.  Consulte [multiInstanceSettings](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task) para obter detalhes.|
-|[restrições](#constraints)|Tipo complexo|As restrições de execução aplicáveis a essa tarefa.|
-|[executionInfo](#executionInfo)|Tipo complexo|Contém informações sobre a execução da tarefa.|
+|[multiInstanceSettings](#multiInstanceSettings)|Tipo Complexo|Especifica que a tarefa é uma tarefa com várias instâncias que precisa de vários nós de computação.  Consulte [multiInstanceSettings](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task) para obter detalhes.|
+|[restrições](#constraints)|Tipo Complexo|As restrições de execução aplicáveis a essa tarefa.|
+|[executionInfo](#executionInfo)|Tipo Complexo|Contém informações sobre a execução da tarefa.|
 
 ###  <a name="nodeInfo"></a> nodeInfo
 
 |Nome do elemento|Tipo|Observações|
 |------------------|----------|-----------|
-|poolId|Cadeia de caracteres|A ID do pool em que a tarefa foi executada.|
-|nodeId|Cadeia de caracteres|A ID do nó em que a tarefa foi executada.|
+|poolId|Cadeia|A ID do pool em que a tarefa foi executada.|
+|nodeId|Cadeia|A ID do nó em que a tarefa foi executada.|
 
 ###  <a name="multiInstanceSettings"></a> multiInstanceSettings
 

@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 7ab921d889c48ccd8be469328e2690cb1cb2d8b2
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 7dba929101a928f0bbcb8553d6dd3b3043d74853
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70050051"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114861"
 ---
 # <a name="install-and-run-face-containers"></a>Instalar e executar contêineres de face
 
@@ -150,7 +150,6 @@ Para obter mais informações sobre essas opções, consulte [Configurar contêi
 
 Neste artigo, você aprendeu conceitos e fluxo de trabalho sobre como baixar, instalar e executar API de Detecção Facial contêineres. Em resumo:
 
-* O API de Detecção Facial fornece três contêineres do Linux para o Docker que fornecem extração de frases-chave, detecção de idioma e análise de sentimentos.
 * As imagens de contêiner são baixadas do registro de contêiner do Azure.
 * Imagens de contêiner são executadas no Docker.
 * Você pode usar a API REST ou o SDK para chamar operações em contêineres API de Detecção Facial especificando o URI do host do contêiner.

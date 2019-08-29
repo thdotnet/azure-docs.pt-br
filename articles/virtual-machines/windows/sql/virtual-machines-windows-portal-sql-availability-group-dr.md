@@ -9,19 +9,18 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 388c464e-a16e-4c9d-a0d5-bb7cf5974689
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.custom: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: f9e31ac7685d597c741033bc165c6a51280e3d72
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f74f9ba55f3593ed31994b83bb9bda1501445e0a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571735"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100660"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Configurar um Grupo de Disponibilidade Always On em máquinas virtuais do Azure em diferentes regiões
 
@@ -145,7 +144,7 @@ A réplica no data center remoto é parte do grupo de disponibilidade, mas ele e
 
 Preferencialmente, atualize as cadeias de conexão do cliente para definir `MultiSubnetFailover=Yes`. Consulte [conectar-se ao MultiSubnetFailover](https://msdn.microsoft.com/library/gg471494#Anchor_0).
 
-Se você não pode modificar as cadeias de conexão, você pode configurar o cache de resolução de nome. Ver [erro de tempo limite e você não pode se conectar a um ouvinte do grupo de disponibilidade AlwaysOn do SQL Server 2012 em um ambiente de várias sub-redes](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av).
+Se você não pode modificar as cadeias de conexão, você pode configurar o cache de resolução de nome. Consulte [erro de tempo limite e não é possível se conectar a um ouvinte de grupo de disponibilidade SQL Server 2012 AlwaysOn em um ambiente de várias sub-redes](https://support.microsoft.com/help/2792139/time-out-error-and-you-cannot-connect-to-a-sql-server-2012-alwayson-av).
 
 ## <a name="fail-over-to-remote-region"></a>Failover para região remota
 
@@ -165,7 +164,7 @@ Para testar a conectividade do ouvinte para a região remota, é possível reali
 
 Depois de testar a conectividade, mova a réplica primária de volta para seu data center principal e definir o modo de disponibilidade para suas configurações operacionais normais. A tabela a seguir mostra as configurações operacionais normais para a arquitetura descrita neste documento:
 
-| Local padrão | Instância do servidor | Função | Modo de Disponibilidade | Modo de failover
+| Location | Instância do servidor | Role | Modo de Disponibilidade | Modo de failover
 | ----- | ----- | ----- | ----- | -----
 | Data center principal | SQL-1 | Primário | Síncrono | Automático
 | Data center principal | SQL-2 | Secundário | Síncrono | Automático

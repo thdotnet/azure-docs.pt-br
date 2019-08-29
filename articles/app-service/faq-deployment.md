@@ -11,17 +11,16 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: beee76bdc443b3a66b4500b83d228075b84eed1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c7551a13c84798b5a594d4646b8faa619619724b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65864765"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073143"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Perguntas frequentes sobre implantação de Aplicativos Web no Azure
 
@@ -38,16 +37,16 @@ Estas são algumas opções para publicar seu código do aplicativo Web:
 
 Para obter mais informações, consulte [Implantar seu aplicativo no Serviço de Aplicativo](deploy-local-git.md).
 
-## <a name="i-see-an-error-message-when-i-try-to-deploy-from-visual-studio-how-do-i-resolve-this-error"></a>Recebi uma mensagem de erro ao tentar implantar por meio do Visual Studio. Como resolvo o erro?
+## <a name="i-see-an-error-message-when-i-try-to-deploy-from-visual-studio-how-do-i-resolve-this-error"></a>Recebi uma mensagem de erro ao tentar implantar por meio do Visual Studio. Como fazer resolver esse erro?
 
-Se você vir a seguinte mensagem de erro, talvez você esteja usando uma versão mais antiga do SDK: "Erro durante a implantação do recurso 'YourResourceName' no grupo de recursos 'YourResourceGroup': MissingRegistrationForLocation: A assinatura não está registrada para o tipo de recurso 'components' na localização 'Centro dos EUA'. Registre novamente para esse provedor para ter acesso a esse local." 
+Se você vir a seguinte mensagem de erro, talvez você esteja usando uma versão mais antiga do SDK: "Erro durante a implantação do recurso 'YourResourceName' no grupo de recursos 'YourResourceGroup': MissingRegistrationForLocation: A assinatura não está registrada para o tipo de recurso 'components' na localização 'Centro dos EUA'. Registre-se novamente para esse provedor para ter acesso a esse local. " 
 
 Para resolver esse erro, atualize para o [último SDK](https://azure.microsoft.com/downloads/). Se você receber essa mensagem e tiver o último SDK, envie uma solicitação de suporte.
 
 ## <a name="how-do-i-deploy-an-aspnet-application-from-visual-studio-to-app-service"></a>Como fazer para implantar um aplicativo ASP.NET por meio do Visual Studio no Serviço de Aplicativo?
 <a id="deployasp"></a>
 
-O tutorial [criar seu primeiro aplicativo web ASP.NET no Azure em cinco minutos](app-service-web-get-started-dotnet.md) mostra como implantar um aplicativo de web do ASP.NET para um aplicativo web no serviço de aplicativo usando o Visual Studio.
+O tutorial [criar seu primeiro aplicativo web ASP.net no Azure em cinco minutos](app-service-web-get-started-dotnet.md) mostra como implantar um aplicativo Web ASP.net em um aplicativo Web no serviço de aplicativo usando o Visual Studio.
 
 ## <a name="what-are-the-different-types-of-deployment-credentials"></a>Quais são os diferentes tipos de credenciais de implantação?
 
@@ -59,7 +58,7 @@ Para obter informações sobre a estrutura de arquivos do aplicativo do Serviço
 
 ## <a name="how-do-i-resolve-ftp-error-550---there-is-not-enough-space-on-the-disk-when-i-try-to-ftp-my-files"></a>Como fazer para resolver o “Erro de FTP 550 – não há espaço suficiente em disco” quando tento usar o FTP para meus arquivos?
 
-Se você vir essa mensagem, é provável que você está executando em uma cota de disco no plano de serviço para seu aplicativo web. Talvez você precise escalar verticalmente para uma camada de serviço superior de acordo com suas necessidades de espaço em disco. Para obter mais informações sobre planos de preços e limites de recursos, consulte [Preços do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/).
+Se você vir essa mensagem, é provável que você esteja executando uma cota de disco no plano de serviço para seu aplicativo Web. Talvez você precise escalar verticalmente para uma camada de serviço superior de acordo com suas necessidades de espaço em disco. Para obter mais informações sobre planos de preços e limites de recursos, consulte [Preços do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/).
 
 ## <a name="how-do-i-set-up-continuous-deployment-for-my-app-service-web-app"></a>Como fazer para configurar a implantação contínua em meu aplicativo Web do Serviço de Aplicativo?
 
@@ -73,7 +72,7 @@ Para obter ajuda sobre como investigar problemas com a implantação contínua d
 
 Para resolver problemas de FTP:
 
-1. Verifique se você estiver inserindo o nome de host correto e as credenciais. Para obter informações detalhadas sobre os diferentes tipos de credenciais e como usá-los, consulte [Credenciais de implantação](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
+1. Verifique se você está inserindo o nome de host e as credenciais corretas. Para obter informações detalhadas sobre os diferentes tipos de credenciais e como usá-los, consulte [Credenciais de implantação](https://github.com/projectkudu/kudu/wiki/Deployment-credentials).
 2. Verifique se as portas FTP não estão bloqueadas por um firewall. As portas devem ter essas configurações:
     * Porta de conexão de controle FTP: 21
     * Porta de conexão de dados FTP: 989, 10001-10300
@@ -90,7 +89,7 @@ Para saber mais sobre as circunstâncias nas quais uma implantação de aplicati
 
 Você tem duas opções para usar a implantação contínua com o Azure DevOps:
 
-*   Use um projeto Git. Conecte-se por meio do serviço de aplicativo usando o Centro de implantação.
+*   Use um projeto Git. Conecte-se por meio do serviço de aplicativo usando o centro de implantação.
 *   Use um projeto TFVC (Controle de Versão do Team Foundation). Implante usando o agente de build do Serviço de Aplicativo.
 
 A implantação contínua de código para essas duas opções depende dos fluxos de trabalho existentes do desenvolvedor e dos procedimentos de check-in. Para obter mais informações, consulte estes artigos: 

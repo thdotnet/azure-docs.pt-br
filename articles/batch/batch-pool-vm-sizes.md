@@ -10,17 +10,16 @@ ms.assetid: ''
 ms.service: batch
 ms.workload: ''
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/01/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: fd88f8e9b32b3fe5a0d7ab0caf233098ea19fde0
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: f894a7438c56c3830eb62c516447195f10fc3b76
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323096"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70094662"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Escolher um tamanho de VM para nós de computação em um pool do Lote do Azure
 
@@ -39,7 +38,7 @@ Os pools do lote na configuração de máquina virtual dão suporte a quase todo
 
 Os tamanhos de VM promocional ou de visualização não listados não são garantidos para suporte.
 
-| Série da VM  | Tamanhos com suporte | Modo de alocação do pool de contas do lote<sup>1</sup> |
+| Série de VM  | Tamanhos com suporte | Modo de alocação do pool de contas do lote<sup>1</sup> |
 |------------|---------|-----------------|
 | Série A básica | Todos os tamanhos *, exceto* Basic_A0 (a0) | Any |
 | Séria A | Todos os tamanhos *, exceto* Standard_A0 | Any |
@@ -72,9 +71,9 @@ Os tamanhos de VM promocional ou de visualização não listados não são garan
 
 Os pools de lote na configuração do Serviço de Nuvem oferecem suporte a todos os [tamanhos de VM para Serviços de Nuvem](../cloud-services/cloud-services-sizes-specs.md) **exceto** para:
 
-| Série da VM  | Tamanhos sem suporte |
+| Série de VM  | Tamanhos sem suporte |
 |------------|-------------------|
-| Séria A   | Extrapequena       |
+| Séria A   | Extra pequeno       |
 | Série Av2 | Standard_A1_v2, Standard_A2_v2, Standard_A2m_v2 |
 
 ## <a name="size-considerations"></a>Considerações de tamanhos

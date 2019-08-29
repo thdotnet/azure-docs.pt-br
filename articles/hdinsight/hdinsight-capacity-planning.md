@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: hrasheed
-ms.openlocfilehash: bd2284211c2fdc5a346c6ffb113f89fe311a358c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 0f386faa5a18282c9e60bdb282e01dcd53f9de4f
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67786509"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114315"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Planejamento de capacidade para clusters HDInsight
 
@@ -82,7 +82,7 @@ A escala do cluster é determinada pela quantidade de seus nós de VM. Para todo
 
 Dependendo de seu tipo de cluster, aumentar o número de nós de trabalho gerará capacidade adicional de computação (por exemplo, mais núcleos), mas também poderá ocasionar aumento na quantidade total de memória necessária para que todo o cluster dê suporte ao armazenamento na memória de dados que estão sendo processados. Assim como acontece com a escolha do tamanho e tipo de VM, a seleção da escala correta do cluster é normalmente alcançada empiricamente, usando consultas canary ou cargas de trabalho simuladas.
 
-Você pode aumentar o cluster para atender ao pico das demandas de carga e reduzi-lo novamente quando esses nós adicionais não forem mais necessários. O [recurso de dimensionamento automático](hdinsight-autoscale-clusters.md) permite automaticamente escala seu cluster com base em predeterminados métricas e intervalos. Para obter mais informações sobre como dimensionar seus clusters manualmente, consulte [clusters do HDInsight de escala](hdinsight-scaling-best-practices.md).
+Você pode aumentar o cluster para atender ao pico das demandas de carga e reduzi-lo novamente quando esses nós adicionais não forem mais necessários. O [recurso de dimensionamento automático](hdinsight-autoscale-clusters.md) permite dimensionar automaticamente o cluster com base nas métricas e nos tempos predeterminados. Para obter mais informações sobre como dimensionar seus clusters manualmente, consulte [dimensionar clusters HDInsight](hdinsight-scaling-best-practices.md).
 
 ### <a name="cluster-lifecycle"></a>Ciclo de vida do cluster
 
@@ -94,7 +94,7 @@ Você é cobrado pelo tempo de vida do cluster. Se houver apenas momentos espec�
 
 ### <a name="isolate-cluster-job-errors"></a>Isolar os erros de trabalho do cluster
 
-Às vezes, os erros podem ocorrer devido à execução paralela de vários mapas e componentes de redução em um cluster de vários nós. Para ajudar a isolar o problema, experimente os testes distribuídos através da execução simultânea de vários trabalhos em um cluster de nó único e, em seguida, expanda essa abordagem para executar várias tarefas simultaneamente em clusters que contenham mais de um nó. Para criar um cluster HDInsight de nó único no Azure, use a opção *avançada*.
+Às vezes, os erros podem ocorrer devido à execução paralela de vários mapas e componentes de redução em um cluster de vários nós. Para ajudar a isolar o problema, experimente o teste distribuído executando vários trabalhos simultâneos em um único cluster de nó de trabalho e, em seguida, expanda essa abordagem para executar vários trabalhos simultaneamente em clusters que contenham mais de um nó. Para criar um cluster HDInsight de nó único no Azure, use a opção *personalizado (tamanho, configurações, aplicativos)* e use um valor de 1 para o *número de nós de trabalho* na seção **tamanho do cluster** ao provisionar um novo cluster no Portal.
 
 Você também pode instalar um ambiente de desenvolvimento de nó único em seu computador local e testar a solução nesse ambiente. A Hortonworks fornece um ambiente de desenvolvimento local de nó único para soluções baseadas em Hadoop que é útil para o desenvolvimento inicial, a prova de conceito e o teste. Para obter mais informações, consulte a [Área Restrita do Hortonworks](https://hortonworks.com/products/hortonworks-sandbox/).
 
@@ -106,7 +106,7 @@ Depois de determinar o tamanho, a escala e o tipo da VM do cluster de destino, v
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 1. Selecione **ajuda + suporte** no lado inferior esquerdo da página.
-1. Selecione na **nova solicitação de suporte**.
+1. Selecione em **nova solicitação de suporte**.
 1. Na página **Nova solicitação de suporte**, na guia **Noções básicas**, selecione as opções a seguir:
    - **Tipo de problema**: **Limites de serviço e assinatura (cotas)**
    - **Assinatura**: a assinatura que você quer modificar
@@ -114,10 +114,10 @@ Depois de determinar o tamanho, a escala e o tipo da VM do cluster de destino, v
     
      ![Crie uma solicitação de suporte para aumentar a cota de núcleos do HDInsight](./media/hdinsight-capacity-planning/hdinsight-quota-support-request.png)
 
-1. Selecione **Avançar: Soluções >>** .
-1. Sobre o **detalhes** página, insira uma descrição do problema, selecione a severidade do problema, o método de contato preferencial e outros campos obrigatórios.
-1. Selecione **Avançar: Revisar + criar >>** .
-1. Sobre o **revisar + criar** guia, selecione **criar**.
+1. Selecione **Avançar: Soluções > >** .
+1. Na página **detalhes** , insira uma descrição do problema, selecione a severidade do problema, seu método de contato preferencial e outros campos obrigatórios.
+1. Selecione **Avançar: Examine + criar > >** .
+1. Na guia **revisar + criar** , selecione **criar**.
 
 > [!NOTE]  
 > Se precisar aumentar a cota de núcleos do HDInsight em uma região privada, [envie uma solicitação de lista de permissões](https://aka.ms/canaryintwhitelist).

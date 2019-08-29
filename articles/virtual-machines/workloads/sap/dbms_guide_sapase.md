@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/1/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3f50f013020c704ddc294a59f8c6c5dac24bbd5a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51e97089b1de88ccf9f45b1a0f429abc0cfac9f3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60835270"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101336"
 ---
 # <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Implantação do DBMS de Máquinas Virtuais do SAP ASE Azure para carga de trabalho do SAP
 
@@ -379,9 +378,9 @@ Como com sistemas locais, são necessárias várias etapas para habilitar toda a
 
 e os links gerados no DBACockpit da transação são semelhantes a este:
 
-> https:\//\<fullyqualifiedhostname>:44300/sap/bc/webdynpro/sap/dba_cockpit
+> https:\//fullyqualifiedhostname>:44300/SAP/BC/Webdynpro\</SAP/dba_cockpit
 > 
-> http:\//\<fullyqualifiedhostname>:8000/sap/bc/webdynpro/sap/dba_cockpit
+> http:\//fullyqualifiedhostname>:8000/SAP/BC/Webdynpro\</SAP/dba_cockpit
 > 
 > 
 
@@ -393,7 +392,7 @@ Se você implantou a VM em um cenário de somente na nuvem sem conectividade ent
 > 
 > 
 
-É possível encontrar mais detalhes relacionados ao nome DNS [aqui][virtual-machines-azurerm-versus-azuresm].
+Mais detalhes relacionados ao nome DNS podem ser encontrados [aqui][virtual-machines-azurerm-versus-azuresm].
 
 Definindo o parâmetro de perfil do SAP icm/host_name_full para o nome DNS da VM do Azure, o link pode ser semelhante a:
 
@@ -504,7 +503,7 @@ Para esses sistemas, as etapas a seguir devem ser executadas para o tempdb criad
 
 Essa configuração permite que o tempdb consuma mais espaço do que a unidade do sistema pode de fornecer. Como referência, é possível verificar os tamanhos de dispositivo tempdb em sistemas existentes, que são executados localmente. Ou tal configuração habilita números de IOPS em relação ao tempdb, que não poderiam ser fornecidos com a unidade do sistema. Sistemas que são executados localmente podem ser usados para monitorar a carga de trabalho de E/S no tempdb.
 
-Nunca coloque qualquer diretório do SAP ASE em /mnt ou /mnt/resource da VM. Para ASE SAP, este dispositivo também se aplica ao tempdb, mesmo que os objetos mantidos no tempdb sejam apenas temporários. Porque /mnt ou /mnt/resource é um padrão do espaço temporário da VM do Azure, que não é persistente. Mais detalhes sobre o espaço temporário da VM do Azure podem ser encontrados [neste artigo][virtual-machines-linux-how-to-attach-disk]
+Nunca coloque qualquer diretório do SAP ASE em /mnt ou /mnt/resource da VM. Para ASE SAP, este dispositivo também se aplica ao tempdb, mesmo que os objetos mantidos no tempdb sejam apenas temporários. Porque /mnt ou /mnt/resource é um padrão do espaço temporário da VM do Azure, que não é persistente. Mais detalhes sobre o espaço temporário da VM do Azure podem ser encontrados neste [artigo][virtual-machines-linux-how-to-attach-disk]
 
 Para dados e implantações de arquivos de log de transação, as instruções e sugestões feitas em [Considerações para implantação de DBMS de máquinas virtuais do Azure para a carga de trabalho SAP](dbms_guide_general.md). No caso de implantações com base em Linux é recomendável o uso de LVM ou MDADM usar para criar conjuntos de distribuição com suficiente de IOPS, taxa de transferência e volume. 
 
@@ -532,9 +531,9 @@ Como com sistemas locais, são necessárias várias etapas para habilitar toda a
 
 e os links gerados no DBACockpit da transação serão semelhantes a este:
 
-> https:\//\<fullyqualifiedhostname>:44300/sap/bc/webdynpro/sap/dba_cockpit
+> https:\//fullyqualifiedhostname>:44300/SAP/BC/Webdynpro\</SAP/dba_cockpit
 > 
-> http:\//\<fullyqualifiedhostname>:8000/sap/bc/webdynpro/sap/dba_cockpit
+> http:\//fullyqualifiedhostname>:8000/SAP/BC/Webdynpro\</SAP/dba_cockpit
 > 
 > 
 
@@ -546,7 +545,7 @@ Se você implantou a VM em um cenário de somente na nuvem sem conectividade ent
 > 
 > 
 
-É possível encontrar mais detalhes relacionados ao nome DNS [aqui][virtual-machines-azurerm-versus-azuresm].
+Mais detalhes relacionados ao nome DNS podem ser encontrados [aqui][virtual-machines-azurerm-versus-azuresm].
 
 Definindo o parâmetro de perfil do SAP icm/host_name_full para o nome DNS da VM do Azure, o link pode ser semelhante a:
 

@@ -8,18 +8,17 @@ manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: windows
 ms.workload: ''
 ms.date: 03/26/2018
 ms.author: robreed
-ms.openlocfilehash: 89d652f440e97650b7e7ac63cccc7fde75d7204a
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: ee5a6c732bcb48cd347b8d87b95d2896d7230a08
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798275"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092367"
 ---
 # <a name="powershell-dsc-extension"></a>Extensão de DSC do PowerShell
 
@@ -37,7 +36,7 @@ Windows Server 2019, Windows Server 2016, Windows Server 2012R2, Windows Server 
 
 ### <a name="internet-connectivity"></a>Conectividade com a Internet
 
-A extensão de DSC para Windows requer que a máquina virtual de destino é capaz de se comunicar com o Azure e o local do pacote de configuração (arquivo. zip), se ele estiver armazenado em um local fora do Azure. 
+A extensão de DSC para Windows requer que a máquina virtual de destino seja capaz de se comunicar com o Azure e o local do pacote de configuração (arquivo. zip) se ele estiver armazenado em um local fora do Azure. 
 
 ## <a name="extension-schema"></a>Esquema de extensão
 
@@ -98,7 +97,7 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 
 ### <a name="property-values"></a>Valores de propriedade
 
-| NOME | Valor/Exemplo | Tipo de dados |
+| Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
 | apiVersion | 01-10-2018 | date |
 | publisher | Microsoft.Powershell.DSC | string |
@@ -107,7 +106,7 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 
 ### <a name="settings-property-values"></a>Valores da Propriedade de Configurações
 
-| NOME | Tipo de dados | DESCRIÇÃO
+| Nome | Tipo de dados | Descrição
 | ---- | ---- | ---- |
 | settings.wmfVersion | string | Especifica a versão do Windows Management Framework que deve ser instalada em sua VM. Configurar essa propriedade como 'latest' instalará a versão mais atualizada do WMF. Os únicos valores possíveis atualmente para essa propriedade são ‘4.0’, ‘5.0’, e a mais recente. Esses valores possíveis estão sujeitos a atualizações. O valor padrão é ‘latest’. |
 | settings.configuration.url | string | Especifica o local da URL de onde baixar o arquivo zip configuração DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationUrlSasToken como o valor do token de SAS. Esta propriedade será necessária se settings.configuration.script e/ou settings.configuration.function estiverem definidas.
@@ -116,12 +115,12 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 | settings.configurationArguments | Collection | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade não será criptografada.
 | settings.configurationData.url | string | Especifica a URL de onde baixar o arquivo de dados de configuração (.pds1) para usar como entrada para a sua configuração de DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationDataUrlSasToken como o valor do token de SAS.
 | settings.privacy.dataEnabled | string | Habilita ou desabilita a coleta de telemetria. Os únicos valores possíveis para essa propriedade são ‘Enable’, ‘Disable’, ”, ou $null. Deixar esta propriedade em branco ou nulo permitirá telemetria
-| settings.advancedOptions.forcePullAndApply | Bool | Esta configuração é projetada para aprimorar a experiência de trabalhar com a extensão para registrar os nós com o DSC de automação do Azure.  Se o valor for `$true`, aguardará a extensão para a primeira execução da configuração extraída do serviço antes de retornar êxito/falha.  Se o valor é definido como $false, o status retornado pela extensão só fará referência a se o nó foi registrado com a configuração de estado de automação do Azure com êxito e a configuração de nó não será executada durante o registro.
+| settings.advancedOptions.forcePullAndApply | Bool | Essa configuração foi projetada para aprimorar a experiência de trabalhar com a extensão para registrar nós com o DSC de Automação do Azure.  Se o valor for `$true`, a extensão aguardará a primeira execução da configuração extraída do serviço antes de retornar êxito/falha.  Se o valor for definido como $false, o status retornado pela extensão somente fará referência a se o nó foi registrado com êxito na configuração de estado da automação do Azure e a configuração do nó não será executada durante o registro.
 | settings.advancedOptions.downloadMappings | Collection | Define locais alternativos para fazer o download de dependências como WMF e .NET
 
 ### <a name="protected-settings-property-values"></a>Valores da Propriedade de Configurações Protegidos
 
-| NOME | Tipo de dados | DESCRIÇÃO
+| Nome | Tipo de dados | Descrição
 | ---- | ---- | ---- |
 | protectedSettings.configurationArguments | string | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade será criptografada. |
 | protectedSettings.configurationUrlSasToken | string | Especifica o token SAS para acessar a URL definida por configuration.url. Esta propriedade será criptografada. |
@@ -132,7 +131,7 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 
 Extensões de VM do Azure podem ser implantadas com modelos do Azure Resource Manager.
 Modelos são ideais ao implantar uma ou mais máquinas virtuais que exigem configuração pós-implantação.
-Um modelo do Resource Manager que inclui a extensão de DSC para Windows pode ser encontrado na [Galeria de início rápido do Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
+Um modelo do Resource Manager de exemplo que inclui a extensão de DSC para Windows pode ser encontrado na [Galeria de início rápido do Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
@@ -149,7 +148,7 @@ Pacote de extensão é baixado e implantado para esse local na VM do Azure
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}
 ```
 
-Arquivo de status de extensão contém o status de sub-rotina e códigos de status de êxito/erro juntamente com o erro detalhado e uma descrição para cada execução da extensão.
+O arquivo de status de extensão contém os códigos de status de êxito/erro de subseqüentes, juntamente com o erro detalhado e a descrição para cada execução de extensão.
 ```
 C:\Packages\Plugins\{Extension_Name}\{Extension_Version}\Status\{0}.Status  -> {0} being the sequence number
 ```
@@ -162,7 +161,7 @@ C:\WindowsAzure\Logs\Plugins\{Extension_Name}\{Extension_Version}
 
 ### <a name="error-codes-and-their-meanings"></a>Códigos de erro e seus significados
 
-| Código do Erro | Significado | Ação possível |
+| Código de Erro | Significado | Ação possível |
 | :---: | --- | --- |
 | 1000 | Erro genérico | A mensagem de erro é fornecida pela exceção específica em logs de extensão |
 | 52 | Erro de Instalação da Extensão | A mensagem de erro é fornecida pela exceção específica |

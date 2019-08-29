@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.openlocfilehash: b451769f5f98bf64ca340504c983f16d1db36647
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: a844d28067fc0851760849317160d5902918252e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991545"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074384"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Quais são os componentes e versões do Apache Hadoop disponíveis com o HDInsight?
 
@@ -177,63 +177,7 @@ A seção fornece links para notas de versão para as distribuições do Hortonw
 
 ## <a name="default-node-configuration-and-virtual-machine-sizes-for-clusters"></a>Tamanhos de máquina virtual e configuração de nó de padrão para clusters
 
-As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clusters HDInsight.  Este gráfico é necessário para entender quais tamanhos de VM usar durante a criação de scripts do PowerShell ou da CLI do Azure para implantar clusters do HDInsight.
-
-> [!NOTE]
-> Os únicos tipos de cluster que têm discos de dados são Kafka e clusters HBase com o recurso de gravações aceleradas habilitado. O HDInsight dá suporte a tamanhos de disco p30 e S30 nesses cenários.
-
-> [!IMPORTANT]  
-> Se você precisa de mais de 32 nós de trabalho em um cluster, você precisa selecionar um tamanho de nó de cabeçalho com pelo menos 8 núcleos e 14 GB de RAM.
-
-* Todas as regiões com suporte, exceto Sul do Brasil e Oeste do Japão:
-
-|Tipo de Cluster|Hadoop|HBase|Consulta Interativa|Storm|Spark|ML Server|Kafka|
-|---|---|---|---|---|---|---|---|
-|Cabeçalho: tamanho padrão da VM|D12 v2|D12 v2|D13 v2|A3|D12 v2|D12 v2|D3V2|
-|Cabeçalho: tamanhos de VM recomendados|D3 v2|D3 v2|D13|A4 v2|D12 v2|D12 v2|A2M v2|
-||D4 v2|D4 v2|D14|A8 v2|D13 v2|D13 v2|D3 v2|
-||D12 v2|D12 v2|E16 v3|A2m v2|D14 v2|D14 v2|D4 v2|
-||E4 v3|E4 v3|E32 v3|E4 v3|E4 v3|E4 v3|D12 v2|
-|Trabalho: tamanho de VM padrão|D4 v2|D4 v2|D14 v2|D3 v2|D13 v2|D4 v2|4 D12v2 com 2 discos S30 por agente|
-|Trabalho: tamanhos de VM recomendados|D3 v2|D3 v2|D13|D3 v2|D4 v2|D4 v2|D13 v2|
-||D4 v2|D4 v2|D14|D4 v2|D12 v2|D12 v2|DS12 v2|
-||D12 v2|D12 v2|E16 v3|D12 v2|D13 v2|D13 v2|DS13 v2|
-||E4 v3|E4 v3|E20 v3|E4 v3|D14 v2|D14 v2|E4 v3|
-||||E32 v3||E16 v3|E16 v3|ES4 v3|
-||||E64 v3||E20 v3|E20 v3|E8 v3|
-||||||E32 v3|E32 v3|ES8 v3|
-||||||E64 v3|E64 v3||
-|Zookeeper: tamanho de VM padrão||A4 v2|A4 v2|A4 v2||A2 v2|D3V2|
-|Zookeeper: tamanhos de VM recomendados||A4 v2||A2 v2|||A2M v2|
-|||A8 v2||A4 v2|||D3 v2|
-|||A2m v2||A8 v2|||E8 v3|
-|Serviços de ML: tamanho de VM padrão||||||D4 v2||
-|Serviços de ML: tamanho de VM recomendado||||||D4 v2||
-|||||||D12 v2||
-|||||||D13 v2||
-|||||||D14 v2||
-|||||||E16 v3||
-|||||||E20 v3||
-|||||||E32 v3||
-|||||||E64 v3||
-
-* Apenas Sul do Brasil e Oeste do Japão (sem tamanhos v2):
-
-  | Tipo de Cluster | Hadoop | HBase | Consulta Interativa |Storm | Spark | Serviços de ML |
-  | --- | --- | --- | --- | --- | --- | --- |
-  | Cabeçalho: tamanho padrão da VM |D12 |D12  | D13 |A3 |D12 |D12 |
-  | Cabeçalho: tamanhos de VM recomendados |D3,<br/> D4,<br/> D12 |D3,<br/> D4,<br/> D12  | D13,<br/> D14 |A3,<br/> A4,<br/> A5 |D12,<br/> D13,<br/> D14 |D12,<br/> D13,<br/> D14 |
-  | Trabalho: tamanho de VM padrão |D4 |D4  |  D14 |D3 |D13 |D4 |
-  | Trabalho: tamanhos de VM recomendados |D3,<br/> D4,<br/> D12 |D3,<br/> D4,<br/> D12  | D13,<br/> D14 |D3,<br/> D4,<br/> D12 |D4,<br/> D12,<br/> D13,<br/> D14 | D4,<br/> D12,<br/> D13,<br/> D14 |
-  | Zookeeper: tamanho de VM padrão | |A4 v2 | A4 v2| A4 v2 | | A2 v2|
-  | Zookeeper: tamanhos de VM recomendados | |A2,<br/> A3,<br/> A4 | |A2,<br/> A3,<br/> A4 | | |
-  | Serviços de ML: tamanhos de VM padrão | | | | | |D4 |
-  | Serviços de ML: tamanhos de VM recomendados | | | | | |D4,<br/> D12,<br/> D13,<br/> D14 |
-
-> [!NOTE]
-> - O cabeçalho é conhecido como *Nimbus* para o tipo de cluster Storm.
-> - A função de trabalho é conhecida como *Supervisor* para o tipo de cluster Storm.
-> - A função de trabalho é conhecida como *Região* para o tipo de cluster HBase.
+Para obter mais informações sobre quais SKUs de máquina virtual selecionar para o cluster, consulte [detalhes de configuração do cluster HDInsight do Azure](hdinsight-supported-node-configuration.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 - [Configuração de cluster para o Apache Hadoop, Spark e muito mais no HDInsight](hdinsight-hadoop-provision-linux-clusters.md)

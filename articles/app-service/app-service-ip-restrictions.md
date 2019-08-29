@@ -1,6 +1,6 @@
 ---
-title: Restringir o acesso - serviço de aplicativo do Azure | Microsoft Docs
-description: Como usar restrições de acesso com o serviço de aplicativo do Azure
+title: Restringir acesso-serviço de Azure App | Microsoft Docs
+description: Como usar restrições de acesso com o serviço Azure App
 author: ccompy
 manager: stefsch
 editor: ''
@@ -10,95 +10,94 @@ ms.assetid: 3be1f4bd-8a81-4565-8a56-528c037b24bd
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: d3c547fbc09aeb034df5b7ed579639e1ff4bc0b4
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: cee6fc9fb5cc10a2b3442e146ef5688ed74290bb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705796"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088448"
 ---
-# <a name="azure-app-service-access-restrictions"></a>Restrições de acesso do serviço de aplicativo do Azure #
+# <a name="azure-app-service-access-restrictions"></a>Azure App restrições de acesso de serviço #
 
-Restrições de acesso permitem que você defina uma lista ordenada de permissão/negação prioridade que controla o acesso à rede para seu aplicativo. A lista pode incluir endereços IP ou sub-redes de rede Virtual do Azure. Quando há uma ou mais entradas, há, em seguida, implícito "negar tudo" que existe no final da lista.
+As restrições de acesso permitem que você defina uma lista de permissão/negação ordenada de prioridade que controla o acesso à rede para seu aplicativo. A lista pode incluir endereços IP ou sub-redes de rede virtual do Azure. Quando há uma ou mais entradas, há então um "negar tudo" implícito que existe no final da lista.
 
-O recurso de restrições de acesso funciona com todas as cargas de trabalho hospedado incluindo; o serviço de aplicativo aplicativos Web, aplicativos de API, aplicativos do Linux, aplicativos de contêiner do Linux e funções.
+A funcionalidade de restrições de acesso funciona com todas as cargas de trabalho hospedadas do serviço de aplicativo, incluindo; aplicativos Web, aplicativos de API, aplicativos do Linux, aplicativos de contêiner do Linux e funções.
 
-Quando é feita uma solicitação para seu aplicativo, o endereço de é avaliado em relação a regras de endereço IP em sua lista de restrições de acesso. Se o endereço de estiver em uma sub-rede que é configurada com pontos de extremidade de serviço à Microsoft. Web, em seguida, a sub-rede de origem é comparada com as regras de rede virtual na sua lista de restrições de acesso. Se o endereço não é permitido o acesso com base nas regras na lista, o serviço responderá com um código de status [HTTP 403](https://en.wikipedia.org/wiki/HTTP_403).
+Quando uma solicitação é feita ao seu aplicativo, o endereço de é avaliado em relação às regras de endereço IP em sua lista de restrições de acesso. Se o endereço de estiver em uma sub-rede configurada com pontos de extremidade de serviço para Microsoft. Web, a sub-rede de origem será comparada com as regras de rede virtual em sua lista de restrições de acesso. Se o endereço não é permitido o acesso com base nas regras na lista, o serviço responderá com um código de status [HTTP 403](https://en.wikipedia.org/wiki/HTTP_403).
 
-O recurso de restrições de acesso é implementado de funções de front-end do serviço de aplicativo, que são upstream dos hosts de trabalho em que seu código é executado. Portanto, as restrições de acesso são efetivamente as ACLs de rede.
+O recurso de restrições de acesso é implementado nas funções de front-end do serviço de aplicativo, que são upstream dos hosts de trabalho em que seu código é executado. Portanto, as restrições de acesso são efetivamente ACLs de rede.
 
-A capacidade de restringir o acesso ao seu aplicativo web de uma rede Virtual do Azure (VNet) é chamada [pontos de extremidade de serviço][serviceendpoints]. Pontos de extremidade de serviço permitem restringir o acesso a um serviço de multilocatário de subredes selecionadas. Ele deve ser habilitado no lado do sistema de rede, bem como o serviço que ela está sendo habilitada com. Ele não funciona para restringir o tráfego para aplicativos que são hospedados em um ambiente de serviço de aplicativo.  Se você estiver em um ambiente de serviço de aplicativo, você pode controlar o acesso ao seu aplicativo com regras de endereço IP.
+A capacidade de restringir o acesso ao seu aplicativo Web de uma VNet (rede virtual) do Azure é chamada de [pontos de extremidade de serviço][serviceendpoints]. Os pontos de extremidade de serviço permitem restringir o acesso a um serviço multilocatário de sub-redes selecionadas. Ele deve ser habilitado tanto no lado da rede quanto no serviço com o qual está sendo habilitado. Ele não funciona para restringir o tráfego para aplicativos hospedados em um Ambiente do Serviço de Aplicativo.  Se você estiver em um Ambiente do Serviço de Aplicativo, poderá controlar o acesso ao seu aplicativo com regras de endereço IP.
 
 ![fluxo de restrições de acesso](media/app-service-ip-restrictions/access-restrictions-flow.png)
 
-## <a name="adding-and-editing-access-restriction-rules-in-the-portal"></a>Adicionar e editar regras de restrição de acesso no portal ##
+## <a name="adding-and-editing-access-restriction-rules-in-the-portal"></a>Adicionando e editando regras de restrição de acesso no portal ##
 
-Para adicionar uma regra de restrição de acesso ao seu aplicativo, use o menu abrir **rede**>**restrições de acesso** e clique em **configurar restrições de acesso**
+Para adicionar uma regra de restrição de acesso ao seu aplicativo, use o menu para abrir**restrições de acesso** à **rede**>e clique em **Configurar restrições de acesso**
 
 ![Opções de rede do Serviço de Aplicativo do Azure](media/app-service-ip-restrictions/access-restrictions.png)  
 
-Na interface de usuário de restrições de acesso, você pode examinar a lista de regras de restrição de acesso definida para o aplicativo.
+Na interface do usuário de restrições de acesso, você pode examinar a lista de regras de restrição de acesso definidas para seu aplicativo.
 
-![restrições de acesso de lista](media/app-service-ip-restrictions/access-restrictions-browse.png)
+![listar restrições de acesso](media/app-service-ip-restrictions/access-restrictions-browse.png)
 
-A lista mostrará todas as restrições atuais que estão em seu aplicativo. Se você tiver uma restrição de rede virtual em seu aplicativo, a tabela mostrará se os pontos de extremidade de serviço estão habilitados para Microsoft. Web. Quando não há nenhuma restrição definida em seu aplicativo, seu aplicativo poderá ser acessado de qualquer lugar.  
+A lista mostrará todas as restrições atuais que estão em seu aplicativo. Se você tiver uma restrição de VNet em seu aplicativo, a tabela mostrará se os pontos de extremidade de serviço estão habilitados para Microsoft. Web. Quando não houver nenhuma restrição definida em seu aplicativo, seu aplicativo poderá ser acessado de qualquer lugar.  
 
 ## <a name="adding-ip-address-rules"></a>Adicionando regras de endereço IP
 
-Você pode clicar em **[+] adicionar** para adicionar uma nova regra de restrição de acesso. Depois de adicionar uma regra, entrará em vigor imediatamente. As regras são impostas em ordem de prioridade a partir do número mais baixo e para cima. Há uma negação implícita tudo o que está em vigor depois que você adicionar até mesmo uma única regra.
+Você pode clicar em **[+] Adicionar** para adicionar uma nova regra de restrição de acesso. Depois de adicionar uma regra, entrará em vigor imediatamente. As regras são impostas em ordem de prioridade a partir do número mais baixo e para cima. Há uma negação implícita tudo o que está em vigor depois que você adicionar até mesmo uma única regra.
 
-Ao criar uma regra, você deve selecionar Permitir/Negar e também o tipo de regra. Você também deve fornecer o valor de prioridade e o que você está restringindo o acesso aos.  Opcionalmente, você pode adicionar um nome e descrição para a regra.  
+Ao criar uma regra, você deve selecionar permitir/negar e também o tipo de regra. Também é necessário fornecer o valor de prioridade e o que você está restringindo o acesso ao.  Opcionalmente, você pode adicionar um nome e uma descrição à regra.  
 
-![Adicionar uma regra de restrição de acesso IP](media/app-service-ip-restrictions/access-restrictions-ip-add.png)
+![Adicionar uma regra de restrição de acesso a IP](media/app-service-ip-restrictions/access-restrictions-ip-add.png)
 
-Para definir um endereço IP com base em regra, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). 
+Para definir uma regra baseada em endereço IP, selecione um tipo de IPv4 ou IPv6. Notação de endereço IP deve ser especificada na notação de CIDR de endereços IPv4 e IPv6. Para especificar um endereço exato, você pode usar algo como 1.2.3.4/32 onde os quatro primeiros octetos representam o endereço IP e /32 é a máscara. A notação de CIDR de IPv4 para todos os endereços é 0.0.0.0/0. Para saber mais sobre a notação CIDR, leia [Roteamento entre domínios sem classe](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). 
 
 ## <a name="service-endpoints"></a>Pontos de extremidade de serviço
 
-Pontos de extremidade de serviço permite que você restrinja o acesso às sub-redes de rede de virtual do Azure selecionada. Para restringir o acesso a uma sub-rede específica, crie uma regra de restrição com um tipo de rede Virtual. Você pode escolher a assinatura, VNet e sub-rede que deseja permitir ou negar acesso com. Se os pontos de extremidade de serviço não já estarão habilitados com o Microsoft. Web para a sub-rede que você selecionou, ele automaticamente será ativado para você, a menos que você marcar a caixa pedindo para não fazer isso. A situação em que você desejaria para habilitá-lo no aplicativo, mas não a sub-rede está amplamente relacionada à se você tiver as permissões para habilitar os pontos de extremidade de serviço na sub-rede ou não. Se você precisar obter outra pessoa para habilitar pontos de extremidade de serviço na sub-rede, você pode a caixa de seleção e seu aplicativo configurado para pontos de extremidade de serviço em antecipação a ele que está sendo habilitado mais tarde na sub-rede. 
+Os pontos de extremidade de serviço permitem restringir o acesso às sub-redes selecionadas da rede virtual do Azure. Para restringir o acesso a uma sub-rede específica, crie uma regra de restrição com um tipo de rede virtual. Você pode escolher a assinatura, a VNet e a sub-rede que deseja permitir ou negar acesso. Se os pontos de extremidade de serviço ainda não estiverem habilitados com o Microsoft. Web para a sub-rede que você selecionou, ele será habilitado automaticamente para você, a menos que você marque a caixa pedindo para não fazer isso. A situação em que você deseja habilitá-la no aplicativo, mas não a sub-rede está amplamente relacionada a se você tiver as permissões para habilitar os pontos de extremidade de serviço na sub-rede ou não. Se você precisar fazer com que outra pessoa habilite os pontos de extremidade de serviço na sub-rede, marque a caixa e faça com que seu aplicativo seja configurado para pontos de extremidade de serviço na previsão de que ele está sendo habilitado posteriormente na sub-rede. 
 
-![Adicionar uma regra de restrição de acesso de rede virtual](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
+![Adicionar uma regra de restrição de acesso VNet](media/app-service-ip-restrictions/access-restrictions-vnet-add.png)
 
-Pontos de extremidade de serviço não podem ser usados para restringir o acesso a aplicativos que são executados em um ambiente de serviço de aplicativo. Quando seu aplicativo estiver em um ambiente de serviço de aplicativo, você pode controlar o acesso ao seu aplicativo com regras de acesso IP. 
+Os pontos de extremidade de serviço não podem ser usados para restringir o acesso a aplicativos executados em um Ambiente do Serviço de Aplicativo. Quando seu aplicativo estiver em um Ambiente do Serviço de Aplicativo, você poderá controlar o acesso ao seu aplicativo com as regras de acesso de IP. 
 
-Com pontos de extremidade de serviço, você pode configurar seu aplicativo com Gateways de aplicativo ou outros dispositivos de WAF. Você também pode configurar aplicativos multicamadas com o back-ends seguro. Para obter mais detalhes sobre algumas das possibilidades, leia [recursos de rede e serviço de aplicativo](networking-features.md).
+Com os pontos de extremidade de serviço, você pode configurar seu aplicativo com gateways de aplicativo ou outros dispositivos WAF. Você também pode configurar aplicativos de várias camadas com back-ends seguros. Para obter mais detalhes sobre algumas das possibilidades, leia [recursos de rede e serviço de aplicativo](networking-features.md).
 
 ## <a name="managing-access-restriction-rules"></a>Gerenciando regras de restrição de acesso
 
 Você pode clicar em qualquer linha para editar uma regra de restrição de acesso existente. As edições são eficazes imediatamente, incluindo as alterações na ordem de prioridade.
 
-![Editar uma regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-ip-edit.png)
+![editar uma regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-ip-edit.png)
 
-Quando você edita uma regra, você não pode alterar o tipo entre uma regra de endereço IP e uma regra de rede Virtual. 
+Quando você edita uma regra, não pode alterar o tipo entre uma regra de endereço IP e uma regra de rede virtual. 
 
-![Editar uma regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-vnet-edit.png)
+![editar uma regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-vnet-edit.png)
 
 Para excluir uma regra, clique em **...**  em sua regra e clique em **remover**.
 
-![Excluir regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-delete.png)
+![excluir regra de restrição de acesso](media/app-service-ip-restrictions/access-restrictions-delete.png)
 
-## <a name="blocking-a-single-ip-address"></a>Bloqueio de um único endereço IP ##
+## <a name="blocking-a-single-ip-address"></a>Bloqueando um único endereço IP ##
 
-Ao adicionar sua primeira regra de restrição de IP, o serviço adicionará um explícito **negar tudo** regra com uma prioridade de 2147483647. Na prática, explícita **negar tudo** regra será a última regra executada e bloqueará o acesso a nenhum endereço IP que não é explicitamente permitido usando uma **permitir** regra.
+Ao adicionar sua primeira regra de restrição de IP, o serviço adicionará uma regra **negar tudo** explícita com uma prioridade de 2147483647. Na prática, a regra **negar tudo** explícita será executada pela última vez e bloqueará o acesso a qualquer endereço IP que não seja explicitamente permitido usando uma regra de **permissão** .
 
-Para o cenário em que os usuários desejam bloquear explicitamente um único endereço IP ou o bloco de endereço IP, mas permitir que todo o acesso mais, é necessário adicionar uma explícita **permitir que todos os** regra.
+Para o cenário em que os usuários desejam bloquear explicitamente um único endereço IP ou bloco de endereço IP, mas permitir que todas as outras pessoas acessem, é necessário adicionar uma regra **permitir tudo** explícito.
 
-![endereço ip único de bloco](media/app-service-ip-restrictions/block-single-address.png)
+![bloquear endereço IP único](media/app-service-ip-restrictions/block-single-address.png)
 
 ## <a name="scm-site"></a>Site do SCM 
 
-Além de ser capaz de controlar o acesso ao seu aplicativo, você também pode restringir o acesso para o site do scm usado pelo seu aplicativo. O site do scm é web implantar o ponto de extremidade e também o console do Kudu. Separadamente, você pode atribuir as restrições de acesso para o site do scm do aplicativo ou usar o mesmo conjunto para o aplicativo e o site do scm. Quando você marca a caixa para que as mesmas restrições que seu aplicativo, tudo o que é blanked-out. Se você desmarcar a caixa, são aplicadas a todas as configurações que você tinha anteriormente no site do scm. 
+Além de poder controlar o acesso ao seu aplicativo, você também pode restringir o acesso ao site do SCM usado pelo seu aplicativo. O site do SCM é o ponto de extremidade de implantação da Web e também o console do kudu. Você pode atribuir separadamente restrições de acesso ao site do SCM do aplicativo ou usar o mesmo conjunto para o aplicativo e o site do SCM. Quando você marca a caixa para ter as mesmas restrições que seu aplicativo, tudo fica em branco. Se você desmarcar a caixa, quaisquer configurações que você tenha anteriormente no site do SCM serão aplicadas. 
 
-![restrições de acesso de lista](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
+![listar restrições de acesso](media/app-service-ip-restrictions/access-restrictions-scm-browse.png)
 
-## <a name="programmatic-manipulation-of-access-restriction-rules"></a>Manipulação programática das regras de restrição de acesso ##
+## <a name="programmatic-manipulation-of-access-restriction-rules"></a>Manipulação programática de regras de restrição de acesso ##
 
-Atualmente, não há nenhuma CLI ou o PowerShell para o novo recurso de restrições de acesso, mas os valores podem ser definidos manualmente com um [API REST do Azure](https://docs.microsoft.com/rest/api/azure/) operação PUT na configuração de aplicativo no Gerenciador de recursos. Por exemplo, você pode usar resources.azure.com e editar o bloco ipSecurityRestrictions para adicionar o JSON necessário.
+Atualmente, não há uma CLI ou o PowerShell para o novo recurso de restrições de acesso, mas os valores podem ser definidos manualmente com uma operação Put da [API REST do Azure](https://docs.microsoft.com/rest/api/azure/) na configuração do aplicativo no Gerenciador de recursos. Por exemplo, você pode usar resources.azure.com e editar o bloco ipSecurityRestrictions para adicionar o JSON necessário.
 
 O local para obter essas informações no Gerenciador de Recursos é:
 
@@ -120,9 +119,9 @@ A sintaxe JSON para o exemplo anterior é:
       }
     }
 
-## <a name="function-app-ip-restrictions"></a>Restrições de IP do aplicativo de função
+## <a name="function-app-ip-restrictions"></a>Aplicativo de funções restrições de IP
 
-Restrições de IP estão disponíveis para ambos os aplicativos de funções com a mesma funcionalidade que os planos de serviço de aplicativo. Habilitar restrições de IP desabilitará o editor de códigos de portal para quaisquer IPs não permitidos.
+As restrições de IP estão disponíveis para ambos os aplicativos de funções com a mesma funcionalidade que os planos do serviço de aplicativo. Habilitar restrições de IP desabilitará o editor de código do portal para qualquer IPs não permitido.
 
 [Saiba mais aqui](../azure-functions/functions-networking-options.md#inbound-ip-restrictions)
 

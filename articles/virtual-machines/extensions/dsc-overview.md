@@ -10,30 +10,29 @@ tags: azure-resource-manager
 keywords: dsc
 ms.assetid: bbacbc93-1e7b-4611-a3ec-e3320641f9ba
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 410990ecdca8a94be9c7c3d0b48a5092fcaa6060
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c759567e4d8c183452eccbbdca8459c8993d1361
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515901"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092431"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Introdução ao manipulador de extensão de Desired State Configuration do Azure
 
 O agente de VM do Azure e as extensões associadas são parte dos serviços de infraestrutura do Microsoft Azure. Extensões de VM são componentes de software que estendem a funcionalidade da VM e simplificam várias operações de gerenciamento de VM.
 
-Caso de uso primário para a extensão do Azure Desired State Configuration (DSC) é inicializar uma VM para o [serviço de configuração de estado na automação do Azure (DSC)](../../automation/automation-dsc-overview.md).
-O serviço oferece [benefícios](/powershell/dsc/metaconfig#pull-service) que incluem o gerenciamento contínuo da configuração da VM e integração com outras ferramentas operacionais, como o monitoramento do Azure.
-Usando a extensão para registrar da VM para o serviço fornece uma solução flexível que funciona até mesmo entre assinaturas do Azure.
+O caso de uso primário para a extensão DSC (configuração de estado desejado) do Azure é inicializar uma VM para o [serviço de configuração de estado da automação do Azure (DSC)](../../automation/automation-dsc-overview.md).
+O serviço fornece [benefícios](/powershell/dsc/metaconfig#pull-service) que incluem o gerenciamento contínuo da configuração da VM e a integração com outras ferramentas operacionais, como o monitoramento do Azure.
+Usar a extensão para registrar VMs no serviço fornece uma solução flexível que até funciona em assinaturas do Azure.
 
 Você pode usar a extensão de DSC, independentemente do serviço de DSC de Automação.
-No entanto, isso enviará apenas uma configuração para a VM.
-Nenhum relatório contínuo está disponível, diferente de localmente na VM.
+No entanto, isso enviará por push apenas uma configuração para a VM.
+Nenhum relatório contínuo está disponível, a não ser localmente na VM.
 
 Este artigo fornece informações sobre cenários: usar a extensão DSC para integração da Automação e usar a extensão de DSC como uma ferramenta para atribuir configurações a VMs usando o SDK do Azure.
 
@@ -66,13 +65,13 @@ Instalar o WMF requer uma reinicialização. Após a reinicialização, a extens
 
 A extensão de DSC do Azure inclui um script de configuração padrão que é destinado a ser usado quando você carrega uma VM ao serviço de DSC de Automação do Azure. Os parâmetros do script estão alinhados com as propriedades configuráveis do [Gerenciador de Configurações Locais](/powershell/dsc/metaconfig). Para parâmetros de script, consulte [Script de configuração padrão](dsc-template.md#default-configuration-script) na [extensão de Desired State Configuration com modelos do Azure Resource Manager](dsc-template.md). Para o script completo, consulte o [modelo de início rápido do Azure no GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip?raw=true).
 
-## <a name="information-for-registering-with-azure-automation-state-configuration-dsc-service"></a>Informações para registrar com o serviço de configuração de estado na automação do Azure (DSC)
+## <a name="information-for-registering-with-azure-automation-state-configuration-dsc-service"></a>Informações para registrar com o serviço de configuração de estado da automação do Azure (DSC)
 
-Ao usar a extensão de DSC para registrar um nó com o serviço de configuração de estado, três valores precisará ser fornecido.
+Ao usar a extensão de DSC para registrar um nó com o serviço de configuração de estado, será necessário fornecer três valores.
 
-- RegistrationUrl - o endereço https da conta de automação do Azure
-- RegistrationKey - um segredo compartilhado usado para registrar os nós com o serviço
-- NodeConfigurationName - o nome do nó de configuração (MOF) para efetuar pull do serviço para configurar a função de servidor
+- RegistrationUrl-o endereço https da conta de automação do Azure
+- RegistrationKey-um segredo compartilhado usado para registrar nós com o serviço
+- NodeConfigurationName-o nome da configuração de nó (MOF) a ser extraída do serviço para configurar a função de servidor
 
 Essas informações podem ser vistas na [portal do Azure](../../automation/automation-dsc-onboarding.md#azure-portal) ou você pode usar o PowerShell.
 
@@ -81,9 +80,9 @@ Essas informações podem ser vistas na [portal do Azure](../../automation/autom
 (Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).PrimaryKey
 ```
 
-Para o nome da configuração de nó, verifique se que a configuração de nó existe na configuração de estado do Azure.  Se não existir, a implantação da extensão retornará uma falha.  Também, verifique se você está usando o nome da *configuração de nó* e não a configuração.
+Para o nome da configuração do nó, verifique se a configuração do nó existe na configuração de estado do Azure.  Caso contrário, a implantação da extensão retornará uma falha.  Verifique também se você está usando o nome da *configuração do nó* e não a configuração.
 Uma configuração é definida em um script que é usado [para compilar a configuração de nó (arquivo MOF)](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
-O nome sempre será a configuração seguida por um período `.` e `localhost` ou um nome de computador específico.
+O nome será sempre a configuração seguida por um ponto `.` `localhost` e um nome de computador específico.
 
 ## <a name="dsc-extension-in-resource-manager-templates"></a>Extensão de DSC nos modelos do Resource Manager
 
@@ -146,9 +145,9 @@ Set-AzVMDscExtension -Version '2.76' -ResourceGroupName $resourceGroup -VMName $
 
 ## <a name="azure-cli-deployment"></a>Implantação da CLI do Azure
 
-A CLI do Azure pode ser usada para implantar a extensão de DSC em uma máquina virtual existente.
+O CLI do Azure pode ser usado para implantar a extensão de DSC em uma máquina virtual existente.
 
-Para uma máquina virtual executando Windows:
+Para uma máquina virtual que executa o Windows:
 
 ```azurecli
 az vm extension set \

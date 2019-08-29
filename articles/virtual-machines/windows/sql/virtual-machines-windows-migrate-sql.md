@@ -11,17 +11,16 @@ ms.assetid: 00fd08c6-98fa-4d62-a3b8-ca20aa5246b1
 ms.service: virtual-machines-sql
 ms.workload: iaas-sql-server
 ms.tgt_pltfrm: vm-windows-sql-server
-ms.devlang: na
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 8e5a7bfc243fc8c797ffc66b2130756567ddc0fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5a8b66c181505a617b002d1a45675d4677588b1c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65795788"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102189"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-in-an-azure-vm"></a>Migrar um banco de dados do SQL Server para o SQL Server em uma VM do Azure
 
@@ -31,7 +30,7 @@ Existem vários métodos para migrar um banco de dados de usuário do SQL Server
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-both-include.md)]
 
   > [!NOTE]
-  > SQL Server 2008 e SQL Server 2008 R2 estão se aproximando os [final de seu ciclo de vida de suporte](https://www.microsoft.com/sql-server/sql-server-2008) para instâncias locais. Para estender o suporte, migrar sua instância do SQL Server para uma VM do Azure ou comprar atualizações de segurança estendida para mantê-lo no local. Para obter mais informações, consulte [estender o suporte para SQL Server 2008 e 2008 R2 com o Azure](virtual-machines-windows-sql-server-2008-eos-extend-support.md)
+  > SQL Server 2008 e SQL Server 2008 R2 estão se aproximando do [fim do ciclo de vida de suporte](https://www.microsoft.com/sql-server/sql-server-2008) para instâncias locais. Para estender o suporte, você pode migrar sua instância de SQL Server para uma VM do Azure ou comprar atualizações de segurança estendidas para mantê-las no local. Para obter mais informações, consulte [estender o suporte para SQL Server 2008 e 2008 R2 com o Azure](virtual-machines-windows-sql-server-2008-eos-extend-support.md)
 
 ## <a name="what-are-the-primary-migration-methods"></a>Quais são os principais métodos de migração?
 Os principais métodos de migração são:

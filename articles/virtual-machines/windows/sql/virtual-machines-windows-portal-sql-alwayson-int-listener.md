@@ -8,18 +8,17 @@ manager: craigg
 editor: monicar
 ms.assetid: d1f291e9-9af2-41ba-9d29-9541e3adcfcf
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/16/2017
 ms.author: mikeray
-ms.openlocfilehash: 3b90ae3e9808b22b6d6c41e3ac11bec0293bd4bf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c9c8379787619608421256120139f07c8dbd8d14
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60326031"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102254"
 ---
 # <a name="configure-a-load-balancer-for-an-always-on-availability-group-in-azure"></a>Configurar um balanceador de carga para um grupo de disponibilidade Always On no Azure
 Este artigo explica como criar um balanceador de carga para um grupo de disponibilidade Always On do SQL Server em máquinas virtuais do Azure em execução com o Azure Resource Manager. Um grupo de disponibilidade exige um balanceador de carga quando as instâncias do SQL Server estão em máquinas virtuais do Azure. O balanceador de carga armazena o endereço IP do ouvinte do grupo de disponibilidade. Se um grupo de disponibilidade abranger várias regiões, cada região precisará de um balanceador de carga.
@@ -63,7 +62,7 @@ Primeiro, crie o balanceador de carga.
 
 5. Na caixa de diálogo **Criar balanceador de carga**, configure o balanceador de carga da seguinte maneira:
 
-   | Configuração | Value |
+   | Configuração | Valor |
    | --- | --- |
    | **Nome** |Um nome de texto que representa o balanceador de carga. Por exemplo, **sqlLB**. |
    | **Tipo** |**Interna**: a maioria das implementações usa um balanceador de carga interno que permite a conexão dos aplicativos na mesma rede virtual ao grupo de disponibilidade.  </br> **Externa**: permite que os aplicativos se conectem ao grupo de disponibilidade por meio de uma conexão à Internet pública. |
@@ -109,7 +108,7 @@ A investigação define como o Azure verifica qual das instâncias do SQL Server
 
 3. Configure a investigação na folha **Adicionar investigação** . Use os valores a seguir para configurar a investigação:
 
-   | Configuração | Value |
+   | Configuração | Valor |
    | --- | --- |
    | **Nome** |Um nome de texto que representa a investigação. Por exemplo, **SQLAlwaysOnEndPointProbe**. |
    | **Protocolo** |**TCP** |
@@ -135,7 +134,7 @@ As regras de balanceamento de carga configuram como o balanceador de carga encam
 
 3. Na folha **Adicionar regras de balanceamento de carga**, configure a regra de balanceamento de carga. Use as configurações a seguir: 
 
-   | Configuração | Value |
+   | Configuração | Valor |
    | --- | --- |
    | **Nome** |Um nome de texto que representa as regras de balanceamento de carga. Por exemplo, **SQLAlwaysOnEndPointListener**. |
    | **Protocolo** |**TCP** |
@@ -221,7 +220,7 @@ Para adicionar um endereço IP a um balanceador de carga com o Portal do Azure, 
 
 7. Adicione uma investigação de integridade usando as seguintes configurações:
 
-   |Configuração |Value
+   |Configuração |Valor
    |:-----|:----
    |**Nome** |Um nome para identificar a investigação.
    |**Protocolo** |TCP
@@ -235,7 +234,7 @@ Para adicionar um endereço IP a um balanceador de carga com o Portal do Azure, 
 
 10. Defina a nova regra de balanceamento de carga usando as seguintes configurações:
 
-    |Configuração |Value
+    |Configuração |Valor
     |:-----|:----
     |**Nome** |Um nome para identificar a regra de balanceamento de carga. 
     |**Endereço IP de front-end** |Selecione o endereço IP que você criou. 
@@ -284,7 +283,7 @@ Se um grupo de disponibilidade participar de um grupo de disponibilidade distrib
 
 1. Crie a regra de balanceamento de carga com as configurações a seguir:
 
-   |Configuração |Value
+   |Configuração |Valor
    |:-----|:----
    |**Nome** |Um nome para identificar a regra de balanceamento de carga para o grupo de disponibilidade distribuído. 
    |**Endereço IP de front-end** |Use o mesmo endereço IP de front-end como o grupo de disponibilidade.

@@ -1,25 +1,24 @@
 ---
-title: Padrões e expressões de associações de funções do azure
-description: Aprenda a criar expressões de associação de funções do Azure diferentes com base em padrões comuns.
+title: Padrões e expressões de associações de Azure Functions
+description: Aprenda a criar diferentes expressões de associação de Azure Functions com base em padrões comuns.
 services: functions
 documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: b9a44bd058e6148c6210c5e3be93745d18d8cb74
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: db6f4f938b1555091dc51e310d4d31f96f93200c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480421"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097347"
 ---
-# <a name="azure-functions-binding-expression-patterns"></a>Padrões de expressões de associação de funções do Azure
+# <a name="azure-functions-binding-expression-patterns"></a>Padrões de expressão de associação de Azure Functions
 
-Um dos recursos mais poderosos do [gatilhos e associações](./functions-triggers-bindings.md) é *expressões de associação*. No arquivo *function.json* e em parâmetros de função e de código, você pode usar expressões que são resolvidas para valores de várias fontes.
+Um dos recursos mais poderosos de [gatilhos e associações](./functions-triggers-bindings.md) é a *Associação de expressões*. No arquivo *function.json* e em parâmetros de função e de código, você pode usar expressões que são resolvidas para valores de várias fontes.
 
 A maioria das expressões são identificadas, encapsulando-as entre chaves. Por exemplo, em uma função de gatilho de fila, `{queueTrigger}` resolve para o texto de mensagem da fila. Se a propriedade `path` para uma associação de saída de blob é `container/{queueTrigger}` e a função é disparada por uma mensagem da fila `HelloWorld`, um blob denominado `HelloWorld` é criado.
 
@@ -147,7 +146,7 @@ Por exemplo, um gatilho do Armazenamento de Filas do Azure é compatível com as
 * QueueTrigger – disparar o conteúdo da mensagem em caso de uma cadeia de caracteres válida
 * DequeueCount
 * ExpirationTime
-* ID
+* Id
 * InsertionTime
 * NextVisibleTime
 * PopReceipt
@@ -312,4 +311,4 @@ No C#, e em outras linguagens .NET, você pode usar um padrão de associação o
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]
-> [Usando o valor de retorno de função do Azure](./functions-bindings-return-value.md)
+> [Usando o valor de retorno da função do Azure](./functions-bindings-return-value.md)

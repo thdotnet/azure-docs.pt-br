@@ -10,17 +10,16 @@ ms.assetid: c23af2d8-d370-4b1f-9b3e-8782321ddccb
 ms.service: app-service
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 6660aa4e21aa36dc94c4ed9201fecb5637dddb3a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0c49e1835412b61817ff3571dd3ee1eaa29f21f
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65955970"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070078"
 ---
 # <a name="autoscaling-and-app-service-environment-v1"></a>Dimensionamento automático e Ambiente de Serviço de Aplicativo v1
 
@@ -63,7 +62,7 @@ O dimensionamento automático de um ambiente de Serviço de Aplicativo pode ser 
 Este artigo explica todas as considerações necessárias ao configurar o dimensionamento automático. Este artigo aborda as interações que entram em jogo quando você fatora em ambientes de Serviço de Aplicativo de dimensionamento automático hospedados no Ambiente de Serviço de Aplicativo.
 
 ### <a name="scenario-introduction"></a>Introdução ao cenário
-Frank é um sysadmin de uma empresa que migrou uma parte das cargas de trabalho que eles gerenciam a um ambiente de serviço de aplicativo.
+Frank é um sysadmin para uma empresa que migrou uma parte das cargas de trabalho que eles gerenciam para um ambiente do serviço de aplicativo.
 
 O ambiente do Serviço de Aplicativo está configurado para a escala manual da seguinte maneira:
 
@@ -76,7 +75,7 @@ O pool de trabalho 1 é usado para cargas de trabalho de produção, embora o po
 
 Os Planos do Serviço de Aplicativo para controle de qualidade e desenvolvimento são configurados para escala manual. O Plano do Serviço de Aplicativo de produção é definido para dimensionamento automático para lidar com variações de carga e tráfego.
 
-Matheus está familiarizado com o aplicativo. Eles sabem que são as horas de pico de carga entre 9:00 e 18:00, porque este é um aplicativo (LOB) de linha de negócios que os funcionários usam enquanto eles estiverem no escritório. O uso é reduzido depois disso, quando os usuários param de trabalhar naquele dia. Fora do horário de pico, ainda há alguma carga porque os usuários podem acessar o aplicativo remotamente, usando seus dispositivos móveis ou computadores domésticos. O plano do Serviço de Aplicativo de produção já está configurado para dimensionamento automático com base no uso de CPU com as seguintes regras:
+Matheus está familiarizado com o aplicativo. Eles sabem que o horário de pico para carga está entre 9:00 e 6:00, pois esse é um aplicativo de linha de negócios (LOB) que os funcionários usam enquanto estão no escritório. O uso é reduzido depois disso, quando os usuários param de trabalhar naquele dia. Fora do horário de pico, ainda há alguma carga porque os usuários podem acessar o aplicativo remotamente, usando seus dispositivos móveis ou computadores domésticos. O plano do Serviço de Aplicativo de produção já está configurado para dimensionamento automático com base no uso de CPU com as seguintes regras:
 
 ![Configurações específicas para o aplicativo LOB.][asp-scale]
 
@@ -96,7 +95,7 @@ Matheus está familiarizado com o aplicativo. Eles sabem que são as horas de pi
 | **Métrica:** CPU (%) |**Métrica:** CPU (%) |
 | **Operação:** Maior que 60% |**Operação:** Maior que 80% |
 | **Duração:** 5 Minutos |**Duração:** 10 minutos |
-| **Agregação de tempo:** Média |**Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |**Agregação de tempo:** Average |
 | **Ação:** Aumentar a contagem em 2 |**Ação:** Aumentar a contagem em 1 |
 | **Tempo de resfriamento (minutos):** 15 |**Tempo de resfriamento (minutos):** 20 |
 |  | |
@@ -105,7 +104,7 @@ Matheus está familiarizado com o aplicativo. Eles sabem que são as horas de pi
 | **Métrica:** CPU (%) |**Métrica:** CPU (%) |
 | **Operação:** Menor que 30% |**Operação:** Menor que 20% |
 | **Duração:** 10 minutos |**Duração:** 15 minutos |
-| **Agregação de tempo:** Média |**Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |**Agregação de tempo:** Average |
 | **Ação:** Diminuir contagem em 1 |**Ação:** Diminuir contagem em 1 |
 | **Tempo de resfriamento (minutos):** 20 |**Tempo de resfriamento (minutos):** 10 |
 
@@ -167,7 +166,7 @@ Com essas informações, Matheus pode definir o seguinte perfil e regras de dime
 | **Métrica:** WorkersAvailable |**Métrica:** WorkersAvailable |
 | **Operação:** Menor que 8 |**Operação:** Menor que 3 |
 | **Duração:** 20 minutos |**Duração:** 30 minutos |
-| **Agregação de tempo:** Média |**Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |**Agregação de tempo:** Average |
 | **Ação:** Aumentar a contagem em 8 |**Ação:** Aumentar a contagem em 3 |
 | **Tempo de resfriamento (minutos):** 180 |**Tempo de resfriamento (minutos):** 180 |
 |  | |
@@ -176,7 +175,7 @@ Com essas informações, Matheus pode definir o seguinte perfil e regras de dime
 | **Métrica:** WorkersAvailable |**Métrica:** WorkersAvailable |
 | **Operação:** Maior que 8 |**Operação:** Maior que 3 |
 | **Duração:** 20 minutos |**Duração:** 15 minutos |
-| **Agregação de tempo:** Média |**Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |**Agregação de tempo:** Average |
 | **Ação:** Diminuir contagem em 2 |**Ação:** Diminuir contagem em 3 |
 | **Tempo de resfriamento (minutos):** 120 |**Tempo de resfriamento (minutos):** 120 |
 
@@ -212,7 +211,7 @@ Para este cenário, Frank sabe que a taxa de erro aumenta depois que os front-en
 | **Métrica:** CPU (%) |
 | **Operação:** Maior que 60% |
 | **Duração:** 20 minutos |
-| **Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |
 | **Ação:** Aumentar a contagem em 3 |
 | **Tempo de resfriamento (minutos):** 120 |
 |  |
@@ -221,7 +220,7 @@ Para este cenário, Frank sabe que a taxa de erro aumenta depois que os front-en
 | **Métrica:** CPU (%) |
 | **Operação:** Menor que 30% |
 | **Duração:** 20 minutos |
-| **Agregação de tempo:** Média |
+| **Agregação de tempo:** Average |
 | **Ação:** Diminuir contagem em 3 |
 | **Tempo de resfriamento (minutos):** 120 |
 

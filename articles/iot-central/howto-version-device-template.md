@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: c718794528989fbc46b404617f16d3a91ade6011
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 155f392410c5722a28ba09acafc1480e72586773
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877302"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100899"
 ---
 # <a name="create-a-new-device-template-version"></a>Criar uma nova versão do modelo de dispositivo
 
@@ -50,7 +50,7 @@ A lista a seguir descreve as ações do usuário que podem exigir uma nova vers�
 
 O que acontece com as regras e os painéis de dispositivos quando há uma alteração da versão?
 
-As **regras** podem conter condições que dependem das propriedades. Se você removeu uma ou mais dessas propriedades, essas regras poderão ser desfeitas na nova versão do modelo de dispositivo. É possível acessar essas regras específicas e atualizar as condições para corrigi-las. As regras para a versão anterior devem funcionar sem impacto.
+**As regras** na versão anterior do modelo de dispositivo continuam a funcionar inalteradas. As regras não são migradas automaticamente para a nova versão de modelo de dispositivo. Você pode criar regras na nova versão do modelo como de costume. Para obter mais informações, consulte o artigo como [criar uma regra de telemetria e configurar notificações no seu aplicativo IOT central do Azure](howto-create-telemetry-rules.md) .
 
 Os **painéis do dispositivo** podem conter vários tipos de blocos. Algumas blocos podem conter configurações e propriedades. Quando uma propriedade ou configuração usada em um bloco é removida, o bloco é desfeito total ou parcialmente. Você pode acessar o bloco e corrigir o problema, removendo o bloco ou atualizando o conteúdo do bloco.
 

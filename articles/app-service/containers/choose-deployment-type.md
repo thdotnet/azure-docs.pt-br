@@ -11,24 +11,23 @@ ms.assetid: ''
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: bba38bb69e5abaa94b01308924fe0c6bf07ca08e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae28b185aa44ca22d59204826036435a10c64e91
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64919963"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066784"
 ---
 # <a name="custom-image-multi-container-or-built-in-platform-image"></a>Imagem personalizada, vários contêineres ou imagem da plataforma interna?
 
 O [Serviço de Aplicativo no Linux](app-service-linux-intro.md) oferece três caminhos diferentes para publicar aplicativos na Web:
 
 - **Implantação de imagem personalizada**: transforme seu aplicativo em Docker em uma imagem do Docker que contém todos os arquivos e as dependências em um pacote pronto para execução.
-- **Implantação de vários contêineres**: "Colocar no docker" seu aplicativo em vários contêineres usando um arquivo de configuração do Docker Compose.
+- **Implantação de vários contêineres**: "Encaixe" seu aplicativo em vários contêineres usando um arquivo de configuração Docker Compose.
 - **Implantação de aplicativo com uma imagem de plataforma interna**: nossas imagens de plataforma interna contêm tempos de execução de aplicativo Web comuns e dependências, como Node e PHP. Use qualquer um dos [métodos de implantação do Serviço de Aplicativo do Azure](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) para implantar seu aplicativo no armazenamento de seu aplicativo Web e, em seguida, use uma imagem de plataforma interna para executá-lo.
 
 ## <a name="which-method-is-right-for-your-app"></a>Qual método é adequado para seu aplicativo? 
@@ -47,12 +46,12 @@ Os principais fatores a considerar são:
 ## <a name="next-steps"></a>Próximas etapas
 
 Contêiner personalizado:
-* [Executar um contêiner personalizado](quickstart-docker-go.md)
+* [Executar contêiner personalizado](quickstart-docker-go.md)
 
 Vários contêineres:
 * [Criar aplicativo de vários contêineres](quickstart-multi-container.md)
 
-Os artigos a seguir ajudá-lo ao serviço de aplicativo no Linux com uma imagem de plataforma interna:
+Os artigos a seguir o ajudarão a começar a usar o serviço de aplicativo no Linux com uma imagem de plataforma interna:
 
 * [.NET Core](quickstart-dotnetcore.md)
 * [PHP](quickstart-php.md)

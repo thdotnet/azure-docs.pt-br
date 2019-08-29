@@ -6,16 +6,15 @@ documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: 8b7666b043379f3ff143e2a5eaae6b40ea80ab90
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: dc113417be3df97b9ab9509c30a1f23e1eeaf35b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480245"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086273"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Associações do SendGrid no Azure Functions
 
@@ -164,7 +163,7 @@ public class Message
 
 ### <a name="java-example"></a>Exemplo do Java
 
-O exemplo a seguir usa o `@SendGridOutput` anotação a [biblioteca de tempo de execução de funções Java](/java/api/overview/azure/functions/runtime) associação de saída enviar um email usando o SendGrid.
+O exemplo a seguir usa `@SendGridOutput` a anotação da [biblioteca de tempo de execução de funções Java](/java/api/overview/azure/functions/runtime) para enviar um email usando a associação de saída SendGrid.
 
 ```java
 @FunctionName("SendEmail")
@@ -251,7 +250,7 @@ Para ver um exemplo completo, consulte [Exemplo de C#](#c-example).
 
 ## <a name="configuration"></a>Configuração
 
-A tabela a seguir explica as propriedades de configuração de associação que você define no arquivo *function.json* e no `SendGrid` atributo.
+A tabela a seguir explica as propriedades de configuração de associação que você define no arquivo *function.json* e no atributo `SendGrid`.
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
@@ -286,9 +285,9 @@ Esta seção descreve as definições de configuração globais disponíveis par
 }
 ```  
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
-|from|n/d|Endereço de email do remetente em todas as funções.| 
+|from|N/D|Endereço de email do remetente em todas as funções.| 
 
 
 ## <a name="next-steps"></a>Próximas etapas

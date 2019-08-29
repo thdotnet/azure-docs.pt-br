@@ -7,19 +7,18 @@ author: saghorpa
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c7cbec63cb04075977c167d8b21bf3128e91434f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 1d97130251f7ca56adaf77c5e70d6f08bd5cf514
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710046"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101520"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Configuração de alta disponibilidade no SUSE usando o STONITH
 Este documento fornece instruções passo a passo detalhadas para configurar a Alta Disponibilidade no sistema operacional SUSE usando o dispositivo STONITH.
@@ -258,7 +257,7 @@ Execute o comando *crm_mon* para fazer com que **ambos** os nós fiquem online. 
 ```
 crm_mon
 ```
-![CRM-MON](media/HowToHLI/HASetupWithStonith/crm-mon.png) você também pode fazer logon HAWK para verificar o status do cluster *https://\<nó IP >: 7630*. O usuário padrão é hacluster e a senha é linux. Se necessário, você pode alterar a senha usando o comando *passwd*.
+![CRM-Mon. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) você também pode fazer logon no Hawk para verificar o status do *cluster\<https://IP do nó >: 7630*. O usuário padrão é hacluster e a senha é linux. Se necessário, você pode alterar a senha usando o comando *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Configurar Propriedades do Cluster e Recursos 
 Esta seção descreve as etapas para configurar os recursos do cluster.
@@ -323,7 +322,7 @@ crm configure load update crm-vip.txt
 Quando você executa o comando *crm_mon*, pode ver os dois recursos.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Além disso, você pode ver o status em *https://\<endereço IP do nó >: 7630/cib/live/estado*
+Além disso, você pode ver o status *no\<endereço IP do nó https://>: 7630/CIB/Live/State*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 

@@ -11,16 +11,15 @@ ms.assetid: 906a9c89-6866-496b-b4a4-f07fb39f990c
 ms.service: virtual-machines-linux
 ms.workload: na
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 09/09/2016
 ms.author: cjiang
-ms.openlocfilehash: dd6241f75311ea956b204b5181ae17db0ef3faa1
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: f02e1f73460140c9fe9f2cf6d7ffda26533d570d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710487"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70090019"
 ---
 # <a name="troubleshoot-resource-manager-deployment-issues-with-creating-a-new-linux-virtual-machine-in-azure"></a>Solucionar problemas de implantação do Resource Manager com a criação de uma nova máquina virtual Linux no Azure
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
@@ -43,29 +42,29 @@ Para iniciar a solução de problemas, colete os logs de atividades para identif
 
 [!INCLUDE [virtual-machines-linux-troubleshoot-deployment-new-vm-table](../../../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-table.md)]
 
-**Y:** Se o sistema operacional for Linux generalizado e ele é carregado e/ou capturado com a configuração generalizada, não haverá erros. Da mesma forma, se o sistema operacional for Linux especializado e ele for carregado e/ou capturado com a configuração especializada, não haverá erros.
+**Y:** Se o sistema operacional for Linux generalizado e ele for carregado e/ou capturado com a configuração generalizada, não haverá erros. Da mesma forma, se o sistema operacional for Linux especializado e ele for carregado e/ou capturado com a configuração especializada, não haverá erros.
 
 **Erros de upload:**
 
-**N<sup>1</sup>:** Se o sistema operacional for Linux generalizado e ele for carregado como especializado, você receberá um erro de tempo limite de provisionamento porque a VM estará paralisada no estágio de provisionamento.
+**N<sup>1</sup>:** Se o sistema operacional for Linux generalizado e ele for carregado como especializado, você receberá um erro de tempo limite de provisionamento porque a VM está presa no estágio de provisionamento.
 
-**N<sup>2</sup>:** Se o sistema operacional for Linux especializado e ele é carregado como generalizado, você receberá um erro de falha no provisionamento porque a nova VM está em execução com o nome do computador original, nome de usuário e senha.
+**N<sup>2</sup>:** Se o sistema operacional for Linux especializado e ele for carregado como generalizado, você receberá um erro de falha de provisionamento porque a nova VM está em execução com o nome do computador, o nome de usuário e a senha originais.
 
 **Resolução:**
 
-Para resolver ambos os erros, carregue o VHD original, disponível no local, com a mesma configuração usada para o sistema operacional (generalizado/especializado). Para carregar como generalizado, lembre-se de executar -deprovision primeiro.
+Para resolver esses dois erros, carregue o VHD original, disponível no local, com a mesma configuração do sistema operacional (generalizado/especializado). Para carregar como generalizado, lembre-se de executar -deprovision primeiro.
 
 **Erros de captura:**
 
-**N<sup>3</sup>:** Se o sistema operacional for Linux generalizado e ele for capturado como especializado, você receberá um erro de tempo limite de provisionamento porque a VM original não será utilizável, já que é marcada como generalizada.
+**N<sup>3</sup>:** Se o sistema operacional for Linux generalizado e ele for capturado como especializado, você receberá um erro de tempo limite de provisionamento porque a VM original não é utilizável, pois está marcada como generalizada.
 
-**N<sup>4</sup>:** Se o sistema operacional for Linux especializado e ele for capturado como generalizado, você receberá um erro de falha no provisionamento porque a nova VM está em execução com o nome do computador original, nome de usuário e senha. Além disso, a VM original não será utilizável, já que estará marcada como especializada.
+**N<sup>4</sup>:** Se o sistema operacional for Linux especializado e ele for capturado como generalizado, você receberá um erro de falha de provisionamento porque a nova VM está em execução com o nome do computador, o nome de usuário e a senha originais. Além disso, a VM original não será utilizável, já que estará marcada como especializada.
 
 **Resolução:**
 
 Para resolver ambos os erros, exclua a imagem atual do portal e [recapture-a dos VHDs atuais](../linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) com a mesma configuração usada para o sistema operacional (generalizado/especializado).
 
-## <a name="issue-custom-gallery-marketplace-image-allocation-failure"></a>Problema: Personalizado / Galeria / imagem do marketplace; Falha de alocação
+## <a name="issue-custom-gallery-marketplace-image-allocation-failure"></a>Problema: Imagem personalizada/de galeria/Marketplace; falha de alocação
 Esse erro ocorre em situações nas quais a nova solicitação de VM é fixada em um cluster que não tem suporte para o tamanho da VM sendo solicitado ou não tem espaço livre disponível para acomodar a solicitação.
 
 **Causa 1:** o cluster não dá suporte ao tamanho de VM solicitado.

@@ -10,24 +10,23 @@ ms.assetid: a195675b-f7d0-4fc9-90bf-860e6f17ccf7
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 00d5e3df78e85d19a519786dad1a1b176ad7fa08
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8b250c45716146c505a803046b18bf5d05cf116
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836986"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073765"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Como personalizar o portal de desenvolvedor de Gerenciamento de API do Azure usando modelos
 
 Há três maneiras básicas para personalizar o portal do desenvolvedor no Gerenciamento de API do Azure:
 
 * [Editar o conteúdo de páginas estáticas e elementos de layout da página][modify-content-layout]
-* [Atualizar os estilos usados para elementos de página entre o portal do desenvolvedor][customize-styles]
-* [Modificar os modelos usados para as páginas geradas pelo portal][portal-templates] (explicado neste guia)
+* [Atualizar os estilos usados para elementos de página no portal do desenvolvedor][customize-styles]
+* [Modificar os modelos usados para páginas geradas pelo portal][portal-templates] (explicado neste guia)
 
 Modelos são usados para personalizar o conteúdo das páginas de portal de desenvolvedor geradas pelo sistema (por exemplo, documentos de API, produtos, autenticação do usuário etc.). Com a sintaxe do [DotLiquid](http://dotliquidmarkup.org/), e um conjunto fornecido de recursos de cadeia de caracteres localizados, ícones e controles de página, você conta com muita flexibilidade para configurar o conteúdo das páginas como quiser.
 

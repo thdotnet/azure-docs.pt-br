@@ -9,19 +9,18 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: 9fc761b1-21ad-4d79-bebc-a2f094ec214d
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.custom: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
-ms.openlocfilehash: 39f38af601888f847cd1a82da9e2e03e6893c28e
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 3ff9a694dca0d2a205c27569a7c744f482b662ec
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67607291"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100648"
 ---
 # <a name="configure-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Configurar a instância de Cluster de Failover do SQL Server em máquinas virtuais do Azure
 
@@ -74,7 +73,7 @@ Você deve ter uma compreensão operacional das seguintes tecnologias:
 - [Tecnologias de cluster do Windows](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)
 - [Instâncias de Cluster de Failover do SQL Server](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server).
 
-Uma diferença importante é que, em um cluster de failover de convidado de VM IaaS do Azure, recomendamos uma única NIC por servidor (nó de cluster) e uma única sub-rede. A rede do Azure tem redundância física, o que torna desnecessários os adaptadores de rede e as sub-redes adicionais em um cluster de convidado de uma VM de IaaS do Azure. Embora o relatório de validação de cluster emita um aviso de que os nós só são acessíveis em uma única rede, esse aviso pode ser ignorado com segurança em clusters de failover de convidado de uma VM de IaaS do Azure. 
+Uma diferença importante é que, em um cluster de failover convidado da VM IaaS do Azure, recomendamos uma única NIC por servidor (nó de cluster) e uma única sub-rede. A rede do Azure tem redundância física, o que torna desnecessários os adaptadores de rede e as sub-redes adicionais em um cluster de convidado de uma VM de IaaS do Azure. Embora o relatório de validação de cluster emita um aviso de que os nós só são acessíveis em uma única rede, esse aviso pode ser ignorado com segurança em clusters de failover de convidado de uma VM de IaaS do Azure. 
 
 Além disso, você deve ter uma compreensão geral das tecnologias a seguir:
 
@@ -399,7 +398,7 @@ Para criar o balanceador de carga:
 
    - **Nome**: um nome para a investigação de integridade.
    - **Protocolo**: TCP.
-   - **Porta**: Configurar como a porta que você criou no firewall para a investigação de integridade no [esta etapa](#ports). Neste artigo, o exemplo usa a porta TCP `59999`.
+   - **Porta**: Defina para a porta que você criou no firewall para a investigação de integridade nesta [etapa](#ports). Neste artigo, o exemplo usa a porta `59999`TCP.
    - **Intervalo**: 5 segundos.
    - **Limite não íntegro**: duas falhas consecutivas.
 
@@ -475,7 +474,7 @@ Teste o failover de FCI para validar a funcionalidade do cluster. Execute as seg
 
 **Gerenciador de Cluster de Failover** mostra a função, e seus recursos ficam offline. Os recursos são movidos e ficam online no outro nó.
 
-### <a name="test-connectivity"></a>Testar a conectividade
+### <a name="test-connectivity"></a>Testar conectividade
 
 Para testar a conectividade, faça logon em outra máquina virtual na mesma rede virtual. Abra o **SQL Server Management Studio** e conecte-se ao nome de FCI do SQL Server.
 

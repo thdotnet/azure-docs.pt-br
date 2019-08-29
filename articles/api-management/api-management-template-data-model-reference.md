@@ -10,16 +10,15 @@ ms.assetid: b0ad7e15-9519-4517-bb73-32e593ed6380
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2017
 ms.author: apimpm
-ms.openlocfilehash: 3c2384b536235554fed7c1cf1a08b7c665f513a8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 323b3effb4c4a63d03ab7ea5251e0d59271d9dcd
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61094515"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072147"
 ---
 # <a name="azure-api-management-template-data-model-reference"></a>Referência de modelo de dados de modelo do Gerenciamento de API do Azure
 Este tópico descreve as representações de entidade e tipo para itens comuns usados nos modelos de dados para os modelos de portal do desenvolvedor no Gerenciamento de API do Azure.  
@@ -60,7 +59,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="API"></a> API  
  A entidade `API` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente a API na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `apis/{id}` em que `{id}` é um identificador de API. Essa propriedade é somente leitura.|  
 |`name`|cadeia de caracteres|O nome da API. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
@@ -74,7 +73,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="APISummary"></a> Resumo da API  
  A entidade `API summary` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente a API na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `apis/{id}` em que `{id}` é um identificador de API. Essa propriedade é somente leitura.|  
 |`name`|cadeia de caracteres|O nome da API. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
@@ -83,7 +82,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Application"></a> Aplicativo  
  A entidade `application` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|O identificador exclusivo do aplicativo.|  
 |`Title`|cadeia de caracteres|O título do aplicativo.|  
@@ -101,7 +100,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Attachment"></a> Anexo  
  A entidade `attachment` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`UniqueId`|cadeia de caracteres|O identificador exclusivo do anexo.|  
 |`Url`|cadeia de caracteres|A URL do recurso.|  
@@ -110,7 +109,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
   
 ##  <a name="Sample"></a> Exemplo de código  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`title`|cadeia de caracteres|O nome da operação.|  
 |`snippet`|cadeia de caracteres|Essa propriedade foi preterida e não deve ser usada.|  
@@ -128,7 +127,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Comment"></a> Comentário  
  A entidade `API` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|número|A ID do comentário.|  
 |`CommentText`|cadeia de caracteres|O corpo do comentário. Pode incluir HTML.|  
@@ -138,7 +137,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Issue"></a> Problema  
  A entidade `issue` tem as seguintes propriedades.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|O identificador exclusivo do problema.|  
 |`ApiID`|cadeia de caracteres|A ID da API para a qual esse problema foi relatado.|  
@@ -154,7 +153,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Filtering"></a> Filtragem  
  A entidade `filtering` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Pattern`|cadeia de caracteres|O termo de pesquisa atual ou `null` se não houver nenhum termo de pesquisa.|  
 |`Placeholder`|cadeia de caracteres|O texto a ser exibido na caixa de pesquisa quando não há nenhum termo de pesquisa especificado.|  
@@ -162,7 +161,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Header"></a> Cabeçalho  
  Esta seção descreve a representação de `parameter`.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|-----------------|----------|  
 |`name`|cadeia de caracteres|Nome do parâmetro.|  
 |`description`|cadeia de caracteres|Descrição do parâmetro.|  
@@ -175,7 +174,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="HTTPRequest"></a> Solicitação HTTP  
  Esta seção descreve a representação de `request`.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`description`|cadeia de caracteres|Descrição da solicitação de operação.|  
 |`headers`|matriz de entidades de [Cabeçalho](#Header).|Cabeçalhos de solicitação.|  
@@ -185,7 +184,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="HTTPResponse"></a> Resposta HTTP  
  Esta seção descreve a representação de `response`.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`statusCode`|número inteiro positivo|Código de status de resposta da operação.|  
 |`description`|cadeia de caracteres|Descrição da resposta da operação.|  
@@ -194,7 +193,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Operation"></a> Operação  
  A entidade `operation` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente a operação na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `apis/{aid}/operations/{id}` em que `{aid}` é um identificador de API e `{id}` é um identificador de API. Essa propriedade é somente leitura.|  
 |`name`|cadeia de caracteres|Nome da operação. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
@@ -209,7 +208,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Menu"></a> Menu de operação  
  A entidade `operation menu` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`ApiId`|cadeia de caracteres|A ID da API atual.|  
 |`CurrentOperationId`|cadeia de caracteres|A ID da operação atual.|  
@@ -219,7 +218,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="MenuItem"></a> Item de menu de operação  
  A entidade `operation menu item` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|A ID da operação.|  
 |`Title`|cadeia de caracteres|A descrição da operação.|  
@@ -228,7 +227,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Paging"></a> Paginação  
  A entidade `paging` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Page`|número|O número da página atual.|  
 |`PageSize`|número|O número máximo de resultados a serem exibidos em uma única página.|  
@@ -239,7 +238,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Parameter"></a> Parâmetro  
  Esta seção descreve a representação de `parameter`.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|-----------------|----------|  
 |`name`|cadeia de caracteres|Nome do parâmetro.|  
 |`description`|cadeia de caracteres|Descrição do parâmetro.|  
@@ -252,7 +251,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Product"></a> Produto  
  A entidade `product` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente o produto na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `products/{pid}` em que `{pid}` é um identificador de produto. Essa propriedade é somente leitura.|  
 |`Title`|cadeia de caracteres|O nome do produto. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
@@ -265,7 +264,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Provider"></a> Provedor  
  A entidade `provider` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Properties`|dicionário de cadeia de caracteres|Propriedades desse provedor de autenticação.|  
 |`AuthenticationType`|cadeia de caracteres|O tipo de provedor. (Azure Active Directory, logon do Facebook, Conta do Google, Conta da Microsoft, Twitter).|  
@@ -274,7 +273,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Representation"></a> Representação  
  Esta seção descreve uma `representation`.  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`contentType`|cadeia de caracteres|Especifica um tipo de conteúdo registrado ou personalizado para essa representação, por exemplo, `application/xml`.|  
 |`sample`|cadeia de caracteres|Um exemplo da representação.|  
@@ -282,7 +281,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="Subscription"></a> Assinatura  
  A entidade `subscription` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente a assinatura na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `subscriptions/{sid}` em que `{sid}` é um identificador de assinatura. Essa propriedade é somente leitura.|  
 |`ProductId`|cadeia de caracteres|O identificador de recurso do produto assinado. O valor é uma URL relativa válida no formato de `products/{pid}` em que `{pid}` é um identificador de produto.|  
@@ -308,7 +307,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="SubscriptionSummary"></a> Resumo da assinatura  
  A entidade `subscription summary` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Id`|cadeia de caracteres|Identificador de recurso. Identifica exclusivamente a assinatura na instância atual do serviço de Gerenciamento de API. O valor é uma URL relativa válida no formato de `subscriptions/{sid}` em que `{sid}` é um identificador de assinatura. Essa propriedade é somente leitura.|  
 |`DisplayName`|cadeia de caracteres|O nome de exibição da assinatura|  
@@ -316,7 +315,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="UserAccountInfo"></a> Informações de conta de usuário  
  A entidade `user account info` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`FirstName`|cadeia de caracteres|Nome. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
 |`LastName`|cadeia de caracteres|Sobrenome. Não deve ficar vazio. O comprimento máximo é de 100 caracteres.|  
@@ -329,7 +328,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="UseSignIn"></a> Entrada do usuário  
  A entidade `user sign in` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`Email`|cadeia de caracteres|Endereço de email. Não deve estar vazio e deve ser exclusivo dentro da instância do serviço. O comprimento máximo é de 254 caracteres.|  
 |`Password`|cadeia de caracteres|Senha da conta de usuário.|  
@@ -347,7 +346,7 @@ O portal do desenvolvedor não está disponível na camada de consumo.
 ##  <a name="UserSignUp"></a> Inscrição do usuário  
  A entidade `user sign up` tem as seguintes propriedades:  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`PasswordConfirm`|boolean|Valor usado pelo controle [sign-up](api-management-page-controls.md#sign-up).|  
 |`Password`|cadeia de caracteres|Senha da conta de usuário.|  

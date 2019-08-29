@@ -10,17 +10,16 @@ ms.assetid: b5a1da49-4cab-460d-b5d2-edd086ec32f4
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 5c0b4117f6e7b48dce1746ad6eb3dbe29c0d16af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8a05b7e8466187202e6a4d11efce288238cc19b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130612"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069945"
 ---
 # <a name="configuring-an-app-service-environment-v1"></a>Configuração de um Ambiente do Serviço de Aplicativo v1
 
@@ -71,7 +70,7 @@ Se os aplicativos exigirem um recurso de computação maior, você não poderá 
 
 **Dimensionamento automático**: uma das ferramentas que podem ajudá-lo a gerenciar o consumo de recursos de computação é o dimensionamento automático. Você pode usar o dimensionamento automático para o front-end ou para os pools de trabalho. Você pode aumentar suas instâncias de algum tipo de pool de manhã e reduzi-las durante a noite. Ou você pode adicionar instâncias quando o número de trabalhador disponíveis em um pool de trabalho cair abaixo de um certo limite.
 
-Se você quiser definir regras de dimensionamento automático com relação às métricas de pool de recursos de computação, lembre-se do tempo necessário para o provisionamento. Para obter mais detalhes sobre o dimensionamento automático dos Ambientes do Serviço de Aplicativo, confira [Como configurar o dimensionamento automático em um Ambiente de Serviço de Aplicativo][ASEAutoscale].
+Se você quiser definir regras de dimensionamento automático com relação às métricas de pool de recursos de computação, lembre-se do tempo necessário para o provisionamento. Para obter mais detalhes sobre o dimensionamento automático de ambientes do serviço de aplicativo, consulte [como configurar a autoescala em um ambiente do serviço de aplicativo][ASEAutoscale].
 
 ### <a name="storage"></a>Armazenamento
 Cada ASE é configurado com 500 GB de armazenamento. Esse espaço é usado em todos os aplicativos do ASE. Esse espaço de armazenamento faz parte do ASE e atualmente não pode ser alternado para usar seu espaço de armazenamento. Se você estiver fazendo ajustes no roteamento ou segurança de rede virtual, ainda será necessário permitir o acesso ao Armazenamento do Azure ou o ASE não funcionará.
@@ -89,7 +88,7 @@ Há algumas restrições na rede virtual que é usada para um ASE:
 * Quando uma sub-rede é usada para hospedar um ASE, o intervalo de endereços da sub-rede não pode ser alterado. Por esse motivo, recomendamos que a sub-rede contenha pelo menos 64 endereços a fim acomodar qualquer crescimento futuro do ASE.
 * Nada mais pode existir na sub-rede além do ASE.
 
-Ao contrário do serviço hospedado que contém o ASE, a [rede virtual][virtualnetwork] e a sub-rede estão sob o controle do usuário.  Você pode administrar sua rede virtual por meio da interface do usuário de rede virtual ou do PowerShell.  Um ASE pode ser implantado em uma VNet clássica ou do Resource Manager.  O portal e as experiências de API são um pouco diferentes entre as VNets Clássica e do Resource Manager, mas a experiência do ASE é a mesma.
+Ao contrário do serviço hospedado que contém o ASE, a [rede virtual][virtualnetwork] e a sub-rede estão sob controle do usuário.  Você pode administrar sua rede virtual por meio da interface do usuário de rede virtual ou do PowerShell.  Um ASE pode ser implantado em uma VNet clássica ou do Resource Manager.  O portal e as experiências de API são um pouco diferentes entre as VNets Clássica e do Resource Manager, mas a experiência do ASE é a mesma.
 
 A rede virtual que é usada para hospedar um ASE pode usar endereços IP RFC1918 privados ou endereços IP públicos.  Se você deseja usar um intervalo de IP que não é coberto pelo RFC1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), precisa criar sua rede virtual e sub-rede a ser usada pelo seu ASE antes de criá-lo.
 
@@ -97,14 +96,14 @@ Já que esse recurso coloca o serviço de aplicativo do Azure em sua rede virtua
 
 Por exemplo, você pode usar a Integração VNET para integrar-se a uma Rede Virtual que esteja em sua assinatura mas que não esteja conectada à rede virtual em que seu ASE está. Você também ainda pode usar as Conexões Híbridas para acessar recursos em outras redes, como faria normalmente.  
 
-Caso você tenha configurado sua rede virtual com uma VPN do ExpressRoute, deverá estar ciente das necessidades de rotas de um ASE. Há algumas configurações de UDR (rota definida pelo usuário) que são incompatíveis com um ASE. Para obter mais detalhes sobre como executar um ASE em uma rede virtual com o ExpressRoute, confira [Executando um Ambiente de Serviço de Aplicativo em uma rede virtual com o ExpressRoute][ExpressRoute].
+Caso você tenha configurado sua rede virtual com uma VPN do ExpressRoute, deverá estar ciente das necessidades de rotas de um ASE. Há algumas configurações de UDR (rota definida pelo usuário) que são incompatíveis com um ASE. Para obter mais detalhes sobre como executar um ASE em uma rede virtual com o ExpressRoute, consulte [executando um ambiente do serviço de aplicativo em uma rede virtual com o expressroute][ExpressRoute].
 
 #### <a name="securing-inbound-traffic"></a>Protegendo o tráfego de entrada
 Há dois métodos principais para controlar o tráfego de entrada para seu ASE.  Você pode usar NSGs (Grupos de Segurança de Rede) para controlar quais endereços IP podem acessar seu ASE conforme descrito aqui [Como controlar o tráfego de entrada em um Ambiente de Serviço de Aplicativo](app-service-app-service-environment-control-inbound-traffic.md) e também pode configurar seu ASE com um ILB (Balanceador de Carga Interno).  Esses recursos também podem ser usados juntos para restringir o acesso usando NSGs para seu ASE ILB.
 
 Quando você cria um ASE, ele cria um VIP em sua rede virtual.  Há dois tipos de VIP, internos e externos.  Quando você cria um ASE com um VIP externo, seus aplicativos no ASE poderão ser acessados por meio de um endereço IP que pode ser roteado na Internet. Quando você seleciona seu ASE interno, ele será configurado com um ILB e não poderá ser acessado diretamente pela Internet.  Um ASE ILB ainda requer um VIP externo, mas ele é usado somente para acesso de gerenciamento e manutenção do Azure.  
 
-Durante a criação do ASE ILB, você fornecerá o subdomínio usado pelo ASE ILB e terá que gerenciar seu próprio DNS para o subdomínio que especificar.  Como você define o nome de subdomínio, também precisa gerenciar o certificado usado para acesso HTTPS.  Após a criação do ASE, você precisará fornecer o certificado.  Para saber mais sobre a criação e o uso de um ASE ILB, leia [Usando um Balanceador de Carga Interno com um Ambiente de Serviço de Aplicativo][ILBASE]. 
+Durante a criação do ASE ILB, você fornecerá o subdomínio usado pelo ASE ILB e terá que gerenciar seu próprio DNS para o subdomínio que especificar.  Como você define o nome de subdomínio, também precisa gerenciar o certificado usado para acesso HTTPS.  Após a criação do ASE, você precisará fornecer o certificado.  Para saber mais sobre como criar e usar um ASE ILB, leia [usando um Load balancer interno com um ambiente do serviço de aplicativo][ILBASE]. 
 
 ## <a name="portal"></a>Portal
 Você pode gerenciar e monitorar o ambiente de serviço de aplicativo usando a interface do usuário no portal do Azure. Se você tiver um ASE, provavelmente verá o símbolo do Serviço de Aplicativo em sua barra lateral. Esse símbolo é usado para representar Ambientes do Serviço de Aplicativo no portal do Azure:
@@ -117,7 +116,7 @@ Para abrir a interface do usuário que lista todos os seus Ambientes de Serviço
 
 A primeira folha mostra algumas propriedades do seu ASE junto com um gráfico de métricas por pool de recursos. Algumas das propriedades mostradas no bloco **Fundamentos** também são hiperlinks que abrirão a folha associada a ele. Por exemplo, você pode selecionar o Nome da **rede virtual** para abrir a interface do usuário associada à rede virtual em que o ASE está sendo executado. Os **Planos do Serviço de Aplicativo** e os **Aplicativos** abrem folhas que listam esses itens em seu ASE.  
 
-### <a name="monitoring"></a>Monitoramento
+### <a name="monitoring"></a>Monitorando
 Os gráficos permitem a você ver uma variedade de métricas de desempenho em cada pool de recursos. Para o pool de front-ends, você pode monitorar a média de memória e de CPU . Para pools de trabalho, você pode monitorar a quantidade usada e a quantidade disponível.
 
 Vários Planos do Serviço de Aplicativo podem usar os trabalhadores em um pool de trabalho. A carga de trabalho não é distribuída da mesma forma que ocorre com servidores front-end. Portanto, o uso de CPU e de memória não oferece muitas informações úteis. É mais importante controlar quantos trabalhadores foram usados e estão disponíveis, especialmente se você estiver gerenciando esse sistema para outros usuários.  
@@ -137,7 +136,7 @@ Na folha do ASE, há uma seção **Configurações** que contém vários recurso
 
 ![Folha Configurações e propriedades][4]
 
-**Configurações** > **Endereços IP**: ao criar um aplicativo de IP SSL (protocolo SSL) em seu ASE, você precisará de um endereço IP SSL. Para obter um, seu ASE precisa de endereços IP SSL próprios que possam ser alocados. Quando um ASE é criado, ele conta com um endereço IP SSL para essa finalidade, mas você pode adicionar mais. Há uma cobrança por endereços IP SSL adicionais, conforme indicado em [Preços do Serviço de Aplicativo][AppServicePricing] (na seção Conexões SSL). O preço adicional é o preço do IP SSL.
+**Configurações** > **Endereços IP**: ao criar um aplicativo de IP SSL (protocolo SSL) em seu ASE, você precisará de um endereço IP SSL. Para obter um, seu ASE precisa de endereços IP SSL próprios que possam ser alocados. Quando um ASE é criado, ele conta com um endereço IP SSL para essa finalidade, mas você pode adicionar mais. Há um encargo para endereços IP SSL adicionais, conforme mostrado em [preços do serviço de aplicativo][AppServicePricing] (na seção sobre conexões SSL). O preço adicional é o preço do IP SSL.
 
 **Configurações** > **Pool de Front-ends** / **Pools de Trabalho**: cada uma dessas folhas do pool de recursos só mostra as informações daquele pool de recursos, além de fornecer controles para o dimensionamento completo do pool de recursos.  
 
