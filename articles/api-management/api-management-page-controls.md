@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/20/2017
 ms.author: apimpm
-ms.openlocfilehash: d87293d89e4009512494bf47f9742ea5901f909a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b720d64f5b0a5f66375083b7854658aa754db150
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60656856"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072296"
 ---
 # <a name="azure-api-management-page-controls"></a>Controles de página do Gerenciamento de API do Azure
 O Gerenciamento de API do Azure fornece os controles a seguir para uso em modelos de portal do desenvolvedor.  
@@ -57,9 +56,9 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <app-actions params="{ appId: '{{app.id}}' }"></app-actions>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|DESCRIÇÃO|  
+|Parâmetro|Descrição|  
 |---------------|-----------------|  
 |appId|A ID do aplicativo.|  
   
@@ -79,8 +78,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <basic-SignIn></basic-SignIn>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `basic-signin` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -98,8 +97,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <paging-control></paging-control>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `paging-control` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -121,8 +120,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <providers></providers>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `providers` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -140,8 +139,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <search-control></search-control>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `search-control` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -161,8 +160,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <sign-up></sign-up>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `sign-up` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -180,8 +179,8 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
 <subscribe-button></subscribe-button>  
 ```  
   
-### <a name="parameters"></a>parâmetros  
- Nenhuma.  
+### <a name="parameters"></a>Parâmetros  
+ nenhuma.  
   
 ### <a name="developer-portal-templates"></a>Modelos de portal do desenvolvedor  
  O controle `subscribe-button` pode ser usado nos modelos de portal do desenvolvedor a seguir:  
@@ -201,9 +200,9 @@ Para usar um controle, coloque-o no local desejado no modelo do portal do desenv
   
 ```  
   
-### <a name="parameters"></a>parâmetros  
+### <a name="parameters"></a>Parâmetros  
   
-|Parâmetro|DESCRIÇÃO|  
+|Parâmetro|Descrição|  
 |---------------|-----------------|  
 |subscriptionId|A ID da assinatura a ser cancelada.|  
 |cancelUrl|A assinatura cancela a URL.|  

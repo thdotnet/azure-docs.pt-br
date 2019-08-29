@@ -10,19 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: d7c59cc1-b2d0-4d90-9126-628f9c7a5538
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/07/2019
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 11a54dee653bcfa6c94a861e483183ac39f465bf
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e87ea28f2454ec3c969574b21ef383e81b3148c2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67710191"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098760"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Planejamento e implementação de Máquinas Virtuais do Azure para SAP NetWeaver
 
@@ -669,7 +668,7 @@ Você pode definir várias vNICs (placas de interface de rede virtual) para uma 
 * [Implantar VMs com várias NICs usando o PowerShell][virtual-network-deploy-multinic-arm-ps]
 * [Implantar VMs com várias NICs usando o CLI do Azure][virtual-network-deploy-multinic-arm-cli]
 
-#### <a name="site-to-site-connectivity"></a>Conectividade Site a Site
+#### <a name="site-to-site-connectivity"></a>Conectividade site a site
 
 Entre instalações refere-se a VMs do Azure e locais vinculadas por uma conexão VPN permanente e transparente. Espera-se que esse se torne o padrão de implantação SAP mais comum no Azure. Pressupõe-se que os procedimentos operacionais e processos com instâncias SAP no Azure funcionem de modo transparente. Isso significa que você deve ser capaz de imprimir a partir desses sistemas, bem como usar o TMS (sistema de gerenciamento de transporte) SAP para transportar alterações de um sistema de desenvolvimento no Azure para um sistema de teste que é implantado localmente. Mais documentação sobre o site a site pode ser encontrada neste [artigo][vpn-gateway-create-site-to-site-rm-powershell]
 

@@ -10,16 +10,15 @@ ms.assetid: ea160028-fc04-4782-aa26-4b8329df3448
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a42028891f0a8677127221c8ed4cff73a22103a
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: fa5e84ba62896969458b84cf014e2b35ee869df7
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498546"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072182"
 ---
 # <a name="api-management-policy-expressions"></a>Expressões de política de Gerenciamento de API
 Este artigo descreve a sintaxe das expressões de política C# 7. Cada expressão tem acesso à variável de [contexto](api-management-policy-expressions.md#ContextVariables) fornecida implicitamente e a um [subconjunto](api-management-policy-expressions.md#CLRTypes) permitido de tipos do .NET Framework.

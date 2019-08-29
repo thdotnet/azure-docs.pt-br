@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-windows
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/15/2019
 ms.author: sedusch
-ms.openlocfilehash: 93644b9a3487906a27db70bfe82cceccdc7ab45c
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7af5663b399556d66f86213310858780369215af
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707223"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101064"
 ---
 # <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Alta disponibilidade do NFSVMs do Azure no SUSE Linux Enterprise Server
 
@@ -52,7 +51,7 @@ ms.locfileid: "67707223"
 [sap-hana-ha]:sap-hana-high-availability.md
 
 Este artigo descreve como implantar as máquinas virtuais, configurar as máquinas virtuais, instalar a estrutura de cluster e instalar um servidor NFS com alta disponibilidade que pode ser usado para armazenar dados compartilhados de um sistema SAP altamente disponível.
-Este guia descreve como configurar um servidor NFS altamente disponível que é usado pelos dois sistemas SAP, NW1 e NW2. Os nomes dos recursos (por exemplo, máquinas virtuais, redes virtuais) no exemplo pressupõem que você tenha usado o [modelo de servidor de arquivo do SAP][template-file-server] com o prefixo do recurso **prod**.
+Este guia descreve como configurar um servidor NFS altamente disponível que é usado pelos dois sistemas SAP, NW1 e NW2. Os nomes dos recursos (por exemplo, máquinas virtuais, redes virtuais) no exemplo pressupõem que você usou o [modelo de servidor de arquivos SAP][template-file-server] com o prefixo de recurso **prod**.
 
 Primeiro, leia os seguintes documentos e Notas SAP
 
@@ -71,13 +70,13 @@ Primeiro, leia os seguintes documentos e Notas SAP
 * A Nota SAP [1984787] tem informações gerais sobre o SUSE Linux Enterprise Server 12.
 * A Nota SAP [1999351] tem informações de solução de problemas adicionais para a Extensão de Monitoramento Avançado do Azure para SAP.
 * [WIKI da comunidade do SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes) tem todas as Notas SAP necessárias para Linux.
-* [Máquinas virtuais de planejamento e implementação para SAP no Linux do Azure][planning-guide]
-* [Implantação de máquinas virtuais do Azure para SAP no Linux (Este artigo)][deployment-guide]
+* [Planejamento e implementação de máquinas virtuais do Azure para SAP no Linux][planning-guide]
+* [Implantação de máquinas virtuais do Azure para SAP no Linux (este artigo)][deployment-guide]
 * [Implantação de DBMS de máquinas virtuais do Azure para SAP no Linux][dbms-guide]
-* [Guias de SUSE Linux Enterprise alta disponibilidade extensão 12 SP3 melhores práticas][sles-hae-guides]
+* [Guias de práticas recomendadas da extensão de alta disponibilidade do SUSE Linux Enterprise 12 SP3][sles-hae-guides]
   * Armazenamento NFS Altamente Disponível com DRBD e Pacemaker
-* [Guias de SUSE Linux Enterprise Server para aplicativos SAP 12 SP3 melhores práticas][sles-for-sap-bp]
-* [Notas de versão do SP3 com a extensão de alta disponibilidade do SUSE 12][suse-ha-12sp3-relnotes]
+* [Guias de práticas recomendadas do SUSE Linux Enterprise Server para aplicativos SAP 12 SP3][sles-for-sap-bp]
+* [Notas de versão da extensão de alta disponibilidade do SUSE 12 SP3][suse-ha-12sp3-relnotes]
 
 ## <a name="overview"></a>Visão geral
 
@@ -110,7 +109,7 @@ Você pode usar um Modelo do Azure do GitHub para implantar todos os recursos do
 O Azure Marketplace contém uma imagem para SUSE Linux Enterprise Server for SAP Applications 12 que você pode usar para implantar novas máquinas virtuais.
 Você pode usar um dos modelos de início rápido no GitHub para implantar todos os recursos necessários. O modelo implanta as máquinas virtuais, o balanceador de carga, o conjunto de disponibilidade etc. Siga estas etapas para implantar o modelo:
 
-1. Abra o [modelo de servidor de arquivo SAP][template-file-server] no portal do Azure   
+1. Abra o [modelo de servidor de arquivos SAP][template-file-server] no portal do Azure   
 1. Defina os seguintes parâmetros
    1. Prefixo de recursos  
       Digite o prefixo que você deseja usar. O valor é usado como um prefixo para os recursos que serão implantados.
@@ -181,7 +180,7 @@ Primeiro, você precisa criar as máquinas virtuais para este cluster NFS. Poste
          * Repita as etapas acima para a porta 2049 e UDP para NW2
 
 > [!IMPORTANT]
-> Não habilite os carimbos de hora do TCP em VMs do Azure colocadas por trás do balanceador de carga do Azure. Habilitar TCP carimbos de hora fará com que as investigações de integridade falha. Defina o parâmetro **net.ipv4.tcp_timestamps** à **0**. Para obter detalhes, consulte [investigações de integridade do balanceador de carga](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+> Não habilite carimbos de data/hora TCP em VMs do Azure colocadas por trás Azure Load Balancer. Habilitar carimbos de data/hora TCP fará com que as investigações de integridade falhem. Defina o parâmetro **net. IPv4. TCP _timestamps** como **0**. Para obter detalhes, consulte [Load Balancer investigações de integridade](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
 
 ### <a name="create-pacemaker-cluster"></a>Criar cluster do Pacemaker
 
@@ -539,8 +538,8 @@ Os itens a seguir são prefixados com **[A]** – aplicável a todos os nós, **
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Instale o SAP ASCS e o banco de dados](high-availability-guide-suse.md)
-* [Máquinas virtuais de planejamento e implementação para o SAP do Azure][planning-guide]
+* [Planejamento e implementação de máquinas virtuais do Azure para SAP][planning-guide]
 * [Implantação de máquinas virtuais do Azure para SAP][deployment-guide]
 * [Implantação de DBMS de máquinas virtuais do Azure para SAP][dbms-guide]
 * Para saber como estabelecer a alta disponibilidade e o plano de recuperação de desastres do SAP HANA no Azure (instâncias grandes), confira [Alta disponibilidade e recuperação de desastres do SAP HANA (instâncias grandes) no Azure](hana-overview-high-availability-disaster-recovery.md).
-* Para saber como estabelecer a alta disponibilidade e o plano de recuperação de desastre do SAP HANA em VMs do Azure, consulte [alta disponibilidade do SAP HANA em máquinas virtuais do Azure (VMs)][sap-hana-ha]
+* Para saber como estabelecer alta disponibilidade e planejar a recuperação de desastre de SAP HANA em VMs do Azure, consulte [alta disponibilidade de SAP Hana em VMS (máquinas virtuais) do Azure][sap-hana-ha]

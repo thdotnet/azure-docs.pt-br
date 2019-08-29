@@ -7,18 +7,17 @@ author: hermanndms
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: rclaus
-ms.openlocfilehash: 91671b39e6ac33e16636cc924f5c0aa5e3fcbf3b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 05a4b8e8034e1c354a4209244694aeb2fc2c6007
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709938"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70078756"
 ---
 # <a name="backup-guide-for-sap-hana-on-azure-virtual-machines"></a>Guia de backup para SAP HANA em Máquinas Virtuais do Azure
 
@@ -90,7 +89,7 @@ O SAP não dá preferência para fazer backup do HANA ou instantâneo de armazen
 
 No Azure, lembre-se do fato de que o recurso de instantâneo do blob do Azure não garante a consistência do sistema de arquivos (consulte [Usando instantâneos de blob com o PowerShell](https://blogs.msdn.microsoft.com/cie/2016/05/17/using-blob-snapshots-with-powershell/)). A próxima seção, _Consistência de dados do SAP HANA ao fazer instantâneos de armazenamento_, aborda algumas considerações sobre esse recurso.
 
-Além disso, é preciso entender as implicações de cobranças ao trabalhar com frequência com instantâneos de blob, conforme descrito neste artigo: [Noções básicas sobre como instantâneos acumulam cobranças](/rest/api/storageservices/understanding-how-snapshots-accrue-charges)— ele não é&#39;tão óbvio quanto usar discos virtuais do Azure.
+Além disso, é importante entender as implicações de cobrança ao trabalhar com frequência com instantâneos de BLOB, conforme descrito neste artigo: [Entender como](/rest/api/storageservices/understanding-how-snapshots-accrue-charges)os instantâneos acumulam encargos&#39;— não é tão óbvio quanto usar discos virtuais do Azure.
 
 ### <a name="sap-hana-data-consistency-when-taking-storage-snapshots"></a>Consistência de dados do SAP HANA ao realizar instantâneos de armazenamento
 

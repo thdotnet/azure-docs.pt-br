@@ -10,18 +10,17 @@ ms.assetid: ae78b410-1bc0-4d72-8fc4-ac69801247ae
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/30/2018
 ms.author: cephalin
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: ae172c5a7ed6f90bfe132f346b356f2be81b349d
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: f239fb4464d2e7f67b91a2d18c21b089ffd52b27
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617044"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070494"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Implantar seu aplicativo no Serviço de Aplicativo do Azure usando FTP/S
 
@@ -46,11 +45,11 @@ No painel FTP, clique em **Copiar** para copiar o ponto de extremidade de FTPS e
 É recomendável que você use as **Credenciais do Aplicativo** para implantar seu aplicativo porque ele é exclusivo para cada aplicativo. No entanto, se você clicar em **Credenciais do Usuário**, poderá definir as credenciais de nível de usuário a serem usadas para logon do FTP/S em todos os aplicativos do Serviço de Aplicativo em sua assinatura.
 
 > [!NOTE]
-> Fazer a autenticação em um ponto de extremidade FTP/FTPS usando um nome de usuário de requirers de credenciais de usuário no seguinte formato: 
+> A autenticação em um ponto de extremidade de FTP/FTPS usando credenciais de nível de usuário exige um nome de usuário no seguinte formato: 
 >
 >`<app-name>\<user-name>`
 >
-> Uma vez que as credenciais de usuário são vinculadas ao usuário e não um recurso específico, o nome de usuário deve estar no seguinte formato para direcionar a ação de sinal para o ponto de extremidade do aplicativo certo.
+> Como as credenciais de nível de usuário são vinculadas ao usuário e não a um recurso específico, o nome de usuários deve estar nesse formato para direcionar a ação de entrada para o ponto de extremidade do aplicativo certo.
 >
 
 ## <a name="deploy-files-to-azure"></a>Implantar arquivos no Azure

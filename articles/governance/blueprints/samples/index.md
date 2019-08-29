@@ -5,15 +5,15 @@ author: DCtheGeek
 manager: carmonm
 ms.service: blueprints
 ms.topic: sample
-ms.date: 08/20/2019
+ms.date: 08/21/2019
 ms.author: dacoulte
 ms.custom: fasttrack-edit
-ms.openlocfilehash: dbfecdc4f7545746694fbd0996d3281395ad47df
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: fc05e8c7c1536544d9ac7c2a45f66da8316fe088
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013029"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076929"
 ---
 # <a name="azure-blueprints-samples"></a>Exemplos do Azure Blueprints
 
@@ -23,8 +23,9 @@ A tabela a seguir contém links para exemplos do Azure Blueprints. Cada exemplo 
 
 |  |  |
 |---------|---------|
+| [PBMM Federal do Canadá](./canada-federal-pbmm/control-mapping.md) | Fornece proteções para conformidade com o PBMM (B Protegido, Integridade Média, Disponibilidade Média) Federal do Canadá. |
 | [CIS Microsoft Azure Foundations Benchmark](./cis-azure-1.1.0/index.md)| Fornece um conjunto de políticas para ajudar a cumprir as recomendações do CIS Microsoft Azure Foundations Benchmark. |
-| [IRS 1075](./irs-1075/index.md)| Fornece as proteções para a conformidade com o IRS 1075.|
+| [IRS 1075](./irs-1075/index.md) | Fornece as proteções para a conformidade com o IRS 1075.|
 | [ISO 27001](./iso27001/index.md) | Fornece as diretrizes para a conformidade com a ISO 27001. |
 | [Serviços Compartilhados ISO 27001](./iso27001-shared/index.md) | Oferece um conjunto de padrões de infraestrutura e proteções de política em conformidade que ajudam na certificação ISO 27001. |
 | [Carga de trabalho do Ambiente do Serviço de Aplicativo/Banco de Dados SQL ISO 27001](./iso27001-ase-sql-workload/index.md) | Oferece infraestrutura adicional para o exemplo de blueprint dos [Serviços Compartilhados ISO 27001](./iso27001-shared/index.md). |

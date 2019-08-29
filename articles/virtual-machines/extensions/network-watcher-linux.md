@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 5c81e94c-e127-4dd2-ae83-a236c4512345
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
-ms.openlocfilehash: 5ed5e791cd6e611218769650115c78afd1869f67
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b59e4c570032bdd3341dc7d519f23f4cd86984c7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60743421"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084437"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>Extensão da máquina virtual do Agente do Observador de Rede do Azure para Linux
 
@@ -79,7 +78,7 @@ O JSON a seguir mostra o esquema para a extensão do Agente do Observador de Red
 | Nome | Valor/Exemplo |
 | ---- | ---- |
 | apiVersion | 2015-06-15 |
-| publicador | Microsoft.Azure.NetworkWatcher |
+| publisher | Microsoft.Azure.NetworkWatcher |
 | type | NetworkWatcherAgentLinux |
 | typeHandlerVersion | 1.4 |
 
@@ -106,7 +105,7 @@ az vm extension set --resource-group myResourceGroup1 --vm-name myVM1 --name Net
 
 ## <a name="troubleshooting-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshooting"></a>solução de problemas
+### <a name="troubleshooting"></a>Solução de problemas
 
 Você pode recuperar dados sobre o estado das implantações de extensão usando o portal do Azure ou a CLI do Azure.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: manayar
-ms.openlocfilehash: d1cff1011e190e5fbb2874657cbdfbdc68bde0c0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e074d76f9ed095725d99bddc9eb21925f4b3697c
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60619817"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114479"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Usando a extensão do Application Health com os conjuntos de dimensionamento de máquinas virtuais
 O monitoramento de integridade do seu aplicativo é um sinal importante para gerenciar e atualizar sua implantação. Os conjuntos de dimensionamento de máquinas virtuais do Azure fornecem suporte para [atualizações sem interrupção](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model) incluindo [atualizações automáticas de imagem do sistema operacional](virtual-machine-scale-sets-automatic-upgrade.md), que dependem do monitoramento de integridade das instâncias individuais para atualizar sua implantação.
@@ -63,20 +63,20 @@ O JSON a seguir mostra o esquema para a extensão para VM do Application Health.
 
 ### <a name="property-values"></a>Valores de propriedade
 
-| Nome | Valor/Exemplo | Tipo de Dados
+| Nome | Valor/Exemplo | Tipo de dados
 | ---- | ---- | ---- 
 | apiVersion | `2018-10-01` | date |
-| publicador | `Microsoft.ManagedServices` | string |
-| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
+| publisher | `Microsoft.ManagedServices` | cadeia de caracteres |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | cadeia de caracteres |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Configurações
 
-| NOME | Valor/Exemplo | Tipo de Dados
+| Nome | Valor/Exemplo | Tipo de dados
 | ---- | ---- | ----
-| protocol | `http` ou `tcp` | string |
+| protocolo | `http` ou `tcp` | cadeia de caracteres |
 | port | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | int |
-| requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | string |
+| requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | cadeia de caracteres |
 
 ## <a name="deploy-the-application-health-extension"></a>Implantar a Extensão de Integridade do Aplicativo
 Há várias maneiras de implantar a integridade da extensão do Application Health para o dimensionamento conforme detalhado nos exemplos a seguir.
@@ -149,16 +149,25 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
 
 Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) para adicionar a extensão do Application Health a definição do modelo de conjunto de dimensionamento.
 
-Os exemplos a seguir adicionam a extensão do Application Health em uma escala de conjunto de dimensionamento de um conjunto de dimensionamento baseado em Windows.
+O exemplo a seguir adiciona a extensão de integridade do aplicativo ao modelo do conjunto de dimensionamento de um conjunto de dimensionamento baseado em Linux.
 
 ```azurecli-interactive
 az vmss extension set \
-  --name ApplicationHealthWindows \
+  --name ApplicationHealthLinux \
   --publisher Microsoft.ManagedServices \
   --version 1.0 \
   --resource-group <myVMScaleSetResourceGroup> \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
+```
+O conteúdo do arquivo extension. JSON.
+
+```json
+{
+  "protocol": "<protocol>",
+  "port": "<port>",
+  "requestPath": "</requestPath>"
+}
 ```
 
 

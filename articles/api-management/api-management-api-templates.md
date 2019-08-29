@@ -10,16 +10,15 @@ ms.assetid: 3642fd09-ba98-4358-93a6-c48ab0500431
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: e8519bf436e1af19a22a840f48bf1bfccdae99b2
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 9d75dff413e7b6e61d38b95e08bf9c891b583014
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341266"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073830"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Modelos de API no Gerenciamento de API do Azure
 
@@ -88,7 +87,7 @@ Os modelos desta seção permitem personalizar o conteúdo das páginas de API n
   
 ### <a name="data-model"></a>Modelo de dados  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
 |`apis`|Coleção de entidades de [Resumo da API](api-management-template-data-model-reference.md#APISummary).|As APIs visíveis para o usuário atual.|  
   
@@ -343,14 +342,14 @@ Os modelos desta seção permitem personalizar o conteúdo das páginas de API n
   
 ### <a name="data-model"></a>Modelo de dados  
   
-|Propriedade|Type|DESCRIÇÃO|  
+|Propriedade|Tipo|Descrição|  
 |--------------|----------|-----------------|  
-|`apiId`|string|A ID da API atual.|  
-|`apiName`|string|O nome da API.|  
-|`apiDescription`|string|Uma descrição para a API.|  
+|`apiId`|cadeia de caracteres|A ID da API atual.|  
+|`apiName`|cadeia de caracteres|O nome da API.|  
+|`apiDescription`|cadeia de caracteres|Uma descrição para a API.|  
 |`api`|Entidade [Resumo da API](api-management-template-data-model-reference.md#APISummary).|A API atual.|  
 |`operation`|[Operação](api-management-template-data-model-reference.md#Operation)|A operação atualmente exibida.|  
-|`sampleUrl`|string|A URL para a operação atual.|  
+|`sampleUrl`|cadeia de caracteres|A URL para a operação atual.|  
 |`operationMenu`|[Menu de operação](api-management-template-data-model-reference.md#Menu)|Um menu de operações para esta API.|  
 |`consoleUrl`|URI|O URI para o botão **Experimente**.|  
 |`samples`|Coleção de entidades de [Exemplo de código](api-management-template-data-model-reference.md#Sample).|Os exemplos de código para a operação atual.|  

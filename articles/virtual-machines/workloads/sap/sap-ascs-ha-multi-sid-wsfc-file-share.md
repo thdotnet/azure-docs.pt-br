@@ -10,19 +10,18 @@ tags: azure-resource-manager
 keywords: ''
 ms.assetid: cbf18abe-41cb-44f7-bdec-966f32c89325
 ms.service: virtual-machines-windows
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 02/03/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 32905f6d505f83ead805550205df0daf6be501e5
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 00c38c5c8140bffe0767ebe69470285bb15f5fc6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710124"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098709"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -199,7 +198,7 @@ ms.locfileid: "67710124"
 > ![Windows][Logo_Windows] Windows
 >
 
-Você pode gerenciar vários endereços IP virtuais usando um [balanceador de carga interno do Azure][load-balancer-multivip-overview]. 
+Você pode gerenciar vários endereços IP virtuais usando um balanceador de [carga interno do Azure][load-balancer-multivip-overview]. 
 
 Se tiver uma implantação do SAP, você poderá usar um balanceador de carga interno para criar uma configuração de cluster do Windows para instâncias dos Serviços Centrais do SAP (ASCS/SCS).
 
@@ -241,7 +240,7 @@ A meta é instalar várias instâncias clusterizadas do SAP Advanced Business Ap
 
 _**Figura 2:** configuração de vários SIDs do SAP em dois clusters_
 
-A instalação do adicional **SAP \<SID2 >** sistema é idêntico à instalação de um \<SID > sistema. Duas etapas adicionais de preparação são necessárias no cluster ASCS/SCS, bem como no cluster SOFS de compartilhamento de arquivos.
+A instalação de um sistema **de \<> do SAP SID2** adicional é idêntica à instalação de \<um sistema de > Sid. Duas etapas adicionais de preparação são necessárias no cluster ASCS/SCS, bem como no cluster SOFS de compartilhamento de arquivos.
 
 ## <a name="prepare-the-infrastructure-for-an-sap-multi-sid-scenario"></a>Prepare a infraestrutura para um cenário de vários SIDs do SAP
 
@@ -256,12 +255,12 @@ Você deve preparar a infraestrutura no cluster ASCS/SCS existente para um segun
 * Crie um nome de host virtual para a instância do SAP ASCS/SCS clusterizada no servidor DNS.
 * Adicione um endereço IP a um balanceador de carga interno do Azure existente usando o PowerShell.
 
-Essas etapas são descritas em [preparação da infraestrutura para um cenário multi-SID do SAP][sap-ascs-ha-multi-sid-wsfc-shared-disk-infrast-prepare].
+Essas etapas são descritas em [preparação da infraestrutura para um cenário de vários SID do SAP][sap-ascs-ha-multi-sid-wsfc-shared-disk-infrast-prepare].
 
 
 ### <a name="prepare-the-infrastructure-on-an-sofs-cluster-by-using-the-existing-sap-global-host"></a>Prepare a infraestrutura em um cluster SOFS usando o Host Global do SAP existente
 
-Você pode reutilizar existente \<SAPGlobalHost > e o Volume1 do SAP primeiro \<SID1 > sistema.
+Você pode reutilizar o \<SAPGlobalHost existente > e Volume1 do primeiro sistema \<do SAP SID1 >.
 
 ![Figura 3: SOFS com vários SIDs é o mesmo que o Nome de host Global do SAP][sap-ha-guide-figure-8014]
 
@@ -271,7 +270,7 @@ _**Figura 3:** SOFS com vários SIDs é o mesmo que o Nome de host Global do SAP
 >Para o segundo sistema **SAP \<SID2>** , o mesmo Volume1 e a mesma rede **\<SAPGlobalHost>** estão sendo usados.
 >Como você já definiu **SAPMNT** como o nome do compartilhamento para vários sistemas SAP, para reutilizar o nome de rede **\<SAPGlobalHost >** , você deve usar o mesmo **Volume1**.
 >
->O caminho do arquivo para o \<SID2 > host global é C:\ClusterStorage\\**Volume1**\usr\sap\<SID2 > \SYS\.
+>O caminho do arquivo para \<o host SID2 > global é\\C:\ClusterStorage**Volume1**\usr\sap\<SID2 > \SYS\.
 >
 
 Para o sistema \<SID2>, você deve preparar o Host Global do SAP ..\SYS\.. pasta no cluster SOFS.
@@ -404,19 +403,19 @@ _**Figura 6:** iniciar assistente para "Adicionar Compartilhamento de Arquivos"_
 
 <br>
 
-![Figura 7: "Selecionar compartilhamento SMB – rápido"][sap-ha-guide-figure-8018]
+![Figura 7: "Selecione o compartilhamento SMB – rápido"][sap-ha-guide-figure-8018]
 
 _**Figura 7:** Escolha "Compartilhamento SMB - Rápido"_
 
 <br>
 
-![Figura 8: Escolher "sapglobalhost2" e especifique o caminho no Volume2][sap-ha-guide-figure-8019]
+![Figura 8: Selecione "sapglobalhost2" e especifique o caminho em Volume2][sap-ha-guide-figure-8019]
 
 _**Figura 8:** escolher "sapglobalhost2" e especificar o caminho no Volume2_
 
 <br>
 
-![Figura 9: Definir o nome de compartilhamento de arquivo como "sapmnt"][sap-ha-guide-figure-8020]
+![Figura 9: Defina o nome do compartilhamento de arquivos como "sapmnt"][sap-ha-guide-figure-8020]
 
 _**Figura 9:** definir o nome do compartilhamento de arquivo como "sapmnt"_
 
@@ -444,7 +443,7 @@ _**Figura 12:** escolher "Criar"_
 
 <br>
 
-![Figura 13: O segundo sapmnt associado ao host sapglobal2 e Volume2 é criado][sap-ha-guide-figure-8024]
+![Figura 13: O segundo sapmnt associado ao host ao sapglobal2 e Volume2 é criado][sap-ha-guide-figure-8024]
 
 _**Figura 13:** o segundo sapmnt associado ao host sapglobal2 e ao Volume2 é criado_
 
@@ -461,10 +460,10 @@ Instale os servidores de aplicativos SAP e DBMS conforme descrito anteriormente.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Instalar uma instância do ASCS/SCS em um cluster de failover sem discos compartilhados][sap-official-ha-file-share-document]: Diretrizes de SAP oficiais para um compartilhamento de arquivo de HA
+* [Instale uma instância do ASCS/SCS em um cluster de failover sem discos compartilhados][sap-official-ha-file-share-document]: Diretrizes de SAP oficiais para um compartilhamento de arquivo de HA
 
 * [Espaços de armazenamento diretos no Windows Server 2016][s2d-in-win-2016]
 
-* [Servidor de arquivos de escalabilidade horizontal para visão geral de dados de aplicativo][sofs-overview]
+* [Visão geral do servidor de arquivos de expansão para dados de aplicativos][sofs-overview]
 
 * [O que há de novo no armazenamento no Windows Server 2016][new-in-win-2016-storage]
