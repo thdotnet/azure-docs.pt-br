@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: d2f60b496594946e9175ecf5c1948b08c9065b1b
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 220f68461d47293e9f43a650e4fa5d1d59bce02f
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848195"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128350"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Configurar um ambiente de desenvolvimento para Azure Machine Learning
 
@@ -30,7 +30,7 @@ A tabela a seguir mostra cada ambiente de desenvolvimento abordado neste artigo,
 | [Ambiente local](#local) | Controle total do seu ambiente de desenvolvimento e dependências. Execute com qualquer ferramenta de compilação, ambiente ou IDE de sua escolha. | Leva mais tempo para começar. Os pacotes SDK necessários devem ser instalados e um ambiente também deve ser instalado se você ainda não tiver um. |
 | [Azure Databricks](#aml-databricks) | Ideal para executar fluxos de trabalho de aprendizado de máquina com uso intensivo em larga escala na plataforma de Apache Spark escalonável. | Um exagero para aprendizado de máquina experimental ou experimentos e fluxos de trabalho de escala menor. Custo adicional incorrido para Azure Databricks. Consulte [detalhes de preço](https://azure.microsoft.com/pricing/details/databricks/). |
 | [O Máquina Virtual de Ciência de Dados (DSVM)](#dsvm) | Semelhante à VM do bloco de notas baseado em nuvem (o Python e o SDK são pré-instalados), mas com mais populares ferramentas de ciência de dados e de aprendizado de máquina instaladas previamente. Fácil de dimensionar e combinar com outras ferramentas e fluxos de trabalho personalizados. | Uma experiência de introdução mais lenta em comparação com a VM do bloco de notas baseado em nuvem. |
-| [Azure Notebooks](#aznotebooks) | Experiência de introdução gratuita e leve, com Python e o SDK pré-instalado. | VM menos potente disponível em comparação com a VM do bloco de notas baseado em nuvem. Isolado do espaço de trabalho e outros recursos. |
+| [Azure Notebooks](#aznotebooks) | Experiência de introdução gratuita e leve, com Python e o SDK pré-instalado. | VMs menos poderosas disponíveis em comparação com a VM do bloco de notas baseado em nuvem. Isolado do espaço de trabalho e outros recursos. |
 
 Este artigo também fornece dicas de uso adicionais para as seguintes ferramentas:
 
@@ -72,7 +72,7 @@ A VM do notebook é:
 
   Se você estiver no código, a VM incluirá tutoriais e exemplos para ajudá-lo a explorar e aprender a usar Azure Machine Learning serviço. Os blocos de anotações de exemplo são armazenados na conta de armazenamento de BLOBs do Azure do espaço de trabalho, tornando-os compartilháveis entre as VMs. Quando executado, eles também têm acesso aos armazenamentos de dados e aos recursos de computação do seu espaço de trabalho.
 
-+ **Configuração simples**: Crie uma a qualquer momento em seu espaço de trabalho Azure Machine Learning. Forneça apenas um nome e especifique um tipo de VM do Azure. Experimente agora com este [tutorial: Ambiente de instalação e](tutorial-1st-experiment-sdk-setup.md)espaço de trabalho.
++ **Configuração simples**: Crie uma a qualquer momento em seu espaço de trabalho Azure Machine Learning. Forneça apenas um nome e especifique um tipo de VM do Azure. Experimente agora com este [tutorial: configurar o ambiente e o workspace](tutorial-1st-experiment-sdk-setup.md).
 
 + **Personalizável**. Enquanto uma oferta de VM gerenciada e segura, você mantém o acesso completo aos recursos de hardware e o personaliza para o desejo do coração. Por exemplo, crie rapidamente a VM mais recente NVidia V100 para executar a depuração passo a passo da arquitetura de rede neural de romance.
 
@@ -187,16 +187,21 @@ Quando você estiver usando um computador local (que também pode ser uma máqui
 
     Esse comando instala o SDK de Azure Machine Learning base com os extras do bloco de anotações e do automl. O `automl` extra é uma instalação grande e pode ser removido dos colchetes se você não pretende executar experimentos de aprendizado de máquina automatizados. O `automl` extra também inclui o Azure Machine Learning SDK de preparação de dados por padrão como uma dependência.
 
-     ```shell
+    ```shell
     pip install azureml-sdk[notebooks,automl]
     ```
 
    > [!NOTE]
-   > Se você receber uma mensagem informando que o PyYAML não pode ser desinstalado, use o seguinte comando:
+   > * Se você receber uma mensagem informando que o PyYAML não pode ser desinstalado, use o seguinte comando:
    >
-   > `pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML`
+   >   `pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML`
+   >
+   > * A partir do macOS Catalina, o zsh (Z Shell) é o Shell de logon padrão e o shell interativo. No zsh, use o comando a seguir que escapa entre colchetes com\\"" (barra invertida):
+   >
+   >   `pip install --upgrade azureml-sdk\[notebooks,automl\]`
 
-   Levará vários minutos para instalar o SDK. Consulte o [Guia de instalação](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) para obter mais informações sobre as opções de instalação.
+
+   Levará vários minutos para instalar o SDK. Para obter mais informações sobre as opções de instalação, consulte o [guia](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)de instalação.
 
 1. Instale outros pacotes para sua experimentação do Machine Learning.
 
@@ -280,7 +285,7 @@ Para usar o Visual Studio Code para desenvolvimento, faça o seguinte:
 <a name="aml-databricks"></a>
 
 ## <a name="azure-databricks"></a>Azure Databricks
-Azure Databricks é um ambiente baseado em Apache Spark na nuvem do Azure. Ele fornece um ambiente com base em blocos de anotações colaborativos com CPU ou cluster de computação baseado em GPU.
+Azure Databricks é um ambiente baseado em Apache Spark na nuvem do Azure. Ele fornece um ambiente de colaboração baseado em notebook com CPU ou cluster de computação baseado em GPU.
 
 Como Azure Databricks funciona com o serviço Azure Machine Learning:
 + Você pode treinar um modelo usando o Spark MLlib e implantar o modelo em ACI/AKS de dentro Azure Databricks.
@@ -329,10 +334,10 @@ Depois que o cluster estiver em execução, [crie uma biblioteca](https://docs.d
    1. Na guia **Bibliotecas**, selecione **Reiniciar**.
 
    Considere também:
-   + Na configuração do Automl, ao usar Azure Databricks adicione os seguintes parâmetros:
+   + Na configuração do AutoML, ao usar Azure Databricks adicione os seguintes parâmetros:
        1. ```max_concurrent_iterations```o é baseado no número de nós de trabalho no cluster.
         2. ```spark_context=sc```baseia-se no contexto padrão do Spark.
-   + Ou, se você tiver uma versão antiga do SDK, desmarque-a do bibliotecas instalado do cluster e mude para Trash. Instale a nova versão do SDK e reinicie o cluster. Se houver um problema depois de fazer isso, desanexe e anexe novamente o cluster.
+   + Ou, se você tiver uma versão antiga do SDK, desmarque-a do bibliotecas instalado do cluster e mude para Trash. Instale a nova versão do SDK e reinicie o cluster. Se houver um problema após a reinicialização, desanexe e anexe novamente o cluster.
 
 Se a instalação tiver sido bem-sucedida, a biblioteca importada deverá ser semelhante a uma destas:
 
@@ -357,7 +362,7 @@ O [Azure Notebooks](https://notebooks.azure.com) (versão prévia) é um ambient
 
 Use o [portal do Azure](https://portal.azure.com) para começar a usar o Azure Notebooks.  Abra seu espaço de trabalho e, na seção **visão geral** , selecione introdução **em Azure notebooks**.
 
-Por padrão, o Azure Notebooks usa uma camada de serviço gratuita que está limitada a 4 GB de memória e 1 GB de dados. No entanto, é possível remover esses limites anexando uma instância de Máquina Virtual de Ciência de Dados ao projeto do Azure Notebooks. Para saber mais, confira [Gerenciar e configurar projetos do Azure Notebooks: camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
+Por padrão, o Azure Notebooks usa uma camada de serviço gratuita Limitada a 4 GB de memória e 1 GB de dados. No entanto, é possível remover esses limites anexando uma instância de Máquina Virtual de Ciência de Dados ao projeto do Azure Notebooks. Para saber mais, confira [Gerenciar e configurar projetos do Azure Notebooks: camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
 
 ## <a id="workspace"></a>Criar um arquivo de configuração do workspace
 
@@ -371,7 +376,7 @@ O arquivo de configuração do workspace é um arquivo JSON que informa ao SDK c
 }
 ```
 
-Esse arquivo JSON deve estar na estrutura de diretório que contém os scripts Python ou Jupyter Notebooks. Ele pode estar no mesmo diretório, um subdiretório chamado *. azureml*ou em um diretório pai.
+Esse arquivo JSON deve estar na estrutura de diretório que contém os scripts Python ou Jupyter Notebooks. Ele pode estar no mesmo diretório, um subdiretório denominado *.azureml* ou em um diretório pai.
 
 Para usar esse arquivo de seu código, use `ws=Workspace.from_config()`. Esse código carrega as informações do arquivo e se conecta ao seu workspace.
 

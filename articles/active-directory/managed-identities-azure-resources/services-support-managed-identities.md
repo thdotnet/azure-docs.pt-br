@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5630c157ef7843726bcc17455a1e683e58b88ffd
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: a9464b408f43f55cb75a57798b098be6335328e3
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69905228"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70136515"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Serviços que dão suporte a identidades gerenciadas para recursos do Azure
 
@@ -76,8 +76,8 @@ Veja a lista a seguir para configurar a identidade gerenciada para Serviço de A
 
 |Tipo de identidade gerenciada | Todos Disponíveis ao Público Geral<br>Regiões Globais do Azure | Azure Governamental | Azure Alemanha | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Sistema atribuído | Visualizar | Não disponível | Não disponível | Não disponível |
-| Usuário atribuído | Visualizar | Não disponível | Não disponível | Não disponível |
+| Atribuído pelo sistema | Disponível | Disponível | Não disponível | Não disponível |
+| Usuário atribuído | Disponível | Disponível | Não disponível | Não disponível |
 
 Consulte a lista a seguir para usar uma identidade gerenciada com [plantas do Azure](../../governance/blueprints/overview.md):
 

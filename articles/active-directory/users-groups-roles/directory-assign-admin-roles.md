@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a228c0d349fd45f34923a64ef99dcfba50c4c548
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 93532b1b40dc138a234d5433591a2ba79167194e
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034986"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135566"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Permissões da função de administrador no Azure Active Directory
 
@@ -123,7 +123,7 @@ As seguintes funções de administrador estão disponíveis:
 
 * **[Administrador do dispositivo](#device-administrators)** : Essa função está disponível para atribuição apenas como um administrador local adicional em [Configurações do dispositivo](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Os usuários com essa função se tornam administradores de computador local em todos os dispositivos Windows 10 associados ao Azure Active Directory. Eles não têm a capacidade de gerenciar objetos de dispositivos no Azure Active Directory. 
 
-* **[Leitores de Diretório](#directory-readers)** : Essa é uma função que deve ser atribuída somente a aplicativos herdados que não dão suporte à [estrutura de consentimento](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Não o atribua aos usuários.
+* **[Leitores de Diretório](#directory-readers)** : Essa é uma função que deve ser atribuída somente a aplicativos herdados que não dão suporte à [estrutura de consentimento](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Os usuários nessa função podem ler informações básicas do diretório. Essa função deve ser usada para: 1) a concessão de um conjunto específico de usuários convidados acesso de leitura em vez de concedê-lo a todos os usuários convidados. 2) conceder a um conjunto específico de usuários não administradores acesso ao portal do Azure quando "restringir o acesso ao portal do AD do Azure somente aos administradores" estiver definido como "Sim". 3) concedendo acesso de entidades de serviço ao diretório whereDirectory. Read. All não é uma opção.
 
 * **[Contas de Sincronização de Diretório](#directory-synchronization-accounts)** : Não use. Essa função é automaticamente atribuída ao serviço do Azure AD Connect e não tem intenção ou suporte para outros usos.
 
@@ -658,7 +658,7 @@ Os usuários atribuídos a essa função são adicionados ao grupo local de admi
 | microsoft.aad.directory/groupSettingTemplates/basic/read | Ler as propriedades básicas no groupSettingTemplates no Azure Active Directory. |
 
 ### <a name="directory-readers"></a>Leitores de Diretório
-Pode ler informações básicas do diretório. Para conceder acesso a aplicativos, não destinado a usuários.
+Pode ler informações básicas do diretório. Os usuários nessa função podem ler informações básicas do diretório. Essa função deve ser usada para: 1) a concessão de um conjunto específico de usuários convidados acesso de leitura em vez de concedê-lo a todos os usuários convidados. 2) conceder a um conjunto específico de usuários não administradores acesso ao portal do Azure quando "restringir o acesso ao portal do AD do Azure somente aos administradores" estiver definido como "Sim". 3) concedendo acesso de entidades de serviço ao diretório whereDirectory. Read. All não é uma opção.
 
 | **Ações** | **Descrição** |
 | --- | --- |

@@ -3,21 +3,20 @@ title: Expressão e funções no Azure Data Factory | Microsoft Docs
 description: Este artigo fornece informações sobre expressões e funções que você pode usar na criação de entidades do data factory.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-ms.openlocfilehash: 533d0c7461530a00e6f640ee53c0c87d336e799d
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c500c4b2d35a449a9f9c0f693a02c008ea6e3c5e
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876325"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141685"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Expressão e funções no Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -176,7 +175,7 @@ Este [tutorial](https://azure.microsoft.com/mediahandler/files/resourcefiles/azu
 |union|Retorna uma única matriz ou objeto com todos os elementos que estão em uma matriz ou objeto passado para ela. Por exemplo, essa função retorna `[1, 2, 3, 10, 101]:`<br /><br /> :  `union([1, 2, 3], [101, 2, 1, 10])`<br /><br /> Os parâmetros para a função podem ser um conjunto de objetos ou um conjunto de matrizes (não uma mistura destes). Se houver dois objetos com o mesmo nome na saída final, o último objeto com esse nome aparece no objeto final.<br /><br /> **Número do parâmetro**: 1 ... *n*<br /><br /> **Nome**: Coleção *n*<br /><br /> **Descrição**: Obrigatório. As coleções a serem avaliadas. Um objeto que aparece em qualquer uma das coleções aparece no resultado.|  
 |first|Retorna o primeiro elemento da matriz ou da cadeia de caracteres passada. Por exemplo, essa função retornará `0`:<br /><br /> `first([0,2,3])`<br /><br /> **Número do parâmetro**: 1<br /><br /> **Nome**: Collection<br /><br /> **Descrição**: Obrigatório. A coleção que possui o primeiro objeto a ser retirado.|  
 |last|Retorna o último elemento da matriz ou da cadeia de caracteres passada. Por exemplo, essa função retornará `3`:<br /><br /> `last('0123')`<br /><br /> **Número do parâmetro**: 1<br /><br /> **Nome**: Collection<br /><br /> **Descrição**: Obrigatório. A coleção que possui o último objeto a ser retirado.|  
-|take|Retorna os primeiros elementos **Count** da matriz ou da cadeia de caracteres passada, por exemplo, essa função retorna `[1, 2]`: `take([1, 2, 3, 4], 2)`<br /><br /> **Número do parâmetro**: 1<br /><br /> **Nome**: Collection<br /><br /> **Descrição**: Obrigatório. A coleção da qual obter os primeiros objetos **Count**.<br /><br /> **Número do parâmetro**: 2<br /><br /> **Nome**: Contagem<br /><br /> **Descrição**: Obrigatório. O número de objetos a serem retirados da **Coleção**. Deve ser um número inteiro positivo.|  
+|take|Retorna os primeiros elementos **Count** da matriz ou da cadeia de caracteres passada, por exemplo, essa função retorna `[1, 2]`: `take([1, 2, 3, 4], 2)`<br /><br /> **Número do parâmetro**: 1<br /><br /> **Nome**: Collection<br /><br /> **Descrição**: Obrigatório. A coleção da qual obter os primeiros objetos **Count**.<br /><br /> **Número do parâmetro**: 2<br /><br /> **Nome**: Count<br /><br /> **Descrição**: Obrigatório. O número de objetos a serem retirados da **Coleção**. Deve ser um número inteiro positivo.|  
 |pular|Retorna os elementos da matriz começando pelo índice **Count**, por exemplo, essa função retorna `[3, 4]`:<br /><br /> `skip([1, 2 ,3 ,4], 2)`<br /><br /> **Número do parâmetro**: 1<br /><br /> **Nome**: Collection<br /><br /> **Descrição**: Obrigatório. A coleção onde serão ignorados os primeiros objetos da **Contagem**.<br /><br /> **Número do parâmetro**: 2<br /><br /> **Nome**: Contagem<br /><br /> **Descrição**: Obrigatório. O número de objetos a serem removidos da frente da **Coleção**. Deve ser um número inteiro positivo.|  
   
 ## <a name="logical-functions"></a>Funções lógicas  

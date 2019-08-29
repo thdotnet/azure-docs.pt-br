@@ -3,22 +3,21 @@ title: Monitorar e gerenciar pipelines de dados - Azure | Microsoft Docs
 description: Saiba como usar o aplicativo de Monitoramento e Gerenciamento para monitorar e gerenciar data factories e pipelines do Azure.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.assetid: f3f07bc4-6dc3-4d4d-ac22-0be62189d578
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: 5b70edd4f65538b52c70881258bc500a34b04d80
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 052ea99f0489458269adf4dca2c6713535933638
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60826351"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139584"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Monitorar e gerenciar os pipelines do Azure Data Factory usando o aplicativo de Monitoramento e Gerenciamento
 > [!div class="op_single_selector"]
@@ -28,7 +27,7 @@ ms.locfileid: "60826351"
 >
 
 > [!NOTE]
-> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
+> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [Monitorar e gerenciar pipelines do Data Factory em](../monitor-visually.md).
 
 Este artigo descreve como usar o aplicativo de Monitoramento e Gerenciamento para monitorar, gerenciar e depurar seus pipelines do Data Factory. Comece a usar o aplicativo assistindo ao seguinte vídeo:
 
@@ -160,7 +159,7 @@ As janelas de atividades podem estar em um dos seguintes status:
 
 <table>
 <tr>
-    <th align="left">Status</th><th align="left">Substatus</th><th align="left">DESCRIÇÃO</th>
+    <th align="left">Status</th><th align="left">Substatus</th><th align="left">Descrição</th>
 </tr>
 <tr>
     <td rowspan="8">Aguardando</td><td>ScheduleTime</td><td>Não chegou a hora de a janela de atividades ser executada.</td>
@@ -188,16 +187,16 @@ As janelas de atividades podem estar em um dos seguintes status:
 </tr>
 <tr>
 <tr>
-<td rowspan="2">InProgress</td><td>Validando</td><td>Validação em andamento.</td>
+<td rowspan="2">EmAndamento</td><td>Validando</td><td>Validação em andamento.</td>
 </tr>
 <td>-</td>
 <td>A janela de atividades está sendo processada.</td>
 </tr>
 <tr>
-<td rowspan="4">Com falha</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
+<td rowspan="4">Falhou</td><td>TimedOut</td><td>A execução demorou mais do que o permitido pela atividade.</td>
 </tr>
 <tr>
-<td>Cancelado</td><td>A janela de atividade foi cancelada por ação do usuário.</td>
+<td>Cancelada</td><td>A janela de atividade foi cancelada por ação do usuário.</td>
 </tr>
 <tr>
 <td>Validação</td><td>A validação falhou.</td>
@@ -205,7 +204,7 @@ As janelas de atividades podem estar em um dos seguintes status:
 <tr>
 <td>-</td><td>Falha ao gerar e/ou validar a janela de atividades.</td>
 </tr>
-<td>Ready</td><td>-</td><td>A janela de atividades está pronta para consumo.</td>
+<td>Pronto</td><td>-</td><td>A janela de atividades está pronta para consumo.</td>
 </tr>
 <tr>
 <td>Ignorado</td><td>-</td><td>A janela de atividades não foi processada.</td>
@@ -239,7 +238,7 @@ Você pode mudar para outra janela de atividades clicando nela na exibição de 
 
 Você pode usar os botões da barra de ferramentas no painel inferior para executar novamente a janela de atividades ou para atualizar os detalhes no painel.
 
-### <a name="script"></a>Script
+### <a name="script"></a>script
 Você pode usar a guia **Script** para exibir a definição de JSON da entidade selecionada do Data Factory (serviço vinculado, conjunto de dados ou pipeline).
 
 ![Guia Script](./media/data-factory-monitor-manage-app/ScriptTab.png)

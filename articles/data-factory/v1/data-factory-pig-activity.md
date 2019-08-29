@@ -3,22 +3,21 @@ title: Transformar dados usando a Atividade Pig no Azure Data Factory | Microsof
 description: Saiba como usar a Atividade Pig em uma data factory do Azure para executar scripts Pig em um cluster sob demanda/próprio do HDInsight.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.assetid: 5af07a1a-2087-455e-a67b-a79841b4ada5
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: 09fd569ebfe8bc7f287eeb2a0b830399250c3a7a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 72f532c277096a20387ab1b4922def2cd35a9afb
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67701504"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70139119"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Transformar dados usando a Atividade Pig no Azure Data Factory
 > [!div class="op_single_selector" title1="Atividades de transformação"]
@@ -83,7 +82,7 @@ A atividade de Pig do HDInsight em um [pipeline](data-factory-create-pipelines.m
 
 ## <a name="syntax-details"></a>Detalhes da sintaxe
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Obrigatório |
 | --- | --- | --- |
 | name |Nome da atividade |Sim |
 | description |Texto que descreve qual a utilidade da atividade |Não |
@@ -125,7 +124,7 @@ Para executar esse script Pig em um pipeline do Data Factory, realize as seguint
 1. Criar um serviço vinculado para registrar [seu próprio cluster de cálculo HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) ou configurar o [cluster de cálculo HDInsight sob demanda](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Vamos chamar esse serviço vinculado de **HDInsightLinkedService**.
 2. Criar um [serviço vinculado](data-factory-azure-blob-connector.md) para configurar a conexão com o armazenamento de blob do Azure que está hospedando os dados. Vamos chamar esse serviço vinculado de **StorageLinkedService**.
 3. Criar [conjuntos de dados](data-factory-create-datasets.md) apontando para os dados de entrada e de saída. Vamos chamar o conjunto de dados de entrada de **PigSampleIn** e o conjunto de dados de saída de **PigSampleOut**.
-4. Copie a consulta Pig em um arquivo do Armazenamento de Blobs do Azure configurado na etapa 2. Se o armazenamento do Azure que hospeda os dados for diferente daquele que hospeda o arquivo de consulta, crie um serviço vinculado do Armazenamento do Azure separado. Confira o serviço vinculado na configuração de atividade. Use **scriptPath** para especificar o caminho para o arquivo de script de pig e **scriptLinkedService**. 
+4. Copie a consulta Pig em um arquivo do Armazenamento de Blobs do Azure configurado na etapa 2. Se o armazenamento do Azure que hospeda os dados for diferente daquele que hospeda o arquivo de consulta, crie um serviço vinculado do Armazenamento do Azure separado. Confira o serviço vinculado na configuração de atividade. Use **ScriptPath** para especificar o caminho para o arquivo de script Pig e **scriptLinkedService**. 
    
    > [!NOTE]
    > Você também pode fornecer o script Pig embutido na definição da atividade usando a propriedade **script** . No entanto, não incentivamos o uso dessa abordagem, pois os caracteres especiais no script precisam de escape e podem causar problemas de depuração. A prática recomendada é seguir a etapa 4.

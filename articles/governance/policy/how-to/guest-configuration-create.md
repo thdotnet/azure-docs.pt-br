@@ -7,18 +7,18 @@ ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 131d6865c47a32bbefbfbd397a5f0f88dedc9c35
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 12b88e14ed1d20ad26c9c8832877da08d3d98523
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543503"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70146118"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Como criar políticas de configuração de convidado
 
 A configuração de convidado usa um módulo de recurso de [configuração de estado desejado](/powershell/dsc) (DSC) para criar a configuração para auditoria das máquinas virtuais do Azure. A configuração DSC define a condição em que a máquina virtual deve estar. Se a avaliação da configuração falhar, a **auditoria** de efeito de política será disparada e a máquina virtual será considerada **não compatível**.
 
-[Azure Policy configuração de convidado](/azure/governance/policy/concepts/guest-configuration) só pode ser usada para auditar configurações dentro de máquinas virtuais. A correção das configurações dentro das máquinas virtuais ainda não está disponível.
+[Azure Policy configuração de convidado](/azure/governance/policy/concepts/guest-configuration) só pode ser usada para auditar configurações dentro de máquinas virtuais. A correção de configurações dentro de máquinas virtuais ainda não está disponível.
 
 Use as ações a seguir para criar sua própria configuração para validar o estado de uma máquina virtual do Azure.
 
@@ -142,7 +142,7 @@ Na configuração de convidado Azure Policy, a maneira ideal de gerenciar segred
 Primeiro, crie uma identidade gerenciada atribuída pelo usuário no Azure. A identidade é usada pelas máquinas virtuais para acessar os segredos armazenados no Key Vault. Para obter etapas detalhadas, consulte [criar, listar ou excluir uma identidade gerenciada atribuída pelo usuário usando Azure PowerShell](../../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
 
 Em seguida, crie uma instância de Key Vault. Para obter etapas detalhadas, consulte [definir e recuperar um segredo-PowerShell](../../../key-vault/quick-create-powershell.md).
-Atribua permissões à instância para conceder ao acesso de identidade atribuído pelo usuário os segredos armazenados no Key Vault. Para obter etapas detalhadas, consulte [definir e recuperar um segredo-.net](../../../key-vault/quick-create-net.md#assign-permissions-to-your-application-to-read-secrets-from-key-vault).
+Atribua permissões à instância para conceder ao acesso de identidade atribuído pelo usuário os segredos armazenados no Key Vault. Para obter etapas detalhadas, consulte [definir e recuperar um segredo-.net](../../../key-vault/quick-create-net.md#give-the-service-principal-access-to-your-key-vault).
 
 Em seguida, atribua a identidade atribuída pelo usuário à sua máquina virtual. Para obter etapas detalhadas, consulte [Configurar identidades gerenciadas para recursos do Azure em uma VM do Azure usando o PowerShell](../../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md#user-assigned-managed-identity).
 Em escala, atribua essa identidade usando Azure Resource Manager por meio de Azure Policy. Para obter etapas detalhadas, consulte [Configurar identidades gerenciadas para recursos do Azure em uma VM do Azure usando um modelo](../../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md#assign-a-user-assigned-managed-identity-to-an-azure-vm).
@@ -318,11 +318,11 @@ Com as definições de política e iniciativa criadas no Azure, a última etapa 
 
 Depois de publicar um Azure Policy personalizado usando seu pacote de conteúdo personalizado, há dois campos que devem ser atualizados se você quiser publicar uma nova versão.
 
-- **Versão**: Ao executar o `New-GuestConfigurationPolicy` cmdlet cmdlet, você deve especificar um número de versão maior do que o atualmente publicado.  Isso atualizará a versão da atribuição de configuração de convidado no novo arquivo de política, de modo que a extensão reconhecerá que o pacote foi atualizado.
-- **contentHash**: Isso é atualizado automaticamente pelo `New-GuestConfigurationPolicy` cmdlet.  É um valor de hash do pacote criado pelo `New-GuestConfigurationPackage`.  Isso deve estar correto para o `.zip` arquivo que você publicar.  Se apenas a `contentUri` propriedade for atualizada, como no caso em que alguém possa fazer uma alteração manual na definição de política do portal, a extensão não aceitará o pacote de conteúdo.
+- **Versão**: Ao executar o `New-GuestConfigurationPolicy` cmdlet, você deve especificar um número de versão maior do que o publicado atualmente.  A propriedade atualiza a versão da atribuição de configuração de convidado no novo arquivo de política, de modo que a extensão reconhecerá que o pacote foi atualizado.
+- **contentHash**: Essa propriedade é atualizada automaticamente pelo `New-GuestConfigurationPolicy` cmdlet.  É um valor de hash do pacote criado pelo `New-GuestConfigurationPackage`.  A propriedade deve estar correta para o `.zip` arquivo que você publicar.  Se apenas a `contentUri` propriedade for atualizada, como no caso em que alguém possa fazer uma alteração manual na definição de política do portal, a extensão não aceitará o pacote de conteúdo.
 
 A maneira mais fácil de liberar um pacote atualizado é repetir o processo descrito neste artigo e fornecer um número de versão atualizado.
-Isso garantirá que todas as propriedades tenham sido corretamente atualizadas.
+Esse processo garante que todas as propriedades tenham sido corretamente atualizadas.
 
 ## <a name="converting-windows-group-policy-content-to-azure-policy-guest-configuration"></a>Convertendo conteúdo do Windows Política de Grupo para Azure Policy configuração de convidado
 
@@ -330,7 +330,7 @@ A configuração de convidado, ao auditar computadores Windows, é uma implement
 A comunidade de DSC publicou ferramentas para converter modelos de Política de Grupo exportados para o formato DSC.
 Usando essa ferramenta junto com os cmdlets de configuração de convidado descritos acima, você pode converter o conteúdo do Windows Política de Grupo e o pacote/publicá-lo para Azure Policy para auditoria.
 Para obter detalhes sobre como usar a ferramenta, consulte [o artigo início rápido: Converter Política de Grupo em DSC](/powershell/dsc/quickstarts/gpo-quickstart).
-Depois que o conteúdo tiver sido convertido, as etapas acima para criar um Pakcage e publicá-lo como Azure Policy serão as mesmas para qualquer conteúdo DSC.
+Depois que o conteúdo tiver sido convertido, as etapas acima para criar um pacote e publicá-lo como Azure Policy serão as mesmas para qualquer conteúdo DSC.
 
 ## <a name="optional-signing-guest-configuration-packages"></a>OPCIONAL: Assinando pacotes de configuração de convidado
 

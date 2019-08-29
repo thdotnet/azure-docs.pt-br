@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: d294ceaaf77175a3010131b18864b71c7b26b88b
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: ef0237b38c8f640c0fc4b1b1788215c8804a5cd4
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360820"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141896"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Como usar tópicos e assinaturas do Barramento de Serviço com Python
 
@@ -39,7 +39,7 @@ Este artigo descreve como usar tópicos e assinaturas do Barramento de Serviço.
 
     > [!NOTE]
     > Você criará um **tópico** e uma **assinatura** para o tópico usando o **python** neste guia de início rápido. 
-3. Instale o [pacote do Azure Python][Azure Python package]. Consulte o [Guia de instalação do Python](../python-how-to-install.md).
+3. Instale o [pacote do Azure Python][Azure Python package]. Consulte o [Guia de instalação do Python](/azure/python/python-sdk-azure-install).
 
 ## <a name="create-a-topic"></a>Criar um tópico
 

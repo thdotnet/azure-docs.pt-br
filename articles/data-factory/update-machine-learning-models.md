@@ -3,21 +3,20 @@ title: Atualizar modelos do Machine Learning usando o Azure Data Factory | Micro
 description: Descreve como criar pipelines de previsão usando o Azure Data Factory e o Machine Learning
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/16/2018
-ms.author: shlo
-ms.openlocfilehash: 8f1320db0af85f6c83a9daf8e17a691336c9b251
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 56d0ce6668c1077b99c980c2bc5b16998a3a41c1
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60335464"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140540"
 ---
 # <a name="update-azure-machine-learning-models-by-using-update-resource-activity"></a>Atualizar modelos do Azure Machine Learning usando a atividade de atualização de recursos
 Este artigo complementa o artigo principal sobre o Azure Data Factory - integração do Azure Machine Learning: [Criar pipelines de previsão usando Azure Machine Learning e o Azure Data Factory](transform-data-using-machine-learning.md). Se você ainda não fez isso, leia o artigo principal antes de ler este.
@@ -57,7 +56,7 @@ O snippet JSON a seguir define uma atividade de execução em lotes do Azure Mac
 }
 ```
 
-| Propriedade                      | DESCRIÇÃO                              | Obrigatório |
+| Propriedade                      | Descrição                              | Obrigatório |
 | :---------------------------- | :--------------------------------------- | :------- |
 | name                          | Nome da atividade no pipeline     | Sim      |
 | description                   | Texto que descreve o que a atividade faz.  | Não       |
@@ -71,7 +70,7 @@ O snippet JSON a seguir define uma atividade de execução em lotes do Azure Mac
 
 Todo o processo de operacionalização de novo treinamento de um modelo e de atualização dos serviços Web de previsão envolve as seguintes etapas:
 
-- Invocar o **treinamento do serviço Web** usando a **atividade de execução em lotes**. Invocar um serviço Web de treinamento é o mesmo que invocar um serviço Web de previsão, descrito em [Create predictive pipelines using Azure Machine Learning and Data Factory Batch Execution activity](transform-data-using-machine-learning.md) (Criar pipelines de previsão usando o Azure Machine Learning e a atividade de execução em lotes do Data Factory). A saída do treinamento do serviço Web é um arquivo iLearner que você pode usar para atualizar o serviço Web preditivo.
+- Invocar o **treinamento do serviço Web** usando a **atividade de execução em lotes**. Invocar um serviço Web de treinamento é o mesmo que invocar um serviço Web de previsão, descrito em [Create predictive pipelines using Azure Machine Learning and Data Factory Batch Execution activity](transform-data-using-machine-learning.md) (Criar pipelines de previsão usando o Azure Machine Learning e a atividade de execução em lotes do Data Factory). A saída do serviço Web de treinamento é um arquivo iLearner que você pode usar para atualizar o serviço Web de previsão.
 - Invoque a **atualização do ponto de extremidade do recurso** do **Serviço Web de previsão** usando a **atividade de atualização de recurso** para atualizar o serviço Web com o modelo recém-treinado.
 
 ## <a name="azure-machine-learning-linked-service"></a>Serviço vinculado do Azure Machine Learning
@@ -95,7 +94,7 @@ Você pode obter valores para espaços reservados na URL ao consultar o serviço
 
 O novo tipo de ponto de extremidade do recurso de atualização requer a autenticação da entidade de serviço. Para usar a autenticação da entidade de serviço, registre uma entidade de aplicativo no Azure Active Directory (Azure AD) e atribua a ela a função **Colaborador** ou **Proprietário** da assinatura ou do grupo de recursos ao qual o serviço Web pertence. Consulte [como criar entidade de serviço e atribuir permissões para gerenciar recursos do Azure](../active-directory/develop/howto-create-service-principal-portal.md). Anote os seguintes valores, que são usados para definir o serviço vinculado:
 
-- ID do aplicativo
+- ID do Aplicativo
 - Chave do aplicativo
 - ID do locatário
 
@@ -128,7 +127,7 @@ Aqui está uma definição do serviço vinculado de exemplo:
 O cenário a seguir fornece mais detalhes. Há um exemplo de readaptação e atualização de modelos do Azure Machine Learning Studio de um pipeline do Azure Data Factory.
 
 
-## <a name="sample-retraining-and-updating-an-azure-machine-learning-model"></a>Exemplo: Como treinar novamente e atualizar um modelo do Azure Machine Learning
+## <a name="sample-retraining-and-updating-an-azure-machine-learning-model"></a>Amostra: Como treinar novamente e atualizar um modelo do Azure Machine Learning
 
 Esta seção fornece um pipeline de exemplo que usa a **atividade de Execução em lote do Azure Machine Learning Studio** para treinar novamente um modelo. O pipeline também usa a **atividade do Recurso de atualização do Azure Machine Learning Studio** para atualizar o modelo no serviço Web de pontuação. A seção também fornece snippets de JSON para todos os serviços vinculados, conjuntos de dados e pipeline no exemplo.
 

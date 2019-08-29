@@ -1,5 +1,5 @@
 ---
-title: Mantenha-Me Conectado no Azure Active Directory B2C | Microsoft Docs
+title: Mantenha-me conectado no Azure Active Directory B2C
 description: Aprenda a configurar o KMSI (Mantenha-me conectado) no Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -7,29 +7,31 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/03/2018
+ms.date: 08/29/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e99dacbe7ae0f42919616e04e60bf4f21b9bd985
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 29cdf5e7723113b4673945bf5db3158680a44b79
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835375"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147032"
 ---
 # <a name="enable-keep-me-signed-in-kmsi-in-azure-active-directory-b2c"></a>Habilitar o KMSI (Mantenha-me conectado) no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-É possível habilitar a funcionalidade KMSI (Mantenha-me conectado) para seus aplicativos Web e nativos no Azure Active Directory (Azure AD) B2C. Esse recurso concede acesso ao aplicativo para usuários que estejam retornando, sem solicitar a reinserção de nome de usuário e senha. Esse acesso é revogado quando o usuário sai do serviço.
+Você pode habilitar a funcionalidade KMSI (Mantenha-me conectado) para usuários de seus aplicativos Web e nativos que têm contas locais em seu diretório Azure Active Directory B2C (Azure AD B2C). Esse recurso concede acesso a usuários que retornam ao seu aplicativo sem solicitar que eles reinsiram seu nome de usuário e senha. Esse acesso é revogado quando o usuário sai do serviço.
 
 Os usuários não devem habilitar essa opção em computadores públicos.
 
-![Inscreva-se entrar página de exemplo mostrando uma Mantenha-me conectado na caixa de seleção](./media/active-directory-b2c-reference-kmsi-custom/kmsi.PNG)
+![Exemplo de página de entrada de inscrição mostrando uma caixa de seleção Mantenha-me conectado](./media/active-directory-b2c-reference-kmsi-custom/kmsi.PNG)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Um locatário do Azure AD B2C que está configurado para permitir inscrição e entrada em conta local. Caso não tenha um locatário, você pode criar um usando as etapas em [Tutorial: Criar um locatário do Azure Active Directory B2C](tutorial-create-tenant.md).
+Um locatário Azure AD B2C configurado para permitir a entrada da conta local. KMSI não tem suporte para contas de provedor de identidade externa.
+
+Caso não tenha um locatário, você pode criar um usando as etapas em [Tutorial: Criar um locatário do Azure Active Directory B2C](tutorial-create-tenant.md).
 
 ## <a name="add-a-content-definition-element"></a>Adicionar um elemento de definição de conteúdo
 
@@ -87,7 +89,7 @@ Adicione os identificadores do aplicativo ao arquivo *TrustFrameworkExtensions.x
 
 1. No arquivo *TrustFrameworkExtensions.xml*, localize o elemento **TechnicalProfile** com o identificador de `login-NonInteractive` e o elemento **TechnicalProfile** com um identificador de `login-NonInteractive-PasswordChange` e substitua todos os valores de `IdentityExperienceFrameworkAppId` pelo identificador de aplicativo do aplicativo Identity Experience Framework, conforme descrito em [Introdução](active-directory-b2c-get-started-custom.md).
 
-    ```
+    ```XML
     <Item Key="client_id">8322dedc-cbf4-43bc-8bb6-141d16f0f489</Item>
     ```
 
@@ -183,11 +185,3 @@ Atualize o arquivo de RP (terceira parte confiável) que iniciará o percurso do
 5. Para testar a política personalizada que você carregou, no portal do Azure, vá até a página de política e, em seguida, clique em **Executar agora**.
 
 Você pode encontrar a política de exemplo [aqui](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/keep%20me%20signed%20in).
-
-
-
-
-
-
-
-

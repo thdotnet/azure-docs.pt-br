@@ -1,5 +1,5 @@
 ---
-title: Gerenciar serviços web usando o gerenciamento de API
+title: Gerenciar serviços Web usando o gerenciamento de API
 titleSuffix: Azure Machine Learning Studio
 description: Um guia mostrando como gerenciar os serviços Web do AzureML usando o Gerenciamento de API. Gerencie seus pontos de extremidade da API REST definindo o acesso do usuário, a limitação de uso e o monitoramento por painel.
 services: machine-learning
@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 11/03/2017
-ms.openlocfilehash: 0d79bc167ea0416218a4d4822bcd6221699643ca
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8b424696c3350ff2592df9a97189dde3df57845f
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60346995"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70138569"
 ---
 # <a name="manage-azure-machine-learning-studio-web-services-using-api-management"></a>Gerenciar serviços da web do Azure Machine Learning Studio usando o Gerenciamento de API
 ## <a name="overview"></a>Visão geral
@@ -168,7 +168,7 @@ Após invocar uma operação, o portal do desenvolvedor exibe a **URL solicitada
 ### <a name="creating-the-experiment"></a>Criando o teste
 Veja abaixo as etapas para criar um teste simples do AzureML e implantá-lo como um serviço Web. O serviço Web assume como entrada uma coluna de texto arbitrário e retorna um conjunto de recursos representados como números inteiros. Por exemplo:
 
-| Text | Texto marcado com sustenido |
+| Texto | Texto marcado com sustenido |
 | --- | --- |
 | Este é um bom dia |1 1 2 2 0 2 0 1 |
 
@@ -182,11 +182,11 @@ Renomeie-o para **SimpleFeatureHashingExperiment**. Expanda **Conjuntos de dados
 
 Expanda **Transformação de Dados** e **Manipulação** e arraste **Selecionar Colunas do Conjunto de Dados** para o teste. Conecte **Resenhas de livros da Amazon** a **Selecionar Colunas do Conjunto de Dados**.
 
-![Conectar o módulo de conjunto de dados de revisões do livro a um módulo de colunas do projeto](./media/manage-web-service-endpoints-using-api-management/project-columns.png)
+![Conectar o módulo conjunto de registros de análises de livros a um módulo de colunas de projeto](./media/manage-web-service-endpoints-using-api-management/project-columns.png)
 
 Clique em **Selecionar Colunas do Conjunto de Dados** e em **Iniciar seletor de colunas** e selecione **Col2**. Clique na marca de seleção para aplicar essas alterações.
 
-![Selecione as colunas usando nomes de coluna](./media/manage-web-service-endpoints-using-api-management/select-columns.png)
+![Selecionar colunas usando nomes de coluna](./media/manage-web-service-endpoints-using-api-management/select-columns.png)
 
 Expanda **Análise de texto** e arraste **Hash de recurso** para o teste. Conecte **Selecionar Colunas no Conjunto de Dados** para **Hash de Funcionalidade**.
 
@@ -214,7 +214,7 @@ Clique em **Sim** para publicar o teste.
 ![yes-to-publish](./media/manage-web-service-endpoints-using-api-management/yes-to-publish.png)
 
 ### <a name="test-the-web-service"></a>Testar o serviço Web
-Um serviço Web AzureML consiste em RSS (serviço de solicitação/resposta) e pontos de extremidade BES (serviço de execução em lotes). RSS é para execução síncrona. BES é para execução do trabalho assíncrono. Para testar o serviço Web com a fonte Python de exemplo abaixo, talvez seja necessário baixar e instalar o SDK do Azure para Python (confira: [Como instalar o Python](../../python-how-to-install.md)).
+Um serviço Web AzureML consiste em RSS (serviço de solicitação/resposta) e pontos de extremidade BES (serviço de execução em lotes). RSS é para execução síncrona. BES é para execução do trabalho assíncrono. Para testar o serviço Web com a fonte Python de exemplo abaixo, talvez seja necessário baixar e instalar o SDK do Azure para Python (confira: [Como instalar o Python](/azure/python/python-sdk-azure-install)).
 
 Você também precisará do **workspace**, do **serviço** e da **api_key** do teste para a fonte de exemplo abaixo. Você pode encontrar o workspace e o serviço clicando em **Solicitação/resposta** ou **Execução em lote** para o teste no painel de serviço Web.
 
@@ -228,7 +228,7 @@ Você pode encontrar a **api_key** clicando no teste no painel de serviço Web.
 ##### <a name="test-button"></a>Botão de teste
 Uma maneira fácil de testar o ponto de extremidade RRS é clicar em **Testar** no painel de serviço Web.
 
-![test](./media/manage-web-service-endpoints-using-api-management/test.png)
+![teste](./media/manage-web-service-endpoints-using-api-management/test.png)
 
 Digite **Este é um bom dia** para **col2**. Clique na marca de seleção.
 

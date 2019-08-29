@@ -1,7 +1,7 @@
 ---
-title: 'Adicione colunas: Referência de módulo'
+title: 'Adicionar colunas: Referência de módulo'
 titleSuffix: Azure Machine Learning service
-description: Saiba como usar o módulo de adicionar colunas no serviço Azure Machine Learning para concatenar dois conjuntos de dados.
+description: Saiba como usar o módulo adicionar colunas no serviço de Azure Machine Learning para concatenar dois conjuntos de valores.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,42 +9,41 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
-ROBOTS: NOINDEX
-ms.openlocfilehash: f1e087e97007c6ba271651a9791c7c3b38a9b9b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 630f8f7d4561ed6e7e9f943f4b3b123daeee4d67
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65029349"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129031"
 ---
 # <a name="add-columns-module"></a>Adicionar módulo de colunas
 
-Este artigo descreve um módulo da interface visual (visualização) para o serviço de Azure Machine Learning.
+Este artigo descreve um módulo da interface visual (visualização) para Azure Machine Learning serviço.
 
-Use este módulo para concatenar dois conjuntos de dados. Você combina todas as colunas de dois conjuntos de dados que você especificar como entradas para criar um único conjunto de dados. Se você precisar concatenar mais de dois conjuntos de dados, use várias instâncias do **adicionar colunas**.
+Use este módulo para concatenar dois conjuntos de valores. Você combina todas as colunas dos dois conjuntos de valores que você especifica como entradas para criar um único conjunto de informações. Se você precisar concatenar mais de dois conjuntos de os, use várias instâncias de **adicionar colunas**.
 
 
 
 ## <a name="how-to-configure-add-columns"></a>Como configurar adicionar colunas
-1. Adicionar o **adicionar colunas** módulo ao seu experimento.
+1. Adicione o módulo **adicionar colunas** ao seu experimento.
 
-2. Conecte-se dois conjuntos de dados que você deseja concatenar. Se você desejar combinar mais de dois conjuntos de dados, você pode encadear várias combinações de **adicionar colunas**.
+2. Conecte os dois conjuntos de os que você deseja concatenar. Se você quiser combinar mais de dois conjuntos de os, poderá encadear várias combinações de **adicionar colunas**.
 
-    - É possível combinar as duas colunas que têm um número diferente de linhas. O conjunto de dados de saída será preenchido com valores ausentes para cada linha na coluna de origem menor.
+    - É possível combinar duas colunas que têm um número diferente de linhas. O conjunto de resultados de saída é preenchido com valores ausentes para cada linha na coluna de origem menor.
 
-    - Você não pode escolher colunas individuais a serem adicionadas. Todas as colunas de cada conjunto de dados são concatenadas quando você usa **adicionar colunas**. Portanto, se você quiser adicionar apenas um subconjunto das colunas, use Selecionar colunas no conjunto de dados para criar um conjunto de dados com as colunas que você deseja.
+    - Você não pode escolher colunas individuais para adicionar. Todas as colunas de cada conjunto de linhas são concatenadas quando você usa **adicionar colunas**. Portanto, se você quiser adicionar apenas um subconjunto das colunas, use selecionar colunas no conjunto de conjuntos para criar um conjunto de um DataSet com as colunas desejadas.
 
 3. Execute o experimento.
 
 ### <a name="results"></a>Resultados
-Depois que o teste foi executado:
+Após a execução do experimento:
 
-- Para ver as primeiras linhas do conjunto de dados novo, clique com botão direito a saída de **adicionar colunas** e selecione Visualizar.
+- Para ver as primeiras linhas do novo conjunto de registros, clique com o botão direito do mouse na saída de **adicionar colunas** e selecione Visualizar.
 
-O número de colunas no novo conjunto de dados é igual à soma das colunas de ambos os conjuntos de dados de entrada.
+O número de colunas no novo DataSet é igual à soma das colunas de ambos os conjuntos de dados de entrada.
 
-Se houver duas colunas com o mesmo nome em conjuntos de dados de entrada, um sufixo numérico será adicionado ao nome da coluna. Por exemplo, se houver duas instâncias de uma coluna chamada TargetOutcome, a coluna à esquerda deve ser renomeada TargetOutcome_1 e a coluna à direita seria renomeada TargetOutcome_2.
+Se houver duas colunas com o mesmo nome nos conjuntos de dados de entrada, um sufixo numérico será adicionado ao nome da coluna. Por exemplo, se houver duas instâncias de uma coluna denominadas TargetOutcome, a coluna à esquerda será renomeada como TargetOutcome_1 e a coluna direita será renomeada como TargetOutcome_2.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [conjunto de módulos disponíveis](module-reference.md) ao serviço de Azure Machine Learning. 
+Consulte o [conjunto de módulos disponíveis](module-reference.md) para Azure Machine Learning serviço. 

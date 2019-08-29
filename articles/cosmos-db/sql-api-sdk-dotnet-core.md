@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 58db76401439befd476bc78c1a1a20eeed5c2342
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 1b1e9338f92aaefab8e7754139066ac03e8b8213
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779161"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142627"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>SDK do .NET Core do Azure Cosmos DB para API do SQL: Notas sobre a versão e recursos
 > [!div class="op_single_selector"]
@@ -252,8 +252,20 @@ O SDK de Versão Prévia do .NET Core do Azure Cosmos DB tem paridade de recurso
 Se você tiver dúvidas relacionadas a esse SDK, poste no [StackOverflow](https://stackoverflow.com/questions/tagged/azure-documentdb) ou registre um problema no [Repositório GitHub](https://github.com/Azure/azure-documentdb-dotnet/issues).
 
 ## <a name="release--retirement-dates"></a>Datas de lançamento e desativação
+A Microsoft notifica pelo menos **12 meses** antes de desativar um SDK, a fim de realizar uma transição tranquila para uma versão mais recente/com suporte.
 
-| Versão | Data do lançamento | Data de desativação |
+Os novos recursos, funcionalidades e otimizações são adicionados apenas ao SDK atual. Portanto, recomendamos que você atualize sempre que possível para a versão do SDK mais recente. 
+
+Qualquer solicitação feita ao BD Cosmos do Azure usando um SDK obsoleto é rejeitada pelo serviço.
+
+> [!WARNING]
+> Todas as versões **1. x** do SDK do .NET Core para a API do SQL serão desativadas em **30 de agosto de 2020**.
+> 
+>
+<br/>
+
+
+| Version | Data do lançamento | Data de desativação |
 | --- | --- | --- |
 | [2.5.1](#2.5.1) |02 de julho de 2019 |--- |
 | [2.4.1](#2.4.1) |20 de junho de 2019 |--- |
@@ -268,26 +280,26 @@ Se você tiver dúvidas relacionadas a esse SDK, poste no [StackOverflow](https:
 | [2.1.1](#2.1.1) |27 de setembro de 2018 |--- |
 | [2.1.0](#2.1.0) |21 de setembro de 2018 |--- |
 | [2.0.0](#2.0.0) |07 de setembro de 2018 |--- |
-| [1.9.1](#1.9.1) |09 de março de 2018 |--- |
-| [1.8.2](#1.8.2) |21 de fevereiro de 2018 |--- |
-| [1.8.1](#1.8.1) |5 de fevereiro de 2018 |--- |
-| [1.7.1](#1.7.1) |16 de novembro de 2017 |--- |
-| [1.7.0](#1.7.0) |10 de novembro, 2017 |--- |
-| [1.6.0](#1.6.0) |17 de outubro de 2017 |--- |
-| [1.5.1](#1.5.1) |2 de outubro de 2017 |--- |
-| [1.5.0](#1.5.0) |10 de agosto de 2017 |--- | 
-| [1.4.1](#1.4.1) |7 de agosto de 2017 |--- |
-| [1.4.0](#1.4.0) |2 de agosto de 2017 |--- |
-| [1.3.2](#1.3.2) |12 de junho de 2017 |--- |
-| [1.3.1](#1.3.1) |23 de maio de 2017 |--- |
-| [1.3.0](#1.3.0) |10 de maio de 2017 |--- |
-| [1.2.2](#1.2.2) |19 de abril de 2017 |--- |
-| [1.2.1](#1.2.1) |29 de março de 2017 |--- |
-| [1.2.0](#1.2.0) |25 de março de 2017 |--- |
-| [1.1.2](#1.1.2) |20 de março de 2017 |--- |
-| [1.1.1](#1.1.1) |14 de março de 2017 |--- |
-| [1.1.0](#1.1.0) |16 de fevereiro de 2017 |--- |
-| [1.0.0](#1.0.0) |21 de dezembro de 2016 |--- |
+| [1.9.1](#1.9.1) |09 de março de 2018 |30 de agosto de 2020 |
+| [1.8.2](#1.8.2) |21 de fevereiro de 2018 |30 de agosto de 2020 |
+| [1.8.1](#1.8.1) |5 de fevereiro de 2018 |30 de agosto de 2020 |
+| [1.7.1](#1.7.1) |16 de novembro de 2017 |30 de agosto de 2020 |
+| [1.7.0](#1.7.0) |10 de novembro, 2017 |30 de agosto de 2020 |
+| [1.6.0](#1.6.0) |17 de outubro de 2017 |30 de agosto de 2020 |
+| [1.5.1](#1.5.1) |2 de outubro de 2017 |30 de agosto de 2020 |
+| [1.5.0](#1.5.0) |10 de agosto de 2017 |30 de agosto de 2020 | 
+| [1.4.1](#1.4.1) |7 de agosto de 2017 |30 de agosto de 2020 |
+| [1.4.0](#1.4.0) |2 de agosto de 2017 |30 de agosto de 2020 |
+| [1.3.2](#1.3.2) |12 de junho de 2017 |30 de agosto de 2020 |
+| [1.3.1](#1.3.1) |23 de maio de 2017 |30 de agosto de 2020 |
+| [1.3.0](#1.3.0) |10 de maio de 2017 |30 de agosto de 2020 |
+| [1.2.2](#1.2.2) |19 de abril de 2017 |30 de agosto de 2020 |
+| [1.2.1](#1.2.1) |29 de março de 2017 |30 de agosto de 2020 |
+| [1.2.0](#1.2.0) |25 de março de 2017 |30 de agosto de 2020 |
+| [1.1.2](#1.1.2) |20 de março de 2017 |30 de agosto de 2020 |
+| [1.1.1](#1.1.1) |14 de março de 2017 |30 de agosto de 2020 |
+| [1.1.0](#1.1.0) |16 de fevereiro de 2017 |30 de agosto de 2020 |
+| [1.0.0](#1.0.0) |21 de dezembro de 2016 |30 de agosto de 2020 |
 | [0.1.0-preview](#0.1.0-preview) |15 de novembro de 2016 |31 de dezembro de 2016 |
 
 ## <a name="see-also"></a>Consulte também

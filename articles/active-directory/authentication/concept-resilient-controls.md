@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/19/2018
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c9be48d8f403d3ddde993ebdcf0142b55e52afce
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 675e970bbdaeb035273eb87394dda610e070aa39
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779685"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125122"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Criar uma estratégia de gerenciamento de controle de acesso resiliente com o Azure Active Directory
 
@@ -122,7 +122,7 @@ Uma política de acesso condicional de contingência é uma **política desabili
   * Se sua organização usa o Microsoft Cloud App Security, considere fazer fallback para uma política que envolve o MCAS e, então, o MCAS permite acesso somente leitura, mas não uploads.
 * Dê um nome às suas políticas para garantir que seja fácil encontrá-las durante uma interrupção. Inclua os seguintes elementos no nome da política:
   * Um *número de rótulo* para a política.
-  * Texto a ser exibido, essa política é somente para emergências. Por exemplo:  **HABILITAR EM EMERGÊNCIA**
+  * Texto a ser exibido, essa política é somente para emergências. Por exemplo: **HABILITAR EM EMERGÊNCIA**
   * A *interrupção* à qual ela se aplica. Por exemplo: **Durante Interrupção da MFA**
   * Um *número de sequência* para mostrar a ordem em que você deve ativar as políticas.
   * Os *aplicativos* aos quais ela se aplica.
@@ -232,7 +232,7 @@ Dependendo de quais mitigações ou contingências são usadas durante uma inter
 1. Como parte da sua estratégia de controle de alterações, documente todas as alterações e o estado anterior para poder reverter quaisquer contingências implementadas, tão logo os controles de acesso estejam totalmente operacionais.
 2. Suponha que atores mal-intencionados tentarão coletar senhas por meio de ataques de pulverização de senha ou de phishing enquanto você tiver desabilitado a MFA. Além disso, os atores maliciosos podem já ter senhas que anteriormente não concediam acesso a qualquer recurso que podem ser tentadas durante essa janela. Para usuários críticos como executivos, você pode mitigar parcialmente esse risco, redefinindo as senhas deles antes de desabilitar a MFA para eles.
 3. Arquive todas as atividades de entrada para identificar quem acessa o que durante o tempo em que MFA estava desabilitada.
-4. [Triagem de todos os eventos de risco relatados](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) durante essa janela.
+4. Fazer triagem de [todas as detecções de risco](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) relatadas durante esta janela.
 
 ## <a name="after-a-disruption"></a>Após uma interrupção
 
@@ -242,7 +242,7 @@ Desfaça as alterações feitas como parte do plano de contingência ativado qua
 2. Desabilite as políticas de contingência. 
 3. Reverta todas as outras alterações feitas e documentadas durante a interrupção.
 4. Se você usou uma conta de acesso de emergência, lembre-se de regenerar as credenciais e proteger fisicamente os detalhes das novas credenciais como parte dos procedimentos de conta de acesso de emergência.
-5. Continue a [triagem de todos os eventos de risco relatados](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) após a interrupção por atividade suspeita.
+5. Continue a fazer a triagem de [todas as detecções de risco](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins) relatadas após a interrupção de atividade suspeita.
 6. Revogue todos os tokens de atualização que foram emitidos [usando o PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken?view=azureadps-2.0) como destino de um conjunto de usuários. A revogação de todos os tokens de atualização é importante para contas com privilégios usadas durante a interrupção e fazer isso as forçará a autenticarem-se novamente e cumprirem o controle das políticas restauradas.
 
 ## <a name="emergency-options"></a>Opções de emergência
@@ -254,7 +254,7 @@ Se sua organização estiver usando políticas herdadas de MFA por usuário, voc
    1. Se você não tem o inventário de endereços IP de saída ou se precisa habilitar o acesso dentro e fora da rede corporativa, é possível adicionar todo o espaço de endereços IPv4 como IPs confiáveis especificando 0.0.0.0/1 e 128.0.0.0/1.
 
 >[!IMPORTANT]
- > Se você expandir os endereços IP confiáveis para desbloquear o acesso, os eventos de risco associados a endereços IP (por exemplo, viagem impossível ou localizações desconhecidas) não serão gerados.
+ > Se você ampliar os endereços IP confiáveis para desbloquear o acesso, as detecções de risco associadas a endereços IP (por exemplo, viagens impossíveis ou locais desconhecidos) não serão geradas.
 
 >[!NOTE]
  > Configurar [IPs confiáveis](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings) para a MFA do Azure só está disponível com [licenças do Azure AD Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-licensing).

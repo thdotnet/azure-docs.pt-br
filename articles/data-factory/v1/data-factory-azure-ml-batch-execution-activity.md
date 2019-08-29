@@ -3,22 +3,20 @@ title: Criar pipelines de dados de previsão usando o Azure Data Factory | Micro
 description: Descreve como criar pipelines de previsão usando o Azure Data Factory e o Azure Machine Learning
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.assetid: 4fad8445-4e96-4ce0-aa23-9b88e5ec1965
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.author: shlo
-robots: noindex
-ms.openlocfilehash: 4093febd19d71512e3c80704e88f9d5cf669d7d9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7c48c1d91ae08be29531f4a99ea75ab7a928f34
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60567380"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140479"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Criar pipelines de previsão usando Azure Machine Learning e o Azure Data Factory
 
@@ -36,7 +34,7 @@ ms.locfileid: "60567380"
 
 ## <a name="introduction"></a>Introdução
 > [!NOTE]
-> Este artigo se aplica à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [transformar dados usando aprendizado de máquina no Data Factory](../transform-data-using-machine-learning.md).
+> Este artigo aplica-se à versão 1 do Data Factory. Se você estiver usando a versão atual do serviço Data Factory, consulte [transformar dados usando aprendizado de máquina no Data Factory](../transform-data-using-machine-learning.md).
 
 
 ### <a name="azure-machine-learning"></a>Azure Machine Learning
@@ -46,7 +44,7 @@ O [Azure Machine Learning](https://azure.microsoft.com/documentation/services/ma
 2. **Convertê-lo em um teste preditivo**. Quando o modelo foi treinado com dados existentes e você estiver pronto para usá-lo para pontuar novos dados, você preparará e simplificará seu teste para a pontuação.
 3. **Implantá-lo como um serviço da Web**. Você pode publicar seu experimento de pontuação como um serviço Web do Azure. Você pode enviar dados ao seu modelo por desse ponto de extremidade de serviço Web e receber previsões de resultado do modelo.
 
-### <a name="azure-data-factory"></a>Fábrica de dados do Azure
+### <a name="azure-data-factory"></a>Azure Data Factory
 O Data Factory é um serviço de integração de dados baseado em nuvem que automatiza a **movimentação** e a **transformação** dos dados. Você pode criar soluções de integração de dados usando o Azure Data Factory que podem ingerir dados de vários repositórios de dados, transformar/processar os dados e publicar os dados resultantes nos repositórios de dados.
 
 O serviço Data Factory permite criar pipelines de dados que movem e transformam dados e depois executar os pipelines em um agendamento especificado (por hora, diariamente, semanalmente, etc.). Ele também fornece visualizações avançadas para exibir a linhagem e as dependências entre os pipelines de dados e monitorar todos os seus pipelines de dados em uma única exibição unificada, a fim de identificar os problemas e configurar alertas de monitoramento facilmente.
@@ -54,7 +52,7 @@ O serviço Data Factory permite criar pipelines de dados que movem e transformam
 Consulte os artigos [Introdução ao Azure Data Factory](data-factory-introduction.md) e [Criar seu primeiro pipeline](data-factory-build-your-first-pipeline.md) para começar a introdução ao serviço do Azure Data Factory.
 
 ### <a name="data-factory-and-machine-learning-together"></a>Data Factory e Machine Learning juntos
-O Azure Data Factory permite que você crie facilmente pipelines que usam o serviço Web do [Azure Machine Learning][azure-machine-learning] publicado para a análise preditiva. Usando a **Atividade de Execução em Lotes** em um pipeline do Azure Data Factory, você pode chamar um serviço Web do Azure Machine Learning Studio para fazer previsões sobre dados em lote. Confira a seção Chamar um serviço Web do Azure Machine Learning usando a Atividade de execução em lote para saber mais.
+Azure Data Factory permite que você crie facilmente pipelines que usam um serviço Web publicado [Azure Machine Learning][azure-machine-learning] para análise preditiva. Usando a **Atividade de Execução em Lotes** em um pipeline do Azure Data Factory, você pode chamar um serviço Web do Azure Machine Learning Studio para fazer previsões sobre dados em lote. Confira a seção Chamar um serviço Web do Azure Machine Learning usando a Atividade de execução em lote para saber mais.
 
 Ao longo do tempo, os modelos de previsão nos testes de pontuação do Azure Machine Learning Studio precisam ser reciclados usando novos conjuntos de dados de entrada. Você pode treinar novamente um modelo do Azure Machine Learning Studio a partir de um pipeline do Data Factory executando as seguintes etapas:
 
@@ -137,7 +135,7 @@ Nesse cenário, o serviço Web de Azure Machine Learning faz previsões usando d
 ### <a name="example"></a>Exemplo
 Este exemplo usa o armazenamento do Azure para conter tanto os dados de entrada quanto os de saída.
 
-Recomendamos que você percorra o tutorial [Compilar seu primeiro pipeline com o Data Factory][adf-build-1st-pipeline] antes de usar este exemplo. Use o Editor do Data Factory para criar artefatos do Data Factory (serviços vinculados, conjuntos de dados, pipeline) neste exemplo.
+Recomendamos que você passe pelo tutorial [criar seu primeiro pipeline com data Factory antes de][adf-build-1st-pipeline] passar por este exemplo. Use o Editor do Data Factory para criar artefatos do Data Factory (serviços vinculados, conjuntos de dados, pipeline) neste exemplo.
 
 1. Criar um **serviço vinculado** para o **Armazenamento do Azure**. Se os arquivos de entrada e saída estiverem em contas de armazenamento diferentes, você precisará de dois serviços vinculados. Aqui está um exemplo JSON:
 
@@ -303,7 +301,7 @@ Recomendamos que você percorra o tutorial [Compilar seu primeiro pipeline com o
       }
       ```
 
-      Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo:  2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
+      Ambos os valores de data/hora de **início** e de **término** devem estar no [formato ISO](https://en.wikipedia.org/wiki/ISO_8601). Por exemplo: 2014-10-14T16:32:41Z. O tempo **final** é opcional. Se você não especificar o valor para a propriedade **end**, ele será calculado como "**início + 48 horas**" Para executar o pipeline indefinidamente, especifique **9999-09-09** como o valor para a propriedade **end**. Consulte a [Referência de script JSON](https://msdn.microsoft.com/library/dn835050.aspx) para obter detalhes sobre as propriedades JSON.
 
       > [!NOTE]
       > A especificação de entrada para a atividade AzureMLBatchExecution é opcional.
@@ -629,7 +627,7 @@ Você também pode usar [Funções do Data Factory](data-factory-functions-varia
 >
 >
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 * [Postagem no blog do Azure: Introdução ao Azure Data Factory e Azure Machine Learning](https://azure.microsoft.com/blog/getting-started-with-azure-data-factory-and-azure-machine-learning-4/)
 
 [adf-build-1st-pipeline]: data-factory-build-your-first-pipeline.md

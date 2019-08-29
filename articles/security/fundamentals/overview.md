@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 2cc8f4f81ad95376dcbc10c2952c1b2ed95ffe42
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 30ec36067b4a047478abc294361b015d12d21319
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907905"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129345"
 ---
 # <a name="introduction-to-azure-security"></a>Introdução à Segurança do Azure
 ## <a name="overview"></a>Visão geral
@@ -365,7 +365,7 @@ O [Azure Active Directory](https://azure.microsoft.com/services/active-directory
 
 - O [Cloud App Discovery](../../active-directory/cloudappdiscovery-get-started.md) é um recurso premium do Azure Active Directory que permite identificar os aplicativos em nuvem usados pelos funcionários em sua organização.
 
-- O [Azure Active Directory Identity Protection](https://azure.microsoft.com/documentation/articles/active-directory-identityprotection/) é um serviço de segurança que usa recursos de detecção de anomalias do Azure Active Directory para fornecer uma visão consolidada sobre eventos de risco e possíveis vulnerabilidades que poderiam afetar as identidades de sua organização.
+- O [Azure Active Directory Identity Protection](https://azure.microsoft.com/documentation/articles/active-directory-identityprotection/) é um serviço de segurança que usa Azure Active Directory recursos de detecção de anomalias para fornecer uma visão consolidada das detecções de risco e possíveis vulnerabilidades que podem afetar a sua organização Identities.
 
 - O [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds/) permite ingressar VMs do Azure em um domínio sem precisar implantar controladores de domínio. Os usuários entram nessas VMs usando suas credenciais corporativas do Active Directory e podem acessar tranquilamente os recursos.
 

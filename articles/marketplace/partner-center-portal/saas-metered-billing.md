@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: 4b24805cd59d1eb9d28591749d5169486e54d506
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 3fa485c9fb2835b8270cb35fc75b57251476005f
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68250114"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141768"
 ---
 # <a name="metered-billing-using-the-marketplace-metering-service"></a>Cobrança limitada usando o serviço de medição do Marketplace
 
@@ -84,7 +84,7 @@ Os outros atributos de uma dimensão são específicos para cada plano e podem t
 
 As dimensões também têm dois conceitos especiais, "Enabled" e "Infinite":
 
-* **Habilitado** indica que este plano participa desta dimensão.  Talvez você queira deixar essa opção desmarcada se estiver criando um novo plano que não envia eventos de uso com base nessa dimensão.  Além disso, todas as novas dimensões adicionadas depois que um plano foi publicado pela primeira vez serão exibidas como "não habilitado" no plano já publicado.  Uma dimensão desabilitada agora aparecerá em qualquer lista de dimensões para um plano visto pelos clientes.
+* **Habilitado** indica que este plano participa desta dimensão.  Talvez você queira deixar essa opção desmarcada se estiver criando um novo plano que não envia eventos de uso com base nessa dimensão.  Além disso, todas as novas dimensões adicionadas depois que um plano foi publicado pela primeira vez serão exibidas como "não habilitado" no plano já publicado.  Uma dimensão desabilitada não aparecerá em nenhuma lista de dimensões para um plano visto pelos clientes.
 * **Infinito**, representado pelo símbolo de infinito "∞", indica que este plano participa dessa dimensão, mas não monitora o uso em relação a essa dimensão.  Se você quiser indicar aos clientes que a funcionalidade representada por essa dimensão está incluída no plano, mas sem limite de uso.  Uma dimensão com uso infinito será exibida em listas de dimensões para um plano visto pelos clientes, com uma indicação de que ele nunca incorrerá em um encargo para esse plano.
 
 >[!Note] 
@@ -117,7 +117,7 @@ Depois que um plano é publicado, os detalhes de nível de plano não podem mais
 
 O número máximo de dimensões que podem ser configuradas para uma única oferta é 18 dimensões exclusivas.
 
-## <a name="get-support"></a>Obtenha suporte
+## <a name="get-support"></a>Obter suporte
 
 Se você tiver um dos seguintes, poderá abrir um tíquete de suporte.
 

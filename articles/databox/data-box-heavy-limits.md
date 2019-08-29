@@ -1,32 +1,33 @@
 ---
-title: Limita a pesada de caixa de dados do Azure | Microsoft Docs
-description: Descreve os limites do sistema e tamanhos recomendados para as conexões e componentes pesados de caixa de dados do Microsoft Azure.
+title: Limites de Azure Data Box Heavy | Microsoft Docs
+description: Descreve os limites do sistema e os tamanhos recomendados para o Microsoft Azure Data Box Heavy componentes e conexões.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: article
-ms.date: 07/03/2019
+ms.date: 08/28/2019
 ms.author: alkohli
-ms.openlocfilehash: 021aedc94b59f73e18679783cfc8b981924769c3
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 76e543a5bec749db55eb77649d2f6e0526f2cb1d
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592356"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126115"
 ---
-# <a name="azure-data-box-heavy-limits"></a>Limites de pesada de caixa de dados do Azure
+# <a name="azure-data-box-heavy-limits"></a>Limites de Azure Data Box Heavy
 
-Considere esses limites, como implantar e operar seu dispositivo pesada de caixa de dados do Azure. A tabela a seguir descreve esses limites para o Data Box.
+Considere esses limites ao implantar e operar o dispositivo Azure Data Box Heavy. A tabela a seguir descreve esses limites para o Data Box.
 
 
-## <a name="data-box-heavy-service-limits"></a>Limites de serviço de caixa intenso de dados
+## <a name="data-box-heavy-service-limits"></a>Limites de serviço Data Box Heavy
 
 [!INCLUDE [data-box-service-limits](../../includes/data-box-service-limits.md)]
 
-## <a name="data-box-heavy-limits"></a>Limites de caixa intenso de dados
+## <a name="data-box-heavy-limits"></a>Limites de Data Box Heavy
 
-- Caixa de dados pode armazenar um máximo de arquivos de 1 bilhão por nó.
+- Data Box Heavy pode armazenar no máximo 1.000.000.000 arquivos por nó.
+- Data Box Heavy dá suporte a um máximo de 512 contêineres ou compartilhamentos por nó na nuvem. Os diretórios de nível superior no compartilhamento do usuário se tornam contêineres ou compartilhamentos de arquivos do Azure na nuvem.
 
 ## <a name="azure-storage-limits"></a>Limites de armazenamento do Azure
 

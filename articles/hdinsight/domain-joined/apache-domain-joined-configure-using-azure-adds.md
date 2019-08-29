@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 300fd31632a6b3c9043c19dd9b47f40258080261
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 1165cbeff1144567e43f408c0866c0b8a571882d
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614213"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125582"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Configurar um cluster HDInsight com o Enterprise Security Package usando o Azure Active Directory Domain Services DS
 
@@ -22,7 +22,7 @@ Clusters de Enterprise Security Package fornecem acesso de vários usuários em 
 Neste artigo, você aprenderá como configurar um cluster HDInsight com ESP usando o Azure Active Directory Domain Services (AD do Azure-DS).
 
 > [!NOTE]  
-> O ESP está geralmente disponível no HDInsight 3,6 e 4,0 para tipos de cluster: Apache Spark, interativo, Apache Hadoop e HBase. O ESP para Apache Kafka tipo de cluster está em versão prévia.
+> O ESP está geralmente disponível no HDInsight 3,6 e 4,0 para tipos de cluster: Apache Spark, interativo, Hadoop e HBase. O ESP para Apache Kafka tipo de cluster está em versão prévia com o melhor suporte ao esforço. Os clusters ESP criados antes da data de GA do ESP (1 de outubro de 2018) não têm suporte.
 
 ## <a name="enable-azure-ad-ds"></a>Habilitar o Microsoft Azure Active Directory DS
 

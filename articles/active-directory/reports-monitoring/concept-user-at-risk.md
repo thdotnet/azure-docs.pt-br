@@ -15,26 +15,26 @@ ms.date: 01/17/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 950d0dc2f4a1a88e0c317b3398c7492cc6c52e2a
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 3e6b79c7d5c2ed9744dc00eb1588c35f8ea94a76
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989833"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127647"
 ---
 # <a name="users-flagged-for-risk-report-in-the-azure-portal"></a>Relatório de usuários sinalizados para risco no portal do Azure
 
-O Azure Active Directory (Azure AD) detecta ações suspeitas relacionadas às suas contas de usuário. Para cada ação detectada, um registro chamado [evento de risco](concept-risk-events.md) é criado.
+O Azure Active Directory (Azure AD) detecta ações suspeitas relacionadas às suas contas de usuário. Para cada ação detectada, um registro chamado [detecção de risco](concept-risk-events.md) é criado.
 
 Você pode acessar os relatórios de segurança do [portal do Azure](https://portal.azure.com) selecionando a folha **Azure Active Directory** e, em seguida, navegando até a seção **Segurança**. 
 
-Os eventos de risco detectados são usados para calcular:
+As detecções de risco detectadas são usadas para calcular:
 
 - **Entradas arriscadas** - uma entrada arriscada é um indicador para uma tentativa de logon que pode ter sido realizada por alguém que não é o proprietário legítimo de uma conta de usuário. 
 
 - **Usuários sinalizados para riscos** - um usuário arriscado é um indicador de uma conta de usuário que pode ter sido comprometida. 
 
-Para saber como configurar as políticas que disparam esses eventos de risco, consulte [Como configurar a política de risco do usuário](../identity-protection/howto-user-risk-policy.md). 
+Para saber como configurar as políticas que disparam essas detecções de risco, consulte [como configurar a política de risco do usuário](../identity-protection/howto-user-risk-policy.md). 
 
 ![Entradas de risco](./media/concept-user-at-risk/10.png)
 
@@ -45,9 +45,9 @@ Todas as edições do Azure Active Directory fornecem relatórios de usuários s
 
 - Nas **edições do Azure Active Directory Gratuito e Básico**, você obtém uma lista de usuários sinalizados como risco. 
 
-- Além disso, a edição do **Azure Active Directory Premium 1** permite que você examine alguns dos eventos de risco subjacentes que foram detectados para cada relatório. 
+- Além disso, a edição **Azure Active Directory Premium 1** permite que você examine algumas das detecções de risco subjacentes que foram detectadas para cada relatório. 
 
-- A edição do **Azure Active Directory Premium 2** fornece as informações mais detalhadas sobre todos os eventos de risco subjacentes e também permite configurar políticas de segurança que atendem automaticamente aos níveis de risco configurados.
+- A edição **Azure Active Directory Premium 2** fornece as informações mais detalhadas sobre todas as detecções de riscos subjacentes e também permite que você configure políticas de segurança que respondem automaticamente aos níveis de risco configurados.
 
 
 ## <a name="users-at-risk-report-for-azure-ad-free-and-basic-editions"></a>O relatório de usuários em risco para as edições gratuita e básica do Azure AD
@@ -73,7 +73,7 @@ O relatório de usuários sinalizados para risco nas edições premium do Azure 
 
 - Uma lista de contas de usuário que pode ter sido comprometida 
 
-- Informações agregadas sobre os [tipos de eventos de risco](concept-risk-events.md) que foram detectados
+- Informações agregadas sobre os [tipos de detecção de risco](concept-risk-events.md) que foram detectados
 
 - Uma opção para baixar o relatório
 
@@ -87,13 +87,13 @@ Ao selecionar um usuário, você obtém uma exibição detalhada do relatório d
 
 - Redefinir a senha do usuário
 
-- Descartar todos os eventos
+- Ignorar todos os eventos
 
-- Investigar os eventos de risco relatados para o usuário. 
+- Investigue as detecções de risco relatadas para o usuário. 
 
 ![Entradas de risco](./media/concept-user-at-risk/324.png)
 
-Para investigar um evento de risco, selecione um na lista para abrir a folha **Detalhes** para esse evento de risco. Na folha **Detalhes**, existe a opção de fechar manualmente um evento de risco ou reativar um evento de risco fechado manualmente. 
+Para investigar uma detecção de risco, selecione uma na lista para abrir a folha de **detalhes** para essa detecção de risco. Na folha **detalhes** , você tem a opção de fechar manualmente uma detecção de risco ou reativar uma detecção de risco fechada manualmente. 
 
 ![Entradas de risco](./media/concept-user-at-risk/325.png)
 

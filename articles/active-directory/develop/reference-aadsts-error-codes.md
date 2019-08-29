@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57ec69f4bc2e73bfb390a6b23b1da627d77f9b5e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8cfefe02b8c9325a2d501289b10b09bc153b0593
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874244"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135751"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Códigos de erro de autenticação e autorização
 
@@ -194,6 +194,7 @@ Procurando informações sobre os códigos de erro AADSTS que são retornados do
 | AADSTS90019 | MissingTenantRealm - O Azure AD não pôde determinar o identificador de inquilino da solicitação. |
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat - O formato do nome principal não é válido ou não atende ao formato `name[/host][@realm]` esperado. O nome principal é obrigatório, o host e o domínio são opcionais e podem ser definidos como nulos. |
 | AADSTS90023 | InvalidRequest - a solicitação de serviço de autenticação não é válida. |
+| AADSTS9002313 | InvalidRequest-a solicitação está malformada ou é inválida. -O problema aqui é porque houve algo errado com a solicitação para um determinado ponto de extremidade. A sugestão para esse problema é obter um rastreamento Fiddler do erro que está ocorrendo e procurando ver se a solicitação está realmente formatada ou não corretamente. |
 | AADSTS90024 | RequestBudgetExceededError - Ocorreu um erro transitório. Tente novamente. |
 | AADSTS90033 | MsodsServiceUnavailable - O serviço de diretório online da Microsoft (MSODS) não está disponível. |
 | AADSTS90036 | MsodsServiceUnretryableFailure - Ocorreu um erro inesperado e não repetível do serviço WCF hospedado pelo MSODS. [Abra um tíquete de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md) para obter mais detalhes sobre o erro. |

@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 0a89cd2c576a3539d7b1b6a282a2287551e8265a
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 124af71e458e103392c554a9c86d679f691df5b9
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69877106"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147652"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Agendar e difundir trabalhos (Node. js)
 
@@ -49,8 +49,6 @@ Ao fim deste tutorial, você terá dois aplicativos do Node.js:
 * **scheduleJobService.js**, que chama um método direto no aplicativo do dispositivo simulado e atualiza as propriedades desejadas do dispositivo gêmeo usando um trabalho.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-
-Para concluir este tutorial, você precisará:
 
 * Node. js versão 10.0. x ou posterior. [Preparar seu ambiente de desenvolvimento](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) descreve como instalar o Node. js para este tutorial no Windows ou no Linux.
 

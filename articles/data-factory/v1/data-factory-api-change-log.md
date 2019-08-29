@@ -3,27 +3,25 @@ title: Data Factory - Log de Alteração da API do .NET | Microsoft Docs
 description: Descreve alterações significativas, novos recursos e correções de bugs etc... em uma versão específica de API do .NET para o Azure Data Factory.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-editor: ''
-ms.assetid: 8208271b-7f4c-4214-b665-d2ff503c4470
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/22/2018
-ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 863f3500c84eeab1c3dac19141cd334fc6961694
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 01/22/2018
+ms.openlocfilehash: 35f0145526aa596691fde26e92695f64f5ac35e0
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60567241"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140510"
 ---
 # <a name="azure-data-factory---net-api-change-log"></a>Azure Data Factory - Log de alterações da API .NET
 > [!NOTE]
-> Este artigo se aplica à versão 1 do Data Factory. 
+> Este artigo aplica-se à versão 1 do Data Factory. 
 
 Este artigo fornece informações sobre alterações no SDK do Azure Data Factory em uma versão específica. Você pode encontrar o pacote NuGet mais recente do Azure Data Factory [aqui](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactories)
 
@@ -137,7 +135,7 @@ Adições de Recursos:
   * [AzureDataLakeStoreSink](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestoresink.aspx)
 
 ## <a name="version-401"></a>Versão 4.0.1
-### <a name="breaking-changes"></a>Alterações de última hora
+### <a name="breaking-changes"></a>Alterações da falha
 As seguintes classes foram renomeadas. Os novos nomes eram os nomes das classes originais antes da versão 4.0.0.
 
 | Nome no 4.0.0 | Nome no 4.0.1 |
@@ -150,7 +148,7 @@ As seguintes classes foram renomeadas. Os novos nomes eram os nomes das classes 
 | SqlServerDataset |[SqlServerTableDataset](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.sqlservertabledataset.aspx) |
 
 ## <a name="version-400"></a>Versão 4.0.0
-### <a name="breaking-changes"></a>Alterações de última hora
+### <a name="breaking-changes"></a>Alterações da falha
 * As seguintes classes/interfaces foram renomeadas.
 
 | Nome antigo | Novo nome |

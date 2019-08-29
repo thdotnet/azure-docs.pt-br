@@ -17,12 +17,12 @@ ms.date: 01/24/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a687823d1344ca11864523cb9187f48d7373fd41
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 56a94ef3f6ea5737b629efe44bd3e1cc1f36a693
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989631"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127137"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Referência das atividades de auditoria do Azure AD
 
@@ -65,7 +65,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Revisões de Acesso|Desvincular controle do programa|
 |Revisões de Acesso|Atualizar revisão de acesso|
 |Revisões de Acesso|Atualizar o status de Integração das Revisões de Acesso do Azure AD|
-|Revisões de Acesso|Atualizar configurações de notificação de email de análise de acesso|
+|Revisões de Acesso|Atualizar configurações de notificação de email da revisão de acesso|
 |Revisões de Acesso|Atualizar a configuração de contagem de recorrências da revisão de acesso|
 |Revisões de Acesso|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
 |Revisões de Acesso|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
@@ -348,10 +348,10 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de unidades administrativas|Baixar um único tipo de evento de risco|
+|Gerenciamento de unidades administrativas|Baixar um tipo de detecção de risco único|
 |Gerenciamento de unidades administrativas|Baixar administradores e status de aceitação do resumo semanal|
-|Gerenciamento de unidades administrativas|Baixar todos os tipos de evento de risco|
-|Gerenciamento de unidades administrativas|Baixar eventos de risco de usuário gratuitos|
+|Gerenciamento de unidades administrativas|Baixar todos os tipos de detecção de riscos|
+|Gerenciamento de unidades administrativas|Baixar detecções de risco de usuário gratuitas|
 |Gerenciamento de unidades administrativas|Baixar usuários sinalizados por risco|
 |Gerenciamento de Aplicativos|Convites do Lote processados|
 |Gerenciamento de Aplicativos|Convites do Lote carregados|
@@ -475,7 +475,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento do Usuário|ActivationCanceled|
 |Gerenciamento do Usuário|ActivationRequested|
 |Gerenciamento do Usuário|Added|
-|Gerenciamento do Usuário|Atribuir|
+|Gerenciamento do Usuário|Assign|
 
 
 ## <a name="identity-protection"></a>Identity Protection
@@ -517,7 +517,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |---|---|
 |Gerenciamento de Grupo|Revisar solicitação de aprovação de solicitação|
 |Gerenciamento de Grupo|Atualizar revisão de acesso|
-|Gerenciamento de Grupo|Atualizar configurações de notificação de email de análise de acesso|
+|Gerenciamento de Grupo|Atualizar configurações de notificação de email da revisão de acesso|
 |Gerenciamento de Grupo|Atualizar a configuração de contagem de recorrências da revisão de acesso|
 |Gerenciamento de Grupo|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
 |Gerenciamento do Usuário|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
@@ -536,7 +536,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |PIM|ActivationRequested|
 |PIM|Added|
 |PIM|AddedOutsidePIM|
-|PIM|Atribuir|
+|PIM|Assign|
 |PIM|DismissAlert|
 |PIM|Elevar|
 |PIM|ReactivateAlert|
@@ -556,7 +556,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de Grupo|Redefinir senha de usuário|
+|Gerenciamento de Grupo|Redefinir a senha do usuário|
 |Gerenciamento de Grupo|Restaurar usuário|
 |Gerenciamento de Grupo|Definir alteração forçada de senha de usuário|
 |Gerenciamento de Grupo|Definir gerenciador de usuários|

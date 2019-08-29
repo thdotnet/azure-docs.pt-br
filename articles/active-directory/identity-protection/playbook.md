@@ -11,33 +11,33 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 273a6aca2050676650b955ec078b47b2ffcfe319
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 7fcf24256634ef11b575348d9da7d6bbbab8b67c
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333935"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127760"
 ---
 # <a name="azure-active-directory-identity-protection-playbook"></a>Guia estratégico do Azure Active Directory Identity Protection
 
 Este guia estratégico vai ajudá-lo a:
 
-* Popular dados no ambiente do Identity Protection, simulando eventos de riscos e vulnerabilidades
+* Popular dados no ambiente de proteção de identidade simulando as detecções e as vulnerabilidades de risco
 * Configurar políticas de acesso condicional com base em risco e testar o impacto dessas políticas
 
-## <a name="simulating-risk-events"></a>Simulação de Eventos de Risco
+## <a name="simulating-risk-detections"></a>Simulando as detecções de riscos
 
-Esta seção fornece as etapas para simular os seguintes tipos de evento de risco:
+Esta seção fornece etapas para simular os seguintes tipos de detecção de risco:
 
 * Entradas de endereços IP anônimos (fácil)
 * Entradas de locais desconhecidos (moderado)
 * Viagem impossível a locais atípicos (difícil)
 
-Outros eventos de risco não podem ser simulados de maneira segura.
+Outras detecções de risco não podem ser simuladas de maneira segura.
 
 ### <a name="sign-ins-from-anonymous-ip-addresses"></a>Entradas de endereços IP anônimos
 
-Para obter mais informações sobre esse evento de risco, consulte [Entradas de endereços IP anônimos](../reports-monitoring/concept-risk-events.md#sign-ins-from-anonymous-ip-addresses). 
+Para obter mais informações sobre essa detecção de risco, consulte [entradas de endereços IP anônimos](../reports-monitoring/concept-risk-events.md#sign-ins-from-anonymous-ip-addresses). 
 
 A conclusão do procedimento a seguir requer que você use:
 
@@ -53,7 +53,7 @@ A entrada aparece no painel de segurança Identity Protection dentro de 10 a 15 
 
 ### <a name="sign-ins-from-unfamiliar-locations"></a>Entradas de locais desconhecidos
 
-Para obter mais informações sobre esse evento de risco, consulte [Entradas de locais desconhecidos](../reports-monitoring/concept-risk-events.md#sign-in-from-unfamiliar-locations). 
+Para obter mais informações sobre essa detecção de risco, consulte [entradas de locais](../reports-monitoring/concept-risk-events.md#sign-in-from-unfamiliar-locations)desconhecidos. 
 
 Para simular locais desconhecidos, você deve entrar a partir de um local e do dispositivo em que a sua conta de teste não tenha entrado anteriormente.
 
@@ -76,14 +76,14 @@ A entrada aparece no painel de segurança Identity Protection dentro de 10 a 15 
 
 ### <a name="impossible-travel-to-atypical-location"></a>Viagem impossível a um local atípico
 
-Para obter mais informações sobre esse evento de risco, consulte [Viagem impossível para local atípico](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations). 
+Para obter mais informações sobre essa detecção de risco, consulte [viagem impossível para o local atípicos](../reports-monitoring/concept-risk-events.md#impossible-travel-to-atypical-locations). 
 
-É difícil simular a condição de viagem impossível porque o algoritmo usa o aprendizado de máquina para eliminar falsos positivos, tais como viagens impossíveis de dispositivos conhecidos ou entradas de VPNs usadas por outros usuários no diretório. Além disso, o algoritmo requer um histórico de entrada de 14 dias e 10 logons do usuário, antes que ele comece a gerar eventos de risco. Por causa dos modelos do Machine Learning complexos e regras acima, há a possibilidade de que as etapas a seguir não potencialize um evento de risco. É conveniente replicar essas etapas em várias contas do Azure Active Directory para publicar esse evento de risco.
+É difícil simular a condição de viagem impossível porque o algoritmo usa o aprendizado de máquina para eliminar falsos positivos, tais como viagens impossíveis de dispositivos conhecidos ou entradas de VPNs usadas por outros usuários no diretório. Além disso, o algoritmo requer um histórico de entrada de 14 dias e 10 logons do usuário antes de começar a gerar as detecções de risco. Devido aos modelos complexos de aprendizado de máquina e às regras acima, há a possibilidade de que as etapas a seguir não levem a uma detecção de risco. Talvez você queira replicar essas etapas para várias contas do Azure AD para publicar essa detecção de risco.
 
 **Para simular uma viagem impossível para um local atípico, realize as seguintes etapas**:
 
 1. Usando o navegador padrão, navegue até [ https://myapps.microsoft.com ](https://myapps.microsoft.com).  
-2. Insira as credenciais da conta para a qual deseja gerar um evento de risco de viagem impossível.
+2. Insira as credenciais da conta para a qual você deseja gerar uma detecção de risco de viagem impossível.
 3. Altere o agente do usuário. É possível alterar o agente do usuário no Internet Explorer nas Ferramentas de Desenvolvedor ou então no Firefox ou Chrome usando um complemento de alternador de agente do usuário.
 4. Altere seu endereço IP. É possível alterar seu endereço IP usando uma VPN, um complemento do Tor ou criando um novo computador no Azure em um diferente.
 5. Entre em [https://myapps.microsoft.com](https://myapps.microsoft.com) usando as mesmas credenciais de antes, alguns minutos após a entrada anterior.
@@ -118,8 +118,8 @@ Para obter mais informações, consulte [Como configurar a política de risco do
 
 5. Na seção Controles, selecione o Controle de Acesso desejado (por exemplo, Requerer mudança de senha).
 5. Como **Impor Política**, selecione **Desativado**.
-6. Eleve o risco de usuário de uma conta de teste, por exemplo, simulando um dos eventos de risco algumas vezes.
-7. Aguarde alguns minutos e, em seguida, verifique se o nível do usuário para o usuário é Médio. Caso contrário, simule mais eventos de risco para o usuário.
+6. Eleve o risco do usuário de uma conta de teste, por exemplo, simulando uma das detecções de risco algumas vezes.
+7. Aguarde alguns minutos e, em seguida, verifique se o nível do usuário para o usuário é Médio. Caso contrário, simule mais detecções de risco para o usuário.
 8. Como **Impor Política**, selecione **Ativado**.
 9. Agora você pode testar o acesso condicional baseado em risco do usuário entrando usando um usuário com um nível de risco elevado.
 

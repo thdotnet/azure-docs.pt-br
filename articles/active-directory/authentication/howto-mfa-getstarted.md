@@ -1,6 +1,6 @@
 ---
 title: Planejar e executar uma implantação da autenticação multifator do Azure-Azure Active Directory
-description: Microsoft Azure o planejamento de implantação da autenticação multifator
+description: Planejamento de implantação do Autenticação Multifator do Microsoft Azure
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 776a73f8a20a3f5ad4e97a08ff3871e805a61eb3
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 4b555ecdf8bbd3d29e440675599041f40ac3c9d0
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879132"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125021"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Planejando uma implantação da autenticação multifator do Azure baseada em nuvem
 
@@ -76,7 +76,7 @@ As políticas de acesso condicional impõem o registro, exigindo que usuários n
 * Entradas de dispositivos infectados
 * Entradas de endereços IP com atividades suspeitas
 
-Alguns dos eventos de risco detectados pelo Azure Active Directory Identity Protection ocorrem em tempo real e alguns exigem processamento offline. Os administradores podem optar por bloquear os usuários que apresentam comportamentos arriscados e corrigir manualmente, exigir uma alteração de senha ou exigir uma autenticação multifator como parte de suas políticas de acesso condicional.
+Algumas das detecções de risco detectadas pelo Azure Active Directory Identity Protection ocorrem em tempo real e algumas exigem processamento offline. Os administradores podem optar por bloquear os usuários que apresentam comportamentos arriscados e corrigir manualmente, exigir uma alteração de senha ou exigir uma autenticação multifator como parte de suas políticas de acesso condicional.
 
 ## <a name="define-network-locations"></a>Definir locais de rede
 
@@ -95,7 +95,7 @@ Recomendamos que as organizações usem o acesso condicional para definir sua re
       2. Especificar os intervalos de IP
    2. Se estiver usando países/regiões
       1. Expanda o menu suspenso e selecione os países ou regiões que você deseja definir para esse local nomeado.
-      2. Decida se as áreas desconhecidas devem ser incluídas. As áreas desconhecidas são endereços IP que não podem ser mapeados para um país ou uma região.
+      2. Decida se as áreas desconhecidas devem ser incluídas. Áreas desconhecidas são endereços IP que não podem ser mapeados para um país/região.
 7. Clique em **Criar**
 
 ## <a name="plan-authentication-methods"></a>Planejar métodos de autenticação

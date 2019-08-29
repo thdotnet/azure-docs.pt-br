@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1244dd460196e5882caab0d4b526850da48d084
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 03c09a751119c1d6effa5795f2dbf7da422b7806
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60383334"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135791"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Sincronização do Azure AD Connect: impedir exclusões acidentais
 Este tópico descreve o recurso de prevenção contra exclusões acidentais (que impede exclusões acidentais) no Azure AD Connect.
@@ -57,6 +57,8 @@ Caso isso não seja esperado, investigue e tome medidas corretivas. Para ver qua
 5. No pop-up em **Escopo**, selecione **Desconectado desde** e escolha um horário no passado. Clique em **Pesquisar**. Esta página fornece uma exibição de todos os objetos prestes a serem excluídos. Clicando em cada item, você poderá obter informações adicionais sobre o objeto. Você também pode clicar em **Configuração de Coluna** para adicionar outros atributos para exibição na grade.
 
 ![Pesquisar Espaço do Conector](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
+
+[!NOTE] Se você não tiver certeza de que todas as exclusões são desejadas e deseja descer uma rota mais segura. Você pode usar o cmdlet do PowerShell `Enable-ADSyncExportDeletionThreshold` : para definir um novo limite em vez de desabilitar o limite que pode permitir exclusões indesejadas. 
 
 Se todas as exclusões forem desejadas, siga este procedimento:
 

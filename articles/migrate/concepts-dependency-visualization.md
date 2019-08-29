@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: hamusa
-ms.openlocfilehash: 4b6a140ec428ce3b053c41074f02f65f19b8dc72
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: e7b69e57d4e01c292a2c6d032ba995d1936b88dc
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102886"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142897"
 ---
 # <a name="dependency-visualization"></a>Visualização de dependência
 
@@ -45,7 +45,7 @@ As migrações para Azure usam a solução [mapa do serviço](../operations-mana
 
 - Durante a associação de um workspace, haverá a opção de criar um workspace ou anexar um existente:
   - Ao criar um workspace, você precisará especificar um nome para ele. O workspace será criado em uma região na mesma [Geografia do Azure](https://azure.microsoft.com/global-infrastructure/geographies/) que o projeto de migração.
-  - Ao anexar um workspace, você pode escolher entre todos os workspaces disponíveis na mesma assinatura que o projeto de migração. Observe que são listados somente os workspaces que foram criados em uma região [com suporte para o Mapa do Serviço](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-configure#supported-azure-regions). É necessário ser capaz de anexar a um workspace, verifique se você tem acesso de 'Leitura' no workspace.
+  - Ao anexar um workspace, você pode escolher entre todos os workspaces disponíveis na mesma assinatura que o projeto de migração. Observe que são listados somente os workspaces que foram criados em uma região [com suporte para o Mapa do Serviço](../azure-monitor/insights/vminsights-enable-overview.md#prerequisites). É necessário ser capaz de anexar a um workspace, verifique se você tem acesso de 'Leitura' no workspace.
 
   > [!NOTE]
   > Depois de anexar um workspace a um projeto, você não poderá mais alterá-lo.

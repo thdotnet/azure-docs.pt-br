@@ -11,29 +11,29 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ce4e2958978de9339f4340755e3740730025a5f
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: f244c28b99c429fef5641bb4fc399e09fd451069
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334035"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126565"
 ---
 # <a name="how-to-configure-risk-policies-in-azure-active-directory-identity-protection-refreshed"></a>Como: Configurar políticas de risco no Azure Active Directory Identity Protection (atualizado)
 
-O Azure AD detecta eventos de risco que são indicadores para identidades potencialmente comprometidas. Configurando políticas de risco, você pode definir as respostas automatizadas para os resultados da detecção:
+O Azure AD detecta as detecções de risco que são indicadores para identidades potencialmente comprometidas. Configurando políticas de risco, você pode definir as respostas automatizadas para os resultados da detecção:
 
-- Com a política de risco de entrada, você pode configurar uma resposta para eventos de risco em tempo real que foram detectados durante a entrada do usuário. 
+- Com a política de risco de entrada, você pode configurar uma resposta para as detecções de risco em tempo real que foram detectadas durante a entrada de um usuário. 
 - Com a política de risco do usuário, você pode configurar uma resposta para todos os riscos de usuário ativos que foram detectados para um usuário ao longo do tempo.  
 
 > [!VIDEO https://www.youtube.com/embed/zEsbbik-BTE]
 
 ## <a name="what-is-the-sign-in-risk-policy"></a>O que é a política de risco de entrada?
 
-O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. Por exemplo, a entrada é feita usando um endereço IP anônimo ou é iniciada de um local desconhecido? No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como eventos de risco. Com base nos eventos de risco que foram detectados durante a entrada, o Azure AD calcula um valor. O valor representa a probabilidade (baixa, média, alta) de que a entrada não seja executada pelo usuário legítimo. A probabilidade é chamada de **nível de risco de entrada**.
+O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. Por exemplo, a entrada é feita usando um endereço IP anônimo ou é iniciada de um local desconhecido? No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como detecções de risco. Com base nas detecções de risco que foram detectadas durante uma entrada, o Azure AD calcula um valor. O valor representa a probabilidade (baixa, média, alta) de que a entrada não seja executada pelo usuário legítimo. A probabilidade é chamada de **nível de risco de entrada**.
 
 A política de risco de entrada é uma resposta automatizada que pode ser configurada para um nível de risco de entrada específico. Na resposta, você pode bloquear o acesso aos seus recursos ou exigir a transmissão de um desafio de MFA (autenticação multifator) para obter acesso.
 
-Quando um usuário conclui com êxito um prompt do MFA disparado pela política de risco de entrada, ele fornece comentários para a proteção de identidade que a entrada originou do usuário legítimo. Assim, o evento de risco de entrada que disparou o prompt do MFA será fechado automaticamente e a proteção de identidade impedirá que esse evento contribua para a elevação do risco do usuário. A habilitação da política de risco de entrada pode reduzir o noisiness na exibição de entradas arriscadas, permitindo que os usuários sejam corrigidos automaticamente quando solicitados a MFA e, subsequentemente, fechando a entrada arriscada associada.
+Quando um usuário conclui com êxito um prompt do MFA disparado pela política de risco de entrada, ele fornece comentários para a proteção de identidade que a entrada originou do usuário legítimo. Assim, a detecção de risco de entrada que disparou o prompt do MFA será fechada automaticamente e a proteção de identidade impedirá que esse evento contribua para a elevação do risco do usuário. A habilitação da política de risco de entrada pode reduzir o noisiness na exibição de entradas arriscadas, permitindo que os usuários sejam corrigidos automaticamente quando solicitados a MFA e, subsequentemente, fechando a entrada arriscada associada.
 
 ## <a name="how-do-i-access-the-sign-in-risk-policy"></a>Como acessar a política de risco de entrada?
    
@@ -51,11 +51,11 @@ Ao configurar a política de risco de entrada, será necessário definir:
 
 - O nível de risco de entrada que dispara a política:
 
-   ![Nível de risco da conexão](./media/howto-configure-risk-policies/12.png)
+   ![Nível de risco de entrada](./media/howto-configure-risk-policies/12.png)
 
 - O tipo de acesso que deverá ser imposto quando o nível de risco de entrada for alcançado:  
 
-   ![Acessar](./media/howto-configure-risk-policies/13.png)
+   ![Access](./media/howto-configure-risk-policies/13.png)
 
 - O estado da sua política:
 
@@ -93,9 +93,9 @@ Para obter uma visão geral da experiência do usuário relacionada, confira:
 
 ## <a name="what-is-a-user-risk-policy"></a>O que é uma política de risco do usuário?
 
-O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. No Microsoft Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como eventos de risco. Embora alguns eventos de risco possam podem ser detectados em tempo real, há também aqueles que exigem mais tempo. Por exemplo, para detectar uma viagem impossível a locais atípicos, o sistema requer um período inicial de aprendizado de 14 dias para conhecer melhor o comportamento normal de um usuário. Há várias opções para resolver os eventos de risco detectados. Por exemplo, você pode resolver manualmente os eventos de risco individuais ou pode obtê-los resolvidos usando um risco de entrada ou uma política de acesso condicional de risco do usuário.
+O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como detecções de risco. Embora algumas detecções de risco possam ser detectadas em tempo real, também há detecções de risco que exigem mais tempo. Por exemplo, para detectar uma viagem impossível a locais atípicos, o sistema requer um período inicial de aprendizado de 14 dias para conhecer melhor o comportamento normal de um usuário. Há várias opções para resolver as detecções de risco detectadas. Por exemplo, você pode resolver manualmente as detecções de riscos individuais ou pode obtê-las resolvidas usando um risco de entrada ou uma política de acesso condicional de risco do usuário.
 
-Todos os eventos de risco que foram detectados para um usuário e não são resolvidos são conhecidos como eventos de risco ativos. Os eventos de risco ativos que estão associados a um usuário são conhecidos como risco do usuário. Com base no risco do usuário, o Microsoft Azure AD calcula uma probabilidade (baixa, média, alta) de um usuário ter sido comprometido. A probabilidade é chamada de nível de risco do usuário.
+Todas as detecções de risco que foram detectadas para um usuário e que não foram resolvidas são conhecidas como detecções de riscos ativas. As detecções de riscos ativas associadas a um usuário são conhecidas como risco do usuário. Com base no risco do usuário, o Microsoft Azure AD calcula uma probabilidade (baixa, média, alta) de um usuário ter sido comprometido. A probabilidade é chamada de nível de risco do usuário.
 
 ![Riscos do usuário](./media/howto-configure-risk-policies/11031.png)
 
@@ -121,7 +121,7 @@ Ao configurar a política de risco de usuário, será necessário definir:
 
 - O tipo de acesso que deverá ser imposto quando o nível de risco de entrada for alcançado:  
 
-   ![Acessar](./media/howto-configure-risk-policies/113.png)
+   ![Access](./media/howto-configure-risk-policies/113.png)
 
 - O estado da sua política:
 
@@ -139,8 +139,8 @@ A caixa de diálogo de configuração de política fornece uma opção para esti
 
 Bloquear a entrada:
 
-* impede a geração de novos eventos de risco do usuário para o usuário afetado
-* Permite aos administradores corrigir os eventos de risco que afetam a identidade do usuário manualmente, bem como restaurá-la para um estado seguro
+* Impede a geração de novas detecções de riscos de usuário para o usuário afetado
+* Permite aos administradores corrigir manualmente as detecções de risco que afetam a identidade do usuário e restaurá-lo para um estado seguro
 
 ## <a name="best-practices"></a>Práticas recomendadas
 

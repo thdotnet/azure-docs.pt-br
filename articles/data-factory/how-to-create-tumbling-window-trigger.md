@@ -3,21 +3,20 @@ title: Criar gatilhos de janela em cascata no Azure Data Factory | Microsoft Doc
 description: Saiba como criar um gatilho no Azure Data Factory que execute um pipeline em uma janela em cascata.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-editor: ''
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/14/2018
-ms.author: shlo
-ms.openlocfilehash: 0f78136edf58e76ed478bef9c255791d256c34a5
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 3fb958b446c3f1e78f78f40f112d8d55d37b0986
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678471"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141563"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Criar um gatilho que execute um pipeline em uma janela em cascata
 Este artigo fornece etapas para criar, iniciar e monitorar um gatilho de janela em cascata. Para obter informações gerais sobre gatilhos e os tipos com suporte, consulte [Gatilhos e execução de pipeline](concepts-pipeline-execution-triggers.md).
@@ -104,7 +103,7 @@ A seguinte tabela fornece uma visão geral de alto nível dos principais element
 | **retryPolicy: intervalInSeconds** | O intervalo entre tentativas de repetição especificado em segundos. | Inteiro | O número de segundos, em que o padrão é 30. | Não |
 | **depende: type** | O tipo de TumblingWindowTriggerReference. Necessário se uma dependência for definida. | Cadeia |  "TumblingWindowTriggerDependencyReference", "SelfDependencyTumblingWindowTriggerReference" | Não |
 | **depende: size** | O tamanho da janela de dependência em cascata. | Intervalo de tempo<br/>(hh:mm:ss)  | Um valor de TimeSpan positivo em que o padrão é o tamanho da janela do gatilho filho  | Não |
-| **depende: offset** | O deslocamento do gatilho de dependência. | Intervalo de tempo<br/>(hh:mm:ss) |  Um valor TimeSpan que deve ser negativo em uma autodependência. Se nenhum valor for especificado, a janela será igual ao próprio gatilho. | Autodependência: Sim<br/>Outros: Não  |
+| **depende: offset** | O deslocamento do gatilho de dependência. | Intervalo de tempo<br/>(hh:mm:ss) |  Um valor TimeSpan que deve ser negativo em uma autodependência. Se nenhum valor for especificado, a janela será igual ao próprio gatilho. | Autodependência: Sim<br/>Outros Não  |
 
 ### <a name="windowstart-and-windowend-system-variables"></a>Variáveis do sistema WindowStart e WindowEnd
 

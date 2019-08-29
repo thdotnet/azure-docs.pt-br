@@ -1,6 +1,6 @@
 ---
 title: Microsoft Graph para o Azure Active Directory Identity Protection | Microsoft Docs
-description: Saiba como consultar o Microsoft Graph para obter uma lista de eventos de risco e as informações associadas do Azure Active Directory.
+description: Saiba como consultar Microsoft Graph para obter uma lista de detecções de riscos e informações associadas de Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1640511c2f97865f5026f9f977ed0e4a9c03e338
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: a79440d0d969e01dc94759d4619fc0359762e1fd
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774386"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126571"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Introdução ao Azure Active Directory Identity Protection e ao Microsoft Graph
 
-O Microsoft Graph é o ponto de extremidade de API unificado da Microsoft e a página inicial das APIs do [Azure Active Directory Identity Protection](../active-directory-identityprotection.md). Há quatro APIs que expõem informações sobre usuários arriscados e entradas. A primeira API, **riskDetection**, permite que você consulte Microsoft Graph para obter uma lista de detecções de risco vinculadas de usuário e de entrada e informações associadas sobre a detecção. A segunda API, **riskyUsers**, permite que você consulte o Microsoft Graph para obter informações sobre a proteção do Identity Protection detectada como risco. A terceira API, **signIn**, permite que você consulte o Microsoft Graph para obter informações sobre entradas do Azure AD com propriedades específicas relacionadas ao estado, detalhe e nível de risco. A quarta API, **identityRiskEvents**, permite que você consulte Microsoft Graph para obter uma lista de [eventos de risco](../reports-monitoring/concept-risk-events.md) e informações associadas. Este artigo apresenta a você uma introdução à conexão com o Microsoft Graph e à consulta dessas APIs. Para obter uma introdução detalhada, documentação completa e acesso ao Graph Explorer, consulte o [site do Microsoft Graph](https://graph.microsoft.io/) ou a documentação de referência específica para essas APIs:
+O Microsoft Graph é o ponto de extremidade de API unificado da Microsoft e a página inicial das APIs do [Azure Active Directory Identity Protection](../active-directory-identityprotection.md). Há quatro APIs que expõem informações sobre usuários arriscados e entradas. A primeira API, **riskDetection**, permite que você consulte Microsoft Graph para obter uma lista de detecções de risco vinculadas de usuário e de entrada e informações associadas sobre a detecção. A segunda API, **riskyUsers**, permite que você consulte o Microsoft Graph para obter informações sobre a proteção do Identity Protection detectada como risco. A terceira API, **signIn**, permite que você consulte o Microsoft Graph para obter informações sobre entradas do Azure AD com propriedades específicas relacionadas ao estado, detalhe e nível de risco. A quarta API, **identityRiskEvents**, permite que você consulte Microsoft Graph para obter uma lista de [detecções de risco](../reports-monitoring/concept-risk-events.md) e informações associadas. Este artigo apresenta a você uma introdução à conexão com o Microsoft Graph e à consulta dessas APIs. Para obter uma introdução detalhada, documentação completa e acesso ao Graph Explorer, consulte o [site do Microsoft Graph](https://graph.microsoft.io/) ou a documentação de referência específica para essas APIs:
 
 * [API riskDetection](https://docs.microsoft.com/graph/api/resources/riskdetection?view=graph-rest-beta)
 * [API riskyUsers](https://docs.microsoft.com/graph/api/resources/riskyuser?view=graph-rest-beta)
@@ -68,7 +68,7 @@ Antes de começar, será necessário:
 
    ![Criação de um aplicativo](./media/graph-get-started/44.png)
 
-   1. Na caixa de texto **Nome**, digite um nome para o aplicativo (por exemplo: Aplicativo de API do Evento de Risco AADIP).
+   1. Na caixa de texto **Nome**, digite um nome para o aplicativo (por exemplo: Aplicativo de API de detecção de riscos do AADIP).
 
    1. Como **Tipo**, selecione **Aplicativo Web E/Ou API Web**.
 
@@ -122,7 +122,7 @@ Antes de começar, será necessário:
 
    ![Criação de um aplicativo](./media/graph-get-started/24.png)
 
-   1. Na caixa de texto **Descrição da chave**, digite uma descrição (por exemplo, *AADIP Risk Event*).
+   1. Na caixa de texto **Descrição da chave** , digite uma descrição (por exemplo, AADIP de *detecção de risco*).
    1. Como **Duração**, selecione **Em um ano**.
    1. Clique em **Salvar**.
    1. Copie o valor da chave e cole em um local seguro.   
@@ -131,7 +131,7 @@ Antes de começar, será necessário:
    > Se você perder esta chave, precisará retornar a esta seção e criar uma nova chave. Mantenha essa chave em segredo: qualquer pessoa que a tenha poderá acessar seus dados.
    > 
 
-## <a name="authenticate-to-microsoft-graph-and-query-the-identity-risk-events-api"></a>Autenticar-se no Microsoft Graph e consultar a API de Eventos de Risco de Identidade
+## <a name="authenticate-to-microsoft-graph-and-query-the-identity-risk-detections-api"></a>Autenticar para Microsoft Graph e consultar a API de detecções de risco de identidade
 
 Neste ponto, você deve ter:
 
@@ -157,7 +157,7 @@ Durante a autenticação, você poderá encontrar o tipo de token e o token de a
 
 Envie este cabeçalho como uma solicitação para a seguinte URL de API: `https://graph.microsoft.com/beta/identityRiskEvents`
 
-A resposta, se obtiver êxito, será uma coleção de eventos de risco de identidade e de dados associados no formato JSON OData, que poderá ser analisado e manipulado como for melhor.
+A resposta, se for bem-sucedida, é uma coleção de detecções de risco de identidade e dados associados no formato OData JSON, que pode ser analisado e manipulado da maneira que você vê adequado.
 
 Veja um código de exemplo para autenticação e chamada da API usando o PowerShell.  
 Basta adicionar sua ID do cliente, a chave secreta e o domínio do locatário.
@@ -204,9 +204,9 @@ Com as políticas de risco de entrada da proteção de identidade, você pode ap
 GET https://graph.microsoft.com/beta/riskDetections?$filter=detectionTimingType eq 'offline'
 ```
 
-### <a name="get-the-high-risk-and-medium-risk-events-identityriskevents-api"></a>Obter os eventos de alto e médio risco (API identityRiskEvents)
+### <a name="get-the-high-risk-and-medium-risk-detections-identityriskevents-api"></a>Obtenha as detecções de alto risco e de risco médio (API identityRiskEvents)
 
-Os eventos de médio e alto risco representam aqueles que podem ter a capacidade de disparar políticas de risco de usuário ou entrada do Identity Protection. Uma vez que tenham uma probabilidade média ou alta de que o usuário que está tentando entrar não é o proprietário legítimo da identidade, a correção desses eventos deverá ser uma prioridade. 
+As detecções de médio e alto risco representam aquelas que podem ter a capacidade de disparar a entrada de proteção de identidade ou políticas de risco de usuário. Uma vez que tenham uma probabilidade média ou alta de que o usuário que está tentando entrar não é o proprietário legítimo da identidade, a correção desses eventos deverá ser uma prioridade. 
 
 ```
 GET https://graph.microsoft.com/beta/identityRiskEvents?`$filter=riskLevel eq 'high' or riskLevel eq 'medium'" 
@@ -230,14 +230,14 @@ https://graph.microsoft.com/beta/identityRiskEvents?`$filter=userID eq '<userID>
 ## <a name="next-steps"></a>Próximas etapas
 
 Parabéns, você acabou de criar sua primeira chamada para o Microsoft Graph!  
-Agora você pode consultar os eventos de risco de identidade e usar os dados como quiser.
+Agora você pode consultar as detecções de risco de identidade e usar os dados, no entanto, se desejar.
 
 Para saber mais sobre o Microsoft Graph e como criar aplicativos usando a API do Graph, confira a [documentação](https://docs.microsoft.com/graph/overview) e muito mais no [site Microsoft Graph](https://developer.microsoft.com/graph). 
 
 Para obter informações relacionadas. consulte:
 
 - [Azure Active Directory Identity Protection](../active-directory-identityprotection.md)
-- [Tipos de eventos de risco detectados pelo Azure Active Directory Identity Protection](../reports-monitoring/concept-risk-events.md)
+- [Tipos de detecções de risco detectadas pelo Azure Active Directory Identity Protection](../reports-monitoring/concept-risk-events.md)
 - [Microsoft Graph](https://developer.microsoft.com/graph/)
 - [Visão geral do Microsoft Graph](https://developer.microsoft.com/graph/docs)
 - [Raiz do Serviço Azure AD Identity Protection](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityprotection_root)

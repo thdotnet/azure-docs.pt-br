@@ -3,21 +3,20 @@ title: Atividade Until no Azure Data Factory | Microsoft Docs
 description: A atividade Until executa um conjunto de atividades em um loop até que a condição associada à atividade seja avaliada como verdadeira ou atinja o tempo limite.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: shlo
-ms.openlocfilehash: 5a053ab213390a12c5d2051a802a1fa98279c344
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80eebf0813b6403d5e1e8ff510003f7f0f57c821
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66155165"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142459"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Atividade Until no Azure Data Factory
 A atividade Until fornece a mesma funcionalidade que uma estrutura de loop do-until fornece em linguagens de programação. Ela executa um conjunto de atividades em um loop até que a condição associada à atividade seja avaliada como verdadeira. Especifique um valor de tempo limite para a atividade Until no Data Factory. 
@@ -52,11 +51,11 @@ A atividade Until fornece a mesma funcionalidade que uma estrutura de loop do-un
 
 ## <a name="type-properties"></a>Propriedades de tipo
 
-Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
+Propriedade | Descrição | Valores permitidos | Necessário
 -------- | ----------- | -------------- | --------
-name | Nome da atividade `Until`. | Cadeia de caracteres | Sim
-type | Deve ser definido como **Until**. | Cadeia de caracteres | Sim
-expressão | Expressão que deve ser avaliada como verdadeira ou falsa | Expressão.  | Sim
+name | Nome da atividade `Until`. | Cadeia | Sim
+type | Deve ser definido como **Until**. | Cadeia | Sim
+expression | Expressão que deve ser avaliada como verdadeira ou falsa | Expressão.  | Sim
 timeout | O loop do-until atinge o tempo limite após o tempo especificado aqui. | Cadeia de caracteres. `d.hh:mm:ss` (ou) `hh:mm:ss`. O valor padrão é de 7 dias. Valor máximo: 90 dias. | Não
 Atividades | Conjunto de atividades que é executado até que a expressão seja avaliada como `true`. | Matriz de atividades. |  Sim
 

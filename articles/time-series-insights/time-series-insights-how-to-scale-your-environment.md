@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: ce29336c6e5dc187eb2ef713cd5dfeafdc8a003f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 13fa2b892013cf4a3fb96220c901030c6b0aee0b
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165643"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129099"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Como dimensionar o ambiente do Time Series Insights
 
@@ -53,7 +53,7 @@ As capacidades são dimensionadas linearmente, portanto, uma SKU S1 com capacida
 
 1. Ajuste o controle deslizante **Capacidade** para selecionar a capacidade que atenda aos requisitos de suas taxas de entrada e capacidade de armazenamento. Observe que a **Taxa de entrada**, a **Capacidade de armazenamento** e o **Custo estimado** são atualizadas dinamicamente para mostrar o impacto da alteração.
 
-   [![Slider](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
+   [![Classificação](media/scale-your-environment/slider.png)](media/scale-your-environment/slider.png#lightbox)
 
    Como alternativa, você pode digitar o número do multiplicador de capacidade na caixa de texto à direita do controle deslizante.
 
@@ -61,4 +61,4 @@ As capacidades são dimensionadas linearmente, portanto, uma SKU S1 com capacida
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Verifique se a nova capacidade é [suficientes para evitar a limitação](time-series-insights-diagnose-and-solve-problems.md).
+- Verifique se a nova capacidade é [suficiente para evitar a limitação](time-series-insights-diagnose-and-solve-problems.md).

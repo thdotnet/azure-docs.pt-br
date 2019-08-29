@@ -1,7 +1,7 @@
 ---
-title: 'Treinar o modelo de Clustering: Referência de módulo'
+title: 'Treinar modelo de clustering: Referência de módulo'
 titleSuffix: Azure Machine Learning service
-description: Saiba como usar o módulo treinar modelo de Clustering no serviço do Azure Machine Learning para treinar modelos de clustering.
+description: Saiba como usar o módulo treinar modelo de clustering no serviço de Azure Machine Learning para treinar modelos de clustering.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,56 +9,55 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/06/2019
-ROBOTS: NOINDEX
-ms.openlocfilehash: 41cdec1d7f1c3932b17da6f9b1de518071f3f542
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4883b1420913eb4e5f3bd5f13a95e410370d9184
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65028074"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128486"
 ---
 # <a name="train-clustering-model"></a>Treinar Modelo de Clustering
 
-Este artigo descreve um módulo da interface visual (visualização) para o serviço de Azure Machine Learning.
+Este artigo descreve um módulo da interface visual (visualização) para Azure Machine Learning serviço.
 
 Use este módulo para treinar um modelo de clustering.
 
-O módulo usa um modelo de clustering não treinado que você já tiver configurado usando o [Clustering K-Means](k-means-clustering.md) módulo e treina o modelo usando um conjunto de dados rotulado ou sem rótulo. O módulo cria os dois um modelo treinado que você pode usar para previsão e um conjunto de atribuições de cluster para cada caso nos dados de treinamento.
+O módulo usa um modelo de clustering não treinado que você já configurou usando o módulo de [clustering K-](k-means-clustering.md) means e treina o modelo usando um conjunto de dados rotulado ou sem rótulo. O módulo cria um modelo treinado que você pode usar para previsão e um conjunto de atribuições de cluster para cada caso nos dados de treinamento.
 
 > [!NOTE]
-> Um cluster não foi possível do modelo ser treinado usando o [modelo de treinamento](train-model.md) módulo, que é o módulo genérico de treinamento de modelos de aprendizado de máquina. Isso ocorre porque [modelo de treinamento](train-model.md) funciona apenas com algoritmos de aprendizado supervisionados. K-means e outros algoritmos de clustering permitem aprendizado sem supervisão, o que significa que o algoritmo possa aprender com dados sem rótulo.  
+> Um modelo de clustering não foi possível ser treinado usando o módulo [treinar modelo](train-model.md) , que é o módulo genérico para treinar modelos de aprendizado de máquina. Isso ocorre porque o [modelo de treinamento](train-model.md) funciona apenas com algoritmos de aprendizado supervisionados. K-means e outros algoritmos de clustering permitem aprendizado não supervisionado, o que significa que o algoritmo pode aprender com dados não rotulados.  
   
-## <a name="how-to-use-train-clustering-model"></a>Como usar o modelo de Clustering de treinamento  
+## <a name="how-to-use-train-clustering-model"></a>Como usar o modelo treinar clustering  
   
-1.  Adicione a **treinar modelo de Clustering** módulo à sua experiência no Studio. Você pode encontrar o módulo sob **módulos de aprendizado de máquina**, no **Train** categoria.  
+1.  Adicione o módulo **treinar modelo** de clustering ao seu experimento no estúdio. Você pode encontrar o módulo em **módulos Machine Learning**, na categoria **treinar** .  
   
-2. Adicione a [Clustering K-Means](k-means-clustering.md) módulo ou outro módulo personalizado que cria um clustering compatível de modelo e defina os parâmetros do modelo de clustering.  
+2. Adicione o módulo de [clustering K-](k-means-clustering.md) means ou outro módulo personalizado que cria um modelo de clustering compatível e defina os parâmetros do modelo de clustering.  
     
-3.  Anexar um conjunto de dados de treinamento a entrada à direita do **treinar modelo de Clustering**.
+3.  Anexe um conjunto de dados de treinamento à entrada à direita do **modelo Train clustering**.
   
-5.  Na **coluna definida**, selecione as colunas do conjunto de dados para usar na criação de clusters. Certifique-se de selecionar colunas que fazem bons recursos: por exemplo, evite usar IDs ou outras colunas que têm valores exclusivos ou colunas que têm os mesmos valores.
+5.  Em **conjunto de colunas**, selecione as colunas do conjunto de um para usar na criação de clusters. Certifique-se de selecionar colunas que tenham bons recursos: por exemplo, evite usar IDs ou outras colunas que tenham valores exclusivos ou colunas que tenham os mesmos valores.
 
-    Se um rótulo estiver disponível, você pode usá-lo como um recurso ou deixá-lo.  
+    Se um rótulo estiver disponível, você poderá usá-lo como um recurso ou deixá-lo fora.  
   
-6. Selecione a opção **verificar se há acréscimo ou desmarque para somente resultado**, se você deseja gerar os dados de treinamento, junto com o novo rótulo de cluster.
+6. Selecione a opção, **marque para acrescentar ou desmarque somente o resultado**, se desejar gerar os dados de treinamento junto com o novo rótulo de cluster.
 
-    Se você desmarcar essa opção, somente as atribuições de cluster são de saída. 
+    Se você desmarcar essa opção, somente as atribuições de cluster serão geradas. 
 
-7. Execute o teste, ou clique no **treinar modelo de Clustering** módulo e selecione **executar selecionado**.  
+7. Execute o experimento ou clique no módulo **treinar modelo** de clustering e selecione **executar selecionado**.  
   
 ### <a name="results"></a>Resultados
 
-Após o treinamento foi concluída:
+Após a conclusão do treinamento:
 
 
-+  Para exibir os valores no conjunto de dados, o módulo com o botão direito, selecione **resultar datasets**e clique em **visualizar**.
++  Para exibir os valores no conjunto de linhas, clique com o botão direito do mouse no módulo, selecione **resultado conjuntos de resultados**e clique em **Visualizar**.
 
-+ Para salvar o modelo treinado para reutilização posterior, o módulo com o botão direito, selecione **modelo treinados**e clique em **Salvar como modelo treinado**.
++ Para salvar o modelo treinado para reutilização posterior, clique com o botão direito do mouse no módulo, selecione **modelo treinado**e clique em **salvar como modelo treinado**.
 
-+ Para gerar pontuações do modelo, use [atribuir dados aos Clusters](assign-data-to-clusters.md).
++ Para gerar pontuações do modelo, use [atribuir dados a clusters](assign-data-to-clusters.md).
 
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [conjunto de módulos disponíveis](module-reference.md) ao serviço de Azure Machine Learning. 
+Consulte o [conjunto de módulos disponíveis](module-reference.md) para Azure Machine Learning serviço. 

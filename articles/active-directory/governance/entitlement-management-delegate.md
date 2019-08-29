@@ -16,12 +16,12 @@ ms.date: 07/10/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4430e2115e4282ba7bb618184139a845547a06ed
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 064724b3c6a5faa485850ecdfa3d3759d3631be0
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967089"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70124902"
 ---
 # <a name="delegate-tasks-in-azure-ad-entitlement-management-preview"></a>Delegar tarefas no gerenciamento de direitos do Azure AD (versão prévia)
 
@@ -30,13 +30,15 @@ ms.locfileid: "68967089"
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
 > Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Por padrão, administradores globais e administradores de usuários podem criar e gerenciar todos os aspectos do gerenciamento de direitos do Azure AD. No entanto, os usuários nessas funções podem não conhecer todos os cenários em que os pacotes de acesso são necessários. Normalmente, são usuários em departamentos que sabem quem precisa colaborar.
+Por padrão, administradores globais e administradores de usuários podem criar e gerenciar todos os aspectos do gerenciamento de direitos do Azure AD. No entanto, os usuários nessas funções podem não conhecer todos os cenários em que os pacotes de acesso são necessários. Normalmente, são usuários em departamentos que sabem quem precisa colaborar. 
 
-Em vez de conceder permissões irrestritas para não administradores, você pode conceder aos usuários as permissões mínimas necessárias para executar seu trabalho e evitar a criação de direitos de acesso inadequados ou conflitantes. Este artigo descreve as funções que você pode atribuir para delegar várias tarefas no gerenciamento de direitos.
+Em vez de conceder permissões irrestritas para não administradores, você pode conceder aos usuários as permissões mínimas necessárias para executar seu trabalho e evitar a criação de direitos de acesso inadequados ou conflitantes. Este artigo descreve as funções que você pode atribuir para delegar várias tarefas no gerenciamento de direitos. 
 
 ## <a name="delegate-example-for-departmental-adoption"></a>Exemplo de delegado para adoção departamental
 
-Para entender como você pode delegar tarefas no gerenciamento de direitos, ele ajuda a considerar um exemplo. Suponha que sua organização tenha os cinco usuários a seguir:
+Para entender como você pode delegar tarefas no gerenciamento de direitos, ele ajuda a considerar um exemplo. 
+
+Suponha que sua organização tenha os cinco usuários a seguir:
 
 | User | Departamento | Observações |
 | --- | --- | --- |
@@ -59,6 +61,7 @@ Os departamentos de pesquisa e de marketing desejam usar o gerenciamento de dire
 Agora, os departamentos de pesquisa e marketing podem utilizar o gerenciamento de direitos. Bob, Carol, Dave e Elisa podem criar e gerenciar pacotes de acesso em seus respectivos catálogos.
 
 ![Exemplo de delegado de gerenciamento de direitos](./media/entitlement-management-delegate/elm-delegate.png)
+
 
 ## <a name="entitlement-management-roles"></a>Funções de gerenciamento de direitos
 
@@ -113,6 +116,7 @@ Para um usuário que não seja um administrador global ou um administrador de us
 | [Administrador de aplicativo](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  |  | :heavy_check_mark: |  |
 | [Administrador de aplicativos de nuvem](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  |  | :heavy_check_mark: |  |
 | User | Proprietário do catálogo | Somente se o proprietário do grupo | Somente se o proprietário do grupo | Somente se o proprietário do aplicativo |  |
+
 
 ## <a name="add-a-catalog-creator"></a>Adicionar um criador de catálogo
 

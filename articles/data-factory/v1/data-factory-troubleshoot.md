@@ -9,17 +9,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/10/2018
-author: gauravmalhot
-ms.author: gamal
+author: djpmsft
+ms.author: daperlov
 ms.reviewer: maghan
 manager: craigg
 robots: noindex
-ms.openlocfilehash: cc880885777cbca67d6fb39b90feadc889339f76
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: d729fd11f355650b1476e6864a6d70219bf37e12
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67836171"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135128"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Solucionar problemas do Data Factory
 > [!NOTE]
@@ -48,9 +48,9 @@ Caso você receba esse erro, o provedor de recursos do Azure Data Factory não f
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Problema: erro não autorizado ao executar um cmdlet da Data Factory
 Você provavelmente não está usando a assinatura ou conta do Azure correta com o Azure PowerShell. Use os cmdlets a seguir para selecionar a assinatura e conta do Azure corretas para usar com o Azure PowerShell.
 
-1. Conectar-se-AzAccount - Use a ID de usuário correto e a senha
-2. Get-AzSubscription - exibir todas as assinaturas para a conta.
-3. Selecione AzSubscription &lt;o nome da assinatura&gt; -selecione a assinatura correta. Use a mesma assinatura usada para criar um data factory no portal do Azure.
+1. Connect-AzAccount-use a ID de usuário e a senha corretas
+2. Get-AzSubscription-exibe todas as assinaturas da conta.
+3. Select-AzSubscription &lt;nome&gt; da assinatura-selecione a assinatura correta. Use a mesma assinatura usada para criar um data factory no portal do Azure.
 
 ### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Problema: falha ao inicializar a Configuração Expressa do Gateway de Gerenciamento de Dados no Portal do Azure
 A instalação Expressa do Gateway de Gerenciamento de Dados requer o Internet Explorer ou um navegador da Web compatível com Microsoft ClickOnce. Se a Instalação Expressa não for iniciada, siga um destes procedimentos:

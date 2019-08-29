@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d4f19c16149dbed34c16d021ff7100cace9a06a
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 57b441803a066b794d17b46afec4d930b94ebdea
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879138"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125128"
 ---
 # <a name="how-it-works-azure-multi-factor-authentication"></a>Como funciona: Autenticação Multifator do Azure
 
 A segurança da verificação em duas etapas baseia-se na sua abordagem em camadas. O comprometimento de vários fatores de autenticação apresenta um desafio significativo para os invasores. Mesmo que um invasor consiga descobrir a senha do usuário, ela será inútil se ele também não estiver de posse do método de autenticação adicional. Isso funciona exigindo dois ou mais dos seguintes métodos de autenticação:
 
-* Algo que você sabe (normalmente, uma senha)
-* Algo que você tem (um dispositivo confiável que não pode ser facilmente clonado, como um telefone)
-* Algo seu (biometria)
+* Algo que você sabe (geralmente uma senha)
+* Algo que você tem (um dispositivo confiável que não é duplicado facilmente, como um telefone)
+* Algo que você é (biometria)
 
 <center>
 
@@ -52,7 +52,7 @@ Como a maioria dos usuários está acostumada a usar apenas senhas para a autent
 * Treine sua equipe de suporte para lidar com cenários em que o usuário não consegue entrar porque não têm acesso a seus métodos de autenticação ou esses métodos não estão funcionando corretamente.
    * Usando políticas de acesso condicional para o serviço do Azure MFA, sua equipe de suporte pode adicionar um usuário a um grupo que é excluído de uma política que requer MFA.
 * Considere o uso de locais nomeados de acesso condicional como uma maneira de minimizar prompts de verificação em duas etapas. Com essa funcionalidade, os administradores podem ignorar a verificação em duas etapas para usuários que estão entrando de um local de rede confiável seguro, como um segmento de rede usado para integração de novo usuário.
-* Implante [Azure AD Identity Protection](../active-directory-identityprotection.md) e dispare a verificação em duas etapas com base em eventos de risco.
+* Implante [Azure ad Identity Protection](../active-directory-identityprotection.md) e dispare a verificação em duas etapas com base nas detecções de risco.
 
 ## <a name="next-steps"></a>Próximas etapas
 

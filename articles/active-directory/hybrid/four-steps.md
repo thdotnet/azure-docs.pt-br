@@ -13,12 +13,12 @@ ms.date: 06/20/2019
 ms.subservice: hybrid
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d4eb5b4c634fe495a0ed149016d862defc2eb45
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 36433aef75d38418cb74fcd195dc1e9e902f24a8
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69532453"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70124921"
 ---
 # <a name="four-steps-to-a-strong-identity-foundation-with-azure-active-directory"></a>Quatro etapas para uma base de identidade forte com Azure Active Directory
 
@@ -141,7 +141,7 @@ Por padrão, o Azure Active Directory desbloqueia contas quando ele executa uma 
 
 O Azure fornece relatórios que podem ser usados por você e sua organização para garantir que os usuários sejam registrados para MFA e SSPR. Os usuários que não tiverem registrado talvez precisem ser instruídos no processo.
 
-O [relatório de entradas](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) de MFA inclui informações sobre o uso de MFA e fornece uma visão sobre como a MFA está funcionando em sua organização. Ter acesso à atividade de entrada (e auditorias e eventos de risco) para o Azure AD é crucial para solução de problemas, análise de uso e investigações forenses.
+O [relatório de entradas](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) de MFA inclui informações sobre o uso de MFA e fornece uma visão sobre como a MFA está funcionando em sua organização. Ter acesso à atividade de entrada (e auditorias e detecções de riscos) para o Azure AD é crucial para solução de problemas, análise de uso e investigações forenses.
 
 Da mesma forma, o [relatório de gerenciamento de senhas](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting) de autoatendimento pode ser usado para determinar quem tem (ou não) registrado para SSPR.
 

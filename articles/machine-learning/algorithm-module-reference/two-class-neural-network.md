@@ -1,7 +1,7 @@
 ---
-title: 'Rede Neural de duas classes: Referência de módulo'
+title: 'Rede neural de duas classes: Referência de módulo'
 titleSuffix: Azure Machine Learning service
-description: Saiba como usar o módulo de rede Neural de duas classes no serviço de Azure Machine Learning para criar um modelo de rede neural que pode ser usado para prever um destino que tenha somente dois valores.
+description: Saiba como usar o módulo rede neural de duas classes no serviço de Azure Machine Learning para criar um modelo de rede neural que pode ser usado para prever um destino que tem apenas dois valores.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,45 +9,44 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
-ROBOTS: NOINDEX
-ms.openlocfilehash: 7ea852fcd312c6f7b1b716278ed538b7accde5bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6f0ad3cc6f506efdc0579f7b8949c41b539ade6a
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65029214"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128359"
 ---
-# <a name="two-class-neural-network-module"></a>Módulo de rede Neural de duas classes
+# <a name="two-class-neural-network-module"></a>Módulo de rede neural de duas classes
 
-Este artigo descreve um módulo da interface visual (visualização) para o serviço de Azure Machine Learning.
+Este artigo descreve um módulo da interface visual (visualização) para Azure Machine Learning serviço.
 
-Use este módulo para criar um modelo de rede neural que pode ser usado para prever um destino que tenha somente dois valores.
+Use este módulo para criar um modelo de rede neural que possa ser usado para prever um destino que tenha apenas dois valores.
 
-Classificação usando redes neurais é um método de aprendizado supervisionado e, portanto, requer uma *marcados dataset*, que inclui uma coluna de rótulo. Por exemplo, você pode usar esse modelo de rede neural para prever resultados binários, como se um paciente tem certa doença ou se uma máquina é a probabilidade de falhar dentro de uma janela de tempo especificada.  
+A classificação usando redes neurais é um método de aprendizado supervisionado e, portanto, requer um conjunto de informações *marcado*, que inclui uma coluna de rótulo. Por exemplo, você pode usar esse modelo de rede neural para prever resultados binários, como se um paciente tem ou não uma determinada doença ou se um computador provavelmente falhará dentro de uma janela de tempo especificada.  
 
-Depois de definir o modelo, treiná-lo, fornecendo um conjunto de dados marcado e o modelo como uma entrada para [treinar modelo](./train-model.md). O modelo treinado, em seguida, pode ser usado para prever valores para novas entradas.
+Depois de definir o modelo, treine-o fornecendo um conjunto de dados marcado e o modelo como uma entrada para o [modelo de treinamento](./train-model.md). O modelo treinado pode então ser usado para prever valores para novas entradas.
 
-### <a name="more-about-neural-networks"></a>Mais informações sobre redes neurais
+### <a name="more-about-neural-networks"></a>Mais sobre redes neurais
 
-Uma rede neural é um conjunto de camadas interconectadas. As entradas são a primeira camada e são conectadas a uma camada de saída por um grafo acíclico compostos por nós e bordas ponderadas.
+Uma rede neural é um conjunto de camadas interconectadas. As entradas são a primeira camada e são conectadas a uma camada de saída por um grafo acíclico composto por bordas e nós ponderados.
 
-Entre as camadas de entrada e saídas, você pode inserir várias camadas ocultas. Mais tarefas de previsão podem ser realizadas com facilidade com apenas uma ou algumas camadas ocultas. No entanto, uma pesquisa recente tenha mostrado que as redes neurais profundas (DNN) com várias camadas podem ser eficazes em tarefas complexas, como imagem ou reconhecimento de fala. As camadas sucessivas são usadas para modelar níveis crescentes de profundidade semântica.
+Entre as camadas de entrada e saída, você pode inserir várias camadas ocultas. A maioria das tarefas preditivas pode ser realizada facilmente com apenas uma ou algumas camadas ocultas. No entanto, pesquisas recentes mostraram que as redes neurais profundas (DNN) com muitas camadas podem ser eficazes em tarefas complexas, como reconhecimento de imagem ou de fala. As camadas sucessivas são usadas para modelar níveis crescentes de profundidade semântica.
 
-A relação entre as entradas e saídas é aprendida de treinamento da rede neural nos dados de entrada. A direção do gráfico continua a partir de entradas por meio da camada oculta e para a camada de saída. Todos os nós em uma camada são conectados por bordas ponderadas a nós na próxima camada.
+A relação entre entradas e saídas é aprendida de treinar a rede neural nos dados de entrada. A direção do grafo prossegue das entradas por meio da camada oculta e da camada de saída. Todos os nós em uma camada são conectados pelas bordas ponderadas aos nós na próxima camada.
 
-Para calcular a saída da rede para uma entrada específica, um valor é calculado em cada nó nas camadas ocultas e na camada de saída. O valor é definido Calculando a soma ponderada dos valores de nós da camada anterior. Uma função de ativação é então aplicada a essa soma ponderada.
+Para computar a saída da rede para uma entrada específica, um valor é calculado em cada nó nas camadas ocultas e na camada de saída. O valor é definido calculando a soma ponderada dos valores dos nós da camada anterior. Uma função de ativação é então aplicada a essa soma ponderada.
   
 ## <a name="how-to-configure"></a>Como configurar
 
-1.  Adicione a **rede Neural de duas classes** módulo ao seu experimento. Você pode encontrar esse módulo sob **Machine Learning**, **inicializar**, no **classificação** categoria.  
+1.  Adicione o módulo **rede neural de duas classes** ao seu experimento. Você pode encontrar esse módulo em **Machine Learning**, **inicializar**, na categoria **classificação** .  
   
-2.  Especifique como deseja que o modelo ser treinado, definindo o **criar modo de treino** opção.  
+2.  Especifique como você deseja que o modelo seja treinado, definindo a opção **criar modo de instrutor** .  
   
-    -   **Um único parâmetro**: Escolha esta opção se você já souber como deseja configurar o modelo.  
+    -   **Parâmetro único**: Escolha esta opção se você já souber como deseja configurar o modelo.  
 
-3.  Para **oculta a especificação da camada**, selecione o tipo de arquitetura de rede para criar.  
+3.  Para **especificação de camada oculta**, selecione o tipo de arquitetura de rede a ser criado.  
   
-    -   **Totalmente conectada caso**: Usa a arquitetura de rede neural padrão, definida para redes neurais de duas classes da seguinte maneira:
+    -   **Caso totalmente conectado**: Usa a arquitetura de rede neural padrão, definida para redes neurais de duas classes da seguinte maneira:
   
         -   Tem uma camada oculta.
   
@@ -57,25 +56,25 @@ Para calcular a saída da rede para uma entrada específica, um valor é calcula
   
         -   O número de nós na camada oculta é definido pelo usuário. O valor padrão é 100.
   
-        -   O número de nós é igual ao número de classes. Para uma rede neural de duas classes, isso significa que todas as entradas devem mapear para um dos dois nós na camada de saída.
+        -   O número de nós é igual ao número de classes. Para uma rede neural de duas classes, isso significa que todas as entradas devem ser mapeadas para um dos dois nós na camada de saída.
 
-5.  Para **taxa de aprendizagem**, defina o tamanho da etapa executada em cada iteração, antes da correção. Um valor maior para a taxa de aprendizagem pode fazer com que o modelo convergir mais rapidamente, mas com o risco mínimas locais.
+5.  Para **taxa de aprendizagem**, defina o tamanho da etapa realizada em cada iteração, antes da correção. Um valor maior para a taxa de aprendizagem pode fazer com que o modelo seja convergido mais rapidamente, mas pode Sobreusar mínimo locais.
 
 6.  Para **número de iterações de aprendizado**, especifique o número máximo de vezes que o algoritmo deve processar os casos de treinamento.
 
-7.  Para **o aprendizado inicial pondera o diâmetro**, especifique os pesos de nó no início do processo de aprendizado.
+7.  Para **o diâmetro inicial dos pesos de aprendizado**, especifique os pesos do nó no início do processo de aprendizado.
 
-8.  Para **a dinâmica**, especificar um peso a ser aplicado durante o aprendizado a nós de iterações anteriores  
+8.  Para **a dinâmica**, especifique um peso a ser aplicado durante o aprendizado a nós de iterações anteriores  
 
-10. Selecione o **exemplos de ordem aleatória** opção para casos em ordem aleatória entre as iterações. Se você desmarcar essa opção, casos são processados em exatamente na mesma ordem toda vez que executar o teste.
+10. Selecione a opção **exemplos de ordem aleatória** para embaralhar casos entre iterações. Se você desmarcar essa opção, os casos serão processados exatamente na mesma ordem toda vez que você executar o experimento.
   
-11. Para **propagação de número aleatório**, digite um valor para usar como a semente.
+11. Para **semente de número aleatório**, digite um valor a ser usado como a semente.
   
-     Especificar uma semente de valor é útil quando você deseja garantir a capacidade de repetição em execuções do mesmo experimento.  Caso contrário, um valor de relógio do sistema é usado como a semente, o que pode causar resultados ligeiramente diferentes sempre que você executar o teste.
+     A especificação de um valor de semente é útil quando você deseja garantir a capacidade de repetição entre as execuções do mesmo experimento.  Caso contrário, um valor de relógio do sistema será usado como a semente, o que pode causar resultados ligeiramente diferentes sempre que você executar o experimento.
   
-13. Adicionar um conjunto de dados marcado para o experimento e conecte-se um dos [módulos de treinamento](module-reference.md).  
+13. Adicione um conjunto de um DataSet marcado ao experimento e conecte um dos [módulos de treinamento](module-reference.md).  
   
-    -   Se você definir **criar modo de treino** à **único parâmetro**, use o [modelo de treinamento](train-model.md) módulo.  
+    -   Se você definir **criar modo de instrutor** como **um único parâmetro**, use o módulo [treinar modelo](train-model.md) .  
   
 14. Execute o experimento.
 
@@ -83,11 +82,11 @@ Para calcular a saída da rede para uma entrada específica, um valor é calcula
 
 Após a conclusão do treinamento:
 
-+ Para ver um resumo dos parâmetros do modelo, juntamente com o recurso de pesos que aprendi com treinamento e outros parâmetros de rede neural, clique com botão direito a saída de [modelo de treinamento](./train-model.md)e selecione **visualizar**.  
++ Para ver um resumo dos parâmetros do modelo, junto com os pesos do recurso aprendidos do treinamento e outros parâmetros da rede neural, clique com o botão direito do mouse na saída do [modelo](./train-model.md)de treino e selecione **Visualizar**.  
 
-+ Para salvar um instantâneo do modelo treinado, clique com botão direito do **modelo treinados** de saída e selecione **Salvar como modelo treinado**. Esse modelo não é atualizado em execuções sucessivas do mesmo experimento.
++ Para salvar um instantâneo do modelo treinado, clique com o botão direito do mouse na saída do **modelo treinado** e selecione **salvar como modelo treinado**. Esse modelo não é atualizado em execuções sucessivas do mesmo experimento.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [conjunto de módulos disponíveis](module-reference.md) ao serviço de Azure Machine Learning. 
+Consulte o [conjunto de módulos disponíveis](module-reference.md) para Azure Machine Learning serviço. 

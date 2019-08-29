@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 03/19/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a030005d73df61c31c5aa1c2e1b56e52b03a56e3
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6808ad101a828708ff4fe77bb4b8a55cf8c5fec7
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478502"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135442"
 ---
 # <a name="my-first-python-runbook"></a>Meu primeiro runbook Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "67478502"
 Este tutorial orienta você durante a criação de um [Runbook Python](automation-runbook-types.md#python-runbooks) na Automação do Azure. Você começa com um runbook simples você testa e publica. Em seguida, você modifica o runbook para gerenciar os recursos do Azure, neste caso, iniciando uma máquina virtual do Azure. Depois, você torna o runbook mais robusto adicionando parâmetros de runbook.
 
 > [!NOTE]
-> Não há suporte para usar um webhook para iniciar um runbook Python.
+> Não há suporte para o uso de um webhook para iniciar um runbook do Python.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -99,7 +99,7 @@ Para gerenciar os recursos do Azure, o script precisa ser autenticado usando as 
 
 > [!NOTE]
 > A conta de automação deve ter sido criada com o recurso de entidade de serviço para haver executar como certificado.
-> Se a conta de automação não foi criada com a entidade de serviço, é possível autenticar usando o método descrito em [Autenticar com as Bibliotecas de Gerenciamento do Azure para Python](https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate).
+> Se a conta de automação não foi criada com a entidade de serviço, é possível autenticar usando o método descrito em [Autenticar com as Bibliotecas de Gerenciamento do Azure para Python](/azure/python/python-sdk-azure-authenticate).
 
 1. Abra o editor de texto clicando em **Editar** no painel MyFirstRunbook-Python.
 
@@ -211,6 +211,6 @@ Clique em **OK** para iniciar o runbook. Ele é executado e inicia a VM especifi
 - Para começar a usar os runbooks do PowerShell, veja [Meu primeiro runbook do PowerShell](automation-first-runbook-textual-powershell.md)
 - Para começar a usar os runbooks Gráficos, consulte [Meu primeiro runbook gráfico](automation-first-runbook-graphical.md)
 - Para começar a usar runbooks de fluxo de trabalho do PowerShell, veja [Meu primeiro runbook de Fluxo de Trabalho do PowerShell](automation-first-runbook-textual.md)
-- Para saber mais sobre os tipos de runbook, suas vantagens e limitações, consulte [Tipos de runbook de Automação do Azure](automation-runbook-types.md)
-- Para aprender sobre o desenvolvimento do Azure com o Python, consulte [Azure para desenvolvedores do Python ](https://docs.microsoft.com/python/azure/?view=azure-python)
+- Para saber mais sobre os tipos de runbook, suas vantagens e limitações, veja [Tipos de runbook da Automação do Azure](automation-runbook-types.md)
+- Para aprender sobre o desenvolvimento do Azure com o Python, consulte [Azure para desenvolvedores do Python ](/azure/python/)
 - Para exibir runbooks de amostra do Python 2, consulte o [GitHub de Automação do Azure](https://github.com/azureautomation/runbooks/tree/master/Utility/Python).

@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 08/28/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f213acea71f22815d8b26b6c4c6cb54f64b8b34
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 1265341ecfdb7f418ea89bb0ec848a20c6b430cd
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807794"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127676"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Habilitar acesso remoto ao SharePoint com o Proxy de Aplicativo do Azure AD
 
@@ -36,6 +36,9 @@ Este artigo pressupõe que você já tenha o SharePoint 2013 ou mais recente no 
 * O SharePoint inclui suporte nativo a Kerberos. Portanto, os usuários que acessam sites internos remotamente por meio do Proxy de Aplicativo do Azure AD podem supor que terão uma experiência de SSO (logon único).
 * Esse cenário inclui algumas mudanças na configuração do seu servidor do SharePoint. É recomendável usar um ambiente de preparo. Dessa forma, você pode fazer atualizações no servidor de preparo primeiro e depois facilitar um ciclo de testes antes de passar para o de produção.
 * É necessário SSL na URL publicada. O SSL também é necessário na URL interna para fazer com que os links sejam enviados/mapeados corretamente.
+
+> [!NOTE]
+> Como prática recomendada, use domínios personalizados sempre que possível. Com um domínio personalizado, você pode configurar a mesma URL para a URL interna e a URL externa. Em seguida, o mesmo link pode ser usado para acessar o aplicativo de dentro ou de fora da sua rede. Essa configuração otimiza a experiência para usuários e outros aplicativos que precisam acessar seu aplicativo. Saiba mais sobre como [trabalhar com domínios personalizados no Azure proxy de aplicativo do AD](application-proxy-configure-custom-domain.md).
 
 ## <a name="step-1-configure-kerberos-constrained-delegation-kcd"></a>Etapa 1: configurar a KCD (Delegação Restrita de Kerberos)
 
@@ -114,7 +117,7 @@ Agora que você configurou a KCD, está pronto para configurar o Proxy de Aplica
 
 1. Publique seu site do SharePoint com as seguintes configurações. Para obter instruções passo a passo, consulte [Publicar aplicativos usando o Proxy de Aplicativo do Azure AD](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
    * **URL Interna**: a URL interna do SharePoint que foi escolhida anteriormente, por exemplo, **<https://SharePoint/>** .
-   * **Método de pré-autenticação**: Azure Active Directory
+   * **Método de pré-autenticação**: Active Directory do Azure
    * **Traduzir URL nos cabeçalhos**: NÃO
 
    > [!TIP]
@@ -127,7 +130,7 @@ Agora que você configurou a KCD, está pronto para configurar o Proxy de Aplica
    1. Na página de aplicativo no portal, selecione **Logon único**.
    1. Para o modo de logon único, selecione **Autenticação Integrada do Windows**.
    1. Defina o SPN do Aplicativo Interno para o valor que você definiu anteriormente. Neste exemplo, isso seria **HTTP/SharePoint**.
-   1. Em "Identidade de logon delegada", selecione a opção mais adequada para a sua configuração de floresta do Active Directory. Por exemplo, se você tiver um único domínio do AD em sua floresta, selecione **nome da conta SAM local** (como mostrado abaixo), mas, se os usuários não estão no mesmo domínio que o SharePoint e, em seguida, selecione os servidores de conector de Proxy de aplicativo  **Nome principal de usuário local** (não mostrado).
+   1. Em "identidade de logon delegada", selecione a opção mais adequada para sua configuração de floresta Active Directory. Por exemplo, se você tiver um único domínio do AD em sua floresta, selecione **nome da conta Sam local** (como mostrado abaixo), mas se os usuários não estiverem no mesmo domínio que o SharePoint e os servidores do conector do proxy de aplicativo, selecione **nome principal do usuário local** (não mostrado).
 
    ![Configurar a Autenticação Integrada do Windows para SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 

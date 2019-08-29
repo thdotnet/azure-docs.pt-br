@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a978e2755818e88cad580753e041eacd50a9e6d2
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 1b5615de8df42bca64822b0e459c7815412300af
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980476"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125374"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Arquivar para Novidades no Active Directory do Azure
 
@@ -1841,13 +1841,13 @@ Para obter mais informações sobre como listar seu aplicativo na galeria de apl
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Identity Protection  
-**Funcionalidade do produto:** Segurança de identidade e proteção
+**Funcionalidade do produto:** Segurança de Identidade e Proteção
 
-O insight obtido para um evento de risco detectado está vinculado à sua assinatura do Microsoft Azure AD. Com a edição Azure AD Premium P2, você obtém as informações mais detalhadas sobre todas as detecções subjacentes.
+O insight que você obtém para uma detecção de risco detectado está vinculado à sua assinatura do Azure AD. Com a edição Azure AD Premium P2, você obtém as informações mais detalhadas sobre todas as detecções subjacentes.
 
-Com a edição Azure AD Premium P1, detecções não cobertas por sua licença aparecem como o evento de risco Entrada com risco adicional detectado.
+Com a edição P1 do Azure AD Premium, as detecções que não são cobertas pela sua licença são exibidas como a entrada de detecção de risco com risco adicional detectado.
 
-Para saber mais, veja [Eventos de risco do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-risk-events).
+Para obter mais informações, consulte [Azure Active Directory as detecções de risco](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-risk-events).
  
 ---
 
@@ -1913,7 +1913,7 @@ Com a disponibilidade geral do novo Azure Active Directory, um console de Admini
 
 **O que está disponível?**
 
-Como parte da transição para o novo console de administrador, disponibilizamos duas novas APIs para recuperar os Logs de Atividades do Azure AD. O novo conjunto de APIs fornece funcionalidades de filtragem e classificação mais sofisticadas, bem como atividades mais avançadas de auditoria e de conexão. Os dados disponíveis anteriormente por meio de relatórios de segurança agora podem ser acessados por meio da API de eventos de risco do Identity Protection do Microsoft Graph.
+Como parte da transição para o novo console de administrador, disponibilizamos duas novas APIs para recuperar os Logs de Atividades do Azure AD. O novo conjunto de APIs fornece funcionalidades de filtragem e classificação mais sofisticadas, bem como atividades mais avançadas de auditoria e de conexão. Os dados anteriormente disponíveis por meio dos relatórios de segurança agora podem ser acessados por meio da API de detecções de risco da proteção de identidade no Microsoft Graph.
 
 Para obter mais informações, consulte:
 
@@ -2264,13 +2264,13 @@ Para obter mais informações, consulte [controles no acesso condicional do Azur
  
 ---
 
-### <a name="aggregation-of-real-time-risk-events"></a>Agregação de eventos de risco em tempo real
+### <a name="aggregation-of-real-time-risk-detections"></a>Agregação de detecções de risco em tempo real
 
 **Tipo:** Recurso alterado    
 **Categoria de serviço:** Identity Protection  
 **Funcionalidade do produto:** Segurança de identidade e proteção
 
-No Azure AD Identity Protection, todos os eventos de risco em tempo real que foram originados no mesmo endereço IP em determinado dia agora são agregados por tipo de evento de risco. Essa alteração limita o volume de eventos de risco mostrados sem nenhuma alteração na segurança do usuário.
+Em Azure AD Identity Protection, todas as detecções de risco em tempo real originadas do mesmo endereço IP em um determinado dia agora são agregadas para cada tipo de detecção de risco. Essa alteração limita o volume de detecções de risco mostrado sem nenhuma alteração na segurança do usuário.
 
 A detecção em tempo real subjacente funciona sempre que o usuário se conecta. Se você tiver uma política de segurança de risco de login configurada para Autenticação de vários fatores ou bloqueio de acesso, ela ainda será acionada durante cada entrada arriscada.
  
@@ -2388,7 +2388,7 @@ Para obter mais informações, consulte [Ocultar um aplicativo de terceiros da e
 
 **O que está disponível?**
 
- Como parte da transição para o novo console de administrador, duas novas APIs para recuperar os logs de atividades do Azure AD estão disponíveis. O novo conjunto de APIs fornece funcionalidades de filtragem e classificação mais sofisticadas, bem como atividades mais avançadas de auditoria e de conexão. Os dados disponíveis anteriormente por meio de relatórios de segurança agora podem ser acessados por meio da API de Eventos de Risco do Identity Protection no Microsoft Graph.
+ Como parte da transição para o novo console de administrador, duas novas APIs para recuperar os logs de atividades do Azure AD estão disponíveis. O novo conjunto de APIs fornece funcionalidades de filtragem e classificação mais sofisticadas, bem como atividades mais avançadas de auditoria e de conexão. Os dados anteriormente disponíveis por meio dos relatórios de segurança agora podem ser acessados por meio da API de detecções de risco da proteção de identidade no Microsoft Graph.
 
 
 ## <a name="september-2017"></a>Setembro de 2017

@@ -17,14 +17,18 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 719939b393b01938a4d4faa41a5dca163b2a8949
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 611947c8c1d202cf4abf4222dfe0072aced58507
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834705"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70135719"
 ---
 # <a name="authorize-access-to-azure-active-directory-web-applications-using-the-oauth-20-code-grant-flow"></a>Autorizar o acesso a aplicativos de web do Active Directory do Azure usando o fluxo de concessão de código do OAuth 2.0
+
+> [!NOTE]
+>  Se você não informar ao servidor qual recurso você planeja chamar, o servidor não irá disparar as políticas de acesso condicional para esse recurso. Portanto, para ter um gatilho MFA, você precisará incluir um recurso em sua URL. 
+>
 
 O Azure AD (Azure Active Directory) usa o OAuth 2.0 para permitir que você autorize o acesso a aplicativos Web e APIs da Web em seu locatário do Azure AD. Este guia independe do idioma e descreve como enviar e receber mensagens HTTP sem usar qualquer uma das [nossas bibliotecas de software livre](active-directory-authentication-libraries.md).
 
@@ -278,6 +282,8 @@ A especificação RFC 6750 define os erros a seguir para recursos que usam o cab
 Os Tokens de Acesso têm curta duração e deverão ser atualizados depois de expirados para continuarem acessando recursos. Você pode atualizar o `access_token` ao enviar outra solicitação `POST` ao ponto de extremidade `/token`, mas dessa vez fornecendo o `refresh_token` em vez do `code`.  Os tokens de atualização são válidos para todos os recursos já autorizados para seu cliente. Assim, um token de atualização emitido em uma solicitação para `resource=https://graph.microsoft.com` poderá ser usado para solicitar um novo token de acesso para `resource=https://contoso.com/api`. 
 
 Os tokens de atualização não têm um tempo de vida especificado. Normalmente, os tempos de vida de tokens de atualização são relativamente longos. No entanto, em alguns casos, os tokens de atualização expiram, são revogados ou não têm privilégios suficientes para a ação desejada. Seu aplicativo precisa esperar e tratar os erros retornados pelo ponto de extremidade de emissão de token corretamente.
+
+[!NOTE] Os tempos de vida do token de acesso podem ser encontrados aqui: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes#configurable-token-lifetime-properties O padrão para tokens de acesso é de 1 hora e o padrão para tokens de atualização é de 90 dias. Esses tempos de vida podem ser alterados Configurando os tempos de vida do token de acordo. 
 
 Quando você receber uma resposta com um erro de token de atualização, descarte o token de atualização atual e solicite um novo código de autorização ou um token de acesso. Em particular, quando usar um token de atualização no fluxo de Concessão de Código de Autorização, se você receber uma resposta com os códigos de erro `interaction_required` ou `invalid_grant`, descarte o token de atualização e solicite um novo código de autorização.
 

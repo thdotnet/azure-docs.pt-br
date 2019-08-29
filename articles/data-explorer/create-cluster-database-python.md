@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: caac53aec08e234f320ee4278a5a58bbc62bff68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3f58e596db26c04a8f3be4f87eb129fadf5e328
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66494572"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141747"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-python"></a>Criar um cluster e um banco de dados do Azure Data Explorer usando Python
 
@@ -66,12 +66,12 @@ pip install azure-mgmt-kusto
    |**Configuração** | **Valor sugerido** | **Descrição do campo**|
    |---|---|---|
    | cluster_name | *mykustocluster* | O nome desejado do cluster.|
-   | sku | *D13_v2* | O SKU que será usado para o cluster. |
+   | SKU | *D13_v2* | O SKU que será usado para o cluster. |
    | resource_group_name | *testrg* | O nome do grupo de recursos em que o cluster será criado. |
 
     Há outros parâmetros opcionais que podem ser usados, como a capacidade do cluster.
     
-1. Configurar [*suas credenciais*](https://docs.microsoft.com/python/azure/python-sdk-azure-authenticate?view=azure-python)
+1. Configurar [*suas credenciais*](/azure/python/python-sdk-azure-authenticate)
 
 1. Execute o comando a seguir para verificar se o cluster foi criado com êxito:
 
@@ -119,7 +119,7 @@ Agora você tem um cluster e um banco de dados.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-* Se você planeja siga nossos outros artigos, manter os recursos que você criou.
+* Se você planeja seguir nossos outros artigos, mantenha os recursos que você criou.
 * Para limpar recursos, exclua o cluster. Quando você exclui um cluster, também exclui todos os bancos de dados nele. Use o seguinte comando para excluir o cluster:
 
     ```Python

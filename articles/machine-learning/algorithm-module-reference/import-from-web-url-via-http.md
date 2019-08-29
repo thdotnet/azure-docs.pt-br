@@ -1,7 +1,7 @@
 ---
 title: 'Importar da URL da Web via HTTP: Referência de módulo'
 titleSuffix: Azure Machine Learning service
-description: Saiba como usar a importação de URL da Web por meio do módulo HTTP no serviço de Azure Machine Learning para ler dados de uma página da Web pública para uso em um experimento de machine learning.
+description: Saiba como usar o módulo importar da URL da Web via HTTP no serviço Azure Machine Learning para ler dados de uma página da Web pública para uso em um experimento do Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,74 +9,73 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
-ROBOTS: NOINDEX
-ms.openlocfilehash: bff913efb38c9e5589c795386dfbbc480d799a37
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 59b8e2e73b9904a503c16d8891e5a5bd771fc87f
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65411437"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70128748"
 ---
-# <a name="import-from-web-url-via-http-module"></a>Importar da URL da Web por meio do módulo HTTP
+# <a name="import-from-web-url-via-http-module"></a>Importar da URL da Web via módulo HTTP
 
-Este artigo descreve um módulo da interface visual (visualização) para o serviço de Azure Machine Learning.
+Este artigo descreve um módulo da interface visual (visualização) para Azure Machine Learning serviço.
 
-Use este módulo para ler dados de uma página da Web pública para uso em um experimento de machine learning.
+Use este módulo para ler dados de uma página da Web pública para uso em um experimento do Machine Learning.
 
-As seguintes restrições se aplicam a dados publicados em uma página da web:
+As seguintes restrições se aplicam aos dados publicados em uma página da Web:
 
-- Dados devem estar em um dos formatos com suporte: CSV, TSV, ARFF ou SvmLight. Outros dados causará erros.
-- Nenhuma autenticação é necessária ou com suporte. Dados devem estar publicamente disponíveis. 
+- Os dados devem estar em um dos formatos com suporte: CSV, TSV, ARFF ou SvmLight. Outros dados causarão erros.
+- Nenhuma autenticação é necessária ou tem suporte. Os dados devem estar publicamente disponíveis. 
 
-Há duas maneiras de obter dados: use o Assistente para configurar a fonte de dados ou configurá-lo manualmente.
+Há duas maneiras de obter dados: Use o assistente para configurar a fonte de dados ou configure-a manualmente.
 
-## <a name="use-the-data-import-wizard"></a>Use o Assistente de importação de dados
+## <a name="use-the-data-import-wizard"></a>Usar o assistente de importação de dados
 
-1. Adicione a **importação de dados** módulo ao seu experimento. Você pode encontrar o módulo na interface, além de **dados de entrada e saída** categoria.
+1. Adicione o módulo **importar dados** ao seu experimento. Você pode encontrar o módulo na interface, na categoria **entrada e saída de dados** .
 
-2. Clique em **iniciar o Assistente de importação de dados** e selecione a URL da Web via HTTP.
+2. Clique em **Iniciar assistente de importação de dados** e selecione URL da Web via http.
 
-3. Cole a URL e selecione um formato de dados.
+3. Cole na URL e selecione um formato de dados.
 
-4. Quando a configuração foi concluída.
+4. Quando a configuração estiver concluída.
 
-Para editar uma conexão de dados existentes, inicie o assistente novamente. O assistente carrega todos os detalhes de configuração anterior, para que você não precisa começar novamente do zero
+Para editar uma conexão de dados existente, inicie o assistente novamente. O assistente carrega todos os detalhes de configuração anteriores para que você não precise recomeçar do zero
 
 ## <a name="manually-set-properties-in-the-import-data-module"></a>Definir manualmente as propriedades no módulo importar dados
 
-As etapas a seguir descrevem como configurar manualmente a origem de importação.
+As etapas a seguir descrevem como configurar manualmente a origem da importação.
 
-1. Adicione a [importação de dados](import-data.md) módulo ao seu experimento. Você pode encontrar o módulo na interface, além de **dados de entrada e saída** categoria.
+1. Adicione o módulo [importar dados](import-data.md) ao seu experimento. Você pode encontrar o módulo na interface, na categoria **entrada e saída de dados** .
 
-2. Para **fonte de dados**, selecione **URL da Web via HTTP**.
+2. Para **fonte de dados**, selecione **URL da Web via http**.
 
 3. Para **URL**, digite ou cole a URL completa da página que contém os dados que você deseja carregar.
 
-    A URL deve incluir a URL do site e o caminho completo, com o nome de arquivo e extensão, para a página que contém os dados a serem carregados.
+    A URL deve incluir a URL do site e o caminho completo, com o nome e a extensão do arquivo, para a página que contém os dados a serem carregados.
 
-    Por exemplo, a página a seguir contém o conjunto de dados íris de repositório da Universidade da Califórnia, Irvine de aprendizado de máquina:
+    Por exemplo, a página a seguir contém o conjunto de dados íris do repositório Machine Learning da Universidade da Califórnia, Irvine:
 
     `https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data`
 
-4. Para **formato de dados**, selecione um dos dados com suporte a formatos na lista.
+4. Para **formato de dados**, selecione um dos formatos de dados com suporte na lista.
 
-    É recomendável que você sempre verifique os dados com antecedência para determinar o formato. A página de UC Irvine usa o formato CSV. Outros formatos de dados com suporte são TSV, ARFF e SvmLight.
+    É recomendável sempre verificar os dados com antecedência para determinar o formato. A página UC Irvine usa o formato CSV. Outros formatos de dados com suporte são TSV, ARFF e SvmLight.
 
-5. Se os dados estiverem no formato CSV ou TSV, use o **arquivo tem uma linha de cabeçalho** opção para indicar se a fonte de dados inclui uma linha de cabeçalho. A linha de cabeçalho é usada para atribuir nomes de coluna.
+5. Se os dados estiverem no formato CSV ou TSV, use a opção **arquivo com linha de cabeçalho** para indicar se os dados de origem incluem ou não uma linha de cabeçalho. A linha de cabeçalho é usada para atribuir nomes de coluna.
 
-6. Selecione o **usar resultados armazenados em cache** opções se você não espera que os dados de mudar muito ou se você quiser evitar a recarregar os dados de cada vez que você executar o teste.
+6. Selecione as opções **usar resultados em cache** se você não esperar que os dados mudem muito, ou se quiser evitar recarregar os dados sempre que executar o experimento.
 
-    Quando essa opção é selecionada, o experimento carrega o tempo de dados primeiro o módulo é executado e consequentemente usa uma versão em cache do conjunto de dados.
+    Quando essa opção é selecionada, o experimento carrega os dados na primeira vez em que o módulo é executado e depois usa uma versão armazenada em cache do conjunto.
 
-    Se você deseja recarregar o conjunto de dados em cada iteração do teste de conjunto de dados, desmarque a **usar resultados armazenados em cache** opção. Os resultados também são recarregados se houver alterações aos parâmetros de [importação de dados](import-data.md).
+    Se você quiser recarregar o conjunto de resultados em cada iteração do conjunto de testes de experimento, desmarque a opção **usar resultados em cache** . Os resultados também serão recarregados se houver qualquer alteração nos parâmetros dos [dados de importação](import-data.md).
 
 7. Execute o experimento.
 
 ## <a name="results"></a>Resultados
 
-Ao concluir, clique o conjunto de dados de saída e selecione **visualizar** para ver se os dados foram importados com êxito.
+Ao concluir, clique no conjunto de dados de saída e selecione **Visualizar** para ver se os dados foram importados com êxito.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [conjunto de módulos disponíveis](module-reference.md) ao serviço de Azure Machine Learning. 
+Consulte o [conjunto de módulos disponíveis](module-reference.md) para Azure Machine Learning serviço. 

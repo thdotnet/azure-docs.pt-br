@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0645e01c8ad9c620b77abd9af6cf7fe7c26ab4ea
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: d00376c6689b6be773f24e8acd09c3697fb6a799
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335415"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126304"
 ---
 # <a name="how-to-configure-the-sign-in-risk-policy"></a>Como: Configurar a política de risco de entrada
 
-O Azure Active Directory detecta [tipos de evento de risco](../reports-monitoring/concept-risk-events.md#risk-event-types) em tempo real e offline. Cada evento de risco que tiver sido detectado para a entrada de um usuário contribui para um conceito lógico chamado entrada de risco. Uma entrada de risco é um indicador de uma tentativa de logon que pode não ter sido realizada pelo proprietário legítimo de uma conta de usuário.
+Azure Active Directory detecta [tipos de detecção de risco](../reports-monitoring/concept-risk-events.md#risk-detection-types) em tempo real e offline. Cada detecção de risco que foi detectada para uma entrada de um usuário contribui para um conceito lógico chamado de entrada arriscada. Uma entrada de risco é um indicador de uma tentativa de logon que pode não ter sido realizada pelo proprietário legítimo de uma conta de usuário.
 
 ## <a name="what-is-the-sign-in-risk-policy"></a>O que é a política de risco de entrada?
 
-O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. Por exemplo, a entrada é feita usando um endereço IP anônimo ou é iniciada de um local desconhecido? No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como eventos de risco. Com base nos eventos de risco que foram detectados durante a entrada, o Azure AD calcula um valor. O valor representa a probabilidade (baixa, média, alta) de que a entrada não seja executada pelo usuário legítimo. A probabilidade é chamada de **nível de risco de entrada**.
+O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. Por exemplo, a entrada é feita usando um endereço IP anônimo ou é iniciada de um local desconhecido? No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como detecções de risco. Com base nas detecções de risco que foram detectadas durante uma entrada, o Azure AD calcula um valor. O valor representa a probabilidade (baixa, média, alta) de que a entrada não seja executada pelo usuário legítimo. A probabilidade é chamada de **nível de risco de entrada**.
 
 A política de risco de entrada é uma resposta automatizada que pode ser configurada para um nível de risco de entrada específico. Na resposta, você pode bloquear o acesso aos seus recursos ou exigir a transmissão de um desafio de MFA (autenticação multifator) para obter acesso.
    
@@ -44,11 +44,11 @@ Ao configurar a política de risco de entrada, será necessário definir:
 
 - O nível de risco de entrada que dispara a política:
 
-    ![Nível de risco da conexão](./media/howto-sign-in-risk-policy/12.png)
+    ![Nível de risco de entrada](./media/howto-sign-in-risk-policy/12.png)
 
 - O tipo de acesso que deverá ser imposto quando o nível de risco de entrada for alcançado:  
 
-    ![Acessar](./media/howto-sign-in-risk-policy/13.png)
+    ![Access](./media/howto-sign-in-risk-policy/13.png)
 
 - O estado da sua política:
 

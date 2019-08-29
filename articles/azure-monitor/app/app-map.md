@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 73cf6fd1c20f2e4208d1f7c28a756f28a2fad839
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: ce44be5bae5aaa8f86d04068cce1c4bc919b0893
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302567"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126969"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Mapa do Aplicativo: Triagem dos Aplicativos Distribuídos
 
@@ -66,7 +66,7 @@ Para solucionar problemas de desempenho selecione **Investigar o desempenho**.
 
 ![Captura de tela da experiência de desempenho](media/app-map/performance.png)
 
-### <a name="go-to-details"></a>Acessar detalhes
+### <a name="go-to-details"></a>Ir para detalhes
 
 Selecione **ir para detalhes** para explorar a experiência de transação de ponta a ponta, que pode oferecer exibições até o nível da pilha de chamadas.
 
@@ -74,7 +74,7 @@ Selecione **ir para detalhes** para explorar a experiência de transação de po
 
 ![Captura de tela de detalhes da transação de ponta a ponta](media/app-map/end-to-end-transaction.png)
 
-### <a name="view-in-analytics"></a>Exibir na análise
+### <a name="view-in-analytics"></a>Exibir no Analytics
 
 Para consultar e investigar ainda mais os dados do aplicativos, clique em **Exibir na análise**.
 
@@ -272,4 +272,6 @@ Para fornecer feedback, use a opção de feedback.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Entendendo a correlação](https://docs.microsoft.com/azure/application-insights/application-insights-correlation)
+* Para saber mais sobre como a correlação funciona em Application Insights consulte o [artigo de correlação de https://docs.microsoft.com/azure/application-insights/application-insights-correlation) telemetria] (.
+* A [experiência de diagnóstico de transação de ponta a ponta](transaction-diagnostics.md) correlaciona a telemetria do lado do servidor em todos os seus Application insights componentes monitorados em uma única exibição.
+* Para cenários de correlação avançada em ASP.NET Core e ASP.NET, consulte o artigo [rastrear operações personalizadas](custom-operations-tracking.md) .

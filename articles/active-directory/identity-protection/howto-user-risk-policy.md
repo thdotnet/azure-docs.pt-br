@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc7ea05497d69a7ca833cc783e7a2bc6bf1a8b07
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 92bfb921833d99a3538ffa8c4c5d16a9f0cd3acd
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335446"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70126293"
 ---
 # <a name="how-to-configure-the-user-risk-policy"></a>Como: Configurar a política de risco de usuário
 
@@ -26,9 +26,9 @@ Este artigo fornece as informações necessárias para configurar a política de
 
 ## <a name="what-is-a-user-risk-policy"></a>O que é uma política de risco do usuário?
 
-O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. No Microsoft Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como eventos de risco. Embora alguns eventos de risco possam podem ser detectados em tempo real, há também aqueles que exigem mais tempo. Por exemplo, para detectar uma viagem impossível a locais atípicos, o sistema requer um período inicial de aprendizado de 14 dias para conhecer melhor o comportamento normal de um usuário. Há várias opções para resolver os eventos de risco detectados. Por exemplo, você pode resolver manualmente os eventos de risco individuais ou pode obtê-los resolvidos usando um risco de entrada ou uma política de acesso condicional de risco do usuário.
+O Microsoft Azure AD analisa cada entrada de um usuário. O objetivo da análise é detectar ações suspeitas que ocorrem junto com a entrada. No Azure AD, as ações suspeitas que o sistema pode detectar também são conhecidas como detecções de risco. Embora algumas detecções de risco possam ser detectadas em tempo real, também há detecções de risco que exigem mais tempo. Por exemplo, para detectar uma viagem impossível a locais atípicos, o sistema requer um período inicial de aprendizado de 14 dias para conhecer melhor o comportamento normal de um usuário. Há várias opções para resolver as detecções de risco detectadas. Por exemplo, você pode resolver manualmente as detecções de riscos individuais ou pode obtê-las resolvidas usando um risco de entrada ou uma política de acesso condicional de risco do usuário.
 
-Todos os eventos de risco que foram detectados para um usuário e não são resolvidos são conhecidos como eventos de risco ativos. Os eventos de risco ativos que estão associados a um usuário são conhecidos como risco do usuário. Com base no risco do usuário, o Microsoft Azure AD calcula uma probabilidade (baixa, média, alta) de um usuário ter sido comprometido. A probabilidade é chamada de nível de risco do usuário.
+Todas as detecções de risco que foram detectadas para um usuário e que não foram resolvidas são conhecidas como detecções de riscos ativas. As detecções de riscos ativas associadas a um usuário são conhecidas como risco do usuário. Com base no risco do usuário, o Microsoft Azure AD calcula uma probabilidade (baixa, média, alta) de um usuário ter sido comprometido. A probabilidade é chamada de nível de risco do usuário.
 
 ![Riscos do usuário](./media/howto-user-risk-policy/1031.png)
 
@@ -54,7 +54,7 @@ Ao configurar a política de risco de entrada, será necessário definir:
 
 - O tipo de acesso que deverá ser imposto quando o nível de risco de entrada for alcançado:  
 
-    ![Acessar](./media/howto-user-risk-policy/13.png)
+    ![Access](./media/howto-user-risk-policy/13.png)
 
 - O estado da sua política:
 
@@ -72,8 +72,8 @@ A caixa de diálogo de configuração de política fornece uma opção para esti
 
 Bloquear a entrada:
 
-* impede a geração de novos eventos de risco do usuário para o usuário afetado
-* Permite aos administradores corrigir os eventos de risco que afetam a identidade do usuário manualmente, bem como restaurá-la para um estado seguro
+* Impede a geração de novas detecções de riscos de usuário para o usuário afetado
+* Permite aos administradores corrigir manualmente as detecções de risco que afetam a identidade do usuário e restaurá-lo para um estado seguro
 
 ## <a name="best-practices"></a>Práticas recomendadas
 
