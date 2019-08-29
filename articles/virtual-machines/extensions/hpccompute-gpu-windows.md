@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: roiyz
-ms.openlocfilehash: 004d6125de6762303db91f3a5ef9ffa16e6e501f
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c44722403967f3563472692f97cb2a114e6294cd
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705950"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084454"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Extensão de Driver NVIDIA GPU para Windows
 
@@ -27,7 +26,7 @@ ms.locfileid: "67705950"
 
 Essa extensão instala drivers de GPU NVIDIA em VMs série N do Windows. Dependendo da família VM, a extensão instala drivers CUDA ou grade. Quando você instalar drivers NVIDIA usando esta extensão, estará aceitando e concordando com os termos do [Contrato de Licença de Usuário Final da NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Durante o processo de instalação, a VM pode ser reinicializada para concluir a configuração do driver.
 
-Instruções sobre a instalação manual dos drivers e as versões com suporte atuais estão disponíveis [aqui](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
+As instruções sobre a instalação manual dos drivers e as versões atuais com suporte estão disponíveis [aqui](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
 Uma extensão também está disponível para instalar drivers NVIDIA GPU em [VMs da série N do Linux](hpccompute-gpu-linux.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -36,7 +35,7 @@ Uma extensão também está disponível para instalar drivers NVIDIA GPU em [VMs
 
 A Extensão suporta os seguintes OS:
 
-| Distribuição | Versão |
+| Distribuição | Version |
 |---|---|
 | Windows 10 | Core |
 | Windows Server 2016 | Core |
@@ -160,9 +159,9 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 
 ### <a name="error-codes"></a>Códigos de erro
 
-| Código do Erro | Significado | Ação possível |
+| Código de Erro | Significado | Ação possível |
 | :---: | --- | --- |
-| 0 | Operação concluída com êxito |
+| 0 | Operação com êxito |
 | 1 | Operação concluída com êxito. É necessário reiniciar. |
 | 100 | Operação sem suporte ou não pôde ser concluída. | Possíveis causas: Não há suporte para a versão do PowerShell, o tamanho da VM não é uma VM da série N, falha ao baixar dados. Verifique os arquivos de log para determinar a causa do erro. |
 | 240, 840 | Tempo limite da operação. | Operação de teste. |

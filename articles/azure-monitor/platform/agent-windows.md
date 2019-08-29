@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 8ca87f18a91af3937f8b4dd1148ecad8507e0dd5
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: HT
+ms.openlocfilehash: 5e1fe6252f396a4585b5d7d7190728b79229d5c7
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68849059"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073985"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Conectar computadores Windows ao Azure Monitor
 
@@ -204,6 +204,6 @@ Nos resultados de pesquisa retornados, você deverá ver os registros de pulsaç
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Revisar[Gerenciar e manter o agente de Log Analytics para o Windows e Linux](agent-manage.md) para aprender sobre como gerenciar o agente durante o ciclo de vida da implantação em suas máquinas.  
+- Examine [o gerenciamento e a manutenção do agente de log Analytics para Windows e Linux](agent-manage.md) para saber mais sobre como reconfigurar, atualizar ou remover o agente da máquina virtual.
 
 - Examine [a solução de problemas do agente do Windows](agent-windows-troubleshoot.md) se você encontrar problemas ao instalar ou gerenciar o agente.

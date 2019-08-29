@@ -9,19 +9,18 @@ editor: ''
 tags: azure-resource-manager
 keywords: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83319118c778d89749b1eb5d5fd792a5200c19c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6824eae4d5fed2eceaf85b9a674f980815afb260
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60835988"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70101380"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>SAP MaxDB, liveCache e implantação do Servidor de Conteúdo nas VMs do Azure
 
@@ -320,7 +319,7 @@ Informações gerais sobre como executar o SAP NetWeaver no SAP MaxDB podem ser 
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-maxdb-dbms"></a>Versões do Microsoft Windows e tipos de VM do Azure com suporte para DBMS do SAP MaxDB
 Para localizar a versão com suporte do Microsoft Windows para DBMS do SAP MaxDB no Azure, consulte:
 
-* [PAM (Matriz de Disponibilidade de Produto) da SAP][sap-pam]
+* [PAM (matriz de disponibilidade de produto) SAP][sap-pam]
 * Nota SAP [1928533]
 
 É altamente recomendável usar a versão mais recente do sistema operacional Microsoft Windows, que é o Microsoft Windows 2016.
@@ -386,7 +385,7 @@ A versão mínima do SAP liveCache com suporte nas Máquinas Virtuais do Azure �
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-livecache-dbms"></a>Versões do Microsoft Windows e tipos de VM do Azure com suporte para DBMS do SAP liveCache
 Para localizar a versão com suporte do Microsoft Windows para SAP liveCache no Azure, consulte:
 
-* [PAM (Matriz de Disponibilidade de Produto) da SAP][sap-pam]
+* [PAM (matriz de disponibilidade de produto) SAP][sap-pam]
 * Nota SAP [1928533]
 
 É altamente recomendável usar a versão mais recente do sistema operacional Microsoft Windows Server. 
@@ -428,12 +427,12 @@ No momento o SAP dá suporte ao:
 
 É altamente recomendável usar a versão mais recente do SAP Content Server, e a versão mais recente do **IIS da Microsoft**. 
 
-Verifique as versões mais recentes com suporte do SAP Content Server e do IIS da Microsoft no [PAM (Matriz de Disponibilidade de Produto) da SAP][sap-pam].
+Verifique as versões mais recentes com suporte do SAP Content Server e do Microsoft IIS no [Pam (matriz de disponibilidade de produto) da SAP][sap-pam].
 
 ### <a name="supported-microsoft-windows-and-azure-vm-types-for-sap-content-server"></a>Tipos de VM do Azure e Microsoft Windows com suporte para o SAP Content Server
 Para descobrir a versão com suporte do Windows para o SAP Content Server no Azure, consulte:
 
-* [PAM (Matriz de Disponibilidade de Produto) da SAP][sap-pam]
+* [PAM (matriz de disponibilidade de produto) SAP][sap-pam]
 * Nota SAP [1928533]
 
 É altamente recomendável usar a versão mais recente do Microsoft Windows Server.

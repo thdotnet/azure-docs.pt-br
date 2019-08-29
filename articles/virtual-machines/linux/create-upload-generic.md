@@ -11,16 +11,15 @@ ms.assetid: d351396c-95a0-4092-b7bf-c6aae0bbd112
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: szark
-ms.openlocfilehash: 1f9512e4eabf76edecef594b6b6498782725c019
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: eb6ef87edd2ff16750573c6b8c719fa4b81d3a4c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671596"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083597"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Informações para distribuições não endossadas
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -74,7 +73,7 @@ O mecanismo para recriar a imagem initrd ou initramfs pode variar dependendo da 
 ### <a name="resizing-vhds"></a>Redimensionando VHDs
 As imagens de VHD no Azure devem ter um tamanho virtual alinhado para 1MB.  Normalmente, os VHDs criados usando o Hyper-V estão alinhados corretamente.  Se o VHD não estiver alinhado corretamente, você poderá receber uma mensagem de erro semelhante à seguinte ao tentar criar uma imagem do VHD.
 
-* O VHD http:\//\<mystorageaccount >.blob.core.windows.net/vhds/MyLinuxVM.vhd tem um tamanho virtual sem suporte de 21475270656 bytes. O tamanho deve ser um número inteiro (em MBs).
+* O VHD http:\//\<mystorageaccount >. blob. Core. Windows. net/VHDs/MyLinuxVM. VHD tem um tamanho virtual sem suporte de 21475270656 bytes. O tamanho deve ser um número inteiro (em MBs).
 
 Nesse caso, redimensione a VM usando o console do Gerenciador Hyper-V ou o cmdlet do PowerShell [Resize-VHD](https://technet.microsoft.com/library/hh848535.aspx).  Se você não estiver executando em um ambiente Windows, é recomendável usar `qemu-img` para converter (se necessário) e redimensionar o VHD.
 
@@ -144,10 +143,10 @@ Se um kernel personalizado for necessário, é recomendável uma versão recente
 Os seguintes patches devem ser incluídos no kernel. Esta lista não pode ser completa para todas as distribuições.
 
 * [ata_piix: adie os discos para os drivers Hyper-V por padrão](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c)
-* [storvsc: Conta para os pacotes em trânsito no caminho RESET](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
+* [storvsc Conta para pacotes em trânsito no caminho de redefinição](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c)
 * [storvsc: evite o uso de WRITE_SAME](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090)
-* [storvsc: Desabilite WRITE SAME para RAID e drivers de adaptador de host virtual](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
-* [storvsc: Correção de desreferência de ponteiro nulo](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
+* [storvsc Desabilitar gravação idêntica para RAID e drivers de adaptador de host virtual](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43)
+* [storvsc Correção de desreferência de ponteiro nulo](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e)
 * [storvsc: as falhas do buffer de anéis podem resultar em congelamento de E/S](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951)
 * [scsi_sysfs: proteger contra a execução dupla de __scsi_remove_device](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/scsi_sysfs.c?id=be821fd8e62765de43cc4f0e2db363d0e30a7e9b)
 

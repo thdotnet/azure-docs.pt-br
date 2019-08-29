@@ -9,17 +9,16 @@ editor: ''
 ms.service: app-service
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: de9ae8e5c0cbf0997811db9624f6c6b92e03a5df
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2508090fa8831c8fefb0e710c28e512ec0c94c6e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66742946"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074147"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Endereços IP de entrada e saída no Serviço de Aplicativo do Azure
 
@@ -37,13 +36,13 @@ Independentemente do número de instâncias dimensionadas, cada aplicativo tem u
 
 ## <a name="find-the-inbound-ip"></a>Localizar o IP de entrada
 
-Basta execute o comando a seguir em um terminal local:
+Basta executar o seguinte comando em um terminal local:
 
 ```bash
 nslookup <app-name>.azurewebsites.net
 ```
 
-## <a name="get-a-static-inbound-ip"></a>Obter um endereço IP estático entrado
+## <a name="get-a-static-inbound-ip"></a>Obter um IP de entrada estático
 
 Às vezes, é possível querer um endereço IP dedicado e estático para o aplicativo. Para obter um endereço IP de entrada estático, é necessário configurar uma [associação SSL baseada em IP](app-service-web-tutorial-custom-ssl.md#secure-a-custom-domain). Se você realmente não precisar da funcionalidade SSL para proteger o aplicativo, poderá até carregar um certificado autoassinado para essa associação. Em uma associação SSL baseada em IP, o certificado é vinculado ao próprio endereço IP, portanto, o Serviço de Aplicativo fornece um endereço IP estático para que isso aconteça. 
 
@@ -53,11 +52,11 @@ Independentemente do número de instâncias dimensionadas, cada aplicativo tem u
 
 O conjunto de endereços IP de saída para o aplicativo é alterado quando você dimensiona o aplicativo entre as camadas inferiores (**Básico**, **Standard** e **Premium**) e a camada **Premium V2**.
 
-Você pode encontrar o conjunto de todos os possíveis endereços IP de saída pode usar seu aplicativo, independentemente do tipo de preço, procurando pela `possibleOutboundIPAddresses` propriedade ou na **endereços IP de saída adicionais** campo o **propriedades**  folha no portal do Azure. Consulte [Localizar IPs de saída](#find-outbound-ips).
+Você pode encontrar o conjunto de todos os endereços IP de saída possíveis que seu aplicativo pode usar, independentemente dos tipos de preço, procurando `possibleOutboundIPAddresses` a propriedade ou no campo **endereços IP de saída adicionais** na folha **Propriedades** no portal do Azure. Consulte [Localizar IPs de saída](#find-outbound-ips).
 
 ## <a name="find-outbound-ips"></a>Localizar IPs de saída
 
-Para localizar os endereços IP de saída atualmente usados pelo aplicativo no Portal do Azure, clique em **Propriedades** na navegação esquerda do aplicativo. Eles são listados na **endereços IP de saída** campo.
+Para localizar os endereços IP de saída atualmente usados pelo aplicativo no Portal do Azure, clique em **Propriedades** na navegação esquerda do aplicativo. Eles são listados no campo **endereços IP de saída** .
 
 É possível localizar as mesmas informações, executando o comando a seguir no [Cloud Shell](../cloud-shell/quickstart.md).
 
@@ -69,7 +68,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query outboundI
 (Get-AzWebApp -ResourceGroup <group_name> -name <app_name>).OutboundIpAddresses
 ```
 
-Para encontrar _todos os_ possíveis endereços IP de saída para seu aplicativo, independentemente do tipo de preço, clique em **propriedades** no painel de navegação esquerdo do seu aplicativo. Eles são listados na **endereços de IP de saída adicionais** campo.
+Para localizar _todos os_ endereços IP de saída possíveis para seu aplicativo, independentemente dos tipos de preço, clique em **Propriedades** na navegação esquerda do seu aplicativo. Eles são listados no campo **endereços IP de saída adicionais** .
 
 É possível localizar as mesmas informações, executando o comando a seguir no [Cloud Shell](../cloud-shell/quickstart.md).
 

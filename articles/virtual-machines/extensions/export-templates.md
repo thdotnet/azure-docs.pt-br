@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: 7f4e2ca6-f1c7-4f59-a2cc-8f63132de279
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: roiyz
-ms.openlocfilehash: 58e72390e4cee04b31ed983fb5fcdf5657fcca45
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6ac3a19d12b99c61dd0607b07b4659114f52400e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705998"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084612"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Exportar Grupos de Recursos que contêm extensões de VM
 
@@ -34,7 +33,7 @@ Há muitas extensões da máquina virtual disponíveis. Nem todas as extensões 
 
 As extensões a seguir podem ser exportadas com o recurso de script de automação.
 
-| Extensão ||||
+| Ramal ||||
 |---|---|---|---|
 | Acronis Backup | Datadog Windows Agent | OS Patching For Linux | VM Snapshot Linux
 | Acronis Backup Linux | Extensão do Docker | Puppet Agent |
@@ -42,7 +41,7 @@ As extensões a seguir podem ser exportadas com o recurso de script de automaç�
 | BMC CTM Agent Linux | Dynatrace Linux | Site 24x7 Linux Server |
 | BMC CTM Agent Windows | Dynatrace Windows | Site 24x7 Windows Server |
 | Chef Client | HPE Security Application Defender | Trend Micro DSA |
-| Custom Script | IaaS Antimalware | Trend Micro DSA Linux |
+| Script Personalizado | IaaS Antimalware | Trend Micro DSA Linux |
 | Extensão de script personalizado | Diagnóstico do IaaS | Acesso de VM para Linux |
 | Script Personalizado para Linux | Linux Chef Client | Acesso de VM para Linux |
 | Datadog Linux Agent | Diagnóstico do Linux | VM Snapshot |

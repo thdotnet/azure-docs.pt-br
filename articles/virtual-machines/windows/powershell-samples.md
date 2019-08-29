@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 03/01/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9aea63b8366bf974fd89c32105bea707ad72c8a5
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: c106ee2110a8c023ab3ed4f2ec9903fc5ca146b2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719989"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088965"
 ---
 # <a name="azure-virtual-machine-powershell-samples"></a>Amostras do PowerShell de máquina virtual do Azure
 
@@ -49,6 +48,6 @@ A tabela a seguir fornece links para amostras de script do PowerShell que criam 
 |**Proteger máquinas virtuais**||
 | [Criptografar uma VM e seus discos de dados](./../scripts/virtual-machines-windows-powershell-sample-encrypt-vm.md?toc=%2fpowershell%2fazure%2ftoc.json) | Cria um cofre de chaves do Azure, uma chave de criptografia e uma entidade de serviço e, em seguida, criptografa uma VM. |
 |**Monitorar máquinas virtuais**||
-| [Monitorar uma VM com o Azure Monitor](./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Cria uma máquina virtual, instala o agente do Azure Log Analytics e registra a VM em um espaço de trabalho do Log Analytics.  |
-| [Coletar detalhes sobre todas as VMs em uma assinatura com o PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Cria um csv que contém o nome de VM, grupo de recursos de nome, região, rede Virtual, sub-rede, endereço IP privado, tipo de sistema operacional e endereço IP das VMs na assinatura fornecida.
+| [Monitorar uma VM com Azure Monitor](./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Cria uma máquina virtual, instala o agente do Azure Log Analytics e registra a VM em um espaço de trabalho do Log Analytics.  |
+| [Coletar detalhes sobre todas as VMs em uma assinatura com o PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) | Cria um CSV que contém o nome da VM, o nome do grupo de recursos, a região, a rede virtual, a sub-rede, o endereço IP privado, o tipo de so e o endereço IP público das VMs na assinatura fornecida.
 | | |

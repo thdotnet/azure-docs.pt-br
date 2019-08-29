@@ -8,19 +8,18 @@ manager: gwallace
 editor: ''
 ms.assetid: 5e041ae2-25af-4882-a79e-3aa63c4bfb20
 ms.service: batch
-ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: bb4c71f2c7f42ef599796bc380bb7a9f35b8c64e
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 60662e723a55c969fdd4b70e732303c90bbf9e8b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322769"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70094350"
 ---
 # <a name="use-visual-studio-project-templates-to-jump-start-batch-solutions"></a>Usar modelos de projeto do Visual Studio para iniciar rapidamente soluções em lote
 
@@ -191,7 +190,7 @@ Os códigos de saída e exceções fornecem um mecanismo para determinar o resul
 
 Uma tarefa do Gerenciador de trabalho implementada com o modelo do Gerenciador de trabalho pode retornar três códigos de saída possíveis:
 
-| Código | DESCRIÇÃO |
+| Código | Descrição |
 | --- | --- |
 | 0 |O Gerenciador de trabalho foi concluído com sucesso. O código do divisor de trabalho executou até a conclusão, e todas as tarefas foram adicionadas ao trabalho. |
 | 1 |A tarefa do Gerenciador de trabalho falhou com uma exceção em uma parte “esperada” do programa. A exceção foi convertida para um JobManagerException com informações de diagnóstico e, quando possível, sugestões para resolver a falha. |
@@ -369,7 +368,7 @@ Os códigos de saída e exceções fornecem um mecanismo para determinar o resul
 
 Uma tarefa do Processador de tarefas implementada com o modelo do Processador de tarefas pode retornar três códigos de saída possíveis:
 
-| Código | DESCRIÇÃO |
+| Código | Descrição |
 | --- | --- |
 | [Process. ExitCode][process_exitcode] |O Processador de tarefas foi executado até a conclusão. Observe que isso não significa que o programa invocado foi bem-sucedida, apenas que o Processador de tarefas o invocou e executou com êxito qualquer pós-processamento sem exceções. O significado do código de saída depende do programa invocado, normalmente o código de saída 0 significa que o programa foi bem-sucedido e qualquer outro código de saída significa que o programa falhou. |
 | 1 |A tarefa do Processador de tarefas falhou com uma exceção em uma parte “esperada” do programa. A exceção foi convertida para um `TaskProcessorException` com informações de diagnóstico e, quando possível, sugestões para resolver a falha. |

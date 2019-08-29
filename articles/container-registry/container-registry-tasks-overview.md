@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: danlep
-ms.openlocfilehash: 65debc8c65752150651d00d84eeff469cefbc268
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1459b6fc45bb3d875b4869d1dcb4302dec21eb96
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68311880"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114797"
 ---
 # <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Automatizar compilações de imagem de contêiner e manutenção com tarefas ACR
 
@@ -56,7 +56,7 @@ Saiba como usar as tarefas rápidas no primeiro tutorial das Tarefas do ACR, [Co
 
 ## <a name="automatic-build-on-source-code-commit"></a>Build automático na confirmação de código-fonte
 
-Use as Tarefas do ACR para disparar automaticamente um build de imagem de contêiner quando o código é confirmado para um repositório Git. Tarefas de compilação, configuráveis com o comando CLI do Azure [AZ ACR Task][az-acr-task], permitem que você especifique um repositório git e, opcionalmente, uma ramificação e Dockerfile. Quando sua equipe confirmar o código para o repositório, um webhook criado nas Tarefas do ACR disparará um build de imagem de contêiner definido no repositório.
+Use tarefas ACR para disparar automaticamente uma compilação de imagem de contêiner quando o código for confirmado em um repositório git no GitHub ou no Azure DevOps. Tarefas de compilação, configuráveis com o comando CLI do Azure [AZ ACR Task][az-acr-task], permitem que você especifique um repositório git e, opcionalmente, uma ramificação e Dockerfile. Quando sua equipe confirmar o código para o repositório, um webhook criado nas Tarefas do ACR disparará um build de imagem de contêiner definido no repositório.
 
 > [!IMPORTANT]
 > Se você já tiver criado tarefas durante a versão prévia com o comando `az acr build-task`, essas tarefas precisarão ser recriadas usando o comando [az acr task][az-acr-task].
@@ -73,10 +73,14 @@ Quando um sistema operacional ou uma imagem de estrutura de aplicativo é atuali
 
 Como as Tarefas do ACR descobrem dinamicamente as dependências da imagem base quando criam uma imagem de contêiner, elas podem detectar quando a imagem base de uma imagem de aplicativo é atualizada. Com uma [tarefa de build](container-registry-tutorial-base-image-update.md#create-a-task) pré-configurada, as Tarefas do ACR **recriam automaticamente cada imagem do aplicativo** para você. Com essa detecção e recriação automáticas, as Tarefas do ACR poupam o tempo e o esforço normalmente necessários para acompanhar e atualizar manualmente cada imagem de aplicativo que faz referência à imagem base atualizada.
 
-Saiba mais sobre a aplicação de patch no sistema operacional e na estrutura no terceiro tutorial das Tarefas do ACR, [Automatizar builds de imagem na atualização da imagem de base com as Tarefas do Registro de Contêiner do Azure](container-registry-tutorial-base-image-update.md).
+Uma tarefa ACR controla uma atualização de imagem base quando a imagem base está em um dos seguintes locais:
 
-> [!NOTE]
-> Atualmente, as atualizações de imagem de base acionam compilações somente quando as imagens base e de aplicativo residem no mesmo registro de contêiner do Azure ou a base reside em um hub público do Docker ou no repositório do registro de contêiner da Microsoft.
+* O mesmo registro de contêiner do Azure em que a tarefa é executada
+* Outro registro de contêiner do Azure na mesma região 
+* Um repositório público no Hub do Docker
+* Um repositório público no registro de contêiner da Microsoft
+
+Saiba mais sobre aplicação de patches do sistema operacional e da estrutura no terceiro tutorial de tarefas do ACR, [Automatize a criação de imagens na atualização da imagem base com as tarefas do registro de contêiner do Azure](container-registry-tutorial-base-image-update.md).
 
 ## <a name="multi-step-tasks"></a>Tarefas de várias etapas
 

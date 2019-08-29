@@ -8,74 +8,81 @@ manager: gwallace
 ms.assetid: ''
 ms.service: virtual-machines
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 10/3/2018
 ms.author: genli
-ms.openlocfilehash: 1db5829abd52a1b010d38dd8e9151ab2df3f1de5
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: ed1873fa8e74b2af5734411dc80aeb9089b61a7e
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854398"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080447"
 ---
 # <a name="troubleshooting-azure-virtual-machines"></a>Solução de problemas de máquinas virtuais do Azure
 
-- Falhas na alocação
-    - [Falhas na alocação](allocation-failure.md)
-    - [Falhas de alocação em implantações clássicas](allocation-failure-classic.md)
+## <a name="tools-for-troubleshooting"></a>Ferramentas para solução de problemas
+
+- [Console serial](serial-console-windows.md)
 - [Diagnóstico de inicialização](boot-diagnostics.md)
-- RDP
-    - [Redefinir RDP](reset-rdp.md)
-    - [Solução de problemas do RDP](troubleshoot-rdp-connection.md)
-    - [Solução de problemas detalhada do RDP](detailed-troubleshoot-rdp.md)
-    - [Solucionar erros específicos](troubleshoot-specific-rdp-errors.md)
-- SSH 
-    - [Solução de problemas de SSH](troubleshoot-ssh-connection.md)
-    - [Solução de problemas detalhada de SSH](detailed-troubleshoot-ssh-connection.md)
-    - [Mensagens de erro comuns](error-messages.md)
-- [Instalar o agente de VM do Windows offline](install-vm-agent-offline.md)
-- Solução de problemas de desempenho de VM
-    - [Problemas de desempenho com as VMs](performance-diagnostics.md)
-    - Windows
-        - [Como usar o PerfInsights](how-to-use-perfinsights.md)
-        - [Extensão Performance Diagnostics](performance-diagnostics-vm-extension.md)
-    - Linux
-        - [Como usar o PerfInsights](how-to-use-perfinsights-linux.md)
+- [VM do Windows: Anexe o disco do SO a outra VM para solucionar problemas](troubleshoot-recovery-disks-portal-windows.md)
+- [VM do Linux: Anexe o disco do SO a outra VM para solucionar problemas](troubleshoot-recovery-disks-portal-linux.md)
+
+## <a name="cant-connect-to-the-vm"></a>Não é possível conectar à VM
+
+### <a name="windows"></a>Windows
+
+**Solução comum**
+
+- [Redefinir RDP](reset-rdp.md)
+- [Solução de problemas do RDP](troubleshoot-rdp-connection.md)
+- [Solução de problemas detalhada do RDP](detailed-troubleshoot-rdp.md)
+
+**Erros do RDP**
+
+- [Nenhum servidor de licença](troubleshoot-rdp-no-license-server.md)
+- [Um ](Troubleshoot-rdp-internal-error.md) interno
+- [erros de autenticação](troubleshoot-authentication-error-rdp-vm.md)
+- [Solucionar erros específicos](troubleshoot-specific-rdp-errors.md)
+
+**Erros de inicialização da VM**
+
+* [Erros de inicialização do BitLocker](troubleshoot-bitlocker-boot-error.md) 
+* [O Windows mostra "Verificando sistema de arquivos" durante a inicialização](troubleshoot-check-disk-boot-error.md)
+* [Erros de tela azul](troubleshoot-common-blue-screen-error.md)
+* [A inicialização da VM está parada em "Preparando o Windows"](troubleshoot-vm-boot-configure-update.md)
+* [Erro "FALHA DE SERVIÇO CRÍTICO" na tela azul](troubleshoot-critical-service-failed-boot-error.md)
+* [Problema de loop de reinicialização](troubleshoot-reboot-loop.md)
+* [A inicialização da VM está parada no estágio do Windows Update](troubleshoot-stuck-updating-boot-error.md)
+* [VM é inicializada no Modo de Segurança](troubleshoot-rdp-safe-mode.md)
+
+**Outros**
+- [Redefinir senha da VM para a VM Windows offline](reset-local-password-without-agent.md)
+- [Redefinir NIC após configuração incorreta](reset-network-interface.md)
+
+### <a name="linux"></a>Linux
+
+- [Solução de problemas de SSH](troubleshoot-ssh-connection.md)
+- [Solução de problemas detalhada de SSH](detailed-troubleshoot-ssh-connection.md)
+- [Mensagens de erro comuns](error-messages.md)
+- [Redefinir senha da VM para a VM Linux offline](reset-password.md)
+
+## <a name="vm-deployment-issues"></a>Problemas de implantação da VM
+
+- [Falhas na alocação](allocation-failure.md)
 - Reimplantar uma VM
     - [Linux](redeploy-to-new-node-linux.md)
     - [Windows](redeploy-to-new-node-windows.md)
-- Redefinir senha da VM
-    - [Windows](reset-local-password-without-agent.md)
-    - [Linux](reset-password.md)
-- [Redefinir NIC](reset-network-interface.md)
-- [Reinicializar ou redimensionar uma VM](restart-resize-error-troubleshooting.md)
-- Usar o console serial
-    - [VM Linux](serial-console-linux.md)
-        - [Modo de usuário GRUB/Único do Console serial](serial-console-grub-single-user-mode.md)
-        - [NMI/SysRq de console serial](serial-console-nmi-sysrq.md)
-    - [VM Windows](serial-console-windows.md)
-        - [Comandos de CMD e do PowerShell](serial-console-cmd-ps-commands.md)
-- [Erros ao excluir recursos de armazenamento](storage-resource-deletion-errors.md      )
-- [Reinicializações inesperadas de VMs com VHDs anexados](unexpected-reboots-attached-vhds.md)
-- [Problemas de ativação do Windows](troubleshoot-activation-problems.md)
-- [Problemas de acesso do aplicativo](troubleshoot-app-connection.md)
 - Solucionar problemas das implantações
     - [Linux](troubleshoot-deploy-vm-linux.md)
     - [Windows](troubleshoot-deploy-vm-windows.md)
 - [Os nomes do dispositivo foram alterados](troubleshoot-device-names-problems.md)
-- Acesso de recuperação da VM
-    - Windows
-        - [PowerShell](troubleshoot-recovery-disks-windows.md)
-        - [Portal do Azure](troubleshoot-recovery-disks-portal-windows.md)
-    - Linux
-        - [CLI](troubleshoot-recovery-disks-linux.md)
-    - [Portal do Azure](troubleshoot-recovery-disks-portal-linux.md)
-- [Erros de inicialização](boot-error-troubleshoot.md)
-- [Erros do BitLocker](troubleshoot-bitlocker-boot-error.md)
-- [Verificação de erros do sistema de arquivos](troubleshoot-check-disk-boot-error.md)
-- [Erros de tela azul](troubleshoot-common-blue-screen-error.md)
-- [Erros de limitação](troubleshooting-throttling-errors.md)
-- [Usar virtualização aninhada](troubleshoot-vm-by-use-nested-virtualization.md)
-- [Entender uma reinicialização do sistema](understand-vm-reboot.md)
+- [Instalar o agente de VM do Windows offline](install-vm-agent-offline.md)
+- [Reinicializar ou redimensionar uma VM](restart-resize-error-troubleshooting.md)
 
+## <a name="vm-performance-issue"></a>Problema de desempenho da VM
+- [Problemas de desempenho com as VMs](performance-diagnostics.md)
+- Windows
+    - [Como usar o PerfInsights](how-to-use-perfinsights.md)
+    - [Extensão Performance Diagnostics](performance-diagnostics-vm-extension.md)
+- Linux
+    - [Como usar o PerfInsights](how-to-use-perfinsights-linux.md)

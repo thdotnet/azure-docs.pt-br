@@ -9,12 +9,12 @@ ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.topic: conceptual
 ms.date: 07/19/2019
-ms.openlocfilehash: e1285f6bc3bd081eae03cf1e5a124a86cac7a2ae
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 62b96fa8722408aed81e87cb31218140fa4f5da8
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335979"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099403"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Modelo de preços para os Aplicativos Lógicos do Azure
 
@@ -61,7 +61,7 @@ Um [ISE ( *ambiente do serviço de integração* )](../logic-apps/connect-virtua
 
   * **SKU do desenvolvedor**: Até quatro contas padrão ou até 5 contas padrão... Nenhuma conta básica.
 
-Para obter mais informações sobre limites de conta de integração, consulte [limites e configuração de aplicativos lógicos](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Você pode aprender mais sobre [as camadas de conta de integração e seu modelo de preços](#integration-accounts) posteriormente neste tópico. 
+Para obter mais informações sobre limites de conta de integração, consulte [limites e configuração de aplicativos lógicos](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits). Você pode aprender mais sobre [as camadas de conta de integração e seu modelo de preços](#integration-accounts) posteriormente neste tópico.
 
 Para o SKU do ISE Premium, a unidade base tem capacidade fixa, portanto, se você precisar de mais taxa de transferência, poderá [adicionar mais unidades de escala](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#add-capacity), seja durante a criação ou depois. A SKU do ISE do desenvolvedor não tem a capacidade de adicionar mais unidades de escala. Os aplicativos lógicos executados em um ISE não incorrem em custos de retenção de dados.
 

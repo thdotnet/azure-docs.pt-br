@@ -5,12 +5,12 @@ ms.subservice: single-database
 ms.topic: include
 ms.date: 07/31/2019
 ms.author: mathoma
-ms.openlocfilehash: d19e21edd31be461ba30e8985e80c4651bbbb02d
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: d4c426c5fe31f8fc2bfaf4697c05456124cafcb1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69894158"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099083"
 ---
 Nesta etapa, você criará um banco de dados individual do Banco de Dados SQL do Azure. 
 
@@ -23,8 +23,8 @@ Nesta etapa, você criará um banco de dados individual do Banco de Dados SQL do
 
 Crie o grupo de recursos e o banco de dados individual usando o portal do Azure.
 
-1. Selecione **SQL do Azure** no menu à esquerda do portal do Azure. Se o **SQL do Azure** não estiver na lista, selecione **Todos os serviços** e, em seguida, digite *SQL do Azure* na caixa de pesquisa.
-2. Selecione **+Adicionar** para abrir a página **Selecionar opção de implantação do SQL**. Você pode exibir informações adicionais sobre os diferentes bancos de dados selecionando **Mostrar detalhes** no bloco **Bancos de dados**.
+1. Selecione **SQL do Azure** no menu de navegação do [portal do Azure](https://portal.azure.com) à esquerda. Se o **SQL do Azure** não estiver na lista, selecione **Todos os serviços** e, em seguida, digite *SQL do Azure* na caixa de pesquisa. (Opcional) Selecione a estrela ao lado de **SQL do Azure** para marcá-lo como favorito e adicioná-lo como um item no menu de navegação à esquerda. 
+2. Selecione **+ Adicionar** para abrir a página **Selecionar opção de implantação do SQL**. Você pode exibir informações adicionais sobre os diferentes bancos de dados selecionando **Mostrar detalhes** no bloco **Bancos de dados**.
 3. Selecione **Criar**:
 
    ![Criar banco de dados individual](../media/sql-database-get-started-portal/create-single-database.png)
@@ -43,7 +43,7 @@ Crie o grupo de recursos e o banco de dados individual usando o portal do Azure.
        - **Nome do servidor**: Digite `mysqlserver`, juntamente com alguns números para exclusividade.
        - **Logon de administrador do servidor**: Digite `azureuser`.
        - **Senha**: Digite uma senha complexa que atenda aos requisitos de senha.
-       - **Localização**: Escolha uma localização na lista suspensa, como `West US 2`.
+       - **Localização**: Escolha uma localização na lista suspensa, como `West US`.
 
          ![Novo servidor](../media/sql-database-get-started-portal/new-server.png)
 
@@ -86,7 +86,7 @@ Crie o grupo de recursos e o banco de dados individual usando o PowerShell.
    # Set variables for your server and database
    $subscriptionId = '<SubscriptionID>'
    $resourceGroupName = "myResourceGroup-$(Get-Random)"
-   $location = "West US 2"
+   $location = "West US"
    $adminLogin = "azureuser"
    $password = "PWD27!"+(New-Guid).Guid
    $serverName = "mysqlserver-$(Get-Random)"

@@ -9,19 +9,18 @@ editor: ''
 tags: azure-service-management
 ms.assetid: ab8d41a7-1971-4032-ab71-eb435c455dc1
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/17/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e20e2a094e1fd88dfc2a25b586dc6c894f92b418
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 96d2dc567a4ccc96d33c2ccac233268a5b9148e4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62108453"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100347"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-classic"></a>Configurar a Integração do Azure Key Vault para SQL Server em Máquinas Virtuais do Azure (Clássicas)
 > [!div class="op_single_selector"]
@@ -51,7 +50,7 @@ Primeiro, [instale a extensão IaaS do SQL Server](../classic/sql-server-agent-e
 ### <a name="understand-the-input-parameters"></a>Compreender os parâmetros de entrada
 A tabela a seguir lista os parâmetros necessários para executar o script do PowerShell na próxima seção.
 
-| Parâmetro | DESCRIÇÃO | Exemplo |
+| Parâmetro | Descrição | Exemplo |
 | --- | --- | --- |
 | **$akvURL** |**A URL do cofre da chave** |"https:\//contosokeyvault.vault.azure.net/" |
 | **$spName** |**Nome da Entidade de Serviço** |"fde2b411-33d5-4e11-af04eb07b669ccf2" |

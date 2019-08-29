@@ -9,26 +9,25 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/19/2019
 ms.author: haroldw
-ms.openlocfilehash: af6746e7246b8783e5bdbef34cf1b57427aa7ebb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31512bb264b5e998e5b6adc76d37c82c174933be
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771270"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091698"
 ---
 # <a name="troubleshoot-openshift-deployment-in-azure"></a>Solução de problemas de implantação do OpenShift no Azure
 
 Se o cluster do OpenShift não for implantado com êxito, o portal do Azure fornecerá a saída de erro. A saída pode ser difícil de ler, o que dificulta a identificação do problema. Examine rapidamente essa saída para o código de saída 3, 4 ou 5. A seguir, informações sobre esses três códigos de saída:
 
-- Código de saída 3: Seu nome de usuário de assinatura do Red Hat / senha ou ID / chave de ativação estão incorreta
-- Código de saída 4: Sua ID do Pool do Red Hat está incorreta ou não há direitos disponíveis
-- Código de saída 5: Não foi possível provisionar o Volume do Pool dinâmico do Docker
+- Código de saída 3: O nome de usuário/senha da sua assinatura do Red Hat ou a ID da organização/chave de ativação está incorreta
+- Código de saída 4: A ID do pool Red Hat está incorreta ou não há direitos disponíveis
+- Código de saída 5: Não é possível provisionar o volume do pool fino do Docker
 
 Para todos os outros códigos de saída, conecte-se ao (s) host (s) via ssh para visualizar os arquivos de log.
 
@@ -42,9 +41,9 @@ SSH para o host ansioso playbook. Para o modelo OLD (versão 3.9 e anterior), us
 
 ## <a name="log-files"></a>Arquivos de log
 
-Os arquivos de log (stderr e stdout) para os scripts de preparação de host estão localizados em `/var/lib/waagent/custom-script/download/0` em todos os hosts. Se ocorreu um erro durante a preparação do host, exiba esses arquivos de log para determinar o erro.
+Os arquivos de log (stderr e stdout) para os scripts de preparação do host `/var/lib/waagent/custom-script/download/0` estão localizados em em todos os hosts. Se ocorreu um erro durante a preparação do host, exiba esses arquivos de log para determinar o erro.
 
-Se os scripts de preparação foi executado com êxito, em seguida, os arquivos de log no `/var/lib/waagent/custom-script/download/1` diretório do host de guia estratégico do ansible precisam ser examinados. Se o erro ocorreu durante a instalação real do OpenShift, o arquivo stdout exibirá o erro. Use estas informações para entrar em contato com o Suporte para obter mais assistência.
+Se os scripts de preparação forem executados com êxito, os arquivos de log `/var/lib/waagent/custom-script/download/1` no diretório do host do guia estratégico Ansible precisarão ser examinados. Se o erro ocorreu durante a instalação real do OpenShift, o arquivo stdout exibirá o erro. Use estas informações para entrar em contato com o Suporte para obter mais assistência.
 
 Saída de exemplo
 
@@ -93,11 +92,11 @@ Os erros mais comuns durante a instalação são:
 
 ### <a name="private-key-has-a-passphrase"></a>Chave privada tem uma senha
 
-Você verá um erro que a permissão foi negada para o ssh. SSH para o host de guia estratégico do ansible para verificar se há uma senha na chave privada.
+Você verá um erro de que a permissão foi negada para SSH. SSH para o host do manual do Ansible para verificar uma frase secreta na chave privada.
 
 ### <a name="key-vault-secret-with-private-key-wasnt-created-correctly"></a>O segredo do cofre da chave com chave privada não foi criado corretamente
 
-A chave privada é copiada para o host de guia estratégico do ansible - ~/.ssh/id_rsa. Confirme se este arquivo está correto. Teste abrindo uma sessão SSH em um dos nós do cluster a partir do ansible host do manual.
+A chave privada é copiada no host do guia estratégico Ansible-~/.ssh/id_rsa. Confirme se este arquivo está correto. Teste abrindo uma sessão SSH em um dos nós do cluster a partir do ansible host do manual.
 
 ### <a name="service-principal-credentials-were-entered-incorrectly"></a>As credenciais do principal de serviço foram inseridas incorretamente
 
@@ -119,5 +118,5 @@ az group update -g <openshift resource group> --set tags.sptest=test
 
 Para alguns erros, você também pode usar os seguintes comandos para obter mais informações:
 
-1. status de systemctl \<serviço >
+1. > de \<serviço de status systemctl
 2. journalctl -xe

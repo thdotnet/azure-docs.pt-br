@@ -9,18 +9,17 @@ editor: ''
 tags: ''
 ms.assetid: 28d8e1f2-8e61-4fbe-bfe8-80a68443baba
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
-ms.openlocfilehash: ddd34147848ecb3a964eac3d618b452f5eb43f19
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 087f27b3857363c0b5f244ecd52ebd64105626b5
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710296"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102395"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Serviço de Metadados do Azure: Eventos Agendados para VMs do Windows
 
@@ -45,10 +44,10 @@ Muitos aplicativos podem se beneficiar do tempo para se preparar para a manuten�
 Usando eventos agendados, seu aplicativo pode descobrir quando a manutenção ocorrerá e acionará tarefas para limitar seu impacto. Habilitar eventos agendados, oferece sua máquina virtual uma quantidade mínima de tempo antes que a atividade de manutenção é realizada. Consulte a seção de agendamento do evento abaixo para obter detalhes.
 
 Os eventos agendados fornecem eventos nos seguintes casos de uso:
-- [Manutenção iniciada na plataforma](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates) (por exemplo, VM reinicialização, migração ao vivo ou atualizações para o host de preservação da memória)
+- [Manutenção iniciada pela plataforma](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates) (por exemplo, reinicialização de VM, migração dinâmica ou preservar a memória para host)
 - Hardware degradado
 - Manutenção iniciada pelo usuário (por exemplo, o usuário reinicia ou reimplanta uma VM)
-- [Remoção de VMs de baixa prioridade](https://azure.microsoft.com/blog/low-priority-scale-sets) conjuntos de dimensionamento
+- [Remoção de VM de baixa prioridade](https://azure.microsoft.com/blog/low-priority-scale-sets) em conjuntos de dimensionamento
 
 ## <a name="the-basics"></a>Noções básicas  
 
@@ -64,11 +63,11 @@ Se a Máquina Virtual não for criada em uma Rede Virtual, casos padrão para se
 ### <a name="version-and-region-availability"></a>Disponibilidade de Versão e Região
 O serviço de eventos agendados tem controle de versão. As versões são obrigatórias e a versão atual é `2017-11-01`.
 
-| Versão | Tipo de Versão | Regions | Notas de versão | 
+| Version | Tipo de Versão | Regions | Notas de versão | 
 | - | - | - | - |
-| 2017-11-01 | Disponibilidade geral | Todos | <li> Adicionado suporte para remoção de VMs de baixa prioridade EventType 'Preempt'<br> | 
-| 2017-08-01 | Disponibilidade geral | Todos | <li> Removido o sublinhado inicial dos nomes de recursos para as VMs de IaaS<br><li>Requisito de cabeçalho de metadados imposto para todas as solicitações | 
-| 2017-03-01 | Visualizar | Todos |<li>Versão inicial
+| 2017-11-01 | Disponibilidade geral | Todas | <li> Suporte adicionado para a remoção de VM de baixa prioridade do EventType ' preempt '<br> | 
+| 2017-08-01 | Disponibilidade geral | Todas | <li> Removido o sublinhado inicial dos nomes de recursos para as VMs de IaaS<br><li>Requisito de cabeçalho de metadados imposto para todas as solicitações | 
+| 2017-03-01 | Visualizar | Todas |<li>Versão inicial
 
 > [!NOTE] 
 > Versões de visualização anteriores de eventos agendados compatíveis {mais recentes} como a api-version. Esse formato não é mais suportado e será substituído no futuro.
@@ -91,7 +90,7 @@ Ao consultar o Serviço de Metadados você deverá fornecer o cabeçalho `Metada
 ### <a name="query-for-events"></a>Consulta de eventos
 Você pode consultar Eventos agendados realizando a chamada a seguir:
 
-#### <a name="powershell"></a>Powershell
+#### <a name="powershell"></a>PowerShell
 ```
 curl http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01 -H @{"Metadata"="true"}
 ```
@@ -116,10 +115,10 @@ No caso de haver eventos agendados, a resposta contém uma matriz de eventos:
 O DocumentIncarnation é uma ETag e fornece uma maneira fácil de inspecionar se a carga de eventos foi alterada desde a última consulta.
 
 ### <a name="event-properties"></a>Propriedades do evento
-|Propriedade  |  DESCRIÇÃO |
+|Propriedade  |  Descrição |
 | - | - |
 | EventId | Identificador global exclusivo para esse evento. <br><br> Exemplo: <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
-| EventType | Impacto desse evento. <br><br> Valores: <br><ul><li> `Freeze`: A máquina Virtual está agendada para pausar por alguns segundos. Conectividade de rede e CPU pode ser suspenso, mas não há nenhum impacto na memória ou em arquivos abertos. <li>`Reboot`: A Máquina Virtual está agendada para ser reinicializada (a memória não persistente é perdida). <li>`Redeploy`: A Máquina Virtual está agendada para ser movida para outro nó (os discos efêmeros são perdidos). <li>`Preempt`: A máquina Virtual de baixa prioridade está sendo excluída (discos efêmeros são perdidos).|
+| EventType | Impacto desse evento. <br><br> Valores: <br><ul><li> `Freeze`: A máquina virtual está agendada para pausar por alguns segundos. A conectividade de CPU e de rede pode ser suspensa, mas não há nenhum impacto na memória ou em arquivos abertos. <li>`Reboot`: A Máquina Virtual está agendada para ser reinicializada (a memória não persistente é perdida). <li>`Redeploy`: A Máquina Virtual está agendada para ser movida para outro nó (os discos efêmeros são perdidos). <li>`Preempt`: A máquina virtual de baixa prioridade está sendo excluída (discos efêmeros são perdidos).|
 | ResourceType | Tipo de recurso que esse evento impacta. <br><br> Valores: <ul><li>`VirtualMachine`|
 | Recursos| Lista de recursos que esse evento impacta. Isso é garantido para conter máquinas de no máximo um [Domínio de Atualização](manage-availability.md), mas pode não conter todas as máquinas no UD. <br><br> Exemplo: <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | Status do evento | Status desse evento. <br><br> Valores: <ul><li>`Scheduled`: Esse evento está agendado para ser iniciado após o tempo especificado na propriedade `NotBefore`.<li>`Started`: Esse evento foi iniciado.</ul> Não `Completed` status semelhante já foi fornecido; o evento não será mais retornado quando o evento for concluído.
@@ -131,9 +130,9 @@ Cada evento é agendado uma quantidade mínima de tempo no futuro com base no ti
 |EventType  | Aviso mínimo |
 | - | - |
 | Congelamento| 15 minutos |
-| Reboot | 15 minutos |
+| Reinicializar | 15 minutos |
 | Reimplantar | 10 minutos |
-| Antecipe | 30 segundos |
+| Ocupa | 30 segundos |
 
 ### <a name="event-scope"></a>Escopo do Evento     
 Os eventos agendados são entregues a:
@@ -159,7 +158,7 @@ A seguir vemos o json esperado no corpo da solicitação `POST`. A solicitação
 }
 ```
 
-#### <a name="powershell"></a>Powershell
+#### <a name="powershell"></a>PowerShell
 ```
 curl -H @{"Metadata"="true"} -Method POST -Body '{"StartRequests": [{"EventId": "f020ba2e-3bc0-4c40-a10b-86575a9eabd5"}]}' -Uri http://169.254.169.254/metadata/scheduledevents?api-version=2017-11-01
 ```

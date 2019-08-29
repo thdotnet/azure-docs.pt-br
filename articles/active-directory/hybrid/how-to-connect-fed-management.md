@@ -18,12 +18,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 021e13dafcc659337d4096a068e224312e69db1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7249f2077666530964afa16ef47d69731cee846a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60353370"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085219"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Gerenciar e personalizar os Serviços de Federação do Active Directory usando o Azure AD Connect
 Este artigo descreve como gerenciar e personalizar os Serviços de Federação do Active Directory (AD FS) usando o Azure Active Directory (Azure AD) Connect. Ele também inclui outras tarefas comuns do AD FS que você pode precisar realizar para obter uma configuração completa de um farm do AD FS.
@@ -32,7 +32,7 @@ Este artigo descreve como gerenciar e personalizar os Serviços de Federação d
 |:--- |:--- |
 | **Gerenciar o AD FS** | |
 | [Reparar a relação de confiança](#repairthetrust) |Como reparar a confiança de federação com o Office 365. |
-| [Federar ao Azure AD usando a ID de logon alternativo](#alternateid) | Configurar a federação usando uma ID de logon alternativa  |
+| [Federar com o Azure AD usando a ID de logon alternativa](#alternateid) | Configurar a federação usando uma ID de logon alternativa  |
 | [Adicionar um servidor do AD FS](#addadfsserver) |Como expandir o farm do AD FS com um servidor adicional do AD FS. |
 | [Adicionar um Servidor Proxy de Aplicativo Web do AD FS](#addwapserver) |Como expandir um farm do AD FS com um servidor WAP (Proxy de Aplicativo Web) adicional. |
 | [Adicionar um domínio federado](#addfeddomain) |Como adicionar um domínio federado. |
@@ -98,7 +98,7 @@ A configuração da ID de logon alternativa do AD FS consiste em duas etapas pri
 
 2. Na página **Conectar ao Azure AD**, digite suas credenciais de administrador global do Azure AD e clique em **Avançar**.
 
-   ![Conecte-se ao AD do Azure](./media/how-to-connect-fed-management/AddNewADFSServer2.PNG)
+   ![Conectar ao Azure AD](./media/how-to-connect-fed-management/AddNewADFSServer2.PNG)
 
 3. Forneça as credenciais de administrador de domínio.
 
@@ -131,7 +131,7 @@ A configuração da ID de logon alternativa do AD FS consiste em duas etapas pri
 
 2. Forneça as credenciais de administrador global do Azure.
 
-   ![Conecte-se ao AD do Azure](./media/how-to-connect-fed-management/wapserver2.PNG)
+   ![Conectar ao Azure AD](./media/how-to-connect-fed-management/wapserver2.PNG)
 
 3. Na página **Especificar certificado SSL**, forneça a senha para o arquivo PFX que você forneceu ao configurar o farm do AD FS com o Azure AD Connect.
    ![Senha de certificado](./media/how-to-connect-fed-management/WapServer3.PNG)
@@ -164,7 +164,7 @@ A configuração da ID de logon alternativa do AD FS consiste em duas etapas pri
 
 2. Na próxima página do assistente, forneça as credenciais de administrador global do Azure AD.
 
-   ![Conecte-se ao AD do Azure](./media/how-to-connect-fed-management/AdditionalDomain2.PNG)
+   ![Conectar ao Azure AD](./media/how-to-connect-fed-management/AdditionalDomain2.PNG)
 
 3. Na página **Credenciais de acesso remoto** , forneça as credenciais do administrador de domínio.
 
@@ -231,7 +231,7 @@ Essa regra define um sinalizador temporário chamado **idflag** que é definido 
 **Regra 3: emitir ms-ds-consistencyguid como a ID imutável, se estiver presente**
 
     c:[Type == "http://contoso.com/ws/2016/02/identity/claims/msdsconsistencyguid"]
-    => issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", Value = c.Value);
+    => issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c.Value);
 
 Essa é uma verificação **Exist** implícita. Se o valor para a declaração existir, emita-o como a ID imutável. O exemplo anterior usa a declaração **nameidentifier** . Você precisará alterar isso para o tipo de declaração adequado para a ID imutável no seu ambiente.
 
@@ -239,7 +239,7 @@ Essa é uma verificação **Exist** implícita. Se o valor para a declaração e
 
     c1:[Type == "urn:anandmsft:tmp/idflag", Value =~ "useguid"]
     && c2:[Type == "http://contoso.com/ws/2016/02/identity/claims/objectguid"]
-    => issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", Value = c2.Value);
+    => issue(Type = "http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID", Value = c2.Value);
 
 Nessa regra, você simplesmente verifica o sinalizador temporário **idflag**. Você decide se deve emitir a declaração com base em seu valor.
 

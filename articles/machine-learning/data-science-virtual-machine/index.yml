@@ -3,7 +3,7 @@ documentType: LandingData
 title: Documentação da Máquina Virtual de Ciência de Dados do Azure
 metadata:
   title: Documentação da Máquina Virtual de Ciência de Dados – Azure
-  description: 'Saiba como usar a Máquina Virtual de Ciência de Dados, um ambiente experimental na nuvem do Azure criado para ciência de dados. A ciência de dados e outras ferramentas conhecidas são pré-instaladas e pré-configuradas a fim de iniciar rapidamente a criação de aplicativos inteligentes para análise avançada.'
+  description: 'Saiba como usar a Máquina Virtual de Ciência de Dados, um ambiente experimental na nuvem do Azure criado para ciência de dados. As ferramentas populares de ciência de dados e aprendizado de máquina são pré-instaladas e pré-configuradas. Esse design oferece uma vantagem na criação de aplicativos inteligentes para análise avançada.'
   services: machine-learning
   author: vijetajo
   ms.service: machine-learning
@@ -14,12 +14,12 @@ metadata:
   ms.date: 08/19/2019
   ms.author: vijetaj
 abstract:
-  description: A DSVM (Máquina Virtual de Ciência de Dados) do Azure é uma imagem de VM personalizada com ciência de dados e ferramentas de aprendizado de máquina. É possível usar essa VM para criar aplicativos inteligentes de análise avançada. <a href="overview.md">Saiba mais...</a>
+  description: A DSVM (Máquina Virtual de Ciência de Dados) do Azure é uma imagem de VM personalizada com ciência de dados e ferramentas de aprendizado de máquina. Você pode usar essa VM para criar aplicativos inteligentes para análise avançada. <a href="overview.md">Saiba mais</a>.
 sections:
   - title: Guia de início rápido de 5 minutos
     items:
       - type: paragraph
-        text: 'Saiba como configurar uma VM de Ciência de Dados baseada em Windows ou Linux:'
+        text: 'Saiba como configurar uma Máquina Virtual de Ciência de Dados baseada em Windows ou Linux:'
       - type: paragraph
         text: <b>DSVM do Windows</b>
       - type: list

@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: azure functions, funções, processamento de eventos, webhooks, computação dinâmica, arquitetura sem servidor, testes
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 800c9db245007047b2dc17b3f270737254ed42d7
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 0bd6222a6f2a2582fb715dbaf364fe23e41630d5
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479729"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085120"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Estratégias para testar seu código no Azure Functions
 
@@ -44,7 +43,7 @@ Para configurar o ambiente, crie uma função e teste o aplicativo. As etapas a 
 2. [Crie uma função HTTP do modelo](./functions-create-first-azure-function.md) e nomeie-a *HttpTrigger*.
 3. [Crie uma função temporizadora do modelo](./functions-create-scheduled-function.md) e nomeie-a *TimerTrigger*.
 4. [Crie um aplicativo de teste xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) no Visual Studio, clicando em **Arquivo > Novo > Projeto > Visual C# > .NET Core > Projeto de teste xUnit** e nomeie-o *Functions.Test*. 
-5. Use o Nuget para adicionar uma referência do aplicativo teste [Microsoft.AspNetCore.Mvc](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
+5. Use o NuGet para adicionar uma referência do aplicativo de teste [Microsoft. AspNetCore. Mvc](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
 6. [Referencie o aplicativo *Functions* no](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) aplicativo *Functions.Test*.
 
 ### <a name="create-test-classes"></a>Criar classes de teste
@@ -55,7 +54,7 @@ Cada função usa uma instância do [ILogger](https://docs.microsoft.com/dotnet/
 
 A classe `ListLogger` deve implementar a interface `ILogger` e manter uma lista interna de mensagens para avaliação durante um teste.
 
-**Clique com botão direito** sobre o *Functions.Test* aplicativo e selecione **Adicionar > classe**, nomeie- **NullScope.cs** e insira o código a seguir:
+**Clique com o botão direito do mouse** no aplicativo Functions *. Test* e selecione **Adicionar > classe**, nomeie-o **NullScope.cs** e insira o código a seguir:
 
 ```csharp
 using System;
@@ -73,7 +72,7 @@ namespace Functions.Tests
 }
 ```
 
-Em seguida, **com o botão direito** sobre o *Functions.Test* aplicativo e selecione **Adicionar > classe**, nomeie- **ListLogger.cs** e insira o o código a seguir:
+Em seguida, clique com o **botão direito do mouse** no aplicativo *functions. Test* e selecione **Adicionar > classe**, nomeie-o **ListLogger.cs** e insira o código a seguir:
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -111,7 +110,7 @@ namespace Functions.Tests
 
 A classe `ListLogger` implementará os seguintes membros, conforme contratado pela interface `ILogger`:
 
-- **BeginScope**: Define o escopo de adicionar contexto do log. Nesse caso, o teste apenas aponta para a instância estática sobre o `NullScope` classe para permitir que o teste de função.
+- **BeginScope**: Define o escopo de adicionar contexto do log. Nesse caso, o teste apenas aponta para a instância estática na `NullScope` classe para permitir que o teste funcione.
 
 - **IsEnabled**: Um valor padrão de `false` é fornecido.
 
@@ -253,7 +252,7 @@ Os membros implementados nesta classe são:
 
 - **Timer_should_log_message**: Esse teste cria uma instância de `ListLogger` e passa-a para uma função de temporizador. Depois que a função é executada, o log é verificado para garantir que a mensagem esperada está presente.
 
-Se você quiser acessar as configurações de aplicativo em seus testes, você pode usar [GetEnvironmentVariable](./functions-dotnet-class-library.md#environment-variables).
+Se você quiser acessar as configurações do aplicativo em seus testes, você pode usar [System. Environment. GetEnvironmentVariable](./functions-dotnet-class-library.md#environment-variables).
 
 ### <a name="run-tests"></a>Executar testes
 

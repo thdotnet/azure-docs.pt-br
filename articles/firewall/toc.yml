@@ -10,7 +10,7 @@
     - name: Implantar e configurar
       href: tutorial-firewall-deploy-portal.md
     - name: Implantar em rede híbrida
-      href: tutorial-hybrid-ps.md
+      href: tutorial-hybrid-portal.md
     - name: Filtrar o tráfego de entrada com DNAT
       href: tutorial-firewall-dnat.md
     - name: Logs de diagnóstico do Monitor
@@ -39,6 +39,8 @@
   items:
     - name: Implantar usando o Azure PowerShell
       href: deploy-ps.md
+    - name: Implantar na rede híbrida – PowerShell
+      href: tutorial-hybrid-ps.md
     - name: Implantar usando a CLI do Azure
       href: deploy-cli.md
     - name: Implantar usando um modelo

@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: azure functions, funções, processamento de eventos, computação dinâmica, arquitetura sem servidor
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 965ec88b39336e71d2779da4b7cd31b9c26e28be
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 37192a25bff794ac019fd29b47e0e8ad161790c9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480375"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097317"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Associações de Aplicativos Móveis para o Azure Functions 
 
@@ -163,7 +162,7 @@ Em funções do JavaScript, o registro é passado para o objeto `context.binding
 
 Nas funções do C# ou do F#, todas as alterações feitas no registro de entrada (parâmetro de entrada) são enviadas novamente de forma automática para a tabela quando a função é fechada com êxito. Não é possível modificar um registro em funções do JavaScript.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 Use a associação de saída dos Aplicativos Móveis para gravar um novo registro em um ponto de extremidade da tabela dos Aplicativos Móveis.  
 

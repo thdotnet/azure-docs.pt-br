@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2018
 ms.author: apimpm
-ms.openlocfilehash: d267ff3a43438d9fe6e4e21f0ac023cfa6675f19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6116ece6035b326440108c1f2b2effd1b6bb9258
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956313"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072555"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Autorizar contas de desenvolvedor usando o Active Directory do Azure no Gerenciamento de API do Azure
 
@@ -38,31 +37,31 @@ Este artigo mostra como habilitar o acesso ao portal do desenvolvedor para os us
 3. Digite **api** na caixa de pesquisa.
 4. Selecione **Serviços de Gerenciamento de API**.
 5. Selecione uma instância do Serviço de Gerenciamento de API.
-6. Sob **segurança**, selecione **identidades**.
+6. Em **segurança**, selecione **identidades**.
 7. Selecione **+Adicionar** na parte superior.
 
     O painel **Adicionar provedor de identidade** aparece à direita.
 8. Em **Tipo de provedor**, selecione **Azure Active Directory**.
 
     Os controles que permitem que você insira outras informações necessárias aparecem no painel. Os controles incluem **ID do cliente** e **Segredo do cliente**. (Você obterá informações sobre esses controles posteriormente neste artigo.)
-9. Anote o conteúdo do **URL de redirecionamento**.
+9. Anote o conteúdo da **URL**de redirecionamento.
     
    ![Etapas para adicionar um provedor de identidade no portal do Azure](./media/api-management-howto-aad/api-management-with-aad001.png)  
 10. No navegador, abra uma guia diferente. 
-11. Navegue até a [portal do Azure - registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar um aplicativo no Active Directory.
-12. Sob **Manage**, selecione **registros de aplicativo**.
-13. Selecione **Novo registro**. Sobre o **registrar um aplicativo** , defina os valores da seguinte maneira:
+11. Navegue até o [portal do Azure-registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) para registrar um aplicativo no Active Directory.
+12. Em **gerenciar**, selecione **registros de aplicativo**.
+13. Selecione **Novo registro**. Na página **registrar um aplicativo** , defina os valores da seguinte maneira:
     
-* Definir **nome** com um nome significativo. e.g., *developer-portal*
-* Definir **suporte para tipos de conta** à **contas neste diretório organizacional apenas**. 
-* Definir **URI de redirecionamento** para o valor que você obteve na etapa 9. 
-* Escolher **registrar**. 
+* Defina o **nome** como um nome significativo. por exemplo, *portal do desenvolvedor*
+* Defina os **tipos de conta com suporte** para **contas neste diretório organizacional somente**. 
+* Defina o **URI** de redirecionamento para o valor obtido na etapa 9. 
+* Escolha **registrar**. 
 
-14.  Depois que o aplicativo está registrado, copie o **ID do aplicativo (cliente)** da **visão geral** página. 
-15. Volte para sua instância de gerenciamento de API. No **Adicionar provedor de identidade** janela, cole o **ID do aplicativo (cliente)** valor na **ID do cliente** caixa.
-16. Volte para a configuração do AD do Azure, selecione **certificados e segredos** sob **gerenciar**. Selecione o **novo segredo do cliente** botão. Insira um valor em **descrição**, selecione qualquer opção para **Expires** e escolha **adicionar**. Copie o valor do segredo de cliente antes de sair da página. Isso será necessário na próxima etapa. 
-17. Sob **Manage**, selecione **autenticação** e, em seguida, selecione **tokens de ID** sob **concessão implícita**
-18. Volte para sua instância de gerenciamento de API, cole o segredo para o **segredo do cliente** caixa.
+14.  Depois que o aplicativo for registrado, copie a **ID do aplicativo (cliente)** da página **visão geral** . 
+15. Volte para a instância de gerenciamento de API. Na janela **Adicionar provedor de identidade** , Cole o valor da **ID do aplicativo (cliente)** na caixa **ID do cliente** .
+16. Volte para a configuração do Azure AD, selecione **certificados & segredos** em **gerenciar**. Selecione o botão **novo segredo do cliente** . Insira um valor em **Descrição**, selecione qualquer opção para **expirar** e escolha **Adicionar**. Copie o valor do segredo do cliente antes de sair da página. Isso será necessário na próxima etapa. 
+17. Em **gerenciar**, selecione **autenticação** e, em seguida, selecione tokens de **ID** em **concessão implícita**
+18. Volte para a instância de gerenciamento de API, Cole o segredo na caixa **segredo do cliente** .
 
     > [!IMPORTANT]
     > Certifique-se de atualizar o **Segredo do cliente** antes de a chave expirar. 
@@ -72,7 +71,7 @@ Este artigo mostra como habilitar o acesso ao portal do desenvolvedor para os us
 19. A janela **Adicionar provedor de identidade** também contém a caixa de texto **Locatários Permitidos**. Lá, especifique os domínios das instâncias do Azure AD para os quais você deseja conceder acesso às APIs da instância de serviço Gerenciamento da API. Você pode separar múltiplos domínios com novas linhas, espaços ou vírgulas.
 
 > [!NOTE]
-> Você pode especificar vários domínios na seção **Locatários Permitidos**. Antes que qualquer usuário possa entrar por meio de um domínio diferente do domínio original em que o aplicativo foi registrado, um administrador global do domínio diferente deve conceder permissão para o aplicativo para acessar dados de diretório. Para conceder permissão, o administrador global deve: um. Vá para `https://<URL of your developer portal>/aadadminconsent` (por exemplo, https://contoso.portal.azure-api.net/aadadminconsent).
+> Você pode especificar vários domínios na seção **Locatários Permitidos**. Antes que qualquer usuário possa entrar por meio de um domínio diferente do domínio original em que o aplicativo foi registrado, um administrador global do domínio diferente deve conceder permissão para o aplicativo para acessar dados de diretório. Para conceder permissão, o administrador global deve: a. Vá para `https://<URL of your developer portal>/aadadminconsent` (por exemplo, https://contoso.portal.azure-api.net/aadadminconsent).
 > b. Digite o nome de domínio do locatário do Azure AD ao qual você deseja conceder acesso.
 > c. Selecione **Enviar**. 
 
@@ -85,7 +84,7 @@ Depois que as alterações forem salvas, os usuários na instância do Azure AD 
 Depois de habilitar acesso para usuários em uma instância do Azure AD, você poderá adicionar grupos do Azure AD no Gerenciamento de API. Em seguida, você pode gerenciar mais facilmente a associação dos desenvolvedores no grupo com os produtos desejados.
 
  > [!IMPORTANT]
- > Para adicionar um externo grupo do AD do Azure, primeiro você deve configurar a instância do AD do Azure na **identidades** guia seguindo o procedimento na seção anterior. Além disso, o aplicativo deve ter acesso à API do Graph do Azure AD com `Directory.Read.All` permissão. 
+ > Para adicionar um grupo do Azure AD externo, primeiro você deve configurar a instância do Azure AD na guia identidades seguindo o procedimento na seção anterior. Além disso, o aplicativo deve receber acesso ao Azure ad API do Graph com `Directory.Read.All` permissão. 
 
 Você adiciona grupos do Azure AD externos na guia **Grupos** da instância Gerenciamento de API.
 
@@ -99,7 +98,7 @@ Depois de adicionar um grupo do Azure AD externo, você poderá revisar e config
  
 Os usuários da instância do Azure AD configurada já podem entrar no portal do desenvolvedor. Eles podem exibir e se inscrever em todos os grupos para os quais têm visibilidade.
 
-## <a name="a-idlogintodevportalsign-in-to-the-developer-portal-by-using-an-azure-ad-account"></a><a id="log_in_to_dev_portal"/>Entrar no portal do desenvolvedor usando uma conta do Azure AD
+## <a name="a-idlog_in_to_dev_portalsign-in-to-the-developer-portal-by-using-an-azure-ad-account"></a><a id="log_in_to_dev_portal"/>Entrar no portal do desenvolvedor usando uma conta do Azure AD
 
 Para entrar no portal do desenvolvedor usando uma conta do Azure AD que você configurou nas seções anteriores:
 

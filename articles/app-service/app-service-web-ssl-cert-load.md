@@ -9,77 +9,76 @@ editor: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ead1892062912840c9931ae60d11c90975ad26ac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6820daf34e63fd48e83c645e7509a3256bc8435b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475103"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066986"
 ---
 # <a name="use-an-ssl-certificate-in-your-application-code-in-azure-app-service"></a>Usar um certificado SSL no código do aplicativo no Serviço de Aplicativo do Azure
 
 Este guia de instruções mostra como usar certificados públicos ou privados no código do aplicativo. Um exemplo do caso de uso é que seu aplicativo acessa um serviço externo que exige autenticação de certificado.
 
-Essa abordagem ao uso de certificados em seu código utiliza o SSL funcionalidade no serviço de aplicativo que exige que seu aplicativo esteja na **básica** camada ou superior. Como alternativa, você pode [incluir o arquivo de certificado no seu repositório de aplicativo](#load-certificate-from-file), mas não é uma prática recomendada para certificados privados.
+Essa abordagem para usar certificados em seu código usa a funcionalidade SSL no serviço de aplicativo, o que exige que seu aplicativo esteja na camada **básica** ou acima. Como alternativa, você pode [incluir o arquivo de certificado em seu repositório de aplicativos](#load-certificate-from-file), mas não é uma prática recomendada para certificados privados.
 
 Ao permitir que o Serviço de Aplicativo gerencie os certificados SSL, é possível manter os certificados e o código do aplicativo separados e proteger seus dados confidenciais.
 
 ## <a name="upload-a-private-certificate"></a>Carregar um certificado privado
 
-Antes de carregar um certificado privado, certifique-se [atende a todos os requisitos](app-service-web-tutorial-custom-ssl.md#prepare-a-private-certificate), exceto que ele não precisa ser configurado para autenticação do servidor.
+Antes de carregar um certificado privado, verifique se [ele atende a todos os requisitos](app-service-web-tutorial-custom-ssl.md#prepare-a-private-certificate), exceto que ele não precisa ser configurado para autenticação do servidor.
 
-Quando estiver pronto para carregar, execute o seguinte comando <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Quando estiver pronto para carregar, execute o seguinte comando na <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config ssl upload --name <app-name> --resource-group <resource-group-name> --certificate-file <path-to-PFX-file> --certificate-password <PFX-password> --query thumbprint
 ```
 
-Copie a impressão digital do certificado e ver [disponibilizar o certificado](#make-the-certificate-accessible).
+Copie a impressão digital do certificado e veja [tornar o certificado acessível](#make-the-certificate-accessible).
 
 ## <a name="upload-a-public-certificate"></a>Carregar um certificado público
 
-Certificados públicos dá suporte a *. cer* formato. Para carregar um certificado público, o <a href="https://portal.azure.com" target="_blank">portal do Azure</a>e navegue até seu aplicativo.
+Há suporte para certificados públicos no formato *. cer* . Para carregar um certificado público, o <a href="https://portal.azure.com" target="_blank">portal do Azure</a>e navegar até seu aplicativo.
 
-Clique em **configurações de SSL** > **certificados públicos (. cer)**  > **carregar certificado público** na navegação à esquerda de seu aplicativo.
+Clique em **configurações** > SSL**certificados públicos (. cer)**  > **carregar certificado público** do painel de navegação esquerdo do seu aplicativo.
 
-Na **nome**, digite um nome para o certificado. Na **arquivo de certificado CER**, selecione o arquivo CER.
+Em **nome**, digite um nome para o certificado. No **arquivo de certificado cer**, selecione o arquivo cer.
 
 Clique em **Carregar**.
 
 ![Carregar um certificado público](./media/app-service-web-ssl-cert-load/private-cert-upload.png)
 
-Depois que o certificado é carregado, copie a impressão digital do certificado e ver [disponibilizar o certificado](#make-the-certificate-accessible).
+Depois que o certificado for carregado, copie a impressão digital do certificado e veja [tornar o certificado acessível](#make-the-certificate-accessible).
 
-## <a name="import-an-app-service-certificate"></a>Importar um certificado de serviço de aplicativo
+## <a name="import-an-app-service-certificate"></a>Importar um certificado do serviço de aplicativo
 
-Ver [comprar e configurar um certificado SSL para o serviço de aplicativo do Azure](web-sites-purchase-ssl-web-site.md).
+Consulte [comprar e configurar um certificado SSL para Azure app serviço](web-sites-purchase-ssl-web-site.md).
 
-Depois que o certificado é importado, copie a impressão digital do certificado e ver [disponibilizar o certificado](#make-the-certificate-accessible).
+Depois que o certificado for importado, copie a impressão digital do certificado e veja [tornar o certificado acessível](#make-the-certificate-accessible).
 
-## <a name="make-the-certificate-accessible"></a>Disponibilizar o certificado
+## <a name="make-the-certificate-accessible"></a>Tornar o certificado acessível
 
-Para usar um certificado carregado ou importado no código do aplicativo, verifique sua impressão digital acessível com o `WEBSITE_LOAD_CERTIFICATES` configuração do aplicativo, executando o seguinte comando na <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
+Para usar um certificado carregado ou importado no código do aplicativo, torne sua impressão digital `WEBSITE_LOAD_CERTIFICATES` acessível com a configuração do aplicativo, executando o seguinte comando no <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_CERTIFICATES=<comma-separated-certificate-thumbprints>
 ```
 
-Para disponibilizar todos os certificados, defina o valor como `*`.
+Para tornar todos os certificados acessíveis, defina o valor como `*`.
 
 > [!NOTE]
-> Essa configuração coloca os certificados especificados na [User\My atual](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) repositório para a maioria dos tipos de preço, mas na **isolado** camada (ou seja, o aplicativo é executado em um [o ambiente do serviço de aplicativo](environment/intro.md)), ele coloca os certificados na [Machine\My Local](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) armazenar.
+> Essa configuração coloca os certificados especificados no repositório [User\My atual](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) para a maioria dos tipos de preço, mas na camada **isolada** (ou seja, o aplicativo é executado em um [ambiente do serviço de aplicativo](environment/intro.md)), ele coloca os certificados no [Machine\My local](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores) armazenadas.
 >
 
 ![Definir a configuração do aplicativo](./media/app-service-web-ssl-cert-load/configure-app-setting.png)
 
 Ao terminar, clique em **Salvar**.
 
-Os certificados configurados agora estão prontos para ser usado pelo seu código.
+Os certificados configurados agora estão prontos para serem usados pelo seu código.
 
 ## <a name="load-the-certificate-in-code"></a>Carregar o certificado no código
 
@@ -109,17 +108,17 @@ certStore.Close();
 ```
 
 <a name="file"></a>
-## <a name="load-certificate-from-file"></a>Certificado de carga do arquivo
+## <a name="load-certificate-from-file"></a>Carregar o certificado do arquivo
 
-Se você precisar carregar um arquivo de certificado do seu diretório de aplicativo, é melhor carregá-lo usando [FTPS](deploy-ftp.md) em vez de [Git](deploy-local-git.md), por exemplo. Você deve manter os dados confidenciais, como um certificado privado fora do controle do código-fonte.
+Se você precisar carregar um arquivo de certificado do diretório do aplicativo, é melhor carregá-lo usando [FTPS](deploy-ftp.md) em vez do [git](deploy-local-git.md), por exemplo. Você deve manter dados confidenciais como um certificado privado fora do controle do código-fonte.
 
-Mesmo que você está carregando o arquivo diretamente no seu código .NET, a biblioteca ainda verifica se o perfil do usuário atual será carregado. Para carregar o perfil do usuário atual, defina as `WEBSITE_LOAD_USER_PROFILE` configuração de aplicativo com o seguinte comando em de <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Embora você esteja carregando o arquivo diretamente no seu código .NET, a biblioteca ainda verifica se o perfil do usuário atual está carregado. Para carregar o perfil do usuário atual, defina `WEBSITE_LOAD_USER_PROFILE` a configuração do aplicativo com o seguinte comando na <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_LOAD_USER_PROFILE=1
 ```
 
-Depois que essa configuração é definida, o seguinte C# exemplo carrega um certificado chamado `mycert.pfx` da `certs` diretório do repositório do seu aplicativo.
+Quando essa configuração é definida, o exemplo C# a seguir carrega um certificado `mycert.pfx` chamado do `certs` diretório do repositório do aplicativo.
 
 ```csharp
 using System;

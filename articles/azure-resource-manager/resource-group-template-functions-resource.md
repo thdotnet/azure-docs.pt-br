@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 08/20/2019
 ms.author: tomfitz
-ms.openlocfilehash: 2cd37405176eefa8f4445942b9fbf1afc2a7404a
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: eddd99be9d4a30e3e71c806a3f98c6be6800e8fb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69650426"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70095760"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Funções de recursos para modelos do Azure Resource Manager
 
@@ -188,7 +188,7 @@ Especifique o recurso usando o nome de recurso ou o [função resourceId](#resou
 
 Se você usar uma função de **lista** em um recurso que é implantado condicionalmente, a função será avaliada mesmo que o recurso não seja implantado. Você receberá um erro se a função de **lista** se referir a um recurso que não existe. Use a função **If** para garantir que a função só seja avaliada quando o recurso estiver sendo implantado. Consulte a [função If](resource-group-template-functions-logical.md#if) para obter um modelo de exemplo que usa If e List com um recurso implantado condicionalmente.
 
-### <a name="example"></a>Exemplo
+### <a name="list-example"></a>Exemplo de lista
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) a seguir mostra como retornar as chaves primárias e secundárias de uma conta de armazenamento na seção de saídas. Ele também retorna um token SAS para a conta de armazenamento. 
 
@@ -284,7 +284,7 @@ Cada tipo com suporte é retornado no seguinte formato:
 
 A ordenação de matriz dos valores retornados não é garantida.
 
-### <a name="example"></a>Exemplo
+### <a name="providers-example"></a>Exemplo de provedores
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/providers.json) a seguir mostra como usar a função do provedor:
 
@@ -433,7 +433,7 @@ Por exemplo:
 
 `Microsoft.Compute/virtualMachines/myVM/extensions/myExt`está correto, `Microsoft.Compute/virtualMachines/extensions/myVM/myExt` não está correto
 
-### <a name="example"></a>Exemplo
+### <a name="reference-example"></a>Exemplo de referência
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/referencewithstorage.json) a seguir implanta um recurso e faz referência a esse recurso.
 
@@ -600,7 +600,7 @@ Um uso comum da função resourceGroup é criar recursos no mesmo local que o gr
 
 Você também pode usar a função resourcegroup para aplicar marcas do grupo de recursos a um recurso. Para obter mais informações, consulte [aplicar marcas do grupo de recursos](resource-group-using-tags.md#apply-tags-from-resource-group).
 
-### <a name="example"></a>Exemplo
+### <a name="resource-group-example"></a>Exemplo de grupo de recursos
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourcegroup.json) a seguir retorna as propriedades do grupo de recursos.
 
@@ -737,7 +737,7 @@ Frequentemente, você precisa usar essa função ao usar uma conta de armazename
 }
 ```
 
-### <a name="example"></a>Exemplo
+### <a name="resource-id-example"></a>Exemplo de ID de recurso
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourceid.json) a seguir retorna a ID de recurso de uma conta de armazenamento no grupo de recursos:
 
@@ -795,7 +795,7 @@ A função retorna o seguinte formato:
 }
 ```
 
-### <a name="example"></a>Exemplo
+### <a name="subscription-example"></a>Exemplo de assinatura
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/subscription.json) a seguir mostra a função de assinatura chamada na seção de saídas. 
 
