@@ -11,16 +11,15 @@ ms.assetid: 7802489d-33ec-4302-82a4-91463d03887a
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: ad30bd4f77c5f4314956e39f26a30b72d72a208a
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 903c5f31f5039270b1edc65f53b248cd0a5b1355
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68361166"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088939"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Preparar um VHD ou VHDX do Windows para carregar no Azure
 
@@ -426,7 +425,7 @@ Nem toda função ou aplicativo instalado em um computador baseado no Windows d�
     ![Ferramenta de Preparação do Sistema](media/prepare-for-upload-vhd-image/syspre.png)
 1. Em **Opções de Desligamento**, selecione **Desligar**.
 1. Selecione **OK**.
-1. Quando o Sysprep for concluído, desligue a VM. Não use  reinicialização para desligar a VM.
+1. Quando o Sysprep for concluído, desligue a VM. Não use reinicialização para desligar a VM.
 
 Agora o VHD está pronto para ser carregado. Para obter mais informações sobre como criar uma VM de um disco generalizado, consulte [carregar um VHD generalizado e usá-lo para criar uma nova VM no Azure](sa-upload-generalized.md).
 

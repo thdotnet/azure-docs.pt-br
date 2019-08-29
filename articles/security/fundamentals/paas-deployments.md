@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: a562630ef19c134c227ef44b944c1dd921ff2e46
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: d20ea4a6e86bb889615d3ab9bfcac5aedf838ceb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726818"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098635"
 ---
 # <a name="securing-paas-deployments"></a>Proteção de implantações de PaaS
 
@@ -116,7 +116,7 @@ A tabela a seguir lista as ameaças STRIDE e fornece algumas mitigações de exe
 | --- | --- | --- |
 | Falsificação | Autenticação | Exigir conexões HTTPS. |
 | Violação | Integridade | Validar certificados SSL. |
-| Repúdio | Não recusa | Habilitar o [monitoramento e diagnóstico](/azure/architecture/best-practices/monitoring) do Azure. |
+| Repúdio | Não repúdio | Habilitar o [monitoramento e diagnóstico](/azure/architecture/best-practices/monitoring) do Azure. |
 | Divulgação de informações confidenciais | Confidencialidade | Criptografar dados confidenciais em repouso usando [certificados de serviço](/rest/api/appservice/certificates). |
 | Negação de serviço | Disponibilidade | Monitorar as métricas de desempenho quanto a possíveis condições de negação de serviço. Implementar filtros de conexão. |
 | Elevação de privilégio | Autorização | Usar o [Privileged Identity Management](/azure/active-directory/privileged-identity-management/subscription-requirements). |
@@ -139,7 +139,7 @@ A seguir estão as práticas recomendadas para usar o Serviço de Aplicativo.
 **Detalhe**: O [Ambiente do Serviço de Aplicativo](/azure/app-service/environment/intro) tem um recurso de integração de rede virtual que ajuda a restringir endereços IP de origem de entrada por meio dos grupos de segurança de rede. As redes virtuais permitem que você coloque recursos do Azure em uma rede roteável, fora da Internet, cujo acesso você pode controlar. Para obter mais informações, confira [Integrar um aplicativo a uma rede virtual do Azure](/azure/app-service/web-sites-integrate-with-vnet).
 
 **Melhor prática**: Monitore o estado de segurança dos ambientes do Serviço de Aplicativo.   
-**Detalhe**: Use a Central de Segurança do Azure para monitorar os ambientes do Serviço de Aplicativo. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria [recomendações](/azure/security-center/security-center-virtual-machine-recommendations) que guiam você pelo processo de configuração dos controles necessários.
+**Detalhe**: Use a Central de Segurança do Azure para monitorar os ambientes do Serviço de Aplicativo. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria [recomendações](../../security-center/security-center-virtual-machine-protection.md) que guiam você pelo processo de configuração dos controles necessários.
 
 > [!NOTE]
 > O Monitoramento do Serviço de Aplicativo está na versão prévia e disponível apenas no [nível Standard](/azure/security-center/security-center-pricing) da Central de Segurança.

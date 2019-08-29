@@ -10,16 +10,15 @@ ms.assetid: 3c777964-02b2-4f55-8731-8c3bd3c0ae27
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: apimpm
-ms.openlocfilehash: 87693caa5343e359bb3ab424de489c2270bbca62
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: df7b14c8221ab7837cabe968a82cfc5d5d9050c4
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64704431"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072588"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Tratamento de erro em políticas de Gerenciamento de API
 
@@ -77,7 +76,7 @@ A seção de política `on-error` pode ser usada em qualquer escopo. Os editores
 
  Quando ocorre um erro e o controle salta para a seção de política `on-error` o erro é armazenado na propriedade [context.LastError](api-management-policy-expressions.md#ContextVariables),que pode ser acessada por políticas na seção `on-error`. LastError tem as propriedades a seguir.  
   
-| NOME       | Type   | DESCRIÇÃO                                                                                               | Obrigatório |
+| Nome       | Tipo   | Descrição                                                                                               | Necessário |
 |------------|--------|-----------------------------------------------------------------------------------------------------------|----------|
 | `Source`   | cadeia de caracteres | Indica o elemento em que ocorreu o erro. Pode ser o nome de uma etapa do pipeline interno ou política.     | Sim      |
 | `Reason`   | cadeia de caracteres | Código de erro amigável para computadores, que pode ser usado no tratamento de erro.                                       | Não       |
@@ -96,7 +95,7 @@ A seção de política `on-error` pode ser usada em qualquer escopo. Os editores
 ## <a name="predefined-errors-for-built-in-steps"></a>Erros predefinidos para etapas internas  
  Os erros a seguir são predefinidos para condições de erro que podem ocorrer durante a avaliação das etapas de processamento interno.  
   
-| source        | Condição                                 | Motivo                  | Message                                                                                                                |
+| Origem        | Condição                                 | Reason                  | Mensagem                                                                                                                |
 |---------------|-------------------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
 | configuração | O Uri não corresponde a nenhuma API ou Operação | OperationNotFound       | Não é possível corresponder a solicitação recebida a uma operação.                                                                      |
 | authorization | Chave de assinatura não fornecida             | SubscriptionKeyNotFound | Acesso negado devido à ausência da chave de assinatura. Certifique-se de incluir a chave de assinatura ao fazer solicitações para esta API. |
@@ -105,10 +104,10 @@ A seção de política `on-error` pode ser usada em qualquer escopo. Os editores
 ## <a name="predefined-errors-for-policies"></a>Erros predefinidos para políticas  
  Os erros a seguir são predefinidos para condições de erro que podem ocorrer durante a avaliação da política.  
   
-| source       | Condição                                                       | Motivo                    | Message                                                                                                                              |
+| Origem       | Condição                                                       | Reason                    | Mensagem                                                                                                                              |
 |--------------|-----------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | rate-limit   | Limite de taxa excedido                                             | RateLimitExceeded         | O limite da taxa foi excedido                                                                                                               |
-| quota        | Cota excedida                                                  | QuotaExceeded             | Fora da cota do volume de chamada. A cota será reposta em xx:xx:xx. – ou – Sem cota de largura de banda. A cota será reposta em xx:xx:xx. |
+| Cota        | Cota excedida                                                  | QuotaExceeded             | Fora da cota do volume de chamada. A cota será reposta em xx:xx:xx. – ou – Sem cota de largura de banda. A cota será reposta em xx:xx:xx. |
 | jsonp        | O valor do parâmetro de retorno de chamada é inválido (contém caracteres errados) | CallbackParameterInvalid  | O valor do parâmetro de retorno de chamada {callback-parameter-name} não é um identificador JavaScript válido.                                          |
 | ip-filter    | Falha ao analisar o IP do chamador da solicitação                          | FailedToParseCallerIP     | Falha ao estabelecer o endereço IP para o chamador. Acesso negado.                                                                        |
 | ip-filter    | O IP do chamador não está na lista de permissões                                | CallerIpNotAllowed        | O endereço IP do chamador {ip-address} não é permitido. Acesso negado.                                                                        |

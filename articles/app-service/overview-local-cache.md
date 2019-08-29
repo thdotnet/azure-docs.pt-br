@@ -10,19 +10,18 @@ tags: optional
 keywords: ''
 ms.assetid: e34d405e-c5d4-46ad-9b26-2a1eda86ce80
 ms.service: app-service
-ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/04/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 1d6e233509b50f0b03678f2e62267169d02133a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9102d6f3ce3be44107268419517dc9ebe434ac7a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60839022"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098453"
 ---
 # <a name="azure-app-service-local-cache-overview"></a>Visão geral do cache local do Serviço de Aplicativo do Azure
 
@@ -35,7 +34,7 @@ O conteúdo do Serviço de Aplicativo do Azure é armazenado no Armazenamento do
 * O conteúdo é compartilhado entre várias instâncias de VM (máquina virtual) do aplicativo.
 * O conteúdo é duradouro e pode ser modificado pela execução dos aplicativos.
 * Os arquivos de log e arquivos de dados de diagnóstico estão disponíveis na mesma pasta de conteúdo compartilhado.
-* A publicação de novo conteúdo atualiza a pasta de conteúdo diretamente. Você pode exibir imediatamente o mesmo conteúdo por meio do site do SCM e a execução do aplicativo (normalmente algumas tecnologias, como o ASP.NET iniciar uma reinicialização do aplicativo em algumas alterações de arquivo para obter o conteúdo mais recente).
+* A publicação de novo conteúdo atualiza a pasta de conteúdo diretamente. Você pode exibir imediatamente o mesmo conteúdo por meio do site do SCM e do aplicativo em execução (normalmente, algumas tecnologias, como ASP.NET, iniciam uma reinicialização do aplicativo em algumas alterações de arquivo para obter o conteúdo mais recente).
 
 Embora muitos aplicativos usem um ou todos esses recursos, outros precisam somente de um repositório de conteúdo de alto desempenho somente leitura de onde eles possam ser executados com alta disponibilidade. Esses aplicativos podem se beneficiar de uma instância de máquina virtual de um cache local específico.
 

@@ -3,15 +3,15 @@ title: Configurar e ler logs ao usar o gatilho do Azure Functions para Cosmos DB
 description: Saiba como expor os logs ao pipeline de log do Azure Functions ao usar o gatilho do Azure Functions para o Cosmos DB
 author: ealsur
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: ad53762ad490c5e8feedb83007b8721fe4883806
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
-ms.translationtype: HT
+ms.openlocfilehash: 17b2d4854e3222e5bdb607c6c80b0ec5ed6177d3
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334522"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093592"
 ---
 # <a name="how-to-configure-and-read-the-logs-when-using-azure-functions-trigger-for-cosmos-db"></a>Como configurar e ler logs ao usar o gatilho do Azure Functions para Cosmos DB
 
