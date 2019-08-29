@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 05/01/2019
+ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: bcab20c654657483fd37322de7ec0827fb171c01
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 584172a9b248a9d151ba9a980bf4e52ed1e1b926
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165720"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141965"
 ---
 # <a name="create-a-new-time-series-insights-environment-in-the-azure-portal"></a>Criar um novo ambiente de Análise de Séries Temporais no portal do Azure
 
@@ -30,38 +30,38 @@ Siga estas etapas para criar um ambiente:
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
-1. Selecione o botão **+ Novo**.
+1. Selecione o botão **+ criar um recurso** .
 
 1. Selecione a categoria **Internet das Coisas** e selecione **Time Series Insights**.
 
-   ![Criar o ambiente de Análise de Séries Temporais](media/time-series-insights-get-started/1-new-tsi.png)
+   [Criar o ambiente de time Series insights) ![](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
 
 1. Na página **Time Series Insights**, selecione **Criar**.
 
 1. Preencha os parâmetros necessários. A tabela a seguir explica cada parâmetro:
    
-   ![Criar o grupo de recursos de Análise de Séries Temporais](media/time-series-insights-get-started/2-create-tsi.png)
+   [![Criar o grupo de recursos Time Series Insights](media/time-series-insights-get-started/2-create-tsi.png)](media/time-series-insights-get-started/2-create-tsi.png#lightbox)
    
-   Configuração|Valor sugerido|DESCRIÇÃO
+   Configuração|Valor sugerido|Descrição
    ---|---|---
    Nome do ambiente | Um nome exclusivo | Esse nome representa o ambiente no [explorer do Time Series](https://insights.timeseries.azure.com)
    Assinatura | Sua assinatura | Se você tiver várias assinaturas, escolha a assinatura que contenha a origem do evento de preferência. A Análise das Séries Temporais podem detectar automaticamente o Hub IoT do Azure e os recursos de Hub de Eventos existentes na mesma assinatura.
    Grupo de recursos | Criar um novo ou usar um existente | Um grupo de recursos é uma coleção de recursos do Azure que são usados juntos. Você pode escolher um grupo de recursos existente, como aquele que contém seu Hub de Eventos ou Hub IoT. Ou você pode criar um novo se esse recurso não estiver relacionado a outros recursos.
-   Local padrão | Mais próximo da origem do evento | Preferencialmente, escolha o mesmo local de centro de dados que contenha os dados de origem do evento, em um esforço para evitar os custos de largura de banda entre regiões e zonas e a latência adicional ao mover os dados para fora da região.
+   Location | Mais próximo da origem do evento | Preferencialmente, escolha o mesmo local de centro de dados que contenha os dados de origem do evento, em um esforço para evitar os custos de largura de banda entre regiões e zonas e a latência adicional ao mover os dados para fora da região.
    Tipo de preço | S1 | Escolha a taxa de transferência necessária. Para ter custos mais baixos e a capacidade inicial, selecione S1.
    Capacity | 1 | A capacidade é o multiplicador aplicado à taxa de ingresso, à capacidade de armazenamento e ao custo associado com a SKU selecionada.  Você pode alterar a capacidade de um ambiente após a criação. Para custos mais baixos, selecione uma capacidade 1. 
   
-1. Verifique **fixar no painel** para acessar facilmente seu ambiente do Time Series no futuro.
-
-   ![Criar uma marcação para Análise de Séries Temporais no painel](media/time-series-insights-get-started/3-pin-create.png)
-
 1. Selecione **Criar** para iniciar o processo de provisionamento. Isso poderá levar alguns minutos.
 
 1. Para monitorar o processo de implantação, selecione o símbolo **Notificações** (ícone de sino).
 
-   ![Assistir às notificações](media/time-series-insights-get-started/4-notifications.png)
+   [![Assista às notificações](media/time-series-insights-get-started/3-notifications.png)](media/time-series-insights-get-started/3-notifications.png#lightbox)
 
-Quando a implantação for bem-sucedida, você poderá selecionar **Ir para o recurso** para configurar outras propriedades, defina a segurança com as políticas de acesso de dados, adicione origens do evento e outras ações.
+    Quando a implantação for bem-sucedida, você poderá selecionar **Ir para o recurso** para configurar outras propriedades, defina a segurança com as políticas de acesso de dados, adicione origens do evento e outras ações.
+
+1. Na **visão geral**do recurso, selecione o **ícone de pino** no canto superior direito para acessar facilmente seu ambiente de time Series insights no futuro.
+
+   [![Criar o Time Series Insights fixar no painel](media/time-series-insights-get-started/4-pin-create.png)](media/time-series-insights-get-started/4-pin-create.png#lightbox)
 
 ## <a name="next-steps"></a>Próximas etapas
 

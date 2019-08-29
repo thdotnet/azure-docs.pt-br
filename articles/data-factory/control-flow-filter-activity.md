@@ -3,21 +3,20 @@ title: Atividade de filtro no Azure Data Factory | Microsoft Docs
 description: A atividade de filtro filtra as entradas.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/04/2018
-ms.author: shlo
-ms.openlocfilehash: 787c9393e2700bd7ed349b501e70abc4a0687b9c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a7e2e735baa7e40b4170d3397327e90fc1a5d2d5
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60554840"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141667"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Atividade de filtro no Azure Data Factory
 Você pode usar uma atividade de filtro em um pipeline para aplicar uma expressão de filtro para uma matriz de entrada. 
@@ -37,12 +36,12 @@ Você pode usar uma atividade de filtro em um pipeline para aplicar uma express�
 
 ## <a name="type-properties"></a>Propriedades de tipo
 
-Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
+Propriedade | Descrição | Valores permitidos | Necessário
 -------- | ----------- | -------------- | --------
-name | Nome da atividade `Filter`. | Cadeia de caracteres | Sim
-type | Deve ser definido como **filtro** | Cadeia de caracteres | Sim
-condition | Condição a ser usada para filtragem de entrada. | Expression | Sim
-items | Matriz de entrada na qual o filtro deve ser aplicado. | Expression | Sim
+name | Nome da atividade `Filter`. | Cadeia | Sim
+type | Deve ser definido como **filtro** | Cadeia | Sim
+condição | Condição a ser usada para filtragem de entrada. | Expressão | Sim
+items | Matriz de entrada na qual o filtro deve ser aplicado. | Expressão | Sim
 
 ## <a name="example"></a>Exemplo
 

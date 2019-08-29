@@ -3,23 +3,22 @@ title: Atividade Wait no Azure Data Factory | Microsoft Docs
 description: A atividade Wait pausa a execução do pipeline pelo período especificado.
 services: data-factory
 documentationcenter: ''
-author: shlo
-manager: craigg
+author: djpmsft
+ms.author: daperlov
+manager: jroth
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.author: shlo
-ms.openlocfilehash: 66d79bc1597cd8f3c7e01eb8227eb7c91ba04d1d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48a722979e61209a855dd1fec22fcdcc756ae1ce
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60764744"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142428"
 ---
-# <a name="execute-wait-activity-in-azure-data-factory"></a>Executar a atividade wait no Azure Data Factory
+# <a name="execute-wait-activity-in-azure-data-factory"></a>Executar atividade de espera no Azure Data Factory
 Quando você usa uma atividade de espera em um pipeline, o pipeline aguarda o período de tempo especificado antes de continuar com a execução de atividades subsequentes. 
 
 ## <a name="syntax"></a>Sintaxe
@@ -37,11 +36,11 @@ Quando você usa uma atividade de espera em um pipeline, o pipeline aguarda o pe
 
 ## <a name="type-properties"></a>Propriedades de tipo
 
-Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório
+Propriedade | Descrição | Valores permitidos | Necessário
 -------- | ----------- | -------------- | --------
-name | Nome da atividade `Wait`. | Cadeia de caracteres | Sim
-type | Deve ser definido para **Wait**. | Cadeia de caracteres | Sim
-waitTimeInSeconds | O número de segundos que o pipeline aguarda antes de continuar o processamento. | Número inteiro | Sim
+name | Nome da atividade `Wait`. | Cadeia | Sim
+type | Deve ser definido para **Wait**. | Cadeia | Sim
+waitTimeInSeconds | O número de segundos que o pipeline aguarda antes de continuar o processamento. | Inteiro | Sim
 
 ## <a name="example"></a>Exemplo
 

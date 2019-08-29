@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 91bdaf93c9dc9b051fce6e052ccd5bd2f5682eaa
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: 3f0355ae14ed1a6157c8d3b7fccb5fb8a225ee80
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061997"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147496"
 ---
 # <a name="get-started-with-device-twins-java"></a>Introdução ao dispositivos gêmeos (Java)
 
@@ -29,8 +29,6 @@ Neste tutorial, você cria dois aplicativos de console do Java:
 > O artigo [SDKs de IoT do Azure](iot-hub-devguide-sdks.md) apresenta informações sobre os SDKs de IoT do Azure que você pode usar para criar dispositivos e aplicativos de back-end.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-
-Para concluir este tutorial, você precisará:
 
 * A versão mais recente do [Java SE Development Kit 8](https://aka.ms/azure-jdks)
 

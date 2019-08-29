@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 7fed6caa719824dd51b19789a7066ffaea13d336
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 82c2c6d7ac347949a7cf24226fdb0095313ee689
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907795"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147679"
 ---
 # <a name="get-started-with-device-management-java"></a>Introdução ao gerenciamento de dispositivos (Java)
 
@@ -52,8 +52,6 @@ Ao fim deste tutorial, você tem dois aplicativos de console do Java:
 > Para obter informações sobre os SDKs que você pode usar para criar aplicativos para serem executados em dispositivos e seu back-end da solução, consulte [SDKs do IoT do Azure](iot-hub-devguide-sdks.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
-
-Para concluir este tutorial, você precisará:
 
 * Java SE 8. [Prepare seu ambiente de desenvolvimento](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md) descreve como instalar o Java para este tutorial no Windows ou no Linux.
 
