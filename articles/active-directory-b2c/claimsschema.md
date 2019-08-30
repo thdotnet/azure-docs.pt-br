@@ -51,12 +51,12 @@ O elemento **ClaimType** contém os seguintes elementos:
 | Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | DisplayName | 0:1 | O título que é exibido aos usuários em várias telas. O valor pode ser [localizado](localization.md). |
-| Tipo de dados | 0:1 | O tipo da declaração. Os tipos de dados boolean, date, dateTime, int, long, string, stringCollection, alternativeSecurityIdCollection podem ser usados. |
+| DataType | 0:1 | O tipo da declaração. Os tipos de dados boolean, date, dateTime, int, long, string, stringCollection, alternativeSecurityIdCollection podem ser usados. |
 | DefaultPartnerClaimTypes | 0:1 | Os tipos de declaração padrão do parceiro a serem usados para um protocolo especificado. O valor pode ser substituído no **PartnerClaimType** especificado nos elementos **InputClaim** ou **OutputClaim**. Use esse elemento para especificar o nome padrão de um protocolo.  |
 | Mask | 0:1 | Uma cadeia de caracteres opcional de caracteres de mascaramento que podem ser aplicados ao exibir a declaração. Por exemplo, o número de telefone 324-232-4343 pode ser mascarado como XXX-XXX-4343. |
 | UserHelpText | 0:1 | Uma descrição do tipo de declaração que pode ser útil para os usuários entenderem sua finalidade. O valor pode ser [localizado](localization.md). |
 | UserInputType | 0:1 | O tipo de controle de entrada que deve estar disponível para o usuário ao inserir manualmente os dados da declaração para o tipo de declaração. Confira os tipos de entrada do usuário definidos nesta página. |
-| Restrição | 0:1 | As restrições de valor para essa declaração, como uma expressão regular (Regex) ou uma lista de valores aceitáveis. O valor pode ser [localizado](localization.md). |
+| Restriction | 0:1 | As restrições de valor para essa declaração, como uma expressão regular (Regex) ou uma lista de valores aceitáveis. O valor pode ser [localizado](localization.md). |
 PredicateValidationReference| 0:1 | Uma referência a um elemento **PredicateValidationsInput**. Os elementos **PredicateValidationReference** permitem que você execute um processo de validação para garantir que apenas dados formados corretamente sejam inseridos. Para obter mais informações, confira [Predicados](predicates.md). |
 
 ### <a name="defaultpartnerclaimtypes"></a>DefaultPartnerClaimTypes
@@ -152,8 +152,8 @@ O elemento **Restriction** contém os seguintes elementos:
 
 | Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
-| Enumeração | 1:n | As opções disponíveis na interface do usuário para o usuário selecionar para uma declaração, como um valor em uma lista suspensa. |
-| Padrão | 1:1 | A expressão regular a ser usada. |
+| Enumeration | 1:n | As opções disponíveis na interface do usuário para o usuário selecionar para uma declaração, como um valor em uma lista suspensa. |
+| Pattern | 1:1 | A expressão regular a ser usada. |
 
 ### <a name="enumeration"></a>Enumeração
 
@@ -161,9 +161,9 @@ O elemento **Enumeration** contém os seguintes atributos:
 
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
-| Texto | Sim | A cadeia de caracteres de exibição que é mostrada ao usuário na interface do usuário para essa opção. |
-|Valor | Sim | O valor da declaração associada à seleção dessa opção. |
-| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
+| Text | Sim | A cadeia de caracteres de exibição que é mostrada ao usuário na interface do usuário para essa opção. |
+| Value | Sim | O valor da declaração associada à seleção dessa opção. |
+| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: True ou False. |
 
 O exemplo a seguir configura uma declaração de lista suspensa **city** com um valor padrão definido como `New York`:
 
