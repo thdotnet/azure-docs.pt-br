@@ -39,7 +39,7 @@ Os valores nomeados podem conter cadeias de caracteres literais e [expressões d
 | Nome       | Valor                      | Secret | Marcas          |
 | ---------- | -------------------------- | ------ | ------------- |
 | Valor      | 42                         | False  | números vitais |
-| Credencial | ••••••••••••••••••••••     | verdadeiro   | segurança      |
+| Credencial | ••••••••••••••••••••••     | True   | segurança      |
 | Expressão | @(DateTime.Now.ToString()) | False  |               |
 
 ## <a name="to-add-and-edit-a-property"></a>Para adicionar e editar uma propriedade
