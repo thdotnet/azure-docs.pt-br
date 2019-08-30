@@ -67,7 +67,7 @@ Parênteses são opcionais para uma única expressão. O comprimento total do co
 Há três tipos de propriedades que podem ser usadas para construir uma regra de associação.
 
 * Boolean
-* Cadeia
+* String
 * Coleção de Cadeias de Caracteres
 
 Estas são todas as propriedades do usuário que você pode usar para criar uma expressão única.
@@ -76,8 +76,8 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 
 | Propriedades | Valores Permitidos | Uso |
 | --- | --- | --- |
-| accountEnabled |verdadeiro, falso |user.accountEnabled -eq true |
-| dirSyncEnabled |verdadeiro, falso |user.dirSyncEnabled -eq true |
+| accountEnabled |true, false |user.accountEnabled -eq true |
+| dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Propriedades do tipo cadeia de caracteres
 
@@ -165,7 +165,7 @@ David é avaliado como true, Da é avaliado como false.
 Os valores usados em uma expressão podem consistir em vários tipos, incluindo:
 
 * Cadeias de caracteres
-* Booliano – verdadeiro, falso
+* Booliano – true, false
 * Números
 * Matrizes – matriz de número, matriz de cadeia de caracteres
 
