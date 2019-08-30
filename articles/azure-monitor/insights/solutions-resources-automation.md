@@ -283,7 +283,7 @@ Se você definir o valor inicial da variável, ele deverá ser definido como o t
 |:--|:--|:--|:--|
 | string   | Coloque o valor entre aspas duplas.  | "\"Olá, Mundo\"" | "Olá, Mundo" |
 | numeric  | Valor numérico com aspas simples.| "64" | 64 |
-| boolean  | **true** ou **false** entre aspas.  Observe que esse valor deve estar em minúsculas. | "true" | verdadeiro |
+| boolean  | **true** ou **false** entre aspas.  Observe que esse valor deve estar em minúsculas. | "true" | true |
 | datetime | Valor de data serializada.<br>Você pode usar o cmdlet ConvertTo-Json no PowerShell para gerar esse valor para uma determinada data.<br>Exemplo: get-date "24/5/2017 13:14:57" \| ConvertTo-Json | "\\/Date(1495656897378)\\/" | 2017-05-24 13:14:57 |
 
 ## <a name="modules"></a>Módulos
