@@ -127,7 +127,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
     | Chave | Value |
     |-----|------------|
-    | typeahead | verdadeiro |
+    | typeahead | true |
 
     O sinalizador **typeahead** informa à API de Pesquisa de Endereço para tratar a consulta como uma entrada parcial e retornar uma matriz de valores de previsão.
 
