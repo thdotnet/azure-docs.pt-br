@@ -111,11 +111,11 @@ Ao editar a lista de atributos com suporte, as seguintes propriedades são forne
 
 - **Nome** - O nome do sistema do atributo, conforme definido no esquema do objeto de destino.
 - **Tipo** -o tipo de dados o atributo armazena, conforme definido no esquema do objeto de destino, que pode ser um dos seguintes tipos:
-  - *Binário* - O atributo contém dados binários.
-  - *Booliano* - O atributo contém um valor Verdadeiro ou Falso.
+  - *Binary* - O atributo contém dados binários.
+  - *Boolean* - O atributo contém um valor True ou False.
   - *DateTime* - O atributo contém uma cadeia de caracteres de data.
-  - *Número inteiro* - O atributo contém um número inteiro.
-  - *Referência* - O atributo contém uma ID que faz referência a um valor armazenado em outra tabela no aplicativo de destino.
+  - *Integer* - O atributo contém um número inteiro.
+  - *String* - O atributo contém uma ID que faz referência a um valor armazenado em outra tabela no aplicativo de destino.
   - *Cadeia de caracteres* - O atributo contém uma cadeia de caracteres de texto.
 - **Chave primária?** – Se o atributo é definido como um campo de chave primária no esquema do objeto de destino.
 - **Obrigatório?** – Se o atributo é necessário para ser preenchido no sistema ou aplicativo de destino.
