@@ -10,20 +10,20 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
-ms.date: 06/26/2019
-ms.openlocfilehash: c35863ed1d564adf4190efa1888d24f4f4f68ddf
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.date: 08/29/2019
+ms.openlocfilehash: 4af269faab21207e1a754e309cac16e5e0a94b69
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147850"
+ms.locfileid: "70164336"
 ---
 # <a name="choose-among-the-vcore-service-tiers-and-migrate-from-the-dtu-service-tiers"></a>Escolha entre as camadas de serviço vCore e migre das camadas de serviço de DTU
 
 O modelo de compra baseado no núcleo virtual (vCore) permite que você dimensione de forma independente os recursos de computação e armazenamento, correspondam ao desempenho local e otimize o preço. Ele também permite que você escolha a geração de hardware:
 
-- **Gen4**: Até 24 CPUs lógicas baseadas em processadores Intel E5-2673 v3 (Haswell) 2,4-GHz, vCore = 1 PP (núcleo físico), 7 GB por núcleo, SSD anexado
-- **Gen5**: Até 80 CPUs lógicas baseadas em processadores Intel E5-2673 V4 (Broadwell) 2,3 GHz, vCore = 1 LP (Hyper-thread), 5,1 GB por núcleo, SSD rápido eNVM
+- **Gen4**: Até 24 CPUs lógicas baseadas em processadores Intel E5-2673 v3 (Haswell) 2,4-GHz, vCore = 1 PP (núcleo físico), 7 GB por vCore, SSD anexado
+- **Gen5**: Até 80 CPUs lógicas baseadas em processadores Intel E5-2673 V4 (Broadwell) 2,3 GHz, vCore = 1 LP (Hyper-thread), 5,1 GB por vCore para computação provisionada e até 24 GB por vCore para computação sem servidor, SSD rápido de eNVM
 
 Hardware Ger 4 oferece substancialmente mais memória por vCore. No entanto, o hardware Gen5 permite que você amplie recursos de computação muito maiores.
 
@@ -44,9 +44,9 @@ A tabela a seguir explica as diferenças entre as três camadas:
 |---|---|---|---|
 |Melhor para|A maioria das cargas de trabalho comerciais. Oferece opções de armazenamento e de computação voltadas para o orçamento, equilibradas e escalonáveis.|Aplicativos de negócios com requisitos de e/s altos. Oferece maior resiliência a falhas usando várias réplicas isoladas.|A maioria das cargas de trabalho de negócios com requisitos de armazenamento e escala de leitura altamente escalonáveis.|
 |Computação|**Computação**provisionada:<br/>Gen4: 1 a 24 vCores<br/>Gen5: 2 a 80 vCores<br/>**Computação sem servidor**:<br/>Gen5: 0,5-16 vCores|**Computação**provisionada:<br/>Gen4: 1 a 24 vCores<br/>Gen5: 2 a 80 vCores|**Computação**provisionada:<br/>Gen4: 1 a 24 vCores<br/>Gen5: 2 a 80 vCores|
-|Memória|**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore<br/>**Computação sem servidor**:<br/>Gen5: 3 GB por vCore|**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore |**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore|
-|Armazenamento|Usa o armazenamento remoto.<br/>**Computação provisionada de banco de dados individual**:<br/>5 GB – 4 TB<br/>**Computação sem servidor de banco de dados individual**:<br/>5 GB-1 TB<br/>**Instância gerenciada**: 32 GB - 8 TB |Usa o armazenamento SSD local.<br/>**Computação provisionada de banco de dados individual**:<br/>5 GB – 4 TB<br/>**Instância gerenciada**:<br/>32 GB - 4 TB |Crescimento automático flexível do armazenamento, conforme necessário. Dá suporte a até 100 TB de armazenamento. Usa o armazenamento SSD local para o cache do pool de buffers local e o armazenamento de dados local. Usa o armazenamento remoto do Azure como armazenamento de dados de longo prazo final. |
-|Taxa de transferência de e/s (aproximada)|**Banco de dados individual**: 500 IOPS por vCore com 7000 IOPS máximo.<br/>**Instância gerenciada**: Depende [do tamanho do arquivo](../virtual-machines/windows/premium-storage-performance.md#premium-storage-disk-sizes).|5000 IOPS por núcleo com máximo de 200.000 IOPS|O hiperscale é uma arquitetura de várias camadas com cache em vários níveis. O IOPs efetivo dependerá da carga de trabalho.|
+|Memória|**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore<br/>**Computação sem servidor**:<br/>Gen5: Até 24 GB por vCore|**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore |**Computação**provisionada:<br/>Gen4: 7 GB por vCore<br/>Gen5: 5.1 GB por vCore|
+|Armazenamento|Usa o armazenamento remoto.<br/>**Computação provisionada de banco de dados individual e pool elástico**:<br/>5 GB – 4 TB<br/>**Computação sem servidor**:<br/>5 GB-3 TB<br/>**Instância gerenciada**: 32 GB - 8 TB |Usa o armazenamento SSD local.<br/>**Computação provisionada de banco de dados individual e pool elástico**:<br/>5 GB – 4 TB<br/>**Instância gerenciada**:<br/>32 GB - 4 TB |Crescimento automático flexível do armazenamento, conforme necessário. Dá suporte a até 100 TB de armazenamento. Usa o armazenamento SSD local para o cache do pool de buffers local e o armazenamento de dados local. Usa o armazenamento remoto do Azure como armazenamento de dados de longo prazo final. |
+|Taxa de transferência de e/s (aproximada)|**Banco de dados individual e pool elástico**: 500 IOPS por vCore até 40000 IOPS máximo.<br/>**Instância gerenciada**: Depende [do tamanho do arquivo](../virtual-machines/windows/premium-storage-performance.md#premium-storage-disk-sizes).|5000 IOPS por núcleo até 200.000 IOPS máximo|O hiperscale é uma arquitetura de várias camadas com cache em vários níveis. O IOPs efetivo dependerá da carga de trabalho.|
 |Disponibilidade|1 réplica, sem réplicas de escala de leitura|3 réplicas, 1 [réplica em escala de leitura](sql-database-read-scale-out.md),<br/>alta disponibilidade com redundância de zona (HA)|1 réplica de leitura/gravação, além [de 0-4 réplicas de escala de leitura](sql-database-read-scale-out.md)|
 |Backups|[Armazenamento com redundância geográfica com acesso de leitura (ra-grs)](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 dias (7 dias por padrão)|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 dias (7 dias por padrão)|Backups baseados em instantâneo no armazenamento remoto do Azure. As restaurações usam esses instantâneos para recuperação rápida. Os backups são instantâneos e não afetam O desempenho de e/s de computação. As restaurações são rápidas e não são uma operação de tamanho de dados (levando minutos em vez de horas ou dias).|
 |Na memória|Sem suporte|Suportado|Sem suporte|

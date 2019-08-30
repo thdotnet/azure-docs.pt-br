@@ -12,12 +12,12 @@ ms.workload: na
 ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
-ms.openlocfilehash: 390e49a09136c21f3fd2f6555c0d56fde6e3b267
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 38da6d39d095ce27cdd26719d9b8b752d2921bc0
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60388077"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164760"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Desenvolva modelos do Azure Resource Manager para consistência de nuvem
 
@@ -47,7 +47,7 @@ O restante deste guia descreve as áreas a serem consideradas no planejamento pa
 * Garanta que os parâmetros de modelo usados funcionam nas nuvens de destino.
 * Verifique se as propriedades específicas do recurso estão disponíveis nas nuvens de destino.
 
-Para obter uma introdução aos modelos do Azure Resource Manager, confira [Implantação de modelo](resource-group-overview.md#template-deployment).
+Para obter uma introdução aos modelos do Azure Resource Manager, confira [Implantação de modelo](template-deployment-overview.md).
 
 ## <a name="ensure-template-functions-work"></a>Garantir o funcionamento das funções de modelo
 
@@ -154,7 +154,7 @@ Em todo o modelo, os vínculos são gerados pela combinação do URI base (do pa
 
 Usando essa abordagem, o valor padrão para o parâmetro `_artifactsLocation` é usado. Se os modelos vinculados precisarem ser recuperados de outro local, o parâmetro de entrada poderá ser usado no momento da implantação para substituir o valor padrão – nenhuma alteração ao modelo em si é necessária.
 
-### <a name="use-artifactslocation-instead-of-hardcoding-links"></a>Usar _artifactsLocation em vez de vínculos hard-coding
+### <a name="use-_artifactslocation-instead-of-hardcoding-links"></a>Usar _artifactsLocation em vez de vínculos hard-coding
 
 Além de ser usada para modelos aninhados, a URL no parâmetro `_artifactsLocation` é usada como base de todos os artefatos relacionados de um modelo de implantação. Algumas extensões de VM incluem um vínculo para um script armazenado fora do modelo. Para essas extensões, você não deve embutir os vínculos em código. Por exemplo, as extensões Script Personalizado e DSC do PowerShell podem ser vinculadas a um script externo no GitHub, conforme mostrado abaixo: 
 
@@ -221,7 +221,7 @@ Sabendo que as nuvens e as regiões do Azure podem ser diferentes em seus servi�
 
 Um modelo implanta e configura recursos. Um tipo de recurso é fornecido por um provedor de recursos. Por exemplo, o provedor de recursos de computação (Microsoft.Compute) fornece vários tipos de recurso, como virtualMachines e availabilitySets. Cada provedor de recursos fornece uma API ao Azure Resource Manager definida por um contrato comum, permitindo uma experiência de criação consistente e unificada em todos os provedores de recursos. No entanto, um provedor de recursos disponível no Azure global pode não estar disponível em uma nuvem soberana ou uma região do Azure Stack.
 
-![Provedores de recursos](./media/templates-cloud-consistency/resource-providers.png) 
+![Provedores de recurso](./media/templates-cloud-consistency/resource-providers.png) 
 
 Para verificar se os provedores de recursos disponíveis em determinada nuvem, execute o seguinte script na CLI ([interface de linha de comando](/cli/azure/install-azure-cli)) do Azure:
 
@@ -445,7 +445,7 @@ Namespaces de ponto de extremidade também pode ser usados na saída de um model
 * Cadeias de conexão (MySql, SQLServer, SQLAzure, Custom, NotificationHub, ServiceBus, EventHub, ApiHub, DocDb, RedisCache, PostgreSQL)
 * Gerenciador de Tráfego
 * domainNameLabel de um endereço IP público
-* Serviços de Nuvem
+* Serviços de nuvem
 
 Em geral, evite pontos de extremidade embutidos em código em um modelo. A melhor prática é usar a função de modelo de referência para recuperar os pontos de extremidade dinamicamente. Por exemplo, o ponto de extremidade mais geralmente embutido em código é o namespace de ponto de extremidade para contas de armazenamento. Cada conta de armazenamento tem um FQDN exclusivo que é construído pela concatenação do nome da conta de armazenamento com o namespace de ponto de extremidade. Uma conta de Armazenamento de Blobs chamada mystorageaccount1 resulta em FQDNs diferentes, dependendo da nuvem:
 

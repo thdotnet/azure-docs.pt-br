@@ -3,15 +3,15 @@ title: Usar o avaliador do feed de alterações – Azure Cosmos DB
 description: Saiba como usar o avaliador do feed de alterações para analisar o progresso do processador do feed de alterações
 author: ealsur
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: maquaran
-ms.openlocfilehash: f72a3bfcfd6b4f480977510963f49f73a7207e1f
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
-ms.translationtype: HT
+ms.openlocfilehash: 0023f68400b36b9abd3b9d4a789895e79f67aa03
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615280"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092944"
 ---
 # <a name="use-the-change-feed-estimator"></a>Usar o avaliador do feed de alterações
 
@@ -55,7 +55,7 @@ Envie essa estimativa para sua solução de monitoramento e use-a para entender 
 ## <a name="additional-resources"></a>Recursos adicionais
 
 * [SDK do Azure Cosmos DB](sql-api-sdk-dotnet.md)
-* [Exemplos de código no GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/usage/changefeed)
+* [Exemplos de código no GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Exemplos adicionais sobre o GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
 ## <a name="next-steps"></a>Próximas etapas

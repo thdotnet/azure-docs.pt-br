@@ -150,7 +150,7 @@ Aqui estão alguns pontos importantes a considerar:
 - Para reduzir o nível de detalhes e o volume de dados, os registros com IP curinga serão omitidos quando houver um registro correspondente (para o mesmo processo, porta e protocolo) com um endereço IP específico. Quando um registro IP de curinga é omitido, o *IsWildcardBind* propriedade para o registro com o endereço IP específico, será definido como *verdadeiro*.  Isso indica que a porta é exposta através de todas as interfaces da máquina de geração de relatórios. 
 - Portas que estão associadas somente em uma interface específica ter IsWildcardBind definido como *falsos*. 
 
-### <a name="servicemapcomputercl-records"></a>Registros ServiceMapComputer_CL
+### <a name="servicemapcomputer_cl-records"></a>Registros ServiceMapComputer_CL
 Os registros com um tipo de *ServiceMapComputer_CL* têm dados de inventário para servidores com o Agente de dependência. Esses registros têm as propriedades descritas na tabela a seguir:
 
 | Propriedade | Description |
@@ -175,7 +175,7 @@ Os registros com um tipo de *ServiceMapComputer_CL* têm dados de inventário pa
 | VirtualMachineName_s | O nome da VM |
 | BootTime_t | O tempo de inicialização |
 
-### <a name="servicemapprocesscl-type-records"></a>Registros do tipo ServiceMapProcess_CL Type
+### <a name="servicemapprocess_cl-type-records"></a>Registros do tipo ServiceMapProcess_CL Type
 Os registros com um tipo de *ServiceMapProcess_CL* têm dados de inventário para processos conectados com TCP em servidores com o Agente de dependência. Esses registros têm as propriedades descritas na tabela a seguir:
 
 | Propriedade | Description |

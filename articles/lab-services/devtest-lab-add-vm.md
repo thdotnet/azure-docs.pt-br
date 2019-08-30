@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
-ms.openlocfilehash: be5ff2c59878cc966e73d89c18343b0a6ea3d89c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 64a5892226b90019f175308b5984dc0a0108e226
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311537"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162244"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Adicionar uma VM a um laboratório no Azure DevTest Labs
 Se você já tiver [criado sua primeira VM](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), provavelmente isso foi feito por meio de uma [imagem do Marketplace](devtest-lab-configure-marketplace-images.md) pré-carregada. Agora, se quiser adicionar VMs subsequentes ao laboratório, você também poderá escolher uma *base* que seja uma [imagem personalizada](devtest-lab-create-template.md) ou uma [fórmula](devtest-lab-manage-formulas.md). Este tutorial orienta você pelo Portal do Azure para adicionar uma máquina virtual a um laboratório no DevTest Labs.
@@ -107,7 +107,7 @@ As etapas a seguir ilustram como exibir ou modificar os parâmetros de um artefa
 ## <a name="save-azure-resource-manager-template"></a>Salvar modelo do Azure Resource Manager
 Um modelo do Azure Resource Manager é uma forma declarativa de definir uma implantação repetível.
 As etapas a seguir explicam como salvar o modelo do Azure Resource Manager para a VM que está sendo criada.
-Depois de salvo, você pode usar o modelo do Azure Resource Manager para [implantar novas VMs com o Azure PowerShell](../azure-resource-manager/resource-group-overview.md#template-deployment).
+Depois de salvo, você pode usar o modelo do Azure Resource Manager para [implantar novas VMs com o Azure PowerShell](../azure-resource-manager/template-deployment-overview.md).
 
 1. No painel **Máquina Virtual**, selecione **Exibir Modelo do Azure Resource Manager**.
 2. No painel **Exibir o modelo do Azure Resource Manager**, selecione o texto do modelo.

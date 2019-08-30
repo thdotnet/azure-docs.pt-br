@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 08/15/2019
+ms.date: 08/29/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 081061eae07fa3765d032ad155e59ebf5aa3cbc9
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 5968536d0bd0fbe2496fd9bf5fca86c7a1c4053d
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512551"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162260"
 ---
 # <a name="azure-active-directory-b2b-collaboration-licensing-guidance"></a>Diretrizes de licenciamento da colaboração B2B do Azure Active Directory
 
@@ -32,7 +32,7 @@ Além disso, os usuários convidados podem usar os recursos gratuitos do Azure A
 ## <a name="examples-calculating-guest-user-licenses"></a>Exemplos: Calculando licenças de usuário convidado
 Depois de determinar quantos usuários convidados precisam acessar seus serviços pagos do Azure AD, verifique se você tem licenças pagas do Azure AD suficientes para cobrir os usuários convidados na proporção 1:5 necessária. Estes são alguns exemplos:
 
-- Você deseja convidar 100 usuários para seus aplicativos ou serviços do Azure AD e atribuir acesso de provisionamento e gerenciamento a todos os usuários convidados. Você também deseja exigir MFA e acesso condicional para 50 desses usuários convidados. Para cobrir essa combinação, você precisará de 10 licenças do Azure AD Básico e 10 licenças do Azure AD Premium P1. Se planejar usar recursos do Identity Protection com os usuários convidados, você precisará de licenças do Azure AD Premium P2 na mesma proporção de 1:5 para cobrir os usuários convidados.
+- Você deseja convidar usuários convidados 100 para seus aplicativos ou serviços do Azure AD e fornecer gerenciamento e provisionamento de acesso. Para 50 desses usuários convidados, você também deseja exigir MFA e acesso condicional, portanto, para esses recursos, você precisará de 10 Azure AD Premium licenças P1. Se planejar usar recursos do Identity Protection com os usuários convidados, você precisará de licenças do Azure AD Premium P2 na mesma proporção de 1:5 para cobrir os usuários convidados.
 - Você deseja convidar 60 usuários que exigirão MFA, portanto, você precisa ter pelo menos 12 licenças do Azure AD Premium P1. Você tem 10 funcionários com licenças do Azure AD Premium P1, o que permite até 50 usuários convidados na proporção de licenciamento 1:5. Você precisará comprar duas licenças Premium P1 adicionais para cobrir os 10 usuários convidados adicionais.
 
 ## <a name="next-steps"></a>Próximas etapas

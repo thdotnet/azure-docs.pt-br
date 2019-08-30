@@ -163,7 +163,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
     | Chave | Value |
     |-----|------------|
-    | número | verdadeiro |
+    | número | true |
 
     Se o parâmetro de consulta [number](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) é enviado com a solicitação, a resposta pode incluir o lado da rua (esquerda/direita) e também uma posição ajustada para o número.
   
@@ -171,7 +171,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
     | Chave | Value |
     |-----|------------|
-    | returnSpeedLimit | verdadeiro |
+    | returnSpeedLimit | true |
   
     Quando o parâmetro de consulta [returnSpeedLimit](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) é definido, a resposta retorna o limite de velocidade indicado.
 
@@ -179,7 +179,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
     | Chave | Value |
     |-----|------------|
-    | returnRoadUse | verdadeiro |
+    | returnRoadUse | true |
 
     Quando o [returnRoadUse](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) parâmetro de consulta for definido, a resposta retorna a matriz de uso de estrada para códigos geográficos reversos no nível da rua.
 
@@ -187,7 +187,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
     | Chave | Value |
     |-----|------------|
-    | roadUse | verdadeiro |
+    | roadUse | true |
 
     Você pode restringir a consulta invertida de geocodificação para um tipo específico de estrada usando o parâmetro de consulta [roadUse](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse).
   

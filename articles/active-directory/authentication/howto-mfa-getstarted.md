@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b555ecdf8bbd3d29e440675599041f40ac3c9d0
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 62ea1761cef48ab7808a352789963ab55129d2f8
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125021"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70162383"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Planejando uma implantação da autenticação multifator do Azure baseada em nuvem
 
@@ -173,6 +173,8 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 
 Se os usuários tiverem sido habilitados usando a autenticação multifator habilitada por usuário e impostas, o PowerShell a seguir poderá ajudá-lo a fazer a conversão para o acesso condicional com base na autenticação multifator do Azure.
 
+Execute este PowerShell em uma janela do ISE ou salve como um. Arquivo PS1 a ser executado localmente.
+
 ```PowerShell
 # Disable MFA for all users, keeping their MFA methods intact
 Get-MsolUser -All | Disable-MFA -KeepMethods
@@ -299,16 +301,16 @@ Escolha o que acontece quando os usuários que não estão registrados com o MFA
 
 | Chave | Valor | Padrão |
 | --- | --- | --- |
-| `REQUIRE_USER_MATCH` | TRUE/FALSE | Não definido (equivalente a TRUE) |
+| `REQUIRE_USER_MATCH` | VERDADEIRO/FALSO | Não definido (equivalente a TRUE) |
 
 A finalidade dessa configuração é determinar o que fazer quando um usuário não estiver inscrito na MFA. Os efeitos da alteração dessa configuração são listados na tabela a seguir.
 
 | Configurações | Status de MFA do usuário | Effect |
 | --- | --- | --- |
 | A chave não existe | Não registrado | O desafio de MFA não foi bem-sucedido |
-| Valor definido como True/not set | Não registrado | O desafio de MFA não foi bem-sucedido |
-| Chave definida como False | Não registrado | Autenticação sem MFA |
-| Chave definida como Falsa ou True | Registrados | Deve autenticar com MFA |
+| Valor definido como true/not set | Não registrado | O desafio de MFA não foi bem-sucedido |
+| Chave definida como false | Não registrado | Autenticação sem MFA |
+| Chave definida como falsa ou verdadeira | Registrados | Deve autenticar com MFA |
 
 ### <a name="integrate-with-active-directory-federation-services"></a>Integrar com o Serviços de Federação do Active Directory (AD FS)
 

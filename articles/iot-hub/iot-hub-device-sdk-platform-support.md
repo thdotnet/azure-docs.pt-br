@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: robinsh
-ms.openlocfilehash: 1fbaa54be4419d493d5179a6d6d0884393c8138a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 9a64c6e476910ab4fe983fa949680f05fdded3ae
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967335"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70161859"
 ---
 # <a name="azure-iot-sdks-platform-support"></a>Suporte da plataforma de SDKs do IoT do Azure
 
@@ -71,10 +71,10 @@ Há várias plataformas com suporte.
 
 ### <a name="nodejs-sdk"></a>SDK do Node.js
 
-| OS                                           | Arch | Versão do nó |
-|----------------------------------------------|------|--------------|
-| Ubuntu 16.04 LTS (usando imagem de docker do nó 6) | X64  | Nó 6       |
-| Windows Server 2016                          | X64  | Nó 6       |
+| OS                                           | Arch | Versão do nó    |
+|----------------------------------------------|------|-----------------|
+| Ubuntu 16.04 LTS (usando imagem de docker do nó 6) | X64  | LTS e atual |
+| Windows Server 2016                          | X64  | LTS e atual |
 
 ### <a name="java-sdk"></a>Java SDK
 

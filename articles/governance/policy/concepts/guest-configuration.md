@@ -1,6 +1,6 @@
 ---
-title: Entenda como auditar o conteúdo de uma máquina virtual
-description: Saiba como o Azure Policy usa a configuração do convidado para auditar as configurações dentro de uma máquina virtual do Azure.
+title: Entenda como auditar o conteúdo de um computador
+description: Saiba como o Azure Policy usa a configuração de convidado para auditar as configurações dentro de um computador do Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 03/18/2019
@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 18a85fae7d2d241bd8d582db73c71e1d1472f04d
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: b6c9e50334a25b505655a49a02cd98165d04740b
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036311"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164960"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Entender a Configuração de Convidado do Azure Policy
 
-Além de auditar e [corrigir](../how-to/remediate-resources.md) recursos do Azure, Azure Policy pode auditar configurações dentro de uma máquina virtual. A validação é executada pela extensão e pelo cliente de Configuração de Convidado. A extensão, por meio do cliente, valida definições como a configuração do sistema operacional, a configuração ou a presença do aplicativo, as configurações do ambiente e muito mais.
+Além de auditar e [corrigir](../how-to/remediate-resources.md) recursos do Azure, Azure Policy pode auditar configurações dentro de um computador. A validação é executada pela extensão e pelo cliente de Configuração de Convidado. A extensão, por meio do cliente, valida definições como a configuração do sistema operacional, a configuração ou a presença do aplicativo, as configurações do ambiente e muito mais.
 
 Neste momento, Azure Policy configuração de convidado executa apenas uma auditoria de configurações dentro da máquina.
 Ainda não é possível aplicar as configurações.
@@ -26,7 +26,7 @@ Ainda não é possível aplicar as configurações.
 
 ## <a name="extension-and-client"></a>Extensão e cliente
 
-Para auditar as configurações dentro de uma máquina virtual, uma [extensão de máquina virtual](../../../virtual-machines/extensions/overview.md) é habilitada. A extensão baixa a atribuição de política aplicável e a definição de configuração correspondente.
+Para auditar as configurações dentro de um computador, uma [extensão de máquina virtual](../../../virtual-machines/extensions/overview.md) está habilitada. A extensão baixa a atribuição de política aplicável e a definição de configuração correspondente.
 
 ### <a name="limits-set-on-the-exension"></a>Limites definidos no exension
 
@@ -60,7 +60,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 ## <a name="validation-tools"></a>Ferramentas de validação
 
-Na máquina virtual, o cliente de Configuração de Convidado usa ferramentas locais para executar a auditoria.
+Dentro do computador, o cliente de configuração de convidado usa ferramentas locais para executar a auditoria.
 
 A tabela a seguir mostra uma lista das ferramentas locais usadas em cada sistema operacional com suporte:
 
@@ -71,7 +71,7 @@ A tabela a seguir mostra uma lista das ferramentas locais usadas em cada sistema
 
 ### <a name="validation-frequency"></a>Frequência de validação
 
-O cliente de Configuração Convidado verifica o novo conteúdo a cada 5 minutos. Depois que uma atribuição de convidado for recebida, as configurações serão verificadas em um intervalo de 15 minutos. Os resultados são enviados ao provedor de recursos de configuração do convidado assim que a auditoria é concluída. Quando ocorre um [gatilho de avaliação](../how-to/get-compliance-data.md#evaluation-triggers) de política, o estado do computador é gravado no provedor de recursos de Configuração do Convidado. Isso faz com que a Política do Azure avalie as propriedades do Azure Resource Manager. Uma avaliação de Azure Policy sob demanda recupera o valor mais recente do provedor de recursos de configuração de convidado. No entanto, ele não dispara uma nova auditoria da configuração dentro da máquina virtual.
+O cliente de Configuração Convidado verifica o novo conteúdo a cada 5 minutos. Depois que uma atribuição de convidado for recebida, as configurações serão verificadas em um intervalo de 15 minutos. Os resultados são enviados ao provedor de recursos de configuração do convidado assim que a auditoria é concluída. Quando ocorre um [gatilho de avaliação](../how-to/get-compliance-data.md#evaluation-triggers) de política, o estado do computador é gravado no provedor de recursos de Configuração do Convidado. Isso faz com que a Política do Azure avalie as propriedades do Azure Resource Manager. Uma avaliação de Azure Policy sob demanda recupera o valor mais recente do provedor de recursos de configuração de convidado. No entanto, ele não aciona uma nova auditoria da configuração no computador.
 
 ## <a name="supported-client-types"></a>Tipos de clientes com suporte
 
@@ -96,7 +96,7 @@ O Windows Server nano Server não tem suporte em nenhuma versão.
 
 ## <a name="guest-configuration-extension-network-requirements"></a>Requisitos de rede da extensão de configuração do convidado
 
-Para se comunicar com o provedor de recursos de configuração de convidado no Azure, as máquinas virtuais exigem acesso de saída aos datacenters do Azure na porta **443**. Se você estiver usando uma rede virtual privada no Azure e não permitir o tráfego de saída, as exceções deverão ser configuradas usando regras de [grupo de segurança de rede](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) . Neste momento, uma marca de serviço não existe para Azure Policy configuração de convidado.
+Para se comunicar com o provedor de recursos de configuração de convidado no Azure, as máquinas exigem acesso de saída aos datacenters do Azure na porta **443**. Se você estiver usando uma rede virtual privada no Azure e não permitir o tráfego de saída, as exceções deverão ser configuradas usando regras de [grupo de segurança de rede](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) . Neste momento, uma marca de serviço não existe para Azure Policy configuração de convidado.
 
 Para listas de endereços IP, você pode baixar [Microsoft Azure intervalos de IP](https://www.microsoft.com/download/details.aspx?id=41653)do datacenter. Esse arquivo é atualizado semanalmente e tem os intervalos atualmente implantados e as alterações futuras nos intervalos de IP. Você só precisa permitir o acesso de saída aos IPs nas regiões em que suas VMs são implantadas.
 
@@ -105,12 +105,12 @@ Para listas de endereços IP, você pode baixar [Microsoft Azure intervalos de I
 
 ## <a name="guest-configuration-definition-requirements"></a>Requisitos de definição da Configuração de Convidado
 
-Cada execução de auditoria pela configuração de convidado requer duas definições de política, uma definição de **DeployIfNotExists** e uma definição de **AuditIfNotExists** . A definição **DeployIfNotExists** é usada para preparar a máquina virtual com o agente de configuração convidado e outros componentes para dar suporte às [ferramentas de validação](#validation-tools).
+Cada execução de auditoria pela configuração de convidado requer duas definições de política, uma definição de **DeployIfNotExists** e uma definição de **AuditIfNotExists** . A definição de **DeployIfNotExists** é usada para preparar a máquina com o agente de configuração convidado e outros componentes para dar suporte às [ferramentas de validação](#validation-tools).
 
 A definição de política **DeployIfNotExists** valida e corrige os seguintes itens:
 
-- Valide se a máquina virtual recebeu uma configuração para avaliação. Se não houver nenhuma atribuição no momento, obtenha a atribuição e prepare a máquina virtual:
-  - Autenticando na máquina virtual usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md)
+- Valide se uma configuração foi atribuída à máquina para avaliação. Se nenhuma atribuição estiver presente no momento, obtenha a atribuição e prepare a máquina da:
+  - Autenticando no computador usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md)
   - Instalando a versão mais recente da extensão **Microsoft.GuestConfiguration**
   - Instalando [ferramentas de validação](#validation-tools) e dependências se necessário
 
@@ -125,11 +125,11 @@ O Azure Policy usa a propriedade **complianceStatus** dos provedores de recursos
 > A política **DeployIfNotExists** é necessária para que a política **AuditIfNotExists** retorne os resultados.
 > Sem o **DeployIfNotExists**, a política **AuditIfNotExists** mostra "0 de 0" recursos como status.
 
-Todas as políticas internas da Configuração de Convidado são incluídas em uma iniciativa para agrupar as definições a serem usadas em atribuições. A iniciativa interna chamada *[Versão Prévia]: Auditar as configurações de segurança de Senha em máquinas virtuais do Linux e do Windows* contém 18 políticas. Há seis pares de **DeployIfNotExists** e **AuditIfNotExists** para o Windows e três para o Linux. Em cada caso, a lógica dentro da definição valida somente se o sistema operacional de destino é avaliado com base na definição da [regra de política](definition-structure.md#policy-rule).
+Todas as políticas internas da Configuração de Convidado são incluídas em uma iniciativa para agrupar as definições a serem usadas em atribuições. A iniciativa interna chamada *[Versão Prévia]: As configurações de segurança de senha de auditoria dentro* de computadores Linux e Windows contêm 18 políticas. Há seis pares de **DeployIfNotExists** e **AuditIfNotExists** para o Windows e três para o Linux. Em cada caso, a lógica dentro da definição valida somente se o sistema operacional de destino é avaliado com base na definição da [regra de política](definition-structure.md#policy-rule).
 
 ### <a name="multiple-assignments"></a>Várias atribuições
 
-Atualmente, as políticas de configuração de convidado só dão suporte à atribuição da mesma entrada de convidado uma vez por máquina virtual, mesmo que a atribuição de política use parâmetros diferentes.
+Atualmente, as políticas de configuração de convidado só dão suporte à atribuição da mesma entrada de convidado uma vez por computador, mesmo que a atribuição de política use parâmetros diferentes.
 
 ## <a name="client-log-files"></a>Arquivos de log do cliente
 

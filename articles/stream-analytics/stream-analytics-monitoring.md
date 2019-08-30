@@ -7,19 +7,19 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 6/21/2018
+ms.date: 06/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: a4fc6db300a24d483e88efe668645d2cdb62496b
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 9432b43498cd48352427bf1ec2709a2d0f13a797
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612271"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172772"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Noções básicas sobre o monitoramento de trabalhos do Stream Analytics e como monitorar consultas
 
 ## <a name="introduction-the-monitor-page"></a>Introdução A página do monitor
-As portal do Azure revela principais métricas de desempenho que podem ser usadas para monitorar e solucionar problemas de desempenho de seus trabalhos e consultas. Para ver essas métricas, procure o trabalho do Stream Analytics em cujas métricas você está interessado em ver e exiba a seção **Monitoramento** na página de visão geral.  
+O portal do Azure superfícies principais métricas de desempenho que podem ser usadas para monitorar e solucionar problemas de desempenho de consulta e de trabalho. Para ver essas métricas, procure o trabalho do Stream Analytics em cujas métricas você está interessado em ver e exiba a seção **Monitoramento** na página de visão geral.  
 
 ![Link do monitoramento de trabalho do Stream Analytics](./media/stream-analytics-monitoring/02-stream-analytics-monitoring-block.png)
 
@@ -36,16 +36,16 @@ A janela será exibida conforme mostrado:
 | Solicitações de função com falha | Número de chamadas à função Azure Machine Learning com falha (se presente). |
 | Eventos de função        | Número de eventos enviados à função Azure Machine Learning (se presente). |
 | Solicitações de função      | Número de chamadas à função Azure Machine Learning (se presente). |
-| Erros de desserialização de entrada       | Número de eventos de entrada que não puderam ser desserializados.  |
+| Erros de Desserialização de Entrada       | Número de eventos de entrada que não puderam ser desserializados.  |
 | Bytes de evento de entrada      | Quantidade de dados recebidos pelo trabalho do Stream Analytics, em bytes. Isso pode ser usado para validar que os eventos estão sendo enviados para a fonte de entrada. |
 | Eventos de entrada           | Número de registros desserializados nos eventos de entrada. Essa contagem não inclui eventos de entrada que resultam em erros de desserialização. |
-| Fontes de Entrada Recebidas       | Número de mensagens recebidas pelo trabalho. Para o Hub de eventos, uma mensagem é um único EventData. Para Blob, uma mensagem é um único blob. Observe que as fontes de entrada são contadas antes de desserialização. Se houver erros de desserialização, fontes de entrada podem ser maiores que eventos de entrada. Caso contrário, ele pode ser menor ou igual a eventos de entrada, uma vez que cada mensagem pode conter vários eventos. |
-| Eventos de entrada atrasados      | Eventos que chegaram mais tarde do que a janela de tolerância de chegada tardia configurada. Saiba mais sobre [Considerações sobre a ordem dos eventos do Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md). |
+| Fontes de Entrada Recebidas       | Número de mensagens recebidas pelo trabalho. Para o Hub de eventos, uma mensagem é um único EventData. Para BLOB, uma mensagem é um único BLOB. Observe que as fontes de entrada são contadas antes da desserialização. Se houver erros de desserialização, as fontes de entrada poderão ser maiores que os eventos de entrada. Caso contrário, ele pode ser menor ou igual a eventos de entrada, pois cada mensagem pode conter vários eventos. |
+| Eventos de entrada tardia      | Eventos que chegaram mais tarde do que a janela de tolerância de chegada tardia configurada. Saiba mais sobre [Considerações sobre a ordem dos eventos do Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md). |
 | Eventos fora de ordem    | Número de eventos recebidos fora de ordem que foram descartados ou que receberam um carimbo de data/hora ajustado, com base na Política de ordenação de evento. Isso pode ser afetado pela configuração da definição da Janela de tolerância fora de ordem. |
 | Eventos de saída          | Quantidade de dados enviados pelo trabalho do Stream Analytics para o destino de saída, em números de evento. |
-| Erros de tempo de execução         | Número total de erros relacionados ao processamento de consulta (exceto os erros encontrados durante a ingestão de eventos ou a saída de resultados) |
+| Erros de tempo de execução         | Número total de erros relacionados ao processamento de consulta (excluindo erros encontrados ao ingerir eventos ou resultados de saída) |
 | % de utilização do SU       | A utilização das unidades de Streaming é atribuída a um trabalho na guia Escala do trabalho. Se esse indicador alcançar 80% ou acima, há grande probabilidade de que o processamento de eventos se atrase ou pare. |
-| Atraso de Marca-d'água       | O atraso máximo de marca d'água em todas as partições de todas as saídas no trabalho. |
+| Atraso de Marca d'água       | O atraso máximo de marca d'água em todas as partições de todas as saídas no trabalho. |
 
 É possível usar essas métricas para [monitorar o desempenho de seu trabalho do Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-set-up-alerts#scenarios-to-monitor). 
 

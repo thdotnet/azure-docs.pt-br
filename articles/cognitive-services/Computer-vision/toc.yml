@@ -133,12 +133,6 @@
       href: concept-detecting-adult-content.md
 - name: Guias de instruções
   items:
-    - name: Usar o Visual Computacional
-      items:
-        - name: Java
-          href: Tutorials/java-tutorial.md
-        - name: JavaScript
-          href: Tutorials/javascript-tutorial.md
     - name: Chamar a API da Pesquisa Visual Computacional
       href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
     - name: Usar contêineres

@@ -140,7 +140,7 @@ O Identity Experience Framework renderiza apenas a primeira letra de endereço d
 ![Declaração de email mostrada no navegador com caracteres mascarados por asteriscos](./media/claimsschema/mask-regex.png)
 
 
-### <a name="restriction"></a>Restrição
+### <a name="restriction"></a>Restriction
 
 O elemento **Restriction** pode conter o seguinte atributo:
 
@@ -155,15 +155,15 @@ O elemento **Restriction** contém os seguintes elementos:
 | Enumeration | 1:n | As opções disponíveis na interface do usuário para o usuário selecionar para uma declaração, como um valor em uma lista suspensa. |
 | Pattern | 1:1 | A expressão regular a ser usada. |
 
-### <a name="enumeration"></a>Enumeração
+### <a name="enumeration"></a>Enumeration
 
 O elemento **Enumeration** contém os seguintes atributos:
 
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | Text | Sim | A cadeia de caracteres de exibição que é mostrada ao usuário na interface do usuário para essa opção. |
-| Value | Sim | O valor da declaração associada à seleção dessa opção. |
-| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: True ou False. |
+|Value | Sim | O valor da declaração associada à seleção dessa opção. |
+| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
 
 O exemplo a seguir configura uma declaração de lista suspensa **city** com um valor padrão definido como `New York`:
 
@@ -184,7 +184,7 @@ Lista suspensa de cidades com um valor padrão definido como Nova York:
 
 ![Controle suspenso renderizado no navegador e mostrando o valor padrão](./media/claimsschema/dropdownsingleselect.png)
 
-### <a name="pattern"></a>Padrão
+### <a name="pattern"></a>Pattern
 
 O elemento **Pattern** pode conter os seguintes atributos:
 

@@ -13,7 +13,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 06/11/2019
+  ms.date: 08/29/2019
   ms.author: terrylan
 abstract:
   description: 'Saiba como desenvolver e implantar aplicativos seguros no Azure com nossos aplicativos de exemplo, melhores práticas e diretrizes.'
@@ -41,7 +41,6 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/security/develop/secure-web-app">Aplicativo Web em um contêiner do Linux</a>
-          - html: <a href="/azure/security/develop/secure-pci-web-app">Setor de cartões de pagamento</a>
   - title: Conceitos
     items:
       - type: list

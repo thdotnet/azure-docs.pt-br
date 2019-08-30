@@ -1,17 +1,17 @@
 ---
 title: Criar e gerenciar um servidor de Banco de Dados do Azure para MySQL usando o Portal do Azure
-description: Este artigo descreve como você pode criar rapidamente um novo servidor de Banco de Dados do Azure para MySQL e gerenciar o servidor usando o Portal do Azure.
+description: Este artigo descreve como você pode criar rapidamente um novo servidor de banco de dados do Azure para MySQL e gerenciar o servidor usando o portal do Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: 6d6f24475497382dd9e04d3335fb89d6f0bdd514
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fdcb302d3a14b02ea86fb92c8dbf822ef3f42177
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61459388"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142243"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-server-using-azure-portal"></a>Criar e gerenciar um servidor de Banco de Dados do Azure para MySQL usando o Portal do Azure
 Este tópico descreve como criar rapidamente um novo servidor de Banco de Dados do Azure para MySQL. Também inclui informações sobre como gerenciar o servidor usando o Portal do Azure. O gerenciamento do servidor inclui exibir detalhes do servidor e banco de dados, redefinir a senha, dimensionar recursos e excluir o servidor.
@@ -44,6 +44,8 @@ Execute essas etapas para criar um Banco de Dados do Azure para MySQL nomeado �
     | *Localidade* | Sudeste Asiático (selecione entre a Europa Setentrional e o Oeste dos EUA) |
     | *Versão* | 5.7 (escolha uma versão do servidor de Banco de Dados do Azure para MySQL) |
 
+   ![create-new-server](./media/howto-create-manage-server-portal/form-field.png)
+
 4. Clique em **Tipo de preço** para especificar o nível de desempenho e a camada de serviço para o novo servidor. Selecione a guia **Uso Geral**. *Gen 5*, *2 vCores*, *5 GB*, e *7 dias* são os valores padrão para **Geração de Computação**, **vCore**, **Armazenamento** e **Período de Retenção de Backup**. Você pode deixar esses controles deslizantes como estão. Para habilitar os backups do servidor em armazenamento com redundância geográfica, selecione **Redundância Geográfica** das **Opções de Redundância de Backup**.
 
    ![create-server-pricing-tier](./media/howto-create-manage-server-portal/create-server-pricing-tier.png)
@@ -53,7 +55,7 @@ Execute essas etapas para criar um Banco de Dados do Azure para MySQL nomeado �
     > Selecione a opção **Fixar no painel** para permitir o controle fácil das suas implantações.
 
 ## <a name="update-an-azure-database-for-mysql-server"></a>Atualizar um servidor de Banco de Dados do Azure para MySQL
-Depois que o novo servidor for provisionado, o usuário terá várias opções para configurar o servidor existente, incluindo redefinir a senha do administrador e escalar verticalmente ou reduzir verticalmente o servidor, alterando vCore ou armazenamento.
+Depois que o novo servidor tiver sido provisionado, o usuário terá várias opções para configurar o servidor existente, incluindo a redefinição da senha do administrador, a alteração do tipo de preço e a expansão ou redução vertical do servidor, alterando vCore ou armazenamento
 
 ### <a name="change-the-administrator-user-password"></a>Alterar a senha de usuário do administrador
 1. Na **Visão Geral** do servidor, clique em **Redefinir Senha** para mostrar a janela de redefinição de senha.
@@ -65,6 +67,17 @@ Depois que o novo servidor for provisionado, o usuário terá várias opções p
    ![reset-password](./media/howto-create-manage-server-portal/reset-password.png)
 
 3. Clique em **OK** para salvar a nova senha.
+
+### <a name="change-the-pricing-tier"></a>Alterar o tipo de preço
+> [!NOTE]
+> O dimensionamento só tem suporte de Uso Geral para camadas de serviço com otimização de memória e vice-versa. Observe que a alteração de e para o tipo de preço básico após a criação do servidor não tem suporte no banco de dados do Azure para MySQL.
+> 
+1. Clique em **Tipo de Preço**, localizado em **Configurações**.
+2. Selecione o **tipo de preço** para o qual você deseja alterar.
+
+    ![alterar-camada de preços](./media/howto-create-manage-server-portal/change-pricing-tier.png)
+
+4. Clique em **OK** para salvar as alterações. 
 
 ### <a name="scale-vcores-updown"></a>Escalar verticalmente/reduzir verticalmente o vCores
 
@@ -90,7 +103,7 @@ Depois que o novo servidor for provisionado, o usuário terá várias opções p
 
 1. Na **Visão Geral** do servidor, clique no botão **Excluir** para abrir o prompt de confirmação de exclusão.
 
-    ![excluir](./media/howto-create-manage-server-portal/delete.png)
+    ![delete](./media/howto-create-manage-server-portal/delete.png)
 
 2. Digite o nome do servidor na caixa de entrada para confirmação dupla.
 
@@ -106,7 +119,7 @@ Na **Visão Geral** do servidor, role para baixo até visualizar o bloco do banc
 ## <a name="show-details-of-an-azure-database-for-mysql-server"></a>Mostrar detalhes de um servidor de Banco de Dados do Azure para MySQL
 Clique em **Propriedades**, localizado em **Configurações** para exibir informações detalhadas sobre o servidor.
 
-![propriedades](./media/howto-create-manage-server-portal/properties.png)
+![properties](./media/howto-create-manage-server-portal/properties.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

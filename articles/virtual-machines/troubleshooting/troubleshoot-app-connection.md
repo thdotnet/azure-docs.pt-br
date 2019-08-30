@@ -12,16 +12,15 @@ ms.assetid: b9ff7cd0-0c5d-4c3c-a6be-3ac47abf31ba
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 9bc528cdd098a2e355c542c3ca8f9bcb0287f339
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: fd79e04cdd8f9d01131c016031d696c1583eb55d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710516"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080391"
 ---
 # <a name="troubleshoot-application-connectivity-issues-on-virtual-machines-in-azure"></a>Solucionar problemas de conectividade do aplicativo em máquinas virtuais no Azure
 
@@ -85,7 +84,7 @@ Se não conseguir acessar o aplicativo, verifique as seguintes configurações:
 
 Em máquinas virtuais baseadas em Linux e Windows, use o comando **netstat -a** para mostrar as portas de escuta ativas. Examine a saída para as portas esperadas no qual seu aplicativo deve estar escutando. Reinicie o aplicativo ou configure-o para usar as portas esperadas, como necessário e tente acessar o aplicativo localmente outra vez.
 
-## <a id="step2"></a>Etapa 2: Aplicativo de acesso de outra VM na mesma rede virtual
+## <a id="step2"></a>Etapa 2: Acessar o aplicativo de outra VM na mesma rede virtual
 Tente acessar o aplicativo de uma VM diferente, mas na mesma rede virtual, usando o nome de host da VM ou seu endereço IP público, privado ou do provedor atribuído ao Azure. Em máquinas virtuais criadas usando o modelo de implantação clássica, não use o endereço IP público do serviço de nuvem.
 
 ![Iniciar o aplicativo de uma VM diferente](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access3.png)
@@ -105,7 +104,7 @@ Se não conseguir acessar o aplicativo, verifique as seguintes configurações:
 
 Em uma máquina virtual baseada no Windows, use o Firewall do Windows com Segurança avançada para determinar se as regras de firewall excluem o tráfego de entrada e de saída do seu aplicativo.
 
-## <a id="step3"></a>Etapa 3: Aplicativo de acesso de fora da rede virtual
+## <a id="step3"></a>Etapa 3: Acessar o aplicativo de fora da rede virtual
 Tente acessar o aplicativo em um computador fora da rede virtual em que está a VM na qual o aplicativo está sendo executado. Use uma rede diferente do computador cliente original.
 
 ![Iniciar o aplicativo em um computador fora da rede virtual](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access4.png)

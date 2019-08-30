@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/12/2019
+ms.date: 08/29/2019
 ms.author: atsenthi
-ms.openlocfilehash: 08864d6a965921f7f6d284dc53bd2586d30fedd1
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 5d6f1fcba5d93cbd4efb63cd080848258eb2a262
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014436"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172880"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Saiba como personalizar algumas das configurações de cluster do Service Fabric
 Este artigo descreve as várias configurações de malha para o cluster do Service Fabric que você pode personalizar. Para clusters hospedados no Azure, você pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou utilizando um modelo do Azure Resource Manager. Para obter mais informações, consulte [Atualizar a configuração de um cluster do Azure](service-fabric-cluster-config-upgrade-azure.md). Para clusters independentes, você customiza as configurações atualizando o arquivo *ClusterConfig.json* e executando uma atualização de configuração em seu cluster. Para obter mais informações, consulte [atualizar a configuração de um cluster autônomo](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -236,6 +236,8 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |UserMaxStandByReplicaCount |Int, o padrão é 1 |Dinâmico|O número máximo padrão de réplicas Em Espera que o sistema mantém para serviços de usuário. |
 |UserReplicaRestartWaitDuration |Tempo em segundos, o padrão é \* 60,0 30 |Dinâmico|Especifique o intervalo de tempo em segundos. Quando uma réplica persistente fica inativa, o Windows Fabric aguarda a duração para que a réplica fique ativa novamente antes de criar novas réplicas de posicionamento (o que exigiria uma cópia do estado). |
 |UserStandByReplicaKeepDuration |Tempo em segundos, o padrão é 3600,0 \* 24 \* 7 |Dinâmico|Especifique o intervalo de tempo em segundos. Quando uma réplica persistente voltar de um estado inativo, talvez ela já tenha sido substituída. Este temporizador determina por quanto tempo o FM manterá a réplica em espera antes de descartá-la. |
+|WaitForInBuildReplicaSafetyCheckTimeout|TimeSpan, o padrão é Common:: TimeSpan:: FromSeconds (60 * 10)|Dinâmico|Especifique o intervalo de tempo em segundos. Entrada de configuração para o tempo limite de verificação de segurança WaitForInBuildReplica opcional. Essa configuração define o tempo limite para a verificação de segurança WaitForInBuildReplica para as desativações e atualizações de nó. Essa verificação de segurança falhará se qualquer um dos seguintes for verdadeiro:-um primário está sendo criado e o tamanho do conjunto de réplicas de destino ft > 1-se a réplica atual estiver em compilação e persistir – se esse for o primário atual e uma nova réplica estiver sendo criada, essa verificação de segurança será ignorada PED se o tempo limite expirar mesmo que uma das condições anteriores ainda seja verdadeira. |
+|WaitForReconfigurationSafetyCheckTimeout|TimeSpan, o padrão é Common:: TimeSpan:: FromSeconds (60,0 * 10)|Dinâmico|Especifique o intervalo de tempo em segundos. Entrada de configuração para o tempo limite de verificação de segurança WaitForReconfiguration opcional. Essa configuração define o tempo limite da verificação de segurança WaitForReconfiguration para desativações e atualizações de nó. Essa verificação de segurança falhará se a réplica que está sendo verificada fizer parte de uma partição que está em reconfiguração. A verificação de segurança será ignorada depois que esse tempo limite expira mesmo que a partição ainda esteja em reconfiguração.|
 
 ## <a name="faultanalysisservice"></a>FaultAnalysisService
 

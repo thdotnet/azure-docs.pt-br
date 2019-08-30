@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: 2fd8934f34b811c0a2532f27e32fc799c2c8186e
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 1fb377d482277a4776214d08b879d99f4234ca40
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141841"
+ms.locfileid: "70163669"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Criar um pool de host com o PowerShell
 
@@ -25,7 +25,7 @@ Primeiro, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual 
 Execute o seguinte cmdlet para entrar no ambiente de área de trabalho virtual do Windows
 
 ```powershell
-Add-RdsAccount -DeploymentUrl https://rdbroker.wvd.microsoft.com
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
 Em seguida, execute este cmdlet para criar um novo pool de hosts em seu locatário de área de trabalho virtual do Windows:

@@ -1,66 +1,66 @@
 ---
-title: Criar um pool de host de visualização de área de trabalho Virtual do Windows com um modelo do Azure Resource Manager - Azure
-description: Como criar um pool de host na visualização de área de trabalho Virtual do Windows com um modelo do Azure Resource Manager.
+title: Criar um pool de hosts da visualização de área de trabalho virtual do Windows com um modelo de Azure Resource Manager – Azure
+description: Como criar um pool de hosts na visualização da área de trabalho virtual do Windows com um modelo Azure Resource Manager.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 04/05/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: cdc61aede6e650bce62768b7a97f8640affd594f
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 27fe19c2b1f92b67e02b4e09d5fcd607759d8abd
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620478"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163750"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Criar um pool de host com um modelo do Azure Resource Manager
 
 Pools de hosts são uma coleção de uma ou mais máquinas virtuais idênticas dentro dos ambientes de locatário de Versão Prévia da Área de Trabalho Virtual do Windows. Cada pool de hosts pode conter um grupo de aplicativo com o qual os usuários podem interagir como se eles estivessem em uma área de trabalho física.
 
-Siga as instruções desta seção para criar um pool de host para um locatário de área de trabalho Virtual do Windows com um modelo do Azure Resource Manager fornecido pela Microsoft. Este artigo informa como criar um pool de host na área de trabalho Virtual do Windows, crie um grupo de recursos com as VMs em uma assinatura do Azure, Junte-se nessas VMs ao domínio do AD e registrar as máquinas virtuais com área de trabalho Virtual do Windows.
+Siga as instruções desta seção para criar um pool de hosts para um locatário de área de trabalho virtual do Windows com um modelo de Azure Resource Manager fornecido pela Microsoft. Este artigo informará como criar um pool de hosts na área de trabalho virtual do Windows, criar um grupo de recursos com VMs em uma assinatura do Azure, ingressar essas VMs no domínio do AD e registrar as VMs com a área de trabalho virtual do Windows.
 
 ## <a name="what-you-need-to-run-the-azure-resource-manager-template"></a>O que é necessário para executar o modelo do Azure Resource Manager
 
-Verifique se que você sabe o seguinte antes de executar o modelo do Azure Resource Manager:
+Verifique se você conhece as ações a seguir antes de executar o modelo de Azure Resource Manager:
 
-- Onde é a origem da imagem que você deseja usar. Trata-se de galeria do Azure ou é personalizado?
-- Suas credenciais de associação de domínio.
-- Suas credenciais de área de trabalho Virtual do Windows.
+- Onde a origem da imagem que você deseja usar é. Ele é da galeria do Azure ou é personalizado?
+- Suas credenciais de ingresso no domínio.
+- Suas credenciais de área de trabalho virtual do Windows.
 
-Quando você cria um pool de host de área de trabalho Virtual do Windows com o modelo do Azure Resource Manager, você pode criar uma máquina virtual da Galeria do Azure, uma imagem gerenciada ou uma imagem não gerenciada. Para saber mais sobre como criar imagens de VM, consulte [preparar um VHD do Windows ou o VHDX para carregar no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) e [criar uma imagem gerenciada de uma VM generalizada no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
+Ao criar um pool de hosts de área de trabalho virtual do Windows com o modelo de Azure Resource Manager, você pode criar uma máquina virtual na galeria do Azure, em uma imagem gerenciada ou em uma imagem não gerenciada. Para saber mais sobre como criar imagens de VM, consulte [preparar um VHD do Windows ou VHDX para carregar no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image) e [criar uma imagem gerenciada de uma VM generalizada no Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
 
-## <a name="run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool"></a>Executar o modelo do Azure Resource Manager para o provisionamento de um novo pool de host
+## <a name="run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool"></a>Executar o modelo de Azure Resource Manager para provisionar um novo pool de hosts
 
-Para começar, acesse [essa URL do GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool).
+Para começar, vá para [esta URL do GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool).
 
 ### <a name="deploy-the-template-to-azure"></a>Implantar o modelo no Azure
 
-Se você estiver implantando em uma assinatura do Enterprise, role para baixo e selecione **implantar no Azure**, em seguida, ignorar ahead preencha os parâmetros com base em sua origem da imagem.
+Se você estiver implantando em uma assinatura do Enterprise, role para baixo e selecione **implantar no Azure**e, em seguida, ignorar antecipadamente os parâmetros com base na origem da imagem.
 
 Se você estiver implantando em uma assinatura do provedor de soluções na nuvem, siga estas etapas para implantar no Azure:
 
 1. Role para baixo e clique com o botão direito do mouse em **Implantar no Azure** e, em seguida, selecione **Copiar o link**.
 2. Abra um editor de texto, como o Bloco de Notas, e cole o link nele.
-3. Logo após "https://portal.azure.com/" e a hashtag (#) antes de inserir um sinal de arroba (@) seguido do nome de domínio de locatário. Aqui está um exemplo do formato você deve usar: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
+3. Logo após "https://portal.azure.com/" e antes da hashtag (#), insira um sinal de arroba (@) seguido pelo nome de domínio do locatário. Aqui está um exemplo do formato que você deve usar: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
 4. Entre no portal do Azure como um usuário com permissões de Administrador/Colaborador para a assinatura do Provedor de Soluções de Nuvem.
 5. Cole o link copiado para o editor de texto na barra de endereços.
 
-Para obter orientação sobre quais parâmetros você deve inserir para seu cenário, consulte a área de trabalho Virtual do Windows [arquivo Leiame](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/README.md). O arquivo Leiame esteja sempre atualizado com as alterações mais recentes.
+Para obter diretrizes sobre quais parâmetros devem ser inseridos para seu cenário, consulte o [arquivo Leiame](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/README.md)da área de trabalho virtual do Windows. O Leiame sempre é atualizado com as alterações mais recentes.
 
 ## <a name="assign-users-to-the-desktop-application-group"></a>Atribuir usuários ao grupo de aplicativos da área de trabalho
 
-Após a conclusão do modelo do GitHub do Azure Resource Manager, atribua acesso de usuário antes de você começar a testar as áreas de trabalho de sessão completa em suas máquinas virtuais.
+Após a conclusão do modelo de Azure Resource Manager do GitHub, atribua o acesso do usuário antes de começar a testar as áreas de trabalho de sessão completas em suas máquinas virtuais.
 
 Primeiro, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual do Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) para usá-lo na sessão do PowerShell, caso ainda não tenha feito isso.
 
-Para atribuir usuários ao grupo de aplicativos da área de trabalho, abra uma janela do PowerShell e execute este cmdlet para entrar no ambiente de área de trabalho Virtual do Windows:
+Para atribuir usuários ao grupo de aplicativos da área de trabalho, abra uma janela do PowerShell e execute este cmdlet para entrar no ambiente de área de trabalho virtual do Windows:
 
 ```powershell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 ```
 
-Depois disso, adicione usuários ao grupo de aplicativo da área de trabalho com este cmdlet:
+Depois disso, adicione usuários ao grupo de aplicativos da área de trabalho com este cmdlet:
 
 ```powershell
 Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -UserPrincipalName <userupn>

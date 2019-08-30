@@ -1,6 +1,6 @@
 ---
 title: Fazer logon em uma VM do Linux com as credenciais do Azure Active Directory | Microsoft Docs
-description: Nessas instruções, você aprenderá a criar e configurar uma VM do Linux para usar a autenticação do Azure Active Directory para logons de usuário
+description: Saiba como criar e configurar uma VM do Linux para entrar usando Azure Active Directory autenticação.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -12,21 +12,26 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/17/2018
+ms.date: 08/29/2019
 ms.author: cynthn
-ms.openlocfilehash: f8f00c49ced4e06eb634cbbfb1b786e6729783d2
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 0e3996c28750639b227475bf4e0196f3a0c3ab0d
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667661"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163214"
 ---
-# <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Fazer logon em uma máquina virtual do Linux no Azure usando a autenticação do Azure Active Directory (versão prévia)
+# <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Visualização: Faça logon em uma máquina virtual Linux no Azure usando a autenticação Azure Active Directory
 
 Para melhorar a segurança das VMs (máquinas virtuais) do Linux no Azure, você pode fazer a integração com a autenticação do AD (Azure Active Directory). Ao usar a autenticação do Azure AD para VMs do Linux, você controla e impõe de forma central as políticas que permitem ou negam acesso às VMs. Este artigo mostra como criar e configurar uma VM do Linux para usar a autenticação do Azure AD.
 
-> [!NOTE]
-> Este recurso está na versão prévia e não é recomendado para uso com máquinas virtuais ou cargas de trabalho de produção. Use esse recurso em uma máquina virtual de teste que você pretende descartar após o teste.
+
+> [!IMPORTANT]
+> A autenticação Azure Active Directory está atualmente em visualização pública.
+> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Use esse recurso em uma máquina virtual de teste que você pretende descartar após o teste.
+>
+
 
 Há muitos benefícios de usar a autenticação do Azure AD para fazer logon em VMs do Linux no Azure, como:
 
@@ -43,7 +48,7 @@ Há muitos benefícios de usar a autenticação do Azure AD para fazer logon em 
 
 No momento, há suporte para as seguintes distribuições do Linux durante a versão prévia desse recurso:
 
-| Distribuição | Versão |
+| Distribuição | Version |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
 | Debian | Debian 9 |
@@ -60,11 +65,10 @@ No momento, há suporte para as seguintes regiões do Azure durante a versão pr
 >[!IMPORTANT]
 > Para usar esse recurso de versão prévia, somente implante uma distribuição do Linux com suporte em uma região do Azure com suporte. Não há suporte para o recurso no Azure Governamental nem nas nuvens soberanas.
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Se optar por instalar e usar a CLI localmente, este tutorial exigirá que você esteja executando a CLI do Azure versão 2.0.31 ou posterior. Execute `az --version` para encontrar a versão. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-linux-virtual-machine"></a>Criar uma máquina virtual Linux
+## <a name="create-a-linux-virtual-machine"></a>Crie uma máquina virtual Linux
 
 Crie um grupo de recursos com [az group create](/cli/azure/group#az-group-create) e, em seguida, crie uma VM com [az vm create](/cli/azure/vm#az-vm-create) usando uma distribuição com suporte em uma região com suporte. O exemplo a seguir implanta uma VM denominada *myVM* que usa o *Ubuntu 16.04 LTS* em um grupo de recursos denominado *myResourceGroup* na região *southcentralus*. Nos exemplos a seguir, você pode fornecer seu próprio grupo de recursos e seus próprios nomes de VM, conforme o necessário.
 
@@ -83,7 +87,7 @@ A criação da VM e dos recursos de suporte demora alguns minutos.
 
 ## <a name="install-the-azure-ad-login-vm-extension"></a>Instalar a extensão da VM de logon do Azure AD
 
-Para fazer logon uma VM do Linux com credenciais do AD do Azure, instale o extensão de VM de logon do Active Directory do Azure. As extensões de VM são pequenos aplicativos que fornecem tarefas de configuração e automação pós-implantação nas máquinas virtuais do Azure. Use [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) para instalar a extensão *AADLoginForLinux* na VM denominada *myVM* no grupo de recursos *myResourceGroup*:
+Para fazer logon em uma VM do Linux com credenciais do Azure AD, instale a extensão de VM de logon Azure Active Directory. As extensões de VM são pequenos aplicativos que fornecem tarefas de configuração e automação pós-implantação nas máquinas virtuais do Azure. Use [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) para instalar a extensão *AADLoginForLinux* na VM denominada *myVM* no grupo de recursos *myResourceGroup*:
 
 ```azurecli-interactive
 az vm extension set \
@@ -93,7 +97,7 @@ az vm extension set \
     --vm-name myVM
 ```
 
-O *provisioningState* de *êxito* é mostrado quando a extensão é instalada na VM.
+O *provisioningState* de *Succeeded* é mostrado depois que a extensão é instalada com êxito na VM.
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Configurar atribuições de função para a VM
 
@@ -132,24 +136,21 @@ Primeiro, exiba o endereço IP público da VM com [az vm show](/cli/azure/vm#az-
 az vm show --resource-group myResourceGroup --name myVM -d --query publicIps -o tsv
 ```
 
-Faça logon na máquina virtual do Linux no Azure usando suas credenciais do Azure AD. O parâmetro `-l` permite que você especifique seu próprio endereço da conta do Azure AD. Endereços de conta devem ser inseridos em letras minúsculas. Use o endereço IP público da VM conforme a saída do comando anterior:
+Faça logon na máquina virtual do Linux no Azure usando suas credenciais do Azure AD. O parâmetro `-l` permite que você especifique seu próprio endereço da conta do Azure AD. Substitua a conta de exemplo pela sua. Endereços de conta devem ser inseridos em letras minúsculas. Substitua o endereço IP de exemplo pelo endereço IP público da sua VM do comando anterior.
 
 ```azurecli-interactive
-ssh -l azureuser@contoso.onmicrosoft.com publicIps
+ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 ```
 
-Você precisará entrar no Azure AD com um código de uso avulso em [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Copie e cole o código de uso avulso na página de logon do dispositivo, conforme é mostrado no exemplo a seguir:
+Você precisará entrar no Azure AD com um código de uso avulso em [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Copie e cole o código de uso único na página de logon do dispositivo.
 
-```bash
-~$ ssh -l azureuser@contoso.onmicrosoft.com 13.65.237.247
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code FJS3K6X4D to authenticate. Press ENTER when ready.
-```
+Quando solicitado, insira suas credenciais de logon do Azure AD na página de logon. 
 
-Quando solicitado, insira suas credenciais de logon do Azure AD na página de logon. A seguinte mensagem é mostrada no navegador da Web quando você é autenticado com êxito:
+A seguinte mensagem é mostrada no navegador da Web quando você se autenticou com êxito:`You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.`
 
-    You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.
+Feche a janela do navegador, retorne para o prompt do SSH e pressione a tecla **Enter**. 
 
-Feche a janela do navegador, retorne para o prompt do SSH e pressione a tecla **Enter**. Agora, você está conectado à máquina virtual do Linux no Azure com as permissões de função atribuídas, como *Usuário da VM* ou *Administrador da VM*. Se a conta de usuário recebeu a função *Logon de Administrador da Máquina Virtual*, você pode usar o `sudo` para executar comandos que exigem privilégios de raiz.
+Agora, você está conectado à máquina virtual do Linux no Azure com as permissões de função atribuídas, como *Usuário da VM* ou *Administrador da VM*. Se sua conta de usuário for atribuída à função de *logon de administrador da máquina virtual* , você poderá usar `sudo` o para executar comandos que exigem privilégios de raiz.
 
 ## <a name="sudo-and-aad-login"></a>Logon do AAD e Sudo
 

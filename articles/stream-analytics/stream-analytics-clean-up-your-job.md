@@ -7,25 +7,25 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 6/21/2019
+ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: cb81c73f7946a10bae0470a55dcf1c0d55c2b847
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 093ada2b2751540b986154be3a2f333784c1259f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67330042"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173298"
 ---
-# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Interromper ou excluir seu trabalho Azure Stream Analytics
+# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Parar ou excluir seu trabalho de Azure Stream Analytics
 
-Os trabalhos do Stream Analytics do Azure podem ser facilmente parados ou excluídos por meio do portal do Azure, Azure PowerShell, SDK do Azure para .net ou API REST. Um trabalho do Stream Analytics não pode ser recuperado depois que ele foi excluído.
+Azure Stream Analytics trabalhos podem ser facilmente interrompidos ou excluídos por meio do portal do Azure, Azure PowerShell, SDK do Azure para .net ou API REST. Um trabalho de Stream Analytics não pode ser recuperado depois de ser excluído.
 
 >[!NOTE] 
 >Quando o trabalho do Azure Stream Analytics é interrompido, os dados persistem somente no armazenamento de entrada e saída, como no Hubs de Eventos ou no Banco de Dados SQL do Azure. Se for necessário para remover dados do Azure, lembre-se de seguir o processo de remoção para os recursos de entrada e saída do seu trabalho do Stream Analytics.
 
 ## <a name="stop-a-job-in-azure-portal"></a>Parar um trabalho no portal do Azure
 
-Quando você interrompe um trabalho, os recursos são deprovisionned e ele interrompe o processamento de eventos. Encargos relacionados a esse trabalho também são interrompidos. No entanto, toda a sua configuração são mantidas e você pode reiniciar o trabalho mais tarde 
+Quando você interrompe um trabalho, os recursos são desprovisionados e o processamento de eventos é interrompido. Os encargos relacionados a esse trabalho também são interrompidos. No entanto, todas as suas configurações são mantidas e você pode reiniciar o trabalho mais tarde 
 
 1. Entre no [Portal do Azure](https://portal.azure.com). 
 
@@ -39,7 +39,7 @@ Quando você interrompe um trabalho, os recursos são deprovisionned e ele inter
 ## <a name="delete-a-job-in-azure-portal"></a>Excluir um trabalho no portal do Azure
 
 >[!WARNING] 
->Um trabalho do Stream Analytics não pode ser recuperado depois que ele foi excluído.
+>Um trabalho de Stream Analytics não pode ser recuperado depois de ser excluído.
 
 1. Entre no Portal do Azure. 
 
@@ -54,7 +54,7 @@ Quando você interrompe um trabalho, os recursos são deprovisionned e ele inter
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Para interromper um trabalho usando o PowerShell, use o [Stop-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/stop-azstreamanalyticsjob) cmdlet. Para excluir um trabalho usando o PowerShell, use o [AzStreamAnalyticsJob remover](https://docs.microsoft.com/powershell/module/az.streamanalytics/Remove-azStreamAnalyticsJob) cmdlet.
+Para interromper um trabalho usando o PowerShell, use o cmdlet [Stop-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/stop-azstreamanalyticsjob) . Para excluir um trabalho usando o PowerShell, use o cmdlet [Remove-AzStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/az.streamanalytics/Remove-azStreamAnalyticsJob) .
 
 ## <a name="stop-or-delete-a-job-using-azure-sdk-for-net"></a>Parar ou excluir um trabalho usando o SDK do Azure para .NET
 

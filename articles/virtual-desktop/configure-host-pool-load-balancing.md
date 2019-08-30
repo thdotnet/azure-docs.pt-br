@@ -1,49 +1,53 @@
 ---
-title: Configurar o método de balanceamento de carga de visualização de área de trabalho Virtual do Windows - Azure
-description: Como configurar o método de balanceamento de carga para um ambiente de área de trabalho Virtual do Windows.
+title: Configurar o método de balanceamento de carga do Windows Virtual Desktop Preview-Azure
+description: Como configurar o método de balanceamento de carga para um ambiente de área de trabalho virtual do Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 03/21/2019
+ms.date: 08/29/2019
 ms.author: helohr
-ms.openlocfilehash: 0c4702dada17e759d89c33be99b3155f4b15ad9e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e1f1ea10dc68e501cfac7ef0cf0383ce78e8f380
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60328877"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70163760"
 ---
-# <a name="configure-the-windows-virtual-desktop-preview-load-balancing-method"></a>Configurar o método de balanceamento de carga de visualização de área de trabalho Virtual do Windows
+# <a name="configure-the-windows-virtual-desktop-preview-load-balancing-method"></a>Configurar o método de balanceamento de carga do Windows Virtual Desktop Preview
 
-Configurar o método de balanceamento de carga para um pool de host permite que você ajuste o ambiente de visualização de área de trabalho Virtual do Windows para melhor se adequar às suas necessidades.
+Configurar o método de balanceamento de carga para um pool de hosts permite que você ajuste o ambiente de visualização de área de trabalho virtual do Windows para atender melhor às suas necessidades.
 
 >[!NOTE]
-> Isso não se aplica a um pool de host de área de trabalho persistentes como os usuários sempre têm um mapeamento de 1:1 para um host de sessão dentro do pool de host.
+> Isso não se aplica a um pool de hosts de área de trabalho persistente porque os usuários sempre têm um mapeamento 1:1 para um host de sessão dentro do pool de hosts.
 
-## <a name="configure-breadth-first-load-balancing"></a>Configurar balanceamento de carga do amplitude
+## <a name="configure-breadth-first-load-balancing"></a>Configurar o balanceamento de carga da primeira amplitude
 
-Balanceamento de carga de amplitude é a configuração padrão para novos pools de host não persistente. Balanceamento de carga de amplitude distribui novas sessões de usuário em todos os hosts de sessão disponíveis no pool de host. Ao configurar o balanceamento de carga de amplitude, você pode definir um limite máximo de sessão por host de sessão no pool de host.
+O balanceamento de carga da primeira amplitude é a configuração padrão para novos pools de hosts não persistentes. O balanceamento de carga da primeira distribuição distribui novas sessões de usuário em todos os hosts de sessão disponíveis no pool de hosts. Ao configurar o balanceamento de carga da primeira amplitude, você pode definir um limite máximo de sessão por host de sessão no pool de hosts.
 
-Primeiro, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual do Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) para usá-lo na sessão do PowerShell, caso ainda não tenha feito isso.
+Primeiro, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual do Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) para usá-lo na sessão do PowerShell, caso ainda não tenha feito isso. Depois disso, execute o seguinte cmdlet para entrar em sua conta:
 
-Para configurar um pool de host para executar sem ajustar o limite máximo de sessão de balanceamento de carga de amplitude, execute o seguinte cmdlet do PowerShell:
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
+
+Para configurar um pool de hosts para executar o balanceamento de carga de primeira amplitude sem ajustar o limite máximo de sessão, execute o seguinte cmdlet do PowerShell:
 
 ```powershell
 Set-RdsHostPool <tenantname> <hostpoolname> -BreadthFirstLoadBalancer
 ```
 
-Para configurar um pool de host para realizar o balanceamento de carga de amplitude e usar um limite máximo de sessão nova, execute o seguinte cmdlet do PowerShell:
+Para configurar um pool de hosts para executar o balanceamento de carga da primeira amplitude e usar um novo limite máximo de sessão, execute o seguinte cmdlet do PowerShell:
 
 ```powershell
 Set-RdsHostPool <tenantname> <hostpoolname> -BreadthFirstLoadBalancer -MaxSessionLimit ###
 ```
 
-## <a name="configure-depth-first-load-balancing"></a>Configurar balanceamento de carga de profundidade
+## <a name="configure-depth-first-load-balancing"></a>Configurar o balanceamento de carga de profundidade inicial
 
-Balanceamento de carga de profundidade distribui novas sessões de usuário para um host de sessão disponíveis com o maior número de conexões, mas não atingiu seu limite máximo de sessão. Ao configurar o balanceamento de carga de profundidade, você **deve** definir um limite máximo de sessão por host de sessão no pool de host.
+O balanceamento de carga em profundidade distribui novas sessões de usuário para um host de sessão disponível com o número mais alto de conexões, mas não atingiu seu limite máximo de limite de sessão. Ao configurar o balanceamento de carga de profundidade inicial, você **deve** definir um limite máximo de sessão por host de sessão no pool de hosts.
 
-Para configurar um pool de host para realizar o balanceamento de carga de profundidade, execute o seguinte cmdlet do PowerShell:
+Para configurar um pool de hosts para executar o balanceamento de carga de profundidade primeiro, execute o seguinte cmdlet do PowerShell:
 
 ```powershell
 Set-RdsHostPool <tenantname> <hostpoolname> -DepthFirstLoadBalancer -MaxSessionLimit ###

@@ -1,18 +1,18 @@
 ---
 title: Noções básicas sobre a manipulação de horas no Azure Stream Analytics
-description: Saiba mais sobre a manipulação de horas no Azure Stream Analytics
+description: Saiba mais sobre como funciona o tratamento de tempo e como resolver problemas de manipulação de tempo no Azure Stream Analytics.
 author: jasonwhowell
 ms.author: zhongc
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.openlocfilehash: 0eb4b77964aa3c07bac2af615a26c3a9199525de
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c8517d4754d10b61f7ee4c8075830860e1d22864
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64692389"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172990"
 ---
 # <a name="understand-time-handling-in-azure-stream-analytics"></a>Noções básicas sobre a manipulação de horas no Azure Stream Analytics
 
@@ -26,7 +26,7 @@ Para um melhor quadro de discussão, vamos definir alguns conceitos informativos
 
 - **Tempo de processamento**: o momento em que o evento atinge o sistema de processamento e é observado. Por exemplo, quando o sensor de uma cabine de pedágio detecta o carro e o sistema do computador leva alguns segundos para processar os dados.
 
-- **Marca-d'água**: Um marcador de tempo do evento que indica até que ponto os eventos tiverem sido inseridos para o processador de streaming. As marcas-d'água permitem que o sistema indique claramente o andamento da ingestão dos eventos. Pela natureza dos fluxos, os dados do evento de entrada nunca param, de modo que as marcas-d'água indicam o andamento até um determinado ponto no fluxo.
+- **Marca-d'água**: Um marcador de tempo de evento que indica até que ponto os eventos foram inseridos para o processador de streaming. As marcas-d'água permitem que o sistema indique claramente o andamento da ingestão dos eventos. Pela natureza dos fluxos, os dados do evento de entrada nunca param, de modo que as marcas-d'água indicam o andamento até um determinado ponto no fluxo.
 
    O conceito de marca-d'água é importante. As marcas-d'água permitem que o Stream Analytics determine quando o sistema pode gerar resultados completos, corretos e repetíveis que não precisem ser retraídos. O processamento pode ser feito de forma garantida, além de ser previsível e repetível. Por exemplo, se uma recontagem precisa ser feita por alguma condição de tratamento de erro, as marcas-d'água são pontos seguros de partida e término.
 
@@ -128,7 +128,7 @@ Os trabalhos do Stream Analytics têm várias opções de **Ordenação de event
 
 Você pode observar os vários efeitos da tolerância de tempo de ordenação de eventos por meio das [métricas de trabalho do Stream Analytics](stream-analytics-monitoring.md). As seguintes métricas são relevantes:
 
-|Métrica  | DESCRIÇÃO  |
+|Métrica  | Descrição  |
 |---------|---------|
 | **Eventos Fora de Ordem** | Indica o número de eventos recebidos fora de ordem, que foram descartados ou receberam um carimbo de data/hora ajustado. Essa métrica é afetada diretamente pela definição da configuração **Eventos fora de ordem** na página **Ordenação de eventos** do trabalho no portal do Azure. |
 | **Eventos de Entrada Tardia** | Indica o número de eventos que chegam da fonte com atraso. Essa métrica inclui eventos que foram descartados ou tiveram seu carimbo de data/hora ajustado. Essa métrica é afetada diretamente pela definição da configuração **Eventos que chegam com atraso** na página **Ordenação de eventos** do trabalho no portal do Azure. |
@@ -163,7 +163,7 @@ O Azure Stream Analytics usa o progresso de marca-d'água como o gatilho somente
 
 Ao usar [agregações em janela](stream-analytics-window-functions.md), o serviço produz apenas saídas no final das janelas. Em alguns casos, os usuários talvez queiram ver agregações parciais geradas das janelas. As agregações parciais atualmente não têm suporte no Azure Stream Analytics.
 
-Em outras soluções de streaming, os eventos de saída podem ser materializados em vários pontos de gatilho, dependendo das circunstâncias externas. É possível em algumas soluções que os eventos de saída para determinado período de tempo podem ser gerados várias vezes. Como os valores de entrada são refinados, os resultados agregados se tornam mais precisos. Os eventos poderiam ser especulados primeiro e revisados ao longo do tempo. Por exemplo, quando um determinado dispositivo estivesse offline da rede, um valor estimado poderia ser usado por um sistema. Mais tarde, o mesmo dispositivo ficaria online para a rede. Assim, os dados reais do evento poderiam ser incluídos no fluxo de entrada. Os resultados de processar essa janela de tempo produz uma saída mais precisa.
+Em outras soluções de streaming, os eventos de saída podem ser materializados em vários pontos de gatilho, dependendo das circunstâncias externas. É possível em algumas soluções que os eventos de saída de uma determinada janela de tempo poderiam ser gerados várias vezes. Como os valores de entrada são refinados, os resultados agregados se tornam mais precisos. Os eventos poderiam ser especulados primeiro e revisados ao longo do tempo. Por exemplo, quando um determinado dispositivo estivesse offline da rede, um valor estimado poderia ser usado por um sistema. Mais tarde, o mesmo dispositivo ficaria online para a rede. Assim, os dados reais do evento poderiam ser incluídos no fluxo de entrada. Os resultados de processar essa janela de tempo produz uma saída mais precisa.
 
 ## <a name="illustrated-example-of-watermarks"></a>Exemplo ilustrado de marcas-d'água
 
@@ -171,7 +171,7 @@ As imagens a seguir ilustram o andamento das marcas-d'água em diferentes circun
 
 Esta tabela mostra os dados de exemplo que são colocados no gráfico abaixo. Observe que a hora do evento e a hora de chegada variam, às vezes correspondendo, às vezes, não.
 
-| Hora do evento | Hora de chegada | deviceId |
+| Hora do evento | Hora de chegada | DeviceID |
 | --- | --- | --- |
 | 12:07 | 12:07 | device1
 | 12:08 | 12:08 | device2
