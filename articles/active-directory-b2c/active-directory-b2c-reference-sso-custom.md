@@ -91,8 +91,8 @@ Há dois itens de metadados no perfil técnico:
 
 | item | Valor Padrão | Valores possíveis | DESCRIÇÃO
 | --- | --- | --- | --- |
-| IncludeSessionIndex | verdadeiro | true/false | Indica ao provedor que o índice de sessão deve ser armazenado. |
-| RegisterServiceProviders | verdadeiro | true/false | Indica que o provedor deve registrar todos os provedores de serviço SAML que emitiram uma declaração. |
+| IncludeSessionIndex | true | true/false | Indica ao provedor que o índice de sessão deve ser armazenado. |
+| RegisterServiceProviders | true | true/false | Indica que o provedor deve registrar todos os provedores de serviço SAML que emitiram uma declaração. |
 
 Ao usar o provedor para armazenar uma sessão de provedor de identidade SAML, os itens acima devem ser falsos. Ao usar o provedor para armazenar a sessão de SAML do B2C, os itens acima devem ser verdadeiros ou omitidos, já que os padrões são verdadeiros. O logoff da sessão de SAML requer que `SessionIndex` e `NameID` sejam concluídos.
 
