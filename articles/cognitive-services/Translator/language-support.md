@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 6ab500fe6a7f288bcfbdc9168ada8bdad5bdb6ea
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: be69f18f30b796e7401ef68aa5088153e07f14f5
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68772943"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127878"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Idiomas e regiões compatíveis com a API de Tradução de Texto
 
@@ -45,7 +45,7 @@ A API de Tradução de Texto dá suporte aos seguintes idiomas para tradução d
 |Africâner| `af`    |Estatística apenas|  Neural|
 |Árabe|    `ar`    |Neural disponível|  Neural|
 |Bengali|    `bn`    |Neural disponível|  Neural|
-|Bósnio (Latino)|   `bs`    |Neural disponível|  Neural|
+|Bósnio (latim)|   `bs`    |Neural disponível|  Neural|
 |Búlgaro| `bg`    |Neural disponível|  Neural|
 |Cantonês (tradicional)|   `yue`   |Estatística apenas|  Estatística|
 |Catalão|   `ca`    |Estatística apenas|  Estatística|
@@ -89,8 +89,8 @@ A API de Tradução de Texto dá suporte aos seguintes idiomas para tradução d
 |Romeno|  `ro`    |Neural disponível|  Neural|
 |Russo|   `ru`    |Neural disponível|  Neural|
 |Samoano|    `sm`    |Estatística apenas|  Estatística|
-|Sérvio (Cirílico)|    `sr-Cyrl`   |Estatística apenas|  Estatística|
-|Sérvio (Latino)|   `sr-Latn`   |Estatística apenas   |Estatística|
+|Sérvio (cirílico)|    `sr-Cyrl`   |Estatística apenas|  Estatística|
+|Sérvio (latino)|   `sr-Latn`   |Estatística apenas   |Estatística|
 |Eslovaco|    `sk`    |Neural disponível|  Neural|
 |Esloveno| `sl`    |Neural disponível|  Neural|
 |Espanhol|   `es`    |Neural disponível|  Neural|
@@ -115,10 +115,10 @@ O método Transliterate suporta os seguintes idiomas. Em "Para / De", "<->" indi
 |:----------- |:-------------:|:-------------:|:-------------:|:-------------:|
 | Árabe | `ar` | Árabe `Arab` | <--> | Latim `Latn` |
 |Bengali  | `bn` | Bengalês `Beng` | <--> | Latim `Latn` |
-| Chinês (simplificado) | `zh-Hans` | Chinês (simplificado) `Hans`| <--> | Latim `Latn` |
-| Chinês (simplificado) | `zh-Hans` | Chinês simplificado `Hans`| <--> | Chinês tradicional `Hant`|
-| Chinês (tradicional) | `zh-Hant` | Chinês tradicional `Hant`| <--> | Latim `Latn` |
-| Chinês (tradicional) | `zh-Hant` | Chinês tradicional `Hant`| <--> | Chinês simplificado `Hans` |
+| Chinês (Simplificado) | `zh-Hans` | Chinês (simplificado) `Hans`| <--> | Latim `Latn` |
+| Chinês (Simplificado) | `zh-Hans` | Chinês simplificado `Hans`| <--> | Chinês tradicional `Hant`|
+| Chinês (Tradicional) | `zh-Hant` | Chinês tradicional `Hant`| <--> | Latim `Latn` |
+| Chinês (Tradicional) | `zh-Hant` | Chinês tradicional `Hant`| <--> | Chinês simplificado `Hans` |
 | Guzerate | `gu`  | Guzerate `Gujr` | --> | Latim `Latn` |
 | Hebraico | `he` | Hebraico `Hebr` | <--> | Latim `Latn` |
 | Híndi | `hi` | Devanagari `Deva` | <--> | Latim `Latn` |
@@ -128,8 +128,8 @@ O método Transliterate suporta os seguintes idiomas. Em "Para / De", "<->" indi
 | Marati | `mr` | Devanagari `Deva` | --> | Latim `Latn` |
 | Odia | `or` | Oriya `Orya` | <--> | Latim `Latn` |
 | Panjabi | `pa` | Gurmukhi `Guru`  | <--> | Latim `Latn`  |
-| Sérvio (Cirílico) | `sr-Cyrl` | Cirílico `Cyrl`  | --> | Latim `Latn` |
-| Sérvio (Latino) | `sr-Latn` | Latim `Latn` | --> | Cirílico `Cyrl`|
+| Sérvio (cirílico) | `sr-Cyrl` | Cirílico `Cyrl`  | --> | Latim `Latn` |
+| Sérvio (latino) | `sr-Latn` | Latim `Latn` | --> | Cirílico `Cyrl`|
 | Tâmil | `ta` | Tâmil `Taml` | --> | Latim `Latn` |
 | Telugu | `te` | Télugo `Telu` | --> | Latim `Latn` |
 | Tailandês | `th` | Tailandês `Thai` | <--> | Latim `Latn` |
@@ -143,7 +143,7 @@ O dicionário suporta os seguintes idiomas para ou do inglês usando os métodos
 | Africâner      | `af`          |
 | Árabe       | `ar`          |
 | Bengali      | `bn`          |
-| Bósnio (Latino)      | `bs`          |
+| Bósnio (latim)      | `bs`          |
 | Búlgaro      | `bg`          |
 | Catalão      | `ca`          |
 | Chinês Simplificado      | `zh-Hans`          |
@@ -178,7 +178,7 @@ O dicionário suporta os seguintes idiomas para ou do inglês usando os métodos
 | Português      | `pt`          |
 | Romeno      | `ro`          |
 | Russo      | `ru`          |
-| Sérvio (Latino)      | `sr-Latn`          |
+| Sérvio (latino)      | `sr-Latn`          |
 | Eslovaco     | `sk`          |
 | Esloveno      | `sl`          |
 | Espanhol      | `es`          |
@@ -210,7 +210,7 @@ Os idiomas a seguir estão disponíveis para personalização de ou para o ingl�
 |:----------- |:-------------:|
 | Árabe       | `ar`          |
 | Bengali      | `bn`          |
-| Bósnio (Latino)      | `bs`          |
+| Bósnio (latim)      | `bs`          |
 | Búlgaro      | `bg`          |
 | Chinês Simplificado      | `zh-Hans`          |
 |Chinês tradicional|   `zh-Hant`   |
@@ -237,12 +237,13 @@ Os idiomas a seguir estão disponíveis para personalização de ou para o ingl�
 | Lituano      | `lt`          |
 |Malgaxe|  `mg`    |
 | Norueguês      | `nb`          |
+| Persa      | `fa`          |
 | Polonês      | `pl`          |
 | Português      | `pt`          |
 | Romeno      | `ro`          |
 | Russo      | `ru`          |
 |Samoano|    `sm`    |
-| Sérvio (Latino)      | `sr-Latn`          |
+| Sérvio (latino)      | `sr-Latn`          |
 | Eslovaco     | `sk`          |
 | Esloveno      | `sl`          |
 | Espanhol      | `es`          |
