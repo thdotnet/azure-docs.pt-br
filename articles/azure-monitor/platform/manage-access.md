@@ -103,8 +103,8 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 Para configurar o modo de acesso em um modelo de Azure Resource Manager, defina o sinalizador de recurso **enableLogAccessUsingOnlyResourcePermissions** no espaço de trabalho para um dos valores a seguir.
 
-* **falso**: Defina o espaço de trabalho para permissões de contexto de espaço de trabalho. Essa será a configuração padrão se o sinalizador não estiver definido.
-* **verdadeiro**: Defina o espaço de trabalho para permissões de contexto de recurso.
+* **false**: Defina o espaço de trabalho para permissões de contexto de espaço de trabalho. Essa será a configuração padrão se o sinalizador não estiver definido.
+* **true**: Defina o espaço de trabalho para permissões de contexto de recurso.
 
 ## <a name="manage-access-using-workspace-permissions"></a>Gerenciar o acesso usando permissões de espaço de trabalho
 
