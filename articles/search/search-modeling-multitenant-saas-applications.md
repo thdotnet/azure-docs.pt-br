@@ -1,19 +1,19 @@
 ---
 title: Modelagem de multilocação para isolamento de conteúdo em um único serviço - Azure Search
 description: Saiba mais sobre padrões de design comuns para aplicativos SaaS multilocatários ao usar o Azure Search.
-manager: jlembicz
+manager: nitinme
 author: LiamCavanagh
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: liamca
-ms.openlocfilehash: b3e47fc0c46c638a51e6555ccbdc1885f081c149
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 8b7538da41241f005298537c2969e5fce72b3c38
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640557"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182242"
 ---
 # <a name="design-patterns-for-multitenant-saas-applications-and-azure-search"></a>Padrões de design para aplicativos SaaS multilocatários e Azure Search
 Um aplicativo multilocatário é aquele que fornece os mesmos serviços e funcionalidades para qualquer número de locatários que não conseguem ver nem compartilhar os dados de qualquer outro locatário. Este documento discute estratégias de isolamento de locatário para aplicativos multilocatários criados com o Azure Search.

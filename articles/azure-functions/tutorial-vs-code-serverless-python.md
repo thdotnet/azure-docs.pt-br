@@ -3,21 +3,31 @@ title: Criar e implantar Azure Functions em Python com Visual Studio Code
 description: Como usar a extensão de Visual Studio Code para Azure Functions para criar funções sem servidor no Python e implantá-las no Azure.
 services: functions
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: glenga
-ms.openlocfilehash: f5591a3e0ca73649b1ffc51c75aa95e86e286768
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 4f5c10536992f51ac61815507a3869e521520299
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639096"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70170705"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Implantar o Python para Azure Functions com Visual Studio Code
 
 Neste tutorial, você usa Visual Studio Code e a extensão Azure Functions para criar um ponto de extremidade HTTP sem servidor com Python e também adicionar uma conexão (ou "Associação") ao armazenamento. O Azure Functions executa seu código em um ambiente sem servidor, independentemente de precisar provisionar uma máquina virtual ou publicar um aplicativo Web. A extensão de Azure Functions para Visual Studio Code simplifica muito o processo de usar funções ao lidar automaticamente com muitas questões de configuração.
+
+Neste tutorial, você aprenderá como:
+
+> [!div class="checklist"]
+> * Instalar a extensão do Azure Functions
+> * Criar uma função disparada por HTTP
+> * Depurar localmente
+> * Sincronizar configurações do aplicativo
+> * Exibir logs de streaming
+> * Conectar-se ao armazenamento do Azure
 
 Se você encontrar problemas com qualquer uma das etapas deste tutorial, adoraríamos saber mais sobre os detalhes. Use o botão entrar **em um problema** no final de cada seção para enviar comentários detalhados.
 
@@ -84,7 +94,7 @@ A saída que começa com o logotipo Azure Functions (você precisa rolar a saíd
 Se o `func` comando não for reconhecido, verifique se a pasta onde você instalou o Azure Functions Core Tools está incluída na variável de ambiente Path.
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=01-verify-prerequisites)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=01-verify-prerequisites)
 
 ## <a name="create-the-function"></a>Criar a função
 
@@ -100,29 +110,26 @@ Se o `func` comando não for reconhecido, verifique se a pasta onde você instal
     | Selecione uma linguagem de programação para o seu projeto de aplicativo de função. | **Python** | O idioma a ser usado para a função, que determina o modelo usado para o código. |
     | Selecione um modelo para a primeira função do projeto | **Gatilho HTTP** | Uma função que usa um gatilho HTTP é executada sempre que há uma solicitação HTTP feita ao ponto de extremidade da função. (Há uma variedade de outros gatilhos para Azure Functions. Para saber mais, veja [o que posso fazer com as funções?](functions-overview.md#what-can-i-do-with-functions).) |
     | Forneça um nome de função | HttpExample | O nome é usado para uma subpasta que contém o código da função junto com os dados de configuração e também define o nome do ponto de extremidade HTTP. Use "HttpExample" em vez de aceitar o padrão "HTTPTrigger" para distinguir a função em si do gatilho. |
-    | Nível de autorização | **Modo** | A autorização anônima torna a função publicamente acessível a qualquer pessoa. |
+    | Nível de autorização | **Função** | As chamadas feitas ao ponto de extremidade da função exigem uma [chave de função](functions-bindings-http-webhook.md#authorization-keys). |
     | Selecione como você gostaria de abrir seu projeto | **Abrir na janela atual** | Abre o projeto na janela de Visual Studio Code atual. |
 
-1. Após um curto período de tempo, uma mensagem para indicar que o novo projeto foi criado. No **Gerenciador**, há a subpasta criada para a função e Visual Studio Code abre o  *\_ \_arquivo\_Init\_. py* que contém o código de função padrão:
+1. Após um curto período de tempo, uma mensagem para indicar que o novo projeto foi criado. No **Gerenciador**, há a subpasta criada para a função. 
+
+1. Se ainda não estiver aberto, abra o  *\_ \_arquivo init\_\_. py* que contém o código de função padrão:
 
     [![Resultado da criação de um novo projeto de funções do Python](media/tutorial-vs-code-serverless-python/project-create-results.png)](media/tutorial-vs-code-serverless-python/project-create-results.png)
 
     > [!NOTE]
-    > Se Visual Studio Code informar que você não tem um intérprete Python **selecionado ao abrir  *\_ \_\_Init\_. py*, abra a paleta de comandos (F1), selecione o Python: Selecione o** comando interpretador e, em seguida, selecione o ambiente `.env` virtual na pasta local (que foi criada como parte do projeto). O ambiente deve ser baseado em Python 3.6 x especificamente, conforme observado anteriormente em [pré-requisitos](#prerequisites).
+    > Quando Visual Studio Code informa que você não tem um intérprete Python **selecionado ao abrir  *\_ \_\_Init\_. py*, abra a paleta de comandos (F1), selecione o Python: Selecione o** comando interpretador e, em seguida, selecione o ambiente `.env` virtual na pasta local (que foi criada como parte do projeto). O ambiente deve ser baseado em Python 3.6 x especificamente, conforme observado anteriormente em [pré-requisitos](#prerequisites).
     >
     > ![Selecionando o ambiente virtual criado com o projeto](media/tutorial-vs-code-serverless-python/select-venv-interpreter.png)
 
-> [!TIP]
-> Sempre que desejar criar outra função no mesmo projeto, use o comando **criar função** no **Azure: Gerenciador** de funções, ou abra a paleta de comandos (F1) e **selecione o Azure Functions: Criar Função**. Ambos os comandos solicitam a você um nome de função (que é o nome do ponto de extremidade) e, em seguida, cria uma subpasta com os arquivos padrão.
->
-> ![Novo comando de função no Azure: Gerenciador de funções](media/tutorial-vs-code-serverless-python/function-create-new.png)
-
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=02-create-function)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=02-create-function)
 
 ## <a name="examine-the-code-files"></a>Examinar os arquivos de código
 
-Na subpasta da função recém-criada há três arquivos:  *\_ \_Init\_\_. py* contém o código da função, *Function. JSON* descreve a função para Azure Functions e *Sample. dat* é um arquivo de dados de exemplo. Você pode excluir *Sample. dat* se desejar, pois ele existe apenas para mostrar que você pode adicionar outros arquivos à subpasta.
+Na subpasta da função _HttpExample_ criada recentemente, há três arquivos:  *\_ \_\_Init\_. py* contém o código da função, *Function. JSON* descreve a função para o Azure Functions e *Sample. dat* é um arquivo de dados de exemplo. Você pode excluir *Sample. dat* se desejar, pois ele existe apenas para mostrar que você pode adicionar outros arquivos à subpasta.
 
 Vamos examinar primeiro *Function. JSON* e, em seguida, o código  *\_em\_ \_\_init. py*.
 
@@ -135,7 +142,7 @@ O arquivo function. JSON fornece as informações de configuração necessárias
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "authLevel": "anonymous",
+      "authLevel": "function",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
@@ -155,9 +162,9 @@ O arquivo function. JSON fornece as informações de configuração necessárias
 
 A `scriptFile` propriedade identifica o arquivo de inicialização para o código e esse código deve conter uma função Python chamada `main`. Você pode considerar o código em vários arquivos, contanto que o arquivo especificado aqui contenha uma `main` função.
 
-O `bindings` elemento contém dois objetos, um para descrever as solicitações de entrada e o outro para descrever a resposta http. Para solicitações de entrada`"direction": "in"`(), a função responde a solicitações HTTP Get ou post e não requer autenticação. A resposta (`"direction": "out"`) é uma resposta http que retorna qualquer valor retornado `main` da função Python.
+O `bindings` elemento contém dois objetos, um para descrever as solicitações de entrada e o outro para descrever a resposta http. Para solicitações de entrada`"direction": "in"`(), a função responde às solicitações HTTP Get ou post e exige que você forneça a chave de função. A resposta (`"direction": "out"`) é uma resposta http que retorna qualquer valor retornado `main` da função Python.
 
-### <a name="initpy"></a>\_\_init.py\_\_
+### <a name="__initpy__"></a>\_\_init.py\_\_
 
 Quando você cria uma nova função, Azure Functions fornece o código Python padrão  *\_em\_ \_\_init. py*:
 
@@ -196,7 +203,7 @@ As partes importantes do código são as seguintes:
 - Se um nome for encontrado, o código retornará a cadeia de caracteres "Olá" com o nome anexado; caso contrário, ele retornará uma mensagem de erro.
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=03-examine-code-files)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=03-examine-code-files)
 
 ## <a name="debug-locally"></a>Depurar localmente
 
@@ -233,12 +240,12 @@ As partes importantes do código são as seguintes:
 
     Como alternativa, crie um arquivo como *Data. JSON* que contenha `{"name":"Visual Studio Code"}` e use o `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample`comando.
 
-1. Para testar a depuração da função, defina um ponto de interrupção na linha `name = req.params.get('name')` que lê e faça uma solicitação para a URL novamente. O depurador de Visual Studio Code deve parar nessa linha, permitindo que você examine as variáveis e percorra o código. (Para obter uma breve explicação da depuração básica, consulte [Visual Studio Code tutorial – configurar e executar o depurador](https://code.visualstudio.com/docs/python/python-tutorial.md#configure-and-run-the-debugger).)
+1. Para depurar a função, defina um ponto de interrupção na linha que `name = req.params.get('name')` lê e faça uma solicitação para a URL novamente. O depurador de Visual Studio Code deve parar nessa linha, permitindo que você examine as variáveis e percorra o código. (Para obter uma breve explicação da depuração básica, consulte [Visual Studio Code tutorial – configurar e executar o depurador](https://code.visualstudio.com/docs/python/python-tutorial.md#configure-and-run-the-debugger).)
 
 1. Quando você estiver satisfeito de testar completamente a função localmente, pare o depurador (com o comando **debug** > **Stop Debugging** menu ou o comando **Disconnect** na barra de ferramentas Debugging).
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=04-test-debug)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=04-test-debug)
 
 ## <a name="deploy-to-azure-functions"></a>Implantar no Azure Functions
 
@@ -276,7 +283,7 @@ Nestas etapas, você usa a extensão Functions para criar um aplicativo de funç
     Use esse ponto de extremidade para executar os mesmos testes que você fez localmente, usando parâmetros de URL e/ou solicitações com dados JSON no corpo da solicitação. Os resultados do ponto de extremidade público devem corresponder aos resultados do ponto de extremidade local que você testou anteriormente.
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=05-deploy)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=05-deploy)
 
 ### <a name="stream-logs"></a>Transmitir logs
 
@@ -403,7 +410,7 @@ Após sua primeira implantação, você pode fazer alterações no código, como
 1. Após a conclusão da implantação (demora alguns minutos!), a janela de **saída** mostra os pontos de extremidade públicos com os quais você pode repetir seus testes.
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=06-second-function)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=06-second-function)
 
 ## <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Adicionar uma associação para gravar mensagens no armazenamento do Azure
 
@@ -423,7 +430,7 @@ Nesta seção, você adicionará uma associação de armazenamento à função H
     | --- | --- |
     | Definir direção de vinculação | out |
     | Selecionar associação com direção | Armazenamento de Filas do Azure |
-    | O nome usado para identificar esta associação em seu código | MSG |
+    | O nome usado para identificar essa associação em seu código | MSG |
     | A fila para a qual a mensagem será enviada | outqueue |
     | Selecione configuração de *local. Settings. JSON* (solicitando a conexão de armazenamento) | AzureWebJobsStorage |
 
@@ -487,7 +494,7 @@ Nesta seção, você adicionará uma associação de armazenamento à função H
 1. Para testar na nuvem, reimplante o código usando **implantar para aplicativo de funções** no **Azure: Gerenciador** de funções. Se solicitado, selecione o Aplicativo de funções criado anteriormente. Após a conclusão da implantação (leva alguns minutos!), a janela de **saída** mostra novamente os pontos de extremidade públicos com os quais você pode repetir seus testes.
 
 > [!div class="nextstepaction"]
-> [Ocorreu um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
+> [Encontrei um problema](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -511,5 +518,5 @@ Algumas extensões populares são:
 
 - [Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
 - [Serviço de Aplicativo do Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
-- [Ferramentas de CLI do Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)
+- [Ferramentas da CLI do Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)
 - [Ferramentas do Azure Resource Manager](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)

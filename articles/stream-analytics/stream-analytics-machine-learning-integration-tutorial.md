@@ -9,15 +9,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2d74488f60f21e3644a7a04579bfab7e70882b01
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: ab510f7ee2f95a2c3373c0514c31554598451b27
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621536"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173325"
 ---
-# <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning-studio-preview"></a>Executar análise de sentimento usando o Azure Stream Analytics e Azure Machine Learning Studio (versão prévia)
-Este artigo descreve como configurar rapidamente um trabalho simples do Azure Stream Analytics que integra o Azure Machine Learning Studio. Você usa um modelo de análise de sentimento de Machine Learning da Galeria do Cortana Intelligence para analisar dados de texto de streaming e determinar a pontuação de sentimento em tempo real. Usar o Cortana Intelligence Suite permite realizar essa tarefa sem se preocupar com as complexidades de criar um modelo de análise de sentimento.
+# <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-preview"></a>Executar análise de sentimentos com Azure Stream Analytics e Azure Machine Learning Studio (visualização)
+Este artigo descreve como configurar rapidamente um trabalho simples de Azure Stream Analytics que integra Azure Machine Learning Studio. Você usa um modelo de análise de sentimento de Machine Learning da Galeria do Cortana Intelligence para analisar dados de texto de streaming e determinar a pontuação de sentimento em tempo real. Usar o Cortana Intelligence Suite permite realizar essa tarefa sem se preocupar com as complexidades de criar um modelo de análise de sentimento.
 
 Você pode aplicar o que aprendeu com este artigo a cenários como estes:
 
@@ -45,7 +45,7 @@ Antes de começar, verifique se você tem:
 Em um nível alto, para concluir as tarefas demonstradas neste artigo, você fará o seguinte:
 
 1. Criar uma conta de armazenamento do Azure e um contêiner de armazenamento de blobs e carregar um arquivo de entrada formatado em CSV para o contêiner.
-3. Adicionar um modelo de análise de sentimento da Galeria do Cortana Intelligence ao seu espaço de trabalho do Azure Machine Learning Studio e implantar esse modelo como um serviço web no espaço de trabalho do Machine Learning.
+3. Adicione um modelo de análise de sentimentos da Cortana Intelligence Gallery ao seu espaço de trabalho Azure Machine Learning Studio e implante esse modelo como um serviço Web no espaço de trabalho Machine Learning.
 5. Criar um trabalho do Stream Analytics que chame esse serviço Web como uma função para determinar o sentimento da entrada de texto.
 6. Iniciar o trabalho do Stream Analytics e verificar a saída.
 

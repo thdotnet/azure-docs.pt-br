@@ -6,14 +6,14 @@ manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 08/29/2019
 ms.author: v-adgera
-ms.openlocfilehash: da1493d2d52f2c8a964df3b72c1622a9c6b66abf
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 8472a86800d13cedd228ca881a7c095ff748350a
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719858"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172810"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Como usar as APIs de gerenciamento de Gêmeos Digitais do Azure
 
@@ -88,6 +88,7 @@ A lista a seguir mostra alguns exemplos de navegação pelas APIs [/devices](htt
 
 
 ## <a name="odata-support"></a>Suporte a OData
+
 A maioria das APIs que retorna coleções, como uma chamada GET em /spaces, dá suporte ao seguinte subconjunto dos genéricos das opções de consulta do sistema [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData):  
 
 * **$filter**
@@ -95,11 +96,12 @@ A maioria das APIs que retorna coleções, como uma chamada GET em /spaces, dá 
 * **$top**
 * **$skip** – se você pretende exibir toda a coleção, deve solicitá-la como um conjunto inteiro em uma única chamada e, em seguida, executar a paginação em seu aplicativo. 
 
-Observe que não há suporte para outras opções de consulta, como $count, $expand, $search.
+> [!NOTE]
+> Algumas opções de OData (como opções de consulta **$Count**, **$Expand**e **$Search**) não têm suporte atualmente.
 
 ### <a name="examples"></a>Exemplos
 
-A lista a seguir mostra alguns exemplos de consultas usando opções de consulta do sistema do OData:
+A lista a seguir descreve várias consultas com sintaxe de OData válida:
 
 - `YOUR_MANAGEMENT_API_URL/devices?$top=3&$orderby=Name desc`
 - `YOUR_MANAGEMENT_API_URL/keystores?$filter=endswith(Description,’space’)`
@@ -108,9 +110,10 @@ A lista a seguir mostra alguns exemplos de consultas usando opções de consulta
 - `YOUR_MANAGEMENT_API_URL/users?$top=4&$filter=endswith(LastName,’k’)&$orderby=LastName`
 - `YOUR_MANAGEMENT_API_URL/spaces?$orderby=Name desc&$top=3&$filter=substringof('Floor’,Name)`
  
-
 ## <a name="next-steps"></a>Próximas etapas
 
-Para aprender sobre alguns padrões comuns de consulta de API, leia [Como consultar as APIs de Gêmeos Digitais do Azure para tarefas comuns](how-to-query-common-apis.md).
+Para aprender sobre alguns padrões comuns de consulta de API, leia [Como consultar as APIs de Gêmeos Digitais do Azure para tarefas comuns](./how-to-query-common-apis.md).
 
-Para saber mais sobre seus pontos de extremidade de API, leia [como usar o Swagger de gêmeos Digital](./how-to-use-swagger.md).
+Para saber mais sobre seus pontos de extremidade de API, leia [como usar o Swagger digital gêmeos](./how-to-use-swagger.md).
+
+Para examinar a sintaxe do OData e os operadores de comparação disponíveis, leia [operadores de comparação OData no Azure Search](../search/search-query-odata-comparison-operators.md).

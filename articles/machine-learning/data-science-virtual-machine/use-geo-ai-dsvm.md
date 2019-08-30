@@ -1,7 +1,7 @@
 ---
 title: Usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica – Azure | Microsoft Docs
 description: Saiba como usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica para analisar dados e criar modelos com base em dados geoespaciais.
-keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise Geoespacial
+keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise geoespacial
 services: machine-learning
 documentationcenter: ''
 author: vijetajo
@@ -16,38 +16,38 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: vijetaj
-ms.openlocfilehash: 9bca7089e6137b3780e3d22f50887e880be29d8e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 22c0d7d604ca41044d2d969d4ddbd2ae1a4d23d5
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565071"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70170495"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica
 
-Use Máquina Virtual da Ciência de Dados de Inteligência Artificial Geográfica para buscar dados para análise, executar a disputa de dados e criar modelos para aplicativos IA que consomem informações geoespaciais. Depois de ter provisionado a máquina virtual de ciência de dados de inteligência artificial geográfica e conectado no ArcGIS Pro com sua conta do ArcGIS, você pode começar a interagir com a área de trabalho do ArcGIS e ArcGis online. Você também pode acessar o ArcGIS de interfaces Python e uma ponte de linguagem R pré-configurada na máquina virtual de ciência de dados geográficos. Para criar aplicativos de IA sofisticados, combine-os com o aprendizado de máquina às estruturas de aprendizado profundo outro softwares de ciência de dados disponíveis na máquina virtual de ciência de dados.  
+Use Máquina Virtual da Ciência de Dados de Inteligência Artificial Geográfica para buscar dados para análise, executar a disputa de dados e criar modelos para aplicativos IA que consomem informações geoespaciais. Depois de provisionar seu VM de Ciência de Dados de ia geográfico e entrar no ArcGIS pro por meio de sua conta do ArcGIS, você poderá começar a interagir com o ArcGIS Desktop e o ArcGIs online. Você também pode acessar o ArcGIS de interfaces do Python e uma ponte de linguagem R pré-configurada no VM de Ciência de Dados geográfico. Para criar aplicativos de ia avançados, combine a VM de Ciência de Dados geográfica com as estruturas de aprendizado de máquina e de aprendizado profundo e outros softwares de ciência de dados que estão disponíveis nela.  
 
 
 ## <a name="configuration-details"></a>Detalhes da configuração
 
-A Biblioteca do Python, [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm), que é usada para a interface com o ArcGIS está instalada no ambiente raiz do conda da máquina virtual de Ciência de Dados encontrado em ```c:\anaconda```. 
+A Biblioteca Python, [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm), que é usada para a interface com ArcGIS, é instalada no ambiente raiz global conda do VM de ciência de dados encontrado em ```c:\anaconda```.
 
-- Se você estiver executando o Python em um prompt de comando, execute ```activate``` para ativar no ambiente conda raiz Python. 
-- Se você estiver usando um bloco de anotações do IDE ou Jupyter, você pode selecionar o ambiente ou kernel para garantir que está no ambiente conda correto. 
+- Se você estiver executando o Python em um prompt de comando ```activate``` , execute para ativar no ambiente Conda raiz Python.
+- Se estiver usando um notebook IDE ou Jupyter, você poderá selecionar o ambiente ou o kernel para verificar se está no ambiente Conda correto.
 
-A ponte de R para ArcGIS é instalada como uma biblioteca R chamada [arcgisbinding](https://github.com/R-ArcGIS/r-bridge) na instância independente do servidor Microsoft R localizado em```C:\Program Files\Microsoft\ML Server\R_SERVER```. Visual Studio, RStudio e Jupyter já são pré-configurados para usar esse ambiente R e ter acesso à ```arcgisbinding``` biblioteca R. 
+A ponte R para ArcGIS é instalada como uma biblioteca do R chamada [arcgisbinding](https://github.com/R-ArcGIS/r-bridge) no principal Microsoft Machine Learning Server instância autônoma localizada em ```C:\Program Files\Microsoft\ML Server\R_SERVER```. O Visual Studio, o RStudio e o Jupyter já estão pré-configurados para usar esse ambiente r e terão acesso à biblioteca do ```arcgisbinding``` r. 
 
 
 ## <a name="geo-ai-data-science-vm-samples"></a>Amostras de máquina virtual de ciência de dados de IA Geográfica
 
-Além das amostras baseadas em ML e estrutura de aprendizado profundo da Máquina Virtual de Ciência de dados, um conjunto de amostras geoespacial também é fornecido como parte da Máquina Virtual de Ciência de Dados de IA Geográfica. Esses exemplos podem ajudar a impulsionar o desenvolvimento de aplicativos da IA usando dados geoespaciais e o software do ArcGIS. 
+Além dos exemplos baseados em estrutura de aprendizado de máquina e de aprendizado profundo do VM de Ciência de Dados base, um conjunto de amostras geoespaciais também é fornecido como parte do VM de Ciência de Dados de ia geográfico. Esses exemplos podem ajudá-lo a iniciar seu desenvolvimento de aplicativos de ia usando dados geoespaciais e o software ArcGIS:
 
 
-1. [Introdução a análises geoespaciais com Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Uma amostra introdutória mostrando como trabalhar com os dados geoespaciais usando a interface do Python para ArcGIS fornecidos pela biblioteca [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm). Também mostra como você pode combinar a máquina tradicional de aprendizado com dados geoespaciais e visualizar o resultado em um mapa no ArcGIS. 
+1. [Introdução à análise geoespacial com Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Um exemplo introdutório que mostra como trabalhar com dados geoespaciais por meio da interface Python para ArcGIS é fornecido pela biblioteca [arcpy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm) . Ele também mostra como combinar o aprendizado de máquina tradicional com dados geoespaciais e, em seguida, Visualizar o resultado em um mapa no ArcGIS.
 
-2. [Introdução a análises geoespaciais com R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Uma amostra introdutória mostrando como trabalhar com os dados geoespaciais usando a interface do R para ArcGIS fornecidos pela biblioteca [arcgisbinding](https://github.com/R-ArcGIS/r-bridge). 
+2. [Introdução à análise geoespacial com o R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Um exemplo introdutório que mostra como trabalhar com dados geoespaciais usando a interface R para ArcGIS que é fornecida pela biblioteca [arcgisbinding](https://github.com/R-ArcGIS/r-bridge) . 
 
-3. [Classificação de uso de terra em nível de pixel](https://github.com/Azure/pixel_level_land_classification): Um tutorial que mostra como criar um modelo de rede neural profunda que aceita uma imagem aérea como entrada e retorna um rótulo de cobertura de terra. Exemplos de rótulos de cobertura de terra são "floresta" ou "água". O modelo retorna um rótulo para cada pixel da imagem. O modelo é criado usando a estrutura de aprendizado profundo [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) de código aberto da Microsoft. 
+3. [Classificação de uso de terra em nível de pixel](https://github.com/Azure/pixel_level_land_classification): Um tutorial que mostra como criar um modelo de rede neural profunda que aceita uma imagem aérea como entrada e retorna um rótulo de cobertura de terra. Exemplos de rótulos de tampa terrestre são em uma *floresta* e *água*. O modelo retorna um rótulo para cada pixel da imagem. O modelo é criado usando a estrutura de aprendizado profundo do [CNTK (](https://www.microsoft.com/en-us/cognitive-toolkit/) Microsoft Open-Source cognitive Toolkit).
 
 
 ## <a name="next-steps"></a>Próximas etapas

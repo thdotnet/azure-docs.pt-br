@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 37e42b05046be27254d2ceb15a59fbdb931ae161
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d894fabf3cfd4c6949aba94d558751bf007356d9
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711916"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165150"
 ---
 # <a name="use-packet-capture-for-proactive-network-monitoring-with-alerts-and-azure-functions"></a>Usar a captura de pacotes para fazer um monitoramento de rede proativo com alertas e o Azure Functions
 
@@ -80,8 +80,8 @@ A primeira etapa é criar uma função do Azure para processar o alerta e criar 
     |**Nome do aplicativo**|PacketCaptureExample|O nome do aplicativo de funções.|
     |**Assinatura**|[Sua assinatura]A assinatura na qual a criar o aplicativo de funções.||
     |**Grupo de recursos**|PacketCaptureRG|O nome do grupo de recursos para conter o aplicativo de funções.|
-    |**Plano de hospedagem**|Plano de consumo| O tipo de plano de que seu aplicativo de funções usa. As opções são planos de consumo ou planos do serviço de aplicativo do Azure. |
-    |**Localidade**|Centro dos EUA| A região na qual um aplicativo de funções será criado.|
+    |**Plano de hospedagem**|Plano de Consumo| O tipo de plano de que seu aplicativo de funções usa. As opções são planos de consumo ou planos do serviço de aplicativo do Azure. |
+    |**Localidade**|EUA Central| A região na qual um aplicativo de funções será criado.|
     |**Conta de armazenamento**|{gerado automaticamente}| A conta de armazenamento que o Azure Functions usa para armazenamento de finalidade geral.|
 
 3. Na folha **Aplicativos do Functions PacketCaptureExample**, selecione **Functions** > **Função personalizada** > **+** .
@@ -137,11 +137,11 @@ Para usar os cmdlets do PowerShell no Observador de Rede, faça upload do últim
 
     * Az.Resources
 
-1. Clique com botão direito do **Az.Network** subpasta e, em seguida, selecione **carregar arquivos**. 
+1. Clique com o botão direito do mouse na subpasta **AZ. Network** e selecione **carregar arquivos**. 
 
-6. Vá para os módulos do Azure. No local **Az.Network** pasta, selecione todos os arquivos na pasta. Depois, selecione **OK**. 
+6. Vá para os módulos do Azure. Na pasta **AZ. Network** local, selecione todos os arquivos na pasta. Depois, selecione **OK**. 
 
-7. Repita essas etapas para **Az.Accounts** e **Az.Resources**.
+7. Repita essas etapas para **AZ.** Accounts e **AZ.** Resources.
 
     ![Carregar arquivos][functions6]
 
@@ -149,7 +149,7 @@ Para usar os cmdlets do PowerShell no Observador de Rede, faça upload do últim
 
     ![Arquivos do PowerShell][functions7]
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 Para usar os cmdlets do PowerShell, você deve se autenticar. Configure a autenticação no aplicativo de funções. Para configurar a autenticação, você deverá configurar as variáveis de ambiente e carregar um arquivo de chave criptografado no aplicativo de funções.
 
@@ -253,7 +253,7 @@ $Encryptedpassword
 
 1. Adicione as variáveis de ambiente e seus valores às configurações do aplicativo e selecione **Salvar**.
 
-    ![Configurações do aplicativo][functions12]
+    ![Configurações de aplicativo][functions12]
 
 ### <a name="add-powershell-to-the-function"></a>Adicione o PowerShell para a função
 
@@ -305,8 +305,7 @@ O exemplo a seguir é o código do PowerShell que pode ser usado na função. H�
                 Write-Output ("Resource Type:  {0}" -f $requestBody.context.resourceType)
 
                 #Get the Network Watcher in the VM's region
-                $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq $requestBody.context.resourceRegion}
-                $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName
+                $networkWatcher = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq $requestBody.context.resourceRegion}
 
                 #Get existing packetCaptures
                 $packetCaptures = Get-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher

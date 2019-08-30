@@ -13,38 +13,37 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: e36e1ca17b5106c79076d1c62e737ba60907ab19
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 8420142e67fe4af12045a2b6fe7f7461ef384f81
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67666466"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164482"
 ---
 # <a name="virtual-network-service-endpoints"></a>Pontos de extremidade de serviço de rede virtual
 
 Os pontos de extremidade de serviço de VNet (rede virtual) estendem o espaço de endereço privado e a identidade da sua rede virtual para os serviços do Azure por meio de uma conexão direta. Os pontos de extremidade permitem que você possa garantir os recursos essenciais do serviço do Azure somente para suas redes virtuais. O tráfego de sua rede virtual para o serviço do Azure sempre permanece na rede de backbone do Microsoft Azure.
 
-Este recurso está disponível para os seguintes serviços e regiões do Azure:
+Esse recurso está disponível para os seguintes serviços e regiões do Azure e você também encontrará o recurso Microsoft. * em parênteses que precisa ser habilitado do lado da sub-rede durante a configuração de pontos de extremidade de serviço para seu serviço:
 
 **Disponível**
 
-- **[Armazenamento do Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** : Disponível em todas as regiões do Azure.
-- **[Banco de Dados SQL do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
-- **[SQL Data Warehouse do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
-- **[Servidor do Banco de Dados do Azure para PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
-- **[Servidor do Banco de Dados do Azure para MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
-- **[Banco de Dados do Azure para MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** : Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
-- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
-- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** : Disponível em todas as regiões do Azure.
-- **[Barramento de Serviço do Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
-- **[Hubs de Eventos do Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
-- **[Azure Data Lake Storage Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure nas quais o ADLS Gen1 está disponível.
-- **[O serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Disponível em todas as regiões do Azure em que o serviço de aplicativo está disponível
+- **[Armazenamento do Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** (Microsoft. Storage): Disponível em todas as regiões do Azure.
+- **[Banco de dados SQL do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. Sql): Disponível em todas as regiões do Azure.
+- **[SQL data warehouse do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. Sql): Disponível em todas as regiões do Azure.
+- **[Banco de dados do Azure para servidor PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. Sql): Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
+- **[Banco de dados do Azure para servidor MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. Sql): Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
+- **[Banco de dados do Azure para MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (Microsoft. Sql): Disponível ao público em geral em regiões do Azure em que o serviço de banco de dados está disponível.
+- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. AzureCosmosDB): Disponível em todas as regiões do Azure.
+- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** (Microsoft. keyvault): Disponível em todas as regiões do Azure.
+- **[Barramento de serviço do Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. ServiceBus): Disponível em todas as regiões do Azure.
+- **[Hubs de eventos do Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. EventHub): Disponível em todas as regiões do Azure.
+- **[Azure data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (Microsoft. AzureActiveDirectory): Disponível em todas as regiões do Azure nas quais o ADLS Gen1 está disponível.
+- **[Serviço de Azure app](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Geralmente disponível em todas as regiões do Azure em que o serviço de aplicativo está disponível
 
 **Versão prévia pública**
 
-- **[Registro de contêiner do Azure](../container-registry/container-registry-vnet.md)** : Visualização disponível em todas as regiões do Azure em que o registro de contêiner do Azure está disponível.
-.
+- **[Registro de contêiner do Azure](../container-registry/container-registry-vnet.md)** (Microsoft. ContainerRegistry): Visualização disponível em todas as regiões do Azure em que o registro de contêiner do Azure está disponível.
 
 Para obter as notificações mais recentes, verifique a página [Atualizações de rede virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
@@ -63,7 +62,7 @@ Os pontos de extremidade de serviço fornecem os seguintes benefícios:
 - O recurso está disponível apenas para redes virtuais implantadas usando o modelo de implantação do Azure Resource Manager.
 - Os pontos de extremidade são habilitados nas sub-redes configuradas em redes virtuais do Azure. Os pontos de extremidade não podem ser usados para tráfego do seu local para os serviços do Azure. Para obter mais informações, consulte ["Garantindo o acesso local ao serviço do Azure"](#securing-azure-services-to-virtual-networks)
 - Para o SQL do Azure, um ponto de extremidade de serviço aplica-se somente ao tráfego de serviço do Azure dentro de uma região da rede virtual. Para o Armazenamento do Microsoft Azure, para dar suporte a tráfego GRS e RA-GRS, pontos de extremidade também incluem as regiões emparelhadas em que a rede virtual é implantada. Saiba mais sobre as [regiões emparelhadas do Azure.](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
-- Para o ADLS Gen 1, a funcionalidade Integração VNet só está disponível para as redes virtuais na mesma região. Também Observe que torna a integração de rede virtual para o Azure Data Lake armazenamento Gen1 usa a segurança de ponto de extremidade de serviço de rede virtual entre sua rede virtual e o Azure Active Directory (Azure AD) para gerar declarações de segurança adicional no token de acesso. Essas declarações, em seguida, são usadas para autenticar sua rede virtual na conta do Data Lake Storage Gen1 e permitir o acesso. Marca de "Microsoft. azureactivedirectory" listada em serviços que dão suporte a pontos de extremidade de serviço é usada apenas para dar suporte a pontos de extremidade de serviço para o ADLS Gen 1. Azure Active Directory (AD do Azure) não dá suporte a pontos de extremidade de serviço nativamente. Saiba mais sobre [integração de rede virtual do Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- Para o ADLS Gen 1, a funcionalidade Integração VNet só está disponível para as redes virtuais na mesma região. Observe também que a integração de rede virtual para Azure Data Lake Storage Gen1 usa a segurança do ponto de extremidade do serviço de rede virtual entre sua rede virtual e Azure Active Directory (AD do Azure) para gerar declarações de segurança adicionais no token de acesso. Essas declarações, em seguida, são usadas para autenticar sua rede virtual na conta do Data Lake Storage Gen1 e permitir o acesso. A marca "Microsoft. AzureActiveDirectory" listada em serviços que dão suporte a pontos de extremidade de serviço é usada somente para dar suporte a pontos de extremidade de serviço para o ADLS Gen 1. O Azure Active Directory (AD do Azure) não dá suporte a pontos de extremidade de serviço nativamente. Saiba mais sobre a [integração de VNet do Azure data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="securing-azure-services-to-virtual-networks"></a>Proteção dos serviços do Azure em redes virtuais
 
@@ -122,7 +121,7 @@ Quando os pontos de extremidade de serviço são configurados para um serviço e
 
 ## <a name="provisioning"></a>Provisionamento
 
-Pontos de extremidade de serviço podem ser configurados em redes virtuais de forma independente por um usuário com acesso de gravação a uma rede virtual. Para proteger recursos de serviço do Azure a uma rede virtual, o usuário deve ter permissão para *Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action* para as sub-redes que está sendo adicionadas. Essa permissão está incluída nas funções de administrador de serviço internas por padrão e pode ser modificada com a criação de funções personalizadas.
+Pontos de extremidade de serviço podem ser configurados em redes virtuais de forma independente por um usuário com acesso de gravação a uma rede virtual. Para proteger os recursos de serviço do Azure para uma VNet, o usuário deve ter permissão para *Microsoft. Network/virtualNetworks/sub-redes/joinViaServiceEndpoint/Action* para as sub-redes que estão sendo adicionadas. Essa permissão está incluída nas funções de administrador de serviço internas por padrão e pode ser modificada com a criação de funções personalizadas.
 
 Saiba mais sobre [funções internas](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) e como atribuir permissões específicas a [funções personalizadas](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
@@ -134,13 +133,13 @@ Não há nenhum custo adicional para usar pontos de extremidade de serviço. O m
 
 Não há limite para o número total de pontos de extremidade de serviço em uma rede virtual.
 
-Determinados serviços do Azure, como contas de armazenamento do Azure, podem impor limites no número de sub-redes usadas para garantir o recurso. Consulte a documentação para serviços diversos em [Próximas etapas](#next-steps) para obter detalhes.
+Determinados serviços do Azure, como contas de armazenamento do Azure, podem impor limites no número de sub-redes usadas para proteger o recurso. Consulte a documentação para serviços diversos em [Próximas etapas](#next-steps) para obter detalhes.
 
 ## <a name="virtual-network-service-endpoint-policies"></a>Políticas de Ponto de Extremidade de Serviço de Rede Virtual 
 
 As políticas de ponto de extremidade de serviço de rede virtual permitem filtrar o tráfego da rede virtual para serviços do Azure, permitindo apenas recursos específicos de serviço do Azure, em pontos de extremidade de serviço. As políticas de ponto de extremidade de serviço fornecem controle de acesso granular para tráfego de rede virtual para serviços do Azure. Mais informações: [Políticas de Ponto de Extremidade de Serviço de Rede Virtual](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 
-## <a name="faqs"></a>Perguntas frequentes
+## <a name="faqs"></a>Perguntas Frequentes
 
 Para perguntas frequentes, confira as [Perguntas frequentes sobre o ponto de extremidade de serviço de rede virtual](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints)
 

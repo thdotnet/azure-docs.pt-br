@@ -7,15 +7,15 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 05/02/2019
-manager: jlembicz
+manager: nitinme
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 99abcc70a81622e4efbe85722d457bd1846b6e15
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: d9ddb5af42c538558a69ce68e7ea90161c947b12
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485211"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186448"
 ---
 # <a name="synonyms-in-azure-search"></a>Sinônimos no Azure Search
 
@@ -25,9 +25,9 @@ No Azure Search, a expansão do sinônimo é feita no momento da consulta. Você
 
 ## <a name="create-synonyms"></a>Criar sinônimos
 
-Não há suporte do portal para criar sinônimos, mas você pode usar a API REST ou o SDK do .NET. Para começar com o REST, é recomendável [usando o Postman](search-get-started-postman.md) e formulação de solicitações que usam essa API: [Criar mapas de sinônimos](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Para C# desenvolvedores, você pode começar a usar com [adicionar sinônimos na pesquisa do Azure usando o C# ](search-synonyms-tutorial-sdk.md).
+Não há suporte do portal para criar sinônimos, mas você pode usar a API REST ou o SDK do .NET. Para começar com o REST, é recomendável [usar o postmaster](search-get-started-postman.md) e a formulação de solicitações usando esta API: [Crie mapas](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map)de sinônimos. Para C# os desenvolvedores, você pode começar a [Adicionar sinônimos na pesquisa do Azure C#usando ](search-synonyms-tutorial-sdk.md)o.
 
-Opcionalmente, se você estiver usando [chaves gerenciadas pelo cliente](search-security-manage-encryption-keys.md) para criptografia em repouso no lado do serviço, você pode aplicar essa proteção ao conteúdo de seu mapa de sinônimos.
+Opcionalmente, se você estiver usando [chaves gerenciadas pelo cliente](search-security-manage-encryption-keys.md) para criptografia do lado do serviço em repouso, poderá aplicar essa proteção ao conteúdo do seu mapa de sinônimos.
 
 ## <a name="use-synonyms"></a>Usar sinônimos
 
@@ -76,14 +76,14 @@ Como alternativa, use PUT e especifique o nome do mapa de sinônimos no URI. Se 
 
 ##### <a name="apache-solr-synonym-format"></a>Formato de sinônimo Apache Solr
 
-O formato Solr dá suporte a mapeamentos de sinônimo equivalentes e explícitos. Regras de mapeamento aderem à especificação de filtro de sinônimo de código-fonte aberto do Apache Solr, descritos neste documento: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Abaixo está um exemplo de regra de sinônimos equivalentes.
+O formato Solr dá suporte a mapeamentos de sinônimo equivalentes e explícitos. As regras de mapeamento aderem à especificação de filtro de sinônimos de software livre do Apache Solr, descritas neste documento: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Abaixo está um exemplo de regra de sinônimos equivalentes.
 ```
 USA, United States, United States of America
 ```
 
 Com a regra acima, uma consulta de pesquisa "EUA" será expandida para "EUA" OR "Estados Unidos" OR "Estados Unidos da América".
 
-Mapeamento explícito é indicado por uma seta "=>". Quando especificado, uma sequência de termos de uma consulta de pesquisa que corresponda à esquerda de "= >" será substituída com as alternativas do lado direito. Dada a regra abaixo, consultas de pesquisa "Washington", "Wash." ou "WA" serão regravadas como "WA". Mapeamento explícito só é aplicável na direção especificada e não regrava a consulta "WA" para "Washington" nesse caso.
+Mapeamento explícito é indicado por uma seta "=>". Quando especificado, uma sequência de termo de uma consulta de pesquisa que corresponde ao lado esquerdo de "= >" será substituída pelas alternativas no lado direito. Dada a regra abaixo, consultas de pesquisa "Washington", "Wash." ou "WA" serão regravadas como "WA". Mapeamento explícito só é aplicável na direção especificada e não regrava a consulta "WA" para "Washington" nesse caso.
 ```
 Washington, Wash., WA => WA
 ```

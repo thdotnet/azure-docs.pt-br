@@ -1,6 +1,6 @@
 ---
-title: Integrar e desenvolver com o pacote npm de CI/CD do Azure Stream Analytics continuamente
-description: Este artigo descreve como usar o pacote npm de CI/CD do Azure Stream Analytics para configurar um processo de implantação e integração contínua.
+title: Usar o pacote Azure Stream Analytics CI/CD NPM
+description: Este artigo descreve como usar Azure Stream Analytics pacote de NPM CI/CD para configurar um processo de implantação e integração contínua.
 services: stream-analytics
 author: su-jie
 ms.author: sujie
@@ -8,21 +8,21 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: fa5a57afa379c6bbe027be80f400fc176800d289
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: df9afaaeeb7e41c111fe6bd053047095a9cb9349
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66158498"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173340"
 ---
-# <a name="continuously-integrate-and-develop-with-stream-analytics-cicd-npm-package"></a>Integrar e desenvolver com o pacote npm de Stream Analytics CI/CD continuamente
-Este artigo descreve como usar o pacote de npm do Azure Stream Analytics CI/CD para configurar um processo de implantação e integração contínua.
+# <a name="use-the-stream-analytics-cicd-npm-package"></a>Usar o pacote Stream Analytics CI/CD NPM
+Este artigo descreve como usar o pacote Azure Stream Analytics CI/CD NPM para configurar um processo de implantação e integração contínua.
 
-## <a name="build-the-vs-code-project"></a>Compile o projeto do VS Code
+## <a name="build-the-vs-code-project"></a>Criar o projeto de VS Code
 
-Você pode habilitar a integração contínua e implantação para trabalhos do Azure Stream Analytics usando o **asa-streamanalytics-cicd** pacote npm. O pacote npm fornece as ferramentas para gerar modelos do Azure Resource Manager do [projetos do Visual Studio Code do Stream Analytics](quick-create-vs-code.md). Ele pode ser usado no Windows, macOS e Linux sem instalar o Visual Studio Code.
+Você pode habilitar a integração e a implantação contínuas para trabalhos de Azure Stream Analytics usando o pacote NPM- **streamanalytics-cICD** . O pacote NPM fornece as ferramentas para gerar Azure Resource Manager modelos de [Stream Analytics projetos de Visual Studio Code](quick-create-vs-code.md). Ele pode ser usado no Windows, no macOS e no Linux sem instalar Visual Studio Code.
 
-Quando você tiver [baixou o pacote](https://www.npmjs.com/package/azure-streamanalytics-cicd), use o seguinte comando para gerar os modelos do Azure Resource Manager. O **scriptPath** argumento é o caminho absoluto para o **asaql** arquivo em seu projeto. Verifique se que os arquivos de JobConfig.json e asaproj.json estão na mesma pasta com o arquivo de script. Se o **outputPath** não for especificado, os modelos serão colocados na **Deploy** pasta sob o projeto **bin** pasta.
+Depois de [baixar o pacote](https://www.npmjs.com/package/azure-streamanalytics-cicd), use o comando a seguir para gerar os modelos de Azure Resource Manager. O argumento **ScriptPath** é o caminho absoluto para o arquivo **asaql** em seu projeto. Verifique se os arquivos asaproj. JSON e JobConfig. JSON estão na mesma pasta com o arquivo de script. Se o **outputPath** não for especificado, os modelos serão colocados na pasta **Deploy** na pasta **bin** do projeto.
 
 ```powershell
 azure-streamanalytics-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
@@ -32,7 +32,7 @@ Exemplo (no macOS)
 azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/script.asaql" 
 ```
 
-Quando um projeto do Visual Studio Code do Stream Analytics é compilado com êxito, ele gera os seguintes arquivos de modelo do Azure Resource Manager duas sob o **bin / [depuração/varejo] / implantar** pasta: 
+Quando um Stream Analytics Visual Studio Code projeto é compilado com êxito, ele gera os dois arquivos de modelo de Azure Resource Manager a seguir na pasta **bin/[Debug/Retail]/Deploy** : 
 
 *  Arquivo de modelo do Resource Manager
 
@@ -42,7 +42,7 @@ Quando um projeto do Visual Studio Code do Stream Analytics é compilado com êx
 
        [ProjectName].JobTemplate.parameters.json   
 
-Os parâmetros padrão no arquivo Parameters. JSON são das configurações em seu projeto do Visual Studio Code. Se você deseja implantar em outro ambiente, apenas substitua os parâmetros adequadamente.
+Os parâmetros padrão no arquivo Parameters. JSON são das configurações no seu projeto Visual Studio Code. Se você deseja implantar em outro ambiente, apenas substitua os parâmetros adequadamente.
 
 > [!NOTE]
 > Para todas as credenciais, os valores padrão são definidos como nulo. Eles **precisam** ser definidos antes de serem implantados na nuvem.
@@ -57,6 +57,6 @@ Saiba mais sobre como [implantar com um arquivo de modelo do Resource Manager e 
 Para usar a Identidade Gerenciada para o Azure Data Lake Storage Gen1 como coletor de saída, você precisará fornecer Acesso à entidade de serviço usando o PowerShell antes da implantação no Azure. Saiba mais sobre como [implantar o ADLS Gen1 com a Identidade Gerenciada e o modelo do Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Início Rápido: Criar um trabalho de nuvem do Azure Stream Analytics no Visual Studio Code (visualização)](quick-create-vs-code.md)
-* [Testar as consultas do Stream Analytics localmente com o Visual Studio Code (visualização)](vscode-local-run.md)
-* [Explorar o Azure Stream Analytics com o código do Visual Studio (versão prévia)](vscode-explore-jobs.md)
+* [Início Rápido: Criar um trabalho de nuvem Azure Stream Analytics no Visual Studio Code (visualização)](quick-create-vs-code.md)
+* [Testar Stream Analytics consultas localmente com Visual Studio Code (versão prévia)](vscode-local-run.md)
+* [Explorar Azure Stream Analytics com Visual Studio Code (versão prévia)](vscode-explore-jobs.md)

@@ -7,14 +7,14 @@ services: search
 ms.date: 05/02/2019
 author: brjohnstmsft
 ms.author: brjohnst
-manager: jlembicz
+manager: nitinme
 ms.custom: seodec2018
-ms.openlocfilehash: a222b9e506988929c25a560361611b8f78142053
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4d1ffa5b29a56d32a4f6a8ccf40f5bafd27795e6
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024362"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186495"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-search"></a>Filtros de segurança para resultados de corte no Azure Search
 
@@ -152,7 +152,7 @@ Você deve obter os documentos de volta, em que `group_ids` contém "group_id1" 
 ```
 ## <a name="conclusion"></a>Conclusão
 
-É assim que você pode filtrar os resultados com base na identidade do usuário e na função `search.in()` do Azure Search. Você pode usar essa função para passar identificadores de princípio do usuário solicitante para correspondência com identificadores de entidade associados a cada documento de destino. Quando uma solicitação de pesquisa é manipulada, a função `search.in` filtra os resultados da pesquisa aos quais nenhuma das entidades do usuário têm acesso de leitura. Os identificadores de entidade podem representar itens como grupos de segurança, funções ou até mesmo a própria identidade do usuário.
+É assim que você pode filtrar os resultados com base na identidade do usuário e na função `search.in()` do Azure Search. Você pode usar essa função para passar identificadores principais para que o usuário solicitante coincida com os identificadores de entidade de segurança associados a cada documento de destino. Quando uma solicitação de pesquisa é manipulada, a função `search.in` filtra os resultados da pesquisa aos quais nenhuma das entidades do usuário têm acesso de leitura. Os identificadores de entidade podem representar itens como grupos de segurança, funções ou até mesmo a própria identidade do usuário.
  
 ## <a name="see-also"></a>Consulte também
 

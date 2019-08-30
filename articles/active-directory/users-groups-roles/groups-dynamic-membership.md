@@ -351,7 +351,7 @@ Os seguintes atributos de dispositivo podem ser usados.
 
  Atributo do dispositivo  | Valores | Exemplo
  ----- | ----- | ----------------
- accountEnabled | verdadeiro, falso | (device.accountEnabled -eq true)
+ accountEnabled | true, false | (device.accountEnabled -eq true)
  displayName | Um valor de cadeia de caracteres. |(device.displayName -eq "Rob iPhone")
  deviceOSType | Um valor de cadeia de caracteres. | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")<br>(Device. deviceOSType-contém "AndroidEnterprise")<br>(device.deviceOSType -eq "AndroidForWork")
  deviceOSVersion | Um valor de cadeia de caracteres. | (device.deviceOSVersion -eq "9.1")
@@ -360,7 +360,7 @@ Os seguintes atributos de dispositivo podem ser usados.
  deviceModel | Um valor de cadeia de caracteres. | (device.deviceModel -eq "iPad Air")
  deviceOwnership | Pessoal, Empresa, Desconhecido | (device.deviceOwnership -eq "Company")
  enrollmentProfileName | Nome do perfil de perfil de registro de dispositivo Apple ou Autopilot do Windows | (device.enrollmentProfileName -eq "DEP iPhones")
- isRooted | verdadeiro, falso | (device.isRooted -eq true)
+ isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (para dispositivos móveis)<br>PC (para computadores gerenciados pelo agente de PC do Intune) | (device.managementType -eq "MDM")
  deviceId | uma ID de dispositivo do Azure AD válida | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | uma ID de objeto do Azure AD válida |  (device.objectId -eq 76ad43c9-32c5-45e8-a272-7b58b58f596d")

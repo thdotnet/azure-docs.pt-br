@@ -2,7 +2,7 @@
 title: Atualizar para o SDK do .NET do Azure Search versão 1.1 – Azure Search
 description: Migre o código para o SDK do .NET do Azure Search versão 1.1 de versões de API mais antigas. Conheça as novidades e quais alterações de código são necessárias.
 author: brjohnstmsft
-manager: jlembicz
+manager: nitinme
 services: search
 ms.service: search
 ms.devlang: dotnet
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 82823bae76521080634d4f7ff285d94ce8495fbf
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 8227e1b372af1eee43db59da2cfad165d67be9ae
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65024162"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183276"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-11"></a>Atualizando para o SDK do .NET do Azure Search versão 1.1
 
