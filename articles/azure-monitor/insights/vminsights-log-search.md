@@ -118,7 +118,7 @@ Todas as propriedades RemoteIp na tabela *VMConnection* são verificadas em um c
 |Severity |Os valores são *0 – 5*, onde *5* é o mais grave e *0* não é grave. O valor padrão é *3*.  |
 |FirstReportedDateTime |A primeira vez que o provedor relatou o indicador. |
 |LastReportedDateTime |A última vez que o indicador foi visto pelo Interflow. |
-|IsActive |Indica que os indicadores estão desativados com o valor *Verdadeiro* ou *Falso*. |
+|IsActive |Indica que os indicadores estão desativados com o valor *True* ou *False*. |
 |ReportReferenceLink |Links para relatórios relacionados a um dado observável. |
 |AdditionalInformation |Fornece informações adicionais, se aplicáveis, sobre a ameaça observada. |
 
