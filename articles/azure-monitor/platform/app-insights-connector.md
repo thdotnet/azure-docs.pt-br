@@ -198,7 +198,7 @@ Um registro com um *tipo* de *ApplicationInsights* é criado para cada tipo de d
 | isSynthetic | Indica se a solicitação foi criada por um usuário ou por um método automatizado. True = método automatizado ou false = gerado pelo usuário |
 | SamplingRate | Porcentagem de telemetria gerada pelo SDK enviado ao portal. Intervalo 0.0-100.0. |
 | SampledCount | 100/(SamplingRate). Por exemplo, 4 =&gt; 25% |
-| IsAuthenticated | Verdadeiro ou falso |
+| IsAuthenticated | True ou False |
 | OperationID | Itens que têm a mesma ID de operação são mostrados como Itens Relacionados no portal. Normalmente, a ID da solicitação |
 | ParentOperationID | ID da operação pai |
 | OperationName |   |
