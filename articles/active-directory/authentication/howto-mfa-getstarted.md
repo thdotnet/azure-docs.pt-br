@@ -299,16 +299,16 @@ Escolha o que acontece quando os usuários que não estão registrados com o MFA
 
 | Chave | Valor | Padrão |
 | --- | --- | --- |
-| `REQUIRE_USER_MATCH` | VERDADEIRO/FALSO | Não definido (equivalente a TRUE) |
+| `REQUIRE_USER_MATCH` | TRUE/FALSE | Não definido (equivalente a TRUE) |
 
 A finalidade dessa configuração é determinar o que fazer quando um usuário não estiver inscrito na MFA. Os efeitos da alteração dessa configuração são listados na tabela a seguir.
 
 | Configurações | Status de MFA do usuário | Effect |
 | --- | --- | --- |
 | A chave não existe | Não registrado | O desafio de MFA não foi bem-sucedido |
-| Valor definido como true/not set | Não registrado | O desafio de MFA não foi bem-sucedido |
-| Chave definida como false | Não registrado | Autenticação sem MFA |
-| Chave definida como falsa ou verdadeira | Registrados | Deve autenticar com MFA |
+| Valor definido como True/not set | Não registrado | O desafio de MFA não foi bem-sucedido |
+| Chave definida como False | Não registrado | Autenticação sem MFA |
+| Chave definida como Falsa ou True | Registrados | Deve autenticar com MFA |
 
 ### <a name="integrate-with-active-directory-federation-services"></a>Integrar com o Serviços de Federação do Active Directory (AD FS)
 
