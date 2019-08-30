@@ -64,7 +64,7 @@ As permissões no AD do Azure têm um número de propriedades que ajudam, admini
 | Nome da propriedade | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | `ID` | É um valor de GUID que identifica exclusivamente esta permissão. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
-| `IsEnabled` | Indica se essa permissão está disponível para uso. | verdadeiro |
+| `IsEnabled` | Indica se essa permissão está disponível para uso. | true |
 | `Type` | Indica se essa permissão requer o consentimento do usuário ou consentimento do administrador. | Usuário |
 | `AdminConsentDescription` | É uma descrição que é exibida para os administradores durante as experiências de consentimento do administrador | Permite que o aplicativo leia emails nas caixas de entrada dos usuários. |
 | `AdminConsentDisplayName` | É um nome fácil exibido aos administradores durante as experiências de consentimento do administrador. | Ler email de usuário |
