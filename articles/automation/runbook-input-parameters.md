@@ -32,7 +32,7 @@ O PowerShell e os runbooks de Fluxo de Trabalho do PowerShell na Automação do 
 |:--- |:--- |
 | `Type` |Obrigatório. O tipo de dados esperado para o valor do parâmetro. Qualquer tipo .NET é válido. |
 | `Name` |Obrigatório. O nome do parâmetro. Deve ser exclusivo no runbook e pode conter apenas letras, números ou caracteres de sublinhado. Deve começar com uma letra. |
-| `Mandatory` |Opcional. Especifica se deve ser fornecido um valor para o parâmetro. Se você definir isso como **\$verdadeiro**, um valor deverá ser fornecido quando o runbook for iniciado. Se você definir isso como **\$falso**, um valor será opcional. |
+| `Mandatory` |Opcional. Especifica se deve ser fornecido um valor para o parâmetro. Se você definir isso como **\$true**, um valor deverá ser fornecido quando o runbook for iniciado. Se você definir isso como **\$false**, um valor será opcional. |
 | `Default value` |Opcional. Especifica um valor que é usado para o parâmetro se um valor não for transmitido ao iniciar o runbook. Um valor padrão pode ser definido para qualquer parâmetro e tornará automaticamente o parâmetro opcional, independentemente da configuração obrigatória. |
 
 O Windows PowerShell dá suporte a mais atributos de parâmetros de entrada do que aqueles listados aqui, como validação, aliases e conjuntos de parâmetros. No entanto, a Automação do Azure atualmente dá suporte apenas aos parâmetros de entrada anteriores.
