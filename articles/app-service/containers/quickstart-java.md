@@ -143,13 +143,13 @@ Navegue até `pom.xml` novamente para ver se a configuração de plug-in foi atu
 
  Propriedade | Obrigatório | DESCRIÇÃO | Versão
 ---|---|---|---
-`<schemaVersion>` | falso | Especifique a versão do esquema de configuração. Os valores suportados são: `v1`, `v2`. | 1.5.2
-`<resourceGroup>` | verdadeiro | Grupo de recursos do Azure para seu aplicativo Web. | 0.1.0+
-`<appName>` | verdadeiro | O nome do seu aplicativo Web. | 0.1.0+
-[`<region>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region) | verdadeiro | Especifica a região onde seu aplicativo Web será hospedado; o valor padrão é **westus**. Todas as regiões válidas na seção [Regiões com suporte](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region). | 0.1.0+
-[`<pricingTier>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme##pricingtier) | falso | O tipo de preço do seu aplicativo Web. O valor padrão é **P1V2**.| 0.1.0+
-[`<runtime>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting) | verdadeiro | A configuração do ambiente de tempo de execução. Você pode ver os detalhes [aqui](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting). | 0.1.0+
-[`<deployment>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting) | verdadeiro | A configuração de implantação. Você pode ver os detalhes [aqui](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting). | 0.1.0+
+`<schemaVersion>` | false | Especifique a versão do esquema de configuração. Os valores suportados são: `v1`, `v2`. | 1.5.2
+`<resourceGroup>` | true | Grupo de recursos do Azure para seu aplicativo Web. | 0.1.0+
+`<appName>` | true | O nome do seu aplicativo Web. | 0.1.0+
+[`<region>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region) | true | Especifica a região onde seu aplicativo Web será hospedado; o valor padrão é **westus**. Todas as regiões válidas na seção [Regiões com suporte](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#region). | 0.1.0+
+[`<pricingTier>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme##pricingtier) | false | O tipo de preço do seu aplicativo Web. O valor padrão é **P1V2**.| 0.1.0+
+[`<runtime>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting) | true | A configuração do ambiente de tempo de execução. Você pode ver os detalhes [aqui](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#runtimesetting). | 0.1.0+
+[`<deployment>`](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting) | true | A configuração de implantação. Você pode ver os detalhes [aqui](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme#deploymentsetting). | 0.1.0+
 
 ## <a name="deploy-the-app"></a>Implantar o aplicativo
 
