@@ -105,7 +105,7 @@ Use as etapas a seguir para configurar o acompanhamento de arquivo em computador
 |Recursão     | Determina se a recursão é usada ao procurar o item a ser rastreado.        |
 |Usar o Sudo     | Essa configuração determina se o Sudo será usado durante a verificação do item.         |
 |Links     | Essa configuração determina como os links simbólicos lidam ao passar diretórios.<br> **Ignorar** – ignora os links simbólicos e não inclui os arquivos/diretórios referenciados.<br>**Seguir** - Segue os links simbólicos durante a recursão e inclui também os arquivos/diretórios referenciados.<br>**Gerenciar** - Segue os links simbólicos e permite a alteração do conteúdo retornado.     |
-|Carregar o conteúdo do arquivo para todas as configurações| Habilita ou desabilita o upload de conteúdo do arquivo em alterações controladas. Opções disponíveis: **Verdadeiro** ou **Falso**.|
+|Carregar o conteúdo do arquivo para todas as configurações| Habilita ou desabilita o upload de conteúdo do arquivo em alterações controladas. Opções disponíveis: **True** ou **False**.|
 
 > [!NOTE]
 > A opção "Gerenciar" links não é recomendada. Não há suporte para a recuperação de conteúdo do arquivo.
