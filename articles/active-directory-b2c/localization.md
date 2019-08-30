@@ -110,9 +110,9 @@ O elemento **Item** contém os seguintes atributos:
 
 | Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
-| Texto | Sim | A cadeia de caracteres de exibição amigável deve ser mostrada ao usuário na interface do usuário para essa opção. |
-| Valor | Sim | O valor da declaração da cadeia de caracteres associada com essa opção. |
-| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
+| Text | Sim | A cadeia de caracteres de exibição amigável deve ser mostrada ao usuário na interface do usuário para essa opção. |
+| Value | Sim | O valor da declaração da cadeia de caracteres associada com essa opção. |
+| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: True ou False. |
 
 O exemplo a seguir mostra o uso do elemento **LocalizedCollections**. Ele contém dois elementos **LocalizedCollection**, um para inglês e outro para espanhol. Ambos definem a coleção de **Restrição** da declaração `Gender` com uma lista de itens para inglês e espanhol.
 
