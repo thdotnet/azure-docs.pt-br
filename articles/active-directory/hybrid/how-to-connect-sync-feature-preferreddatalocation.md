@@ -170,7 +170,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
     | Atributo | Operator | Valor |
     | --- | --- | --- |
     | sourceObjectType | EQUAL | User |
-    | cloudMastered | NOTEQUAL | verdadeiro |
+    | cloudMastered | NOTEQUAL | True |
 
     Filtro de escopo determina a quais objetos do Azure AD essa regra de sincronização de saída é aplicada. Neste exemplo, usamos o mesmo filtro de escopo da regra de sincronização OOB (pronta para uso) de “Saída para AD – identidade do usuário”. Impede que a regra de sincronização seja aplicada aos objetos de **Usuário** que não estão sincronizados do Active Directory local. Talvez seja necessário ajustar o filtro de escopo de acordo com sua implantação do Azure AD Connect.
 
