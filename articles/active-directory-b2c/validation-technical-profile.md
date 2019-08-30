@@ -66,14 +66,14 @@ O elemento **Precondition** contém os seguinte atributo:
 | Atributo | Obrigatório | DESCRIÇÃO |
 | --------- | -------- | ----------- |
 | `Type` | Sim | O tipo de verificação ou consulta ser executada para a pré-condição. Qualquer um dos `ClaimsExist` é especificado para garantir que as ações devem ser realizadas se as declarações especificadas existem no atual conjunto de declarações do usuário, ou `ClaimEquals` for especificado que as ações devem ser executadas se a declaração especificada existe e seu valor é igual ao valor especificado. |
-| `ExecuteActionsIf` | Sim | Indica se as ações na pré-condição devem ser executadas se o teste for verdadeiro ou falso. |
+| `ExecuteActionsIf` | Sim | Indica se as ações na pré-condição devem ser executadas se o teste for true ou false. |
 
 O elemento **Precondition** contém os seguintes elementos:
 
 | Elemento | Ocorrências | DESCRIÇÃO |
 | ------- | ----------- | ----------- |
 | Value | 1:n | Os dados que são usados pela verificação. Se o tipo dessa verificação for `ClaimsExist`, este campo especifica um ClaimTypeReferenceId para consultar. Se o tipo dessa verificação for `ClaimEquals`, este campo especifica um ClaimTypeReferenceId para consultar. Enquanto outro elemento de valor contém o valor a ser verificado.|
-| Ação | 1:1 | A ação que deverá ser executada se a verificação de pré-condição dentro de uma etapa de orquestração for verdadeira. O valor da **Ação** é definido como `SkipThisValidationTechnicalProfile`. Especifica que o perfil técnico de validação associada não deve ser executado. |
+| Action | 1:1 | A ação que deverá ser executada se a verificação de pré-condição dentro de uma etapa de orquestração for true. O valor da **Action** é definido como `SkipThisValidationTechnicalProfile`. Especifica que o perfil técnico de validação associada não deve ser executado. |
 
 ### <a name="example"></a>Exemplo
 
