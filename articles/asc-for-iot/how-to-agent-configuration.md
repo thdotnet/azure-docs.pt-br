@@ -135,18 +135,18 @@ Os valores padrão estão disponíveis no esquema adequado no [GitHub](https\://
 |----------|------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------|
 |Evento de diagnóstico|eventPriorityDiagnostic| Desativar| False| Eventos de diagnóstico relacionados ao agente. Use esse evento para log detalhado.| 
 |Erro de configuração |eventPriorityConfigurationError |Baixa |False |O agente não pôde analisar a configuração. Verifique a configuração em relação ao esquema.| 
-|Estatísticas de eventos descartados |eventPriorityDroppedEventsStatistics |Baixa |verdadeiro|Estatísticas de evento relacionadas ao agente. |
-|Estatísticas de mensagem|eventPriorityMessageStatistics |Baixa |verdadeiro |Estatísticas de mensagens relacionadas ao agente. |
-|Hardware conectado|eventPriorityConnectedHardware |Baixa |verdadeiro |Instantâneo de todo o hardware conectado ao dispositivo.|
-|Portas de escuta|eventPriorityListeningPorts |Alto |verdadeiro |Instantâneo de todas as portas de escuta abertas no dispositivo.|
+|Estatísticas de eventos descartados |eventPriorityDroppedEventsStatistics |Baixa |True|Estatísticas de evento relacionadas ao agente. |
+|Estatísticas de mensagem|eventPriorityMessageStatistics |Baixa |True |Estatísticas de mensagens relacionadas ao agente. |
+|Hardware conectado|eventPriorityConnectedHardware |Baixa |True |Instantâneo de todo o hardware conectado ao dispositivo.|
+|Portas de escuta|eventPriorityListeningPorts |Alto |True |Instantâneo de todas as portas de escuta abertas no dispositivo.|
 |Criar processo |eventPriorityProcessCreate |Baixa |False |Audita a criação do processo no dispositivo.|
 |Término do processo|eventPriorityProcessTerminate |Baixa |False |Audita o encerramento do processo no dispositivo.| 
-|Informações do sistema |eventPrioritySystemInformation |Baixa |verdadeiro |Um instantâneo das informações do sistema (por exemplo: SO ou CPU).| 
-|Usuários locais| eventPriorityLocalUsers |Alto |verdadeiro|Um instantâneo dos usuários locais registrados no sistema. |
+|Informações do sistema |eventPrioritySystemInformation |Baixa |True |Um instantâneo das informações do sistema (por exemplo: SO ou CPU).| 
+|Usuários locais| eventPriorityLocalUsers |Alto |True|Um instantâneo dos usuários locais registrados no sistema. |
 |Logon|  eventPriorityLogin |Alto|False|Auditar os eventos de logon para o dispositivo (logons locais e remotos).|
 |Criação de conexão |eventPriorityConnectionCreate|Baixa|False|Audita as conexões TCP criadas de e para o dispositivo. |
-|Configuração do firewall| eventPriorityFirewallConfiguration|Baixa|verdadeiro|Instantâneo da configuração de firewall do dispositivo (regras de firewall). |
-|Linha de base do so| eventPriorityOSBaseline| Baixa|verdadeiro|Instantâneo da verificação de linha de base do so do dispositivo.|
+|Configuração do firewall| eventPriorityFirewallConfiguration|Baixa|True|Instantâneo da configuração de firewall do dispositivo (regras de firewall). |
+|Linha de base do so| eventPriorityOSBaseline| Baixa|True|Instantâneo da verificação de linha de base do so do dispositivo.|
 |
  
 
