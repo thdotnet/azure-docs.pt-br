@@ -1,29 +1,23 @@
 ---
-title: Armazenar credenciais de acesso com segurança na Máquina Virtual de Ciência de Dados - Azure | Microsoft Docs
+title: Armazenar credenciais de acesso com segurança
+titleSuffix: Azure Data Science Virtual Machine
 description: Saiba como armazenar com segurança as credenciais de acesso na Máquina Virtual de Ciência de Dados. Você aprenderá a usar identidades de serviço gerenciadas e Azure Key Vault para armazenar credenciais de acesso.
 keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise geoespacial, processo de ciência de dados da equipe
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 05/08/2018
+author: vijetajo
 ms.author: vijetaj
-ms.openlocfilehash: 1374cbef41f40ea270f3c4d84c68d08e7db095bc
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.topic: conceptual
+ms.date: 05/08/2018
+ms.openlocfilehash: 17e611007d2b5400497597946159826df7aa4848
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051606"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195605"
 ---
-# <a name="store-access-credentials-securely-on-a-data-science-virtual-machine"></a>Armazenar credenciais de acesso com segurança em um Máquina Virtual de Ciência de Dados
+# <a name="store-access-credentials-securely-on-an-azure-data-science-virtual-machine"></a>Armazenar credenciais de acesso com segurança em um Máquina Virtual de Ciência de Dados do Azure
 
 É comum que o código em aplicativos de nuvem contenha credenciais para autenticação em serviços de nuvem. Como gerenciar e proteger essas credenciais é um desafio bem conhecido na criação de aplicativos em nuvem. O ideal é que as credenciais nunca apareçam em estações de trabalho do desenvolvedor ou obtenha check-in no controle do código-fonte.
 

@@ -1,27 +1,21 @@
 ---
-title: Plataformas de dados pra a Máquina Virtual de Ciência de Dados – Azure | Microsoft Docs
-description: Saiba mais sobre as plataformas de dados e ferramentas compatíveis com a Máquina Virtual de Ciência de Dados.
+title: Plataformas de dados com suporte
+titleSuffix: Azure Data Science Virtual Machine
+description: Saiba mais sobre as plataformas de dados e as ferramentas com suporte para o Máquina Virtual de Ciência de Dados do Azure.
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: vijetaj
-ms.openlocfilehash: a0fe4ee33769a6d8cf14f60dcc0c4615bb00c5e8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e0ba013f7739e7ade717136cb5507af630263a18
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565305"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192199"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Plataformas de dados compatíveis com a Máquina Virtual de Ciência de Dados
 
@@ -33,7 +27,7 @@ A seguir estão as ferramentas de plataforma de dados com suporte na DSVM.
 
 | | |
 | ------------- | ------------- |
-| O que é isto?   | Uma instância de banco de dados relacional local      |
+| O que é?   | Uma instância de banco de dados relacional local      |
 | Edições do DSVM com suporte      | Windows      |
 | Usos típicos      | Desenvolvimento rápido localmente com o menor conjunto de dados <br/> Executar R no banco de dados   |
 | Links para exemplos      |    Uma pequena amostra do Conjunto de Dados de Nova Iorque é carregada para o banco de dados SQL `nyctaxi`. <br/> Exemplo do Jupyter mostrando Microsoft R e análise no banco de dados pode ser encontrado em:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
@@ -68,7 +62,7 @@ O SQL Server está instalado da maneira padrão. Ele pode ser encontrado em `C:\
 
 | | |
 | ------------- | ------------- |
-| O que é isto?   | Uma instância autônoma (único nó em processo) da plataforma do Apache Spark popular, um sistema de aprendizado de máquina e processamento rápido de dados em grande escala     |
+| O que é?   | Uma instância autônoma (único nó em processo) da plataforma do Apache Spark popular, um sistema de aprendizado de máquina e processamento rápido de dados em grande escala     |
 | Edições do DSVM com suporte      | Linux <br /> Windows (experimental)      |
 | Usos típicos      | * Rápido desenvolvimento de aplicativos Spark/PySpark localmente com o menor conjunto de dados e posterior implantação em grandes clusters do Spark, como HDInsight do Azure<br/> * Teste o contexto do Microsoft R Server Spark <br />* Use a biblioteca [MMLSpark](https://github.com/Azure/mmlspark) de software livre da Microsoft ou do SparkML para criar aplicativos ML  |
 | Links para exemplos      |    Exemplo de Jupyter: <br />&nbsp;&nbsp;* ~/notebooks/SparkML/pySpark <br /> &nbsp;&nbsp;* ~/notebooks/MMLSpark <br /> Microsoft R Server (contexto do Spark): /dsvm/samples/MRS/MRSSparkContextSample.R |

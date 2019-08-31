@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b6c9e50334a25b505655a49a02cd98165d04740b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 269d13e0b64d2da7a21316b16c88acde46ba1722
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164960"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194632"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Entender a Configuração de Convidado do Azure Policy
 
@@ -130,6 +130,11 @@ Todas as políticas internas da Configuração de Convidado são incluídas em u
 ### <a name="multiple-assignments"></a>Várias atribuições
 
 Atualmente, as políticas de configuração de convidado só dão suporte à atribuição da mesma entrada de convidado uma vez por computador, mesmo que a atribuição de política use parâmetros diferentes.
+
+## <a name="built-in-resource-modules"></a>Módulos de recursos internos
+
+Quando a extensão de configuração de convidado é instalada, o módulo do PowerShell "GuestConfiguration" é incluído com a versão mais recente dos módulos de recursos de DSC. Esse módulo pode ser baixado do Galeria do PowerShell usando o link ' download manual ' na página do módulo [GuestConfiguration/](https://www.powershellgallery.com/packages/GuestConfiguration/).
+O formato de arquivo '. nupkg ' pode ser renomeado para '. zip ' para descompactar e examinar.
 
 ## <a name="client-log-files"></a>Arquivos de log do cliente
 

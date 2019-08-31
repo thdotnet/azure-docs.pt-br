@@ -3,15 +3,15 @@ title: Funções do modelo do Azure Resource Manager – cadeia de caracteres | 
 description: Descreve as funções a serem usadas em um modelo do Azure Resource Manager para trabalhar com cadeias de caracteres.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1db1eb9be3586f76a8d3abc48a78a1e691da9924
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: c30bb47f3f35663a6ffcfc0126758eb82c9dec4e
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698187"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194766"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Funções de cadeia de caracteres para modelos do Azure Resource Manager
 
@@ -63,7 +63,7 @@ Retorna a representação base64 da cadeia de caracteres de entrada.
 |:--- |:--- |:--- |:--- |
 | inputString |Sim |cadeia de caracteres |O valor a retornar como uma representação base64. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que contém a representação base64.
 
@@ -114,7 +114,7 @@ A saída do exemplo anterior com os valores padrão é:
 | ---- | ---- | ----- |
 | base64Output | Cadeia | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Cadeia | um, dois, três |
-| toJsonOutput | Objeto | {"one": "a", "two": "b"} |
+| toJsonOutput | Object | {"one": "a", "two": "b"} |
 
 ## <a name="base64tojson"></a>base64ToJson
 
@@ -128,7 +128,7 @@ Converte uma representação base64 em um objeto JSON.
 |:--- |:--- |:--- |:--- |
 | base64Value |Sim |cadeia de caracteres |A representação base64 a ser convertida em um objeto JSON. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um objeto JSON.
 
@@ -179,7 +179,7 @@ A saída do exemplo anterior com os valores padrão é:
 | ---- | ---- | ----- |
 | base64Output | Cadeia | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Cadeia | um, dois, três |
-| toJsonOutput | Objeto | {"one": "a", "two": "b"} |
+| toJsonOutput | Object | {"one": "a", "two": "b"} |
 
 ## <a name="base64tostring"></a>base64ToString
 
@@ -193,7 +193,7 @@ Converte uma representação base64 em uma cadeia de caracteres.
 |:--- |:--- |:--- |:--- |
 | base64Value |Sim |cadeia de caracteres |A representação base64 a ser convertida em uma cadeia de caracteres. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres do valor base64 convertido.
 
@@ -244,7 +244,7 @@ A saída do exemplo anterior com os valores padrão é:
 | ---- | ---- | ----- |
 | base64Output | Cadeia | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Cadeia | um, dois, três |
-| toJsonOutput | Objeto | {"one": "a", "two": "b"} |
+| toJsonOutput | Object | {"one": "a", "two": "b"} |
 
 ## <a name="concat"></a>concat
 
@@ -259,7 +259,7 @@ Combina vários valores de cadeia de caracteres e retorna a cadeia de caracteres
 | arg1 |Sim |cadeia de caracteres ou matriz |O primeiro valor de concatenação. |
 | argumentos adicionais |Não |cadeia de caracteres |Valores adicionais em ordem sequencial para concatenação. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 Uma cadeia de caracteres ou matriz de valores concatenados.
 
 ### <a name="examples"></a>Exemplos
@@ -346,7 +346,7 @@ Verifica se uma matriz contém um valor, um objeto contém uma chave ou uma cade
 | contêiner |Sim |matriz, objeto ou cadeia de caracteres |O valor que contém o valor a ser encontrado. |
 | itemToFind |Sim |cadeia de caracteres ou inteiro |O valor a ser encontrado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 **True** se o item for encontrado; caso contrário, **False**.
 
@@ -426,7 +426,7 @@ Converte um valor em um URI de dados.
 |:--- |:--- |:--- |:--- |
 | stringToConvert |Sim |cadeia de caracteres |O valor a ser convertido em um URI de dados. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres formatada como um URI de dados.
 
@@ -481,7 +481,7 @@ Converte um valor formatado como um URI de dados em uma cadeia de caracteres.
 |:--- |:--- |:--- |:--- |
 | dataUriToConvert |Sim |cadeia de caracteres |Os valor de URI de dados a ser convertido. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que contém o valor convertido.
 
@@ -536,7 +536,7 @@ Determina se uma matriz, objeto ou uma cadeia de caracteres está vazio.
 |:--- |:--- |:--- |:--- |
 | itemToTest |Sim |matriz, objeto ou cadeia de caracteres |O valor para verificar se ele está vazio. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se o valor é vazio; caso contrário, **False**.
 
@@ -602,7 +602,7 @@ Determina se uma cadeia de caracteres termina com um valor. A comparação não 
 | stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
 | stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 **True** se o último caractere ou caracteres da cadeia de caracteres corresponderem ao valor; caso contrário, **False**.
 
@@ -667,7 +667,7 @@ Retorna o primeiro caractere da cadeia de caracteres ou o primeiro elemento da m
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |O valor para recuperar o primeiro elemento ou caractere. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres do primeiro caractere ou o tipo (cadeia de caracteres, inteiro, matriz ou objeto) do primeiro elemento em uma matriz.
 
@@ -764,7 +764,7 @@ A saída do exemplo anterior com os valores padrão é:
 | ---- | ---- | ----- |
 | formatTest | Cadeia | Olá, usuário. Número formatado: 8.175.133 |
 
-## <a name="guid"></a>GUID
+## <a name="guid"></a>guid
 
 `guid(baseString, ...)`
 
@@ -803,7 +803,7 @@ Escopo exclusivo para a implantação de um grupo de recursos
 "[guid(resourceGroup().id, deployment().name)]"
 ```
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que contém 36 caracteres no formato de um identificador global exclusivo.
 
@@ -848,7 +848,7 @@ Retorna a primeira posição de um valor em uma cadeia de caracteres. A compara�
 | stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
 | stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa a posição do item a ser encontrado. O valor é baseado em zero. Se o item não for encontrado,-1 será retornado.
 
@@ -908,7 +908,7 @@ Retorna o último caractere da cadeia de caracteres ou o último elemento da mat
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz ou cadeia de caracteres |O valor para recuperar o último elemento ou caractere. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres do último caractere ou o tipo (cadeia de caracteres, inteiro, matriz ou objeto) do último elemento em uma matriz.
 
@@ -961,7 +961,7 @@ Retorna a última posição de um valor em uma cadeia de caracteres. A comparaç
 | stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
 | stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa a última posição do item a ser encontrado. O valor é baseado em zero. Se o item não for encontrado,-1 será retornado.
 
@@ -1021,7 +1021,7 @@ Retorna o número de caracteres em uma cadeia de caracteres, elementos em uma ma
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz, Cadeia de caracteres ou objeto |A matriz a ser usada para obter o número de elementos, a cadeia de caracteres a ser usada para obter o número de caracteres ou o objeto a ser usado para obter o número de propriedades no nível raiz. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro. 
 
@@ -1103,7 +1103,7 @@ Em um ambiente de teste, talvez seja necessário implantar repetidamente os recu
 
 Tenha cuidado ao reimplantar um modelo que dependa da função newGuid para um valor padrão. Quando você reimplanta e não fornece um valor para o parâmetro, a função é reavaliada. Se você quiser atualizar um recurso existente em vez de criar um novo, passe o valor do parâmetro da implantação anterior.
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que contém 36 caracteres no formato de um identificador global exclusivo.
 
@@ -1198,7 +1198,7 @@ Retorna uma cadeia de caracteres alinhada à direita adicionando caracteres à e
 
 Se a cadeia de caracteres original for mais longa que o número de caracteres a ser preenchido, nenhum caractere será adicionado.
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres com, pelo menos, o número de caracteres especificado.
 
@@ -1246,7 +1246,7 @@ Retorna uma nova cadeia de caracteres com todas as instâncias de uma cadeia de 
 | oldString |Sim |cadeia de caracteres |A cadeia de caractere a ser removida da cadeia de caracteres original. |
 | newString |Sim |cadeia de caracteres |A cadeia de caracteres a ser adicionada no lugar da cadeia removida. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres com os caracteres substituídos.
 
@@ -1298,7 +1298,7 @@ Retorna uma cadeia de caracteres com todos os caracteres após o número especif
 | originalValue |Sim |matriz ou cadeia de caracteres |A matriz ou cadeia de caracteres a ser usada para ignorar. |
 | numberToSkip |Sim |int |O número de elementos ou caracteres a ser ignorado. Se esse valor for 0 ou menos, todos os elementos ou caracteres no valor serão retornados. Se for maior do que o comprimento da matriz ou da cadeia de caracteres, uma matriz ou cadeia de caracteres vazia será retornada. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma matriz ou cadeia de caracteres.
 
@@ -1366,7 +1366,7 @@ Retorna uma matriz de cadeias de caracteres que contém as subcadeias de caracte
 | inputString |Sim |cadeia de caracteres |A cadeia de caracteres a dividir. |
 | delimiter |Sim |cadeia de caracteres ou matriz de cadeias de caracteres |O delimitador a ser usado para dividir a cadeia de caracteres. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma matriz de cadeias de caracteres.
 
@@ -1425,7 +1425,7 @@ Determina se uma cadeia de caracteres começa com um valor. A comparação não 
 | stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
 | stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 **True** se o primeiro caractere ou caracteres da cadeia de caracteres corresponderem ao valor; caso contrário, **False**.
 
@@ -1490,7 +1490,7 @@ Converte o valor especificado em uma cadeia de caracteres.
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Sim | Any |O valor a ser convertido em cadeia de caracteres. Qualquer tipo de valor pode ser convertido, incluindo objetos e matrizes. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres do valor convertido.
 
@@ -1563,7 +1563,7 @@ Retorna uma subcadeia de caraceteres que começa na posição do caractere espec
 | startIndex |Não |int |A posição inicial do caractere baseada em zero para a subcadeia de caracteres. |
 | length |Não |int |O número de caracteres para a subcadeia de caracteres. Deve se referir a uma localização dentro da cadeia de caracteres. Deve ser zero ou maior. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 A subcadeia de caracteres. Ou, uma cadeia de caracteres vazia se o comprimento for zero.
 
@@ -1623,7 +1623,7 @@ Retorna uma cadeia de caracteres com o número especificado de caracteres desde 
 | originalValue |Sim |matriz ou cadeia de caracteres |A matriz ou cadeia de caracteres da qual extrair os elementos. |
 | numberToTake |Sim |int |O número de elementos ou caracteres a ser extraído. Se esse valor for 0 ou menos, uma matriz ou cadeia de caracteres vazia será retornada. Se for maior do que o comprimento da matriz ou cadeia de caracteres determinada, todos os elementos na matriz ou na cadeia de caracteres serão retornados. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma matriz ou cadeia de caracteres.
 
@@ -1690,7 +1690,7 @@ Converte a cadeia de caracteres especificada em letras minúsculas.
 |:--- |:--- |:--- |:--- |
 | stringToChange |Sim |cadeia de caracteres |O valor a ser convertido em letras minúsculas. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 A cadeia de caracteres convertida em minúsculas.
 
@@ -1741,7 +1741,7 @@ Converte a cadeia de caracteres especificada em maiúsculas.
 |:--- |:--- |:--- |:--- |
 | stringToChange |Sim |cadeia de caracteres |O valor a ser convertido em letras maiúsculas. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 A cadeia de caracteres convertida em maiúsculas.
 
@@ -1792,7 +1792,7 @@ Remove todos os caracteres de espaço em branco à esquerda e à direita da cade
 |:--- |:--- |:--- |:--- |
 | stringToTrim |Sim |cadeia de caracteres |O valor de corte. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 A cadeia de caracteres sem caracteres de espaço em branco à esquerda e à direita.
 
@@ -1878,7 +1878,7 @@ O exemplo a seguir mostra como criar um nome exclusivo para uma conta de armazen
 
 Se você precisar criar um novo nome exclusivo cada vez que implantar um modelo e não pretender atualizar o recurso, poderá usar a função [UtcNow](#utcnow) com uniquestring. Você pode usar essa abordagem em um ambiente de teste. Para obter um exemplo, consulte [UtcNow](#utcnow).
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que contém 13 caracteres.
 
@@ -1919,7 +1919,7 @@ Cria um URI absoluto, combinando o baseUri e a cadeia de caracteres relativeUri.
 
 O valor para o parâmetro **baseUri** pode incluir um arquivo específico, mas apenas o caminho base é usado ao construir a URI. Por exemplo, transmitir `http://contoso.com/resources/azuredeploy.json` como parâmetro baseUri resultará em uma URI base de `http://contoso.com/resources/`.
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres que representa o URI absoluto dos valores base e relativos.
 
@@ -1980,7 +1980,7 @@ Codifica um URI.
 |:--- |:--- |:--- |:--- |
 | stringToEncode |Sim |cadeia de caracteres |O valor a ser codificado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres do valor codificado em URI.
 
@@ -2035,7 +2035,7 @@ Retorna uma cadeia de caracteres de um valor codificado em URI.
 |:--- |:--- |:--- |:--- |
 | uriEncodedString |Sim |cadeia de caracteres |O valor codificado em URI a ser convertido em uma cadeia de caracteres. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Uma cadeia de caracteres decodificada de valores codificados em URI.
 
@@ -2098,7 +2098,7 @@ Se você usar a [opção para reimplantar uma implantação bem-sucedida anterio
 
 Tenha cuidado ao reimplantar um modelo que dependa da função utcNow para um valor padrão. Quando você reimplanta e não fornece um valor para o parâmetro, a função é reavaliada. Se você quiser atualizar um recurso existente em vez de criar um novo, passe o valor do parâmetro da implantação anterior.
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 O valor DateTime UTC atual.
 

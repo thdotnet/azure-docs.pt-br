@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: conceptual
-ms.date: 7/01/2019
+ms.date: 08/30/2019
 ms.author: aahi
-ms.openlocfilehash: 6604e5d5b3b77955c9e5f78df5d2a5b804bf09ef
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e857401591d45048962e9f606973dbf59dfe99c8
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883588"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194319"
 ---
 # <a name="sending-search-queries-to-the-bing-visual-search-api"></a>Enviar consultas de pesquisa para a API da Pesquisa Visual do Bing
 
@@ -242,7 +242,7 @@ O campo `tags` contém um nome de exibição e uma lista de ações (insights). 
 
 Para obter uma lista de informações padrão, consulte marca de [informações padrão](../default-insights-tag.md).
 
-As marcas restantes contêm outros insights que podem ser de interesse para o usuário. Por exemplo, se a imagem contiver um texto, uma das marcas poderá incluir um insight de TextResults, que contém o texto reconhecido. Ou, se o Bing reconhecer uma entidade (ou seja, uma pessoa, lugar ou coisa) na imagem, uma das marcas poderá identificar a entidade. A Pesquisa Visual também retorna um conjunto diversificado de termos (marcas) derivados da imagem de entrada. Essas marcas permitem que os usuários explorem os conceitos encontrados na imagem. Por exemplo, se a imagem de entrada for a de um atleta famoso, uma das marcas poderá ser Esportes, que contém links para imagens de esportes.
+As marcas restantes contêm outros insights que podem ser de interesse para o usuário. Por exemplo, se a imagem contiver um texto, uma das marcas poderá incluir um insight de TextResults, que contém o texto reconhecido. Ou, se o Bing reconhecer uma entidade (ou seja, uma pessoa, lugar ou coisa culturalmente conhecida/popular) na imagem, uma das marcas poderá identificar a entidade. A Pesquisa Visual também retorna um conjunto diversificado de termos (marcas) derivados da imagem de entrada. Essas marcas permitem que os usuários explorem os conceitos encontrados na imagem. Por exemplo, se a imagem de entrada for a de um atleta famoso, uma das marcas poderá ser Esportes, que contém links para imagens de esportes.
 
 Cada marcação inclui um nome de exibição que você pode usar para categorizar o insight, uma caixa delimitadora que identifica a região de interesse à qual o insight se aplica, os próprios insights e uma miniatura da imagem. Por exemplo, se a imagem for de uma pessoa usando uma camisa de uniforme esportivo, uma das marcas poderá incluir uma caixa delimitadora que delimita a camisa e inclui insights de VisualSearch e ProductVisualSearch. Outra marcação pode incluir um insight de ImageResults que contém uma URL para uma solicitação de API /images/search para obter imagens relacionadas a um tópico ou a uma URL de pesquisa do Bing.com que leva o usuário aos resultados da pesquisa de imagem do Bing.com.
 
@@ -368,7 +368,7 @@ O reconhecimento de texto também pode reconhecer as informações de contato em
     }
 ```
 
-Se a imagem contiver uma entidade reconhecida como uma pessoa, um lugar ou uma coisa, uma das marcas poderá incluir um insight de Entity.
+Se a imagem contiver uma entidade reconhecida como uma pessoa, lugar ou coisa culturalmente conhecida/popular, uma das marcas poderá incluir um insight de entidade.
 
 ```json
     {
@@ -403,5 +403,5 @@ Se a imagem contiver uma entidade reconhecida como uma pessoa, um lugar ou uma c
 
 ## <a name="see-also"></a>Consulte também
 
-- [O que é o API da Pesquisa Visual do Bing?](../overview.md)
+- [O que é a API da Pesquisa Visual do Bing?](../overview.md)
 - [Tutorial: Criar um aplicativo Web de página única Pesquisa Visual](../tutorial-bing-visual-search-single-page-app.md)

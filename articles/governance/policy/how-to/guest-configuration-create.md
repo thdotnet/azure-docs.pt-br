@@ -7,12 +7,12 @@ ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 235ad37c5cf5f8ac7e801a6d25e961d32c1b7aad
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: ee8a17846495a122f7432e66c3e343a00dd0a015
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70164913"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194615"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Como criar políticas de configuração de convidado
 
@@ -367,6 +367,13 @@ Uma boa referência para a criação de chaves GPG para usar com computadores Li
 
 Depois que o conteúdo for publicado, acrescente uma marca com `GuestConfigPolicyCertificateValidation` nome e `enabled` valor a todas as máquinas virtuais em que a assinatura de código deve ser necessária. Essa marca pode ser entregue em escala usando Azure Policy. Consulte a amostra [aplicar marca e seu valor padrão](../samples/apply-tag-default-value.md) .
 Depois que essa marca estiver em vigor, a definição de política gerada `New-GuestConfigurationPolicy` usando o cmdlet habilita o requisito por meio da extensão de configuração de convidado.
+
+## <a name="preview-troubleshooting-guest-configuration-policy-assignments"></a>APRESENTAÇÃO Solucionando problemas de atribuições de política de configuração de convidado
+
+Uma ferramenta está disponível na visualização para auxiliar na solução de problemas Azure Policy atribuições de configuração de convidado.
+A ferramenta está em versão prévia e foi publicada no Galeria do PowerShell como nome do módulo [solução de problemas de configuração de convidado](https://www.powershellgallery.com/packages/GuestConfigurationTroubleshooter/).
+
+Para obter mais informações sobre os cmdlets nesta ferramenta, use o comando Get-Help no PowerShell para mostrar as diretrizes internas.  Como a ferramenta está obtendo atualizações frequentes, essa é a melhor maneira de obter as informações mais recentes.
 
 ## <a name="next-steps"></a>Próximas etapas
 

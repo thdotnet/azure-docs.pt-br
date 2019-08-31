@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 08/29/2019
+ms.date: 08/30/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 27526f4940cb7ab538992f3506c1a35a81cec9bc
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
-ms.translationtype: HT
+ms.openlocfilehash: c7b0dc39d2da403383f245b9ff3227734c58cbbe
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165015"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193498"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limites e limites de base de dados de conhecimento do QnA Maker
 
@@ -90,8 +90,4 @@ Eles representam os limites de cada ação de atualização; ou seja, clique em 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba quando e como alterar as camadas de serviço:
-
-* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku): Quando você precisar ter mais arquivos de origem ou documentos maiores na sua base de dados de conhecimento, além da sua camada atual, atualize seu tipo de preço do QnA Maker Service.
-* [Serviço de aplicativo](how-to/upgrade-qnamaker-service.md#upgrade-app-service): Quando sua base de dados de conhecimento precisar fornecer mais solicitações do aplicativo cliente, atualize o tipo de preço do serviço de aplicativo.
-* [Azure Search](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service): Ao planejar ter muitas bases de conhecimento, atualize o tipo de preço do serviço do Azure Search.
+Saiba quando e como alterar os [tipos de preço de serviço](How-To/set-up-qnamaker-service-azure.md#upgrade-qna-maker).

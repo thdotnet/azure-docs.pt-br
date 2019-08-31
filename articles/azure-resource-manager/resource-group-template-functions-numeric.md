@@ -3,15 +3,15 @@ title: Funções do modelo do Azure Resource Manager – numéricas | Microsoft 
 description: Descreve as funções a serem usadas em um modelo do Resource Manager para trabalhar com números.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 11/08/2017
 ms.author: tomfitz
-ms.openlocfilehash: f63ce16369fd1ff58d5368b43c3c730008e63d9a
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 3ec5477ca6ea1731f18b09d6393bdde6261e0c32
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206409"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194338"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Funções numéricas para modelos do Azure Resource Manager
 
@@ -37,14 +37,14 @@ O Gerenciador de Recursos fornece as seguintes funções para trabalhar com núm
 
 Retorna a soma dos dois inteiros fornecidos.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- | 
 |operand1 |Sim |int |Primeiro número a ser adicionado. |
 |operand2 |Sim |int |Segundo número a ser adicionado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que contém a soma dos parâmetros.
 
@@ -85,9 +85,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| addResult | Int | 8 |
+| addResult | int | 8 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -108,12 +108,12 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Retorna o índice de um loop de iteração. 
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | loopName | Não | cadeia de caracteres | O nome do loop para obter a iteração. |
-| deslocamento |Não |int |O número a ser adicionado ao valor de iteração com base em zero. |
+| offset |Não |int |O número a ser adicionado ao valor de iteração com base em zero. |
 
 ### <a name="remarks"></a>Comentários
 
@@ -143,7 +143,7 @@ O exemplo a seguir mostra um loop de cópia e o valor de índice incluído no no
 ]
 ```
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa o índice atual da iteração.
 
@@ -154,14 +154,14 @@ Um inteiro que representa o índice atual da iteração.
 
 Retorna a divisão de inteiros dos dois inteiros fornecidos.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número que está sendo dividido. |
 | operand2 |Sim |int |O número usado para dividir. Não pode ser 0. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa a divisão.
 
@@ -202,9 +202,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| divResult | Int | 2 |
+| divResult | int | 2 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -225,13 +225,13 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Converte o valor em um número de ponto flutuante. Você só usa essa função ao passar parâmetros personalizados para um aplicativo, como um aplicativo lógico.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |cadeia de caracteres ou inteiro |O valor a ser convertido em um número de ponto flutuante. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 Um número de ponto flutuante.
 
 ### <a name="example"></a>Exemplo
@@ -259,13 +259,13 @@ O exemplo a seguir mostra como usar float para passar parâmetros para um aplica
 
 Converte o valor especificado em um inteiro.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Sim |string ou int |O valor a ser convertido em um inteiro. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro do valor convertido.
 
@@ -296,9 +296,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| intResult | Int | 4 |
+| intResult | int | 4 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -314,18 +314,18 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="max" />
 
-## <a name="max"></a>max
+## <a name="max"></a>máx.
 `max (arg1)`
 
 Retorna o valor máximo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor máximo. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa o valor máximo da coleção.
 
@@ -359,10 +359,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| arrayOutput | Int | 5 |
-| intOutput | Int | 5 |
+| arrayOutput | int | 5 |
+| intOutput | int | 5 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -378,18 +378,18 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="min" />
 
-## <a name="min"></a>Min
+## <a name="min"></a>min
 `min (arg1)`
 
 Retorna o valor mínimo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor mínimo. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa o valor mínimo da coleção.
 
@@ -423,10 +423,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| arrayOutput | Int | 0 |
-| intOutput | Int | 0 |
+| arrayOutput | int | 0 |
+| intOutput | int | 0 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -447,14 +447,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Retorna o restante da divisão de inteiros usando os dois inteiros fornecidos.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número que está sendo dividido. |
 | operand2 |Sim |int |O número usado para dividir. Não pode ser 0. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 Um inteiro que representa o resto.
 
 ### <a name="example"></a>Exemplo
@@ -494,9 +494,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| modResult | Int | 1 |
+| modResult | int | 1 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -517,14 +517,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Retorna a multiplicação de dois inteiros fornecidos.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |Primeiro número a ser multiplicado. |
 | operand2 |Sim |int |Segundo número a ser multiplicado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Um inteiro que representa a multiplicação.
 
@@ -565,9 +565,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| mulResult | Int | 15 |
+| mulResult | int | 15 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -588,14 +588,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Retorna a subtração dos dois inteiros fornecidos.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número do qual é subtraído. |
 | operand2 |Sim |int |O número subtraído. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 Um inteiro que representa a subtração.
 
 ### <a name="example"></a>Exemplo
@@ -635,9 +635,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| subResult | Int | 4 |
+| subResult | int | 4 |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 

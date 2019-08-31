@@ -8,14 +8,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 577bf7f157eb89da360fa6cbdd4d22c1054f234f
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: daf2781113016b20c19a6b8f5365033f1ff1479b
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966721"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195275"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Use o aprendizado ativo para melhorar sua base de dados de conhecimento
 
@@ -56,7 +56,7 @@ Quando a pontuação de uma pergunta tem um alto grau de confiabilidade, tal com
 
 ## <a name="upgrade-your-runtime-version-to-use-active-learning"></a>Atualizar sua versão de tempo de execução para usar o aprendizado ativo
 
-O aprendizado ativo é compatível com a versão de tempo de execução 4.4.0 e superior. Se sua base de dados de conhecimento foi criada em uma versão anterior, [atualize seu tempo de execução](troubleshooting-runtime.md#how-to-get-latest-qnamaker-runtime-updates) para usar esse recurso. 
+O aprendizado ativo é compatível com a versão de tempo de execução 4.4.0 e superior. Se sua base de dados de conhecimento foi criada em uma versão anterior, [atualize seu tempo de execução](set-up-qnamaker-service-azure.md#get-latest-runtime-updates) para usar esse recurso. 
 
 ## <a name="turn-on-active-learning-to-see-suggestions"></a>Ativar o aprendizado ativo para ver sugestões
 
@@ -195,7 +195,7 @@ O corpo JSON tem várias configurações:
 |--|--|--|--|
 |`feedbackRecords`|array|Lista de comentários.|
 |`userId`|cadeia de caracteres|A ID de usuário da pessoa que está aceitando as perguntas sugeridas. O formato da ID de usuário cabe a você. Por exemplo, um endereço de email pode ser uma ID de usuário válida em sua arquitetura. Opcional.|
-|`userQuestion`|cadeia de caracteres|Texto exato da consulta do usuário. Obrigatória.|
+|`userQuestion`|cadeia de caracteres|Texto exato da consulta do usuário. Obrigatório.|
 |`qnaID`|número|ID de pergunta, encontrada na [resposta de GenerateAnswer](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Um exemplo de corpo JSON é semelhante a:

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
 ms.author: harelbr
-ms.openlocfilehash: 6bb89eec0b4905e101bed87d3d3fc617dec589e0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: e7a54c2e207a27f3519375df09d0c930a92d52d6
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477856"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193727"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Gerenciar regras de detecção inteligente do Application Insights usando modelos do Azure Resource Manager
 
@@ -29,9 +29,9 @@ Esse método pode ser usado na implantação de novos recursos do Application In
 
 É possível definir as seguintes configurações para uma regra de detecção inteligente:
 - Se a regra está habilitada (o padrão é **true**.)
-- Se os emails devem ser enviados para os usuários associados à assinatura do [leitor de monitoramento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) e [Colaborador de monitoramento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) funções quando uma detecção for encontrada (o padrão é **true**.)
+- Se os emails devem ser enviados aos usuários associados ao [leitor de monitoramento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) da assinatura e às funções de [colaborador de monitoramento](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) quando uma detecção é encontrada (o padrão é **true**).
 - Quaisquer destinatários de email adicionais que devem receber uma notificação quando uma detecção for encontrada.
-    -  Configuração de email não está disponível para regras de detecção inteligente marcadas como _visualização_.
+    -  A configuração de email não está disponível para as regras de detecção inteligente marcadas como _Visualização_.
 
 Para permitir a definição das configurações da regra por meio do Azure Resource Manager, a configuração da regra de detecção inteligente agora está disponível como um recurso interno dentro do recurso do Application Insights nomeado **ProactiveDetectionConfigs**.
 Para máxima flexibilidade, cada regra de detecção inteligente pode ser definida com configurações de notificação exclusivas.
@@ -138,9 +138,9 @@ Certifique-se de substituir o nome de recurso do Application Insights e especifi
 
 ```
 
-### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Regra de alerta de falha anomalias v2 (não clássica)
+### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Regra de alerta de anomalias de falha v2 (não clássico)
 
-Este modelo do Azure Resource Manager demonstra como configurar uma regra de alerta de v2 de anomalias de falha com uma severidade de 2. Essa nova versão da regra de alerta de anomalias de falha faz parte do Azure nova plataforma de alerta e substitui a versão clássica que está sendo desativada como parte do [processo de desativação de alertas clássicos](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+Este modelo de Azure Resource Manager demonstra como configurar uma regra de alerta de anomalias de falha V2 com uma severidade de 2. Essa nova versão da regra de alerta de anomalias de falha faz parte da nova plataforma de alerta do Azure e substitui a versão clássica que está sendo desativada como parte do [processo de aposentadoria de alertas clássicos](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
 
 ```json
 {
@@ -151,6 +151,7 @@ Este modelo do Azure Resource Manager demonstra como configurar uma regra de ale
             "type": "microsoft.alertsmanagement/smartdetectoralertrules",
             "apiVersion": "2019-03-01",
             "name": "Failure Anomalies - my-app",
+            "location": "global", 
             "properties": {
                   "description": "Detects a spike in the failure rate of requests or dependencies",
                   "state": "Enabled",
@@ -170,14 +171,14 @@ Este modelo do Azure Resource Manager demonstra como configurar uma regra de ale
 ```
 
 > [!NOTE]
-> Este modelo do Azure Resource Manager é exclusivo para a regra de alerta de v2 de anomalias de falha e é diferente do que as outras regras de detecção inteligente clássicas descritos neste artigo.   
+> Este modelo de Azure Resource Manager é exclusivo para a regra de alerta de anomalias V2 e é diferente das outras regras de detecção inteligente clássicas descritas neste artigo.   
 
 ## <a name="smart-detection-rule-names"></a>Nomes das regras de detecção inteligente
 
 Abaixo está uma tabela de nomes de regra de detecção inteligente assim como aparecem no portal, juntamente com seus nomes internos, os quais devem ser usados no modelo do Azure Resource Manager.
 
 > [!NOTE]
-> Regras de detecção inteligente marcadas como _visualização_ não dão suporte a notificações por email. Portanto, você só pode definir a _habilitado_ propriedade para essas regras. 
+> As regras de detecção inteligente marcadas como _Visualização_ não dão suporte a notificações por email. Portanto, você só pode definir a propriedade _Enabled_ para essas regras. 
 
 | Nome da regra do portal do Azure | Nome interno
 |:---|:---|
@@ -190,7 +191,7 @@ Abaixo está uma tabela de nomes de regra de detecção inteligente assim como a
 | Aumento anormal no volume de exceção (visualização) | extension_exceptionchangeextension |
 | Potencial perda de memória detectada (visualização) | extension_memoryleakextension |
 | Potencial problema de segurança detectado (visualização) | extension_securityextensionspackage |
-| Aumento anormal no volume de dados diária (visualização) | extension_billingdatavolumedailyspikeextension |
+| Aumento anormal no volume de dados diário (versão prévia) | extension_billingdatavolumedailyspikeextension |
 
 ## <a name="next-steps"></a>Próximas etapas
 

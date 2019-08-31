@@ -12,17 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/05/2019
+ms.date: 08/30/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 611947c8c1d202cf4abf4222dfe0072aced58507
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 81b1f06238b8205e72fd989bb581fba39423f7c3
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135719"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70193220"
 ---
 # <a name="authorize-access-to-azure-active-directory-web-applications-using-the-oauth-20-code-grant-flow"></a>Autorizar o acesso a aplicativos de web do Active Directory do Azure usando o fluxo de concessão de código do OAuth 2.0
 
@@ -179,7 +179,7 @@ Uma resposta bem-sucedida se parece com esta:
 
 | Parâmetro | Descrição |
 | --- | --- |
-| access_token |O [token de acesso](access-tokens.md) solicitado como um JWT (Token Web JSON) assinado. O aplicativo pode usar esse token para se autenticar no recurso protegido, como uma API Web. |
+| access_token |O token de acesso solicitado.  Essa é uma cadeia de caracteres opaca, depende do que o recurso espera receber e não se destina ao cliente examinar. O aplicativo pode usar esse token para se autenticar no recurso protegido, como uma API Web. |
 | token_type |Indica o valor do tipo de token. O único tipo com suporte do Azure AD é Portador. Para saber mais sobre os tokens de portador, confira [Estrutura de Autorização do OAuth2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) |
 | expires_in |Por quanto tempo o token de acesso é válido (em segundos). |
 | expires_on |A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache. |
@@ -283,8 +283,6 @@ Os Tokens de Acesso têm curta duração e deverão ser atualizados depois de ex
 
 Os tokens de atualização não têm um tempo de vida especificado. Normalmente, os tempos de vida de tokens de atualização são relativamente longos. No entanto, em alguns casos, os tokens de atualização expiram, são revogados ou não têm privilégios suficientes para a ação desejada. Seu aplicativo precisa esperar e tratar os erros retornados pelo ponto de extremidade de emissão de token corretamente.
 
-[!NOTE] Os tempos de vida do token de acesso podem ser encontrados aqui: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-configurable-token-lifetimes#configurable-token-lifetime-properties O padrão para tokens de acesso é de 1 hora e o padrão para tokens de atualização é de 90 dias. Esses tempos de vida podem ser alterados Configurando os tempos de vida do token de acordo. 
-
 Quando você receber uma resposta com um erro de token de atualização, descarte o token de atualização atual e solicite um novo código de autorização ou um token de acesso. Em particular, quando usar um token de atualização no fluxo de Concessão de Código de Autorização, se você receber uma resposta com os códigos de erro `interaction_required` ou `invalid_grant`, descarte o token de atualização e solicite um novo código de autorização.
 
 Uma solicitação de exemplo para o ponto de extremidade **específico do locatário** (você também pode usar o ponto de extremidade **comum**) para obter um novo token de acesso usando um token de atualização que tem esta aparência:
@@ -352,3 +350,6 @@ Uma resposta de erro de exemplo se parece com esta:
 | correlation_id |Um identificador exclusivo para a solicitação que pode ajudar no diagnóstico entre os componentes. |
 
 Para obter uma descrição dos códigos de erro e a ação recomendada do cliente, veja [Códigos de erro para erros de ponto de extremidade de token](#error-codes-for-token-endpoint-errors).
+
+## <a name="next-steps"></a>Próximas etapas
+Para saber mais sobre o ponto de extremidade v 1.0 do Azure AD e como adicionar autenticação e autorização para seus aplicativos Web e APIs Web, consulte [aplicativos de exemplo](sample-v1-code.md).

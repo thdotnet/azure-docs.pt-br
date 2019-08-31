@@ -8,12 +8,13 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 08/29/2019
 ms.author: alkohli
-ms.openlocfilehash: e17fbcebc128a7169953ed05de617efa25fc25f8
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.localizationpriority: high
+ms.openlocfilehash: 20c27a3e4e9a96a19b347e5ef57ab9fb3c047140
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172707"
+ms.locfileid: "70194437"
 ---
 ::: zone target="docs"
 
@@ -27,12 +28,13 @@ Os requisitos de sistema incluem as plataformas compatíveis com os clientes que
 
 ::: zone target="chromeless"
 
-## <a name="prerequisites"></a>Pré-requisitos
+# <a name="review-prerequisites"></a>Examinar os pré-requisitos
 
-Você tem um computador cliente disponível do qual você pode copiar os dados. Computador cliente deve:
+1. Você deve ter ordenado seu Disco do Data Box usando o tutorial: Ordene seu Disco do Azure Data Box. Você recebeu seus discos e um cabo de conexão por disco.
+2. Você tem um computador cliente disponível do qual você pode copiar os dados. Computador cliente deve:
 
-- Execute um sistema operacional com suporte.
-- Ter outros softwares necessários instalados.
+    - Execute um sistema operacional com suporte.
+    - Ter outros softwares necessários instalados.
 
 ::: zone-end
 

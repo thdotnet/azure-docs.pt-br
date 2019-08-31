@@ -3,15 +3,15 @@ title: Funções de modelo do Azure Resource Manager – comparação | Microsof
 description: Descreve as funções a serem usadas em um modelo do Resource Manager para comparar valores.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 09/05/2017
 ms.author: tomfitz
-ms.openlocfilehash: 0eafadd4049baea58aa882b3421eaa6a684a3a38
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 05e51af62be974f925fefc46ad63c489f27fd163
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205492"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194823"
 ---
 # <a name="comparison-functions-for-azure-resource-manager-templates"></a>Funções de comparação para modelos do Azure Resource Manager
 
@@ -30,14 +30,14 @@ O Resource Manager fornece várias funções para fazer comparações em seus mo
 
 Verifica se dois valores são iguais entre si.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int, string, array ou object |O primeiro valor para verificar a igualdade. |
 | arg2 |Sim |int, string, array ou object |O segundo valor para verificar a igualdade. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se os valores são iguais; caso contrário, **False**.
 
@@ -127,12 +127,12 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
-| checkStrings | Bool | True |
-| checkArrays | Bool | True |
-| checkObjects | Bool | True |
+| checkInts | Bool | verdadeiro |
+| checkStrings | Bool | verdadeiro |
+| checkArrays | Bool | verdadeiro |
+| checkObjects | Bool | verdadeiro |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -165,9 +165,9 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 O resultado do exemplo anterior é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkNotEquals | Bool | True |
+| checkNotEquals | Bool | verdadeiro |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -186,14 +186,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Verifica se o primeiro valor é maior que o segundo valor.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de maior que. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de maior que. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se o primeiro valor é maior que o segundo valor; caso contrário, **False**.
 
@@ -240,10 +240,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkInts | Bool | Falso |
-| checkStrings | Bool | True |
+| checkInts | Bool | False |
+| checkStrings | Bool | verdadeiro |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -262,14 +262,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Verifica se o primeiro valor é maior que ou igual ao segundo valor.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de maior que ou igual a. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de maior que ou igual a. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se o primeiro valor é maior que ou igual ao segundo valor; caso contrário, **False**.
 
@@ -316,10 +316,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkInts | Bool | Falso |
-| checkStrings | Bool | True |
+| checkInts | Bool | False |
+| checkStrings | Bool | verdadeiro |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -333,19 +333,19 @@ Para implantar este modelo de exemplo com o PowerShell, use:
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greaterorequals.json 
 ```
 
-## <a name="less"></a>less
+## <a name="less"></a>menos
 `less(arg1, arg2)`
 
 Verifica se o primeiro valor é menor que o segundo valor.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de menor que. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de menor que. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se o primeiro valor é menor que o segundo valor; caso contrário, **False**.
 
@@ -392,10 +392,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
-| checkStrings | Bool | Falso |
+| checkInts | Bool | verdadeiro |
+| checkStrings | Bool | False |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 
@@ -414,14 +414,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Verifica se o primeiro valor é menor que ou igual ao segundo valor.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |int ou string |O primeiro valor da comparação de menor que ou igual a. |
 | arg2 |Sim |int ou string |O segundo valor da comparação de menor que ou igual a. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Retorna **True** se o primeiro valor é menor que ou igual ao segundo valor; caso contrário, **False**.
 
@@ -468,10 +468,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| checkInts | Bool | True |
-| checkStrings | Bool | Falso |
+| checkInts | Bool | verdadeiro |
+| checkStrings | Bool | False |
 
 Para implantar este modelo de exemplo com a CLI do Azure, use:
 

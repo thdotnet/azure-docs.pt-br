@@ -1,27 +1,21 @@
 ---
-title: Usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica – Azure | Microsoft Docs
+title: Usar o ia geográfico
+titleSuffix: Azure Data Science Virtual Machine
 description: Saiba como usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica para analisar dados e criar modelos com base em dados geoespaciais.
 keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise geoespacial
 services: machine-learning
-documentationcenter: ''
-author: vijetajo
-manager: cgronlun
-ms.custom: seodec18
-ms.assetid: ''
 ms.service: machine-learning
 ms.subservice: data-science-vm
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: vijetajo
+ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.author: vijetaj
-ms.openlocfilehash: 22c0d7d604ca41044d2d969d4ddbd2ae1a4d23d5
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 01238885e68a39ff713bd346a9206668e16e7ee4
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/30/2019
-ms.locfileid: "70170495"
+ms.locfileid: "70195288"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica
 
@@ -47,7 +41,7 @@ Além dos exemplos baseados em estrutura de aprendizado de máquina e de aprendi
 
 2. [Introdução à análise geoespacial com o R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb): Um exemplo introdutório que mostra como trabalhar com dados geoespaciais usando a interface R para ArcGIS que é fornecida pela biblioteca [arcgisbinding](https://github.com/R-ArcGIS/r-bridge) . 
 
-3. [Classificação de uso de terra em nível de pixel](https://github.com/Azure/pixel_level_land_classification): Um tutorial que mostra como criar um modelo de rede neural profunda que aceita uma imagem aérea como entrada e retorna um rótulo de cobertura de terra. Exemplos de rótulos de tampa terrestre são em uma *floresta* e *água*. O modelo retorna um rótulo para cada pixel da imagem. O modelo é criado usando a estrutura de aprendizado profundo do [CNTK (](https://www.microsoft.com/en-us/cognitive-toolkit/) Microsoft Open-Source cognitive Toolkit).
+3. [Classificação de uso de terra em nível de pixel](https://github.com/Azure/pixel_level_land_classification): Um tutorial que mostra como criar um modelo de rede neural profunda que aceita uma imagem aérea como entrada e retorna um rótulo de cobertura de terra. Exemplos de rótulos de tampa terrestre são em uma *floresta* e *água*. O modelo retorna um rótulo para cada pixel da imagem. 
 
 
 ## <a name="next-steps"></a>Próximas etapas

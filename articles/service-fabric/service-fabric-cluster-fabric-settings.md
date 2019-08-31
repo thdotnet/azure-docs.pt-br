@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/29/2019
+ms.date: 08/30/2019
 ms.author: atsenthi
-ms.openlocfilehash: 5d6f1fcba5d93cbd4efb63cd080848258eb2a262
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 096b6a13c85d04ebeb4f2ffae72acdd8629ae886
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172880"
+ms.locfileid: "70191757"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Saiba como personalizar algumas das configurações de cluster do Service Fabric
 Este artigo descreve as várias configurações de malha para o cluster do Service Fabric que você pode personalizar. Para clusters hospedados no Azure, você pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou utilizando um modelo do Azure Resource Manager. Para obter mais informações, consulte [Atualizar a configuração de um cluster do Azure](service-fabric-cluster-config-upgrade-azure.md). Para clusters independentes, você customiza as configurações atualizando o arquivo *ClusterConfig.json* e executando uma atualização de configuração em seu cluster. Para obter mais informações, consulte [atualizar a configuração de um cluster autônomo](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -649,6 +649,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |AADClusterApplication|cadeia de caracteres, o padrão é ""|Estático|ID ou nome do aplicativo de API Web que representa o cluster |
 |AADLoginEndpoint|cadeia de caracteres, o padrão é ""|Estático|Ponto de extremidade de logon do AAD, padrão do Azure comercial, especificado para um ambiente não padrão, como\/o Azure governamental "https:/login.microsoftonline.us" |
 |AADTenantId|cadeia de caracteres, o padrão é ""|Estático|ID do locatário (GUID) |
+|AcceptExpiredPinnedClusterCertificate|bool, o padrão é FALSE|Dinâmico|Sinalizador que indica se os certificados de cluster expirados declarados pela impressão digital só se aplicam a certificados de cluster; para manter o cluster em funcionamento. |
 |AdminClientCertThumbprints|cadeia de caracteres, o padrão é ""|Dinâmico|Impressões digitais de certificados usados pelos clientes na função de administrador. É uma lista de nomes separados por vírgula. |
 |AADTokenEndpointFormat|cadeia de caracteres, o padrão é ""|Estático|Ponto de extremidade de token do AAD, padrão do Azure comercial, especificado para um ambiente não padrão, como\/o Azure{0}governamental "https:/login.microsoftonline.us/" |
 |AdminClientClaims|cadeia de caracteres, o padrão é ""|Dinâmico|Todas as declarações possíveis esperadas de clientes do administrador, com o mesmo formato de ClientClaims. Essa lista é adicionada internamente a ClientClaims, portanto, não há necessidade de adicionar as mesmas entradas também a ClientClaims. |

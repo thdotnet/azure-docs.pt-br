@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: c79429d1a39e975c6bcc7fce191846a6205f9a86
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: b48988c04f6b387a8124a812a836e2b92a9d3ada
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311699"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194389"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Usando modelos vinculados e aninhados ao implantar os recursos do Azure
 
@@ -375,7 +375,7 @@ Para usar o endereço IP público do modelo anterior ao implantar um balanceador
 
 O Gerenciador de Recursos trata cada modelo como uma implantação separada no histórico de implantações. Portanto, o modelo principal com três modelos vinculados ou aninhados aparece no histórico de implantação, como:
 
-![Histórico de implantações](./media/resource-group-linked-templates/deployment-history.png)
+![Histórico de implantação](./media/resource-group-linked-templates/deployment-history.png)
 
 Você pode usar essas entradas separadas no histórico para recuperar valores de saída após a implantação. O modelo a seguir cria um endereço IP público e gera o endereço IP:
 
@@ -480,6 +480,8 @@ Embora o modelo vinculado precise estar disponível externamente, ele não preci
 
 O arquivo de parâmetro também pode ter o acesso limitado por meio de um token SAS.
 
+No momento, não é possível vincular a um modelo em uma conta de armazenamento que está atrás de um [Firewall de armazenamento do Azure](../storage/common/storage-network-security.md).
+
 O exemplo a seguir mostra como passar um token SAS ao vincular a um modelo:
 
 ```json
@@ -546,7 +548,7 @@ az group deployment create --resource-group ExampleGroup --template-uri $url?$to
 
 Os exemplos a seguir mostram os usos comuns dos modelos vinculados.
 
-|Modelo principal  |Modelo vinculado |DESCRIÇÃO  |
+|Modelo principal  |Modelo vinculado |Descrição  |
 |---------|---------| ---------|
 |[Olá mundo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[modelo vinculado](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Retorna a cadeia de caracteres do modelo vinculado. |
 |[Azure Load Balancer com o endereço IP público](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[modelo vinculado](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Retorna o endereço IP público do modelo vinculado e define esse valor no balanceador de carga. |

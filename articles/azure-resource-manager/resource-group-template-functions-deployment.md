@@ -3,15 +3,15 @@ title: Funções de modelo do Azure Resource Manager – implantação | Microso
 description: Descreve as funções a serem usadas em um modelo do Resource Manager para recuperar informações sobre implantação.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 01/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9cf81058d79d474a4d61195850636e428a1dbd0d
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 236fbb9e4ed3283ecf9147e6eb5033fb906a127b
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206463"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194341"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Funções de implantação para modelos do Azure Resource Manager 
 
@@ -32,7 +32,7 @@ Para obter valores de recursos, de grupos de recursos ou de assinaturas, veja [F
 
 Retorna informações sobre a operação de implantação atual.
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Essa função retorna o objeto que é passado durante a implantação. As propriedades no objeto retornado vão variar dependendo se o objeto de implantação for transmitido como um link ou como um objeto na linha. Quando o objeto de implantação é passado na linha, como ao usar o parâmetro **-TemplateFile** no Azure PowerShell para apontar para um arquivo local, o objeto retornado tem no seguinte formato:
 
@@ -157,13 +157,13 @@ Para um modelo no nível da assinatura, que usa a função de implantação, con
 
 Retorna um valor de parâmetro. O nome do parâmetro especificado deve ser definido na seção de parâmetros do modelo.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | parameterName |Sim |string |O nome do parâmetro a retornar. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 O valor do parâmetro especificado.
 
@@ -246,10 +246,10 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
 | stringOutput | String | opção 1 |
-| intOutput | Int | 1 |
+| intOutput | int | 1 |
 | objectOutput | Object | {"one": "a", "two": "b"} |
 | arrayOutput | Array | [1, 2, 3] |
 | crossOutput | String | opção 1 |
@@ -273,13 +273,13 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Retorna o valor da variável. O nome do parâmetro especificado deve ser definido na seção variáveis do modelo.
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
+| Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
 | variableName |Sim |String |O nome da variável a retornar. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 O valor da variável especificada.
 
@@ -349,7 +349,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Value |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
 | exampleOutput1 | String | myVariable |
 | exampleOutput2 | Array | [1, 2, 3, 4] |

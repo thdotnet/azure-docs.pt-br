@@ -12,17 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/12/2019
+ms.date: 08/30/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 274c4e89ff3f996cc71cdacdfb7b5b72e813ae4b
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: fdd99899494e9f7b3c0caa4e83f18803b969db1e
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297657"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70192725"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-device-code-flow"></a>Plataforma de identidade da Microsoft e o fluxo de código do dispositivo OAuth 2,0
 
@@ -35,7 +35,7 @@ A plataforma de identidade da Microsoft dá suporte à [concessão de código de
 >
 > As contas pessoais que forem convidadas para um locatário do Azure AD poderão usar a concessão de fluxo do dispositivo, mas somente no contexto do locatário.
 >
-> Como uma observação adicional, o `verification_uri_complete` campo de resposta não é incluído ou tem suporte no momento.  
+> Como uma observação adicional, o `verification_uri_complete` campo de resposta não é incluído ou tem suporte no momento.  Mencionamos isso porque, se você ler o padrão, verá `verification_uri_complete` que está listado como uma parte opcional do padrão de fluxo de código do dispositivo.
 
 > [!NOTE]
 > O ponto de extremidade da plataforma Microsoft Identity não dá suporte a todos os cenários e recursos de Azure Active Directory. Para determinar se você deve usar o ponto de extremidade da plataforma de identidade da Microsoft, leia sobre as [limitações da plataforma de identidade da Microsoft](active-directory-v2-limitations.md).
@@ -65,24 +65,24 @@ scope=user.read%20openid%20profile
 
 ```
 
-| Parâmetro | Condição | DESCRIÇÃO |
+| Parâmetro | Condição | Descrição |
 | --- | --- | --- |
-| `tenant` | Obrigatório |O locatário do diretório para o qual você deseja solicitar permissão. Pode estar no formato de nome amigável ou de GUID.  |
-| `client_id` | Obrigatório | A **ID do aplicativo (cliente)** que a [portal do Azure – registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) experiência atribuída ao seu aplicativo. |
+| `tenant` | Necessário |O locatário do diretório para o qual você deseja solicitar permissão. Pode estar no formato de nome amigável ou de GUID.  |
+| `client_id` | Necessário | A **ID do aplicativo (cliente)** que a [portal do Azure – registros de aplicativo](https://go.microsoft.com/fwlink/?linkid=2083908) experiência atribuída ao seu aplicativo. |
 | `scope` | Recomendado | Uma lista separada por espaços de [escopos](v2-permissions-and-consent.md) para os quais você deseja o consentimento do usuário.  |
 
 ### <a name="device-authorization-response"></a>Resposta de autorização de dispositivo
 
 Uma resposta bem-sucedida será um objeto JSON contendo as informações necessárias para permitir que o usuário faça login.  
 
-| Parâmetro | Formatar | DESCRIÇÃO |
+| Parâmetro | Formatar | Descrição |
 | ---              | --- | --- |
-|`device_code`     | Cadeia de caracteres | Uma cadeia de caracteres longa usada para verificar a sessão entre o cliente e o servidor de autorização. O cliente usa esse parâmetro para solicitar o token de acesso do servidor de autorização. |
-|`user_code`       | Cadeia de caracteres | Uma cadeia de caracteres curta mostrada para o usuário que é usado para identificar a sessão em um dispositivo secundário.|
+|`device_code`     | Cadeia | Uma cadeia de caracteres longa usada para verificar a sessão entre o cliente e o servidor de autorização. O cliente usa esse parâmetro para solicitar o token de acesso do servidor de autorização. |
+|`user_code`       | Cadeia | Uma cadeia de caracteres curta mostrada para o usuário que é usado para identificar a sessão em um dispositivo secundário.|
 |`verification_uri`| URI | O URI que o usuário deve acessar com o `user_code` para entrar. |
 |`expires_in`      | int | O número de segundos antes que o `device_code` e o `user_code` expirem. |
 |`interval`        | int | O número de segundos que o cliente deve aguardar entre as solicitações de sondagem. |
-| `message`        | Cadeia de caracteres | Uma cadeia de caracteres legível com instruções para o usuário. Ela pode ser localizada incluindo um **parâmetro de consulta** na solicitação do formulário `?mkt=xx-XX`, preenchendo o código de cultura do idioma apropriado. |
+| `message`        | Cadeia | Uma cadeia de caracteres legível com instruções para o usuário. Ela pode ser localizada incluindo um **parâmetro de consulta** na solicitação do formulário `?mkt=xx-XX`, preenchendo o código de cultura do idioma apropriado. |
 
 ## <a name="authenticating-the-user"></a>Autenticação do usuário
 
@@ -99,17 +99,17 @@ client_id: 6731de76-14a6-49ae-97bc-6eba6914391e
 device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 ```
 
-| Parâmetro | Obrigatório | DESCRIÇÃO|
+| Parâmetro | Obrigatório | Descrição|
 | -------- | -------- | ---------- |
-| `grant_type` | Obrigatório | Precisa ser `urn:ietf:params:oauth:grant-type:device_code`|
-| `client_id`  | Obrigatório | Precisa corresponder à `client_id` usada na solicitação inicial. |
-| `device_code`| Obrigatório | O `device_code` retornado na solicitação de autorização de dispositivo.  |
+| `grant_type` | Necessário | Precisa ser `urn:ietf:params:oauth:grant-type:device_code`|
+| `client_id`  | Necessário | Precisa corresponder à `client_id` usada na solicitação inicial. |
+| `device_code`| Necessário | O `device_code` retornado na solicitação de autorização de dispositivo.  |
 
 ### <a name="expected-errors"></a>Erros esperados
 
 O fluxo de código do dispositivo é um protocolo de sondagem, de modo que o cliente deve esperar receber erros antes de concluir a autenticação do usuário.  
 
-| Erro | DESCRIÇÃO | Ação do Cliente |
+| Erro | Descrição | Ação do Cliente |
 | ------ | ----------- | -------------|
 | `authorization_pending` | O usuário não concluiu a autenticação, mas não cancelou o fluxo. | Repita a solicitação depois de pelo menos `interval` segundos. |
 | `authorization_declined` | O usuário final negou a solicitação de autorização.| Interrompa a sondagem e reverta para um estado não autenticado.  |
@@ -131,9 +131,9 @@ Uma resposta de token bem-sucedida se parecerá com esta:
 }
 ```
 
-| Parâmetro | Formatar | DESCRIÇÃO |
+| Parâmetro | Formatar | Descrição |
 | --------- | ------ | ----------- |
-| `token_type` | Cadeia de caracteres| Sempre "Portador. |
+| `token_type` | Cadeia| Sempre "Portador. |
 | `scope` | Cadeia de caracteres separadas por espaço | Se um token de acesso for retornado, isso listará os escopos em que o token de acesso é válido. |
 | `expires_in`| int | Número de segundos antes que o token de acesso incluído seja válido. |
 | `access_token`| Cadeia de caracteres opaca | Emitido para os [escopos](v2-permissions-and-consent.md) que foram solicitados.  |

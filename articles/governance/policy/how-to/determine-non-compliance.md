@@ -1,22 +1,22 @@
 ---
 title: Determinar as causas de não conformidade
-description: Quando um recurso não está em conformidade, há muitas razões possíveis. Saiba mais descobrir o que causou a não conformidade.
+description: Quando um recurso não está em conformidade, há muitos motivos possíveis. Saiba como descobrir o que causou a não conformidade.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: fb7f238bb5c04bb03ee500b1b953895cc88c0596
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2b36e7c333521e9438e76bfbe53a26dce23c2e8a
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66298935"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194687"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Determinar as causas de não conformidade
 
-Quando um recurso do Azure é determinado para estar fora de conformidade para uma regra de política, é útil entender qual parte da regra que o recurso não está em conformidade com o. Também é útil para entender quais alterações alterado um recurso anteriormente compatível para torná-lo fora de conformidade. Há duas maneiras para encontrar essas informações:
+Quando um recurso do Azure é determinado como não compatível com uma regra de política, é útil entender a parte da regra com a qual o recurso não está em conformidade. Também é útil entender qual alteração alterou um recurso compatível anteriormente para torná-lo não compatível. Há duas maneiras de encontrar essas informações:
 
 > [!div class="checklist"]
 > - [Detalhes de conformidade](#compliance-details)
@@ -24,32 +24,32 @@ Quando um recurso do Azure é determinado para estar fora de conformidade para u
 
 ## <a name="compliance-details"></a>Detalhes de conformidade
 
-Quando um recurso não está em conformidade, os detalhes de conformidade para esse recurso estão disponíveis na **conformidade com a política** página. O painel de detalhes de conformidade inclui as seguintes informações:
+Quando um recurso não está em conformidade, os detalhes de conformidade desse recurso estão disponíveis na página de **conformidade da política** . O painel de detalhes de conformidade inclui as seguintes informações:
 
-- Detalhes do recurso como a ID de nome, tipo, local e recursos
-- Estado de conformidade e o carimbo de hora da última avaliação para a atribuição de política atual
-- Uma lista dos _motivos_ para o recurso não-conformidade
+- Detalhes do recurso, como nome, tipo, local e ID do recurso
+- Estado de conformidade e carimbo de data/hora da última avaliação para a atribuição de política atual
+- Uma lista de _motivos_ para a não conformidade do recurso
 
 > [!IMPORTANT]
-> Como os detalhes de conformidade para um _incompatível_ recurso mostra o valor atual de propriedades neste recurso, o usuário deve ter **ler** operação para o **tipo** de recurso. Por exemplo, se o _incompatível_ recurso estiver **Compute/virtualmachines** e em seguida, o usuário deve ter o **Microsoft.Compute/virtualMachines/read** operação. Se o usuário não tiver a operação necessária, é exibido um erro de acesso.
+> Como os detalhes de conformidade para um recurso _sem conformidade_ mostram o valor atual das propriedades nesse recurso, o usuário deve ter a operação de **leitura** para o **tipo** de recurso. Por exemplo, se o recurso _sem conformidade_ for **Microsoft. Compute/virtualMachines** , o usuário deverá ter a operação **Microsoft. Compute/virtualMachines/Read** . Se o usuário não tiver a operação necessária, um erro de acesso será exibido.
 
 Para exibir os detalhes de conformidade, siga estas etapas:
 
 1. Inicie o serviço de Azure Policy no portal do Azure clicando em**Todos os serviços**, em seguida pesquisando e selecionando **Política**.
 
-1. No **visão geral** ou **conformidade** , selecione uma política em um **estado de conformidade** que é _incompatível_.
+1. Na página **visão geral** ou **conformidade** , selecione uma política em um **estado de conformidade** que _não esteja em_conformidade.
 
-1. Sob o **conformidade do recurso** guia da **conformidade com a política** da página, clique com botão direito ou selecione as reticências de um recurso em um **estado de conformidade** que é  _Fora de conformidade_. Em seguida, selecione **exibir detalhes de conformidade**.
+1. Na guia **conformidade de recursos** da página **conformidade de política** , clique com o botão direito do mouse ou selecione as reticências de um recurso em um **estado de conformidade** que não está em _conformidade_. Em seguida, selecione **Exibir detalhes de conformidade**.
 
-   ![Opção de exibição de detalhes de conformidade](../media/determine-non-compliance/view-compliance-details.png)
+   ![Opção Exibir detalhes de conformidade](../media/determine-non-compliance/view-compliance-details.png)
 
-1. O **detalhes de conformidade** painel exibe informações de avaliação mais recente do recurso para a atribuição de política atual. Neste exemplo, o campo **Microsoft.Sql/servers/version** for _12.0_ enquanto a definição de política esperada _14.0_. Se o recurso não está em conformidade por vários motivos, cada um é listado nesse painel.
+1. O painel **detalhes de conformidade** exibe informações da avaliação mais recente do recurso para a atribuição de política atual. Neste exemplo, o campo **Microsoft. SQL/Servers/Version** é considerado _12,0_ enquanto a definição de política era esperada _14,0_. Se o recurso não estiver em conformidade por vários motivos, cada um será listado nesse painel.
 
-   ![Painel de detalhes de conformidade e os motivos para não conformidade](../media/determine-non-compliance/compliance-details-pane.png)
+   ![Painel de detalhes de conformidade e motivos para não conformidade](../media/determine-non-compliance/compliance-details-pane.png)
 
-   Para um **auditIfNotExists** ou **deployIfNotExists** definição de política, os detalhes incluem o **details.type** propriedade e qualquer propriedade opcional. Para obter uma lista, consulte [propriedades auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) e [deployIfNotExists propriedades](../concepts/effects.md#deployifnotexists-properties). **Avaliado pela última vez resource** é um recurso relacionado do **detalhes** seção da definição.
+   Para uma definição de política **auditIfNotExists** ou **deployIfNotExists** , os detalhes incluem a propriedade **Details. Type** e todas as propriedades opcionais. Para obter uma lista, consulte [Propriedades de auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) e propriedades de [deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). O **último recurso avaliado** é um recurso relacionado da seção de **detalhes** da definição.
 
-   Exemplo parcial **deployIfNotExists** definição:
+   Exemplo de definição de **deployIfNotExists** parcial:
 
    ```json
    {
@@ -74,77 +74,62 @@ Para exibir os detalhes de conformidade, siga estas etapas:
    }
    ```
 
-   ![Painel de detalhes de conformidade - * ifNotExists](../media/determine-non-compliance/compliance-details-pane-existence.png)
+   ![Painel de detalhes de conformidade-* ifNotExists](../media/determine-non-compliance/compliance-details-pane-existence.png)
 
 > [!NOTE]
-> Para proteger dados, quando um valor de propriedade é uma _segredo_ o valor atual exibe asteriscos.
+> Para proteger os dados, quando um valor de propriedade é um _segredo_ , o valor atual exibe asteriscos.
 
-Esses detalhes explicam por que um recurso atualmente não está em conformidade, mas não mostram quando a alteração foi feita para o recurso que fez com que ele ficar fora de conformidade. Para obter essas informações, consulte [(visualização) do histórico de alterações](#change-history-preview) abaixo.
+Esses detalhes explicam por que um recurso não está em conformidade no momento, mas não mostram quando a alteração foi feita no recurso que fez com que ele se torne incompatível. Para obter essas informações, consulte [histórico de alterações (versão prévia)](#change-history-preview) abaixo.
 
 ### <a name="compliance-reasons"></a>Motivos de conformidade
 
-A matriz a seguir mapeia cada possível _motivo_ para o responsável [condição](../concepts/definition-structure.md#conditions) na definição de política:
+A matriz a seguir mapeia cada possível _motivo_ para a [condição](../concepts/definition-structure.md#conditions) responsável na definição de política:
 
-|Motivo | Condição |
+|Reason | Condição |
 |-|-|
-|Valor atual deve conter o valor de destino como uma chave. |containsKey ou **não** notContainsKey |
-|Valor atual deve conter o valor de destino. |contém ou **não** notContains |
-|Valor atual deve ser igual ao valor de destino. |é igual a ou **não** notEquals |
-|Valor atual deve ser menor que o valor de destino. |menor ou **não** greaterOrEquals |
-|Valor atual deve ser maior que ou igual ao valor de destino. |greaterOrEquals ou **não** menos |
-|Valor atual deve ser maior que o valor de destino. |maior ou **não** lessOrEquals |
-|Valor atual deve ser menor ou igual ao valor de destino. |lessOrEquals ou **não** maior |
-|Valor atual deve existir. |exists |
-|Valor atual deve ser o valor de destino. |em ou **não** notIn |
-|Valor atual deve ser como o valor de destino. |como ou **não** notLike |
-|Valor atual deve ser a correspondência diferencia maiusculas de minúsculas do valor de destino. |corresponder ou **não** notMatch |
-|Valor atual deve ser a correspondência diferencia maiusculas de minúsculas do valor de destino. |matchInsensitively ou **não** notMatchInsensitively |
-|Valor atual não deve conter o valor de destino como uma chave. |notContainsKey ou **não** containsKey|
-|Valor atual não deve conter o valor de destino. |notContains ou **não** contém |
-|Valor atual não deve ser igual ao valor de destino. |notEquals ou **não** é igual a |
-|Valor atual não deve existir. |**não** existe  |
-|Valor atual não deve ser o valor de destino. |notIn ou **não** em |
-|Valor atual não deve ser como o valor de destino. |notLike ou **não** como |
-|Valor atual deve o valor de destino de correspondência não diferencia maiusculas de minúsculas. |notMatch ou **não** corresponder |
-|Valor atual deve o valor de destino de correspondência não diferencia maiusculas de minúsculas. |notMatchInsensitively ou **não** matchInsensitively |
-|Não há recursos relacionados correspondem os detalhes de efeito na definição de política. |Um recurso do tipo definido em **then.details.type** e relacionados ao recurso definido na **se** parte da regra de política não existe. |
+|O valor atual deve conter o valor de destino como uma chave. |containsKey ou **não** notContainsKey |
+|O valor atual deve conter o valor de destino. |Contains ou **não** contém |
+|O valor atual deve ser igual ao valor de destino. |é igual a ou **não** é diferente de |
+|O valor atual deve ser menor que o valor de destino. |menos ou **não** greaterOrEquals |
+|O valor atual deve ser maior ou igual ao valor de destino. |greaterOrEquals ou **não** menos |
+|O valor atual deve ser maior que o valor de destino. |maior ou **não** lessOrEquals |
+|O valor atual deve ser menor ou igual ao valor de destino. |lessOrEquals ou **não** é maior |
+|O valor atual deve existir. |exists |
+|O valor atual deve estar no valor de destino. |in ou **not** notIn |
+|O valor atual deve ser semelhante ao valor de destino. |Like ou **não** like |
+|O valor atual deve diferenciar maiúsculas de minúsculas no valor de destino. |corresponder ou **não** corresponder |
+|O valor atual deve diferenciar maiúsculas e minúsculas corresponde ao valor de destino. |matchInsensitively ou **não** notMatchInsensitively |
+|O valor atual não deve conter o valor de destino como uma chave. |notContainsKey ou **não** ContainsKey|
+|O valor atual não deve conter o valor de destino. |Não contém ou **não** contém |
+|O valor atual não deve ser igual ao valor de destino. |Não é igual a ou **não** é igual a |
+|O valor atual não deve existir. |**não** existe  |
+|O valor atual não deve estar no valor de destino. |notIn ou **não** em |
+|O valor atual não deve ser igual ao valor de destino. |não curtir ou **não** gostar |
+|O valor atual não deve diferenciar maiúsculas de minúsculas no valor de destino. |não corresponder ou **não** corresponder |
+|O valor atual não deve diferenciar maiúsculas de minúsculas para corresponder ao valor de destino. |notMatchInsensitively ou **não** matchInsensitively |
+|Nenhum recurso relacionado corresponde aos detalhes de efeito na definição de política. |Um recurso do tipo definido em **then. Details. Type** e relacionado ao recurso definido na parte **If** da regra de política não existe. |
 
-## <a name="compliance-details-for-guest-configuration"></a>Detalhes de conformidade para a configuração do convidado
+## <a name="compliance-details-for-guest-configuration"></a>Detalhes de conformidade para configuração de convidado
 
-Para _auditar_ diretivas na _configuração do convidado_ categoria, pode haver várias configurações avaliadas dentro da VM e você precisará exibir detalhes por configuração. Por exemplo, se você estiver fazendo uma auditoria para obter uma lista de aplicativos instalados e o status de atribuição é _incompatível_, você precisará saber quais aplicativos específicos estão ausentes.
+Para políticas de _auditIfNotExists_ na categoria de _configuração de convidado_ , pode haver várias configurações avaliadas dentro da VM e você precisará exibir os detalhes por configuração. Por exemplo, se você estiver auditando uma lista de políticas de senha e apenas uma delas tiver o status _não compatível_, você precisará saber quais políticas de senha específicas estão fora de conformidade e por quê.
 
-Você também não pode ter acesso ao entrar na VM diretamente, mas você precisa relatar por que a VM está _incompatível_. Por exemplo, você pode auditar que VMs ingressaram no domínio correto e incluem a participação no domínio atual nos detalhes do relatório.
+Você também pode não ter acesso para entrar na VM diretamente, mas precisa relatar por que a VM _não está em conformidade_.
 
 ### <a name="azure-portal"></a>Portal do Azure
 
-1. Inicie o serviço de Azure Policy no portal do Azure clicando em**Todos os serviços**, em seguida pesquisando e selecionando **Política**.
+Comece seguindo as mesmas etapas na seção acima para exibir os detalhes de conformidade da política.
 
-1. Sobre o **visão geral** ou **conformidade** , selecione uma atribuição de política para qualquer iniciativa que contém uma definição de política de configuração do convidado que _incompatível_.
+Na exibição do painel **detalhes de conformidade** , clique no link **último recurso avaliado**.
 
-1. Selecione uma _auditar_ diretiva na iniciativa que _incompatível_.
+   ![Exibir detalhes da definição de auditIfNotExists](../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png)
 
-   ![Exibir detalhes da definição de auditoria](../media/determine-non-compliance/guestconfig-audit-compliance.png)
+A página **atribuição de convidado** exibe todos os detalhes de conformidade disponíveis. Cada linha na exibição representa uma avaliação que foi executada dentro da máquina. Na coluna **motivo** , uma frase que descreve por que a atribuição de convidado _não é compatível_ é mostrada. Por exemplo, se você estiver auditando políticas de senha, a coluna **motivo** exibiria texto, incluindo o valor atual de cada configuração.
 
-1. Sobre o **conformidade do recurso** guia, as seguintes informações são fornecidas:
-
-   - **Nome** -o nome das atribuições de configuração de convidado.
-   - **Recurso pai** -a máquina virtual em um _incompatível_ estado para a atribuição de convidado configuração selecionada.
-   - **Tipo de recurso** - o _guestConfigurationAssignments_ nome completo.
-   - **Avaliado pela última vez** – a última vez em que o serviço de configuração de convidado notificado sobre a política do Azure sobre o estado da máquina virtual de destino.
-
-   ![Exibir detalhes de conformidade](../media/determine-non-compliance/guestconfig-assignment-view.png)
-
-1. Selecione o nome da atribuição de configuração de convidado na **nome** coluna para abrir o **conformidade do recurso** página.
-
-1. Selecione o **recurso de exibição** botão na parte superior da página para abrir o **convidado atribuição** página.
-
-O **atribuição de convidados** página exibe todos os detalhes de conformidade disponíveis. Cada linha no modo de exibição representa uma avaliação que foi executada dentro da máquina virtual. No **motivo** coluna, uma frase que descreve por que é a atribuição de convidado _incompatível_ é mostrado. Por exemplo, se você estiver fazendo uma auditoria que VMs devem ser associadas a um domínio, o **motivo** coluna exibiria o texto, incluindo a associação de domínio atual.
-
-![Exibir detalhes de conformidade](../media/determine-non-compliance/guestconfig-compliance-details.png)
+![Exibir detalhes de conformidade.](../media/determine-non-compliance/guestconfig-compliance-details.png)
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Você também pode exibir detalhes de conformidade do Azure PowerShell. Primeiro, verifique se você tem o módulo de configuração do convidado instalado.
+Você também pode exibir detalhes de conformidade de Azure PowerShell. Primeiro, verifique se você tem o módulo configuração de convidado instalado.
 
 ```azurepowershell-interactive
 Install-Module Az.GuestConfiguration
@@ -163,7 +148,7 @@ Audit that an application is installed inside Windows VMs                 {[Inst
 Audit that an application is not installed inside Windows VMs.            {[InstalledApplication]NotInstalledApplica...
 ```
 
-Para exibir apenas os _motivo_ frase que descreve por que a VM está _incompatível_, retornar apenas a propriedade filho do motivo.
+Para exibir apenas a frase de _motivo_ que descreve por que a VM _não está em conformidade_, retorne apenas a propriedade filho Reason.
 
 ```azurepowershell-interactive
 Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
@@ -173,7 +158,7 @@ Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname
 The following applications are not installed: '<name>'.
 ```
 
-Você também poderá gerar um histórico de conformidade para atribuições de convidado no escopo para a máquina virtual. A saída desse comando inclui os detalhes de cada relatório para a VM.
+Você também pode gerar um histórico de conformidade para as atribuições de convidado no escopo da máquina. A saída desse comando inclui os detalhes de cada relatório para a VM.
 
 > [!NOTE]
 > A saída pode retornar um grande volume de dados. É recomendável armazenar a saída em uma variável.
@@ -191,7 +176,7 @@ PolicyDisplayName                                                         Compli
 <truncated>
 ```
 
-Para simplificar este modo de exibição, use o **ShowChanged** parâmetro. A saída desse comando inclui apenas os relatórios que seguido de uma alteração no status de conformidade.
+Para simplificar essa exibição, use o parâmetro showchanged. A saída desse comando inclui apenas os relatórios que seguiram uma alteração no status de conformidade.
 
 ```azurepowershell-interactive
 $guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname> -ShowChanged
@@ -209,32 +194,32 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 ## <a name="a-namechange-historychange-history-preview"></a><a name="change-history"/>Histórico de alterações (versão prévia)
 
-Como parte de uma nova **visualização pública**, dos últimos 14 dias de histórico de alterações estão disponíveis para todos os recursos do Azure que dão suporte ao [concluir exclusão do modo](../../../azure-resource-manager/complete-mode-deletion.md). O histórico de alterações fornece detalhes sobre quando uma alteração foi detectada e uma _comparação visual_ para cada alteração. A detecção de alteração é disparada quando as propriedades do Gerenciador de recursos são adicionadas, removidas ou alteradas.
+Como parte de uma nova **Visualização pública**, os últimos 14 dias de histórico de alterações estão disponíveis para todos os recursos do Azure que dão suporte à [exclusão de modo completo](../../../azure-resource-manager/complete-mode-deletion.md). O histórico de alterações fornece detalhes sobre quando uma alteração foi detectada e uma _comparação visual_ para cada alteração. Uma detecção de alteração é disparada quando as propriedades do Resource Manager são adicionadas, removidas ou alteradas.
 
 1. Inicie o serviço de Azure Policy no portal do Azure clicando em**Todos os serviços**, em seguida pesquisando e selecionando **Política**.
 
-1. Sobre o **visão geral** ou **conformidade** , selecione uma política em qualquer **estado de conformidade**.
+1. Na página **visão geral** ou **conformidade** , selecione uma política em qualquer **estado de conformidade**.
 
-1. Sob o **conformidade do recurso** guia da **conformidade com a política** , selecione um recurso.
+1. Na guia **conformidade de recursos** da página **conformidade de política** , selecione um recurso.
 
 1. Escolha a guia **Histórico de Alterações (versão prévia)** na página **Conformidade do Recurso**. Se houver uma lista de alterações detectadas, ela será exibida.
 
-   ![Guia de histórico de alterações de política do Azure na página de conformidade do recurso](../media/determine-non-compliance/change-history-tab.png)
+   ![Azure Policy guia histórico de alterações na página conformidade de recursos](../media/determine-non-compliance/change-history-tab.png)
 
-1. Escolha uma das alterações detectadas. O _comparação visual_ para o recurso é apresentado na **histórico de alterações** página.
+1. Escolha uma das alterações detectadas. A _diferença visual_ para o recurso é apresentada na página **histórico de alterações** .
 
-   ![Azure política alteração histórico Visual Diff na página de histórico de alteração](../media/determine-non-compliance/change-history-visual-diff.png)
+   ![Azure Policy diferença visual do histórico de alterações na página Histórico de alterações](../media/determine-non-compliance/change-history-visual-diff.png)
 
-A _comparação visual_ ajuda a identificar alterações em um recurso. Não podem estar relacionadas as alterações detectadas para o estado atual de conformidade do recurso.
+A _comparação visual_ ajuda a identificar alterações em um recurso. As alterações detectadas podem não estar relacionadas ao estado de conformidade atual do recurso.
 
-Dados de histórico de alterações são fornecidos pelo [grafo de recursos do Azure](../../resource-graph/overview.md). Para consultar essas informações fora do portal do Azure, consulte [obter alterações de recurso](../../resource-graph/how-to/get-resource-changes.md).
+Os dados do histórico de alterações são fornecidos pelo [grafo de recursos do Azure](../../resource-graph/overview.md). Para consultar essas informações fora do portal do Azure, consulte [obter alterações de recurso](../../resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
+- Examine exemplos em [exemplos de Azure Policy](../samples/index.md).
 - Revise a [estrutura de definição do Azure Policy](../concepts/definition-structure.md).
 - Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
-- Entender como [criar políticas de forma programática](programmatically-create.md).
+- Entenda como [criar políticas](programmatically-create.md)programaticamente.
 - Saiba como [obter dados de conformidade](getting-compliance-data.md).
 - Saiba como [corrigir recursos sem conformidade](remediate-resources.md).
 - Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

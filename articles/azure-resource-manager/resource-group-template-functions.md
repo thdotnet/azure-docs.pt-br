@@ -3,18 +3,18 @@ title: Funções do modelo do Resource Manager | Microsoft Docs
 description: Descreve as funções a serem usadas no modelo do Gerenciador de Recursos do Azure para recuperar valores, trabalhar com cadeias de caracteres e numéricos e recuperar informações de implantação.
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: 201fea91aba2a14720a7c28df5128f94e9e327fd
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 5333bfd8c7f7d24e497e4b7ba7da3543aee54da6
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205425"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194756"
 ---
 # <a name="azure-resource-manager-template-functions"></a>Funções do modelo do Gerenciador de Recursos do Azure
-Este artigo descreve todas as funções que você pode usar em um modelo do Azure Resource Manager. Para obter informações sobre como usar funções em seu modelo, consulte [sintaxe de modelo](resource-group-authoring-templates.md#syntax).
+Este artigo descreve todas as funções que você pode usar em um modelo do Azure Resource Manager. Para obter informações sobre como usar funções em seu modelo, consulte [sintaxe do modelo](resource-group-authoring-templates.md#syntax).
 
 Para criar suas próprias funções, consulte [Funções definidas pelo usuário](resource-group-authoring-templates.md#functions).
 
@@ -49,7 +49,7 @@ O Resource Manager fornece diversas funções para trabalhar com matrizes e obje
 * [intersection](resource-group-template-functions-array.md#intersection)
 * [json](resource-group-template-functions-array.md#json)
 * [last](resource-group-template-functions-array.md#last)
-* [Comprimento](resource-group-template-functions-array.md#length)
+* [length](resource-group-template-functions-array.md#length)
 * [min](resource-group-template-functions-array.md#min)
 * [max](resource-group-template-functions-array.md#max)
 * [range](resource-group-template-functions-array.md#range)
@@ -81,7 +81,7 @@ O Gerenciador de Recursos fornece as seguintes funções para obter os valores d
 
 * [implantação](resource-group-template-functions-deployment.md#deployment)
 * [parâmetros](resource-group-template-functions-deployment.md#parameters)
-* [variáveis](resource-group-template-functions-deployment.md#variables)
+* [variables](resource-group-template-functions-deployment.md#variables)
 
 <a id="and" aria-hidden="true" />
 <a id="bool" aria-hidden="true" />
@@ -193,10 +193,10 @@ O Gerenciador de Recursos fornece as seguintes funções para trabalhar com cade
 * [indexOf](resource-group-template-functions-string.md#indexof)
 * [last](resource-group-template-functions-string.md#last)
 * [lastIndexOf](resource-group-template-functions-string.md#lastindexof)
-* [Comprimento](resource-group-template-functions-string.md#length)
+* [length](resource-group-template-functions-string.md#length)
 * [newGuid](resource-group-template-functions-string.md#newguid)
 * [padLeft](resource-group-template-functions-string.md#padleft)
-* [substitui](resource-group-template-functions-string.md#replace)
+* [replace](resource-group-template-functions-string.md#replace)
 * [skip](resource-group-template-functions-string.md#skip)
 * [split](resource-group-template-functions-string.md#split)
 * [startsWith](resource-group-template-functions-string.md#startswith)
@@ -205,7 +205,7 @@ O Gerenciador de Recursos fornece as seguintes funções para trabalhar com cade
 * [take](resource-group-template-functions-string.md#take)
 * [toLower](resource-group-template-functions-string.md#tolower)
 * [toUpper](resource-group-template-functions-string.md#toupper)
-* [cortar](resource-group-template-functions-string.md#trim)
+* [trim](resource-group-template-functions-string.md#trim)
 * [uniqueString](resource-group-template-functions-string.md#uniquestring)
 * [uri](resource-group-template-functions-string.md#uri)
 * [uriComponent](resource-group-template-functions-string.md#uricomponent)
@@ -216,4 +216,4 @@ O Gerenciador de Recursos fornece as seguintes funções para trabalhar com cade
 * Para obter uma descrição das seções de um modelo do Gerenciador de Recursos do Azure, veja a seção [Criando modelos do Gerenciador de Recursos do Azure](resource-group-authoring-templates.md)
 * Para mesclar diversos modelos, confira a seção [Como usar modelos vinculados com o Gerenciador de Recursos do Azure](resource-group-linked-templates.md)
 * Para iterar um número de vezes especificado ao criar um tipo de recurso, confira [Criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md)
-* Para ver como implantar o modelo que você criou, consulte [implantar um aplicativo com o modelo do Resource Manager](resource-group-template-deploy.md)
+* Para ver como implantar o modelo que você criou, consulte [implantar um aplicativo com Azure Resource Manager modelo](resource-group-template-deploy.md)

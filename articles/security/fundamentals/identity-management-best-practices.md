@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/03/2019
 ms.author: barclayn
-ms.openlocfilehash: 371c3b9fde17bba33fb6f2526be68fe89aec6b01
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 093c5878cd2f7df63502a7aff686824af3c88078
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934700"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195078"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Práticas recomendadas de Gerenciamento de Identidade do Azure e segurança de controle de acesso
 Neste artigo, abordaremos uma coleção de práticas recomendadas de segurança de controle de acesso e gerenciamento de identidades do Azure. Essas práticas recomendadas derivam da nossa experiência com o [Azure AD](../../active-directory/fundamentals/active-directory-whatis.md) e da experiência de clientes como você.
@@ -93,7 +93,7 @@ Organizações que não integram suas identidades locais com sua identidade de n
 > Você precisa escolher em quais diretórios as contas críticas residirão e se a estação de trabalho de administração usada é gerenciada por novos serviços de nuvem ou processos existentes. O uso de processos existentes de provisionamento de identidade e gerenciamento pode diminuir alguns riscos, mas também pode criar o risco de um invasor comprometer uma conta local e dinamizar para a nuvem. Talvez você queira usar uma estratégia diferente para funções diferentes (por exemplo, administradores de ti versus administradores de unidade de negócios). Você tem duas opções. A primeira opção é criar contas do Azure AD que não estejam sincronizadas com sua instância de Active Directory local. Ingresse sua estação de trabalho de administrador no Azure AD, que você pode gerenciar e aplicar patch usando Microsoft Intune. A segunda opção é usar contas de administrador existentes sincronizando com sua instância de Active Directory local. Use estações de trabalho existentes em seu Active Directory domínio para gerenciamento e segurança.
 
 ## <a name="manage-connected-tenants"></a>Gerenciar locatários conectados
-Sua organização de segurança precisa de visibilidade para avaliar o risco e determinar se as políticas da sua organização e quaisquer requisitos regulatórios estão sendo seguidas. Você deve garantir que sua organização de segurança tenha visibilidade de todas as assinaturas conectadas ao seu ambiente de produção e rede (por meio [do Azure ExpressRoute](../../expressroute/expressroute-introduction.md) ou [VPN site a site](../../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)). Um [administrador de administrador/empresa global](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator) no Azure AD pode elevar seu acesso à função de [administrador de acesso do usuário](../../role-based-access-control/built-in-roles.md#user-access-administrator) e ver todas as assinaturas e grupos gerenciados conectados ao seu ambiente.
+Sua organização de segurança precisa de visibilidade para avaliar o risco e determinar se as políticas da sua organização e quaisquer requisitos regulatórios estão sendo seguidas. Você deve garantir que sua organização de segurança tenha visibilidade de todas as assinaturas conectadas ao seu ambiente de produção e rede (por meio [do Azure ExpressRoute](../../expressroute/expressroute-introduction.md) ou [VPN site a site](../../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)). Um [administrador de administrador/empresa global](../../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) no Azure AD pode elevar seu acesso à função de [administrador de acesso do usuário](../../role-based-access-control/built-in-roles.md#user-access-administrator) e ver todas as assinaturas e grupos gerenciados conectados ao seu ambiente.
 
 Consulte [elevar o acesso para gerenciar todas as assinaturas e grupos de gerenciamento do Azure](../../role-based-access-control/elevate-access-global-admin.md) para garantir que você e seu grupo de segurança possam exibir todas as assinaturas ou grupos de gerenciamento conectados ao seu ambiente. Você deve remover esse acesso elevado depois de avaliar os riscos.
 
@@ -180,7 +180,7 @@ Você pode usar o [RBAC](/azure/role-based-access-control/overview) para atribui
 **Detalhe**: Use [funções RBAC internas](/azure/role-based-access-control/built-in-roles) no Azure para atribuir privilégios a usuários.
 
 > [!Note]
-> Permissões específicas criam complexidade e confusão desnecessárias, acumulando em uma configuração "herdada" que é difícil de corrigir sem medo de quebrar algo. Evite permissões específicas do recurso. Em vez disso, use grupos de gerenciamento para permissões de toda a empresa e grupos de recursos para permissões nas assinaturas. Evite permissões específicas do usuário. Em vez disso, atribua acesso a grupos no Azure AD.
+> Permissões específicas criam complexidade e confusão desnecessárias, acumulando em uma configuração "herdada" que é difícil de corrigir sem medo de quebrar algo. Evite permissões específicas para cada recurso. Em vez disso, use grupos de gerenciamento para permissões de toda a empresa e grupos de recursos para permissões nas assinaturas. Evite permissões específicas do usuário. Em vez disso, atribua acesso a grupos no Azure AD.
 
 **Melhor prática**: Conceda às equipes de segurança acesso de responsabilidades do Azure para ver os recursos do Azure para que eles possam avaliar e corrigir riscos.
 **Detalhe**: Conceda às equipes de segurança a função de [leitor de segurança](/azure/role-based-access-control/built-in-roles#security-reader) RBAC. Você pode usar o grupo de gerenciamento raiz ou o grupo de gerenciamento de segmentos, dependendo do escopo das responsabilidades:
