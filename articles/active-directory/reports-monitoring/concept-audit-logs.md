@@ -17,16 +17,16 @@ ms.date: 07/17/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a31fab8dd1490b58e743c149e4a54cae11bed1
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: b2b30b6463ed3d58ec1565f3c49f98388ad09ed4
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988333"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186278"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividades de auditoria no portal do Azure Active Directory 
 
-Com os relatórios do Azure AD (Azure Active Directory), é possível obter as informações necessárias para determinar o desempenho do ambiente.
+Com os relatórios do Azure Active Directory (Azure AD), você pode obter as informações necessárias para determinar o funcionamento do seu ambiente.
 
 A arquitetura de relatórios consiste nos seguintes componentes:
 
@@ -83,7 +83,7 @@ Selecione um item na exibição de lista para obter informações mais detalhada
 - Atividade
 - Status
 - Destino
-- Iniciado por (Ator)
+- Iniciado por (ator)
 - Intervalo de datas
 
 ![Logs de auditoria](./media/concept-audit-logs/filter.png "Logs de auditoria")
@@ -102,7 +102,7 @@ O filtro de **serviço** permite que você selecione em uma lista suspensa dos s
 - Identity Protection
 - Usuários Convidados
 - PIM
-- Gerenciamento de Grupo de Autoatendimento
+- Gerenciamento de grupos de autoatendimento
 - Gerenciamento de senhas de auto-atendimento
 - Termos de uso
 

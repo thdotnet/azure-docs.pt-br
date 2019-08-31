@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: 3acae8f7d34bb02905e6e8d479b7de5ccab1bb7a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: d9b0c551cdfb92b380a967aaa5bdce7c278fd39e
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850994"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70183581"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Integridade do back-end, logs de diagnóstico e métricas do Gateway de Aplicativo
 
@@ -105,7 +105,7 @@ Você pode usar tipos diferentes de logs no Azure para gerenciar e solucionar pr
 Você tem três opções para armazenar os logs:
 
 * **Conta de armazenamento**: As contas de armazenamento são mais adequadas para os logs quando eles são armazenados por mais tempo e examinados quando necessário.
-* **Hubs de Evento**: Os hubs de eventos são uma ótima opção para integração a outras ferramentas SEIM (informações de segurança e gerenciamento de evento) para receber alertas sobre os recursos.
+* **Hubs de Evento**: Os hubs de eventos são uma ótima opção para integração com outras ferramentas de SIEM (gerenciamento de eventos e informações de segurança) para obter alertas sobre seus recursos.
 * **Logs do Azure Monitor**: Os logs do Azure Monitor são mais adequados para o monitoramento geral em tempo real do aplicativo ou para a observação de tendências.
 
 ### <a name="enable-logging-through-powershell"></a>Habilitar o log por meio do PowerShell

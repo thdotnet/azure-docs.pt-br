@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 08/29/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: b90b4806e86ed0ba33500cf31a6ed892241ceabe
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
-ms.translationtype: MT
+ms.openlocfilehash: 27526f4940cb7ab538992f3506c1a35a81cec9bc
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423460"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165015"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Limites e limites de base de dados de conhecimento do QnA Maker
 
@@ -44,19 +44,31 @@ O número máximo de links profundos que podem ser rastreados para extração de
 
 ## <a name="metadata-limits"></a>Limites de metadados
 
+### <a name="by-azure-search-pricing-tier"></a>Por Azure Search tipo de preço
+
 O número máximo de campos de metadados por base de dados de conhecimento baseia-se em seus **[limites de camada de Azure Search](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)** .
 
 |**Camada do Azure Search** | **Gratuito** | **Básico** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
 |Máximo de campos de metadados por serviço QnA Maker (entre todas as bases de dados de conhecimento)|1\.000|100*|1\.000|1\.000|1\.000|1\.000|
 
+### <a name="by-name-and-value"></a>Por nome e valor
+
+O comprimento e os caracteres aceitáveis para o nome e o valor dos metadados são listados na tabela a seguir.
+
+|Item|Caracteres permitidos|Correspondência de padrão de Regex|Máximo de caracteres|
+|--|--|--|--|
+|Nome|Permitem<br>alfanumérico (letras e dígitos)<br>`_`sublinhado|`^[a-zA-Z0-9_]+$`|100|
+|Valor|Permite tudo, exceto<br>`:`pontos<br>`|`(canal vertical)|`^[^:|]+$`|500|
+|||||
+
 ## <a name="knowledge-base-content-limits"></a>Limites de conteúdo da Base de Dados de Conhecimento
 Limites gerais sobre o conteúdo na base de dados de conhecimento:
 * Tamanho do texto de resposta: 25.000
 * Tamanho do texto da pergunta: 1.000
 * Tamanho do texto de chave/valor dos metadados: 100
-* Caracteres com suporte para nome de metadados: caracteres alfabéticos, dígitos e _  
-* Caracteres com suporte para valor de metadados: Todos, exceto : e | 
+* Caracteres com suporte para nome de metadados: Alfabetos, dígitos e`_`  
+* Caracteres com suporte para valor de metadados: Todos, `:` exceto e`|` 
 * Tamanho do nome do arquivo: 200
 * Formatos de arquivo com suporte: ".tsv", ".pdf", ".txt", ".docx", ".xlsx".
 * Número máximo de perguntas alternativas: 300

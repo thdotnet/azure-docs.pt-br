@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/20/2019
+ms.date: 08/30/2019
 ms.author: barclayn
-ms.openlocfilehash: 910057e0e81219a68608441530d03ca1a2411b02
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 9721f22eb73c68f729ced13480370f6593c58510
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875088"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182800"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Criptografia de dados em repouso no Azure
 
@@ -254,14 +254,16 @@ O suporte para criptografia do servidor atualmente é fornecido através do recu
 
 A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte por meio do recurso [Always Encrypted](https://msdn.microsoft.com/library/mt163865.aspx). Always Encrypted utiliza uma chave criada e armazenada pelo cliente. Os clientes podem armazenar a chave mestre em um repositório de certificados do Windows, no Azure Key Vault ou em um Módulo de Segurança de Hardware local. Utilizando o SQL Server Management Studio, os usuários de SQL escolhem que chave gostariam de usar para criptografar determinada coluna.
 
-#### <a name="encryption-model-and-key-management"></a>Modelo de criptografia e gerenciamento de chaves
+#### <a name="encryption-model-and-key-management-table"></a>Modelo de criptografia e tabela de gerenciamento de chaves
 
-| **Lado do servidor usando chave de serviço gerenciado** |**Lado do servidor usando chave gerenciada pelo cliente**| **Lado do cliente usando gerenciado pelo cliente** | **IA e Machine Learning**   |
-|--------------------|-------------------|----------------------|--------------------|
+|                                  |                    | **Modelo de criptografia e gerenciamento de chaves** |                    |
+|----------------------------------|--------------------|-----------------------------------------|--------------------|
+|                                  | **Lado do servidor usando chave de serviço gerenciado**     | **Lado do servidor usando chave gerenciada pelo cliente**             | **Lado do cliente usando gerenciado pelo cliente**      |
+| **IA e Machine Learning**      |                    |                    |                    |
 | Azure Search                     | Sim                | -                  | -                  |
 | Serviço do Azure Machine Learning   | Sim                | -                  | -                  |
 | Azure Machine Learning Studio    | Sim                | Versão prévia, RSA de 2048 bits | -               |
-| Power BI                         | Sim                | Versão prévia, RSA de 2048 bits | -               |
+| Power BI                         | Sim                | Versão prévia, RSA de 2048 bits | -                  |
 | **Analytics**                    |                    |                    |                    |
 | Stream Analytics do Azure           | Sim                | -                  | -                  |
 | Hubs de Eventos                       | Sim                | -                  | -                  |
@@ -282,7 +284,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Banco de Dados SQL do Azure               | Sim                | Sim, RSA 2048-bit  | Sim                |
 | Banco de dados SQL do Azure para MariaDB   | Sim                | -                  | -                  |
 | Banco de dados SQL do Azure para MySQL     | Sim                | -                  | -                  |
-| Banco de dados SQL do Azure para PostgreSQL | Sim                | -                  | -                 |
+| Banco de dados SQL do Azure para PostgreSQL | Sim                | -                  | -                  |
 | SQL Data Warehouse do Azure         | Sim                | Sim, RSA 2048-bit  | Sim                |
 | SQL Server Stretch Database      | Sim                | Sim, RSA 2048-bit  | Sim                |
 | Armazenamento de Tabelas                    | Sim                | -                  | Sim                |

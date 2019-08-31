@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 08/29/2019
 ms.author: dapine
-ms.openlocfilehash: 3c0129275ecf78e6a4e6b9286f975ded2b6f9ae3
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 25ea4c96a0e392db2af9c25a150696ca2b25b2dd
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051198"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164545"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
 
@@ -58,28 +58,25 @@ Os núcleos de CPU e a memória mínimos e recomendados a serem alocados para ca
 
 | Contêiner | Mínimo | Recomendado |
 |-----------|---------|-------------|
-|cognitive-services-form-recognizer | 2 núcleos, 4 GB de memória | 4 núcleos, 8 GB de memória |
+| Reconhecimento de Formulários | 2 núcleos, 4 GB de memória | 4 núcleos, 8 GB de memória |
+| Reconhecimento de Texto | 1 núcleo, 8 GB de memória | 2 núcleos, 8 GB de memória |
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
-* TPS – transações por segundo
 * Memória e núcleo correspondem às configurações `--cpus` e `--memory`, que são usadas como parte do comando `docker run`.
 
 > [!Note]
 > Os valores mínimos e recomendados se baseiam nos limites do Docker e *não* nos recursos do computador host.
 
-## <a name="get-the-container-image-with-the-docker-pull-command"></a>Obtenha a imagem de contêiner com o comando docker pull
+## <a name="get-the-container-images-with-the-docker-pull-command"></a>Obter as imagens de contêiner com o comando docker pull
 
-Imagens de contêiner para o Reconhecimento de Formulários estão disponíveis no seguinte repositório:
+As imagens de contêiner para as ofertas de reconhecedor de **formulário** e **reconhecimento de texto** estão disponíveis no seguinte registro de contêiner:
 
-| Contêiner | Repositório |
+| Contêiner | Nome da imagem totalmente qualificado |
 |-----------|------------|
-| cognitive-services-form-recognizer | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
+| Reconhecimento de Formulários | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
+| Reconhecimento de Texto | `containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest` |
 
-Se você pretende usar o [contêiner](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) do `cognitive-services-recognize-text` em vez do serviço de Reconhecimento de Formulários, use o comando `docker pull` com o nome do contêiner correto: 
-
-```
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
-```
+Você precisará de ambos os contêineres. Observe que o contêiner de **texto** do reconhecedor é [detalhado fora deste artigo.](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull)
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
@@ -91,6 +88,15 @@ Para obter o contêiner do Reconhecimento de Formulários, use o seguinte comand
 
 ```Docker
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest
+```
+### <a name="docker-pull-for-the-recognize-text-container"></a>Docker pull para o contêiner de Reconhecimento de Texto
+
+#### <a name="recognize-text"></a>Reconhecimento de Texto
+
+Para obter o contêiner de Reconhecimento de Texto, use o seguinte comando:
+
+```Docker
+docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
 ```
 
 ## <a name="how-to-use-the-container"></a>Como usar o contêiner
