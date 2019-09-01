@@ -50,8 +50,8 @@ Eventos são enviados por objetos de IoT (por exemplo, dispositivos e sensores) 
 | Atributo | Tipo | Descrição |
 | --- | --- | --- |
 | id | cadeia de caracteres | Identificador exclusivo do evento. |
-| assunto | cadeia de caracteres | Caminho definido pelo fornecedor para o assunto do evento. |
-| dados | objeto | Dados do evento específicos ao provedor de recursos. |
+| subject | cadeia de caracteres | Caminho definido pelo fornecedor para o assunto do evento. |
+| data | objeto | Dados do evento específicos ao provedor de recursos. |
 | eventType | cadeia de caracteres | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | cadeia de caracteres | A hora em que o evento é gerado com base na hora UTC do provedor. |
 | dataVersion | cadeia de caracteres | A versão de esquema do objeto de dados. O fornecedor define a versão do esquema. |
