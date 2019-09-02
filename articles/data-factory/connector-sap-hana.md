@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2018
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: e9b024fc3c07670201cf72cf80c0b69bf68f1cc8
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 8174b2e8bc63db8954e596d831eb2f9cad2ba440
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68725997"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211625"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Copiar dados do SAP HANA usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -25,6 +25,9 @@ ms.locfileid: "68725997"
 > * [Versão atual](connector-sap-hana.md)
 
 Este artigo descreve como usar a atividade de cópia no Azure Data Factory para copiar dados de um banco de dados SAP HANA. Ele amplia o artigo [Visão geral da atividade de cópia](copy-activity-overview.md) que apresenta uma visão geral da atividade de cópia.
+
+>[!TIP]
+>Para aprender o suporte geral do ADF no cenário de integração de dados do SAP, consulte [integração de dados SAP usando Azure data Factory White Paper](https://github.com/Azure/Azure-DataFactory/blob/master/whitepaper/SAP%20Data%20Integration%20using%20Azure%20Data%20Factory.pdf) com introdução, análise e diretrizes detalhadas.
 
 ## <a name="supported-capabilities"></a>Funcionalidades com suporte
 
@@ -221,8 +224,8 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | ------------------ | ------------------------------ |
 | ALPHANUM           | String                         |
 | BIGINT             | Int64                          |
-| BINARY             | Byte[]                         |
-| BINTEXT            | String                         |
+| BINÁRIO             | Byte[]                         |
+| BINTEXT            | Cadeia                         |
 | BLOB               | Byte[]                         |
 | BOOL               | Byte                           |
 | CLOB               | String                         |
@@ -235,7 +238,7 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | NVARCHAR           | String                         |
 | REAL               | Single                         |
 | SECONDDATE         | DateTime                       |
-| SHORTTEXT          | String                         |
+| SHORTTEXT          | Cadeia                         |
 | SMALLDECIMAL       | DECIMAL                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
@@ -243,7 +246,7 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | TEXT               | String                         |
 | TIME               | TimeSpan                       |
 | TINYINT            | Byte                           |
-| VARCHAR            | String                         |
+| VARCHAR            | Cadeia                         |
 | TIMESTAMP          | DateTime                       |
 | VARBINARY          | Byte[]                         |
 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/16/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 05ecfdc4f082aaa44fe54e6b807a1c5faf84eb8d
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 22c83b1fe53a9209fd243fe807bb76718cbdcbbd
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69996455"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211689"
 ---
 # <a name="copy-activity-performance-and-scalability-guide"></a>Guia de desempenho e escalabilidade da atividade de cópia
 > [!div class="op_single_selector" title1="Selecione a versão do Azure Data Factory que você está usando:"]
@@ -181,6 +181,7 @@ Para cada execução de atividade de cópia, Azure Data Factory determina o núm
 | Copiar cenário | Contagem de cópia paralela padrão determinada pelo serviço |
 | --- | --- |
 | Copiar dados entre repositórios baseados em arquivo |Depende do tamanho dos arquivos e do número de DIUs usados para copiar dados entre dois armazenamentos de dados de nuvem ou a configuração física do computador do Integration Runtime de hospedagem interna. |
+| Copiar do repositório de dados relacional com a opção de partição habilitada (incluindo [Oracle](connector-oracle.md#oracle-as-source), [Teradata](connector-teradata.md#teradata-as-source), [tabela SAP](connector-sap-table.md#sap-table-as-source)e [Hub aberto SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source))|4 |
 | Copiar dados de qualquer repositório de origem para o armazenamento de tabelas do Azure |4 |
 | Todos os outros cenários de cópia |1 |
 

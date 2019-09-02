@@ -6,14 +6,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 4/3/2019
+ms.date: 04/03/2019
 ms.author: dacurwin
-ms.openlocfilehash: 5c6e3ef74ea2d77ba03526e05145fe6faa61c050
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: ac101c6079eee908a6499f5e6ed8cc3aadffb75a
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882050"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210303"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Fazer backup e restaurar a VM do Azure criptografada
 
@@ -51,7 +51,7 @@ O backup do Azure pode fazer backup e restaurar VMs do Azure usando ADE com e se
 
 
 
-## <a name="before-you-start"></a>Antes de iniciar
+## <a name="before-you-start"></a>Antes de começar
 
 Antes de começar, faça o seguinte:
 

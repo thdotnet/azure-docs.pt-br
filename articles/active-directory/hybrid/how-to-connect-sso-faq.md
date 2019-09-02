@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 709fb3be37850be37d6378652921ce26f4ff15fe
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: dcea3c1ab715a79ebecd913885fbf9bbee61606a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/02/2019
 ms.locfileid: "60242224"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Logon Único Contínuo do Azure Active Directory: Perguntas frequentes
@@ -39,22 +39,22 @@ O SSO Contínuo é um recurso gratuito e você não precisa de nenhuma edição 
 
 Não. O SSO Contínuo está disponível apenas na instância mundial do Azure AD.
 
-## <a name="what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso"></a>Quais aplicativos tiram proveito da capacidade de parâmetro `domain_hint` ou `login_hint` do SSO Contínuo?
+## <a name="what-applications-take-advantage-of-domain_hint-or-login_hint-parameter-capability-of-seamless-sso"></a>Quais aplicativos tiram proveito da capacidade de parâmetro `domain_hint` ou `login_hint` do SSO Contínuo?
 
 Veja abaixo uma lista parcial de aplicativos que enviam esses parâmetros para o Microsoft Azure Active Directory e, portanto, fornecem aos usuários uma experiência de logon silenciosa usando o SSO contínuo (isto é, os usuários não precisam inserir seus nomes de usuário ou senha):
 
 | Nome do aplicativo | URL do aplicativo a ser usada |
 | -- | -- |
-| Painel de acesso | https:\//myapps.microsoft.com/contoso.com |
-| Outlook na Web | https:\//outlook.office365.com/contoso.com |
-| Portais do Office 365 | https:\//portal.office.com?domain_hint=contoso.com, https:\//www.office.com?domain_hint=contoso.com |
+| Painel de acesso | https:\//myapps.Microsoft.com/contoso.com |
+| Outlook na Web | https:\//Outlook.office365.com/contoso.com |
+| Portais do Office 365 | https:\//Portal.Office.com? domain_hint = contoso. com, https:\//www.Office.com? domain_hint = contoso. com |
 
-Além disso, os usuários obtêm uma experiência de logon silenciosa se um aplicativo envia solicitações de entrada para pontos de extremidade do Azure AD configurado como locatários – ou seja, https:\//login.microsoftonline.com/contoso.com/ <... > ou https:\//login.microsoftonline.com/ < tenant_ID > / <... > - em vez do ponto de extremidade de comum do Azure AD - ou seja, https:\//login.microsoftonline.com/common/ <... >. Abaixo está uma lista parcial de aplicativos que fazem esses tipos de solicitações de entrada.
+Além disso, os usuários terão uma experiência de logon silenciosa se um aplicativo enviar solicitações de entrada para os pontos de extremidade do Azure ad configurados como locatários, ou seja, https\/:/login.microsoftonline.com/contoso.com/<.. > ou https:\//login.microsoftonline.com/<tenant_ID>/<.. >-em vez do ponto de extremidade comum do Azure AD, ou seja\/, https:/login.microsoftonline.com/Common/<... >. Abaixo está uma lista parcial de aplicativos que fazem esses tipos de solicitações de entrada.
 
 | Nome do aplicativo | URL do aplicativo a ser usada |
 | -- | -- |
-| SharePoint Online | https:\//contoso.sharepoint.com |
-| Portal do Azure | https:\//portal.azure.com/contoso.com |
+| SharePoint Online | https:\//contoso.SharePoint.com |
+| Portal do Azure | https:\//Portal.Azure.com/contoso.com |
 
 Nas tabelas acima, substitua "contoso.com" por seu nome de domínio para obter as URLs do aplicativo certo para o seu locatário.
 

@@ -15,12 +15,12 @@ ms.date: 01/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e077127681f8bd7b650ab22f2d036efd7f9733ee
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e75ad29c5b4a76de5317991995f132c6cb53bbe3
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60454756"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211850"
 ---
 # <a name="troubleshoot-azure-ad-connect-install-issues"></a>Solucionar problemas: problemas de instalação do Azure AD Connect
 
@@ -41,11 +41,11 @@ No entanto, se você não atende aos critérios de instalação expressa e preci
 
 ### <a name="common-issues"></a>**Problemas comuns**
 
-* [Problemas de conectividade com o Active Directory no local](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adconnectivitytools).
+* [Problemas de conectividade com Active Directory locais](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-adconnectivitytools).
 
 * [Problemas de conectividade com o Azure Active Directory online](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-connectivity).
 
-* [Problemas de permissões com no Active Directory local](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account).
+* [Problemas de permissão com Active Directory locais](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-configure-ad-ds-connector-account).
 
 ## <a name="recommended-documents"></a>**Documentos Recomendados**
 * [Pré-requisitos do Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
@@ -58,7 +58,7 @@ No entanto, se você não atende aos critérios de instalação expressa e preci
 
 ## <a name="next-steps"></a>Próximas etapas
 - [Sincronização do Azure AD Connect](how-to-connect-sync-whatis.md).
-- [O que é a identidade híbrida?](whatis-hybrid-identity.md).
+- [O que é identidade híbrida?](whatis-hybrid-identity.md)
 
 
 
