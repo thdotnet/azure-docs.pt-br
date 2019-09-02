@@ -110,18 +110,18 @@ Blobs retornados individualmente estão em conformidade com o seguinte esquema J
 
 | Atributo | Tipo | Descrição |
 | --- | --- | --- |
-| **id** | Cadeia | O identificador exclusivo do blob |
-| **name** |Cadeia | Um nome amigável para humanos para o blob |
-| **parentId** | Cadeia | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
-| **type** | Cadeia | O tipo de blob – não é possível usar *type* e *typeId*  |
-| **typeId** | Inteiro | A ID do tipo de blob – não é possível usar *type* e *typeId* |
-| **subtype** | Cadeia | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **subtypeId** | Inteiro | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **sharing** | Cadeia | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
-| **description** | Cadeia | Descrição personalizada do blob |
+| **id** | String | O identificador exclusivo do blob |
+| **name** |String | Um nome amigável para humanos para o blob |
+| **parentId** | String | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
+| **type** | String | O tipo de blob – não é possível usar *type* e *typeId*  |
+| **typeId** | Integer | A ID do tipo de blob – não é possível usar *type* e *typeId* |
+| **subtype** | String | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **subtypeId** | Integer | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **sharing** | String | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
+| **description** | String | Descrição personalizada do blob |
 | **contentInfos** | Array | Especifica as informações de metadados não estruturados, incluindo a versão |
-| **fullName** | Cadeia | O nome completo do blob |
-| **spacePaths** | Cadeia | O caminho de espaço |
+| **fullName** | String | O nome completo do blob |
+| **spacePaths** | String | O caminho de espaço |
 
 Metadados de blob sempre são fornecidos como a primeira parte, com **Content-Type** `application/json` ou como um arquivo `.json`. Dados de arquivo são fornecidos na segunda parte e podem ser de qualquer tipo MIME com suporte.
 

@@ -119,9 +119,9 @@ O objeto de dados tem as seguintes propriedades:
 | -------- | ---- | ----------- |
 | apiCategory | string | Categoria da API do evento. |
 | apiName | string | Nome da API do evento. |
-| issues | objeto | Lista os problemas encontrados durante o processamento. Se algum problema for retornado, não haverá geometrias retornadas com a resposta. |
+| issues | object | Lista os problemas encontrados durante o processamento. Se algum problema for retornado, não haverá geometrias retornadas com a resposta. |
 | responseCode | número | Código de resposta HTTP |
-| geometries | objeto | Lista as geometrias de delimitação que contêm a posição da coordenada ou sobrepõem o searchBuffer em torno da posição. |
+| geometries | object | Lista as geometrias de delimitação que contêm a posição da coordenada ou sobrepõem o searchBuffer em torno da posição. |
 
 O objeto de erro é retornado quando ocorre um erro na API de Mapas. O objeto de erro tem as seguintes propriedades:
 
