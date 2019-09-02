@@ -8,49 +8,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 9da6b6ba3ab697887e55f9077b44cf6fa100a981
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a1bb7a6737115f903391997a5430c32f9a40465f
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707958"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207100"
 ---
 # <a name="use-mapreduce-in-apache-hadoop-on-hdinsight"></a>Usar MapReduce no Apache Hadoop em HDInsight
 
-Saiba como executar trabalhos do MapReduce em clusters HDInsight. 
-
-## <a id="whatis"></a>O que é o MapReduce
-
-O MapReduce do Apache Hadoop é uma estrutura de software para gravar trabalhos que processam grandes quantidades de dados. Dados de entrada são divididos em partes independentes. Cada bloco é processado em paralelo em todos os nós no cluster. Um trabalho do MapReduce consiste em duas funções:
-
-* **Mapeador**: Consome dados de entrada, analisa-os (normalmente com operações de classificação e filtro) e emite tuplas (pares chave-valor)
-
-* **Redutor**: Consome tuplas emitidas pelo Mapeador e executa uma operação de resumo que cria um resultado menor e combinado dos dados do Mapeador
-
-Um exemplo básico de trabalho de contagem de palavras do MapReduce está ilustrado no diagrama abaixo:
-
-![HDI.WordCountDiagram][image-hdi-wordcountdiagram]
-
-A saída deste trabalho é uma contagem de quantas vezes cada palavra ocorreu no texto.
-
-* O mapeador utiliza cada linha do texto de entrada como uma entrada e a divide em palavras. Ele emite um par de chave/valor cada vez que ocorre uma palavra seguida de um 1. A saída será classificada antes de ser enviada ao redutor.
-* Em seguida, o redutor soma essas contagens individuais para cada palavra e emite um par de chave/valor único que contém a palavra seguido pela soma de suas ocorrências.
-
-O MapReduce pode ser implementado em várias linguagens. Java é a implementação mais comum e é usado para fins de demonstração neste documento.
-
-## <a name="development-languages"></a>Linguagens de desenvolvimento
-
-As linguagens ou frameworks que são baseados em Java e a Máquina Virtual Java podem ser executadas diretamente como um trabalho do MapReduce. O exemplo usado neste documento é um aplicativo MapReduce em Java. Linguagens não Java, como C#, Python ou executáveis autônomos devem usar o **streaming do Hadoop**.
-
-O streaming do Hadoop se comunica com o mapeador e redutor por STDIN e STDOUT. O mapeador e redutor leem os dados uma linha por vez do STDIN e gravam a saída em STDOUT. Cada linha lida ou emitida pelo mapeador e redutor deve estar no formato de um par de chave/valor, delimitado por um caractere de tabulação:
-
-    [key]/t[value]
-
-Para saber mais, confira [Streaming do Hadoop](https://hadoop.apache.org/docs/r1.2.1/streaming.html).
-
-Para obter exemplos de uso do Hadoop streaming com o HDInsight, consulte o documento a seguir:
-
-* [Desenvolver trabalhos do MapReduce em C#](apache-hadoop-dotnet-csharp-mapreduce-streaming.md)
+Saiba como executar trabalhos do MapReduce em clusters HDInsight.
 
 ## <a id="data"></a>Dados de exemplo
 
@@ -134,7 +101,7 @@ public class WordCount {
 }
 ```
 
-Para obter instruções para escrever seus próprios aplicativos MapReduce, consulte o documento a seguir:
+Para obter instruções sobre como escrever seus próprios aplicativos MapReduce, consulte o seguinte documento:
 
 * [Desenvolver aplicativos Java MapReduce para HDInsight](apache-hadoop-develop-deploy-java-mapreduce-linux.md)
 
@@ -154,10 +121,9 @@ Para saber mais sobre como trabalhar com os dados no HDInsight, consulte os segu
 
 * [Desenvolver programas Java MapReduce para HDInsight](apache-hadoop-develop-deploy-java-mapreduce-linux.md)
 
-* [Usar o Apache Hive com HDInsight][hdinsight-use-hive]
+* [Usar o Apache Hive com o HDInsight][hdinsight-use-hive]
 
-* [Usar Apache Pig com o HDInsight][hdinsight-use-pig]
-
+* [Usar o Apache Pig com o HDInsight][hdinsight-use-pig]
 
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-get-started]:apache-hadoop-linux-tutorial-get-started.md
@@ -167,5 +133,3 @@ Para saber mais sobre como trabalhar com os dados no HDInsight, consulte os segu
 
 
 [powershell-install-configure]: /powershell/azureps-cmdlets-docs
-
-[image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

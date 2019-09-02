@@ -163,7 +163,7 @@ O elemento **Enumeration** contém os seguintes atributos:
 | --------- | -------- | ----------- |
 | Text | Sim | A cadeia de caracteres de exibição que é mostrada ao usuário na interface do usuário para essa opção. |
 |Value | Sim | O valor da declaração associada à seleção dessa opção. |
-| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: Verdadeiro ou falso. |
+| SelectByDefault | Não | Indica se esta opção deve ser selecionada ou não por padrão na interface do usuário. Valores possíveis: True ou False. |
 
 O exemplo a seguir configura uma declaração de lista suspensa **city** com um valor padrão definido como `New York`:
 

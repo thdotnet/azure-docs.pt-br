@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 58bd765b5f240f56cad0eafc4952918c9cd52c36
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: ebc06057dfa4bce72821ddf807cda46270e8ff3e
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70193592"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70206841"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Obter a análise em sua base de dados de conhecimento
 
@@ -32,7 +32,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
 3. Cole a consulta a seguir e execute-a.
 
-    ```query
+    ```kusto
     requests
     | where url endswith "generateAnswer"
     | project timestamp, id, name, resultCode, duration, performanceBucket
@@ -54,7 +54,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
 ### <a name="total-90-day-traffic"></a>Tráfego total de 90 dias
 
-```query
+```kusto
     //Total Traffic
     requests
     | where url endswith "generateAnswer" and name startswith "POST"
@@ -64,7 +64,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
 ### <a name="total-question-traffic-in-a-given-time-period"></a>Tráfego total de perguntas em um determinado período de tempo
 
-```query
+```kusto
     //Total Question Traffic in a given time period
     let startDate = todatetime('2018-02-18');
     let endDate = todatetime('2018-03-12');
@@ -77,7 +77,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
 ### <a name="user-traffic"></a>Tráfego de usuários
 
-```query
+```kusto
     //User Traffic
     requests
     | where url endswith "generateAnswer"
@@ -92,7 +92,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
 ### <a name="latency-distribution-of-questions"></a>Distribuição de latência das perguntas
 
-```query
+```kusto
     //Latency distribution of questions
     requests
     | where url endswith "generateAnswer" and name startswith "POST"

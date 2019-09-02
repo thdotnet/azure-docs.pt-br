@@ -3,7 +3,7 @@ documentType: LandingData
 title: Documentação da versão prévia da Configuração de Aplicativos do Azure
 metadata:
   title: 'Documentação da Configuração de Aplicativos do Azure – Tutoriais, referência da API'
-  description: 'A Configuração de Aplicativos do Azure é um serviço gerenciado que ajuda os desenvolvedores a centralizar seus aplicativos, suas configurações de recursos e seus recursos de maneira simples e segura.'
+  description: A Configuração de Aplicativos do Azure é um serviço gerenciado que ajuda os desenvolvedores a centralizar seus aplicativos e suas configurações de recursos de maneira simples e segura.
   author: yegu-ms
   manager: maiye
   ms.author: yegu

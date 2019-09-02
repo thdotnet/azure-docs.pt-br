@@ -10,71 +10,71 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 05/08/2018
-ms.openlocfilehash: 5cd310dac28b999af3d21c46b108abdc6d5779b5
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 44f1f7ae3b290e1dbf01877f3881e1d95a238446
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70192241"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208152"
 ---
-# <a name="set-up-a-common-identity-on-the-data-science-virtual-machine"></a>Configurar uma identidade comum na Máquina Virtual de Ciência de Dados
+# <a name="set-up-a-common-identity-on-a-data-science-virtual-machine"></a>Configurar uma identidade comum em um Máquina Virtual de Ciência de Dados
 
-Em uma VM (máquina virtual) do Azure, incluindo a DSVM (Máquina Virtual de Ciência de Dados), você cria contas de usuário locais enquanto provisiona a VM. Os usuários então se autenticam na VM usando essas credenciais. Se você precisar acessar várias VMs, essa abordagem dificultará o gerenciamento de credenciais rapidamente. As contas de usuário comuns e o gerenciamento por meio de um provedor de identidade baseado em padrões permitem que você use um único conjunto de credenciais para acessar vários recursos no Azure, incluindo várias DSVMs. 
+Em um Microsoft Azure VM (máquina virtual), incluindo um Máquina Virtual de Ciência de Dados (DSVM), você cria contas de usuário local ao provisionar a VM. Os usuários então se autenticam na VM usando essas credenciais. Se você tiver várias VMs que seus usuários precisam acessar, o gerenciamento de credenciais poderá ficar muito complicado. Uma solução excelente é implantar contas de usuário e gerenciamento comuns por meio de um provedor de identidade baseado em padrões. Por meio dessa abordagem, você pode usar um único conjunto de credenciais para acessar vários recursos no Azure, incluindo vários DSVMs.
 
-O Active Directory é um provedor de identidade popular e tem suporte no Azure como serviço e no local. Você pode usar o Azure AD (Azure Active Directory) ou o Active Directory local para autenticar usuários em uma DSVM autônoma ou em um cluster de DSVMs em um conjunto de dimensionamento de máquina virtual do Azure. Para isso, integre as instâncias de DSVM em um domínio do Active Directory. 
+Active Directory é um provedor de identidade popular e tem suporte no Azure como um serviço de nuvem e como um diretório local. Você pode usar o Azure AD (Azure Active Directory) ou o Active Directory local para autenticar usuários em uma DSVM autônoma ou em um cluster de DSVMs em um conjunto de dimensionamento de máquina virtual do Azure. Para isso, integre as instâncias de DSVM em um domínio do Active Directory.
 
-Se você já tiver o Active Directory para gerenciar as identidades, poderá usá-lo como seu provedor de identidade comum. Se você não tiver o Active Directory, poderá executar uma instância gerenciada do Active Directory no Azure por meio de um serviço chamado [Azure AD DS](https://docs.microsoft.com/azure/active-directory-domain-services/) (Azure Active Directory Domain Services). 
+Se você já tiver Active Directory, poderá usá-lo como seu provedor de identidade comum. Se você não tiver Active Directory, poderá executar uma instância de Active Directory gerenciada no Azure por meio de [Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/) (Azure AD DS).
 
-A documentação do [Azure AD](https://docs.microsoft.com/azure/active-directory/) fornece [instruções detalhadas de gerenciamento](https://docs.microsoft.com/azure/active-directory/choose-hybrid-identity-solution), incluindo a conexão do Azure AD a seu diretório local, se você tiver um. 
+A documentação do [Azure ad](https://docs.microsoft.com/azure/active-directory/) fornece [instruções de gerenciamento](https://docs.microsoft.com/azure/active-directory/choose-hybrid-identity-solution)detalhadas, incluindo diretrizes sobre como conectar o Azure AD ao seu diretório local, se você tiver um.
 
-Este artigo descreve as etapas para configurar um serviço de domínio do Active Directory totalmente gerenciado no Azure usando o Azure AD DS. Posteriormente, você poderá associar DSVMs ao domínio gerenciado do Active Directory para permitir que os usuários acessem um conjunto de DSVMs (e outros recursos do Azure) usando uma conta de usuário e credenciais comuns. 
+Este artigo descreve como configurar um serviço de domínio Active Directory totalmente gerenciado no Azure usando o AD DS do Azure. Em seguida, você pode ingressar seu DSVMs no domínio Active Directory gerenciado. Essa abordagem permite que os usuários acessem um pool de DSVMs (e outros recursos do Azure) por meio de uma conta de usuário e credenciais comuns.
 
 ## <a name="set-up-a-fully-managed-active-directory-domain-on-azure"></a>Configurar um domínio do Active Directory totalmente gerenciado no Azure
 
-O Azure AD DS simplifica o gerenciamento de identidades, fornecendo um serviço totalmente gerenciado no Azure. Nesse domínio do Active Directory, você pode gerenciar usuários e grupos. Etapas para configurar contas de usuário e um domínio do Active Directory hospedado no Azure em seu diretório:
+O Azure AD DS simplifica o gerenciamento de identidades, fornecendo um serviço totalmente gerenciado no Azure. Nesse domínio do Active Directory, você pode gerenciar usuários e grupos. Para configurar um domínio Active Directory hospedado pelo Azure e contas de usuário em seu diretório, siga estas etapas:
 
 1. No portal do Azure, adicione o usuário ao Active Directory: 
 
-   a. Entre no [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) com uma conta que seja um administrador global do diretório.
+   1. Entre no centro de [Administração do Azure Active Directory](https://aad.portal.azure.com) usando uma conta que seja um administrador global do diretório.
     
-   b. Selecione **Azure Active Directory** e, em seguida, **Usuários e grupos**.
+   1. Selecione **Azure Active Directory** e, em seguida, **Usuários e grupos**.
     
-   c. Em **Usuários e grupos**, selecione **Todos os usuários** e, em seguida, selecione **Novo usuário**.
+   1. Em **usuários e grupos**, selecione **todos os usuários**e, em seguida, selecione **novo usuário**.
    
-      O painel **Usuário** é aberto.
+           The **User** pane opens:
       
       ![O painel "Usuário"](./media/add-user.png)
     
-   d. Insira os detalhes do usuário, como **Nome** e **Nome de usuário**. A parte de nome de domínio do nome de usuário deve ser o nome de domínio padrão inicial "[nome de domínio].onmicrosoft.com" ou um [nome de domínio personalizado](../../active-directory/add-custom-domain.md) verificado e não federado, como "contoso.com".
+   1. Insira os detalhes do usuário, como **Nome** e **Nome de usuário**. A parte de nome de domínio do nome de usuário deve ser o nome de domínio padrão inicial "[nome de domínio].onmicrosoft.com" ou um [nome de domínio personalizado](../../active-directory/add-custom-domain.md) verificado e não federado, como "contoso.com".
     
-   e. Copie ou anote a senha de usuário gerada para que você possa fornecê-la ao usuário depois que esse processo estiver concluído.
+   1. Copie ou anote a senha de usuário gerada para que você possa fornecê-la ao usuário depois que esse processo estiver concluído.
     
-   f. Opcionalmente, você pode abrir e preencher as informações em **Perfil**, **Grupos** ou **Função do diretório** para o usuário. 
+   1. Opcionalmente, você pode abrir e preencher as informações em **Perfil**, **Grupos** ou **Função do diretório** para o usuário. 
     
-   g. Em **Usuário**, selecione **Criar**.
+   1. Em **usuário**, selecione **criar**.
     
-   h. Distribua com segurança a senha gerada para o novo usuário para que ele possa entrar.
+   1. Distribua com segurança a senha gerada para o novo usuário para que ele possa entrar.
 
-1. Crie uma instância do Azure AD DS. Siga as instruções do artigo [Habilitar o Azure Active Directory Domain Services usando o Portal do Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started) (tarefas 1 a 5). É importante atualizar as senhas de usuários existentes no Active Directory para que a senha do Azure AD DS fique sincronizada. Também é importante adicionar o DNS ao Azure AD DS, conforme descrito na tarefa 4 do artigo. 
+1. Crie uma instância do Azure AD DS. Siga as instruções em [habilitar Azure Active Directory Domain Services usando o portal do Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started) (a seção "criar uma instância e definir configurações básicas"). É importante atualizar as senhas de usuários existentes no Active Directory para que a senha do Azure AD DS fique sincronizada. Também é importante adicionar o DNS ao Azure AD DS, conforme descrito em "concluir os campos na janela noções básicas do portal do Azure para criar uma instância de AD DS do Azure" nessa seção.
 
-1. Crie uma sub-rede de DSVM separada na rede virtual criada na tarefa 2 da etapa anterior.
-1. Crie uma ou mais instâncias de VM de Ciência de Dados na sub-rede de DSVM. 
-1. Siga as [instruções](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-join-ubuntu-linux-vm ) para adicionar a DSVM ao Active Directory. 
-1. Crie um compartilhamento de Arquivos do Azure para hospedar seu diretório raiz ou notebook para habilitar a montagem de seu workspace em qualquer computador. (Se você precisar de rigorosas permissões de nível de arquivo, será necessário um NFS em execução em uma ou mais VMs).
+1. Crie uma sub-rede DSVM separada na rede virtual criada na seção "criar e configurar a rede virtual" da etapa anterior.
+1. Crie uma ou mais instâncias DSVM na sub-rede DSVM.
+1. Siga as [instruções](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-join-ubuntu-linux-vm ) para adicionar o DSVM ao Active Directory. 
+1. Monte um compartilhamento de arquivos do Azure para hospedar seu diretório base ou notebook para que seu espaço de trabalho possa ser montado em qualquer computador. (Se precisar de permissões rígidas em nível de arquivo, você precisará do NFS (sistema de arquivos de rede) em execução em uma ou mais VMs.)
 
-   a. [Criar um compartilhamento de arquivos do Azure](../../storage/files/storage-how-to-create-file-share.md).
+   1. [Criar um compartilhamento de arquivos do Azure](../../storage/files/storage-how-to-create-file-share.md).
     
-   b. Monte-o em DSVM no Linux. Quando você selecionar o botão **Conectar** para o compartilhamento de Arquivos do Azure em sua conta de armazenamento no Portal do Azure, o comando a ser executado no shell do Bash na DSVM do Linux será mostrado. O comando se parece com o seguinte:
+   2.  Monte esse compartilhamento no DSVM do Linux. Quando você seleciona **conectar** para o compartilhamento de arquivos do Azure em sua conta de armazenamento no portal do Azure, o comando a ser executado no Shell do bash no DSVM do Linux é exibido. O comando se parece com o seguinte:
    
    ```
    sudo mount -t cifs //[STORAGEACCT].file.core.windows.net/workspace [Your mount point] -o vers=3.0,username=[STORAGEACCT],password=[Access Key or SAS],dir_mode=0777,file_mode=0777,sec=ntlmssp
    ```
-1. Presuma que você tenha montado o compartilhamento de Arquivos do Azure em /data/workspace, por exemplo. Agora crie diretórios para cada um dos usuários no compartilhamento: /data/workspace/user1, /data/workspace/user2 e assim por diante. Criar um diretório `notebooks` no workspace de cada usuário. 
+1. Por exemplo, suponha que você montou o compartilhamento de arquivos do Azure no/data/Workspace. Agora, crie diretórios para cada um de seus usuários no compartilhamento:/data/Workspace/user1,/data/Workspace/user2 e assim por diante. Criar um diretório `notebooks` no workspace de cada usuário. 
 1. Criar links simbólicos para `notebooks` em `$HOME/userx/notebooks/remote`.   
 
-Agora, você tem os usuários em sua instância do Active Directory hospedada no Azure. Usando as credenciais do Active Directory, os usuários podem fazer logon em qualquer DSVM (SSH ou JupyterHub) associada ao Azure AD DS. Como o workspace do usuário está em um compartilhamento de Arquivos do Azure, os usuários têm acesso a seus notebooks e outros trabalhos de qualquer DSVM quando eles usam o JupyterHub. 
+Agora você tem os usuários em sua instância de Active Directory hospedados no Azure. Usando credenciais de Active Directory, os usuários podem entrar em qualquer DSVM (SSH ou JupyterHub) que tenha ingressado no Azure AD DS. Como o workspace do usuário está em um compartilhamento de Arquivos do Azure, os usuários têm acesso a seus notebooks e outros trabalhos de qualquer DSVM quando eles usam o JupyterHub.
 
-Para o dimensionamento automático, você pode usar um conjunto de dimensionamento de máquinas virtuais para criar um pool de VMs que ingressaram no domínio dessa maneira e com o disco compartilhado montado. Os usuários podem fazer logon em qualquer computador disponível no conjunto de dimensionamento de máquinas virtuais e ter acesso ao disco compartilhado onde os seus notebooks estão salvos. 
+Para o dimensionamento automático, você pode usar um conjunto de dimensionamento de máquinas virtuais para criar um pool de VMs que ingressaram no domínio dessa maneira e com o disco compartilhado montado. Os usuários podem entrar em qualquer computador disponível no conjunto de dimensionamento de máquinas virtuais e ter acesso ao disco compartilhado onde seus blocos de anotações são salvos. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
