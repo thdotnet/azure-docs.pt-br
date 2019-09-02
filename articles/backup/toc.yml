@@ -70,6 +70,8 @@
       href: backup-architecture.md
     - name: Controle de Acesso Baseado em Função
       href: backup-rbac-rs-vault.md
+    - name: Segurança para cargas de trabalho na nuvem
+      href: backup-azure-security-feature-cloud.md
     - name: Segurança para backups híbridos
       href: backup-azure-security-feature.md
     - name: Configurar o backup offline

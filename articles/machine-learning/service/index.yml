@@ -3,7 +3,7 @@ documentType: LandingData
 title: Documentação do Serviço do Azure Machine Learning
 metadata:
   title: 'Documentação do Serviço do Azure Machine Learning - Tutoriais, Referência de API | Microsoft Docs'
-  description: 'O Serviço do Azure Machine Learning fornece SDKs e serviços para rapidamente preparar dados, treinar e implantar modelos de machine learning. Aprimore a produtividade e reduza custos com a computação de dimensionamento automático e os pipelines. Use essas funcionalidades com estruturas do Python de software livre, como a PyTorch, a TensorFlow e a Scikit-learn. Comece a seguir nossos guias de início rápido e tutoriais.'
+  description: 'O Serviço do Azure Machine Learning fornece SDKs e serviços para rapidamente treinar e implantar modelos de machine learning. Aprimore a produtividade e reduza custos com a computação de dimensionamento automático e os pipelines. Use essas funcionalidades com estruturas do Python de software livre, como a PyTorch, a TensorFlow e a Scikit-learn. Comece a seguir nossos guias de início rápido e tutoriais.'
   services: machine-learning
   ms.service: machine-learning
   ms.subservice: core
@@ -16,7 +16,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
 abstract:
-  description: 'O Serviço do Azure Machine Learning fornece SDKs e serviços para rapidamente preparar dados, treinar e implantar modelos de machine learning. Aprimore a produtividade e os custos com pipelines e computação de dimensionamento automático. Use essas funcionalidades com estruturas do Python de software livre, como a PyTorch, a TensorFlow e a Scikit-learn. Comece a seguir nossos guias de início rápido e tutoriais.'
+  description: 'O Serviço do Azure Machine Learning fornece SDKs e serviços para rapidamente treinar e implantar modelos de machine learning. Aprimore a produtividade e os custos com pipelines e computação de dimensionamento automático. Use essas funcionalidades com estruturas do Python de software livre, como a PyTorch, a TensorFlow e a Scikit-learn. Comece a seguir nossos guias de início rápido e tutoriais.'
   aside:
     image:
       alt: null
@@ -30,7 +30,7 @@ sections:
   - title: Tutoriais Passo a Passo
     items:
       - type: paragraph
-        text: 'Saiba como preparar dados, configurar experimentos, treinar e operacionalizar modelos de machine learning.'
+        text: 'Saiba como configurar experimentos, treinar e operacionalizar seus modelos de machine learning.'
       - type: paragraph
         text: '<b>Use o portal do Azure</b>, uma interface sem código e fácil de usar para aprendizado de máquina:'
       - type: list

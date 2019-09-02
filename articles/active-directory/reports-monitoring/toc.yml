@@ -37,10 +37,12 @@
       href: concept-usage-insights-report.md
     - name: Entradas de risco
       href: concept-risky-sign-ins.md
-    - name: Eventos de risco
+    - name: Detecções de risco
       href: concept-risk-events.md
     - name: Usuários em risco
       href: concept-user-at-risk.md
+    - name: Provisionamento de logs
+      href: concept-provisioning-logs.md
     - name: APIs dos relatórios
       href: concept-reporting-api.md
     - name: Logs do Azure AD no Azure Monitor

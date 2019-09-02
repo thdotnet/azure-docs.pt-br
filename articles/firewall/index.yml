@@ -1,47 +1,57 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação do Firewall do Azure
+summary: Saiba como implantar o Firewall do Azure, um serviço de segurança de rede com base em nuvem.
 metadata:
-  title: 'Documentação do Firewall do Azure — Tutoriais, Referência de API'
-  meta.description: 'Learn how to create Azure Firewalls. Documentation helps you plan, deploy, and manage web traffic to your Azure resources.'
+  title: Documentação do Firewall do Azure
+  description: Saiba como implantar o Firewall do Azure, um serviço de segurança de rede com base em nuvem.
   services: firewall
-  author: vhorne
   ms.service: firewall
   ms.topic: landing-page
-  ms.date: 9/24/2018
+  author: vhorne
   ms.author: victorh
-abstract:
-  description: 'Saiba como implantar o Firewall do Azure, um serviço de segurança de rede com base em nuvem. Tutoriais, referências de API e outras documentações mostram como configurar políticas de nível de aplicativo e no nível de rede para proteger seus recursos de rede virtual do Azure.'
-sections:
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: Saiba como implantar o Firewall do Azure
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/firewall/tutorial-firewall-deploy-portal">Implantar e configurar o Firewall do Azure usando o portal do Azure</a>
-          - html: <a href="/azure/firewall/tutorial-hybrid-ps">Implantar em uma rede híbrida</a>
-          - html: <a href="/azure/firewall/tutorial-firewall-dnat">Filtrar o tráfego de entrada com DNAT</a>
-          - html: <a href="/azure/firewall/tutorial-diagnostics">Monitorar os logs do Firewall do Azure</a>
-  - title: Exemplos
-    items:
-      - type: paragraph
-        text: Exemplos de script para tarefas comuns.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/firewall/sample-powershell">PowerShell do Azure</a>
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Linha de comando
-            html: <p><a href="/powershell/module/az.network/new-azfirewall">PowerShell do Azure</a></p><p><a href="/cli/azure/ext/azure-firewall/network/firewall">CLI do Azure</a></p>
-          - title: Languages
-            html: <p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p>
-          - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/firewall/">Referência da API REST de Computação</a></p>'
+  ms.date: 08/30/2019
+  ms.openlocfilehash: aba20908401cba2c1b740570f62593b5afb92dc5
+  ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70147312"
+landingContent:
+- title: Saiba mais sobre o Firewall do Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o Firewall do Azure?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Lógica de processamento de regra do Firewall do Azure
+      url: rule-processing.md
+    - text: Perguntas frequentes
+      url: firewall-faq.md
+- title: Implantar um Firewall do Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implantar usando o Portal do Azure
+      url: tutorial-firewall-deploy-portal.md
+    - text: Implantar em uma rede híbrida
+      url: tutorial-hybrid-portal.md
+    - text: Filtrar tráfego de entrada
+      url: tutorial-firewall-dnat.md
+- title: Integrar com o Load Balancer
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Integrar o Firewall do Azure com o Azure Standard Load Balancer
+      url: integrate-lb.md
+- title: Monitorar o Firewall do Azure
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Logs e métricas do Firewall do Azure
+      url: logs-and-metrics.md
+  - linkListType: tutorial
+    links:
+    - text: Monitorar os logs e as métricas do Firewall do Azure
+      url: tutorial-diagnostics.md

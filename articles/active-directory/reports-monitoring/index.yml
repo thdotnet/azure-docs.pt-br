@@ -1,48 +1,57 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Relatórios e monitoramento do Azure Active Directory
+### YamlMime:Landing
+title: Documentação de relatórios e monitoramento do Azure Active Directory
+summary: Saiba como usar relatórios no Azure AD.
 metadata:
-  document_id: null
-  title: 'Relatórios e documentação de monitoramento do Azure Active Directory - tutoriais, guias de início rápido, conceitos | Microsoft Docs'
-  description: Saiba como configurar e testar as soluções de relatórios e monitoramento do Azure Active Directory
+  title: Documentação de relatórios e monitoramento do Azure Active Directory
+  description: Saiba como usar relatórios e monitoramento no Azure AD.
   services: active-directory
-  ms.subservice: report-monitor
-  author: priyamohanram
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: devices
   ms.topic: landing-page
-  ms.date: 08/14/2018
-  ms.author: priyamo
-abstract:
-  description: 'Saiba como exibir relatórios de segurança e auditoria para seu ambiente ou monitorá-los ao longo do tempo para obter informações sobre padrões de uso. Com os relatórios do Azure Active Directory (Azure AD), você pode obter informações sobre padrões de uso e segurança em seu ambiente. Por exemplo, é possível responder às seguintes perguntas:<ul><li>Como os aplicativos ou serviços são utilizados pelos usuários?</li><li>Quais são os possíveis riscos que afetam a integridade do ambiente?</li><li>Como solucionar problemas que impedem a conclusão dos trabalhos pelos usuários?</li>'
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Saiba como baixar os relatórios de atividade e rotear seus logs para uma conta de armazenamento do Azure
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report">Baixar um relatório de entrada</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-download-audit-report">Baixar um relatório de auditoria</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-install-power-bi-content-pack">Instalar pacote de conteúdo do Power BI para relatórios</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account">Rotear logs para conta de armazenamento</a>
-  - title: Tutoriais passo a passo
-    items:
-      - type: paragraph
-        text: Saiba como acessar os relatórios e transmitir por streaming os logs de atividades para o sistema de monitoramento de sua escolha
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-access-api-with-certificates">Acessar a API do Relatório usando certificados de forma programática</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub">Transmitir por streaming logs de atividades para um hub de eventos</a>
-  - title: Referência
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/reports-monitoring/reference-sign-ins-error-codes">Códigos de erro de entradas</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema">Esquema de logs de auditoria do Azure AD no Azure Monitor</a>
-          - html: <a href="/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema">Esquema de entradas do Azure AD no Azure Monitor</a>
+  author: MarkusVi
+  ms.author: markvi
+  ms.date: 08/29/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: 2b29aaf88f0a7659fd3ceb58ddf3b762ee7646d3
+  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/29/2019
+  ms.locfileid: "70162496"
+landingContent:
+- title: Sobre os relatórios e o monitoramento do Azure Active Directory
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o monitoramento do Azure Active Directory?
+      url: overview-monitoring.md
+  - linkListType: concept
+    links:
+    - text: Logs de auditoria
+      url: concept-audit-logs.md
+    - text: Logs de entrada
+      url: concept-sign-ins.md
+    - text: Logs de entrada com risco
+      url: concept-risky-sign-ins.md
+    - text: Usuários sinalizados por logs de risco
+      url: concept-user-at-risk.md
+    - text: Provisionando logs
+      url: concept-provisioning-logs.md
+- title: Usar relatórios no Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Localizar relatórios de atividades
+      url: howto-find-activity-reports.md
+    - text: Remediar usuários sinalizados como em risco
+      url: howto-remediate-users-flagged-for-risk.md
+    - text: Usar pastas de trabalho do Azure AD
+      url: howto-use-azure-monitor-workbooks.md
+- title: Usar o monitoramento no Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Analisar os logs de atividades nos logs do Azure Monitor
+      url: howto-analyze-activity-logs-log-analytics.md
+    - text: Instalar e usar as exibições de análise de logs do Azure AD
+      url: howto-install-use-log-analytics-views.md

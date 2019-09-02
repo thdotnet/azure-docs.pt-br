@@ -32,11 +32,11 @@
           href: howto-sign-in-risk-policy.md
         - name: Configurar a política de risco de usuário
           href: howto-user-risk-policy.md
-        - name: Fechar eventos de risco ativos
+        - name: Fechar detecções de risco ativas
           href: howto-close-active-risk-events.md
         - name: Desbloquear usuários
           href: howto-unblock-user.md
-        - name: Simular eventos de risco
+        - name: Simular detecções de risco
           href: playbook.md
         - name: Perguntas frequentes
           href: faqs.md
@@ -46,9 +46,9 @@
           href: overview-v2.md
         - name: Visão geral da segurança
           href: security-overview.md
-        - name: Investigar entradas e usuários arriscados
-          href: howto-investigate-risky-users-signins.md
-        - name: Fornecer comentários sobre eventos de risco
+        - name: Investigar risco
+          href: howto-investigate-risk.md
+        - name: Fornecer comentários sobre detecções de risco
           href: howto-provide-risk-event-feedback.md
         - name: Configurar políticas de risco
           href: howto-configure-risk-policies.md
@@ -58,7 +58,7 @@
   items:
     - name: Usar a API do Microsoft Graph
       href: graph-get-started.md
-    - name: Eventos de risco
+    - name: Detecções de risco
       href: risk-events-reference.md
     - name: Glossário
       href: glossary.md

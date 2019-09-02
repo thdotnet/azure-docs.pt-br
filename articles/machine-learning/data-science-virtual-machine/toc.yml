@@ -4,9 +4,9 @@
 - name: Visão geral
   expanded: true
   items:
-    - name: O que é a VM de Ciência de Dados?
+    - name: O que é uma Máquina Virtual de Ciência de Dados?
       href: overview.md
-    - name: O que é a VM de Ciência de Dados de IA geográfica?
+    - name: O que é a DSVM de IA Geográfica?
       href: geo-ai-dsvm-overview.md
 - name: Guia de início rápido
   expanded: true
@@ -17,7 +17,7 @@
       href: dsvm-ubuntu-intro.md
     - name: Criar uma DSVM do CentOS
       href: linux-dsvm-intro.md
-    - name: Criar uma VM de Ciência de Dados de IA geográfica
+    - name: Criar uma DSVM de IA geográfica
       href: provision-geo-ai-dsvm.md
 - name: Conceitos
   items:
@@ -33,9 +33,9 @@
       href: dsvm-data-platforms.md
     - name: Ferramentas de ingestão de dados
       href: dsvm-tools-ingestion.md
-    - name: Ferramentas de exploração e visualização de dados
+    - name: Ferramentas de visualização e exploração de dados
       href: dsvm-tools-explore-and-visualize.md
-    - name: Segurança e diretrizes para empresas
+    - name: Segurança e diretrizes corporativas
       href: dsvm-enterprise-overview.md
 - name: Exemplos
   href: dsvm-samples-and-walkthroughs.md
@@ -47,7 +47,7 @@
       href: linux-dsvm-walkthrough.md
     - name: Usar uma DSVM de IA geográfica
       href: use-geo-ai-dsvm.md
-    - name: Criar um pool de DSVMs com dimensionamento automático
+    - name: Criar um pool de DSVMs dimensionadas automaticamente
       href: dsvm-pools.md
     - name: Integre-se com o Active Directory
       href: dsvm-common-identity.md

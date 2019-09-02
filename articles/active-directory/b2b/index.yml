@@ -1,55 +1,87 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação do Azure Active Directory B2B
+summary: Saiba como usar a colaboração business-to-business (B2B) do Azure AD para compartilhar com segurança aplicativos e serviços da empresa com usuários convidados e parceiros externos de qualquer organização, enquanto mantém controle sobre seus próprios dados corporativos.
 metadata:
-  document_id: null
-  title: Documentação do Azure Active Directory B2B – Azure Active Directory | Microsoft Docs
-  description: 'Use nossos tutoriais, guias de início rápido e instruções para saber mais sobre como usar o acesso do usuário convidado B2B para compartilhar e colaborar com parceiros externos.'
-  services: active-directory
-  ms.subservice: authentication
-  author: msmimart
-  manager: celestedg
+  title: Documentação do Gerenciamento de Aplicativos
+  description: Saiba como usar a colaboração business-to-business (B2B) do Azure AD para compartilhar com segurança aplicativos e serviços da empresa com usuários convidados e parceiros externos de qualquer organização, enquanto mantém controle sobre seus próprios dados corporativos.
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: manage-apps
+  ms.workload: identity
   ms.topic: landing-page
-  ms.date: 09/10/2018
+  ms.date: 08/27/2019
+  author: msmimart
   ms.author: mimart
-abstract:
-  description: 'Saiba como usar a colaboração business-to-business (B2B) do Azure AD para compartilhar com segurança aplicativos e serviços da empresa com usuários convidados e parceiros externos de qualquer organização, enquanto mantém controle sobre seus próprios dados corporativos.  Veja alguns dos principais recursos:<ul><li>Por meio de um convite simples e o processo de resgate, os usuários convidados podem começar a colaborar nos recursos que você deseja que eles acessem.</li><li>Seus usuários convidados e parceiros externos gerenciam suas próprias identidades por meio do Azure AD, contas de email social ou qualquer provedor de identidade.</li><li>Você pode proteger seus recursos corporativos com recursos do Azure AD, como a autenticação multifator.</li><li>É possível usar APIs para personalizar a experiência, por exemplo, por meio de um portal de inscrição de autoatendimento.</li></ul>Os seguintes recursos ajudam você a começar rapidamente.'
-  aside:
-    image:
-      alt: Imagem em miniatura do vídeo intitulado B2B do Azure AD explicado
-      height: 110
-      src: ./media/index/video.png
-      width: 246
-    title: B2B do Azure AD explicado
-    href: 'https://www.youtube.com/watch?v=AhwrweCBdsc'
-    width: 246
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Saiba como convidar usuários e começar a trabalhar com a colaboração B2B.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              alt: null
-              src: ./media/index/i_security-management.png
-            text: Adicionar usuários convidados no portal do Azure
-            href: b2b-quickstart-add-guest-users-portal.md
-          - image:
-              alt: null
-              src: ./media/index/i_security-management.png
-            text: Adicionar um usuário convidado com o PowerShell
-            href: b2b-quickstart-invite-powershell.md
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: Saiba mais sobre como configurar a colaboração B2B e proteger os recursos da empresa.
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/b2b/tutorial-bulk-invite">Convidar usuários de B2B em massa com o PowerShell</a>
-          - html: <a href="/azure/active-directory/b2b/b2b-tutorial-require-mfa">Impor a autenticação multifator para usuários convidados de B2B</a>
+  manager: celested
+  ms.openlocfilehash: a1822b3bd6ec7950bc3c0ab9304ea2f60a7127e4
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70125167"
+landingContent:
+- title: Sobre a colaboração B2B
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é acesso do usuário convidado de B2B?
+      url: what-is-b2b.md
+- title: Convidar usuários B2B convidados
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Como um convidado B2B resgata um convite
+      url: redemption-experience.md
+  - linkListType: quickstart
+    links:
+    - text: Adicionar um usuário convidado ao diretório
+      url: b2b-quickstart-add-guest-users-portal.md
+    - text: Adicionar um usuário convidado com o PowerShell
+      url: b2b-quickstart-invite-powershell.md
+  - linkListType: how-to-guide
+    links:
+    - text: Como os administradores convidam os convidados
+      url: add-users-administrator.md
+    - text: Como os usuários convidam os convidados
+      url: add-users-information-worker.md
+- title: Personalizar colaboração B2B
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Habilitar colaboração B2B
+      url: delegate-invitations.md
+  - linkListType: deploy
+    links:
+    - text: Configurar a federação direta (versão prévia)
+      url: direct-federation.md
+    - text: Configurar a federação do Google
+      url: google-federation.md
+    - text: Configurar autenticação de senha de uso único (versão prévia)
+      url: one-time-passcode.md
+  - linkListType: tutorial
+    links:
+    - text: Impor autenticação multifator
+      url: b2b-tutorial-require-mfa.md
+  - linkListType: reference
+    links:
+    - text: Código de colaboração B2B e exemplos do PowerShell
+      url: code-samples.md
+- title: Gerenciar seus usuários convidados
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Entender o usuário B2B convidado
+      url: user-properties.md
+    - text: Grupos dinâmicos e convidados B2B
+      url: use-dynamic-groups.md
+  - linkListType: how-to-guide
+    links:
+    - text: Auditoria e relatório sobre os usuários B2B convidados
+      url: auditing-and-reporting.md
+    - text: Conceder permissões aos convidados B2B
+      url: add-guest-to-role.md
+    - text: Permitir ou bloquear as organizações
+      url: allow-deny-list.md
+  - linkListType: deploy
+    links:
+    - text: Configurar aplicativos SaaS para colaboração B2B
+      url: configure-saas-apps.md

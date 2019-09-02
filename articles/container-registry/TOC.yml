@@ -59,6 +59,8 @@
       items:
         - name: Enviar e receber uma imagem
           href: container-registry-get-started-docker-cli.md
+        - name: Efetuar push e pull de um artefato do OCI
+          href: container-registry-oci-artifacts.md
         - name: Exibir repositórios
           href: container-registry-repositories.md
         - name: Importar imagens de contêiner

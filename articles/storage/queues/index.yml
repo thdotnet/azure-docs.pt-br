@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: Documentação do Armazenamento de Filas do Azure – Armazenamento do Azure
+summary: O Armazenamento de Filas do Azure é um serviço usado para armazenar grandes quantidades de mensagens. Acesse as mensagens em qualquer lugar do mundo por meio dos protocolos HTTP ou HTTPS.
+metadata:
+  title: Documentação do Armazenamento de Filas do Azure – Armazenamento do Azure
+  description: O Armazenamento de Filas do Azure é um serviço usado para armazenar grandes quantidades de mensagens. Acesse as mensagens em qualquer lugar do mundo por meio dos protocolos HTTP ou HTTPS.
+  services: storage
+  ms.service: storage
+  ms.subservice: queues
+  ms.topic: landing-page
+  ms.collection: collection
+  author: mhopkins-msft
+  ms.author: mhopkins
+  ms.date: 08/27/2019
+  ms.openlocfilehash: 5de22a49dcc985ca95ee97d9de77180e2c56765b
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70129407"
+landingContent:
+- title: Sobre as Filas do Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são as Filas do Azure?
+      url: storage-queues-introduction.md
+- title: Introdução
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Criar uma fila e adicionar uma mensagem com o portal do Azure
+      url: storage-quickstart-queues-portal.md
+    - text: Usar o .NET para criar uma fila no Armazenamento do Azure
+      url: storage-quickstart-queues-dotnet.md
+- title: Desenvolver com filas
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Introdução ao armazenamento de Fila do Azure usando o .NET
+      url: storage-dotnet-how-to-use-queues.md
+    - text: Como usar o Armazenamento de Fila no Java
+      url: storage-java-how-to-use-queue-storage.md
+    - text: Como usar o Armazenamento de Fila do Node.js
+      url: storage-nodejs-how-to-use-queues.md
+    - text: Como usar o armazenamento de filas do C++
+      url: storage-c-plus-plus-how-to-use-queues.md
+    - text: Como usar o Armazenamento de fila do Python
+      url: storage-python-how-to-use-queue-storage.md
+- title: Gerenciar filas
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Executar operações de armazenamento de Fila do Azure com o Azure PowerShell
+      url: storage-powershell-how-to-use-queues.md
+- title: Tutorial
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Trabalhar com as filas de armazenamento do Azure (.NET)
+      url: storage-tutorial-queues.md

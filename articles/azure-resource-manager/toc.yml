@@ -58,6 +58,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager'
 - name: Conceitos
   items:
+    - name: Implantações de modelo
+      href: template-deployment-overview.md
     - name: Estrutura de arquivos de modelo
       displayName: 'parameters,variables,resources,outputs,condition'
       href: resource-group-authoring-templates.md
@@ -83,6 +85,8 @@
   items:
     - name: Criar modelos
       items:
+        - name: Ferramenta de desenvolvimento – VS Code
+          href: resource-manager-tools-vs-code.md
         - name: Criar modelo
           href: how-to-create-template.md
         - name: Nome e tipo do recurso filho

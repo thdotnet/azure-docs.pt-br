@@ -1,51 +1,95 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Documentação do Gerenciamento de Aplicativos
+### YamlMime:Landing
+title: Documentação do gerenciamento de aplicativos
+summary: O Azure Active Directory fornece acesso seguro e ininterrupto a aplicativos locais e na nuvem. Além disso, não é necessário gerenciar senhas. Os usuários finais podem entrar uma vez para acessar o Office 365 e milhares de outros aplicativos. Saiba como gerenciar e implantar aplicativos com nossos inícios rápidos, tutoriais e orientações.
 metadata:
-  title: Documentação do gerenciamento de aplicativos do Azure AD – Azure Active Directory
-  description: Saiba como gerenciar e implantar outros aplicativos com o Azure Active Directory.
-  services: active-directory
-  author: barbkess
-  manager: daveba
-  layout: LandingPage
-  ms.assetid: null
+  title: Documentação do gerenciamento de aplicativos
+  description: O Azure Active Directory fornece acesso seguro e ininterrupto a aplicativos locais e na nuvem. Além disso, não é necessário gerenciar senhas. Os usuários finais podem entrar uma vez para acessar o Office 365 e milhares de outros aplicativos. Saiba como gerenciar e implantar aplicativos com nossos inícios rápidos, tutoriais e orientações.
   ms.service: active-directory
+  ms.subservice: manage-apps
+  ms.workload: identity
   ms.topic: landing-page
-  ms.date: 09/14/2018
-  ms.author: barbkess
-abstract:
-  description: 'O Azure Active Directory fornece acesso seguro e ininterrupto a aplicativos locais e na nuvem. Além disso, não é necessário gerenciar senhas. Os usuários finais podem entrar uma vez para acessar o Office 365 e milhares de outros aplicativos. Saiba como gerenciar e implantar aplicativos com nossos inícios rápidos, tutoriais e orientações.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video.png
-      width: 250
-    title: 'Proteger o acesso aos seus aplicativos com o Azure AD (1:47)'
-    href: 'https://youtu.be/BSUuXXcJKCk/'
-    width: 250
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Saiba como adicionar um aplicativo para que os usuários o acessem por meio do Azure Active Directory.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_protect.svg'
-            text: Adicionar um aplicativo
-            href: 'https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal'
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_protect.svg'
-            text: Exibir seus aplicativos
-            href: 'https://docs.microsoft.com/azure/active-directory/manage-apps/view-applications-portal'
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: Saiba como habilitar um processo de entrada simples e seguro para seus aplicativos.
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://docs.microsoft.com/azure/active-directory/saas-apps/">Tutoriais de aplicativos SaaS</a>'
-          - html: <a href="/azure/active-directory/manage-apps/application-proxy-add-on-premises-application">Adicionar um aplicativo local por meio do Proxy de Aplicativo</a>
+  ms.date: 08/16/2019
+  author: msmimart
+  ms.author: mimart
+  manager: celested
+  ms.openlocfilehash: acb99eab233836f46c1e1dfe4c857fb2e80ed3de
+  ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/28/2019
+  ms.locfileid: "70127540"
+landingContent:
+- title: Sobre o gerenciamento de aplicativos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é gerenciamento de aplicativos?
+      url: what-is-application-management.md
+- title: Gerenciar aplicativos de nuvem e logon único
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Entendimento do logon único
+      url: what-is-single-sign-on.md
+    - text: Experiências do usuário final
+      url: end-user-experiences.md
+  - linkListType: quickstart
+    links:
+    - text: Adicionar um aplicativo de galeria
+      url: add-application-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Adicionar um aplicativo inexistente na galeria
+      url: add-non-gallery-app.md
+    - text: Configurar o logon único
+      url: configure-single-sign-on-non-gallery-applications.md
+    - text: Atribuir um usuário ou um grupo a um aplicativo
+      url: assign-user-or-group-access-portal.md
+- title: Provisionar usuários e grupos a um aplicativo
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o provisionamento automático de usuários?
+      url: user-provisioning.md
+  - linkListType: concept
+    links:
+    - text: Usar o SCIM para provisionar usuários e grupos
+      url: use-scim-to-provision-users-and-groups.md
+  - linkListType: how-to-guide
+    links:
+    - text: Configurar o provisionamento automático de usuário
+      url: configure-automatic-user-provisioning-portal.md
+    - text: Personalizar mapeamentos do atributo
+      url: customize-application-attributes.md
+    - text: Verificar status do provisionamento
+      url: application-provisioning-when-will-provisioning-finish-specific-user.md
+  - linkListType: reference
+    links:
+    - text: Escrever expressões para mapeamentos de atributo
+      url: functions-for-customizing-application-data.md
+- title: Publicar aplicativos locais com o Proxy de Aplicativo
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o Proxy de Aplicativo?
+      url: what-is-application-proxy.md
+  - linkListType: concept
+    links:
+    - text: Planejar o Proxy de Aplicativo
+      url: application-proxy-deployment-plan.md
+  - linkListType: tutorial
+    links:
+    - text: Adicionar um aplicativo local
+      url: application-proxy-add-on-premises-application.md
+  - linkListType: how-to-guide
+    links:
+    - text: Configurar conectores com servidores proxy
+      url: application-proxy-configure-connectors-with-proxy-servers.md
+    - text: Configurar uma home page personalizada
+      url: application-proxy-configure-custom-home-page.md
+  - linkListType: deploy
+    links:
+    - text: Publicar a Área de Trabalho Remota com o Proxy de Aplicativo
+      url: application-proxy-integrate-with-remote-desktop-services.md
+    - text: Habilitar acesso remoto ao SharePoint com o Proxy de Aplicativo do Azure AD
+      url: application-proxy-integrate-with-sharepoint-server.md
