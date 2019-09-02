@@ -168,7 +168,7 @@ Cada modelo inclui código de exemplo que usa dados simulados de sensor do módu
         print ( "Total calls confirmed: %d\n" % TWIN_CALLBACKS )
     ```
 
-6. Na classe **HubManager**, adicione uma nova linha ao método ** __** para inicializar a função **module_twin_callback** que você acabou de adicionar:
+6. Na classe **HubManager**, adicione uma nova linha ao método **__init__** para inicializar a função **module_twin_callback** que você acabou de adicionar:
 
     ```python
     # Sets the callback when a module twin's desired properties are updated.
