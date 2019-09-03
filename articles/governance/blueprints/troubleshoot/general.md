@@ -7,13 +7,12 @@ ms.date: 12/11/2018
 ms.topic: troubleshooting
 ms.service: blueprints
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 42fdd6645a7a0e7cd9a2f0a7bc969e8eee62758c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8cbefcbadc14c1249d2783f1539e40c99c3be66c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60874953"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231555"
 ---
 # <a name="troubleshoot-errors-using-azure-blueprints"></a>Solucionar problemas usando o Azure Blueprint
 
@@ -25,9 +24,9 @@ Muitos erros serão o resultado da atribuição de um blueprint para um escopo. 
 
 1. Selecione **Todos os serviços** no painel esquerdo. Pesquise e selecione **Blueprints**.
 
-1. Selecione **atribuído plantas** da página à esquerda e use a caixa de pesquisa para filtrar as atribuições de especificações técnicas para localizar a atribuição com falha. Você também pode classificar a tabela de atribuições de acordo com a coluna **Estado de Provisionamento** para ver todas as atribuições com falha agrupadas.
+1. Selecione **plantas atribuídas** na página à esquerda e use a caixa de pesquisa para filtrar as atribuições de plano gráfico para localizar a atribuição com falha. Você também pode classificar a tabela de atribuições de acordo com a coluna **Estado de Provisionamento** para ver todas as atribuições com falha agrupadas.
 
-1. Botão esquerdo do mouse sobre o plano gráfico com o _Failed_ status ou o botão direito do mouse e selecione **exibir detalhes da atribuição**.
+1. Clique no plano gráfico com o status com _falha_ ou clique com o botão direito do mouse e selecione **Exibir detalhes da atribuição**.
 
 1. Uma faixa vermelha que falhou a atribuição de aviso está na parte superior da página de atribuição de plano gráfico. Clique em qualquer lugar na faixa para obter mais detalhes.
 
@@ -64,12 +63,12 @@ Passar um parâmetro de blueprint que usa uma função, como `[resourceGroup().t
 
 #### <a name="resolution"></a>Resolução
 
-Para passar uma função como um parâmetro, faça o escape de toda a cadeia de caracteres com `[`, de modo que o parâmetro de blueprint se pareça com `[[resourceGroup().tags.myTag]`. O caractere de escape faz com que o Blueprints trate o valor como uma cadeia de caracteres ao processar o blueprint. O Blueprints, em seguida, coloca a função no artefato, permitindo que ela seja dinâmica conforme o esperado. Para obter mais informações, consulte [estrutura do arquivo de modelo - sintaxe](../../../azure-resource-manager/resource-group-authoring-templates.md#syntax).
+Para passar uma função como um parâmetro, faça o escape de toda a cadeia de caracteres com `[`, de modo que o parâmetro de blueprint se pareça com `[[resourceGroup().tags.myTag]`. O caractere de escape faz com que o Blueprints trate o valor como uma cadeia de caracteres ao processar o blueprint. O Blueprints, em seguida, coloca a função no artefato, permitindo que ela seja dinâmica conforme o esperado. Para obter mais informações, consulte [estrutura do arquivo de modelo-sintaxe](../../../azure-resource-manager/resource-group-authoring-templates.md#syntax).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Se você não encontrou seu problema ou não conseguiu resolver seu problema, visite um dos seguintes canais para obter mais suporte:
 
-- Obtenha respostas de especialistas do Azure por meio [fóruns do Azure](https://azure.microsoft.com/support/forums/).
+- Obtenha respostas de especialistas do Azure por meio dos [fóruns do Azure](https://azure.microsoft.com/support/forums/).
 - Conecte-se a [@AzureSupport](https://twitter.com/azuresupport) – a conta oficial do Microsoft Azure para melhorar a experiência do cliente conectando-se à comunidade do Azure para os recursos certos: respostas, suporte e especialistas.
 - Se precisar de mais ajuda, você pode registrar um incidente de suporte do Azure. Vá para o [site de suporte do Azure](https://azure.microsoft.com/support/options/) e selecione **Obter Suporte**.

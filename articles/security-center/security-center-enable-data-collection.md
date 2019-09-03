@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/06/2019
+ms.date: 06/10/2019
 ms.author: v-mohabe
-ms.openlocfilehash: e87ea5f6d8a92f18fc1b289ebf9ffd1cc0326812
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
-ms.translationtype: HT
+ms.openlocfilehash: 12739bf230eb7a2d5afa4edd57dbc2761907ec4e
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845908"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231342"
 ---
 # <a name="data-collection-in-azure-security-center"></a>Coleta de dados na Central de Segurança do Azure
 A central de segurança coleta dados de suas VMs (máquinas virtuais) do Azure, conjuntos de dimensionamento de máquinas virtuais, contêineres de IaaS e computadores não Azure (incluindo locais) para monitorar vulnerabilidades de segurança e ameaças. Os dados são coletados usando o agente de Log Analytics, que lê várias configurações relacionadas à segurança e logs de eventos do computador e copia os dados para o espaço de trabalho para análise. Exemplos desses dados são: tipo e versão do sistema operacional, logs do sistema operacional (logs de eventos do Windows), processos em execução, nome do computador, endereços IP e usuário conectado. O agente de Log Analytics também copia arquivos de despejo de memória para seu espaço de trabalho.
@@ -41,7 +41,7 @@ Para coletar os dados dos computadores, você deve ter o agente de Log Analytics
 > O provisionamento automático é desativado por padrão. Para configurar a Central de Segurança para instalar o provisionamento automático por padrão, defina-o como **Ativado**.
 >
 
-Quando o provisionamento automático está ativado, a central de segurança provisiona o agente de Log Analytics em todas as VMs do Azure com suporte e quaisquer novas que forem criadas. O provisionamento automático é altamente recomendável, mas a instalação manual do agente também está disponível. [Saiba como instalar a extensão do agente de log Analytics](#manualagent).
+Quando o provisionamento automático está ativado, a central de segurança provisiona o agente de Log Analytics em todas as VMs do Azure com suporte e quaisquer novas que forem criadas. O provisionamento automático é altamente recomendável, mas a instalação manual do agente também está disponível. [Saiba como instalar a extensão do agente de log Analytics](#manual-agent).
 
 
 
@@ -59,7 +59,7 @@ Para habilitar o provisionamento automático do agente de Log Analytics:
 
 >[!NOTE]
 > - Para obter instruções sobre como provisionar uma instalação já existente, veja [Provisionamento automático em caso de uma instalação de agente pré-existente](#preexisting).
-> - Para obter instruções sobre o provisionamento manual, consulte [instalar manualmente a extensão do agente de log Analytics](#manualagent).
+> - Para obter instruções sobre o provisionamento manual, consulte [instalar manualmente a extensão do agente de log Analytics](#manual-agent).
 > - Para ver as instruções sobre como desativar o provisionamento automático, consulte [Desativar o provisionamento automático](#offprovisioning).
 > - Para obter instruções sobre como integrar a Central de Segurança usando o PowerShell, consulte [Automatizar a integração da Central de Segurança do Azure usando o PowerShell](security-center-powershell-onboarding.md).
 >
@@ -151,7 +151,7 @@ A seleção de uma camada de coleta de dados na Central de Segurança do Azure a
 > 
 > É possível escolher a diretiva de filtragem correta para assinaturas e workspaces de quatro conjuntos de eventos a serem armazenados no workspace: 
 
-- **Nenhum** – Desabilitar armazenamento de eventos de segurança. Esta é a configuração padrão.
+- **Nenhum** – Desabilitar armazenamento de eventos de segurança. Essa é a configuração padrão.
 - **Mínimo** – um conjunto menor de eventos, para clientes que desejam minimizar o volume de eventos.
 - **Comum** – este é um conjunto de eventos que satisfaz a maioria dos clientes, garantindo uma trilha de auditoria completa.
 - **Todos os eventos** – Para clientes que querem garantir que todos os eventos sejam armazenados.
@@ -240,7 +240,7 @@ Se você desativar o provisionamento automático que estava ativado anteriorment
 >  Desabilitar o provisionamento automático não remove o agente de Log Analytics das VMs do Azure em que o agente foi provisionado. Para obter informações sobre como remover a extensão do OMS, consulte [Como fazer para remover extensões OMS instaladas pela Central de Segurança](security-center-faq.md#remove-oms).
 >
     
-## Provisionamento manual de agente <a name="manualagent"></a>
+## Provisionamento manual de agente <a name="manual-agent"></a>
  
 Há várias maneiras de instalar o agente de Log Analytics manualmente. Verifique se o provisionamento automático está desabilitado ao efetuar a instalação manual.
 

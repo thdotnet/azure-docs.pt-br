@@ -7,13 +7,12 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 5c1bb1f959f920ea9bce23082ec531dc83d873ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9670433284ae963783b655322c4b18f748df52c5
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66356975"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231961"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Criando blueprints dinâmicos por meio de parâmetros
 
@@ -27,7 +26,7 @@ Um exemplo simples é o artefato do grupo de recursos. Quando um grupo de recurs
 
 A solução para esse problema é parâmetros. Blueprints permite que você defina o valor de cada propriedade do artefato durante a atribuição a uma assinatura. O parâmetro possibilita a reutilização de um blueprint que cria um grupo de recursos e outros recursos em uma única assinatura sem conflito.
 
-## <a name="blueprint-parameters"></a>Parâmetros de blueprint
+## <a name="blueprint-parameters"></a>Parâmetros de plano gráfico
 
 Por meio da API REST, os parâmetros podem ser criados no próprio blueprint. Esses parâmetros são diferentes dos parâmetros em cada um dos artefatos suportados. Quando um parâmetro é criado no blueprint, ele pode ser usado pelos artefatos nesse blueprint. Um exemplo pode ser o prefixo para nomenclatura do grupo de recursos. O artefato pode usar o parâmetro blueprint para criar um parâmetro "principalmente dinâmico". Como o parâmetro também pode ser definido durante a atribuição, esse padrão permite uma consistência que pode aderir às regras de nomenclatura. Para obter as etapas, confira [definindo parâmetros estáticos – parâmetro do nível de blueprint](#blueprint-level-parameter).
 
@@ -40,12 +39,12 @@ Essa medida de segurança impede a prática insegura de armazenar segredos junto
 - Nome do segredo do Key Vault
 - Versão do segredo do Key Vault
 
-Se usar a atribuição de planta uma **atribuído pelo sistema de identidade gerenciada**, o referenciado Key Vault _deve_ existir na mesma assinatura que a definição de planta é atribuída a.
+Se a atribuição Blueprint usar uma **identidade gerenciada atribuída pelo sistema**, o Key Vault referenciado _deverá_ existir na mesma assinatura à qual a definição de Blueprint está atribuída.
 
-Se usa a atribuição de planta uma **usuário atribuído a identidade gerenciada**, o referenciado Key Vault _pode_ existe em uma assinatura centralizada. A identidade gerenciada deve receber direitos apropriados no cofre de chaves antes da atribuição de planta.
+Se a atribuição Blueprint usar uma **identidade gerenciada atribuída pelo usuário**, o Key Vault referenciado _poderá_ existir em uma assinatura centralizada. A identidade gerenciada deve receber os direitos apropriados no Key Vault antes da atribuição de Blueprint.
 
 > [!IMPORTANT]
-> Em ambos os casos, o Cofre de chaves deve ter **habilitar o acesso ao Azure Resource Manager para implantação de modelo** configurado na **políticas de acesso** página. Para obter instruções sobre como habilitar esse recurso, confira [Key Vault – Habilitar implantação de modelo](../../../managed-applications/key-vault-access.md#enable-template-deployment).
+> Em ambos os casos, o Key Vault deve ter **habilitar acesso ao Azure Resource Manager para implantação de modelo** configurada na página **políticas de acesso** . Para obter instruções sobre como habilitar esse recurso, confira [Key Vault – Habilitar implantação de modelo](../../../managed-applications/key-vault-access.md#enable-template-deployment).
 
 Para obter mais informações sobre o Azure Key Vault, confira [Visão geral do Key Vault](../../../key-vault/key-vault-overview.md).
 
@@ -61,17 +60,17 @@ Um valor de parâmetro definido na definição de um blueprint é chamado de **p
 
 1. Selecione **Definições do blueprint** na página à esquerda.
 
-1. Clique em um projeto existente e, em seguida, clique em **blueprint de edição** ou clique em **+ criar blueprint** e preencha as informações sobre a **Noções básicas** guia.
+1. Clique em um plano gráfico existente e, em seguida, clique em **Editar Blueprint** ou clique em **+ criar plano gráfico** e preencha as informações na guia **noções básicas** .
 
 1. Clique em **Avançar: Artefatos** OU clique na guia **Artefatos**.
 
 1. Os artefatos adicionados ao blueprint que têm opções de parâmetro exibem **X de Y parâmetros populados** na coluna **Parâmetros**. Clique na linha do artefato para editar os seus parâmetros.
 
-   ![Parâmetros de plano gráfico em uma definição de planta](../media/parameters/parameter-column.png)
+   ![Parâmetros de Blueprint em uma definição de Blueprint](../media/parameters/parameter-column.png)
 
 1. A página **Editar artefato** exibe opções de valor apropriadas para o artefato clicado. Cada parâmetro no artefato tem um título, uma caixa de valor e uma caixa de seleção. Defina a caixa como desmarcada para torná-la um **parâmetro estático**. No exemplo abaixo, apenas _Local_ é um **parâmetro estático**, pois está desmarcado e _Nome do Grupo de Recursos_ está marcado.
 
-   ![Parâmetros estáticos do plano gráfico em um artefato do blueprint](../media/parameters/static-parameter.png)
+   ![Parâmetros estáticos do Blueprint em um artefato do Blueprint](../media/parameters/static-parameter.png)
 
 #### <a name="setting-static-parameters-from-rest-api"></a>Definindo parâmetros estáticos com base na API REST
 
@@ -90,7 +89,7 @@ Ao criar um blueprint por meio da API REST, é possível criar [parâmetros de b
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Corpo da solicitação
+- Corpo de Solicitação
 
   ```json
   {
@@ -123,7 +122,7 @@ O exemplo de API REST a seguir cria um artefato de atribuição de função no b
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/roleOwner?api-version=2018-11-01-preview
   ```
 
-- Corpo da solicitação
+- Corpo de Solicitação
 
   ```json
   {
@@ -148,7 +147,7 @@ A criação de **parâmetros estáticos** em um artefato é semelhante, mas usa 
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/MyBlueprint/artifacts/policyStorageTags?api-version=2018-11-01-preview
   ```
 
-- Corpo da solicitação
+- Corpo de Solicitação
 
   ```json
   {
@@ -170,7 +169,7 @@ A criação de **parâmetros estáticos** em um artefato é semelhante, mas usa 
 
 ### <a name="dynamic-parameters"></a>Parâmetros dinâmicos
 
-O oposto de um parâmetro estático é um **parâmetro dinâmico**. Esse parâmetro não está definido no blueprint, mas é definido durante cada atribuição do blueprint. No exemplo do grupo de recursos, o uso de um parâmetro **dinâmico** faz sentido para o nome do grupo de recursos. Ele fornece um nome diferente para cada designação do blueprint. Para obter uma lista de funções de especificação técnica, consulte a [blueprint funções](../reference/blueprint-functions.md) referência.
+O oposto de um parâmetro estático é um **parâmetro dinâmico**. Esse parâmetro não está definido no blueprint, mas é definido durante cada atribuição do blueprint. No exemplo do grupo de recursos, o uso de um parâmetro **dinâmico** faz sentido para o nome do grupo de recursos. Ele fornece um nome diferente para cada designação do blueprint. Para obter uma lista de funções de plano gráfico, consulte a referência de [funções de Blueprint](../reference/blueprint-functions.md) .
 
 #### <a name="setting-dynamic-parameters-in-the-portal"></a>Definindo parâmetros dinâmicos no portal
 
@@ -178,15 +177,15 @@ O oposto de um parâmetro estático é um **parâmetro dinâmico**. Esse parâme
 
 1. Selecione **Definições do blueprint** na página à esquerda.
 
-1. Clique com o botão direito do mouse no blueprint que você deseja atribuir. Selecione **Assign blueprint** ou clique no plano de gráfico que você deseja atribuir e clique no **atribuir blueprint** botão.
+1. Clique com o botão direito do mouse no blueprint que você deseja atribuir. Selecione **atribuir plano gráfico** ou clique no plano gráfico que você deseja atribuir e clique no botão **atribuir Blueprint** .
 
-1. No **Assign blueprint** página, localize o **parâmetros de artefato** seção. Cada artefato com pelo menos um **parâmetro dinâmico** exibe o artefato e as opções de configuração. Forneça os valores necessários aos parâmetros antes de atribuir o blueprint. No exemplo abaixo, _Nome_ é um **parâmetro dinâmico** que deve ser definido para concluir a atribuição do blueprint.
+1. Na página **atribuir Blueprint** , localize a seção **parâmetros de artefato** . Cada artefato com pelo menos um **parâmetro dinâmico** exibe o artefato e as opções de configuração. Forneça os valores necessários aos parâmetros antes de atribuir o blueprint. No exemplo abaixo, _Nome_ é um **parâmetro dinâmico** que deve ser definido para concluir a atribuição do blueprint.
 
-   ![Parâmetro dinâmico do BluePrint durante a atribuição de planta](../media/parameters/dynamic-parameter.png)
+   ![Parâmetro dinâmico do Blueprint durante a atribuição do Blueprint](../media/parameters/dynamic-parameter.png)
 
 #### <a name="setting-dynamic-parameters-from-rest-api"></a>Definindo parâmetros dinâmicos com base na API REST
 
-Definir **parâmetros dinâmicos** durante a atribuição é feito inserindo o valor diretamente. Em vez de usar uma função, como [parameters()](../reference/blueprint-functions.md#parameters), o valor fornecido é uma cadeia de caracteres apropriada. Os artefatos de um grupo de recursos são definidos com as propriedades "nome do modelo", **nome** e **local**. Todos os outros parâmetros para o artefato incluído são definidos em **parâmetros** com um par de **\<nomes\>** e **valor**. Se o blueprint estiver configurado para um parâmetro dinâmico que não é fornecido durante a atribuição, a atribuição falhará.
+Definir **parâmetros dinâmicos** durante a atribuição é feito inserindo o valor diretamente. Em vez de usar uma função, como [Parameters ()](../reference/blueprint-functions.md#parameters), o valor fornecido é uma cadeia de caracteres apropriada. Os artefatos de um grupo de recursos são definidos com as propriedades "nome do modelo", **nome** e **local**. Todos os outros parâmetros para o artefato incluído são definidos em **parâmetros** com um par de **\<nomes\>** e **valor**. Se o blueprint estiver configurado para um parâmetro dinâmico que não é fornecido durante a atribuição, a atribuição falhará.
 
 - URI da API REST
 
@@ -194,7 +193,7 @@ Definir **parâmetros dinâmicos** durante a atribuição é feito inserindo o v
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Blueprint/blueprintAssignments/assignMyBlueprint?api-version=2018-11-01-preview
   ```
 
-- Corpo da solicitação
+- Corpo de Solicitação
 
   ```json
   {
@@ -239,7 +238,7 @@ Definir **parâmetros dinâmicos** durante a atribuição é feito inserindo o v
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Consulte a lista de [blueprint funções](../reference/blueprint-functions.md).
+- Consulte a lista de [funções de plantas](../reference/blueprint-functions.md).
 - Saiba mais sobre o [ciclo de vida do blueprint](lifecycle.md).
 - Saiba como personalizar a [ordem de sequenciamento de blueprint](sequencing-order.md).
 - Saiba como usar o [bloqueio de recurso de blueprint](resource-locking.md).

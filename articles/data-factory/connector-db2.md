@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 16dd40a521a9b0a240574c2f177f896c31508a37
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: 2bdec0c70e9f11ca40e0ff9e1aa87898c94e119c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211714"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232996"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Copiar dados do DB2 usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -32,7 +32,6 @@ Você pode copiar dados de um banco de dados DB2 para qualquer armazenamento de 
 
 Especificamente, este conector DB2 dá suporte às plataformas e versões do IBM DB2 a seguir com as versões 9, 10 e 11 do SQL Access Manager (SQLAM) da Distributed Relational Database Architecture (DRDA):
 
-* IBM DB2 para z/OS 12
 * IBM DB2 para z/OS 11.1
 * IBM DB2 para z/OS 10.1
 * IBM DB2 para i 7.3

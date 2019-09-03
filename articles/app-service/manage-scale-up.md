@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cebd6e5c120bdaa5e7dd5b681366e07087cd3498
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: d2c3b09277963781b90f65705e03f936f81b14ee
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70069185"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232368"
 ---
 # <a name="scale-up-an-app-in-azure-app-service"></a>Escalar verticalmente um aplicativo no serviço Azure App
 
@@ -85,11 +85,8 @@ Para uma tabela de limites de serviço, cotas, restrições e recursos com supor
 
 ## <a name="more-resources"></a>Mais recursos
 
-Para assistir a vídeos sobre o dimensionamento de aplicativos do Serviço de Aplicativo, consulte os seguintes recursos:
- 
-* [Quando dimensionar Sites do Azure - com Stefan Schackow](https://azure.microsoft.com/resources/videos/azure-web-sites-free-vs-standard-scaling/)
-* [Dimensionamento automático de Sites do Azure, CPU ou programado - com Stefan Schackow](https://azure.microsoft.com/resources/videos/auto-scaling-azure-web-sites/)
-* [Como dimensionar sites do Azure - com Stefan Schackow](https://azure.microsoft.com/resources/videos/how-azure-web-sites-scale/)
+[Escalonar a contagem de instâncias manualmente ou automaticamente](../monitoring-and-diagnostics/insights-how-to-scale.md)  
+[Configurar camada de PremiumV2 para o serviço de aplicativo](app-service-configure-premium-tier.md)
 
 <!-- LINKS -->
 [vmsizes]:https://azure.microsoft.com/pricing/details/app-service/

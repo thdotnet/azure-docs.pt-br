@@ -9,30 +9,34 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 07/02/2019
+ms.date: 08/29/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: d0a81d5d7ce8e7569b77007b6ad9c322cf626f16
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 2f2dea922b7a3ba45ad6493ce94f0c52649dfa68
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67670693"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70230985"
 ---
 # <a name="assets"></a>Ativos
 
-Nos serviços de mídia do Azure, uma [ativo](https://docs.microsoft.com/rest/api/media/assets) contém informações sobre arquivos digitais armazenados no armazenamento do Azure (incluindo vídeo, áudio, imagens, coleções de miniaturas, faixas de texto e arquivos de legenda oculta). 
+Nos serviços de mídia do Azure, um [ativo](https://docs.microsoft.com/rest/api/media/assets) contém informações sobre arquivos digitais armazenados no armazenamento do Azure (incluindo vídeo, áudio, imagens, coleções de miniaturas, faixas de texto e arquivos de legenda codificada). 
 
 Um ativo é mapeado para um contêiner de blob na [conta de Armazenamento do Microsoft Azure](storage-account-concept.md) e os arquivos no ativo são armazenados como blob de blocos nesse contêiner. Os Serviços de Mídia oferecem suporte a camadas de Blob quando a conta usa Armazenamento de uso geral v2 (GPv2). Com o GPv2, você pode mover arquivos para o [armazenamento esporádico ou para arquivar](https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers). O armazenamento **de Arquivamento** é adequado para arquivar arquivos fontes quando não forem mais necessário (por exemplo, após terem sido decodificados).
 
 A camada de armazenamento de **Arquivamento** só é recomendada para arquivos de origem muito grandes que já tenham sido codificados e a saída do trabalho de codificação foi colocada em um contêiner de blobs de saída. Os blobs no contêiner de saída que você deseja associar a um ativo e usar para transmitir ou analisar seu conteúdo, deve existir em uma camada de armazenamento de **frequente** ou **esporádico**.
 
+### <a name="naming-blobs"></a>Nomeando BLOBs
+
+Os nomes de Arquivos/blobs em um ativo devem seguir os [requisitos de nome do blob](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata) e os requisitos de nome do [NTFS](https://docs.microsoft.com/windows/win32/fileio/naming-a-file). O motivo para esses requisitos é que os arquivos podem ser copiados do armazenamento de BLOBs para um disco NTFS local para processamento.
+
 ## <a name="upload-digital-files-into-assets"></a>Carregar os arquivos digitais em Ativos
 
-Depois que os arquivos digitais são carregados no armazenamento e associados a um ativo, pode ser usados nos serviços de mídia, codificação, streaming, analisando os fluxos de trabalho de conteúdo. Um dos fluxos de trabalho dos Serviços de Mídia do Azure comuns é carregar, codificar e transmitir um arquivo. Esta seção descreve as etapas gerais.
+Depois que os arquivos digitais são carregados no armazenamento e associados a um ativo, eles podem ser usados na codificação de serviços de mídia, no streaming, na análise de fluxos de trabalho de conteúdo. Um dos fluxos de trabalho dos Serviços de Mídia do Azure comuns é carregar, codificar e transmitir um arquivo. Esta seção descreve as etapas gerais.
 
 > [!TIP]
-> Antes de começar a desenvolver, examine [desenvolver com APIs dos serviços de mídia v3](media-services-apis-overview.md) (inclui informações sobre como acessar as APIs, as convenções de nomenclatura, etc.)
+> Antes de começar a desenvolver, examine o [desenvolvimento com as APIs dos serviços de mídia v3](media-services-apis-overview.md) (inclui informações sobre como acessar APIs, convenções de nomenclatura, etc.)
 
 1. Use a API dos Serviços de Mídia do Azure v3 para criar um novo ativo de "entrada". Esta operação cria um contêiner na conta de armazenamento associada com sua conta de Serviços de Mídia do Azure. A API retorna o nome do contêiner (por exemplo, `"container": "asset-b8d8b68a-2d7f-4d8c-81bb-8c7bbbe67ee4"`).
    
@@ -87,17 +91,17 @@ curl -X PUT \
 
 Para obter um exemplo completo, consulte [Criar uma entrada de trabalho de um arquivo local](job-input-from-local-file-how-to.md). Nos Serviços de Mídia do Azure v3, entrada de um trabalho também pode ser criada de URLs HTTPS (consulte [criar uma entrada de trabalho de uma URL HTTPS](job-input-from-http-how-to.md)).
 
-## <a name="map-v3-asset-properties-to-v2"></a>Mapear propriedades de ativo v3 v2
+## <a name="map-v3-asset-properties-to-v2"></a>Mapear Propriedades de ativos V3 para v2
 
-A tabela a seguir mostra como o [ativo](https://docs.microsoft.com/rest/api/media/assets/createorupdate#asset)do propriedades na v3 são mapeadas para propriedades do ativo no v2.
+A tabela a seguir mostra como as propriedades do [ativo](https://docs.microsoft.com/rest/api/media/assets/createorupdate#asset)em v3 são mapeadas para as propriedades do ativo na v2.
 
-|Propriedades de V3|Propriedades de v2|
+|Propriedades v3|Propriedades de v2|
 |---|---|
-|ID - (exclusivo) o caminho completo do Azure Resource Manager, veja exemplos na [ativo](https://docs.microsoft.com/rest/api/media/assets/createorupdate)||
-|nome – (exclusivo) consulte [convenções de nomenclatura](media-services-apis-overview.md#naming-conventions) ||
+|ID-(exclusivo) o caminho de Azure Resource Manager completo, consulte os exemplos no [ativo](https://docs.microsoft.com/rest/api/media/assets/createorupdate)||
+|nome-(exclusivo) consulte [convenções de nomenclatura](media-services-apis-overview.md#naming-conventions) ||
 |alternateId|AlternateId|
-|assetId|ID - valor (exclusivo) começa com o `nb:cid:UUID:` prefixo.|
-|criado|Criado|
+|assetId|ID-o valor (exclusivo) começa com `nb:cid:UUID:` o prefixo.|
+|criado|Criado em|
 |description|Nome|
 |lastModified|LastModified|
 |storageAccountName|StorageAccountName|
@@ -108,10 +112,10 @@ A tabela a seguir mostra como o [ativo](https://docs.microsoft.com/rest/api/medi
 
 Para proteger os Ativos em repouso, os ativos devem ser criptografados pela criptografia do armazenamento. A tabela a seguir mostra como a criptografia do armazenamento funciona nos Serviços de Mídia:
 
-|Opção de criptografia|DESCRIÇÃO|Serviços de Mídia v2|Serviços de Mídia v3|
+|Opção de criptografia|Descrição|Serviços de Mídia v2|Serviços de Mídia v3|
 |---|---|---|---|
 |Criptografia do Armazenamento dos Serviços de Mídia|Criptografia AES-256, chave gerenciada pelos Serviços de Mídia|Com suporte<sup>(1)</sup>|Sem suporte<sup>(2)</sup>|
-|[Criptografia do Serviço de Armazenamento para dados em repouso](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Criptografia do servidor oferecida pelo Armazenamento do Microsoft Azure, chave gerenciada pelo Azure ou pelo cliente|Com suporte|Com suporte|
+|[Criptografia do Serviço de Armazenamento para dados em repouso](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Criptografia do servidor oferecida pelo Armazenamento do Microsoft Azure, chave gerenciada pelo Azure ou pelo cliente|Suportado|Suportado|
 |[Criptografia do cliente de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Criptografia do cliente oferecida pelo armazenamento do Azure, chave gerenciada pelo cliente no Key Vault|Sem suporte|Sem suporte|
 
 <sup>1</sup> Enquanto os Serviços de Mídia deem suporte para tratamento de conteúdo sem qualquer forma de criptografia/limpo, não é recomendável fazer isso.

@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/04/2019
 ms.author: raynew
-ms.openlocfilehash: c31a9fde50de8190cdd7bc19600344a8e58cf60b
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: e2faa47a58283623747ae569de22e1c57df1a51f
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827329"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231137"
 ---
 # <a name="azure-migrate-appliance"></a>Dispositivo de Migrações para Azure
 
@@ -72,6 +72,9 @@ Taxa de transferência de gravação da NIC (MB por segundo) | net.transmitted.a
 
 ## <a name="collected-metadata-vmware"></a>Metadados coletados-VMware
 
+> [!NOTE]
+> Os metadados descobertos pelo dispositivo de migrações para Azure são usados para ajudá-lo a dimensionar seus aplicativos conforme você os migra para o Azure, executar análise de adequação do Azure, análise de dependência de aplicativos e planejamento de custos. A Microsoft não usa esses dados em relação a nenhuma auditoria de conformidade de licença.
+
 Aqui está a lista completa de metadados de VM do VMware que o dispositivo coleta e envia para o Azure.
 
 **Dados** | **Contador**
@@ -122,6 +125,9 @@ Detalhes do host por VM | ((HostSystem)container).VM
 
 
 ## <a name="collected-performance-data-hyper-v"></a>Coletados de dados de desempenho-Hyper-V
+
+> [!NOTE]
+> Os metadados descobertos pelo dispositivo de migrações para Azure são usados para ajudá-lo a dimensionar seus aplicativos conforme você os migra para o Azure, executar análise de adequação do Azure, análise de dependência de aplicativos e planejamento de custos. A Microsoft não usa esses dados em relação a nenhuma auditoria de conformidade de licença.
 
 Aqui estão os dados de desempenho da VM VMware que o dispositivo coleta e envia para o Azure.
 

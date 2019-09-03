@@ -8,12 +8,12 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 7da31e09157b8877db4d36d0f061f29433d02d11
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: b53f293f6289377d85f4346933f7edb7369065cf
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515621"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231639"
 ---
 # <a name="control-mapping-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Mapeamento de controle dos exemplos do plano gráfico do Reino Unido e do Reino Unido NHS
 
@@ -39,7 +39,7 @@ Entender em que local os recursos do Azure podem ter configurações de criptogr
 - A transferência segura para contas de armazenamento deve ser habilitada
 - Service Fabric clusters devem ter a propriedade ClusterProtectionLevel definida como EncryptAndSign
 - A Transparent Data Encryption em bancos de dados SQL deve ser habilitada
-- Implantar a transparent data encryption do BD SQL
+- Implantar a Transparent Data Encryption no BD SQL
 - Exigir a criptografia em contas do Data Lake Storage
 - Locais permitidos (foram embutidos em código para "sul do Reino Unido" e "oeste do Reino Unido")
 - Locais permitidos para grupos de recursos (foi embutido no código "sul do Reino Unido" e "oeste do Reino Unido")
@@ -48,9 +48,9 @@ Entender em que local os recursos do Azure podem ter configurações de criptogr
 
 Este projeto ajuda você a gerenciar as vulnerabilidades do sistema de informações atribuindo definições de [Azure Policy](../../../policy/overview.md) que monitoram a proteção de ponto de extremidade ausente, atualizações do sistema ausentes, vulnerabilidades do sistema operacional, vulnerabilidades do SQL e virtual vulnerabilidades do computador. Esses insights fornecem informações em tempo real sobre o estado de segurança dos recursos implantados e podem ajudá-lo a priorizar as ações de correção.
 
-- Monitorar Endpoint Protection ausente na Central de Segurança do Azure
-- As atualizações do sistema devem ser instaladas em seus computadores
-- Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas
+- monitora o Endpoint Protection ausente na Central de Segurança do Azure
+- As atualizações do sistema devem ser instaladas em suas máquinas
+- As vulnerabilidades da configuração de segurança nas máquinas devem ser corrigidas
 - As vulnerabilidades nos bancos de dados SQL devem ser corrigidas
 - As vulnerabilidades devem ser corrigidas por uma solução de Avaliação de Vulnerabilidades
 
@@ -60,7 +60,7 @@ Este projeto ajuda a proteger os ativos do sistema de informações atribuindo d
 
 - Auditar o acesso irrestrito à rede para contas de armazenamento
 - Os controles de aplicativos adaptáveis devem ser habilitados em máquinas virtuais
-- Implantar a Detecção de Ameaças nos servidores SQL
+- Implantar a Detecção de Ameaças em servidores SQL
 - Implantar a extensão antimalware do Microsoft IaaS padrão para o Windows Server
 
 ## <a name="9-secure-user-management--10-identity-and-authentication"></a>9 gerenciamento seguro de usuários/10 identidade e autenticação
@@ -151,12 +151,12 @@ Esse plano gráfico também atribui uma definição de Azure Policy que audita a
 
 Este blueprint ajuda você a garantir que os eventos do sistema sejam registrados em log por meio da atribuição de definições do [Azure Policy](../../../policy/overview.md) que auditam as configurações do log de auditoria em recursos do Azure. Uma política atribuída também audita se as máquinas virtuais não estão enviando logs para um workspace especificado do Log Analytics.
 
-- A auditoria deve ser habilitada nas configurações de segurança de dados avançadas no SQL Server
+- A auditoria deve ser habilitada nas configurações de segurança de dados avançada no SQL Server
 - Auditar configuração de diagnóstico
-- Auditar configurações de Auditoria de nível do SQL Server
+- Auditar configurações de Auditoria de nível do servidor SQL
 - \[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux
 - \[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Windows
-- Implantar o observador de rede quando as redes virtuais são criadas
+- Implantar o observador de rede quando redes virtuais são criadas
 
 ## <a name="next-steps"></a>Próximas etapas
 

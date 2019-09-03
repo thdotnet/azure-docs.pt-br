@@ -8,12 +8,12 @@ ms.date: 06/24/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: c2dbfa5f6c9d679582a1834f2ff645c5ff79c51e
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: d7d62770bc0e2683fc7bc1554493954c0e98758b
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515695"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232679"
 ---
 # <a name="control-mapping-of-the-pci-dss-v321-blueprint-sample"></a>Mapeamento de controle do exemplo de especificação técnica PCI-DSS v 3.2.1
 
@@ -32,9 +32,9 @@ Este projeto ajuda você a gerenciar e controlar redes atribuindo [Azure Policy]
 
 Este projeto ajuda a reforçar a política com o uso de controles de cryptograph atribuindo definições de [Azure Policy](../../../policy/overview.md) que impõem controles cryptograph específicos e auditam o uso de configurações de criptografia fracas. Entender em que local os recursos do Azure podem ter configurações de criptografia não ideais pode ajudá-lo a tomar ações corretivas para garantir que os recursos sejam configurados de acordo com a política de segurança de informações. Especificamente, as políticas atribuídas por este projeto exigem Transparent Data Encryption em bancos de dados SQL; auditar criptografia ausente em contas de armazenamento e variáveis de conta de automação. Também há políticas que abordam conexões inseguras de auditoria para contas de armazenamento, aplicativos de funções, WebApp, aplicativos de API e cache Redis e auditoria de comunicação não criptografada Service Fabric.
 
-- O Aplicativo de Funções só deve ser acessível via HTTPS
-- O Aplicativo Web só deve ser acessível via HTTPS
-- O Aplicativo de API só deve estar acessível via HTTPS
+- O aplicativo de funções deve ser acessível apenas por HTTPS
+- Aplicativo Web deve ser acessível somente por HTTPS
+- O aplicativo de API só deve estar acessível via HTTPS
 - A Transparent Data Encryption em bancos de dados SQL deve ser habilitada
 - A criptografia de disco deve ser aplicada em máquinas virtuais
 - As variáveis da conta de automação devem ser criptografadas
@@ -42,17 +42,17 @@ Este projeto ajuda a reforçar a política com o uso de controles de cryptograph
 - A transferência segura para contas de armazenamento deve ser habilitada
 - Service Fabric clusters devem ter a propriedade ClusterProtectionLevel definida como EncryptAndSign
 - A Transparent Data Encryption em bancos de dados SQL deve ser habilitada
-- Implantar a transparent data encryption do BD SQL
+- Implantar a Transparent Data Encryption no BD SQL
 
 ## <a name="51-62-66-and-1121-vulnerability-scanning-and-system-updates"></a>5,1, 6,2, 6,6 e 11.2.1 de verificação de vulnerabilidade e atualizações do sistema
 
 Este projeto ajuda a gerenciar as vulnerabilidades do sistema de informações atribuindo [Azure Policy](../../../policy/overview.md) definições que monitoram atualizações de sistema ausentes, vulnerabilidades do sistema operacional, vulnerabilidades de SQL e vulnerabilidades de máquina virtual no Azure Central de segurança. A Central de Segurança do Azure fornece funcionalidades de relatórios que permitem ter insights em tempo real sobre o estado de segurança de recursos implantados do Azure.
 
-- Monitorar Endpoint Protection ausente na Central de Segurança do Azure
-- Implantar a extensão IaaSAntimalware padrão da Microsoft para o Windows Server
+- monitora o Endpoint Protection ausente na Central de Segurança do Azure
+- Implantar a extensão padrão antimalware de IaaS da Microsoft para Windows Server
 - Implantar a detecção de ameaças em servidores SQL
-- As atualizações do sistema devem ser instaladas em seus computadores
-- Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas
+- As atualizações do sistema devem ser instaladas em suas máquinas
+- As vulnerabilidades da configuração de segurança nas máquinas devem ser corrigidas
 - As vulnerabilidades nos bancos de dados SQL devem ser corrigidas
 - As vulnerabilidades devem ser corrigidas por uma solução de Avaliação de Vulnerabilidades
 
@@ -75,7 +75,7 @@ serviços.
 - A MFA deve ser habilitada para contas com permissões de gravação em sua assinatura
 - O MFA deve ser habilitado em contas com permissões de leitura em sua assinatura
 - Um administrador do Azure Active Directory deve ser provisionado para servidores SQL
-- Auditar o uso de regras personalizadas de RBAC
+- Auditar o uso de regras personalizadas do RBAC
 
 ## <a name="812-and-815-least-privilege-and-review-of-user-access-rights"></a>8.1.2 e 8.1.5 privilégios mínimos e revisão dos direitos de acesso do usuário
 
@@ -110,9 +110,9 @@ Este projeto ajuda a impor senhas fortes atribuindo definições de [Azure Polic
 Este blueprint ajuda você a garantir que os eventos do sistema sejam registrados em log por meio da atribuição de definições do [Azure Policy](../../../policy/overview.md) que auditam as configurações do log de auditoria em recursos do Azure.
 Os logs de diagnóstico fornecem insights sobre operações realizadas em recursos do Azure. Os logs do Azure dependem de relógios internos sincronizados para criar um registro de eventos relacionado à hora em todos os recursos.
 
-- A auditoria deve ser habilitada nas configurações de segurança de dados avançadas no SQL Server
+- A auditoria deve ser habilitada nas configurações de segurança de dados avançada no SQL Server
 - Auditar configuração de diagnóstico
-- Auditar configurações de Auditoria de nível do SQL Server
+- Auditar configurações de Auditoria de nível do servidor SQL
 - Implantar Auditoria em servidores SQL
 - As contas de armazenamento devem ser migradas para novos recursos de Azure Resource Manager
 - As máquinas virtuais devem ser migradas para novos recursos de Azure Resource Manager

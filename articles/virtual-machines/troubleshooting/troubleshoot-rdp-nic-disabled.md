@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/12/2018
 ms.author: genli
-ms.openlocfilehash: 9038bdb79504289c3aa149868d8a02e74c11fdb7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: bb4583c88f2e867c619a2163d91bff1d48b6a7a3
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103439"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70230697"
 ---
 #  <a name="cannot-remote-desktop-to-a-vm-because-the-network-interface-is-disabled"></a>Não é possível conectar área de trabalho remota em uma VM porque o adaptador de rede está desabilitado
 
@@ -52,8 +52,7 @@ Para habilitar o adaptador de rede da VM, use o Controle serial ou [redefina o a
 
     Por exemplo, se o adaptador de rede nomear "Ethernet 2", execute o seguinte comando:
 
-        netsh interface set interface name=""Ethernet 2" admin=enabled
-
+        netsh interface set interface name="Ethernet 2" admin=enabled
 
 4.  Verifique o estado do adaptador de rede novamente para certificar-se de que o adaptador de rede está habilitado.
 

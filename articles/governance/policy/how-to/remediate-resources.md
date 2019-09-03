@@ -7,24 +7,23 @@ ms.date: 01/23/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: ba015a1d5183fcf27cfcc05ef1d0cd838201e91e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f88ecb782598cabacc29f97ee3225a5abf280a84
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077113"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232333"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Corrigir recursos que não estão em conformidade com o Azure Policy
 
-Recursos que não estão em conformidade com uma política de **deployIfNotExists** podem ser colocados em um estado de conformidade por meio de **Correção**. Correção é realizada pela instruindo a política do Azure para executar o **deployIfNotExists** efeito da diretiva atribuída em seus recursos existentes. Este artigo mostra as etapas necessárias para entender e realizar a correção com o Azure Policy.
+Recursos que não estão em conformidade com uma política de **deployIfNotExists** podem ser colocados em um estado de conformidade por meio de **Correção**. A correção é realizada instruindo Azure Policy a executar o efeito **deployIfNotExists** da política atribuída em seus recursos existentes. Este artigo mostra as etapas necessárias para entender e realizar a correção com o Azure Policy.
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="how-remediation-security-works"></a>Como funciona a correção de segurança
 
-Quando a política do Azure é executado o modelo na **deployIfNotExists** definição de política, ele faz isso usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md).
-A política do Azure cria uma identidade gerenciada para cada atribuição, mas deve ter detalhes sobre quais são as funções para conceder a identidade gerenciada. Se a identidade gerenciada não tiver funções, esse erro será exibido durante a atribuição da política ou uma iniciativa. Ao usar o portal, política do Azure automaticamente concederá a identidade gerenciada funções listadas depois que a atribuição é iniciada.
+Quando Azure Policy executa o modelo na definição de política **deployIfNotExists** , ele faz isso usando uma [identidade gerenciada](../../../active-directory/managed-identities-azure-resources/overview.md).
+Azure Policy cria uma identidade gerenciada para cada atribuição, mas deve ter detalhes sobre quais funções devem ser concedidas à identidade gerenciada. Se a identidade gerenciada não tiver funções, esse erro será exibido durante a atribuição da política ou uma iniciativa. Ao usar o portal, Azure Policy concederá automaticamente à identidade gerenciada as funções listadas assim que a atribuição for iniciada.
 
 ![Identidade gerenciada – função ausente](../media/remediate-resources/missing-role.png)
 
@@ -53,7 +52,7 @@ az role definition list --name 'Contributor'
 
 ## <a name="manually-configure-the-managed-identity"></a>Configurar manualmente a identidade gerenciada
 
-Ao criar uma atribuição usando o portal, política do Azure gera a identidade gerenciada e concede a ele as funções definidas no **roleDefinitionIds**. Nas seguintes condições, as etapas usadas para criar a identidade gerenciada e atribuir permissões a ela precisam ser feitas manualmente:
+Ao criar uma atribuição usando o portal, o Azure Policy gera a identidade gerenciada e concede a ela as funções definidas em **roleDefinitionIds**. Nas seguintes condições, as etapas usadas para criar a identidade gerenciada e atribuir permissões a ela precisam ser feitas manualmente:
 
 - Ao usar o SDK (como o Azure PowerShell)
 - Quando um recurso fora do escopo de atribuição é modificado pelo modelo
@@ -127,7 +126,7 @@ Para adicionar uma função à identidade gerenciada da atribuição, siga estas
 
 ## <a name="create-a-remediation-task"></a>Criar uma tarefa de correção
 
-### <a name="create-a-remediation-task-through-portal"></a>Criar uma tarefa de atualização por meio do portal
+### <a name="create-a-remediation-task-through-portal"></a>Criar uma tarefa de correção por meio do portal
 
 Durante a avaliação, a atribuição de política com o efeito **deployIfNotExists** determinará se há recursos sem conformidade. Quando forem encontrados recursos sem conformidade, os detalhes serão fornecidos na página **Correção**. Junto com a lista de políticas que têm recursos sem conformidade está a opção para disparar uma **tarefa de correção**. Essa opção é a que cria uma implantação usando o modelo **deployIfNotExists**.
 
@@ -139,7 +138,7 @@ Para criar uma **tarefas de correção**, siga estas etapas:
 
 1. Selecione **Correção** no lado esquerdo da página do Azure Policy.
 
-   ![Selecione correção na página de política](../media/remediate-resources/select-remediation.png)
+   ![Selecionar correção na página de política](../media/remediate-resources/select-remediation.png)
 
 1. Todas as atribuições de política **deployIfNotExists** com recursos sem conformidade estão incluídas na tabela de dados e na guia **Políticas a corrigir**. Clique em uma política com recursos sem conformidade. A página **Nova tarefa de correção** é aberta.
 
@@ -148,11 +147,11 @@ Para criar uma **tarefas de correção**, siga estas etapas:
 
 1. Na página **Nova tarefa de correção**, filtre os recursos a serem corrigidos usando as reticências de **Escopo** para escolher os recursos filho nos quais a política está atribuída (incluindo até os objetos do recurso individuais). Além disso, use a lista suspensa **Locais** para filtrar ainda mais os recursos. Somente os recursos listados na tabela serão corrigidos.
 
-   ![Corrigir - selecionar quais recursos para corrigir](../media/remediate-resources/select-resources.png)
+   ![Corrigir-selecione os recursos a serem corrigidos](../media/remediate-resources/select-resources.png)
 
 1. Inicie a tarefa de correção depois que os recursos forem filtrados clicando em **Corrigir**. A página de conformidade de política será aberta na guia **Tarefas de correção** para mostrar o estado do progresso das tarefas.
 
-   ![Corrigir - progresso das tarefas de correção](../media/remediate-resources/task-progress.png)
+   ![Corrigir-progresso das tarefas de correção](../media/remediate-resources/task-progress.png)
 
 1. Clique na **tarefa de correção** na página de conformidade de política para obter detalhes sobre o progresso. A filtragem usada para a tarefa é mostrada junto com uma lista dos recursos que estão sendo corrigidos.
 
@@ -162,9 +161,9 @@ Para criar uma **tarefas de correção**, siga estas etapas:
 
 Os recursos implantados por meio de uma **tarefa de correção** são adicionados à guia **Recursos Implantados** na página de conformidade com a política.
 
-### <a name="create-a-remediation-task-through-azure-cli"></a>Criar uma tarefa de atualização por meio da CLI do Azure
+### <a name="create-a-remediation-task-through-azure-cli"></a>Criar uma tarefa de correção por meio do CLI do Azure
 
-Para criar uma **tarefas de correção** com a CLI do Azure, use o `az policy remediation` comandos. Substitua `{subscriptionId}` com sua ID de assinatura e `{myAssignmentId}` com seu **deployIfNotExists** ID de atribuição de política.
+Para criar uma **tarefa de correção** com CLI do Azure, use `az policy remediation` os comandos. Substitua `{subscriptionId}` pela sua ID de assinatura `{myAssignmentId}` e pela sua ID de atribuição de política **deployIfNotExists** .
 
 ```azurecli-interactive
 # Login first with az login if not using Cloud Shell
@@ -173,11 +172,11 @@ Para criar uma **tarefas de correção** com a CLI do Azure, use o `az policy re
 az policy remediation create --name myRemediation --policy-assignment '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments/{myAssignmentId}'
 ```
 
-Para outros comandos de correção e exemplos, consulte o [correção de política az](/cli/azure/policy/remediation) comandos.
+Para outros comandos de correção e exemplos, consulte os comandos [AZ Policy](/cli/azure/policy/remediation) remediation.
 
-### <a name="create-a-remediation-task-through-azure-powershell"></a>Criar uma tarefa de atualização por meio do PowerShell do Azure
+### <a name="create-a-remediation-task-through-azure-powershell"></a>Criar uma tarefa de correção por meio do Azure PowerShell
 
-Para criar uma **tarefas de correção** com o Azure PowerShell, use o `Start-AzPolicyRemediation` comandos. Substitua `{subscriptionId}` com sua ID de assinatura e `{myAssignmentId}` com seu **deployIfNotExists** ID de atribuição de política.
+Para criar uma **tarefa de correção** com Azure PowerShell, use `Start-AzPolicyRemediation` os comandos. Substitua `{subscriptionId}` pela sua ID de assinatura `{myAssignmentId}` e pela sua ID de atribuição de política **deployIfNotExists** .
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -186,13 +185,13 @@ Para criar uma **tarefas de correção** com o Azure PowerShell, use o `Start-Az
 Start-AzPolicyRemediation -Name 'myRemedation' -PolicyAssignmentId '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments/{myAssignmentId}'
 ```
 
-Para outros cmdlets de correção e exemplos, consulte o [Az.PolicyInsights](/powershell/module/az.policyinsights/#policy_insights) módulo.
+Para obter outros cmdlets de correção e exemplos, consulte o módulo [AZ. PolicyInsights](/powershell/module/az.policyinsights/#policy_insights) .
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Examine os exemplos na [exemplos do Azure Policy](../samples/index.md).
+- Examine exemplos em [exemplos de Azure Policy](../samples/index.md).
 - Revise a [estrutura de definição do Azure Policy](../concepts/definition-structure.md).
 - Revisar [Compreendendo os efeitos da política](../concepts/effects.md).
-- Entender como [criar políticas de forma programática](programmatically-create.md).
+- Entenda como [criar políticas](programmatically-create.md)programaticamente.
 - Saiba como [obter dados de conformidade](getting-compliance-data.md).
 - Veja o que é um grupo de gerenciamento com [Organizar seus recursos com grupos de gerenciamento do Azure](../../management-groups/overview.md).

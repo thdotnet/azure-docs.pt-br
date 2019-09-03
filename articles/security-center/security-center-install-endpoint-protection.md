@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/28/2019
 ms.author: rkarlin
-ms.openlocfilehash: 4274b3684a2e9e79385a561b1cad426b4ffd954e
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 58a220192d6a02c6ad66094e8421405578a82a01
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68609949"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231308"
 ---
 # <a name="manage-endpoint-protection-issues-with-azure-security-center"></a>Gerenciar problemas de proteção de ponto de extremidade com a Central de Segurança do Azure
 A Central de Segurança do Azure monitora o status da proteção antimalware e relata isso na folha Problemas de proteção de ponto de extremidade. A Central de Segurança realça os problemas, como ameaças detectadas e proteção insuficiente, que podem tornar seus computadores e VMs (máquinas virtuais) vulneráveis a ameaças de antimalware. Ao usar as informações em **Problemas de proteção de ponto de extremidade**, você pode identificar um plano para solucionar os problemas identificados.
@@ -31,12 +31,12 @@ A Central de Segurança relata os seguintes problemas de proteção de ponto de 
 - Integridade da proteção do ponto de extremidade:
 
   - Assinatura desatualizada – uma solução antimalware está instalada nessas VMs e computadores, mas a solução não tem as assinaturas de antimalware mais recentes.
-  - Sem proteção em tempo real – uma solução antimalware está instalada nessas VMs e computadores, mas ela não está configurada para oferecer proteção em tempo real.   O serviço pode estar desabilitado ou a Central de Segurança não conseguiu obter o status porque não há suporte para a solução. Consulte a [integração com parceiros](security-center-os-coverage.md#supported-endpoint-protection-solutions) para obter uma lista de soluções com suporte.
+  - Sem proteção em tempo real – uma solução antimalware está instalada nessas VMs e computadores, mas ela não está configurada para oferecer proteção em tempo real.   O serviço pode estar desabilitado ou a Central de Segurança não conseguiu obter o status porque não há suporte para a solução. Consulte a [integração com parceiros](security-center-services.md#endpoint-supported) para obter uma lista de soluções com suporte.
   - Sem relatório – uma solução antimalware está instalada, mas não está relatando dados.
   - Desconhecido – uma solução antimalware está instalada, mas seu status é desconhecido ou está relatando um erro desconhecido.
 
     > [!NOTE]
-    > Consulte [Integrar soluções de segurança](security-center-os-coverage.md#supported-endpoint-protection-solutions) para obter uma lista de soluções de segurança da proteção de ponto de extremidade integradas com a Central de Segurança.
+    > Consulte [Integrar soluções de segurança](security-center-services.md#endpoint-supported) para obter uma lista de soluções de segurança da proteção de ponto de extremidade integradas com a Central de Segurança.
     >
     >
 

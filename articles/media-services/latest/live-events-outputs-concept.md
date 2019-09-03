@@ -11,39 +11,39 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 06/19/2019
+ms.date: 08/26/2019
 ms.author: juliako
-ms.openlocfilehash: a951ebd46335ad4639b8499283ddd30f13edd64e
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c81c2de180a2c5734f3896d4b6843f2ccccdf45f
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67605644"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231201"
 ---
 # <a name="live-events-and-live-outputs"></a>Eventos ao Vivo e Saídas Dinâmicas
 
-O Azure Media Services permite entregar eventos ao vivo para seus clientes na nuvem do Azure. Para configurar os eventos de transmissão ao vivo nos serviços de mídia v3, você precisa entender os conceitos discutidos neste artigo.
+O Azure Media Services permite entregar eventos ao vivo para seus clientes na nuvem do Azure. Para configurar seus eventos de transmissão ao vivo nos serviços de mídia v3, você precisa entender os conceitos discutidos neste artigo.
 
 > [!TIP]
-> Migrando de APIs do serviços de mídia v2, o **evento ao vivo** entidade substitui **canal** na v2 e **Live saída** substitui **programa**.
+> Para clientes que estão migrando das APIs do Media Services v2, a entidade de **evento ao vivo** substitui o **canal** em v2 e a **saída ao vivo** substitui o **programa**.
 
 ## <a name="live-events"></a>Eventos ao Vivo
 
-[Eventos ao Vivo](https://docs.microsoft.com/rest/api/media/liveevents) são responsáveis pela ingestão e pelo processamento dos feeds de vídeo ao vivo. Quando você cria um evento ao vivo, um primário e secundário entrado criar ponto de extremidade que você pode usar para enviar um sinal ao vivo de um codificador remoto. O codificador ao vivo remoto envia a feed de contribuição aos que o ponto de extremidade usando qualquer uma de entrada a [RTMP](https://www.adobe.com/devnet/rtmp.html) ou [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) protocolo de entrada (MP4 fragmentado). Para o protocolo de ingestão de RTMP, o conteúdo pode ser enviado de modo transparente (`rtmp://`) ou criptografados com segurança durante a transmissão (`rtmps://`). Para o protocolo de ingestão Smooth Streaming, os esquemas de URL compatíveis são `http://` ou `https://`.  
+[Eventos ao Vivo](https://docs.microsoft.com/rest/api/media/liveevents) são responsáveis pela ingestão e pelo processamento dos feeds de vídeo ao vivo. Quando você cria um evento ao vivo, é criado um ponto de extremidade de entrada primário e secundário que você pode usar para enviar um sinal ao vivo de um codificador remoto. O codificador remoto dinâmico envia o feed de contribuição para esse ponto de extremidade de entrada usando o protocolo de entrada [RTMP](https://www.adobe.com/devnet/rtmp.html) ou [Smooth streaming](https://msdn.microsoft.com/library/ff469518.aspx) (fragmentado-MP4). Para o protocolo de ingestão RTMP, o conteúdo pode ser enviado em Clear`rtmp://`() ou criptografado com segurança na conexão`rtmps://`(). Para o protocolo de ingestão Smooth Streaming, os esquemas de URL compatíveis são `http://` ou `https://`.  
 
 ## <a name="live-event-types"></a>Tipos de eventos ao vivo
 
 Um [Evento ao vivo](https://docs.microsoft.com/rest/api/media/liveevents) pode ser de dois tipos: de passagem e de codificação ativa. Os tipos são definidos durante a criação usando [LiveEventEncodingType](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencodingtype):
 
-* **LiveEventEncodingType.None** -um codificador ao vivo do local envia um fluxo de taxa de bits múltiplas. Os fluxos ingeridos passam por evento ao vivo sem nenhum processamento adicional. 
-* **LiveEventEncodingType.Standard** – um codificador ao vivo envia um fluxo de taxa de bits única para o evento ao vivo e os serviços de mídia cria vários fluxos de taxa de bits no local. Se o feed de contribuição é de 720p ou resolução mais alta, o **Default720p** predefinição codifica um conjunto de pares de 6 taxas de bits/resolução.
-* **LiveEventEncodingType.Premium1080p** – um codificador ao vivo envia um fluxo de taxa de bits única para o evento ao vivo e os serviços de mídia cria vários fluxos de taxa de bits no local. A predefinição Default1080p Especifica o conjunto de saída de pares de resolução/taxas de bits. 
+* **LiveEventEncodingType. None** -um codificador ao vivo local envia um fluxo de taxas de bits múltiplas. Os fluxos ingeridos passam pelo evento ao vivo sem nenhum processamento adicional. 
+* **LiveEventEncodingType. Standard** -um codificador ao vivo local envia um fluxo de taxa de bits única para o evento ao vivo e os serviços de mídia criam fluxos de taxas de bits múltiplas. Se o feed de contribuição for de 720p ou de resolução superior , a predefinição de default720p codificará um conjunto de 6 pares de resolução/taxa de bits.
+* **LiveEventEncodingType. Premium1080p** -um codificador ao vivo local envia um fluxo de taxa de bits única para o evento ao vivo e os serviços de mídia criam fluxos de taxas de bits múltiplas. A predefinição de default1080p especifica o conjunto de saída de pares de resolução/taxa de bits. 
 
 ### <a name="pass-through"></a>Passagem
 
 ![passagem](./media/live-streaming/pass-through.svg)
 
-Ao usar o **Evento ao vivo** de passagem, você depende de seu codificador dinâmico local para gerar um fluxo de vídeo com várias taxas de bits e enviá-lo como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). A seguir, o Evento ao vivo executa os fluxos de vídeo de entrada sem qualquer processamento adicional. Tal uma passagem evento ao vivo é otimizado para eventos ao vivo de longa execução ou 24 x 365 linear à transmissão ao vivo. Ao criar esse tipo de Evento ao vivo, especifique Nenhum (LiveEventEncodingType.None).
+Ao usar o **Evento ao vivo** de passagem, você depende de seu codificador dinâmico local para gerar um fluxo de vídeo com várias taxas de bits e enviá-lo como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). A seguir, o Evento ao vivo executa os fluxos de vídeo de entrada sem qualquer processamento adicional. Esse evento ao vivo de passagem é otimizado para eventos ao vivo de execução longa ou transmissão ao vivo linear 24x365. Ao criar esse tipo de Evento ao vivo, especifique Nenhum (LiveEventEncodingType.None).
 
 Você pode enviar a contribuição em resoluções de até 4K e em uma taxa de quadros de 60 quadros / segundo, com codecs de vídeo H.264/AVC ou H.265/HEVC e AAC (AAC-LC, HE-AACv1 ou HE-AACv2) codec de áudio.  Confira o artigo [Comparação de tipos de Eventos ao Vivo](live-event-types-comparison.md) para saber mais.
 
@@ -57,14 +57,14 @@ Veja um exemplo de código do .NET no [MediaV3LiveApp](https://github.com/Azure-
 
 ![Codificação ativa](./media/live-streaming/live-encoding.svg)
 
-Usando a codificação dinâmica com os Serviços de Mídia, você configuraria seu codificador dinâmico local para enviar um vídeo de taxa de bits única como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). Você poderia então definir um evento ao vivo, de modo que ele codifica essa taxa de bits única entrada de fluxo para um [transmissão de vídeo de taxa de bits múltiplas](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)e disponibiliza a saída para entrega para reproduzir a dispositivos através de protocolos, como MPEG-DASH, HLS e Smooth Streaming.
+Usando a codificação dinâmica com os Serviços de Mídia, você configuraria seu codificador dinâmico local para enviar um vídeo de taxa de bits única como o feed de contribuição para o Evento ao vivo (usando o protocolo RTMP ou MP4 fragmentado). Em seguida, você configuraria um evento ao vivo para que ele codificasse o fluxo de taxa de bits única de entrada em um [fluxo de vídeo de várias taxas de bits](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming)e disponibilizará a saída para a entrega a fim de reproduzir dispositivos por meio de protocolos como MPEG-Dash, HLS e Smooth streaming.
 
-Quando você usa a codificação ativa, você pode enviar a contribuição do feed somente em resoluções-se a resolução de 1080p em uma taxa de quadros de 30 quadros/segundo, com o codec de vídeo H.264/AVC e AAC (AAC-LC, HE-AACv1 ou HE-AACv2) codec de áudio. Observe que passagem de eventos ao vivo pode dar suporte a resoluções de até 4K em 60 quadros por segundo. Confira o artigo [Comparação de tipos de Eventos ao Vivo](live-event-types-comparison.md) para saber mais.
+Ao usar a codificação ativa, você pode enviar o feed de contribuição somente em resoluções até a resolução de uma taxa de quadros de 30 quadros/segundo, com H. 264/AVC Video Codec e o codec de áudio AAC (AAC-LC, HE-AACv1 ou HE-AACv2). Observe que os eventos ao vivo de passagem podem dar suporte a resoluções de até 4K em 60 quadros/segundo. Confira o artigo [Comparação de tipos de Eventos ao Vivo](live-event-types-comparison.md) para saber mais.
 
-As resoluções e taxas de bits contidas na saída do codificador ao vivo é determinado pela predefinição. Se usando um **Standard** live encoder (LiveEventEncodingType.Standard), em seguida, a *Default720p* predefinição Especifica um conjunto de pares de taxa de bits/resolução 6, indo de 720p em 3.5Mbps até p 192 Kbps 200. Caso contrário, se usar um **Premium1080p** live encoder (LiveEventEncodingType.Premium1080p), em seguida, a *Default1080p* predefinição Especifica um conjunto de pares de taxa de bits/resolução 6, indo de 1080p em 3.5Mbps até 180 p 200 Kbps. Para obter informações, confira [Predefinições do sistema](live-event-types-comparison.md#system-presets).
+As resoluções e taxas de bits contidas na saída do codificador ao vivo são determinadas pela predefinição. Se você estiver usando um codificador ativo **padrão** (LiveEventEncodingType. Standard), a predefinição default720p especificará um conjunto de 6 pares de taxa de resolução/bit, indo de 720p a 3,5 Mbps para 192p a 200 Kbps. Caso contrário, se estiver usando um codificador **Premium1080p** Live (LiveEventEncodingType. Premium1080p), a predefinição de default1080p especificará um conjunto de 6 pares de taxa de resolução/bit, indo de 1080p a 3,5 Mbps para 180p a 200 Kbps. Para obter informações, confira [Predefinições do sistema](live-event-types-comparison.md#system-presets).
 
 > [!NOTE]
-> Se você precisar personalizar a predefinição de codificação ao vivo, abra um tíquete de suporte por meio do portal do Azure. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p (se solicitando uma predefinição para um codificador dinâmico padrão) ou em 1080p (se solicitando uma predefinição para um codificador ao vivo de Premium1080p) e no máximo de 6 camadas.
+> Se você precisar personalizar a predefinição de codificação ativa, abra um tíquete de suporte via portal do Azure. Você deve especificar a tabela desejada da resolução e das taxas de bits. Verifique se há apenas uma camada em 720p (se solicitar uma predefinição para um codificador ao vivo padrão) ou em 1080p (se solicitar uma predefinição para um codificador ao vivo Premium1080p) e no máximo 6 camadas.
 
 ## <a name="live-event-creation-options"></a>Opções de criação de Evento ao vivo
 
@@ -87,20 +87,20 @@ Você pode usar URLs intuitivas ou não intuitivas.
 
 * URL não intuitiva
 
-    URL de não-intuitivo é o modo padrão no serviços de mídia v3. Você possivelmente obterá o Evento ao vivo rapidamente, mas a URL de ingestão é conhecida apenas ao iniciar o evento ao vivo. A URL será alterada se você parar/iniciar o Evento ao vivo. <br/>A URL não intuitiva é útil em cenários em que um usuário final deseja fazer uma transmissão usando um aplicativo que deseja obter um evento ao vivo o mais rápido possível e ter uma URL de ingestão dinâmica não é um problema.
+    A URL não intuitivo é o modo padrão no Media Services V3. Você possivelmente obterá o Evento ao vivo rapidamente, mas a URL de ingestão é conhecida apenas ao iniciar o evento ao vivo. A URL será alterada se você parar/iniciar o Evento ao vivo. <br/>A URL não intuitiva é útil em cenários em que um usuário final deseja fazer uma transmissão usando um aplicativo que deseja obter um evento ao vivo o mais rápido possível e ter uma URL de ingestão dinâmica não é um problema.
     
-    Se não precisar de um aplicativo cliente gerar previamente uma URL de ingestão antes do evento ao vivo é criada, apenas permitir que os serviços de mídia para gerar o Token de acesso para o evento ao vivo.
+    Se um aplicativo cliente não precisar gerar previamente uma URL de ingestão antes que o evento ao vivo seja criado, basta permitir que os serviços de mídia gerem automaticamente o token de acesso para o evento ao vivo.
 * URL intuitiva
 
     A URL intuitiva é preferida pelas grandes emissoras de mídia, que usam codificadores de transmissão de hardware e não querem reconfigurar seus codificadores ao iniciar o Evento ao vivo. Elas querem uma URL de ingestão preditiva, que não muda com o tempo.
     
-    Para especificar esse modo, defina `vanityUrl` à `true` no momento da criação (o padrão é `false`). Você também precisará passar seu próprio token de acesso (`LiveEventInput.accessToken`) no momento da criação. Você especificar o valor do token para evitar um token aleatório na URL. O token de acesso deve ser uma cadeia de caracteres GUID válida (com ou sem hifens). Depois que o modo é definido, ele não pode ser atualizado.
+    Para especificar esse modo, defina `vanityUrl` como `true` no momento da criação (o padrão `false`é). Você também precisa passar seu próprio token de acesso (`LiveEventInput.accessToken`) no momento da criação. Especifique o valor do token para evitar um token aleatório na URL. O token de acesso deve ser uma cadeia de caracteres GUID válida (com ou sem os hifens). Depois que o modo for definido, ele não poderá ser atualizado.
 
-    O token de acesso precisa ser exclusivo em seu data center. Se seu aplicativo precisar usar uma URL intuitivo, é recomendável sempre criar uma nova instância GUID para seu token de acesso (em vez de reutilizar qualquer GUID existente). 
+    O token de acesso precisa ser exclusivo em seu data center. Se seu aplicativo precisar usar uma URL intuitivo, é recomendável sempre criar uma nova instância de GUID para seu token de acesso (em vez de reutilizar qualquer GUID existente). 
 
-    Use as seguintes APIs para habilitar a URL intuitivo e defina o token de acesso como um GUID válido (por exemplo `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`).  
+    Use as seguintes APIs para habilitar a URL intuitivo e definir o token de acesso para um GUID válido (por `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`exemplo).  
     
-    |Idioma|Habilitar o URL personalizado|Definir token de acesso|
+    |Idioma|Habilitar URL intuitivo|Definir token de acesso|
     |---|---|---|
     |REST|[properties.vanityUrl](https://docs.microsoft.com/rest/api/media/liveevents/create#liveevent)|[LiveEventInput.accessToken](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--vanity-url](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--access-token](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
@@ -109,8 +109,8 @@ Você pode usar URLs intuitivas ou não intuitivas.
 ### <a name="live-ingest-url-naming-rules"></a>Regras de nomenclatura de URL de ingestão dinâmica
 
 * A cadeia de caracteres *aleatória* abaixo é um número hexadecimal de 128 bits composto de 32 caracteres de “0” a “9” e “a” a “f”.
-* *o token de acesso* -a cadeia de caracteres GUID válida definido ao usar o modo intuitivo. Por exemplo, `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
-* *nome do fluxo* -indica o nome do fluxo para uma conexão específica. O valor do nome de fluxo geralmente é adicionado por você usar o codificador ao vivo. Você pode configurar o codificador ao vivo para usar qualquer nome para descrever a conexão, por exemplo: "video1_audio1", "video2_audio1", "fluxo".
+* *seu token de acesso* -a cadeia de caracteres GUID válida que você define ao usar o modo intuitivo. Por exemplo, `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
+* *nome do fluxo* – indica o nome do fluxo para uma conexão específica. O valor do nome do fluxo geralmente é adicionado pelo codificador ao vivo que você usa. Você pode configurar o codificador ao vivo para usar qualquer nome para descrever a conexão, por exemplo: "video1_audio1", "video2_audio1", "Stream".
 
 #### <a name="non-vanity-url"></a>URL não intuitiva
 
@@ -142,29 +142,20 @@ Você pode usar URLs intuitivas ou não intuitivas.
 
 ## <a name="live-event-preview-url"></a>URL de visualização do Evento ao vivo
 
-Depois que o evento ao vivo começa a receber a feed de contribuição, você pode usar o seu ponto de extremidade de visualização para visualizar e validar que você está recebendo a transmissão ao vivo antes de publicá-lo ainda mais. Após você ter verificado que o fluxo de visualização é boa, você pode usar o evento ao vivo para disponibilizar o fluxo ao vivo para distribuição por meio de um ou mais (pré-criado) extremidades de Streaming. Para fazer isso, você cria um novo [Live saída](https://docs.microsoft.com/rest/api/media/liveoutputs) no evento ao vivo. 
+Depois que o evento ao vivo começar a receber o feed de contribuição, você poderá usar seu ponto de extremidade de visualização para visualizar e validar que você está recebendo a transmissão ao vivo antes da publicação adicional. Depois de verificar se o fluxo de visualização é bom, você pode usar o evento ao vivo para disponibilizar o Live Stream para entrega por meio de um ou mais pontos de extremidade de streaming (pré-criados). Para fazer isso, você cria uma nova [saída ao vivo](https://docs.microsoft.com/rest/api/media/liveoutputs) no evento ao vivo. 
 
 > [!IMPORTANT]
 > Certifique-se de que o vídeo está fluindo para a URL de visualização antes de continuar!
 
-## <a name="live-event-long-running-operations"></a>Operações de longa duração de evento ao vivo
+## <a name="live-event-long-running-operations"></a>Operações de longa execução de evento ao vivo
 
-Para obter detalhes, consulte [operações de longa execução](media-services-apis-overview.md#long-running-operations)
+Para obter detalhes, consulte [operações de execução longa](media-services-apis-overview.md#long-running-operations)
 
 ## <a name="live-outputs"></a>Saídas ao Vivo
 
 Uma vez que o fluxo esteja fluindo para o Evento ao vivo, é possível começar o evento de transmissão criando um [Ativo](https://docs.microsoft.com/rest/api/media/assets), uma [Saída ao vivo](https://docs.microsoft.com/rest/api/media/liveoutputs) e um [Localizador de streaming](https://docs.microsoft.com/rest/api/media/streaminglocators). A Saída ao vivo arquiva o fluxo e o disponibiliza para usuários por meio do [Ponto de extremidade de streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints).  
 
-> [!NOTE]
-> As Saídas ao Vivo começam na criação e terminam quando são excluídas. Ao excluir a Saída ao Vivo, você não está excluindo o Ativo subjacente nem o conteúdo no ativo. 
-
-A relação entre um **evento ao vivo** e seu **Live saídas** é semelhante a televisão tradicional de difusão, por meio da qual um canal (evento ao vivo) representa um fluxo constante de vídeo e uma gravação (Live Saída) tem como escopo a um segmento de tempo específico (por exemplo, à noite notícias de 6 às 17h30 às 7:00). Você pode gravar televisão usando um gravador de vídeo Digital (DVR) – o recurso equivalente em eventos ao vivo é gerenciado por meio de **archiveWindowLength** propriedade. É uma duração de tempo ISO-8601 (por exemplo, PTHH: MM: SS), que especifica a capacidade do DVR e pode ser definida de um mínimo de 3 minutos a um máximo de 25 horas.
-
-O objeto de saída ao vivo é como um gravador de fita que detectará e um registro a transmissão ao vivo em um ativo em sua conta de serviços de mídia. O conteúdo gravado será mantido na conta de Armazenamento do Azure anexada à sua conta, no contêiner definido pelo recurso Ativo. A saída ao vivo também permite controlar algumas propriedades do fluxo ao vivo de saída, como quanto o fluxo é mantida na gravação de arquivo morto (por exemplo, a capacidade da nuvem DVR) e ou não visualizadores podem começar assistindo à transmissão ao vivo. O arquivamento em disco é um "janela" de arquivamento circular que contém somente a quantidade de conteúdo que é especificado na propriedade archiveWindowLength da saída em tempo real. O conteúdo que fica fora dessa janela é automaticamente descartado do contêiner de armazenamento e não é recuperável. Você pode criar várias saídas Live (máximo de até três) em um evento ao vivo com configurações e os comprimentos de arquivo diferente.  
-
-Se você tiver publicado a saída ao vivo **Asset** usando uma **localizador de Streaming**, o evento ao vivo (até a duração da janela DVR) continuarão a serem visíveis até a expiração ou a exclusão, o localizador de Streaming o que vier primeiro.
-
-Para saber mais, confira [Usar o DVR na nuvem](live-event-cloud-dvr.md).
+Para obter informações detalhadas sobre as saídas ao vivo, consulte [usando um DVR de nuvem](live-event-cloud-dvr.md).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 

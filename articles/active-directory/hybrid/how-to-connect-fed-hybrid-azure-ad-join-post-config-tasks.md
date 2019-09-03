@@ -16,12 +16,12 @@ ms.date: 08/10/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39e76abcac94a877e6bc7ea5c417c77c8c2febff
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 70e3267792f27a170efa26cc4267d1b25045a099
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70032687"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231248"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Tarefas de configuração de postagem para junção do Microsoft Azure Active Directory Híbrido
 
@@ -31,12 +31,12 @@ Depois que você executou a conexão do Azure AD Connect para configurar sua org
 Todos os dispositivos associados ao domínio executando o Windows 10 e o Windows Server 2016 serão registrados automaticamente no Azure AD uma vez que todas as etapas de configuração foram concluídas. Se você preferir um desenvolvimento controlado em vez do registro automático, você pode usar a diretiva de grupo para seletivamente habilitar ou desabilitar a distribuição automática.  Essa política de grupo deve ser definida antes de iniciar as outras etapas de configuração:
 * Crie um objeto de diretiva de grupo no seu Active Directory.
 * Coloque um nome (por exemplo, junção do Azure AD Híbrido).
-* Editar e Ir para:  Configuração do Computador > Políticas > Modelos Administrativos > Componentes do Windows > Registro de Dispositivos.
+* Edite e vá para:  Configuração do Computador > Políticas > Modelos Administrativos > Componentes do Windows > Registro de Dispositivos.
 
 >[!NOTE]
 >Para 2012R2 as configurações da política estão em **Configuração do computador > Políticas > Modelos Administrativos > Componentes do Windows > Ingresso no Local de Trabalho > Ingressar computadores cliente no local de trabalho automaticamente**
 
-* Desabilite essa configuração:  Registrar computadores ingressados no domínio como dispositivos.
+* Habilite essa configuração:  Registrar computadores ingressados no domínio como dispositivos.
 * Aplique e clique em OK.
 * Vincule o GPO para o local de sua escolha (unidade organizacional, grupo de segurança, ou para o domínio para todos os dispositivos).
 

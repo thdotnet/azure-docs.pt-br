@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 3a2702abd39ecdf506d58b6bd8884f12607e29e8
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: d8a9963edd689a32ae0642ac6fa4a622c248bc5b
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615296"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232384"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Log de diagnósticos no Azure Cosmos DB 
 
@@ -436,7 +436,7 @@ Para saber mais sobre o significado dos dados retornados pelas pesquisas de logs
 * Para consultar quais operações demoram mais de 3 milissegundos:
 
     ```
-    AzureDiagnostics | where toint(duration_s) > 30000 and ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | summarize count() by clientIpAddress_s, TimeGenerated
+    AzureDiagnostics | where toint(duration_s) > 3 and ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | summarize count() by clientIpAddress_s, TimeGenerated
     ```
 
 * Para consultar qual agente está executando as operações:
@@ -448,7 +448,7 @@ Para saber mais sobre o significado dos dados retornados pelas pesquisas de logs
 * Para consultar quando foram executadas as operações de longa execução:
 
     ```
-    AzureDiagnostics | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | project TimeGenerated , toint(duration_s)/1000 | render timechart
+    AzureDiagnostics | where ResourceProvider=="MICROSOFT.DOCUMENTDB" and Category=="DataPlaneRequests" | project TimeGenerated , duration_s | render timechart
     ```
 
 Para obter mais informações sobre como usar a nova linguagem de pesquisa de logs, consulte [entender pesquisas de logs em logs de Azure monitor](../log-analytics/log-analytics-log-search-new.md). 
@@ -474,7 +474,7 @@ A tabela a seguir descreve o conteúdo de cada entrada de log.
 | **clientIpAddress** | **clientIpAddress_s** | Endereço IP do cliente. |
 | **requestCharge** | **requestCharge_s** | O número de RUs usadas pela operação |
 | **collectionRid** | **collectionId_s** | A ID exclusiva da coleção.|
-| **duration** | **duration_s** | A duração da operação, em tiques. |
+| **duration** | **duration_s** | A duração da operação, em milissegundos. |
 | **requestLength** | **requestLength_s** | O tamanho da solicitação, em bytes. |
 | **responseLength** | **responseLength_s** | O tamanho da resposta, em bytes.|
 | **resourceTokenUserRid** | **resourceTokenUserRid_s** | Esse valor não fica vazio quando [tokens de recurso](https://docs.microsoft.com/azure/cosmos-db/secure-access-to-data#resource-tokens) são usados para autenticação. O valor aponta para a ID de recurso do usuário. |

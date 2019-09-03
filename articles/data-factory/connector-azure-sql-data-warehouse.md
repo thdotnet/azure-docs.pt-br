@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/23/2019
+ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 49a0c7597e8d44e3f60e2d3b6bd4c14cad1524b5
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 2bfb094994bcc6f41044a08aab6eb0155967638e
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172638"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231433"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Copiar dados de e para o SQL Data Warehouse do Azure usando o Azure Data Factory 
 > [!div class="op_single_selector" title1="Selecione a versão do serviço de Data Factory que você está usando:"]
@@ -379,6 +379,7 @@ Para copiar dados para o SQL Data Warehouse do Azure, defina o tipo de coletor e
 | writeBatchSize    | Número de linhas a serem inseridas na tabela SQL **por lote**. Aplica-se apenas quando o PolyBase não é usado.<br/><br/>O valor permitido é **inteiro** (número de linhas). Por padrão, Data Factory determinar dinamicamente o tamanho do lote apropriado com base no tamanho da linha. | Não                                            |
 | writeBatchTimeout | Tempo de espera para a operação de inserção em lote ser concluída antes de expirar. Aplica-se apenas quando o PolyBase não é usado.<br/><br/>O valor permitido é **timespan**. Exemplo: “00:30:00” (30 minutos). | Não                                            |
 | preCopyScript     | Especifique uma consulta SQL para que a Atividade de Cópia seja executada antes de gravar dados no Azure SQL Data Warehouse em cada execução. Use essa propriedade para limpar os dados pré-carregados. | Não                                            |
+| disableMetricsCollection | Data Factory coleta métricas como SQL Data Warehouse DWUs para otimização e recomendações de desempenho de cópia. Se você estiver preocupado com esse comportamento, especifique `true` para desativá-lo. | Não (o padrão é `false`) |
 
 #### <a name="sql-data-warehouse-sink-example"></a>Exemplo de coletor do SQL Data Warehouse
 

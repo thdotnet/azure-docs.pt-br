@@ -9,12 +9,12 @@ ms.date: 07/03/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Contêiner do Azure, contêineres
-ms.openlocfilehash: 4e0a3c5aa849799872371ef1c5ac0867babffebb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 24a66c5218bb75672ae784b19213116efdb83690
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60686400"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232454"
 ---
 # <a name="how-to-upgrade-azure-dev-spaces-tools"></a>Como atualizar as ferramentas do Azure Dev Spaces
 
@@ -29,7 +29,7 @@ Não é necessário desinstalar a versão anterior, apenas localize o download a
 
 ## <a name="update-the-dev-spaces-cli-extension-and-command-line-tools"></a>Atualizar a extensão da CLI e as ferramentas de linha de comando do Dev Spaces
 
-Execute o comando a seguir:
+Execute o seguinte comando:
 
 ```cmd
 az aks use-dev-spaces -n <your-aks-cluster> -g <your-aks-cluster-resource-group> --update
@@ -48,6 +48,3 @@ Para atualizar as ferramentas no Visual Studio, escolha o item de menu **Ferrame
 ## <a name="next-steps"></a>Próximas etapas
 
 Teste as novas ferramentas criando um novo cluster. Experimente as guias de início rápido e tutoriais no [Azure Dev Spaces](/azure/dev-spaces).
-
-> [!WARNING]
-> O Azure Dev Spaces em clusters existentes não será corrigido imediatamente. Portanto, use a versão mais recente em todas as implantações do Azure, crie um novo cluster após a atualização das ferramentas.

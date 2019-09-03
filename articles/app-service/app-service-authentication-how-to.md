@@ -4,21 +4,21 @@ description: Mostra como personalizar a autenticação e a autorização no Serv
 services: app-service
 documentationcenter: ''
 author: cephalin
-manager: cfowler
+manager: gwallace
 editor: ''
 ms.service: app-service
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/08/2018
+ms.date: 09/02/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ee8d8c54bd618780e00d9975f2fc6950cd795d44
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 105728bdab9c70bb807f38e4a09d5be863694c16
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098536"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231965"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Uso avançado de autenticação e autorização no Serviço de Aplicativo do Azure
 
@@ -130,7 +130,7 @@ Ao usar URLs totalmente qualificadas, a URL deve ser hospedada no mesmo domínio
 GET /.auth/logout?post_logout_redirect_uri=https%3A%2F%2Fmyexternalurl.com
 ```
 
-É necessário executar o comando a seguir no [Azure Cloud Shell](../cloud-shell/quickstart.md):
+Execute o seguinte comando no [Azure cloud Shell](../cloud-shell/quickstart.md):
 
 ```azurecli-interactive
 az webapp auth update --name <app_name> --resource-group <group_name> --allowed-external-redirect-urls "https://myexternalurl.com"
@@ -197,7 +197,7 @@ Quando o token de acesso do seu provedor (não o [token de sessão](#extend-sess
 
 Depois que seu provedor estiver configurado, você poderá [ encontrar o token de atualização e o tempo de expiração do token de acesso ](#retrieve-tokens-in-app-code) na loja do token. 
 
-Para atualizar o token de acesso a qualquer momento, basta chamar `/.auth/refresh` em qualquer idioma. O snippet a seguir usa o jQuery para atualizar seus tokens de acesso de um cliente JavaScript.
+Para atualizar seu token de acesso a qualquer momento, basta `/.auth/refresh` chamar em qualquer idioma. O snippet a seguir usa o jQuery para atualizar seus tokens de acesso de um cliente JavaScript.
 
 ```JavaScript
 function refreshTokens() {
@@ -230,7 +230,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Limite do domínio de contas de entrada
 
-A Conta da Microsoft e o Microsoft Azure Active Directory permitem a entrada de vários domínios. Por exemplo, a Conta da Microsoft permite contas de _outlook.com_, _live.com_ e _hotmail.com_. O Microsoft Azure Active Directory permite qualquer número de domínios personalizados para as contas de entrada. Esse comportamento pode ser indesejável para um aplicativo interno, que você não deseja que qualquer pessoa com uma conta de _outlook.com_ acesse. Para limitar o nome de domínio das contas de entrada, siga estas etapas.
+A Conta da Microsoft e o Microsoft Azure Active Directory permitem a entrada de vários domínios. Por exemplo, a Conta da Microsoft permite contas de _outlook.com_, _live.com_ e _hotmail.com_. O Azure AD permite qualquer número de domínios personalizados para as contas de entrada. No entanto, talvez você queira acelerar seus usuários diretamente para sua própria página de entrada do Azure AD com marca ( `contoso.com`como). Para sugerir o nome de domínio das contas de entrada, siga estas etapas.
 
 Em [https://resources.azure.com](https://resources.azure.com), navegue até **assinaturas** >  **_\< assinatura\_ nome_**  > **resourceGroups** >  **_\< recurso\_ grupo\_ nome>_**  > **provedores** > **Microsoft.Web** > **sites** >  **_\< aplicativo\_ nome>_**  > **config** > **authsettings**. 
 
@@ -239,6 +239,54 @@ Clique em **Editar**, modifique a propriedade a seguir e, em seguida, clique em 
 ```json
 "additionalLoginParams": ["domain_hint=<domain_name>"]
 ```
+
+Essa configuração acrescenta o `domain_hint` parâmetro de cadeia de caracteres de consulta à URL de redirecionamento de logon. 
+
+> [!IMPORTANT]
+> É possível que o cliente remova o `domain_hint` parâmetro depois de receber a URL de redirecionamento e, em seguida, faça logon com um domínio diferente. Portanto, embora essa função seja conveniente, ela não é um recurso de segurança.
+>
+
+## <a name="authorize-or-deny-users"></a>Autorizar ou negar usuários
+
+Embora o serviço de aplicativo se encarrega do caso de autorização mais simples (ou seja, rejeitar solicitações não autenticadas), seu aplicativo pode exigir um comportamento de autorização mais refinado, como limitar o acesso a apenas um grupo específico de usuários. Em determinados casos, você precisa escrever código de aplicativo personalizado para permitir ou negar acesso ao usuário conectado. Em outros casos, o serviço de aplicativo ou o provedor de identidade pode ser capaz de ajudar sem a necessidade de alterações de código.
+
+- [Nível do servidor](#server-level-windows-apps-only)
+- [Nível do provedor de identidade](#identity-provider-level)
+- [Nível do aplicativo](#application-level)
+
+### <a name="server-level-windows-apps-only"></a>Nível do servidor (somente aplicativos do Windows)
+
+Para qualquer aplicativo do Windows, você pode definir o comportamento de autorização do servidor Web do IIS, editando o arquivo *Web. config* . Os aplicativos do Linux não usam o IIS e não podem ser configurados por meio do *Web. config*.
+
+1. Navegue até`https://<app-name>.scm.azurewebsites.net/DebugConsole`
+
+1. No Gerenciador de navegador de seus arquivos do serviço de aplicativo, navegue até *site/wwwroot*. Se um *Web. config* não existir, crie-o selecionando **+**  >  **novo arquivo**. 
+
+1. Selecione o lápis para *Web. config* para editá-lo. Adicione o código de configuração a seguir e clique em **salvar**. Se o *Web. config* já existir, basta adicionar `<authorization>` o elemento a tudo nele. Adicione as contas que você deseja permitir no `<allow>` elemento.
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <configuration>
+       <system.web>
+          <authorization>
+            <allow users="user1@contoso.com,user2@contoso.com"/>
+            <deny users="*"/>
+          </authorization>
+       </system.web>
+    </configuration>
+    ```
+
+### <a name="identity-provider-level"></a>Nível do provedor de identidade
+
+O provedor de identidade pode fornecer determinada autorização de chave. Por exemplo:
+
+- Para [Azure app serviço](configure-authentication-provider-aad.md), você pode [gerenciar o acesso de nível corporativo](../active-directory/manage-apps/what-is-access-management.md) diretamente no Azure AD. Para obter instruções, consulte [como remover o acesso de um usuário a um aplicativo](../active-directory/manage-apps/methods-for-removing-user-access.md).
+- Para o [Google](configure-authentication-provider-google.md), os projetos de API do Google que pertencem a uma [organização](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) podem ser configurados para permitir acesso somente aos usuários em sua organização (consulte a [página de suporte do **OAuth 2,0** Configurando o Google](https://support.google.com/cloud/answer/6158849?hl=en)).
+
+### <a name="application-level"></a>Nível de aplicativo
+
+Se qualquer um dos outros níveis não fornecer a autorização de que você precisa, ou se sua plataforma ou provedor de identidade não tiver suporte, você deverá escrever um código personalizado para autorizar usuários com base nas [declarações do usuário](#access-user-claims).
+
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]

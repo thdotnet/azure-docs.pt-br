@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: raynew
-ms.openlocfilehash: 3158ebddf6ffe5594c9daf0fd9f3e3fe980c0b24
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b4f9c0ab3ca50b0ce8c9ba27d8773c58a72dcfa9
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845657"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70230970"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Matriz de suporte para recuperação de desastre de VMs do Hyper-V locais para o Azure
 
@@ -151,7 +151,7 @@ VMs locais que são replicados para o Azure devem atender aos requisitos de VM d
 **Componente** | **Requisitos** | **Detalhes**
 --- | --- | ---
 Sistema operacional convidado | O Site Recovery é compatível com todos os sistemas operacionais que têm [suporte do Azure](https://technet.microsoft.com/library/cc794868%28v=ws.10%29.aspx).  | A verificação de pré-requisitos falha quando não há suporte para ela.
-Arquitetura do sistema operacional convidado | 64 bits | A verificação de pré-requisitos falha quando não há suporte para ela.
+Arquitetura do sistema operacional convidado | 32 bits (Windows Server 2008)/64-bit | A verificação de pré-requisitos falha quando não há suporte para ela.
 Tamanho do disco do sistema operacional | Até 2.048 GB para máquinas virtuais de Geração 1.<br/><br/> Até 300 GB para máquinas virtuais de Geração 2.  | A verificação de pré-requisitos falha quando não há suporte para ela.
 Contagem do disco do sistema operacional | 1 | A verificação de pré-requisitos falha quando não há suporte para ela.
 Contagem de disco de dados | 16 ou menos  | A verificação de pré-requisitos falha quando não há suporte para ela.
@@ -166,13 +166,13 @@ Tipo de VM | Geração 1<br/><br/> Geração 2--Windows | VMs da Geração 2 com
 
 ## <a name="recovery-services-vault-actions"></a>Ações de cofre dos Serviços de Recuperação
 
-**Ação** |  **Hyper-V com Virtual Machine Manager** | **Hyper-V sem Virtual Machine Manager**
+**Ação** |  **Hyper-V com o VMM** | **Hyper-V sem VMM**
 --- | --- | ---
 Mover cofre entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não | Não
 Mover armazenamento, rede, VMs do Azure entre grupos de recursos<br/><br/> Dentro e entre as assinaturas | Não | Não
 
 > [!NOTE]
-> Ao replicar Hyper-VMs (gerenciadas com/sem o SCVMM) do local para o Azure, você pode replicar para apenas um locatário do AD de um ambiente específico – site do Hyper-V ou SCVMM, conforme aplicável.
+> Ao replicar Hyper-VMs do local para o Azure, você pode replicar para apenas um locatário do AD de um ambiente específico – site do Hyper-V ou Hyper-V com o VMM, conforme aplicável.
 
 
 ## <a name="provider-and-agent"></a>Provedor e agente

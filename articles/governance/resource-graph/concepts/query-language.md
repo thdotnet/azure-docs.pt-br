@@ -1,19 +1,18 @@
 ---
 title: Noções básicas da linguagem de consulta
-description: Descreve os operadores disponíveis do Kusto e funções a ser usadas com o gráfico de recursos do Azure.
+description: Descreve os operadores Kusto e funções disponíveis utilizáveis com o grafo de recursos do Azure.
 author: DCtheGeek
 ms.author: dacoulte
 ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: dcb21a6aedf16b034fad4f0822e22758dda03c33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c6e35d688581d0839e12806117e63c7d71fbc459
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800501"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231517"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Noções básicas sobre a linguagem de consulta do Azure Resource Graph
 
@@ -55,9 +54,9 @@ Aqui está a lista de funções compatíveis no Resource Graph:
 
 ## <a name="escape-characters"></a>Caracteres de escape
 
-Alguns nomes de propriedade, como aquelas que incluem uma `.` ou `$`, deve ser encapsulado ou escape na consulta ou a propriedade nome é interpretado incorretamente e não fornece os resultados esperados.
+Alguns nomes de propriedade, como aqueles que incluem um `.` ou `$`, devem ser encapsulados ou ter escape na consulta ou o nome da propriedade é interpretado incorretamente e não fornece os resultados esperados.
 
-- `.` -Wrap como tal, o nome da propriedade: `['propertyname.withaperiod']`
+- `.`-Encapsular o nome da propriedade como tal:`['propertyname.withaperiod']`
   
   Exemplo de consulta que encapsula a propriedade _OData. Type_:
 
@@ -65,21 +64,21 @@ Alguns nomes de propriedade, como aquelas que incluem uma `.` ou `$`, deve ser e
   where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
   ```
 
-- `$` -Escape do caractere no nome da propriedade. O caractere de escape usado depende do shell em que gráfico de recursos é executado.
+- `$`-Escape o caractere no nome da propriedade. O caractere de escape usado depende do grafo de recursos do Shell em execução.
 
   - **bash** - `\`
 
-    Exemplo de consulta que ignora a propriedade  _\$tipo_ no bash:
+    Exemplo de consulta que escapa o  _\$tipo_ de propriedade no bash:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
     ```
 
-  - **cmd** -não saiam de `$` caracteres.
+  - **cmd** -não escapar do `$` caractere.
 
   - **PowerShell** - ``` ` ```
 
-    Exemplo de consulta que ignora a propriedade  _\$tipo_ no PowerShell:
+    Exemplo de consulta que escapa o  _\$tipo_ de propriedade no PowerShell:
 
     ```kusto
     where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type

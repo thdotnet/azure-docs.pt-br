@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 6/27/2019
 ms.author: sutalasi
-ms.openlocfilehash: bc6d9e7214d2b7cd009e7562357bed420e49f185
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: e9b688d54049c21da3276a20e27dcc9ad3d4ceca
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325104"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231481"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Configurar a recuperação de desastre para um aplicativo do SharePoint de várias camadas para recuperação de desastres usando o Azure Site Recovery
 
@@ -56,7 +56,7 @@ O SharePoint pode ser implantado em um ou mais servidores usando topologias em c
 
 ## <a name="site-recovery-support"></a>Suporte do Site Recovery
 
-Para criar este artigo, usamos as máquinas virtuais VMware com o Windows Server 2012 R2 Enterprise. Foram usados o SharePoint 2013 Enterprise edition e o SQL Server 2014 Enterprise edition. Já que a replicação do Site Recovery é independente do aplicativo, as recomendações fornecidas aqui devem servir também para os cenários a seguir.
+Site Recovery é independente de aplicativo e deve funcionar com qualquer versão do SharePoint em execução em um computador com suporte. Para criar este artigo, usamos as máquinas virtuais VMware com o Windows Server 2012 R2 Enterprise. Foram usados o SharePoint 2013 Enterprise edition e o SQL Server 2014 Enterprise edition.
 
 ### <a name="source-and-target"></a>Origem e destino
 
@@ -65,15 +65,8 @@ Para criar este artigo, usamos as máquinas virtuais VMware com o Windows Server
 **Hyper-V** | Sim | Sim
 **VMware** | Sim | Sim
 **Servidor físico** | Sim | Sim
-**As tabelas** | ND | Sim
+**As tabelas** | N/A | Sim
 
-### <a name="sharepoint-versions"></a>Versões do SharePoint
-Há suporte para as seguintes versões do SharePoint Server.
-
-* SharePoint Server 2013 Standard
-* SharePoint Server 2013 Enterprise
-* SharePoint Server 2016 Standard
-* SharePoint Server 2016 Enterprise
 
 ### <a name="things-to-keep-in-mind"></a>Algumas coisas que se deve manter em mente
 
@@ -93,7 +86,7 @@ Siga [estas diretrizes](site-recovery-vmware-to-azure.md) para começar a replic
 
 ## <a name="networking-configuration"></a>Configuração de rede
 
-### <a name="network-properties"></a>Propriedades da rede
+### <a name="network-properties"></a>Propriedades de rede
 
 * Para as VMs de camada da Web e de Aplicativo, defina configurações de rede no Portal do Azure para que as VMs sejam anexadas à rede de DR correta após o failover.
 

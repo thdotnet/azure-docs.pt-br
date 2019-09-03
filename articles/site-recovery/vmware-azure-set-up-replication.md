@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sutalasi
-ms.openlocfilehash: b60d8a8fb9b9300a6914ad33b2f760fb5adde3b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 019f9f2019619053f87a7923d656513a419d4675
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723447"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231449"
 ---
 # <a name="configure-and-manage-replication-policies-for-vmware-disaster-recovery-to-azure"></a>Configurar e gerenciar políticas de replicação para recuperação de desastre do VMware no Azure
 Este artigo descreve como configurar uma política de replicação quando você replicar VMs do VMware no Azure, usando o [Azure Site Recovery](site-recovery-overview.md).
@@ -24,7 +24,7 @@ Este artigo descreve como configurar uma política de replicação quando você 
 3. Clique em **+Política de replicação** e especifique o nome da política.
 4. Em **Limite de RPO**, especifique o limite de RPO. Os alertas serão gerados quando a replicação contínua excede esse limite.
 5. Em **Retenção do ponto de recuperação**, especifique (em horas) a duração da janela de retenção para cada ponto de recuperação. Os computadores protegidos podem ser recuperados para qualquer ponto em uma janela de retenção. Há suporte para até 24 horas de retenção para computadores replicados no armazenamento premium. Há suporte para até 72 horas no armazenamento standard.
-6. Na **frequência do instantâneo consistente com o aplicativo**, escolha na lista suspensa frequência (em horas) devem ser criados pontos de recuperação que contêm instantâneos consistentes por aplicativo. Se você quiser desativar geração de pontos de consistência do aplicativo, escolha um "valor na lista suspensa desativado".
+6. Em **frequência de instantâneo consistente com o aplicativo**, escolha na lista suspensa com que frequência (em horas) os pontos de recuperação que contêm instantâneos consistentes com o aplicativo devem ser criados. Se você quiser desativar a geração de pontos de consistência do aplicativo, escolha o valor "off" na lista suspensa.
 7. Clique em **OK**. A política deve ser criada em 30 a 60 segundos.
 
 Quando você cria uma política de replicação, uma política de replicação de failback correspondente é criada automaticamente, com o sufixo "failback". Depois de criar a política, você pode editá-la selecionando > **Editar Configurações**.
@@ -42,11 +42,19 @@ Associe a política de replicação ao servidor de configuração local.
 
 ## <a name="edit-a-policy"></a>Editar uma política
 
-1. Selecione **gerencie** > **infraestrutura do Site Recovery** > **políticas de replicação**.
+Você pode modificar uma política de replicação depois de criá-la.
+
+- As alterações na política são aplicadas a todos os computadores usando a política.
+- Se você quiser associar computadores replicados a uma política de replicação diferente, será necessário desabilitar e reabilitar a proteção para os computadores relevantes.
+
+Edite uma política da seguinte maneira:
+1. Selecione **gerenciar** > **site Recovery** > **políticas de replicação**de infraestrutura.
 2. Selecione a política de replicação que você deseja modificar.
-3. Clique em **editar as configurações**e atualize os campos de frequência RPO recuperação do limite ponto retenção horas/instantâneo consistente do aplicativo conforme necessário.
-4. Se você quiser desativar geração de pontos de consistência do aplicativo, escolha "Desativado" valor na lista suspensa do campo **frequência do instantâneo consistente com o aplicativo**.
+3. Clique em **Editar configurações**e atualize os campos tempo de retenção do ponto de recuperação/limite de RPO/frequência de instantâneos consistentes com o aplicativo, conforme necessário.
+4. Se você quiser desativar a geração de pontos de consistência do aplicativo, escolha o valor "desativado" na lista suspensa do campo **frequência do instantâneo consistente com o aplicativo**.
 5. Clique em **Salvar**. A política deve ser atualizada em 30 a 60 segundos.
+
+
 
 ## <a name="disassociate-or-delete-a-replication-policy"></a>Desassociar ou excluir uma política de replicação
 

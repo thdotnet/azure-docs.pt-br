@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: diberry
-ms.openlocfilehash: 82285b27822b6c93f8efc24579bb99c308649ac0
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 5b0516f3d610c0a518d6afc461dddebfb68a7c5d
+ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932669"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70213524"
 ---
 # <a name="preview-migrate-to-api-version-3x-for-luis-apps"></a>Visualização: Migrar para a API versão 3. x para aplicativos LUIS
 
@@ -80,7 +80,7 @@ As alterações de objeto de resposta v3 incluem [entidades](luis-reference-preb
 
 A API v3 tem parâmetros de cadeia de caracteres de consulta diferentes.
 
-|Nome do parâmetro|Tipo|Versão|Padrão|Finalidade|
+|Nome do parâmetro|Tipo|Version|Padrão|Finalidade|
 |--|--|--|--|--|
 |`log`|boolean|V2 & V3|false|Armazenar consulta no arquivo de log.| 
 |`query`|cadeia de caracteres|Somente V3|Nenhum padrão-ele é necessário na solicitação GET|**Em v2**, o expressão a ser previsto está no `q` parâmetro. <br><br>**No v3**, a funcionalidade é passada no `query` parâmetro.|
@@ -108,13 +108,13 @@ A API v3 tem parâmetros de cadeia de caracteres de consulta diferentes.
 }
 ```
 
-|Propriedade|Tipo|Versão|Padrão|Finalidade|
+|Propriedade|Tipo|Version|Padrão|Finalidade|
 |--|--|--|--|--|
 |`dynamicLists`|array|Somente V3|Não obrigatório.|As [listas dinâmicas](#dynamic-lists-passed-in-at-prediction-time) permitem que você estenda uma entidade de lista treinada e publicada existente, já no aplicativo Luis.|
 |`externalEntities`|array|Somente V3|Não obrigatório.|[Entidades externas](#external-entities-passed-in-at-prediction-time) dão ao seu aplicativo Luis a capacidade de identificar e rotular entidades durante o tempo de execução, que pode ser usado como recursos para entidades existentes. |
 |`options.datetimeReference`|cadeia de caracteres|Somente V3|Nenhum padrão|Usado para determinar o [deslocamento de datetimeV2](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity). O formato para o datetimeReference é [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.overridePredictions`|boolean|Somente V3|false|Especifica se a [entidade externa do usuário (com o mesmo nome da entidade existente)](#override-existing-model-predictions) é usada ou a entidade existente no modelo é usada para previsão. |
-|`query`|cadeia de caracteres|Somente V3|Obrigatória.|**Em v2**, o expressão a ser previsto está no `q` parâmetro. <br><br>**No v3**, a funcionalidade é passada no `query` parâmetro.|
+|`query`|cadeia de caracteres|Somente V3|Obrigatório.|**Em v2**, o expressão a ser previsto está no `q` parâmetro. <br><br>**No v3**, a funcionalidade é passada no `query` parâmetro.|
 
 
 
@@ -223,7 +223,7 @@ Na v2, a entidade é identificada pelo _nome da entidade_ com a função como um
 ]
 ```
 
-Em v3, a entidade é referenciada pela _função de entidade_ , se a previsão for para a função:
+Em v3, a entidade é referenciada pela _função de entidade_, se a previsão for para a função:
 
 ```JSON
 "entities":{
@@ -418,7 +418,7 @@ Envie o seguinte corpo JSON para adicionar uma nova sublista com sinônimos à l
     },
     "dynamicLists": [
         {
-            "listEntityName":"ProductList",
+            "listEntity*":"ProductList",
             "requestLists":[
                 {
                     "name": "Azure Cognitive Services",

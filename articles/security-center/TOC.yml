@@ -4,8 +4,10 @@
   items:
     - name: Sobre a Central de Segurança
       href: security-center-intro.md
-    - name: Plataformas e recursos compatíveis da Central de Segurança
+    - name: Plataformas com suporte
       href: security-center-os-coverage.md
+    - name: Recursos com suporte
+      href: security-center-services.md
 - name: Guia de início rápido
   expanded: true
   items:

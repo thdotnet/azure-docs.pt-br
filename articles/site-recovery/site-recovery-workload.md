@@ -5,14 +5,14 @@ author: rayne-wiselman
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 6/27/2019
+ms.date: 09/03/2019
 ms.author: raynew
-ms.openlocfilehash: 6a0e07f338da039be1660e59510b24bcd44eed0c
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: f3ff6e5e05cab9aab5257d810c6785e7691bae45
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491751"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232197"
 ---
 # <a name="what-workloads-can-you-protect-with-azure-site-recovery"></a>Quais cargas de trabalho posso proteger com o Azure Site Recovery?
 
@@ -35,13 +35,13 @@ O Site Recovery contribui para a recuperação e a proteção no nível do aplic
 * Independente do aplicativo, fornecer replicação para quaisquer cargas de trabalho em execução em um computador com suporte.
 * Replicação quase síncrona com RPOs de até 30 segundos para atender as necessidades dos aplicativos mais importantes.
 * Instantâneos consistentes de aplicativos para os aplicativos simples ou multicamadas.
-* Integração com o SQL Server AlwaysOn e parceria com outras tecnologias de replicação em nível de aplicativo, incluindo grupos de disponibilidade do AD replicação, o AlwaysOn do SQL, Exchange banco de dados (DAGs).
+* Integração com o SQL Server AlwaysOn e parceria com outras tecnologias de replicação em nível de aplicativo, incluindo replicação do AD, SQL AlwaysOn, grupos de disponibilidade de banco de dados do Exchange (DAGs).
 * Os planos de recuperação flexíveis permitem a recuperação de uma pilha inteira de aplicativos com um único clique e para incluir scripts externos e ações manuais no plano.
 * O gerenciamento avançado de rede no Site Recovery e no Azure simplifica os requisitos de rede do aplicativo, incluindo a reserva de endereços IP, a configuração de balanceadores de carga e a integração com o Gerenciador de Tráfego do Azure para os switchovers de rede de baixo RTO.
 * Uma biblioteca de automação avançada que fornece scripts específicos do aplicativo, prontos para a produção, que pode ser baixada e integrada nos planos de recuperação.
 
 ## <a name="workload-summary"></a>Resumo de carga de trabalho
-O Site Recovery pode replicar qualquer aplicativo em execução em um computador com suporte. Além disso, uma parceria com as equipes de produto para executar testes adicionais específicos do aplicativo.
+O Site Recovery pode replicar qualquer aplicativo em execução em um computador com suporte. Além disso, fizemos uma parceria com as equipes de produto para executar testes adicionais para os aplicativos especificados na tabela.
 
 | **Carga de trabalho** |**Replicar VMs do Azure para o Azure** |**Replicar máquinas virtuais do Hyper-V para um site secundário** | **Replicar VMs do Hyper-V para o Azure** | **Replicar VMs do VMware para um site secundário** | **Replicar VMs do VMware para o Azure** |
 | --- | --- | --- | --- | --- |---|
@@ -105,7 +105,7 @@ O RDS (Serviços da Área de Trabalho Remota) habilita a infraestrutura da área
 |---| --- | --- | --- | --- | --- | --- | --- |
 | **Área de trabalho virtual em pool (não gerenciada)** |Não|Sim |Não |Sim |Não |Sim |Não |
 | **Área de trabalho virtual em pool (gerenciada e sem UPD)** |Não|Sim |Não |Sim |Não |Sim |Não |
-| **Aplicativos remotos e sessões da área de trabalho (sem UDP)** |Sim|sim |sim |sim |sim |sim |Sim |
+| **Aplicativos remotos e sessões da área de trabalho (sem UDP)** |Sim|Sim |Sim |Sim |Sim |Sim |Sim |
 
 [Configurar a recuperação de desastre para RDS usando o Azure Site Recovery](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-disaster-recovery-with-azure).
 

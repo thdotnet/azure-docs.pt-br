@@ -1,10 +1,10 @@
 ---
-title: Recursos e plataformas compatíveis com a Central de Segurança do Azure | Microsoft Docs
-description: Este documento fornece uma lista de recursos e plataformas compatíveis com a Central de Segurança do Azure.
+title: Plataformas com suporte na central de segurança do Azure | Microsoft Docs
+description: Este documento fornece uma lista de plataformas com suporte na central de segurança do Azure.
 services: security-center
 documentationcenter: na
 author: monhaber
-manager: barbkess
+manager: rkarlin
 editor: ''
 ms.assetid: 70c076ef-3ad4-4000-a0c1-0ac0c9796ff1
 ms.service: security-center
@@ -12,28 +12,35 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 6/03/2019
+ms.date: 8/29/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 1f5a144728614ee13bf4f08bb594f0546d446880
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: c094ef5f3e7c7bfa96f95264e137fd8938296bb4
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640793"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232209"
 ---
-# <a name="platforms-and-features-supported-by-azure-security-center"></a>Plataformas e recursos compatíveis com a Central de Segurança do Azure
+# <a name="supported-platforms"></a>Plataformas com suporte 
 
-As recomendações e o monitoramento do estado de segurança estão disponíveis para computadores e VMs (máquinas virtuais) criadas com o modelo de implantação do Resource Manager e o modelo clássico.
+## Máquinas virtuais/servidores<a name="vm-server"></a>
+
+A central de segurança dá suporte a máquinas virtuais/servidores em diferentes tipos de ambientes híbridos:
+
+* Somente o Azure
+* Azure e local
+* Azure e outras nuvens
+* Azure, outras nuvens e locais
+
+Para um ambiente do Azure ativado em uma assinatura do Azure, a central de segurança do Azure descobrirá automaticamente os recursos de IaaS implantados na assinatura.
 
 > [!NOTE]
-> Saiba mais sobre os [modelos de implantação clássica e do Gerenciador de Recursos](../azure-classic-rm.md) para recursos do Azure.
->
+> Para receber o conjunto completo de recursos de segurança, você deve ter o [agente de log Analytics](../azure-monitor/platform/agents-overview.md#log-analytics-agent), que é usado pela central de segurança do Azure, instalado e [configurado corretamente para enviar dados para a central de segurança do Azure](security-center-enable-data-collection.md#manual-agent).
 
-## <a name="platforms-that-support-the-data-collection-agent"></a>Plataformas que dão suporte ao agente de coleta de dados 
-Esta seção lista as plataformas nas quais o agente de Log Analytics, que é usado pela central de segurança do Azure, pode ser executado.
 
-### <a name="supported-platforms-for-windows-computers-and-vms"></a>Plataformas com suporte para computadores com Windows e VMs
-Os sistemas operacionais Windows a seguir são compatíveis:
+As seções a seguir listam os sistemas operacionais de servidor com suporte nos quais o [agente de log Analytics](../azure-monitor/platform/agents-overview.md#log-analytics-agent), que é usado pela central de segurança do Azure, pode ser executado.
+
+### Sistemas operacionais Windows Server<a name="os-windows"></a>
 
 * Windows Server 2019
 * Windows Server 2016
@@ -43,16 +50,14 @@ Os sistemas operacionais Windows a seguir são compatíveis:
 * Windows Server 2008
 
 > [!NOTE]
-> A integração com o Windows Defender ATP dá suporte a apenas ao Windows Server 2012 R2 e ao Windows Server 2016.
+> A integração com o Microsoft defender ATP dá suporte apenas ao Windows Server 2012 R2 e ao Windows Server 2016.
 
-### <a name="supported-platforms-for-linux-computers-and-vms"></a>Plataformas com suporte para computadores Linux e VMs
+Para saber mais sobre os recursos com suporte para os sistemas operacionais Windows listados acima, consulte [recursos com suporte do servidor/máquina virtual](security-center-services.md##vm-server-features).
 
-Os sistemas operacionais Linux a seguir são compatíveis:
-
-> [!NOTE]
-> Como a lista de sistemas operacionais Linux com suporte está em constante mudança, se você preferir, clique [aqui](https://github.com/microsoft/OMS-Agent-for-Linux#supported-linux-operating-systems) para exibir a lista mais atualizada de versões com suporte, caso haja alterações desde que este tópico foi publicado pela última vez.
+### Sistemas operacionais Linux<a name="os-linux"></a>
 
 64 bits
+
 * CentOS 6 e 7
 * Amazon Linux 2017.09
 * Oracle Linux 6 e 7
@@ -68,103 +73,57 @@ Os sistemas operacionais Linux a seguir são compatíveis:
 * Debian GNU/Linux 8 e 9
 * Ubuntu Linux 14, 4 LTS e 16, 4 LTS
 
-## <a name="vms-and-cloud-services"></a>VMs e Serviços de Nuvem
-VMs que são executadas em um serviço de nuvem também são compatíveis. Apenas funções Web e de trabalho de serviços de nuvem que são executadas em slots de produção são monitorados. Para saber mais sobre os serviços de nuvem, confira [Visão geral dos Serviços de Nuvem do Azure](../cloud-services/cloud-services-choose-me.md).
-
-
-## <a name="supported-iaas-features"></a>Recursos de IaaS compatíveis
-
-> [!div class="mx-tableFixed"]
-> 
-
-|Servidor|Windows|||Linux|||Preços|
-|----|----|----|----|----|----|----|----|
-|**Ambiente**|**As tabelas**||**Não Azure**|**As tabelas**||**Não Azure**||
-||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**|
-|Alertas de detecção de ameaças VMBA|✔|✔|✔|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|Recomendações (gratuito) detecção de ameaças (padrão)|
-|Alertas de detecção de ameaças baseadas em rede|✔|✔|X|✔|✔|X|Standard|
-|Integração com o Windows Defender ATP|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|X|X|X|Standard|
-|Patches ausentes|✔|✔|✔|✔|✔|✔|Gratuito|
-|Configurações de segurança|✔|✔|✔|✔|✔|✔|Gratuito|
-|Avaliação do Endpoint Protection|✔|✔|✔|X|X|X|Gratuito|
-|Acesso à VM JIT|✔|X|X|✔|X|X|Standard|
-|Controles de aplicativo adaptáveis|✔|X|✔|✔|X|✔|Standard|
-|FIM|✔|✔|✔|✔|✔|✔|Standard|
-|Avaliação de criptografia de disco|✔|✔|X|✔|✔|X|Gratuito|
-|Implantação de terceiros|✔|X|X|✔|X|X|Gratuito|
-|Avaliação do NSG|✔|✔|X|✔|✔|X|Gratuito|
-|Detecção de ameaças sem arquivo|✔|✔|✔|X|X|X|Standard|
-|Mapa de rede|✔|✔|X|✔|✔|X|Standard|
-|Controles de rede adaptável|✔|✔|X|✔|✔|X|Standard|
-|Painel de conformidade regulatória & relatórios|✔|✔|✔|✔|✔|✔|Standard|
-|Recomendações e detecção de ameaças em contêineres de IaaS hospedados pelo Docker|X|X|X|✔|✔|✔|Standard|
-
-### <a name="supported-endpoint-protection-solutions"></a>Soluções de proteção de ponto de extremidade com suporte
-
-A tabela a seguir fornece uma matriz de:
- - Se você pode usar a Central de Segurança do Azure para instalar cada solução para você.
- - Quais soluções de proteção de ponto de extremidade a Central de Segurança pode descobrir. Se uma dessas soluções de proteção de ponto de extremidade for descoberta, a Central de Segurança não recomendará a instalação de uma.
-
-Para obter informações sobre quando as recomendações são geradas para cada uma dessas proteções, consulte [Endpoint Protection avaliação e recomendações](security-center-endpoint-protection.md).
-
-| Endpoint Protection| Plataformas | Instalação da Central de Segurança | Descoberta da Central de Segurança |
-|------|------|-----|-----|
-| Windows Defender (Microsoft Antimalware)| Windows Server 2016| Não, Integrado no SO| Sim |
-| System Center Endpoint Protection (antimalware da Microsoft) | Windows Server 2012 R2, 2012, 2008 R2 (consulte a observação abaixo) | Via extensão | Sim |
-| Trend Micro – todas as versões * | Família Windows Server  | Não | Sim |
-| Symantec v12.1.1100+| Família Windows Server  | Não | Sim |
-| McAfee v10+ | Família Windows Server  | Não | Sim |
-| McAfee v10+ | Família de servidores Linux  | Não | Ok **\*** |
-| Sophos v9 +| Família de servidores Linux  | Não | Ok **\***  |
-
- **\*** O estado de cobertura e os dados de suporte estão disponíveis no momento apenas no espaço de trabalho Log Analytics associado às suas assinaturas protegidas e não são refletidos no portal da central de segurança do Azure.
-
 > [!NOTE]
-> - A detecção do System Center Endpoint Protection (SCEP) em uma máquina virtual do Windows Server 2008 R2 exige que o SCEP seja instalado após o PowerShell 3.0 (ou uma versão superior).
-> - Há suporte para a detecção da proteção Trend Micro para agentes de segurança profundas.  Não há suporte para agentes do OfficeScan.
+> Como a lista de sistemas operacionais Linux com suporte está em constante mudança, se você preferir, clique [aqui](https://github.com/microsoft/OMS-Agent-for-Linux#supported-linux-operating-systems) para exibir a lista mais atualizada de versões com suporte, caso haja alterações desde que este tópico foi publicado pela última vez.
 
-## <a name="supported-paas-features"></a>Recursos de PaaS compatíveis
+Para saber mais sobre os recursos com suporte para os sistemas operacionais Linux listados acima, consulte [recursos com suporte do servidor/máquina virtual](security-center-services.md##vm-server-features).
 
+### Serviços de máquina virtual gerenciados<a name="virtual-machine"></a>
 
-|Serviço|Recomendações (gratuito)|Detecção de ameaças (padrão)|
-|----|----|----|
-|SQL|✔| ✔|
-|PostGreSQL*|✔| ✔|
-|MySQL*|✔| ✔|
-|Contas de armazenamento de BLOBs do Azure|✔| ✔|
-|Serviços de Aplicativos|✔| ✔|
-|Serviços de Nuvem|✔| X|
-|VNets|✔| N/A|
-|Sub-redes|✔| N/A|
-|NICs|✔| N/A|
-|NSGs|✔| N/A|
-|Assinatura|✔ **| ✔|
-|Lote|✔| N/A|
-|Service fabric|✔| N/A|
-|Conta de automação|✔| N/A|
-|Balanceador de carga|✔| N/A|
-|Pesquisar|✔| N/A|
-|Barramento de serviço|✔| N/A|
-|Stream Analytics|✔| N/A|
-|Hub de eventos|✔| N/A|
-|Aplicativos lógicos|✔| N/A|
-|Conta de armazenamento|✔| N/A|
-|Redis|✔| N/A|
-|Data Lake Analytics|✔| N/A|
-|Cofre de chaves|✔| N/A|
+As máquinas virtuais também são criadas em uma assinatura de cliente como parte de alguns serviços gerenciados do Azure também, como o Azure kubernetes (AKS), Azure Databricks e muito mais. Essas máquinas virtuais também são descobertas pela central de segurança do Azure e o agente do log Analytics pode ser instalado e configurado de acordo com os [sistemas operacionais Windows/Linux](#os-windows)com suporte, listados acima.
 
+### Serviços de nuvem<a name="cloud-services"></a>
 
+Também há suporte para máquinas virtuais que são executadas em um serviço de nuvem. Apenas funções Web e de trabalho de serviços de nuvem que são executadas em slots de produção são monitorados. Para saber mais sobre os serviços de nuvem, confira [Visão geral dos Serviços de Nuvem do Azure](../cloud-services/cloud-services-choose-me.md).
 
+## Serviços de PaaS<a name="paas-services"></a>
 
-\* Esses recursos são compatíveis atualmente com a versão prévia pública.
+Os seguintes recursos de PaaS do Azure têm suporte na central de segurança do Azure:
 
-\*\*As recomendações do AAD estão disponíveis somente para assinaturas padrão
+* SQL
+* PostGreSQL
+* MySQL
+* CosmosDB
+* Conta de armazenamento
+* Serviço de aplicativo
+* Função
+* Serviço de Nuvem
+* Rede Virtual
+* Subnet
+* NIC
+* NSG
+* Conta do Lote
+* Conta do Service Fabric
+* Conta de automação
+* Balanceador de carga
+* Pesquisar
+* Namespace de barramento de serviço
+* Stream Analytics
+* Namespace de Hub de Eventos
+* Aplicativos lógicos
+* Redis
+* Data Lake Analytics
+* Data Lake Store
+* Cofre de chaves
 
-
+Para saber mais sobre os recursos com suporte para a lista acima de recursos de PaaS, consulte [recursos compatíveis com serviços de PaaS](security-center-services.md#paas-services).
 
 ## <a name="next-steps"></a>Próximas etapas
 
+- Saiba como [a central de segurança coleta dados e o agente de log Analytics](security-center-enable-data-collection.md).
+- Saiba como a [central de segurança gerencia e protege os dados](security-center-data-security.md).
 - Saiba como [planejar e entender as considerações de design para adotar a Central de Segurança do Azure](security-center-planning-and-operations-guide.md).
+- Saiba mais sobre [os recursos disponíveis para os diferentes ambientes de nuvem](security-center-services.md).
 - Saiba mais sobre [a detecção de ameaças para VMs & servidores na central de segurança do Azure](security-center-alerts-iaas.md).
 - Encontre [perguntas frequentes sobre como usar a Central de Segurança do Azure](security-center-faq.md).
 - Encontre [postagens no blog sobre a conformidade e segurança do Azure](https://blogs.msdn.com/b/azuresecurity/).

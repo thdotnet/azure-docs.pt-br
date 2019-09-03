@@ -8,12 +8,12 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: d720f220b8903d960e7bba2a75aa5a86bd0391ce
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 10d1e2fc607df205ea8922a81a1322d4121f30f7
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68225991"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232300"
 ---
 # <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>Implantar os exemplos do Blueprint oficial do Reino Unido e do Reino Unido NHS
 
@@ -67,7 +67,7 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
 
 1. Forneça os valores de parâmetro para a atribuição de blueprint:
 
-   - Noções básicas
+   - Noções Básicas
 
      - **Assinaturas**: Selecione uma ou mais das assinaturas que estão no grupo de gerenciamento em que você salvou a cópia do exemplo de blueprint. Se você selecionar mais de uma assinatura, será criada uma atribuição para cada uma, usando os parâmetros inseridos.
      - **Nome da atribuição**: O nome é pré-preenchido para você com base no nome do blueprint.
@@ -83,7 +83,7 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
 
      Deixe a opção de identidade gerenciada _atribuída ao sistema_ padrão.
 
-   - Parâmetros do artefato
+   - Parâmetros de artefato
 
      Os parâmetros definidos nesta seção se aplicam ao artefato sob o qual ele está definido. Esses são [parâmetros dinâmicos](../../concepts/parameters.md#dynamic-parameters), pois são definidos durante a atribuição do blueprint. Para obter uma lista completa ou parâmetros de artefato e suas descrições, confira a [Tabela de parâmetros de artefato](#artifact-parameters-table).
 
@@ -96,7 +96,7 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
 
 A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 
-Nome do artefato|Tipo de artefato|Nome do parâmetro|DESCRIÇÃO|
+Nome do artefato|Tipo de artefato|Nome do parâmetro|Descrição|
 |-|-|-|-|
 |Iniciativa Blueprint para o Reino Unido ou o NHS UK|Atribuição de política |Tipos de recurso para auditar logs de diagnóstico (política: Iniciativa Blueprint para o Reino Unido ou o NHS UK) |Lista de tipos de recursos para auditoria se a configuração do log de diagnóstico está habilitada.  Para obter valores aceitáveis, consulte [serviços, esquemas e categorias com suporte para logs de diagnóstico do Azure](../../../../azure-monitor/platform/diagnostic-logs-schema.md). |
 |\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux |Atribuição de política |Opcional: Lista de imagens de VM com suporte do SO Linux para adicionar ao escopo (política: \[Versão Prévia\]: Implantar o agente de Log Analytics para VMs do Linux) |Adicional O valor padrão é _None_. Para obter mais informações, consulte [criar um log Analytics espaço de trabalho no portal do Azure](../../../../azure-monitor/learn/quick-create-workspace.md). |

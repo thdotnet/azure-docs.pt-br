@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 08/05/2019
+ms.date: 09/03/2019
 ms.author: raynew
-ms.openlocfilehash: 6882476cabc3dc3a737f31eeeb4ccd92e5ea6ee0
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: d415f303976ae454cb99f07e8d6e15e338e24d7d
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69872755"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231459"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Arquitetura de recuperação de desastre do Azure para o Azure
 
@@ -66,7 +66,7 @@ Quando você habilita a replicação de VM do Azure, por padrão, o Site Recover
 **Configuração de política** | **Detalhes** | **Padrão**
 --- | --- | ---
 **Retenção do ponto de recuperação** | Especifica por quanto tempo o Site Recovery mantém os pontos de recuperação | 24 horas
-**Frequência de instantâneos consistentes com aplicativo** | A frequência com que o Site Recovery tira um instantâneo consistente com aplicativo. | A cada 60 minutos.
+**Frequência de instantâneos consistentes com aplicativo** | A frequência com que o Site Recovery tira um instantâneo consistente com aplicativo. | A cada quatro horas
 
 ### <a name="managing-replication-policies"></a>Gerenciando políticas de replicação
 
