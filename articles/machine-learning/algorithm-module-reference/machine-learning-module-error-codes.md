@@ -2081,7 +2081,7 @@ Resolução:
 |Mensagens de Exceção|  
 |------------------------|  
 |Erro de acesso do GitHub.|  
-|Erro de acesso do GitHub. [https://login.microsoftonline.com/tfp/00000000-0000-0000-0000-000000000000/b2c_1a_tp_sign-up-or-sign-in/v2.0/]({0})|  
+|Erro de acesso do GitHub. {0}|  
   
 
 ## <a name="error-0148"></a>Erro 0148  

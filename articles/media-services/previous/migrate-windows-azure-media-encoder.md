@@ -64,7 +64,7 @@ ITask task = job.Tasks.AddNew("My encoding task",
 
 ### <a name="advanced-scenarios"></a>Cenários avançados 
 
-Se você tiver criado sua própria predefinição de codificação para WAME usando seu esquema, haverá um [esquema equivalente para Media Encoder Standard](media-services-mes-schema.md). Se você tiver dúvidas sobre como mapear as configurações mais antigas para o novo codificador, entre em contato conosco por meio demailto:amshelp@microsoft.com  
+Se você tiver criado sua própria predefinição de codificação para WAME usando seu esquema, haverá um [esquema equivalente para Media Encoder Standard](media-services-mes-schema.md). Se você tiver dúvidas sobre como mapear as configurações mais antigas para o novo codificador, entre em contato conosco por meio de mailto:amshelp@microsoft.com  
 
 ## <a name="known-differences"></a>Diferenças conhecidas 
 
