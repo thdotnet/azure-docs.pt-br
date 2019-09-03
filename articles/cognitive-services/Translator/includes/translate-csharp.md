@@ -4,20 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: c8972dfa2ff6e15802769e65c1c9e1c2fb0aed39
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 64a934196bb964561f36b9d95a2467b149847225
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68968140"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906692"
 ---
-## <a name="prerequisites"></a>Pré-requisitos
+[!INCLUDE [Prerequisites](prerequisites-csharp.md)]
 
-* C# 7.1 ou posterior
-* [SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
-* [Pacote NuGet do Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) ou seu editor de texto favorito
-* Uma chave de assinatura do Azure para a Tradução de Texto
+[!INCLUDE [Set up and use environment variables](setup-env-variables.md)]
 
 ## <a name="create-a-net-core-project"></a>Criar projeto do .NET Core
 
@@ -109,6 +105,31 @@ public class SentenceLength
 }
 ```
 
+## <a name="get-subscription-information-from-environment-variables"></a>Obter informações de assinatura das variáveis de ambiente
+
+Adicione as linhas abaixo à classe `Program`. Essas linhas leem a chave da sua assinatura e o ponto de extremidade com base em variáveis de ambiente e gerarão um erro se você encontrar problemas.
+
+```csharp
+private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
+private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+static Program()
+{
+    if (null == subscriptionKey)
+    {
+        throw new Exception("Please set/export the environment variable: " + key_var);
+    }
+    if (null == endpoint)
+    {
+        throw new Exception("Please set/export the environment variable: " + endpoint_var);
+    }
+}
+// The code in the next section goes here.
+```
+
 ## <a name="create-a-function-to-translate-text"></a>Criar uma função para traduzir texto
 
 Na classe `Program`, crie uma função assíncrona chamada `TranslateTextRequest()`. Esta função usará quatro argumentos: `subscriptionKey`, `host`, `route` e `inputText`.
@@ -116,7 +137,7 @@ Na classe `Program`, crie uma função assíncrona chamada `TranslateTextRequest
 ```csharp
 // This sample requires C# 7.1 or later for async/await.
 // Async call to the Translator Text API
-static public async Task TranslateTextRequest(string subscriptionKey, string host, string route, string inputText)
+static public async Task TranslateTextRequest(string subscriptionKey, string endpoint, string route, string inputText)
 {
   /*
    * The code for your call to the translation service will be added to this
@@ -164,7 +185,7 @@ Adicione este código a `HttpRequestMessage`:
 // Set the method to Post.
 request.Method = HttpMethod.Post;
 // Construct the URI and add headers.
-request.RequestUri = new Uri(host + route);
+request.RequestUri = new Uri(endpoint + route);
 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
@@ -200,18 +221,18 @@ static async Task Main(string[] args)
     // Output languages are defined in the route.
     // For a complete list of options, see API reference.
     // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate
-    string host = "https://api.cognitive.microsofttranslator.com";
     string route = "/translate?api-version=3.0&to=de&to=it&to=ja&to=th";
-    string subscriptionKey = "YOUR_TRANSLATOR_TEXT_KEY_GOES_HERE";
     // Prompts you for text to translate. If you'd prefer, you can
     // provide a string as textToTranslate.
     Console.Write("Type the phrase you'd like to translate? ");
     string textToTranslate = Console.ReadLine();
-    await TranslateTextRequest(subscriptionKey, host, route, textToTranslate);
+    await TranslateTextRequest(subscriptionKey, endpoint, route, textToTranslate);
+    Console.WriteLine("Press any key to continue.");
+    Console.ReadKey();
 }
 ```
 
-Você pode observar que em `Main`, você está declarando `subscriptionKey`, `host` e `route`. Além disso, você está solicitando a entrada do usuário com `Console.Readline()` e atribuindo o valor a `textToTranslate`.
+Você pode observar que em `Main`, você está declarando `subscriptionKey`, `endpoint` e `route`. Além disso, você está solicitando a entrada do usuário com `Console.Readline()` e atribuindo o valor a `textToTranslate`.
 
 ## <a name="run-the-sample-app"></a>Executar o aplicativo de exemplo
 

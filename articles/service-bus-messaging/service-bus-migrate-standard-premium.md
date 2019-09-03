@@ -179,8 +179,8 @@ az servicebus migration abort --resource-group $resourceGroup --name $standardNa
 
 #### <a name="azure-portal"></a>Portal do Azure
 
-![Anular fluxo-anular sincronização][]
-![de anular fluxo-anular conclusão][]
+![Anular o fluxo-anular sincronização][]
+![Anular fluxo-anulação concluída][]
 
 Quando o processo de migração é anulado, ele anula o processo de cópia das entidades (tópicos, assinaturas e filtros) do padrão para o namespace Premium e interrompe o emparelhamento.
 

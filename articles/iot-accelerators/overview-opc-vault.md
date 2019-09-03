@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 40a9016ac7a10175b51f0fb6f072dd089bde3a51
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 44315790116545dd888aed533731bbf01abe801d
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606288"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997297"
 ---
 # <a name="what-is-opc-vault"></a>O que é o OPC Vault?
 
@@ -30,3 +30,10 @@ Um profissional de segurança usa o microsserviço OPC Vault para habilitar faci
 O diagrama a seguir ilustra a arquitetura completa do OPC Vault.
 
 ![Arquitetura do OPC Vault](media/overview-opc-vault-architecture/opc-vault.png)
+
+## <a name="next-steps"></a>Próximas etapas
+
+Agora que você aprendeu sobre o Cofre OPC e seus usos, está é a próxima etapa sugerida:
+
+> [!div class="nextstepaction"]
+> [Arquitetura de Cofre OPC](overview-opc-vault-architecture.md)

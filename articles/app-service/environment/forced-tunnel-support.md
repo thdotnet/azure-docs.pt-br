@@ -9,23 +9,22 @@ ms.assetid: 384cf393-5c63-4ffb-9eb2-bfd990bc7af1
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 05/29/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 36324ccd9b6e9470c93949efed6c29a9b8d3ab61
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.openlocfilehash: e80c0e4e57f8af067c17d0dcfefd26ce7ce8255f
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389298"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069459"
 ---
 # <a name="configure-your-app-service-environment-with-forced-tunneling"></a>Configurar seu Ambiente de Serviço de Aplicativo com tunelamento forçado
 
 Um Ambiente do Serviço de Aplicativo (ASE) é uma implantação do Serviço de Aplicativo do Azure na Rede Virtual do Azure de um cliente. Muitos clientes configuram suas redes virtuais do Azure para extensões de suas redes locais com VPNs ou conexões ExpressRoute do Azure. O túnel forçado é quando você redireciona o tráfego associado de Internet para a VPN ou uma solução de virtualização. Normalmente, soluções de virtualização são usadas para inspecionar e auditar o tráfego de rede de saída. 
 
-O Ambiente do Serviço de Aplicativo tem inúmeras dependências externas, que são descritas no documento [Arquitetura de rede do Ambiente do Serviço de Aplicativo][network]. Normalmente, todo o tráfego de dependência de saída do ASE deve percorrer o VIP que está provisionado com o ASE. Se você alterar o roteamento de tráfego de ou para o ASE sem seguir as informações a seguir, o ASE irá parar de funcionar.
+O ASE tem inúmeras dependências externas, que são descritas no documento [Arquitetura de rede do Ambiente do Serviço de Aplicativo][network]. Normalmente, todo o tráfego de dependência de saída do ASE deve percorrer o VIP que está provisionado com o ASE. Se você alterar o roteamento de tráfego de ou para o ASE sem seguir as informações a seguir, o ASE irá parar de funcionar.
 
 Em uma rede virtual do Azure, o roteamento é feito com base na LPM (correspondência de prefixo mais longo). Se houver mais de uma rota com a mesma correspondência LPM, uma rota será selecionada com base em sua origem na seguinte ordem:
 
@@ -33,7 +32,7 @@ Em uma rede virtual do Azure, o roteamento é feito com base na LPM (correspond�
 * Rota BGP (quando o ExpressRoute é usado)
 * Rota de sistema
 
-Para saber mais sobre como rotear em uma rede virtual, leia [User-defined routes and IP forwarding][routes] (Rotas definidas pelo usuário e encaminhamento de IP). 
+Para saber mais sobre o roteamento em uma rede virtual, leia [Rotas definidas pelo usuário e encaminhamento de IP][routes]. 
 
 Se quiser encaminhar seu tráfego de saída do ASE para algum lugar sem ser diretamente para a Internet, você tem as seguintes opções:
 
@@ -80,7 +79,7 @@ Para encaminhar todo o tráfego de saída de seu ASE, exceto o que vai para o SQ
 
 2. Habilite os Pontos de Extremidade de Serviço com o SQL do Azure e o Armazenamento do Azure com sua sub-rede do ASE.  Após essa etapa estar concluída, você pode configurar sua rede virtual com o túnel forçado.
 
-Para criar seu ASE em uma rede virtual que já está configurada para rotear todo o tráfego no local, você precisa criar seu ASE usando um modelo do gerenciador de recursos.  Não é possível criar um ASE com o portal em uma sub-rede já existente.  Ao implantar seu ASE em uma rede virtual que já está configurada para rotear o tráfego de saída no local, você precisa criar seu ASE usando um modelo de gerenciador de recursos, que permitem que você especifique uma sub-rede já existente. Para obter detalhes sobre como implantar um ASE com um modelo, leia [Creating an App Service Environment using a template][template] (Criando um Ambiente do Serviço de Aplicativo usando um modelo).
+Para criar seu ASE em uma rede virtual que já está configurada para rotear todo o tráfego no local, você precisa criar seu ASE usando um modelo do gerenciador de recursos.  Não é possível criar um ASE com o portal em uma sub-rede já existente.  Ao implantar seu ASE em uma rede virtual que já está configurada para rotear o tráfego de saída no local, você precisa criar seu ASE usando um modelo de gerenciador de recursos, que permitem que você especifique uma sub-rede já existente. Para obter detalhes sobre como implantar um ASE com um modelo, leia [Criando um Ambiente do Serviço de Aplicativo usando um modelo][template].
 
 Os Pontos de Extremidade de Serviço permitem restringir o acesso aos serviços de vários locatários para um conjunto de sub-redes e redes virtuais do Azure. Você pode saber mais sobre os Pontos de Extremidade de Serviço na documentação [Pontos de Extremidade de Serviço de Rede Virtual][serviceendpoints]. 
 

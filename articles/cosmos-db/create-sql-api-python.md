@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 84f3e4d0314408b2f3a8417cebd355a842331286
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f085ca6de2c04caa90c34bc1293da1210d2883eb
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855134"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020172"
 ---
 # <a name="azure-cosmos-db-build-a-python-application-using-azure-cosmos-db-sql-api-account"></a>O Azure Cosmos DB: Criar um aplicativo do Python usando a conta de API de SQL do Azure Cosmos DB
 
@@ -84,7 +84,7 @@ Agora vamos clonar um aplicativo de API do SQL do GitHub, definir a cadeia de co
 
 Agora, volte ao portal do Azure para obter informações sobre a cadeia de conexão e copiá-las para o aplicativo.
 
-1. No [portal do Azure](https://portal.azure.com/), em sua conta do Azure Cosmos, no painel de navegação à esquerda, clique em **Chaves**. Você usará os botões de cópia no lado direito da tela para copiar o **URI** e a **Chave Primária** para o arquivo `CosmosGetStarted.py` na próxima etapa.
+1. No [portal do Azure](https://portal.azure.com/), em sua conta do Azure Cosmos, no painel de navegação à esquerda, selecione **Chaves**. Você usará os botões de cópia no lado direito da tela para copiar o **URI** e a **Chave Primária** para o arquivo `CosmosGetStarted.py` na próxima etapa.
 
     ![Exibir e copiar uma chave de acesso no Portal do Azure, folha Chaves](./media/create-sql-api-dotnet/keys.png)
 
@@ -173,7 +173,7 @@ Todos os snippets de código a seguir são retirados do arquivo `CosmosGetStarte
    
 ## <a name="run-the-app"></a>Execute o aplicativo
 
-1. No Visual Studio Code, selecione **Exibir**>**Paleta de Comandos**. 
+1. No Visual Studio Code, selecione **Exibir** > **Paleta de Comandos**. 
 
 2. No prompt, digite **Python: Selecione Interpretador** e, em seguida, selecione a versão do Python a ser usada.
 

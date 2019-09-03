@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 4/9/2019
+ms.date: 08/29/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 9d7b9673101ed3b6ff85a9981ba061bc870762b1
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 0892bde09891d2edbd7f8cc8715ccc0d2f047ed4
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405678"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70113466"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Tutorial: Implantar e configurar o Firewall do Azure usando o portal do Azure
 
@@ -67,6 +67,9 @@ O grupo de recursos contém todos os recursos para o tutorial.
 
 Essa VNET conterá três sub-redes.
 
+> [!NOTE]
+> O tamanho da sub-rede AzureFirewallSubnet é /26. Para obter mais informações sobre o tamanho da sub-rede, confira [Perguntas frequentes sobre o Firewall do Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+
 1. Na página inicial do portal do Azure, selecione **Criar um recurso**.
 2. Em **Rede**, selecione **Rede virtual**.
 4. Em **Nome**, digite **Test-FW-VN**.
@@ -75,11 +78,8 @@ Essa VNET conterá três sub-redes.
 7. Para **Grupo de recursos**, selecione **Test-FW-RG**.
 8. Em **local**, selecione o mesmo local usado anteriormente.
 9. Em **Sub-rede**, digite **AzureFirewallSubnet** em **Nome**. O firewall estará nessa sub-rede e o nome da sub-rede **precisa** ser AzureFirewallSubnet.
-10. Em **Intervalo de endereços**, digite **10.0.1.0/24**.
+10. Em **Intervalo de endereços**, digite **10.0.1.0/26**.
 11. Aceite as outras configurações padrão e selecione **Criar**.
-
-> [!NOTE]
-> O tamanho mínimo da sub-rede AzureFirewallSubnet é /26.
 
 ### <a name="create-additional-subnets"></a>Criar sub-redes adicionais
 
@@ -87,7 +87,7 @@ Em seguida, crie sub-redes para o servidor jump e uma sub-rede para os servidore
 
 1. Na página inicial do portal do Azure, selecione **Grupos de recursos** > **Test-FW-RG**.
 2. Selecione a rede virtual **Test-FW-VN**.
-3. Selecione **Sub-redes** > **+Sub-rede**.
+3. Selecione **Sub-redes** >  **+Sub-rede**.
 4. Em **Nome**, digite **Workload-SN**.
 5. Em **Intervalo de endereços**, digite **10.0.2.0/24**.
 6. Selecione **OK**.
@@ -104,14 +104,14 @@ Agora crie as máquinas virtuais de jump e carga de trabalho e coloque-as nas su
 
    |Configuração  |Valor  |
    |---------|---------|
-   |Grupo de recursos     |**Test-FW-RG**|
+   |Resource group     |**Test-FW-RG**|
    |Nome da máquina virtual     |**Srv-Jump**|
    |Região     |Igual ao anterior|
    |Nome de usuário administrador     |**azureuser**|
    |Senha     |**Azure123456!**|
 
 4. Em **Regras de porta de entrada**, para **Portas de entrada públicas**, selecione **Permitir portas selecionadas**.
-5. Em **Selecionar portas de entrada**, selecione **RDP (3389)**.
+5. Em **Selecionar portas de entrada**, selecione **RDP (3389)** .
 
 6. Aceite os outros padrões e selecione **Próximo: Discos**.
 7. Aceite os padrões de disco e selecione **Avançar: Rede**.
@@ -140,10 +140,10 @@ Implante o firewall na VNET.
 
    |Configuração  |Valor  |
    |---------|---------|
-   |Assinatura     |\<sua assinatura\>|
-   |Grupo de recursos     |**Test-FW-RG** |
+   |Subscription     |\<sua assinatura\>|
+   |Resource group     |**Test-FW-RG** |
    |NOME     |**Test-FW01**|
-   |Local padrão     |Selecionar o mesmo local usado anteriormente|
+   |Location     |Selecionar o mesmo local usado anteriormente|
    |Escolher uma rede virtual     |**Usar existente**: **Test-FW-VN**|
    |Endereço IP público     |**Criar novo**. O endereço IP público deve ser do tipo SKU Standard.|
 

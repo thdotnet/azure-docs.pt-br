@@ -9,17 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: c3148adc42cb4f899a87d894909eedff4c798575
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 598168285ee67921ab17ab8c2ce780753c562f81
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680223"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072351"
 ---
 # <a name="monitor-published-apis"></a>Monitorar APIs publicadas
 
@@ -64,8 +63,9 @@ Para acessar as métricas:
 
     ![Métricas](./media/api-management-azure-monitor/api-management-metrics-blade.png)
 
-2. Na lista suspensa, selecione as métricas em que você está interessado. Por exemplo, **Solicitações de Gateway com Êxito**. Você também pode adicionar mais métricas ao gráfico.
-3. O gráfico mostra o número total de chamadas à API.
+1. Na lista suspensa, selecione as métricas em que você está interessado. Por exemplo, **Solicitações**. 
+1. O gráfico mostra o número total de chamadas à API.
+1. O gráfico pode ser filtrado usando as dimensões da métrica **Solicitações**. Por exemplo, clique em **Adicionar filtro**, escolha **Código de Resposta de Back-end** e insira 500 como o valor. Agora, o gráfico mostra o número de solicitações que falharam no back-end da API.   
 
 ## <a name="set-up-an-alert-rule-for-unauthorized-request"></a>Configurar uma regra de alerta para a solicitação não autorizada
 

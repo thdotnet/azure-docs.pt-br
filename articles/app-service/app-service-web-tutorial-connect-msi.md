@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 2cf5e0f6da52670d383a1d1508dc7bcc7847831f
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 8a0b974e9b64d477e53c37757b4f2fa952befba2
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68824557"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061869"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Tutorial: proteger a conexão do Banco de Dados SQL do Azure no Serviço de Aplicativo usando uma identidade gerenciada
 
@@ -58,9 +58,11 @@ Para depurar seu aplicativo usando o banco de dados SQL como back-end, verifique
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="grant-azure-ad-user-access-to-database"></a>Conceder ao usuário do Azure AD acesso ao banco de dados
+## <a name="grant-database-access-to-azure-ad-user"></a>Conceder acesso de banco de dados ao usuário do Azure AD
 
-Primeiro, habilite a autenticação do Azure AD para o Banco de Dados SQL atribuindo um usuário do Azure AD como o administrador do Active Directory do servidor do Banco de Dados SQL. Esse usuário é diferente da conta Microsoft usada para inscrição na assinatura do Azure. Esse usuário precisa ser criado, importado, sincronizado ou convidado por você no Azure AD. Para obter mais informações sobre usuários com permissão no Azure AD, confira [Recursos e limitações do Azure AD no banco de dados SQL](../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations). 
+Primeiro, habilite a autenticação do Azure AD para o Banco de Dados SQL atribuindo um usuário do Azure AD como o administrador do Active Directory do servidor do Banco de Dados SQL. Esse usuário é diferente da conta Microsoft usada para inscrição na assinatura do Azure. Esse usuário precisa ser criado, importado, sincronizado ou convidado por você no Azure AD. Para obter mais informações sobre usuários com permissão no Azure AD, confira [Recursos e limitações do Azure AD no banco de dados SQL](../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations).
+
+Se o locatário do Azure AD ainda não tiver um usuário, crie um seguindo as etapas em [Adicionar ou excluir usuários usando o Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md).
 
 Localize a ID do usuário do Azure AD usando a [`az ad user list`](/cli/azure/ad/user?view=azure-cli-latest#az-ad-user-list) e substitua *\<user-principal-name>* . O resultado é salvo em uma variável.
 
@@ -71,7 +73,7 @@ azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-na
 > Para ver a lista de todos os nomes de entidade de usuário no Azure AD, execute `az ad user list --query [].userPrincipalName`.
 >
 
-Adicione o usuário do Azure AD como um administrador do Active Directory usando o comando [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin-create) no Cloud Shell. No comando a seguir, substitua *\<server-name>* .
+Adicione o usuário do Azure AD como um administrador do Active Directory usando o comando [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin-create) no Cloud Shell. No comando a seguir, substitua *\<nome do servidor>* pelo nome do servidor do Banco de Dados SQL (sem o sufixo `.database.windows.net`).
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server-name> --display-name ADMIN --object-id $azureaduser
@@ -170,7 +172,10 @@ var conn = (System.Data.SqlClient.SqlConnection)Database.GetDbConnection();
 conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net/").Result;
 ```
 
-Isso é tudo de que você precisa para se conectar ao Banco de Dados SQL. Ao depurar no Visual Studio, seu código utiliza o usuário do Azure AD que você configurou na seção [Configurar Visual Studio](#set-up-visual-studio). Você configurará o servidor do Banco de dados SQL posteriormente para permitir a conexão da identidade gerenciada do seu aplicativo do Serviço de Aplicativo.
+> [!TIP]
+> Este código de demonstração é síncrono para fins de clareza. Para obter mais informações, confira [Guia assíncrono para construtores](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios/blob/master/AsyncGuidance.md#constructors).
+
+Isso é tudo de que você precisa para se conectar ao Banco de Dados SQL. Ao depurar no Visual Studio, seu código utiliza o usuário do Azure AD que você configurou na seção [Configurar Visual Studio](#set-up-visual-studio). Você configurará o servidor do Banco de dados SQL posteriormente para permitir a conexão da identidade gerenciada do seu aplicativo do Serviço de Aplicativo. A classe `AzureServiceTokenProvider` armazena em cache o token na memória e recupera-o do Azure AD logo antes da expiração. Você não precisa de nenhum código personalizado para atualizar o token.
 
 Digite `Ctrl+F5` para executar o aplicativo novamente. Agora, o mesmo aplicativo CRUD em seu navegador está se conectando diretamente ao Banco de Dados SQL do Azure, usando a autenticação do Azure AD. Essa configuração permite que você execute migrações de banco de dados do Visual Studio.
 
@@ -199,7 +204,7 @@ Veja um exemplo da saída:
 
 ### <a name="add-managed-identity-to-an-azure-ad-group"></a>Adicionar identidade gerenciada a um grupo do Azure AD
 
-Para conceder esse acesso de identidade ao seu Banco de Dados SQL, você precisará adicioná-lo a um [grupo do Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). No Cloud Shell, adicione-o a um novo grupo chamado _myAzureSQLDBAccessGroup_ , conforme mostrado no seguinte script:
+Para conceder esse acesso de identidade ao seu Banco de Dados SQL, você precisará adicioná-lo a um [grupo do Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). No Cloud Shell, adicione-o a um novo grupo chamado _myAzureSQLDBAccessGroup_, conforme mostrado no seguinte script:
 
 ```azurecli-interactive
 groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)

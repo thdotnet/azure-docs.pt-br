@@ -1,5 +1,5 @@
 ---
-title: Criar um dispositivo IoT Plug and Play Preview do Azure | Microsoft Docs
+title: Criar um dispositivo da versão prévia do IoT Plug and Play | Microsoft Docs
 description: Use um modelo de funcionalidade do dispositivo para gerar o código do dispositivo. Em seguida, execute o código do dispositivo e veja o dispositivo se conectar ao Hub IoT.
 author: miagdp
 ms.author: miag
@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 7cfa6e63f74233e9a3fab8f235584fdbe01e67d9
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 386c2fa23e8d01f696ef3cf6078bac5fcec58f05
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881535"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050127"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-device"></a>Início Rápido: Usar um modelo de funcionalidade do dispositivo para criar um dispositivo IoT Plug and Play
 
@@ -48,7 +48,7 @@ Encontre a _cadeia de conexão do repositório de modelos da empresa_ no portal 
 
 ## <a name="prepare-an-iot-hub"></a>Preparar um hub IoT
 
-Você também precisará de um hub IoT do Azure em sua assinatura do Azure para concluir este início rápido. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+Você também precisará de um Hub IoT do Azure em sua assinatura do Azure para concluir este início rápido. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 Adicione a Extensão IoT do Microsoft Azure para a CLI do Azure:
 
@@ -56,7 +56,7 @@ Adicione a Extensão IoT do Microsoft Azure para a CLI do Azure:
 az extension add --name azure-cli-iot-ext
 ```
 
-Use o comando a seguir para criar uma identidade do dispositivo no hub IoT. Substitua os espaços reservados **YourIoTHubName** e **YourDevice** pelos nomes reais. Caso não tenha um Hub IoT, siga [estas instruções para criar um](../iot-hub/iot-hub-create-using-cli.md):
+Use o comando a seguir para criar uma identidade do dispositivo no Hub IoT. Substitua os espaços reservados **YourIoTHubName** e **YourDevice** pelos nomes reais. Caso não tenha um Hub IoT, siga [estas instruções para criar um](../iot-hub/iot-hub-create-using-cli.md):
 
 ```azurecli-interactive
 az iot hub device-identity create --hub-name [YourIoTHubName] --device-id [YourDevice]
@@ -68,7 +68,7 @@ Execute os seguintes comandos para obter a _cadeia de conexão de dispositivo_ p
 az iot hub device-identity show-connection-string --hub-name [YourIoTHubName] --device-id [YourDevice] --output table
 ```
 
-Execute os seguintes comandos para obter a _cadeia de conexão do hub IoT_ para o hub:
+Execute os seguintes comandos para obter a _cadeia de conexão do Hub IoT_ para o hub:
 
 ```azurecli-interactive
 az iot hub show-connection-string --hub-name [YourIoTHubName] --output table

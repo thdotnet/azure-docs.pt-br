@@ -4,21 +4,21 @@ description: Ao usar o gerenciamento de recursos delegados do Azure, é importan
 author: JnHs
 ms.service: lighthouse
 ms.author: jenhayes
-ms.date: 07/11/2019
+ms.date: 08/22/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 09552c66d2dc841cff8b5cb52e26dc657568e08f
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 399d2cb829c0425e3c9ee70a61cafde8568f903b
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67810990"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012104"
 ---
 # <a name="azure-lighthouse-and-the-cloud-solution-provider-program"></a>Azure Lighthouse e o programa Provedor de Soluções na Nuvem
 
-Se você for um [parceiro CSP (Provedor de Soluções na Nuvem)](https://docs.microsoft.com/partner-center/csp-overview), poderá acessar as assinaturas do Azure criadas para seus clientes por meio do programa CSP usando a funcionalidade [AOBO (Administrar em Nome de)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO). Esse acesso permite que você dê suporte, configure e gerencie diretamente as assinaturas dos seus clientes.
+Se você é [parceiro CSP (Provedor de Soluções na Nuvem)](https://docs.microsoft.com/partner-center/csp-overview), já pode acessar as assinaturas do Azure criadas para seus clientes por meio do programa CSP usando a funcionalidade [AOBO (Administrar em nome de)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO). Esse acesso permite que você dê suporte, configure e gerencie diretamente as assinaturas dos seus clientes.
 
-O mecanismo AOBO concede acesso completo a ambientes de clientes. Usar o gerenciamento de recursos delegados do Azure junto com o AOBO ajuda a aprimorar a segurança permitindo que você reduza o acesso desnecessário habilitando mais permissões granulares para seus usuários. 
+Com o Azure Lighthouse, é possível usar o gerenciamento de recursos delegados do Azure juntamente com o AOBO. Isso ajuda a melhorar a segurança e reduz o acesso desnecessário habilitando permissões mais granulares para seus usuários. Isso também possibilita maior eficiência e escalabilidade, pois os usuários podem trabalhar em várias assinaturas de clientes usando um único logon em seu locatário.
 
 ## <a name="administer-on-behalf-of-aobo"></a>AOBO (Administrar em Nome de)
 
@@ -28,23 +28,14 @@ Com o AOBO, qualquer usuário com a função [Agente Administrador](https://docs
 
 ## <a name="azure-delegated-resource-management"></a>Gerenciamento de recursos delegados do Azure
 
-Usando o gerenciamento de recursos delegados do Azure, é possível atribuir diferentes grupos a diferentes clientes ou funções, conforme mostrado no diagrama a seguir. Como os usuários terão o nível apropriado de acesso por meio do gerenciamento de recursos delegados do Azure, é possível reduzir o número de usuários que têm a função Agente Administrador (e, portanto, ter acesso AOBO total). Isso proporciona maior segurança limitando o acesso desnecessário aos recursos dos seus clientes. Também oferece mais flexibilidade de gerenciar vários clientes em escala.
+Usando o gerenciamento de recursos delegados do Azure, é possível atribuir diferentes grupos a diferentes clientes ou funções, conforme mostrado no diagrama a seguir. Como os usuários terão o nível apropriado de acesso por meio do gerenciamento de recursos delegados do Azure, é possível reduzir o número de usuários que têm a função Agente Administrador (e, portanto, ter acesso AOBO total). Isso ajuda a melhorar a segurança limitando o acesso desnecessário aos recursos dos seus clientes. Também oferece mais flexibilidade de gerenciar vários clientes em escala.
 
 A integração de uma assinatura que você criou por meio do programa CSP segue as etapas descritas em [Integrar uma assinatura ao gerenciamento de recursos delegados do Azure](../how-to/onboard-customer.md). Qualquer usuário que tenha a função Agente Administrador em seu locatário poderá realizar essa integração.
 
-Observe que para assinaturas criadas por meio de programas CSP, as solicitações de suporte só podem ser geradas por usuários com a função Agente Administrador no locatário do provedor do serviço. Os usuários adicionados por meio do gerenciamento de recursos delegados do Azure não poderão abrir solicitações de suporte para recursos delegados nessas assinaturas.
-
 ![Gerenciamento de locatários usando AOBO e gerenciamento de recursos delegados do Azure](../media/csp-2.jpg)
-
-## <a name="partner-admin-link"></a>Link de Partner Admin
-
-Você pode associar sua ID do MPN (Microsoft Partner Network) às assinaturas integradas para acompanhar o impacto nas participações dos clientes.
-
-Se você [publicar uma oferta de serviços gerenciados no Azure Marketplace](../how-to/publish-managed-services-offers.md), sua ID do MPN será associada ao seu perfil de editor e será associada automaticamente à oferta. A receita gerada pelos recursos do Azure por meio desta oferta será atribuída à sua organização. Em sistemas de relatórios parceiros como o Partner Center ou MPN, a atribuição será exibida como PAL (Link de Partner Admin).
-
-Se você [integrar clientes para o gerenciamento de recursos delegados do Azure usando os modelos do Azure Resource Manager](../how-to/onboard-customer.md), ainda poderá associar sua ID do MPN a fim de receber reconhecimento para seu impacto sobre participações de clientes, mas terá que fazer isso manualmente. Para saber mais, confira [Vincular uma ID de parceiro a suas contas do Azure](https://docs.microsoft.com/azure/billing/billing-partner-admin-link-started). 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [experiências de gerenciamento entre locatários](cross-tenant-management-experience.md).
+- Saiba mais sobre as [experiências de gerenciamento entre locatários](cross-tenant-management-experience.md).
+- Saiba como [integrar uma assinatura ao gerenciamento de recursos delegados do Azure](../how-to/onboard-customer.md).
 - Saiba mais sobre o [programa Provedor de Soluções na Nuvem](https://docs.microsoft.com/partner-center/csp-overview).

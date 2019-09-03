@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 08/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 8987a22d4546fe887d1dda9adff8f46afe667618
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: a7d1249d68ddd4a161d1c0476e5f56e80c4d32f9
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69644979"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032007"
 ---
 # <a name="how-to-access-a-classroom-lab-in-azure-lab-services"></a>Como acessar um laboratório de sala de aula no Azure Lab Services
 Este artigo descreve como se registrar em um laboratório de sala de aula, exibir todos os laboratórios que você pode acessar, iniciar/interromper uma VM no laboratório e se conectar a ela. 
@@ -55,6 +55,30 @@ Este artigo descreve como se registrar em um laboratório de sala de aula, exibi
 2. Siga uma das etapas a seguir: 
     1. Para máquinas virtuais do **Windows**, salve o arquivo **RDP** no disco rígido. Abra o arquivo RDP para conectar a máquina virtual. Use o **nome de usuário** e **senha** obtido do seu professor/educador para entrar no computador. 
     3. Para máquinas virtuais do **Linux**, você pode usar **SSH** ou **RDP** (se habilitado) para se conectar a elas. Para obter mais informações, veja [Habilitar conexão de área de trabalho remota para computadores Linux](how-to-enable-remote-desktop-linux.md). 
+    1. Se estiver usando um **Mac** para se conectar à VM do laboratório, siga as instruções na próxima seção. 
+
+## <a name="connect-to-a-vm-using-rdp-on-a-mac"></a>Conectar-se a uma VM usando RDP em um Mac
+Esta seção mostra como um aluno pode se conectar a uma VM de um Mac usando o RDP.
+
+### <a name="step-1-install-microsoft-remote-desktop-on-a-mac"></a>Etapa 1: Instalar a Área de Trabalho Remota da Microsoft em um Mac
+1. Abra a App Store em seu Mac e procure pela **Área de Trabalho Remota da Microsoft**.
+
+    ![Área de Trabalho Remota da Microsoft](../media/how-to-use-classroom-lab/install-ms-remote-desktop.png)
+1. Instale a versão mais recente da Área de Trabalho Remota da Microsoft. 
+
+### <a name="step-2-access-the-vm-from-your-mac-using-rdp"></a>Etapa 2: Acessar a VM de seu Mac usando RDP
+1. Abra o arquivo **RDP** que é baixado em seu computador com a **Área de Trabalho Remota da Microsoft** instalada. Ele deve começar a se conectar à VM. 
+
+    ![Conectar-se a uma VM](../media/how-to-use-classroom-lab/connect-linux-vm.png)
+1. Selecione **Continuar** se você receber o aviso a seguir. 
+
+    ![Aviso de certificado](../media/how-to-use-classroom-lab/certificate-error.png)
+1. Você deverá ver a VM. 
+
+    > [!NOTE]
+    > O exemplo a seguir é referente a uma VM CentOS do Linux. 
+
+    ![VM](../media/how-to-use-classroom-lab/vm-ui.png)
 
 ## <a name="progress-bar"></a>Barra de progresso 
 A barra de progresso no bloco mostra o número de horas usadas em relação ao número de [horas de cota](how-to-configure-student-usage.md#set-quotas-for-users) atribuídas a você. Esse tempo é o tempo adicional alocado para você, além do horário agendado para o laboratório. A cor da barra de progresso e o texto sob a barra de progresso variam de acordo com os seguintes cenários:

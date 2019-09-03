@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 05/21/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 09d12c817e9e8678cf96c63c0bff623923f7074d
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 999b9ed88b6ff2c14defd3424c0fb541b7cf5d8e
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65978834"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050102"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-supported-features-and-syntax"></a>API do Azure Cosmos DB para MongoDB: sintaxe e recursos do MongoDB com suporte
 
@@ -332,7 +332,7 @@ Alguns aplicativos dependem de uma [Preocupação de gravação](https://docs.mo
 
 ## <a name="sharding"></a>Fragmentação
 
-O Cosmos DB é compatível com a fragmentação automática, do lado do servidor. O Cosmos DB não dá suporte aos comandos de fragmentação manual.
+O Azure Cosmos DB oferece suporte à fragmentação automática, do lado do servidor. Ele gerencia a criação, o posicionamento e o balanceamento de fragmentos automaticamente. O Azure Cosmos DB não dá suporte a comandos de fragmentação manual, o que significa que você não precisa invocar comandos como shardCollection, addShard, balancerStart, moveChunk etc. Você só precisa especificar a chave de fragmentação ao criar os contêineres ou consultar os dados.
 
 ## <a name="next-steps"></a>Próximas etapas
 

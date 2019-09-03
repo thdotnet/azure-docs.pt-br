@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: a622aa85d1d0a9dcd5d5ad9b2b30e7a3120ea974
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 660b2ead146695657ae13444cb7936eff8224f3a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69878627"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099510"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application-preview-features"></a>Tutorial: Definir um novo tipo de dispositivo no aplicativo do Azure IoT Central (versão prévia dos recursos)
 
@@ -44,7 +44,7 @@ Neste tutorial, você aprenderá como:
 
 Para concluir este tutorial, você precisa de um aplicativo Azure IoT Central. Se você concluiu o início rápido [Criar um aplicativo Azure IoT Central](quick-deploy-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json), você pode reutilizar o aplicativo criado no início rápido. Caso contrário, conclua as seguintes etapas para criar um aplicativo Azure IoT Central vazio:
 
-1. Navegue até a página do [Gerenciador de aplicativos](https://aka.ms/iotcentral) do Azure IoT Central.
+1. Navegue até o site do [Gerenciador de aplicativos do Azure IoT Central](https://aka.ms/iotcentral).
 
 1. Se você tiver uma assinatura do Azure, entre com as credenciais usadas para acessá-lo, caso contrário, entre usando uma conta Microsoft:
 
@@ -70,7 +70,7 @@ Para criar um novo aplicativo de IoT Central do Azure que usa versão prévia do
 
     Para obter mais informações, consulte o [Criar um início rápido de aplicativo](quick-deploy-iot-central-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json).
 
-Você também precisa de uma cópia local do arquivo **EnvironmentalSensorInline. capabilitymodel.json** que contém o modelo de funcionalidade do dispositivo [IoT Plug and Play](https://aka.ms/iot-pnp-docs). Você pode baixá-lo [aqui](https://raw.githubusercontent.com/Azure/IoTPlugandPlay/master/samples/EnvironmentalSensorInline.capabilitymodel.json). Clique com o botão direito do mouse na página e selecione **Salvar como**.
+Você também precisa de uma cópia local do arquivo **EnvironmentalSensorInline. capabilitymodel.json** que contém o modelo de funcionalidade do dispositivo [IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md). Você pode baixá-lo [aqui](https://raw.githubusercontent.com/Azure/IoTPlugandPlay/master/samples/EnvironmentalSensorInline.capabilitymodel.json). Clique com o botão direito do mouse na página e selecione **Salvar como**.
 
 Depois de baixar o arquivo, abra-o em um editor de texto e substitua as duas instâncias de `<YOUR_COMPANY_NAME_HERE>` pelo seu nome. Use somente os caracteres a-z, A-Z, 0-9 e sublinhado.
 
@@ -90,11 +90,11 @@ As etapas a seguir mostram como importar o modelo de funcionalidade para um disp
 
 1. Para adicionar um novo modelo de dispositivo, selecione **+ Novo** na página **Modelos de Aplicativo**.
 
-1. Escolha **Personalizar** na lista de modelos de funcionalidade do dispositivo.
+1. Escolha **Personalizado** na lista de modelos.
 
 1. Insira **Sensor Ambiental** como nome do seu modelo de dispositivo.
 
-1. Escolha **Importar Modelo de Funcionalidade** para criar um modelo de funcionalidade do dispositivo de um arquivo JSON. Navegue até a pasta em que você salvou o arquivo **EnvironmentalSensorInline. capabilitymodel.json** em seu computador local. Selecione o arquivo **EnvironmentalSensorInline. capabilitymodel. json** e, em seguida, selecione importar. O modelo de funcionalidade do sensor de ambiente inclui as interfaces do **Sensor Ambiental** e de **Informações do Dispositivo**:
+1. Escolha **Importar Modelo de Funcionalidade** para criar um modelo de funcionalidade do dispositivo de um arquivo JSON. Navegue até a pasta em que você salvou o arquivo **EnvironmentalSensorInline. capabilitymodel.json** em seu computador local. Selecione o arquivo **EnvironmentalSensorInline. capabilitymodel. json** e, em seguida, selecione **Abrir**. O modelo de funcionalidade do sensor de ambiente inclui as interfaces do **Sensor Ambiental** e de **Informações do Dispositivo**:
 
     ![Modelo de funcionalidade do dispositivo do sensor ambiental](./media/tutorial-define-device-type-pnp/newdevicecapabilitymodel.png)
 
@@ -147,9 +147,9 @@ Depois de selecionar **Gerar modos de exibição padrão**, eles serão automati
 
 Um painel de dispositivos permite que um operador visualize um dispositivo usando gráficos e métricas. Como um construtor, você pode definir quais informações são exibidas em um painel do dispositivo. Você pode definir vários painéis para os dispositivos. Para criar um painel para visualizar a telemetria do sensor ambiental, selecione **Modo de exibição** e, em seguida, **Visualizando o dispositivo**:
 
-1. Todas as propriedades do dispositivo, propriedades de nuvem, telemetria e opções estáticas são listadas no painel à direita. Você pode arrastar e soltar qualquer um desses itens para a exibição. Arraste uma propriedade para a exibição. Você pode configurar o bloco usando o ícone de engrenagem.
+1. Todas as propriedades do dispositivo, propriedades de nuvem, telemetria e opções estáticas são listadas em **Propriedades**. Você pode arrastar e soltar qualquer um desses itens para a exibição. Arraste a propriedade **Nível de Brilho** para a exibição. Você pode configurar o bloco usando o ícone de engrenagem.
 
-1. Para adicionar um gráfico que plota telemetria, selecione **Umidade** e **Temperatura**. Em seguida, selecione **Combinar**. Para exibir esse gráfico em qualquer formato diferente, como um gráfico de pizza ou gráfico de barras, selecione o botão **Alterar Visualização** na parte superior do bloco.
+1. Para adicionar um gráfico que plota telemetria, selecione **Umidade** e **Temperatura**. Em seguida, selecione **Combinar**. Para exibir esse gráfico em um formato diferente, como um gráfico de pizza ou um gráfico de barras, selecione o botão **Alterar Visualização** na parte superior do bloco.
 
 1. Selecione **Salvar** para salvar sua exibição:
 
@@ -161,7 +161,7 @@ Um formulário de dispositivo permite que um operador edite as propriedades de d
 
 Para criar um formulário para exibir e editar as propriedades do sensor ambiental:
 
-1. Selecione o bloco **Editando dados de Dispositivo e de Nuvem**.
+1. Navegue até **Exibições** no modelo **Sensor Ambiental**. Selecione o bloco **Editando dados de Dispositivo e de Nuvem** para adicionar uma nova exibição.
 
 1. Insira o nome do formulário **Propriedades do Sensor Ambiental**.
 
@@ -169,10 +169,9 @@ Para criar um formulário para exibir e editar as propriedades do sensor ambient
 
 1. Selecione o **Nível do brilho** e as propriedades do dispositivo **Estado do dispositivo**. Em seguida, selecione **Adicionar Seção**. Edite o título da seção para ser **Propriedades do Sensor**. Escolha **Aplicar**.
 
-1. Selecione as propriedades do dispositivo, **Bateria Restante**, **Modelo do Dispositivo**, **Versão do firmware**, **Fabricante** e **Número de série**. Em seguida, selecione **Adicionar Seção**. Edite o título da seção para ser **Propriedades do Dispositivo**. Escolha **Aplicar**.
+1. Selecione as propriedades **Modelo do dispositivo**, **Versão de software**, **Fabricante** e **Fabricante do processador** do dispositivo. Em seguida, selecione **Adicionar Seção**. Edite o título da seção para ser **Propriedades do Dispositivo**. Escolha **Aplicar**.
 
 1. Selecione **Salvar** para salvar sua exibição.
-
 
 ## <a name="publish-device-template"></a>Publicar um modelo de dispositivo
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 3a283f6cbcf4dc345a8c55192507c461f33244d6
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 66394600963cf154b3cb1fe661968f4ded2ec225
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855435"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992274"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Tutorial: Acessar dados de Data Lake Storage Gen2 com o Azure Databricks usando o Spark
 
@@ -124,18 +124,18 @@ Use o AzCopy para copiar dados do arquivo *.csv* para sua conta do Data Lake Sto
 2. Para copiar dados da conta *.csv*, insira o comando a seguir.
 
    ```bash
-   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time.csv
+   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<container-name>/folder1/On_Time.csv
    ```
 
    * Substitua o valor de espaço reservado `<csv-folder-path>` pelo nome caminho no arquivo *.csv*.
 
    * Substitua o valor de espaço reservado `<storage-account-name>` pelo nome da sua conta de armazenamento.
 
-   * Substitua o espaço reservado `<file-system-name>` por qualquer nome que deseje fornecer ao sistema de arquivos.
+   * Substitua o espaço reservado `<container-name>` por qualquer nome que deseje fornecer ao contêiner.
 
-## <a name="create-a-file-system-and-mount-it"></a>Criar um sistema de arquivos e montá-lo
+## <a name="create-a-container-and-mount-it"></a>Criar um contêiner e montá-lo
 
-Nesta seção, você criará um sistema de arquivos e uma pasta em sua conta de armazenamento.
+Nesta seção, você criará um contêiner e uma pasta em sua conta de armazenamento.
 
 1. No [portal do Azure](https://portal.azure.com), acesse o serviço do Azure Databricks criado e selecione **Iniciar Workspace**.
 
@@ -158,12 +158,12 @@ Nesta seção, você criará um sistema de arquivos e uma pasta em sua conta de 
            "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
     dbutils.fs.mount(
-    source = "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/folder1",
+    source = "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/folder1",
     mount_point = "/mnt/flightdata",
     extra_configs = configs)
     ```
 
-18. Neste bloco de código, substitua os valores de espaço reservado `appId`, `password`, `tenant` e `storage-account-name` pelos valores coletados ao concluir os pré-requisitos deste tutorial. Substitua o valor de espaço reservado `file-system-name` pelo nome que você deu ao seu sistema de arquivos do ADLS na etapa anterior.
+18. Neste bloco de código, substitua os valores de espaço reservado `appId`, `password`, `tenant` e `storage-account-name` pelos valores coletados ao concluir os pré-requisitos deste tutorial. Substitua o valor de espaço reservado `container-name` pelo nome que você deu ao contêiner na etapa anterior.
 
 Use esses valores para substituir os espaços reservados mencionados.
 
@@ -173,7 +173,7 @@ Use esses valores para substituir os espaços reservados mencionados.
 
    * O `storage-account-name` é o nome de sua conta de armazenamento do Azure Data Lake Storage Gen2.
 
-   * Substitua o espaço reservado `file-system-name` por qualquer nome que deseje fornecer ao sistema de arquivos.
+   * Substitua o espaço reservado `container-name` por qualquer nome que deseje fornecer ao contêiner.
 
    > [!NOTE]
    > Em uma configuração de produção, considere armazenar sua senha no Azure Databricks. Em seguida, adicione uma chave de pesquisa ao bloco de código em vez da senha. Depois de concluir este início rápido, consulte o artigo [Azure Data Lake Storage Gen2](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) no site Azure Databricks para ver exemplos dessa abordagem.

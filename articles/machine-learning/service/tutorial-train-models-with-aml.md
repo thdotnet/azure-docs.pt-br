@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 05/08/2019
+ms.date: 08/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: df5085011fd2771f094131244c1f466cebcbc89a
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 90f745d3ef5fd4442a184a51d82cd61b12828e15
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534791"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036204"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Tutorial: Treinar modelos de classificação de imagem usando dados MNIST e scikit-learn com o Azure Machine Learning
 
@@ -96,11 +96,11 @@ experiment_name = 'sklearn-mnist'
 exp = Experiment(workspace=ws, name=experiment_name)
 ```
 
-### <a name="create-or-attach-an-existing-compute-resource"></a>Criar ou anexar a um recurso de computação existente
+### <a name="create-or-attach-an-existing-compute-target"></a>Criar ou anexar um destino de computação existente
 
 Usando a Computação do Azure Machine Learning, um serviço gerenciado, os cientistas de dados podem treinar modelos de aprendizado de máquina em clusters de máquinas virtuais do Azure. Exemplos incluem máquinas virtuais com suporte a GPU. Neste tutorial, você cria a Computação do Azure Machine Learning como seu ambiente de treinamento. O código abaixo criará clusters de computação para você se eles ainda não existirem em seu workspace.
 
- **A criação do cluster de computação leva cerca de cinco minutos.** Se o cluster de computação já estiver no workspace, o código o usará e ignorará o processo de criação.
+ **A criação do destino de computação leva cerca de cinco minutos.** Se o recurso de computação já estiver no workspace, o código o usará e ignorará o processo de criação.
 
 ```python
 from azureml.core.compute import AmlCompute
@@ -211,9 +211,9 @@ Agora você tem uma ideia de como essas imagens se parecem e o resultado esperad
 
 ### <a name="upload-data-to-the-cloud"></a>Carregar dados para a nuvem
 
-Agora, torne os dados acessíveis remotamente enviando-os do computador local para o Azure. Então, ele pode ser acessado para treinamento remoto. O armazenamento de dados é um constructo prático associado ao seu workspace para você fazer upload/download de dados. Você também pode interagir com ele de seus destinos de computação remotos. Ele tem suporte de uma conta de Armazenamento de Blobs do Azure.
+Você baixou e usou os dados de treinamento no computador em que seu notebook está sendo executado.  Na próxima seção, você treinará um modelo na Computação do Azure Machine Learning remota.  O recurso de computação remota também precisará de acesso a seus dados. Para fornecer acesso, faça upload dos seus dados para um repositório de dados centralizado associado ao seu workspace. Esse repositório de dados fornece acesso rápido aos seus dados ao usar destinos de computação remota na nuvem, como no data center do Azure.
 
-Os arquivos do MNIST são carregados em um diretório chamado `mnist` na raiz do armazenamento de dados:
+Faça upload dos arquivos do MNIST em um diretório chamado `mnist` na raiz do repositório de dados. Confira [acessar dados de seus repositórios de dados](how-to-access-data.md) para obter mais informações.
 
 ```python
 ds = ws.get_default_datastore()

@@ -3,19 +3,20 @@ title: Tutorial – Automatizar o processamento de emails e anexos – Aplicativ
 description: Tutorial – Crie fluxos de trabalho automatizados que manuseiam emails e anexos com os Aplicativos Lógicos do Azure, o Armazenamento do Azure e o Azure Functions
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
+ms.manager: carmonm
 ms.reviewer: klam, LADocs
-manager: carmonm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/07/2019
-ms.openlocfilehash: ee232b54bc4d65d6380a6f2a1d1c88ee7dcf53c3
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: e7c27d284ef93d15c5ac9a6228205e79518f2ffa
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312657"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051780"
 ---
 # <a name="tutorial-automate-handling-emails-and-attachments-with-azure-logic-apps"></a>Tutorial: Automatizar o manuseio de emails e anexos com os Aplicativos Lógicos do Azure
 
@@ -61,9 +62,9 @@ Você pode salvar emails recebidos e anexos como blobs em um [contêiner de arma
    | Configuração | Valor | DESCRIÇÃO |
    |---------|-------|-------------|
    | **Assinatura** | <*Azure-subscription-name*> | O nome e a ID da assinatura do Azure |  
-   | **Grupo de recursos** | LA-Tutorial-RG | O nome do [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) usado para organizar e gerenciar os recursos relacionados. <p>**Observação:** um grupo de recursos reside dentro de uma região específica. Embora os itens neste tutorial possam não estar disponíveis em todas as regiões, tente usar a mesma região sempre que possível. |
-   | **Nome da conta de armazenamento** | attachmentstorageacct | O nome da conta de armazenamento |
-   | **Localidade** | Oeste dos EUA | A região na qual armazenar informações sobre sua conta de armazenamento |
+   | **Grupo de recursos** | <*Azure-resource-group*> | O nome do [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) usado para organizar e gerenciar os recursos relacionados. Este exemplo usa "LA-tutorial-RG". <p>**Observação:** um grupo de recursos reside dentro de uma região específica. Embora os itens neste tutorial possam não estar disponíveis em todas as regiões, tente usar a mesma região sempre que possível. |
+   | **Nome da conta de armazenamento** | <*Azure-storage-account-name*> | O nome da conta de armazenamento, que deve ter de 3 a 24 caracteres e pode conter apenas letras minúsculas e números. Este exemplo usa "attachmentstorageacct". |
+   | **Localidade** | <*Azure-region*> | A região na qual armazenar informações sobre sua conta de armazenamento. Este exemplo usa "Leste dos EUA". |
    | **Desempenho** | Standard | Essa configuração especifica os tipos de dados com suporte e a mídia para armazenar dados. Confira os [Tipos de contas de armazenamento](../storage/common/storage-introduction.md#types-of-storage-accounts). |
    | **Tipo de conta** | Propósito geral | O [tipo de conta de armazenamento](../storage/common/storage-introduction.md#types-of-storage-accounts) |
    | **Replicação** | Armazenamento com redundância local (LRS) | Essa configuração especifica como os dados são copiados, armazenados, gerenciados e sincronizados. Veja [LRS (armazenamento com redundância local): Redundância de dados de baixo custo para o Armazenamento do Azure](../storage/common/storage-redundancy-lrs.md). |

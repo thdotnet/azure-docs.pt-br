@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: def218564511b65809e776f97d0962b72f72adc2
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 17e27fcbd0e31c8602869be3d884888fe4fe7db0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898129"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70095823"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure (versão prévia pública)
 
@@ -235,8 +235,8 @@ O objetivo desta seção é mostrar como incluir uma etapa de verificação de i
 
 Para simplificar o tutorial, o modelo de topologia e os artefatos são compartilhados nas localizações a seguir, de modo que você não precise preparar sua própria cópia. Caso deseje usar sua própria cópia, siga as instruções do [Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
 
-* Modelo de topologia: \\[https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json](https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json)
-* Repositório de artefatos: \\[https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore](https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore)
+* Modelo de topologia: https:\//armtutorials.blob.core.windows.net/admtutorial/ADMTemplates/CreateADMServiceTopology.json
+* Repositório de artefatos: https:\//armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
 
 Para implantar a topologia, selecione **Experimentar** para abrir o Cloud Shell e, em seguida, cole o script do PowerShell.
 
@@ -265,8 +265,8 @@ Verifique se a topologia de serviço e os recursos de sublinhado foram criados c
 
 Para simplificar o tutorial, o modelo de distribuição revisado é compartilhado nas localizações a seguir, de modo que você não precise preparar sua própria cópia. Caso deseje usar sua própria cópia, siga as instruções do [Tutorial: Usar o Gerenciador de Implantação do Azure com modelos do Resource Manager](./deployment-manager-tutorial.md).
 
-* Modelo de topologia: \\[https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json](https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json)
-* Repositório de artefatos: \\[https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore](https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore)
+* Modelo de topologia: https:\//armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json
+* Repositório de artefatos: https:\//armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
 
 Use a URL de status não íntegro que você criou em [Criar um simulador de serviço de verificação de integridade](#create-a-health-check-service-simulator). Para **managedIdentityID**, confira [Criar a identidade gerenciada atribuída ao usuário](./deployment-manager-tutorial.md#create-the-user-assigned-managed-identity).
 

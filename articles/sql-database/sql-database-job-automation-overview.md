@@ -10,12 +10,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 01/25/2019
-ms.openlocfilehash: f4d2afd65ec06c331498ce974e933fe08c8e67dd
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 432580017cec548b7ecd7cf766aa8f5cdb2253cc
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935183"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70113587"
 ---
 # <a name="automate-management-tasks-using-database-jobs"></a>Automatizar tarefas de gerenciamento usando trabalhos de banco de dados
 
@@ -43,7 +43,7 @@ Há vários cenários, quando você pode usar a automação de trabalhos:
 
 As tecnologias de agendamento de trabalhos a seguir estão disponíveis no Banco de Dados SQL do Azure:
 
-- Os **Trabalhos do SQL Agent** são um componente de agendamento de trabalho do SQL Server clássico e eficaz disponível na Instância Gerenciada. Os Trabalhos do SQL Agent não estão disponíveis em bancos de dados individuais.
+- Os **Trabalhos do SQL Agent** são um componente de agendamento de trabalho do SQL Server clássico e eficaz disponível na Instância Gerenciada. Os Trabalhos do SQL Agent não estão disponíveis em bancos de dados individuais linguagem SQL do Azure.
 - Os **Trabalhos de banco de dados elástico (versão prévia)** são os serviços de Agendamento de Trabalhos que executam trabalhos personalizados em um ou muitos Bancos de Dados SQL do Azure.
 
 Vale a pena observar algumas diferenças entre o SQL Agent (disponível localmente e como parte da Instância Gerenciada do Banco de Dados SQL) e o agente Trabalho Elástico do Banco de Dados (disponível para bancos de dados individuais no Banco de Dados SQL do Azure e para bancos de dados no SQL Data Warehouse).

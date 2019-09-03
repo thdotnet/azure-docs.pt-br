@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17cea353df0337b062b89cd440f79f7869450f8d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9289bfe9e90186896a753e5853d81d2f06669917
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113215"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125188"
 ---
-# <a name="tutorial-use-risk-events-to-trigger-multi-factor-authentication-and-password-changes"></a>Tutorial: Usar eventos de risco para disparar a Autenticação Multifator e alterações de senha
+# <a name="tutorial-use-risk-detections-to-trigger-multi-factor-authentication-and-password-changes"></a>Tutorial: Usar detecções de risco para disparar a Autenticação Multifator e alterações de senha
 
 Neste tutorial, você habilitará recursos do Azure AD (Azure Active Directory) Identity Protection, um recurso do Azure AD Premium P2 que é mais do que apenas uma ferramenta de monitoramento e relatório. Para proteger as identidades da organização, você pode configurar políticas de risco que respondem automaticamente a comportamentos de risco. Essas políticas podem bloquear ou iniciar a correção automaticamente, incluindo a exigência de alterações de senha e a imposição de Autenticação Multifator.
 
 As políticas do Azure AD Identity Protection podem ser usadas além das políticas de acesso condicional existentes, como uma camada extra de proteção. Os usuários podem nunca realizar um comportamento de risco que exija uma dessas políticas, mas como administrador, você sabe que eles estão protegidos.
 
-Alguns itens que podem disparar um evento de risco incluem:
+Alguns itens que podem disparar uma detecção de risco incluem:
 
 * Usuários com credenciais vazadas
 * Entradas de endereços IP anônimos

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/09/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: c78c2c8279972108aee12b9b386175d0f27b7fee
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 339b13201934b1ba5cd4f53c21d50b62814c36eb
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310405"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905369"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Tutorial: Executar um fluxo de trabalho de contêiner de várias etapas na nuvem ao fazer commit do código-fonte
 
@@ -332,7 +332,7 @@ az acr task create \
     --name example2 \
     --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
     --branch master \
-    --file taskmulti-image.yaml \
+    --file taskmulti-multiregistry.yaml \
     --git-access-token $GIT_PAT \
     --set regDate=mycontainerregistrydate.azurecr.io
 ```
@@ -363,7 +363,7 @@ Como no exemplo anterior, para testar a tarefa de várias etapas, dispare-a manu
 az acr task run --registry $ACR_NAME --name example2
 ```
 
-Por padrão, o comando `az acr task run` transmite a saída de log para o console quando você executa o comando. Como antes, a saída mostra o andamento da execução de cada uma das etapas da tarefa. A saída foi condensada para mostrar as principais etapas
+Por padrão, o comando `az acr task run` transmite a saída de log para o console quando você executa o comando. Como antes, a saída mostra o andamento da execução de cada uma das etapas da tarefa. A saída foi condensada para mostrar as principais etapas.
 
 Saída:
 

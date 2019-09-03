@@ -8,16 +8,16 @@ ms.subservice: disk
 ms.topic: overview
 ms.date: 08/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 1361224fb59a32ca227c5ea1e6cc92a4b0fdff6e
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 1ac91853c78a33645c0ccb234437e3cabc188f88
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541803"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70076891"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: Perguntas frequentes
 
-A solução de nuvem do Microsoft Azure Data Box Disk permite que você envie terabytes de dados do Azure de maneira rápida, barata e confiável. Estas Perguntas frequentes contêm perguntas e respostas sobre dúvidas que você pode ter ao usar discos do Data Box no portal do Azure. 
+A solução de nuvem do Microsoft Azure Data Box Disk permite que você envie terabytes de dados do Azure de maneira rápida, barata e confiável. Estas Perguntas frequentes contêm respostas para perguntas que podem surgir durante o uso dos discos do Data Box no portal do Azure. 
 
 As perguntas e respostas são organizadas nas seguintes categorias:
 
@@ -34,11 +34,11 @@ As perguntas e respostas são organizadas nas seguintes categorias:
 a.  O serviço Azure Data Box foi criado para a ingestão de dados offline. Esse serviço gerencia uma variedade de produtos e é personalizado para o transporte de dados em diferentes capacidades de armazenamento. 
 
 ### <a name="q-what-are-azure-data-box-disks"></a>P. O que são os discos do Azure Data Box?
-a. Os discos do Azure Data Box permitem uma transferência rápida, barata e segura de terabytes de dados do Azure e para ele. A Microsoft fornece de um a cinco discos, com capacidade de armazenamento máxima de 35 TB. Você pode configurar, conectar e desbloquear facilmente esses discos por meio do serviço Data Box no Portal do Azure.  
+a. Os discos do Azure Data Box permitem uma transferência de terabytes de dados rápida, barata e segura entre a plataforma do Azure. A Microsoft fornece de um a cinco discos, com capacidade de armazenamento máxima de 35 TB. Você pode configurar, conectar e desbloquear facilmente esses discos por meio do serviço Data Box no Portal do Azure.  
 
 Os discos são criptografados usando a Criptografia de Unidade de Disco BitLocker da Microsoft e suas chaves de criptografia são gerenciadas no portal do Azure. Em seguida, você copia os dados dos servidores do cliente. No datacenter, a Microsoft migra os dados da unidade para a nuvem usando um link de carregamento rápido de rede privada e os carrega para o Azure.
 
-### <a name="q-when-should-i-use-data-box-disks"></a>P. Quando devo usar os discos do Data Box?
+### <a name="q-when-should-i-use-data-box-disks"></a>P. Quando devo usar discos do Data Box?
 a. Se você tiver 40 TB de dados (ou menos) que deseja transferir para o Azure, os discos do Data Box serão uma boa opção.
 
 ### <a name="q-what-is-the-price-of-data-box-disks"></a>P. Qual é o preço dos discos do Data Box?
@@ -72,13 +72,13 @@ a.  No portal do Azure, vá para o pedido do Data Box Disk e navegue até **Deta
 
 Para obter instruções passo a passo, acesse [Desbloquear discos em um cliente do Windows](data-box-disk-deploy-set-up.md#unlock-disks-on-windows-client) ou [Desbloquear discos em um cliente do Linux](data-box-disk-deploy-set-up.md#unlock-disks-on-linux-client).
 
-### <a name="q-can-i-use-a-linux-host-computer-to-connect-and-copy-the-data-on-to-the-data-box-disks"></a>P. Posso usar um computador de host do Linux para conectar e copiar dados para discos do Data Box?
+### <a name="q-can-i-use-a-linux-host-computer-to-connect-and-copy-the-data-on-to-the-data-box-disks"></a>P. Posso usar um computador de host do Linux para conectar e copiar os dados para discos do Data Box?
 a.  Sim. Os clientes do Linux e do Windows podem ser usados para conectar e copiar dados em discos do Data Box. Para obter mais informações, vá para a lista de [sistemas operacionais com suporte](data-box-disk-system-requirements.md) de seu computador host.
 
 ### <a name="q-my-disks-are-dispatched-but-now-i-want-to-cancel-this-order-why-is-the-cancel-button-not-available"></a>P. Meus discos já foram enviados, mas agora quero cancelar o pedido. Por que o botão Cancelar não está disponível?
 a.  Pedidos só podem ser cancelados após a realização do pedido de discos e antes do envio. Depois que os discos são expedidos, você não pode cancelar o pedido. No entanto, você pode devolver seus discos pagando um encargo. 
 
-### <a name="q-can-i-connect-multiple-data-box-disks-at-the-same-to-the-host-computer-to-transfer-data"></a>P. Posso conectar ao mesmo tempo vários discos do Data Box ao computador host para transferir dados?
+### <a name="q-can-i-connect-multiple-data-box-disks-at-the-same-to-the-host-computer-to-transfer-data"></a>P. Posso conectar vários discos do Data Box ao mesmo tempo ao computador host para transferir dados?
 a. Sim. Vários discos do Data Box podem ser conectados ao mesmo computador host para transferir dados, e vários trabalhos de cópia podem ser executados paralelamente.
 
 ## <a name="track-status"></a>Rastreamento de status
@@ -103,7 +103,7 @@ a. Quando testado com discos conectados via USB 3.0, o desempenho do disco foi d
 ### <a name="q-how-do-i-know-that-my-data-is-secure-during-transit"></a>P. Como fazer para saber se meus dados estão protegidos durante o trânsito? 
 a.  Os discos do Data Box são criptografados usando a criptografia BitLocker AES de 128 bits e a chave de acesso só está disponível no portal do Azure. Faça logon no portal do Azure usando suas credenciais de conta para obter a chave de acesso. Forneça essa chave de acesso quando executar a ferramenta de desbloqueio do Data Box Disk.
 
-### <a name="q-how-do-i-copy-the-data-to-the-data-box-disks"></a>P. Como fazer para copiar os dados para os discos do Data Box? 
+### <a name="q-how-do-i-copy-the-data-to-the-data-box-disks"></a>P. Como fazer para copiar os dados em discos do Data Box? 
 a.  Use uma ferramenta de cópia SMB, como o Robocopy, o Diskboss ou até mesmo o arrastar e soltar do Explorador de Arquivos do Windows para copiar os dados nos discos.
 
 ### <a name="q-are-there-any-tips-to-speed-up-the-data-copy"></a>P. Existem dicas para acelerar a cópia dos dados?
@@ -113,7 +113,7 @@ a.  Para acelerar o processo de cópia:
 - Use várias sessões.
 - Em vez de copiar arquivos por compartilhamento de rede (onde você poderia ser limitado pelas velocidades da rede), tenha os dados no mesmo computador em que os discos estão conectados.
 - Verifique se você está usando USB 3.0 ou posterior em todo o processo de cópia. Baixe e use a [ferramenta USBView](https://docs.microsoft.com/windows-hardware/drivers/debugger/usbview) para identificar os controladores USB e dispositivos USB conectados ao computador.
-- Avalie o desempenho do computador usado para copiar os dados. Baixe e use a [ferramenta FIO Bluestop](https://bluestop.org/fio/) para avaliar o desempenho do hardware do servidor.
+- Avalie o desempenho do computador usado para copiar os dados. Baixe e use a [ferramenta FIO Bluestop](https://ci.appveyor.com/project/axboe/fio) para avaliar o desempenho do hardware do servidor. Selecione o build x86 ou x64 mais recente, selecione a guia **Artefatos** e baixe a MSI.
 
 ### <a name="q-how-to-speed-up-the-data-if-the-source-data-has-small-files-kbs-or-few-mbs"></a>P. Como acelerar os dados se a fonte de dados tiver arquivos pequeno (KBs ou alguns MBs)?
 a.  Para acelerar o processo de cópia:

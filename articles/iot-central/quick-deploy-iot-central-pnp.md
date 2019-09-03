@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 05b761dbf9f58f6afca6459e28d2fecca9aa7b06
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 0ae82f8980b995edab3419374e27a2cb905935d5
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881665"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099495"
 ---
 # <a name="create-an-azure-iot-central-application-preview-features"></a>Criar um aplicativo do Azure IoT Central (versão prévia dos recursos)
 
@@ -27,7 +27,7 @@ Este início rápido mostra como criar um aplicativo do Azure IoT Central que us
 
 ## <a name="create-an-application"></a>Criar um aplicativo
 
-Navegue até a página do [Gerenciador de aplicativos](https://aka.ms/iotcentral) do Azure IoT Central. Em seguida, entre com uma conta pessoal ou uma conta corporativa ou de estudante da Microsoft.
+Navegue até o site do [Gerenciador de aplicativos do Azure IoT Central](https://aka.ms/iotcentral). Em seguida, entre com uma conta pessoal ou uma conta corporativa ou de estudante da Microsoft.
 
 Para começar a criar um novo aplicativo Azure IoT Central, selecione **Novo Aplicativo**. Esse link leva você para a página **Criar um aplicativo**.
 
@@ -55,4 +55,4 @@ Para criar um aplicativo do Azure IoT Central que inclui a versão prévia dos r
 Neste início rápido, você criou um aplicativo do IoT Central que usa a versão prévia dos recursos. A próxima etapa sugerida é:
 
 > [!div class="nextstepaction"]
-> [Faça um tour pelo IoT Central](overview-iot-central-tour-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)
+> [Definir um novo tipo de dispositivo em seu aplicativo do Azure IoT Central](./tutorial-define-device-type-pnp.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json)

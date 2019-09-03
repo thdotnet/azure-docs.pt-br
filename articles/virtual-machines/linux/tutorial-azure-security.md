@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 671b7de8852b0aac30e35b76d89eb4489a206f91
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 0ac5c95fa51ca5032f5d3e057af2064f872ea15c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708557"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70081705"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Tutorial: Usar a Central de Segurança do Azure para monitorar máquinas virtuais do Linux
 
@@ -72,7 +71,7 @@ Para configurar uma política de segurança para uma assinatura inteira:
 
 ## <a name="view-vm-configuration-health"></a>Exibir a integridade da configuração da VM
 
-Depois de ter ativado a coleta de dados e definir uma política de segurança, a Central de segurança começa a fornecer alertas e recomendações. À medida que as VMs são implantadas, o agente de coleta de dados é instalado. A Central de segurança é preenchida com os dados para as novas VMs. Para obter informações detalhadas sobre a integridade de configuração de VM, consulte [Proteger suas VMs na Central de segurança](../../security-center/security-center-virtual-machine-recommendations.md). 
+Depois de ter ativado a coleta de dados e definir uma política de segurança, a Central de segurança começa a fornecer alertas e recomendações. À medida que as VMs são implantadas, o agente de coleta de dados é instalado. A Central de segurança é preenchida com os dados para as novas VMs. Para obter informações detalhadas sobre a integridade de configuração de VM, consulte [Proteger suas VMs na Central de segurança](../../security-center/security-center-virtual-machine-protection.md). 
 
 Conforme os dados são coletados, a integridade de recursos de cada VM e os recursos do Azure relacionados são agregados. As informações são mostradas em um gráfico de fácil leitura. 
 
@@ -104,7 +103,7 @@ Em muitos casos, a Central de Segurança fornece etapas acionáveis que você po
 
 ## <a name="view-detected-threats"></a>Exibir as ameaças detectadas
 
-Além das recomendações de configuração de recursos, a Central de Segurança fornece alertas de detecção de ameaças. O recurso de alertas de segurança agrega os dados coletados de cada VM, os logs de rede do Azure e as soluções de parceiros conectadas para detectar ameaças de segurança aos recursos do Azure. Para obter informações detalhadas sobre as funcionalidades de detecção de ameaças da Central de Segurança, consulte [Funcionalidades de detecção da Central de Segurança do Azure](../../security-center/security-center-detection-capabilities.md).
+Além das recomendações de configuração de recursos, a Central de Segurança fornece alertas de detecção de ameaças. O recurso de alertas de segurança agrega os dados coletados de cada VM, os logs de rede do Azure e as soluções de parceiros conectadas para detectar ameaças de segurança aos recursos do Azure. Para obter informações detalhadas sobre as funcionalidades de detecção de ameaças da Central de Segurança, confira [Como a Central de Segurança detecta ameaças?](../../security-center/security-center-alerts-overview.md#detect-threats).
 
 O recurso de alertas de segurança exige que o tipo de preço da Central de Segurança seja aumentado de *Gratuito* para *Standard*. Uma **avaliação gratuita** está disponível quando você muda para esse tipo de preço mais alto. 
 

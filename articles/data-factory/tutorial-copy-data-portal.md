@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/21/2018
 ms.author: jingwang
-ms.openlocfilehash: 5174b46bae5bbcc18f5a2575fb68cce1305507a3
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: a1a97e7521e9772b1d13049d42e67d7ac318fffc
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68826626"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907372"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-azure-data-factory"></a>Copiar dados do Armazenamento de Blobs do Azure para um banco de dados SQL usando o Azure Data Factory
 Neste tutorial, você criará um data factory ao usar a interface do usuário do Azure Data Factory. O pipeline neste data factory copia dados do Armazenamento de Blobs do Azure para um banco de dados SQL. O padrão de configuração neste tutorial aplica-se a cópia de um armazenamento de dados baseado em arquivo para um armazenamento de dados relacional. Para obter uma lista de armazenamentos de dados com suporte como origens e coletores, confira a tabela [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -172,6 +172,9 @@ Neste tutorial, inicie com a criação do pipeline. Em seguida, crie conjuntos d
 1. Alterne para a guia com o pipeline e, em **Conjunto de Dados do Coletor**, confirme se **OutputSqlDataset** está selecionado.
 
     ![Guia Pipeline](./media/tutorial-copy-data-portal/pipeline-tab-2.png)       
+
+Opcionalmente, é possível mapear o esquema da origem para o esquema de destino correspondente seguindo [Mapeamento de esquema na atividade de cópia ](copy-activity-schema-and-type-mapping.md)
+    
 ## <a name="validate-the-pipeline"></a>Validar o pipeline
 Selecione **Validar** na barra de ferramentas para validar as configurações de pipeline.
  

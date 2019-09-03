@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: c4339aa8548ef66c862200ad61b6aaca90332ad0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.openlocfilehash: f478956c3a220ea4435c4f6e8b1096a1e9fdcadf
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171641"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70014684"
 ---
-Depois que o observador é criado, o `AnchorLocated` evento será acionado para cada âncora solicitada. Esse evento é acionado quando uma âncora for localizada, ou se a âncora não pode ser localizada. Se essa situação ocorrer, o motivo pelo qual será declarado no status. Após o processamento de todas as âncoras de um observador, encontrado ou não encontrado, o `LocateAnchorsCompleted` evento será disparado.
+Depois que o observador for criado, o evento `AnchorLocated` será acionado para cada âncora solicitada. Esse evento é acionado quando uma âncora é localizada ou se a âncora não puder ser localizada. Se essa situação ocorrer, o motivo será indicado no status. Após todas as âncoras de um observador serem processadas, sejam elas encontradas ou não, o evento `LocateAnchorsCompleted` será acionado. Há um limite de 35 identificadores por observador. 

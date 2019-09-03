@@ -10,39 +10,38 @@ ms.author: tzvikei
 author: tsikiksr
 ms.reviewer: nibaccam
 ms.date: 08/14/2019
-ms.openlocfilehash: e53cd92a9dfd8f823918fb38e14c2b73c2ce071f
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 01228dc01b8006a0a2476ddbbd6fa8ff430e280a
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534401"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982753"
 ---
 # <a name="tutorial-create-your-first-classification-model-with-automated-machine-learning"></a>Tutorial: Crie seu primeiro modelo de classificação com o aprendizado de máquina automatizado
 
 Neste tutorial, você aprenderá a criar seu primeiro experimento de aprendizado de máquina automatizado no portal do Azure (versão prévia) sem escrever nenhuma linha de código. Este exemplo cria um modelo de classificação para prever se um cliente assinará um depósito a prazo fixo com uma instituição financeira.
 
-Usando as funcionalidades de aprendizado de máquina automatizados do Serviço do Azure Machine Learning e o portal do Azure, você inicia o processo de aprendizado de máquina automatizado. A seleção do algoritmo e o ajuste de hiperparâmetro são feitos para você. A técnica de aprendizado de máquina automatizado itera em muitas combinações de algoritmos e hiperparâmetros até encontrar o melhor modelo com base em seu critério.
+Com o aprendizado de máquina automatizado, você pode automatizar tarefas intensivas e demoradas. O aprendizado de máquina automatizado itera rapidamente em muitas combinações de algoritmos e hiperparâmetros para ajudar você a encontrar o melhor modelo com base em uma métrica de sucesso de sua escolha.
 
-Neste tutorial, você aprende as seguintes tarefas:
+Neste tutorial, você aprenderá a fazer as seguintes tarefas:
 
 > [!div class="checklist"]
-> * Configurar um workspace do Serviço do Azure Machine Learning.
-> * Criar um experimento.
-> * Treinar automaticamente um modelo de classificação.
-> * Exibir detalhes da execução do treinamento.
+> * Criar um workspace do Serviço do Azure Machine Learning.
+> * Executar um experimento de aprendizado de máquina automatizado.
+> * Exibir detalhes do experimento.
 > * Implantar o modelo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://aka.ms/AMLFree).
 
-* Baixe o arquivo de dados [**bankmarketing_train.csv** ](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). A coluna **y** indica se um cliente assinou um depósito a prazo fixo, que é posteriormente identificado como a coluna de destino para as previsões neste tutorial. 
+* Baixe o arquivo de dados [**bankmarketing_train.csv**](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv). A coluna **y** indica se um cliente assinou um depósito a prazo fixo, que é posteriormente identificado como a coluna de destino para as previsões neste tutorial. 
 
 ## <a name="create-a-workspace"></a>Criar um workspace
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
-## <a name="create-an-experiment"></a>Criar uma experiência
+## <a name="create-and-run-the-experiment"></a>Criar e executar o experimento
 
 Essas etapas guiarão você durante a configuração do experimento, da seleção de dados à escolha da métrica primária e do tipo de modelo. 
 
@@ -50,8 +49,6 @@ Essas etapas guiarão você durante a configuração do experimento, da seleçã
 Você verá a tela **Bem-vindo ao Aprendizado de máquina Automatizado**, pois este é seu primeiro experimento com o aprendizado de máquina automatizado.
 
     ![Paonel de navegação do portal do Azure](media/tutorial-1st-experiment-automated-ml/nav-pane.png)
-
-
 
 1. Selecione **Criar um experimento**. Em seguida, insira **my-1st-automl-experiment** como o nome do experimento.
 
@@ -72,14 +69,11 @@ Você verá a tela **Bem-vindo ao Aprendizado de máquina Automatizado**, pois e
 
 1. Selecione **Carregar** e escolha o arquivo **bankmarketing_train.csv** do computador local para carregá-lo no contêiner padrão. A versão prévia pública é compatível apenas com uploads de arquivos locais e contas de Armazenamento de Blobs do Azure. Quando o upload for concluído, selecione o arquivo na lista. 
 
-    [![Selecionar o arquivo de dados](media/tutorial-1st-experiment-automated-ml/select-data-file.png)](media/tutorial-1st-experiment-automated-ml/select-data-file-expanded.png#lightbox)
-
 1. A guia **Visualização** nos permite configurar ainda mais nossos dados para esse experimento.
 
     Na guia **Visualização**, indique que os dados incluem cabeçalhos. O serviço inclui por padrão todos os recursos (colunas) para treinamento. Para este exemplo, role para a direita e **Ignore** o recurso **day_of_week**.
 
     ![Configuração da guia Visualização](media/tutorial-1st-experiment-automated-ml/preview-tab-config.gif)
-
 
     >[!NOTE]
     > A criação de perfil de dados não está disponível com computações que não têm nenhum nó mínimo.
@@ -103,9 +97,7 @@ Você verá a tela **Bem-vindo ao Aprendizado de máquina Automatizado**, pois e
 
 1. Clique em **Iniciar** para executar o experimento.
 
-   Quando o experimento for iniciado, você verá uma tela **Detalhes de Execução** em branco com o status a seguir na parte superior. 
-
-      ![Preparação para execução](media/tutorial-1st-experiment-automated-ml/run-preparing.png)
+   Quando o experimento for iniciado, você verá uma tela **Detalhes de Execução** em branco com o status a seguir na parte superior.
       
 O processo de preparação do experimento leva alguns minutos. Quando o processo é concluído, a mensagem de status muda para **Execução em Andamento**.
 
@@ -137,11 +129,9 @@ Nesse contexto de experimento, **VotingEnsemble** é considerado o melhor modelo
     
 1. Selecione **Implantar**.
 
-    A mensagem a seguir aparece quando a implantação é concluída com êxito:
-
-    ![Implantação concluída](media/tutorial-1st-experiment-automated-ml/deploy-complete-status.png)
+    Uma mensagem de conclusão da implantação é exibida quando a implantação é concluída com êxito.
     
-    Agora você tem um serviço Web operacional para gerar previsões.
+Agora você tem um serviço Web operacional para gerar previsões.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -167,7 +157,6 @@ Neste tutorial de aprendizado de máquina automatizado, você usou o portal do A
 
 > [!div class="nextstepaction"]
 > [Consumir um serviço Web](how-to-consume-web-service.md)
-
 
 + Saiba mais sobre o [pré-processamento](how-to-create-portal-experiments.md#preprocess).
 + Saiba mais sobre a [criação de perfil de dados](how-to-create-portal-experiments.md#profile).

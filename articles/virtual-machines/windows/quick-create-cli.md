@@ -1,6 +1,6 @@
 ---
-title: Início Rápido – Criar uma VM Windows com o Azure PowerShell | Microsoft Docs
-description: Neste início rápido, você aprende a usar o Azure PowerShell para criar uma máquina virtual Windows
+title: Início Rápido – Criar uma VM Windows usando a CLI do Azure | Microsoft Docs
+description: Neste início rápido, você aprende a usar a CLI do Azure para criar uma máquina virtual Windows
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
@@ -9,19 +9,18 @@ editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/02/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: d50c3cc59bffba1c9124c59bbd6ed197025dabc8
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: e6709a6efff80df01d7504db8b39f8ff5c2c5e49
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723006"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70088850"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-with-the-azure-cli"></a>Início Rápido: Criar uma máquina virtual do Windows com a CLI do Azure
 

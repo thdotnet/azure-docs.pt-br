@@ -11,44 +11,44 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 07/29/2019
+ms.date: 08/22/2019
 ms.author: juliako
-ms.openlocfilehash: 5979e34e7c186a0484c8db2d432a3c57a5ed1d15
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 352b42099bcd832792aad2fa24dca3e14525dc06
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68679163"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990640"
 ---
 # <a name="dynamic-packaging"></a>Empacotamento dinâmico
 
-Os Serviços de Mídia do Microsoft Azure podem ser usados para fornecer vários formatos de arquivos de mídia de origem, formatos de streaming de mídia e formatos de proteção de conteúdo para diversas tecnologias de cliente (por exemplo, iOS e XBOX). Esses clientes entendem protocolos diferentes, por exemplo, o iOS requer um formato HTTP Live Streaming (HLS), enquanto o Xbox requer Smooth Streaming. Se você tiver um conjunto de arquivos MP4 (mídia base ISO 14496-12) de taxa de bits adaptável (múltiplas taxas de bits) ou um conjunto de arquivos Smooth Streaming de taxa de bits adaptável que queira fornecer a clientes que entendam HLS, MPEG DASH ou Smooth Streaming, pode se beneficiar do *Empacotamento dinâmico*. O empacotamento é independente de resolução de vídeo, SD/HD/UHD-4K têm suporte.
+Os Serviços de Mídia do Microsoft Azure podem ser usados para codificar vários formatos de arquivos de mídia de origem e entregá-los por diferentes protocolos de streaming, com ou sem proteção de conteúdo, para alcançar todos os principais dispositivos (por exemplo, dispositivos iOS e Android). Esses clientes entendem os diferentes protocolos. Por exemplo, o iOS requer que os fluxos sejam entregues no formato HLS (HTTP Live Streaming) e os dispositivos Android dão suporte a HLS e a MPEG DASH. Para preparar seus arquivos de origem para entrega por streaming de taxa de bits adaptável, eles precisam ser [codificados](encoding-concept.md) em um conjunto de arquivos MP4 (ISO Base Media 14496-12) de várias taxas de bit (também chamadas de taxa de bits adaptável). Com base nesse conjunto de arquivos MP4, você pode fornecer vídeo por meio de protocolos HLS ou MPEG-DASH ou Smooth Streaming, **usando o Empacotamento Dinâmico**.
 
 Nos Serviços de Mídia, um [Ponto de Extremidade de Streaming](streaming-endpoint-concept.md) representa um serviço de origem e empacotamento dinâmico (just-in-time) que pode fornecer seu conteúdo ao vivo e sob demanda diretamente para um aplicativo de reprodução de cliente, usando um dos protocolos de mídia de transmissão comuns (HLS ou DASH). O empacotamento dinâmico é um recurso que vem por padrão em todos os **Pontos de Extremidade de Streaming** (Standard ou Premium). 
 
-Para se beneficiar do empacotamento dinâmico, é necessário ter um [Ativo](assets-concept.md) com um conjunto de arquivos MP4 de taxa de bits adaptável e arquivos de configuração de streaming requeridos (.ism, .ismc, .mpi, etc.). Uma maneira de obter os arquivos é codificar seu arquivo mezanino (fonte) com os Serviços de Mídia. Para fazer vídeos no ativo codificado disponível para clientes de reprodução, é necessário criar um [Localizador de Streaming](streaming-locators-concept.md) e URLs de streaming. Em seguida, com base no formato especificado no manifesto do cliente de streaming (HLS, DASH ou Smooth), você recebe o fluxo no protocolo que você escolheu.
+Para se beneficiar do **Empacotamento Dinâmico**, você precisa ter um **Ativo** com um conjunto de arquivos MP4 de taxa de bits adaptável e arquivos de configuração de streaming exigidos pelo Empacotamento Dinâmico dos Serviços de Mídia. Uma maneira de obter os arquivos é codificar seu arquivo mezanino (fonte) com os Serviços de Mídia. Para fazer vídeos no ativo codificado disponível para clientes de reprodução, você precisará criar um **Localizador de Streaming** e URLs de streaming. Em seguida, com base no formato especificado no manifesto do cliente de streaming (HLS, MPEG, DASH ou Smooth Streaming), você recebe o fluxo no protocolo que você escolheu.
 
 Como resultado você só precisa armazenar e pagar pelos arquivos em um único formato de armazenamento, e os Serviços de Mídia vão criar e fornecer a resposta apropriada com base nas solicitações de um cliente. 
 
-Nos Serviços de Mídia, o empacotamento dinâmico é usado, independentemente de você estar transmitindo ao vivo ou sob demanda. 
+Nos Serviços de Mídia, o Empacotamento Dinâmico é usado, independentemente de você estar transmitindo vídeos ao vivo ou sob demanda. 
 
 > [!NOTE]
 > Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-ref), a [CLI](https://aka.ms/ams-v3-cli-ref) ou um dos [SDKs](media-services-apis-overview.md#sdks) com suporte.
 
 ## <a name="on-demand-streaming-workflow"></a>Fluxo de trabalho do streaming sob demanda
 
-Aqui está um fluxo de trabalho comum para o streaming sob demanda de Serviços de Mídia com empacotamento dinâmico:
+Veja a seguir um fluxo de trabalho de streaming dos Serviços de Mídia em que o Empacotamento Dinâmico é usado junto com o Codificador Padrão nos Serviços de Mídia do Azure.
 
-1. Carregar um arquivo de entrada ou fonte (chamado de arquivo de *mezanino*). Exemplos incluem um arquivo MP4, MOV ou MXF. 
-1. Codifique o arquivo de mezanino para conjuntos de taxa de bits adaptável MP4 H.264. 
+1. Faça upload de um arquivo de entrada, como um arquivo QuickTime/MOV ou MXF (para obter a lista de formatos com suporte, confira [Formatos com suporte do Media Encoder Standard](media-encoder-standard-formats.md)). Isso também é denominado arquivo de mezanino ou de origem.
+1. [Codifique](#encode-to-adaptive-bitrate-mp4s) seu arquivo de mezanino em um conjunto de taxa de bits adaptável H.264/AAC MP4. 
 1. Publicar o ativo de saída que contém o conjunto MP4 de taxa de bits adaptável. Você publica criando um localizador de streaming.
-1. Criar URLs que segmentam diferentes formatos (HLS, MPEG-DASH e Smooth Streaming). O ponto de extremidade de streaming cuida de servir o manifesto correto e solicita os diferentes formatos.
+1. Criar URLs que segmentam diferentes formatos (HLS, MPEG-DASH e Smooth Streaming). O **Ponto de Extremidade de Streaming** cuidaria de servir o manifesto correto e solicitações para todos esses formatos diferentes.
 
-Este diagrama mostra o fluxo de trabalho para streaming sob demanda com empacotamento dinâmico:
+O diagrama a seguir mostra o streaming sob demanda com o fluxo de trabalho do Empacotamento Dinâmico.
 
-![Diagrama de um fluxo de trabalho para streaming sob demanda com empacotamento dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.png)
+![Diagrama de um fluxo de trabalho para streaming sob demanda com o Empacotamento Dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
-### <a name="encoding-to-adaptive-bitrate-mp4s"></a>Codificar para MP4s de taxa de bits adaptável
+### <a name="encode-to-adaptive-bitrate-mp4s"></a>Codificar para MP4s de taxa de bits adaptável
 
 Os artigos a seguir mostram exemplos de [como codificar um vídeo com os Serviços de Mídia](encoding-concept.md):
 
@@ -62,7 +62,7 @@ Confira a lista de [codecs e formatos](media-encoder-standard-formats.md) do Med
 
 Um evento ao vivo pode ser de dois tipos: passagem ou codificação ativa. 
 
-Aqui está um fluxo de trabalho comum para transmissão ao vivo com empacotamento dinâmico:
+Aqui está um fluxo de trabalho comum para transmissão ao vivo com Empacotamento Dinâmico:
 
 1. Crie um [evento ao vivo](live-events-outputs-concept.md).
 1. Obtenha a URL de ingestão e configure seu codificador local para usar a URL no envio do feed de contribuição.
@@ -74,9 +74,9 @@ Aqui está um fluxo de trabalho comum para transmissão ao vivo com empacotament
 1. Obtenha o nome do host para o ponto de extremidade de streaming do qual você deseja transmitir.
 1. Criar URLs que segmentam diferentes formatos (HLS, MPEG-DASH e Smooth Streaming). O ponto de extremidade de streaming cuida de servir o manifesto correto e solicita os diferentes formatos.
 
-Este diagrama mostra o fluxo de trabalho para transmissão ao vivo com empacotamento dinâmico:
+Este diagrama mostra o fluxo de trabalho para transmissão ao vivo com Empacotamento Dinâmico:
 
-![Diagrama de um fluxo de trabalho para codificação de passagem com empacotamento dinâmico](./media/live-streaming/pass-through.svg)
+![Diagrama de um fluxo de trabalho para codificação de passagem com Empacotamento Dinâmico](./media/live-streaming/pass-through.svg)
 
 Para obter informações sobre transmissão ao vivo nos Serviços de Mídia v3, confira [Visão geral de transmissão ao vivo](live-streaming-overview.md).
 
@@ -93,25 +93,29 @@ Você pode usar esses protocolos de entrega para o seu conteúdo no pacote dinâ
 |MPEG-DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` |
 |Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`|
 
-## <a name="delivery-codecs-support"></a>Suporte a codecs de entrega 
+## <a name="video-codecs-supported-by-dynamic-packaging"></a>Codecs de vídeo compatíveis com o Empacotamento Dinâmico
 
-### <a name="video-codecs"></a>Codecs de vídeo
-
-O empacotamento dinâmico oferece suporte aos seguintes codecs de vídeo:
+O Empacotamento Dinâmico dá suporte aos seguintes codecs de vídeo:
 * Arquivos MP4 files, que contêm vídeo codificado com [H.264](https://en.m.wikipedia.org/wiki/H.264/MPEG-4_AVC) (MPEG-4 AVC ou AVC1) ou [H.265](https://en.m.wikipedia.org/wiki/High_Efficiency_Video_Coding) (HEVC, hev1, ou hvc1).
 
-### <a name="audio-codecs"></a>Codecs de áudio
+> [!NOTE]
+> As resoluções de até 4K e taxa de quadros de até 60 quadros/segundo foram testadas com o Empacotamento Dinâmico. O [Codificador Premium](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) dá suporte à codificação para H.265, por meio das APIs v2 herdadas. Contate amshelp@microsoft.com em caso de dúvidas sobre esse tópico. 
 
-O empacotamento dinâmico dá suporte aos protocolos de áudio descritos abaixo:
+## <a name="a-idaudio-codecsaudio-codecs-supported-by-dynamic-packaging"></a><a id="audio-codecs"/>Codecs de áudio com suporte do Empacotamento Dinâmico
+
+O Empacotamento Dinâmico dá suporte aos protocolos de áudio descritos abaixo:
 
 * Arquivos MP4
 * Várias faixas de áudio
 
-O empacotamento dinâmico não oferece suporte a arquivos que contenham áudio [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (codec herdado).
+O Empacotamento Dinâmico não dá suporte a arquivos que contenham áudio [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (é um codec herdado).
 
-#### <a name="mp4-files"></a>Arquivos MP4
+> [!NOTE]
+> O [Codificador Premium](https://docs.microsoft.com/azure/media-services/previous/media-services-encode-asset#media-encoder-premium-workflow) dá suporte à codificação para Dolby Digital Plus, por meio das APIs v2 herdadas. Contate amshelp@microsoft.com em caso de dúvidas sobre esse tópico. 
 
-O empacotamento dinâmico oferece suporte a arquivos MP4, que contêm áudio é codificado com os seguintes protocolos: 
+### <a name="mp4-files"></a>Arquivos MP4
+
+O Empacotamento Dinâmico dá suporte a arquivos MP4, que contêm áudio codificado com os seguintes protocolos: 
 
 * [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, ou HE-AAC v2)
 * [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus) (AC-3 ou E-AC3 avançado)
@@ -126,13 +130,13 @@ O empacotamento dinâmico oferece suporte a arquivos MP4, que contêm áudio é 
     * DTS Express (dtse)
     * DTS-HD Lossless (no core) (dtsl)
 
-#### <a name="multiple-audio-tracks"></a>Várias faixas de áudio
+### <a name="multiple-audio-tracks"></a>Várias faixas de áudio
 
-O empacotamento dinâmico oferece suporte a múltiplas faixas de áudio para saída HLS (versão 4 ou posterior) para recursos de streaming que possuem várias faixas de áudio com vários codecs e idiomas.
+O Empacotamento Dinâmico dá suporte a múltiplas faixas de áudio para saída HLS (versão 4 ou posterior) para recursos de streaming que têm várias faixas de áudio com vários codecs e idiomas.
 
 ## <a name="manifests"></a>Manifestos 
  
-No empacotamento dinâmico dos Serviços de Mídia, os manifestos do cliente de streaming para HLS, MPEG-DASH e Smooth Streaming são gerados dinamicamente com base no seletor de formato na URL. Para saber mais, confira [protocolos de entrega](#delivery-protocols). 
+No Empacotamento Dinâmico dos Serviços de Mídia, os manifestos do cliente de streaming para HLS, MPEG-DASH e Smooth Streaming são gerados dinamicamente com base no seletor de formato na URL. Para saber mais, confira [protocolos de entrega](#delivery-protocols). 
 
 Um arquivo de manifesto inclui o streaming de metadados, como: tipo da trilha (áudio, vídeo ou texto), nome da trilha, hora de início e término, taxa de bits (qualidades), idiomas da trilha, janela de apresentação (janela deslizante de duração fixa) e codec de vídeo (FourCC). Também instrui o player a recuperar o próximo fragmento, fornecendo informações sobre os próximos fragmentos de vídeo executáveis que estão disponíveis e sua localização. Os fragmentos (ou segmentos) são os "pedaços" reais de um conteúdo de vídeo.
 

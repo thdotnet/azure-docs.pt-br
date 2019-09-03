@@ -6,15 +6,15 @@ author: dlepow
 manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
-ms.date: 06/12/2019
+ms.date: 08/12/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 496aa065b3b10eac546dbe41f5a2650acc112d29
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 23b0990be7f215d9cc443c5549ae38de86826d17
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68310515"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114609"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Tutorial: automatizar builds de imagem de contêiner na atualização da imagem base em um Registro de Contêiner do Azure 
 
@@ -72,7 +72,16 @@ Quando uma imagem de base é atualizada, você verá a necessidade de recriar as
 
 ### <a name="tasks-triggered-by-a-base-image-update"></a>Tarefas disparadas por uma atualização de imagem base
 
-* No momento, para builds de imagem de um Dockerfile, uma tarefa do ACR detecta as dependências nas imagens base no mesmo registro de contêiner do Azure, um repositório público do Docker Hub ou um repositório público no registro de contêiner da Microsoft. Se a imagem base especificada na instrução `FROM` residir em um desses locais, a tarefa do ACR adicionará um gancho para garantir que a imagem seja recompilada sempre que sua base for atualizada.
+* Para builds de imagem com base em um Dockerfile, uma tarefa do ACR detecta dependências em imagens base nas seguintes localizações:
+
+  * O mesmo Registro de Contêiner do Azure em que a tarefa é executada
+  * Outro Registro de Contêiner do Azure na mesma região 
+  * Um repositório público no Docker Hub 
+  * Um repositório público no Registro de Contêiner da Microsoft
+
+   Se a imagem base especificada na instrução `FROM` residir em um desses locais, a tarefa do ACR adicionará um gancho para garantir que a imagem seja recompilada sempre que sua base for atualizada.
+
+* Atualmente, as Tarefas do ACR só rastreiam atualizações de imagem base para imagens de aplicativo (*runtime*). Elas não rastreiam atualizações de imagem base para imagens intermediárias (*buildtime*) usadas em Dockerfiles de vários estágios.  
 
 * Quando você cria uma tarefa do ACR com o comando[az acr task create][az-acr-task-create], por padrão, a tarefa é *habilitada* para ser disparada pela atualização da imagem base. Isto é, a propriedade `base-image-trigger-enabled` é definida como True. Se desejar desabilitar esse comportamento da tarefa, atualize a propriedade para False. Por exemplo, execute o seguinte comando [az acr task update][az-acr-task-update]:
 
@@ -82,7 +91,7 @@ Quando uma imagem de base é atualizada, você verá a necessidade de recriar as
 
 * Para habilitar uma tarefa do ACR a fim de determinar e acompanhar as dependências de uma imagem do contêiner, que inclui a própria imagem base, você deve primeiro disparar a tarefa **pelo menos uma vez**. Por exemplo, disparar a tarefa manualmente usando o comando [az acr task run][az-acr-task-run].
 
-* Para disparar uma tarefa na atualização da imagem base, esta precisa ter uma marca *estável*, como `node:9-alpine`. Essa marcação é típica de uma imagem base que é atualizada com o sistema operacional e patches de estrutura para uma versão estável mais recente. Se a imagem base é atualizada com uma nova marca de versão, ela não dispara uma tarefa. Para obter mais informações sobre a marcação de imagens, confira as [diretrizes de práticas recomendadas](https://stevelasker.blog/2018/03/01/docker-tagging-best-practices-for-tagging-and-versioning-docker-images/). 
+* Para disparar uma tarefa na atualização da imagem base, esta precisa ter uma marca *estável*, como `node:9-alpine`. Essa marcação é típica de uma imagem base que é atualizada com o sistema operacional e patches de estrutura para uma versão estável mais recente. Se a imagem base é atualizada com uma nova marca de versão, ela não dispara uma tarefa. Para obter mais informações sobre a marcação de imagens, confira as [diretrizes de práticas recomendadas](container-registry-image-tag-version.md). 
 
 ### <a name="base-image-update-scenario"></a>Cenário de atualização de imagem base
 
@@ -217,7 +226,7 @@ az acr task list-runs --registry $ACR_NAME --output table
 A saída deverá ser semelhante à seguinte. O GATILHO para o build executado por último será “Atualização da Imagem”, indicando que a tarefa foi iniciada pela sua tarefa rápida da imagem base.
 
 ```console
-$ az acr task list-builds --registry $ACR_NAME --output table
+$ az acr task list-runs --registry $ACR_NAME --output table
 
 Run ID    TASK            PLATFORM    STATUS     TRIGGER       STARTED               DURATION
 --------  --------------  ----------  ---------  ------------  --------------------  ----------

@@ -52,7 +52,7 @@ Inicie uma conexão da área de trabalho remota para a máquina virtual.
 Defina essas configurações manualmente ou use um script do PowerShell que fornecemos para automatizar a configuração.
 
 ### <a name="option-1-use-a-powershell-script-to-configure-nested-virtualization"></a>Opção 1: Usar um script do PowerShell para configurar a virtualização aninhada
-Um script do PowerShell para habilitar a virtualização aninhada em um host do Windows Server 2016 está disponível no [GitHub](https://github.com/charlieding/Virtualization-Documentation/tree/live/hyperv-tools/Nested). O script verifica os pré-requisitos e, em seguida, configura a virtualização aninhada na VM do Azure. Uma reinicialização da VM do Azure é necessária para concluir a configuração. Esse script pode funcionar em outros ambientes, mas não há garantia disso. Confira a postagem no blog do Azure com uma demonstração de vídeo ao vivo sobre a virtualização aninhada em execução no Azure! https://aka.ms/AzureNVblog.
+Um script do PowerShell para habilitar a virtualização aninhada em um host do Windows Server 2016 está disponível no [GitHub](https://github.com/charlieding/Virtualization-Documentation/tree/live/hyperv-tools/Nested). O script verifica os pré-requisitos e, em seguida, configura a virtualização aninhada na VM do Azure. Uma reinicialização da VM do Azure é necessária para concluir a configuração. Esse script pode funcionar em outros ambientes, mas não há garantia disso. Confira a postagem no blog do Azure com uma demonstração de vídeo ao vivo sobre a virtualização aninhada em execução no Azure! [https://aka.ms/AzureNVblog](https://aka.ms/AzureNVblog ).
 
 ### <a name="option-2-configure-nested-virtualization-manually"></a>Opção 2: Configurar a virtualização aninhada manualmente
 

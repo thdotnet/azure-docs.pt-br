@@ -1,5 +1,5 @@
 ---
-title: Coletar dados sobre as Máquinas Virtuais do Azure | Microsoft Docs
+title: Coletar dados de uma máquina virtual do Azure com o Azure Monitor | Microsoft Docs
 description: Saiba como habilitar a Extensão de VM do agente do Log Analytics e como habilitar a coleta de dados das VMs do Azure com o Log Analytics.
 services: log-analytics
 documentationcenter: log-analytics
@@ -14,16 +14,16 @@ ms.topic: quickstart
 ms.date: 08/19/2019
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 1a61c0f96f62712bbd2500b2e80fd08565990bbe
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8e44908baea506efa488899c90e9022acc6e30b8
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874906"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992144"
 ---
-# <a name="collect-data-about-azure-virtual-machines"></a>Coletar dados sobre máquinas virtuais do Azure
+# <a name="collect-data-from-an-azure-virtual-machine-with-azure-monitor"></a>Coletar dados de uma máquina virtual do Azure com o Azure Monitor
 
-O [Azure Log Analytics](../../azure-monitor/log-query/log-query-overview.md) pode coletar dados diretamente das máquinas virtuais do Azure e de outros recursos do ambiente em um único repositório para correlação e análise detalhada. Este guia de início rápido mostra como configurar e coletar dados de VMs Linux ou Windows do Azure com algumas etapas simples.  
+O [Azure Monitor](../overview.md) pode coletar dados diretamente das máquinas virtuais do Azure em um workspace do Log Analytics para correlação e análise detalhadas. A instalação da extensão de VM do Log Analytics para [Windows](../../virtual-machines/extensions/oms-windows.md) e [Linux](../../virtual-machines/extensions/oms-linux.md) permite que o Azure Monitor colete dados de suas VMs do Azure. Este início rápido mostra como configurar e coletar dados de VMs Linux ou Windows do Azure usando a extensão de VM com algumas etapas simples.  
  
 Este guia de início rápido pressupõe que você tenha uma máquina virtual do Azure existente. Se não puder [criar uma VM Windows](../../virtual-machines/windows/quick-create-portal.md) nem [criar uma VM Linux](../../virtual-machines/linux/quick-create-cli.md), siga nossos guias de início rápido de VM.
 
@@ -33,7 +33,7 @@ Entre no Portal do Azure em [https://portal.azure.com](https://portal.azure.com)
 
 ## <a name="create-a-workspace"></a>Criar um workspace
 
-1. No portal do Azure, clique em **Todos os serviços**. Na lista de recursos, digite **Log Analytics**. Quando você começa a digitar, a lista é filtrada com base em sua entrada. Selecione **Log Analytics**.
+1. No portal do Azure, clique em **Todos os serviços**. Na lista de recursos, digite **Log Analytics**. Quando você começa a digitar, a lista é filtrada com base em sua entrada. Pesquise **Espaços de trabalho do Log Analytics**.
 
     ![Portal do Azure](media/quick-collect-azurevm/azure-portal-01.png)<br>  
 
@@ -55,7 +55,7 @@ Enquanto as informações são verificadas e o workspace é criado, você pode a
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)] 
 
-Para máquinas virtuais Windows e Linux já implantadas no Azure, instale o agente do Log Analytics com a Extensão de VM do Log Analytics. Usar a extensão simplifica o processo de instalação e configura automaticamente o agente para enviar dados para o espaço de trabalho do Log Analytics que você especificar. O agente também será automaticamente atualizado, garantindo que você disponha dos recursos e correções mais recentes. Antes de prosseguir, verifique se a VM está em execução, caso contrário, a conclusão do processo com êxito falhará.  
+Para máquinas virtuais Windows e Linux já implantadas no Azure, instale o agente do Log Analytics com a Extensão de VM do Log Analytics. Usar a extensão simplifica o processo de instalação e configura automaticamente o agente para enviar dados para o espaço de trabalho do Log Analytics que você especificar. O agente também será automaticamente atualizado quando uma versão mais recente for lançada, garantindo que você disponha dos recursos e correções mais recentes. Antes de prosseguir, verifique se a VM está em execução, caso contrário, a conclusão do processo com êxito falhará.  
 
 >[!NOTE]
 >O agente do Log Analytics para Linux não pode ser configurado para se reportar a mais de um espaço de trabalho do Log Analytics. 
@@ -74,7 +74,7 @@ Para máquinas virtuais Windows e Linux já implantadas no Azure, instale o agen
 
 ## <a name="collect-event-and-performance-data"></a>Coletar dados de desempenho e eventos
 
-O Log Analytics pode coletar eventos dos logs de eventos do Windows ou do Syslog do Linux e de contadores de desempenho especificados para relatórios e análise de prazo mais longo e tomar uma ação quando determinada condição for detectada. Siga estas etapas para configurar a coleta de eventos do log do sistema do Windows e do Syslog do Linux e de vários contadores de desempenho comuns para começar.  
+O Azure Monitor pode coletar eventos dos logs de eventos do Windows ou do Syslog do Linux e de contadores de desempenho especificados para relatórios e análise de prazo mais longo e tomar uma ação quando determinada condição for detectada. Siga estas etapas para configurar a coleta de eventos do log do sistema do Windows e do Syslog do Linux e de vários contadores de desempenho comuns para começar.  
 
 ### <a name="data-collection-from-windows-vm"></a>Coleta de dados de VM Windows
 
@@ -124,15 +124,15 @@ O Log Analytics pode coletar eventos dos logs de eventos do Windows ou do Syslog
 
 Agora que você habilitou a coleta de dados, vamos executar um exemplo simples de pesquisa de logs para ver alguns dados das VMs de destino.  
 
-1. No portal do Azure, navegue para Log Analytics e selecione o workspace criado anteriormente.
+1. No workspace selecionado, no painel esquerdo, selecione **Logs**.
 
-2. Selecione o bloco **Pesquisa de Logs** e, no painel Pesquisa de Logs, no campo de consulta, digite `Perf`. Em seguida, pressione Enter ou selecione o botão Pesquisar à direita do campo de consulta.
+2. Na página de consulta de logs, digite `Perf` no editor de consulta e selecione **Executar**.
 
-    ![Exemplo de consulta da pesquisa de logs do Log Analytics](./media/quick-collect-azurevm/log-analytics-portal-perf-query.png) 
+    ![Exemplo de consulta da pesquisa de logs do Log Analytics](./media/quick-collect-windows-computer/log-analytics-portal-queryexample.png) 
 
-Por exemplo, a consulta na imagem a seguir retornou 735 registros de desempenho.  Os resultados serão significativamente menores.
+    Por exemplo, a consulta na imagem a seguir retornou 10 mil registros de desempenho. Os resultados serão significativamente menores.
 
-![Resultado da pesquisa de logs do Log Analytics](media/quick-collect-azurevm/log-analytics-search-perf.png)
+    ![Resultado da pesquisa de logs do Log Analytics](media/quick-collect-azurevm/log-analytics-search-perf.png)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

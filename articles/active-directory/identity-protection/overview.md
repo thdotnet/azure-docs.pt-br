@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99a542d3208d5871d88c966fffc65cf16e0fbeee
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 8b89cab41061376fc1d8b4cbffc8fe87b9677688
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335400"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125669"
 ---
 # <a name="what-is-azure-active-directory-identity-protection"></a>O que é Azure Active Directory Identity Protection?
 
@@ -45,10 +45,10 @@ O Azure Active Directory Identity Protection é mais do que apenas uma ferrament
 - Calcular os níveis de risco de entrada
 - Calcular os níveis de risco do usuário
 
-**Investigação dos eventos de risco:**
+**Como investigar as detecções de risco:**
 
-- Enviar notificações para eventos de risco
-- Investigar os eventos de risco usando informações relevantes e contextuais
+- Como enviar notificações para as detecções de risco
+- Como investigar as detecções de risco usando informações relevantes e contextuais
 - Fornecer fluxos de trabalho básicos para acompanhar as investigações
 - Fornecer acesso fácil às ações de correção, tais como redefinição de senha
 
@@ -76,10 +76,10 @@ Para saber mais detalhes, consulte [Atribuindo funções de administrador no Azu
 
 O Azure Active Directory Identity Protection analisa sua configuração e detecta vulnerabilidades que podem ter impacto nas identidades do usuário. Para saber mais, confira [Vulnerabilidades detectadas pelo Azure Active Directory Identity Protection](vulnerabilities.md).
 
-### <a name="risk-events"></a>Eventos de risco
+### <a name="risk-detections"></a>Detecções de risco
 
-O Azure Active Directory usa algoritmos de aprendizado de máquina e heurística adaptáveis para detectar ações suspeitas relacionadas a identidades do usuário. O sistema cria um registro para cada ação suspeita detectada. Esses registros também são conhecidos como eventos de risco.  
-Para obter mais detalhes, veja [Eventos de risco do Azure Active Directory](../active-directory-identity-protection-risk-events.md).
+O Azure Active Directory usa algoritmos de aprendizado de máquina e heurística adaptáveis para detectar ações suspeitas relacionadas a identidades do usuário. O sistema cria um registro para cada ação suspeita detectada. Esses registros também são conhecidos como detecções de risco.  
+Para obter mais detalhes, confira [Detecções de risco do Azure Active Directory](../active-directory-identity-protection-risk-events.md).
 
 ## <a name="investigation"></a>Investigação
 
@@ -89,10 +89,10 @@ Sua jornada pelo Identity Protection normalmente inicia no Painel do Identity Pr
 
 O painel concede acesso a:
 
-- Relatórios, como **Usuários sinalizados por riscos**, **Eventos de risco** e **Vulnerabilidades**
+- Relatórios como **Usuários sinalizados para risco**, **Detecções de risco** e **Vulnerabilidades**
 - Configurações como a definição das suas **Políticas de Segurança**, **Notificações** e **registro de autenticação multifator**
 
-Este é normalmente seu ponto de partida para investigação, que é o processo de revisão de atividades, logs e outras informações relevantes relacionadas a um evento de risco para decidir se as etapas de correção e mitigação são necessárias, como a identidade foi comprometida e entender como ela foi usada.
+Este é normalmente o ponto de partida para investigação, que é o processo de revisão de atividades, logs e outras informações relevantes relacionadas a uma detecção de risco para decidir se as etapas de correção e mitigação são necessárias, como a identidade foi comprometida e entender como a identidade comprometida foi usada.
 
 Você pode vincular suas atividades de investigação para as [notificações](notifications.md) que o Azure Active Directory Protection envia por email.
 

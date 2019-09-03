@@ -17,12 +17,12 @@ ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: dadc394e9c9ddb152923095de10b8f727310d3f7
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: eeab0433310892f27b9cb2d2eb6f64e17e6f14ef
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52164516"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991715"
 ---
 #  <a name="create-a-cicd-pipeline-for--nodejs-with-azure-devops-projects"></a>Criar um pipeline de CI/CD para Node.js com o Azure DevOps Projects 
 
@@ -54,9 +54,9 @@ O DevOps Projects cria um pipeline de CI/CD no Azure Pipelines. É possível cri
 
 1. Crie uma nova organização do Azure DevOps ou escolha uma organização existente. 
 
-     a. Escolha um nome para o projeto. 
+    a. Insira um nome para seu projeto.
 
-    b. Selecione a assinatura e o local do Azure, escolha um nome para o aplicativo e selecione **Concluído**.  
+    b. Selecione a assinatura e o local do Azure, insira um nome para o aplicativo e selecione **Concluído**.  
     Após alguns minutos, o painel do DevOps Projects é exibido no portal do Azure. Um aplicativo de exemplo é configurado em um repositório em sua organização do Azure DevOps, é executado um build, e seu aplicativo é implantado no Azure. Esse painel oferece visibilidade ao seu repositório de código, pipeline de CI/CD e seu aplicativo no Azure.
      
 3. Selecione **Procurar** para exibir o aplicativo em execução.
@@ -78,7 +78,7 @@ Esse link abre uma exibição do repositório de Git recém-criado.
 1. À esquerda do navegador, vá até o arquivo **views/index.pug**.
 
 1. Selecione **Editar**, depois faça uma alteração no cabeçalho h2.  
-    Por exemplo, digite **Começar agora mesmo com o Projeto de DevOps do Azure** ou faça outra alteração.
+    Por exemplo, insira **Começar agora mesmo com o Azure DevOps Projects** ou faça outra alteração.
 
 1. Selecione **Confirmar**, depois salve as alterações.
 

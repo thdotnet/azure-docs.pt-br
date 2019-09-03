@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: 17fee1f01bf883aa2a9845fe4f2817fb806056dd
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: cee5801826c78bdee51ba5afb14d6776a1191702
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69516230"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051636"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Tutorial: Treinar seu primeiro modelo de ML
 
@@ -31,14 +31,18 @@ Neste tutorial, você aprende as seguintes tarefas:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-O único pré-requisito é executar o tutorial anterior, [Configurar o ambiente e o workspace](tutorial-1st-experiment-sdk-setup.md).
+O único pré-requisito é executar a parte um deste tutorial, [Configurar o ambiente e o workspace](tutorial-1st-experiment-sdk-setup.md).
+
+Nesta parte do tutorial, você executa o código no Jupyter Notebook de exemplo `tutorials/tutorial-1st-experiment-sdk-train.ipynb` aberto no final da parte um. Este artigo percorre o mesmo código que está no notebook.
 
 ## <a name="connect-workspace-and-create-experiment"></a>Conectar o workspace e criar um experimento
 
-Importe a classe `Workspace` e carregue suas informações de assinatura do arquivo `config.json` usando a função `from_config().`. Isso busca o arquivo JSON no diretório atual por padrão, mas você também pode especificar um parâmetro de caminho para apontar para o arquivo usando `from_config(path="your/file/path")`. Se você estiver executando este notebook em um servidor de notebook de nuvem em seu workspace, o arquivo estará automaticamente no diretório raiz.
+Importe a classe `Workspace` e carregue suas informações de assinatura do arquivo `config.json` usando a função `from_config().`. Isso busca o arquivo JSON no diretório atual por padrão, mas você também pode especificar um parâmetro de caminho para apontar para o arquivo usando `from_config(path="your/file/path")`. Em um servidor de notebook de nuvem, o arquivo fica automaticamente no diretório raiz.
 
 Se o código a seguir solicitar autenticação adicional, basta colar o link em um navegador e inserir o token de autenticação.
 
+> [!TIP]
+> Se você for novo no Jupyter notebooks, execute o código clicando em uma célula de código e pressionando **Shift + Enter** para executar as células uma de cada vez. Como alternativa, para executar todo o notebook de uma só vez, clique em **Célula** na barra de menus superior e, em seguida, clique em **Executar Tudo**.
 
 ```python
 from azureml.core import Workspace

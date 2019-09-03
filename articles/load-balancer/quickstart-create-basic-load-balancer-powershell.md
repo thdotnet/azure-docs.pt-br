@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 58b36265a5e440dbf33a5d6fb85e791abbd006a8
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 378904b139edb7fe5d7c4376102ca6b153d84fb6
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274239"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70129071"
 ---
 # <a name="get-started"></a>Início Rápido: criar um balanceador de carga público usando o Azure PowerShell
 
@@ -295,40 +295,37 @@ Instale o IIS com uma página da Web personalizada em ambas as VMs de back-end d
 
 1. Obtenha o endereço IP Público do Balanceador de Carga. Usando `Get-AzPublicIPAddress`, obtenha o endereço IP Público do Balanceador de Carga.
 
-   ```azurepowershell-interactive
-    Get-AzPublicIPAddress `
-    -ResourceGroupName "myResourceGroupLB" `
-    -Name "myPublicIP" | select IpAddress
-   ```
-2. Crie uma conexão de área de trabalho remota com VM1 usando o endereço IP Público obtido na etapa anterior. 
+    ```azurepowershell-interactive
+    Get-AzPublicIPAddress -ResourceGroupName "myResourceGroupLB" -Name "myPublicIP" | select IpAddress
+    ```
 
-   ```azurepowershell-interactive
+2. **No computador local, abra um prompt de comando ou uma janela do PowerShell para esta etapa**.  Crie uma conexão de área de trabalho remota com VM1 usando o endereço IP Público obtido na etapa anterior. 
 
-      mstsc /v:PublicIpAddress:4221  
-  
-   ```
+    ```azurepowershell-interactive
+    mstsc /v:PublicIpAddress:4221  
+    ```
+
 3. Insira as credenciais para *VM1* para iniciar a sessão do RDP.
 4. Inicie o Windows PowerShell na VM1 e usando os comandos a seguir para instalar o servidor do IIS e atualizar o arquivo htm padrão.
+
     ```azurepowershell-interactive
-    # Install IIS
-      Install-WindowsFeature -name Web-Server -IncludeManagementTools
-    
-    # Remove default htm file
-     remove-item  C:\inetpub\wwwroot\iisstart.htm
-    
-    #Add custom htm file
-     Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello from" + $env:computername)
+        # Install IIS
+          Install-WindowsFeature -name Web-Server -IncludeManagementTools
+        
+        # Remove default htm file
+          remove-item  C:\inetpub\wwwroot\iisstart.htm
+        
+        # Add custom htm file
+          Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello from" + $env:computername)
     ```
 5. Feche a conexão RDP com *myVM1*.
-6. Crie uma conexão RDP com *myVM2* executando o comando `mstsc /v:PublicIpAddress:4222` e repita a etapa 4 para *VM2*.
+6. **Crie uma conexão RDP no computador local** com *myVM2* executando o comando `mstsc /v:PublicIpAddress:4222` e repita a etapa 4 para *VM2*.
 
 ## <a name="test-load-balancer"></a>Testar o balanceador de carga
 Obtenha o endereço IP público do balanceador de carga com [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). O exemplo a seguir obtém o endereço IP para *myPublicIP* criado anteriormente:
 
 ```azurepowershell-interactive
-Get-AzPublicIPAddress `
-  -ResourceGroupName "myResourceGroupLB" `
-  -Name "myPublicIP" | select IpAddress
+Get-AzPublicIPAddress -ResourceGroupName "myResourceGroupLB" -Name "myPublicIP" | select IpAddress
 ```
 
 Você pode inserir o endereço IP público em um navegador da Web. O site é exibido, incluindo o nome do host da VM para a qual o balanceador de carga distribui o tráfego como no exemplo a seguir:

@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: cc16f3c8ea287e78d7b7b4d9a56f5a2e82c26f01
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 7ed81375912613995d573b110607e7913adfd10f
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515331"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051669"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment"></a>Tutorial: Introdução à criação do seu primeiro experimento de ML
 
@@ -73,7 +73,12 @@ Depois que sua VM estiver em execução, use a seção **VMs de Notebook** para 
     > [!TIP]
     > Esta pasta está localizada no [contêiner de armazenamento](concept-workspace.md#resources) em seu workspace, não na VM do notebook.  Você pode excluir a VM do notebook e ainda manter todo o seu trabalho.  Quando você criar uma nova VM do notebook posteriormente, ela será carregada dessa mesma pasta. Se você compartilhar seu workspace com outras pessoas, elas verão sua pasta e você verá as pastas delas.
 
-1. Abra o subdiretório `samples-*` e, em seguida, abra `tutorials/tutorial-1st-experiment-sdk-train.ipynb` para executar a **parte dois** do tutorial.
+1. Abra o subdiretório `samples-*` e, em seguida, abra `tutorials/tutorial-1st-experiment-sdk-train.ipynb`
+
+> [!Warning]
+> Certifique-se de abrir o arquivo `tutorial-1st-experiment-sdk-train.ipynb`, e **não** o arquivo `.yml` com o > mesmo nome. 
+
+Na **parte dois** do tutorial, você executa o código em `tutorial-1st-experiment-sdk-train.ipynb` para treinar um modelo de machine learning.
 
 ## <a name="end"></a> Limpar recursos
 

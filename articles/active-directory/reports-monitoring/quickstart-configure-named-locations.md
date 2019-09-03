@@ -16,17 +16,17 @@ ms.date: 11/13/2018
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 540bc8a4dbfda83ff6e0480bc216a38742bbef2b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1513dba19221e64d40551ffb13a5e9f33fd9858f
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988094"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70127232"
 ---
 # <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Início Rápido: Configurar locais nomeados no Azure Active Directory
 
 Com locais nomeados, você pode rotular os intervalos de endereços IP confiáveis em sua organização. O Azure AD usa localizações nomeadas para:
-- Detectar falsos positivos em [eventos de risco](concept-risk-events.md). Conectar de um local confiável diminui o risco de entrada do usuário.   
+- Detectar falsos positivos em [detecções de risco](concept-risk-events.md). Conectar de um local confiável diminui o risco de entrada do usuário.   
 - Configure o [acesso condicional com base em localização](../conditional-access/location-condition.md).
 
 Neste início rápido, você aprenderá a configurar locais nomeados no seu ambiente.

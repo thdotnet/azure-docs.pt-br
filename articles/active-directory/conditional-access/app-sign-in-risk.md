@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdbdd0253478200d39501444ae649b87b77e65a4
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 928900c526ec0e77f84c621f630ac5894cdb2d23
+ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509041"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70125652"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Início Rápido: bloquear o acesso quando um risco de sessão é detectado com acesso condicional do Azure Active Directory  
 
@@ -34,7 +34,7 @@ Para concluir o cenário deste tutorial, você precisa de:
 
 - **Acesso a uma edição do Azure Active Directory Premium P2** - enquanto o Acesso Condicional é um recurso do Azure Active Directory Premium P1, você precisa de uma edição de P2 pois o cenário neste início rápido requer a proteção de identidade.
 - **Proteção de identidade** -o cenário neste início rápido requer a proteção de identidade a ser habilitado. Se você não sabe como habilitar a proteção de identidade, confira [Habilitando o Azure Active Directory Identity Protection](../identity-protection/enable.md).
-- **Tor Browser** - o [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) foi projetado para ajudá-lo a preservar sua privacidade online. Identity Protection detecta uma entrada de um Tor Browser como entradas de endereços IP anônimos, que tem um nível de risco médio. Para saber mais, veja [Eventos de risco do Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
+- **Tor Browser** - o [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en) foi projetado para ajudá-lo a preservar sua privacidade online. Identity Protection detecta uma entrada de um Tor Browser como entradas de endereços IP anônimos, que tem um nível de risco médio. Para obter mais informações, confira [Detecções de risco do Azure Active Directory](../reports-monitoring/concept-risk-events.md).  
 - **Uma conta de teste chamada Alain Charon** – caso não saiba como criar uma conta de teste, consulte [Adicionar usuários baseados em nuvem](../fundamentals/add-users-azure-active-directory.md#add-a-new-user).
 
 ## <a name="test-your-sign-in"></a>Teste seu logon
@@ -48,7 +48,7 @@ O objetivo desta etapa é certificar-se de que sua conta de teste pode acessar s
 
 ## <a name="create-your-conditional-access-policy"></a>Criar sua política de acesso condicional
 
-O cenário neste início rápido usa uma entrada de um Tor Browser para gerar um evento de risco detectado **entradas de endereços IP anônimos**. O nível de risco desse evento de risco é médio. Para responder a esse evento de risco, defina a condição de risco de entrada como média. Em um ambiente de produção, é necessário definir a condição de risco de entrada como alta ou média e alta.
+O cenário deste início rápido usa uma entrada de um Tor Browser para gerar uma detecção de risco **Entradas de endereços IP anônimos** detectada. O nível de risco dessa detecção de risco é médio. Para responder a essa detecção de risco, defina a condição de risco de entrada como média. Em um ambiente de produção, é necessário definir a condição de risco de entrada como alta ou média e alta.
 
 Esta seção mostra como criar a política de acesso condicional necessária. Em sua política, defina:
 

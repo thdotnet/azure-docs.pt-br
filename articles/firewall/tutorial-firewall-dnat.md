@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 11/28/2018
+ms.date: 08/29/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: df57faad770b252228b6c55d4caff775acfe3594
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: f0a58382b9825a7b32aee69c00b9801d1c77251a
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57531157"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114626"
 ---
 # <a name="tutorial-filter-inbound-traffic-with-azure-firewall-dnat-using-the-azure-portal"></a>Tutorial: Filtrar tráfego de entrada com o DNAT do Firewall do Azure usando o portal do Azure
 
@@ -62,8 +62,9 @@ Primeiro, crie as redes virtuais e, em seguida, emparelhe-as.
 
      O firewall estará nessa sub-rede e o nome da sub-rede **precisa** ser AzureFirewallSubnet.
      > [!NOTE]
-     > O tamanho mínimo da sub-rede AzureFirewallSubnet é /26.
-10. Em **Intervalo de endereços**, digite **10.0.1.0/24**.
+     > O tamanho da sub-rede AzureFirewallSubnet é /26. Para obter mais informações sobre o tamanho da sub-rede, confira [Perguntas frequentes sobre o Firewall do Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+
+10. Em **Intervalo de endereços**, digite **10.0.1.0/26**.
 11. Use as outras configurações padrão e clique em **Criar**.
 
 ### <a name="create-a-spoke-vnet"></a>Criar uma rede virtual do spoke
@@ -151,9 +152,9 @@ Após a conclusão da implantação, observe o endereço IP privado da máquina 
    |Configuração  |Valor  |
    |---------|---------|
    |NOME     |FW-DNAT-test|
-   |Assinatura     |\<sua assinatura\>|
-   |Grupo de recursos     |**Usar existente**: RG-DNAT-Test |
-   |Local padrão     |Selecionar o mesmo local usado anteriormente|
+   |Subscription     |\<sua assinatura\>|
+   |Resource group     |**Usar existente**: RG-DNAT-Test |
+   |Location     |Selecionar o mesmo local usado anteriormente|
    |Escolher uma rede virtual     |**Usar existente**: VN-Hub|
    |Endereço IP público     |**Criar novo**. O endereço IP público deve ser do tipo SKU Standard.|
 

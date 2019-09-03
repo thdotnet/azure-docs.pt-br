@@ -6,16 +6,28 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 05/14/2019
+ms.date: 08/27/2019
 ms.author: alkohli
-ms.openlocfilehash: 6a725784c419b67f7738b70ad867d2d6ef8b0785
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 4e997998c345e1cbd6ff784aaf84bc9f605f691c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795969"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098651"
 ---
+::: zone target="docs"
+
 # <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Tutorial: Cabear e conectar-se ao Azure Data Box
+
+::: zone-end
+
+::: zone target="chromeless"
+
+# <a name="cable-and-connect-to-your-device"></a>Cabear e conectar ao seu dispositivo
+
+::: zone-end
+
+::: zone target="docs"
 
 Este tutorial descreve como cabear, conectar e ligar seu Azure Data Box.
 
@@ -64,6 +76,38 @@ Execute as etapas a seguir para cabear seu dispositivo.
 
     ![Botão de energia do Data Box](media/data-box-deploy-set-up/data-box-powered-door-open.png)
 
+::: zone-end
+
+::: zone target="chromeless"
+
+Após receber o dispositivo, você precisará cabear e conectar-se ao seu dispositivo. 
+
+## <a name="cable-your-device"></a>Cabear seu dispositivo
+
+1. Se houver alguma evidência de que o dispositivo foi adulterado ou danificado, não continue. Contate o Suporte da Microsoft para receber um dispositivo substituto.
+2. Antes de cabear o dispositivo, verifique se você tem os seguintes cabos:
+    
+    - Cabo de alimentação com aterramento (incluso) com potência igual ou superior a 10 A e um conector IEC60320 C-13 em uma extremidade para a conexão ao dispositivo.
+    - Um cabo de rede RJ-45 CAT 6 (usar com adaptador de rede MGMT)
+    - Dois cabos de cobre SFP+ Twinax de 10 GbE (usar com adaptadores de rede DATA 1 ou DATA 2 de 10 Gbps)
+    - Um cabo de rede RJ-45 CAT 6A OU RJ-45 CAT 6 (usar com adaptador de rede DATA 3 configurado como 10 Gbps ou 1 Gbps, respectivamente)
+
+3. Remova e coloque o dispositivo em uma superfície plana. 
+    
+4. Cabeie o dispositivo, conforme mostrado abaixo.  
+
+    ![Backplane do dispositivo Data Box cabeado](media/data-box-deploy-set-up/data-box-cabled-dhcp.png)  
+
+    1. Conecte o cabo de alimentação ao dispositivo.
+    2. Use o cabo de rede RJ-45 CAT 6 para conectar o computador host à porta de gerenciamento (MGMT) no dispositivo. 
+    3. Use o cabo de cobre SFP+ Twinax para conectar, pelo menos, um adaptador de rede de 10 Gbps (preferível a 1 Gbps), DATA 1 ou DATA 2, aos dados. 
+    4. Ative o dispositivo. O botão de energia está localizado no painel frontal do dispositivo.
+
+::: zone-end
+
+::: zone target="docs"
+
+
 ## <a name="connect-to-your-device"></a>Conectar-se ao seu dispositivo
 
 Execute as etapas a seguir para configurar seu dispositivo usando a interface do usuário da Web local e o portal da interface do usuário.
@@ -92,6 +136,22 @@ Depois que os adaptadores de rede de dados forem configurados, você também pod
 
 Após a configuração do dispositivo ser concluída, é possível se conectar aos compartilhamentos de dispositivo e copiar os dados do seu computador para o dispositivo. 
 
+::: zone-end
+
+::: zone target="chromeless"
+
+## <a name="connect-your-device"></a>Conectar o dispositivo
+
+1. Para obter a senha do dispositivo, acesse **Geral > Detalhes do dispositivo** no [portal do Azure](https://portal.azure.com).
+2. Atribua um endereço IP estático igual a 192.168.100.5 e a sub-rede 255.255.255.0 ao adaptador Ethernet no computador que você está usando para se conectar ao Data Box. Acesse a interface do usuário da Web local do dispositivo em `https://192.168.100.10`. A conexão poderá levar até 5 minutos após a ativação do dispositivo. 
+3. Entre usando a senha do portal do Azure. Você verá um erro indicando um problema com o certificado de segurança do site. Siga as instruções específicas do navegador para continuar para a página da Web.
+4. Por padrão, as configurações de rede para o adaptador de dados de 10 Gbps (ou 1 Gbps) são definidas como DHCP. Se necessário, configure essa interface como estática e forneça um endereço IP. 
+
+::: zone-end
+
+
+::: zone target="docs"
+
 ## <a name="next-steps"></a>Próximas etapas
 
 Neste tutorial, você aprendeu sobre tópicos do Azure Data Box como:
@@ -104,4 +164,6 @@ Avance para o próximo tutorial para saber como copiar dados no seu Data Box.
 
 > [!div class="nextstepaction"]
 > [Copiar seus dados para o Disco do Azure Data Box](./data-box-deploy-copy-data.md)
+
+::: zone-end
 

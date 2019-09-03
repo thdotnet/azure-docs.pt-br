@@ -10,16 +10,15 @@ ms.assetid: ''
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.date: 04/29/2019
+ms.date: 08/23/2019
 ms.author: cephalin
-ms.openlocfilehash: 163876d63ba2127dd3f3444e95b284918e60e368
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: d4f1cd5193f29e929c822966ca427c6e6ebf67de
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951989"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70070967"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Criar um aplicativo Python no Serviço de Aplicativo do Azure no Linux
 
@@ -37,7 +36,7 @@ Para concluir este guia de início rápido:
 
 ## <a name="download-the-sample-locally"></a>Baixar o exemplo localmente
 
-Em uma janela do terminal, execute os comandos a seguir para clonar o aplicativo de exemplo no computador local e navegue para o diretório que contém o código de exemplo.
+Em uma janela do terminal, execute os comandos a seguir para clonar o aplicativo de exemplo no computador local e vá para o diretório que contém o código de exemplo.
 
 ```bash
 git clone https://github.com/Azure-Samples/python-docs-hello-world
@@ -65,7 +64,7 @@ Set-Item Env:FLASK_APP ".\application.py"
 flask run
 ```
 
-Abra um navegador da Web e navegue até o aplicativo de exemplo em `http://localhost:5000/`.
+Abra um navegador da Web e vá até o aplicativo de exemplo em `http://localhost:5000/`.
 
 Você verá o **Olá, Mundo!** mensagem do aplicativo de exemplo exibida na página.
 
@@ -82,7 +81,7 @@ No Cloud Shell, crie um diretório de início rápido e depois altere-o.
 ```bash
 mkdir quickstart
 
-cd quickstart
+cd $HOME/quickstart
 ```
 
 Em seguida, execute o comando a seguir para clonar o repositório de aplicativos de exemplo ao seu diretório de início rápido.
@@ -158,7 +157,7 @@ O código de exemplo Python está em execução no Serviço de Aplicativo no Lin
 
 ## <a name="update-locally-and-redeploy-the-code"></a>Atualizar localmente e reimplantar o código
 
-No Cloud Shell, digite `code application.py` para abrir o editor do Cloud Shell.
+No Cloud Shell, insira `code application.py` para abrir o editor do Cloud Shell.
 
 ![Código application.py](media/quickstart-python/code-applicationpy.png)
 
@@ -184,7 +183,7 @@ Depois que a implantação for concluída, troque para a janela do navegador abe
 
 Acesse o <a href="https://portal.azure.com" target="_blank">portal do Azure</a> para gerenciar o aplicativo que você criou.
 
-No menu à esquerda, clique em **Serviços de Aplicativos** e, em seguida, clique no nome do aplicativo do Azure.
+No menu à esquerda, selecione **Serviços de Aplicativos** e, em seguida, selecione o nome do seu aplicativo do Azure.
 
 ![Navegação no Portal para o aplicativo do Azure](./media/quickstart-python/app-service-list.png)
 
