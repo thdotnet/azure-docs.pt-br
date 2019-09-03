@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: overview
 ms.subservice: design
-ms.date: 04/17/2018
+ms.date: 08/23/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 38d353541b233f3cd9466e8dcf6c2b84083bd859
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 6c198b6d5e9ecfed3f36ddc3be831af85a913ca5
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515780"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69995829"
 ---
 # <a name="cheat-sheet-for-azure-sql-data-warehouse"></a>Roteiro do SQL Data Warehouse do Azure
 Esta folha de referências fornece dicas úteis e melhores práticas para a compilação de suas soluções do SQL Data Warehouse do Azure. Antes da introdução, saiba mais sobre cada etapa detalhadamente, lendo os [Padrões de Carga de Trabalho do SQL Data Warehouse do Azure e Anti-Padrões](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns), que explica o que é SQL Data Warehouse e o que não é.
@@ -96,9 +96,11 @@ Saiba mais sobre [partições].
 
 ## <a name="incremental-load"></a>Carga incremental
 
-Se você for carregar incrementalmente os dados, primeiro certifique-se de alocar classes de recursos maiores para carregar os dados. É recomendável usar PolyBase e ADF V2 para automatizar os pipelines ELT no SQL Data Warehouse.
+Se você for carregar incrementalmente os dados, primeiro certifique-se de alocar classes de recursos maiores para carregar os dados.  Isso é particularmente importante ao carregar em tabelas com índices columnstore clusterizados.  Confira [classes de recursos](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management) para obter detalhes.  
 
-Para um lote de atualizações grande nos dados históricos, primeiro exclua os dados em questão. Em seguida, faça uma inserção em massa dos novos dados. Essa abordagem em duas etapas é mais eficiente.
+É recomendável usar PolyBase e ADF V2 para automatizar os pipelines ELT no SQL Data Warehouse.
+
+Para obter um grande lote de atualizações em seus dados históricos, considere usar um [CTAS](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-develop-ctas) para escrever os dados que você deseja manter em uma tabela, em vez de usar INSERT, UPDATE e DELETE.
 
 ## <a name="maintain-statistics"></a>Manter as estatísticas
  Até que as estatísticas automáticas estejam geralmente disponíveis, o SQL Data Warehouse irá requerer manutenção manual de estatísticas. É importante atualizar as estatísticas quando ocorrem alterações *significativas* em seus dados. Isso ajuda a otimizar seus planos de consulta. Se você achar que demora demais para manter todas as estatísticas, seja mais seletivo sobre quais colunas têm estatísticas. 
@@ -157,7 +159,7 @@ Implante com um clique seus spokes nos Bancos de Dados SQL do SQL Data Warehouse
 <!--Other Web references-->
 [typical architectures that take advantage of SQL Data Warehouse]: https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/
 [is and is not]:https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns/
-[migração de dados]:https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
+[migração de dados]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
 
 [Azure Data Lake Store]: ../data-factory/connector-azure-data-lake-store.md
 [sys.dm_pdw_nodes_db_partition_stats]: /sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql
