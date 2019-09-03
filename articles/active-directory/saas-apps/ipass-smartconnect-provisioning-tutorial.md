@@ -57,7 +57,7 @@ Antes de configurar e habilitar o provisionamento automático de usuário, você
 Antes de configurar o iPass SmartConnect para o provisionamento automático de usuário com o Azure AD, você precisará recuperar as informações de configuração do console de administração do iPass SmartConnect:
 
 1. Para recuperar o token de portador que é necessário para autenticar no ponto de extremidade do iPass SmartConnect SCIM, consulte a primeira vez que você configurou o iPass SmartConnect, pois esse valor só é fornecido. 
-2. Se você não tiver o token de portador, entre em contato com a equipe de suporte do [iPassmailto:help@ipass.comSmartConnect] () para recuperar um novo.
+2. Se você não tiver o token de portador, entre em contato com a equipe de suporte do [iPass SmartConnect] (mailto:help@ipass.com) para recuperar um novo.
 
 ## <a name="add-ipass-smartconnect-from-the-gallery"></a>Adicionar o iPass SmartConnect da Galeria
 

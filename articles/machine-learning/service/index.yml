@@ -45,7 +45,7 @@ sections:
         items:
           - html: <a href="tutorial-1st-experiment-sdk-setup">Configure o ambiente e treine seu primeiro experimento de aprendizado de máquina.</a>
           - html: <a href="tutorial-train-models-with-aml">Treine e implante modelos de classificação de imagem.</a>
-          - html: <a href="tutorial-data-prep">Prepare dados e use ML automatizado para prever tarifas de táxi.</b></a>
+          - html: <a href="tutorial-auto-train-models">Use ML automatizado para prever tarifas de táxi.</b></a>
           - html: <a href="how-to-run-batch-predictions">Execute previsões de lote em conjuntos de dados grandes com pipelines de ML.</b></a>
   - title: Exemplos
     items:

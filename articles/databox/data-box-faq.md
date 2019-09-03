@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
-ms.topic: overview
+ms.topic: article
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 287fd07f170ec85b07b75e1823cbb67d462004f6
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
-ms.translationtype: HT
+ms.openlocfilehash: f9afd3ae1d1d5d6235cf8bd0a6350a782ea6afbe
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098793"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142938"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: Perguntas frequentes
 
@@ -124,7 +124,7 @@ a. Se você não puder acessar a senha de desbloqueio no portal do Azure, verifi
 ### <a name="q-is-port-channel-configuration-supported-on-data-box-how-about-mpio"></a>P. Há suporte para configuração de canal de porta no Data Box? E quanto ao MPIO?
 a. Não damos suporte à configuração de canal de porta, à configuração de MPIO (Multipath I/O) nem à configuração de VLAN no Data Box.
 
-## <a name="track-status"></a>Rastreamento de status
+## <a name="track-status"></a>Controlar status
 
 ### <a name="q-how-do-i-track-the-data-box-from-when-i-placed-the-order-to-shipping-the-device-back"></a>P. Como fazer para rastrear o Data Box desde a realização do pedido até a devolução do dispositivo? 
 a.  Rastreie o status do pedido do Data Box no portal do Azure. Ao criar o pedido, é necessário também fornecer um email para notificações. Através desse email você será notificado sobre todas as alterações de status do pedido. Para obter mais informações, consulte como [configurar emails de notificação](data-box-portal-ui-admin.md#edit-notification-details).
@@ -250,7 +250,7 @@ a.  Os seguintes relatórios estão disponíveis para dar suporte à cadeia de c
 a.  Os logs de acompanhamento da transportadora são capturados no histórico de pedidos do Data Box. Esse relatório estará disponível para você depois que o dispositivo retornar ao datacenter do Azure e os dados nos discos do dispositivo forem limpos. Para uma necessidade imediata, acesse também o site da transportadora diretamente com o número de acompanhamento do pedido e obtenha as informações de rastreamento.
 
 ### <a name="can-i-transport-the-data-box-to-azure-datacenter"></a>Posso transportar o Data Box para o datacenter do Azure? 
-a.  Não. No momento, o datacenter do Azure não aceita a entrega do Data Box de clientes ou de transportadoras além da UPS.
+a.  Nº No momento, o datacenter do Azure não aceita a entrega do Data Box de clientes ou de transportadoras além da UPS.
 
 
 ## <a name="next-steps"></a>Próximas etapas
