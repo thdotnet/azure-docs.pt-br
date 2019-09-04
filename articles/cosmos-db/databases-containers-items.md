@@ -4,15 +4,15 @@ description: Este artigo descreve como criar e usar bancos de dados, contêinere
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/26/2019
+ms.date: 09/01/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 9c8460380755c6057f7507443d0b564e85c2ff86
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: de9b0a372d04b40a24b6dc0a8952722129f4a55f
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598488"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241206"
 ---
 # <a name="work-with-databases-containers-and-items-in-azure-cosmos-db"></a>Trabalhar com bancos de dados, contêineres e itens no Azure Cosmos DB
 
@@ -28,7 +28,7 @@ Você pode criar um ou vários bancos de dados do Azure Cosmos em sua conta. Um 
 
 | Entidade Cosmos do Azure | API do SQL | API Cassandra | API do Azure Cosmos DB para MongoDB | API do Gremlin | API de Tabela |
 | --- | --- | --- | --- | --- | --- |
-|Banco de dados do Azure Cosmos | Banco de dados | Keyspace | Banco de dados | Banco de dados | N/A |
+|Banco de dados do Azure Cosmos | Banco de Dados | Keyspace | Banco de Dados | Banco de Dados | N/A |
 
 > [!NOTE]
 > Com contas de API de Tabela, quando você cria sua primeira tabela, um banco de dados padrão é criado automaticamente em sua conta do Azure Cosmos.
@@ -74,7 +74,7 @@ Um contêiner Cosmos do Azure é especializado em entidades específicas de API,
 
 | Entidade Cosmos do Azure | API do SQL | API Cassandra | API do Azure Cosmos DB para MongoDB | API do Gremlin | API de Tabela |
 | --- | --- | --- | --- | --- | --- |
-|Contêiner do Azure Cosmos | Collection | Tabela | Collection | Grafo | Tabela |
+|Contêiner do Azure Cosmos | Contêiner | Tabela | Collection | Grafo | Tabela |
 
 ### <a name="properties-of-an-azure-cosmos-container"></a>Propriedades de um contêiner do Azure Cosmos
 

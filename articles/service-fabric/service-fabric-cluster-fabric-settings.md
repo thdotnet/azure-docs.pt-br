@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/30/2019
 ms.author: atsenthi
-ms.openlocfilehash: 096b6a13c85d04ebeb4f2ffae72acdd8629ae886
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: cdbb545e981e50e23bbbb011dc54577acf7974f7
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70191757"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241761"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Saiba como personalizar algumas das configurações de cluster do Service Fabric
 Este artigo descreve as várias configurações de malha para o cluster do Service Fabric que você pode personalizar. Para clusters hospedados no Azure, você pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou utilizando um modelo do Azure Resource Manager. Para obter mais informações, consulte [Atualizar a configuração de um cluster do Azure](service-fabric-cluster-config-upgrade-azure.md). Para clusters independentes, você customiza as configurações atualizando o arquivo *ClusterConfig.json* e executando uma atualização de configuração em seu cluster. Para obter mais informações, consulte [atualizar a configuração de um cluster autônomo](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -311,7 +311,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
 |EnableApplicationTypeHealthEvaluation |Bool, o padrão é false |Estático|Política de avaliação de integridade do cluster: habilitar avaliação de integridade de tipo por aplicativo. |
-|MaxSuggestedNumberOfEntityHealthReports|Int, o padrão é 500 |Dinâmico|O número máximo de relatórios de integridade que uma entidade pode ter antes de gerar preocupações sobre a lógica de relatório de integridade do Watchdog. Cada entidade de integridade deve ter um número relativamente pequeno de relatórios de integridade. Se a contagem de relatórios ficar acima desse número; pode haver problemas com a implementação do Watchdog. Uma entidade com muitos relatórios é sinalizada por meio de um relatório de integridade de aviso quando a entidade é avaliada. |
+|MaxSuggestedNumberOfEntityHealthReports|Int, o padrão é 100 |Dinâmico|O número máximo de relatórios de integridade que uma entidade pode ter antes de gerar preocupações sobre a lógica de relatório de integridade do Watchdog. Cada entidade de integridade deve ter um número relativamente pequeno de relatórios de integridade. Se a contagem de relatórios ficar acima desse número; pode haver problemas com a implementação do Watchdog. Uma entidade com muitos relatórios é sinalizada por meio de um relatório de integridade de aviso quando a entidade é avaliada. |
 
 ## <a name="healthmanagerclusterhealthpolicy"></a>HealthManager/ClusterHealthPolicy
 

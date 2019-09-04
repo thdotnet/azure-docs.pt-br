@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/02/2019
 ms.author: diberry
-ms.openlocfilehash: 0ab6e4854a96b4434ebb6c0b3649a1955568ba45
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: f92776072038c5684e9334d2dda1690ebb7bcaa8
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932788"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70257804"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Publicar seu aplicativo ativo, treinado em um ponto de extremidade de preparo ou produção
 
@@ -26,39 +26,67 @@ Quando terminar de compilar e testar seu aplicativo LUIS ativo, disponibilize-o 
 
 ## <a name="publishing"></a>Publicando
 
-Para publicar no ponto de extremidade, selecione **Publicar** no painel superior direito. 
+1. Para publicar no ponto de extremidade, selecione **Publicar** no painel superior direito. 
 
-![Barra de navegação superior direita](./media/luis-how-to-publish-app/publish-top-nav-bar.png)
+    ![Botão publicar na parte superior, barra de navegação direita](./media/luis-how-to-publish-app/publish-top-nav-bar.png)
 
-Selecione o slot correto quando a janela pop-up for exibida: de preparo ou produção. Usando os dois slots de publicação, isso permite que você tenha duas versões diferentes com pontos de extremidade publicados ou a mesma versão em dois pontos de extremidade diferentes. 
+1. Selecione as configurações para o ponto de extremidade de previsão publicado e, em seguida, selecione **publicar**.
 
-O aplicativo é publicado em todas as regiões associadas aos recursos do LUIS adicionados no portal do LUIS. Por exemplo, para um aplicativo criado em [www.luis.ai](https://www.luis.ai), se você criar um recurso de LUIS em **westus** e adicioná-lo ao aplicativo como um recurso, o aplicativo será publicado nessa região. Para obter mais informações sobre as regiões do LUIS, consulte [Regiões](luis-reference-regions.md).
- 
-![Janela pop-up de publicação](./media/luis-how-to-publish-app/publish-pop-up.png)
+    ![Selecione Publicar configurações e, em seguida, clique no botão publicar](./media/luis-how-to-publish-app/publish-pop-up.png)
+
+### <a name="publishing-slots"></a>Slots de publicação
+
+Selecione o slot correto quando a janela pop-up for exibida: 
+
+* Preparo.
+* Produção. 
+
+Usando os dois slots de publicação, isso permite que você tenha duas versões diferentes do seu aplicativo disponíveis nos pontos de extremidade publicados ou na mesma versão em dois pontos de extremidade diferentes. 
+
+### <a name="publishing-regions"></a>Regiões de publicação
+
+O aplicativo é publicado em todas as regiões associadas aos recursos de ponto de extremidade de previsão LUIS adicionados no portal do LUIS. 
+
+Por exemplo, para um aplicativo criado em [www.Luis.ai](https://www.luis.ai), se você criar um recurso de Luis em duas regiões , westuse lesteus, e adicioná-los ao aplicativo como recursos, o aplicativo será publicado em ambas as regiões. Para obter mais informações sobre as regiões do LUIS, consulte [Regiões](luis-reference-regions.md).
+
+
+## <a name="configuring-publish-settings"></a>Definindo configurações de publicação
+
+Depois de selecionar o slot, defina as configurações de publicação para:
+
+* Análise de Sentimento
+* Correção ortográfica
+* Preparação da fala 
+
+Depois de publicar, essas configurações estarão disponíveis para análise na página **gerenciar** configurações de **publicação** da seção. Você pode alterar as configurações com cada publicação. Se você cancelar uma publicação, as alterações feitas durante a publicação também serão canceladas. 
+
+### <a name="when-your-app-is-published"></a>Quando seu aplicativo é publicado
 
 Quando seu aplicativo tiver sido publicado com êxito, uma notificação de êxito em verde será exibida na parte superior do navegador. A barra de notificação verde também inclui um link para os pontos de extremidade. 
 
 ![Publicando uma janela pop-up com link para o ponto de extremidade](./media/luis-how-to-publish-app/publish-success.png)
 
-Se você precisar da URL do ponto de extremidade, selecione o link. Você também pode obter as URLs do ponto de extremidade selecionando **Gerenciar** no menu superior, em seguida, selecione **Chaves e Pontos de Extremidade** no menu à esquerda. 
+Se você precisar da URL do ponto de extremidade, selecione o link. Você também pode acessar as URLs do ponto de extremidade selecionando **gerenciar** no menu superior e, em seguida, selecione **recursos do Azure** no menu à esquerda. 
 
-## <a name="configuring-publish-settings"></a>Definindo configurações de publicação
-
-Defina configurações de publicação selecionando **Gerenciar** na barra de navegação na parte superior direita e, em seguida, selecionando **Configurações de Publicação**. 
-
-![Configurações de publicação](./media/luis-how-to-publish-app/publish-settings.png)
-
-### <a name="publish-after-enabling-sentiment-analysis"></a>Publicar após habilitar a análise de sentimento
+## <a name="sentiment-analysis"></a>Análise de Sentimento
 
 <a name="enable-sentiment-analysis"></a>
 
 A análise de sentimento permite ao LUIS fazer a integração com a [Análise de Texto](https://azure.microsoft.com/services/cognitive-services/text-analytics/) para fornecer análise de frase-chave e sentimento. 
 
-Você não precisa fornecer uma chave de Análise de Texto e não é cobrando nenhum encargo para esse serviço na sua conta do Azure. Depois que você marcar essa configuração, ela será persistente. 
+Você não precisa fornecer uma chave de Análise de Texto e não é cobrando nenhum encargo para esse serviço na sua conta do Azure. 
 
 Dados de sentimento são uma pontuação entre 1 e 0 indicando o sentimento positivo (mais próximo de 1) ou negativo (mais próximo de 0) dos dados. O rótulo de sentimento de `positive`, `neutral` e `negative` é por cultura com suporte. Atualmente, somente inglês dá suporte a rótulos de sentimento. 
 
 Para obter mais informações sobre a resposta do ponto de extremidade JSON com análise de sentimento, veja [Análise de sentimento](luis-concept-data-extraction.md#sentiment-analysis)
+
+## <a name="spelling-correction"></a>Correção ortográfica
+
+As correções de ortografia são feitas antes da previsão de expressão do usuário LUIS. Você pode ver quaisquer alterações no expressão original, incluindo a ortografia, na resposta.
+
+## <a name="speech-priming"></a>Preparação da fala
+
+A desobstrução de fala é o processo de usar o envio do modelo LUIS para os serviços de fala antes da conversão de texto em fala. Isso permite que o serviço de fala forneça a conversão de fala com mais precisão para seu modelo. Isso permite o bot Speech e solicitações LUIS e respostas em uma chamada fazendo uma chamada de fala e voltando uma resposta LUIS. Ele fornece menos latência geral.
 
 ## <a name="next-steps"></a>Próximas etapas
 

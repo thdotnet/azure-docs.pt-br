@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: nolachar
+ms.author: nitinme
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5443b97febd6bf3831690531bceb540181e7676c
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: 429570d81f7e15758d8ea60951bb4d01b96f8f2c
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68706988"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70256477"
 ---
 # <a name="when-to-use-enum-entities-and-set-entity-actions"></a>Quando usar entidades ENUM e definir ações de entidade
 
@@ -53,7 +53,7 @@ Nos tutoriais anteriores, examinamos as entidades [treinadas personalizadas](04-
 
 Nesses casos, você precisa usar as entidades ENUM e as ações SET_ENTITY.
 
-## <a name="when-to-use-enums-or-setentity-actions"></a>Quando usar ENUMs ou ações SET_ENTITY
+## <a name="when-to-use-enums-or-set_entity-actions"></a>Quando usar ENUMs ou ações SET_ENTITY
 
 Use estas regras abaixo para saber quando usar entidades ENUM e ações SET_ENTITY:
 

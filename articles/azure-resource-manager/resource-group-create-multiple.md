@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/25/2019
+ms.date: 09/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: dbacec6e8f91480996150e73f2a81dbcde67550b
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: b349576f5e9f5410afc29f48e40c38e12168252d
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494797"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258889"
 ---
 # <a name="resource-property-or-variable-iteration-in-azure-resource-manager-templates"></a>Recurso, propriedade ou iteração de variável em modelos de Azure Resource Manager
 
@@ -43,13 +43,13 @@ Quando usado com uma variável ou propriedade, o objeto de cópia tem o seguinte
 
 Ambos os usos são descritos mais detalhadamente neste artigo. Para um tutorial, consulte [Tutorial: crie várias instâncias de recursos usando modelos do Resource Manager](./resource-manager-tutorial-create-multiple-instances.md).
 
-Caso precise especificar se um recurso é ou não implantado, confira [Elemento condition](resource-group-authoring-templates.md#condition).
+Caso precise especificar se um recurso é ou não implantado, confira [Elemento condition](conditional-resource-deployment.md).
 
 ## <a name="copy-limits"></a>Limites de cópia
 
 Para especificar o número de iterações, você fornece um valor para a propriedade Count. A contagem não pode exceder 800.
 
-A contagem não pode ser um número negativo. Se você implantar um modelo com a API REST versão **2019-05-10** ou posterior, poderá definir Count como zero. As versões anteriores da API REST não dão suporte a zero para contagem. Atualmente, CLI do Azure ou PowerShell não dão suporte a zero para contagem, mas esse suporte será adicionado em uma versão futura.
+A contagem não pode ser um número negativo. Se você implantar um modelo com Azure PowerShell 2,6 ou posterior, ou a versão de API REST **2019-05-10** ou posterior, poderá definir Count como zero. As versões anteriores do PowerShell e a API REST não dão suporte a zero para contagem. Atualmente, CLI do Azure não dá suporte a zero para Count, mas esse suporte será adicionado em uma versão futura.
 
 Tenha cuidado ao usar a [implantação do modo completo](deployment-modes.md) com a cópia. Se você reimplantar com o modo completo em um grupo de recursos, todos os recursos que não forem especificados no modelo após a resolução do loop de cópia serão excluídos.
 

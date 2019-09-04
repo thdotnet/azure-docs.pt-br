@@ -12,19 +12,18 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 09/04/2018
+ms.date: 09/03/2019
 ms.author: damaerte
-ms.openlocfilehash: f3d7edf21edf116732eceb332cb8725a0dee85dc
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: acdf52022d8498a186ed4cff90284cd6e299d6c0
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742028"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240854"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Visão geral do Azure Cloud Shell
-O Azure Cloud Shell é um shell interativo e acessível pelo navegador para o gerenciamento de recursos do Azure.
-Ele dá a você a flexibilidade de escolher a experiência de shell que melhor se adequa ao modo como você trabalha.
-Usuários do Linux podem optar por uma experiência com o Bash, enquanto usuários do Windows podem optar pelo PowerShell.
+Azure Cloud Shell é um shell interativo, autenticado e acessível por navegador para gerenciar recursos do Azure.
+Ele fornece a flexibilidade de escolher a experiência de shell que melhor se adapta à maneira como você trabalha, seja bash ou PowerShell.
 
 Tente do shell.azure.com clicando abaixo.
 
@@ -59,7 +58,7 @@ O Cloud Shell oferece um editor de texto gráfico integrado com base no Monaco E
 
 ### <a name="integrated-with-docsmicrosoftcom"></a>Integrado a docs.microsoft.com
 
-Você pode usar o Cloud Shell diretamente da documentação hospedada em [docs.microsoft.com](https://docs.microsoft.com). Ele está integrado ao [Microsoft Learn](https://docs.microsoft.com/learn/), ao [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) e à [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure); clique no botão "Experimentar" em um trecho de código para abrir a experiência imersiva de shell. 
+Você pode usar o Cloud Shell diretamente da documentação hospedada em [docs.microsoft.com](https://docs.microsoft.com). Ele está integrado ao [Microsoft Learn](https://docs.microsoft.com/learn/), ao [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) e à [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure); clique no botão &quot;Experimentar&quot; em um snippet de código para abrir a experiência imersiva de shell. 
 
 ### <a name="multiple-access-points"></a>Vários pontos de acesso
 O Cloud Shell é uma ferramenta flexível que pode ser usada a partir de:

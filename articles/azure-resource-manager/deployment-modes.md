@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8a53ed1eea66c976c46a21378a9c48a1ad5ce902
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: c82d8b90d9da44ab8f4b8ea0aa0e063ea70350e2
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508211"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258971"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Modos de implantação do Azure Resource Manager
 
@@ -21,31 +21,31 @@ Para ambos os modos, o Resource Manager tenta criar todos os recursos especifica
 
 ## <a name="complete-mode"></a>Modo completo
 
-No modo completo, o Gerenciador de recursos **exclui** recursos existentes no grupo de recursos, mas que não são especificados no modelo. Os recursos que estão especificados no modelo, mas que não foram implantados porque uma [condição](resource-group-authoring-templates.md#condition) foi avaliada como falsa, não são excluídos.
+No modo completo, o Gerenciador de recursos **exclui** recursos existentes no grupo de recursos, mas que não são especificados no modelo. Os recursos que estão especificados no modelo, mas que não foram implantados porque uma [condição](conditional-resource-deployment.md) foi avaliada como falsa, não são excluídos.
 
-Tenha cuidado ao usar o modo completo com [copiar loops](resource-group-create-multiple.md). Todos os recursos que não são especificados no modelo depois de resolver o loop de cópia são excluídos.
+Tenha cuidado ao usar o modo completo com loops de [cópia](resource-group-create-multiple.md). Todos os recursos que não são especificados no modelo após a resolução do loop de cópia são excluídos.
 
-Há algumas diferenças nos tipos de recurso lidarem com exclusões de modo completo. Os recursos pai serão excluídos automaticamente quando não estiverem em um modelo que é implantado no modo completo. Alguns recursos filho não são excluídos automaticamente quando não estão no modelo. No entanto, esses recursos filho serão excluídos se o recurso pai seja excluído. 
+Há algumas diferenças em como os tipos de recursos lidam com exclusões de modo completo. Os recursos pai serão excluídos automaticamente quando não estiverem em um modelo que é implantado no modo completo. Alguns recursos filho não são excluídos automaticamente quando não estão no modelo. No entanto, esses recursos filho serão excluídos se o recurso pai for excluído. 
 
-Por exemplo, se seu grupo de recursos contém uma zona DNS (tipo de recurso Microsoft.Network/dnsZones) e um registro CNAME (tipo de recurso Microsoft.Network/dnsZones/CNAME), a zona DNS é o recurso pai para o registro CNAME. Se você implantar com o modo completo e não incluir a zona DNS em seu modelo, a zona DNS e o registro CNAME são ambos excluídos. Se você incluir a zona DNS no seu modelo, mas não incluem o registro CNAME, o CNAME não é excluído. 
+Por exemplo, se seu grupo de recursos contém uma zona DNS (tipo de recurso Microsoft.Network/dnsZones) e um registro CNAME (tipo de recurso Microsoft.Network/dnsZones/CNAME), a zona DNS é o recurso pai para o registro CNAME. Se você implantar com o modo completo e não incluir a zona DNS em seu modelo, a zona DNS e o registro CNAME são ambos excluídos. Se você incluir a zona DNS em seu modelo, mas não incluir o registro CNAME, o CNAME não será excluído. 
 
 Para obter uma lista de como os tipos de recursos tratam a exclusão, confira [Exclusão de recursos do Azure para implantações no modo completo](complete-mode-deletion.md).
 
-Se o grupo de recursos estiver [bloqueado](resource-group-lock-resources.md), modo completo não exclui os recursos.
+Se o grupo de recursos estiver [bloqueado](resource-group-lock-resources.md), o modo completo não excluirá os recursos.
 
 > [!NOTE]
 > Somente modelos de nível raiz suporte ao modo de implantação completa. Para ver os [modelos vinculados ou aninhados](resource-group-linked-templates.md), você deve usar o modo incremental. 
 >
-> [Implantações de nível de assinatura](deploy-to-subscription.md) não oferecem suporte para o modo completo.
+> Implantações de [nível de assinatura](deploy-to-subscription.md) não dão suporte ao modo completo.
 >
-> Atualmente, o portal não oferece suporte a modo completo.
+> Atualmente, o portal não dá suporte ao modo completo.
 >
 
 ## <a name="incremental-mode"></a>Modo incremental
 
 No modo incremental, o Gerenciador de recursos **deixa inalterados** recursos existentes no grupo de recursos, mas que não são especificados no modelo.
 
-No entanto, ao reimplantar um recurso existente no modo incremental, o resultado é uma opção diferente. Especifique todas as propriedades do recurso, não apenas aqueles que você está atualizando. Um erro comum é considerar as propriedades que não forem especificadas são permanecem inalteradas. Se você não especificar certas propriedades, o Resource Manager interpretará que a atualização está substituindo esses valores.
+No entanto, ao reimplantar um recurso existente no modo incremental, o resultado é diferente. Especifique todas as propriedades para o recurso, não apenas aquelas que você está atualizando. Um mal-entendido comum é considerar que as propriedades que não são especificadas são deixadas inalteradas. Se você não especificar certas propriedades, o Resource Manager interpretará que a atualização está substituindo esses valores.
 
 ## <a name="example-result"></a>Resultados de exemplo
 
