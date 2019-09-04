@@ -156,7 +156,7 @@ Os usuários podem ter uma combinação de até cinco tokens de hardware OATH ou
 
 ## <a name="oath-hardware-tokens-public-preview"></a>Tokens OATH de hardware (versão prévia pública)
 
-O OATH é um padrão livre que especifica os códigos de OTP (senha única) são gerados. O Azure AD será compatível com o uso de tokens OATH-TOTP SHA-1 das variedades de 30 segundos ou 60 segundos. Os clientes podem adquirir esses tokens do fornecedor de sua escolha. As chaves secretas são limitadas a 128 caracteres, que podem não ser compatíveis com todos os tokens. As chaves secretas precisam ser codificadas em Base32.
+O OATH é um padrão livre que especifica como os códigos de OTP (senha única) são gerados. O Azure AD será compatível com o uso de tokens OATH-TOTP SHA-1 das variedades de 30 segundos ou 60 segundos. Os clientes podem adquirir esses tokens do fornecedor de sua escolha. As chaves secretas são limitadas a 128 caracteres, que podem não ser compatíveis com todos os tokens. As chaves secretas precisam ser codificadas em Base32.
 
 ![Carregando tokens OATH para a folha de tokens OATH do servidor MFA](media/concept-authentication-methods/oath-tokens-azure-ad.png)
 
