@@ -7,14 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/12/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: 56d332ca00cbd47448b7e3fb8d3ab2d141380b70
-ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
+ms.openlocfilehash: c845c4bcc8dc57371304b5917ee09191b5256c51
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70061519"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70276348"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-by-using-azure-data-factory"></a>Copiar dados de ou para o Armazenamento de Blobs do Azure usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -315,12 +315,12 @@ Estas propriedades são suportadas por um serviço vinculado de armazenamento de
 
 Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre [Conjuntos de Dados](concepts-datasets-linked-services.md). 
 
-- Para **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e o conjunto de DataSet de formato binário](#format-based-dataset) .
-- Para outros formatos, como o **formato Orc/Avro/JSON**, consulte outra seção do [conjunto](#other-format-dataset) de exemplo.
+- Para **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado e conjunto de banco de forma binário](#format-based-dataset) .
+- Para outros formatos como o **formato Orc/JSON**, consulte [outra](#other-format-dataset) seção do conjunto de exemplo.
 
-### <a name="format-based-dataset"></a>Parquet, texto delimitado e conjunto de DataSet de formato binário
+### <a name="format-based-dataset"></a>Parquet, texto delimitado, Avro e conjunto de um formato binário
 
-Para copiar dados de e para o armazenamento de BLOBs em parquet, texto delimitado ou formato binário, consulte [formato de parquet](format-parquet.md), formato de [texto delimitado](format-delimited-text.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `location` do Azure em configurações em conjunto de base de formato:
+Para copiar dados de e para o armazenamento de BLOBs em parquet, texto delimitado, formato Avro ou binário, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `location` do Azure em configurações em conjunto de base de formato:
 
 | Propriedade   | Descrição                                                  | Necessário |
 | ---------- | ------------------------------------------------------------ | -------- |
@@ -362,7 +362,7 @@ Para copiar dados de e para o armazenamento de BLOBs em parquet, texto delimitad
 
 ### <a name="other-format-dataset"></a>Outro conjunto de DataSet de formato
 
-Para copiar dados de e para o armazenamento de BLOBs no formato ORC/Avro/JSON, defina a propriedade Type do conjunto de dados como **AzureBlob**. Há suporte para as seguintes propriedades.
+Para copiar dados de e para o armazenamento de BLOBs no formato ORC/JSON, defina a propriedade Type do conjunto de dados como **AzureBlob**. Há suporte para as seguintes propriedades.
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
@@ -413,12 +413,12 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 ### <a name="blob-storage-as-a-source-type"></a>Armazenamento de blob como um tipo de fonte
 
-- Para copiar de **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
-- Para copiar de outros formatos, como o **formato Orc/Avro/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
+- Para copiar de **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos como o **formato Orc/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, texto delimitado e fonte de formato binário
+#### <a name="format-based-source"></a>Parquet, texto delimitado, Avro e fonte de formato binário
 
-Para copiar dados de e para o armazenamento de BLOBs em **parquet, texto delimitado ou formato binário**, consulte [formato de parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `storeSettings` do Azure em configurações em fonte de cópia baseada em formato:
+Para copiar dados de e para o armazenamento de BLOBs em **parquet, texto delimitado, formato Avro ou binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e com suporte Configurações. As propriedades a seguir têm suporte para o blob `storeSettings` do Azure em configurações em fonte de cópia baseada em formato:
 
 | Propriedade                 | Descrição                                                  | Necessário                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
@@ -476,7 +476,7 @@ Para copiar dados de e para o armazenamento de BLOBs em **parquet, texto delimit
 
 #### <a name="other-format-source"></a>Outra fonte de formato
 
-Para copiar dados do armazenamento de BLOBs no **formato Orc, Avro ou JSON**, defina o tipo de origem na atividade decópia como blobname. As propriedades a seguir têm suporte na seção **source** da atividade de cópia.
+Para copiar dados do armazenamento de BLOBs no **formato orc ou JSON**, defina o tipo de origem na atividadede cópia como blobname. As propriedades a seguir têm suporte na seção **source** da atividade de cópia.
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
@@ -518,12 +518,12 @@ Para copiar dados do armazenamento de BLOBs no **formato Orc, Avro ou JSON**, de
 
 ### <a name="blob-storage-as-a-sink-type"></a>Armazenamento de blob como um tipo de coletor
 
-- Para copiar de **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
-- Para copiar de outros formatos, como o **formato Orc/Avro/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
+- Para copiar de **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos como o **formato Orc/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, texto delimitado e fonte de formato binário
+#### <a name="format-based-source"></a>Parquet, texto delimitado, Avro e fonte de formato binário
 
-Para copiar dados do armazenamento de BLOBs em **parquet, texto delimitado ou formato binário**, consulte [formato de parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md) e [artigo de formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `storeSettings` do Azure em configurações no coletor de cópia com base em formato:
+Para copiar dados do armazenamento de BLOBs em **parquet, texto delimitado, formato Avro ou binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `storeSettings` do Azure em configurações no coletor de cópia com base em formato:
 
 | Propriedade                 | Descrição                                                  | Necessário |
 | ------------------------ | ------------------------------------------------------------ | -------- |
@@ -571,7 +571,7 @@ Para copiar dados do armazenamento de BLOBs em **parquet, texto delimitado ou fo
 
 #### <a name="other-format-sink"></a>Outro coletor de formato
 
-Para copiar dados para o armazenamento de blob no **formato Orc/Avro/JSON**, defina o tipo de coletor na atividade de cópia como **BlobSink**. As propriedades a seguir têm suporte na seção **coletor**.
+Para copiar dados para o armazenamento de blob no **formato Orc/JSON**, defina o tipo de coletor na atividade de cópia como **BlobSink**. As propriedades a seguir têm suporte na seção **coletor**.
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |

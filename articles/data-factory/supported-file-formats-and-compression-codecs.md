@@ -7,14 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: f2ffd88b21d8cf331435a030199b562e6b5b979f
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: b9d853cc0de08b64f2e0f5530e153724d9eeddda
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840258"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277088"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Formatos de arquivo e codecs de compactação com suporte no Azure Data Factory
 
@@ -35,7 +35,7 @@ Se você quiser **copiar arquivos no estado em que se encontram** entre reposit�
 ## <a name="text-format"></a>Formato de texto
 
 >[!NOTE]
->Data Factory introduziu o novo formato de texto delimitado conjunto, consulte o artigo [formato de texto delimitado](format-delimited-text.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
+>Data Factory introduziu um novo conjunto de informações de formato de texto delimitado, consulte o artigo [formato de texto delimitado](format-delimited-text.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
 
 Se você quiser ler um arquivo de texto ou gravar em um arquivo de texto, defina a propriedade `type` na seção `format` do conjunto de dados para **TextFormat**. Você também pode especificar as seguintes propriedades **opcionais** na seção `format`. Veja a seção [Exemplo de TextFormat](#textformat-example) sobre a configuração.
 
@@ -228,7 +228,7 @@ Neste exemplo, você espera que um objeto JSON de raiz seja mapeado para um úni
 
 e quiser copiá-lo para uma tabela SQL do Azure no formato a seguir, ao extrair dados dos objetos e da matriz:
 
-| ID | deviceType | targetResourceType | resourceManagementProcessRunId | occurrenceTime |
+| id | deviceType | targetResourceType | resourceManagementProcessRunId | occurrenceTime |
 | --- | --- | --- | --- | --- |
 | ed0e4960-d9c5-11e6-85dc-d7996816aad3 | Computador | Microsoft.Compute/virtualMachines | 827f8aaa-ab72-437c-ba48-d8917a7336a3 | 13/01/2017 11:24:37 |
 
@@ -360,7 +360,7 @@ O conjunto de dados de entrada com o tipo **JsonFormat** é definido da seguinte
 
 Se você tiver a tabela a seguir no Banco de Dados SQL:
 
-| ID | order_date | order_price | order_by |
+| id | order_date | order_price | order_by |
 | --- | --- | --- | --- |
 | 1 | 20170119 | 2000 | Davi |
 | 2 | 20170120 | 3500 | Pedro |
@@ -413,7 +413,7 @@ O conjunto de dados de saída com o tipo **JsonFormat** é definido da seguinte 
 ## <a name="parquet-format"></a>Formato Parquet
 
 >[!NOTE]
->Data Factory introduziu o novo formato parquet conjunto, consulte o artigo [parquet Format](format-parquet.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
+>Data Factory introduziu o novo conjunto de informações de formato parquet, consulte o artigo [formato parquet](format-parquet.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
 
 Se você quiser analisar os arquivos Parquet ou gravar os dados no formato Parquet, defina a propriedade `format` `type` como **ParquetFormat**. Não será necessário especificar nenhuma propriedade na seção Formato dentro da seção typeProperties. Exemplo:
 
@@ -520,6 +520,9 @@ Para cópia em execução no IR auto-hospedado com serialização/desserializaç
 | Char | Char(1) |
 
 ## <a name="avro-format"></a>Formato AVRO
+
+>[!NOTE]
+>Data Factory introduziu o novo conjunto de informações de formato Avro, consulte o artigo [formato avri](format-avro.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
 
 Se você quiser analisar os arquivos Avro ou gravar os dados no formato Avro, defina a propriedade `format` `type` como **AvroFormat**. Não será necessário especificar nenhuma propriedade na seção Formato dentro da seção typeProperties. Exemplo:
 

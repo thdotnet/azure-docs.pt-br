@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.openlocfilehash: 891d2acc42f8d6f03976f0553e2e3127bc6d16f7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be77ae932ec72239bea04fce298d7f1b84e5e4d8
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60759310"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240643"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Ingestão de dados do Azure Data Explorer
 
@@ -52,7 +52,7 @@ O Azure Data Explorer atualmente dá suporte ao seguinte:
 
 ### <a name="ingestion-using-integration-services"></a>Ingestão usando os serviços de integração
 
-* Azure Data Factory (ADF), um serviço de integração de dados totalmente gerenciado para cargas de trabalho analíticas no Azure, para copiar dados para e do Gerenciador de dados do Azure usando [formatos e armazenamentos de dados com suporte](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats). Para obter mais informações, consulte [copiar dados do Azure Data Factory para o Data Explorer do Azure](/azure/data-explorer/data-factory-load-data).
+* Azure Data Factory (ADF), um serviço de integração de dados totalmente gerenciado para cargas de trabalho analíticas no Azure, para copiar dados de e para o Azure Data Explorer usando [formatos e armazenamentos de dados com suporte](/azure/data-factory/copy-activity-overview#supported-data-stores-and-formats). Para obter mais informações, consulte [copiar dados de Azure data Factory para o Azure data Explorer](/azure/data-explorer/data-factory-load-data).
 
 ### <a name="programmatic-ingestion"></a>Ingestão programática
 
@@ -80,7 +80,7 @@ O Kusto oferece um SDK cliente que pode ser usado para ingerir e consultar dados
 
 * Ingestão de dados direta no mecanismo do Azure Data Explorer (mais apropriada para exploração e criação de protótipos):
 
-  * **Ingestão de embutido**: comando de controle (.ingest embutido) que contém os dados em banda destina-se ao ad-hoc para fins de teste.
+  * **Ingestão embutida**: o comando Control (. ingestão embutida) contendo dados em banda destina-se a fins de teste ad hoc.
 
   * **Ingestão de consulta**: o comando de controle (.set, .set-or-append, .set-or-replace) que aponta para os resultados da consulta é usado para a geração de relatórios ou tabelas temporárias pequenas.
 
@@ -88,7 +88,7 @@ O Kusto oferece um SDK cliente que pode ser usado para ingerir e consultar dados
 
 **Latência de métodos diferentes**:
 
-| Método | Latency |
+| Método | Latência |
 | --- | --- |
 | **Ingestão embutida** | Imediata |
 | **Ingestão de consulta** | Tempo de consulta + tempo de processamento |
@@ -113,13 +113,13 @@ Antes de iniciar a ingestão de dados, você deve se perguntar o seguinte.
 * Quais são os requisitos de latência? 
 * Um dos pipelines de ingestão gerenciados existentes pode ser usado? 
 
-Para organizações com uma infraestrutura existente com base em um serviço de mensagens, como o Hub de Eventos, o uso de um conector provavelmente é a solução mais apropriada. A ingestão na fila é apropriada para grandes volumes de dados.
+Para organizações com uma infraestrutura existente baseada em um serviço de mensagens como hub de eventos e Hub IoT, o uso de um conector é provavelmente a solução mais apropriada. A ingestão na fila é apropriada para grandes volumes de dados.
 
 ## <a name="supported-data-formats"></a>Formatos de dados com suporte
 
 Para todos os métodos de ingestão diferentes da ingestão de consulta, formate os dados de modo que o Azure Data Explorer possa analisá-los. Os formatos de dados compatíveis são:
 
-* CSV, TSV, PSV, SCSV, SOH
+* CSV, TSV, TSVE, PSV, SCSV, SOH
 * JSON (multilinha, separado por linha), Avro
 * ZIP e GZIP 
 

@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.openlocfilehash: 01238885e68a39ff713bd346a9206668e16e7ee4
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 2d7532c51e2963c0dc9f8d02e7a0e32864e80f92
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70195288"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278425"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Usar a Máquina Virtual de Ciência de Dados de Inteligência Artificial Geográfica
 
@@ -49,4 +49,3 @@ Além dos exemplos baseados em estrutura de aprendizado de máquina e de aprendi
 Exemplos adicionais que usam a máquina virtual de ciência de dados estão disponíveis aqui:
 
 * [Amostras](dsvm-samples-and-walkthroughs.md)
-

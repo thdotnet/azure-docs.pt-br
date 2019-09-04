@@ -7,19 +7,19 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/12/2019
 ms.author: hamusa
-ms.openlocfilehash: c9c57a07100f2ea6db86408826bf74d05c8df5aa
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 0d279781cdc27dbf2140c0100d84de5128c6a3d5
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868674"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70279418"
 ---
 # <a name="assess-large-numbers-of-vmware-vms-for-migration-to-azure"></a>Avalie grandes números de VMs VMware para migração para o Azure
 
 
 Este artigo descreve como avaliar números grandes (35000) de VMs VMware locais para migração para o Azure, usando a ferramenta de avaliação de servidor migrações para Azure
 
-As migrações para [Azure](migrate-services-overview.md) fornecem um hub de ferramentas que ajudam a descobrir, avaliar e migrar aplicativos, infraestrutura e cargas de trabalho para Microsoft Azure. O Hub inclui ferramentas de migração do Azure e ofertas de fornecedores independentes de software (ISV) de terceiros. 
+As [Migrações para Azure](migrate-services-overview.md) fornecem um hub de ferramentas que ajudam você a descobrir, avaliar e migrar aplicativos, a infraestrutura e cargas de trabalho para o Microsoft Azure. O hub inclui ferramentas das Migrações para Azure e ofertas de ISV (fornecedor independente de software) de terceiros. 
 
 Neste artigo, você aprenderá a:
 > [!div class="checklist"]
@@ -48,7 +48,8 @@ Use os limites resumidos nesta tabela para planejamento.
 **Planejamento** | **Limites**
 --- | --- 
 **Projetos de migrações para Azure** | Avalie até 35.000 VMs em um projeto.
-**Dispositivo de migrações para Azure** | Um dispositivo só pode se conectar a um único vCenter Server.<br/><br/> Um dispositivo só pode ser associado a um único projeto de migrações para Azure.<br/> Um dispositivo pode descobrir até 10.000 VMs em um vCenter Server.
+**Dispositivo de migrações para Azure** | Um dispositivo pode descobrir até 10.000 VMs em um vCenter Server.<br/> Um dispositivo só pode se conectar a um único vCenter Server.<br/> Um dispositivo só pode ser associado a um único projeto de migrações para Azure.<br/>  Qualquer número de dispositivos pode ser associado a um único projeto de migrações para Azure. <br/><br/> 
+**Grupo** | Você pode adicionar até 35.000 VMs em um único grupo.
 **Avaliação de migrações para Azure** | Você pode avaliar até 35.000 VMs em uma única avaliação.
 
 Com esses limites em mente, aqui estão alguns exemplos de implantações:
@@ -68,7 +69,7 @@ Se você estiver planejando um ambiente multilocatário, poderá fazer o escopo 
 
 - Você pode definir o escopo de descoberta do dispositivo para um vCenter Server data centers, clusters ou pasta de clusters, hosts ou pasta de hosts ou VMs individuais.
 - Se o seu ambiente for compartilhado entre locatários e você quiser descobrir cada locatário separadamente, você poderá usar o escopo de acesso à conta do vCenter que o dispositivo usa para descoberta. 
-    - Talvez você queira fazer o escopo por pastas de VM se os locatários compartilharem hosts. As migrações para Azure não poderão descobrir VMs se a conta do vCenter tiver acesso concedido no nível da pasta da VM do vCenter. Se você pretende fazer o escopo de sua descoberta por pastas de VM, você pode fazê-lo, garantindo que a conta do vCenter tenha acesso somente leitura atribuído em um nível de VM. Saiba mais sobre a descoberta de escopo [aqui](tutorial-assess-vmware.md#scoping-discovery).
+    - Talvez você queira fazer o escopo por pastas de VM se os locatários compartilharem hosts. As migrações para Azure não poderão descobrir VMs se a conta do vCenter tiver acesso concedido no nível da pasta da VM do vCenter. Se você pretende definir o escopo da descoberta por pastas de VM, faça isso verificando se a conta do vCenter tem acesso somente leitura atribuído em um nível de VM. Saiba mais sobre a descoberta de escopo [aqui](tutorial-assess-vmware.md#scoping-discovery).
 
 ## <a name="prepare-for-assessment"></a>Preparar para avaliação
 

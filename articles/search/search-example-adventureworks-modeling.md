@@ -1,27 +1,27 @@
 ---
 title: 'Exemplo: Modelar o banco de dados de Inventário AdventureWorks - Azure Search'
 description: Saiba como modelar dados relacionais, transformando-os em um conjunto de dados nivelado para indexação e pesquisa de texto completo no Azure Search.
-author: cstone
+author: HeidiSteen
 manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 01/25/2019
-ms.author: chstone
-ms.openlocfilehash: 52ccf3edfca5b3481b038bd5d3449c1dd6354179
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.date: 09/05/2019
+ms.author: heidist
+ms.openlocfilehash: c25dd34460e7e92bb20913f5b812044623dd38e3
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69649912"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274029"
 ---
 # <a name="example-model-the-adventureworks-inventory-database-for-azure-search"></a>Exemplo: Modelar o banco de dados de Inventário AdventureWorks para Azure Search
 
-Modelar o conteúdo do banco de dados estruturado em um índice de pesquisa eficiente raramente é um exercício simples. Agendamento e gerenciamento de alterações à parte, há o desafio de desnormalizar as linhas de origem de seu estado ingressado na tabela em entidades de pesquisa amigável. Este artigo usa os dados de exemplo do AdventureWorks, disponíveis online, para destacar experiências comuns na transição do banco de dados para pesquisa. 
+Azure Search aceita um conjunto de linhas achatado como entradas para o [pipeline de indexação (ingestão de dados)](search-what-is-an-index.md). Se os dados de origem forem provenientes de um SQL Server banco de dado relacional, este artigo demonstra uma abordagem para criar um conjunto de linhas achatado antes da indexação, usando o banco de dados de exemplo AdventureWorks como exemplo.
 
 ## <a name="about-adventureworks"></a>Sobre o AdventureWorks
 
-Se você tiver uma instância do SQL Server, talvez esteja familiarizado com o banco de dados de exemplo AdventureWorks. Entre as tabelas incluídas nesse banco de dados estão cinco tabelas que expõem informações sobre o produto.
+Se você tiver uma instância do SQL Server, talvez esteja familiarizado com o [banco de dados de exemplo AdventureWorks](https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017). Entre as tabelas incluídas nesse banco de dados estão cinco tabelas que expõem informações sobre o produto.
 
 + **ProductModel**: nome
 + **Produto**: nome, cor, custo, tamanho, peso, imagem, categoria (cada linha ingressa um ProductModel específico)
@@ -29,7 +29,7 @@ Se você tiver uma instância do SQL Server, talvez esteja familiarizado com o b
 + **ProductModelProductDescription**: localidade (cada linha ingressa um ProductModel a um ProductDescription específico para uma linguagem específica)
 + **ProductCategory**: nome, categoria pai
 
-Combinar todos esses dados em um conjunto de linhas bidimensional que possa ser ingerido em um índice de pesquisa é a tarefa em questão. 
+Combinar todos esses dados em um conjunto de linhas achatado que pode ser ingerido em um índice de pesquisa é o objetivo deste exemplo. 
 
 ## <a name="considering-our-options"></a>Considerando as opções
 
@@ -43,7 +43,7 @@ Resolver esse problema não é tão simples quanto mover o índice de destino pa
 
 ## <a name="use-a-collection-data-type"></a>Usar um tipo de dados de Coleção
 
-A "abordagem correta" é utilizar um recurso de esquema de pesquisa que não possui um paralelo direto no modelo de banco de dados: **Collection(Edm.String)** . Um tipo de dados de Coleção é usado quando há uma lista de cadeia de caracteres individuais, em vez de uma cadeia de caracteres muito longa (única). Se houver marcas ou palavras-chave, é possível usar um tipo de dados de Coleção para esse campo.
+A "abordagem correta" é utilizar um recurso de esquema de pesquisa que não possui um paralelo direto no modelo de banco de dados: **Collection(Edm.String)** . Esse constructo é definido no esquema de índice de Azure Search. Um tipo de dados de coleção é usado quando você precisa representar uma lista de cadeias de caracteres individuais, em vez de uma cadeia de caracteres muito longa (única). Se houver marcas ou palavras-chave, é possível usar um tipo de dados de Coleção para esse campo.
 
 Ao definir campos de índice de vários valores de **Collection(Edm.String)** para "cor", "tamanho" e "imagem", as informações auxiliares são retidas para facetamento e filtragem sem poluir o índice com entradas duplicadas. Da mesma forma, aplique funções de agregação aos campos do Produto numérico, indexando **minListPrice** em vez de cada produto individual **listPrice**.
 
@@ -164,5 +164,3 @@ WHERE
 
 > [!div class="nextstepaction"]
 > [Exemplo: Taxonomias facetadas de vários níveis no Azure Search](search-example-adventureworks-multilevel-faceting.md)
-
-

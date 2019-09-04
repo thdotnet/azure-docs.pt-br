@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: cd17dcb7a9f68c25617c9e6b928ddebebcdbddbe
-ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
+ms.openlocfilehash: 4ee9048202a5953ff27ea83cfb39cb1af0739e7a
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70211729"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70277500"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Copiar dados do SAP Business Warehouse usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -98,9 +98,9 @@ As propriedades a seguir têm suporte no serviço vinculado do SAP BW (Business 
 
 ## <a name="dataset-properties"></a>Propriedades do conjunto de dados
 
-Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre conjuntos de dados. Esta seção fornece uma lista das propriedades com suporte pelo conjunto de dados do SAP BW.
+Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre [conjuntos de dados](concepts-datasets-linked-services.md). Esta seção fornece uma lista das propriedades com suporte pelo conjunto de dados do SAP BW.
 
-Para copiar dados do SAP BW, defina a propriedade type do conjunto de dados como **RelationalTable**. Enquanto não há propriedades específicas ao tipo com suporte para o conjunto de dados do SAP BW do tipo RelationalTable.
+Para copiar dados de SAP BW, defina a propriedade Type do conjunto de dado como **SapBwCube**. Enquanto não há propriedades específicas ao tipo com suporte para o conjunto de dados do SAP BW do tipo RelationalTable.
 
 **Exemplo:**
 
@@ -108,15 +108,18 @@ Para copiar dados do SAP BW, defina a propriedade type do conjunto de dados como
 {
     "name": "SAPBWDataset",
     "properties": {
-        "type": "RelationalTable",
+        "type": "SapBwCube",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<SAP BW linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
+
+Se você estivesse usando `RelationalTable` dataset tipado, ele ainda tem suporte como está, enquanto você é sugerido para usar o novo no futuro.
 
 ## <a name="copy-activity-properties"></a>Propriedades da atividade de cópia
 
@@ -124,11 +127,11 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 ### <a name="sap-bw-as-source"></a>SAP BW como fonte
 
-Para copiar dados do SAP BW, defina o tipo de origem na atividade de cópia como **RelationalSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
+Para copiar dados de SAP BW, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
-| type | A propriedade type da fonte da atividade de cópia deve ser definida como: **RelationalSource** | Sim |
+| type | A propriedade type da fonte da atividade de cópia deve ser definida como: **SapBwSource** | Sim |
 | query | Especifica a consulta MDX para ler dados da instância do SAP BW. | Sim |
 
 **Exemplo:**
@@ -152,7 +155,7 @@ Para copiar dados do SAP BW, defina o tipo de origem na atividade de cópia como
         ],
         "typeProperties": {
             "source": {
-                "type": "RelationalSource",
+                "type": "SapBwSource",
                 "query": "<MDX query for SAP BW>"
             },
             "sink": {
@@ -162,6 +165,8 @@ Para copiar dados do SAP BW, defina o tipo de origem na atividade de cópia como
     }
 ]
 ```
+
+Se você estiver usando `RelationalSource` a fonte digitada, ainda haverá suporte como está, enquanto você é sugerido para usar a nova no futuro.
 
 ## <a name="data-type-mapping-for-sap-bw"></a>Mapeamento de tipo de dados para SAP BW
 

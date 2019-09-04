@@ -4,19 +4,58 @@ description: Descreve como excluir recursos e grupos de recursos. Ele descreve c
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 08/22/2019
+ms.date: 09/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 75cdeb88a68dece59d6b037592f7212fa895e821
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 30a394fd33ed5d928175fc27e003661c2b53de9a
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991668"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275080"
 ---
 # <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager o grupo de recursos e a exclusão de recursos
 
 Este artigo mostra como excluir recursos e grupos de recursos. Ele descreve como o Azure Resource Manager ordena a exclusão de recursos quando você exclui um grupo de recursos.
+
+## <a name="how-order-of-deletion-is-determined"></a>Como a ordem de exclusão é determinada
+
+Quando você exclui um grupo de recursos, o Gerenciador de Recursos determina a ordem para excluir recursos. Ele usa a seguinte ordem:
+
+1. Todos os recursos filho (aninhados) são excluídos.
+
+2. Recursos que gerenciam outros recursos são excluídos a seguir. Um recurso pode ter a propriedade `managedBy` definida para indicar que um recurso diferente a gerencia. Quando essa propriedade é configurada, o recurso que gerencia o outro recurso é excluído antes dos outros recursos.
+
+3. Os recursos restantes são excluídos após as duas categorias anteriores.
+
+Depois que o pedido é determinado, o Gerenciador de recursos emite uma operação DELETE para cada recurso. Aguarda que quaisquer dependências terminem antes de prosseguir.
+
+Para operações síncronas, os códigos de resposta bem-sucedidos esperados são:
+
+* 200
+* 204
+* 404
+
+Para operações assíncronas, a resposta bem-sucedida esperada é 202. O Gerenciador de Recursos rastreia o cabeçalho do local ou o cabeçalho da operação azure-async para determinar o status da operação de exclusão assíncrona.
+  
+### <a name="deletion-errors"></a>Erros de exclusão
+
+Quando uma operação de exclusão retorna um erro, o Gerenciador de Recursos repete a chamada DELETE. As novas tentativas ocorrem para os códigos de status 5xx, 429 e 408. Por padrão, o período de repetição é de 15 minutos.
+
+## <a name="after-deletion"></a>Após a exclusão
+
+Gerenciador de recursos emite uma chamada GET em cada recurso que ele tentou excluir. Espera-se que a resposta desta chamada GET seja 404. Quando o Gerenciador de Recursos recebe um erro 404, ele considera a exclusão concluída com êxito. O Gerenciador de recursos remove o recurso do cache.
+
+No entanto, se a chamada GET no recurso retornar um 200 ou 201, o Gerenciador de recursos recria o recurso.
+
+Se a operação GET retornar um erro, o Gerenciador de Recursos tentará novamente o GET para o seguinte código de erro:
+
+* Menos de 100
+* 408
+* 429
+* Maior que 500
+
+Para outros códigos de erro, o Gerenciador de Recursos falha na exclusão do recurso.
 
 ## <a name="delete-resource-group"></a>Excluir grupo de recursos
 
@@ -25,13 +64,13 @@ Use um dos métodos a seguir para excluir o grupo de recursos.
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
-Remove-AzResourceGroup -Name <resource-group-name>
+Remove-AzResourceGroup -Name ExampleResourceGroup
 ```
 
 # <a name="azure-clitabazure-cli"></a>[CLI do Azure](#tab/azure-cli)
 
 ```azurecli-interactive
-az group delete --name <resource-group-name>
+az group delete --name ExampleResourceGroup
 ```
 
 # <a name="portaltabazure-portal"></a>[Portal](#tab/azure-portal)
@@ -80,46 +119,6 @@ az resource delete \
 
 ---
 
-## <a name="how-order-of-deletion-is-determined"></a>Como a ordem de exclusão é determinada
-
-Quando você exclui um grupo de recursos, o Gerenciador de Recursos determina a ordem para excluir recursos. Ele usa a seguinte ordem:
-
-1. Todos os recursos filho (aninhados) são excluídos.
-
-2. Recursos que gerenciam outros recursos são excluídos a seguir. Um recurso pode ter a propriedade `managedBy` definida para indicar que um recurso diferente a gerencia. Quando essa propriedade é configurada, o recurso que gerencia o outro recurso é excluído antes dos outros recursos.
-
-3. Os recursos restantes são excluídos após as duas categorias anteriores.
-
-Depois que o pedido é determinado, o Gerenciador de recursos emite uma operação DELETE para cada recurso. Aguarda que quaisquer dependências terminem antes de prosseguir.
-
-Para operações síncronas, os códigos de resposta bem-sucedidos esperados são:
-
-* 200
-* 204
-* 404
-
-Para operações assíncronas, a resposta bem-sucedida esperada é 202. O Gerenciador de Recursos rastreia o cabeçalho do local ou o cabeçalho da operação azure-async para determinar o status da operação de exclusão assíncrona.
-  
-### <a name="errors"></a>Erros
-
-Quando uma operação de exclusão retorna um erro, o Gerenciador de Recursos repete a chamada DELETE. As novas tentativas ocorrem para os códigos de status 5xx, 429 e 408. Por padrão, o período de repetição é de 15 minutos.
-
-## <a name="after-deletion"></a>Após a exclusão
-
-Gerenciador de recursos emite uma chamada GET em cada recurso que ele tentou excluir. Espera-se que a resposta desta chamada GET seja 404. Quando o Gerenciador de Recursos recebe um erro 404, ele considera a exclusão concluída com êxito. O Gerenciador de recursos remove o recurso do cache.
-
-No entanto, se a chamada GET no recurso retornar um 200 ou 201, o Gerenciador de recursos recria o recurso.
-
-### <a name="errors"></a>Erros
-
-Se a operação GET retornar um erro, o Gerenciador de Recursos tentará novamente o GET para o seguinte código de erro:
-
-* Menos de 100
-* 408
-* 429
-* Maior que 500
-
-Para outros códigos de erro, o Gerenciador de Recursos falha na exclusão do recurso.
 
 ## <a name="next-steps"></a>Próximas etapas
 

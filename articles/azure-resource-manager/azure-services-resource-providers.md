@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: tomfitz
-ms.openlocfilehash: b500a7b2c74acbd4e035e710f7e25f1aacd86126
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 3df481245db8d737032d1abf5906a2ffe949a2fe
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194852"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275700"
 ---
 # <a name="resource-providers-for-azure-services"></a>Provedores de recursos para serviços do Azure
 
@@ -102,9 +102,9 @@ Este artigo mostra como os namespaces do provedor de recursos são mapeados para
 | Microsoft.LogAnalytics | [Azure Monitor](../azure-monitor/index.yml) |
 | Microsoft.Logic | [Aplicativos Lógicos](../logic-apps/index.yml) |
 | Microsoft.MachineLearning | [Machine Learning Studio](../machine-learning/studio/index.yml) |
-| Microsoft.MachineLearningCompute | [Serviço de Machine Learning](../machine-learning/service/index.yml) |
-| Microsoft.MachineLearningModelManagement | [Serviço de Machine Learning](../machine-learning/service/index.yml) |
-| Microsoft.MachineLearningServices | [Serviço de Machine Learning](../machine-learning/service/index.yml) |
+| Microsoft.MachineLearningCompute | [Serviço de Machine Learning](../machine-learning/index.yml) |
+| Microsoft.MachineLearningModelManagement | [Serviço de Machine Learning](../machine-learning/index.yml) |
+| Microsoft.MachineLearningServices | [Serviço de Machine Learning](../machine-learning/index.yml) |
 | Microsoft.ManagedIdentity | [Identidades gerenciadas para os recursos do Azure](../active-directory/managed-identities-azure-resources/index.yml) |
 | Microsoft.ManagedLab | [Azure Lab Services](../lab-services/index.yml) |
 | Microsoft.Management | [Grupos de Gerenciamento](/azure/governance/management-groups/) |

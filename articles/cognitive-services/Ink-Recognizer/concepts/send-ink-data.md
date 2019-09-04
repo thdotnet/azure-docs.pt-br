@@ -10,12 +10,12 @@ ms.subservice: ink-recognizer
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: a5fe77ace5f745911bb9085dd6996a8d21fe265f
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 0ad961495d44f13522a3c02224a5612aaedaf076
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879044"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274481"
 ---
 # <a name="send-ink-data-to-the-ink-recognizer-api"></a>Enviar dados de tinta para a API de Reconhecimento de Tinta Digital 
 
@@ -82,7 +82,7 @@ Ter os resultados de reconhecimento com antecedência fornece informações sobr
 
 ## <a name="integrate-the-ink-recognizer-api-with-windows-ink"></a>Integrar a API de Reconhecimento de Tinta Digital ao Windows Ink
 
-O [Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) fornece ferramentas e tecnologias para proporcionar experiências de escrita à tinta digital em uma ampla variedade de dispositivos. Combine a plataforma Windows Ink com a API de Reconhecimento de Tinta Digital para criar aplicativos que exibem e interpretam traços de tinta digital.
+O [Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions) fornece ferramentas e tecnologias para proporcionar experiências de escrita à tinta digital em uma ampla variedade de dispositivos. Você pode combinar a plataforma de tinta do Windows com a API do reconhecedor de tinta para criar aplicativos que exibem e interpretam traços de tinta digital.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,7 +1,7 @@
 ---
 title: Colaborar com outras pessoas – LUIS
 titleSuffix: Azure Cognitive Services
-description: Um proprietário de aplicativo pode adicionar colaboradores ao aplicativo. Esses colaboradores podem modificar o modelo, treinar e publicar o aplicativo.
+description: Um proprietário de aplicativo pode adicionar colaboradores ao recurso de criação. Esses colaboradores podem modificar o modelo, treinar e publicar o aplicativo.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,40 +9,66 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 2aaedb27d6875335b34c757505981f1a58462541
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: e69fea4d57aaf2a0b7d3615b1eecbf99a6b13ab8
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932832"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70256834"
 ---
-# <a name="how-to-manage-authors-and-collaborators"></a>Como gerenciar autores e colaboradores 
+# <a name="add-contributors-to-your-app"></a>Adicionar colaboradores ao seu aplicativo
 
-Um proprietário de aplicativo pode adicionar colaboradores ao aplicativo. Esses colaboradores podem modificar o modelo, treinar e publicar o aplicativo. 
+Um proprietário de aplicativo pode adicionar colaboradores a aplicativos. Esses colaboradores podem modificar o modelo, treinar e publicar o aplicativo. 
 
-<a name="owner-and-collaborators"></a>
+[!INCLUDE [Manage collaborators and contributors based on migrated or not-migrated apps](./includes/manage-contributor-collaborator-migration.md)]
 
-## <a name="add-collaborator"></a>Adicionar colaborador
+## <a name="add-contributor-to-azure-authoring-resource"></a>Adicionar colaborador ao recurso de criação do Azure
+
+O procedimento a seguir é para todos os usuários que migraram para usar o recurso de criação do Azure.
+
+Você migrou se sua experiência de criação do LUIS está vinculada a um recurso de criação na página **gerenciar recursos do Azure->** no portal do Luis.
+
+1. Na portal do Azure, localize o recurso de criação de Reconhecimento vocal (LUIS). Ele tem o tipo `LUIS.Authoring`.
+1. Na página controle de **acesso deste recurso (iam)** , selecione **+ Adicionar** e selecione **Adicionar atribuição de função**.
+
+    ![Em portal do Azure, adicione atribuição de função ao recurso de criação.](./media/luis-how-to-collaborate/authoring-resource-access-control-add-role.png)
+
+1. Na janela **Adicionar atribuição de função** , selecione a **função** de colaborador. Na opção **atribuir acesso a** , selecione **usuário, grupo ou entidade de serviço do Azure ad**. Na opção **selecionar** , insira o endereço de email do usuário. Se o usuário for conhecido por mais de um endereço de email para o mesmo domínio, certifique-se de inserir a conta de email _principal_ .
+
+    ![Adicionar email do usuário à função colaborador do Azure AD](./media/luis-how-to-collaborate/add-role-assignment-for-contributor.png)
+
+    Quando o email do usuário for encontrado, selecione a conta e selecione **salvar**. 
+
+    Se você tiver problemas com essa atribuição de função, examine as atribuições de [função do Azure](../../role-based-access-control/role-assignments-portal.md) e [solução de problemas do controle de acesso do Azure](../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments).
+
+## <a name="add-collaborator-to-luis-app"></a>Adicionar colaborador ao aplicativo LUIS
+
+O procedimento a seguir é para todos os usuários que **não migraram** para usar o recurso de criação do Azure.
+
+Você não migrou se sua experiência de criação do LUIS não estiver vinculada a um recurso de criação na página **gerenciar recursos do Azure->** no portal do Luis.
 
 Um aplicativo tem um único autor, mas pode ter vários colaboradores. Para permitir que os colaboradores editem o aplicativo LUIS, você deve adicionar o email que eles usam para acessar o portal do LUIS à lista de colaboradores. Depois que eles são adicionados, o aplicativo aparece no portal do LUIS deles.
 
 1. Selecione **Gerenciar** no menu superior direito e selecione **Colaboradores** no menu esquerdo.
 
-2. Selecione **Adicionar Colaborador** na barra de ferramentas.
+1. Selecione **Adicionar Colaborador** na barra de ferramentas.
 
     [![Adicionar colaborador](./media/luis-how-to-collaborate/add-collaborator.png "Adicionar colaborador")](./media/luis-how-to-collaborate/add-collaborator.png#lightbox)
 
-3. Insira o endereço de email que o colaborador usa para entrar no portal do LUIS.
+1. Insira o endereço de email que o colaborador usa para entrar no portal do LUIS.
 
     ![Adicionar o endereço de email do colaborado](./media/luis-how-to-collaborate/add-collaborator-pop-up.png)
 
-## <a name="transfer-of-ownership"></a>Transferência de propriedade
 
-Embora atualmente o LUIS não dê suporte à transferência de propriedade, você pode exportar seu aplicativo e outro usuário do LUIS pode importá-lo. Pode haver pequenas diferenças nas pontuações do LUIS entre os dois aplicativos. 
+### <a name="users-with-multiple-emails"></a>Usuários com vários emails 
 
-## <a name="azure-active-directory-resources"></a>Recursos do Azure Active Directory
+Se você adicionar colaboradores/colaboradores a um aplicativo LUIS, você estará especificando o endereço de email exato. Embora Azure Active Directory (Azure AD) permita que um único usuário tenha mais de uma conta de email usada de forma intercambiável, o LUIS exige que o usuário entre com o endereço de email especificado ao adicionar o colaborador/colaborador.
+
+<a name="owner-and-collaborators"></a>
+
+### <a name="azure-active-directory-resources"></a>Recursos do Azure Active Directory
 
 Se você usar o [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) (Azure AD) em sua organização, o Reconhecimento Vocal (LUIS) precisará de permissão para acessar as informações sobre o acesso de seus usuários quando eles quiserem usar o LUIS. Os recursos exigidos pelo LUIS são mínimos. 
 
@@ -52,7 +78,7 @@ Você vê a descrição detalhada ao tentar se inscrever com uma conta que tem c
 * Permite que o aplicativo veja e atualize seus dados, mesmo quando não estiver usando o aplicativo no momento. A permissão é necessária para atualizar o token de acesso do usuário.
 
 
-## <a name="azure-active-directory-tenant-user"></a>Usuário de locatário do Azure Active Directory
+### <a name="azure-active-directory-tenant-user"></a>Usuário de locatário do Azure Active Directory
 
 LUIS usa o fluxo de autorização padrão do Azure Active Directory (Azure AD). 
 
@@ -70,7 +96,9 @@ Se o administrador de locatários desejar que somente determinados usuários use
 Saiba mais sobre o consentimento e os usuários do Azure Active Directory: 
 * [Restringir o aplicativo](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) a um conjunto de usuários
 
-### <a name="user-accounts-with-multiple-emails-for-collaborators"></a>Contas de usuários com vários emails para colaboradores
+## <a name="next-steps"></a>Próximas etapas
 
-Se você adicionar colaboradores a um aplicativo LUIS, você está especificando o endereço de email exato que um colaborador necessita para usar LUIS como colaborador. Enquanto o Azure Active Directory (AD do Azure) permite que um único usuário tenha mais de uma conta de email usada alternadamente, LUIS exige que o usuário faça logon com o endereço de email especificado na lista do colaborador.
-
+* Saiba [como usar versões](luis-how-to-manage-versions.md) para controlar o ciclo de vida do aplicativo.
+* Entenda os conceitos, incluindo o [recurso de criação](/luis-concept-keys.md#authoring-key) e os [colaboradores](luis-concept-keys.md#contributions-from-other-authors) nesse recurso.
+* Saiba [como criar](luis-how-to-azure-subscription.md) recursos de criação e tempo de execução
+* Migrar para o novo [recurso de criação](luis-migration-authoring.md) 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/02/2019
 ms.author: diberry
-ms.openlocfilehash: 2e13efa70d0344defeb306a92ac405439635e929
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: c519b030aaee58397766ecb8658e7af08b5986e1
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619693"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70256868"
 ---
 # <a name="understand-how-and-when-to-use-a-luis-version"></a>Reconhecer como e quando usar uma versão do LUIS
 
@@ -48,7 +48,7 @@ Clone uma versão para criar uma cópia de uma versão existente e salve-a como 
 
 É possível exportar uma versão no nível do aplicativo ou no nível da versão. A única diferença é que a versão exportada do nível do aplicativo é a versão ativa no momento, enquanto no nível da versão, é possível escolher qualquer versão para ser exportada na página **[Configurações](luis-how-to-manage-versions.md)** . 
 
-O arquivo exportado não contém informações de aprendizado de máquina, porque o aplicativo é treinado novamente após a importação. O arquivo exportado não contém colaboradores – é necessário adicioná-los de volta, porque a versão importada para o novo aplicativo.
+O arquivo exportado não contém informações de aprendizado de máquina, porque o aplicativo é treinado novamente após a importação. O arquivo exportado não contém informações de colaborador.
 
 ## <a name="export-each-version-as-app-backup"></a>Exportar cada versão como backup do aplicativo
 Para fazer backup do aplicativo LUIS, exporte cada versão na página **[Configurações](luis-how-to-manage-versions.md)** .
@@ -59,8 +59,23 @@ Para fazer backup do aplicativo LUIS, exporte cada versão na página **[Configu
 ## <a name="version-availability-at-the-endpoint"></a>Disponibilidade da versão no ponto de extremidade
 Versões treinadas não estão automaticamente disponíveis no [ponto de extremidade](luis-glossary.md#endpoint) do seu aplicativo. É necessário [publicar](luis-how-to-publish-app.md) ou republicar uma versão para que ela esteja disponível no ponto de extremidade do seu aplicativo. É possível publicar em **Preparo** e em **Produção**, fornecendo até duas versões do aplicativo disponível no ponto de extremidade. Se precisar de mais versões do aplicativo disponível em um ponto de extremidade, você deverá exportar a versão e importar novamente a um novo aplicativo. O novo aplicativo tem uma ID do aplicativo diferente.
 
-## <a name="collaborators"></a>Colaboradores
-O proprietário e todos os [colaboradores](luis-how-to-collaborate.md) têm acesso completo a todas as versões do aplicativo.
+## <a name="manage-multiple-versions-inside-the-same-app"></a>Gerenciar várias versões dentro do mesmo aplicativo
+Comece [clonando](luis-how-to-manage-versions.md#clone-a-version), de uma versão base, para cada autor. 
+
+Cada autor faz alterações em sua própria versão do aplicativo. Depois que cada autor estiver satisfeito com o modelo, exporte as novas versões para os arquivos JSON.  
+
+Aplicativos exportados são arquivos formatados para JSON, que podem ser comparados quanto a alterações. Combine os arquivos para criar um único arquivo JSON da nova versão. Altere a propriedade **versionId** no JSON para significar a nova versão mesclada. Importe essa versão para o aplicativo original. 
+
+Esse método permite que você tenha uma versão ativa, uma versão do estágio e uma versão publicada. Você pode comparar os resultados da versão ativa com uma versão publicada (fase ou produção) no painel de [teste interativo](luis-interactive-test.md).
+
+## <a name="manage-multiple-versions-as-apps"></a>Gerenciar várias versões como aplicativos
+[Exporte](luis-how-to-manage-versions.md#export-version) a versão base. Cada autor importa a versão. A pessoa que importa o aplicativo é o proprietário da versão. Quando ela terminar de modificar o aplicativo, exporte a versão. 
+
+Aplicativos exportados são arquivos formatados para JSON, que podem ser comparados com a exportação base quanto a alterações. Combine os arquivos para criar um único arquivo JSON da nova versão. Altere a propriedade **versionId** no JSON para significar a nova versão mesclada. Importe essa versão para o aplicativo original.
+
+## <a name="contributions-from-collaborators"></a>Contribuições de colaboradores
+
+Saiba mais sobre a criação de contribuições de [colaboradores](luis-how-to-collaborate.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

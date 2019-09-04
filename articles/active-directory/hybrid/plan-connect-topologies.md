@@ -16,12 +16,12 @@ ms.date: 11/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b1c0d33a7d920f76bcbea6d8d6babc7390003bc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9618e02f54fbb2a3b92771761c5fcf700d126b5c
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60383497"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70275226"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Topologias para o Azure AD Connect
 Este artigo descreve várias topologias locais e do Azure Active Directory (Azure AD) que usam a sincronização do Azure AD Connect como solução de integração principal. Este artigo inclui configurações com e sem suporte.
@@ -29,7 +29,7 @@ Este artigo descreve várias topologias locais e do Azure Active Directory (Azur
 
 Aqui está a legenda para imagens neste artigo:
 
-| DESCRIÇÃO | Símbolo |
+| Descrição | Símbolo |
 | --- | --- |
 | Floresta do Active Directory local |![Floresta do Active Directory local](./media/plan-connect-topologies/LegendAD1.png) |
 | Active Directory local com importação filtrada |![Active Directory com importação filtrada](./media/plan-connect-topologies/LegendAD2.png) |
@@ -37,7 +37,7 @@ Aqui está a legenda para imagens neste artigo:
 | “Modo de preparo” do servidor de sincronização do Azure AD Connect |![“Modo de preparo” do servidor de sincronização do Azure AD Connect](./media/plan-connect-topologies/LegendSync2.png) |
 | GALSync com o Forefront Identity Manager (FIM) 2010 ou o Microsoft Identity Manager (MIM) 2016 |![GALSync com o FIM 2010 ou MIM 2016](./media/plan-connect-topologies/LegendSync3.png) |
 | Servidor do Azure AD Connect Sync detalhado |![Servidor do Azure AD Connect Sync detalhado](./media/plan-connect-topologies/LegendSync4.png) |
-| AD do Azure |![Azure Active Directory](./media/plan-connect-topologies/LegendAAD.png) |
+| Azure AD |![Active Directory do Azure](./media/plan-connect-topologies/LegendAAD.png) |
 | Cenário sem suporte |![Cenário sem suporte](./media/plan-connect-topologies/LegendUnsupported.png) |
 
 
@@ -60,7 +60,7 @@ Não há suporte para vários servidores de sincronização do Azure AD Connect 
 
 Muitas organizações têm ambientes com várias florestas do Active Directory local. Há vários motivos para ter mais de uma floresta do Active Directory local. Exemplos típicos são designs com florestas de conta-recurso e o resultado de uma fusão ou aquisição.
 
-Quando você tem várias florestas, todas elas devem ser acessíveis por um único servidor de sincronização do Azure AD Connect. Você não precisa adicionar o servidor a um domínio. Se necessário, para acessar todas as florestas, você pode colocar o servidor em uma rede de perímetro (também conhecida como DMZ, zona desmilitarizada e sub-rede selecionada).
+Quando você tem várias florestas, todas elas devem ser acessíveis por um único servidor de sincronização do Azure AD Connect. O servidor deve ser ingressado em um domínio. Se necessário, para acessar todas as florestas, você pode colocar o servidor em uma rede de perímetro (também conhecida como DMZ, zona desmilitarizada e sub-rede selecionada).
 
 O assistente de instalação do Azure AD Connect oferece várias opções para consolidar os usuários representados em várias florestas. O objetivo é que um usuário seja representado somente uma vez no Azure AD. Há algumas topologias comuns que você pode configurar o caminho de instalação personalizada do assistente de instalação. Na página **Identificando exclusivamente seus usuários**, selecione a opção correspondente que representa sua topologia. A consolidação está configurada somente para os usuários. Grupos duplicados não são consolidados com a configuração padrão.
 
@@ -120,7 +120,7 @@ Nesse cenário, uma (ou mais) floresta de recursos confia em todas as florestas 
 ## <a name="office-365-and-topology-considerations"></a>Office 365 e considerações de topologia
 Algumas cargas de trabalho do Office 365 têm certas restrições em topologias com suporte:
 
-| Carga de trabalho | Restrições |
+| Carga de Trabalho | Restrições |
 | --------- | --------- |
 | Exchange Online | Para obter mais informações sobre topologias híbridas com suporte pelo Exchange Online, consulte [Implantações híbridas com várias florestas do Active Directory](https://technet.microsoft.com/library/jj873754.aspx). |
 | Skype for Business | Ao usar várias florestas locais, somente a topologia de floresta conta-recurso terá suporte. Para obter mais informações, confira [Requisitos ambientais para Skype for Business Server 2015](https://technet.microsoft.com/library/dn933910.aspx). |

@@ -1,5 +1,5 @@
 ---
-title: Criar um certificado de Cofre de chaves do Azure | O Azure Marketplace
+title: Criar um certificado de Azure Key Vault | Azure Marketplace
 description: Explica como registrar uma VM de um VHD do Azure implantado.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: pabutler
-ms.openlocfilehash: 5163aa0a9195aa712fa333667b3f7ccf227469be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c27605d2f9b87a9d4ba3d2326c0ce7ad437d3441
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938396"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240992"
 ---
 # <a name="create-certificates-for-azure-key-vault"></a>Criar certificados para o Azure Key Vault
 
@@ -201,7 +201,7 @@ Agora você pode armazenar os certificados contidos no arquivo .pfx no novo cofr
     "dataType" :"pfx",
     "password": "$certpassword"
     }
-    "@
+"@
             echo $certpassword
             $jsonObjectBytes = [System.Text.Encoding]::UTF8.GetBytes($jsonObject)
             $jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)

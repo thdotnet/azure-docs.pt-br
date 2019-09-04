@@ -9,31 +9,31 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 90f064ce5d6dc7ffa6b4c532ac30d9b4dd60e13f
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 00e69d9222444e3b700fca10e3f15b4b110e0c60
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981147"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241733"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure
 
-O Armazenamento do Microsoft Azure fornece um modelo de segurança em camadas. Esse modelo permite que você proteja suas contas de armazenamento a um conjunto específico de redes com suporte. Quando as regras de rede são configuradas, somente dados de solicitação de aplicativos do conjunto especificado de redes podem acessar uma conta de armazenamento.
+O Armazenamento do Microsoft Azure fornece um modelo de segurança em camadas. Esse modelo permite que você proteja suas contas de armazenamento para um subconjunto específico de redes. Quando as regras de rede são configuradas, somente os aplicativos que solicitam dados no conjunto especificado de redes podem acessar uma conta de armazenamento. Você pode limitar o acesso à sua conta de armazenamento a solicitações originadas de endereços IP especificados, intervalos de IP ou de uma lista de sub-redes em redes virtuais do Azure.
 
-Um aplicativo que acessa uma conta de armazenamento quando as regras de rede estão em vigor requer autorização adequada na solicitação. Há suporte para autorização com as credenciais do Azure Active Directory (Azure AD) para BLOBs e filas, com uma chave de acesso de conta válida ou com um token SAS.
+Um aplicativo que acessa uma conta de armazenamento quando as regras de rede estão em vigor requer uma autorização adequada para a solicitação. Há suporte para autorização com as credenciais do Azure Active Directory (Azure AD) para BLOBs e filas, com uma chave de acesso de conta válida ou com um token SAS.
 
 > [!IMPORTANT]
-> Ativar regras de firewall para sua conta de armazenamento bloqueia solicitações de entrada para os dados por padrão, a menos que as solicitações sejam provenientes de um serviço que está operando em uma Rede Virtual do Microsoft Azure (VNet). Solicitações que estão bloqueadas incluem as de outros serviços do Azure, do portal do Azure, de registro em log e serviços de métricas e assim por diante.
+> A ativação de regras de firewall para sua conta de armazenamento bloqueia solicitações de entrada de dados por padrão, a menos que as solicitações sejam originadas de um serviço operando em uma VNet (rede virtual) do Azure. Solicitações que estão bloqueadas incluem as de outros serviços do Azure, do portal do Azure, de registro em log e serviços de métricas e assim por diante.
 >
-> Você pode conceder acesso aos serviços do Azure que operam de dentro de uma rede virtual, permitindo a sub-rede da instância do serviço. Um número limitado de cenários pode ser habilitado por meio do mecanismo [Exceções](#exceptions) descrito na seção abaixo. Para acessar o portal do Azure, é necessário fazer isso partir de um computador dentro do limite confiável (IP ou VNet) que você configurou.
+> Você pode conceder acesso aos serviços do Azure que operam de dentro de uma VNet, permitindo o tráfego da sub-rede que hospeda a instância do serviço. Você também pode habilitar um número limitado de cenários por meio do mecanismo de [exceções](#exceptions) descrito na seção a seguir. Para acessar dados da conta de armazenamento por meio do portal do Azure, você precisa estar em um computador dentro do limite confiável (IP ou VNet) que você configurou.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="scenarios"></a>Cenários
 
-Configure as contas de armazenamento para negar acesso ao tráfego de todas as redes (incluindo o tráfego da Internet) por padrão. Em seguida, conceda acesso ao tráfego de VNets específicas. Essa configuração permite que você crie um limite de rede seguro para seus aplicativos. Você também pode acessar os intervalos de endereço IP de Internet pública, permitindo conexões de clientes locais ou específicos da Internet.
+Para proteger sua conta de armazenamento, primeiro você deve configurar uma regra para negar o acesso ao tráfego de todas as redes (incluindo o tráfego de Internet) por padrão. Em seguida, você deve configurar regras que concedem acesso ao tráfego de VNets específicas. Essa configuração permite que você crie um limite de rede seguro para seus aplicativos. Você também pode configurar regras para conceder acesso ao tráfego de selecionar intervalos de endereços IP públicos da Internet, permitindo conexões de clientes locais ou da Internet específicos.
 
-As regras de rede são aplicadas em todos os protocolos de rede para o armazenamento do Azure, incluindo REST e SMB. Para acessar os dados com ferramentas como o portal do Azure, o Gerenciador de Armazenamento e o AZCopy, são necessárias regras de rede explícitas.
+As regras de rede são aplicadas em todos os protocolos de rede para o armazenamento do Azure, incluindo REST e SMB. Para acessar dados usando ferramentas como o portal do Azure, Gerenciador de Armazenamento e AZCopy, as regras de rede explícitas devem ser configuradas.
 
 Você pode aplicar as regras de rede para contas de armazenamento existentes ou ao criar novas contas de armazenamento.
 
@@ -50,7 +50,7 @@ Você pode usar discos não gerenciados nas contas de armazenamento com as regra
 Por padrão, as contas de armazenamento aceitam conexões de clientes em qualquer rede. Para limitar o acesso a redes selecionadas, primeiro você deve alterar a ação padrão.
 
 > [!WARNING]
-> Fazer alterações em regras de rede pode afetar a capacidade de seus aplicativos se conectarem ao Armazenamento do Azure. Definir a regra de rede padrão como **negar** bloqueia todo o acesso aos dados, a menos que regras específicas de rede para **conceder** acesso também sejam aplicadas. Certifique-se de conceder acesso a qualquer uma das redes permitidas usando regras de rede antes de alterar a regra padrão para negar o acesso.
+> Fazer alterações em regras de rede pode afetar a capacidade de seus aplicativos se conectarem ao Armazenamento do Azure. A definição da regra de rede padrão para **negar** bloqueia todo o acesso aos dados, a menos que regras de rede específicas que **concedem** acesso também sejam aplicadas. Certifique-se de conceder acesso a qualquer uma das redes permitidas usando regras de rede antes de alterar a regra padrão para negar o acesso.
 
 ### <a name="managing-default-network-access-rules"></a>Como alterar as regras de acesso de rede padrão
 
@@ -112,9 +112,9 @@ Você pode gerar as regras de acesso à rede padrão para contas de armazenament
 
 ## <a name="grant-access-from-a-virtual-network"></a>Conceder acesso de uma rede virtual
 
-Você pode configurar as contas de armazenamento para permitir o acesso somente de VNets específicas.
+Você pode configurar contas de armazenamento para permitir o acesso somente de sub-redes específicas. As sub-redes permitidas podem pertencer a uma VNet na mesma assinatura ou àquelas em uma assinatura diferente, incluindo assinaturas que pertencem a um locatário de Azure Active Directory diferente.
 
-Habilitar um [Ponto de extremidade de serviço](/azure/virtual-network/virtual-network-service-endpoints-overview) do Armazenamento do Microsoft Azure dentro da VNet. Esse ponto de extremidade fornece o tráfego de uma rota ideal para o serviço de Armazenamento do Microsoft Azure. As identidades de rede virtual e a sub-rede também são transmitidas com cada solicitação. Em seguida, os administradores podem configurar as regras de rede para a conta de armazenamento que as solicitações sejam recebidas de sub-redes específicas na VNet. Os clientes com o acesso concedido por meio dessas regras de rede devem continuar a atender aos requisitos de autorização da conta de armazenamento para acessar os dados.
+Habilitar um [Ponto de extremidade de serviço](/azure/virtual-network/virtual-network-service-endpoints-overview) do Armazenamento do Microsoft Azure dentro da VNet. O ponto de extremidade de serviço roteia o tráfego da VNet por meio de um caminho ideal para o serviço de armazenamento do Azure. As identidades da sub-rede e da rede virtual também são transmitidas com cada solicitação. Os administradores podem configurar as regras de rede para a conta de armazenamento que permitem que as solicitações sejam recebidas de sub-redes específicas em uma VNet. Os clientes com o acesso concedido por meio dessas regras de rede devem continuar a atender aos requisitos de autorização da conta de armazenamento para acessar os dados.
 
 Cada conta de armazenamento pode dar suporte a até 100 regras da rede virtual que podem ser combinadas com [regras de rede IP](#grant-access-from-an-internet-ip-range).
 
@@ -131,7 +131,10 @@ Ao planejar a recuperação de desastre durante uma interrupção regional, voc�
 
 Para aplicar uma regra da rede virtual a uma conta de armazenamento, o usuário deve ter permissão para as sub-redes sendo adicionadas. A permissão necessária é *Ingressar o Serviço em uma Sub-rede* e está incluída na função interna *Colaborador da conta de armazenamento*. Também podem ser adicionado às definições de função personalizada.
 
-A conta de armazenamento e o acesso concedido às redes virtuais podem estar em assinaturas diferentes, mas as assinaturas devem fazer parte do mesmo locatário do Azure AD.
+A conta de armazenamento e as redes virtuais com acesso concedido podem estar em assinaturas diferentes, incluindo assinaturas que fazem parte de um locatário diferente do Azure AD.
+
+> [!NOTE]
+> A configuração de regras que concedem acesso a sub-redes em redes virtuais que fazem parte de um locatário Azure Active Directory diferente atualmente só tem suporte por meio do PowerShell, da CLI e de APIs REST. Essas regras não podem ser configuradas por meio do portal do Azure, embora possam ser exibidas no Portal.
 
 ### <a name="managing-virtual-network-rules"></a>Gerenciando regras da rede virtual
 
@@ -149,6 +152,8 @@ Você pode gerenciar as regras da rede virtual para contas de armazenamento atra
 
     > [!NOTE]
     > Se um ponto de extremidade de Armazenamento do Microsoft Azure não foi configurado anteriormente para a rede virtual selecionada e as sub-redes, você pode configurá-lo como parte dessa operação.
+    >
+    > Atualmente, somente as redes virtuais que pertencem ao mesmo locatário Azure Active Directory são mostradas para seleção durante a criação da regra. Para conceder acesso a uma sub-rede em uma rede virtual que pertence a outro locatário, use o PowerShell, a CLI ou as APIs REST.
 
 1. Para remover uma regra de rede virtual ou sub-rede, clique em **...** para abrir o menu de contexto da rede virtual ou da sub-rede e clique em **Remover**.
 
@@ -176,6 +181,9 @@ Você pode gerenciar as regras da rede virtual para contas de armazenamento atra
     $subnet = Get-AzVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Get-AzVirtualNetworkSubnetConfig -Name "mysubnet"
     Add-AzStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -VirtualNetworkResourceId $subnet.Id
     ```
+
+    > [!TIP]
+    > Para adicionar uma regra de rede para uma sub-rede em uma VNet que pertence a outro locatário do Azure AD, use um parâmetro **VirtualNetworkResourceId** totalmente qualificado no formato "/subscriptions/Subscription-ID/resourceGroups/resourceGroup-Name/Providers/Microsoft.Network/virtualNetworks/vNet-Name/Subnets/subnet-Name".
 
 1. Remova uma regra de rede para uma rede virtual e uma sub-rede.
 
@@ -209,6 +217,11 @@ Você pode gerenciar as regras da rede virtual para contas de armazenamento atra
     $subnetid=(az network vnet subnet show --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --query id --output tsv)
     az storage account network-rule add --resource-group "myresourcegroup" --account-name "mystorageaccount" --subnet $subnetid
     ```
+
+    > [!TIP]
+    > Para adicionar uma regra para uma sub-rede em uma VNet que pertence a outro locatário do Azure AD, use uma ID de sub-rede totalmente qualificada no formato "/subscriptions/subscription-ID/resourceGroups/resourceGroup-Name/providers/Microsoft.Network/virtualNetworks/vNet-name/subnets/subnet-name".
+    > 
+    > Você pode usar o parâmetro de **assinatura** para recuperar a ID de sub-rede de uma VNet que pertence a outro locatário do Azure AD.
 
 1. Remova uma regra de rede para uma rede virtual e uma sub-rede.
 
@@ -344,7 +357,7 @@ As regras de rede podem habilitar uma configuração de rede segura para a maior
 
 Alguns serviços da Microsoft que interagem com contas de armazenamento operam a partir de redes que não podem ter o acesso concedido por meio de regras de rede.
 
-Para ajudar esse tipo de serviço a funcionar como esperado, você pode permitir que o conjunto de serviços Microsoft confiáveis ignore as regras de rede. Esses serviços usarão então a autenticação forte para acessar a conta de armazenamento.
+Para que alguns serviços funcionem conforme o esperado, você deve permitir que um subconjunto de serviços confiáveis da Microsoft ignore as regras de rede. Esses serviços usarão então a autenticação forte para acessar a conta de armazenamento.
 
 Se você habilitar a exceção **Permitir serviços Microsoft confiáveis...** , os serviços a seguir (quando registrados em sua assinatura), são concedidos acessos para a conta de armazenamento:
 

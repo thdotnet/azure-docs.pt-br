@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 79cb276f121c351a9954994038d9d826819edf5d
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1e6d3b78887c9d195fdf0137553860c141bdaaba
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087448"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241051"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Pontos de verificação e reprodução nas Funções Duráveis (Azure Functions)
 
@@ -145,6 +145,9 @@ O comportamento de reprodução cria restrições quanto ao tipo do código que 
   Se o orquestrador precisar de um atraso, ele poderá usar a API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) (.NET) ou `createTimer` (JavaScript).
 
 * O código do orquestrador **nunca deve iniciar nenhuma operação assíncrona**, exceto usando a API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) ou a API do objeto `context.df`. Por exemplo, sem `Task.Run`, `Task.Delay` ou `HttpClient.SendAsync` no .NET ou sem `setTimeout()` e `setInterval()` no JavaScript. O Framework de Tarefa Durável executa o código do orquestrador em um único thread e não pode interagir com outros threads que poderiam ser agendados por outras APIs assíncronas. Caso isso ocorra, `InvalidOperationException` a exceção será lançada.
+
+> [!NOTE]
+> A API [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) executa e/s assíncrona, o que não é permitido em uma função de orquestrador e só pode ser usado em funções que não sejam de orquestrador.
 
 * **Loops infinitos devem ser evitados** no código do orquestrador. Como o Framework de Tarefa Durável salva o histórico de execução durante o andamento da função de orquestração, um loop infinito pode fazer com que uma instância do orquestrador fique sem memória. Para cenários com loop infinito, use APIs como [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_) (.NET) ou `continueAsNew` (JavaScript) para reiniciar a execução da função e descartar o histórico de execução anterior.
 

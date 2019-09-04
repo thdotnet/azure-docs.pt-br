@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f98b72d9b5e59155bb7215181fd1ecd336126ee6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4001f3c88b676a2786159946a8981823e18ea5f6
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67440964"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274408"
 ---
 # <a name="password-management-frequently-asked-questions"></a>Perguntas frequentes sobre gerenciamento de senhas
 
@@ -41,12 +41,12 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   >
 * **P:  Se eu habilitar a redefinição de senha para um grupo e, em seguida, decidir habilitá-la para todos, os usuários deverão se registrar novamente?**
 
-  > **R:** Não. Os usuários que possuem dados de autenticação populados não devem se registrar novamente.
+  > **R:** Nº Os usuários que possuem dados de autenticação populados não devem se registrar novamente.
   >
   >
 * **P:  Posso definir os dados da redefinição de senha em nome dos usuários?**
 
-  > **R:** Sim, você pode fazer isso com o Azure AD Connect, PowerShell, o [portal do Azure](https://portal.azure.com), ou o [Centro de administração do Microsoft 365](https://admin.microsoft.com). Para obter mais informações, consulte [Dados usados pelo autoatendimento de redefinição de senha do Azure AD](howto-sspr-authenticationdata.md).
+  > **R:** Sim, você pode fazer isso com Azure AD Connect, PowerShell, o [portal do Azure](https://portal.azure.com)ou o [centro de administração do Microsoft 365](https://admin.microsoft.com). Para obter mais informações, consulte [Dados usados pelo autoatendimento de redefinição de senha do Azure AD](howto-sspr-authenticationdata.md).
   >
   >
 * **P:  Posso sincronizar os dados de perguntas de segurança localmente?**
@@ -61,7 +61,7 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   >
 * **P:  Os usuários precisam ser registrados antes de usar a redefinição de senha?**
 
-  > **R:** Não. Se você definir informações de autenticação suficientes em nome deles, os usuários não precisarão se registrar. A redefinição de senha funcionará desde que você tenha formatado corretamente os dados armazenados nos campos apropriados no diretório.
+  > **R:** Nº Se você definir informações de autenticação suficientes em nome deles, os usuários não precisarão se registrar. A redefinição de senha funcionará desde que você tenha formatado corretamente os dados armazenados nos campos apropriados no diretório.
   >
   >
 * **P:  Posso sincronizar ou definir os campos de telefone de autenticação, email de autenticação ou telefone de autenticação alternativo em nome dos usuários?**
@@ -101,7 +101,7 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   > Se você não receber a notificação nesse período:
   > * Verifique a pasta Lixo Eletrônico.
   > * Verifique se o número ou o email de contato é aquele que você espera.
-  > * Verifique se os dados de autenticação no diretório estão corretamente formatado, por exemplo, + 1 4255551234 ou *usuário\@contoso.com*. 
+  > * Verifique se os dados de autenticação no diretório estão formatados corretamente, por exemplo, + 1 4255551234 *ou\@contoso.com do usuário*. 
 * **P:  Quais idiomas são compatíveis com a redefinição de senha?**
 
   > **R:** A interface do usuário, as mensagens SMS e as chamadas de voz da redefinição de senha estão localizadas nos mesmos idiomas compatíveis com o Office 365.
@@ -159,7 +159,7 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   >
 * **P:  Um usuário pode registrar a mesma pergunta de segurança mais de uma vez?**
 
-  > **R:** Não. Quando um usuário registra uma pergunta específica, ele não pode registrar essa pergunta uma segunda vez.
+  > **R:** Nº Quando um usuário registra uma pergunta específica, ele não pode registrar essa pergunta uma segunda vez.
   >
   >
 * **P:  É possível definir um limite mínimo de perguntas de segurança para registro e redefinição?**
@@ -179,7 +179,7 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   >
 * **P:  Por quanto tempo a senha avulsa de email e SMS permanece válida?**
 
-  > **R:** O tempo de vida da sessão para a redefinição de senha é de 15 minutos. Desde o início da operação de redefinição de senha, o usuário tem 15 minutos para redefinir sua senha. A senha de uso único por email e SMS perde a validade depois que esse período de tempo expira.
+  > **R:** O tempo de vida da sessão para a redefinição de senha é de 15 minutos. Desde o início da operação de redefinição de senha, o usuário tem 15 minutos para redefinir sua senha. O email e a senha de uso único do SMS são válidos por 5 minutos durante a sessão de redefinição de senha.
   >
   >
 * **P:  Posso impedir os usuários de redefinirem suas senhas?**
@@ -239,7 +239,7 @@ Esta seção de perguntas frequentes é dividida nas seguintes seções:
   >
   >
 
-## <a name="password-writeback"></a>write-back de senha
+## <a name="password-writeback"></a>Write-back de senha
 
 * **P:  Como funciona os bastidores do write-back de senha?**
 
