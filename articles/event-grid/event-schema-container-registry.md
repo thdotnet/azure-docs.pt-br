@@ -162,7 +162,7 @@ Um evento tem os seguintes dados de nível superior:
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
 | id | string | Identificador exclusivo do evento. |
-| data | objeto | Dados de eventos do armazenamento de blob. |
+| data | object | Dados de eventos do armazenamento de blob. |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
 
@@ -170,24 +170,24 @@ O objeto de dados tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| id | cadeia de caracteres | A ID do evento. |
-| timestamp | cadeia de caracteres | A hora em que o evento ocorreu. |
-| action | cadeia de caracteres | A ação que abrange o evento fornecido. |
-| target | objeto | O destino do evento. |
-| request | objeto | A solicitação que gerou o evento. |
+| id | string | A ID do evento. |
+| timestamp | string | A hora em que o evento ocorreu. |
+| action | string | A ação que abrange o evento fornecido. |
+| target | object | O destino do evento. |
+| request | object | A solicitação que gerou o evento. |
 
 O objeto de destino tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| mediaType | cadeia de caracteres | O tipo MIME do objeto referenciado. |
-| size | inteiro | O número de bytes do conteúdo. Mesmo que o campo de Comprimento. |
-| digest | cadeia de caracteres | O resumo da mensagem, conforme definido pela Especificação API HTTP do Registry V2. |
-| length | inteiro | O número de bytes do conteúdo. O mesmo que o campo Tamanho. |
-| repository | cadeia de caracteres | Nome do repositório. |
-| tag | cadeia de caracteres | O nome da marca. |
-| name | cadeia de caracteres | O nome do gráfico. |
-| version | cadeia de caracteres | A versão do gráfico. |
+| mediaType | string | O tipo MIME do objeto referenciado. |
+| size | integer | O número de bytes do conteúdo. Mesmo que o campo de Comprimento. |
+| digest | string | O resumo da mensagem, conforme definido pela Especificação API HTTP do Registry V2. |
+| length | integer | O número de bytes do conteúdo. O mesmo que o campo Tamanho. |
+| repository | string | Nome do repositório. |
+| tag | string | O nome da marca. |
+| name | string | O nome do gráfico. |
+| version | string | A versão do gráfico. |
 
 O objeto solicitado tem as seguintes propriedades:
 
