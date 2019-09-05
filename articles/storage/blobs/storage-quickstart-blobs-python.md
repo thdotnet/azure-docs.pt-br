@@ -3,16 +3,16 @@ title: Início Rápido do Azure - Criar um blob no armazenamento de objeto com P
 description: Neste início rápido, você criará uma conta de armazenamento e um contêiner no armazenamento de objeto (Blob). Em seguida, você deve usar a biblioteca de clientes de armazenamento para Python a fim de carregar um blob no Armazenamento do Azure, baixar um blob e listar os blobs em um contêiner.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 12/14/2018
+ms.date: 08/29/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 0eb4558b7c9c08fc6df964a7e45328a83c60352b
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 059e41b744ad92cdec9057e4a17f470b5b769c62
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721993"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142960"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Início Rápido: Carregar, baixar e listar blobs com o Python
 
@@ -158,8 +158,8 @@ Baixe os blobs para o disco local usando o método `get_blob_to_path`. O código
 ```python
 # Download the blob(s).
 # Add '_DOWNLOADED' as prefix to '.txt' so you can see both files in Documents.
-full_path_to_file2 = os.path.join(local_path, string.replace(
-    local_file_name, '.txt', '_DOWNLOADED.txt'))
+full_path_to_file2 = os.path.join(local_path, local_file_name.replace(
+   '.txt', '_DOWNLOADED.txt'))
 print("\nDownloading blob to " + full_path_to_file2)
 block_blob_service.get_blob_to_path(
     container_name, local_file_name, full_path_to_file2)

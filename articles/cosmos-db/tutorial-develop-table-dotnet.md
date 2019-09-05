@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 05/20/2019
-ms.openlocfilehash: 75f1554f7522723d71666633a03761d07e797e33
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 677ea48244f8417670a2645ab67fa08c1f869f1a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68443515"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142596"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Introdução à API de Tabela do Azure Cosmos DB e armazenamento de Tabelas do Azure usando SDK do .NET
 
@@ -217,36 +217,36 @@ O exemplo de código a seguir cria um objeto de entidade e o adiciona à tabela.
 Clique com o botão direito do mouse no projeto **CosmosTableSamples**. Selecione **Adicionar**, **Novo Item** e adicione uma classe nomeada **SamplesUtils.cs**. Essa classe armazena todo o código necessário para executar operações CRUD nas entidades. 
 
 ```csharp
-public static async Task<CustomerEntity> InsertOrMergeEntityAsync(CloudTable table, CustomerEntity entity)
-    {
-      if (entity == null)
-    {
-       throw new ArgumentNullException("entity");
-    }
-    try
-    {
-       // Create the InsertOrReplace table operation
-       TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(entity);
+ public static async Task<CustomerEntity> InsertOrMergeEntityAsync(CloudTable table, CustomerEntity entity)
+ {
+     if (entity == null)
+     {
+         throw new ArgumentNullException("entity");
+     }
+     try
+     {
+         // Create the InsertOrReplace table operation
+         TableOperation insertOrMergeOperation = TableOperation.InsertOrMerge(entity);
 
-       // Execute the operation.
-       TableResult result = await table.ExecuteAsync(insertOrMergeOperation);
-       CustomerEntity insertedCustomer = result.Result as CustomerEntity;
-        
-        // Get the request units consumed by the current operation. RequestCharge of a TableResult is only applied to Azure CosmoS DB 
-        if (result.RequestCharge.HasValue)
-          {
-            Console.WriteLine("Request Charge of InsertOrMerge Operation: " + result.RequestCharge);
-          }
+         // Execute the operation.
+         TableResult result = await table.ExecuteAsync(insertOrMergeOperation);
+         CustomerEntity insertedCustomer = result.Result as CustomerEntity;
 
-        return insertedCustomer;
-        }
-        catch (StorageException e)
-        {
-          Console.WriteLine(e.Message);
-          Console.ReadLine();
-          throw;
-        }
-    }
+         // Get the request units consumed by the current operation. RequestCharge of a TableResult is only applied to Azure Cosmos DB
+         if (result.RequestCharge.HasValue)
+         {
+             Console.WriteLine("Request Charge of InsertOrMerge Operation: " + result.RequestCharge);
+         }
+
+         return insertedCustomer;
+     }
+     catch (StorageException e)
+     {
+         Console.WriteLine(e.Message);
+         Console.ReadLine();
+         throw;
+     }
+ }
 ```
 
 ### <a name="get-an-entity-from-a-partition"></a>Obter uma entidade de uma partição

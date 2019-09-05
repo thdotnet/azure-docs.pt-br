@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/12/2018
 ms.author: yexu
-ms.openlocfilehash: 41f8769aea841e05887feb6a44511cbf444a7acf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a71c83a190bd7e88edd5008edef670b32905add
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66168549"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140800"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Carregar incrementalmente os dados do Banco de Dados SQL do Azure para o Armazenamento de Blobs do Azure usando informações de controle de alterações 
 Neste tutorial, você cria um data factory do Azure com um pipeline que carrega dados delta com base em informações de  **controle de alterações** no Banco de Dados SQL do Azure de origem para um armazenamento de blobs do Azure.  
@@ -294,7 +293,7 @@ Nesta etapa, crie um pipeline com uma atividade de cópia que copia todos os dad
 5. Alterne para a guia **Coletor** e selecione **SinkDataset** para o campo **Conjunto de dados do coletor**. 
 
     ![Atividade de cópia - Coletor](./media/tutorial-incremental-copy-change-tracking-feature-portal/copy-activity-sink.png)
-6. Para validar a definição do pipeline, clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Feche o **Relatório de validação do pipeline** clicando em **>>**. 
+6. Para validar a definição do pipeline, clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Feche o **Relatório de validação do pipeline** clicando em **>>** . 
 
     ![Validar o pipeline](./media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-pipeline-validate.png)
 7. Para publicar as entidades (serviços vinculados, conjuntos de dados e pipelines), clique em **Publicar**. Aguarde até que a publicação seja bem-sucedida. 
@@ -423,7 +422,7 @@ Nesta etapa, você cria um pipeline com as seguintes atividades e execute-o peri
 14. **Conecte a atividade de Cópia à atividade de Procedimento armazenado**. Arraste o botão **verde** anexado à atividade de Cópia para a atividade de Procedimento armazenado. 
 
     ![Conecte as atividades de Cópia e Procedimento armazenado](./media/tutorial-incremental-copy-change-tracking-feature-portal/connect-copy-stored-procedure.png)
-15. Clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Feche a janela **Relatório de validação do pipeline** clicando em **>>**. 
+15. Clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Feche a janela **Relatório de validação do pipeline** clicando em **>>** . 
 
     ![Botão Validar](./media/tutorial-incremental-copy-change-tracking-feature-portal/validate-button.png)
 16. Publique as entidades (serviços vinculados, conjuntos de dados e pipelines) para o serviço de Data Factory clicando no botão **Publicar tudo**. Aguarde até que você veja a mensagem **Publicado com êxito**. 

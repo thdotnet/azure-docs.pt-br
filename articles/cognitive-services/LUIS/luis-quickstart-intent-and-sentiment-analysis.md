@@ -1,5 +1,5 @@
 ---
-title: Análise de sentimento – LUIS
+title: 'Tutorial: Análise de sentimento – LUIS'
 titleSuffix: Azure Cognitive Services
 description: Neste tutorial, crie um aplicativo que demonstra como obter o sentimento positivo, negativo e neutro de enunciados. O sentimento é determinado pelo enunciado inteiro.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 06/03/2019
+ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: ad1dba3c35c0f1fa5640e484319b584731843dd8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ed403e3d761b32c6837eb8e72edef3f3e6380217
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563576"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307582"
 ---
 # <a name="tutorial--get-sentiment-of-utterance"></a>Tutorial:  Obter o sentimento do enunciado
 

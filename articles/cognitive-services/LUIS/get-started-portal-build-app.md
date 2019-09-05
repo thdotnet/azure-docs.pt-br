@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 05/07/2019
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: f54643883028d93b56c7e122f43db95bb6d0b8c1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ff666437790a1e32dde83f9e3be90b4c62637181
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560883"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307750"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Início Rápido: Criar um aplicativo no portal do LUIS
 
@@ -23,9 +23,9 @@ Neste início rápido, você criará um aplicativo no [portal do LUIS](https://w
 
 A criação de um aplicativo é gratuita e não exige uma assinatura do Azure. Quando você estiver pronto para implantar seu aplicativo, confira o [início rápido para implantar um aplicativo](get-started-portal-deploy-app.md). Ele mostra como criar um recurso do Serviço Cognitivo do Azure e atribuí-lo ao aplicativo.
 
-## <a name="create-an-app"></a>Criar um aplicativo
+[!INCLUDE [Sign in to LUIS](./includes/sign-in-process.md)]
 
-1. Abra o [portal do LUIS](https://www.luis.ai) em um navegador e entre. Se esta for a primeira vez que você entra, você precisará criar uma conta de usuário gratuita do portal do LUIS.
+## <a name="create-an-app"></a>Criar um aplicativo
 
 1. Selecione **Criar aplicativo** da barra de ferramentas de contexto.
 

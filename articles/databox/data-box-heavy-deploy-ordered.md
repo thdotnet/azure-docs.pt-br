@@ -8,12 +8,13 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: c7fbd37ff8d40f27e0ca18a6f9816d3d96422ab9
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.localizationpriority: high
+ms.openlocfilehash: dce3549bde4c62245e1d2b1f8ac0c88c0b70260c
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592404"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241401"
 ---
 # <a name="tutorial-order-azure-data-box-heavy"></a>Tutorial: Solicitar o Azure Data Box Heavy
 
@@ -80,7 +81,7 @@ Execute as etapas a seguir no portal do Azure para solicitar um dispositivo.
 
     |Configuração  |Valor  |
     |---------|---------|
-    |Assinatura     | Selecione uma assinatura do EA, do CSP ou do Azure Sponsorship para o serviço Data Box. <br> A assinatura está vinculada à sua conta de cobrança.       |
+    |Subscription     | Selecione uma assinatura do EA, do CSP ou do Azure Sponsorship para o serviço Data Box. <br> A assinatura está vinculada à sua conta de cobrança.       |
     |Tipo de transferência     | Selecione **Importar no Azure**.        |
     |País de origem     | Selecione o país/região em que os dados residem no momento.         |
     |Região do Azure de destino     | Selecione a região do Azure para onde você deseja transferir dados.        |
@@ -96,7 +97,7 @@ Execute as etapas a seguir no portal do Azure para solicitar um dispositivo.
     |Configuração  |Valor  |
     |---------|---------|
     |NOME     | Forneça um nome amigável para acompanhar o pedido. <br> O nome pode ter entre 3 e 24 caracteres que podem ser letras, números e hífens. <br> O nome deve começar e terminar com uma letra ou um número.      |
-    |Grupo de recursos     | Use um grupo existente ou crie um novo. <br> Um grupo de recursos é um contêiner lógico para os recursos que podem ser gerenciados ou implantados juntos.         |
+    |Resource group     | Use um grupo existente ou crie um novo. <br> Um grupo de recursos é um contêiner lógico para os recursos que podem ser gerenciados ou implantados juntos.         |
     |Região do Azure de destino     | Selecione uma região para sua conta de armazenamento. <br> Para saber mais, acesse [disponibilidade por região](https://azure.microsoft.com/global-infrastructure/services/?products=databox).        |
     |Destino de armazenamento     | Escolha entre conta de armazenamento, discos gerenciados ou ambos. <br> Com base na região especificada do Azure, selecione uma ou mais contas de armazenamento existente na lista filtrada de uma conta de armazenamento existente. <br>O Data Box Heavy pode ser vinculado a até 10 contas de armazenamento. <br> Você também pode criar uma nova conta de **Uso geral v1**, **Uso geral v2** ou de **Armazenamento de Blobs**. <br> Não há suporte para contas do Azure Data Lake Storage Gen2. Confira as [contas de armazenamento compatíveis com seu dispositivo](data-box-heavy-system-requirements.md#supported-storage-accounts). <br>Contas de armazenamento com redes virtuais são compatíveis. Para permitir que o serviço do Data Box trabalhe com contas de armazenamento protegido, habilite os serviços confiáveis em definições de firewall de rede da conta de armazenamento. Para obter mais informações, confira como [Adicionar o serviço Azure Data Box como um serviço confiável](../storage/common/storage-network-security.md#exceptions).|
 

@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 568b00007f2c95a5a63c236863f0c599c6b6f86f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 604b859bc144331550db9b71e6b216e35fd2d88a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66161730"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140598"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Carregar incrementalmente os dados do banco de dados SQL do Azure para o Armazenamento de Blobs do Azure
 Neste tutorial, você cria um Azure Data Factory com um pipeline que carrega dados delta de uma tabela em um banco de dados SQL do Azure para um Armazenamento de Blobs do Azure. 
@@ -524,7 +523,7 @@ Neste tutorial, você cria um pipeline com duas atividades de Pesquisa, uma ativ
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName
     ``` 
-2. Verifique o status do pipeline executando o **Get-AzDataFactoryV2ActivityRun** até ver todas as atividades executando com êxito. Substitua os espaços reservados com sua própria hora apropriada para os parâmetros *RunStartedAfter* e *RunStartedBefore*. Neste tutorial, você usa *-RunStartedAfter "2017/09/14"* e *-RunStartedBefore "2017/09/15"*.
+2. Verifique o status do pipeline executando o **Get-AzDataFactoryV2ActivityRun** até ver todas as atividades executando com êxito. Substitua os espaços reservados com sua própria hora apropriada para os parâmetros *RunStartedAfter* e *RunStartedBefore*. Neste tutorial, você usa *-RunStartedAfter "2017/09/14"* e *-RunStartedBefore "2017/09/15"* .
 
     ```powershell
     Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $RunId -RunStartedAfter "<start time>" -RunStartedBefore "<end time>"
@@ -644,7 +643,7 @@ Neste tutorial, você cria um pipeline com duas atividades de Pesquisa, uma ativ
     ```powershell
     $RunId = Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -ResourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName
     ```
-3. Verifique o status do pipeline executando o **Get-AzDataFactoryV2ActivityRun** até ver todas as atividades executando com êxito. Substitua os espaços reservados com sua própria hora apropriada para os parâmetros *RunStartedAfter* e *RunStartedBefore*. Neste tutorial, você usa *-RunStartedAfter "2017/09/14"* e *-RunStartedBefore "2017/09/15"*.
+3. Verifique o status do pipeline executando o **Get-AzDataFactoryV2ActivityRun** até ver todas as atividades executando com êxito. Substitua os espaços reservados com sua própria hora apropriada para os parâmetros *RunStartedAfter* e *RunStartedBefore*. Neste tutorial, você usa *-RunStartedAfter "2017/09/14"* e *-RunStartedBefore "2017/09/15"* .
 
     ```powershell
     Get-AzDataFactoryV2ActivityRun -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -PipelineRunId $RunId -RunStartedAfter "<start time>" -RunStartedBefore "<end time>"

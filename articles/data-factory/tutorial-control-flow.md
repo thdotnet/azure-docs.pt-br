@@ -3,21 +3,20 @@ title: Ramificação no pipeline do Azure Data Factory | Microsoft Docs
 description: Aprenda a controlar o fluxo de dados no Azure Data Factory por ramificação e encadeamento de atividades.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/20/2019
-ms.author: shlo
-ms.openlocfilehash: 9a03094683a973db16aa949f0610bc7f9914be45
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: 264d8e049cc7b714e00aaa77441cdc81a1e0a0c9
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58649213"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140744"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ramificação e encadeamento de atividades em um pipeline de Data Factory
 
@@ -46,7 +45,7 @@ Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://a
 * **Conta de Armazenamento do Azure**. Você usa o Armazenamento de Blobs como um armazenamento de dados de **origem**. Se você não tiver uma conta de Armazenamento do Azure, veja o artigo [Criar uma conta de armazenamento](../storage/common/storage-quickstart-create-account.md) para conhecer as etapas para criar uma.
 * **Banco de dados SQL do Azure**. Você usa o banco de dados como um armazenamento de dados de **coletor**. Se você não tiver um Banco de Dados SQL do Azure, veja o artigo [Criar um Banco de Dados SQL do Azure](../sql-database/sql-database-get-started-portal.md) para conhecer as etapas para criar um.
 * **Visual Studio** 2013, 2015 ou 2017. Este artigo passo a passo usa o Visual Studio 2017.
-* **Baixar e instalar o [SDK do .NET do Azure](https://azure.microsoft.com/downloads/)**.
+* **Baixar e instalar o [SDK do .NET do Azure](https://azure.microsoft.com/downloads/)** .
 * **Crie um aplicativo no Azure Active Directory** seguindo [estas instruções](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Anote os valores a seguir, que você usará em etapas posteriores: **ID do aplicativo**, **chave de autenticação** e **ID do locatário**. Seguindo as instruções no mesmo artigo, atribua o aplicativo à função "**Colaborador**".
 
 ### <a name="create-blob-table"></a>Criar tabela de blob
@@ -66,7 +65,7 @@ Usando o Visual Studio 2015/2017, crie um aplicativo de console C# .NET.
 
 1. Inicie o **Visual Studio**.
 2. Clique em **Arquivo**, aponte para **Novo** e clique em **Projeto**. O .NET versão 4.5.2 ou superior é necessário.
-3. Selecione **Visual C#** -> **Aplicativo de Console (.NET Framework)** na lista de tipos de projeto à direita.
+3. Selecione **Visual C#**  -> **Aplicativo de Console (.NET Framework)** na lista de tipos de projeto à direita.
 4. Digite **ADFv2BranchTutorial** para o Nome.
 5. Clique em **OK** para criar o projeto.
 

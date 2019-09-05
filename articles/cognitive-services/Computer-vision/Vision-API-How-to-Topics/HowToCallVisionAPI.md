@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/21/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 35e6ad922ab54748165fcf8e273d93ee44bc42cc
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 97b9e0defb3f349a6e202572bc0e3005d5d87e9c
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564533"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141196"
 ---
 # <a name="example-how-to-call-the-computer-vision-api"></a>Exemplo: Como chamar a API da Pesquisa Visual Computacional
 
@@ -47,19 +47,19 @@ Os recursos são divididos em:
 
 Toda chamada à API da Pesquisa Visual Computacional requer uma chave de assinatura. Essa chave precisa ser passada por um parâmetro de cadeia de caracteres de consulta ou especificada no cabeçalho da solicitação.
 
-Para obter uma chave de avaliação gratuita, veja [Experimentar os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). Ou siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar a Pesquisa Visual Computacional e obter sua chave.
+É possível obter uma chave de avaliação gratuita em [Experimente os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). Ou siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar a Pesquisa Visual Computacional e obter sua chave.
 
 1. Passando a chave de assinatura por meio de uma cadeia de consulta, veja abaixo como um exemplo da API da Pesquisa Visual Computacional:
 
-```https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>```
+    ```https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>```
 
 1. A passagem da chave de assinatura também pode ser especificada no cabeçalho da solicitação HTTP:
 
-```ocp-apim-subscription-key: <Your subscription key>```
+    ```ocp-apim-subscription-key: <Your subscription key>```
 
 1. Ao usar uma biblioteca de clientes, a chave de assinatura é passada por meio do construtor de VisionServiceClient:
 
-```var visionClient = new VisionServiceClient("Your subscriptionKey");```
+    ```var visionClient = new VisionServiceClient("Your subscriptionKey");```
 
 ## <a name="upload-an-image-to-the-computer-vision-api-service-and-get-back-tags-descriptions-and-celebrities"></a>Carregar uma imagem para o serviço API da Pesquisa Visual Computacional e retornar as marcas, descrições e celebridades
 

@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 78f608aedd53aa1071eaf88864f5a63f8f9e6072
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: fbd765ef94f4dbb26f076d8bc9520b4e4860bbae
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791004"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232777"
 ---
 # <a name="deploy-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Implantação da amostra de blueprint de carga de trabalho do Ambiente do Serviço de Aplicativo/Banco de Dados SQL do ISO 27001
 
@@ -115,35 +115,35 @@ A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 
 |Nome do artefato|Tipo de artefato|Nome do parâmetro|DESCRIÇÃO|
 |-|-|-|-|
-|Grupo de recursos do Log Analytics|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-log-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Log Analytics|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Log Analytics|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-log-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Log Analytics|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Log Analytics|Modelo do Resource Manager|Camada de serviço|Define a camada do workspace do Log Analytics. O valor padrão é _PerNode_.|
 |Modelo do Log Analytics|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
-|Modelo do Log Analytics|Modelo do Resource Manager|Local padrão|Região usada para criar o workspace do Log Analytics. O valor padrão é _Oeste dos EUA 2_.|
-|Grupo de recursos de rede|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-net-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos de rede|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Modelo do Log Analytics|Modelo do Resource Manager|Location|Região usada para criar o workspace do Log Analytics. O valor padrão é _Oeste dos EUA 2_.|
+|Grupo de recursos de rede|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-net-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos de rede|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Grupo de Segurança de Rede|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|IP privado do firewall do Azure|Configura o IP privado do [Firewall do Azure](../../../../firewall/overview.md). Deve fazer parte da notação CIDR definida no parâmetro de artefato _ISO 27001: Serviços Compartilhados_, **prefixo de endereço de sub-rede do Firewall do Azure**. O valor padrão é _10.0.4.4_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|ID da Assinatura de serviços compartilhados|Valor usado para habilitar o emparelhamento VNet entre uma Carga de Trabalho e Serviços Compartilhados.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Prefixo de endereço da Rede Virtual|A notação CIDR da rede virtual. O valor padrão é _10.1.0.0/16_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Prefixo de endereço de sub-rede padrão|A notação CIDR para a sub-rede da rede virtual padrão. O valor padrão é _10.1.0.0/16_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Endereço IP do ADDS|Endereço IP da primeira VM do ADDS. Esse valor é usado como o DNS da VNET personalizado.|
-|Grupo de recursos do Cofre de Chaves|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-kv-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Cofre de Chaves|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Cofre de Chaves|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-kv-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Cofre de Chaves|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Key Vault|Modelo do Resource Manager|ID de objeto do AAD|O identificador de objeto do AAD da conta que exige acesso à instância do Key Vault. Nenhum valor padrão e não pode ser deixado em branco. Para localizar esse valor no portal do Azure, pesquise e selecione "Usuários" em _Serviços_. Use a caixa _Nome_ para filtrar o nome da conta e selecione essa conta. Na página _Perfil do usuário_, selecione o ícone "Clique para copiar" ao lado da _ID de Objeto_.|
 |Modelo do Key Vault|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
 |Modelo do Key Vault|Modelo do Resource Manager|SKU do Key Vault|Especifica o SKU do Key Vault criado. O valor padrão é _Premium_.|
 |Modelo do Key Vault|Modelo do Resource Manager|Nome de usuário de administrador do SQL Server do Azure|O nome de usuário usado para acessar o SQL Server do Azure. Deve corresponder ao mesmo valor da propriedade em **modelo de Banco de Dados SQL do Azure**. O valor padrão é _sql-admin-user_.|
-|Grupo de recursos do Banco de Dados SQL do Azure|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-azsql-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Banco de Dados SQL do Azure|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Banco de Dados SQL do Azure|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-azsql-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Banco de Dados SQL do Azure|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|Nome de usuário de administrador do SQL Server do Azure|Nome de usuário para o SQL Server do Azure. Precisa corresponder ao mesmo valor da propriedade no **Modelo do Key Vault**. O valor padrão é _sql-admin-user_.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|Senha do administrador do SQL Server do Azure (ID de Recurso do Key Vault)|A ID do Recurso do Key Vault. Use "/subscription/{subscriptionId}/resourceGroups/{orgName}-workload-kv/providers/Microsoft.KeyVault/vaults/{orgName}-workload-kv" e substitua `{subscriptionId}` pela sua ID de Assinatura e `{orgName}` pelo parâmetro de blueprint do **Nome da organização**.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|Senha do administrador do SQL Server do Azure (Nome do Segredo do Key Vault)|Nome de usuário do administrador do SQL Server. Deve corresponder ao valor no **modelo de Key Vault**, propriedade **nome de usuário de administrador do SQL Server do Azure**.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|ID de objeto de administrador do AAD|ID de objeto do AAD do usuário que será atribuído como um administrador do Active Directory. Nenhum valor padrão e não pode ser deixado em branco. Para localizar esse valor no portal do Azure, pesquise e selecione "Usuários" em _Serviços_. Use a caixa _Nome_ para filtrar o nome da conta e selecione essa conta. Na página _Perfil do usuário_, selecione o ícone "Clique para copiar" ao lado da _ID de Objeto_.|
 |Modelo de Banco de Dados SQL do Azure|Modelo do Resource Manager|Logon de administrador do AAD|No momento, contas da Microsoft (como live.com ou outlook.com) não podem ser definidas como administrador. Somente usuários e grupos de segurança em sua organização podem ser definidos como administrador. Nenhum valor padrão e não pode ser deixado em branco. Para localizar esse valor no portal do Azure, pesquise e selecione "Usuários" em _Serviços_. Use a caixa _Nome_ para filtrar o nome da conta e selecione essa conta. Na página _Perfil do usuário_, copie o _Nome de usuário_.|
-|Grupo de recursos do Ambiente do Serviço de Aplicativo|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-ase-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Ambiente do Serviço de Aplicativo|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Ambiente do Serviço de Aplicativo|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-workload-ase-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Ambiente do Serviço de Aplicativo|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo de Ambiente do Serviço de Aplicativo|Modelo do Resource Manager|Nome de domínio|Nome do Active Directory criado pela amostra. O valor padrão é _contoso.com_.|
 |Modelo de Ambiente do Serviço de Aplicativo|Modelo do Resource Manager|Local do ASE|Local do Ambiente do Serviço de Aplicativo. O valor padrão é _Oeste dos EUA 2_.|
 |Modelo de Ambiente do Serviço de Aplicativo|Modelo do Resource Manager|Retenção de log do Gateway de Aplicativo em dias|Retenção de dados em dias. O valor padrão é _365_.|

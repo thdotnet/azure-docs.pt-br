@@ -7,14 +7,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: overview
-ms.date: 07/03/2019
+ms.date: 08/28/2019
 ms.author: alkohli
-ms.openlocfilehash: 0f4657cdd71a104ca111f62a6e9757b5a33b46e8
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 362b7457538a16d389c3cc40fc44da19b073c0b0
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592312"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70142907"
 ---
 # <a name="what-is-azure-data-box-heavy"></a>O que é o Azure Data Box Heavy?
 
@@ -68,7 +68,7 @@ O dispositivo Data Box Heavy tem os seguintes recursos nesta versão.
 | Potência                                                    | 4 unidades de fonte de energia internas compartilhadas nos dois nós do dispositivo <br> Consumo de energia típico de 1.200 watts|
 | Capacidade de armazenamento                                        | Aproximadamente 70 discos de 1 PB brutos com 14 TB cada <br> 770 TB de capacidade utilizável|
 | Número de nós                                          | 2 nós independentes por dispositivo (500 TB cada) |
-| Adaptadores de rede por nó                             | 4 adaptadores de rede por nó <br><br> MGMT, DATA3 <ul><li> 2 interfaces 1 GbE </li><li> MGMT serve para gerenciamento e configuração inicial, não é configurável pelo usuário </li><li> DATA3 é um protocolo DHCP configurável pelo usuário por padrão</li><li>Os adaptadores de rede 1 GbE também podem ser configurados como as interfaces 10 GbE</li></ul>Interfaces de dados DATA1, DATA2 <ul><li>2 interfaces 40 GbE </li><li> Usuário configurável para DHCP (padrão) ou estático</li></ul>|
+| Adaptadores de rede por nó                             | 4 adaptadores de rede por nó <br><br> MGMT, DATA3 <ul><li> 2 interfaces 1 GbE </li><li> MGMT serve para gerenciamento e configuração inicial, não é configurável pelo usuário </li><li> DATA3 é um protocolo DHCP configurável pelo usuário por padrão</li></ul>Interfaces de dados DATA1, DATA2 <ul><li>2 interfaces 40 GbE </li><li> Usuário configurável para DHCP (padrão) ou estático</li></ul>|
 
 
 ## <a name="components"></a>Componentes

@@ -7,13 +7,12 @@ ms.date: 02/04/2019
 ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 83133629d92abb50d9fd7509cf182282503fc041
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: f5c2b58fc6877bc196eb98faab88712f474523cb
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799221"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241336"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Início Rápido: Definir e atribuir um Azure Blueprint com a API REST
 
@@ -28,8 +27,6 @@ Aprender a criar e atribuir blueprints permite definir padrões comuns para dese
 > - Remover um blueprint que tenha sido atribuído a uma assinatura
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free) antes de começar.
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="getting-started-with-rest-api"></a>Introdução à API REST
 

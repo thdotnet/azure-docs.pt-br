@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 08/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: a8e19c89cec00bba05eb74e752268e1da43a1ac0
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 822bbd004035d9745535942c508cae6702e5b99b
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278121"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>O que é o serviço Azure Machine Learning?
 
@@ -35,9 +35,12 @@ Explore e prepare dados, treine e teste modelos e implante-os usando ferramentas
 + [Jupyter Notebooks](https://jupyter.org) nos quais você usa os [SDKs](https://docs.microsoft.com/azure/machine-learning/service/#reference) para escrever seu próprio código, tal como [esses notebooks de exemplo](https://aka.ms/aml-notebooks)
 + [Extensão do Visual Studio Code](how-to-vscode-tools.md)
 
+
+> [!VIDEO https://channel9.msdn.com/Events/Connect/Microsoft-Connect--2018/D240/player]
+
 ## <a name="what-can-i-do-with-azure-machine-learning-service"></a>O que eu posso fazer com o serviço Azure Machine Learning?
 
-Use o <a href="https://aka.ms/aml-sdk" target="_blank">SDK do Python do Azure Machine Learning</a> com pacotes Python open-source ou use a [interface visual (versão prévia)](ui-tutorial-automobile-price-train-score.md) para criar e treinar modelos altamente precisos de machine learning e aprendizado profundo por conta própria em um workspace do Serviço do Azure Machine Learning.
+Use o <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">SDK do Python do Azure Machine Learning</a> com pacotes Python open-source ou use a [interface visual (versão prévia)](ui-tutorial-automobile-price-train-score.md) para criar e treinar modelos altamente precisos de machine learning e aprendizado profundo por conta própria em um workspace do Serviço do Azure Machine Learning.
 
 É possível escolher entre muitos componentes de aprendizado de máquina disponíveis em pacotes do Python open-source, como <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>, <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a> e <a href="https://mxnet.io" target="_blank">MXNet</a>.
 
@@ -45,7 +48,7 @@ Independentemente se você escreve código ou usa a interface visual, é possív
 
 ### <a name="code-first-experience"></a>Experiência de primeiro código
 
-Inicie o treinamento em seu computador local usando o <a href="https://aka.ms/aml-sdk" target="_blank">SDK do Python do Azure Machine Learning</a> e, em seguida, expanda para a nuvem. Com muitos [destinos de computação](how-to-set-up-training-targets.md) disponíveis, como a Computação do Azure Machine Learning e o [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), além de [serviços avançados de ajuste de hiperparâmetro](how-to-tune-hyperparameters.md), você pode criar modelos melhores com mais rapidez usando o poder da nuvem.
+Inicie o treinamento em seu computador local usando o <a href="https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">SDK do Python do Azure Machine Learning</a> e, em seguida, expanda para a nuvem. Com muitos [destinos de computação](how-to-set-up-training-targets.md) disponíveis, como a Computação do Azure Machine Learning e o [Azure Databricks](/azure/azure-databricks/what-is-azure-databricks), além de [serviços avançados de ajuste de hiperparâmetro](how-to-tune-hyperparameters.md), você pode criar modelos melhores com mais rapidez usando o poder da nuvem.
 
 Também é possível [automatizar o treinamento e o ajuste do modelo](tutorial-auto-train-models.md) usando o SDK.
 
@@ -63,7 +66,7 @@ Para o treinamento sem código, experimente:
 
 Quando você tem o modelo certo, é possível usá-lo facilmente em um serviço Web, em um dispositivo IoT ou do Power BI. Para obter mais informações, confira o artigo [Como e onde implantar](how-to-deploy-and-where.md).
 
-Em seguida, você pode gerenciar seus modelos implantados usando o [portal do Azure](https://aka.ms/aml-sdk) ou o [SDK do Azure Machine Learning para Python](https://portal.azure.com/).
+Em seguida, você pode gerenciar seus modelos implantados usando o [portal do Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) ou o [SDK do Azure Machine Learning para Python](https://portal.azure.com/).
 
 Esses modelos podem ser consumidos e retornar previsões em [tempo real](how-to-consume-web-service.md) ou [assincronamente](how-to-run-batch-predictions.md) em grandes quantidades de dados.
 

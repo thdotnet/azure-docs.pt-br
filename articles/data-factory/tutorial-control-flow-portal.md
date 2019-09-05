@@ -3,21 +3,20 @@ title: Ramificação no pipeline do Azure Data Factory | Microsoft Docs
 description: Aprenda a controlar o fluxo de dados no Azure Data Factory por ramificação e encadeamento de atividades.
 services: data-factory
 documentationcenter: ''
-author: sharonlo101
-manager: craigg
-ms.reviewer: douglasl
+author: djpmsft
+ms.author: daperlov
+manager: jroth
+ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
-ms.author: shlo
-ms.openlocfilehash: f2a8983ae5306ec2ada7b4b537c2f17425b8717d
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: d8e4c17307b35295f37f1f84db912d04ca625b6a
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449377"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140901"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ramificação e encadeamento de atividades em um pipeline de Data Factory
 Neste tutorial, você deve criar um pipeline de Data Factory que apresente alguns dos recursos de fluxo de controle. Esse pipeline faz uma cópia simples de um contêiner no Armazenamento de Blobs do Azure para outro contêiner na mesma conta de armazenamento. Se a atividade de cópia for bem-sucedida, o pipeline enviará detalhes da operação de cópia bem-sucedida (tais como a quantidade de dados gravados) em um email de êxito. Se a atividade de cópia falhar, o pipeline enviará detalhes da falha de cópia (por exemplo, a mensagem de erro) em um email de falha. Ao longo do tutorial, você verá como passar parâmetros.
@@ -195,7 +194,7 @@ Nesta etapa, você pode criar um pipeline com uma atividade de Cópia e duas ati
 
     1. Insira **AzureStorageLinkedService** como o **Nome**.
     2. Selecione sua conta de armazenamento do Azure cmoo o **Nome da conta de armazenamento**.
-    3. Clique em **Salvar**.
+    3. Clique em **Save** (Salvar).
 
    ![Novo serviço vinculado de Armazenamento do Azure](./media/tutorial-control-flow-portal/new-azure-storage-linked-service.png)
 12. Insira `@pipeline().parameters.sourceBlobContainer` como a pasta e `emp.txt` como o nome do arquivo. Você pode usar o parâmetro de pipeline sourceBlobContainer para definir o caminho da pasta para o conjunto de dados. 
@@ -272,7 +271,7 @@ Nesta etapa, você pode criar um pipeline com uma atividade de Cópia e duas ati
 23. Arraste o botão **vermelho** próximo à atividade Cópia para a segunda atividade Web **SendFailureEmailActivity**. Você pode mover as atividades de forma que o pipeline se pareça com a imagem a seguir: 
 
     ![Pipeline completo com todas as atividades](./media/tutorial-control-flow-portal/full-pipeline.png)
-24. Para validar o pipeline, clique no botão **Validar** na barra de ferramentas. Feche a janela **Saída da Validação do Pipeline** clicando no botão **>>**.
+24. Para validar o pipeline, clique no botão **Validar** na barra de ferramentas. Feche a janela **Saída da Validação do Pipeline** clicando no botão **>>** .
 
     ![Validar o pipeline](./media/tutorial-control-flow-portal/validate-pipeline.png)
 24. Para publicar as entidades (conjuntos de dados, pipelines etc.) no serviço Data Factory, selecione **Publicar tudo**. Aguarde até que você veja a mensagem **Publicado com êxito**.

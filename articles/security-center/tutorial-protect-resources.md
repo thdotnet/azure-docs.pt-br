@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/3/2018
 ms.author: v-mohabe
-ms.openlocfilehash: 8fc287826d1a98b5d61229979544fdb3780455d4
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 7533a8636697db92a69cfec99d0e89138164d7b7
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967930"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70147895"
 ---
 # <a name="tutorial-protect-your-resources-with-azure-security-center"></a>Tutorial: Proteger seus recursos com a Central de Segurança do Azure
 A Central de Segurança limita a exposição a ameaças por meio de controles de acesso e de aplicativo a fim de bloquear atividades mal-intencionadas. O acesso da VM (máquina virtual) JIT (just-in-time) reduz a exposição a ataques permitindo que você negue o acesso persistente às VMs. Em vez disso, você fornece acesso controlado e auditado às VMs somente quando for necessário. Controles de aplicativo adaptáveis ajudam a proteger VMs contra malware, controlando quais aplicativos podem ser executados em suas VMs. A Central de Segurança usa o aprendizado de máquina para analisar os processos em execução na VM e ajuda a aplicar regras de lista de permissões usando essa inteligência.
@@ -72,8 +72,6 @@ As portas de gerenciamento não precisam ficar abertas o tempo todo. Elas só pr
 
 ## <a name="harden-vms-against-malware"></a>Proteger VMs contra malware
 Os controles de aplicativo adaptáveis ajudam você a definir um conjunto de aplicativos que podem ser executados em grupos de recursos configurados que, entre outros benefícios, ajuda você a proteger suas VMs contra malware. A Central de Segurança usa o aprendizado de máquina para analisar os processos em execução na VM e ajuda a aplicar regras de lista de permissões usando essa inteligência.
-
-Este recurso só está disponível para máquinas com Windows.
 
 1. Volte para o menu principal da Central de Segurança. Em **DEFESA AVANÇADA DE NUVEM**, selecione **Controles de aplicativo adaptáveis**.
 

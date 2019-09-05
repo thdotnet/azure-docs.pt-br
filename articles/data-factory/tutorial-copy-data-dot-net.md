@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jingwang
-ms.openlocfilehash: dbf45853f5f7a440578f3a9005831a4ef63d85e7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 49b5b03356790bd45b2ad29897a57b746af1abe1
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65778858"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140695"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Copiar dados do Blob do Azure para o Banco de Dados SQL do Azure usando o Azure Data Factory
 
@@ -42,7 +41,7 @@ Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://a
 * **Conta de Armazenamento do Azure**. Você usa o Armazenamento de Blobs como um armazenamento de dados de **origem**. Se você não tiver uma conta de Armazenamento do Azure, veja o artigo [Criar uma conta de armazenamento](../storage/common/storage-quickstart-create-account.md) para conhecer as etapas para criar uma.
 * **Banco de dados SQL do Azure**. Você usa o banco de dados como um armazenamento de dados de **coletor**. Se você não tiver um Banco de Dados SQL do Azure, veja o artigo [Criar um Banco de Dados SQL do Azure](../sql-database/sql-database-get-started-portal.md) para conhecer as etapas para criar um.
 * **Visual Studio** 2015 ou 2017. Este artigo passo a passo usa o Visual Studio 2017.
-* **Baixar e instalar o [SDK do .NET do Azure](https://azure.microsoft.com/downloads/)**.
+* **Baixar e instalar o [SDK do .NET do Azure](https://azure.microsoft.com/downloads/)** .
 * **Crie um aplicativo no Azure Active Directory** seguindo [esta instrução](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Anote os valores a seguir, que você usará em etapas posteriores: **ID do aplicativo**, **chave de autenticação** e **ID do locatário**. Seguindo as instruções no mesmo artigo, atribua o aplicativo à função "**Colaborador**".
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Criar um blob e uma tabela SQL
@@ -89,7 +88,7 @@ Usando o Visual Studio 2015/2017, crie um aplicativo de console C# .NET.
 
 1. Inicie o **Visual Studio**.
 2. Clique em **Arquivo**, aponte para **Novo** e clique em **Projeto**.
-3. Selecione **Visual C#** -> **Aplicativo de Console (.NET Framework)** na lista de tipos de projeto à direita. O .NET versão 4.5.2 ou superior é necessário.
+3. Selecione **Visual C#**  -> **Aplicativo de Console (.NET Framework)** na lista de tipos de projeto à direita. O .NET versão 4.5.2 ou superior é necessário.
 4. Digite **ADFv2Tutorial** para o Nome.
 5. Clique em **OK** para criar o projeto.
 

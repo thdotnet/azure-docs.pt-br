@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 07/16/2019
+ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 767866fd6768237c4d3a0d7ea422521254414fb3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 06e2a772bfad7b1964f813a6cb6266efe61c6ccf
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559870"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70206861"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Início Rápido: Criar uma base de dados de conhecimento no QnA Maker usando o Java
 
@@ -114,7 +114,7 @@ O método principal cria a base de dados de conhecimento, em seguida, sonda o st
 
 2. Insira o comando a seguir em uma linha de comando para executar o programa. Ele enviará a solicitação para a API de QnA Maker para criar a base de dados de conhecimento e, em seguida, sondará os resultados a cada 30 segundos. Todas as respostas são impressas na janela do console.
 
-    ```base
+    ```bash
     java -cp ",;libs/*" CreateKB
     ```
 

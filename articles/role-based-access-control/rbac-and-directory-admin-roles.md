@@ -15,12 +15,12 @@ ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 1b7183da84b994da8694440183e367f143722002
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: be37768a5cef38ae0dc49e12f1d83ba8005ab961
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295158"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70194183"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Funções de administrador da assinatura clássica, funções do Azure RBAC e funções de administrador do Azure AD
 
@@ -81,7 +81,7 @@ As demais funções internas permitem o gerenciamento de recursos específicos d
 
 Somente o portal do Azure e as APIs do Azure Resource Manager dão suporte ao RBAC. Os usuários, grupos e aplicativos aos quais são atribuídas funções RBAC não podem usar as [APIs do modelo de implantação clássico do Azure](../azure-resource-manager/resource-manager-deployment-model.md).
 
-No portal do Azure, as atribuições de função usando o RBAC aparecem na folha **Controle de acesso (IAM)**. Essa folha pode ser encontrada em todo o portal, por exemplo, em grupos de gerenciamento, assinaturas, grupos de recursos e vários recursos.
+No portal do Azure, as atribuições de função usando o RBAC aparecem na folha **Controle de acesso (IAM)** . Essa folha pode ser encontrada em todo o portal, por exemplo, em grupos de gerenciamento, assinaturas, grupos de recursos e vários recursos.
 
 ![Folha Controle de acesso (IAM) no portal do Azure](./media/rbac-and-directory-admin-roles/access-control-role-assignments.png)
 
@@ -97,7 +97,7 @@ As funções de administrador do Azure AD são usadas para gerenciar recursos do
 
 | Função de administrador do Azure AD | Permissões | Observações |
 | --- | --- | --- |
-| [Administrador global](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator) | <ul><li>Gerenciar o acesso a todos os recursos administrativos do Azure Active Directory, bem como serviços federados ao Azure Active Directory</li><li>Atribuir funções de administrador a outras pessoas</li><li>Redefinir a senha para qualquer usuário e todos os outros administradores</li></ul> | A pessoa que se inscreve no locatário do Azure Active Directory torna-se um administrador global. |
+| [Administrador global](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) | <ul><li>Gerenciar o acesso a todos os recursos administrativos do Azure Active Directory, bem como serviços federados ao Azure Active Directory</li><li>Atribuir funções de administrador a outras pessoas</li><li>Redefinir a senha para qualquer usuário e todos os outros administradores</li></ul> | A pessoa que se inscreve no locatário do Azure Active Directory torna-se um administrador global. |
 | [Administrador de usuários](../active-directory/users-groups-roles/directory-assign-admin-roles.md#user-administrator) | <ul><li>Criar e gerenciar todos os aspectos de usuários e grupos</li><li>Gerenciar tíquetes de suporte</li><li>Monitorar a integridade do serviço</li><li>Alterar senhas de usuários, Administradores de Assistência Técnica e outros Administradores de Usuário</li></ul> |  |
 | [Administrador de cobrança](../active-directory/users-groups-roles/directory-assign-admin-roles.md#billing-administrator) | <ul><li>Fazer compras</li><li>Gerenciar Assinaturas</li><li>Gerenciar tíquetes de suporte</li><li>Monitorar a integridade do serviço</li></ul> |  |
 

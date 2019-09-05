@@ -7,17 +7,16 @@ author: nabhishek
 manager: craigg
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/12/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: fad8045ac8bddb236f0f80ad223ebafc7aa7e93a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: b6426017b7608742866cedb08b5ac9298400d433
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002850"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140898"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Executar um Databricks Notebook com a atividade Databricks Notebook no Azure Data Factory
 
@@ -137,7 +136,7 @@ Nesta seção, você cria um serviço vinculado Databricks. Esse serviço vincul
 
 1.  Nas propriedades da atividade **Notebook** do **Databricks**, na parte inferior, execute as seguintes etapas:
 
-     a. Alterne para a guia **Azure Databricks**.
+    a. Alterne para a guia **Azure Databricks**.
 
     b. Selecione **AzureDatabricks\_LinkedService** (criado no procedimento anterior).
 
@@ -175,7 +174,7 @@ Nesta seção, você cria um serviço vinculado Databricks. Esse serviço vincul
 
 1.  Volte para a **ferramenta de criação de IU do Data Factory**. Navegue a guia **Configurações** na **Atividade Notebook1**.
 
-     a.  **Adicionar parâmetro** à atividade de Notebook. Use o mesmo parâmetro que você adicionou anteriormente ao **Pipeline**.
+    a.  **Adicionar parâmetro** à atividade de Notebook. Use o mesmo parâmetro que você adicionou anteriormente ao **Pipeline**.
 
        ![Adicionar um parâmetro](media/transform-data-using-databricks-notebook/new-adf-parameters.png)
 

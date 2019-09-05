@@ -8,16 +8,15 @@ manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/20/2018
 ms.author: yexu
-ms.openlocfilehash: b9dafd31ed84298c97932b1cdb5593eb17769ef9
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: d46c460f7158635e520b47517fb3aab005af94a2
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565998"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70140764"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Carregar incrementalmente os dados de várias tabelas no SQL Server para um banco de dados SQL do Azure
 Neste tutorial, você pode criar um Azure Data Factory com um pipeline que carrega dados delta de várias tabelas do SQL Server local para um banco de dados SQL do Azure.    
@@ -67,7 +66,7 @@ Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://a
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * **SQL Server**. Neste tutorial, você utiliza um banco de dados do SQL Server local como o armazenamento de dados de origem. 
-* **Banco de dados SQL do Azure**. Use um banco de dados SQL do Azure como o armazenamento de dados do coletor. Se você não tiver um banco de dados SQL, consulte [Criar um banco de dados SQL](../sql-database/sql-database-get-started-portal.md) para saber as etapas para criar um. 
+* **Banco de dados SQL do Azure**. Use um banco de dados SQL do Azure como o armazenamento de dados do coletor. Se você não tiver um banco de dados SQL, consulte [Criar um banco de dados SQL do Azure](../sql-database/sql-database-get-started-portal.md) para saber as etapas para criar um. 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Criar tabelas de origem no banco de dados do SQL Server
 
@@ -284,7 +283,7 @@ Conforme você move dados de um armazenamento de dados em uma rede privada (loca
 1. Clique em **Clique aqui para inicializar a instalação expressa para este computador** na seção **Opção 1: instalação expressa**. 
 
    ![Clique no link de instalação Expressa](./media/tutorial-incremental-copy-multiple-tables-portal/click-express-setup.png)
-1. Na janela **Instalação Expressa do Microsoft Integration Runtime (auto-hospedado)**, clique em **Fechar**. 
+1. Na janela **Instalação Expressa do Microsoft Integration Runtime (auto-hospedado)** , clique em **Fechar**. 
 
    ![Instalação do tempo de execução de integração - êxito](./media/tutorial-incremental-copy-multiple-tables-portal/integration-runtime-setup-successful.png)
 1. No navegador da Web, na janela **Configuração de Tempo de Execução de Integração**, clique em **Concluir**. 
@@ -440,7 +439,7 @@ O pipeline usa uma lista de nomes de tabela como um parâmetro. A atividade ForE
 1. Alterne para a guia **Configurações** na janela **Propriedades** e digite `@pipeline().parameters.tableList` como **Itens**. A atividade ForEach itera por meio de uma lista de tabelas e executa a operação de cópia incremental. 
 
     ![Atividade ForEach - configurações](./media/tutorial-incremental-copy-multiple-tables-portal/foreach-settings.png)
-1. Selecione a atividade **ForEach** no pipeline, se já não estiver selecionada. Clique no botão **Editar (ícone de lápis)**.
+1. Selecione a atividade **ForEach** no pipeline, se já não estiver selecionada. Clique no botão **Editar (ícone de lápis)** .
 
     ![Atividade ForEach - edição](./media/tutorial-incremental-copy-multiple-tables-portal/edit-foreach.png)
 1. Na caixa de ferramentas **Atividades**, expanda **Geral** e arraste e solte a atividade de **Pesquisa** para a superfície do designer de pipeline, e insira **LookupOldWaterMarkActivity** para o **Nome**.
@@ -516,7 +515,7 @@ O pipeline usa uma lista de nomes de tabela como um parâmetro. A atividade ForE
 
         | NOME | Tipo | Valor | 
         | ---- | ---- | ----- |
-        | LastModifiedtime | DateTime | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
+        | LastModifiedtime | Datetime | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
         | TableName | Cadeia de caracteres | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
     
         ![Atividade de Procedimento armazenado - configurações de procedimento armazenado](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)

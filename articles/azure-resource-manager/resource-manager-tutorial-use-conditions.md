@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b997451a25f8a093491a322376db95ea53165893
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 50c6c2a1f8be979d10b77793adb168e6bd276e49
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989150"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258857"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Tutorial: Condição de uso em modelos do Azure Resource Manager
 
@@ -38,7 +38,7 @@ Este tutorial cobre as seguintes tarefas:
 
 Este tutorial aborda apenas um cenário básico de como usar as condições. Para obter mais informações, consulte:
 
-* [Estrutura de arquivos de modelo: Condição](./resource-group-authoring-templates.md#condition).
+* [Estrutura de arquivos de modelo: Condição](conditional-resource-deployment.md).
 * [Implantar condicionalmente um recurso em um modelo do Azure Resource Manager](/azure/architecture/building-blocks/extending-templates/conditional-deploy).
 * [Função de modelo: If](./resource-group-template-functions-logical.md#if).
 * [Funções de comparação para modelos do Azure Resource Manager](./resource-group-template-functions-comparison.md)

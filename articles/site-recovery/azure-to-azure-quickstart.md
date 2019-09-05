@@ -1,20 +1,19 @@
 ---
 title: Configurar a recuperação de desastre para uma VM IaaS do Azure para uma região secundária do Azure
 description: Este início rápido fornece as etapas necessárias para recuperação de desastre de uma VM de IaaS do Azure entre regiões do Azure, usando o serviço Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: quickstart
-ms.date: 05/30/2019
+ms.date: 08/28/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 46376091649a2c2b1498fd13e8775fb161de32c1
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: d23d16d1315eeaf224a5291641ab088212fcdc77
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399539"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70146946"
 ---
 # <a name="set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Configurar a recuperação de desastre para uma região secundária do Azure para uma VM do Azure        
 

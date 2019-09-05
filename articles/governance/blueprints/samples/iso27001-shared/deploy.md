@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 88d5cfbbcb29cacc2e8c1c6a226367c5f23e8231
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 04285ace1713a03a812f1c79895da64e6dac42a8
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926294"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231721"
 ---
 # <a name="deploy-the-iso-27001-shared-services-blueprint-sample"></a>Implantar a amostra de blueprint dos Serviços Compartilhados ISO 27001
 
@@ -89,8 +89,8 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
      - **Nome da organização**: insira um nome curto para a sua organização. Essa propriedade é usada principalmente para recursos de nomenclatura.
      - **Prefixo de endereço da sub-rede dos serviços compartilhados**: Forneça o valor de notação CIDR para colocar os recursos implantados na mesma rede.
      - **Localização dos serviços compartilhados**: Determina em que local os artefatos são implantados. Nem todos os serviços estão disponíveis em todas as localizações. Os artefatos que implantam esses serviços fornecem uma opção de parâmetro para a localização na qual esse artefato deverá ser implantado.
-     - **Localização permitida (política: Iniciativa de blueprint para ISO 27001)**: Valor que indica as localizações permitidas para grupos de recursos e recursos.
-     - **Workspace do Log Analytics para agentes de VM (política: Iniciativa de blueprint para ISO 27001)**: Especifica a ID do recurso de um workspace. Esse parâmetro usa uma função `concat` para construir a ID do recurso.
+     - **Localização permitida (política: Iniciativa de blueprint para ISO 27001)** : Valor que indica as localizações permitidas para grupos de recursos e recursos.
+     - **Workspace do Log Analytics para agentes de VM (política: Iniciativa de blueprint para ISO 27001)** : Especifica a ID do recurso de um workspace. Esse parâmetro usa uma função `concat` para construir a ID do recurso.
 
    - Parâmetros do artefato
 
@@ -107,21 +107,21 @@ A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 
 |Nome do artefato|Tipo de artefato|Nome do parâmetro|DESCRIÇÃO|
 |-|-|-|-|
-|\[Versão Prévia\]: Implantar o Agente do Log Analytics no VMSS (Conjuntos de Dimensionamento de VMs) do Linux|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Linux a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_.|
-|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Linux a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_.|
-|\[Versão Prévia\]: Implantar o Agente do Log Analytics no VMSS (Conjuntos de Dimensionamento de VMs) do Windows|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Windows a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_.|
-|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Windows|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Windows a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_.|
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics no VMSS (Conjuntos de Dimensionamento de VMs) do Linux|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Linux a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_ .|
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Linux a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_ .|
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics no VMSS (Conjuntos de Dimensionamento de VMs) do Windows|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Windows a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_ .|
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Windows|Atribuição de política|Opcional: Lista de imagens de VM compatíveis com o sistema operacional Windows a serem adicionadas ao escopo|(Opcional) O valor padrão é _["none"]_ .|
 |Tipos de recursos permitidos|Atribuição de política|Tipos de recursos permitidos|Lista de tipos de recursos permitidos a serem implantados. Essa lista é composta por todos os tipos de recursos implantados nos Serviços Compartilhados.|
-|SKUs de contas de armazenamento permitidas|Atribuição de política|SKUs de armazenamento permitidos|Lista de SKUs de conta de armazenamento dos logs de diagnóstico permitidos. O valor padrão é _["Standard_LRS"]_.|
-|SKUs de máquinas virtuais permitidas|Atribuição de política|Lista de SKUs de máquina virtual com permissão de serem implantados. O valor padrão é _["Standard_DS1_v2", "Standard_DS2_v2"]_.|
+|SKUs de contas de armazenamento permitidas|Atribuição de política|SKUs de armazenamento permitidos|Lista de SKUs de conta de armazenamento dos logs de diagnóstico permitidos. O valor padrão é _["Standard_LRS"]_ .|
+|SKUs de máquinas virtuais permitidas|Atribuição de política|Lista de SKUs de máquina virtual com permissão de serem implantados. O valor padrão é _["Standard_DS1_v2", "Standard_DS2_v2"]_ .|
 |Iniciativa de blueprint para ISO 27001|Atribuição de política|Tipos de recursos para auditar logs de diagnóstico|Lista de tipos de recurso a serem auditados se a configuração do log de diagnóstico não estiver habilitada. Os valores aceitáveis podem ser encontrados em [Esquemas de logs de diagnóstico do Azure Monitor](../../../../azure-monitor/platform/diagnostic-logs-schema.md#supported-log-categories-per-resource-type).|
-|Grupo de recursos do Log Analytics|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvsc-log-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Log Analytics|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Log Analytics|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvsc-log-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Log Analytics|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Log Analytics|Modelo do Resource Manager|Camada de serviço|Define a camada do workspace do Log Analytics. O valor padrão é _PerNode_.|
 |Modelo do Log Analytics|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
-|Modelo do Log Analytics|Modelo do Resource Manager|Local padrão|Região usada para criar o workspace do Log Analytics. O valor padrão é _Oeste dos EUA 2_.|
-|Grupo de recursos de rede|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-net-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos de rede|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Modelo do Log Analytics|Modelo do Resource Manager|Location|Região usada para criar o workspace do Log Analytics. O valor padrão é _Oeste dos EUA 2_.|
+|Grupo de recursos de rede|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-net-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos de rede|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Firewall do Azure|Modelo do Resource Manager|IP privado do firewall do Azure|Configura o IP privado do [Firewall do Azure](../../../../firewall/overview.md). Esse valor também é usado como a tabela de rotas padrão na sub-rede dos serviços compartilhados. Deve fazer parte da notação CIDR definida no **prefixo de endereço da sub-rede do Firewall do Azure**. O valor padrão é _10.0.4.4_.|
 |Modelo do Firewall do Azure|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
 |Modelo do Grupo de Segurança de Rede|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
@@ -132,8 +132,8 @@ A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Prefixo de endereço da sub-rede do Gateway de Aplicativo|A notação CIDR da sub-rede do Gateway de Aplicativo. O valor padrão é _10.0.2.0/24_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Prefixo de endereço da sub-rede do gateway de rede virtual|A notação CIDR da sub-rede do gateway de rede virtual. O valor padrão é _10.0.3.0/24_.|
 |Modelo de Rede Virtual e a Tabela de Rotas|Modelo do Resource Manager|Prefixo de endereço da sub-rede do Firewall do Azure|A notação CIDR da sub-rede do [Firewall do Azure](../../../../firewall/overview.md). Deve incluir o parâmetro de **IP privado do Firewall do Azure**.|
-|Grupo de recursos do Cofre de Chaves|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-kv-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Cofre de Chaves|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Cofre de Chaves|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-kv-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Cofre de Chaves|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Key Vault|Modelo do Resource Manager|Nome de usuário do administrador do jumpbox|Nome de usuário do jumpbox. Precisa corresponder ao mesmo valor da propriedade no **Modelo do jumpbox**. O valor padrão é _jb-admin-user_.|
 |Modelo do Key Vault|Modelo do Resource Manager|Chave SSH ou senha do administrador do jumpbox|Chave ou senha para a conta no jumpbox. Precisa corresponder ao mesmo valor da propriedade no **Modelo do jumpbox**. Nenhum valor padrão e não pode ser deixado em branco.|
 |Modelo do Key Vault|Modelo do Resource Manager|Nome de usuário do administrador de domínio|O nome de usuário usado para acessar a VM do Active Directory e para ingressar outras VMs em um domínio. Precisa corresponder ao valor da propriedade **Usuário administrador do domínio** no **Modelo do Active Directory Domain Services**. O valor padrão é _domain-admin-user_.|
@@ -141,14 +141,14 @@ A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 |Modelo do Key Vault|Modelo do Resource Manager|ID de objeto do AAD|O identificador de objeto do AAD da conta que exige acesso à instância do Key Vault. Nenhum valor padrão e não pode ser deixado em branco. Para localizar esse valor no portal do Azure, pesquise e selecione "Usuários" em _Serviços_. Use a caixa _Nome_ para filtrar o nome da conta e selecione essa conta. Na página _Perfil do usuário_, selecione o ícone "Clique para copiar" ao lado da _ID de Objeto_.  |
 |Modelo do Key Vault|Modelo do Resource Manager|Retenção de log em dias|Retenção de dados em dias. O valor padrão é _365_.|
 |Modelo do Key Vault|Modelo do Resource Manager|SKU do Key Vault|Especifica o SKU do Key Vault criado. O valor padrão é _Premium_.|
-|Grupo de recursos do jumpbox|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-jb-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do jumpbox|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do jumpbox|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-jb-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do jumpbox|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do jumpbox|Modelo do Resource Manager|Nome de usuário do administrador do jumpbox|O nome de usuário usado para acessar as VMs do jumpbox. Precisa corresponder ao mesmo valor da propriedade no **Modelo do Key Vault**. O valor padrão é _jb-admin-user_.|
 |Modelo do jumpbox|Modelo do Resource Manager|Senha do administrador do jumpbox (ID do recurso do Key Vault)|A ID do Recurso do Key Vault. Use "/subscriptions/{subscriptionId}/resourceGroups/{orgName}-sharedsvcs-kv-rg/providers/Microsoft.KeyVault/vaults/{orgName}-sharedsvcs-kv" e substitua `{subscriptionId}` pela ID de assinatura e `{orgName}` pelo parâmetro de blueprint **Nome da organização**.|
 |Modelo do jumpbox|Modelo do Resource Manager|Senha do administrador do jumpbox (nome do segredo do Key Vault)|Nome de usuário do administrador do jumpbox. Precisa corresponder ao valor da propriedade **Nome de usuário do administrador do jumpbox** no **Modelo do Key Vault**.|
 |Modelo do jumpbox|Modelo do Resource Manager|Sistema operacional do jumpbox|Determina o sistema operacional da VM de jumpbox. O valor padrão é _Windows_.|
-|Grupo de recursos do Active Directory Domain Services|Grupo de recursos|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-adds-rg` para tornar o grupo de recursos exclusivo.|
-|Grupo de recursos do Active Directory Domain Services|Grupo de recursos|Local padrão|**Bloqueado** – usa o parâmetro de blueprint.|
+|Grupo de recursos do Active Directory Domain Services|Resource group|NOME|**Bloqueado** – concatena o **Nome da organização** com `-sharedsvcs-adds-rg` para tornar o grupo de recursos exclusivo.|
+|Grupo de recursos do Active Directory Domain Services|Resource group|Location|**Bloqueado** – usa o parâmetro de blueprint.|
 |Modelo do Active Directory Domain Services|Modelo do Resource Manager|Nome de usuário do administrador de domínio|Nome de usuário para o jumpbox do ADDS. Precisa corresponder ao mesmo valor da propriedade no **Modelo do Key Vault**. O valor padrão é _adds-admin-user_.|
 |Modelo do Active Directory Domain Services|Modelo do Resource Manager|Senha do administrador de domínio (ID do recurso do Key Vault)|A ID do Recurso do Key Vault. Use "/subscriptions/{subscriptionId}/resourceGroups/{orgName}-sharedsvcs-kv-rg/providers/Microsoft.KeyVault/vaults/{orgName}-sharedsvcs-kv" e substitua `{subscriptionId}` pela ID de assinatura e `{orgName}` pelo parâmetro de blueprint **Nome da organização**.|
 |Modelo do Active Directory Domain Services|Modelo do Resource Manager|Senha do administrador de domínio (nome do segredo do Key Vault)|Nome de usuário do administrador do domínio. Precisa corresponder ao valor da propriedade **Nome de usuário do administrador do domínio** no **Modelo do Key Vault**.|
