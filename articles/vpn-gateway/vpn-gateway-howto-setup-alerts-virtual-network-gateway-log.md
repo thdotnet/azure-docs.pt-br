@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: c84d457c51f71bdf315bbbcec674ff1186dd905f
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: d914c020553bace7ea5ab8898ac4093fea30e6c9
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249007"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307000"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Configurar alertas em eventos de log de diagnóstico do gateway de VPN
 
@@ -70,12 +70,17 @@ As etapas de exemplo a seguir criarão um alerta para um evento de desconexão q
 
    ![Seleções para uma pesquisa de logs personalizada](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert8.png  "Selecione")
 
-10. Insira a consulta a seguir na caixa de texto **Consulta de pesquisa**. Substitua os valores em < > conforme apropriado.
+10. Insira a consulta a seguir na caixa de texto **Consulta de pesquisa**. Substitua os valores em < > e TimeGenerated conforme apropriado.
 
     ```
-    AzureDiagnostics |
-      where Category  == "TunnelDiagnosticLog" and ResourceId == toupper("<RESOURCEID OF GATEWAY>") and TimeGenerated > ago(5m) and
-      remoteIP_s == "<REMOTE IP OF TUNNEL>" and status_s == "Disconnected"
+    AzureDiagnostics
+    | where Category == "TunnelDiagnosticLog"
+    | where _ResourceId == tolower("<RESOURCEID OF GATEWAY>")
+    | where TimeGenerated > ago(5m) 
+    | where remoteIP_s == "<REMOTE IP OF TUNNEL>"
+    | where status_s == "Disconnected"
+    | project TimeGenerated, OperationName, instance_s, Resource, ResourceGroup, _ResourceId 
+    | sort by TimeGenerated asc
     ```
 
     Defina o valor do limite como 0 e selecione **concluído**.

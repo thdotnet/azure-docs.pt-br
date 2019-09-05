@@ -193,11 +193,11 @@ O objeto solicitado tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| id | cadeia de caracteres | A ID da solicitação que iniciou o evento. |
-| addr | cadeia de caracteres | O IP ou nome de host e, possivelmente, a porta da conexão do cliente que iniciou o evento. Esse valor é o RemoteAddr da solicitação http padrão. |
-| host | cadeia de caracteres | O nome de host acessível externamente da instância de registro, conforme especificado pelo cabeçalho do host http em solicitações de entrada. |
-| method | cadeia de caracteres | O método de solicitação que gerou o evento. |
-| useragent | cadeia de caracteres | O cabeçalho do agente de usuário da solicitação. |
+| id | string | A ID da solicitação que iniciou o evento. |
+| addr | string | O IP ou nome de host e, possivelmente, a porta da conexão do cliente que iniciou o evento. Esse valor é o RemoteAddr da solicitação http padrão. |
+| host | string | O nome de host acessível externamente da instância de registro, conforme especificado pelo cabeçalho do host http em solicitações de entrada. |
+| method | string | O método de solicitação que gerou o evento. |
+| useragent | string | O cabeçalho do agente de usuário da solicitação. |
 
 ## <a name="next-steps"></a>Próximas etapas
 

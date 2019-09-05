@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: 7a2802bd4daa1a009c610688120c9a56583b054f
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 91ff99f674439580d369aad1490ded85d39d377c
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639283"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382888"
 ---
 # <a name="best-practices-for-building-a-language-understanding-app-with-cognitive-services"></a>Melhores práticas para criação de um aplicativo de reconhecimento vocal com os Serviços Cognitivos
 Use o processo de criação de aplicativos para criar seu aplicativo LUIS: 
@@ -84,7 +84,7 @@ Depois de compreender como o seu aplicativo se comporta sem elas, adicione cada 
 
 Não há nenhum problema em adicioná-los no início do design de seu modelo, mas é mais fácil ver como cada recurso altera os resultados depois que o modelo for testado com expressões vocais. 
 
-Uma boa prática é testar por meio do [ponto de extremidade](luis-get-started-create-app.md#query-the-endpoint-with-a-different-utterance) para que você obtenha o benefício adicional do [aprendizado ativo](luis-concept-review-endpoint-utterances.md). O [painel de teste interativo](luis-interactive-test.md) também é uma metodologia de teste válida. 
+Uma boa prática é testar por meio do [ponto de extremidade](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) para que você obtenha o benefício adicional do [aprendizado ativo](luis-concept-review-endpoint-utterances.md). O [painel de teste interativo](luis-interactive-test.md) também é uma metodologia de teste válida. 
  
 
 ### <a name="phrase-lists"></a>Listas de frase

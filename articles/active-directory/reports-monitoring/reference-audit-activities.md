@@ -17,12 +17,12 @@ ms.date: 01/24/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56a94ef3f6ea5737b629efe44bd3e1cc1f36a693
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: aaa60a7737b7781a21e23516d139332f10bdf448
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70127137"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305990"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Referência das atividades de auditoria do Azure AD
 
@@ -408,6 +408,14 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de Diretório|Obter IDPs para um fluxo específico do administrador|
 |Gerenciamento de Diretório|Obter lista de todos os fluxos de administrador|
 |Gerenciamento de Diretório|Obter lista de marcas de todos os fluxos de administrador para todos os usuários|
+|Gerenciamento de Grupo|Membros do grupo de download em massa-iniciados|
+|Gerenciamento de Grupo|Membros do grupo de download em massa-concluído|
+|Gerenciamento de Grupo|Membros do grupo de importação em massa-iniciados|
+|Gerenciamento de Grupo|Membros do grupo de importação em massa-concluídos|
+|Gerenciamento de Grupo|Remoção de membros do grupo em massa-iniciada|
+|Gerenciamento de Grupo|Remoção de membros do grupo em massa – concluída|
+|Gerenciamento de Grupo|Grupos de download em massa-iniciados|
+|Gerenciamento de Grupo|Grupos de download em massa-concluídos|
 |Gerenciamento de Grupo|Obter lista de locatários de um usuário|
 |Gerenciamento de Grupo|Obter declarações autodeclaradas das contas locais|
 |Gerenciamento de Grupo|Obter json de recurso localizado|
@@ -454,28 +462,42 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de funções|Excluir configuração de dispositivo|
 |Gerenciamento de funções|O dispositivo não é mais compatível|
 |Gerenciamento de funções|O dispositivo não é mais gerenciado|
-|Gerenciamento do Usuário|Remover proprietário registrado do dispositivo|
-|Gerenciamento do Usuário|Remover usuários registrados do dispositivo|
-|Gerenciamento do Usuário|Atualizar dispositivo|
-|Gerenciamento do Usuário|Atualizar configuração do dispositivo|
-|Gerenciamento do Usuário|Adicionar membro qualificado à função|
-|Gerenciamento do Usuário|Adicionar membro à função|
-|Gerenciamento do Usuário|Adicionar atribuição de função à definição de função|
-|Gerenciamento do Usuário|Adicionar função originada no modelo|
-|Gerenciamento do Usuário|Adicionar membro no escopo à função|
-|Gerenciamento do Usuário|Remover membro qualificado da função|
-|Gerenciamento do Usuário|Remover o membro da função|
-|Gerenciamento do Usuário|Remover atribuição de função da definição de função|
-|Gerenciamento do Usuário|Remover membro no escopo da função|
-|Gerenciamento do Usuário|Atualizar função|
 |Gerenciamento do Usuário|AccessReview_Review|
 |Gerenciamento do Usuário|AccessReview_Update|
 |Gerenciamento do Usuário|ActivationAborted|
 |Gerenciamento do Usuário|ActivationApproved|
 |Gerenciamento do Usuário|ActivationCanceled|
 |Gerenciamento do Usuário|ActivationRequested|
+|Gerenciamento do Usuário|Adicionar membro qualificado à função|
+|Gerenciamento do Usuário|Adicionar membro à função|
+|Gerenciamento do Usuário|Adicionar atribuição de função à definição de função|
+|Gerenciamento do Usuário|Adicionar função originada no modelo|
+|Gerenciamento do Usuário|Adicionar membro no escopo à função|
 |Gerenciamento do Usuário|Added|
 |Gerenciamento do Usuário|Assign|
+|Gerenciamento do Usuário|Criação de usuários em massa-iniciada|
+|Gerenciamento do Usuário|Criação de usuários em massa – concluída|
+|Gerenciamento do Usuário|Exclusão de usuários em massa – iniciada|
+|Gerenciamento do Usuário|Exclusão de usuários em massa concluída|
+|Gerenciamento do Usuário|Usuários do download em massa-iniciados|
+|Gerenciamento do Usuário|Usuários do download em massa-concluídos|
+|Gerenciamento do Usuário|Restauração em massa de usuários excluídos-iniciado|
+|Gerenciamento do Usuário|Restauração em massa de usuários excluídos-concluído|
+|Gerenciamento do Usuário|Usuários de convite em massa-iniciados|
+|Gerenciamento do Usuário|Usuários de convite em massa-concluídos|
+|Gerenciamento do Usuário|Remover proprietário registrado do dispositivo|
+|Gerenciamento do Usuário|Remover usuários registrados do dispositivo|
+|Gerenciamento do Usuário|Remover membro qualificado da função|
+|Gerenciamento do Usuário|Remover o membro da função|
+|Gerenciamento do Usuário|Remover atribuição de função da definição de função|
+|Gerenciamento do Usuário|Remover membro no escopo da função|
+|Gerenciamento do Usuário|Atualizar dispositivo|
+|Gerenciamento do Usuário|Atualizar configuração do dispositivo|
+|Gerenciamento do Usuário|Atualizar função|
+
+
+
+
 
 
 ## <a name="identity-protection"></a>Identity Protection

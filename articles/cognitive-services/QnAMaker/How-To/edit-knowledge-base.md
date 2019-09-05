@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 1342616a0d32d8ac68965bc04f1fd3ca60146369
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 1450d6b41d9a193f8069509aacd3343ae646c6ac
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966760"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307015"
 ---
 # <a name="edit-a-knowledge-base-in-qna-maker"></a>Editar uma base de dados de conhecimento no QnA Maker
 
@@ -54,7 +54,7 @@ O QnA Maker permite que você gerencie o conteúdo de sua base de dados de conhe
 
 ## <a name="add-a-qna-pair"></a>Adicionar um par de QnA
 
-Na página **configurações** , selecione **Adicionar par de QnA** para adicionar uma nova linha à tabela base de dados de conhecimento.
+Na página **Editar** , selecione **Adicionar par de QnA** para adicionar uma nova linha à tabela base de dados de conhecimento.
 
 ![Adicionar par QnA](../media/qnamaker-how-to-edit-kb/add-qnapair.png)
 

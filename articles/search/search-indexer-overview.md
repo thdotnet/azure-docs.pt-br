@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
-ms.openlocfilehash: af01b6127a8a3e20edfac19ce3b54cecb9d561d1
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: e50d88181a27dcc46da858f220404eb09ad9b4bd
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640580"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308962"
 ---
 # <a name="indexers-in-azure-search"></a>Indexadores no Azure Search
 
@@ -48,11 +48,7 @@ Armazenamentos de dados de rastreamento de indexadores no Azure.
 * [Azure SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Armazenamento de Blobs do Azure](search-howto-indexing-azure-blob-storage.md)
-* [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md) 
-
-> [!Note]
-> O armazenamento de tabelas do Azure não tem suporte para [pesquisa cognitiva](cognitive-search-concept-intro.md).
->
+* [Armazenamento de Tabelas do Azure](search-howto-indexing-azure-tables.md)
 
 ## <a name="basic-configuration-steps"></a>Etapas da configuração básica
 Os indexadores podem oferecer recursos que são exclusivos da fonte de dados. Nesse sentido, alguns aspectos de configuração da fonte de dados ou do indexador variam de acordo com o tipo de indexador. No entanto, todos os indexadores compartilham a mesma composição básica e os mesmos requisitos. As etapas que são comuns a todos os indexadores são abordadas a seguir.
@@ -89,7 +85,7 @@ Você pode monitorar o status do indexador no portal ou por meio da API obter st
 
 ## <a name="get-indexer-status"></a>Obter o status do indexador
 
-Você pode recuperar o status e o histórico de execução de um indexador por meio do [comando obter status](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status)do indexador:
+Você pode recuperar o status e o histórico de execução de um indexador por meio do [comando obter status do indexador](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status):
 
 
     GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2019-05-06

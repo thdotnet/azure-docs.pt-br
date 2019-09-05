@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 03/19/2019
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: f46757b97fb2dd38be36459e5aafb70f5b5a3bf6
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 3b1b31da68d821ff27fa30e75ec1522b9d4875c8
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932703"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307422"
 ---
 # <a name="language-and-region-support-for-luis"></a>Suporte de idioma e região para o LUIS
 
@@ -38,6 +38,7 @@ O LUIS compreende declarações nos seguintes idiomas:
 | Francês (França) |`fr-FR` |-| ✔ |✔ |✔|
 | Francês (Canadá) |`fr-CA` |-|   -   |-|✔|
 | Alemão |`de-DE` |-| ✔ |✔ |✔|
+| Híndi | `hi-IN`|-|-|-|-|
 | Italiano |`it-IT` |-| ✔ |✔|✔|
 | *[Japonês](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Somente frase principal|
 | Coreano |`ko-KR` |-|   -   |-|Somente frase principal|
@@ -88,6 +89,7 @@ Para executar o aprendizado de máquina, o LUIS divide uma declaração em [toke
 |Francês (fr-FR)|✔||||
 |Francês (fr-CA)|✔||||
 |Alemão|||✔|✔|
+| Híndi |✔|-|-|-|-|
 |Italiano|✔||||
 |Japonês||||✔|
 |Coreano||✔||✔|
@@ -99,7 +101,7 @@ Para executar o aprendizado de máquina, o LUIS divide uma declaração em [toke
 
 As seguintes culturas têm versões de criador personalizadas:
 
-|Cultura|Versão|Finalidade|
+|Cultura|Version|Finalidade|
 |--|--|--|
 |Alemão<br>`de-de`|1.0.0|Cria tokens palavras dividindo-as usando um criador baseado em Machine Learning que tenta dividir palavras compostas em seus componentes únicos.<br>Se um usuário inserir `Ich fahre einen krankenwagen` como um expressão, ele será `Ich fahre einen kranken wagen`ativado. Permitir a marcação de `kranken` e `wagen` de forma independente como entidades diferentes.|
 |Alemão<br>`de-de`|1.0.2|Cria tokens palavras dividindo-as em espaços.<br> se um usuário inserir `Ich fahre einen krankenwagen` como um expressão, ele permanecerá como um único token. Portanto `krankenwagen` , é marcado como uma única entidade. |

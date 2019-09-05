@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 7171923e4badb3355a64b63515d40e73fadca6b0
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 4e568d2322088d9f6f6b4f9ad6e4b3cd98f25a47
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596370"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376053"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Implantar um módulo de segurança em seu dispositivo IoT Edge
 
@@ -138,11 +138,11 @@ Há três etapas para criar uma implantação de IoT Edge para a central de segu
 1. Clique em **Avançar**.
 
     ~~~Default implicit route
-    "route": "FROM /messages/* INTO $upstream 
+    "route": "FROM /messages/* INTO $upstream" 
     ~~~
 
     ~~~Explicit route
-    "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream
+    "ASCForIoTRoute": "FROM /messages/modules/azureiotsecurity/* INTO $upstream"
     ~~~
 
 #### <a name="step-3-review-deployment"></a>Etapa 3: Examinar Implantação

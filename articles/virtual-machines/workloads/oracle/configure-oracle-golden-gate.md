@@ -14,18 +14,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 40eaabb149e2e897ecd4e1109e0db7c42b990925
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 31137bba8c9b6b88c6a8b9569c02ae887e73e8d0
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101555"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309596"
 ---
 # <a name="implement-oracle-golden-gate-on-an-azure-linux-vm"></a>Implementar Oracle Golden Gate em uma VM Linux do Azure 
 
 A CLI do Azure é usada para criar e gerenciar recursos do Azure da linha de comando ou em scripts. Esse guia detalha como usar a CLI do Azure para implantar um banco de dados Oracle 12c por meio da imagem na galeria do Marketplace do Azure. 
 
-Este documento mostra passo a passo sobre como criar, instalar e configurar o Oracle Golden Gate em uma VM do Azure.
+Este documento mostra passo a passo sobre como criar, instalar e configurar o Oracle Golden Gate em uma VM do Azure. Neste tutorial, duas máquinas virtuais são configuradas em um conjunto de disponibilidade em uma única região. O mesmo tutorial pode ser usado para configurar o portão OracleGolden para VMs em diferentes Zonas de Disponibilidade em uma única região do Azure ou para a instalação de VMs em duas regiões diferentes.
 
 Antes de começar, certifique-se de que a CLI do Azure foi instalada. Para obter mais informações, consulte o [Guia de instalação da CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).
 

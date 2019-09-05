@@ -1,5 +1,5 @@
 ---
-title: Executar um serviço do Azure Service Fabric em uma conta gMSA | Microsoft Docs
+title: Executar um serviço de Service Fabric do Azure em uma conta do gMSA | Microsoft Docs
 description: Saiba como executar um serviço como gMSA em um cluster autônomo do Service Fabric Windows.
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/29/2018
 ms.author: dekapur
-ms.openlocfilehash: 5c3781c2111fff7483a7fb65bd7b2e69c2011d18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d00eceffebb222196191a389058c0feb496e169a
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837735"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307651"
 ---
 # <a name="run-a-service-as-a-group-managed-service-account"></a>Executar um serviço como uma Conta de Serviço Gerenciado de grupo
 Em um cluster do Windows Server autônomo, você pode executar um serviço como um grupo de Conta de Serviço gerenciado (gMSA) usando uma política de RunAs.  Por padrão, os aplicativos de Service Fabric são executados na conta sob a qual o processo Fabric.exe está sendo executado. Executar os aplicativos em contas diferentes, mesmo em um ambiente hospedado compartilhado, torna-os mais protegidos uns dos outros. Observe que esse é o Active Directory local em seu domínio e não é com o Azure Active Directory (Azure AD). Ao usar uma gMSA, a senha ou senha criptografada não será armazenada no manifesto do aplicativo.  Você também pode executar um serviço como [Grupo ou usuário do Active Directory](service-fabric-run-service-as-ad-user-or-group.md).
@@ -28,7 +28,7 @@ O exemplo a seguir mostra como criar uma conta gMSA chamada *svc-Test$* ; como i
 
 Pré-requisitos:
 - O domínio precisa de uma chave raiz KDS.
-- O domínio deve ser um Windows Server 2012 ou nível funcional posterior.
+- Deve haver pelo menos um DC do Windows Server 2012 (ou R2) no domínio.
 
 1. Peça para um administrador de domínio do Active Directory criar uma conta de serviço gerenciado de grupo usando o cmdlet `New-ADServiceAccount` e verifique se o `PrincipalsAllowedToRetrieveManagedPassword` inclui todos os nós de cluster de malha do serviço. `AccountName`, `DnsHostName`, e `ServicePrincipalName` deve ser exclusivo.
 

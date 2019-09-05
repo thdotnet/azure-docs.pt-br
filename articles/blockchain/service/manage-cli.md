@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
-ms.openlocfilehash: ee7e529593960c3a7c62021225122370c122b3c4
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 4dd58f2542674633f2d5e2a1724adc7934d7f030
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240964"
+ms.locfileid: "70307056"
 ---
 # <a name="manage-azure-blockchain-service-using-azure-cli"></a>Gerenciar o serviço Blockchain do Azure usando o CLI do Azure
 
@@ -186,7 +186,7 @@ az role assignment create --role <role> --assignee <assignee> --scope /subscript
 |---------|-------------|
 | **role** | Nome da função do Azure AD. |
 | **destinatário** | ID de usuário do Azure AD. Por exemplo, `user@contoso.com` |
-| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain do nó Transaction. |
+| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain ou um nó de transação. |
 
 **Exemplo:**
 
@@ -219,7 +219,7 @@ az role assignment create --role <role> --assignee-object-id <assignee_object_id
 |---------|-------------|
 | **role** | Nome da função do Azure AD. |
 | **assignee-object-id** | ID do grupo ou ID do aplicativo do Azure AD. |
-| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain do nó Transaction. |
+| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain ou um nó de transação. |
 
 **Exemplo:**
 
@@ -242,7 +242,7 @@ az role assignment delete --role <myRole> --assignee <assignee> --scope /subscri
 |---------|-------------|
 | **role** | Nome da função do Azure AD. |
 | **destinatário** | ID de usuário do Azure AD. Por exemplo, `user@contoso.com` |
-| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain do nó Transaction. |
+| **scope** | Escopo da atribuição de função. Pode ser um membro blockchain ou um nó de transação. |
 
 ## <a name="next-steps"></a>Próximas etapas
 

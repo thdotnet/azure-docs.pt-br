@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
-ms.openlocfilehash: 53b44441397be6aaa690c75bf362fd16d5a34019
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 6314bd348c22c901001b88eda6875181a2f69df4
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/04/2019
-ms.locfileid: "70242886"
+ms.locfileid: "70307132"
 ---
 # <a name="use-powershell-to-view-the-details-of-a-sent-data-share"></a>Usar o PowerShell para exibir os detalhes de um compartilhamento de dados enviados
 
@@ -45,7 +45,7 @@ Este script usa os seguintes comandos:
 
 | Comando | Observações |
 |---|---|
-| [Get-AzDataShare](/powershell/module/az.resources/get-az) | Obtém e lista de compartilhamentos em uma conta. |
+| [Get-AzDataShare](/powershell/module/az.datashare/get-azdatashare?view=azps-2.6.0) | Obtém e lista de compartilhamentos em uma conta. |
 |||
 
 ## <a name="next-steps"></a>Próximas etapas

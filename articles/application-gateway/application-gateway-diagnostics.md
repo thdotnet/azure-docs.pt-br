@@ -7,14 +7,14 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: d9b0c551cdfb92b380a967aaa5bdce7c278fd39e
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 6df78a46e6bc8055f8cce89e199d01ad631e178e
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183581"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306200"
 ---
-# <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Integridade do back-end, logs de diagnóstico e métricas do Gateway de Aplicativo
+# <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Integridade de back-end e logs de diagnóstico para o gateway de aplicativo
 
 Com o Gateway de Aplicativo do Azure, você pode monitorar os recursos das seguintes maneiras:
 
@@ -22,7 +22,7 @@ Com o Gateway de Aplicativo do Azure, você pode monitorar os recursos das segui
 
 * [Logs](#diagnostic-logging): Os logs permitem que o desempenho, o acesso e outros dados sejam salvos ou consumidos de um recurso para fins de monitoramento.
 
-* [Métrica](#metrics): O Gateway de Aplicativo atualmente tem sete métricas para exibir os contadores de desempenho.
+* [Métrica](application-gateway-metrics.md): O gateway de aplicativo tem várias métricas que ajudam a verificar se o sistema está sendo executado conforme o esperado.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -359,67 +359,6 @@ Você também pode se conectar à sua conta de armazenamento e recuperar as entr
 #### <a name="analyzing-access-logs-through-goaccess"></a>Analisar logs de acesso por meio do GoAccess
 
 Publicamos um modelo do Resource Manager que instala e executa o popular analisador de logs [GoAccess](https://goaccess.io/) para logs de acesso do Gateway de Aplicativo. O GoAccess fornece valiosas estatísticas de tráfego HTTP, tais como visitantes exclusivos, arquivos solicitados, hosts, sistemas operacionais, navegadores, códigos de status HTTP e muito mais. Para obter mais detalhes, consulte o [arquivo Leiame na pasta de modelo do Resource Manager no GitHub](https://aka.ms/appgwgoaccessreadme).
-
-## <a name="metrics"></a>metrics
-
-Métricas são um recurso para alguns recursos do Azure, nas quais você pode exibir os contadores de desempenho no portal. Para o Gateway de Aplicativo, as seguintes métricas estão disponíveis:
-
-- **Conexões atuais**
-- **Solicitações com falha**
-- **Contagem de hosts íntegros**
-
-   É possível filtrar por pool de back-end para mostrar hosts íntegros/não íntegros em um pool de back-end específico.
-
-
-- **Status da resposta**
-
-   A distribuição do código de status de resposta pode ser adicionalmente categorizada para mostrar as respostas nas categorias 2xx, 3xx, 4xx e 5xx.
-
-- **Taxa de transferência**
-- **Total de solicitações**
-- **Contagem de hosts não íntegros**
-
-   É possível filtrar por pool de back-end para mostrar hosts íntegros/não íntegros em um pool de back-end específico.
-
-Navegue até um gateway de aplicativo, em **monitoramento** selecione **métricas**. Para exibir os valores disponíveis, selecione a lista suspensa **MÉTRICA**.
-
-Na imagem a seguir, você pode ver um exemplo com três métricas exibidas para os últimos 30 minutos:
-
-[![](media/application-gateway-diagnostics/figure5.png "Exibição de métrica")](media/application-gateway-diagnostics/figure5-lb.png#lightbox)
-
-Para ver uma lista atual de métricas, consulte [Métricas com suporte no Azure Monitor](../azure-monitor/platform/metrics-supported.md).
-
-### <a name="alert-rules"></a>Regras de alerta
-
-Você pode iniciar as regras de alerta com base nas métricas de um recurso. Por exemplo, um alerta poderá chamar um webhook ou enviar um email para um administrador se a vazão de dados do gateway de aplicativo estiver acima, abaixo ou no limite durante um período especificado.
-
-O seguinte exemplo orientará você pela criação de uma regra de alerta que envia um email para um administrador após um limite de vazão de dados ter sido violado:
-
-1. Selecione **adicionar alerta de métrica** para abrir a página **Adicionar regra** . Você também pode acessar essa página na página métricas.
-
-   ![Botão “Adicionar alerta de métrica”][6]
-
-2. Na página **Adicionar regra** , preencha as seções nome, condição e notificar e selecione **OK**.
-
-   * No seletor **Condição**, selecione um dos quatro valores: **Maior que**, **Maior ou igual a**, **Menor que**, ou **Menor ou igual a**.
-
-   * No seletor **Período**, selecione um período de cinco minutos a seis horas.
-
-   * Se você selecionar **Proprietários, colaboradores e leitores de email**, o email poderá ser dinâmico com base nos usuários que têm acesso a esse recurso. Caso contrário, você poderá fornecer uma lista separada por vírgula de usuários na caixa **Emails de administrador adicionais**.
-
-   ![Página Adicionar regra][7]
-
-Se o limite for violado, um email semelhante ao mostrado na seguinte imagem chegará:
-
-![Email para o limite violado][8]
-
-Uma lista de alertas é exibida após a criação de um alerta de métrica. Ela fornece uma visão geral de todas as regras de alerta.
-
-![Lista de alertas e regras][9]
-
-Para saber mais sobre notificações de alerta, consulte [Receber notificações de alerta](../monitoring-and-diagnostics/insights-receive-alert-notifications.md).
-
-Para entender mais sobre webhooks e como eles podem ser usados com alertas, consulte [Configurar um webhook em um alerta de métrica do Azure](../azure-monitor/platform/alerts-webhooks.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 7874a2bad63a4c5b47545c06a91228e64d523849
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 3907a244bc2d85e7225f94b15150298fd80a032f
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258801"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382334"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal)
 
@@ -70,7 +70,7 @@ Para transferir um aplicativo de LUIS para uma assinatura do Azure diferente, ex
 
 ### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Uma entidade predefinida é marcada em um exemplo de expressão em vez de minha entidade personalizada. Como fazer corrigir isso? 
 
-Consulte [Solucionando problemas de entidades](luis-concept-entity-types.md#troubleshooting-prebuilt-entities)predefinidas.
+Consulte [Solucionando problemas de entidades predefinidas](luis-concept-entity-types.md#troubleshooting-prebuilt-entities).
 
 ### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Tentei importar um arquivo de aplicativo ou de versão, mas recebi um erro, o que aconteceu? 
 
@@ -265,7 +265,7 @@ Sua chave de criação/inicial tem permissão apenas para mil consultas de ponto
 O primeiro problema é descobrir se o problema está relacionado ao LUIS ou se ocorre fora do middleware do LUIS. 
 
 #### <a name="resolve-issue-in-luis"></a>Resolver problema no LUIS
-Transmita o mesmo enunciado do [ponto de extremidade do LUIS](luis-get-started-create-app.md#query-the-endpoint-with-a-different-utterance) para o LUIS. Se você receber um erro, resolva o problema no LUIS até que o erro já não seja retornado. Os erros comuns incluem:
+Transmita o mesmo enunciado do [ponto de extremidade do LUIS](luis-get-started-create-app.md#query-the-v2-api-prediction-endpoint) para o LUIS. Se você receber um erro, resolva o problema no LUIS até que o erro já não seja retornado. Os erros comuns incluem:
 
 * `Out of call volume quota. Quota will be replenished in <time>.` - É um problema que indica a necessidade de mudar de uma chave de criação para uma [chave do ponto de extremidade](luis-how-to-azure-subscription.md) ou a necessidade de alterar [camadas de serviço](luis-how-to-azure-subscription.md#change-pricing-tier). 
 

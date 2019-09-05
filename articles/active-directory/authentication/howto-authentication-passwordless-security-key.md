@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a063891339a46366490447b7c7a7a1a14fd81be6
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 316a523a6216354ae5b6166be55e183a4e050766
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828911"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305070"
 ---
 # <a name="enable-passwordless-security-key-sign-in-for-azure-ad-preview"></a>Habilitar entrada de chave de segurança sem senha para o Azure AD (versão prévia)
 
@@ -54,7 +54,7 @@ Para direcionar grupos de dispositivos específicos para habilitar o provedor de
    1. Nome: Chaves de segurança para entrada no Windows
    1. Descrição: Permite que as chaves de segurança FIDO sejam usadas durante a entrada do Windows
    1. Plataforma: Windows 10 e posterior
-   1. Tipo de plataforma: Personalizado
+   1. Tipo de perfil: Personalizado
    1. Configurações personalizadas de OMA-URI:
       1. Nome: Ativar as chaves de segurança do FIDO para entrar no Windows
       1. OMA-URI: ./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin

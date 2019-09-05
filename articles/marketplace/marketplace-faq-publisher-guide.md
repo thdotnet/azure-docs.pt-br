@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 07/11/2019
 ms.author: ellacroi
-ms.openlocfilehash: b8d0759d96b0b2566934f117f5dea32ec4ad015c
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 209905eaf90e006ded232be73ab2a3a428568eda
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68000012"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309014"
 ---
 # <a name="marketplace-faqs"></a>Perguntas frequentes sobre o Marketplace
 
@@ -35,7 +35,7 @@ O Azure Marketplace foi projetado para profissionais de TI e desenvolvedores de 
 O Azure Marketplace oferece serviços e soluções técnicas da Microsoft e de parceiros, criados para estender os serviços e os produtos do Azure. O catálogo de soluções abrange várias categorias, incluindo, entre outras:
 
 * sistemas operacionais de base
-* databases
+* bancos de dados
 * segurança
 * identity
 * Rede
@@ -219,7 +219,7 @@ Sim. Os créditos de assinatura do Azure ou fundos de compromisso monetário da 
 
 Uma informação de uso estimada pode ser encontrada no [portal do Azure]. As informações de uso estimado podem não incluir atividades recentes e podem basear-se em projeções derivadas de consumo passado. Durante a versão prévia pública, essa funcionalidade pode não estar disponível para todas as compras e variar de acordo com o tipo de produto.
 
-### <a name="customer-support"></a>Suporte ao cliente
+### <a name="customer-support"></a>Atendimento ao cliente
 
 **Quem devo contatar para falar sobre questões gerais de suporte com o Azure Marketplace?**
 
@@ -263,7 +263,7 @@ O Azure Marketplace foi projetado para profissionais de TI e desenvolvedores de 
 
 **Por que devo publicar meu aplicativo no Azure Marketplace e como isso me beneficia?**
 
-O Azure Marketplace oferece um mercado para os Microsoft Partner promoverem e venderem produtos e serviços para clientes do Azure. Publicadores, acessam instantaneamente 140 mercados globais, nossos 300000 + parceiros e a rede de clientes corporativos do Azure.  O Marketplace inclui mais de 90% das empresas da Fortune 500 e muitos dos principais desenvolvedores do mundo. Novos parceiros no Azure Marketplace são oferecidos automaticamente a um conjunto de [benefícios de entrada no mercado sem custo](gtm-your-marketplace-benefits.md#go-to-market-gtm-benefits-in-the-marketplace) para ajudar a aumentar a conscientização de suas ofertas no Marketplace do Azure.
+O Azure Marketplace oferece um mercado para os Microsoft Partner promoverem e venderem produtos e serviços para clientes do Azure. Publicadores, acessam instantaneamente 140 mercados globais, nossos 300000 + parceiros e a rede de clientes corporativos do Azure.  O Marketplace inclui mais de 90% das empresas da Fortune 500 e muitos dos principais desenvolvedores do mundo. Novos parceiros no Azure Marketplace são oferecidos automaticamente a um conjunto de [benefícios de entrada no mercado sem custo](gtm-your-marketplace-benefits.md#list-trial-and-consulting-benefits) para ajudar a aumentar a conscientização de suas ofertas no Marketplace do Azure.
 
 **Qual é o fator de diferenciação entre o Azure Marketplace e o AppSource?**
 

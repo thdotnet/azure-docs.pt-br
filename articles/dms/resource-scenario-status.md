@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 07/13/2019
-ms.openlocfilehash: 44ac290a471fd0099b6589f84fea604249818432
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.date: 09/05/2019
+ms.openlocfilehash: 9ea070ea86a4d0d5e7101e82450235a59c936d2d
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868606"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376399"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Status dos cenários de migração com suporte pelo serviço de migração de banco de dados do Azure
 
@@ -79,7 +79,7 @@ A tabela a seguir mostra o suporte para o Serviço de Migração de Banco de Dad
 |   | MySQL para RDS | ✔ | GA |
 | **Banco de Dados do Azure para PostgreSQL** | PostgreSQL | ✔ | GA |
 |   | PostgreSQL para RDS | ✔ | GA |
-|   | Oracle | ✔ | Visualização particular |
+|   | Oracle | ✔ | Versão prévia pública |
 
 ## <a name="next-steps"></a>Próximas etapas
 

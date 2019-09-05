@@ -9,12 +9,12 @@ ms.date: 02/25/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7785c6b5c575bf862b1ba0edccc75fc1c6031b08
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: b2cd7232bce674dfa5aa2c6f4b6d9386fa7a189b
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69015652"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70376461"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Recuperação de desastre e failover de conta de armazenamento (versão prévia) no Armazenamento do Azure
 
@@ -168,7 +168,6 @@ Tenha em mente que todos os dados armazenados em um disco temporário serão per
 Não há suporte aos seguintes recursos ou serviços para o failover de conta na versão prévia:
 
 - A Sincronização de Arquivos do Azure não oferece suporte ao failover de conta de armazenamento. Não deve ser realizado o failover das contas de armazenamento que contêm compartilhamentos de arquivos do Azure que estejam sendo usadas como pontos de extremidade de nuvem na Sincronização de Arquivos do Azure. Se isso for feito, a sincronização deixará de funcionar e poderá causar a perda inesperada de dados no caso de arquivos recentes em camadas.  
-- Não é possível realizar failover nas contas de armazenamento usando o namespace hierárquico do Azure Data Lake Storage Gen2.
 - Não é possível fazer failover em uma conta de armazenamento que contenha blobs. Mantenha os blobs arquivados em uma conta de armazenamento separada na qual não planeje fazer failover.
 - Não é possível realizar failover em uma conta de armazenamento que contenha blob de blocos premium. As contas de armazenamento que dão suporte a blobs de bloco premium atualmente não são compatíveis com a redundância geográfica.
 - Depois que o failover for concluído, os seguintes recursos deixarão de funcionar se originalmente habilitados: [Assinaturas de evento](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-overview), [políticas de ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) [análise de armazenamento log](https://docs.microsoft.com/rest/api/storageservices/about-storage-analytics-logging).

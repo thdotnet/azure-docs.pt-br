@@ -1,6 +1,6 @@
 ---
-title: Conectar-se à API de v3 de serviços de mídia do Azure - Node. js
-description: Saiba como se conectar à API do serviços de mídia v3 com Node. js.
+title: Conectar-se à API dos serviços de mídia do Azure v3-node. js
+description: Saiba como se conectar à API dos serviços de mídia v3 com node. js.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,23 +13,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: 40880a2c28ce28a671930ef8837082247e61e24b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ab620ec456610029d699952bb9625abfe4c21dc
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60733123"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70307880"
 ---
-# <a name="connect-to-media-services-v3-api---nodejs"></a>Conectar-se à API de v3 de serviços de mídia - Node. js
+# <a name="connect-to-media-services-v3-api---nodejs"></a>Conectar-se à API dos serviços de mídia v3-node. js
 
-Este artigo mostra como conectar-se para o Azure Media Services v3 SDK Node. js usando o logon de entidade de serviço no método.
+Este artigo mostra como se conectar ao SDK do node. js dos serviços de mídia do Azure v3 usando o método de entrada da entidade de serviço.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Instale o [Node.js](https://nodejs.org/en/download/).
-- [Crie uma conta de Serviços de Mídia](create-account-cli-how-to.md). Certifique-se de lembrar o nome do grupo de recursos e o nome da conta dos serviços de mídia.
+- [Crie uma conta de Serviços de Mídia](create-account-cli-how-to.md). Lembre-se de lembrar o nome do grupo de recursos e o nome da conta dos serviços de mídia.
 
-## <a name="create-packagejson"></a>Criar um Package. JSON
+> [!IMPORTANT]
+> Examine as [convenções de nomenclatura](media-services-apis-overview.md#naming-conventions).
+
+## <a name="create-packagejson"></a>Criar Package. JSON
 
 1. Crie um arquivo Package. JSON usando seu editor favorito.
 1. Abra o arquivo e cole o seguinte código:
@@ -51,23 +54,23 @@ Este artigo mostra como conectar-se para o Azure Media Services v3 SDK Node. js 
 
 Os seguintes pacotes devem ser especificados:
 
-|Pacote|DESCRIÇÃO|
+|Pacote|Descrição|
 |---|---|
-|`azure-arm-mediaservices`|SDK de serviços de mídia do Azure. <br/>Para verificar se você estiver usando o pacote de serviços de mídia do Azure mais recente, verifique [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
-|`azure-storage`|SDK de armazenamento. Usado quando o carregamento de arquivos em ativos.|
+|`azure-arm-mediaservices`|SDK dos serviços de mídia do Azure. <br/>Para verificar se você está usando o pacote mais recente dos serviços de mídia do Azure, marque [NPM instalar Azure-ARM-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
+|`azure-storage`|SDK de armazenamento. Usado ao carregar arquivos em ativos.|
 |`ms-rest-azure`| Usado para entrar.|
 
-Você pode executar o comando a seguir para verificar se que você estiver usando o pacote mais recente:
+Você pode executar o seguinte comando para verificar se está usando o pacote mais recente:
 
 ```
 npm install azure-arm-mediaservices
 ```
 
-## <a name="connect-to-nodejs-client"></a>Conectar ao cliente do Node. js
+## <a name="connect-to-nodejs-client"></a>Conectar-se ao cliente do node. js
 
 1. Crie um arquivo. js usando seu editor favorito.
 1. Abra o arquivo e cole o seguinte código.
-1. Defina os valores na seção "configuração do ponto de extremidade" para valores você obteve [acessar as APIs](access-api-cli-how-to.md).
+1. Defina os valores na seção "configuração do ponto de extremidade" para os valores obtidos das [APIs de acesso](access-api-cli-how-to.md).
 
 ```js
 'use strict';
@@ -111,7 +114,7 @@ msRestAzure.loginWithServicePrincipalSecret(aadClientId, aadSecret, aadTenantId,
 });
 ```
 
-## <a name="run-your-app"></a>Executar seu aplicativo
+## <a name="run-your-app"></a>Executar o aplicativo
 
 Abra um prompt de comando. Navegue até o diretório do exemplo e execute os seguintes comandos:
 

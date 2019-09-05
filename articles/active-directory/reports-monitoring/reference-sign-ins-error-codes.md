@@ -17,12 +17,12 @@ ms.date: 08/08/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c5f7e45a1e1daa5d8504db2506a79e88c28bcc1
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 1b5aedd5c9bde7689df14c7efdf8d58692680c13
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989605"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383167"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Códigos de erro do relatório de atividade de login 
 
@@ -153,6 +153,8 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |70018|Código de verificação inválido devido ao usuário ter digitado o código de usuário incorreto para o fluxo de código do dispositivo. Autorização não é aprovada.|
 |70019|O código de verificação expirou. Solicite ao usuário de tentar novamente na entrada.|
 |70037|Fornecida a resposta de desafio incorreta. Sessão de autenticação remota negada.|
+|70043|O gerenciamento de sessão de acesso condicional do Azure força a sessão a expirar|
+|70044|O gerenciamento de sessão de acesso condicional do Azure força a sessão a expirar|
 |75001|Ocorreu um erro durante a associação de mensagem SAML.|
 |75003|O aplicativo retornou um erro relacionado à associação sem suporte (resposta de protocolo do SAML não pode ser enviada por meio de associações que não sejam HTTP POST). Entre em contato com o proprietário do aplicativo.|
 |75005|O Azure AD não oferece suporte para a solicitação SAML enviada pelo aplicativo para logon único. Entre em contato com o proprietário do aplicativo.|

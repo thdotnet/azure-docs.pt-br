@@ -7,19 +7,19 @@ services: monitoring
 ms.service: service-health
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: 1151eb8659c60cd71430c3dd971e73ec03a5545f
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 40ffe0b377a5cbb21f07c479097958d7c15a2879
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538270"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383154"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Criar alertas do log de atividades em notificações de serviço
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Este artigo mostra como configurar alertas do log de atividades para notificações de integridade do serviço usando o portal do Azure.  
 
-Notificações de integridade de serviço são armazenadas na [log de atividades do Azure](../azure-monitor/platform/activity-logs-overview.md) devido ao volume possivelmente grande de informações armazenadas no log de atividades, há uma interface de usuário separadas para torná-lo mais fácil exibir e configurar alertas de integridade do serviço notificações. 
+As notificações de integridade do serviço são armazenadas no [log de atividades do Azure](../azure-monitor/platform/activity-logs-overview.md) , considerando o volume possivelmente grande de informações armazenadas no log de atividades, há uma interface do usuário separada para facilitar a exibição e a configuração de alertas sobre notificações de integridade do serviço. 
 
 Você pode receber um alerta quando o Azure envia notificações de integridade do serviço para sua assinatura do Azure. Você pode configurar o alerta de acordo com:
 
@@ -61,8 +61,8 @@ Para saber mais sobre como configurar alertas de notificação de integridade do
 
     ![A caixa de diálogo "Adicionar alerta do log de atividades"](media/alerts-activity-log-service-notifications/activity-log-alert-new-ux.png)
 
-> [!NOTE]
-> Esta assinatura é usada para salvar o alerta do log de atividades. O recurso de alerta é implantado para essa assinatura e monitora os eventos no log de atividades para ele.
+    > [!NOTE]
+    > Esta assinatura é usada para salvar o alerta do log de atividades. O recurso de alerta é implantado para essa assinatura e monitora os eventos no log de atividades para ele.
 
 1. Escolha os **tipos de eventos** dos quais você quer ser alertado: *Problema de serviço*, *Manutenção planejada*, e *Consultorias de integridade* 
 
@@ -91,11 +91,10 @@ Saiba como [Configurar notificações de webhook para sistemas de gerenciamento 
 >[!NOTE]
 >O grupo de ações definido nessas etapas é reutilizável, como um grupo de ação existente, para todas as definições de alerta futuras.
 >
->
 
 ## <a name="alert-with-existing-action-group-using-azure-portal"></a>Alerta com o grupo de ações existente usando o portal do Azure
 
-1. Siga as etapas 1 a 6 na seção anterior para criar a notificação de integridade do serviço. 
+1. Siga as etapas 1 a 6 na seção anterior para criar sua notificação de integridade do serviço. 
 
 1. Em **Definir grupo de ação**, clique no botão **Selecionar grupo de ação**. Selecione o grupo de ação apropriado.
 
@@ -202,8 +201,8 @@ Depois de criar um alerta, ele ficará visível na seção **Alertas** do **Moni
 * Desabilite-o ou habilite-o, se desejar interromper temporariamente ou continuar recebendo notificações do alerta.
 
 ## <a name="next-steps"></a>Próximas etapas
-- Saiba mais sobre [práticas recomendadas para configuração de alertas de integridade do serviço Azure](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUa).
-- Saiba como [configurar notificações por push móveis do Azure Service Health](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUw).
+- Saiba mais sobre [as práticas recomendadas para configurar alertas de integridade do serviço do Azure](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUa).
+- Saiba como [configurar notificações por push móvel para a integridade do serviço do Azure](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUw).
 - Saiba como [configurar notificações de webhook para sistemas de gerenciamento de problemas existentes](service-health-alert-webhook-guide.md).
 - Saiba mais sobre as [notificações de integridade do serviço](service-notifications.md).
 - Saiba mais sobre [limitação de taxa de notificação](../azure-monitor/platform/alerts-rate-limiting.md).

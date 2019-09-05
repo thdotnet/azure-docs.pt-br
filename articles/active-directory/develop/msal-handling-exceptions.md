@@ -16,12 +16,12 @@ ms.date: 08/19/2019
 ms.author: negoe
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 77a2e571b76044ff9114f6671b187118cf03c0ba
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: fe3ad29cfd113deba5824ce25721dc543c6267c0
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135808"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70305060"
 ---
 # <a name="handling-exceptions-and-errors-using-msal"></a>Tratar exceções e erros usando MSAL
 As exceções na MSAL (Biblioteca de Autenticação da Microsoft) são destinadas aos desenvolvedores de aplicativos para solucionar problemas e não para exibição aos usuários finais. Mensagens de exceção não são localizadas.
@@ -179,7 +179,7 @@ A obtenção interativa do token solicita a participação do usuário e oferece
 
 Ao chamar uma API que exige acesso condicional, você poderá receber um desafio de declarações no erro da API. Nesse caso, você pode passar as declarações retornadas no erro para o `claimsRequest` campo `AuthenticationParameters.ts` da classe para atender à política apropriada. 
 
-Consulte [solicitando declarações adicionais]() para obter mais detalhes.
+Consulte [solicitando declarações adicionais](active-directory-optional-claims.md) para obter mais detalhes.
 
 ## <a name="retrying-after-errors-and-exceptions"></a>Tentar novamente após erros e exceções
 
