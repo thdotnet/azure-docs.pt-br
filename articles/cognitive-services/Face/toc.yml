@@ -9,12 +9,8 @@
   items:
     - name: Usando o SDK do cliente
       items:
-        - name: Detectar faces em uma imagem
-          items:
-            - name: 'C#'
-              href: QuickStarts/csharp-detect-sdk.md
-            - name: Python
-              href: Tutorials/FaceAPIinPythonTutorial.md
+        - name: SDK .NET
+          href: Quickstarts/csharp-sdk.md
         - name: SDK do Python
           href: QuickStarts/python-sdk.md
     - name: Usando a API REST

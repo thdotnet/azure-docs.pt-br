@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 1d52117440028c75b249f469f2b3576c2ab1c5c5
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 09/05/2019
 ms.locfileid: "67172586"
 ---
 Etapa final é preparar o dispositivo para o envio. Nesta etapa, todos os compartilhamentos do dispositivo são colocados offline. As ações não poderão ser acessadas depois que você iniciar esse processo.
