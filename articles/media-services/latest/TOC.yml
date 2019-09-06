@@ -48,7 +48,7 @@
       items:
         - name: Ativos
           href: assets-concept.md
-          displayName: naming
+          displayName: 'name, naming, file name'
     - name: Codificação
       items:
         - name: Visão geral
@@ -150,7 +150,7 @@
       items:
         - name: Visão geral
           href: media-services-apis-overview.md
-          displayName: 'accessing, naming, long-running, invalid character'
+          displayName: 'accessing, long-running, invalid character, name, naming, file name'
         - name: 'Entidades de página, de filtro e de ordem'
           href: entities-overview.md
         - name: RBAC
@@ -179,6 +179,8 @@
           href: media-reserved-units-cli-how-to.md
         - name: Criar um ativo – CLI
           href: cli-create-asset.md
+    - name: Guias do desenvolvedor
+      items:
         - name: Desenvolver com o REST
           items:
             - name: Conectar-se com o Postman

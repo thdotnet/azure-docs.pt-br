@@ -60,9 +60,6 @@
   items:
     - name: Implantações de modelo
       href: template-deployment-overview.md
-    - name: Estrutura de arquivos de modelo
-      displayName: 'parameters,variables,resources,outputs,condition'
-      href: resource-group-authoring-templates.md
     - name: Práticas recomendadas de modelo
       href: template-best-practices.md
     - name: Modelos de consistência de nuvem
@@ -85,26 +82,38 @@
   items:
     - name: Criar modelos
       items:
-        - name: Ferramenta de desenvolvimento – VS Code
+        - name: Usar o VS Code
           href: resource-manager-tools-vs-code.md
-        - name: Criar modelo
-          href: how-to-create-template.md
-        - name: Nome e tipo do recurso filho
-          href: child-resource-name-type.md
-        - name: Criar grupos de recursos e recursos na assinatura
-          displayName: subscription level deployment
-          href: deploy-to-subscription.md
-        - name: Definir as dependências de recursos
-          href: resource-group-define-dependencies.md
+        - name: Escrever expressões de modelo
+          href: template-expressions.md
+        - name: parâmetros
+          href: template-parameters.md
+        - name: variáveis
+          href: template-variables.md
+        - name: Funções definidas pelo usuário
+          href: template-user-defined-functions.md
+        - name: Recursos
+          items:
+            - name: Nome e tipo do recurso filho
+              href: child-resource-name-type.md
+            - name: Implantação condicional
+              href: conditional-resource-deployment.md
+            - name: Definir dependências do recurso
+              href: resource-group-define-dependencies.md
+            - name: Definir local do recurso
+              href: resource-location.md
+            - name: Usar extensões de modelo
+              href: resource-manager-use-extensions.md
+        - name: outputs
+          href: template-outputs.md
         - name: Modularizar modelos
           displayName: 'linked templates, nested templates'
           href: resource-group-linked-templates.md
         - name: Criar múltiplas instâncias
           href: resource-group-create-multiple.md
-        - name: Usar extensões de modelo
-          href: resource-manager-use-extensions.md
-        - name: Atualizar recursos
-          href: /azure/architecture/building-blocks/extending-templates/update-resource
+        - name: Criar grupos de recursos e recursos na assinatura
+          displayName: subscription level deployment
+          href: deploy-to-subscription.md
     - name: Implantar modelos
       items:
         - name: Implantar – portal
@@ -244,6 +253,9 @@
       href: resource-manager-async-operations.md
 - name: Referência
   items:
+    - name: Estrutura de arquivos de modelo
+      displayName: 'parameters,variables,resources,outputs,condition'
+      href: resource-group-authoring-templates.md
     - name: Referência de modelo
       href: /azure/templates/
     - name: Funções de modelo

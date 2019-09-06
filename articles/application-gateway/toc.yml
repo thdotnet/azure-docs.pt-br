@@ -81,8 +81,10 @@
       items:
         - name: Investigação de integridade
           href: application-gateway-probe-overview.md
-        - name: Diagnósticos
+        - name: Logs de diagnóstico e integridade de back-end
           href: application-gateway-diagnostics.md
+        - name: Métricas
+          href: application-gateway-metrics.md
     - name: Aplicativo Web do Serviço de Aplicativo e suporte multilocatário
       href: application-gateway-web-app-overview.md
     - name: Suporte para WebSocket
@@ -225,6 +227,8 @@
           href: resource-health-overview.md
         - name: Usar o Log Analytics
           href: log-analytics.md
+        - name: Problemas de integridade de back-end
+          href: application-gateway-backend-health-troubleshooting.md
     - name: Migrar de v1 para v2
       href: migrate-v1-v2.md
 - name: Referência

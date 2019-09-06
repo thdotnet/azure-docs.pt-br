@@ -1,4 +1,4 @@
-- name: Documentação do Armazenamento de Filas do Azure
+- name: Documentação de armazenamento de Filas do Azure
   href: /azure/storage/queues/
 - name: Visão geral
   expanded: true

@@ -12,14 +12,16 @@
       href: virtual-wan-expressroute-portal.md
 - name: Conceitos
   items:
-    - name: Sobre locais e parceiros
+    - name: Locais e parceiros
       href: virtual-wan-locations-partners.md
-    - name: Sobre a arquitetura de rede de trânsito global
-      href: virtual-wan-global-transit-network-architecture.md
-    - name: Sobre o plano de controle do Office 365 na WAN Virtual
-      href: virtual-wan-office365-overview.md
-    - name: Sobre as políticas de IPsec
+    - name: Políticas de IPsec
       href: virtual-wan-ipsec.md
+    - name: Arquitetura
+      items:
+        - name: Arquitetura de rede de trânsito global
+          href: virtual-wan-global-transit-network-architecture.md
+        - name: Plano de controle do Office 365 na WAN Virtual
+          href: virtual-wan-office365-overview.md
 - name: Guias de instruções
   items:
     - name: Encaminhar o tráfego de um hub virtual para uma NVA

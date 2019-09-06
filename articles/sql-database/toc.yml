@@ -219,10 +219,16 @@
       items:
         - name: Documentação da instância gerenciada
           href: sql-database-managed-instance-index.yml
-        - name: Recursos de instâncias gerenciadas
+        - name: Visão geral das Instâncias Gerenciadas
           href: sql-database-managed-instance.md
         - name: Perguntas frequentes de instância gerenciada
           href: sql-database-managed-instance-faq.md
+        - name: Pools da instância
+          items:
+            - name: Visão geral de pools da instância
+              href: sql-database-instance-pools.md
+            - name: Guia de instruções de pools da instância
+              href: sql-database-instance-pools-how-to.md
         - name: Referência da API de Gerenciamento
           href: sql-database-managed-instance-create-manage.md
         - name: Limites de recursos
