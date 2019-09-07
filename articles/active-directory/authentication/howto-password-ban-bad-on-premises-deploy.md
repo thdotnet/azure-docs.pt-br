@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0b15c9730f7e469fde8fabd1bc4cbcd28efa66c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 5949f57a87f324dc2e6651611574f4b66215c8a8
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68953006"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389770"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Implantar proteção de senha do Azure AD
 
@@ -295,7 +295,7 @@ Quando uma versão mais recente do software de proxy de proteção de senha do A
 
 Não é necessário desinstalar a versão atual do software proxy-o instalador executará uma atualização in-loco. Nenhuma reinicialização deve ser necessária ao atualizar o software proxy. A atualização de software pode ser automatizada usando procedimentos MSI padrão, por `AzureADPasswordProtectionProxySetup.exe /quiet`exemplo:.
 
-O agente de proxy dá suporte à atualização automática. A atualização automática usa o serviço de atualizador do agente Microsoft Azure AD Connect que é instalado lado a lado com o serviço de proxy. A atualização automática está ativada por padrão e pode ser habilitada ou desabilitada usando o cmdlet Set-AzureADPasswordProtectionProxyConfiguration. A configuração atual pode ser consultada usando o cmdlet Get-AzureADPasswordProtectionProxyConfiguration. A Microsoft recomenda que a atualização automática seja deixada habilitada.
+O agente de proxy dá suporte à atualização automática. A atualização automática usa o serviço de atualizador do agente Microsoft Azure AD Connect que é instalado lado a lado com o serviço de proxy. A atualização automática está ativada por padrão e pode ser habilitada ou desabilitada usando o `Set-AzureADPasswordProtectionProxyConfiguration` cmdlet. A configuração atual pode ser consultada usando o `Get-AzureADPasswordProtectionProxyConfiguration` cmdlet. A Microsoft recomenda que a atualização automática seja deixada habilitada.
 
 O `Get-AzureADPasswordProtectionProxy` cmdlet pode ser usado para consultar a versão de software de todos os agentes de proxy atualmente instalados em uma floresta.
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 07176fbe22e70658856dd266687a15d719e78e9f
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 27361017241ba6529b93c24ce7fb95b2c1b22a62
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231094"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389906"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Configurar e usar destinos de computação para treinamento de modelo 
 
@@ -403,11 +403,20 @@ Alterne o mesmo experimento para ser executado em um destino de computação dif
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/amlcompute2.py?name=amlcompute_submit)]
 
+> [!TIP]
+> Este exemplo usa como padrão apenas um nó do destino de computação para treinamento. Para usar mais de um nó, defina a `node_count` configuração de execução para o número de nós desejado. Por exemplo, o código a seguir define o número de nós usados para treinamento para quatro:
+>
+> ```python
+> src.run_config.node_count = 4
+> ```
+
 Ou você pode:
 
 * Enviar o teste com um objeto `Estimator` conforme mostrado em [Treinar modelos de ML com estimadores](how-to-train-ml-models.md).
-* Envie uma execução HyperDrive para [ajuste](how-to-tune-hyperparameters.md)de hiperparâmetro.
+* Envie uma execução HyperDrive para [ajuste de hiperparâmetro](how-to-tune-hyperparameters.md).
 * Envie um experimento por meio da [extensão vs Code](how-to-vscode-tools.md#train-and-tune-models).
+
+Para obter mais informações, consulte a documentação do [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) e do [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) .
 
 ## <a name="create-run-configuration-and-submit-run-using-azure-machine-learning-cli"></a>Criar configuração de execução e enviar execução usando Azure Machine Learning CLI
 
@@ -501,7 +510,7 @@ Veja estes notebooks para obter exemplos de treinamento com vários destinos de 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Tutorial: Treinar um modelo](tutorial-train-models-with-aml.md) usa um destino de computação gerenciado para treinar um modelo.
-* Saiba como ajustar os hiperparâmetros com [eficiência](how-to-tune-hyperparameters.md) para criar modelos melhores.
+* Saiba como [ajustar os hiperparâmetros com eficiência](how-to-tune-hyperparameters.md) para criar modelos melhores.
 * Quando você tiver um modelo treinado, aprenda [como e em que local implantar modelos](how-to-deploy-and-where.md).
 * Exiba a referência do SKD da [classe RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
 * [Usar o Serviço do Azure Machine Learning com redes virtuais do Azure](how-to-enable-virtual-network.md)

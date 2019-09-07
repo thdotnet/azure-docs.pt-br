@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 86fa7f62230c0ae0530b67ff2384942c876083d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d7b76a58a427b687d0dc36d13cfc00f32196853
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686133"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390129"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>Encadeando entidades do Barramento de Serviço com o encaminhamento automático
 
@@ -27,7 +27,7 @@ O recurso *encaminhamento automático* do Barramento de Serviço permite encadea
 
 ## <a name="using-autoforwarding"></a>Usar o encaminhamento automático
 
-Você pode habilitar o encaminhamento automático configurando as propriedades [QueueDescription.ForwardTo][QueueDescription.ForwardTo] ou [SubscriptionDescription.ForwardTo][SubscriptionDescription.ForwardTo] nos objetos [QueueDescription][QueueDescription] ou [SubscriptionDescription][SubscriptionDescription] para a origem, como no exemplo a seguir:
+Você pode habilitar o encaminhamento automático definindo as propriedades [QueueDescription. ForwardTo][QueueDescription.ForwardTo] ou [SubscriptionDescription. ForwardTo][SubscriptionDescription.ForwardTo] nos objetos [QueueDescription][QueueDescription] ou [SubscriptionDescription][SubscriptionDescription] para a origem, como no exemplo a seguir:
 
 ```csharp
 SubscriptionDescription srcSubscription = new SubscriptionDescription (srcTopic, srcSubscriptionName);
@@ -48,8 +48,10 @@ Você também pode usar o encaminhamento automático para separar os remetentes 
 Se Brenda entrar de férias, sua fila pessoal, em vez do tópico ERP, ficará cheia. Nesse cenário, como um representante de vendas não recebeu nenhuma mensagem, nenhum dos tópicos ERP atingirá a cota.
 
 > [!NOTE]
-> Quando o encaminhamento automático está configurado, o valor para AutoDeleteOnIdle no destino é automaticamente definido como o valor máximo do tipo de dados.
-> Isso é feito para garantir que haja sempre um destino para encaminhar a mensagem.
+> Quando o encaminhamento automático é configurado, o valor de AutoDeleteOnIdle na **origem e no destino** é definido automaticamente como o valor máximo do tipo de dados.
+> 
+>   - No lado da origem, o encaminhamento automático atua como uma operação de recebimento. Portanto, a origem que tem a configuração de encaminhamento automático nunca é realmente "ociosa".
+>   - No lado do destino, isso é feito para garantir que sempre haja um destino para encaminhar a mensagem.
 
 ## <a name="autoforwarding-considerations"></a>Considerações sobre o encaminhamento automático
 

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/02/2018
-ms.openlocfilehash: e79c83ecb17c4dcd11f7ccbecded59e7d1d13dfd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a2a879ed677b981adcd50aea0468e0c5976c2a8a
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60525802"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390539"
 ---
 # <a name="migrate-your-mysql-database-to-azure-database-for-mysql-using-dump-and-restore"></a>Migrar seu banco de dados MySQL para o Banco de Dados do Azure para MySQL usando despejo e restauração
 Este artigo descreve duas maneiras comuns de fazer backup e restaurar bancos de dados no seu Banco de dados do Azure para MySQL
@@ -49,6 +49,7 @@ Para otimizar o desempenho, observe essas considerações ao despejar grandes ba
 -   Use tabelas particionadas, quando apropriado.
 -   Carregar dados em paralelo. Evite o excesso de paralelismo que poderá fazer com que você atinja um limite de recursos e monitore os recursos usando as métricas disponíveis no portal do Azure. 
 -   Use a opção `defer-table-indexes` em mysqlpump ao despejar bancos de dados, para que a criação de índice ocorra após os dados de tabelas que são carregados.
+-   Use a `skip-definer` opção em mysqlpump para omitir as cláusulas refinadas e de segurança do SQL das instruções CREATE para exibições e procedimentos armazenados.  Quando você recarrega o arquivo de despejo, ele cria objetos que usam os valores de segurança padrão e SQL.
 -   Copie os arquivos de backup para um blob/armazenamento do Azure e execute a restauração de lá, o que deve ser muito mais rápido do que executar a restauração pela Internet.
 
 ## <a name="create-a-backup-file-from-the-command-line-using-mysqldump"></a>Criar um arquivo de backup a partir da linha de comando usando mysqldump
@@ -76,10 +77,6 @@ $ mysqldump -u root -p testdb table1 table2 > testdb_tables_backup.sql
 Para fazer backup de mais de um banco de dados ao mesmo tempo, use a opção --database e liste os nomes dos banco de dados separados por espaços. 
 ```bash
 $ mysqldump -u root -p --databases testdb1 testdb3 testdb5 > testdb135_backup.sql 
-```
-Para fazer backup de todos os bancos de dados no servidor ao mesmo tempo, você deve usar a opção --all-databases.
-```bash
-$ mysqldump -u root -p --all-databases > alldb_backup.sql 
 ```
 
 ## <a name="create-a-database-on-the-target-azure-database-for-mysql-server"></a>Criar um banco de dados no Banco de dados de destino do Azure para o serviço MySQL

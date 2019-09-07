@@ -7,19 +7,16 @@ ms.date: 02/04/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: 8cb9a9c6dd2e84318cd4d05bf6e67e127fc39ce3
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 0aa3af754082d91c4a5994e42146d1f1f475f64d
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726376"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390328"
 ---
 # <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-java-v7"></a>Como carregar, baixar e listar blobs usando a biblioteca de clientes para Java v7
 
 Neste guia de instruções, você aprenderá como usar a biblioteca de clientes para Java v7 para carregar, baixar e listar blobs de bloco em um contêiner no Armazenamento de Blobs do Azure.
-
-> [!TIP]
-> A versão mais recente da biblioteca de clientes do Armazenamento do Azure para Java é a v10. A Microsoft recomenda que você use a versão mais recente da biblioteca de clientes, quando possível. Para começar a usar a v10, confira [Início rápido: carregar, baixar e listar blobs usando o SDK de Armazenamento de Java V10](storage-quickstart-blobs-java-v10.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

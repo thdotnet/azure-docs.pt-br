@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/01/2019
 ms.author: dekapur
-ms.openlocfilehash: d1681aee9dc11f0dbd3133bced0b919a8c1623b8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: edb6a84762ce65e65ff33492f3a7bcebbce60777
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60310904"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390370"
 ---
 # <a name="overview-of-service-fabric-clusters-on-azure"></a>Visão geral dos clusters do Service Fabric no Azure
 Um cluster do Service Fabric é um conjunto de computadores físicos ou virtuais conectados via rede, nos quais os microsserviços são implantados e gerenciados. Um computador ou VM que faz parte de um cluster é chamado de nó de cluster. Os clusters podem ser dimensionados para milhares de nós. Se você adiciona novos nós ao cluster, o Service Fabric reequilibra as réplicas de partição de serviço e instâncias entre o número aumentado de nós. O desempenho geral do aplicativo é melhorado e a contenção para o acesso à memória é reduzida. Se os nós no cluster não estiverem sendo usados com eficiência, você poderá diminuir o número de nós no cluster. O Service Fabric redistribui novamente as réplicas de partição e instâncias entre o número reduzido de nós, para fazer melhor uso do hardware em cada nó.
@@ -29,7 +29,7 @@ O tipo de nó define o tamanho, o número e as propriedades de um conjunto de n�
 ## <a name="cluster-components-and-resources"></a>Recursos e componentes do cluster
 O cluster do Service Fabric no Azure é um recurso do Azure que usa e interage com outros recursos do Azure:
 * Placas de rede virtual e de VMs
-* conjuntos de escala de máquina virtual
+* conjuntos de dimensionamento de máquinas virtuais
 * redes virtuais
 * balanceadores de carga
 * contas de armazenamento
@@ -103,12 +103,17 @@ Para saber mais, leia [Upgrade de clusters](service-fabric-cluster-upgrade.md).
 ## <a name="supported-operating-systems"></a>Sistemas operacionais com suporte
 É possível criar clusters em máquinas virtuais que executem estes sistemas operacionais:
 
-* Windows Server 2012 R2
-* Windows Server 2016 
-* Windows Server 1709
-* Windows Server 1803
-* Linux Ubuntu 16.04
-* Red Hat Enterprise Linux 7.4 (suporte da versão prévia)
+| Sistema operacional | Versão de Service Fabric mais antiga com suporte |
+| --- | --- |
+| Windows Server 2012 R2 | Todas as versões |
+| Windows Server 2016 | Todas as versões |
+| Windows Server 1709 | 6.0 |
+| Windows Server 1803 | 6.4 |
+| Windows Server 1809 | 6.4.654.9590 |
+| Windows Server 2019 | 6.4.654.9590 |
+| Linux Ubuntu 16.04 | 6.0 |
+
+Para obter informações adicionais, consulte [versões de cluster com suporte no Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-operating-systems)
 
 > [!NOTE]
 > Se você decidir implantar o Service Fabric no Windows Server 1709, note que (1) ele não é um branch de manutenção de longo prazo, então, talvez será necessário mover versões futuramente, e (2) se você implantar contêineres, os contêineres compilados no Windows Server 2016 não funcionarão no Windows Server 1709 e vice-versa (será necessário recompilar para implementá-los).

@@ -12,26 +12,29 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/02/2019
+ms.date: 09/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 93b3c7671a5beb4b3a451fe0efd13b9f48e00436
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 6e0c1419e5656f184d27dce8d185a86bea71d173
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68941813"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70389960"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Configurar uma galeria de imagem compartilhada no Azure DevTest Labs
-O DevTest Labs agora dá suporte ao recurso da [Galeria de imagens](../virtual-machines/windows/shared-image-galleries.md) compartilhadas. Ele permite que os usuários do laboratório acessem imagens de um local compartilhado durante a criação de recursos de laboratório. Ele também ajuda você a criar estrutura e organização em torno de suas imagens de VM gerenciadas de modo personalizado. O recurso da Galeria de imagens compartilhadas dá suporte a:
+O DevTest Labs agora dá suporte ao recurso da [Galeria de imagens compartilhadas](../virtual-machines/windows/shared-image-galleries.md) . Ele permite que os usuários do laboratório acessem imagens de um local compartilhado durante a criação de recursos de laboratório. Ele também ajuda você a criar estrutura e organização em torno de suas imagens de VM gerenciadas de modo personalizado. O recurso da Galeria de imagens compartilhadas dá suporte a:
 
 - Replicação global gerenciada de imagens
 - Controle de versão e agrupamento de imagens para que o gerenciamento seja mais fácil
 - Torne suas imagens altamente disponíveis com contas de ZRS (Armazenamento com Redundância de Zona) em regiões com suporte para zonas de disponibilidade. O ZRS oferece melhor resiliência em relação às falhas de zona.
 - Compartilhamento entre assinaturas e até mesmo entre locatários usando o RBAC (controle de acesso baseado em função).
 
-Para obter mais informações, consulte a [documentação da Galeria de imagens](../virtual-machines/windows/shared-image-galleries.md)compartilhadas. 
+Para obter mais informações, consulte a [documentação da Galeria de imagens compartilhadas](../virtual-machines/windows/shared-image-galleries.md). 
  
 Se você tiver um grande número de imagens gerenciadas que precise manter e gostaria de disponibilizá-los em toda a empresa, poderá usar uma galeria de imagem compartilhada como um repositório que facilite a atualização e o compartilhamento das suas imagens. Como proprietário de um laboratório, é possível anexar uma galeria de imagens compartilhadas existente ao seu laboratório. Depois que essa galeria for anexada, os usuários do laboratório poderão criar computadores com base nessas imagens mais recentes. Um importante benefício desse recurso é que agora o DevTest Labs pode aproveitar o compartilhamento de imagens entre laboratórios, entre assinaturas e entre regiões. 
+
+> [!NOTE]
+> Para saber mais sobre os custos associados ao serviço da Galeria de imagens compartilhadas, consulte [cobrança da Galeria de imagens compartilhadas](../virtual-machines/windows/shared-image-galleries.md#billing).
 
 ## <a name="considerations"></a>Considerações
 - Você só pode anexar uma galeria de imagens compartilhadas a um laboratório por vez. Se desejar anexar outra galeria, você precisará desanexar a existente e anexar outra. 
@@ -45,7 +48,7 @@ Se você tiver um grande número de imagens gerenciadas que precise manter e gos
 1. Selecione **DevTest Labs** na lista.
 1. Na lista de laboratórios, selecione seu **laboratório**.
 1. Selecione **configuração e políticas** na seção **configurações** no menu à esquerda.
-1. Selecione **galerias de imagens** compartilhadas em **bases da máquina virtual** no menu à esquerda.
+1. Selecione **galerias de imagens compartilhadas** em **bases da máquina virtual** no menu à esquerda.
 
     ![Menu de galerias de imagens compartilhadas](./media/configure-shared-image-gallery/shared-image-galleries-menu.png)
 1. Anexe uma galeria de imagens compartilhada existente ao seu laboratório clicando no botão **anexar** e selecionando a galeria na lista suspensa.

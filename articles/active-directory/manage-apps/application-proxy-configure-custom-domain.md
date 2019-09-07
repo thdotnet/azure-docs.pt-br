@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82b8dcfa02d21183a06fa510adb774338e72cb4e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8a1914b7cf79287831e0e94c19c50107c2ac216d
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851716"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390786"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Trabalhando com domínios personalizados no Proxy de Aplicativo do AD do Azure
 
@@ -40,7 +40,7 @@ Ao publicar um aplicativo por meio do Proxy de Aplicativo do Azure Active Direct
 
 Antes de configurar um domínio personalizado, verifique se você tem os seguintes requisitos preparados: 
 - Um [domínio verificado adicionado ao Azure Active Directory](../fundamentals/add-custom-domain.md).
-- Um certificado personalizado para o domínio, no formato de um arquivo PFX. 
+- Um certificado personalizado para o domínio, no formato de um arquivo PFX.
 - Um aplicativo local [publicado por meio do Proxy de Aplicativo](application-proxy-add-on-premises-application.md).
 
 ### <a name="configure-your-custom-domain"></a>Configurar seu domínio personalizado
@@ -72,6 +72,8 @@ Quando você tiver esses três requisitos prontos, siga estas etapas para config
 Não há nenhuma restrição em relação aos métodos de assinatura do certificado. A Criptografia de Curva Elíptica (ECC), o Nome Alternativo da Entidade (SAN) e outros tipos de certificado são compatíveis. 
 
 Você pode usar um certificado curinga, desde que o curinga corresponda à URL externa desejada.
+
+O certificado deve incluir a chave privada.
 
 Certificados emitidos por sua própria PKI (infraestrutura de chave pública) podem ser usados se a cadeia de certificados estiver instalada em seus dispositivos cliente. O Intune pode ser usado para implantar esses certificados em dispositivos gerenciados. Para dispositivos não gerenciados, esses certificados devem ser instalados manualmente.
 

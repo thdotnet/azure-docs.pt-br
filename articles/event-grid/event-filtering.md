@@ -7,18 +7,18 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 76a4c16afc9edef0a88ac9f2892de9738fd30289
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9fca0a9fefb5959747a4492139ae422a118db02
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66305068"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390186"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Compreender a filtragem para assinaturas da Grade de Eventos
 
 Este artigo descreve as diferentes maneiras para filtrar quais eventos são enviados para o ponto de extremidade. Ao criar uma assinatura de evento, você tem três opções de filtragem:
 
-* Tipos de evento
+* Tipos de eventos
 * Assunto começa com ou termina com
 * Campos avançados e operadores
 
@@ -43,7 +43,7 @@ Para filtragem simples por assunto, especifique um valor inicial ou final para o
 
 Ao publicar eventos em tópicos personalizados, crie assuntos para os eventos que tornem mais fácil aos assinantes reconhecer se estão interessados no evento. Os assinantes usam a propriedade de assunto para filtrar e rotear eventos. Considere adicionar o caminho do acontecimento do evento para que os assinante possam filtrar por segmentos desse caminho. O caminho permite que os assinantes filtrem eventos de maneira restrita ou ampla. Se você fornecer um caminho de três segmentos como `/A/B/C` no assunto, os assinantes poderão filtrar pelo primeiro segmento `/A` para obter um conjunto amplo de eventos. Esses assinantes recebem eventos com assuntos como `/A/B/C` ou `/A/D/E`. Outros assinantes podem filtrar por `/A/B` para obter um conjunto de eventos mais restrito.
 
-A sintaxe JSON para a filtragem, o assunto é:
+A sintaxe JSON para filtragem por assunto é:
 
 ```json
 "filter": {
@@ -61,26 +61,43 @@ Para filtrar por valores nos campos de dados e especificar o operador de compara
 * chave – o campo nos dados do evento que você está usando para filtragem. Ele pode ser um número, booliano ou cadeia de caracteres.
 * valor ou valores: o valor ou os valores a serem comparados com a chave.
 
-A sintaxe JSON para usar filtros avançados é:
+Se você especificar um único filtro com vários valores, uma operação **ou** será executada, portanto, o valor do campo de chave deverá ser um desses valores. Veja um exemplo:
 
 ```json
-"filter": {
-  "advancedFilters": [
+"advancedFilters": [
     {
-      "operatorType": "NumberGreaterThanOrEquals",
-      "key": "Data.Key1",
-      "value": 5
-    },
-    {
-      "operatorType": "StringContains",
-      "key": "Subject",
-      "values": ["container1", "container2"]
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/microsoft.devtestlab/",
+            "/providers/Microsoft.Compute/virtualMachines/"
+        ]
     }
-  ]
-}
+]
 ```
 
-### <a name="operator"></a>Operador
+Se você especificar vários filtros diferentes, uma operação and será executada, portanto, cada condição **de** filtro deverá ser atendida. Veja um exemplo: 
+
+```json
+"advancedFilters": [
+    {
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/microsoft.devtestlab/"
+        ]
+    },
+    {
+        "operatorType": "StringContains",
+        "key": "Subject",
+        "values": [
+            "/providers/Microsoft.Compute/virtualMachines/"
+        ]
+    }
+]
+```
+
+### <a name="operator"></a>Operator
 
 Os operadores disponíveis para os números são:
 
@@ -107,7 +124,7 @@ Todas as comparações de cadeia de caracteres diferenciam maiúsculas de minús
 
 Para eventos no esquema de Grade de Eventos do Azure, use os seguintes valores para a chave:
 
-* ID
+* id
 * Tópico
 * Subject
 * EventType
@@ -117,7 +134,7 @@ Para eventos no esquema de Grade de Eventos do Azure, use os seguintes valores p
 Para eventos no esquema de Eventos de Nuvem, use os seguintes valores para a chave:
 
 * EventId
-* source
+* Origem
 * EventType
 * EventTypeVersion
 * Dados de evento (como Data.key1)
@@ -131,7 +148,7 @@ Os valores podem ser:
 * número
 * cadeia de caracteres
 * boolean
-* matriz
+* array
 
 ### <a name="limitations"></a>Limitações
 
