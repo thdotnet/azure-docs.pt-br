@@ -155,7 +155,7 @@ Todos os eventos conterão os mesmos dados de nível superior:
 | subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
 | eventType | string | Um dos tipos de evento registrados para a origem do evento. |
 | eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| data | objeto | Dados de evento de Hub IoT.  |
+| data | object | Dados de evento de Hub IoT.  |
 | dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
 | metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
 
