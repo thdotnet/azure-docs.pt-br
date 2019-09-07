@@ -4,6 +4,8 @@
   items:
     - name: O que é o Gerenciador de Recursos?
       href: resource-group-overview.md
+    - name: Visão geral de modelo
+      href: template-deployment-overview.md
 - name: Guia de início rápido
   expanded: true
   items:
@@ -58,8 +60,6 @@
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager'
 - name: Conceitos
   items:
-    - name: Implantações de modelo
-      href: template-deployment-overview.md
     - name: Práticas recomendadas de modelo
       href: template-best-practices.md
     - name: Modelos de consistência de nuvem
