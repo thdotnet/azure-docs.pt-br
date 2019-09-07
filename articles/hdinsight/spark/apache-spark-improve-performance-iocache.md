@@ -1,17 +1,17 @@
 ---
-title: Melhorar o desempenho de cargas de trabalho do Apache Spark usando o Cache de E/S do Azure HDInsight (versão prévia)
+title: Desempenho de cargas de trabalho Apache Spark com o cache de e/s do Azure HDInsight (versão prévia)
 description: Saiba mais sobre o Cache de E/S do Azure HDInsight e sobre como usá-lo para melhorar o desempenho do Apache Spark.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 10/15/2018
-ms.openlocfilehash: b77e7e9d5a68439e7f336ecb26e91031d80a7606
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a078fc205403983f4f6484f6a7ccde7f99c4dd58
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695216"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734540"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache-preview"></a>Melhorar o desempenho de cargas de trabalho do Apache Spark usando o Cache de E/S do Azure HDInsight (versão prévia)
 
@@ -47,7 +47,7 @@ O Cache de E/S do Azure HDInsight está desativado por padrão na versão prévi
 >[!NOTE]  
 > Mesmo que a barra de progresso mostre ativado, o Cache de E/S, na verdade, não estará habilitado até que você reinicie os outros serviços afetados.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
   
 Você pode receber erros de espaço em disco ao executar trabalhos do Spark depois de habilitar o Cache de E/S. Esses erros acontecem porque o Spark também usa o armazenamento de disco local para armazenar dados durante operações de embaralhamento. O Spark poderá ocupar todo o espaço do SSD, já que o Cache de E/S está habilitado e o espaço para armazenamento do Spark é reduzido. A quantidade de espaço padrão usado pelo Cache de E/S é de metade do espaço total do SSD. O uso de espaço em disco para o Cache de E/S é configurável no Ambari. Se você receber erros de espaço em disco, reduza a quantidade de espaço de SSD usada pelo Cache de E/S e reinicie o serviço. Para alterar o espaço definido para o Cache de E/S, execute as seguintes etapas:
 

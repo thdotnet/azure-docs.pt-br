@@ -1,6 +1,6 @@
 ---
 title: Usar armazenamentos de metadados externos - Azure HDInsight
-description: Use armazenamentos de metadados externos com clusters HDInsight.
+description: Use armazenamentos de metadados externos com clusters do Azure HDInsight e as práticas recomendadas.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/27/2019
-ms.openlocfilehash: 705ced82ad4edad0bb4adc057414f6b20b80d8d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 38e33c0e138b115010b22cc3510b93be98546b50
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66298882"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735861"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Usar armazenamentos de metadados externos no Azure HDInsight
 
@@ -50,7 +50,7 @@ O HDInsight também dá suporte a metastores personalizados, que são recomendad
 
 ### <a name="select-a-custom-metastore-during-cluster-creation"></a>Selecione um metastore personalizado durante a criação do cluster
 
-Você pode apontar seu cluster para um Banco de Dados SQL do Azure criado anteriormente durante a criação do cluster, ou configurar o Banco de Dados SQL depois que o cluster é criado. Essa opção é especificada com o **armazenamento > configurações de Metastore** durante a criação de um novo Hadoop, Spark ou cluster do Hive interativo do portal do Azure.
+Você pode apontar seu cluster para um Banco de Dados SQL do Azure criado anteriormente durante a criação do cluster, ou configurar o Banco de Dados SQL depois que o cluster é criado. Essa opção é especificada com as **configurações de metastore > de armazenamento** ao criar um novo cluster Hadoop, Spark ou Hive interativo do portal do Azure.
 
 ![Armazenamento de metadados Hive do HDInsight Portal do Azure](./media/hdinsight-use-external-metadata-stores/metadata-store-azure-portal.png)
 
@@ -67,7 +67,7 @@ Aqui estão algumas melhores práticas gerais de metastore Hive do HDInsight:
 - Se você pretende que vários clusters HDInsight acessem dados separados, use um banco de dados separado para o metastore em cada cluster. Se você compartilhar um metastore entre vários clusters do HDInsight, isso significa que os clusters usam os mesmos metadados e arquivos de dados do usuário subjacentes.
 - Faça backup de seu metastore personalizado periodicamente. O Banco de Dados SQL do Azure gera backups automaticamente, mas o prazo de retenção de backup varia. Para obter mais informações, consulte [Saiba mais sobre os backups automáticos do Banco de Dados SQL](../sql-database/sql-database-automated-backups.md).
 - Localize seu cluster do metastore e HDInsight na mesma região, para obter o mais alto desempenho e os menores custos de saída de rede.
-- Monitore seu metastore para desempenho e disponibilidade, usando ferramentas de monitoramento do banco de dados SQL do Azure, como o portal do Azure ou os logs do Azure Monitor.
+- Monitore seu metastore para obter desempenho e disponibilidade usando as ferramentas de monitoramento do banco de dados SQL do Azure, como os logs de portal do Azure ou Azure Monitor.
 - Quando uma nova versão superior do Azure HDInsight é criada em um banco de dados metastore personalizado existente, o sistema atualiza o esquema do metastore, que é irreversível sem restaurar o backup do banco de dados.
 - Se você compartilhar um metastore em vários clusters, verifique se todos os clusters são da mesma versão do HDInsight. Diferentes versões do Hive usam diferentes esquemas de banco de dados metastore. Por exemplo, você não pode compartilhar um metastore entre os clusters com versão Hive 1.2 e Hive 2.1. 
 

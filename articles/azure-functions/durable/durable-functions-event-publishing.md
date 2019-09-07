@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: glenga
-ms.openlocfilehash: 837e29731b617fcb8da95b89668403638c4d049a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f3fd59c0d17bd9094f6887aa5ec088f9fdcdd979
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087395"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734445"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Publicação de Funções Duráveis para a Grade de Eventos do Azure (visualização)
 
@@ -125,6 +125,16 @@ Digite o nome da função e selecione `Create`.
 
 Uma função com o código a seguir é criada:
 
+#### <a name="precompiled-c"></a>C# pré-compilado
+```csharp
+public static void Run([HttpTrigger] JObject eventGridEvent, ILogger log)
+{
+    log.LogInformation(eventGridEvent.ToString(Formatting.Indented));
+}
+```
+
+#### <a name="c-script"></a>Script do C#
+
 ```csharp
 #r "Newtonsoft.Json"
 using Newtonsoft.Json;
@@ -150,6 +160,8 @@ Agora, você está pronto para receber eventos de ciclo de vida.
 ## <a name="create-durable-functions-to-send-the-events"></a>Crie Durable Functions para enviar os eventos
 
 No seu projeto de Funções Duráveis, inicie a depuração em seu computador local.  O código a seguir é o mesmo que o código de modelo para as Funções Duráveis. Você já configurou `host.json` e `local.settings.json` em seu computador local.
+
+### <a name="precompiled-c"></a>C# pré-compilado
 
 ```csharp
 using System.Collections.Generic;
@@ -188,8 +200,8 @@ namespace LifeCycleEventSpike
 
         [FunctionName("Sample_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
-            [OrchestrationClient]DurableOrchestrationClient starter,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestMessage req,
+            [OrchestrationClient] DurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.

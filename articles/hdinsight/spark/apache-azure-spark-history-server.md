@@ -1,19 +1,19 @@
 ---
-title: Uso estendido de servidor de histórico do Spark para depurar e diagnosticar aplicativos do Spark - Microsoft Azure HDInsight
+title: Servidor de histórico do Spark estendido para depurar aplicativos Spark – Azure HDInsight
 description: Uso estendido de servidor de histórico do Spark para depurar e diagnosticar aplicativos do Spark – Azure HDInsight.
 ms.service: hdinsight
-author: jejiang
-ms.author: jejiang
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 09/14/2018
-ms.openlocfilehash: 641fc41c25746a67b4b1fe3d5316df17f14f113c
-ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.date: 09/04/2019
+ms.openlocfilehash: 9ba03f6b1e658e08c3d07d7ccb5e2a99e96fe69c
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68377254"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70736464"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Use o Apache Spark History Server estendido para depurar e diagnosticar aplicativos do Apache Spark
 
@@ -300,7 +300,7 @@ Se você quiser atualizar com o hotfix, use o script a seguir, que atualizará e
 
 **Para usar o arquivo de bash do portal do Azure**
 
-1. Inicie [Portal do Azure](https://ms.portal.azure.com)e selecione seu cluster.
+1. Inicie o [portal do Azure](https://ms.portal.azure.com)e selecione o cluster.
 2. Clique em **ações de Script**, em seguida, **enviar novo**. Conclua o **enviar ação de script** de formulário e, em seguida, clique no botão **criar**.
     
     + Para **Tipo de Script**, selecione **Personalizar**.

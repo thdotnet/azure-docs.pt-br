@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to work with routing tables for NVA.
-ms.openlocfilehash: fc8dd6770efa1c057a56374ddc0094c2d88d2eb5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 18af56f6924484c6267871cf3fed34f80a8f12a4
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60457589"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744708"
 ---
 # <a name="create-a-virtual-hub-route-table-to-steer-traffic-to-a-network-virtual-appliance"></a>Criar uma tabela de rotas do Hub Virtual para conduzir o tráfego para uma solução de virtualização de rede
 
@@ -36,9 +36,9 @@ Neste artigo, você aprenderá a:
 
 Verifique se você atende aos seguintes critérios:
 
-1. Você tem um dispositivo Virtual de rede (NVA). Isso é um software de terceiros de sua escolha que normalmente é provisionado no Azure Marketplace em uma rede virtual.
+1. Você tem uma solução de virtualização de rede (NVA). Esse é um software de terceiros de sua escolha que normalmente é provisionado do Azure Marketplace em uma rede virtual.
 2. Você tem um IP privado atribuído ao adaptador de rede da NVA. 
-3. A NVA não pode ser implantada no hub virtual. Ela deve ser implantada em uma VNet separada. Neste artigo, a VNet NVA é chamada de 'VNet DMZ'.
+3. O NVA não pode ser implantado no Hub virtual. Ela deve ser implantada em uma VNet separada. Neste artigo, a VNet NVA é chamada de 'VNet DMZ'.
 4. A “VNet DMZ” pode ter uma ou várias redes virtuais conectadas a ela. Neste artigo, essa VNet é chamada de “VNet de spoke indireto”. Essas VNets podem ser conectadas à rede VNets DMZ usando o emparelhamento VNet.
 5. Verifique se você tem duas VNets já criadas. Elas serão usadas como VNets spoke. Neste artigo, os espaços de endereço da VNets spoke são 10.0.2.0/24 e 10.0.3.0/24. Se você precisar obter informações sobre como criar uma VNets, consulte [Criar uma rede virtual usando o PowerShell](../virtual-network/quick-create-powershell.md).
 6. Certifique-se de que não há nenhum gateway de rede virtual nas VNets.
@@ -78,7 +78,7 @@ Certifique-se de instalar a versão mais recente dos cmdlets do PowerShell do Re
 3. Crie um hub virtual.
 
    ```powershell
-   New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24"
+   New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24" -Location "West US"
    ```
 
 ## <a name="connections"></a>3. Criar conexões

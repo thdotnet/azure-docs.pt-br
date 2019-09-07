@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 40144fb50a01a64bbd67d541562b4fe0842fbf10
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: b0a58251530467d788710b0584b15715a207e20f
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097792"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734316"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Hubs de tarefas nas Funções Duráveis (Azure Functions)
 
@@ -101,6 +101,8 @@ O nome do hub de tarefas será definido com o valor da configuração do aplicat
 
 Confira um exemplo pré-compilado em C# de como escrever uma função que usa um [OrchestrationClientBinding](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationClientAttribute.html) para trabalhar com um hub de tarefas configurado como uma Configuração de Aplicativo:
 
+### <a name="c"></a>C#
+
 ```csharp
 [FunctionName("HttpStart")]
 public static async Task<HttpResponseMessage> Run(
@@ -119,8 +121,9 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-E abaixo está a configuração necessária para JavaScript. A propriedade do hub de tarefas no arquivo `function.json` é definida por meio da Configuração de Aplicativo:
+### <a name="javascript"></a>JavaScript
 
+A propriedade do hub de tarefas no arquivo `function.json` é definida por meio da Configuração de Aplicativo:
 ```json
 {
     "name": "input",

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: fa03017c35c76d986139eeee00eea8a9b4a00e62
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: e303fe5ca1869249d57373aab9c60a5f92b7ea9c
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60238061"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735110"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Esquema de configuração 1.3 e posterior do Diagnóstico do Azure
 > [!NOTE]
@@ -27,13 +27,11 @@ ms.locfileid: "60238061"
 >
 > Esta página só é relevante se você estiver usando um desses serviços.
 
-Esta página é válida para as versões 1.3 e mais recentes (SDK 2.4 e mais recente do Azure). As seções de configuração mais recentes são comentadas para mostrar em qual versão eles foram adicionados.  
+Esta página é válida para as versões 1.3 e mais recentes (SDK 2.4 e mais recente do Azure). As seções de configuração mais recentes são comentadas para mostrar em qual versão eles foram adicionados. A versão 1,0 e 1,2 do esquema foram arquivadas e não estão mais disponíveis. 
 
 O arquivo de configuração descrito aqui é usado para definir as configurações de diagnóstico quando o monitor de diagnóstico é iniciado.  
 
 A extensão é usada em conjunto com outros produtos de diagnóstico da Microsoft, como Azure Monitor, que inclui Application Insights e Log Analytics.
-
-
 
 Baixe a definição do esquema do arquivo de configuração pública ao executar o seguinte comando PowerShell:  
 
@@ -420,7 +418,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Elementos filho|Descrição|  
 |--------------------|-----------------|  
-|**PublicConfig**|Obrigatória. Veja a descrição em outro lugar nesta página.|  
+|**PublicConfig**|Obrigatório. Veja a descrição em outro lugar nesta página.|  
 |**PrivateConfig**|Opcional. Veja a descrição em outro lugar nesta página.|  
 |**IsEnabled**|Booliano. Veja a descrição em outro lugar nesta página.|  
 
@@ -431,7 +429,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Elementos filho|Descrição|  
 |--------------------|-----------------|  
-|**WadCfg**|Obrigatória. Veja a descrição em outro lugar nesta página.|  
+|**WadCfg**|Obrigatório. Veja a descrição em outro lugar nesta página.|  
 |**StorageAccount**|O nome da conta do Armazenamento do Azure para armazenar os dados. Pode ser especificado como um parâmetro ao executar o cmdlet Set-AzureServiceDiagnosticsExtension.|  
 |**StorageType**|Pode ser *Table*, *Blob* ou *TableAndBlob*. Tabela é o padrão. Quando TableAndBlob for escolhido, os dados de diagnóstico serão gravados duas vezes, uma vez para cada tipo.|  
 |**LocalResourceDirectory**|O diretório na máquina virtual em que o Agente de Monitoramento armazena dados de evento. Caso contrário, o diretório padrão definido será usado:<br /><br /> Para uma função de Trabalho/da Web: `C:\Resources\<guid>\directory\<guid>.<RoleName.DiagnosticStore\`<br /><br /> Para uma Máquina Virtual: `C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<WADVersion>\WAD<WADVersion>`<br /><br /> Os atributos obrigatórios são:<br /><br /> - **path** - o diretório no sistema a ser usado pelo Diagnóstico do Azure.<br /><br /> - **expandEnvironment** - controla se as variáveis de ambiente estão expandidas ou não no nome do caminho.|  
@@ -482,7 +480,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Elementos filho|Descrição|  
 |--------------------|-----------------|  
-|**CrashDumpConfiguration**|Obrigatória. Define os valores de configuração para cada processo.<br /><br /> O atributo a seguir também é obrigatório:<br /><br /> **processName** - o nome do processo para o qual você deseja que o Diagnóstico do Azure colete um despejo de memória.|  
+|**CrashDumpConfiguration**|Obrigatório. Define os valores de configuração para cada processo.<br /><br /> O atributo a seguir também é obrigatório:<br /><br /> **processName** - o nome do processo para o qual você deseja que o Diagnóstico do Azure colete um despejo de memória.|  
 
 ## <a name="directories-element"></a>Elemento Directories
  *Árvore: Raiz - DiagnosticsConfiguration - PublicConfig - WadCFG - DiagnosticMonitorConfiguration - Directories*
@@ -507,7 +505,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
 |Elementos filho|Descrição|  
 |--------------------|-----------------|  
-|**DirectoryConfiguration**|Obrigatória. Atributo obrigatório:<br /><br /> **containerName** - o nome do contêiner de blob no armazenamento do Azure na conta a ser usada para armazenar os arquivos de log.|  
+|**DirectoryConfiguration**|Obrigatório. Atributo obrigatório:<br /><br /> **containerName** - o nome do contêiner de blob no armazenamento do Azure na conta a ser usada para armazenar os arquivos de log.|  
 
 
 
@@ -610,7 +608,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
  Define a configuração de buffer para logs básicos do Azure.  
 
-|Atributo|Tipo|Descrição|  
+|Atributo|type|Descrição|  
 |---------------|----------|-----------------|  
 |**bufferQuotaInMB**|**unsignedInt**|Opcional. Especifica a quantidade máxima de armazenamento do sistema de arquivos disponível para os dados especificados.<br /><br /> O padrão é 0.|  
 |**scheduledTransferLogLevelFilter**|**string**|Opcional. Especifica o nível de severidade mínimo para as entradas de log transferidas. O valor padrão é **Indefinido**, que transfere todos os logs. Outros possíveis valores (na ordem de mais informações para menos) são **Detalhado**, **Informações**, **Aviso**, **Erro**, e **Crítico**.|  
@@ -642,7 +640,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 
  Define os locais para os quais os dados de diagnóstico devem ser enviados. Por exemplo, o serviço Application Insights.  
 
-|Atributo|Tipo|Descrição|  
+|Atributo|type|Descrição|  
 |---------------|----------|-----------------|  
 |**name**|cadeia de caracteres|Uma cadeia de caracteres que identifica o nome do coletor.|  
 

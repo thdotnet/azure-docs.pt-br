@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ae6c2bd27e9192966ecffb4d4296063201fca970
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 992e3f7aa53fdd006d29c06113cd30b07a406f3b
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098013"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734346"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Cenário do Monitor em Funções Duráveis - Exemplo de observador meteorológico
 
@@ -67,11 +67,11 @@ A função **E3_Monitor** usa *function.json* padrão para funções de orquestr
 
 Este é o código que implementa a função:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Script do C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_Monitor/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (somente Functions 2.x)
+### <a name="javascript-functions-2x-only"></a>JavaScript (apenas Funções 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_Monitor/index.js)]
 
@@ -103,11 +103,11 @@ Como com outros exemplo, as funções de atividade auxiliares são funções reg
 
 E aqui está a implementação. Tal como os POCOs utilizados para transferência de dados, a lógica para identificar a chamada à API e analisar a resposta JSON é abstraída em uma classe compartilhada em C#. É possível localizá-la como parte do [código de exemplo do Visual Studio](#run-the-sample).
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Script do C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_GetIsClear/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (somente Functions 2.x)
+### <a name="javascript-functions-2x-only"></a>JavaScript (apenas Funções 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_GetIsClear/index.js)]
 
@@ -117,11 +117,11 @@ A função **E3_SendGoodWeatherAlert** usa a associação do Twilio para enviar 
 
 E aqui está o código que envia a mensagem SMS:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Script do C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_SendGoodWeatherAlert/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (somente Functions 2.x)
+### <a name="javascript-functions-2x-only"></a>JavaScript (apenas Funções 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_SendGoodWeatherAlert/index.js)]
 

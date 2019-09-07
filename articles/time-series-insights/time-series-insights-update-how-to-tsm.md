@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 06/26/2019
+ms.date: 09/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: 05faf77d22f77da87e7c22d47473e6debf0f77c8
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 245a69f5e5834e68bbbd17a96859a93bc16eacbe
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461086"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744187"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Modelagem de dados na Versão Prévia do Azure Time Series Insights
 
@@ -31,7 +31,7 @@ Para saber mais sobre como usar a atualização, leia [Gerenciador da Versão Pr
 
     [![Criar um único tipo](media/v2-update-how-to-tsm/portal-one.png)](media/v2-update-how-to-tsm/portal-one.png#lightbox)
 
-1. Selecione **Adicionar**.
+1. Selecione **+ adicionar**.
 1. Insira todos os detalhes referentes a tipos e selecione **Criar**. Essa ação cria tipos no ambiente.
 
     [![Adicionar um tipo](media/v2-update-how-to-tsm/portal-two.png)](media/v2-update-how-to-tsm/portal-two.png#lightbox)
@@ -42,7 +42,7 @@ Para saber mais sobre como usar a atualização, leia [Gerenciador da Versão Pr
 1. Selecione o arquivo que contém o conteúdo de tipo.
 1. Escolha **Carregar**.
 
-    [![Carregar o JSON](media/v2-update-how-to-tsm/portal-three.png)](media/v2-update-how-to-tsm/portal-three.png#lightbox)
+    [![Carregar JSON](media/v2-update-how-to-tsm/portal-three.png)](media/v2-update-how-to-tsm/portal-three.png#lightbox)
 
 ### <a name="edit-a-single-type"></a>Editar um único tipo
 
@@ -64,13 +64,13 @@ Para saber mais sobre como usar a atualização, leia [Gerenciador da Versão Pr
 
 1. Vá para o painel de seletor de Modelos de Série Temporal e selecione **Hierarquias** no menu. Recolha o painel para se concentrar nas hierarquias de Modelos de Série Temporal.
 
-    [![Selecione hierarquias](media/v2-update-how-to-tsm/portal-six.png)](media/v2-update-how-to-tsm/portal-six.png#lightbox)
+    [![Selecionar hierarquias](media/v2-update-how-to-tsm/portal-six.png)](media/v2-update-how-to-tsm/portal-six.png#lightbox)
 
-1. Selecione **Adicionar**.
+1. Selecione **+ adicionar**.
 
     [![Adicionar uma hierarquia](media/v2-update-how-to-tsm/portal-seven.png)](media/v2-update-how-to-tsm/portal-seven.png#lightbox)
 
-1. Selecione **Adicionar Nível** no painel direito.
+1. Selecione **+ Adicionar nível** no painel direito.
 
     [![Adicionar um nível](media/v2-update-how-to-tsm/portal-eight.png)](media/v2-update-how-to-tsm/portal-eight.png#lightbox)
 
@@ -119,7 +119,7 @@ Para saber mais sobre como usar a atualização, leia [Gerenciador da Versão Pr
 1. Selecione **Carregar JSON**.
 1. Selecione o arquivo que contém o conteúdo das instâncias.
 
-    [![Uma ou mais instâncias de carregamento em massa](media/v2-update-how-to-tsm/portal-fifteen.png)](media/v2-update-how-to-tsm/portal-fifteen.png#lightbox)
+    [![Carregar em massa uma ou mais instâncias](media/v2-update-how-to-tsm/portal-fifteen.png)](media/v2-update-how-to-tsm/portal-fifteen.png#lightbox)
 
 1. Escolha **Carregar**.
 

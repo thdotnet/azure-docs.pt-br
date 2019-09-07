@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 1645e97e5648032a1281e7cb410c42f0a28b6767
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4f0cffbb65192a3698df0c658742147aea354b70
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559646"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744524"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Como criar transcrições com rótulo humano
 
@@ -27,7 +27,7 @@ Um exemplo grande de dados de transcrição é necessário para melhorar o recon
 
 As transcrições com rótulo humano para áudio em inglês devem ser fornecidas como texto sem formatação, apenas usando caracteres ASCII. Evite o uso de caracteres de Pontuação latino-1 ou Unicode. Esses caracteres são frequentemente adicionados inadvertidamente ao copiar texto de um aplicativo de processamento de textos ou recorte de dados de páginas da Web. Se esses caracteres estiverem presentes, certifique-se de atualizá-los com a substituição ASCII apropriada.
 
-Veja alguns exemplos:
+Veja aqui alguns exemplos:
 
 | Caracteres a evitar | Substituição | Observações |
 |---------------------|--------------|-------|
@@ -74,7 +74,7 @@ Aqui estão alguns exemplos de normalização executadas automaticamente na tran
 | Go get -em! | go get em |
 | I'm double-jointed | I'm double jointed |
 | 104 Elm Street | one oh four Elm street |
-| Tune to 102.7 | tune to one oh two seven |
+| Tune to 102.7 | tune to one oh two point seven |
 | Pi is about 3.14 | pi is about three point one four |
 It costs $3.14| it costs three fourteen |
 
@@ -82,7 +82,7 @@ It costs $3.14| it costs three fourteen |
 
 As transcrições rotuladas pelo homem para áudio mandarim chinês devem ser codificadas em UTF-8 com um marcador de ordem de byte. Evite o uso de caracteres de pontuação de meia largura. Esses caracteres podem ser incluídos inadvertidamente quando você prepara os dados em um programa de processamento de texto ou recorta dados de páginas da Web. Se esses caracteres estiverem presentes, certifique-se de atualizá-los com a substituição de largura inteira apropriada.
 
-Veja alguns exemplos:
+Veja aqui alguns exemplos:
 
 | Caracteres a evitar | Substituição | Observações |
 |---------------------|--------------|-------|

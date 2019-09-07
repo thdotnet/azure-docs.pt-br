@@ -1,5 +1,5 @@
 ---
-title: Ferramentas do Apache Hive com Data Lake (Apache Hadoop) para Visual Studio – Azure HDInsight
+title: Apache Hive com o Data Lake Tools para Visual Studio – Azure HDInsight
 description: Saiba como usar as ferramentas de Data Lake para Visual Studio para executar consultas do Apache Hive com Apache Hadoop no Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: hrasheed
-ms.openlocfilehash: 7480dafe435e555bfba81ebd9242bb5724c0bf3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bded3ac97732a7cd18411cc9f4ef1707dbdf68e3
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65861588"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735811"
 ---
 # <a name="run-apache-hive-queries-using-the-data-lake-tools-for-visual-studio"></a>Executar consultas do Apache Hive usando as ferramentas do Data Lake para Visual Studio
 
@@ -39,25 +39,25 @@ Você tem duas opções para criar e executar consultas do Hive:
 
 ### <a name="ad-hoc"></a>Ad hoc
 
-Consultas ad hoc podem ser executadas em qualquer um **lote** ou **interativo** modo.
+Consultas ad hoc podem ser executadas no modo de **lote** ou **interativo** .
 
-1. Abra **Visual Studio**.
+1. Abra o **Visual Studio**.
 
-2. Partir **Gerenciador de servidores**, navegue até **Azure** > **HDInsight**.
+2. Em **Gerenciador de servidores**, navegue até **Azure** > **HDInsight**.
 
-3. Expandir **HDInsight**e o botão direito do mouse no cluster em que você deseja executar a consulta e, em seguida, selecione **escrever uma consulta Hive**.
+3. Expanda o **HDInsight**e clique com o botão direito do mouse no cluster em que você deseja executar a consulta e, em seguida, selecione **gravar uma consulta do hive**.
 
-4. Insira a seguinte consulta de hive:
+4. Insira a seguinte consulta de Hive:
 
     ```hql
     SELECT * FROM hivesampletable;
     ```
 
-5. Selecione **Executar**. Observe que o modo de execução é padronizado para **interativo**.
+5. Selecione **Executar**. Observe que o modo de execução é padronizado como **interativo**.
 
     ![Captura de tela de Executar consultas interativas do Hive](./media/apache-hadoop-use-hive-visual-studio/vs-execute-hive-query.png)
 
-6. Para executar a mesma consulta no **lote** modo, a lista de alternância na lista suspensa da **interativo** para **lote**. Observe que o botão de execução é alterado de **Execute** à **enviar**.
+6. Para executar a mesma consulta no modo de **lote** , alterne a lista suspensa de **interativo** para **lote**. Observe que o botão de execução muda de **executar** para **Enviar**.
 
     ![Captura de tela do envio de uma consulta do Hive](./media/apache-hadoop-use-hive-visual-studio/vs-batch-query.png)
 
@@ -73,15 +73,15 @@ Consultas ad hoc podem ser executadas em qualquer um **lote** ou **interativo** 
 
     ![Captura de tela de uma consulta Hive do HDInsight Hadoop](./media/apache-hadoop-use-hive-visual-studio/hdinsight.visual.studio.tools.submit.jobs.advanced.png "Enviar consultas")
 
-### <a name="hive-application"></a>Aplicativo de hive
+### <a name="hive-application"></a>Aplicativo do hive
 
-1. Abra **Visual Studio**.
+1. Abra o **Visual Studio**.
 
-2. Na barra de menus, navegue até **arquivo** > **New** > **projeto**.
+2. Na barra de menus, navegue até **arquivo** > **novo** > **projeto**.
 
-3. Dos **novo projeto** janela, navegue até **modelos** > **Azure Data Lake** > **HIVE (HDInsight)**  >  **Hive aplicativo**. 
+3. Na janela **novo projeto** , navegue até **modelos** > **Azure data Lake** > **aplicativo Hive** **do hive (HDInsight)**  > . 
 
-4. Forneça um nome para este projeto e, em seguida, selecione **Okey**.
+4. Forneça um nome para este projeto e, em seguida, selecione **OK**.
 
 5. Abra o arquivo **Script.hql** criado com esse projeto e cole as seguintes instruções HiveQL:
 
@@ -125,11 +125,11 @@ Consultas ad hoc podem ser executadas em qualquer um **lote** ou **interativo** 
 
 ### <a name="additional-example"></a>Exemplo adicional
 
-Este exemplo se baseia no `log4jLogs` tabela criada na etapa anterior.
+Este exemplo se baseia na `log4jLogs` tabela criada na etapa anterior.
 
-1. Partir **Gerenciador de servidores**, o cluster com o botão direito e selecione **escrever uma consulta Hive**.
+1. Em **Gerenciador de servidores**, clique com o botão direito do mouse no cluster e selecione **gravar uma consulta do hive**.
 
-2. Insira a seguinte consulta de hive:
+2. Insira a seguinte consulta de Hive:
 
     ```hql
     set hive.execution.engine=tez;
@@ -148,7 +148,7 @@ Este exemplo se baseia no `log4jLogs` tabela criada na etapa anterior.
     
     * `INSERT OVERWRITE ... SELECT`: Seleciona linhas da tabela `log4jLogs` que contêm `[ERROR]` e, então, insere os dados na tabela `errorLogs`.
 
-3. Executar a consulta no **lote** modo.
+3. Execute a consulta no modo de **lote** .
 
 4. Para verificar se o trabalho criou a tabela, use o **Gerenciador de Servidores** e expanda **Azure** > **HDInsight** > seu cluster HDInsight > **Bancos de Dados do Hive** > **padrão**. As tabelas **errorLogs** e **log4jLogs** são listadas.
 

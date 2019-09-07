@@ -1,19 +1,19 @@
 ---
 title: Apache Phoenix no HDInsight - Azure HDInsight
-description: ''
+description: Visão geral do Apache Phoenix
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 01/19/2018
+ms.date: 09/05/2019
 ms.author: ashishth
-ms.openlocfilehash: 7d9aafeb920eab7f6a87061a135bf2e464add436
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f07c7b7a6b1eea05ba41a875e9e78f31404c5f32
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64698001"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733198"
 ---
 # <a name="apache-phoenix-in-hdinsight"></a>Apache Phoenix no HDInsight
 
@@ -40,7 +40,7 @@ CREATE INDEX ix_purchasetype on SALTEDWEBLOGS (purchasetype, transactiondate) IN
 
 Essa abordagem pode produzir um aumento significativo de desempenho executando consultas únicas indexadas. Esse tipo de índice secundário é um **índice de cobertura**, que contém todas as colunas incluídas na consulta. Portanto, a pesquisa de tabela não é necessária e o índice satisfaz a consulta inteira.
 
-### <a name="views"></a>Modos de exibição
+### <a name="views"></a>Exibições
 
 Exibições de Phoenix fornecem uma maneira de resolver uma limitação do HBase, onde o desempenho começará a ser prejudicado quando você criar mais de 100 tabelas físicas aproximadamente. Exibições de Phoenix habilitam várias *tabelas virtuais* para compartilhar uma tabela do HBase física subjacente.
 

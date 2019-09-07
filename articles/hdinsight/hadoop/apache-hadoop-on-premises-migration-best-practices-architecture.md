@@ -1,19 +1,19 @@
 ---
-title: Migrar clusters do Apache Hadoop locais para o Azure HDInsight – melhores práticas de arquitetura
+title: Migrar clusters de Apache Hadoop locais para o Azure HDInsight-Architecture
 description: Aprenda as melhores práticas de arquitetura para migrar clusters do Hadoop locais para o Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/25/2018
+ms.date: 09/04/2019
 ms.author: hrasheed
-ms.openlocfilehash: d1f2b79ff3ae33adb0b6e3ce5a6d96ad38fb1562
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4243100d74515576463a6812e31625ddc0ca1f48
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64693116"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735894"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Migrar clusters do Apache Hadoop locais para o Azure HDInsight – melhores práticas de arquitetura
 
@@ -104,8 +104,8 @@ Algumas melhores práticas do metastore Hive do HDInsight são as seguintes:
 - Não compartilhe o metastore criado para uma versão de cluster do HDInsight com clusters de uma versão diferente. Versões diferentes do Hive usam esquemas diferentes. Por exemplo, um metastore não pode ser compartilhado com clusters do Hive 1.2 e do Hive 2.1.
 - Faça backup do metastore personalizado periodicamente.
 - Mantenha o metastore e o cluster HDInsight na mesma região.
-- Monitore o metastore para desempenho e disponibilidade, usando ferramentas de monitoramento do banco de dados SQL do Azure, como o portal do Azure ou os logs do Azure Monitor.
-- Execute o comando **ANALYZE TABLE** conforme necessário para gerar estatísticas para tabelas e colunas. Por exemplo: `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
+- Monitore o metastore para obter desempenho e disponibilidade usando as ferramentas de monitoramento do banco de dados SQL do Azure, como portal do Azure ou Azure Monitor logs.
+- Execute o comando **ANALYZE TABLE** conforme necessário para gerar estatísticas para tabelas e colunas. Por exemplo, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
 ## <a name="best-practices-for-different-workloads"></a>Melhores práticas para diferentes cargas de trabalho
 

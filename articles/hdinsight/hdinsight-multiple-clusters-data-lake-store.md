@@ -1,5 +1,5 @@
 ---
-title: Usar múltiplos clusters HDInsight com uma conta do Azure Data Lake Storage - Azure
+title: Usar vários clusters HDInsight com uma conta de Azure Data Lake Storage
 description: Saiba como usar mais de um cluster HDInsight com uma única conta do Data Lake Storage
 keywords: armazenamento hdinsight, hdfs, dados estruturados, dados não estruturados, data lake store
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: b580890b1663aa6ce742443e927e4d760585d4ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 776d8f31a5353604ff1c887bdfa214d07b2bfb48
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64700283"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70733175"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Usar múltiplos clusters HDInsight com uma conta do Azure Data Lake Storage
 
@@ -29,7 +29,7 @@ Este artigo fornece recomendações para o administrador do Data Lake Storage co
 O restante deste artigo pressupõe que você tenha um bom conhecimento de ACLs no nível de arquivo e de pasta do Azure Data Lake Storage, o que é descrito em detalhes no [Controle de acesso no Azure Data Lake Storage](../data-lake-store/data-lake-store-access-control.md).
 
 ## <a name="data-lake-storage-setup-for-multiple-hdinsight-clusters"></a>Configuração do Data Lake Storage para vários clusters HDInsight
-Informe-nos levar a uma hierarquia de pastas de dois níveis para explicar as recomendações para usar vários clusters de HDInsight com uma conta de armazenamento do Data Lake. Considere que você tem uma conta do Data Lake Storage com a estrutura de pasta **/clusters/finance**. Com essa estrutura, todos os clusters requeridos pela organização Finance podem usar /clusters/finance como o local de armazenamento. No futuro, se outra organização, digamos, Marketing, quiser criar clusters HDInsight que usem a mesma conta do Data Lake Storage, ela poderá criar clusters/marketing. Por enquanto, usaremos apenas **/clusters/finance**.
+Vamos pegar uma hierarquia de pastas de dois níveis para explicar as recomendações para o uso de vários clusters HDInsight com uma conta de Data Lake Storage. Considere que você tem uma conta do Data Lake Storage com a estrutura de pasta **/clusters/finance**. Com essa estrutura, todos os clusters requeridos pela organização Finance podem usar /clusters/finance como o local de armazenamento. No futuro, se outra organização, digamos, Marketing, quiser criar clusters HDInsight que usem a mesma conta do Data Lake Storage, ela poderá criar clusters/marketing. Por enquanto, usaremos apenas **/clusters/finance**.
 
 Para habilitar essa estrutura de pasta para ser efetivamente usada pelos clusters HDInsight, o administrador do Data Lake Storage deve atribuir permissões apropriadas, conforme descrito na tabela. As permissões mostradas na tabela correspondem a ACLs de acesso e ACLs não padrão. 
 
@@ -53,7 +53,7 @@ Veja alguns pontos principais a considerar.
 - A estrutura de pastas dois níveis ( **/clusters/finance/** ) deve ser criada e provisionada com permissões apropriadas pelo administrador do Data Lake Storage **antes da** conta de armazenamento ser usada para clusters. Essa estrutura não é criada automaticamente durante a criação de clusters.
 - O exemplo acima recomenda que se configure o grupo proprietário de **/clusters/finance** como **FINGRP** e se conceda acesso **r-x** a FINGRP para a hierarquia de pastas inteira, começando da raiz. Isso assegura que os membros de FINGRP possam navegar pela estrutura de pastas começando da raiz.
 - No caso em que entidades de serviço do AAD diferentes podem criar clusters em **/clusters/finance**, o sticky bit (quando definido na pasta **finance**) assegura que as pastas criadas por uma entidade de serviço não possam ser excluídas pela outra.
-- Depois que a estrutura de pastas e as permissões estão em vigor, o processo de criação de cluster do HDInsight cria um local de armazenamento de cluster específico sob **/clusters/Finanças/** . Por exemplo, o armazenamento de um cluster com o nome fincluster01 poderia ser **/clusters/finance/fincluster01**. A propriedade e as permissões para as pastas criadas pelo cluster HDInsight são mostrados na tabela apresentada aqui.
+- Depois que a estrutura de pastas e as permissões estiverem em vigor, o processo de criação de cluster do HDInsight criará um local de armazenamento específico do cluster em **/clusters/Finance/** . Por exemplo, o armazenamento de um cluster com o nome fincluster01 poderia ser **/clusters/finance/fincluster01**. A propriedade e as permissões para as pastas criadas pelo cluster HDInsight são mostrados na tabela apresentada aqui.
 
     |Pasta  |Permissões  |Usuário proprietário  |Grupo proprietário  | Usuário nomeado | Permissões de usuário nomeado | Grupo nomeado | Permissões de grupo nomeado |
     |---------|---------|---------|---------|---------|---------|---------|---------|

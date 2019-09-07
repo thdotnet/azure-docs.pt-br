@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2e32fb57a5ee34da8c342649cc1740d111723ec
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
-ms.translationtype: MT
+ms.openlocfilehash: 7ec30e2445a5ed6008256f7abcef496247922968
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662902"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70744488"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Adicionar alertas e pesquisas salvas do Log Analytics à solução de gerenciamento (versão prévia)
 
@@ -80,7 +80,7 @@ Todas as propriedades de uma pesquisa salva são descritas na tabela a seguir.
 |:--- |:--- |
 | category | A categoria para a pesquisa salva.  As pesquisas salvas na mesma solução geralmente compartilham uma única categoria para que eles são agrupados juntos no console. |
 | displayName | Nome para exibição para a pesquisa salva no portal. |
-| consultar | Consulta a executar. |
+| query | Consulta a executar. |
 
 > [!NOTE]
 > Você talvez precise usar caracteres de escape na consulta, se ele inclui os caracteres que podem ser interpretados como JSON. Por exemplo, se a consulta fosse **AzureActivity | OperationName:"Microsoft.Compute/virtualMachines/write"** , ela deveria ser gravada no arquivo de solução como **AzureActivity | OperationName:/\"Microsoft.Compute/virtualMachines/write\"** .
@@ -119,7 +119,7 @@ As propriedades de recursos de agendamento são descritas na tabela a seguir.
 
 | Nome do elemento | Necessário | description |
 |:--|:--|:--|
-| habilitado       | Sim | Especifica se o alerta está habilitado quando ele é criado. |
+| enabled       | Sim | Especifica se o alerta está habilitado quando ele é criado. |
 | interval      | Sim | A frequência com a consulta é executada em minutos. |
 | queryTimeSpan | Sim | Período de tempo em minutos no qual avaliar resultados. |
 
@@ -169,30 +169,30 @@ Ações de alerta tem a seguinte estrutura. Isso inclui variáveis e parâmetros
 
 As propriedades de Recursos de ação de alerta são descritas nas tabelas a seguir.
 
-| Nome do elemento | Necessário | description |
+| Nome do elemento | Necessário | DESCRIÇÃO |
 |:--|:--|:--|
-| type | Sim | Tipo da ação.  Isso será **Alerta** para ações de alerta. |
-| name | Sim | Nome de exibição para o alerta.  Esse é o nome que é exibido no console para a regra de alerta. |
-| description | Não | Descrição opcional do alerta. |
-| severity | Sim | Severidade do alerta registro dos seguintes valores:<br><br> **crítico**<br>**aviso**<br>**informativo**
+| `Type` | Sim | Tipo da ação.  Isso será **Alerta** para ações de alerta. |
+| `Name` | Sim | Nome de exibição para o alerta.  Esse é o nome que é exibido no console para a regra de alerta. |
+| `Description` | Não | Descrição opcional do alerta. |
+| `Severity` | Sim | Severidade do alerta registro dos seguintes valores:<br><br> **crítico**<br>**aviso**<br>**informativo**
 
 
 #### <a name="threshold"></a>Limite
 Esta seção é necessária. Define as propriedades para o limite de alerta.
 
-| Nome do elemento | Necessário | description |
+| Nome do elemento | Necessário | DESCRIÇÃO |
 |:--|:--|:--|
-| Operator | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
-| Valor | Sim | O valor para comparar os resultados. |
+| `Operator` | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
+| `Value` | Sim | O valor para comparar os resultados. |
 
 ##### <a name="metricstrigger"></a>MetricsTrigger
 Esta seção é opcional. Inclua-o para um alerta de métrica de medição.
 
-| Nome do elemento | Necessário | description |
+| Nome do elemento | Necessário | DESCRIÇÃO |
 |:--|:--|:--|
-| TriggerCondition | Sim | Especifica se o limite do número total de violações ou falhas consecutivas dos seguintes valores:<br><br>**Total<br>consecutivas** |
-| Operator | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
-| Valor | Sim | Número de vezes que os critérios devem ser atendidos para disparar o alerta. |
+| `TriggerCondition` | Sim | Especifica se o limite do número total de violações ou falhas consecutivas dos seguintes valores:<br><br>**Total<br>consecutivas** |
+| `Operator` | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
+| `Value` | Sim | Número de vezes que os critérios devem ser atendidos para disparar o alerta. |
 
 
 #### <a name="throttling"></a>Limitação

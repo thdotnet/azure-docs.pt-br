@@ -3,18 +3,17 @@ title: Pontos de verificação e reprodução nas Funções Duráveis – Azure
 description: Saiba como é o funcionamento dos pontos de verificação e da reprodução na extensão de Funções Duráveis do Azure Functions.
 services: functions
 author: ggailey777
-manager: jeconnoc
-keywords: ''
+manager: gwallace
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 1e6d3b78887c9d195fdf0137553860c141bdaaba
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 5d0527de556c25a1d369d7b22c3f62579bc508f0
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241051"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735255"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Pontos de verificação e reprodução nas Funções Duráveis (Azure Functions)
 
@@ -128,17 +127,9 @@ O comportamento de reprodução cria restrições quanto ao tipo do código que 
 
   Se o código do orquestrador precisar obter a data/hora atual, ele deverá usar a API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime) (.NET) ou `currentUtcDateTime` (JavaScript), que é segura para reprodução.
 
-  Se o código do orquestrador precisar gerar um GUID aleatório, ele deve usar a API [NewGuid](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_NewGuid) (.NET), que é segura para reprodução, ou delegar geração de GUID para uma função de atividade (JavaScript), conforme esse exemplo:
+  Se o código do Orchestrator precisar gerar um GUID aleatório, ele deverá usar a API [NewGuid](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_NewGuid) (.net) ou `newGuid` (JavaScript), que é segura para reprodução.
 
-  ```javascript
-  const uuid = require("uuid/v1");
-
-  module.exports = async function(context) {
-    return uuid();
-  }
-  ```
-
-  Operações não determinísticas devem ser feitas nas funções de atividade. Isso inclui qualquer interação com outras associações de entrada ou saída. Isso garante que qualquer valor não determinístico será gerado uma vez na primeira execução e salvo no histórico de execução. As execuções subsequentes usarão o valor salvo automaticamente.
+   Além desses casos especiais, as operações não determinísticas devem ser feitas em funções de atividade. Isso inclui qualquer interação com outras associações de entrada ou saída. Isso garante que qualquer valor não determinístico será gerado uma vez na primeira execução e salvo no histórico de execução. As execuções subsequentes usarão o valor salvo automaticamente.
 
 * O código de orquestrador deve ser **sem bloqueio**. Por exemplo, isso significa nenhuma E/S e nenhuma chamada para `Thread.Sleep` as APIs (.NET) ou equivalentes.
 
@@ -165,7 +156,7 @@ Embora essas restrições possam parecer assustadoras à primeira vista, na prá
 
 Ocasionalmente, tarefas que podem ser esperadas com segurança em funções de orquestrador são chamadas de *tarefas duráveis*. Trata-se de tarefas que são criadas e gerenciadas pelo Framework de Tarefa Durável. São exemplos as tarefas retornadas por `CallActivityAsync`, `WaitForExternalEvent` e `CreateTimer`.
 
-Essas *tarefas duráveis* são gerenciadas internamente usando uma lista de objetos `TaskCompletionSource`. Durante a reprodução, essas tarefas são criadas como parte da execução do código do orquestrador e são concluídas conforme o dispatcher enumera os eventos de histórico correspondentes. Tudo isso é feito de forma sincronizada usando um único thread até que todo o histórico tenha sido reproduzido. No caso de tarefas duráveis que não forem concluídas até o término da reprodução do histórico, ações apropriadas serão executadas. Por exemplo, uma mensagem pode ser enfileirada para chamar uma função de atividade.
+Essas *tarefas duráveis* são gerenciadas internamente usando uma lista de objetos `TaskCompletionSource`. Durante a reprodução, essas tarefas são criadas como parte da execução do código do orquestrador e são concluídas conforme o dispatcher enumera os eventos de histórico correspondentes. Tudo isso é feito de forma sincronizada usando um único thread até que todo o histórico tenha sido reproduzido. Todas as tarefas duráveis que não forem concluídas pelo fim da reprodução do histórico terão as ações apropriadas executadas. Por exemplo, uma mensagem pode ser enfileirada para chamar uma função de atividade.
 
 O comportamento de execução descrito aqui deve ajudar você a entender por que o código de função de orquestrador nunca deve `await` uma tarefa não durável: o thread de dispatcher não pode aguardar sua conclusão e qualquer retorno de chamada por essa tarefa tem o potencial de corromper o estado de acompanhamento da função de orquestrador. Algumas verificações de tempo de execução estão em vigor para tentar evitar isso.
 
