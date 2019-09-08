@@ -1,21 +1,21 @@
 ---
-title: Práticas recomendadas de Store de consulta no banco de dados do Azure para PostgreSQL – servidor único
-description: Este artigo descreve as práticas recomendadas para a Store consulta no banco de dados do Azure para PostgreSQL – servidor único.
+title: Repositório de Consultas práticas recomendadas no banco de dados do Azure para PostgreSQL-servidor único
+description: Este artigo descreve as práticas recomendadas para o Repositório de Consultas no banco de dados do Azure para PostgreSQL-servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 798a7a3edbf11c8421848871d26ba55b5bada0b6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51239f4cf49784dd47470e1272b90508eaf25e6f
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067249"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764227"
 ---
 # <a name="best-practices-for-query-store"></a>Práticas recomendadas para Repositório de Consultas
 
-**Aplica-se a:** Banco de dados do Azure para PostgreSQL – servidor único 9.6 e 10
+**Aplica-se a:** Banco de dados do Azure para PostgreSQL-versões de servidor único 9,6, 10, 11
 
 Este artigo descreve as práticas recomendadas para o uso do Repositório de Consultas no Banco de Dados do Azure para PostgreSQL.
 
@@ -24,7 +24,7 @@ Deixe que o Repositório de Consultas capture os dados que importam para você.
 
 |**pg_qs.query_capture_mode** | **Cenário**|
 |---|---|
-|_Todas_  |Analise sua carga de trabalho cuidadosamente em termos de todas as consultas e das respectivas frequências de execução e outras estatísticas. Identifique novas consultas na carga de trabalho. Detecte se consultas ad hoc são usadas para identificar oportunidades de parametrização automática ou usuário. _All_ acompanha um custo de consumo de recursos maior. |
+|_Todas_  |Analise sua carga de trabalho cuidadosamente em termos de todas as consultas e das respectivas frequências de execução e outras estatísticas. Identifique novas consultas na carga de trabalho. Detectar se consultas ad hoc são usadas para identificar oportunidades para a parametrização automática ou de usuário. _All_ acompanha um custo de consumo de recursos maior. |
 |_Top_  |Concentre sua atenção nas principais consultas – aquelas emitidas pelos clientes.
 |_Nenhum_ |Você já capturou um conjunto de consultas e a janela de tempo que você deseja investigar, e você deseja eliminar as distrações que outras consultas podem causar. _None_ é adequado para teste e avaliação de desempenho de ambientes. _None_ deve ser usado com cuidado, pois você pode perder a oportunidade de acompanhar e otimizar consultas novas importantes. Você não pode recuperar dados nessas janelas de tempo do passado. |
 

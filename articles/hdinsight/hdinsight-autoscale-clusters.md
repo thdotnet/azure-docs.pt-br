@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: hrasheed
-ms.openlocfilehash: 333eecb11f0bd20c747bc44419fea26765f886c5
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: f7e34d2bbad5f5d8e6b063269b7e87c314fdce90
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69509116"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770693"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters-preview"></a>Dimensionar automaticamente os clusters do Azure HDInsight (versão prévia)
 
@@ -26,12 +26,12 @@ O recurso de dimensionamento automático do cluster do Azure HDInsight dimension
 
 A tabela a seguir descreve os tipos de cluster e as versões que são compatíveis com o recurso de dimensionamento automático.
 
-| Versão | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
+| Version | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
 |---|---|---|---|---|---|---|---|
 | HDInsight 3,6 sem ESP | Sim | sim | Não | Não | Não | Não | Não |
 | HDInsight 4,0 sem ESP | Sim | sim | Não | Não | Não | Não | Não |
 | HDInsight 3,6 com ESP | Sim | sim | Não | Não | Não | Não | Não |
-| HDInsight 3,6 com ESP | Sim | sim | Não | Não | Não | Não | Não |
+| HDInsight 4,0 com ESP | Sim | sim | Não | Não | Não | Não | Não |
 
 ## <a name="how-it-works"></a>Como funciona
 
@@ -77,7 +77,7 @@ Com base no número de contêineres AM por nó e nos requisitos atuais de CPU e 
 Para habilitar o recurso de dimensionamento automático com dimensionamento baseado em carga, conclua as seguintes etapas como parte do processo normal de criação do cluster:
 
 1. Selecione **Personalizado (tamanho, configurações, aplicativos)** em vez de **Criação rápida**.
-1. Na etapa 5 **personalizada** (**tamanho do cluster**), marque a caixa de seleção autoescala do **nó de trabalho** .
+1. Na etapa 5 **personalizada** (**tamanho do cluster**), marque a caixa de seleção **autoescala do nó de trabalho** .
 1. Selecione a opção **com base em carga** em **tipo de dimensionamento automático**.
 1. Insira os valores desejados para as seguintes propriedades:  
 
@@ -94,7 +94,7 @@ O número inicial de nós de trabalho deve estar entre o mínimo e máximo, incl
 Para habilitar o recurso de dimensionamento automático com dimensionamento baseado em agendamento, conclua as seguintes etapas como parte do processo normal de criação do cluster:
 
 1. Selecione **Personalizado (tamanho, configurações, aplicativos)** em vez de **Criação rápida**.
-1. Na etapa 5 **personalizada** (**tamanho do cluster**), marque a caixa de seleção autoescala do **nó de trabalho** .
+1. Na etapa 5 **personalizada** (**tamanho do cluster**), marque a caixa de seleção **autoescala do nó de trabalho** .
 1. Insira o **número de nós de trabalho**, que controla o limite para escalar verticalmente o cluster.
 1. Selecione a opção **baseado em agendamento** em **tipo de dimensionamento automático**.
 1. Clique em **Configurar** para abrir a janela **configuração de dimensionamento automático** .
