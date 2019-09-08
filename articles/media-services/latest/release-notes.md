@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 06/07/2019
+ms.date: 09/06/2019
 ms.author: juliako
-ms.openlocfilehash: f4a859f1e63866a50167031569dca05de3e9af27
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 618aa58fe8553789c831ca933ae6be73843b93dd
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856301"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70801397"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure v3
 
@@ -34,7 +34,11 @@ Para se manter atualizado com os desenvolvimentos mais recentes, este artigo for
 
 Para obter mais informações, consulte [Guia de migração para migrar do Serviços de Mídia v2 para v3](migrate-from-v2-to-v3.md#known-issues).
 
-## <a name="august-2019"></a>Agosto de 2019
+## <a name="september-2019"></a>Setembro de 2019
+
+Os serviços de mídia v3 estão anunciando a visualização de 24 horas x 365 dias de codificação linear dinâmica de eventos ao vivo.
+ 
+## <a name="august-2019"></a>agosto de 2019
 
 ### <a name="south-africa-regional-pair-is-open-for-media-services"></a>O par regional da África do Sul está aberto para os serviços de mídia 
 
@@ -100,7 +104,7 @@ Atualizações adicionadas que incluem melhorias de desempenho dos serviços de 
 
 ## <a name="march-2019"></a>Março de 2019
 
-O empacotamento dinâmico agora dá suporte a Dolby Atmos. Para obter mais informações, consulte codecs de [áudio com suporte pelo empacotamento dinâmico](dynamic-packaging-overview.md#audio-codecs).
+O empacotamento dinâmico agora dá suporte a Dolby Atmos. Para obter mais informações, consulte [codecs de áudio com suporte pelo empacotamento dinâmico](dynamic-packaging-overview.md#audio-codecs).
 
 Agora você pode especificar uma lista de ativos ou filtros de conta, que se aplicariam ao seu localizador de streaming. Para obter mais informações, consulte [associar filtros ao localizador de streaming](filters-concept.md#associating-filters-with-streaming-locator).
 

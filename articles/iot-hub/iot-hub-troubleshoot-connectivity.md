@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/19/2018
 ms.author: jlian
-ms.openlocfilehash: a107689796c58b17c445e7a9cf7c6f0402ef6005
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3904c6390cfe8de197bae470c4ae32d22605ae6a
+ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61440109"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70801419"
 ---
 # <a name="detect-and-troubleshoot-disconnects-with-azure-iot-hub"></a>Detectar e solucionar problemas de desconexões com o Hub do Azure IoT
 
@@ -45,7 +45,7 @@ Para obter mais informações, consulte [monitorar a integridade do IoT Hub do A
 
 ### <a name="set-up-alerts-for-the-_connected-devices_-count-metric"></a>Configurar alertas para a métrica de contagem de _dispositivos conectados_
 
-Para obter alertas quando os dispositivos se desconectar, configurar alertas sobre o **(visualização) de dispositivos conectados** métrica.
+Para obter alertas quando dispositivos se desconectarem, configure alertas na métrica **dispositivos conectados (versão prévia)** .
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
@@ -55,15 +55,15 @@ Para obter alertas quando os dispositivos se desconectar, configurar alertas sob
 
 4. Selecione **nova regra de alerta**.
 
-5. Selecione **Adicionar condição**, em seguida, selecione "Conectado dispositivos (visualização)".
+5. Selecione **Adicionar condição**e, em seguida, selecione "dispositivos conectados (versão prévia)".
 
-6. Conclua a configuração de seus limites desejados e opções de alerta por prompts a seguir.
+6. Conclua a configuração dos limites e das opções de alerta desejadas seguindo os prompts.
 
 Para saber mais, consulte [O que são alertas clássicos no Microsoft Azure?](../azure-monitor/platform/alerts-overview.md).
 
 ## <a name="resolve-connectivity-errors"></a>Resolver problemas de conectividade
 
-Quando você ativa logs de diagnóstico e alertas para dispositivos conectados, você recebe alertas quando ocorrem erros. Esta seção descreve como resolver problemas comuns quando você recebe um alerta. As etapas a seguir pressupõem que você configurou os logs do Azure Monitor para seus logs de diagnóstico.
+Quando você ativa logs de diagnóstico e alertas para dispositivos conectados, você recebe alertas quando ocorrem erros. Esta seção descreve como resolver problemas comuns quando você recebe um alerta. As etapas a seguir pressupõem que você configurou os logs de Azure Monitor para seus logs de diagnóstico.
 
 1. Vá para seu workspace para **Log Analytics** no portal do Azure.
 
@@ -71,7 +71,7 @@ Quando você ativa logs de diagnóstico e alertas para dispositivos conectados, 
 
 3. Para isolar logs de erros de conectividade do Hub IoT, insira a consulta a seguir e selecione **Executar**:
 
-    ```
+    ```kusto
     search *
     | where ( Type == "AzureDiagnostics" and ResourceType == "IOTHUBS")
     | where ( Category == "Connections" and Level == "Error")
