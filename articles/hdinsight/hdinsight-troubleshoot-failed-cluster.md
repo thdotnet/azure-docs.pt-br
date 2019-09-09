@@ -1,6 +1,6 @@
 ---
 title: Solucionar problemas de um trabalho lento ou com falha em um cluster HDInsight – Azure HDInsight
-description: Diagnosticar e solucionar problemas de um cluster HDInsight lento ou falhando.
+description: Diagnostique e solucione problemas de um trabalho lento ou com falha em um cluster do Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: b7afeee554a1faee9507f0a891803024f3bc11e4
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 8c50068914c1519a5522372310bd0f5863a94b39
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69573669"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735779"
 ---
 # <a name="troubleshoot-a-slow-or-failing-job-on-a-hdinsight-cluster"></a>Solucionar problemas de um trabalho lento ou com falha em um cluster HDInsight
 
@@ -72,7 +72,7 @@ Cada cluster HDInsight baseia-se em vários serviços do Azure e em softwares de
 ### <a name="service-details"></a>Detalhes do serviço
 
 * Verifique as versões de lançamento da biblioteca de código aberto.
-* Verifique se há interrupções de [serviço do Azure](https://azure.microsoft.com/status/).  
+* Verifique se há [interrupções de serviço do Azure](https://azure.microsoft.com/status/).  
 * Verifique os limites de uso do serviço do Azure. 
 * Verifique a configuração de sub-rede da rede virtual do Azure.  
 

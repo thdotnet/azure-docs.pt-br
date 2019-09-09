@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3918c37d985c6766fe6ad4601b70ddbd4597b0ba
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 4d8955517450ce3b4efdf30e2790e4be678dfc7b
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70087147"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735190"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Interação humana nas Funções Duráveis – exemplo de verificação por telefone
 
@@ -53,11 +53,11 @@ A função **E4_SmsPhoneVerification** usa o *function.json* padrão para funç�
 
 Este é o código que implementa a função:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Script do C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SmsPhoneVerification/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (somente Functions 2.x)
+### <a name="javascript-functions-2x-only"></a>JavaScript (apenas Funções 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SmsPhoneVerification/index.js)]
 
@@ -84,11 +84,11 @@ A função **E4_SendSmsChallenge** usa a associação ao Twilio para enviar a me
 
 E este é o código que gera o código de desafio de 4 dígitos e envia a mensagem SMS:
 
-### <a name="c"></a>C#
+### <a name="c-script"></a>Script do C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SendSmsChallenge/run.csx)]
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (somente Functions 2.x)
+### <a name="javascript-functions-2x-only"></a>JavaScript (apenas Funções 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SendSmsChallenge/index.js)]
 
