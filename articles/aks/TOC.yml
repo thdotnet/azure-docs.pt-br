@@ -159,7 +159,7 @@
               href: configure-azure-cni.md
         - name: Criar um balanceador de carga interno
           href: internal-lb.md
-        - name: Usar um balanceador de carga padrão (visualização)
+        - name: Usar um Standard Load Balancer
           href: load-balancer-standard.md
         - name: Usar um endereço IP estático
           href: static-ip.md

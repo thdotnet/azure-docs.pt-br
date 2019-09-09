@@ -1,168 +1,149 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação dos Hubs de Eventos do Azure
+summary: Saiba como usar os Hubs de Eventos para ingerir milhões de eventos por segundo por meio de aplicativos e dispositivos conectados.
 metadata:
-  document_id: ''
-  title: 'Documentação dos Hubs de Eventos do Azure - Tutoriais, inícios rápidos, Referência de API'
-  meta.description: Learn how to use Event Hubs to ingest millions of events per second from connected IoT devices and applications on a broad set of platforms.
+  title: Documentação dos Hubs de Eventos do Azure
+  description: Saiba como usar os Hubs de Eventos para ingerir milhões de eventos por segundo por meio de aplicativos e dispositivos conectados.
   services: event-hubs
-  author: spelluru
-  manager: timlt
   ms.service: event-hubs
+  ms.subservice: 
   ms.topic: landing-page
-  ms.date: 10/15/2018
+  ms.collection: collection
+  author: spelluru
   ms.author: spelluru
-abstract:
-  description: 'Os Hubs de Eventos do Azure são uma plataforma de streaming de Big Data e um serviço de ingestão de eventos capaz de receber e processar milhões de eventos por segundo. Os Hubs de Eventos podem processar e armazenar eventos, dados ou telemetria produzidos pelos dispositivos e software distribuídos. Os dados enviados para um hub de eventos podem ser transformados e armazenados usando qualquer provedor de análise em tempo real ou adaptadores de envio em lote/armazenamento. Os Hubs de Eventos do Apache Kafka permitem que os clientes Kafka nativos, ferramentas e aplicativos, como o Mirror Maker, Apache Flink e Akka Streams funcionem perfeitamente com os Hubs de Eventos com alterações na configuração apenas.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: /azure/event-hubs/media/index/stream-big-data-kafka-event-hubs.png
-      width: 250
-    title: 'Transmitir Big Data no Azure com Kafka e Hubs de Eventos (1:20:13)'
-    href: 'https://azure.microsoft.com/resources/videos/streaming-big-data-in-azure-with-kafka-and-event-hubs/'
-    width: 250
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: 'Saiba como <b>criar</b> um hub de eventos:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/event-hubs/media/index/portal.svg
-            text: Portal do Azure
-            href: /azure/event-hubs/event-hubs-quickstart-portal
-          - image:
-              src: /azure/event-hubs/media/index/cli.svg
-            text: CLI do Azure
-            href: /azure/event-hubs/event-hubs-quickstart-cli
-          - image:
-              src: /azure/event-hubs/media/index/logo_powershell.svg
-            text: Azure PowerShell
-            href: /azure/event-hubs/event-hubs-quickstart-powershell
-          - image:
-              src: /azure/event-hubs/media/index/logo_arm.svg
-            text: Modelo do Azure Resource Manager
-            href: /azure/event-hubs/event-hubs-resource-manager-namespace-event-hub
-      - type: paragraph
-        text: 'Saiba como <b>enviar eventos para</b> um hub de eventos e <b>receber eventos dele</b>:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/event-hubs/media/index/logo_net.svg
-            text: .NET Framework
-            href: /azure/event-hubs/event-hubs-dotnet-framework-getstarted-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_netcore.svg
-            text: .NET Standard
-            href: /azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_java.svg
-            text: Java
-            href: /azure/event-hubs/event-hubs-java-get-started-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_python.svg
-            text: Python
-            href: /azure/event-hubs/event-hubs-python-get-started-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_nodejs.svg
-            text: Node.js
-            href: /azure/event-hubs/event-hubs-node-get-started-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_go.svg
-            text: Go
-            href: /azure/event-hubs/event-hubs-go-get-started-send
-          - image:
-              src: /azure/event-hubs/media/index/logo_c.svg
-            text: C
-            href: /azure/event-hubs/event-hubs-c-getstarted-send
-          - image:
-              src: /azure/event-hubs/media/index/storm_r.svg
-            text: Apache Storm
-            href: /azure/event-hubs/event-hubs-storm-getstarted-receive
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: 'Saiba como criar, gerenciar e transmitir eventos usando os Hubs de Eventos do Azure'
-      - type: list
-        style: unordered
-        items:
-          - html: '<a href="https://docs.microsoft.com/azure/event-hubs/event-hubs-tutorial-visualize-anomalies">Ler um fluxo de dados dos Hubs de Eventos com o Azure Stream Analytics e visualizar as anomalias</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/event-hubs/store-captured-data-data-warehouse">Processar e migrar dados dos Hubs de Eventos capturados para um SQL Data Warehouse usando a Grade de Eventos e o Azure Functions</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/azure-databricks/databricks-stream-from-eventhubs">Transmitir dados para o Azure Databricks usando Hubs de Eventos</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/event-hubs/event-hubs-kafka-mirror-maker-tutorial">Espelhar um agente do Kafka em um hub de eventos habilitado do Kafka</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/event-hubs/event-hubs-kafka-flink-tutorial">Conectar o Apache Flink aos hubs de eventos habilitados do Kafka</a>'
-          - html: '<a href="https://docs.microsoft.com/azure/event-hubs/event-hubs-kafka-akka-streams-tutorial">Conectar o Akka Streams aos hubs de eventos habilitados do Kafka</a>'
-  - title: Desenvolva suas habilidades com o Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Habilitar o sistema de mensagens confiável para aplicativos de Big Data usando Hubs de Eventos do Azure
-            href: /learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/
-            image:
-              src: 'https://docs.microsoft.com/learn/achievements/enable-reliable-messaging-for-big-data-apps-using-azure-event-hubs.svg'
-              href: /learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-event-hubs">Mais aprendizado interativo...</a>
-  - title: Treinamento em Vídeo Pluralsight gratuito
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Hubs de Eventos do Azure para Desenvolvedores .NET - Conceitos Básicos
-            href: 'https://www.pluralsight.com/courses/azure-event-hubs-dotnet-developers-fundamentals'
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_pluralsight.svg'
-              href: 'https://www.pluralsight.com/courses/azure-event-hubs-dotnet-developers-fundamentals'
-  - title: Exemplos
-    items:
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/event-hubs/media/index/logo_net.svg
-            text: .NET Framework
-            href: 'https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet'
-          - image:
-              src: /azure/event-hubs/media/index/logo_java.svg
-            text: Java
-            href: 'https://github.com/Azure/azure-event-hubs/tree/master/samples/Java'
-          - image:
-              src: /azure/event-hubs/media/index/logo_python.svg
-            text: Python
-            href: 'https://github.com/Azure/azure-event-hubs-python/tree/master/examples'
-          - image:
-              src: /azure/event-hubs/media/index/logo_nodejs.svg
-            text: Node.js
-            href: 'https://github.com/Azure/azure-event-hubs-node'
-          - image:
-              src: /azure/event-hubs/media/index/logo_go.svg
-            text: Go
-            href: 'https://github.com/Azure/azure-event-hubs-go/tree/master/_examples'
-          - image:
-              src: /azure/event-hubs/media/index/cli.svg
-            text: CLI do Azure
-            href: 'https://github.com/Azure/azure-event-hubs/tree/master/samples/Management/CLI'
-          - image:
-              src: /azure/event-hubs/media/index/logo_powershell.svg
-            text: Azure PowerShell
-            href: 'https://github.com/Azure/azure-event-hubs/tree/master/samples/Management/PowerShell'
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Linha de comando
-            html: <p><a href="/powershell/module/az.eventhub/">PowerShell do Azure</a></p><p><a href="/cli/azure/eventhubs">CLI do Azure</a></p>
-          - title: Languages
-            html: <p><a href="/dotnet/api/microsoft.servicebus.messaging">.NET Framework</a></p><p><a href="/dotnet/api/microsoft.azure.eventhubs">.NET Standard</a></p><p><a href="/java/api/overview/azure/eventhub">Java</a></p>
-          - title: REST
-            html: <p><a href="/rest/api/eventhub/">referência da API REST (a página pode estar em inglês)</a></p>
+  ms.date: 09/05/2019
+  ms.openlocfilehash: bd96fbc12285faa7c18f9fcd09638ec8816865c8
+  ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 09/06/2019
+  ms.locfileid: "70773198"
+landingContent:
+- title: Sobre os Hubs de Eventos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são Hubs de Eventos?
+      url: event-hubs-about.md
+    - text: O que são os Hubs de Eventos para Apache Kafka?
+      url: event-hubs-for-kafka-ecosystem-overview.md
+    - text: O que é a Captura dos Hubs de Eventos?
+      url: event-hubs-capture-overview.md
+    - text: O que são os Hubs de Eventos Dedicados?
+      url: event-hubs-dedicated-overview.md
+- title: Criar um Hub de Evento
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Portal do Azure
+      url: event-hubs-create.md
+    - text: CLI do Azure
+      url: event-hubs-quickstart-cli.md
+    - text: Azure PowerShell
+      url: event-hubs-quickstart-powershell.md
+    - text: Modelo do Azure Resource Manager
+      url: event-hubs-resource-manager-namespace-event-hub.md
+- title: Criar um cluster dedicado
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são os Hubs de Eventos Dedicados?
+      url: event-hubs-dedicated-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Criar um cluster dedicado dos Hubs de Eventos
+      url: event-hubs-dedicated-cluster-create-portal.md
+- title: Integrar com o Apache Kafka
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são os Hubs de Eventos para Apache Kafka?
+      url: event-hubs-for-kafka-ecosystem-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Transmissão para Hubs de Eventos do Apache Kafka
+      url: event-hubs-quickstart-kafka-enabled-event-hubs.md
+  - linkListType: tutorial
+    links:
+    - text: Processar eventos usando o Stream Analytics
+      url: event-hubs-kafka-stream-analytics.md
+  - linkListType: how-to-guide
+    links:
+    - text: Criar um hub de eventos habilitado para Apache Kafka
+      url: event-hubs-create-kafka-enabled.md
+    - text: Espelhar um agente do Kafka em um hub de eventos
+      url: event-hubs-kafka-mirror-maker-tutorial.md
+    - text: Conectar o Apache Spark a um hub de eventos
+      url: event-hubs-kafka-spark-tutorial.md
+    - text: Conectar o Apache Flink a um hub de eventos
+      url: event-hubs-kafka-flink-tutorial.md
+    - text: Integrar o Apache Kafka Connect a um hub de eventos
+      url: event-hubs-kafka-connect-tutorial.md
+    - text: Conectar fluxos do Akka a um hub de eventos
+      url: event-hubs-kafka-akka-streams-tutorial.md
+- title: Enviar e receber eventos
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: .NET Core
+      url: event-hubs-dotnet-standard-getstarted-send.md
+    - text: Java
+      url: event-hubs-java-get-started-send.md
+    - text: Python
+      url: event-hubs-python-get-started-send.md
+    - text: Node.js
+      url: event-hubs-node-get-started-send.md
+    - text: Apache Kafka
+      url: event-hubs-quickstart-kafka-enabled-event-hubs.md#send-and-receive-messages-with-kafka-in-event-hubs
+    - text: Apache Storm (somente receber)
+      url: event-hubs-storm-getstarted-receive.md
+    - text: Go
+      url: event-hubs-go-get-started-send.md
+- title: Capturar eventos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Capturar eventos no Armazenamento de Blobs do Azure ou no Azure Data Lake Storage
+      url: event-hubs-dedicated-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Usar o portal do Azure para habilitar a captura de eventos
+      url: event-hubs-capture-enable-through-portal.md
+    - text: Usar modelo do Resource Manager
+      url: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
+    - text: Habilitar a captura de um aplicativo Python
+      url: event-hubs-capture-python.md
+- title: Processar eventos
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Visualizar anomalias de dados nos fluxos de dados dos Hubs de Eventos
+      url: event-hubs-tutorial-visualize-anomalies.md
+    - text: Processar Hubs de Eventos para eventos do Apache Kafka usando o Stream Analytics
+      url: event-hubs-kafka-stream-analytics.md
+    - text: Transmitir dados para o Azure Databricks usando Hubs de Eventos
+      url: ../azure-databricks/databricks-stream-from-eventhubs.md
+- title: Monitorar e gerenciar
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Monitorar Hubs de Eventos usando o Azure Monitor
+      url: event-hubs-metrics-azure-monitor.md
+    - text: Configuração dos logs de diagnóstico
+      url: event-hubs-diagnostic-logs.md
+    - text: Aumentar automaticamente as unidades de produtividade
+      url: event-hubs-auto-inflate.md
+    - text: Solucionar problemas de exceções
+      url: event-hubs-messaging-exceptions.md
+- title: Segurança
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Usar regras de firewall
+      url: event-hubs-ip-filtering.md
+    - text: Usar pontos de extremidade de serviço de rede virtual
+      url: event-hubs-service-endpoints.md
+    - text: Configurar chaves gerenciadas pelo cliente para criptografia de dados em repouso
+      url: configure-customer-managed-key.md
+    - text: Habilitar integração e firewalls de Redes Virtuais
+      url: event-hubs-tutorial-virtual-networks-firewalls.md

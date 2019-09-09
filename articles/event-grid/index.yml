@@ -1,83 +1,97 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação da Grade de Eventos do Azure
+summary: Saiba como usar a Grade de Eventos do Azure para reagir a eventos relevantes em serviços do Azure e que não são do Azure quase em tempo real.
 metadata:
-  title: 'Documentação da Grade de Eventos do Azure - Tutoriais, Referência da API'
-  description: Use a Grade de Eventos do Azure para reagir a eventos relevantes nos serviços do Azure e não do Azure quase em tempo real.
+  title: Documentação da Grade de Eventos do Azure
+  description: Saiba como usar a Grade de Eventos do Azure para reagir a eventos relevantes em serviços do Azure e que não são do Azure quase em tempo real.
   services: event-grid
-  author: dougeby
-  manager: dougeby
   ms.service: event-grid
+  ms.subservice: 
   ms.topic: landing-page
-  ms.date: 08/10/2017
-  ms.author: dougeby
-abstract:
-  description: 'A Grade de Eventos do Azure é um serviço de roteamento de eventos inteligente totalmente gerenciado que permite um consumo de eventos uniforme usando um modelo do tipo publicar-assinar. Use a Grade de Eventos do Azure para reagir a eventos relevantes nos serviços do Azure e não do Azure quase em tempo real. Saiba como usar a Grade de Eventos do Azure com nossos guias de início rápido, tutoriais e exemplos.'
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Saiba como criar e assinar eventos personalizados.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/event-grid/media/index/cli.svg
-            text: CLI do Azure
-            href: /azure/event-grid/custom-event-quickstart
-          - image:
-              src: /azure/event-grid/media/index/logo_powershell.svg
-            text: Azure PowerShell
-            href: /azure/event-grid/custom-event-quickstart-powershell
-          - image:
-              src: /azure/event-grid/media/index/portal.svg
-            text: Portal do Azure
-            href: /azure/event-grid/custom-event-quickstart-portal
-      - type: paragraph
-        text: Saiba como rotear os eventos de armazenamento de Blobs.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: /azure/event-grid/media/index/cli.svg
-            text: CLI do Azure
-            href: /azure/storage/blobs/storage-blob-event-quickstart?toc=%2fazure%2fevent-grid%2ftoc.json
-          - image:
-              src: /azure/event-grid/media/index/logo_powershell.svg
-            text: Azure PowerShell
-            href: /azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2fazure%2fevent-grid%2ftoc.json
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: Saiba como desenvolver aplicativos que reagem a eventos.
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/event-grid/monitor-virtual-machine-changes-event-grid-logic-app">Monitorar as alterações nas VMs com aplicativos lógicos</a>
-          - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event">Redimensionar imagens carregadas</a>
-          - html: <a href="/azure/event-grid/ensure-tags-exists-on-new-virtual-machines">Integrando a Automação do Azure com a Grade de Eventos</a>
-  - title: Desenvolva suas habilidades com o Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Escolha um modelo de sistema de mensagens no Azure para se conectar livremente aos serviços
-            href: /learn/modules/choose-a-messaging-model-in-azure-to-connect-your-services/
-            image:
-              src: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
-              href: /learn/modules/choose-a-messaging-model-in-azure-to-connect-your-services/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-event-grid">Mais aprendizado interativo...</a>
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Linha de comando
-            html: <p><a href="/cli/azure/eventgrid">CLI do Azure</a></p><p><a href="/powershell/module/az.eventgrid">PowerShell</a></p>
-          - title: APIs REST
-            html: <p><a href="/rest/api/eventgrid">REST</a></p>
-          - title: Esquemas
-            html: <p><a href="/azure/event-grid/subscription-creation-schema ">Esquema da Assinatura</a></p><p><a href="/azure/event-grid/event-schema">Esquema do evento</a></p>
+  ms.collection: collection
+  author: spelluru
+  ms.author: spelluru
+  ms.date: 09/06/2019
+  ms.openlocfilehash: 65eea06d0e31b0d4f9c151ed94719814be5086de
+  ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 09/06/2019
+  ms.locfileid: "70772146"
+landingContent:
+- title: Sobre a Grade de Eventos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é Grade de Eventos?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Conceitos da Grade de Eventos
+      url: concepts.md
+    - text: Origens de eventos
+      url: event-sources.md
+    - text: Manipuladores de eventos
+      url: event-handlers.md
+    - text: Filtros de evento
+      url: event-filtering.md
+- title: Cenários
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Rotear eventos do Armazenamento de Blobs para um ponto de extremidade da Web
+      url: blob-event-quickstart-portal.md
+    - text: Armazenamento de filas como um manipulador de eventos
+      url: custom-event-to-queue-storage.md
+    - text: Hubs de Eventos como um manipulador de eventos
+      url: custom-event-to-eventhub.md
+    - text: Rotear eventos personalizados para um ponto de extremidade da Web
+      url: custom-event-quickstart-portal.md
+    - text: Enviar eventos de um registro de contêiner privado
+      url: ../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
+  - linkListType: tutorial
+    links:
+    - text: Enviar email quando houver alterações na VM
+      url: monitor-virtual-machine-changes-event-grid-logic-app.md
+    - text: Redimensionar imagens carregadas
+      url: resize-images-on-storage-blob-upload-event.md
+    - text: Acionar Runbook de Automação
+      url: ensure-tags-exists-on-new-virtual-machines.md
+    - text: Enviar email quando o dispositivo do Hub IoT for adicionado
+      url: publish-iot-hub-events-to-logic-apps.md
+    - text: Responder a eventos do Barramento de Serviço
+      url: ../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - text: Transmitir dados dos Hubs de Eventos
+      url: event-grid-event-hubs-integration.md
+    - text: Encaminhar eventos de Serviços de Mídia
+      url: ..//media-services/latest/job-state-events-cli-how-to.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - text: Rotear para a Conexões Híbridas
+      url: custom-event-to-hybrid-connection.md
+- title: Conceitos avançados
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Segurança e autenticação
+      url: security-authentication.md
+    - text: Entregar e tentar novamente
+      url: delivery-and-retry.md
+    - text: Domínios de eventos
+      url: event-domains.md
+    - text: Recuperação de desastre geográfico
+      url: geo-disaster-recovery.md
+- title: Personalizações
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Rotear eventos personalizados para o ponto de extremidade da Web
+      url: custom-event-quickstart-portal.md
+  - linkListType: how-to-guide
+    links:
+    - text: Criar um tópico personalizado
+      url: scripts/event-grid-cli-create-custom-topic.md
+    - text: Assinar um tópico personalizado
+      url: scripts/event-grid-cli-subscribe-custom-topic.md
+    - text: Postar em um tópico personalizado
+      url: post-to-custom-topic.md
+    - text: Mapear campos personalizados para o esquema de Grade de Eventos
+      url: input-mappings.md

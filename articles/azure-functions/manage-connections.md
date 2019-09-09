@@ -8,35 +8,35 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 69425129d5f049254a60032283ddc6ca2ab84d5c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26702ae63dcb7aadb96b5bf77f96a44f7d6776f5
+ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65872686"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70114320"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Gerenciar conexões no Azure Functions
 
-Funções em um aplicativo de funções compartilham recursos. Entre esses recursos compartilhados são conexões: Conexões HTTP, conexões de banco de dados e conexões com serviços como o armazenamento do Azure. Quando muitas funções estão em execução simultaneamente, é possível ficar sem conexões disponíveis. Este artigo explica como codificar suas funções para evitar o uso de mais conexões do que o necessário.
+Funções em um aplicativo de funções compartilham recursos. Entre esses recursos compartilhados estão as conexões: Conexões HTTP, conexões de banco de dados e conexões com serviços como o armazenamento do Azure. Quando muitas funções estão em execução simultaneamente, é possível ficar sem conexões disponíveis. Este artigo explica como codificar suas funções para evitar o uso de mais conexões do que precisam.
 
-## <a name="connection-limit"></a>Limite de Conexão
+## <a name="connection-limit"></a>Limite de conexão
 
-O número de conexões disponíveis é limitado em parte porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições que a área restrita impõe no seu código é um limite no número de conexões de saída, que atualmente é 600 (total de 1.200) as conexões ativas por instância. Quando você atingir esse limite, o tempo de execução do functions grava a seguinte mensagem nos logs: `Host thresholds exceeded: Connections`. Para obter mais informações, consulte o [limites de serviço de funções](functions-scale.md#service-limits).
+O número de conexões disponíveis é limitado parcialmente porque um aplicativo de funções é executado em um [ambiente de área restrita](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Uma das restrições que a área de proteção impõe em seu código é um limite no número de conexões de saída, que são atualmente 600 conexões ativas (total de 1.200) por instância. Quando você atinge esse limite, o tempo de execução do Functions grava a seguinte mensagem `Host thresholds exceeded: Connections`nos logs:. Para obter mais informações, consulte os [limites de serviço do Functions](functions-scale.md#service-limits).
 
-Esse limite é por instância. Quando o [controlador de escala adiciona as instâncias do aplicativo de função](functions-scale.md#how-the-consumption-and-premium-plans-work) para tratar mais solicitações, cada instância possui um limite de conexão independente. Isso significa que não há nenhum limite de conexão global, e você pode ter muito mais de 600 conexões ativas em todas as instâncias ativas.
+Esse limite é por instância. Quando o [controlador de escala adiciona instâncias do aplicativo de funções](functions-scale.md#how-the-consumption-and-premium-plans-work) para lidar com mais solicitações, cada instância tem um limite de conexão independente. Isso significa que não há nenhum limite de conexão global e você pode ter muito mais do que 600 conexões ativas em todas as instâncias ativas.
 
-Ao solucionar o problema, certifique-se de que você tiver habilitado o Application Insights para seu aplicativo de funções. O Application Insights permite exibir as métricas para seus aplicativos de funções, como execuções. Para obter mais informações, consulte [exibir a telemetria no Application Insights](functions-monitoring.md#view-telemetry-in-application-insights).  
+Ao solucionar problemas, certifique-se de ter habilitado Application Insights para seu aplicativo de funções. Application Insights permite exibir métricas para seus aplicativos de funções, como execuções. Para obter mais informações, consulte [Exibir telemetria no Application insights](functions-monitoring.md#view-telemetry-in-application-insights).  
 
 ## <a name="static-clients"></a>Clientes estáticos
 
-Para evitar manter mais conexões que o necessário, reutilize as instâncias do cliente em vez de criar novas com cada invocação de função. É recomendável reutilizando as conexões de cliente para qualquer linguagem que você pode escrever sua função no. Por exemplo, os clientes .NET, como o [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx), [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-), e os clientes de armazenamento do Azure podem gerenciar conexões se você usar um cliente simples e estático.
+Para evitar manter mais conexões que o necessário, reutilize as instâncias do cliente em vez de criar novas com cada invocação de função. É recomendável reutilizar conexões de cliente para qualquer idioma em que você possa escrever sua função. Por exemplo, clientes .net como o [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx), [o](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
+)DocumentClient e os clientes de armazenamento do Azure podem gerenciar conexões se você usar um único cliente estático.
 
-Aqui estão algumas diretrizes a seguir quando você estiver usando um cliente específico do serviço em um aplicativo do Azure Functions:
+Aqui estão algumas diretrizes a serem seguidas quando você estiver usando um cliente específico do serviço em um aplicativo Azure Functions:
 
-- *Não* criar um novo cliente com cada invocação de função.
-- *Fazer* criar um cliente simples e estático que cada invocação de função pode usar.
-- *Considere* criando um cliente simples e estático em uma classe auxiliar compartilhado se funções diferentes usam o mesmo serviço.
+- *Não crie um* novo cliente com cada invocação de função.
+- *Crie um* único cliente estático que cada invocação de função possa usar.
+- *Considere* a criação de um único cliente estático em uma classe auxiliar compartilhada se funções diferentes usarem o mesmo serviço.
 
 ## <a name="client-code-examples"></a>Exemplos de código do cliente
 
@@ -44,7 +44,7 @@ Esta seção demonstra as melhores práticas para criar e usar clientes de seu c
 
 ### <a name="httpclient-example-c"></a>Exemplo do HttpClient (C#)
 
-Aqui está um exemplo de C# função de código que cria um estático [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) instância:
+Aqui está um exemplo de C# código de função que cria uma instância [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) estática:
 
 ```cs
 // Create a single, static HttpClient
@@ -57,19 +57,19 @@ public static async Task Run(string input)
 }
 ```
 
-Uma pergunta comum sobre [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) no .NET é "Devo descartar meu cliente?" Em geral, você descarta os objetos que implementam `IDisposable` quando você terminar usá-los. Não descartar um cliente estático porque você não é feitas, mas usá-lo quando a função terminar. Você quer que o cliente estático permaneça durante a duração do aplicativo.
+Uma pergunta comum sobre o [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) no .net é "Devo descartar meu cliente?" Em geral, você descartar objetos que `IDisposable` implementam quando você terminar de usá-los. Mas você não descartar um cliente estático porque não está pronto usando-o quando a função termina. Você quer que o cliente estático permaneça durante a duração do aplicativo.
 
 ### <a name="http-agent-examples-javascript"></a>Exemplos de agente HTTP (JavaScript)
 
-Como ele fornece melhores opções de gerenciamento de conexão, você deve usar a classe[`http.agent`](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_class_http_agent) nativa em vez de métodos não nativos, como o módulo`node-fetch`. Parâmetros de Conexão são configurados por meio de opções no `http.agent` classe. Para opções detalhadas disponíveis com o agente HTTP, consulte [novo agente (\[opções\])](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_new_agent_options).
+Como ele fornece melhores opções de gerenciamento de conexão, você deve usar a classe[`http.agent`](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_class_http_agent) nativa em vez de métodos não nativos, como o módulo`node-fetch`. Os parâmetros de conexão são configurados `http.agent` por meio de opções na classe. Para obter opções detalhadas disponíveis com o agente http, consulte [novo agente\[(\]opções)](https://nodejs.org/dist/latest-v6.x/docs/api/http.html#http_new_agent_options).
 
-Global `http.globalAgent` classe usada por `http.request()` tem todos esses valores definidos com seus respectivos padrões. A maneira recomendada de configurar limites de conexão em Funções é definir um número máximo globalmente. O exemplo a seguir define o número máximo de soquetes para o aplicativo de função:
+A classe `http.globalAgent` global usada pelo `http.request()` tem todos esses valores definidos para seus respectivos padrões. A maneira recomendada de configurar limites de conexão em Funções é definir um número máximo globalmente. O exemplo a seguir define o número máximo de soquetes para o aplicativo de função:
 
 ```js
 http.globalAgent.maxSockets = 200;
 ```
 
- O exemplo a seguir cria uma nova solicitação HTTP com um agente personalizado de HTTP para a solicitação:
+ O exemplo a seguir cria uma nova solicitação HTTP com um agente HTTP personalizado somente para essa solicitação:
 
 ```js
 var http = require('http');
@@ -111,34 +111,34 @@ public static async Task Run(string input)
 ```
 
 ### <a name="cosmosclient-code-example-javascript"></a>Exemplo de código CosmosClient (JavaScript)
-[CosmosClient](/javascript/api/@azure/cosmos/cosmosclient) se conecta a uma instância do Azure Cosmos DB. A documentação do Azure Cosmos DB recomenda que você [use um cliente singleton do Azure Cosmos DB pelo tempo de vida do aplicativo](../cosmos-db/performance-tips.md#sdk-usage). O exemplo a seguir mostra um padrão para fazer isso em uma função:
+[CosmosClient](/javascript/api/@azure/cosmos/cosmosclient) conecta-se a uma instância de Azure Cosmos DB. A documentação do Azure Cosmos DB recomenda que você [use um cliente singleton do Azure Cosmos DB pelo tempo de vida do aplicativo](../cosmos-db/performance-tips.md#sdk-usage). O exemplo a seguir mostra um padrão para fazer isso em uma função:
 
 ```javascript
 const cosmos = require('@azure/cosmos');
 const endpoint = process.env.COSMOS_API_URL;
-const masterKey = process.env.COSMOS_API_KEY;
+const key = process.env.COSMOS_API_KEY;
 const { CosmosClient } = cosmos;
 
-const client = new CosmosClient({ endpoint, auth: { masterKey } });
+const client = new CosmosClient({ endpoint, key });
 // All function invocations also reference the same database and container.
 const container = client.database("MyDatabaseName").container("MyContainerName");
 
 module.exports = async function (context) {
-    const { result: itemArray } = await container.items.readAll().toArray();
+    const { resources: itemArray } = await container.items.readAll().fetchAll();
     context.log(itemArray);
 }
 ```
 
 ## <a name="sqlclient-connections"></a>Conexões SqlClient
 
-O código de função pode usar o .NET Framework Data Provider para SQL Server ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx)) para estabelecer conexões com um banco de dados relacional do SQL. Isso também é o provedor subjacente para estruturas de dados que se baseiam no ADO.NET, como [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Ao contrário das conexões [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) e [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
-), o ADO.NET implementa o pool de conexões por padrão. Mas, porque você ainda pode ficar sem conexões, você deve otimizar a conexões ao banco de dados. Para obter mais informações, consulte [Pool de Conexões do SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling).
+Seu código de função pode usar o .NET Framework Provedor de Dados para SQL Server ([SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx)) para fazer conexões com um banco de dados relacional do SQL. Esse também é o provedor subjacente para estruturas de dados que dependem de ADO.NET, como [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Ao contrário das conexões [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx) e [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient
+), o ADO.NET implementa o pool de conexões por padrão. Mas como você ainda pode ficar sem conexões, você deve otimizar as conexões com o banco de dados. Para obter mais informações, consulte [Pool de Conexões do SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling).
 
 > [!TIP]
-> Algumas estruturas de dados, como o Entity Framework, normalmente obtém cadeias de caracteres de conexão das **ConnectionStrings** seção de um arquivo de configuração. Nesse caso, é necessário adicionar explicitamente as cadeias de conexão de banco de dados SQL à coleção **Cadeias de conexão** das configurações de aplicativo de funções e no [local.settings.json file](functions-run-local.md#local-settings-file) no projeto local. Se você estiver criando uma instância do [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) em seu código de função, você deve armazenar o valor de cadeia de caracteres de conexão na **configurações do aplicativo** com as outras conexões.
+> Algumas estruturas de dados, como Entity Framework, normalmente recebem cadeias de conexão da seção **connectionStrings** de um arquivo de configuração. Nesse caso, é necessário adicionar explicitamente as cadeias de conexão de banco de dados SQL à coleção **Cadeias de conexão** das configurações de aplicativo de funções e no [local.settings.json file](functions-run-local.md#local-settings-file) no projeto local. Se você estiver criando uma instância de [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) em seu código de função, deverá armazenar o valor da cadeia de conexão nas **configurações do aplicativo** com suas outras conexões.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre por que recomendamos que os clientes estáticos, consulte [antipadrão de instanciação inadequada](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/).
+Para obter mais informações sobre por que recomendamos clientes estáticos, consulte [antipadrão de instanciação impróprio](https://docs.microsoft.com/azure/architecture/antipatterns/improper-instantiation/).
 
 Para obter mais dicas de desempenho do Azure Functions, consulte [Melhore o desempenho e a confiabilidade do Azure Functions](functions-best-practices.md).
