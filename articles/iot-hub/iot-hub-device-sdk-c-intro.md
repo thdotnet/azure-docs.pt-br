@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: robinsh
-ms.openlocfilehash: 1c1921391048fc59f03070d4753f422d9cfc5237
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: dd12f974b9b02d919752dcb932c9ce1709d7315b
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883476"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813780"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>SDK do dispositivo IoT do Azure para C
 
@@ -217,7 +217,7 @@ Sempre que você enviar uma mensagem, será possível especificar uma referênci
 static void SendConfirmationCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCallback)
 {
     EVENT_INSTANCE* eventInstance = (EVENT_INSTANCE*)userContextCallback;
-    (void)printf("Confirmation[%d] received for message tracking id = %zu with result = %s\r\n", callbackCounter, eventInstance->messageTrackingId, ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
+    (void)printf("Confirmation[%d] received for message tracking id = %zu with result = %s\r\n", callbackCounter, eventInstance->messageTrackingId, MU_ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
     /* Some device specific action code goes here... */
     callbackCounter++;
     IoTHubMessage_Destroy(eventInstance->messageHandle);
@@ -392,7 +392,7 @@ Por fim, chame a função **CREATE\_MODEL\_INSTANCE**. **WeatherStation** é o n
 
 ### <a name="define-the-model"></a>Definir o modelo
 
-Um modelo na biblioteca **serializer** define as mensagens que seu dispositivo pode enviar ao Hub IoT e as mensagens, chamadas de *ações* na linguagem de modelagem, que ele pode receber. Você define um modelo usando um conjunto de macros C como no aplicativo de exemplo **\_iothub_client Samples\_iothub_convenience_sample** :
+Um modelo na biblioteca **serializer** define as mensagens que seu dispositivo pode enviar ao Hub IoT e as mensagens, chamadas de *ações* na linguagem de modelagem, que ele pode receber. Você define um modelo usando um conjunto de macros C como no aplicativo de exemplo **iothub_client\_Samples\_iothub_convenience_sample** :
 
 ```c
 BEGIN_NAMESPACE(WeatherStation);
@@ -475,7 +475,7 @@ void sendCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCal
 
     (void)printf("Message Id: %u Received.\r\n", messageTrackingId);
 
-    (void)printf("Result Call Back Called! Result is: %s \r\n", ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
+    (void)printf("Result Call Back Called! Result is: %s \r\n", MU_ENUM_TO_STRING(IOTHUB_CLIENT_CONFIRMATION_RESULT, result));
 }
 ```
 

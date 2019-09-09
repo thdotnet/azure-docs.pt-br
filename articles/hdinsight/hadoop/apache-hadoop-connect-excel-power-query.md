@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.openlocfilehash: e35e86bee4dfee21d0a98867c3e0d1d7850ed0ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c1255296854fd28cca4427b6cac04de7dc7919d8
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762001"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810909"
 ---
 # <a name="connect-excel-to-apache-hadoop-by-using-power-query"></a>Conectar o Excel ao Apache Hadoop com o Power Query
 Um dos principais recursos da solução de big data da Microsoft é a integração dos componentes de BI (business intelligence) da Microsoft com clusters Apache Hadoop no Azure HDInsight. Um dos principais exemplos é a capacidade de conectar o Excel com a conta de Armazenamento do Azure, que contém os dados associados ao seu cluster Hadoop usando o suplemento Microsoft Power Query para Excel. Este artigo explica como configurar e usar o Power Query para consultar dados associados a um cluster Hadoop gerenciado com o HDInsight.
@@ -28,7 +28,7 @@ Antes de começar este artigo, você deve ter os seguintes itens:
 ## <a name="install-power-query"></a>Instalar o Power Query
 O Power Query pode importar dados que foram retornados ou que foram gerados por um trabalho Hadoop em execução em um cluster HDInsight.
 
-No Excel 2016, o Power Query foi integrado na faixa de opções Dados na seção Obter e Transformar. Para versões mais antigas do Excel, baixe o Microsoft Power Query para Excel no [Centro de Download da Microsoft][powerquery-download] e instale-o.
+No Excel 2016, o Power Query foi integrado na faixa de opções Dados na seção Obter e Transformar. Para versões mais antigas do Excel, baixe Microsoft Power Query para Excel no [centro de download da Microsoft][powerquery-download] e instale-o.
 
 ## <a name="import-hdinsight-data-into-excel"></a>Importar dados do HDInsight para o Excel
 O suplemento do Power Query para Excel facilita a importação de dados de seu cluster HDInsight para o Excel onde ferramentas de BI, como o PowerPivot e o Power Map, podem ser usadas para inspecionar, analisar e apresentar os dados.
@@ -43,7 +43,7 @@ O suplemento do Power Query para Excel facilita a importação de dados de seu c
 
      - Clique no menu **Dados**, clique em **Obter Dados** da faixa de opções **Obter e Transformar Dados**, clique em **Do Azure** e, em seguida, em **Do Azure HDInsight (HDFS)** .
 
-       ![HDI.PowerQuery.SelectHdiSource](./media/apache-hadoop-connect-excel-power-query/hdi.powerquery.selecthdisource.excel2016.png)
+       ![HDI. PowerQuery. SelectHdiSource. 2016](./media/apache-hadoop-connect-excel-power-query/hdi.powerquery.selecthdisource.excel2016.png)
 
    - Excel 2013/2010
 
@@ -51,7 +51,7 @@ O suplemento do Power Query para Excel facilita a importação de dados de seu c
    
        ![HDI.PowerQuery.SelectHdiSource][image-hdi-powerquery-hdi-source]
        
-       **Observação:** Se você não vir as **Power Query** menu, vá para **arquivo** > **opções** > **Add-ins**e selecione  **COM Add-ins** na lista suspensa **gerenciar** caixa na parte inferior da página. Selecione o botão **Ir...** e verifique se a caixa do suplemento Power Query para Excel está marcada.
+       **Observação:** Se você não vir o menu de **Power Query** , vá para **arquivo** > **Opções** > **suplementos**e selecione suplementos de **com** na caixa suspensa **gerenciar** na parte inferior da página. Selecione o botão **Ir...** e verifique se a caixa do suplemento Power Query para Excel está marcada.
        
        **Observação:** O Power Query também permite que você importe dados do HDFS clicando em **De Outras Fontes**.
 4. Para **Nome da conta**, insira o nome da conta de Armazenamento de Blobs do Azure associada ao cluster e, em seguida, clique em **OK**. Essa conta pode ser a conta de armazenamento padrão ou uma conta de armazenamento vinculada.  O formato é *https://&lt;StorageAccountName>.blob.core.windows.net/* .

@@ -1,9 +1,9 @@
 ---
-title: Requisitos para usar o PIM - Azure Active Directory de licença | Microsoft Docs
+title: Requisitos de licença para usar o PIM-Azure Active Directory | Microsoft Docs
 description: Descreve os requisitos de licenciamento para uso do Azure AD PIM (Privileged Identity Management).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: markwahl-msft
 ms.assetid: 34367721-8b42-4fab-a443-a2e55cdbf33d
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: pim
 ms.date: 01/16/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e16209a185623b6e15650f70141edd6394e337
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 83c31c2731a8e872dfd2750fced8b91d283d0892
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437449"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804065"
 ---
 # <a name="license-requirements-to-use-pim"></a>Requisitos de licença para uso do PIM
 
@@ -45,7 +45,7 @@ Cada administrador ou usuário que interage com o PIM ou que recebe um benefíci
 - Administradores com funções do Azure AD gerenciadas usando o PIM
 - Administradores com funções de recurso do Azure gerenciadas usando o PIM
 - Administradores atribuídos à função Administrador com Função com Privilégios
-- Usuários atribuídos como elegíveis para funções do Azure AD gerenciado usando o PIM
+- Usuários atribuídos como qualificados para funções do Azure AD gerenciadas usando o PIM
 - Usuários que podem aprovar/rejeitar solicitações no PIM
 - Usuários atribuídos a uma função de recurso do Azure com atribuições Just-In-Time ou diretas (por tempo limitado)  
 - Usuários atribuídos a uma revisão de acesso

@@ -1,6 +1,6 @@
 ---
 title: Desempenho do Phoenix no Azure HDInsight
-description: Práticas recomendadas para otimizar o desempenho do Phoenix.
+description: Práticas recomendadas para otimizar o desempenho de Apache Phoenix para clusters do Azure HDInsight
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: 4fc4d1843ddb8d007ca062d928ebbddf90909583
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b2a40802070510939332c3f5e876293445cf2df1
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64690041"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810435"
 ---
 # <a name="apache-phoenix-performance-best-practices"></a>Práticas recomendadas de desempenho do Apache Phoenix
 
@@ -31,31 +31,31 @@ A chave primária definida em uma tabela no Phoenix determina como os dados são
 
 Por exemplo, uma tabela para contatos tem o nome, sobrenome, número de telefone e endereço, todos na mesma família de colunas. Você pode definir uma chave primária com base em um número de sequência crescente:
 
-|rowkey|       endereço|   phone| firstName| lastName|
+|rowkey|       endereço|   telefone| firstName| lastName|
 |------|--------------------|--------------|-------------|--------------|
 |  1000|1111 San Gabriel Dr.|1-425-000-0002|    John|Dole|
 |  8396|5415 San Gabriel Dr.|1-230-555-0191|  Calvin|Raji|
 
 No entanto, se você consultar com frequência por lastName, esta chave primária pode não ser bem executada, porque cada consulta requer uma verificação de tabela completa para ler o valor de cada lastName. Em vez disso, você pode definir uma chave primária nas colunas lastName, firstName e número do seguro social. Esta última coluna é para evitar a ambiguidade de dois residentes no mesmo endereço com o mesmo nome, como pai e filho.
 
-|rowkey|       endereço|   phone| firstName| lastName| socialSecurityNum |
+|rowkey|       endereço|   telefone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
 |  1000|1111 San Gabriel Dr.|1-425-000-0002|    John|Dole| 111 |
 |  8396|5415 San Gabriel Dr.|1-230-555-0191|  Calvin|Raji| 222 |
 
 Com essa nova chave primária, chaves de linhas geradas pelo Phoenix seriam:
 
-|rowkey|       endereço|   phone| firstName| lastName| socialSecurityNum |
+|rowkey|       endereço|   telefone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
 |  Dole-John-111|1111 San Gabriel Dr.|1-425-000-0002|    John|Dole| 111 |
 |  Raji-Calvin-222|5415 San Gabriel Dr.|1-230-555-0191|  Calvin|Raji| 222 |
 
 Na primeira linha acima, os dados para o rowkey são representados conforme mostrado:
 
-|rowkey|       chave|   value| 
+|rowkey|       key|   value| 
 |------|--------------------|---|
 |  Dole-John-111|endereço |1111 San Gabriel Dr.|  
-|  Dole-John-111|phone |1-425-000-0002|  
+|  Dole-John-111|telefone |1-425-000-0002|  
 |  Dole-John-111|firstName |John|  
 |  Dole-John-111|lastName |Dole|  
 |  Dole-John-111|socialSecurityNum |111| 
@@ -113,7 +113,7 @@ Durante a criação dos índices:
 
 Por exemplo, no exemplo de tabela de contato, você pode criar um índice secundário apenas na coluna socialSecurityNum. Esse índice secundário aceleraria as consultas que filtram por valores socialSecurityNum, mas recuperar outros valores de campo exigiria outra leitura em relação à tabela principal.
 
-|rowkey|       endereço|   phone| firstName| lastName| socialSecurityNum |
+|rowkey|       endereço|   telefone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
 |  Dole-John-111|1111 San Gabriel Dr.|1-425-000-0002|    John|Dole| 111 |
 |  Raji-Calvin-222|5415 San Gabriel Dr.|1-230-555-0191|  Calvin|Raji| 222 |

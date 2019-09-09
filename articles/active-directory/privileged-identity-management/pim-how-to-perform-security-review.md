@@ -1,9 +1,9 @@
 ---
-title: Examinar o acesso às funções do AD do Azure no PIM - Azure Active Directory | Microsoft Docs
-description: Saiba como examinar acesso das funções do Azure AD no Azure AD Privileged Identity Management (PIM).
+title: Examinar o acesso às funções do Azure AD no PIM-Azure Active Directory | Microsoft Docs
+description: Saiba como examinar o acesso das funções do Azure AD no Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 06/21/2018
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3850af026ea13e1920aea65e18358ebb04ef0d25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3bd548041b086eef8d788a696497163c756fd5b7
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65140977"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804429"
 ---
-# <a name="review-access-to-azure-ad-roles-in-pim"></a>Examinar o acesso às funções do AD do Azure no PIM
+# <a name="review-access-to-azure-ad-roles-in-pim"></a>Examinar o acesso às funções do Azure AD no PIM
 
-Azure Active Directory (AD) Privileged Identity Management (PIM) simplifica como as empresas gerenciam o acesso privilegiado a recursos no Azure AD e outros Microsoft online services como Office 365 ou Microsoft Intune.  
+O Azure Active Directory (AD) Privileged Identity Management (PIM) simplifica o modo como as empresas gerenciam o acesso privilegiado a recursos no Azure AD e outros serviços online da Microsoft, como o Office 365 ou Microsoft Intune.  
 
 Se você for atribuído a uma função administrativa, o administrador de função com privilégios de sua organização poderá solicitar que você confirme regularmente que ainda precisa da função para seu trabalho. Você pode receber um email que inclui um link ou pode acessar diretamente o [portal do Azure](https://portal.azure.com). Siga as etapas neste artigo para executar a autorrevisão das suas funções atribuídas.
 

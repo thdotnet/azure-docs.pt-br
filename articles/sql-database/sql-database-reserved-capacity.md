@@ -1,5 +1,5 @@
 ---
-title: Pré-pagamento para banco de dados SQL do Azure vCores para economizar dinheiro | Microsoft Docs
+title: Economize custos para o banco de dados SQL do Azure vCores | Microsoft Docs
 description: Aprenda a comprar a capacidade reservada do Banco de Dados SQL do Azure para economizar nos custos de seu computador.
 services: sql-database
 ms.service: sql-database
@@ -10,22 +10,22 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
-ms.date: 08/02/2019
-ms.openlocfilehash: 61b646ca1ec5a4826ac6418c1b80b88a89266012
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.date: 08/29/2019
+ms.openlocfilehash: 5ab5481a89f7bb9c74133487b01879b00b7def32
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972559"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806584"
 ---
-# <a name="prepay-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Pré-pagamento para recursos de computação do Banco de Dados SQL com capacidade reservada do Banco de Dados SQL do Azure
+# <a name="save-costs-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Economize custos para recursos de computação do banco de dados SQL com capacidade reservada do banco de dados SQL
 
-Economize dinheiro com o Banco de Dados SQL do Azure pré-pagando pelos recursos de computação em comparação com os preços de pagamento conforme o uso. Com a capacidade reservada do Banco de Dados SQL do Azure, você assume um compromisso inicial com o Banco de Dados SQL por um período de um ou três anos para obter um desconto significativo nos custos de computação. Para comprar a capacidade reservada do Banco de Dados SQL, é necessário especificar a região do Azure, o tipo de implantação, o nível de desempenho e o prazo.
+Economize dinheiro com o banco de dados SQL do Azure confirmando uma reserva de recursos de computação em comparação com os preços pagos conforme o uso. Com a capacidade reservada do banco de dados SQL do Azure, você faz um compromisso com o uso do banco de dados SQL por um período de um ou três anos para obter um desconto significativo nos custos de computação. Para comprar a capacidade reservada do Banco de Dados SQL, é necessário especificar a região do Azure, o tipo de implantação, o nível de desempenho e o prazo.
 
 
-Você não precisa atribuir a reserva a instâncias específicas do Banco de Dados SQL (bancos de dados individuais, pools elásticos ou instâncias gerenciadas). As instâncias de banco de dados SQL correspondentes, que já estão em execução ou recém-implantadas, receberão automaticamente o benefício. Ao comprar uma reserva, você está pagando antecipadamente os custos de computação por um período de um ou três anos. Assim que você compra uma reserva, as cobranças de computação do Banco de Dados SQL que correspondem aos atributos de reserva não são mais cobradas nas taxas de pagamento conforme o uso. Uma reserva não cobre custos de software, rede ou armazenamento associados à instância do banco de dados SQL. No final do período de reserva, o benefício de cobrança expira e os Bancos de Dados SQL são cobrados pelo preço de pré-pagamento. As reservas não são renovadas automaticamente. Para obter informações sobre preços, consulte a [oferta de capacidade reservada do Banco de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/managed/).
+Você não precisa atribuir a reserva a instâncias específicas do Banco de Dados SQL (bancos de dados individuais, pools elásticos ou instâncias gerenciadas). As instâncias de banco de dados SQL correspondentes, que já estão em execução ou recém-implantadas, receberão automaticamente o benefício. Ao comprar uma reserva, você está comprometido com o uso dos custos de computação por um período de um ou três anos. Assim que você compra uma reserva, as cobranças de computação do Banco de Dados SQL que correspondem aos atributos de reserva não são mais cobradas nas taxas de pagamento conforme o uso. Uma reserva não cobre custos de software, rede ou armazenamento associados à instância do banco de dados SQL. No final do período de reserva, o benefício de cobrança expira e os Bancos de Dados SQL são cobrados pelo preço de pré-pagamento. As reservas não são renovadas automaticamente. Para obter informações sobre preços, consulte a [oferta de capacidade reservada do Banco de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/managed/).
 
-Você pode comprar capacidade reservada do Banco de Dados SQL do Azure na [portal do Azure](https://portal.azure.com). Capacidade reservada comprar o banco de dados SQL:
+Você pode comprar capacidade reservada do Banco de Dados SQL do Azure na [portal do Azure](https://portal.azure.com). Pague pela reserva [antecipada ou com pagamentos mensais](../billing/billing-monthly-payments-reservations.md). Capacidade reservada comprar o banco de dados SQL:
 
 - Você deve estar na função de proprietário de pelo menos uma assinatura corporativa ou individual com tarifas pagas conforme o uso.
 - Para as assinaturas Enterprise, a opção **Adicionar Instâncias Reservadas** deve estar habilitada no [Portal EA](https://ea.azure.com). Ou, se essa configuração estiver desabilitada, você deve ser um administrador de EA na assinatura.

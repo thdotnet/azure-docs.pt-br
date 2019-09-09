@@ -1,6 +1,6 @@
 ---
-title: Logs de consulta do Azure Monitor para monitorar clusters Azure HDInsight
-description: Saiba como executar consultas em logs do Azure Monitor para monitorar trabalhos em execução em um cluster HDInsight.
+title: Consultar logs de Azure Monitor para monitorar os clusters do Azure HDInsight
+description: Saiba como executar consultas em logs de Azure Monitor para monitorar trabalhos em execução em um cluster HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,16 +8,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: cbaaed3fff99778bfab1feeacdab02bf8245a85a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 031879ac1d0d2dd1148c0c37ee72c60d093f8a7d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64714722"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809369"
 ---
-# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Logs de consulta do Azure Monitor para monitorar clusters do HDInsight
+# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Consultar logs de Azure Monitor para monitorar clusters HDInsight
 
-Saiba mais alguns cenários básicos de como usar os logs do Azure Monitor para monitorar clusters do HDInsight do Azure:
+Conheça alguns cenários básicos sobre como usar os logs de Azure Monitor para monitorar os clusters do Azure HDInsight:
 
 * [Analisar métricas de cluster HDInsight](#analyze-hdinsight-cluster-metrics)
 * [Procurar as mensagens de log específicas](#search-for-specific-log-messages)
@@ -27,7 +27,7 @@ Saiba mais alguns cenários básicos de como usar os logs do Azure Monitor para 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Você deve ter configurado um cluster de HDInsight para usar os logs do Azure Monitor e adicionado os logs de Monitor do Azure específicos do cluster HDInsight soluções ao espaço de trabalho de monitoramento. Para obter instruções, consulte [usar o Azure Monitor registra em log com clusters de HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
+* Você deve ter configurado um cluster HDInsight para usar logs de Azure Monitor e adicionar soluções de monitoramento de logs de Azure Monitor específicas do cluster HDInsight ao espaço de trabalho. Para obter instruções, consulte [usar logs de Azure monitor com clusters HDInsight](hdinsight-hadoop-oms-log-analytics-tutorial.md).
 
 ## <a name="analyze-hdinsight-cluster-metrics"></a>Analisar métricas de cluster HDInsight
 
@@ -35,7 +35,7 @@ Saiba como procurar métricas específicas para seu cluster HDInsight.
 
 1. Abra o espaço de trabalho do Log Analytics que está associado ao seu cluster HDInsight do portal do Azure.
 2. Selecione o bloco **pesquisa de logs**.
-3. Digite a seguinte consulta na caixa de pesquisa para procurar todas as métricas para todas as métricas disponíveis para todos os clusters HDInsight configurados para usar os logs do Azure Monitor e, em seguida, selecione **executar**.
+3. Digite a consulta a seguir na caixa de pesquisa para procurar todas as métricas de todas as métricas disponíveis para todos os clusters HDInsight configurados para usar logs de Azure Monitor e, em seguida, selecione **executar**.
 
         search *
 
@@ -68,7 +68,7 @@ Saiba como procurar mensagens de erro durante uma janela de tempo específica. E
 
 1. Abra o espaço de trabalho do Log Analytics que está associado ao seu cluster HDInsight do portal do Azure.
 2. Selecione o bloco **pesquisa de logs**.
-3. Digite a seguinte consulta para pesquisar todas as mensagens de erro para todos os clusters HDInsight configurados para usar os logs do Azure Monitor e, em seguida, selecione **executar**. 
+3. Digite a consulta a seguir para pesquisar todas as mensagens de erro de todos os clusters HDInsight configurados para usar logs de Azure Monitor e, em seguida, selecione **executar**. 
 
          search "Error"
 
@@ -81,15 +81,15 @@ Saiba como procurar mensagens de erro durante uma janela de tempo específica. E
 
     - Para ver mensagens de erro de um nó de trabalho específico:
 
-        ![Pesquisar saída de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "Pesquisar saída de erros específicos")
+        ![Pesquisar erros específicos Saída1](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-refined.png "Pesquisar erros específicos Saída1")
 
     - Para ver se ocorreu um erro em uma determinada hora:
 
-        ![Pesquisar saída de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "Pesquisar saída de erros específicos")
+        ![Pesquisar erros específicos output2](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "Pesquisar erros específicos output2")
 
 6. Para ver o erro específico. É possível clicar em **[+] mostrar mais** para examinar a mensagem de erro real.
 
-    ![Pesquisar saída de erros específicos](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "Pesquisar saída de erros específicos")
+    ![Pesquisar erros específicos output3](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "Pesquisar erros específicos output3")
 
 ## <a name="create-alerts-for-tracking-events"></a>Criar alertas para eventos de rastreamento
 
@@ -105,11 +105,11 @@ A primeira etapa para criar um alerta é chegar a uma consulta com base na qual 
 
 4. Selecione **Nova Regra de Alerta** no topo da página.
 
-    ![Inserir consulta para criar um alerta](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Inserir consulta para criar um alerta")
+    ![Inserir consulta para criar um alert1](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Inserir consulta para criar um alert1")
 
 5. Na janela **Criar regra**, digite a consulta e outros detalhes para criar um alerta e, em seguida, selecione **Criar regra de alerta**.
 
-    ![Inserir consulta para criar um alerta](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Inserir consulta para criar um alerta")
+    ![Inserir consulta para criar um alert2](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Inserir consulta para criar um alert2")
 
 Para editar ou excluir um alerta existente:
 
@@ -118,11 +118,11 @@ Para editar ou excluir um alerta existente:
 3. Selecione o alerta que você deseja editar ou excluir.
 4. Você tem as seguintes opções: **Salvar**, **Descartar**, **Desabilitar** e **Excluir**.
 
-    ![Edição de exclusão do alerta de logs de HDInsight do Azure Monitor](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
+    ![Log de Azure Monitor do HDInsight logs de exclusão de alertas](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 
 Para obter mais informações, confira [Criar, exibir e gerenciar alertas de métrica usando o Azure Monitor](../azure-monitor/platform/alerts-metric.md).
 
 ## <a name="see-also"></a>Consulte também
 
-* [Criar exibições personalizadas usando o Designer de exibição no Azure Monitor](../azure-monitor/platform/view-designer.md)
-* [Criar, exibir e gerenciar alertas de métrica usando o Azure Monitor](../azure-monitor/platform/alerts-metric.md)
+* [Criar exibições personalizadas usando o designer de exibição no Azure Monitor](../azure-monitor/platform/view-designer.md)
+* [Criar, exibir e gerenciar alertas de métrica usando Azure Monitor](../azure-monitor/platform/alerts-metric.md)

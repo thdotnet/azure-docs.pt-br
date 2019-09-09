@@ -12,16 +12,19 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 344613c50f46337ffbd7e786f6753e8030c2af22
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 653089042c87b3223b3de048b6f12056d04b0f3c
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072238"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806334"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Proteger uma API usando OAuth 2.0 com o Azure Active Directory e o Gerenciamento de API
 
 Este guia mostra como configurar sua instância do Gerenciamento de API do Azure para proteger uma API usando o protocolo OAuth 2.0 com o Microsoft Azure Active Directory (Azure AD). 
+
+> [!NOTE]
+> Esse recurso está disponível nas camadas **Developer**, **Standard** e **Premium** do gerenciamento de API.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para seguir as etapas deste artigo, você precisa ter:
@@ -51,7 +54,7 @@ Para proteger uma API com o Azure AD, a primeira etapa é registrar no Azure AD 
     - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `backend-app`. 
     - Na seção **tipos de conta com suporte** , selecione uma opção que atenda ao seu cenário. 
 
-1. Deixe a seção redirecionar **URI** vazia.
+1. Deixe a seção **Redirecionar URI** vazia.
 
 1. Selecione **Registrar** para criar o aplicativo. 
 
@@ -77,7 +80,7 @@ Todos os aplicativos cliente que chamam a API também precisam ser registrados c
     - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `client-app`. 
     - Na seção **tipos de conta com suporte** , selecione **contas em qualquer diretório organizacional**. 
 
-1. Na seção **URI** de redirecionamento `Web` , selecione e insira a URL`https://contoso5.portal.azure-api.net/signin`
+1. Na seção **URI de redirecionamento** , selecione `Web` e insira a URL`https://contoso5.portal.azure-api.net/signin`
 
 1. Selecione **Registrar** para criar o aplicativo. 
 

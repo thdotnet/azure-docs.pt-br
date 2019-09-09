@@ -7,12 +7,12 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: eb6df3bfda131f00c04499dc80c47482229195a5
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: b21847d27dc7f444afaf1b73efa19b0b0087cfe4
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69623910"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811686"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Usar o Apache Oozie com o Apache Hadoop para definir e executar um fluxo de trabalho no Azure HDInsight baseado no Linux
 
@@ -643,7 +643,7 @@ Você pode usar o coordenador para especificar um início, um fim e a frequênci
     > [!NOTE]  
     > Essa imagem mostra apenas as execuções bem-sucedidas do trabalho, não as ações individuais do fluxo de trabalho agendado. Para ver as ações individuais, selecione uma das entradas em **Ação**.
 
-    ![Informações da ação](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
+    ![Informações de ação do coordenador](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
 
 ## <a name="troubleshooting"></a>Solução de problemas
 

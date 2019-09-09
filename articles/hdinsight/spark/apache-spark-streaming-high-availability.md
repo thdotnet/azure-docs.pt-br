@@ -1,6 +1,6 @@
 ---
 title: Criar trabalhos de streaming do Spark altamente disponíveis no YARN - Azure HDInsight
-description: Como configurar o streaming do Spark para um cenário de alta disponibilidade.
+description: Como configurar o streaming de Apache Spark para um cenário de alta disponibilidade no Azure HDInsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: 79a36ad39284dc66467ba7c500a363668f78b893
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dcd9095a1e5010a3d0dd5ea7ad884e36e24c7c1d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720667"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814015"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Crie tarefas do Apache Spark Streaming de alta disponibilidade com o YARN
 

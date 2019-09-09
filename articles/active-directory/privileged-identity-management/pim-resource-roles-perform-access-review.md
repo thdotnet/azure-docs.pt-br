@@ -1,9 +1,9 @@
 ---
-title: Examinar o acesso a funções de recurso do Azure no PIM - Azure Active Directory | Microsoft Docs
-description: Saiba como examinar acesso das funções de recurso do Azure no Azure AD Privileged Identity Management (PIM).
+title: Examinar o acesso às funções de recurso do Azure no PIM-Azure Active Directory | Microsoft Docs
+description: Saiba como examinar o acesso das funções de recurso do Azure no Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: markwahl-msft
 ms.service: active-directory
@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: pim
 ms.date: 03/30/2018
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ede412292caf682c3078002d23e1956bd68d1378
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22c0ce1a5eee4b8d4cc40c47dadd4bcdc74d03ba
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602227"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804094"
 ---
-# <a name="review-access-to-azure-resource-roles-in-pim"></a>Examinar o acesso a funções de recurso do Azure no PIM
-Azure Active Directory (Azure AD) Identity Management PIM (Privileged) simplifica como as empresas gerenciam o acesso privilegiado aos recursos no Azure. 
+# <a name="review-access-to-azure-resource-roles-in-pim"></a>Examinar o acesso às funções de recurso do Azure no PIM
+O Azure Active Directory (Azure AD) Privileged Identity Management (PIM) simplifica como as empresas gerenciam o acesso privilegiado aos recursos no Azure. 
 
 Se você for atribuído a uma função administrativa, o administrador de função com privilégios de sua organização poderá solicitar que você confirme regularmente que ainda precisa da função para seu trabalho. Você pode receber um email que inclui um link ou pode acessar diretamente o [portal do Azure](https://portal.azure.com). Siga as etapas neste artigo para executar a autorrevisão das suas funções atribuídas.
 
@@ -54,4 +54,4 @@ Siga estas etapas para localizar e concluir a análise de acesso:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Executar uma revisão de acesso das minhas funções do Azure AD no PIM](pim-how-to-perform-security-review.md)
+- [Executar uma revisão de acesso de minhas funções do Azure AD no PIM](pim-how-to-perform-security-review.md)

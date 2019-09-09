@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/06/2019
+ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7df117dbb071081473a5651a953927cee8ddaa03
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: e758707511989cca64fdef45b1c673dd3d96d6d2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801498"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812144"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -161,7 +161,7 @@ A tabela a seguir mostra locais pelo provedor de serviços. Se você quiser exib
 | **[NZ de grupo Vocus](https://www.vocus.co.nz/business/cloud-data-centres)** | Suportado | Suportado | Auckland, Sydney |
 | **[Vodafone](https://www.vodafone.com/business/global-enterprise/global-connectivity/vodafone-ip-vpn-cloud-connect)** |Suportado |Suportado |Amsterdam2, Londres, Cingapura |
 | **Vodafone Idea** | Suportado | Suportado | Mumbai, Mumbai2 |
-| **[Zayo](https://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Suportado |Suportado |Amsterdã, Chicago, Dallas, Denver, Londres, Los Angeles, Montreal, Nova York, Paris, Seattle, vale do silício, Toronto, Washington, D.c. |
+| **[Zayo](https://www.zayo.com/solutions/industries/cloud-connectivity/microsoft-expressroute)** |Suportado |Suportado |Amsterdã, Chicago, Dallas, Denver, Londres, Los Angeles, Montreal, Nova York, Paris, Seattle, vale do silício, Toronto, Washington DC, Washington DC2 |
 
  **+** indica que haverá em breve
 
@@ -198,7 +198,7 @@ Para saber mais, confira [ExpressRoute na China](http://www.windowsazure.cn/home
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Suportado  | Sem suporte | Berlim |
 | **T-Systems** |Suportado |Sem suporte |Berlim |
 
-## <a name="connectivity-through-exchange-providers"></a>Conectividade por meio de outros provedores do Exchange
+## <a name="connectivity-through-exchange-providers"></a>Conectividade por meio de provedores do Exchange
 
 Se seu provedor de conectividade não estiver listado em seções anteriores, você ainda pode criar uma conexão.
 
@@ -215,6 +215,13 @@ Se seu provedor de conectividade não estiver listado em seções anteriores, vo
   * Certifique-se de que seu provedor de conectividade estenda sua conectividade de maneira altamente disponível para que não exista nenhum ponto de falha.
 * Solicite um circuito do ExpressRoute com o Exchange como o provedor de conectividade para conectar-se à Microsoft.
   * Siga as etapas em [Criar um circuito do ExpressRoute](expressroute-howto-circuit-classic.md) para configurar a conectividade.
+
+## <a name="connectivity-through-satellite-operators"></a>Conectividade por meio de operadores satélite
+Se você for remoto e não tiver conectividade de fibra ou se quiser explorar outras opções de conectividade, poderá verificar os seguintes operadores de satélite. 
+
+* Intelsat
+* EAS
+* Viasat
 
 ## <a name="connectivity-through-additional-service-providers"></a>Conectividade por meio de provedores de serviço adicionais
 
@@ -295,7 +302,7 @@ Se seu provedor de conectividade não estiver listado em seções anteriores, vo
 | **[vXchnge](https://www.vxchnge.com/colocation-services/interconnection)** | IX REACH, Megaport |
 | **[Datacenters T5](https://t5datacenters.com/network-cloud-connect/)** | IX Reach |
 
-## <a name="connectivity-through-national-research-and-education-networks-nren"></a>Conectividade por meio de Pesquisa Nacional e Redes de Treinamento (NREN)
+## <a name="connectivity-through-national-research-and-education-networks-nren"></a>Conectividade por meio de NREN (pesquisa nacional e redes educacionais)
 
 | **Provedor**|
 | --- |

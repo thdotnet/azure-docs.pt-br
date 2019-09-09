@@ -1,18 +1,18 @@
 ---
 title: Trabalhos de streaming do Spark com processamento de eventos exatamente uma vez – Azure HDInsight
-description: Como configurar o streaming do Spark para processar um evento uma vez e apenas uma vez.
+description: Como configurar Apache Spark streaming para processar um evento apenas uma vez.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: ce676031e0cace3f3dffc77fcd71159337938661
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: ce2cff6a1a6bf769f52940ecc0d1dc5a4678cbd5
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735986"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814025"
 ---
 # <a name="create-apache-spark-streaming-jobs-with-exactly-once-event-processing"></a>Crie tarefas do Apache Spark Streaming com processamento de eventos exatamente uma vez
 

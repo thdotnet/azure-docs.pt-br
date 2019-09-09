@@ -7,19 +7,20 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: c07326cc3a4334f1873eef2dc23da05156a93577
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: da871a1fed0663c5654ebcfd61f4189bf2267026
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64574653"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814053"
 ---
-# <a name="use-script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Usar ação de script para instalar pacotes Python externos em notebooks Jupyter em clusters do Apache Spark no HDInsight
+# <a name="script-action-to-install-external-python-packages-for-jupyter-notebooks-in-apache-spark-on-hdinsight"></a>Ação de script para instalar pacotes python externos para notebooks Jupyter no Apache Spark no HDInsight
+
 > [!div class="op_single_selector"]
 > * [Usando a mágica da célula](apache-spark-jupyter-notebook-use-external-packages.md)
 > * [Usando a ação de script](apache-spark-python-package-installation.md)
 
-Saiba como usar ações de Script para configurar uma [Apache Spark](https://spark.apache.org/) cluster no HDInsight para usar externos enviados pela comunidade **python** pacotes que não estão incluídos o out-of-the-box no cluster.
+Saiba como usar ações de script para configurar um cluster de [Apache Spark](https://spark.apache.org/) no HDInsight para usar pacotes **Python** externos e contribuídos pela Comunidade que não estão incluídos de forma integrada no cluster.
 
 > [!NOTE]  
 > Você também pode configurar um notebook Jupyter usando a mágica `%%configure` para usar pacotes externos. Para obter instruções, confira [Usar pacotes externos com notebooks Jupyter em clusters do Apache Spark no HDInsight](apache-spark-jupyter-notebook-use-external-packages.md).
@@ -54,23 +55,23 @@ Há dois tipos de componentes de software livre disponíveis no serviço HDInsig
 
 ## <a name="use-external-packages-with-jupyter-notebooks"></a>Usar pacotes externos com blocos de notas Jupyter
 
-1. Dos [portal do Azure](https://portal.azure.com/), navegue até seu cluster.  
+1. No [portal do Azure](https://portal.azure.com/), navegue até o cluster.  
 
-2. Com o cluster selecionado, no painel esquerdo, em **as configurações**, selecione **ações de Script**.
+2. Com o cluster selecionado, no painel esquerdo, em **configurações**, selecione **ações de script**.
 
-3. Selecione **+ enviar novo**.
+3. Selecione **+ Enviar novo**.
 
-4. Insira os seguintes valores para o **enviar ação de script** janela:  
+4. Insira os seguintes valores para a janela **Enviar ação de script** :  
 
 
-    |Parâmetro | Value |
+    |Parâmetro | Valor |
     |---|---|
     |Tipo de script | Selecione **- Personalizar** na lista suspensa.|
-    |NOME |Insira `tensorflow` na caixa de texto.|
-    |URI do script Bash |Insira `https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh` na caixa de texto. |
-    |Tipo de nó (s) | Selecione o **Head**, e **trabalho** caixas de seleção. |
+    |Nome |Insira `tensorflow` na caixa de texto.|
+    |URI do script de bash |Insira `https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh` na caixa de texto. |
+    |Tipo(s) de nó | Marque as caixas de seleção **cabeçalho**e **trabalhador** . |
 
-    `tensorflowinstall.sh` contém os seguintes comandos:
+    `tensorflowinstall.sh`contém os seguintes comandos:
 
     ```bash
     #!/usr/bin/env bash
@@ -79,9 +80,9 @@ Há dois tipos de componentes de software livre disponíveis no serviço HDInsig
 
 5. Selecione **Criar**.  Acesse a documentação em [como usar ações de script personalizadas](../hdinsight-hadoop-customize-cluster-linux.md).
 
-6. Aguarde o conclusão do script.  O **ações de Script** painel informará **novas ações de script podem ser enviadas após a conclusão da operação de cluster atual** enquanto o script está em execução.  Uma barra de progresso pode ser exibida na UI do Ambari **operações em segundo plano** janela.
+6. Aguarde a conclusão do script.  O painel **ações de script** irá declarar **novas ações de script podem ser enviadas depois que a operação de cluster atual for concluída** enquanto o script estiver em execução.  Uma barra de progresso pode ser exibida na janela de **operações de segundo plano** da interface do usuário do Ambari.
 
-7. Abra um bloco de anotações do PySpark Jupyter.  Ver [criar um notebook Jupyter no Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) para obter as etapas.
+7. Abra um notebook PySpark Jupyter.  Consulte [criar um notebook Jupyter no Spark HDInsight](./apache-spark-jupyter-notebook-kernels.md#create-a-jupyter-notebook-on-spark-hdinsight) para obter as etapas.
 
     ![Criar um novo bloco de anotações do Jupyter](./media/apache-spark-python-package-installation/hdinsight-spark-create-notebook.png "Criar um novo bloco de anotações do Jupyter")
 

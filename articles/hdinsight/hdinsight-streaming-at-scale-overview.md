@@ -1,22 +1,22 @@
 ---
 title: Streaming em escala no Azure HDInsight
-description: Como usar fluxo de dados com Clusters HDInsight escalonáveis.
+description: Como usar o streaming de dados com clusters Apache escalonáveis no Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: 97bc2e585ccce250dd83dc855c3eda5f958186a7
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 18f1c15f12295228dab971f2abfa612d2061ab5d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484068"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811920"
 ---
 # <a name="streaming-at-scale-in-hdinsight"></a>Streaming em escala no HDInsight
 
-Soluções de big data em tempo real atuam em dados que estão em movimento. Normalmente, esses dados são mais valiosos em seu tempo de chegada. Se o fluxo de dados de entrada tornar-se maior do que pode ser tratado no momento, talvez seja necessário restringir os recursos. Alternativamente, um Cluster HDInsight pode escalar verticalmente para atender sua solução de streaming, adicionando nós sob demanda.
+Soluções de Big Data em tempo real atuam em dados que estão em movimento. Normalmente, esses dados são mais valiosos em seu tempo de chegada. Se o fluxo de dados de entrada tornar-se maior do que pode ser tratado no momento, talvez seja necessário restringir os recursos. Alternativamente, um Cluster HDInsight pode escalar verticalmente para atender sua solução de streaming, adicionando nós sob demanda.
 
 
 Em um aplicativo de streaming, uma ou mais fontes de dados geram eventos (às vezes em milhões por segundo) que precisam ser ingeridos rapidamente sem remover quaisquer informações úteis. Os eventos de entrada são tratados com *buffer do fluxo*, também chamado de *enfileiramento de eventos*, por um serviço como [Apache Kafka](kafka/apache-kafka-introduction.md) ou [Hubs de Eventos](https://azure.microsoft.com/services/event-hubs/). Após coletar os eventos, será possível analisar os dados usando um sistema de análise em tempo real dentro da camada do *processamento do fluxo* como [Apache Storm](storm/apache-storm-overview.md) ou [Apache Spark Streaming](spark/apache-spark-streaming-overview.md). Os dados processados podem ser armazenados em sistemas de armazenamento em longo prazo, como o [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/) e exibido em tempo real em um painel do business intelligence, como [Power BI](https://powerbi.microsoft.com), Tableau ou uma página da Web personalizada.
@@ -64,7 +64,7 @@ Esses três parâmetros podem ser configurados no nível do cluster para todos o
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Criar e monitorar uma topologia Apache Storm no HDInsight do Azure](storm/apache-storm-quickstart.md)
+* [Criar e monitorar uma topologia Apache Storm no Azure HDInsight](storm/apache-storm-quickstart.md)
 * [Topologias de exemplo para Apache Storm no HDInsight](storm/apache-storm-example-topology.md)
 * [Introdução ao Apache Spark no HDInsight](spark/apache-spark-overview.md)
 * [Iniciar com o Apache Kafka no HDInsight](kafka/apache-kafka-get-started.md)

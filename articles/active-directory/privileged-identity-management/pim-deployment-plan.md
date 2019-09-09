@@ -1,9 +1,9 @@
 ---
-title: Implantar o Privileged Identity Management (PIM) - Azure Active Directory | Microsoft Docs
+title: Privileged Identity Management de implantação (PIM) – Azure Active Directory | Microsoft Docs
 description: Descreve como planejar a implantação do Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 02/08/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7413fcf7992195753cba86a50b7d53a144b36023
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 4ff46a693766ab12b53baba1ad8e4a56e174a076
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476434"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804496"
 ---
 # <a name="deploy-azure-ad-privileged-identity-management-pim"></a>Implantar o Azure AD Privileged Identity Management (PIM)
 
-Este guia passo a passo descreve como planejar a implantação do Azure Active Directory (Azure AD) PIM Privileged Identity Management () em sua organização.
+Este guia passo a passo descreve como planejar a implantação do Azure Active Directory (Azure AD) Privileged Identity Management (PIM) em sua organização.
 
 > [!TIP]
 > Ao longo deste documento, você verá itens marcados como:
@@ -58,7 +58,7 @@ Para obter mais informações, veja [Requisitos de licença para usar o PIM](sub
 
 ### <a name="key-pim-terminology"></a>Terminologia principal do PIM
 
-| Termo ou conceito | DESCRIÇÃO |
+| Termo ou conceito | Descrição |
 | --- | --- |
 | qualificado | Uma atribuição de função que requer que um usuário execute uma ou mais ações para usá-la. Se um usuário se qualificou para uma função, isso significa que ele poderá ativá-la quando precisar executar tarefas privilegiadas. Não há nenhuma diferença no modo de acesso concedido a uma pessoa com uma atribuição de função permanente em comparação com uma qualificada. A única diferença é que algumas pessoas não precisam desse acesso o tempo todo. |
 | ativar | O processo de execução de uma ou mais ações a fim de usar uma função para a qual um usuário está qualificado. As ações podem incluir a execução de uma verificação de MDA (Autenticação Multifator), fornecimento de uma justificativa comercial ou solicitação de aprovação dos aprovadores designados. |
@@ -79,7 +79,7 @@ Para obter mais informações, confira [O que é o Privileged Identity Managemen
 
 ### <a name="roles-that-can-be-managed-by-pim"></a>Funções que podem ser gerenciadas pelo PIM
 
-**Funções do Azure AD** – essas funções estão todos em Azure Active Directory (como Administrador Global, administrador do Exchange e o administrador de segurança). Você pode ler mais sobre as funções e suas funcionalidades em [Permissões da função de administrador no Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Para obter ajuda sobre como determinar quais funções devem ser atribuídas aos administradores, confira [funções com menos privilégios por tarefa](../users-groups-roles/roles-delegate-by-task.md).
+**Funções do Azure ad** – essas funções estão todas em Azure Active Directory (como administrador global, administrador do Exchange e administrador de segurança). Você pode ler mais sobre as funções e suas funcionalidades em [Permissões da função de administrador no Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md). Para obter ajuda sobre como determinar quais funções devem ser atribuídas aos administradores, confira [funções com menos privilégios por tarefa](../users-groups-roles/roles-delegate-by-task.md).
 
 **Funções de recurso do Azure** - essas funções são vinculadas a um recurso, grupo de recursos, assinatura ou grupo de gerenciamento do Azure. O PIM fornece acesso just-in-time a funções internas, como Proprietário, Administrador de Acesso do Usuário e Colaborador, além de [funções personalizadas](../../role-based-access-control/custom-roles.md). Para saber mais sobre funções de recurso do Azure, confira [Controle de acesso baseado em função (RBAC)](../../role-based-access-control/overview.md).
 
@@ -99,7 +99,7 @@ A seção a seguir ajuda você a identificar todos os participantes envolvidos n
 
 #### <a name="stakeholders-pim-for-azure-ad-roles"></a>Participantes: PIM para funções do Azure AD
 
-| NOME | Role | Ação |
+| Nome | Role | Action |
 | --- | --- | --- |
 | Nome e email | **Arquiteto de identidade ou de Administrador Global do Azure**<br/>Um representante da equipe de gerenciamento de identidade encarregado de definir como essa alteração está alinhada com a infraestrutura de gerenciamento de identidade principal em sua organização. | SO/R/I |
 | Nome e email | **Proprietário do serviço / gerente de linha**<br/>Um representante dos proprietários de TI de um serviço ou um grupo de serviços. Eles são essenciais na tomada de decisões e ajudam a implantar o PIM para sua equipe. | SO/R/I |
@@ -109,7 +109,7 @@ A seção a seguir ajuda você a identificar todos os participantes envolvidos n
 
 #### <a name="stakeholders-pim-for-azure-resource-roles"></a>Participantes: Funções de recurso do PIM para Azure
 
-| NOME | Role | Ação |
+| Nome | Role | Action |
 | --- | --- | --- |
 | Nome e email | **Proprietário da assinatura / recurso**<br/>Um representante dos proprietários de TI de cada assinatura ou recurso no qual você deseja implantar o PIM | SO/R/I |
 | Nome e email | **Proprietário de segurança**<br/>Um representante da equipe de segurança que pode confirmar que o plano atende aos requisitos de segurança da organização. | SO/R |
@@ -120,7 +120,7 @@ A seção a seguir ajuda você a identificar todos os participantes envolvidos n
 
 Como parte do processo de planejamento, primeiro, você deve consentir e ativar o PIM seguindo nossa [introdução ao uso do documento do PIM](pim-getting-started.md). A ativação do PIM fornece acesso a alguns recursos especificamente desenvolvidos para auxiliar a implantação.
 
-Se seu objetivo é implantar o PIM para recursos do Azure, siga o artigo [Descobrir os recursos do Azure para gerenciar no PIM](pim-resource-roles-discover-resources.md). Somente proprietários de cada recurso, grupo de recursos e assinatura poderão descobri-los dentro do PIM. Se você for um Administrador Global tentar implantar o PIM para recursos do Azure, você pode [elevar o acesso para gerenciar todas as assinaturas do Azure](../../role-based-access-control/elevate-access-global-admin.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json) para lhe dar acesso a todos os recursos do Azure no diretório para a descoberta. No entanto, recomendamos que você obtenha aprovação de cada um dos proprietários da assinatura antes de gerenciar seus recursos com o PIM.
+Se seu objetivo é implantar o PIM para recursos do Azure, siga o artigo [Descobrir os recursos do Azure para gerenciar no PIM](pim-resource-roles-discover-resources.md). Somente proprietários de cada recurso, grupo de recursos e assinatura poderão descobri-los dentro do PIM. Se você for um administrador global tentando implantar o PIM para seus recursos do Azure, você poderá [elevar o acesso para gerenciar todas as assinaturas do Azure](../../role-based-access-control/elevate-access-global-admin.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json) para conceder acesso a todos os recursos do Azure no diretório para descoberta. No entanto, recomendamos que você obtenha aprovação de cada um dos proprietários da assinatura antes de gerenciar seus recursos com o PIM.
 
 ### <a name="enforce-principle-of-least-privilege"></a>Aplicar o princípio de privilégios mínimos
 
@@ -143,7 +143,7 @@ Siga estas etapas para impor o Princípio de privilégios mínimos para suas fun
 
 1. Liste quem tem função com privilégios em sua organização. Você pode usar o [assistente do PIM](pim-security-wizard.md#run-the-wizard) para acessar uma página semelhante à seguinte.
 
-    ![Descubra o painel de funções privilegiadas que mostra quem tem funções com privilégios](./media/pim-deployment-plan/discover-privileged-roles-users.png)
+    ![Painel descobrir funções privilegiadas mostrando quem tem funções com privilégios](./media/pim-deployment-plan/discover-privileged-roles-users.png)
 
 1. Para todos os Administradores Globais da organização, descubra por que eles precisam da função. Com base na leitura da documentação anterior, se a tarefa da pessoa puder ser executada por uma ou mais funções granulares de administrador, você deverá removê-la da função de Administrador Global e fazer atribuições de acordo com o Azure Active Directory (como uma referência: Atualmente, a Microsoft tem apenas cerca de 10 administradores com a função de Administrador Global. Saiba mais em [Como a Microsoft usa o PIM](https://www.microsoft.com/itshowcase/Article/Content/887/Using-Azure-AD-Privileged-Identity-Management-for-elevated-access)).
 
@@ -161,7 +161,7 @@ As revisões de acesso dependem de emails para notificar as pessoas sobre o aces
 
 Para assinaturas do Azure e recursos, você pode configurar um processo de revisão de acesso semelhante para revisar as funções em cada assinatura ou recurso. O objetivo desse processo é minimizar as atribuições de Administrador de Acesso do Proprietário e Usuário anexadas a cada assinatura ou recurso e, também, remover atribuições desnecessárias. No entanto, as organizações geralmente delegam essas tarefas ao proprietário de cada assinatura ou recurso porque eles têm um melhor entendimento de funções específicas (especialmente funções personalizadas).
 
-Se você for um administrador de TI com a função de Administrador Global tentar implantar o PIM para recursos do Azure em sua organização, você pode [elevar o acesso para gerenciar todas as assinaturas do Azure](../../role-based-access-control/elevate-access-global-admin.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json) para obter acesso a cada assinatura. Em seguida, é possível localizar o proprietário de cada assinatura e trabalhar com ele para remover atribuições desnecessárias e minimizar a atribuição de funções do proprietário.
+Se você for um administrador de ti com a função de administrador global tentando implantar o PIM para recursos do Azure em sua organização, poderá [elevar o acesso para gerenciar todas as assinaturas do Azure](../../role-based-access-control/elevate-access-global-admin.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json) para obter acesso a cada assinatura. Em seguida, é possível localizar o proprietário de cada assinatura e trabalhar com ele para remover atribuições desnecessárias e minimizar a atribuição de funções do proprietário.
 
 Os usuários com a função de proprietário de uma assinatura do Azure também podem utilizar [revisões de acesso para recursos do Azure](pim-resource-roles-start-access-review.md) para realizar a auditoria e remover atribuições de função desnecessárias semelhantes ao processo descrito anteriormente para as funções do Azure AD.
 
@@ -184,7 +184,7 @@ A escolha das funções que serão protegidas com o PIM pode ser difícil e dife
 1. Administrador do SharePoint
 1. Administrador do Intune
 1. Leitor de segurança
-1. Administrador de serviço
+1. Administrador do serviço
 1. Administrador de cobrança
 1. Administrador do Skype for Business
 
@@ -240,29 +240,29 @@ Antes de implementar sua solução do PIM, convém elaborar suas configurações
 
 #### <a name="pim-settings-for-azure-ad-roles"></a>Configurações do PIM para funções do Azure AD
 
-| Role | Exigir MFA | Notificação | Tíquete de incidente | Exigir aprovação | Aprovador | Duração da ativação | Administrador permanente |
+| Role | Exigir MFA | Notificação | Tíquete de incidente | Requer aprovação | Aprovador | Duração da ativação | Administrador permanente |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Administrador global | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Outros administradores globais | 1 hora | Contas de acesso de emergência |
+| Administrador Global | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Outros administradores globais | 1 Hora | Contas de acesso de emergência |
 | Administrador do Exchange | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | Nenhum | 2 horas | Nenhum |
-| Administrador de assistência técnica | :x: | :x: | :heavy_check_mark: | :x: | Nenhum | 8 horas | Nenhum |
+| Administrador de Assistência Técnica | :x: | :x: | :heavy_check_mark: | :x: | Nenhum | 8 horas | Nenhum |
 
 #### <a name="pim-settings-for-azure-resource-roles"></a>Configurações do PIM para funções de recurso do Azure
 
-| Role | Exigir MFA | Notificação | Exigir aprovação | Aprovador | Duração da ativação | Administradores ativos | Expiração ativa | Expiração qualificada |
+| Role | Exigir MFA | Notificação | Requer aprovação | Aprovador | Duração da ativação | Administradores ativos | Expiração ativa | Expiração qualificada |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Proprietário de assinaturas críticas | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Outros proprietários da assinatura | 1 hora | Nenhum | n/d | 3 meses |
-| Administrador de Acesso do Usuário de assinaturas menos críticas | :heavy_check_mark: | :heavy_check_mark: | :x: | Nenhum | 1 hora | Nenhum | n/d | 3 meses |
-| Colaborador de Máquina Virtual | :x: | :heavy_check_mark: | :x: | Nenhum | 3 horas | Nenhum | n/d | 6 meses |
+| Proprietário de assinaturas críticas | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Outros proprietários da assinatura | 1 Hora | Nenhum | N/D | 3 meses |
+| Administrador de Acesso do Usuário de assinaturas menos críticas | :heavy_check_mark: | :heavy_check_mark: | :x: | Nenhum | 1 Hora | Nenhum | N/D | 3 meses |
+| Colaborador da Máquina Virtual | :x: | :heavy_check_mark: | :x: | Nenhum | 3 horas | Nenhum | N/D | 6 meses |
 
 A tabela a seguir descreve cada configuração.
 
-| Configuração | DESCRIÇÃO |
+| Configuração | Descrição |
 | --- | --- |
 | Role | Nome da função para a qual você está definindo as configurações. |
 | Exigir MFA | Se o usuário qualificado precisa executar a MFA antes de ativar a função.<br/><br/> :heavy_check_mark: A **Microsoft recomenda** aplicar o MFA a todas as funções de administrador, especialmente se as funções tiverem usuários convidados. |
 | Notificação | Se configurado como true, o Administrador Global, o Administrador de Função com Privilégios e o Administrador de Segurança da organização receberão uma notificação por email quando um usuário qualificado ativar a função.<br/><br/>**Observação:** Algumas organizações não têm um endereço de email vinculado a suas contas de administrador. Para receber essas notificações por email, você deve configurar um endereço de email alternativo para que os administradores recebam esses emails. |
 | Tíquete de incidente | Se o usuário qualificado precisa registrar um número de tíquete de incidente ao ativar sua função. Essa configuração ajuda uma organização a identificar cada ativação com um número de incidente interno para atenuar ativações indesejadas.<br/><br/> :heavy_check_mark: A **Microsoft recomenda** aproveitar os números de tíquetes de incidentes para fazer a ligação entre o PIM e seu sistema interno. Isso é particularmente útil para os aprovadores que precisam de contexto para a ativação. |
-| Exigir aprovação | Se o usuário qualificado precisa obter aprovação para ativar a função.<br/><br/> :heavy_check_mark: A **Microsoft recomenda** configurar a aprovação para funções com mais permissão. Com base nos padrões de uso de todos os clientes do PIM, o Administrador Global, o Administrador de usuário, o Administrador do Exchange, o Administrador de segurança e o Administrador de senha são as funções mais comuns com a configuração da aprovação. |
+| Requer aprovação | Se o usuário qualificado precisa obter aprovação para ativar a função.<br/><br/> :heavy_check_mark: A **Microsoft recomenda** configurar a aprovação para funções com mais permissão. Com base nos padrões de uso de todos os clientes do PIM, o Administrador Global, o Administrador de usuário, o Administrador do Exchange, o Administrador de segurança e o Administrador de senha são as funções mais comuns com a configuração da aprovação. |
 | Aprovador | Se a aprovação for necessária para ativar a função qualificada, liste as pessoas que deverão aprovar a solicitação. Por padrão, o PIM define o aprovador como todos os usuários que são administradores de funções com privilégios, sejam eles permanentes ou qualificados.<br/><br/>**Observação:** Se um usuário estiver qualificado para uma função do Azure AD e como aprovador da função, ele não poderá aprovar a si próprio.<br/><br/> :heavy_check_mark: A **Microsoft recomenda** que você escolha os aprovadores como os mais bem informados sobre a função específica e seus usuários frequentes, em vez de um Administrador Global. |
 | Duração da ativação | O período de tempo que um usuário será ativado na função antes da expiração. |
 | Administrador permanente | Lista de usuários que serão administradores permanentes da função (nunca precisarão ser ativados).<br/><br/> :heavy_check_mark: A **Microsoft recomenda** que você não tenha administradores para todas as funções, exceto para Administradores Globais. Leia mais sobre isso na seção deste plano sobre quem deve ser qualificado e quem deve estar permanentemente ativo. |
@@ -294,7 +294,7 @@ Agora que você identificou os usuários de teste, use esta etapa para configura
 
 #### <a name="configure-pim-for-azure-ad-roles"></a>Configurar o PIM para funções do Azure AD
 
-1. [Definir as configurações de função do Azure AD](pim-how-to-change-default-settings.md) com base no que você planejado.
+1. [Defina as configurações de função do Azure ad](pim-how-to-change-default-settings.md) com base no que você planejou.
 
 1. Navegue até **Funções do Azure AD**, clique em **Funções** e escolha a função que você acabou de configurar.
 
@@ -320,7 +320,7 @@ Você deve usar este estágio para verificar se todas as configurações configu
 
 | Role | Comportamento esperado durante a ativação | Resultados reais |
 | --- | --- | --- |
-| Administrador global | (1) Exigir o MFA<br/>(2) Exigir aprovação<br/>(3) O aprovador recebe a notificação e pode aprová-la<br/>(4) A função expira após o horário predefinido |  |
+| Administrador Global | (1) Exigir o MFA<br/>(2) Exigir aprovação<br/>(3) O aprovador recebe a notificação e pode aprová-la<br/>(4) A função expira após o horário predefinido |  |
 | Proprietário da assinatura *X* | (1) Exigir o MFA<br/>(2) A atribuição qualificada expira após o período de tempo configurado |  |
 
 ### <a name="communicate-pim-to-affected-stakeholders"></a>Comunicar o PIM aos participantes afetados

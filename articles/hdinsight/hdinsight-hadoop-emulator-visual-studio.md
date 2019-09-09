@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3286ca3b9c85236ff322eb19324bc5ac7a904e22
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 580712c4d1815b1c994fd62be78e8d7f3f1c9a01
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65605443"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809434"
 ---
 # <a name="use-the-azure-data-lake-tools-for-visual-studio-with-the-hortonworks-sandbox"></a>Usar as Ferramentas do Azure Data Lake para Visual Studio com a Área Restrita da Hortonworks
 
@@ -45,13 +45,13 @@ Certifique-se de que a Área Restrita da Hortonworks está em execução. Siga a
 
 3. Na caixa de diálogo **Conectar-se ao Emulador do HDInsight**, digite a senha que você configurou para o Ambari.
 
-    ![Captura de tela da caixa de diálogo, com a caixa de texto de senha realçada](./media/hdinsight-hadoop-emulator-visual-studio/enter-ambari-password.png)
+    ![Captura de tela da caixa de diálogo com a caixa de texto senha do ambari realçada](./media/hdinsight-hadoop-emulator-visual-studio/enter-ambari-password.png)
 
     Selecione **Avançar** para continuar.
 
 4. Use o campo **Senha** para inserir a senha configurada para a conta `root`. Mantenha os outros campos com os valores padrão.
 
-    ![Captura de tela da caixa de diálogo, com a caixa de texto de senha realçada](./media/hdinsight-hadoop-emulator-visual-studio/enter-root-password.png)
+    ![Captura de tela da caixa de diálogo com a caixa de texto senha raiz realçada](./media/hdinsight-hadoop-emulator-visual-studio/enter-root-password.png)
 
     Selecione **Avançar** para continuar.
 
@@ -90,7 +90,7 @@ O Hive fornece uma linguagem de consulta do tipo SQL (HiveQL) para trabalhar com
 
     Você também pode usar o menu suspenso próximo a **Enviar** para selecionar **Avançado**. Opções avançadas permitem que você forneça opções adicionais ao enviar o trabalho.
 
-    ![Captura de tela da caixa de diálogo Enviar Script](./media/hdinsight-hadoop-emulator-visual-studio/advanced-hive.png)
+    ![Captura de tela do hive da caixa de diálogo Enviar script](./media/hdinsight-hadoop-emulator-visual-studio/advanced-hive.png)
 
 3. Após você enviar a consulta, o status do trabalho será exibido. O status do trabalho exibe informações sobre o trabalho conforme ele é processado pelo Hadoop. **Estado do Trabalho** fornece o status do trabalho. O estado é atualizado periodicamente ou você pode usar o ícone de atualização para atualizar o estado manualmente.
 
@@ -149,7 +149,7 @@ Enquanto o Hive fornece uma linguagem semelhante ao SQL para trabalhar com os da
 
     Embora o Pig use uma linguagem diferente do Hive, o modo de execução dos trabalhos é consistente entre as duas linguagens por meio do botão **Enviar**. A seleção da lista suspensa ao lado de **Enviar** exibe uma caixa de diálogo de envio avançado para o Pig.
 
-    ![Captura de tela da caixa de diálogo Enviar Script](./media/hdinsight-hadoop-emulator-visual-studio/advanced-pig.png)
+    ![Captura de tela da caixa de diálogo Enviar script Pig](./media/hdinsight-hadoop-emulator-visual-studio/advanced-pig.png)
 
 3. O status e a saída do trabalho também são exibidos, assim como ocorre com uma consulta do Hive.
 

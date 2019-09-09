@@ -1,33 +1,33 @@
 ---
-title: Pagar antecipadamente por SQL Data Warehouse encargos com a capacidade reservada do Azure
-description: Saiba como você pode pagar por SQL Data Warehouse encargos com capacidade reservada para economizar dinheiro.
+title: Economize custos para encargos SQL Data Warehouse com a capacidade reservada do Azure
+description: Saiba como economizar custos para SQL Data Warehouse encargos com capacidade reservada para economizar dinheiro.
 services: billing
 author: yashesvi
 manager: yashar
 ms.service: billing
 ms.topic: conceptual
-ms.date: 08/02/2019
+ms.date: 08/29/2019
 ms.author: banders
-ms.openlocfilehash: 6ee7a661434bb756c6cf196937229db19d06b373
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 381a709c74f5fcf6bb1f89f07ad84d5e3af0c5e0
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779978"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806287"
 ---
-# <a name="prepay-for-sql-data-warehouse-charges-with-reserved-capacity"></a>Pagar antecipadamente por SQL Data Warehouse encargos com capacidade reservada
+# <a name="save-costs-for-sql-data-warehouse-charges-with-reserved-capacity"></a>Economize custos para encargos SQL Data Warehouse com capacidade reservada
 
-Você pode economizar dinheiro com o Azure SQL Data Warehouse prestando pelo uso de cDWU por uma duração de um ou três anos. Para comprar SQL Data Warehouse capacidade reservada, você precisa escolher a região do Azure e o termo. Em seguida, adicione o SQL Data Warehouse SKU ao seu carrinho e escolha a quantidade de unidades cDWU que você deseja comprar.
+Você pode economizar dinheiro com o Azure SQL Data Warehouse confirmando uma reserva para seu uso de cDWU por uma duração de um ou três anos. Para comprar SQL Data Warehouse capacidade reservada, você precisa escolher a região do Azure e o termo. Em seguida, adicione a SKU (unidade de manutenção de estoque) do SQL Data Warehouse ao seu carrinho e escolha a quantidade de unidades de cDWU que deseja comprar.
 
-Quando você adquire uma reserva, o uso de SQL Data Warehouse que corresponde aos atributos de reserva não é mais cobrado com as tarifas de pagamento conforme o uso.
+Quando você compra uma reserva, o uso do SQL Data Warehouse, que corresponde aos atributos da reserva, não é mais cobrado pelas taxas de pagamento conforme o uso.
 
-Uma reserva não abrange os encargos de armazenamento ou de rede associados ao uso de SQL Data Warehouse.
+A reserva não cobre encargos de armazenamento ou rede associados ao uso do SQL Data Warehouse.
 
-Quando a capacidade reservada expira, SQL Data Warehouse instâncias continuam a ser executadas, mas são cobradas com a taxa paga conforme o uso. As reservas não são renovadas automaticamente.
+Quando a capacidade reservada expira, as instâncias do SQL Data Warehouse continuam a ser executadas, mas são cobradas pela taxa de pagamento conforme o uso. As reservas não são renovadas automaticamente.
 
 Para obter informações sobre preços, consulte a [SQL data warehouse oferta de capacidade reservada](https://azure.microsoft.com/pricing/details/sql-data-warehouse/gen2/).
 
-Você pode comprar o Azure SQL Data Warehouse capacidade reservada no [portal do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade). Para comprar uma capacidade reservada:
+Você pode comprar o Azure SQL Data Warehouse capacidade reservada no [portal do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade). Pague pela reserva [antecipada ou com pagamentos mensais](billing-monthly-payments-reservations.md). Para comprar uma capacidade reservada:
 
 - Você deve ter a função de proprietário para pelo menos uma assinatura corporativa ou paga conforme o uso.
 - Para assinaturas Enterprise, a opção **adicionar instâncias reservadas** deve ser habilitada no [portal de ea](https://ea.azure.com/). Se a configuração estiver desabilitada, você deverá ser um administrador do EA.
@@ -45,7 +45,7 @@ Por exemplo, suponha que o consumo total de SQL Data Warehouse seja DW3000c. Voc
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Todos os serviços** > **Reservas**.
-3. Selecionar uma assinatura. Use a lista assinatura para escolher a assinatura que é usada para pagar pela capacidade reservada. O método de pagamento da assinatura é cobrado pelos custos iniciais da capacidade reservada. O tipo de assinatura deve ser um contrato empresarial (números da oferta: MS-AZR-0017P ou MS-AZR-0148P) ou Pagamento Conforme o Uso (números da oferta: MS-AZR-0003P ou MS-AZR-0023P).
+3. Selecione uma assinatura. Use a lista assinatura para escolher a assinatura que é usada para pagar pela capacidade reservada. O método de pagamento da assinatura é cobrado pelos custos da capacidade reservada. O tipo de assinatura deve ser um contrato empresarial (números da oferta: MS-AZR-0017P ou MS-AZR-0148P) ou Pagamento Conforme o Uso (números da oferta: MS-AZR-0003P ou MS-AZR-0023P).
    - Para uma assinatura de empresa, os encargos são deduzidos do saldo do compromisso monetário do registro ou cobrados como média.
    - Para a assinatura de Pagamento Conforme o Uso, as cobranças são feitas ao cartão de crédito ou à forma de pagamento de faturas na assinatura.
 4. Selecione um escopo. Use a lista escopo para escolher um escopo de assinatura.

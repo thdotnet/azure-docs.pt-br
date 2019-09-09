@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 08/30/2019
-ms.openlocfilehash: 65a75bc3a2e7ab2361ee8ae53d11ba1604c1d1ef
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.date: 09/06/2019
+ms.openlocfilehash: a80e1d0e4aa243d46efa79173af3fc5d774eb46f
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70208348"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806599"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Use grupos de failover automático para habilitar o failover transparente e coordenado de vários bancos de dados
 
@@ -191,6 +191,9 @@ Se seu aplicativo usar a instância gerenciada como a camada de dados, siga esta
 
   Para garantir conectividade ininterrupta à instância primária após o failover, ambas as instâncias primária e secundária precisam estar na mesma zona DNS. Ele garantirá que o mesmo certificado de vários domínios (SAN) possa ser usado para autenticar as conexões do cliente com uma das duas instâncias no grupo de failover. Quando seu aplicativo está pronto para implantação em produção, crie uma instância do secundário em uma região diferente e assegure que ela compartilhe a zona DNS com a instância do primário. Você pode fazer isso especificando um `DNS Zone Partner` parâmetro opcional usando o portal do Azure, o PowerShell ou a API REST. 
 
+> [!IMPORTANT]
+> A primeira instância criada na sub-rede determina a zona DNS para todas as instâncias subsequentes na mesma sub-rede. Isso significa que duas instâncias da mesma sub-rede não podem pertencer a diferentes zonas DNS.   
+
   Para obter mais informações sobre como criar a instância secundária na mesma zona DNS que a instância primária, consulte [criar uma instância gerenciada secundária](sql-database-managed-instance-failover-group-tutorial.md#3---create-a-secondary-managed-instance).
 
 - **Permitir o tráfego de replicação entre duas instâncias**
@@ -237,6 +240,10 @@ Se seu aplicativo usar a instância gerenciada como a camada de dados, siga esta
 
   > [!IMPORTANT]
   > Use o failover manual de grupo para mover os primários de volta para a localização original. Quando a interrupção que causou o failover for atenuada, você poderá mover seus bancos de dados primários para a localização original. Para fazer isso, você deve iniciar o failover manual do grupo.
+
+- **Reconhecer limitações conhecidas de grupos de failover**
+
+  Renomeação de banco de dados e redimensionamento de instância não têm suporte para instâncias no grupo de failover. Você precisará excluir temporariamente o grupo de failover para poder realizar essas ações.
 
 ## <a name="failover-groups-and-network-security"></a>Grupos de failover e a segurança de rede
 

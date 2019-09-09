@@ -1,9 +1,9 @@
 ---
-title: Usar funções personalizadas para recursos do Azure no PIM - Azure Active Directory | Microsoft Docs
+title: Usar funções personalizadas para recursos do Azure em PIM-Azure Active Directory | Microsoft Docs
 description: Saiba como usar funções personalizadas para recursos do Azure no Azure AD PIM (Privileged Identity Management).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.devlang: na
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 03/30/2018
-ms.author: rolyon
+ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e814cde49374b52266f725b4d57657a507874ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d36514c97cf1f45ee0a435d3b716019d2762e5a
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602032"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804184"
 ---
 # <a name="use-custom-roles-for-azure-resources-in-pim"></a>Usar funções personalizadas para recursos do Azure no PIM
 
-Você talvez precise aplicar configurações de Azure Active Directory (Azure AD) gerenciamento PIM (Privileged Identity) estrita para alguns membros de uma função, proporcionando maior autonomia para outras pessoas. Considere um cenário em que sua organização contrata vários colaboradores contratados para ajudar no desenvolvimento de um aplicativo que será executado em uma assinatura do Azure.
+Talvez seja necessário aplicar configurações Privileged Identity Management do PIM (Azure Active Directory estrito) a alguns membros de uma função, fornecendo, ao mesmo tempo, uma autonomia maior para outras pessoas. Considere um cenário em que sua organização contrata vários colaboradores contratados para ajudar no desenvolvimento de um aplicativo que será executado em uma assinatura do Azure.
 
 Como administrador de recursos, você quer que os funcionários sejam qualificados para o acesso sem a necessidade de aprovação. No entanto, todos os colaboradores contratados devem ser aprovados quando solicitam acesso aos recursos da organização.
 

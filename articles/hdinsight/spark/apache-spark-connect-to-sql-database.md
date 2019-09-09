@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/21/2019
-ms.openlocfilehash: 3812cf55a26a12ef110b8acf14edd0e8bfd36851
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 20c4571ee795c280e6c916e3080279a6d13fecce
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236527"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814220"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Usar o cluster do Azure HDInsight Spark para leitura e gravação dos dados no Banco de Dados SQL do Azure
 
@@ -36,7 +36,7 @@ Saiba como conectar um cluster Apache Spark no Microsoft Azure HDInsight com um 
 Comece criando um [Jupyter Notebook](https://jupyter.org/) associado ao cluster do Spark. Você usa esse notebook para executar os snippets de código usados neste artigo. 
 
 1. Do [portal do Azure](https://portal.azure.com/), abra o seu cluster.
-1. Selecione o **Notebook Jupyter** abaixo dos **painéis do Cluster** no lado direito.  Se você não vir **painéis do Cluster**, selecione **visão geral** no menu à esquerda. Se você receber uma solicitação, insira as credenciais de administrador para o cluster.
+1. Selecione o **Notebook Jupyter** abaixo dos **painéis do Cluster** no lado direito.  Se você não vir os **painéis de cluster**, selecione **visão geral** no menu à esquerda. Se você receber uma solicitação, insira as credenciais de administrador para o cluster.
 
     ![Bloco de anotações do Jupyter no Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Bloco de anotações do Jupyter no Spark")
    
@@ -95,7 +95,7 @@ Nesta seção, você faz a leitura dos dados de uma tabela (por exemplo, **Sales
    
     Você verá uma saída semelhante à seguinte:
 
-    ![Fornecer um nome para o bloco de anotações](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "Fornecer um nome para o bloco de anotações")
+    ![saída do esquema](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "saída do esquema")
 
 1. Também é possível executar operações como, por exemplo, recuperar as 10 melhores filas.
 
@@ -148,11 +148,11 @@ Nesta seção, usamos um exemplo CSV de arquivo disponível no cluster para cria
 
     a. Inicie o SSMS e conecte-se ao Banco de Dados SQL do Azure, fornecendo os detalhes de conexão como mostrado na captura de tela abaixo.
 
-    ![Conectar-se ao Banco de Dados SQL usando SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Conectar-se ao Banco de Dados SQL SSMS")
+    ![Conectar-se ao banco de dados SQL usando SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Conectar-se ao banco de dados SQL usando SSMS1")
 
     b. No Pesquisador de Objetos, expanda o Banco de Dados SQL do Azure e o nó da Tabela para ver o **dbo.hvactable** criado.
 
-    ![Conectar-se ao Banco de Dados SQL usando SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Conectar-se ao Banco de Dados SQL SSMS")
+    ![Conectar-se ao banco de dados SQL usando SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Conectar-se ao banco de dados SQL usando SSMS2")
 
 1. Execute uma consulta no SSMS para ver as colunas na tabela.
 
@@ -174,7 +174,7 @@ Nesta seção, transmitimos dados para o **hvactable** já criados no Banco de D
        import org.apache.spark.sql.streaming._
        import java.sql.{Connection,DriverManager,ResultSet}
 
-1. Nós transmitimos dados do **HVAC.csv** no hvactable. Arquivo HVAC. csv está disponível no cluster em `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. No snippet de código a seguir, primeiro recebemos o esquema dos dados a serem transmitidos. Em seguida, criamos um dataframe de transmissão usando esse esquema. Cole o snippet de código a seguir em uma célula de código e pressione **SHIFT+ENTER** para executar.
+1. Nós transmitimos dados do **HVAC.csv** no hvactable. O arquivo HVAC. csv está disponível no cluster em `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. No snippet de código a seguir, primeiro recebemos o esquema dos dados a serem transmitidos. Em seguida, criamos um dataframe de transmissão usando esse esquema. Cole o snippet de código a seguir em uma célula de código e pressione **SHIFT+ENTER** para executar.
 
        val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
        val readStreamDf = spark.readStream.schema(userSchema).csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/") 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 163c3cbaeed1526f08d047c3bf357232ccb534a3
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: dc532ed33fca5120736dfb9503d012b2877e675e
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802397"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806625"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -155,7 +155,7 @@ Novos compartilhamentos de arquivos começam com o número total de créditos em
 
 ## <a name="file-share-redundancy"></a>Redundância de compartilhamento de arquivo
 
-Compartilhamentos padrão do Azure files oferece suporte a três opções de redundância de dados: LRS (armazenamento com redundância local), ZRS (armazenamento com redundância de zona), GRS (armazenamento com redundância geográfica) e GZRS (armazenamento com redundância de zona geográfica) (versão prévia).
+Compartilhamentos padrão do Azure files oferece suporte a quatro opções de redundância de dados: LRS (armazenamento com redundância local), ZRS (armazenamento com redundância de zona), GRS (armazenamento com redundância geográfica) e GZRS (armazenamento com redundância de zona geográfica) (versão prévia).
 
 Os compartilhamentos Premium dos arquivos do Azure oferecem suporte apenas ao LRS (armazenamento com redundância local).
 

@@ -1,18 +1,18 @@
 ---
 title: Use Caffe no Azure HDInsight Spark para aprendizado aprofundado distribuído
-description: Use Caffe no Azure HDInsight Spark para aprendizado aprofundado distribuído
+description: Use Caffe em Apache Spark para aprendizado profundo distribuído no Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: d0d68263485c5ab6e57a349317b1975862470cc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31911c6c2456ab8b4949bab6ef8e541b91fc8a2c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721506"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814200"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Use Caffe no Azure HDInsight Spark para aprendizado aprofundado distribuído
 
@@ -175,7 +175,7 @@ Para este exemplo, como você está usando a CPU em vez de GPU, você deve alter
     # solver mode: CPU or GPU
     solver_mode: CPU
 
-![Configuração do Caffe](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
+![Caffe Config1](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
 
 Você pode alterar outras linhas conforme necessário.
 
@@ -184,7 +184,7 @@ O segundo arquivo (${CAFFE_ON_SPARK}/data/lenet_memory_train_test.prototxt) defi
 - altere "file:/Users/mridul/bigml/demodl/mnist_train_lmdb" para "wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb"
 - altere "file:/Users/mridul/bigml/demodl/mnist_test_lmdb/" para "wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb"
 
-![Configuração do Caffe](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
+![Caffe Config2](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
 
 Para obter mais informações sobre como definir a rede, confira a [documentação do Caffe no conjunto de dados MNIST](https://caffe.berkeleyvision.org/gathered/examples/mnist.html)
 

@@ -1,18 +1,18 @@
 ---
-title: Arquitetura para recuperação de desastre do Hyper-V para um site local secundário com o Azure Site Recovery | Microsoft Docs
+title: Arquitetura para recuperação de desastres do Hyper-V em um site local secundário com Azure Site Recovery
 description: Este artigo apresenta uma visão geral da arquitetura para recuperação de desastre de VMs Hyper-V locais para um site VMM do System Center secundário com o Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 05/30/2019
+ms.topic: conceptual
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 22f21f11b0c374724bc6924f30ea20a21de6ab90
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d8e9c3531e031538c593cfd60d83b4ae97b4f4c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66398170"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813736"
 ---
 # <a name="architecture---hyper-v-replication-to-a-secondary-site"></a>Arquitetura – replicação do Hyper-V para um site secundário
 

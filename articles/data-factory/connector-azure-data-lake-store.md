@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: d64a8431cb0331b58afc635bf8cf9d0fe0f1f225
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 4bb57190a310e1ea4b8e5c511f1acd90f53b8f09
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70276041"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813473"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Copiar dados de ou para Azure Data Lake Storage Gen1 usando Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do Azure Data Factory que você está usando:"]
@@ -163,12 +163,12 @@ No Azure Data Factory, você não precisa especificar nenhuma propriedade além 
 
 Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre [Conjuntos de Dados](concepts-datasets-linked-services.md). 
 
-- Para **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado, Avro e formato binário do conjunto de banco](#format-based-dataset) de uma.
-- Para outros formatos como o **formato Orc/JSON**, consulte [outra](#other-format-dataset) seção do conjunto de exemplo.
+- Para **parquet, texto delimitado, JSON, Avro e formato binário**, consulte a seção [parquet, texto delimitado, JSON, Avro e DataSet de formato binário](#format-based-dataset) .
+- Para outros formatos, como o **formato Orc**, consulte outra seção do conjunto de um [formato](#other-format-dataset) .
 
-### <a name="format-based-dataset"></a>Parquet, texto delimitado, Avro e conjunto de um formato binário
+### <a name="format-based-dataset"></a>Parquet, texto delimitado, JSON, Avro e conjunto de DataSet de formato binário
 
-Para copiar dados de e para **parquet, texto delimitado, formato Avro ou binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato [Avro](format-avro.md) e artigo [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte.
+Para copiar dados de e para **parquet, texto delimitado, JSON, Avro e formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte .
 As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `location` em configurações no conjunto de base de formato:
 
 | Propriedade   | Descrição                                                  | Necessário |
@@ -209,7 +209,7 @@ As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `location`
 
 ### <a name="other-format-dataset"></a>Outro conjunto de DataSet de formato
 
-Para copiar dados de e para Azure Data Lake Store Gen1 no **formato Orc/JSON**, há suporte para as seguintes propriedades:
+Para copiar dados de e para Azure Data Lake Store Gen1 no **formato Orc**, há suporte para as seguintes propriedades:
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
@@ -223,7 +223,7 @@ Para copiar dados de e para Azure Data Lake Store Gen1 no **formato Orc/JSON**, 
 
 
 >[!TIP]
->Para copiar todos os arquivos em uma pasta, especifique **folderPath** somente.<br>Para copiar um único arquivo com um nome específico, especifique **FolderPath** com uma parte da pasta e o nome do arquivo com um nome de arquivos.<br>Para copiar um subconjunto de arquivos em uma pasta, especifique **FolderPath** com uma parte de pasta e um **nome de arquivo** com um filtro curinga. 
+>Para copiar todos os arquivos em uma pasta, especifique **folderPath** somente.<br>Para copiar um único arquivo com um nome específico, especifique **FolderPath** com uma parte da pasta **e o nome do** arquivo com um nome de arquivos.<br>Para copiar um subconjunto de arquivos em uma pasta, especifique **FolderPath** com uma parte de pasta e um **nome de arquivo** com um filtro curinga. 
 
 **Exemplo:**
 
@@ -261,12 +261,12 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 ### <a name="azure-data-lake-store-as-source"></a>Azure Data Lake Store como fonte
 
-- Para copiar de **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado, Avro e fonte de formato binário](#format-based-source) .
-- Para copiar de outros formatos como o **formato Orc/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
+- Para copiar de **parquet, de texto delimitado, JSON, Avro e formato binário**, consulte a seção [parquet, texto delimitado, JSON, Avro e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos, como o **formato Orc**, consulte [outra seção fonte de formato](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, texto delimitado, Avro e fonte de formato binário
+#### <a name="format-based-source"></a>Parquet, texto delimitado, JSON, Avro e fonte de formato binário
 
-Para copiar dados de **parquet, texto delimitado, formato Avro ou binário**, consulte o [formato parquet](format-parquet.md), o formato de [texto delimitado](format-delimited-text.md), o [formato Avro](format-avro.md) e o artigo [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e nas configurações com suporte .  As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `storeSettings` em configurações na fonte de cópia baseada em formato:
+Para copiar dados de **parquet, texto delimitado, JSON, Avro e formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e com suporte Configurações.  As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `storeSettings` em configurações na fonte de cópia baseada em formato:
 
 | Propriedade                 | Descrição                                                  | Necessário                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
@@ -324,7 +324,7 @@ Para copiar dados de **parquet, texto delimitado, formato Avro ou binário**, co
 
 #### <a name="other-format-source"></a>Outra fonte de formato
 
-Para copiar dados de Azure Data Lake Store Gen1 no **formato orc ou JSON**, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
+Para copiar dados de Azure Data Lake Store Gen1 no **formato Orc**, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
@@ -366,12 +366,12 @@ Para copiar dados de Azure Data Lake Store Gen1 no **formato orc ou JSON**, as p
 
 ### <a name="azure-data-lake-store-as-sink"></a>Azure Data Lake Store como coletor
 
-- Para copiar para o **parquet, o texto delimitado, o formato Avro ou o binário**, consulte a seção [parquet, texto delimitado, Avro e coletor de formato binário](#format-based-sink) .
+- Para copiar para **parquet, texto delimitado, JSON, Avro e formato binário**, consulte a seção [parquet, texto delimitado, JSON, Avro e coletor de formato binário](#format-based-sink) .
 - Para copiar para outros formatos como o **formato Orc/JSON**, consulte [outra](#other-format-sink) seção de coletor de formato.
 
-#### <a name="format-based-sink"></a>Parquet, texto delimitado, Avro e coletor de formato binário
+#### <a name="format-based-sink"></a>Parquet, texto delimitado, JSON, Avro e coletor de formato binário
 
-Para copiar dados para **parquet, texto delimitado, Avro ou formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), [formato Avro](format-avro.md) e artigo [formato binário](format-binary.md) no coletor de atividade de cópia com base em formato e configurações com suporte.  As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `storeSettings` em configurações no coletor de cópia com base em formato:
+Para copiar dados para **parquet, texto delimitado, JSON, Avro e formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) no coletor de atividade de cópia com base em formato e com suporte Configurações.  As propriedades a seguir têm suporte para Azure data Lake Store Gen1 `storeSettings` em configurações no coletor de cópia com base em formato:
 
 | Propriedade                 | Descrição                                                  | Necessário |
 | ------------------------ | ------------------------------------------------------------ | -------- |
@@ -419,7 +419,7 @@ Para copiar dados para **parquet, texto delimitado, Avro ou formato binário**, 
 
 #### <a name="other-format-sink"></a>Outro coletor de formato
 
-Para copiar dados para Azure Data Lake Store Gen1 no **formato orc ou JSON**, há suporte para as seguintes propriedades na seção **Sink** :
+Para copiar dados para Azure Data Lake Store Gen1 no **formato Orc**, há suporte para as seguintes propriedades na seção **Sink** :
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |

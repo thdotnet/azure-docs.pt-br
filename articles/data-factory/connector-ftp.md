@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: a20c6e90f38e6443597fdf50edd3d4766dc71096
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 98c13287e6e549f1fbcab710adc12cdf5416e814
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275284"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813174"
 ---
 # <a name="copy-data-from-ftp-server-by-using-azure-data-factory"></a>Copiar dados do servidor FTP usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -122,12 +122,12 @@ As propriedades a seguir têm suporte para o serviço vinculado do FTP:
 
 Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre [Conjuntos de Dados](concepts-datasets-linked-services.md). 
 
-- Para **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado, Avro e formato binário do conjunto de banco](#format-based-dataset) de uma.
-- Para outros formatos como o **formato Orc/JSON**, consulte [outra](#other-format-dataset) seção do conjunto de exemplo.
+- Para **parquet, texto delimitado, JSON, Avro e formato binário**, consulte a seção [parquet, texto delimitado, JSON, Avro e DataSet de formato binário](#format-based-dataset) .
+- Para outros formatos, como o **formato Orc**, consulte outra seção do conjunto de um [formato](#other-format-dataset) .
 
-### <a name="format-based-dataset"></a>Parquet, texto delimitado, Avro e conjunto de um formato binário
+### <a name="format-based-dataset"></a>Parquet, texto delimitado, JSON, Avro e conjunto de DataSet de formato binário
 
-Para copiar dados de **parquet, texto delimitado ou formato binário**, consulte o [formato parquet](format-parquet.md), o formato de [texto delimitado](format-delimited-text.md), o formato [Avro](format-avro.md) e o artigo [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para FTP `location` em configurações em conjunto de conjuntos de base de formato:
+Para copiar dados de **parquet, texto delimitado, JSON, Avro e formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), [formato de Avro](format-avro.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para FTP `location` em configurações em conjunto de conjuntos de base de formato:
 
 | Propriedade   | Descrição                                                  | Necessário |
 | ---------- | ------------------------------------------------------------ | -------- |
@@ -166,7 +166,7 @@ Para copiar dados de **parquet, texto delimitado ou formato binário**, consulte
 
 ### <a name="other-format-dataset"></a>Outro conjunto de DataSet de formato
 
-Para copiar dados do FTP no **formato Orc/JSON**, há suporte para as seguintes propriedades:
+Para copiar dados do FTP no **formato Orc**, há suporte para as seguintes propriedades:
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
@@ -217,12 +217,12 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 ### <a name="ftp-as-source"></a>FTP como fonte
 
-- Para copiar de **parquet, texto delimitado, Avro e formato binário**, consulte a seção [parquet, texto delimitado, Avro e fonte de formato binário](#format-based-source) .
-- Para copiar de outros formatos como o **formato Orc/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
+- Para copiar de **parquet, de texto delimitado, JSON, Avro e formato binário**, consulte a seção [parquet, texto delimitado, JSON, Avro e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos, como o **formato Orc**, consulte [outra seção fonte de formato](#other-format-source) .
 
-#### <a name="format-based-source"></a>Parquet, texto delimitado, Avro e fonte de formato binário
+#### <a name="format-based-source"></a>Parquet, texto delimitado, JSON, Avro e fonte de formato binário
 
-Para copiar dados de **parquet, texto delimitado, formato Avro ou binário**, consulte o [formato parquet](format-parquet.md), o formato de [texto delimitado](format-delimited-text.md), o [formato Avro](format-avro.md) e o artigo [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e nas configurações com suporte . As propriedades a seguir têm suporte para FTP `storeSettings` em configurações na fonte de cópia baseada em formato:
+Para copiar dados de **parquet, texto delimitado, JSON, Avro e formato binário**, consulte [formato parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md), formato de [Avro](format-avro.md) e artigo de [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e com suporte Configurações. As propriedades a seguir têm suporte para FTP `storeSettings` em configurações na fonte de cópia baseada em formato:
 
 | Propriedade                 | Descrição                                                  | Necessário                                      |
 | ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
@@ -236,7 +236,7 @@ Para copiar dados de **parquet, texto delimitado, formato Avro ou binário**, co
 | maxConcurrentConnections | O número de conexões a serem conectadas ao repositório de armazenamento simultaneamente. Especifique somente quando quiser limitar a conexão simultânea com o armazenamento de dados. | Não                                            |
 
 > [!NOTE]
-> Para o formato de texto parquet/delimitado, a fonte da atividade de cópia do tipo FileSystemProvider mencionada na próxima seção ainda tem suporte como está para compatibilidade com versões anteriores. Você é sugerido para usar esse novo modelo no futuro, e a interface do usuário de criação do ADF mudou para gerar esses novos tipos.
+> Para o formato de texto parquet/delimitado, a fonte da atividade de cópia do tipo **FileSystemProvider** mencionada na próxima seção ainda tem suporte como está para compatibilidade com versões anteriores. Você é sugerido para usar esse novo modelo no futuro, e a interface do usuário de criação do ADF mudou para gerar esses novos tipos.
 
 **Exemplo:**
 
@@ -281,7 +281,7 @@ Para copiar dados de **parquet, texto delimitado, formato Avro ou binário**, co
 
 #### <a name="other-format-source"></a>Outra fonte de formato
 
-Para copiar dados do FTP no **formato Orc/JSON**, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
+Para copiar dados do FTP no **formato Orc**, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |

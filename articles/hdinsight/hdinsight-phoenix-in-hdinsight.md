@@ -8,14 +8,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: ashishth
-ms.openlocfilehash: f07c7b7a6b1eea05ba41a875e9e78f31404c5f32
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 8ba27261f5ba505c37ef4cc82d06b314471440bc
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733198"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811905"
 ---
-# <a name="apache-phoenix-in-hdinsight"></a>Apache Phoenix no HDInsight
+# <a name="apache-phoenix-in-azure-hdinsight"></a>Apache Phoenix no Azure HDInsight
 
 O [Apache Phoenix](https://phoenix.apache.org/) é um banco de dados relacional de software livre altamente paralelo criado no [Apache HBase](hbase/apache-hbase-overview.md). Phoenix permite que você use consultas SQL em HBase. O Phoenix usa drivers JDBC abaixo para permitir aos usuários criar, excluir, alterar tabelas SQL, índices, exibições e as sequências e linhas upsert individualmente e em massa. O Phoenix usa compilação nativa noSQL, em vez de usar o MapReduce para compilar consultas, permitindo a criação de aplicativos de baixa latência sobre HBase. O Phoenix adiciona coprocessadores para oferecer suporte à execução de código fornecido pelo cliente no espaço de endereço do servidor, executando o código colocalizado junto com os dados. Essa abordagem minimiza a transferência de dados do cliente/servidor.
 

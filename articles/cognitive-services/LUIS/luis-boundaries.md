@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/9/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 3fd593ff199ff87b1c69e1097852a81a21adc1dd
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: ff267a524001802f8bcd0903fcb7119bab16ef11
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883951"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813323"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Limites para seu modelo e suas chaves do LUIS
 O LUIS tem várias áreas de limite. A primeira é o [limite de modelo](#model-boundaries), que controla intenções, entidades e recursos no LUIS. A segunda área é [limites de cota](#key-limits) com base no tipo de chave. A terceira área de limites é a [combinação de teclado](#keyboard-controls) para controlar o site do LUIS. Uma quarta área é o [mapeamento de região do mundo](luis-reference-regions.md) entre o site de criação do LUIS e as APIs do [ponto de extremidade](luis-glossary.md#endpoint) do LUIS. 
@@ -29,6 +29,7 @@ Se seu aplicativo exceder os limites e os perímetros do modelo LUIS, considere 
 |Área|Limite|
 |--|:--|
 | [Nome do aplicativo][luis-get-started-create-app] | *Máximo de caracteres padrão |
+| Aplicativos| 500 aplicativos por recurso do Azure |
 | [Teste em lote][batch-testing]| 10 conjuntos de dados, 1000 declarações por conjunto de dados|
 | Lista explícita | 50 por aplicativo|
 | Entidades externas | sem limites |
@@ -44,7 +45,7 @@ Se seu aplicativo exceder os limites e os perímetros do modelo LUIS, considere 
 | [Funções](luis-concept-roles.md)|300 funções por aplicativo. 10 funções por entidade|
 | [Expressão][utterances] | 500 caracteres|
 | [Declarações][utterances] | 15.000 por aplicativo – não há limite para o número de declarações por tentativa|
-| [Versões](luis-concept-version.md)| nenhum limite |
+| [Versões](luis-concept-version.md)| 100 versões por aplicativo |
 | [Nome da versão][luis-how-to-manage-versions] | 10 caracteres restritos a alfanuméricos e ponto (.) |
 
 *O máximo de caracteres padrão é 50 caracteres. 
@@ -55,7 +56,7 @@ Se seu aplicativo exceder os limites e os perímetros do modelo LUIS, considere 
 
 Não use os seguintes caracteres nos nomes a seguir.
 
-|Objeto|Excluir caracteres|
+|Object|Excluir caracteres|
 |--|--|
 |Nomes de intenção, entidade e função|`:`<br>`$`|
 |Nome da versão|`\`<br> `/`<br> `:`<br> `?`<br> `&`<br> `=`<br> `*`<br> `+`<br> `(`<br> `)`<br> `%`<br> `@`<br> `$`<br> `~`<br> `!`<br> `#`|
@@ -68,6 +69,8 @@ O Reconhecimento Vocal tem chaves separadas: um tipo para criação e outro para
 
 A chave de criação tem diferentes limites para criação e ponto de extremidade. A chave de ponto de extremidade de serviço de LUIS é válida apenas para consultas de ponto de extremidade.
 
+* 500 aplicativos por recurso do Azure 
+* 100 versões por aplicativo
 
 |Chave|Criação|Ponto de extremidade|Finalidade|
 |--|--|--|--|
@@ -80,7 +83,7 @@ A chave de criação tem diferentes limites para criação e ponto de extremidad
 
 ## <a name="keyboard-controls"></a>Controles de teclado
 
-|Entrada de teclado | Descrição | 
+|Entrada por teclado | Descrição | 
 |--|--|
 |Control+E|alterna entre tokens e entidades na lista de declarações|
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5559d30921ea44679b4ecd24c77e26be163c18fc
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 53900bcade3f7a283309f5ee1c624c742a62ad3f
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70375902"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812446"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Como: Planejar a sua implementação do ingresso do Azure Active Directory híbrido
 
@@ -149,7 +149,7 @@ A tabela a seguir fornece detalhes sobre o suporte a esses UPNs do AD local no i
 | ----- | ----- | ----- | ----- |
 | Roteável | Federado | Da versão 1703 | Disponível para o público geral |
 | Não roteável | Federado | Da versão 1803 | Disponível para o público geral |
-| Roteável | Gerenciado | Sem suporte | |
+| Roteável | Gerenciado | Da versão 1803 | Em geral, não há suporte para o SSPR do Azure AD na tela de bloqueio do Windows |
 | Não roteável | Gerenciado | Sem suporte | |
 
 ## <a name="next-steps"></a>Próximas etapas

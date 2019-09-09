@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: baselden
 ms.reviewer: ''
-ms.openlocfilehash: cd19d1e0cdfa1b160734b23d7f50310948ded80d
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 04a2a3f2557ccef510a831a5c9fbf89bb62cb9a7
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879905"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812842"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Planejar uma implantação de Proxy de Aplicativo do AD do Azure
 
@@ -85,7 +85,7 @@ Para obter informações detalhadas sobre o tópico, consulte [KCD para logon ú
 
    * A **publicação e a administração de aplicativos** exigem a função de administrador de *aplicativos* . Os administradores de aplicativos podem gerenciar todos os aplicativos no diretório, incluindo registros, configurações de SSO, atribuições de usuário e grupo e licenciamento, configurações de proxy de aplicativo e consentimento. Ela não concede a capacidade de gerenciar o Acesso Condicional. A função de *administrador de aplicativos de nuvem* tem todas as capacidades do administrador do aplicativo, exceto pelo fato de que ele não permite o gerenciamento de configurações de proxy de aplicativo.
 
-* **Licenciamento**: O proxy de aplicativo está disponível por meio da assinatura Azure AD Basic. Consulte a [página de preços do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/) para obter uma lista completa de opções e recursos de licenciamento.  
+* **Licenciamento**: O proxy de aplicativo está disponível por meio de uma assinatura Azure AD Premium. Consulte a [página de preços do Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/) para obter uma lista completa de opções e recursos de licenciamento.  
 
 ### <a name="application-discovery"></a>Descoberta de aplicativos
 
@@ -180,7 +180,7 @@ Você também pode publicar aplicativos usando o [PowerShell](https://docs.micro
 
 Abaixo estão algumas práticas recomendadas a serem seguidas ao publicar um aplicativo:
 
-* **Usar grupos**de conectores: Atribua um grupo de conectores designado para publicar cada aplicativo respectivo. Recomendamos que cada grupo de conectores tenha pelo menos dois conectores para fornecer alta disponibilidade e escala. Ter três conectores é ideal caso você precise atender a um computador em qualquer ponto. Além disso, consulte [publicar aplicativos em redes e locais separados usando grupos](application-proxy-connector-groups.md) de conectores para ver como você também pode usar grupos de conectores para segmentar seus conectores por rede ou local.
+* **Usar grupos de conectores**: Atribua um grupo de conectores designado para publicar cada aplicativo respectivo. Recomendamos que cada grupo de conectores tenha pelo menos dois conectores para fornecer alta disponibilidade e escala. Ter três conectores é ideal caso você precise atender a um computador em qualquer ponto. Além disso, consulte [publicar aplicativos em redes e locais separados usando grupos de conectores](application-proxy-connector-groups.md) para ver como você também pode usar grupos de conectores para segmentar seus conectores por rede ou local.
 
 * **Definir tempo limite do aplicativo de back-end**: Essa configuração é útil em cenários em que o aplicativo pode exigir mais de 75 segundos para processar uma transação do cliente. Por exemplo, quando um cliente envia uma consulta a um aplicativo Web que atua como um front-end para um banco de dados. O front-end envia essa consulta para seu servidor de banco de dados back-end e aguarda uma resposta, mas quando recebe uma resposta, o lado do cliente da conversa atinge o tempo limite. Definir o tempo limite como longo fornece de 180 segundos para que as transações mais longas sejam concluídas.
 
@@ -202,7 +202,7 @@ Por exemplo, suponha que você tem três aplicativos publicados por meio do Prox
 
 ![Imagem 1](media/App-proxy-deployment-plan/link-translation.png)
 
-Quando você habilita a conversão de link para o aplicativo benefícios, os links para despesas e viagens são redirecionados para as URLs externas para esses aplicativos, para que os usuários que acessam os aplicativos de fora da rede corporativa possam acessá-los. Os links de despesas e viagens de volta para os benefícios não funcionam porque a conversão de links não foi habilitada para esses dois aplicativos. O link para comentários não é redirecionado porque não há nenhuma URL externa, de modo que os usuários que usam o aplicativo de benefícios não conseguirão acessar o aplicativo de comentários de fora da rede corporativa. Consulte informações detalhadas sobre [conversão de link e outras opções](application-proxy-configure-hard-coded-link-translation.md)de redirecionamento.
+Quando você habilita a conversão de link para o aplicativo benefícios, os links para despesas e viagens são redirecionados para as URLs externas para esses aplicativos, para que os usuários que acessam os aplicativos de fora da rede corporativa possam acessá-los. Os links de despesas e viagens de volta para os benefícios não funcionam porque a conversão de links não foi habilitada para esses dois aplicativos. O link para comentários não é redirecionado porque não há nenhuma URL externa, de modo que os usuários que usam o aplicativo de benefícios não conseguirão acessar o aplicativo de comentários de fora da rede corporativa. Consulte informações detalhadas sobre [conversão de link e outras opções de redirecionamento](application-proxy-configure-hard-coded-link-translation.md).
 
 ### <a name="access-your-application"></a>Acessar seu aplicativo
 
@@ -300,13 +300,13 @@ Esses logs fornecem informações detalhadas sobre logons para aplicativos confi
 
 #### <a name="application-proxy-connector-monitoring"></a>Monitoramento do conector de proxy de aplicativo
 
-Os conectores e o serviço cuidam de todas as tarefas de alta disponibilidade. Você pode monitorar o status dos conectores na página proxy de aplicativo no portal do Azure AD. Para obter mais informações sobre conectores manutenção, consulte entender os conectores de [proxy de aplicativo do AD do Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#maintenance).
+Os conectores e o serviço cuidam de todas as tarefas de alta disponibilidade. Você pode monitorar o status dos conectores na página proxy de aplicativo no portal do Azure AD. Para obter mais informações sobre conectores manutenção, consulte [entender os conectores de proxy de aplicativo do AD do Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#maintenance).
 
 ![Exemplo: Conectores de Proxy de Aplicativo do AD do Azure](./media/application-proxy-connectors/app-proxy-connectors.png)
 
 #### <a name="windows-event-logs-and-performance-counters"></a>Logs de eventos do Windows e contadores de desempenho
 
-Os conectores têm logs de administração e de sessão. Os logs de administrador incluem eventos de chave e seus erros. Os logs de sessão incluem todas as transações e seus detalhes de processamento. Os logs e os contadores estão localizados nos logs de eventos do Windows para obter mais informações, consulte entender os conectores de [proxy de aplicativo do AD do Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#under-the-hood). Siga este [tutorial para configurar fontes de dados de log de eventos no Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-windows-events).
+Os conectores têm logs de administração e de sessão. Os logs de administrador incluem eventos de chave e seus erros. Os logs de sessão incluem todas as transações e seus detalhes de processamento. Os logs e os contadores estão localizados nos logs de eventos do Windows para obter mais informações, consulte [entender os conectores de proxy de aplicativo do AD do Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#under-the-hood). Siga este [tutorial para configurar fontes de dados de log de eventos no Azure monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-windows-events).
 
 ### <a name="troubleshooting-guide-and-steps"></a>Guia de solução de problemas e etapas
 

@@ -15,12 +15,12 @@ ms.date: 09/11/2018
 ms.author: mimart
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c831fc7ab1a646d41c0dc08d0e1a66380fe1232
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4bb1ed48d501ca3166e0b906c622507b59ef059a
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65824729"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812678"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Provisionamento de aplicativo com base em atributo com filtros de escopo
 O objetivo deste artigo é explicar como usar filtros de escopo para definir regras baseadas em atributo que determinam quais usuários serão provisionados a um aplicativo.
@@ -108,7 +108,7 @@ Os filtros de escopo são configurados como parte dos mapeamentos de atributos p
 13. Selecione **Salvar** na tela de **Mapeamento de Atributo**. 
 
 >[!IMPORTANT] 
-> Salvar um novo filtro de escopo dispara uma nova sincronização completa para o aplicativo, onde todos os usuários no sistema de origem são avaliados novamente em relação ao novo filtro de escopo. Se um usuário no aplicativo estava anteriormente no escopo de provisionamento, mas sair do escopo, sua conta será desabilitada ou desprovisionada no aplicativo.
+> Salvar um novo filtro de escopo dispara uma nova sincronização completa para o aplicativo, onde todos os usuários no sistema de origem são avaliados novamente em relação ao novo filtro de escopo. Se um usuário no aplicativo estava anteriormente no escopo de provisionamento, mas sair do escopo, sua conta será desabilitada ou desprovisionada no aplicativo. Para substituir esse comportamento padrão, consulte [ignorar a exclusão de contas de usuário que saem do escopo](skip-out-of-scope-deletions.md).
 
 
 ## <a name="related-articles"></a>Artigos relacionados

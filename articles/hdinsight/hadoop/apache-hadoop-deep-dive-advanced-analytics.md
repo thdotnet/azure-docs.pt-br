@@ -1,6 +1,6 @@
 ---
 title: Mergulho profundo - Análise avançada - Azure HDInsight
-description: Saiba como a análise avançada usa algoritmos para processar Big Data.
+description: Saiba como a análise avançada usa algoritmos para processar Big Data no Azure HDInsight.
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: ac0edf2de4337154b665b8f3898134a7c2fd1f4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 973ac928900cc02f176931ffa3865c2997e552f2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712403"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810851"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Mergulho profundo – Análise avançada
 
@@ -45,7 +45,7 @@ Além de selecionar os algoritmos mais adequados, você precisa considerar se pr
 
 | Categoria de algoritmo| Uso | Tipo de aprendizado | Algoritmos |
 | --- | --- | --- | -- |
-| classificação | Classificar pessoas ou coisas em grupos | Supervisionado | Árvores de decisão, Regressão logística, redes neurais |
+| Classificação | Classificar pessoas ou coisas em grupos | Supervisionado | Árvores de decisão, Regressão logística, redes neurais |
 | Clustering | Dividir um conjunto de exemplos em grupos homogêneos | Não supervisionado | Modelo de cluster K-means |
 | Detecção de padrões | Identificar associações frequentes nos dados | Não supervisionado | Regras da associação |
 | Regressão | Prever resultados numéricos | Supervisionado | Regressão linear, redes neurais |

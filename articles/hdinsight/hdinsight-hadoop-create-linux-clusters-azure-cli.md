@@ -1,6 +1,6 @@
 ---
-title: Criar clusters do Apache Hadoop usando a CLI do Azure - Azure HDInsight
-description: Saiba como criar clusters HDInsight usando a CLI do Azure de plataforma cruzada.
+title: Criar clusters Apache Hadoop usando o CLI do Azure-Azure HDInsight
+description: Saiba como criar clusters do Azure HDInsight usando o CLI do Azure de plataforma cruzada.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,18 +8,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: hrasheed
-ms.openlocfilehash: 0a278cd98b0dd6c6d8f0fe9bfee81e5bafd4f543
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c26c0b16331ae01f7505e44cef3fe91b3282750b
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65597690"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809855"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Criar os clusters do HDInsight usando a CLI do Azure
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-As etapas neste passo a passo do documento criando um cluster HDInsight 3.6 usando a CLI do Azure.
+As etapas neste documento orientam a criação de um cluster HDInsight 3,6 usando o CLI do Azure.
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -33,7 +33,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
 
 ## <a name="create-a-cluster"></a>Criar um cluster
 
-1. Faça logon em sua assinatura do Azure. Se você planeja usar o Azure Cloud Shell, basta selecionar **Experimente** no canto superior direito do bloco de código. Caso contrário, insira o comando a seguir:
+1. Faça logon na sua assinatura do Azure. Se você planeja usar o Azure Cloud Shell, basta selecionar **Experimente** no canto superior direito do bloco de código. Caso contrário, insira o comando a seguir:
 
     ```azurecli-interactive
     az login
@@ -42,16 +42,16 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
     # az account set --subscription "SUBSCRIPTIONID"
     ```
 
-2. Configure as variáveis de ambiente. O uso de variáveis neste artigo se baseia em Bash. Pequenas variações serão necessárias para outros ambientes. Ver [az-hdinsight-create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) para obter uma lista completa de parâmetros possíveis para a criação do cluster.
+2. Configure as variáveis de ambiente. O uso de variáveis neste artigo baseia-se no bash. Pequenas variações serão necessárias para outros ambientes. Consulte [AZ-hdinsight-Create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) para obter uma lista completa de possíveis parâmetros para a criação do cluster.
 
-    |Parâmetro | DESCRIÇÃO |
+    |Parâmetro | Descrição |
     |---|---|
     |`--size`| O número de nós de trabalho no cluster. Este artigo usa a variável `clusterSizeInNodes` como o valor passado para `--size`. |
-    |`--version`| a versão do cluster do HDInsight. Este artigo usa a variável `clusterVersion` como o valor passado para `--version`. Consulte também: [Suporte para versões do HDInsight](./hdinsight-component-versioning.md#supported-hdinsight-versions).|
-    |`--type`| Tipo de cluster do HDInsight, como: hadoop, interactivehive, hbase, kafka, storm, spark, rserver, mlservices.  Este artigo usa a variável `clusterType` como o valor passado para `--type`. Consulte também: [Tipos e a configuração de cluster](./hdinsight-hadoop-provision-linux-clusters.md#cluster-types).|
-    |`--component-version`|As versões de vários componentes do Hadoop, nas versões separadas por espaços em ' componente = versão ' formato. Este artigo usa a variável `componentVersion` como o valor passado para `--component-version`. Consulte também: [Componentes do Hadoop](./hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions).|
+    |`--version`| a versão do cluster do HDInsight. Este artigo usa a variável `clusterVersion` como o valor passado para `--version`. Confira também:  [Versões do HDInsight com suporte](./hdinsight-component-versioning.md#supported-hdinsight-versions).|
+    |`--type`| Tipo de cluster HDInsight, como: Hadoop, interactivehive, HBase, Kafka, Storm, Spark, rserver, mlservices.  Este artigo usa a variável `clusterType` como o valor passado para `--type`. Confira também:  [Tipos de cluster e configuração](./hdinsight-hadoop-provision-linux-clusters.md#cluster-types).|
+    |`--component-version`|As versões de vários componentes do Hadoop, em versões separadas por espaços no formato ' componente = versão '. Este artigo usa a variável `componentVersion` como o valor passado para `--component-version`. Confira também:  [Componentes do Hadoop](./hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions).|
 
-    Substitua `RESOURCEGROUPNAME`, `LOCATION`, `CLUSTERNAME`, `STORAGEACCOUNTNAME`, e `PASSWORD` com os valores desejados. Altere os valores para as outras variáveis conforme desejado. Em seguida, insira os comandos da CLI.
+    Substitua `RESOURCEGROUPNAME`, `LOCATION`, ,`CLUSTERNAME` epelos`PASSWORD` valores desejados `STORAGEACCOUNTNAME`. Altere os valores para as outras variáveis conforme desejado. Em seguida, insira os comandos da CLI.
 
     ```azurecli-interactive
     export resourceGroupName=RESOURCEGROUPNAME
@@ -68,7 +68,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
     export componentVersion=Hadoop=2.7
     ```
 
-3. [Criar o grupo de recursos](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create) digitando o comando a seguir:
+3. [Crie o grupo de recursos](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create) inserindo o comando abaixo:
 
     ```azurecli-interactive
     az group create \
@@ -76,9 +76,9 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
         --name $resourceGroupName
     ```
 
-    Para obter uma lista de locais válidos, use o `az account list-locations` de comando e, em seguida, use um dos locais a partir de `name` valor.
+    Para obter uma lista de locais válidos, use `az account list-locations` o comando e, em seguida, use um dos locais `name` do valor.
 
-4. [Criar uma conta de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) digitando o comando a seguir:
+4. [Crie uma conta de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) inserindo o comando a seguir:
 
     ```azurecli-interactive
     # Note: kind BlobStorage is not available as the default storage account.
@@ -91,7 +91,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
         --sku Standard_LRS
     ```
 
-5. [Extrair a chave primária da conta de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/account/keys?view=azure-cli-latest#az-storage-account-keys-list) e armazená-lo em uma variável, digitando o comando a seguir:
+5. [Extraia a chave primária da conta de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/account/keys?view=azure-cli-latest#az-storage-account-keys-list) e armazene-a em uma variável digitando o comando a seguir:
 
     ```azurecli-interactive
     export AZURE_STORAGE_KEY=$(az storage account keys list \
@@ -100,7 +100,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
         --query [0].value -o tsv)
     ```
 
-6. [Criar um contêiner de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create) digitando o comando a seguir:
+6. [Crie um contêiner de armazenamento do Azure](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create) inserindo o comando a seguir:
 
     ```azurecli-interactive
     az storage container create \
@@ -109,7 +109,7 @@ CLI do Azure. Se você ainda não tiver instalado a CLI do Azure, confira [Insta
         --account-name $AZURE_STORAGE_ACCOUNT
     ```
 
-7. [Criar o cluster HDInsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) digitando o seguinte comando:
+7. [Crie o cluster HDInsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) inserindo o seguinte comando:
 
     ```azurecli-interactive
     az hdinsight create \

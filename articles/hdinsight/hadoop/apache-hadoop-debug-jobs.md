@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: f96171e1c75676a185edf4a1901ef65b7181135a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5ae05b2ad1dc03bad210b1f67834865afd49df3
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721003"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810882"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Analisar logs do Apache Hadoop
 
@@ -32,7 +32,7 @@ Quando você cria um cluster HDInsight, seis tabelas são criadas automaticament
 * ambariserverlog
 * ambariagentlog
 
-Os nomes de arquivo da tabela são **u\<ClusterName > DDMonYYYYatHHMMSSsss\<TableName >** .
+Os nomes de arquivo de tabela são **u\<ClusterName\<> DDMonYYYYatHHMMSSsss TableName >** .
 
 Essas tabelas contêm os seguintes campos:
 
@@ -41,10 +41,10 @@ Essas tabelas contêm os seguintes campos:
 * EventTimestamp
 * Host
 * MALoggingHash
-* Message
+* Mensagem
 * N
 * PreciseTimeStamp
-* Função
+* Role
 * RowIndex
 * Locatário
 * TIMESTAMP
@@ -73,7 +73,7 @@ Power Query pode ser instalado do [Microsoft Power Query para Excel](https://www
 5. Clique com o botão direito na tabela hadoopservicelog no painel **Navigator** e selecione **Editar**. Você deverá ver quatro colunas. Opcionalmente, exclua as colunas **Chave de Partição**, **Chave de Linha** e **Carimbo de Data/Hora** selecionando-as e clicando em **Remover Colunas** nas opções na faixa de opções.
 6. Clique no ícone de expansão na coluna Conteúdo para escolher as colunas que você deseja importar para a planilha do Excel. Para esta demonstração, escolhi TraceLevel e ComponentName: ela pode oferecer informações básicas sobre quais componentes apresentaram problemas.
    
-    ![Logs do HDInsight Hadoop escolher colunas](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-using-excel-power-query-filter.png)
+    ![Logs do Hadoop no HDInsight escolher colunas Excel](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-using-excel-power-query-filter.png "Logs do Hadoop no HDInsight escolher colunas Excel")
 7. Clique em **OK** para importar os dados.
 8. Selecione as colunas **NívelRastreamento**, Função e **NomeComponente**, e clique no controle **Agrupar Por** na faixa de opções.
 9. Clique em **OK** na caixa de diálogo Agrupar por
@@ -93,7 +93,7 @@ Agora você pode usar o Excel para filtrar e classificar conforme o necessário.
    
         TraceLevel eq 'ERROR'
    
-    ![Logs do HDInsight Hadoop escolher colunas](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png)
+    ![Logs do HDInsight Hadoop escolhem colunas vs](./media/apache-hadoop-debug-jobs/hdinsight-hadoop-analyze-logs-visual-studio-filter.png "Logs do HDInsight Hadoop escolhem colunas vs")
    
     Para saber mais sobre como construir filtros, consulte [Construir cadeias de caracteres de filtro para o Designer de Tabela](../../vs-azure-tools-table-designer-construct-filter-strings.md).
 
@@ -120,7 +120,7 @@ Você pode usar a interface do usuário do YARN para fazer o seguinte:
 
 * **Obter o status do cluster**. No painel esquerdo, expanda **Cluster** e clique em **Sobre**. Isso apresenta detalhes de status do cluster como memória alocada total, núcleos usados, o estado do gerenciador de recursos de cluster, versão do cluster, e assim por adiante.
   
-    ![Iniciar painel do cluster](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png)
+    ![Iniciar o painel do cluster yarn](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png "Iniciar o painel do cluster yarn")
 * **Obtenha o status do nó**. No painel esquerdo, expanda **Cluster** e clique em **Nós**. Isso lista todos os nós no cluster, o endereço HTTP de cada nó, os recursos alocados para cada nó, etc.
 * **Monitore o status do trabalho**. No painel esquerdo, expanda **Cluster**, em seguida, clique em **Aplicativos** para listar todos os trabalhos no cluster. Se você quiser examinar os trabalhos em um estado específico (como novo, enviado, em execução, etc.), clique no link apropriado em **Aplicativos**. Você pode seguir clicando no nome do trabalho para saber mais detalhes sobre ele, como saída, logs, etc.
 

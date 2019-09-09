@@ -1,6 +1,6 @@
 ---
 title: Spark Streaming no Azure HDInsight
-description: Como usar aplicativos Spark Streaming em clusters Spark do HDInsight.
+description: Como usar Apache Spark aplicativos de streaming em clusters Spark do HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: 19d77d4aa49008232a01cd3ac2761a796505a35c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f990e5eb2761f1743c2731f499ecc341990edf53
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712005"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813987"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Visão geral de Streaming do Apache Spark
 
@@ -145,7 +145,7 @@ stream.foreachRDD { rdd =>
 ssc.start()
 ```
 
-Aguarde cerca de 30 segundos depois de iniciar o aplicativo acima.  Em seguida, você pode consultar o DataFrame periodicamente para ver o conjunto atual de valores presente no lote, por exemplo, usando esta consulta SQL:
+Aguarde cerca de 30 segundos depois de iniciar o aplicativo acima.  Em seguida, você pode consultar o dataframe periodicamente para ver o conjunto atual de valores presentes no lote, por exemplo, usando esta consulta SQL:
 
 ```sql
 %%sql

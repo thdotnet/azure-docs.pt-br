@@ -12,12 +12,12 @@ ms.date: 03/15/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: d299a785d50657ef40c0c49cb2dce33b8939fd02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 924367c6bb85b64bafbcb8feb546eeb490e07a34
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60860977"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812778"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Transformar dados executando uma atividade de Jar no Azure Databricks
 
@@ -56,7 +56,7 @@ A seguir está a definição JSON de exemplo de uma Atividade de Jar do Databric
 
 A tabela a seguir descreve as propriedades JSON usadas na definição de JSON:
 
-|Propriedade|DESCRIÇÃO|Obrigatório|
+|Propriedade|Descrição|Obrigatório|
 |:--|---|:-:|
 |name|Nome da atividade no pipeline.|Sim|
 |description|Texto que descreve o que a atividade faz.|Não|
@@ -65,6 +65,9 @@ A tabela a seguir descreve as propriedades JSON usadas na definição de JSON:
 |mainClassName|O nome completo da classe que contém o método principal a ser executado. Essa classe deve estar contida em um JAR fornecido como uma biblioteca.|Sim|
 |parameters|Parâmetros que serão passados ao método principal.  Isto é uma matriz de cadeias de caracteres.|Não|
 |bibliotecas|Uma lista de bibliotecas a serem instaladas no cluster, que executará o trabalho. Ele pode ser uma matriz de <string, object>|Sim (pelo menos um contendo o método mainClassName)|
+
+> [!NOTE]
+> **Problema conhecido** – ao usar o mesmo [cluster interativo](compute-linked-services.md#example---using-existing-interactive-cluster-in-databricks) para executar atividades do jar do databricks simultâneos (sem a reinicialização do cluster), há um problema conhecido no databricks em que os parâmetros da 1ª atividade serão usados pelas atividades a seguir também. Portanto, isso resulta em parâmetros incorretos que estão sendo passados para os trabalhos subsequentes. Para atenuar isso, use um [cluster de trabalho](compute-linked-services.md#example---using-new-job-cluster-in-databricks) . 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Bibliotecas com suporte para atividades do databricks
 

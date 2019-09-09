@@ -1,9 +1,9 @@
 ---
-title: Definir configurações de função de recurso do Azure no PIM - Azure Active Directory | Microsoft Docs
+title: Definir configurações de função de recurso do Azure em PIM-Azure Active Directory | Microsoft Docs
 description: Saiba como definir configurações de função de recurso do Azure no Azure AD PIM (Privileged Identity Management).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 ms.service: active-directory
 ms.devlang: na
@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 04/09/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6da92ccd50707e676a1f5d583fe22ae8b3d8b73
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 88645d07ff213b0b7a56f2b081f0aaed01fd2929
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476310"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804206"
 ---
 # <a name="configure-azure-resource-role-settings-in-pim"></a>Definir configurações de função de recurso do Azure no PIM
 
-Quando você configura as configurações de função de recurso do Azure, você pode definir as configurações padrão que são aplicadas para atribuições de função de recursos do Azure no Azure Active Directory (Azure AD) gerenciamento de PIM (Privileged Identity). Use os procedimentos a seguir para configurar o fluxo de trabalho de aprovação e especifique quem pode aprovar ou negar solicitações.
+Ao definir as configurações de função de recurso do Azure, você define as configurações padrão que são aplicadas às atribuições de função de recurso do Azure no Azure Active Directory (Azure AD) Privileged Identity Management (PIM). Use os procedimentos a seguir para configurar o fluxo de trabalho de aprovação e especifique quem pode aprovar ou negar solicitações.
 
 ## <a name="open-role-settings"></a>Abrir configurações de função
 
@@ -38,11 +38,11 @@ Siga estas etapas para abrir as configurações de uma função de recursos do A
 
 1. Clique no recurso que você quer gerenciar, como uma assinatura ou um grupo de gerenciamento.
 
-    ![Listagem de recursos que podem ser gerenciados de página de recursos do Azure](./media/pim-resource-roles-configure-role-settings/resources-list.png)
+    ![Página de recursos do Azure listando recursos que podem ser gerenciados](./media/pim-resource-roles-configure-role-settings/resources-list.png)
 
 1. Clique em **Configurações de função**.
 
-    ![Página de configurações de função, listando as funções de recurso do Azure](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
+    ![Página de configurações de função listando funções de recurso do Azure](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
 
 1. Clique na função cujas configurações você deseja configurar.
 
@@ -50,7 +50,7 @@ Siga estas etapas para abrir as configurações de uma função de recursos do A
 
 1. Clique em **Editar** para abrir o painel Configurações de função.
 
-    ![Editar página de configurações de função com opções de atualizar as configurações de atribuição e ativação](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
+    ![Página Editar configurações de função com opções para atualizar a atribuição e as configurações de ativação](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
 
     No painel Configurações de função de cada função, há várias configurações que podem ser configuradas.
 
@@ -101,7 +101,7 @@ Use o controle deslizante **Duração máxima da ativação** para definir o tem
 
 É possível exigir que os membros insiram uma justificativa na atribuição ativa ou quando são ativados. Para exigir justificativa, marque a caixa **Exigir justificativa na atribuição ativa**  ou a caixa **Exigir justificativa na ativação**.
 
-## <a name="require-approval-to-activate"></a>Exigir aprovação para ativar
+## <a name="require-approval-to-activate"></a>Requer aprovação para ativar
 
 Se você quiser exigir aprovação para ativar uma função, siga estas etapas.
 
@@ -109,7 +109,7 @@ Se você quiser exigir aprovação para ativar uma função, siga estas etapas.
 
 1. Clique em **Selecionar aprovadores** para abrir o painel Selecionar um membro ou grupo.
 
-    ![Selecione um painel de membro ou grupo a fim de selecionar aprovadores](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
+    ![Selecione um painel membro ou grupo para selecionar aprovadores](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
 
 1. Selecione pelo menos um membro ou grupo e clique em **Selecionar**. É possível adicionar qualquer combinação de membros e grupos. É necessário selecionar pelo menos um aprovador. Não há nenhum aprovador padrão.
 

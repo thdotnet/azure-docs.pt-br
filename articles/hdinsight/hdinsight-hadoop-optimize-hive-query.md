@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
-ms.openlocfilehash: 218085d8d3969218be1a0557fdc477c730879cbe
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 60c725e084a18326cc4bc9cc05d02d103261f5a4
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543700"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70809264"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Otimizar as consultas do Apache Hive no Azure HDInsight
 
 No Azure HDInsight, há vários tipos de cluster e tecnologias que podem executar consultas do Apache Hive. Ao criar o cluster do HDInsight, escolha o tipo de cluster apropriado para ajudar a otimizar o desempenho de suas necessidades de carga de trabalho.
 
-Por exemplo, escolha **consulta interativa** tipo otimizar para consultas ad hoc e interativas de cluster. Escolha o tipo de cluster Apache **Hadoop** para otimizar para consultas do Hive usadas como um processo em lote. Os tipos de cluster **Spark** e **HBase** também podem executar consultas Hive. Para saber mais sobre como executar consultas Hive em vários tipos de cluster do HDInsight, confira [O que é o Apache Hive e HiveQL no Azure HDInsight?](hadoop/hdinsight-use-hive.md).
+Por exemplo, escolha tipo de cluster de **consulta interativa** para otimizar para consultas ad hoc e interativas. Escolha o tipo de cluster Apache **Hadoop** para otimizar para consultas do Hive usadas como um processo em lote. Os tipos de cluster **Spark** e **HBase** também podem executar consultas Hive. Para saber mais sobre como executar consultas Hive em vários tipos de cluster do HDInsight, confira [O que é o Apache Hive e HiveQL no Azure HDInsight?](hadoop/hdinsight-use-hive.md).
 
 Os clusters HDInsight do tipo de cluster Hadoop não são otimizados para desempenho, por padrão. Este artigo descreve alguns dos métodos de otimização de desempenho do Hive mais comuns que você pode aplicar às suas consultas.
 
@@ -29,11 +29,11 @@ O aumento do número de nós de trabalho em um cluster HDInsight permite que o t
 
 * No momento da criação de um cluster, você pode especificar o número de nós de trabalho usando o portal do Azure, o Azure PowerShell ou a interface de linha de comando.  Para saber mais, veja [Criar clusters HDInsight](hdinsight-hadoop-provision-linux-clusters.md). A seguinte captura de tela mostra a configuração de nó de trabalho no Portal do Azure:
   
-    ![scaleout_1][image-hdi-optimize-hive-scaleout_1]
+    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png "scaleout_1")
     
 * Após a criação, você também pode editar o número de nós de trabalho para escalar horizontalmente ainda mais um cluster sem recriar um:
 
-    ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
+    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png "scaleout_2")
 
 Para saber mais sobre dimensionamento do HDInsight, consulte [Dimensionar clusters HDInsight](hdinsight-scaling-best-practices.md)
 
@@ -198,7 +198,6 @@ Neste artigo, você aprendeu a vários métodos comuns de otimização de consul
 * [Analisar dados de atraso de voo usando a consulta interativa no HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)
 * [Analise os dados do Twitter usando o Apache Hive no HDInsight](hdinsight-analyze-twitter-data-linux.md)
 
-[image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png
-[image-hdi-optimize-hive-scaleout_2]: ./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png
+
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png

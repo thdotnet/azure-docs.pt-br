@@ -1,9 +1,9 @@
 ---
-title: A autenticação multifator (MFA) e PIM - Azure Active Directory | Microsoft Docs
+title: Autenticação multifator (MFA) e PIM-Azure Active Directory | Microsoft Docs
 description: Saiba como o PIM (Azure AD Privileged Identity Management) valida a MFA (autenticação multifator).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,21 +11,21 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 08/31/2018
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8831a838a403d58d8673c6400e0dda06c03dc69f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 686c39c9fb1f1ff7c0ecf068a6612f530620d5dc
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60442668"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804308"
 ---
 # <a name="multi-factor-authentication-mfa-and-pim"></a>MFA (Autenticação Multifator) e PIM
 
 É recomendável que você exija MFA (autenticação multifator) a todos os administradores. Isso reduz o risco de um ataque devido a uma senha comprometida.
 
-Você pode exigir que os usuários concluam um desafio de MFA quando entrarem. Você também pode exigir que os usuários concluam um desafio de MFA quando ativarem uma função no Azure Active Directory (Azure AD) gerenciamento de PIM (Privileged Identity). Dessa forma, se o usuário não concluir um desafio de MFA quando ao entrar, será solicitado pelo PIM que ele faça isso.
+Você pode exigir que os usuários concluam um desafio de MFA quando entrarem. Você também pode exigir que os usuários concluam um desafio de MFA quando ativam uma função no Azure Active Directory (Azure AD) Privileged Identity Management (PIM). Dessa forma, se o usuário não concluir um desafio de MFA quando ao entrar, será solicitado pelo PIM que ele faça isso.
 
 > [!IMPORTANT]
 > Agora, o Azure MFA funciona apenas com contas corporativas ou de estudante, não com contas da Microsoft (normalmente uma conta pessoal usada para entrar nos serviços Microsoft como Skype, Xbox, Outlook.com etc.). Por isso, pessoas usando uma conta Microsoft não podem ser um administrador qualificado porque não podem usar a MFA para ativar as funções. Se esses usuários precisarem continuar a gerenciar cargas de trabalho usando uma conta da Microsoft, eleve-os a administradores permanentes por enquanto.
@@ -40,5 +40,5 @@ Alternativamente, se os usuários se autenticarem localmente, você poderá faze
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Definir configurações de função do AD do Azure no PIM](pim-how-to-change-default-settings.md)
+- [Definir as configurações de função do Azure AD no PIM](pim-how-to-change-default-settings.md)
 - [Definir configurações de função de recurso do Azure no PIM](pim-resource-roles-configure-role-settings.md)

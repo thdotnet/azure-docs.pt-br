@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 63e23275a68ddde9385bb252dcb872d02c5cea08
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 829f3e730b4993a6a7f32a9224d3c6c38bd4c06e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405978"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811948"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall-preview"></a>Configurar o tráfego de rede de saída para clusters do Azure HDInsight usando o firewall (versão prévia)
 
@@ -93,7 +93,7 @@ Crie as regras de rede para configurar corretamente o cluster HDInsight.
 
 1. Clique em **Adicionar** para concluir a criação de sua coleção de regras de rede.
 
-   ![Título: Inserir detalhes da coleção de regras de aplicativo](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
+   ![Título: Inserir coleção de regras de aplicativo](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
 
 ### <a name="create-and-configure-a-route-table"></a>Criar e configurar uma tabela de rotas
 

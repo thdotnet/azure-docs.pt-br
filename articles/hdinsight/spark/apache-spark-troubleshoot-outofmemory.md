@@ -1,17 +1,17 @@
 ---
 title: Exceções de OutOfMemoryError para Apache Spark no Azure HDInsight
-description: Várias exceções OutOfMemoryError para Apache Spark no Azure HDInsight
+description: Várias exceções OutOfMemoryError para o cluster Apache Spark no Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.date: 08/15/2019
-ms.openlocfilehash: f6ff654b8e51dfaf2697df69c7f220d41346c2bc
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 6e7157f4e40dbc585d19affaf0c12af2e6ba60c1
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543473"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813904"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Exceções de OutOfMemoryError para Apache Spark no Azure HDInsight
 
@@ -248,7 +248,7 @@ Se você não encontrou seu problema ou não conseguiu resolver seu problema, vi
 
 * [Visão geral do gerenciamento de memória do Spark](https://spark.apache.org/docs/latest/tuning.html#memory-management-overview).
 
-* Depurando o [aplicativo Spark em clusters HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/).
+* [Depurando o aplicativo Spark em clusters HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/).
 
 * Obtenha respostas de especialistas do Azure por meio do [suporte da Comunidade do Azure](https://azure.microsoft.com/support/community/).
 

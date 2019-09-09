@@ -9,14 +9,14 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/25/2017
-ms.openlocfilehash: 0bca6c16124f886d9df9e88e651f3f7450f51a1a
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 9690e114f9ae01c4aee71145525fdda2eff4701c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876362"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814172"
 ---
-# <a name="debug-apache-spark-applications-locally-or-remotely-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Depurar aplicativos Apache Spark local ou remotamente em um cluster HDInsight com Azure Toolkit for IntelliJ por meio do SSH
+# <a name="debug-apache-spark-applications-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Depurar Apache Spark aplicativos em um cluster HDInsight com Azure Toolkit for IntelliJ por meio de SSH
 
 Este artigo fornece orientação passo-a-passo sobre como usar as Ferramentas do HDInsight no [Azure Toolkit for IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij?view=azure-java-stable) para depurar aplicativos remotamente em um cluster do HDInsight. Para depurar seu projeto, você também poderá exibir o vídeo [Depurar aplicativos do HDInsight Spark com o Kit de Ferramentas do Azure para IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ).
 
@@ -118,7 +118,7 @@ Para resolver esse erro, [baixe o executável](https://public-repo-1.hortonworks
 
 1. Clique no botão **Desconectar** para ocultar os logs de envio do painel esquerdo. Eles continuarão sendo executados em segundo plano.
 
-   ![Botão de execução remota](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/remote-run-result.png)
+   ![Resultado da execução remota](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/remote-run-result.png)
 
 
 

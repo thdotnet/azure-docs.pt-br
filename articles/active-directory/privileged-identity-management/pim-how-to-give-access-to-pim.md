@@ -1,9 +1,9 @@
 ---
-title: Conceder acesso a outros administradores para gerenciar o PIM - Azure Active Directory | Microsoft Docs
+title: Conceder acesso a outros administradores para gerenciar o PIM-Azure Active Directory | Microsoft Docs
 description: Saiba como permitir acesso a outros administradores para gerenciar o Azure AD PIM (Privileged Identity Management).
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: curtand
 manager: mtillman
 editor: ''
 ms.service: active-directory
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
 ms.date: 04/09/2019
-ms.author: rolyon
+ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb22e3cc93baebac023c0148812c6a4c6c95be60
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f3a0173108b6c884994ca25fd0495e9cb8d45186
+ms.sourcegitcommit: 95b180c92673507ccaa06f5d4afe9568b38a92fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60288558"
+ms.lasthandoff: 09/08/2019
+ms.locfileid: "70804353"
 ---
 # <a name="grant-access-to-other-administrators-to-manage-pim"></a>Permitir acesso a outros administradores para gerenciar o PIM
 
-O Administrador Global, que permite que o Azure Active Directory (Azure AD) gerenciamento de PIM (Privileged Identity) para uma organização automaticamente obtém atribuições de função e acesso ao PIM. Entretanto, ninguém mais obtém acesso de gravação por padrão, incluindo outros Administradores Globais. Outros Administradores Globais, Administradores de Segurança e Leitores de Segurança têm acesso somente leitura ao PIM. Para conceder acesso ao PIM, o primeiro usuário pode atribuir a outros usuários a função **Administrador com Função com Privilégios**.
+O administrador global que habilita o Azure Active Directory (Azure AD) Privileged Identity Management (PIM) para uma organização obtém automaticamente atribuições de função e acesso ao PIM. Entretanto, ninguém mais obtém acesso de gravação por padrão, incluindo outros Administradores Globais. Outros Administradores Globais, Administradores de Segurança e Leitores de Segurança têm acesso somente leitura ao PIM. Para conceder acesso ao PIM, o primeiro usuário pode atribuir a outros usuários a função **Administrador com Função com Privilégios**.
 
 > [!NOTE]
 > O gerenciamento de PIM requer Autenticação Multifator do Microsoft Azure. Como as contas Microsoft não podem registrar na Autenticação Multifator do Microsoft Azure, um usuário que entrar com uma conta Microsoft não poderá acessar o PIM.
@@ -40,7 +40,7 @@ Certifique-se de que haja sempre pelo menos dois usuários em uma função de Ad
 
 1. Clique em **Funções**.
 
-    ![Funções do AD do Azure do PIM - funções](./media/pim-how-to-give-access-to-pim/pim-directory-roles-roles.png)
+    ![Funções do Azure AD do PIM – funções](./media/pim-how-to-give-access-to-pim/pim-directory-roles-roles.png)
 
 1. Clique na função **Administrador com Função com Privilégios** para abrir a página de membros.
 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/09/2019
 ms.author: jingwang
-ms.openlocfilehash: c9192a6d6b8cf122092963f2352af8bb6e5a6c21
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 5399c79645be0ac774dc74603f26f092497262bf
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275916"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813211"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Copiar dados de ou para o Banco de Dados SQL do Azure usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do Azure Data Factory que você está usando:"]
@@ -383,6 +383,7 @@ Para copiar os dados para o Azure SQL Database, há suporte para as seguintes pr
 | storedProcedureTableTypeParameterName |O nome do parâmetro do tipo de tabela especificado no procedimento armazenado.  |Não |
 | sqlWriterTableType |O nome do tipo de tabela a ser usado no procedimento armazenado. A atividade de cópia disponibiliza aqueles dados sendo movidos em uma tabela temporária com esse tipo de tabela. O código de procedimento armazenado pode mesclar os dados que estão sendo copiados com os dados existentes. |Não |
 | storedProcedureParameters |Parâmetros para o procedimento armazenado.<br/>Valores permitidos são pares de nome e valor. Nomes e uso de maiúsculas e minúsculas de parâmetros devem corresponder aos nomes e o uso de maiúsculas e minúsculas dos parâmetros do procedimento armazenado. | Não |
+| tableOption | Especifica se a tabela do coletor deve ser criada automaticamente se não existir com base no esquema de origem. Não há suporte para a criação automática de tabela quando o coletor especifica o procedimento armazenado ou a cópia preparada está configurada na atividade de cópia. Os valores permitidos são `none` : (padrão) `autoCreate`,. |Não |
 | disableMetricsCollection | Data Factory coleta métricas como DTUs do banco de dados SQL do Azure para otimização e recomendações de desempenho de cópia. Se você estiver preocupado com esse comportamento, especifique `true` para desativá-lo. | Não (o padrão é `false`) |
 
 **Exemplo 1: Acrescentar dados**
@@ -410,7 +411,8 @@ Para copiar os dados para o Azure SQL Database, há suporte para as seguintes pr
             },
             "sink": {
                 "type": "AzureSqlSink",
-                "writeBatchSize": 100000
+                "writeBatchSize": 100000,
+                "tableOption": "autoCreate"
             }
         }
     }
@@ -483,7 +485,7 @@ Por exemplo, em Azure Data Factory, você pode criar um pipeline com uma **ativi
 
 ![Upsert](./media/connector-azure-sql-database/azure-sql-database-upsert.png)
 
-No banco de dados, defina um procedimento armazenado com lógica de MESCLAgem, como o exemplo a seguir, que é apontado da atividade de procedimento armazenado anterior. Suponha que o destino seja a tabela de **marketing** com três colunas: **ProfileID**, **State** e **Category**. Faça o Upsert com base na coluna ProfileId.
+No banco de dados, defina um procedimento armazenado com lógica de MESCLAgem, como o exemplo a seguir, que é apontado da atividade de procedimento armazenado anterior. Suponha que o destino seja a tabela de **marketing** com três colunas: **ProfileID**, **State** e **Category**. Faça o Upsert com base na coluna **ProfileId** .
 
 ```sql
 CREATE PROCEDURE [dbo].[spMergeData]
@@ -524,7 +526,7 @@ Quando você copia dados para o Azure SQL Database, também pode configurar e in
 
 Você pode usar um procedimento armazenado quando os mecanismos internos de cópia não atendem à finalidade. Um exemplo é quando você deseja aplicar processamento extra antes da inserção final dos dados de origem na tabela de destino. Alguns exemplos de processamento extra são quando você deseja mesclar colunas, Pesquisar valores adicionais e inserir em mais de uma tabela.
 
-A amostra a seguir mostra como usar um procedimento armazenado para fazer um upsert em uma tabela no Banco de Dados SQL do Azure. Suponha que os dados de entrada e a tabela de **marketing** do coletor tenham três colunas: **ProfileID**, **State** e **Category**. Faça o Upsert com base na coluna ProfileId e aplique-o somente para uma categoria específica chamada "produtoA".
+A amostra a seguir mostra como usar um procedimento armazenado para fazer um upsert em uma tabela no Banco de Dados SQL do Azure. Suponha que os dados de entrada e a tabela de **marketing** do coletor tenham três colunas: **ProfileID**, **State** e **Category**. Faça o Upsert com base na coluna **ProfileId** e aplique-o somente para uma categoria específica chamada "produtoA".
 
 1. No banco de dados, defina o tipo de tabela com o mesmo nome que **sqlWriterTableType**. O esquema do tipo de tabela é o mesmo que o esquema retornado pelos dados de entrada.
 

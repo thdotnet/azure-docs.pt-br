@@ -1,6 +1,6 @@
 ---
 title: Arquitetura do Azure HDInsight com o pacote de segurança da empresa
-description: Saiba como planejar a segurança do HDInsight com o pacote de segurança Enterprise.
+description: Saiba como planejar a segurança do Azure HDInsight com o Enterprise Security Package.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.openlocfilehash: 8b8c200979b70e145fca64746547b37dee558848
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: e7983c4da4803965dabaa6a471fbea8a2fba5229
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67720439"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810949"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Usar o pacote de segurança Enterprise no HDInsight
 
@@ -37,7 +37,7 @@ As seguintes coisas são criadas automaticamente:
 
 Para resumir, você precisa configurar um ambiente com:
 
-- Um domínio do Active Directory (gerenciado pelo Azure AD DS). **O nome de domínio deve ser 39 caracteres ou menos para trabalhar com o Azure HDInsight.**
+- Um domínio do Active Directory (gerenciado pelo Azure AD DS). **O nome de domínio deve ter 39 caracteres ou menos para funcionar com o Azure HDInsight.**
 - LDAP Seguro (LDAPS) habilitado no Azure AD DS.
 - Conectividade de rede adequada da rede virtual do HDInsight para a rede virtual do Azure AD DS, se você escolher redes virtuais separadas para elas. Uma VM dentro da rede virtual do HDInsight deve ter uma linha de visão para o Azure AD DS por meio de emparelhamento de rede virtual. Se o HDInsight e o Azure AD DS forem implantados na mesma rede virtual, a conectividade será fornecida automaticamente e nenhuma outra ação será necessária.
 
@@ -63,13 +63,13 @@ O uso do Active Directory local ou do Active Directory somente em VMs IaaS, sem 
 
 Se a federação estiver sendo usada e hashes de senha forem sincronizados corretamente, mas você estiver obtendo falhas de autenticação, verifique se a autenticação de senha de nuvem está habilitada para a entidade de serviço do PowerShell. Se não, você deverá definir uma [política de HRD (Home Realm Discovery)](../../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) para seu locatário do Azure AD. Para verificar e definir a política de HRD:
 
-1. Instalar a versão prévia [módulo do PowerShell do Azure AD](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Instale o módulo versão prévia do [PowerShell do Azure ad](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
 
    ```powershell
    Install-Module AzureAD
    ```
 
-2. Conecte-se usando as credenciais de administrador global (administrador de locatários).
+2. Conecte-se usando credenciais de administrador global (administrador de locatários).
    
    ```powershell
    Connect-AzureAD
@@ -81,7 +81,7 @@ Se a federação estiver sendo usada e hashes de senha forem sincronizados corre
    Get-AzureADServicePrincipal -SearchString "Microsoft Azure Powershell"
    ```
 
-4. Se ela não existir, crie a entidade de serviço.
+4. Se ele não existir, crie a entidade de serviço.
 
    ```powershell
    $powershellSPN = New-AzureADServicePrincipal -AppId 1950a258-227b-4e31-a9cf-717495945fc2

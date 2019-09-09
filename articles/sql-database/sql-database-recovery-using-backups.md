@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 08/27/2019
-ms.openlocfilehash: 00982ea837783a7e7a9dca257f04c77d48aceef2
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 6f1a0485dbae3234d476ba5df62126f05d52f435
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103112"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813351"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Recuperar um banco de dados SQL do Azure usando backups de banco de dados automatizados
 
@@ -127,10 +127,7 @@ Atualmente, não há suporte para a restauração pontual em uma área geográfi
 
 ### <a name="geo-restore-using-the-azure-portal"></a>Restauração geográfica usando o portal do Azure
 
-Para fazer a restauração geográfica de um banco de dados usando o portal do Azure, abra a página SQL databases e clique em **Adicionar**. Na caixa de texto **Selecionar fonte**, selecione **Backup**. Especifique o backup do qual fazer a recuperação, na região e no servidor de sua escolha.
-
-> [!Note]
-> A restauração geográfica usando o portal do Azure não está disponível no Instância Gerenciada. Em vez disso, use o PowerShell.
+Para fazer a restauração geográfica de um banco de dados usando o portal do Azure, abra a página SQL databases e clique em **Adicionar**. Na caixa de texto **Selecionar fonte**, selecione **Backup**. Especifique o backup do qual fazer a recuperação, na região e no servidor de sua escolha. 
 
 ## <a name="programmatically-performing-recovery-using-automated-backups"></a>Executar recuperação programaticamente usando backups automatizados
 

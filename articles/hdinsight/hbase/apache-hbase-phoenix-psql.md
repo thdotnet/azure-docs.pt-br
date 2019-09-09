@@ -1,6 +1,6 @@
 ---
 title: Carregamento em massa no Apache Phoenix usando psql – HDInsight do Azure
-description: Use a ferramenta psql para carregar dados de carregamento em massa em tabelas do Phoenix.
+description: Usar a ferramenta psql para carregar dados de carregamento em massa em tabelas Apache Phoenix no Azure HDInsight
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ashishth
-ms.openlocfilehash: fe6705dc3dedd521357f924dd433c7eacf88ba84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 15bb65e004de916862297f91278328cddb16487d
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64718635"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810422"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Carregar dados em massa para o Apache Phoenix usando psql
 

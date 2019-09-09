@@ -1,6 +1,6 @@
 ---
 title: Otimizar configurações de cluster com o Apache Ambari - Azure HDInsight
-description: Use a interface da Web do Apache Ambari para configurar e otimizar clusters do HDInsight.
+description: Use a interface do usuário da Web do Apache amAmbari para configurar e otimizar clusters do Azure HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: f0db36fa380d0d1bb7f2b581c4bf8fa1abfaadaf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 57e5eef8563bca0e27024d6ff5a46b983273df07
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60698491"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70810667"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Use o Apache Ambari para otimizar as configurações de cluster do HDInsight
 
@@ -49,15 +49,15 @@ Para modificar o tamanho do heap do NameNode Java:
 
 1. Digite o novo valor na caixa de texto e pressione **Enter** para salvar a alteração.
 
-    ![Editar o tamanho do heap do NameNode Java](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit.png)
+    ![Editar NameNode Size1 heap de Java](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit.png)
 
-1. O tamanho de heap do NameNode Java é alterado para 1 GB de 2 GB.
+1. O tamanho do heap do Java NameNode é alterado para 1 GB de 2 GB.
 
-    ![Tamanho do heap do NameNode Java editado](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edited.png)
+    ![Size2 de heap do NameNode editado](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edited.png)
 
 1. Salve as alterações clicando no botão verde **Salvar** na parte superior da tela de configuração.
 
-    ![Salvar alterações](./media/hdinsight-changing-configs-via-ambari/save-changes.png)
+    ![Salvar as alterações](./media/hdinsight-changing-configs-via-ambari/save-changes.png)
 
 ## <a name="apache-hive-optimization"></a>Otimização do Apache Hive
 
@@ -123,9 +123,9 @@ O parâmetro `hive.exec.reducers.bytes.per.reducer` especifica o número de byte
 
 Uma consulta do Hive é executada em uma ou mais etapas. Se as etapas independentes puderem ser executadas em paralelo, o desempenho da consulta aumentará.
 
-1.  Para habilitar a execução de consultas em paralelo, navegue até a guia **Configurações** do Hive e pesquise pela propriedade `hive.exec.parallel`. O valor padrão é falso. Altere o valor para true e pressione **Enter** para salvá-lo.
+1.  Para habilitar a execução de consultas em paralelo, navegue até a guia **Configurações** do Hive e pesquise pela propriedade `hive.exec.parallel`. O valor padrão é false. Altere o valor para true e pressione **Enter** para salvá-lo.
  
-1.  Para limitar o número de trabalhos a serem executados em paralelo, modifique o `hive.exec.parallel.thread.number` propriedade. O valor padrão é 8.
+1.  Para limitar o número de trabalhos a serem executados em paralelo, modifique `hive.exec.parallel.thread.number` a propriedade. O valor padrão é 8.
 
     ![Execução do Hive em paralelo](./media/hdinsight-changing-configs-via-ambari/hive-exec-parallel.png)
 
@@ -136,7 +136,7 @@ O Hive processa dados linha por linha. A vetorização instrui o Hive a processa
 
 1. Para habilitar uma execução de consulta vetorizada, navegue até a guia **Configurações** do Hive e pesquise pelo parâmetro `hive.vectorized.execution.enabled`. O valor padrão é true para o Hive 0.13.0 ou posterior.
  
-1. Para habilitar a execução vetorizada para o lado de redução da consulta, defina o parâmetro `hive.vectorized.execution.reduce.enabled` como true. O valor padrão é falso.
+1. Para habilitar a execução vetorizada para o lado de redução da consulta, defina o parâmetro `hive.vectorized.execution.reduce.enabled` como true. O valor padrão é false.
 
     ![Execução vetorizada no Hive](./media/hdinsight-changing-configs-via-ambari/hive-vectorized-execution.png)
 
@@ -185,7 +185,7 @@ Os tipos de compactação disponíveis são:
 
 Como regra geral, é importante que o método de compactação seja divisível. Caso contrário, poucos mapeadores serão criados. Se os dados de entrada forem texto, `bzip2` será a melhor opção. Para o formato ORC, o Snappy é a opção de compactação mais rápida.
 
-1. Para habilitar a compactação intermediária, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.exec.compress.intermediate` como verdadeiro. O valor padrão é falso.
+1. Para habilitar a compactação intermediária, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.exec.compress.intermediate` como verdadeiro. O valor padrão é false.
 
     ![Compactação intermediária de execução do Hive](./media/hdinsight-changing-configs-via-ambari/hive-exec-compress-intermediate.png)
 
@@ -204,7 +204,7 @@ Como regra geral, é importante que o método de compactação seja divisível. 
 
     d. Na janela Adicionar Propriedade, digite `mapred.map.output.compression.codec` como a chave e `org.apache.hadoop.io.compress.SnappyCodec` como o valor.
 
-    e. Clique em **Adicionar**.
+    e. Clique em **Adicionar** .
 
     ![Propriedade personalizada do Hive](./media/hdinsight-changing-configs-via-ambari/hive-custom-property.png)
 
@@ -217,7 +217,7 @@ Como regra geral, é importante que o método de compactação seja divisível. 
 
 A saída final do Hive também pode ser compactada.
 
-1. Para compactar a saída final do Hive, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.exec.compress.output` como verdadeiro. O valor padrão é falso.
+1. Para compactar a saída final do Hive, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.exec.compress.output` como verdadeiro. O valor padrão é false.
 
 1. Para escolher o codec de compactação de saída, adicione a propriedade personalizada `mapred.output.compression.codec` ao painel hive-site personalizado, conforme descrito na etapa 3 da seção anterior.
 
@@ -229,7 +229,7 @@ A execução especulativa inicializa um determinado número de tarefas duplicada
 
 A execução especulativa não deve ser ativada para tarefas MapReduce de execução longa com grandes quantidades de entrada.
 
-* Para habilitar a execução especulativa, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.mapred.reduce.tasks.speculative.execution` como verdadeiro. O valor padrão é falso.
+* Para habilitar a execução especulativa, navegue até a guia **Configurações** do Hive e, em seguida, defina o parâmetro `hive.mapred.reduce.tasks.speculative.execution` como verdadeiro. O valor padrão é false.
 
     ![Execução especulativa de tarefas de redução mapred do Hive](./media/hdinsight-changing-configs-via-ambari/hive-mapred-reduce-tasks-speculative-execution.png)
 
@@ -279,10 +279,10 @@ O tipo de junção padrão no Hive é a *junção em ordem aleatória*. No Hive,
 
 Recomendações adicionais para otimizar o mecanismo de execução do Hive:
 
-| Configuração | Recomendadas | Padrão do HDInsight |
+| Configuração | Recomendado | Padrão do HDInsight |
 | -- | -- | -- |
-| `hive.mapjoin.hybridgrace.hashtable` | True = mais seguro, mais lento; false = mais rápido | falso |
-| `tez.am.resource.memory.mb` | Limite superior de 4 GB para a maioria | Ajustado automaticamente |
+| `hive.mapjoin.hybridgrace.hashtable` | True = mais seguro, mais lento; false = mais rápido | false |
+| `tez.am.resource.memory.mb` | limite superior de 4 GB para a maioria dos | Ajustado automaticamente |
 | `tez.session.am.dag.submit.timeout.secs` | 300+ | 300 |
 | `tez.am.container.idle.release-timeout-min.millis` | 20000+ | 10000 |
 | `tez.am.container.idle.release-timeout-max.millis` | 40000+ | 20000 |
@@ -315,7 +315,7 @@ Dois mecanismos de execução estão disponíveis para executar scripts de Pig: 
 
 De forma semelhante ao Hive, o modo local é usado para acelerar trabalhos com quantidades de dados relativamente menores.
 
-1. Para habilitar o modo local, defina `pig.auto.local.enabled` como **true**. O valor padrão é falso.
+1. Para habilitar o modo local, defina `pig.auto.local.enabled` como **true**. O valor padrão é false.
 
 1. Trabalhos com um tamanho de dados de entrada menor que o valor da propriedade `pig.auto.local.input.maxbytes` são considerados trabalhos pequenos. O valor padrão é 1 GB.
 
@@ -342,13 +342,13 @@ As seguintes configurações de memória podem ajudar a otimizar o desempenho de
 
 O Pig gera arquivos temporários durante a execução do trabalho. Compactar os arquivos temporários resulta em uma melhoria do desempenho ao ler ou gravar arquivos no disco. As configurações a seguir podem ser usadas para compactar arquivos temporários.
 
-* `pig.tmpfilecompression`: Quando for true, habilitará a compactação de arquivos temporários. O valor padrão é falso.
+* `pig.tmpfilecompression`: Quando for true, habilitará a compactação de arquivos temporários. O valor padrão é false.
 
 * `pig.tmpfilecompression.codec`: O codec de compactação a ser usado para compactar os arquivos temporários. Os codecs de compactação recomendados são o [LZO](https://www.oberhumer.com/opensource/lzo/) e o Snappy para menor utilização da CPU.
 
 ### <a name="enable-split-combining"></a>Habilitar combinação de divisão
 
-Quando habilitada, pequenos arquivos são combinados para que haja menos tarefas de mapeamento. Isso aumenta a eficiência de trabalhos com muitos arquivos pequenos. Para habilitar, defina `pig.noSplitCombination` como true. O valor padrão é falso.
+Quando habilitada, pequenos arquivos são combinados para que haja menos tarefas de mapeamento. Isso aumenta a eficiência de trabalhos com muitos arquivos pequenos. Para habilitar, defina `pig.noSplitCombination` como true. O valor padrão é false.
 
 
 ### <a name="tune-mappers"></a>Ajustar mapeadores
@@ -365,7 +365,7 @@ O número de redutores é calculado com base no parâmetro `pig.exec.reducers.by
 
 A configuração do [Apache HBase](https://hbase.apache.org/) é modificada na guia **HBase Configs**. As seções a seguir descrevem algumas das definições de configuração importantes que afetam o desempenho do HBase.
 
-### <a name="set-hbaseheapsize"></a>Definir HBASE_HEAPSIZE
+### <a name="set-hbase_heapsize"></a>Definir HBASE_HEAPSIZE
 
 O tamanho do heap do HBase especifica a quantidade máxima do heap a ser usada, em megabytes, por *região* e por servidores *mestre*. O valor padrão é 1,000 MB. Isso deve ser ajustado de acordo com a carga de trabalho do cluster.
 

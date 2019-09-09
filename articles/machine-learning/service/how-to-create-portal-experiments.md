@@ -1,5 +1,5 @@
 ---
-title: Usar o ML automatizado para criar e implantar modelos de aprendizado de máquina
+title: Usar a interface do ML automatizada do Azure para treinar & implantar modelos
 titleSuffix: Azure Machine Learning service
 description: Crie, gerencie e implante experiências automatizadas de aprendizado de máquina no portal do Azure
 services: machine-learning
@@ -11,12 +11,12 @@ author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 08/02/2019
-ms.openlocfilehash: 2f6d45613120d02dd96a9fe0a14ce388d20cf0c6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 0286c82c0b4378e24fa46d0327bd6a5b26037496
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990578"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813650"
 ---
 # <a name="create-explore-and-deploy-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>Criar, explorar e implantar experimentos automatizados de aprendizado de máquina na portal do Azure (versão prévia)
 
@@ -34,11 +34,11 @@ ms.locfileid: "68990578"
 
 Navegue até o painel esquerdo do seu espaço de trabalho. Selecione Machine Learning automatizado na seção criação (visualização).
 
-![Painel de navegação portal do Azure](media/how-to-create-portal-experiments/nav-pane.png)
+![Paonel de navegação do portal do Azure](media/how-to-create-portal-experiments/nav-pane.png)
 
  Se esta for a primeira vez que você faz qualquer experimento, você verá a tela **Bem-vindo à Machine Learning automatizada** . 
 
-Caso contrário, você verá o painel automatizado do **Machine Learning** com uma visão geral de todos os seus experimentos de aprendizado de máquina automatizados, incluindo aqueles criados com o SDK. Aqui você pode filtrar e explorar suas execuções por data, nome do experimento e status de execução.
+Caso contrário, você verá o painel **automatizado do Machine Learning** com uma visão geral de todos os seus experimentos de aprendizado de máquina automatizados, incluindo aqueles criados com o SDK. Aqui você pode filtrar e explorar suas execuções por data, nome do experimento e status de execução.
 
 ## <a name="create-an-experiment"></a>Criar uma experiência
 
@@ -52,8 +52,8 @@ Selecione **criar experimento** e popular o formulário **criar um novo teste au
 
     Campo|Descrição
     ---|---
-    Nome de computação| Insira um nome exclusivo que identifique o contexto de computação.
-    Tamanho da máquina virtual| Selecione o tamanho da máquina virtual para sua computação.
+    Nome de computação| Insira um nome exclusivo que identifique o contexto da computação.
+    Tamanho da máquina virtual| Selecione o tamanho da máquina virtual da computação.
     Configurações adicionais| *Nó mínimo*: Insira o número mínimo de nós para a computação. O número mínimo de nós para a computação AML é 0. Para habilitar a criação de perfil de dados, você deve ter um ou mais nós. <br> *Nó máximo*: Insira o número máximo de nós para sua computação. O padrão é 6 nós para uma computação AML.
 
       Selecione **Criar**. A criação de uma nova computação pode levar alguns minutos.
@@ -71,7 +71,7 @@ Selecione **criar experimento** e popular o formulário **criar um novo teste au
     >* Os dados devem estar no formato de tabela.
     >* O valor que você deseja prever (coluna de destino) deve estar presente nos dados.
 
-    [![Selecionar arquivo de dados](media/tutorial-1st-experiment-automated-ml/select-data-file.png)](media/tutorial-1st-experiment-automated-ml/select-data-file-expanded.png#lightbox)
+    [![Selecionar o arquivo de dados](media/tutorial-1st-experiment-automated-ml/select-data-file.png)](media/tutorial-1st-experiment-automated-ml/select-data-file-expanded.png#lightbox)
 
 1. Use as guias Visualizar e perfil para configurar ainda mais seus dados para este experimento.
 
@@ -95,7 +95,7 @@ Selecione **criar experimento** e popular o formulário **criar um novo teste au
 
     Configurações avançadas|Descrição
     ------|------
-    Métrica primária| Métrica principal usada para pontuar seu modelo. [Saiba mais sobre métricas de modelo](how-to-configure-auto-train.md#explore-model-metrics).
+    Métrica principal| Métrica principal usada para pontuar seu modelo. [Saiba mais sobre métricas de modelo](how-to-configure-auto-train.md#explore-model-metrics).
     Critérios de saída| Quando qualquer um desses critérios é atendido, o trabalho de treinamento termina antes da conclusão completa. <br> *Tempo de trabalho de treinamento (minutos)* : Por quanto tempo permitir que o trabalho de treinamento seja executado.  <br> *Número máximo de iterações*: Número máximo de pipelines (iterações) a serem testados no trabalho de treinamento. O trabalho não será executado mais do que o número especificado de iterações. <br> *Limite de pontuação da métrica*:  Pontuação de métrica mínima para todos os pipelines. Isso garante que, se você tiver uma métrica de destino definida que deseja alcançar, não gaste mais tempo no trabalho de treinamento do que o necessário.
     Pré-processamento| Selecione para habilitar ou desabilitar o pré-processamento feito pelo Machine Learning automatizado. O pré-processamento inclui a limpeza, preparação e transformação automáticas de dados para gerar recursos sintéticos. [Saiba mais sobre o pré-processamento](#preprocess).
     Validação| Selecione uma das opções de validação cruzada para usar no trabalho de treinamento. [Saiba mais sobre a validação cruzada](how-to-configure-auto-train.md).
@@ -156,7 +156,7 @@ Depois que a fase de preparação do experimento for concluída, você verá a t
 
 Os trabalhos de treinamento podem levar algum tempo para que cada pipeline termine a execução.
 
-[![Painel de detalhes de execução](media/how-to-create-portal-experiments/run-details.png)](media/how-to-create-portal-experiments/run-details-expanded.png#lightbox)
+[![Painel de detalhes da execução](media/how-to-create-portal-experiments/run-details.png)](media/how-to-create-portal-experiments/run-details-expanded.png#lightbox)
 
 ### <a name="view-training-run-details"></a>Exibir detalhes da execução de treinamento
 
@@ -181,8 +181,8 @@ O ML automatizado ajuda você a implantar o modelo sem escrever código:
     ----|----
     Nome da implantação| Insira um nome exclusivo para sua implantação.
     Descrição da implantação| Insira uma descrição para identificar melhor a finalidade dessa implantação.
-    Script de Pontuação| Gerar automaticamente ou carregar seu próprio arquivo de pontuação. [Saiba mais sobre o script de Pontuação](how-to-deploy-and-where.md#script)
-    Script de ambiente| Gerar automaticamente ou carregar seu próprio arquivo de ambiente.
+    Script de pontuação| Gerar automaticamente ou carregar seu próprio arquivo de pontuação. [Saiba mais sobre o script de Pontuação](how-to-deploy-and-where.md#script)
+    Script do ambiente| Gerar automaticamente ou carregar seu próprio arquivo de ambiente.
     >[!Important]
     > Os nomes de arquivo devem ter menos de 32 caracteres e devem começar e terminar com alfanuméricos. Pode incluir traços, sublinhados, pontos e alfanuméricos entre. Não são permitidos espaços.
 

@@ -1,6 +1,6 @@
 ---
 title: Otimizar os trabalhos do Spark para desempenho – Microsoft Azure HDInsight
-description: Mostra estratégias comuns para o melhor desempenho de clusters Spark.
+description: Mostre estratégias comuns para o melhor desempenho de clusters de Apache Spark no Azure HDInsight.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 5701bb534d0fd0e25aab90f9d1035c96bb55c518
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8d058c55eab3d161e625d7d4ca3ef53b36497e00
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476110"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814085"
 ---
 # <a name="optimize-apache-spark-jobs"></a>Otimizar trabalhos do Apache Spark
 
@@ -23,7 +23,7 @@ As seções a seguir descrevem as recomendações e otimizações de trabalho do
 
 ## <a name="choose-the-data-abstraction"></a>Escolha a abstração de dados
 
-Versões anteriores do Spark usam RDDs para dados abstrato, Spark 1.3, e 1.6 introduziu DataFrames e conjuntos de dados, respectivamente. Considere os seguintes méritos relativos:
+As versões anteriores do Spark usam RDDs para abstrair dados, Spark 1,3 e 1,6 introduziu dataframes e DataSets, respectivamente. Considere os seguintes méritos relativos:
 
 * **DataFrames**
     * Melhor escolha na maioria das situações.
@@ -57,9 +57,9 @@ O melhor formato para desempenho é parquet com *compactação snappy*, que é o
 
 Ao criar um novo cluster Spark, você terá a opção de selecionar Armazenamento de Blobs do Azure ou Azure Data Lake Storage como o armazenamento padrão do seu cluster. Ambas as opções oferecem o benefício do armazenamento em longo prazo para clusters transitórios para que seus dados não sejam excluídos automaticamente quando você excluir o cluster. É possível recriar um cluster transitório e ainda acessar seus dados.
 
-| Tipo de Armazenamento | Sistema de Arquivos | Velocidade | Transitório | Casos de uso |
+| Tipo de Armazenamento | Sistema de arquivos | Velocidade | Transitório | Casos de uso |
 | --- | --- | --- | --- | --- |
-| Armazenamento do Blobs do Azure | **wasb:** //url/ | **Standard** | Sim | Cluster transitório |
+| Armazenamento de Blob do Azure | **wasb:** //url/ | **Standard** | Sim | Cluster transitório |
 | Azure Data Lake Storage Gen 2| **abfs[s]:** //url/ | **Mais rápido** | Sim | Cluster transitório |
 | Azure Data Lake Store Gen 1| **adl:** //url/ | **Mais rápido** | Sim | Cluster transitório |
 | HDFS local | **hdfs:** //url/ | **Mais rápida** | Não | Cluster interativo 24/7 |

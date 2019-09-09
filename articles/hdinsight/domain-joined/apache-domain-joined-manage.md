@@ -1,6 +1,6 @@
 ---
 title: Gerenciar clusters HDInsight com Enterprise Security Package - Azure
-description: Saiba como gerenciar clusters HDInsight com Enterprise Security Package.
+description: Saiba como gerenciar clusters do Azure HDInsight com o Enterprise Security Package.
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: 7fa215f843fd025d26ba0f583b96f3bb7e63c9ed
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: acf11b8107855c6f087f63f592cdbbad3766795e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488717"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811028"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Gerenciar clusters HDInsight com Enterprise Security Package
 Saiba mais sobre usuários e funções no ESP (Enterprise Security Package) do HDInsight e como gerenciar clusters ESP.
@@ -34,7 +34,7 @@ Saiba mais sobre usuários e funções no ESP (Enterprise Security Package) do H
    
 3. É possível ver um cluster vinculado, usando o comando**Listar cluster**. Agora, você pode enviar um script para esse cluster vinculado.
 
-   ![cluster vinculado](./media/apache-domain-joined-manage/linked-cluster.png)
+   ![cluster vinculado](./media/apache-domain-joined-manage/linked-cluster.png "cluster vinculado")
 
 4. Você também pode desvincular um cluster inserindo **HDInsight: Desvincular um cluster** na paleta de comandos.
 
@@ -43,11 +43,11 @@ Saiba mais sobre usuários e funções no ESP (Enterprise Security Package) do H
 É possível vincular um cluster normal usando o nome de usuário gerenciado Ambari, além de vincular um cluster hadoop de segurança usando o nome de usuário do domínio (como: `user1@contoso.com`). 
 1. Clique em **Vincular um cluster** a partir do **Azure Explorer**.
 
-   ![menu de contexto para vincular cluster](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
+   ![menu de contexto do cluster de link IntelliJ](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
 
 2. Insira o **Nome do Cluster**, o **Nome do Usuário** e a **Senha**. É necessário verificar o nome de usuário e senha, se obter a falha de autenticação. Como opção, adicione a Conta de Armazenamento, Chave de Armazenamento, e selecione um contêiner do Contêiner de Armazenamento. As informações de armazenamento são para o gerenciador de armazenamento na árvore à esquerda
    
-   ![caixa de diálogo para vincular cluster](./media/apache-domain-joined-manage/link-a-cluster-dialog.png)
+   ![caixa de diálogo Vincular cluster IntelliJ](./media/apache-domain-joined-manage/link-a-cluster-dialog.png)
 
    > [!NOTE]  
    > Usamos a chave de armazenamento vinculada, nome de usuário e senha, se o cluster registrou na assinatura do Azure e vinculou um cluster.
@@ -56,22 +56,22 @@ Saiba mais sobre usuários e funções no ESP (Enterprise Security Package) do H
    
 3. Se as informações de entrada estiverem corretas, será possível ver um cluster vinculado no nó **HDInsight**. Agora, você pode enviar um aplicativo para esse cluster vinculado.
 
-   ![cluster vinculado](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
+   ![IntelliJ de cluster vinculado](./media/apache-domain-joined-manage/linked-cluster-intellij.png "cluster vinculado IntelliJ]")
 
 4. Também é possível desvincular um cluster a partir do **Azure Explorer**.
    
-   ![cluster desvinculado](./media/apache-domain-joined-manage/unlink.png)
+   ![IntelliJ de cluster desvinculado](./media/apache-domain-joined-manage/unlink.png)
 
 ## <a name="use-eclipse-to-link-to-domain-joined-cluster"></a>Use o Eclipse para vincular ao cluster ingressado no domínio
 
 É possível vincular um cluster normal usando o nome de usuário gerenciado Ambari, além de vincular um cluster hadoop de segurança usando o nome de usuário do domínio (como: `user1@contoso.com`).
 1. Clique em **Vincular um cluster** a partir do **Azure Explorer**.
 
-   ![menu de contexto para vincular cluster](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
+   ![menu de contexto do cluster de link Eclipse](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
 
 2. Digite **Nome do Cluster**, **Nome de usuário** e **Senha**, clique no botão OK para vincular o cluster. Opcionalmente, insira a Conta de Armazenamento, Chave de Armazenamento e, em seguida, selecione o Contêiner de Armazenamento para o Gerenciador de armazenamento trabalhar no modo de exibição de árvore à esquerda
    
-   ![caixa de diálogo para vincular cluster](./media/apache-domain-joined-manage/link-cluster-dialog.png)
+   ![caixa de diálogo Vincular cluster Eclipse](./media/apache-domain-joined-manage/link-cluster-dialog.png)
    
    > [!NOTE]  
    > Usamos a chave de armazenamento vinculada, nome de usuário e senha, se o cluster registrou na assinatura do Azure e vinculou um cluster.
@@ -79,11 +79,11 @@ Saiba mais sobre usuários e funções no ESP (Enterprise Security Package) do H
 
 3. Se as informações estiverem corretas, será possível ver um cluster vinculado no nó **HDInsight**, após clicar no botão OK. Agora, você pode enviar um aplicativo para esse cluster vinculado.
 
-   ![cluster vinculado](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
+   ![eclipse do cluster vinculado](./media/apache-domain-joined-manage/linked-cluster-intellij.png)
 
 4. Também é possível desvincular um cluster a partir do **Azure Explorer**.
    
-   ![cluster desvinculado](./media/apache-domain-joined-manage/unlink.png)
+   ![eclipse do cluster desvinculado](./media/apache-domain-joined-manage/unlink.png)
 
 ## <a name="access-the-clusters-with-enterprise-security-package"></a>Acesse os clusters com o Pacote de Segurança Enterprise.
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/16/2019
 ms.author: tomfitz
-ms.openlocfilehash: 161539aaec4d3b7162405f437b7fb3dd1f6a00e6
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 361fcc6b60e863ee43d348cedd6b1571f3f563a2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258841"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812912"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Práticas recomendadas para modelos do Azure Resource Manager
 
@@ -192,7 +192,7 @@ As seguintes informações podem ser úteis quando você trabalha com [recursos]
      {
          "name": "[variables('storageAccountName')]",
          "type": "Microsoft.Storage/storageAccounts",
-         "apiVersion": "2016-01-01",
+         "apiVersion": "2019-06-01",
          "location": "[resourceGroup().location]",
          "comments": "This storage account is used to store the VM disks.",
          ...
@@ -203,43 +203,32 @@ As seguintes informações podem ser úteis quando você trabalha com [recursos]
 * Se você usar um *ponto de extremidade público* em seu modelo (como um ponto de extremidade público de Armazenamento de Blobs do Azure), o namespace *não deverá ser embutido em código*. Use a função **reference** para recuperar dinamicamente o namespace. Você pode usar essa abordagem para implantar o modelo em ambientes de namespace públicos diferentes, sem alterar manualmente o ponto de extremidade no modelo. Defina a versão de API como a mesma versão que você está usando para a conta de armazenamento no modelo:
    
    ```json
-   "osDisk": {
-       "name": "osdisk",
-       "vhd": {
-           "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob, variables('vmStorageAccountContainerName'), '/',variables('OSDiskName'),'.vhd')]"
+   "diagnosticsProfile": {
+       "bootDiagnostics": {
+           "enabled": "true",
+           "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
        }
    }
    ```
    
-   Se a conta de armazenamento for implantada no mesmo modelo que você estiver criando, você não precisará especificar o namespace do provedor quando referenciar o recurso. O exemplo a seguir mostra a sintaxe simplificada:
-   
-   ```json
-   "osDisk": {
-       "name": "osdisk",
-       "vhd": {
-           "uri": "[concat(reference(variables('storageAccountName'), '2016-01-01').primaryEndpoints.blob, variables('vmStorageAccountContainerName'), '/',variables('OSDiskName'),'.vhd')]"
-       }
-   }
-   ```
-   
-   Se você tiver outros valores no seu modelo que sejam configurados para usar um namespace público, altere esses valores para refletir a mesma função **reference**. Por exemplo, a propriedade **storageUri** do perfil de diagnóstico da máquina virtual:
+   Se a conta de armazenamento for implantada no mesmo modelo que você está criando e o nome da conta de armazenamento não for compartilhado com outro recurso no modelo, você não precisará especificar o namespace do provedor ou o apiVersion quando fizer referência ao recurso. O exemplo a seguir mostra a sintaxe simplificada:
    
    ```json
    "diagnosticsProfile": {
        "bootDiagnostics": {
            "enabled": "true",
-           "storageUri": "[reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob]"
+           "storageUri": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
        }
    }
    ```
-   
+     
    Você também pode fazer referência a uma conta de armazenamento existente que esteja em um grupo de recursos diferente:
 
    ```json
-   "osDisk": {
-       "name": "osdisk", 
-       "vhd": {
-           "uri":"[concat(reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts/', parameters('existingStorageAccountName')), '2016-01-01').primaryEndpoints.blob,  variables('vmStorageAccountContainerName'), '/', variables('OSDiskName'),'.vhd')]"
+   "diagnosticsProfile": {
+       "bootDiagnostics": {
+           "enabled": "true",
+           "storageUri": "[reference(resourceId(parameters('existingResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('existingStorageAccountName')), '2019-06-01').primaryEndpoints.blob]"
        }
    }
    ```
