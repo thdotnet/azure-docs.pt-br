@@ -8,18 +8,18 @@ ms.date: 08/13/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: c6c070012db0857759c63603072b8321896398b4
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 9019e6f72944823d7c256fa5f6b99b0aca84c845
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69516141"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036335"
 ---
 # <a name="build-highly-available-azure-storage-applications-with-geo-zone-redundant-storage-gzrs-preview"></a>Crie aplicativos de armazenamento do Azure altamente disponíveis com GZRS (armazenamento com redundância de zona geográfica) (visualização)
 
 Armazenamento com redundância de zona geográfica (GZRS) (visualização) casasse a alta disponibilidade de [armazenamento com redundância de zona (ZRS)](storage-redundancy-zrs.md) com proteção contra interrupções regionais, conforme fornecido pelo [armazenamento com REDUNDÂNCIA geográfica (GRS)](storage-redundancy-grs.md). Os dados em uma conta de armazenamento GZRS são replicados em três [zonas de disponibilidade do Azure](../../availability-zones/az-overview.md) na região primária e também são replicados para uma região geográfica secundária para proteção contra desastres regionais. Cada região do Azure é emparelhada com outra região na mesma área geográfica, formando juntas um par regional. Para obter mais detalhes e exceções, consulte a [documentação](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
-Com uma conta de armazenamento GZRS, você pode continuar lendo e gravando dados se uma zona de disponibilidade ficar indisponível ou não puder ser recuperada. Além disso, seus dados também são duráveis no caso de uma interrupção regional completa ou um desastre no qual a região primária não seja recuperável. O GZRS foi projetado para fornecer pelo menos a durabilidade de objetos de 99.99999999999999% (16 9) em um determinado ano. O GZRS também oferece as mesmas [metas](storage-scalability-targets.md) de escalabilidade que lRS, ZRS, grs ou ra-grs. Opcionalmente, você pode habilitar o acesso de leitura aos dados na região secundária com armazenamento com redundância de zona geográfica com acesso de leitura (RA-GZRS) se seus aplicativos precisarem ser capazes de ler dados no caso de um desastre na região primária.
+Com uma conta de armazenamento GZRS, você pode continuar lendo e gravando dados se uma zona de disponibilidade ficar indisponível ou não puder ser recuperada. Além disso, seus dados também são duráveis no caso de uma interrupção regional completa ou um desastre no qual a região primária não seja recuperável. O GZRS foi projetado para fornecer pelo menos a durabilidade de objetos de 99.99999999999999% (16 9) em um determinado ano. O GZRS também oferece as mesmas [metas de escalabilidade](storage-scalability-targets.md) que lRS, ZRS, grs ou ra-grs. Opcionalmente, você pode habilitar o acesso de leitura aos dados na região secundária com armazenamento com redundância de zona geográfica com acesso de leitura (RA-GZRS) se seus aplicativos precisarem ser capazes de ler dados no caso de um desastre na região primária.
 
 A Microsoft recomenda o uso do GZRS para aplicativos que exigem consistência, durabilidade, alta disponibilidade, excelente desempenho e resiliência para a recuperação de diaster. Para obter a segurança adicional de acesso de leitura para a região secundária no caso de um desastre regional, habilite o RA-GZRS para sua conta de armazenamento.
 
@@ -33,7 +33,7 @@ GZRS e RA-GZRS estão disponíveis atualmente para visualização nas seguintes 
 
 A Microsoft continua a habilitar GZRS e RA-GZRS em regiões adicionais do Azure. Verifique a página  [atualizações de serviço do Azure](https://azure.microsoft.com/updates/)regularmente para obter informações sobre as regiões com suporte.
 
-Para obter informações sobre preços de visualização, consulte preços de visualização [](https://azure.microsoft.com/pricing/details/storage/blobs)do GZRS para BLOBs, [arquivos](https://azure.microsoft.com/pricing/details/storage/files/), [filas](https://azure.microsoft.com/pricing/details/storage/queues/)e [tabelas](https://azure.microsoft.com/pricing/details/storage/tables/).
+Para obter informações sobre preços de visualização, consulte preços de visualização do GZRS para [BLOBs](https://azure.microsoft.com/pricing/details/storage/blobs), [arquivos](https://azure.microsoft.com/pricing/details/storage/files/), [filas](https://azure.microsoft.com/pricing/details/storage/queues/)e [tabelas](https://azure.microsoft.com/pricing/details/storage/tables/).
 
 > [!IMPORTANT]
 > A Microsoft recomenda o uso de recursos de visualização para cargas de trabalho de produção.
@@ -70,7 +70,7 @@ Quando uma zona de disponibilidade torna-se indisponível, o Azure utiliza atual
 Se uma falha afetar toda a região primária, a Microsoft tentará primeiro restaurar a região primária. Se a restauração não for possível, a Microsoft fará failover para a região secundária, para que a região secundária se torne a nova região primária. Se a conta de armazenamento tiver o RA-GZRS habilitado, os aplicativos criados para esse cenário poderão ler a partir da região secundária enquanto aguardam o failover. Se a conta de armazenamento não tiver o RA-GZRS habilitado, os aplicativos não poderão ler a partir do secundário até que o failover seja concluído.
 
 > [!NOTE]
-> GZRS e RA-GZRS estão atualmente em visualização apenas na região leste dos EUA 2. O failover de conta gerenciada pelo cliente (versão prévia) ainda não está disponível no leste dos EUA 2, de modo que os clientes não podem atualmente gerenciar eventos de failover de conta com contas GZRS e RA-GZRS. Durante a versão prévia, a Microsoft gerenciará todos os eventos de failover que afetam as contas GZRS e RA-GZRS.
+> GZRS e RA-GZRS estão atualmente em visualização apenas na região leste dos EUA. O failover de conta gerenciada pelo cliente (versão prévia) ainda não está disponível no leste dos EUA 2, de modo que os clientes não podem atualmente gerenciar eventos de failover de conta com contas GZRS e RA-GZRS. Durante a versão prévia, a Microsoft gerenciará todos os eventos de failover que afetam as contas GZRS e RA-GZRS.
 
 Como os dados são replicados para a região secundária de forma assíncrona, uma falha que afeta a região primária poderá resultar em perda de dados se a região primária não puder ser recuperada. O intervalo entre as gravações mais recentes na região primária e a última gravação na região secundária é conhecido como o RPO (objetivo de ponto de recuperação). O RPO indica o ponto no tempo em que os dados podem ser recuperados. O armazenamento do Azure normalmente tem um RPO de menos de 15 minutos, embora atualmente não haja SLA quanto ao tempo necessário para replicar dados para a região secundária.
 

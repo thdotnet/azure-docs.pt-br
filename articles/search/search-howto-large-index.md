@@ -3,18 +3,18 @@ title: Índice grande de conjunto de dados usando os indexadores internos - Azur
 description: Aprenda estratégias para indexação de dados grandes ou indexação computacional extensiva por meio do modo de lote, obtenção de recursos e técnicas para agendados e indexação distribuída.
 services: search
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 ms.service: search
 ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8c067b6e238fab2970e5e40f0660a5c7555a8f2e
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: a98d716562f53488e9adb5d485a1dbf7fafc3102
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67302223"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648169"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-search"></a>Como indexar grandes conjuntos de dados no Azure Search
 
@@ -54,7 +54,7 @@ O agendando indexado é um mecanismo importante para processar grandes conjuntos
 
 Por design, a indexação agendada começa em intervalos específicos, normalmente com o trabalho concluído antes da retomada no próximo intervalo agendado. No entanto, se o processamento não for concluído dentro do intervalo, o indexador será interrompido (por esgotar o tempo). No próximo intervalo, o processamento será retomado de onde parou, com o sistema controlando onde isso ocorreu. 
 
-Em termos práticos, para cargas de índice que abrangem vários dias, você pode colocar o indexador em um agendamento de 24 horas. Quando a indexação é retomada para o próximo ciclo de 24 horas, ela é reiniciada no último documento válido conhecido. Dessa forma, um indexador pode percorrer uma lista de pendências de documentos em uma série de dias até que todos os documentos não processados sejam processados. Para obter mais informações sobre essa abordagem, confira [Indexando conjuntos de dados grandes no Armazenamento de Blob do Azure](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets). Para obter mais informações sobre como definir agendamentos em geral, consulte [criar a API REST do indexador](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer#request-syntax) ou consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
+Em termos práticos, para cargas de índice que abrangem vários dias, você pode colocar o indexador em um agendamento de 24 horas. Quando a indexação é retomada para o próximo ciclo de 24 horas, ela é reiniciada no último documento válido conhecido. Dessa forma, um indexador pode percorrer uma lista de pendências de documentos em uma série de dias até que todos os documentos não processados sejam processados. Para obter mais informações sobre essa abordagem, confira [Indexando conjuntos de dados grandes no Armazenamento de Blob do Azure](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets). Para obter mais informações sobre como definir agendas em geral, consulte [criar API REST do indexador](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer#request-syntax) ou veja [como agendar indexadores para Azure Search](search-howto-schedule-indexers.md).
 
 <a name="parallel-indexing"></a>
 
@@ -67,7 +67,7 @@ Para requisitos de indexação computacionalmente intensivos e não rotineiros -
 O processamento paralelo tem estes elementos:
 
 + Subdividir a fonte de dados entre vários contêineres ou várias pastas virtuais dentro do mesmo contêiner. 
-+ Mapear cada conjunto de dados minidespejos para seu próprio [fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source), emparelhado para seu próprio [indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
++ Mapeie cada conjunto de dados para sua própria [fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source), emparelhado com seu próprio [indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 + Para pesquisa cognitiva, referencie o mesmo [conjunto de habilidades](https://docs.microsoft.com/rest/api/searchservice/create-skillset) em cada definição de indexador.
 + Grave no mesmo índice de pesquisa de destino. 
 + Agende todos os indexadores para serem executados ao mesmo tempo.

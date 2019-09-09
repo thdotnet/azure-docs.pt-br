@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/4/2019
 ms.author: atsenthi
-ms.openlocfilehash: dde124a568581c53a4168b1c84e5df8a9d55155f
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 2bb9a5e8e42901f22d9f68d691684614c7161620
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599557"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650662"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Criar seu primeiro aplicativo de contêiner do Service Fabric no Linux
 > [!div class="op_single_selector"]
@@ -181,28 +181,11 @@ Especifique o mapeamento de porta no formato apropriado. Para este artigo, você
 ![Gerador de Yeoman do Service Fabric para contêineres][sf-yeoman]
 
 ## <a name="configure-container-repository-authentication"></a>Configurar a autenticação do repositório de contêiner
- Se o seu contêiner precisar autenticar com um repositório privado, adicione `RepositoryCredentials`. Para este artigo, adicione o nome da conta e a senha para o registro de contêiner de myregistry.azurecr.io. Certifique-se de que a política é adicionada sob a marca 'ServiceManifestImport' correspondente ao pacote de serviço certo.
 
-```xml
-   <ServiceManifestImport>
-      <ServiceManifestRef ServiceManifestName="MyServicePkg" ServiceManifestVersion="1.0.0" />
-    <Policies>
-        <ContainerHostPolicies CodePackageRef="Code">
-        <RepositoryCredentials AccountName="myregistry" Password="=P==/==/=8=/=+u4lyOB=+=nWzEeRfF=" PasswordEncrypted="false"/>
-        <PortBinding ContainerPort="80" EndpointRef="myServiceTypeEndpoint"/>
-        </ContainerHostPolicies>
-    </Policies>
-   </ServiceManifestImport>
-``` 
-
-É recomendável criptografar a senha do repositório. Confira instruções no artigo [ Gerenciar segredos criptografados em aplicativos do Service Fabric](service-fabric-application-secret-management.md).
-
-### <a name="configure-cluster-wide-credentials"></a>Configurar credenciais de todo o cluster
-Confira a [documentação](
-service-fabric-get-started-containers.md#configure-cluster-wide-credentials)
+Consulte [autenticação de repositório de contêiner](configure-container-repository-credentials.md)para saber como configurar diferentes tipos de autenticação para download de imagem de contêiner.
 
 ## <a name="configure-isolation-mode"></a>Configurar o modo de isolamento
-Com a versão de tempo de execução 6.3, o isolamento de VM tem suporte para contêineres do Linux, dando suporte portanto a dois modos de isolamento para contêineres: processo e Hyper-V. Com o modo de isolamento Hyper-V, os kernels são isolados entre cada contêiner e o host do contêiner. O isolamento Hyper-V é implementado usando [Contêineres não criptografados](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker). O modo de isolamento é especificado para clusters do Linux no elemento `ServicePackageContainerPolicy` no arquivo de manifesto do aplicativo. Os modos de isolamento que podem ser especificados são `process`, `hyperv` e `default`. O padrão é o modo de isolamento do processo. O snippet a seguir mostra como o modo de isolamento é especificado no arquivo de manifesto do aplicativo.
+Com a versão de tempo de execução 6,3, o isolamento de VM tem suporte para contêineres do Linux, dando suporte a dois modos de isolamento para contêineres: processo e Hyper-V. Com o modo de isolamento do Hyper-V, os kernels são isolados entre cada contêiner e o host do contêiner. O isolamento do Hyper-V é implementado usando [contêineres claros](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker). O modo de isolamento é especificado para clusters do Linux no elemento `ServicePackageContainerPolicy` no arquivo de manifesto do aplicativo. Os modos de isolamento que podem ser especificados são `process`, `hyperv` e `default`. O padrão é o modo de isolamento do processo. O snippet a seguir mostra como o modo de isolamento é especificado no arquivo de manifesto do aplicativo.
 
 ```xml
 <ServiceManifestImport>

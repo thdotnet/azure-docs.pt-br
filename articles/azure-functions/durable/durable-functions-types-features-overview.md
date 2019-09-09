@@ -1,110 +1,109 @@
 ---
-title: Tipos de função e recursos na extensão de funções duráveis do Azure Functions
-description: Saiba mais sobre os tipos de funções e funções que dão suporte à comunicação de função de função em uma orquestração de funções duráveis no Azure Functions.
+title: Tipos de função e recursos na extensão Durable Functions de Azure Functions
+description: Saiba mais sobre os tipos de funções e funções que dão suporte à comunicação de função a função em uma orquestração de Durable Functions no Azure Functions.
 services: functions
 author: jeffhollan
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 07/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: de5019e0f91c92829082aed962bb9633da52b4a9
-ms.sourcegitcommit: af31deded9b5836057e29b688b994b6c2890aa79
+ms.openlocfilehash: 0d3087c768a02bb5c647fc0d10db3aa4274804f4
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67812838"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097750"
 ---
-# <a name="durable-functions-types-and-features-azure-functions"></a>Tipos de funções duráveis e recursos (Azure Functions)
+# <a name="durable-functions-types-and-features-azure-functions"></a>Tipos de Durable Functions e recursos (Azure Functions)
 
-As funções duráveis é uma extensão da [Azure Functions](../functions-overview.md). Você pode usar as funções duráveis para orquestração com monitoração de estado de execução da função. Uma função durável é uma solução que é composta por diferentes funções do Azure. Funções podem ter diferentes funções em uma orquestração de função durável. 
+Durable Functions é uma extensão de [Azure Functions](../functions-overview.md). Você pode usar Durable Functions para orquestração com estado da execução da função. Uma função durável é uma solução composta por diferentes funções do Azure. As funções podem reproduzir funções diferentes em uma orquestração de função durável. 
 
-Este artigo fornece uma visão geral dos tipos de funções que você pode usar em uma orquestração de funções duráveis. O artigo inclui alguns padrões comuns que você pode usar para se conectar a funções. Saiba como as funções duráveis pode ajudá-lo a resolver seus desafios de desenvolvimento de aplicativo.
+Este artigo fornece uma visão geral dos tipos de funções que você pode usar em uma orquestração de Durable Functions. O artigo inclui alguns padrões comuns que você pode usar para conectar funções. Saiba como Durable Functions pode ajudá-lo a resolver seus desafios de desenvolvimento de aplicativos.
 
 ![Uma imagem que mostra os tipos de funções duráveis][1]  
 
 ## <a name="types-of-durable-functions"></a>Tipos de funções duráveis
 
-Você pode usar quatro tipos de função durável no Azure Functions: atividade, orchestrator, entity e cliente.
+Você pode usar quatro tipos de função duráveis em Azure Functions: Activity, Orchestrator, Entity e Client.
 
 ### <a name="activity-functions"></a>Funções de atividade
 
-Funções de atividade são a unidade básica de trabalho em uma orquestração de função durável. Funções de atividade são as funções e tarefas que são organizadas no processo. Por exemplo, você pode criar uma função durável para processar um pedido. As tarefas envolvem a verificação de inventário, cobrar o cliente e criar uma remessa. Cada tarefa seria uma função de atividade. 
+As funções de atividade são a unidade básica de trabalho em uma orquestração de função durável. Funções de atividade são as funções e tarefas que são orquestradas no processo. Por exemplo, você pode criar uma função durável para processar um pedido. As tarefas envolvem a verificação do inventário, o carregamento do cliente e a criação de uma remessa. Cada tarefa seria uma função de atividade. 
 
-Funções de atividade não são restritos no tipo de trabalho que você pode fazer no-los. Você pode escrever uma função de atividade em qualquer [linguagem que dão suporte a funções duráveis](durable-functions-overview.md#language-support). A estrutura de tarefa durável garante que cada função de atividade chamada seja executada pelo menos uma vez durante uma orquestração.
+As funções de atividade não são restritas no tipo de trabalho que você pode fazer neles. Você pode escrever uma função de atividade em qualquer [linguagem que Durable Functions suporte](durable-functions-overview.md#language-support). A estrutura de tarefa durável garante que cada função de atividade chamada seja executada pelo menos uma vez durante uma orquestração.
 
-Use uma [gatilho de atividade](durable-functions-bindings.md#activity-triggers) para disparar uma função de atividade. Funções do .NET recebem uma [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html) como um parâmetro. Você também pode associar o gatilho a qualquer outro objeto para passar entradas para a função. No JavaScript, você pode acessar uma entrada por meio de `<activity trigger binding name>` propriedade no [ `context.bindings` objeto](../functions-reference-node.md#bindings).
+Use um [gatilho de atividade](durable-functions-bindings.md#activity-triggers) para disparar uma função de atividade. As funções do .NET recebem um [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html) como um parâmetro. Você também pode associar o gatilho a qualquer outro objeto para passar entradas para a função. No JavaScript, você pode acessar uma entrada por meio `<activity trigger binding name>` da propriedade [ `context.bindings` no objeto](../functions-reference-node.md#bindings).
 
-Sua função de atividade também pode retornar valores para o orchestrator. Se você enviar ou retorna um grande número de valores de uma função de atividade, você pode usar [tuplas ou matrizes](durable-functions-bindings.md#passing-multiple-parameters). Você pode disparar uma função de atividade apenas de uma instância de orquestração. Embora uma função de atividade e a outra função (como uma função disparada por HTTP) podem compartilhar alguns códigos, cada função pode ter apenas um gatilho.
+Sua função de atividade também pode retornar valores para o orquestrador. Se você enviar ou retornar um grande número de valores de uma função de atividade, poderá usar [tuplas ou matrizes](durable-functions-bindings.md#passing-multiple-parameters). Você pode disparar uma função de atividade somente de uma instância de orquestração. Embora uma função de atividade e outra função (como uma função disparada por HTTP) possa compartilhar algum código, cada função pode ter apenas um gatilho.
 
 Para obter mais informações e exemplos, consulte [funções de atividade](durable-functions-bindings.md#activity-triggers).
 
 ### <a name="orchestrator-functions"></a>Funções de orquestrador
 
-Funções de orquestrador descrevem como as ações são executadas e a ordem na qual as ações são executadas. Funções de orquestrador descrevem a orquestração no código (C# ou JavaScript) conforme mostrado na [padrões de funções duráveis e conceitos técnicos](durable-functions-concepts.md). Uma orquestração pode ter muitos tipos diferentes de ações, incluindo [funções de atividade](#activity-functions), [suborquestrações](#sub-orchestrations), [aguardando por eventos externos](#external-events)e [temporizadores](#durable-timers). Funções de orquestrador podem também interagir com [funções de entidade](#entity-functions).
+As funções de orquestrador descrevem como as ações são executadas e a ordem na qual as ações são executadas. As funções de orquestrador descrevem a orquestração noC# código (ou JavaScript), conforme mostrado em [padrões de durable Functions e conceitos técnicos](durable-functions-concepts.md). Uma orquestração pode ter muitos tipos diferentes de ações, incluindo [funções de atividade](#activity-functions), [suborquestrações](#sub-orchestrations), [aguardando eventos externos](#external-events)e [temporizadores](#durable-timers). As funções de orquestrador também podem interagir com [funções de entidade](#entity-functions).
 
 Uma função de orquestrador precisa ser disparada por um [gatilho de orquestração](durable-functions-bindings.md#orchestration-triggers).
 
-Um orquestrador é iniciado por um [cliente orchestrator](#client-functions). Você pode disparar o orquestrador de qualquer fonte (HTTP, fila, fluxo de eventos). Cada instância de uma orquestração tem um identificador de instância. O identificador de instância pode ser gerados automaticamente (recomendado) ou gerado pelo usuário. Você pode usar o identificador de instância para [gerenciar instâncias](durable-functions-instance-management.md) da orquestração.
+Um orquestrador é iniciado por um [cliente do Orchestrator](#client-functions). Você pode disparar o Orchestrator de qualquer fonte (HTTP, fila, fluxo de eventos). Cada instância de uma orquestração tem um identificador de instância. O identificador de instância pode ser gerado automaticamente (recomendado) ou gerado pelo usuário. Você pode usar o identificador de instância para [gerenciar instâncias](durable-functions-instance-management.md) da orquestração.
 
 Para obter mais informações e exemplos, consulte [gatilhos de orquestração](durable-functions-bindings.md#orchestration-triggers).
 
-###  <a name="entity-functions"></a>Funções da entidade (visualização)
+###  <a name="entity-functions"></a>Funções de entidade (visualização)
 
-Definem as funções da entidade operações para ler e atualizar pequenos pedaços de estado, conhecido como *entidades duráveis*. Como funções de orquestrador, funções de entidade são funções com um tipo especial de gatilho, *disparador entidade*. Diferentemente das funções de orquestrador, funções da entidade não tem quaisquer restrições de código específico. Funções de entidade também gerenciam estado explicitamente em vez de implicitamente que representa o estado por meio do fluxo de controle.
+As funções de entidade definem operações para ler e atualizar pequenas partes de estado, conhecidas como *entidades duráveis*. Como as funções de orquestrador, as funções de entidade são funções com um tipo de gatilho especial, *gatilho de entidade*. Ao contrário das funções de orquestrador, as funções de entidade não têm nenhuma restrição de código específica. As funções de entidade também gerenciam o estado explicitamente, em vez de representar implicitamente o estado por meio do fluxo de controle.
 
 > [!NOTE]
-> Funções da entidade e funcionalidades relacionadas só está disponível no durável Functions 2.0 e versões posteriores.
+> Funções de entidade e funcionalidade relacionada só estão disponíveis no Durable Functions 2,0 e superior.
 
-Para obter mais informações sobre as funções de entidade, consulte o [funções de entidade](durable-functions-preview.md#entity-functions) documentação do recurso de visualização.
+Para obter mais informações sobre funções de entidade, consulte a documentação do recurso de visualização de [funções de entidade](durable-functions-preview.md#entity-functions) .
 
 ### <a name="client-functions"></a>Funções do cliente
 
-Funções de cliente são disparadas funções que criar e gerenciar instâncias de orquestrações e entidades. Eles são efetivamente o ponto de entrada para interagir com as funções duráveis. Você pode disparar uma função de cliente de qualquer fonte (HTTP, fila, o fluxo de eventos, etc.). Uma função de cliente usa o [associação de cliente de orquestração](durable-functions-bindings.md#orchestration-client) para criar e gerenciar orquestrações duráveis e entidades.
+As funções de cliente são funções disparadas que criam e gerenciam instâncias de orquestrações e entidades. Eles são efetivamente o ponto de entrada para interagir com Durable Functions. Você pode disparar uma função de cliente de qualquer fonte (HTTP, fila, fluxo de eventos, etc.). Uma função de cliente usa a [Associação de cliente de orquestração](durable-functions-bindings.md#orchestration-client) para criar e gerenciar orquestrações e entidades duráveis.
 
-O exemplo mais básico de uma função de cliente é uma função disparada por HTTP que inicia uma função de orquestrador e, em seguida, retorna uma resposta de status de verificação. Por exemplo, consulte [descoberta de URL da API HTTP](durable-functions-http-api.md#http-api-url-discovery).
+O exemplo mais básico de uma função de cliente é uma função disparada por HTTP que inicia uma função de orquestrador e, em seguida, retorna uma resposta de status de verificação. Para obter um exemplo, consulte [descoberta de URL de API http](durable-functions-http-api.md#http-api-url-discovery).
 
-Para obter mais informações e exemplos, consulte [cliente de orquestração](durable-functions-bindings.md#orchestration-client).
+Para obter mais informações e exemplos, consulte [Orchestration Client](durable-functions-bindings.md#orchestration-client).
 
 ## <a name="features-and-patterns"></a>Recursos e padrões
 
-As próximas seções descrevem os recursos e padrões de tipos de funções duráveis.
+As seções a seguir descrevem os recursos e padrões de tipos de Durable Functions.
 
 ### <a name="sub-orchestrations"></a>Subtipo de orquestrações
 
-Funções de orquestrador podem chamar funções de atividade, mas eles também podem chamar outras funções de orquestrador. Por exemplo, você pode criar uma orquestração maior usando uma biblioteca de funções de orquestrador. Ou, você pode executar várias instâncias de uma função de orquestrador em paralelo.
+As funções de orquestrador podem chamar funções de atividade, mas também podem chamar outras funções de orquestrador. Por exemplo, você pode criar uma orquestração maior usando uma biblioteca de funções de orquestrador. Ou, você pode executar várias instâncias de uma função de orquestrador em paralelo.
 
 Para obter mais informações e exemplos, consulte [suborquestrações](durable-functions-sub-orchestrations.md).
 
 ### <a name="durable-timers"></a>Temporizadores duráveis
 
-[As funções duráveis](durable-functions-overview.md) fornece *temporizadores duráveis* que você pode usar em funções de orquestrador para implementar atrasos ou para configurar tempos limite em ações assíncronas. Usar temporizadores duráveis em funções de orquestrador em vez de `Thread.Sleep` e `Task.Delay` (C#) ou `setTimeout()` e `setInterval()` (JavaScript).
+O [Durable Functions](durable-functions-overview.md) fornece *temporizadores duráveis* que você pode usar em funções de orquestrador para implementar atrasos ou para configurar tempos limite em ações assíncronas. Use temporizadores duráveis em funções de orquestrador `Thread.Sleep` em `Task.Delay` vezC#de and `setTimeout()` ( `setInterval()` ) ou e (JavaScript).
 
 Para obter mais informações e exemplos, consulte [temporizadores duráveis](durable-functions-timers.md).
 
 ### <a name="external-events"></a>Eventos externos
 
-As funções de orquestrador podem aguardar os eventos externos atualizarem uma instância de orquestração. Esse recurso de funções duráveis geralmente é útil para lidar com uma interação humana ou outros retornos de chamada externos.
+As funções de orquestrador podem aguardar os eventos externos atualizarem uma instância de orquestração. Esse Durable Functions recurso geralmente é útil para lidar com uma interação humana ou com outros retornos de chamada externos.
 
 Para obter mais informações e exemplos, consulte [eventos externos](durable-functions-external-events.md).
 
 ### <a name="error-handling"></a>Tratamento de erros
 
-Use o código para implementar orquestrações de funções duráveis. Você pode usar os recursos de tratamento de erros da linguagem de programação. Padrões, como `try` / `catch` funcionam na sua orquestração. 
+Use o código para implementar orquestrações de Durable Functions. Você pode usar os recursos de tratamento de erros da linguagem de programação. Padrões como `try` / trabalharemsuaorquestração`catch` . 
 
-As funções duráveis também são fornecidos com as políticas de repetição interna. Uma ação pode atrasar e tente novamente as atividades automaticamente quando ocorre uma exceção. Você pode usar as novas tentativas para lidar com exceções transitórias, sem o abandono de orquestração.
+Durable Functions também vem com políticas de repetição internas. Uma ação pode atrasar e repetir atividades automaticamente quando ocorre uma exceção. Você pode usar novas tentativas para lidar com exceções transitórias sem abandonar a orquestração.
 
-Para obter mais informações e exemplos, consulte [tratamento de erro](durable-functions-error-handling.md).
+Para obter mais informações e exemplos, consulte [tratamento de erros](durable-functions-error-handling.md).
 
 ### <a name="cross-function-app-communication"></a>Comunicação do aplicativo entre funções
 
-Embora uma orquestração durável é executado no contexto de um único aplicativo de funções, você pode usar padrões para coordenar orquestrações em muitos aplicativos de funções. Comunicação entre aplicativos pode ocorrer por HTTP, mas usando a estrutura durável para cada atividade significa que você ainda pode manter um processo durável entre dois aplicativos.
+Embora uma orquestração durável seja executada no contexto de um único aplicativo de funções, você pode usar padrões para coordenar orquestrações em vários aplicativos de funções. A comunicação entre aplicativos pode ocorrer via HTTP, mas usar a estrutura durável para cada atividade significa que você ainda pode manter um processo durável em dois aplicativos.
 
-Os exemplos a seguir demonstram a orquestração de aplicativo de funções no C# e JavaScript. Em cada exemplo, uma atividade começa a orquestração externa. Outra atividade recupera e retorna o status. O orquestrador aguarda o status ser `Complete` antes de continuar.
+Os exemplos a seguir demonstram a orquestração de aplicativo C# entre funções no e o JavaScript. Em cada exemplo, uma atividade inicia a orquestração externa. Outra atividade recupera e retorna o status. O orquestrador aguarda o status ser `Complete` antes de continuar.
 
-Aqui estão alguns exemplos de orquestração de aplicativo de funções entre:
+Aqui estão alguns exemplos de orquestração de aplicativo entre funções:
 
 #### <a name="c"></a>C#
 
@@ -217,10 +216,10 @@ module.exports = async function(context, statusUrl) {
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para começar, crie sua primeira função durável na [ C# ](durable-functions-create-first-csharp.md) ou [JavaScript](quickstart-js-vscode.md).
+Para começar, crie sua primeira função durável no ou [C#](durable-functions-create-first-csharp.md) no [JavaScript](quickstart-js-vscode.md).
 
 > [!div class="nextstepaction"]
-> [Leia mais sobre as funções duráveis](durable-functions-bindings.md)
+> [Leia mais sobre Durable Functions](durable-functions-bindings.md)
 
 <!-- Media references -->
 [1]: media/durable-functions-types-features-overview/durable-concepts.png

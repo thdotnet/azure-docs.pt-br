@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: article
-ms.date: 09/03/2019
+ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: f054d0665c49ee048451681a7cc34d2a648a6e9e
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
-ms.translationtype: MT
+ms.openlocfilehash: fb2fd89664517e44cf5128a5c82e583f03087061
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240215"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70307692"
 ---
 ::: zone target="docs"
 
@@ -28,13 +28,13 @@ Os requisitos de sistema incluem as plataformas compatíveis com os clientes que
 
 ::: zone target="chromeless"
 
-# <a name="review-prerequisites"></a>Examinar os pré-requisitos
+## <a name="review-prerequisites"></a>Examinar os pré-requisitos
 
-1. Você deve ter ordenado seu disco do data box usando o [tutorial: Ordene seu Disco do Azure Data Box](data-box-disk-deploy-ordered.md). Você recebeu seus discos e um cabo de conexão por disco.
+1. Você deve ter solicitado o Data Box Disk usando o [Tutorial: Solicitar Azure Data Box Disk](data-box-disk-deploy-ordered.md). Você recebeu seus discos e um cabo conector por disco.
 2. Você tem um computador cliente disponível do qual você pode copiar os dados. Computador cliente deve:
 
-    - Execute um sistema operacional com suporte.
-    - Ter outros softwares necessários instalados.
+    - Executar um sistema operacional com suporte.
+    - Ter outro software necessário instalado.
 
 ::: zone-end
 
@@ -66,8 +66,6 @@ Para o cliente do Linux, o conjunto de ferramentas do Data Box Disk instala o so
 - dislocker
 - OpenSSL
 
-::: zone target="docs"
-
 ## <a name="supported-connection"></a>Conexão com suporte
 
 O computador cliente que contém os dados deve ter uma porta USB 3.0 ou superior. Os discos se conectam a esse cliente usando o cabo fornecido.
@@ -79,7 +77,7 @@ Aqui está uma lista dos tipos de armazenamento compatíveis com o Data Box Disk
 | **Conta de armazenamento** | **Observações** |
 | --- | --- |
 | Clássico | Standard |
-| Uso Geral  |Standard; tanto V1 quanto V2 são compatíveis. Tanto a camada de acesso frequente quanto a camada de acesso esporádico são compatíveis. |
+| Uso geral  |Standard; tanto V1 quanto V2 são compatíveis. Tanto a camada de acesso frequente quanto a camada de acesso esporádico são compatíveis. |
 | Conta de armazenamento de blobs | |
 
 >[!NOTE]
@@ -88,7 +86,7 @@ Aqui está uma lista dos tipos de armazenamento compatíveis com o Data Box Disk
 
 ## <a name="supported-storage-types-for-upload"></a>Tipos de armazenamento com suporte para upload
 
-Aqui está uma lista dos tipos de armazenamento com suporte para carregar no Azure usando Disco do Data Box.
+Veja uma lista dos tipos de armazenamento com suporte a serem carregados no Azure usando o Data Box Disk.
 
 | **Formato de arquivo** | **Observações** |
 | --- | --- |
@@ -97,6 +95,7 @@ Aqui está uma lista dos tipos de armazenamento com suporte para carregar no Azu
 | Arquivos do Azure  | |
 | Managed Disks | |
 
+::: zone target="docs"
 
 ## <a name="next-step"></a>Próxima etapa
 
