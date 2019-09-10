@@ -2,20 +2,20 @@
 title: Início Rápido do Azure – Definir e recuperar um segredo do Key Vault usando o portal do Azure | Microsoft Docs
 description: Início Rápido que mostra como definir e recuperar um segredo do Azure Key Vault usando o portal do Azure
 services: key-vault
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 03/14/2019
-ms.author: barclayn
-ms.openlocfilehash: e9b86a5fb0d9e24618cafffb5ca12e22d5394294
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 09/03/2019
+ms.author: mbaldwin
+ms.openlocfilehash: 3c0b9ad774d336da9bc60d2ef9f7ff2645602b6c
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64730172"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70259213"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Início Rápido: definir e recuperar um segredo do Azure Key Vault usando o portal do Azure
 
@@ -79,12 +79,14 @@ Quando não for mais necessário, exclua o grupo de recursos, que excluirá o Ke
 
 1. Insira o nome do grupo de recursos na caixa de pesquisa na parte superior do portal. Quando você vir o grupo de recursos usado neste início rápido nos resultados da pesquisa, selecione-o.
 2. Selecione **Excluir grupo de recursos**.
-3. Na caixa **DIGITE O NOME DO GRUPO DE RECURSOS:**, digite o nome do grupo de recursos e selecione **Excluir**.
+3. Na caixa **DIGITE O NOME DO GRUPO DE RECURSOS:** , digite o nome do grupo de recursos e selecione **Excluir**.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste início rápido, você criou um Key Vault e armazenou um segredo. Para saber mais sobre o Key Vault e como você pode usá-lo com seus aplicativos, prossiga para o tutorial de aplicativos Web que trabalham com o Key Vault.
+Neste início rápido, você criou um Key Vault e armazenou um segredo nele. Para saber mais sobre o Key Vault e como integrá-lo a seus aplicativos, confira os artigos abaixo.
 
-> [!div class="nextstepaction"]
-> Para saber como ler um segredo do Key Vault de um aplicativo Web usando identidades gerenciadas para recursos do Azure, continue com o tutorial a seguir, [Configurar um aplicativo Web do Azure para ler um segredo do Cofre de chaves](quick-create-net.md).
+- Leia uma [Visão geral do Azure Key Vault](key-vault-overview.md)
+- Confira o [Guia do desenvolvedor do Azure Key Vault](key-vault-developers-guide.md)
+- Saiba mais sobre [chaves, segredos e certificados](about-keys-secrets-and-certificates.md)
+- Examine as [Melhores práticas do Azure Key Vault](key-vault-best-practices.md)

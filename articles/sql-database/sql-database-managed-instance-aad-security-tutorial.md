@@ -9,12 +9,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 02/20/2019
-ms.openlocfilehash: 87bd22ec4f2cfae62d1f80284ad8346ca292d016
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 37098411f465c611dc9d2e2443f369e01d6e338c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567677"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70231009"
 ---
 # <a name="tutorial-managed-instance-security-in-azure-sql-database-using-azure-ad-server-principals-logins"></a>Tutorial: Segurança de instância gerenciada no Banco de Dados SQL do Azure usando entidades de servidor (logons) do Azure AD
 
@@ -55,10 +55,12 @@ Para concluir o tutorial, verifique se você tem os seguintes pré-requisitos:
 
 ## <a name="limiting-access-to-your-managed-instance"></a>Limitando o acesso à sua instância gerenciada
 
-As instâncias gerenciadas podem ser acessadas somente por meio de um endereço IP privado. Não há nenhum ponto de extremidade de serviço disponível para se conectar a uma instância gerenciada de fora da rede de instância gerenciada. De modo muito semelhante a um ambiente local do SQL Server isolado, aplicativos ou usuários precisam acessar a rede da instância gerenciada (VNet) antes que uma conexão possa ser estabelecida. Para saber mais, confira o artigo a seguir, [Connect your application to a managed instance](sql-database-managed-instance-connect-app.md) (Conectar seu aplicativo a uma instância gerenciada).
+As instâncias gerenciadas podem ser acessadas por meio de um endereço IP privado. De modo muito semelhante a um ambiente local do SQL Server isolado, aplicativos ou usuários precisam acessar a rede da instância gerenciada (VNet) antes que uma conexão possa ser estabelecida. Para saber mais, confira o artigo a seguir, [Connect your application to a managed instance](sql-database-managed-instance-connect-app.md) (Conectar seu aplicativo a uma instância gerenciada).
+
+Também é possível configurar um ponto de extremidade de serviço na instância gerenciada, o que permite conexões públicas, da mesma maneira que ocorre com o Banco de Dados SQL do Azure. Para obter mais informações, leia o artigo a seguir, [Configurar ponto de extremidade público na instância gerenciada no Banco de Dados SQL do Azure](sql-database-managed-instance-public-endpoint-configure.md).
 
 > [!NOTE] 
-> Uma vez que instâncias gerenciadas só podem ser acessadas dentro de sua VNET, as [regras de firewall do Banco de Dados SQL](sql-database-firewall-configure.md) não se aplicam. A instância gerenciada tem seu próprio [firewall interno](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md).
+> Mesmo com os pontos de extremidade de serviço habilitados, as [regras de firewall do Banco de Dados SQL](sql-database-firewall-configure.md) não se aplicam. A instância gerenciada tem seu próprio [firewall interno](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md) para gerenciar a conectividade.
 
 ## <a name="create-an-azure-ad-server-principal-login-for-a-managed-instance-using-ssms"></a>Criar uma entidade de servidor (logon) do Azure AD para uma instância gerenciada usando SSMS
 

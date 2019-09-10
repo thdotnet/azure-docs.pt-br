@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 21c10e142802914bcf3292ef7f25066675e6cdd1
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 9c956f89d890f93a887d2412c74c906095acf4db
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67143915"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164353"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Tutorial: Integração do Azure Active Directory com o SharePoint no local
 
@@ -273,7 +273,7 @@ O objetivo desta seção é criar um usuário de teste no Portal do Azure chamad
     > [!NOTE]
     > O AzureCP não é um produto da Microsoft ou com suporte pelo suporte técnico da Microsoft. Baixar, instalar e configurar o AzureCP no farm do SharePoint local por https://yvand.github.io/AzureCP/ 
 
-11. **Permitir acesso ao grupo de segurança do Microsoft Azure Active Directory no SharePoint local**: os grupos devem ter acesso ao aplicativo no SharePoint local.  Use as etapas a seguir para definir as permissões para acessar o aplicativo Web.
+11. **Permitir acesso ao grupo de segurança do Azure Active Directory no SharePoint local**: os grupos devem ter acesso ao aplicativo no SharePoint local.  Use as etapas a seguir para definir as permissões para acessar o aplicativo Web.
 
 12. Na Administração Central, clique em Gerenciamento de aplicativos, Gerenciar aplicativos Web. Em seguida, selecione o aplicativo Web para ativar a faixa de opções e clique em Política de usuário.
 
@@ -373,4 +373,4 @@ Ao clicar no bloco do SharePoint local no Painel de Acesso, você deverá entrar
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

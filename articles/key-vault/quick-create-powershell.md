@@ -2,20 +2,20 @@
 title: Início Rápido do Azure – Definir e recuperar um segredo do Key Vault usando o PowerShell | Microsoft Docs
 description: ''
 services: key-vault
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 01/07/2019
-ms.author: barclayn
-ms.openlocfilehash: 8d6260d462b4c244dfb41630e06710a1ce8baf6c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.date: 09/03/2019
+ms.author: mbaldwin
+ms.openlocfilehash: 5753384d12d31016dff7a33175899835c8bd1fec
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66726790"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70259251"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Início Rápido: definir e recuperar um segredo do Azure Key Vault usando o PowerShell
 
@@ -100,9 +100,9 @@ Remove-AzResourceGroup -Name ContosoResourceGroup
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste início rápido, você criou um Key Vault e armazenou uma chave de software nele. Para saber mais sobre o Key Vault e como você pode usá-lo com seus aplicativos, prossiga para o tutorial de aplicativos Web que trabalham com o Key Vault.
+Neste início rápido, você criou um Key Vault e armazenou um segredo nele. Para saber mais sobre o Key Vault e como integrá-lo a seus aplicativos, confira os artigos abaixo.
 
-Para saber como ler um segredo do Key Vault em um aplicativo Web usando identidades gerenciadas para recursos do Azure, continue com o tutorial a seguir
-
-> [!div class="nextstepaction"]
-> [Configurar um aplicativo Web do Azure para ler um segredo do Key Vault](quick-create-net.md).
+- Leia uma [Visão geral do Azure Key Vault](key-vault-overview.md)
+- Confira a referência dos [cmdlets do Key Vault do Azure PowerShell](/powershell/module/az.keyvault/?view=azps-2.6.0#key_vault)
+- Saiba mais sobre [chaves, segredos e certificados](about-keys-secrets-and-certificates.md)
+- Examine as [Melhores práticas do Azure Key Vault](key-vault-best-practices.md)

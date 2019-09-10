@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 04/15/2019
-ms.openlocfilehash: 7dd313789665348ce0a7bfa2da3569867854be94
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: ae19ff5adc220326e32b82bdba676a037e98fabe
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617279"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195136"
 ---
 # <a name="create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Criar um servidor de Banco de Dados do Azure para MySQL usando o portal do Azure
 
@@ -28,9 +28,9 @@ Crie um Banco de Dados do Azure para o servidor MySQL com um conjunto definido d
 
 Siga estas etapas para criar um Banco de Dados do Azure para o servidor MySQL:
 
-1. Selecione o botão **Criar um recurso** (+) no canto superior esquerdo do portal.
+1. Selecione **Criar um recurso** (+) no canto superior esquerdo do portal.
 
-2. Selecione **Bancos de Dados** > **Banco de Dados do Azure para MySQL**. Você também pode digitar **MySQL** na caixa de pesquisa para localizar o serviço.
+2. Selecione **Bancos de Dados** > **Banco de Dados do Azure para MySQL**. Você também pode inserir **MySQL** na caixa de pesquisa para localizar o serviço.
 
    ![Opção do Banco de Dados do Azure para MySQL](./media/quickstart-create-mysql-server-database-using-azure-portal/2_navigate-to-mysql.png)
 
@@ -40,14 +40,14 @@ Siga estas etapas para criar um Banco de Dados do Azure para o servidor MySQL:
 
     **Configuração** | **Valor sugerido** | **Descrição do campo** 
     ---|---|---
-    Nome do servidor | Nome de servidor exclusivo | Escolha um nome exclusivo que identifica o Banco de Dados do Azure para o servidor MySQL. Por exemplo, mydemoserver. O nome de domínio *.mysql.database.azure.com* é acrescentado ao nome do servidor fornecido. O nome do servidor pode conter apenas letras minúsculas, números e o caractere de hífen (-). Ele deve conter de 3 a 63 caracteres.
-    Assinatura | Sua assinatura | Selecione a assinatura do Azure que você deseja usar para o servidor. Se você tem várias assinaturas, escolha a assinatura na qual recebe a cobrança do recurso.
-    Grupo de recursos | *myresourcegroup* | Forneça um novo nome de um grupo de recursos ou um existente.
+    Nome do servidor | Nome de servidor exclusivo | Insira um nome exclusivo que identifique seu servidor do Banco de Dados do Azure para MySQL. Por exemplo, mydemoserver. O nome de domínio *.mysql.database.azure.com* é acrescentado ao nome do servidor fornecido. O nome do servidor pode conter apenas letras minúsculas, números e o caractere de hífen (-). Ele deve conter de 3 a 63 caracteres.
+    Subscription | Sua assinatura | Selecione a assinatura do Azure que você deseja usar para o servidor. Se você tem várias assinaturas, escolha a assinatura na qual recebe a cobrança do recurso.
+    Resource group | *myresourcegroup* | Forneça um novo nome de um grupo de recursos ou um existente.
     Selecionar a origem | *Em branco* | Selecione *Em branco* para criar um novo servidor do zero. (Selecione *Backup* se você estiver criando um servidor de um backup de replicação geográfica de um Banco de Dados do Azure para servidor MySQL existente).
     Logon de administrador do servidor | myadmin | Uma conta de logon a ser usada ao se conectar ao servidor. O nome de logon do administrador não pode ser **azure_superusuário**, **admin**, **administrador**, **raiz**, **convidado** ou **público**.
     Senha | *Sua escolha* | Forneça uma nova senha para a conta do administrador do servidor. Ela deve conter de 8 a 128 caracteres. A senha precisa conter caracteres de três das seguintes categorias: Letras maiúsculas, letras minúsculas, números (0-9) e caracteres não alfanuméricos (!, $, #, % e assim por diante).
     Confirmar senha | *Sua escolha*| Confirme a senha da conta do administrador.
-    Local padrão | *A região mais próxima de seus usuários*| Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure.
+    Location | *A região mais próxima de seus usuários*| Escolha o local mais próximo para os usuários ou para outros aplicativos do Azure.
     Versão | *A última versão principal*| A última versão principal (a menos que você tenha requisitos específicos que exijam uma outra versão).
     Tipo de preço | **Uso Geral**, **Gen 5**, **2 vCores**, **5 GB**, **7 dias**, **Com redundância geográfica** | As configurações de computação, armazenamento e backup para o novo servidor. Selecione **Tipo de preço**. Em seguida, selecione a guia **Uso Geral**. *Gen 5*, *4 vCores*, *100 GB* e *7 dias* são os valores padrão de **Geração da Computação**, **vCore**, **Armazenamento** e **Período de Retenção de Backup**. Você pode deixar esses controles deslizantes como estão. Para habilitar os backups do servidor em armazenamento com redundância geográfica, selecione **Redundância Geográfica** das **Opções de Redundância de Backup**. Para salvar a seleção desse tipo de preço, selecione **OK**. A captura de tela a seguir demonstra essas seleções.
   
@@ -67,7 +67,7 @@ Siga estas etapas para criar um Banco de Dados do Azure para o servidor MySQL:
 
 O serviço do Banco de Dados do Azure para MySQL cria um firewall no nível do servidor. Ele impede que os aplicativos e ferramentas externos se conectem ao servidor e aos bancos de dados no servidor, a menos que uma regra de firewall seja criada para abrir o firewall para endereços IP específicos. 
 
-1. Após a conclusão da implantação, localize o servidor. Se necessário, você pode pesquisar. Por exemplo, selecione **Todos os Recursos** no menu à esquerda. Digite o nome do servidor, como o exemplo **mydemoserver**, para procurar o servidor recém-criado. Selecione o nome do servidor na lista de resultados da pesquisa. A página **Visão geral** do servidor é aberta e oferece outras opções de configuração.
+1. Após a conclusão da implantação, localize o servidor. Se necessário, você pode pesquisar. Por exemplo, selecione **Todos os Recursos** no menu à esquerda. Insira o nome do servidor, como o exemplo **mydemoserver**, para pesquisar o servidor recém-criado. Selecione o nome do servidor na lista de resultados da pesquisa. A página **Visão geral** do servidor é aberta e oferece outras opções de configuração.
 
 2. Na página do servidor, selecione **Segurança da conexão**.
 
@@ -111,7 +111,7 @@ Conectar-se ao seu servidor usando a ferramenta de linha de comando **mysql.exe*
 
     parâmetro mysql |Valor sugerido|DESCRIÇÃO
     ---|---|---
-    --host | *Nome do servidor* | O valor do nome do servidor usado anteriormente na criação do Banco de Dados do Azure para o servidor MySQL. Nosso servidor de exemplo é **mydemoserver.mysql.database.azure.com**. Use o nome de domínio totalmente qualificado (**\*.mysql.database.azure.com**) conforme mostrado no exemplo. Caso não se lembre do nome do servidor, siga as etapas da seção anterior para obter as informações de conexão. 
+    --host | *Nome do servidor* | O valor do nome do servidor usado anteriormente na criação do Banco de Dados do Azure para o servidor MySQL. Nosso servidor de exemplo é **mydemoserver.mysql.database.azure.com**. Use o nome de domínio totalmente qualificado ( **\*.mysql.database.azure.com**) conforme mostrado no exemplo. Caso não se lembre do nome do servidor, siga as etapas da seção anterior para obter as informações de conexão. 
     --user | *Nome de logon do administrador do servidor* |O nome de usuário de logon do administrador do servidor fornecido ao criar o Banco de Dados do Azure para o servidor MySQL anteriormente. Caso não se lembre do nome de usuário, siga as etapas da seção anterior para obter as informações de conexão. O formato é *nome de usuário\@nome do servidor*.
     -p | *Aguarde até a solicitação* |Quando solicitado, forneça a mesma senha fornecida quando você criou o servidor. Observe que os caracteres da senha digitados não são mostrados no prompt do Bash quando você os digita. Depois de inserir a senha, selecione **Enter**.
 
@@ -173,7 +173,7 @@ Para se conectar ao servidor usando a ferramenta de interface gráfica do usuár
 
 1.  Abra o aplicativo MySQL Workbench no computador cliente. Você pode baixar e instalar o MySQL Workbench em [Baixar MySQL Workbench](https://dev.mysql.com/downloads/workbench/).
 
-2. Crie uma nova conexão. Clique no ícone de sinal de adição (+) ao lado do título **Conexões MySQL**.
+2. Crie uma nova conexão. Selecione o ícone de sinal de adição (+) ao lado do título **Conexões MySQL**.
 
 3. Na caixa de diálogo **Configurar Nova Conexão**, insira as informações de conexão de servidor na guia **Parâmetros**. Os valores de espaço reservado são mostrados como um exemplo. Substitua o Nome de Host, o Nome de Usuário e a Senha por seus próprios valores.
 
@@ -183,10 +183,10 @@ Para se conectar ao servidor usando a ferramenta de interface gráfica do usuár
     |---|---|---|
      Nome da conexão | Conexão de demonstração | Um rótulo para essa conexão. |
     Método de conexão | Padrão (TCP/IP) | Padrão (TCP/IP) é suficiente. |
-    Nome do host | *Nome do servidor* | O valor do nome do servidor usado ao criar o Banco de Dados do Azure para o servidor MySQL anteriormente. Nosso servidor de exemplo é **mydemoserver.mysql.database.azure.com**. Use o nome de domínio totalmente qualificado (**\*.mysql.database.azure.com**) conforme mostrado no exemplo. Caso não se lembre do nome do servidor, siga as etapas da seção anterior para obter as informações de conexão.|
+    Nome do host | *Nome do servidor* | O valor do nome do servidor usado ao criar o Banco de Dados do Azure para o servidor MySQL anteriormente. Nosso servidor de exemplo é **mydemoserver.mysql.database.azure.com**. Use o nome de domínio totalmente qualificado ( **\*.mysql.database.azure.com**) conforme mostrado no exemplo. Caso não se lembre do nome do servidor, siga as etapas da seção anterior para obter as informações de conexão.|
      Porta | 3306 | A porta a ser usada ao se conectar ao Banco de Dados do Azure para servidor MySQL. |
     Nome de Usuário |  *Nome de logon do administrador do servidor* | A informação de logon do administrador do servidor fornecido ao criar o Banco de Dados do Azure para o servidor MySQL anteriormente. O nome de usuário de nosso exemplo é **myadmin\@mydemoserver**. Caso não se lembre do nome de usuário, siga as etapas da seção anterior para obter as informações de conexão. O formato é *nome de usuário\@nome do servidor*.
-    Senha | *Sua senha* | Selecione o botão **Armazenar no Cofre...** para salvar a senha. |
+    Senha | *Sua senha* | Selecione **Armazenar no Cofre** para salvar a senha. |
 
 4. Selecione **Testar Conectividade** para testar se todos os parâmetros estão configurados corretamente. Em seguida, selecione **OK** para salvar a conexão. 
 
@@ -204,7 +204,7 @@ Para excluir o grupo de recursos inteiro, incluindo o servidor criado recentemen
 
 1.  Encontre o grupo de recursos no portal do Azure. No menu à esquerda, selecione **Grupos de recursos**e selecione o nome do seu grupo de recursos (como o nosso exemplo, **myresourcegroup**).
 
-2.  Na página do grupo de recursos, selecione **Excluir**. Em seguida, digite o nome do grupo de recursos, como o nosso exemplo **myresourcegroup**, na caixa para confirmar a exclusão e selecione **Excluir**.
+2.  Na página do grupo de recursos, selecione **Excluir**. Em seguida, insira o nome do grupo de recursos (como o nosso exemplo **myresourcegroup**) na caixa para confirmar a exclusão e selecione **Excluir**.
 
 Para excluir apenas o servidor criado recentemente, execute as seguintes etapas:
 
@@ -214,7 +214,7 @@ Para excluir apenas o servidor criado recentemente, execute as seguintes etapas:
 
    ![Banco de Dados do Azure para MySQL - Excluir servidor](./media/quickstart-create-mysql-server-database-using-azure-portal/delete-server.png)
 
-3. Confirme o nome do servidor que deseja excluir e exiba sob ele os bancos de dados que são afetados. Digite o nome do servidor na caixa (como nosso exemplo **mydemoserver**). Selecione **Excluir**.
+3. Confirme o nome do servidor que deseja excluir e exiba sob ele os bancos de dados que são afetados. Insira o nome do servidor na caixa (como nosso exemplo **mydemoserver**). Selecione **Excluir**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

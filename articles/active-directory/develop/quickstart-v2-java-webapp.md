@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 08/11/2019
 ms.author: sagonzal
 ms.custom: aaddev
-ms.openlocfilehash: 549b4457ee38504001e83c4b831cd321e1542068
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: f1ceae17195c08af380a7448dd4dbf3bfa3f9de2
+ms.sourcegitcommit: 8fea78b4521921af36e240c8a92f16159294e10a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70125472"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70211882"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Início Rápido: Adicionar uma entrada com a Microsoft a um aplicativo Web Java
 
@@ -35,13 +35,10 @@ Após concluir este guia, seu aplicativo aceitará conexões de contas Microsoft
 > ## <a name="prerequisites"></a>Pré-requisitos
 > Para executar esta amostra, você precisará do seguinte: 
 > - JDK (Java Development Kit) 8 ou superior e o Maven.
-> - Um locatário do Azure AD (Azure Active Directory). Para obter mais informações sobre como obter um locatário do Azure AD, confira [como obter um locatário do Azure AD.](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant)
 >
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-app"></a>Registrar e baixar o aplicativo de início rápido
-> Você tem duas opções para iniciar o aplicativo de início rápido:
-> * Expressa: [Opção 1: Registrar e configurar automaticamente o aplicativo e, em seguida, baixar o exemplo de código.](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
-> * Manual: [Opção 2: Registrar e configurar manualmente o aplicativo e o exemplo de código.](#option-2-register-and-manually-configure-your-application-and-code-sample)
+> Você tem duas opções para iniciar o aplicativo de início rápido: expressa (opção 1) ou manual (opção 2)
 > 
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Opção 1: Registrar e configurar o aplicativo automaticamente e, em seguida, baixar seu exemplo de código
 >
@@ -123,7 +120,7 @@ Após concluir este guia, seu aplicativo aceitará conexões de contas Microsoft
 ### <a name="getting-msal"></a>Como obter o MSAL
 MSAL4J é a biblioteca usada para conectar usuários e solicitar tokens usados para acessar uma API protegida pela plataforma de identidade da Microsoft. Adicione a MSAL4J ao seu aplicativo usando o Maven ou o Gradle para gerenciar as dependências fazendo as alterações a seguir no arquivo pom.xml ou build.gradle no aplicativo. 
 
-```
+```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>msal4j</artifactId>
@@ -139,7 +136,7 @@ compile group: 'com.microsoft.azure', name: 'msal4j', version: '0.5.0-preview'
 ### <a name="msal-initialization"></a>Inicialização da MSAL
 Adicione a referência à MSAL4J adicionando o seguinte código ao início do arquivo no qual você usará a MSAL4J: 
 
-```
+```Java
 import com.microsoft.aad.msal4j.*;
 ```
 

@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 10/29/2017
-ms.openlocfilehash: 5aff45b4a6b5da62569e0a39c13239a726e6b80b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 08/28/2019
+ms.openlocfilehash: 9a80cb7ba44c86d449e4ff4178a2982db302a717
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001998"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70138337"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Use o Terraform para criar um conjunto de dimensionamento de máquinas virtuais do Azure com base em uma imagem personalizada Packer
 
@@ -44,7 +44,7 @@ Crie três novos arquivos em um diretório vazio com os seguintes nomes:
 
 - ```variables.tf``` Esse arquivo contém os valores das variáveis usadas no modelo.
 - ```output.tf``` Esse arquivo descreve as configurações que são exibidas após a implantação.
-- ```vmss.tf``` Esse arquivo contém o código da infraestrutura de implantação.
+- ```vmss.tf``` Esse arquivo contém o código da infraestrutura que você está implantando.
 
 ##  <a name="create-the-variables"></a>Criar as variáveis 
 
@@ -124,7 +124,7 @@ resource "azurerm_public_ip" "vmss" {
   name                         = "vmss-public-ip"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.vmss.name}"
-  public_ip_address_allocation = "static"
+  allocation_method            = "static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}"
 
   tags {
@@ -175,12 +175,12 @@ Siga o tutorial para criar uma imagem Ubuntu desprovisionada com o NGINX instala
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>Editar a infraestrutura para adicionar o conjunto de dimensionamento de máquinas virtuais
 
 Nesta etapa, você criará os seguintes recursos na rede implantada anteriormente:
-- O Azure Load Balancer para atender ao aplicativo e anexá-lo ao endereço IP público que foi implantado na etapa 4
+- O Azure Load Balancer para atender ao aplicativo e anexá-lo ao endereço IP público implantado anteriormente.
 - Um Azure Load Balancer e regras para atender ao aplicativo e anexá-lo no endereço IP público configurado anteriormente.
-- Um pool de endereços de back-end do Azure e atribua-o ao balanceador de carga 
-- Uma porta de investigação de integridade usada pelo aplicativo e configurada no balanceador de carga 
-- Um conjunto de dimensionamento de máquinas virtuais localizado por trás do balanceador de carga e em execução na vnet implantada anteriormente
-- [Nginx](https://nginx.org/) nos nós de dimensionamento de máquina virtual instalado usando uma imagem personalizada
+- Um pool de endereços de back-end do Azure e atribua-o ao balanceador de carga.
+- Uma porta de investigação de integridade usada pelo aplicativo e configurada no balanceador de carga.
+- Um conjunto de dimensionamento de máquinas virtuais localizado por trás do balanceador de carga, em execução na VNET implantada anteriormente.
+- [Nginx](https://nginx.org/) nos nós de dimensionamento de máquina virtual instalado usando uma imagem personalizada.
 
 
 Adicione o seguinte código ao final do arquivo `vmss.tf`.
@@ -290,6 +290,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
       name                                   = "IPConfiguration"
       subnet_id                              = "${azurerm_subnet.vmss.id}"
       load_balancer_backend_address_pool_ids = ["${azurerm_lb_backend_address_pool.bpepool.id}"]
+      primary = true
     }
   }
   
@@ -355,7 +356,7 @@ resource "azurerm_public_ip" "jumpbox" {
   name                         = "jumpbox-public-ip"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.vmss.name}"
-  public_ip_address_allocation = "static"
+  allocation_method            = "static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}-ssh"
 
   tags {

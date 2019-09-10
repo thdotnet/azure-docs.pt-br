@@ -6,15 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: quickstart
-ms.date: 06/04/2019
+ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 3467b25c085fb86d4aed3918d5446d118f76ffb8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.localizationpriority: high
+ms.openlocfilehash: b2ebb4c5a0df360cede084a90ebe5da041a08aa0
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446727"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70241386"
 ---
+::: zone target = "docs"
+
 # <a name="quickstart-deploy-azure-data-box-heavy-using-the-azure-portal"></a>Início Rápido: Implantar o Azure Data Box Heavy usando o portal do Azure
 
 Este início rápido descreve como implantar o Azure Data Box Heavy usando o portal do Azure. As etapas incluem como cabear, configurar e copiar dados para o Data Box Heavy de modo que eles sejam carregados no Azure. O início rápido é executado no portal do Azure e na interface do usuário da Web local do dispositivo.
@@ -55,6 +58,7 @@ Antes de começar, verifique se:
     - Para o cabo de 10 Gbps, você precisará de um cabo SFP+ que se conecta a um comutador de 10 G em uma extremidade, com um adaptador QSFP+ para SFP+ (ou o adaptador QSA) para a extremidade que se conecta ao dispositivo.
 - Os cabos de alimentação são incluídos em uma bandeja na parte posterior do dispositivo.
 
+
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
 Entre no Portal do Azure em [https://portal.azure.com](https://portal.azure.com).
@@ -69,6 +73,16 @@ Esta etapa leva aproximadamente 5 minutos.
 4. Insira os detalhes do pedido e as informações de envio. Se o serviço estiver disponível em sua região, forneça endereços de email de notificação, examine o resumo e, em seguida, crie o pedido.
 
 Depois que o pedido for criado, o dispositivo estará preparado para remessa.
+
+::: zone-end
+
+::: zone target = "chromeless"
+
+# <a name="cable-and-connect-to-your-device"></a>Cabear e conectar ao seu dispositivo
+
+Depois de revisar os pré-requisitos, você ligará o cabo e se conectará ao seu dispositivo.
+
+::: zone-end
 
 ## <a name="cable-for-power"></a>Cabear o recebimento de energia
 
@@ -105,6 +119,9 @@ Essa etapa demora cerca de 5 a 7 minutos para ser concluída.
 Essa etapa demora cerca de 15 a 20 minutos para ser concluída.
 
 Siga as etapas usadas no primeiro nó para cabear e configurar o segundo nó do dispositivo.  
+
+
+::: zone target = "docs"
 
 ## <a name="copy-data"></a>Copiar dados
 
@@ -157,3 +174,5 @@ Neste início rápido, você implantou um Data Box Heavy para ajudar a importar 
 
 > [!div class="nextstepaction"]
 > [Usar o portal do Azure para administrar o Data Box Heavy](data-box-portal-admin.md)
+
+::: zone-end

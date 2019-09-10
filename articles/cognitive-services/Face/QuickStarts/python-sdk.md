@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 07/26/2019
 ms.author: pafarley
-ms.openlocfilehash: 011345cca1ed1c763a628c94401320862182c9cc
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: f0bd4a49a35392c25b8985aa68ad4e4b66be026c
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68707346"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70306513"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Início Rápido: Biblioteca de clientes de Detecção Facial para Python
 
@@ -109,6 +109,14 @@ O código a seguir detecta um rosto em uma imagem remota. Ele imprime a ID do ro
 
 Confira o código de exemplo no [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/Face/FaceQuickstart.py) para obter mais cenários de detecção.
 
+### <a name="display-and-frame-faces"></a>Exibir e enquadrar rostos
+
+O código a seguir gera a imagem fornecida para a exibição e desenha retângulos em volta dos rostos usando a propriedade DetectedFace.faceRectangle.
+
+[!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_frame)]
+
+![Uma moça com um retângulo vermelho desenhado ao redor da face](../images/face-rectangle-result.png)
+
 ## <a name="find-similar-faces"></a>Encontrar rostos semelhantes
 
 O código a seguir usa um único rosto detectado e pesquisa um conjunto de outros rostos para encontrar correspondências. Quando encontra uma correspondência, ele imprime as coordenadas de retângulo do rosto correspondente no console. 
@@ -135,7 +143,7 @@ O código a seguir cria um **PersonGroup** com três objetos **Person** diferent
 
 ### <a name="create-persongroup"></a>Criar PersonGroup
 
-Para passar por esse cenário, você precisa salvar as seguintes imagens no diretório raiz do seu projeto: https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
+Para percorrer esse cenário, você precisa salvar as seguintes imagens no diretório raiz do seu projeto: https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/Face/images.
 
 Esse grupo de imagens contém três conjuntos de imagens de rosto correspondentes a três pessoas diferentes. O código definirá três objetos **Person** e os associará a arquivos de imagem que começam com `woman`, `man` e `child`.
 
@@ -161,7 +169,7 @@ Depois de atribuir os rostos, você precisa treinar o **PersonGroup** para que e
 
 ## <a name="identify-a-face"></a>Identificar um rosto
 
-O código a seguir usa uma imagem com vários rostos e procura encontrar a identidade de cada pessoa na imagem. Ele compara cada rosto detectado a um **PersonGroup**, um banco de dados de objetos **Person** diferentes, a cada um dos quais vários rostos são associados. 
+O código a seguir usa uma imagem com vários rostos e procura encontrar a identidade de cada pessoa na imagem. Ele compara cada rosto detectado com um **PersonGroup**, um banco de dados de diferentes objetos **Person** cujas características faciais são conhecidas.
 
 > [!IMPORTANT]
 > Para executar este exemplo, você deve primeiro executar o código em [Criar e treinar um grupo de pessoas](#create-and-train-a-person-group).
@@ -188,7 +196,7 @@ Neste exemplo, você migrará o **PersonGroup** que criou em [Criar e treinar um
 
 Primeiro, você precisa obter uma segunda assinatura do Azure com um recurso de Detecção Facial; você pode fazer isso seguindo as etapas na seção [Configuração](#setting-up). 
 
-Em seguida, crie as variáveis a seguir próximo da parte superior do seu script. Você também precisará criar variáveis de ambiente para a ID da assinatura da conta do Azure, bem como a chave e a ID da assinatura da nova conta (de destino). 
+Em seguida, crie as variáveis a seguir próximo da parte superior do seu script. Você também precisará criar variáveis de ambiente para a ID da assinatura da conta do Azure, bem como a chave, o ponto de extremidade e a ID da assinatura da nova conta (de destino). 
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_snapshotvars)]
 

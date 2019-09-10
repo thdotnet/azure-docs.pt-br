@@ -1,22 +1,19 @@
 ---
 title: Crie Azure Functions no Linux usando uma imagem personalizada
 description: Saiba como criar Azure Functions em execução em uma imagem personalizada do Linux.
-services: functions
-keywords: ''
 author: ggailey777
 ms.author: glenga
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
-ms.devlang: azure-cli
-manager: jeconnoc
-ms.openlocfilehash: 525cb444ad7b1b78de867f83539ac338ddd144e9
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+manager: gwallace
+ms.openlocfilehash: 80f7185b69a7953656235d3bd622b7f61611de1a
+ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562925"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70210184"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Crie uma função no Linux usando uma imagem personalizada
 
@@ -56,7 +53,7 @@ Você também pode usar o [Azure Cloud Shell](https://shell.azure.com/bash).
 
 ## <a name="create-the-local-function-app-project"></a>Criar o projeto de aplicativo de funções local
 
-Execute o comando a seguir na linha de comando para criar um projeto de aplicativo de funções na pasta `MyFunctionProj` do diretório local atual.
+Execute o comando a seguir na linha de comando para criar um projeto de aplicativo de funções na pasta `MyFunctionProj` do diretório local atual. Para um projeto Python, você [precisa estar executando em um ambiente virtual](functions-create-first-function-python.md#create-and-activate-a-virtual-environment-optional).
 
 ```bash
 func init MyFunctionProj --docker
@@ -68,7 +65,7 @@ Quando solicitado, escolha um tempo de execução do trabalho com as seguintes l
 
 * `dotnet`: cria um projeto de biblioteca de classes do .NET Core (.csproj).
 * `node`: cria um projeto de JavaScript.
-* `python`: cria um projeto do Python.
+* `python`: cria um projeto do Python.  
 
 Quando o comando for executado, você verá algo parecido com a seguinte saída:
 

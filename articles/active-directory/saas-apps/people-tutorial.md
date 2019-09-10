@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao People | Microsoft Docs'
+title: 'Tutorial: Integração do SSO (logon único) do Azure Active Directory ao People | Microsoft Docs'
 description: Saiba como configurar o logon único entre o Azure Active Directory e o People.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/01/2019
+ms.date: 08/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 334241683f95496ce9ea0629247bb8fd53364ee9
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 3a9b8f08a54c978d81a8d33c61ab3d5f5fc7271f
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68826089"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70164228"
 ---
-# <a name="tutorial-integrate-people-with-azure-active-directory"></a>Tutorial: integrar o People ao Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-people"></a>Tutorial: Integração do SSO (logon único) do Azure Active Directory com o People
 
 Neste tutorial, você aprenderá como integrar o People ao Azure AD (Azure Active Directory). Ao integrar o People ao Azure AD, você poderá:
 
@@ -47,6 +47,9 @@ Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente d
 * O People dá suporte ao SSO iniciado por **SP**
 * Agora, o aplicativo móvel do People pode ser configurado com o Azure AD para habilitar o SSO. Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste.
 
+>[!NOTE]
+>O identificador desse aplicativo é um valor de cadeia de caracteres fixo; portanto apenas uma instância pode ser configurada em um locatário.
+
 ## <a name="adding-people-from-the-gallery"></a>Adição do People a partir da galeria
 
 Para configurar a integração do People ao Azure AD, você precisará adicionar o People à sua lista de aplicativos SaaS gerenciados por meio da galeria.
@@ -58,21 +61,20 @@ Para configurar a integração do People ao Azure AD, você precisará adicionar
 1. Na seção **Adicionar por meio da galeria**, digite **People** na caixa de pesquisa.
 1. Selecione **People** no painel de resultados e, em seguida, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
+## <a name="configure-and-test-azure-ad-single-sign-on-for-people"></a>Configurar e testar logon único do Azure AD para o People
 
 Configure e teste o SSO do Azure AD com o People usando um usuário de teste chamado **B.Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do People.
 
 Para configurar e testar o SSO do Azure AD com o People, conclua os seguintes blocos de construção:
 
 1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** – para permitir que os usuários usem esse recurso.
+    1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
+    1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
 2. **[Configurar o SSO do People](#configure-people-sso)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do People](#create-people-test-user)** – para ter um equivalente de B.Fernandes no People que esteja vinculado à representação do usuário no Azure AD.
+    1. **[Criar um usuário de teste do People](#create-people-test-user)** – para ter um equivalente de B.Fernandes no People que esteja vinculado à representação do usuário no Azure AD.
 6. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
 
-### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
+## <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
 Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
@@ -100,22 +102,6 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 6. Na seção **Configurar o People**, copie a(s) URL(s) apropriada(s) com base em seus requisitos.
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
-
-### <a name="configure-people-sso"></a>Configurar o SSO do People
-
-1. Para configurar o SSO para o aplicativo, você precisa entrar no locatário People como administrador.
-   
-2. No menu à esquerda, clique em **Configurações**.
-
-    ![Configurar o logon único](./media/people-tutorial/tutorial_people_001.png)
-
-3. Clique em **Empresa**.
-
-    ![Configurar o logon único](./media/people-tutorial/tutorial_people_002.png)
-
-4. Em **Carregar arquivo de metadados SAML de ‘Logon Único’** , clique em **Procurar** para carregar o arquivo de metadados baixado.
-
-    ![Configurar o logon único](./media/people-tutorial/tutorial_people_003.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -147,11 +133,35 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário da lista e, em seguida, clique no botão **Escolher** na parte inferior da tela.
 1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
+## <a name="configure-people-sso"></a>Configurar o SSO do People
+
+1. Para automatizar a configuração no People, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, clicando em **Instalar a extensão**.
+
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
+
+2. Depois de adicionar a extensão ao navegador, clique em **Instalação do People**. Você será direcionado ao aplicativo People. De lá, forneça as credenciais de administrador para entrar no People. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 6.
+
+    ![Configuração da instalação](common/setup-sso.png)
+
+3. Se desejar configurar o People manualmente, abra uma nova janela do navegador da Web, entre no site da empresa People como administrador e execute as seguintes etapas:
+   
+4. No menu à esquerda, clique em **Configurações**.
+
+    ![Configurar o logon único](./media/people-tutorial/tutorial_people_001.png)
+
+5. Clique em **Empresa**.
+
+    ![Configurar o logon único](./media/people-tutorial/tutorial_people_002.png)
+
+6. Em **Carregar arquivo de metadados SAML de ‘Logon Único’** , clique em **Procurar** para carregar o arquivo de metadados baixado.
+
+    ![Configurar o logon único](./media/people-tutorial/tutorial_people_003.png)
+
 ### <a name="create-people-test-user"></a>Criar usuário de teste do People
 
 Nesta seção, você criará um usuário chamado B.Fernandes no People. Trabalhe com a [equipe de suporte ao cliente do People](mailto:customerservices@peoplehr.com) para adicionar os usuários na plataforma do People. Os usuários devem ser criados e ativados antes de usar o logon único.
 
-### <a name="test-sso"></a>Testar o SSO 
+## <a name="test-sso"></a>Testar o SSO 
 
 Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
 
@@ -179,3 +189,4 @@ Ao clicar no bloco do People no Painel de Acesso, você deverá ser conectado au
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Experimente o People com o Azure AD](https://aad.portal.azure.com)

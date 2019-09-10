@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/25/2019
-ms.openlocfilehash: 152e93fefecaeaab3502ad5d974ba923727f919b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f9a729376baeb03656b7b54fcb8e10a865d1f364
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443123"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195150"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-in-the-azure-portal"></a>Início Rápido: Criar um Banco de Dados do Azure para o servidor PostgreSQL no portal do Azure
 
@@ -28,7 +28,7 @@ Abra o navegador da Web e acesse o [portal](https://portal.azure.com/). Insira s
 Um Banco de Dados do Azure para PostgreSQL é criado com um conjunto configurado de [recursos de computação e armazenamento](./concepts-pricing-tiers.md). O servidor é criado dentro de um [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md).
 
 Para criar um Banco de Dados do Azure para o servidor PostgreSQL, execute as seguintes etapas:
-1. Selecione o botão **Criar um recurso** (+) no canto superior esquerdo do portal.
+1. Selecione **Criar um recurso** (+) no canto superior esquerdo do portal.
 
 2. Selecione **Bancos de Dados** > **Banco de Dados do Azure para PostgreSQL**.
 
@@ -44,13 +44,13 @@ Para criar um Banco de Dados do Azure para o servidor PostgreSQL, execute as seg
 
     Configuração|Valor sugerido|DESCRIÇÃO
     ---|---|---
-    Assinatura|O nome da sua assinatura|A assinatura do Azure que você deseja usar para o servidor. Se você tiver várias assinaturas, escolha a assinatura para a qual você recebe a cobrança do recurso.
-    Grupo de recursos|*myresourcegroup*| Um novo nome do grupo de recursos ou um existente de sua assinatura.
+    Subscription|O nome da sua assinatura|A assinatura do Azure que você deseja usar para o servidor. Se você tiver várias assinaturas, escolha a assinatura para a qual você recebe a cobrança do recurso.
+    Resource group|*myresourcegroup*| Um novo nome do grupo de recursos ou um existente de sua assinatura.
     Nome do servidor |*mydemoserver*|Um nome exclusivo que identifica o Banco de Dados do Azure para o servidor PostgreSQL. O nome de domínio *postgres.database.azure.com* é acrescentado ao nome do servidor fornecido. O servidor pode conter apenas letras minúsculas, números e o caractere de hífen (-). Ele deve conter, pelo menos, 3 até 63 caracteres.
     Fonte de dados | *Nenhum* | Selecione *Nenhum* para criar um novo servidor do zero. (Você selecionaria *Backup* se estivesse criando um servidor de um backup de replicação geográfica de um Banco de Dados do Azure para servidor PostgreSQL existente).
     Nome de usuário do administrador |*myadmin*| Sua própria conta de logon para uso ao se conectar ao servidor. O nome de logon do administrador não pode ser **azure_superuser,** **azure_pg_admin,** **admin,** **administrator,** **root,** **guest** ou **public**. Ele não pode começar com **pg_** .
     Senha |Sua senha| Uma nova senha para a conta do administrador do servidor. Ele deve conter entre 8 e 128 caracteres. A senha precisa conter caracteres de três das seguintes categorias: Letras maiúsculas, letras minúsculas, números (0 a 9) e caracteres não alfanuméricos (!, $, #, % etc.).
-    Local padrão|A região mais próxima dos usuários| A localização mais próxima dos usuários.
+    Location|A região mais próxima dos usuários| A localização mais próxima dos usuários.
     Versão|A última versão principal| A última versão principal do PostgreSQL, a menos que você tenha requisitos específicos.
     Computação + armazenamento | **Uso Geral**, **Gen 5**, **2 vCores**, **5 GB**, **7 dias**, **Com redundância geográfica** | As configurações de computação, armazenamento e backup para o novo servidor. Selecione **Configurar servidor**. Em seguida, selecione a guia **Uso Geral**. *Gen 5*, *4 vCores*, *100 GB* e *7 dias* são os valores padrão de **Geração da Computação**, **vCore**, **Armazenamento** e **Período de Retenção de Backup**. Você pode deixar esses controles deslizantes como estão ou ajustá-los. Para habilitar os backups do servidor em armazenamento com redundância geográfica, selecione **Redundância Geográfica** das **Opções de Redundância de Backup**. Para salvar a seleção desse tipo de preço, selecione **OK**. A captura de tela a seguir demonstra essas seleções.
 
@@ -72,7 +72,7 @@ Para criar um Banco de Dados do Azure para o servidor PostgreSQL, execute as seg
 
 O Banco de Dados do Azure para PostgreSQL cria um firewall no nível do servidor. Ele impede que os aplicativos e as ferramentas externas se conectem ao servidor e aos bancos de dados no servidor, a menos que uma regra seja criada para abrir o firewall em endereços IP específicos. 
 
-1. Após a conclusão da implantação, localize o servidor. Se necessário, você pode pesquisar. Por exemplo, no menu à esquerda, selecione **Todos os recursos**. Digite o nome do servidor, como o exemplo **mydemoserver**, para pesquisar o servidor recém-criado. Selecione o nome do servidor na lista de resultados da pesquisa. A página **Visão geral** do servidor é aberta e oferece outras opções de configuração.
+1. Após a conclusão da implantação, localize o servidor. Se necessário, você pode pesquisar. Por exemplo, no menu à esquerda, selecione **Todos os recursos**. Insira o nome do servidor, como o exemplo **mydemoserver**, para pesquisar o servidor recém-criado. Selecione o nome do servidor na lista de resultados da pesquisa. A página **Visão geral** do servidor é aberta e oferece outras opções de configuração.
  
     ![Pesquisa de nome do servidor](./media/quickstart-create-database-portal/4-locate.png)
 
@@ -182,15 +182,15 @@ pgAdmin é uma ferramenta de software livre usada com PostgreSQL. Instale o pgAd
     
 5. Clique em **Salvar**.
 
-6. No painel **Navegador** à esquerda, expanda o nó **Servidores**. Selecione o servidor, por exemplo, **mydemoserver**. Clique nele para se conectar a ele.
+6. No painel **Navegador** à esquerda, expanda o nó **Servidores**. Selecione o servidor, por exemplo, **mydemoserver**, para se conectar a ele.
 
 7. Expanda o nó do servidor e expanda **Bancos de Dados** nele. A lista deve conter o banco de dados *postgres* existente e outros bancos de dados criados. Você pode criar vários bancos de dados por servidor com o Banco de Dados do Azure para PostgreSQL.
 
-8. Clique com o botão direito do mouse em **Bancos de Dados**, escolha o menu **Criar** e, em seguida, selecione **Banco de Dados**.
+8. Clique com o botão direito do mouse em **Bancos de Dados**, selecione o menu **Criar** e, em seguida, selecione **Banco de Dados**.
 
-9. Digite um nome de banco de dados de sua escolha no campo **Banco de Dados**, como **mypgsqldb2**.
+9. Insira um nome de banco de dados de sua escolha no campo **Banco de Dados**, como **mypgsqldb2**.
 
-10. Selecione o **Proprietário** do banco de dados na caixa de listagem. Escolha o nome de logon do administrador do servidor, como o exemplo, **myadmin**.
+10. Selecione o **Proprietário** do banco de dados na caixa de listagem. Selecione o nome de logon do administrador do servidor, como o exemplo **myadmin**.
 
     ![Criar um banco de dados em pgadmin](./media/quickstart-create-database-portal/11-pgadmin-database.png)
 
@@ -208,7 +208,7 @@ Limpe os recursos criados no Guia de início rápido usando uma das duas maneira
 Para excluir o grupo de recursos inteiro, incluindo o servidor recém-criado:
 1. Localize o grupo de recursos no portal. No menu à esquerda, selecione **Grupos de recursos**. Em seguida, selecione o nome do grupo de recursos, como o exemplo, **myresourcegroup**.
 
-2. Na página do grupo de recursos, selecione **Excluir**. Digite o nome do grupo de recursos, como o exemplo **myresourcegroup**, na caixa de texto para confirmar a exclusão. Selecione **Excluir**.
+2. Na página do grupo de recursos, selecione **Excluir**. Insira o nome do grupo de recursos, como o exemplo **myresourcegroup**, na caixa de texto para confirmar a exclusão. Selecione **Excluir**.
 
 Para excluir apenas o servidor recém-criado:
 1. Localize o servidor no portal, caso você não esteja com ele aberto. No menu à esquerda, selecione **Todos os recursos**. Em seguida, pesquise o servidor criado.
@@ -217,7 +217,7 @@ Para excluir apenas o servidor recém-criado:
 
     ![O botão “Excluir”](./media/quickstart-create-database-portal/12-delete.png)
 
-3. Confirme o nome do servidor que deseja excluir e veja embaixo do nome dele os bancos de dados que são afetados. Digite o nome do servidor na caixa de texto, como o exemplo **mydemoserver**. Selecione **Excluir**.
+3. Confirme o nome do servidor que deseja excluir e veja embaixo do nome dele os bancos de dados que são afetados. Insira o nome do servidor na caixa de texto, como o exemplo **mydemoserver**. Selecione **Excluir**.
 
 ## <a name="next-steps"></a>Próximas etapas
 > [!div class="nextstepaction"]

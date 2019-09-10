@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 08/07/2019
 ms.author: diberry
-ms.openlocfilehash: f5756c479d47e905e0110c9919cf4b5be4e75099
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: f8149372e0a96cda81ef38558ee0bcf87eb53bb3
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932123"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258757"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-python"></a>Início Rápido: Biblioteca de clientes de criação do LUIS (Reconhecimento Vocal) para Python
 
@@ -37,9 +37,9 @@ Use a biblioteca de clientes de criação de LUIS (Reconhecimento Vocal) para Py
 
 ## <a name="setting-up"></a>Configurando
 
-### <a name="get-your-language-understanding-luis-authoring-key"></a>Obtenha sua chave de criação do LUIS (Reconhecimento Vocal)
+### <a name="get-your-language-understanding-luis-starter-key"></a>Obtenha sua chave inicial do LUIS (Reconhecimento vocal)
 
-Obtenha sua [chave de criação](luis-how-to-account-settings.md) e [crie uma variável de ambiente](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) para a chave camada `LUIS_AUTHORING_KEY` e uma variável de ambiente para a região da chave, `LUIS_REGION`.
+Obtenha sua [chave inicial](luis-how-to-azure-subscription.md#starter-key) e [crie uma variável de ambiente](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) para a chave chamada `LUIS_AUTHORING_KEY` e uma variável de ambiente para a região da chave, `LUIS_REGION`.
 
 ### <a name="install-the-python-library-for-luis"></a>Instalar a biblioteca do Python para LUIS
 

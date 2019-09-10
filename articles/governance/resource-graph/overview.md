@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: faad0a0166c1b11f51f814bb6ce3351d7a017239
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 7091e2bd1ee24843299721d3c21a8546197fac6f
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900020"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70207582"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Visão geral do serviço Azure Resource Graph
 
@@ -35,7 +35,7 @@ Nesta documentação, você estudará cada recurso em detalhes.
 
 Atualmente, o Azure Resource Manager dá suporte para consultas por campos de recursos básicos, mais especificamente: Nome do recurso, ID, Tipo, Grupo de recursos, Assinatura e Local. O Resource Manager também fornece recursos para chamar provedores de recursos individuais para propriedades detalhadas um recurso por vez.
 
-Com o Azure Resource Graph, você pode acessar essas propriedades retornadas pelos provedores de recursos sem a necessidade de fazer chamadas individuais para cada um deles. Para obter uma lista de tipos de recursos com suporte, procure um **Sim** na tabela [Recursos para implantações do modo completo](../../azure-resource-manager/complete-mode-deletion.md).
+Com o Azure Resource Graph, você pode acessar essas propriedades retornadas pelos provedores de recursos sem a necessidade de fazer chamadas individuais para cada um deles. Para obter uma lista de tipos de recursos com suporte, procure um **Sim** na tabela [Recursos para implantações do modo completo](../../azure-resource-manager/complete-mode-deletion.md). Uma maneira alternativa de ver os tipos de recursos com suporte é por meio do [navegador de Esquema do Azure Resource Graph Explorer](./first-query-portal.md#schema-browser).
 
 Com o Azure Resource Graph, é possível:
 
@@ -80,7 +80,13 @@ Para saber mais, consulte [Orientação para solicitações limitadas](./concept
 
 ## <a name="running-your-first-query"></a>Realizando sua primeira consulta
 
-O Resource Graph dá suporte à CLI do Azure, ao Azure PowerShell e ao SDK do Azure para .NET. A consulta é estruturada da mesma maneira para ambas as linguagens. Saiba como habilitar o Resource Graph na [CLI do Azure](first-query-azurecli.md#add-the-resource-graph-extension) e no [Azure PowerShell](first-query-powershell.md#add-the-resource-graph-module).
+O Azure Resource Graph Explorer, parte do portal do Azure, permite executar consultas do Resource Graph diretamente no portal do Azure. Fixe os resultados como gráficos dinâmicos para fornecer informações dinâmicas em tempo real para o fluxo de trabalho do portal. Para saber mais, confira [Primeira consulta com o Azure Resource Graph Explorer](first-query-portal.md).
+
+O Resource Graph dá suporte à CLI do Azure, ao Azure PowerShell e ao SDK do Azure para .NET, entre outros. A consulta é estruturada da mesma maneira para ambas as linguagens. Saiba como habilitar o Resource Graph com:
+
+- [Portal do Azure e Resource Graph Explorer](first-query-portal.md) 
+- [CLI do Azure](first-query-azurecli.md#add-the-resource-graph-extension)
+- [PowerShell do Azure](first-query-powershell.md#add-the-resource-graph-module)
 
 ## <a name="next-steps"></a>Próximas etapas
 

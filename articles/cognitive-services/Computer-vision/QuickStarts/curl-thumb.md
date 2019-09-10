@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 55fa5ffbfe8cdb266340df1a407968d542b36c1a
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 0d430f7c9a6e9d59b20cd1420b65f70d9c6994d5
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606000"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141429"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-curl"></a>Início Rápido: Gerar uma miniatura usando a API REST da Pesquisa Visual Computacional e o cURL
 
@@ -54,7 +54,8 @@ Para criar e executar o exemplo, siga estas etapas:
 1. Faça as alterações a seguir no comando quando necessário:
     1. Substitua o valor de `<subscriptionKey>` pela sua chave de assinatura.
     1. Substitua o valor de `<thumbnailFile>` pelo caminho e o nome do arquivo no qual salvar a miniatura.
-    1. Substitua a URL de solicitação (`https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail`) pela URL do ponto de extremidade para o método [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) da região do Azure em que você adquiriu suas chaves de assinatura, se necessário.
+    1. Substitua a primeira parte da URL de solicitação (`westcentralus`) pelo texto em sua URL de ponto de extremidade.
+        [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
     1. Opcionalmente, altere a URL da imagem no corpo da solicitação (`https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shorkie_Poo_Puppy.jpg/1280px-Shorkie_Poo_Puppy.jpg\`) para a URL de uma imagem diferente da qual você deseja gerar uma miniatura.
 1. Abra una janela de prompt de comando.
 1. Cole o comando do editor de texto na janela do prompt de comando e, em seguida, execute-o.

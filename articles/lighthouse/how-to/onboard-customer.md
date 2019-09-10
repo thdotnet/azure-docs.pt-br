@@ -4,15 +4,15 @@ description: Saiba como integrar um cliente ao gerenciamento de recursos delegad
 author: JnHs
 ms.author: jenhayes
 ms.service: lighthouse
-ms.date: 08/22/2019
+ms.date: 08/29/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 35cf61897d012690f0a0f752a7cb36270e11e10e
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: dabee74dc757a8ccdc4384662f5c9bc09a1e5fbe
+ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70012072"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70165038"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Integrar um cliente no gerenciamento de recursos delegados do Azure
 
@@ -61,63 +61,8 @@ az account set --subscription <subscriptionId/name>
 az account show
 ```
 
-
-## <a name="ensure-the-customers-subscription-is-registered-for-onboarding"></a>Verificar se a assinatura do cliente está registrada para integração
-
-Cada assinatura deve ser autorizada para integração ao ser registrada manualmente no provedor de recursos **Microsoft.ManagedServices**. O cliente pode registrar uma assinatura seguindo as etapas descritas em [Provedores e tipos de recursos do Azure](../../azure-resource-manager/resource-manager-supported-services.md).
-
-O cliente pode confirmar que a assinatura está pronta para integração com uma das maneiras a seguir.
-
-### <a name="azure-portal"></a>Portal do Azure
-
-1. No portal do Azure, selecione a assinatura.
-1. Selecione **Provedores de recursos**.
-1. Confirme se o **Microsoft.ManagedServices** é exibido como **Registrado**.
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell-interactive
-# Log in first with Connect-AzAccount if you're not using Cloud Shell
-
-Set-AzContext -Subscription <subscriptionId>
-Get-AzResourceProvider -ProviderNameSpace 'Microsoft.ManagedServices'
-```
-
-Deve retornar uma resposta semelhante à seguinte:
-
-```output
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {registrationDefinitions}
-Locations         : {}
-
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {registrationAssignments}
-Locations         : {}
-
-ProviderNamespace : Microsoft.ManagedServices
-RegistrationState : Registered
-ResourceTypes     : {operations}
-Locations         : {}
-```
-
-### <a name="azure-cli"></a>CLI do Azure
-
-```azurecli-interactive
-# Log in first with az login if you're not using Cloud Shell
-
-az account set –subscription <subscriptionId>
-az provider show --namespace "Microsoft.ManagedServices" --output table
-```
-
-Deve retornar uma resposta semelhante à seguinte:
-
-```output
-Namespace                  RegistrationState
--------------------------  -------------------
-Microsoft.ManagedServices  Registered
-```
+> [!NOTE]
+> Ao integrar uma assinatura (ou um ou mais grupos de recursos dentro de uma assinatura) usando o processo descrito aqui, o provedor de recursos **Microsoft.ManagedServices** será registrado nessa assinatura.
 
 ## <a name="define-roles-and-permissions"></a>Definir funções e permissões do administrador
 
@@ -129,8 +74,6 @@ Para facilitar o gerenciamento, é recomendável usar grupos de usuários do Azu
 > As atribuições de função devem usar [funções internas](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) de RBAC (controle de acesso baseado em função). Atualmente, todas as funções internas têm suporte com o gerenciamento de recursos delegados do Azure, exceto para funções do Proprietário e quaisquer funções internas com a permissão [DataActions](https://docs.microsoft.com/azure/role-based-access-control/role-definitions#dataactions). A função interna de Administrador de Acesso do Usuário tem suporte para uso limitado, como descrito abaixo. As funções personalizadas e as [funções de administrador de assinatura clássica](https://docs.microsoft.com/azure/role-based-access-control/classic-administrators) também não têm suporte.
 
 Para definir autorizações, você precisará saber os valores das IDs de cada usuário, grupo de usuários ou entidade de serviço para os quais você queira conceder acesso. Você também precisa da ID de definição de função para cada função interna que deseja atribuir. Se ainda não tiver essas informações, você pode recuperá-las de uma das maneiras a seguir.
-
-
 
 ### <a name="powershell"></a>PowerShell
 

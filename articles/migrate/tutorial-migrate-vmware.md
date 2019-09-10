@@ -4,15 +4,15 @@ description: Descreve como executar uma migração sem agente de VMs VMware loca
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/08/2019
+ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 7fba9cbbaa15359e7e4dd95e66645dd5f4022431
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: ec7d10a1d9fec43c149c068fb408211db76d19eb
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640773"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309370"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Migrar VMs VMware para o Azure (sem agente)
 
@@ -126,7 +126,10 @@ Habilitar ssh | Verifique se o ssh está habilitado e se o serviço sshd foi def
 
 ## <a name="replicate-vms"></a>Replicar VMs
 
-Com a descoberta concluída, é possível começar a replicação de VMs do VMware no Azure.
+Com a descoberta concluída, é possível começar a replicação de VMs do VMware no Azure. 
+
+> [!NOTE]
+> Você pode replicar até 10 computadores juntos. Se precisar replicar mais, replique-os simultaneamente em lotes de 10. Para migrações sem agente, você pode executar até 100 replicações simultâneas.
 
 1. No projeto das Migrações para Azure > **Servidores**, **Migrações para Azure: Migração de Servidor**, clique em **Replicar**.
 

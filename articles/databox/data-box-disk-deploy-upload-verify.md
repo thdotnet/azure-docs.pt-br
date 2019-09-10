@@ -7,15 +7,15 @@ ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
 ms.localizationpriority: high
-ms.date: 08/22/2019
+ms.date: 09/04/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: e36f009422307b3b70091775d2288ee710839172
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: fc3145ee0b60402026389863b94d21da4b3e4123
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013991"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70307757"
 ---
 ::: zone target="docs"
 
@@ -70,6 +70,24 @@ Verifique se seus dados estão nas contas de armazenamento antes de excluí-los 
       ![Grupo de recursos para discos gerenciados](media/data-box-disk-deploy-picked-up/resource-group-attached-managed-disk.png)
 
   - Se você copiou um VHDX, ou um VHD diferencial/dinâmico, o VHDX/VHD será carregado para a conta de armazenamento de preparo como um blob de blocos. Acesse sua **conta de armazenamento de preparo > Blobs** e selecione o contêiner apropriado - StandardSSD, StandardHDD ou PremiumSSD. Os VHDX/VHDs devem aparecer como blobs de blocos na conta de armazenamento de preparo.
+  
+::: zone-end
+
+::: zone target="chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>Verificar o carregamento de dados para o Azure
+
+Depois que os dados forem carregados no Azure, verifique se os seus dados estão nas contas de armazenamento antes de excluí-los da fonte. Seus dados podem estar em:
+
+- Suas contas de Armazenamento do Microsoft Azure. Quando você copia os dados para o Data Box, dependendo do tipo, eles são carregados em um dos caminhos a seguir em sua conta do Armazenamento do Azure.
+
+    - **Para blobs de blocos e blobs de páginas**: https://<nome_da_conta_de_armazenamento>.blob.core.windows.net/<containername>/files/a.txt
+
+    - **Para Arquivos do Azure**: https://<nome_da_conta_de_armazenamento>.file.core.windows.net/<sharename>/files/a.txt
+
+- Seus grupos de recursos de disco gerenciado. Ao criar discos gerenciados, os VHDs são carregados como blob de páginas e, em seguida, convertidos em discos gerenciados. Os discos gerenciados são anexados aos grupos de recursos especificados no momento da criação do pedido.
+
+::: zone-end
 
 Para verificar se os dados foram carregados no Azure, execute as seguintes etapas:
 
@@ -77,13 +95,15 @@ Para verificar se os dados foram carregados no Azure, execute as seguintes etapa
 2. Vá para **serviço Blob > Procurar blobs**. A lista de contêineres é apresentada. Correspondente à subpasta que você criou nas pastas *BlockBlob* e *PageBlob*, contêineres com o mesmo nome são criados em sua conta de armazenamento.
     Se os nomes das pastas não estiverem em conformidade com as convenções de nomenclatura do Azure, o carregamento de dados para o Azure falhará.
 
-4. Para verificar se todo o conjunto de dados foi carregado, use o Gerenciador de Armazenamento do Microsoft Azure. Anexe a conta de armazenamento correspondente ao pedido de aluguel do disco e, em seguida, observe a lista de contêineres de blob. Escolha um contêiner, clique em **...Mais** e, em seguida, clique em **Estatísticas da pasta**. No painel **Atividades**, as estatísticas dessa pasta, incluindo o número de blobs e o tamanho total do blob são exibidos. O tamanho total do blob em bytes deve corresponder ao tamanho do conjunto de dados.
+3. Para verificar se todo o conjunto de dados foi carregado, use o Gerenciador de Armazenamento do Microsoft Azure. Anexe a conta de armazenamento correspondente ao pedido do Data Box Disk e, em seguida, observe a lista de contêineres de blob. Escolha um contêiner, clique em **...Mais** e, em seguida, clique em **Estatísticas da pasta**. No painel **Atividades**, as estatísticas dessa pasta, incluindo o número de blobs e o tamanho total do blob são exibidos. O tamanho total do blob em bytes deve corresponder ao tamanho do conjunto de dados.
 
     ![Estatísticas da pasta no Gerenciador de Armazenamento](media/data-box-disk-deploy-picked-up/folder-statistics-storage-explorer.png)
 
 ## <a name="erasure-of-data-from-data-box-disk"></a>Eliminar dados do Data Box Disk
 
 Depois que a cópia for concluída e você tiver verificado que os dados estão na conta de armazenamento do Azure, os discos serão apagados com segurança seguindo o padrão do NIST.
+
+::: zone target="docs"
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -101,22 +121,6 @@ Avance para a próxima instrução para saber como gerenciar o Data Box Disk por
 
 ::: zone-end
 
-::: zone target="chromeless"
 
-# <a name="verify-data-upload-to-azure"></a>Verificar o carregamento de dados para o Azure
-
-Depois que os dados forem carregados no Azure, verifique se os seus dados estão nas contas de armazenamento antes de excluí-los da fonte. Seus dados podem estar em:
-
-- Suas contas de Armazenamento do Microsoft Azure. Quando você copia os dados para o Data Box, dependendo do tipo, eles são carregados em um dos caminhos a seguir em sua conta do Armazenamento do Azure.
-
-    - **Para blobs de blocos e blobs de páginas**: https://<nome_da_conta_de_armazenamento>.blob.core.windows.net/<containername>/files/a.txt
-
-    - **Para Arquivos do Azure**: https://<nome_da_conta_de_armazenamento>.file.core.windows.net/<sharename>/files/a.txt
-
-    Como alternativa, você pode acessar sua conta de Armazenamento do Azure no portal do Azure e navegar de lá.
-
-- Seus grupos de recursos de disco gerenciado. Ao criar discos gerenciados, os VHDs são carregados como blob de páginas e, em seguida, convertidos em discos gerenciados. Os discos gerenciados são anexados aos grupos de recursos especificados no momento da criação do pedido.
-
-::: zone-end
 
 

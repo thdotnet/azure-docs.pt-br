@@ -1,19 +1,18 @@
 ---
 title: Exemplos de consulta avançada
-description: Use o Azure Resource Graph para executar algumas consultas avançadas, incluindo a capacidade do VMSS, listagem de todas as marcas usadas e as máquinas virtuais correspondentes com expressões regulares.
+description: Use o Azure Resource Graph para executar algumas consultas avançadas, incluindo a capacidade do conjunto de dimensionamento de máquinas virtuais, listagem de todas as marcas usadas e as máquinas virtuais correspondentes com expressões regulares.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 01/23/2019
+ms.date: 08/29/2019
 ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
-ms.custom: seodec18
-ms.openlocfilehash: 7684ae6b4ddb6320efc62ef6f9963bef1b9a66fa
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 33c67f77a26e2a4fc97d7f5483aad53c121e117b
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691973"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70239010"
 ---
 # <a name="advanced-resource-graph-queries"></a>Consultas do Microsoft Azure Active Directory Graph
 
@@ -25,10 +24,9 @@ Vamos percorrer as seguintes consultas avançadas:
 > - [Obter capacidade e tamanho do conjunto de dimensionamento de máquina virtual](#vmss-capacity)
 > - [Listar todos os nomes de marca](#list-all-tags)
 > - [Máquinas virtuais correspondidas por regex](#vm-regex)
+> - [Incluir os nomes de locatário e assinatura com DisplayNames](#displaynames)
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free) antes de começar.
-
-[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="language-support"></a>Suporte ao idioma
 
@@ -72,8 +70,8 @@ Search-AzGraph -Query "project tags | summarize buildschema(tags)"
 
 ## <a name="vm-regex"></a>Máquinas virtuais correspondidas por regex
 
-Essa consulta procura por máquinas virtuais que correspondem a um [expressão regular](/dotnet/standard/base-types/regular-expression-language-quick-reference) (conhecida como _regex_).
-O **corresponde ao regex \@** nos permite definir o regex para correspondência, que é `^Contoso(.*)[0-9]+$`. Essa definição de regex é explicada como:
+Essa consulta procura por máquinas virtuais que correspondem a um [expressão regular](/dotnet/standard/base-types/regular-expression-language-quick-reference) (conhecida como _regex_). O **corresponde ao regex \@** nos permite definir o regex para correspondência, que é `^Contoso(.*)[0-9]+$`.
+Essa definição de regex é explicada como:
 
 - `^` - a correspondência deve começar no início da cadeia de caracteres.
 - `Contoso` - a cadeia de caracteres com diferenciação de maiúsculas e minúsculas.
@@ -99,6 +97,22 @@ az graph query -q "where type =~ 'microsoft.compute/virtualmachines' and name ma
 ```azurepowershell-interactive
 Search-AzGraph -Query "where type =~ 'microsoft.compute/virtualmachines' and name matches regex @'^Contoso(.*)[0-9]+$' | project name | order by name asc"
 ```
+
+## <a name="displaynames"></a>Incluir os nomes de locatário e assinatura com DisplayNames
+
+Essa consulta usa o novo parâmetro **Include** com a opção _DisplayNames_ para adicionar **subscriptionDisplayName** e **tenantDisplayName** aos resultados. Esse parâmetro está disponível apenas para a CLI do Azure e o Azure PowerShell.
+
+```azurecli-interactive
+az graph query -q "limit 1" --include displayNames
+```
+
+```azurepowershell-interactive
+Search-AzGraph -Query "limit 1" -Include DisplayNames
+```
+
+> [!NOTE]
+> Se a consulta não usar **project** para especificar as propriedades retornadas, **subscriptionDisplayName** e **tenantDisplayName** serão incluídos automaticamente nos resultados.
+> Se a consulta usar **project**, cada um dos campos _DisplayName_ deverá ser incluído explicitamente no **project** ou eles não serão retornados nos resultados, mesmo quando o parâmetro **Include** for usado.
 
 ## <a name="next-steps"></a>Próximas etapas
 

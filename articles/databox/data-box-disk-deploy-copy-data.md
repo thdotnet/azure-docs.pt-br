@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 30f9597e6a42b8bdd35a7d69594a2feb16edae30
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c309a7cb18086526b23c875b41d9d4f4db4bc213
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126177"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70231383"
 ---
 ::: zone target="docs"
 
@@ -26,9 +27,11 @@ ms.locfileid: "70126177"
 
 ## <a name="copy-data-to-azure-data-box-disk-and-validate"></a>Copiar dados para o Azure Data Box Disk e validá-los
 
-Depois que os discos estiverem conectados e desbloqueados, você poderá copiar dados do servidor de dados de origem para os discos. Depois que a cópia de dados for concluída, você deverá os dados copiados. A validação garante que seja feito upload dos dados com êxito no Azure posteriormente.
+Depois que os discos estiverem conectados e desbloqueados, você poderá copiar dados do servidor de dados de origem para os discos. Após a cópia dos dados ser concluída, valide-os para garantir que eles sejam carregados com êxito no Azure.
 
 ::: zone-end
+
+::: zone target="docs"
 
 Este tutorial descreve como copiar dados do computador host e gerar somas de verificação para verificar a integridade dos dados.
 
@@ -333,6 +336,6 @@ Execute as etapas a seguir para verificar os dados.
 1. Execute `DataBoxDiskValidation.cmd` para validação de soma de verificação na pasta *DataBoxDiskImport* da unidade.
 2. Use a opção 2 para validar os arquivos e gerar somas de verificação. Dependendo do tamanho dos dados, esta etapa pode demorar um pouco. Se houver erros durante a validação e a geração da soma de verificação, você será notificado e também será fornecido um link para os logs de erros.
 
-    Para obter mais informações sobre a validação de dados, confira [Validar dados](data-box-disk-deploy-copy-data.md#validate-data). Caso encontre erros durante a validação, confira [Solução de problemas de erros de validação](data-box-disk-troubleshoot.md).
+    Para obter mais informações sobre a validação de dados, confira [Validar dados](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-copy-data#validate-data). Caso encontre erros durante a validação, confira [Solução de problemas de erros de validação](data-box-disk-troubleshoot.md).
 
 ::: zone-end

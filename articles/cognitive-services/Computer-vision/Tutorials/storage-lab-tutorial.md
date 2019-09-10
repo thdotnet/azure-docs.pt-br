@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 00cca0cbf500ea4e884a9f9334896a18fe7b0978
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: c125941414c73b14138f2b2fc15e470d9ed2d905
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68597859"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70137551"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Tutorial: Use a Pesquisa Visual Computacional para gerar metadados de imagem no Armazenamento do Azure
 
@@ -46,7 +46,8 @@ Você precisará criar um recurso da Pesquisa Visual Computacional para sua cont
 
 1. Depois vá ao menu do grupo de recursos e clique na assinatura da API da Pesquisa Visual Computacional recém-criada. Copie a URL em **Ponto de extremidade** para algum lugar em que poderá recuperá-la com facilidade em pouco tempo. Em seguida, clique em **Mostrar chaves de acesso**.
 
-    ![Página do portal do Azure a URL de ponto de extremidade e o link de chaves de acesso delineados](../Images/copy-vision-endpoint.png)
+    ![Página do portal do Azure a URL de ponto de extremidade e o link de chaves de acesso delineados](../Images/copy-vision-endpoint.png) [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
+
 
 1. Na próxima janela, copie o valor de **KEY 1** para a área de transferência.
 

@@ -1,190 +1,221 @@
 ---
-title: 'Início Rápido: Definir e recuperar um segredo do Azure Key Vault usando um aplicativo Web do .NET – Azure Key Vault | Microsoft Docs'
-description: Neste início rápido, você define e recupera um segredo do Azure Key Vault usando um aplicativo Web do .NET
-services: key-vault
+title: Início Rápido – Biblioteca de clientes do Azure Key Vault para .NET
+description: Fornece critérios de formato e de conteúdo para escrever inícios rápidos para bibliotecas de clientes do SDK do Azure.
 author: msmbaldwin
-manager: sumedhb
+ms.author: mbaldwin
+ms.date: 05/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.date: 01/02/2019
-ms.author: barclayn
-ms.custom: mvc
-ms.openlocfilehash: 9ddb1db9b39ac942a3476f50aad39c98198b2a18
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: c67b24d57117a248559424497939a04ce347658c
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68958607"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70308951"
 ---
-# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Início Rápido: Definir e recuperar um segredo do Azure Key Vault usando um aplicativo Web do .NET
+# <a name="quickstart-azure-key-vault-client-library-for-net"></a>Início Rápido: Biblioteca de clientes do Azure Key Vault para .NET
 
-Neste tutorial, siga as etapas para obter um aplicativo Web do Azure para ler informações do Azure Key Vault usando identidades gerenciadas dos recursos do Azure. Usar o Key Vault ajuda a proteger as informações. Você aprenderá como:
+Introdução à biblioteca de clientes do Azure Key Vault para .NET. Siga as etapas abaixo para instalar o pacote e testar o código de exemplo para tarefas básicas.
 
-* Crie um cofre da chave.
-* Armazenar um segredo no cofre de chaves.
-* Recuperar um segredo do cofre de chaves.
-* Criar um aplicativo Web do Azure.
-* Habilite uma [identidade de serviço gerenciada](../active-directory/managed-identities-azure-resources/overview.md) para o aplicativo Web.
-* Conceder as permissões necessárias para o aplicativo Web ler dados do cofre de chaves.
+O Cofre da Chave do Azure ajuda a proteger chaves criptográficas e segredos usados por aplicativos e serviços em nuvem. Use a biblioteca de clientes do Key Vault para .NET para:
 
-Antes de continuarmos, leia os [conceitos básicos para o Key Vault](key-vault-whatis.md#basic-concepts).
+- Aumentar a segurança e o controle sobre chaves e senhas.
+- Criar e importar chaves de criptografia em minutos.
+- Reduzir a latência com escala de nuvem e redundância global.
+- Simplificar e automatizar tarefas para certificados SSL/TLS.
+- Usar HSMs validados para os padrões FIPS 140-2 Nível 2.
 
->[!NOTE]
->O Key Vault é um repositório central para armazenar segredos de forma programática. Mas, para fazer isso, os aplicativos e usuários precisam autenticar primeiro o Key Vault, ou seja, introduzir um segredo. Seguindo as melhores práticas de segurança, esse primeiro segredo deve ser girado periodicamente. 
->
->Com as [identidades de serviço gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md), os aplicativos executados no Azure obtêm uma identidade gerenciada automaticamente pelo Azure. Isso ajuda a resolver o *problema de introdução do segredo* para que os usuários e aplicativos possam seguir as melhores práticas e não precisem se preocupar em girar o primeiro segredo.
+[Documentação de referência da API](/dotnet/api/overview/azure/key-vault?view=azure-dotnet) | [Código-fonte da biblioteca](https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/KeyVault) | [Pacote (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/)
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* No Windows:
-  * [Visual Studio 2019](https://www.microsoft.com/net/download/windows) com as cargas de trabalho a seguir:
-    * Desenvolvimento Web e ASP.NET
-    * Desenvolvimento multiplataforma com o .NET Core
-  * [SDK do .NET Core 2.1 ou posterior](https://www.microsoft.com/net/download/windows)
+* Uma assinatura do Azure – [crie uma gratuitamente](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [SDK do .NET Core 2.1 ou posterior](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+* [CLI do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) ou [Azure PowerShell](/powershell/azure/overview)
 
-* No Mac:
-  * Confira as [Novidades do Visual Studio para Mac](https://visualstudio.microsoft.com/vs/mac/).
+Este início rápido pressupõe que você esteja executando `dotnet`, a [CLI do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest) e comandos do Windows em um terminal do Windows (como o [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6), o [Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6) ou o [Azure Cloud Shell](https://shell.azure.com/)).
 
-* Todas as plataformas:
-  * Git ([download](https://git-scm.com/downloads)).
-  * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-  * [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) versão 2.0.4 ou posterior. Disponível para Windows, Mac e Linux.
+## <a name="setting-up"></a>Configurando
 
-## <a name="log-in-to-azure"></a>Fazer logon no Azure
+### <a name="create-new-net-console-app"></a>Criar um novo aplicativo de console do .NET
 
-Para fazer logon no Azure usando a CLI do Azure, digite:
+Crie um novo aplicativo .NET Core em seu IDE ou editor preferido.
+
+Em uma janela de console, use o comando `dotnet new` para criar um novo aplicativo do console com o nome `akv-dotnet`.
+
+
+```console
+dotnet new console -n akvdotnet
+```
+
+Altere o diretório para a pasta do aplicativo recém-criado. É possível criar o aplicativo com:
+
+```console
+dotnet build
+```
+
+A saída de compilação não deve conter nenhum aviso ou erro.
+
+```console
+Build succeeded.
+ 0 Warning(s)
+ 0 Error(s)
+```
+
+### <a name="install-the-package"></a>Instalar o pacote
+
+Na janela do console, instale a biblioteca de clientes do Azure Key Vault para .NET:
+
+```console
+dotnet add package Microsoft.Azure.KeyVault
+```
+
+Para este início rápido, também será necessário instalar os pacotes a seguir:
+
+```console
+dotnet add package System.Threading.Tasks
+dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory
+dotnet add package Microsoft.Azure.Management.ResourceManager.Fluent
+```
+
+### <a name="create-a-resource-group-and-key-vault"></a>Criar um grupo de recursos e um cofre de chaves
+
+Este início rápido usa um Azure Key Vault pré-criado. Você pode criar um cofre de chaves seguindo as etapas no [Início rápido da CLI do Azure](quick-create-cli.md), no [Início rápido do Azure PowerShell](quick-create-powershell.md) ou no [Início rápido do portal do Azure](quick-create-portal.md). Como alternativa, você pode simplesmente executar os comandos da CLI do Azure abaixo.
+
+> [!Important]
+> Cada Key Vault deve ter um nome exclusivo. O exemplo a seguir cria um Key Vault chamado *myKV*, mas você deve colocar um nome diferente e usar esse nome para este início rápido.
 
 ```azurecli
-az login
+az group create --name "myResourceGroup" -l "EastUS"
+
+az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
 ```
 
-## <a name="create-a-resource-group"></a>Criar um grupo de recursos
+### <a name="create-a-service-principal"></a>Criar uma entidade de serviço
 
-Crie um grupo de recursos usando o comando [az group create](/cli/azure/group#az-group-create). Um grupo de recursos do Azure é um contêiner lógico no qual os recursos do Azure são implantados e gerenciados.
-
-Selecione um nome para o grupo de recursos e preencha o espaço reservado.
-O exemplo a seguir cria um grupo de recursos no local Leste dos EUA:
+A maneira mais simples de autenticar um aplicativo .NET baseado em nuvem é com uma identidade gerenciada; confira [Autenticação serviço a serviço no Azure Key Vault usando o .NET](service-to-service-authentication.md) para obter detalhes. Para simplificar, no entanto, este início rápido cria um aplicativo de console .NET. Autenticar um aplicativo de área de trabalho com o Azure requer o uso de uma entidade de serviço.
+Crie uma entidade de serviço usando o comando [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) da CLI do Azure:
 
 ```azurecli
-# To list locations: az account list-locations --output table
-az group create --name "<YourResourceGroupName>" --location "East US"
+az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 ```
 
-O grupo de recursos que você acabou de criar é usado ao longo deste artigo.
+Essa operação retornará uma série de pares de chave/valor. 
 
-## <a name="create-a-key-vault"></a>Criar um cofre de chave
+```console
+{
+  "clientId": "7da18cae-779c-41fc-992e-0527854c6583",
+  "clientSecret": "b421b443-1669-4cd7-b5b1-394d5c945002",
+  "subscriptionId": "443e30da-feca-47c4-b68f-1636b75e16b3",
+  "tenantId": "35ad10f1-7799-4766-9acf-f2d946161b77",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+```
 
-Em seguida, você cria um cofre de chaves no grupo de recursos criado na etapa anterior. Forneça as seguintes informações:
+Anote a clientId, o clientSecret, a subscriptionId e a tenantId, pois usaremos essas informações na etapa [Autenticar em seu cofre de chaves](#authenticate-to-your-key-vault) abaixo.
 
-* Nome do cofre de chaves: O nome precisa ser uma cadeia de 3 a 24 caracteres e conter apenas 0-9, a-z, A-Z e um hífen (-).
-* Nome do grupo de recursos.
-* Localização: **Leste dos EUA**.
+Você também precisa da appID da entidade de serviço. Você pode encontrá-la executando [az ad sp list](https://docs.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list) com o parâmetro `--show-mine`:
 
 ```azurecli
-az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "East US"
+az ad sp list --show-mine
 ```
 
-Nesse ponto, sua conta do Azure é a única autorizada a executar qualquer operação nesse novo cofre.
+O `appID` aparece no JSON retornado:
 
-## <a name="add-a-secret-to-the-key-vault"></a>Adicionar um segredo ao cofre de chaves
+```json
+    "appId": "2cf5aa18-0100-445a-9438-0b93e577a3ed",
+```
 
-Estamos adicionando um segredo para ajudar a ilustrar como isso funciona. Você pode estar armazenando uma cadeia de conexão SQL ou qualquer outra informação que precise manter com segurança, mas disponibilizar para o aplicativo.
+#### <a name="give-the-service-principal-access-to-your-key-vault"></a>Fornecer acesso à entidade de serviço ao seu cofre de chaves
 
-Digite os comandos a seguir para criar um segredo no cofre de chaves chamado **AppSecret**. Esse segredo armazenará o valor **MySecret**.
+Crie uma política de acesso para seu cofre de chaves que concede permissão para sua entidade de serviço. Isso é feito usando o comando [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy). Vamos dar à entidade de serviço permissões para obter, listar e definir chaves e segredos.
 
 ```azurecli
-az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
+az keyvault set-policy -n <your-unique-keyvault-name> --spn <appid-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
 ```
 
-Para exibir o valor contido no segredo como texto sem formatação:
+## <a name="object-model"></a>Modelo de objeto
+
+A biblioteca de clientes do Azure Key Vault para .NET permite gerenciar chaves e ativos relacionados, como certificados e segredos. Os exemplos de código abaixo mostrarão como definir e como recuperar um segredo.
+
+Todo o aplicativo de console está disponível em https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/akvdotnet.
+
+## <a name="code-examples"></a>Exemplos de código
+
+### <a name="add-directives"></a>Adicionar diretivas
+
+Adicione as seguintes diretivas à parte superior de seu código:
+
+[!code-csharp[Directives](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=directives)]
+
+### <a name="authenticate-to-your-key-vault"></a>Autenticar no cofre de chaves
+
+Este início rápido do .NET usa variáveis de ambiente para armazenar credenciais que não deveriam, mas acrescentam código. 
+
+Antes de compilar e executar seu aplicativo, use o comando `setx` para definir as variáveis de ambiente `akvClientId`, `akvClientSecret`, `akvTenantId` e `akvSubscriptionId` como os valores que você anotou acima.
+
+```console
+setx akvClientId <your-clientID>
+
+setx akvClientSecret <your-clientSecret>
+
+setx akvTenantId <your-tentantId>
+
+setx akvSubscriptionId <your-subscriptionId>
+````
+
+Sempre que chamar `setx`, você deverá receber uma resposta de "ÊXITO: o valor especificado foi salvo. "
+
+Atribua essas variáveis de ambiente a cadeias de caracteres em seu código e, em seguida, autentique seu aplicativo passando-as para a [classe KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient):
+
+[!code-csharp[Authentication](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=authentication)]
+
+### <a name="save-a-secret"></a>Salvar um segredo
+
+Agora que seu aplicativo está autenticado, você pode colocar um segredo em seu cofre de chaves usando o [método SetSecretAsync](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.setsecretasync). Isso requer a URL do cofre de chaves, que está no formato `https://<your-unique-keyvault-name>.vault.azure.net/secrets/`. Também requer um nome para o segredo – estamos usando "mySecret".  Talvez você queira atribuir essas cadeias de caracteres a variáveis para reutilização.
+
+[!code-csharp[Set secret](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=setsecret)]
+
+Você pode verificar se o segredo foi definido usando o comando [az keyvault secret show](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-show):
 
 ```azurecli
-az keyvault secret show --name "AppSecret" --vault-name "<YourKeyVaultName>"
+az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
 ```
 
-Esse comando mostra as informações secretas, incluindo o URI. Após concluir essas etapas, você deverá ter um URI para um segredo em um cofre de chaves. Anote essa informação. Ela será necessária em uma etapa posterior.
+### <a name="retrieve-a-secret"></a>Recuperar um segredo
 
-## <a name="clone-the-repo"></a>Clonar o repositório
+Agora, você pode recuperar o valor definido anteriormente com o [método GetSecretAsync](/dotnet/api/microsoft.azure.keyvault.keyvaultclientextensions.getsecretasync)
 
-Clone o repositório para fazer uma cópia local em que você possa editar o código-fonte. Execute o comando a seguir:
+[!code-csharp[Get secret](~/samples-key-vault-dotnet-quickstart/akvdotnet/Program.cs?name=getsecret)]
 
-```
-git clone https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart.git
-```
-
-## <a name="open-and-edit-the-solution"></a>Abrir e editar a solução
-
-Edite o arquivo program.cs para executar o exemplo com o nome específico de seu cofre de chaves:
-
-1. Navegue até a pasta key-vault-dotnet-core-quickstart.
-2. Abra o arquivo key-vault-dotnet-core-quickstart.sln no Visual Studio 2019.
-3. Abra o arquivo Program.cs e atualize o espaço reservado *YourKeyVaultName* com o nome do cofre de chaves criado anteriormente.
-
-A solução usa as bibliotecas NuGet [AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) e [KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault).
-
-## <a name="run-the-app"></a>Execute o aplicativo
-
-No menu principal do Visual Studio 2019, escolha **Depurar** > **Iniciar sem depuração**. Quando o navegador aparecer, navegue até a página **Sobre**. O valor para o **AppSecret** é exibido.
-
-## <a name="publish-the-web-application-to-azure"></a>Publicar o aplicativo Web no Azure
-
-Publique esse aplicativo no Azure para vê-lo funcionando como um aplicativo Web e também verificar se é possível buscar o valor do segredo:
-
-1. No Visual Studio, selecione o projeto **key-vault-dotnet-core-quickstart**.
-2. Selecione **Publicar** > **Iniciar**.
-3. Crie um novo **Serviço de Aplicativo** e selecione **Publicar**.
-4. Altere o nome do aplicativo para **keyvaultdotnetcorequickstart**.
-5. Selecione **Criar**.
-
->[!VIDEO https://sec.ch9.ms/ch9/e93d/a6ac417f-2e63-4125-a37a-8f34bf0fe93d/KeyVault_high.mp4]
-
-## <a name="enable-a-managed-identity-for-the-web-app"></a>Habilitar uma identidade gerenciada para o aplicativo Web
-
-O Azure Key Vault fornece uma maneira de armazenar com segurança as credenciais e outras chaves e segredos, mas seu código precisa autenticar para o Key Vault para recuperá-los. [Visão geral das identidades gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md) facilita a solução desse problema, fornecendo aos serviços do Azure uma identidade gerenciada automaticamente no Azure AD (Azure Active Directory). Você pode usar essa identidade para autenticar em qualquer serviço que dá suporte à autenticação do Azure AD, incluindo o Key Vault, sem ter que todas as credenciais no seu código.
-
-Na CLI do Azure, execute o comando de atribuir identidade para criar a identidade para esse aplicativo:
-
-   ```azurecli
-   az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group "<YourResourceGroupName>"
-   ```
-
->[!NOTE]
->O comando neste procedimento é o equivalente a acessar o portal e mudar a configuração **Identidade/Atribuída pelo sistema** para **Ativada** nas propriedades do aplicativo Web.
-
-## <a name="assign-permissions-to-your-application-to-read-secrets-from-key-vault"></a>Atribuir permissões ao aplicativo para ler segredos do Key Vault
-
-Anote a saída quando você publicar o aplicativo no Azure. Ela deve ter o seguinte formato:
-        
-        {
-          "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-          "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-          "type": "SystemAssigned"
-        }
-        
-Em seguida, execute o comando usando o nome do seu cofre de chaves e o valor de **PrincipalId** copiado acima:
-
-```azurecli
-
-az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --secret-permissions get list
-
-```
-
-Agora, ao executar o aplicativo, você verá o valor do segredo recuperado. No comando anterior, você está dando permissões para a identidade do serviço de aplicativo para executar operações **get** e **list** no cofre de chaves.
+Agora, seu segredo está salvo como `keyvaultSecret.Value;`.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
-Exclua o grupo de recursos, a máquina virtual e todos os recursos relacionados quando não precisar mais deles. Para fazer isso, selecione o grupo de recursos do cofre de chaves e selecione **Excluir**.
 
-Exclua o cofre de chaves usando o comando [az keyvault delete](https://docs.microsoft.com/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-delete):
+Quando não for mais necessário, você poderá usar a CLI do Azure ou o Azure PowerShell para remover seu cofre de chaves e o grupo de recursos correspondente.
 
 ```azurecli
-az keyvault delete --name
-                   [--resource-group]
-                   [--subscription]
+az group delete -g "myResourceGroup" -l "EastUS" 
+```
+
+```azurepowershell
+Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
 
-> [!div class="nextstepaction"]
-> [Saiba mais sobre o Key Vault](key-vault-whatis.md)
+Neste início rápido, você criou um cofre de chaves, armazenou um segredo e recuperou esse segredo. Veja o [aplicativo de console completo no GitHub](https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/akvdotnet).
+
+Para saber mais sobre o Key Vault e como integrá-lo a seus aplicativos, confira os artigos abaixo.
+
+- Implementar a [Autenticação serviço a serviço no Azure Key Vault usando o .NET](service-to-service-authentication.md)
+- Leia uma [Visão geral do Azure Key Vault](key-vault-overview.md)
+- Confira o [Guia do desenvolvedor do Azure Key Vault](key-vault-developers-guide.md)
+- Saiba mais sobre [chaves, segredos e certificados](about-keys-secrets-and-certificates.md)
+- Examine as [Melhores práticas do Azure Key Vault](key-vault-best-practices.md)

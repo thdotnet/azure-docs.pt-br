@@ -1,31 +1,31 @@
 ---
-title: Criar um serviço Azure Blockchain usando o portal do Azure
-description: Use o serviço Azure Blockchain para criar um membro do consórcio.
+title: Criar um membro do blockchain do Azure Blockchain Service usando o portal do Azure
+description: Use o Azure Blockchain Service para criar um membro do blockchain.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/29/2019
+ms.date: 08/29/2019
 ms.topic: quickstart
 ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
-ms.openlocfilehash: 5cb236dc38ae41b202004b7e4806d8129378cfdb
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 9f58379acd88fd93a00edc11b73b41dc3d6226a5
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417503"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70241033"
 ---
-# <a name="quickstart-create-an-azure-blockchain-service-using-the-azure-portal"></a>Início Rápido: Criar um serviço Azure Blockchain usando o portal do Azure
+# <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-the-azure-portal"></a>Início Rápido: Criar um membro do blockchain do Azure Blockchain Service usando o portal do Azure
 
-O serviço Azure Blockchain é uma plataforma de blockchain na qual você pode executar sua lógica de negócios em um contrato inteligente. Este Início Rápido mostra como começar por meio da criação de um razão gerenciado usando o portal do Azure.
+O serviço Azure Blockchain é uma plataforma de blockchain na qual você pode executar sua lógica de negócios em um contrato inteligente. Este início rápido mostra como começar a criar um membro do blockchain usando o portal do Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-a-managed-ledger"></a>Criar um razão gerenciado
+## <a name="create-a-blockchain-member"></a>Criar um membro do blockchain
 
-O serviço Azure Blockchain é criado com um conjunto definido de recursos de computação e armazenamento.
+Crie um membro do blockchain que executa o protocolo de razão do Quorum em um consórcio novo ou existente.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Selecione **Criar um recurso** no canto superior esquerdo do portal do Azure.
@@ -36,9 +36,9 @@ O serviço Azure Blockchain é criado com um conjunto definido de recursos de co
 
     Configuração | DESCRIÇÃO
     --------|------------
-    Membro do Blockchain | Escolha um nome exclusivo que identifique o membro do serviço Azure Blockchain. O nome do membro do blockchain só pode conter letras minúsculas e números. O primeiro caractere precisa ser uma letra. O valor precisa ter entre 2 e 20 caracteres.
-    Assinatura | Selecione a assinatura do Azure que deseja usar para o serviço. Se você tem várias assinaturas, escolha a assinatura na qual recebe a cobrança do recurso.
-    Grupo de recursos | Um novo nome do grupo de recursos ou um existente de sua assinatura.
+    Membro do Blockchain | Escolha um nome exclusivo que identifica o membro do blockchain do Azure Blockchain Service. O nome do membro do blockchain só pode conter letras minúsculas e números. O primeiro caractere precisa ser uma letra. O valor precisa ter entre 2 e 20 caracteres.
+    Subscription | Selecione a assinatura do Azure que deseja usar para o serviço. Se você tem várias assinaturas, escolha a assinatura na qual recebe a cobrança do recurso.
+    Resource group | Um novo nome do grupo de recursos ou um existente de sua assinatura.
     Região | A localização precisa ser a mesma para todos os membros do consórcio.
     Senha da conta de membro | A senha da conta do membro é usada para criptografar a chave privada para a conta do Ethereum criada para o membro. Use a conta do membro e a senha da conta do membro para o gerenciamento do consórcio.
     Nome do consórcio | Para um novo consórcio, insira um nome exclusivo. Se estiver ingressando em um consórcio por meio de um convite, o valor será o consórcio no qual você está ingressando.

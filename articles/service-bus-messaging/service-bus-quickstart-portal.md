@@ -3,18 +3,17 @@ title: Início Rápido – Usar o portal do Azure para criar uma fila do Barrame
 description: Neste início rápido, você aprenderá a criar uma fila do Barramento de Serviço usando o portal do Azure. Em seguida, você usará um aplicativo cliente de exemplo para enviar e receber mensagens da fila.
 services: service-bus-messaging
 author: spelluru
-manager: timlt
 ms.service: service-bus-messaging
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 04/10/2019
+ms.date: 09/03/2019
 ms.author: spelluru
-ms.openlocfilehash: 315f8d30b7c7559947c599edd0e18eaa5a99ac22
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: dc9b8260a8ddde6633bc9215d9efff7aaaa71ad3
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513628"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70242389"
 ---
 # <a name="quickstart-use-azure-portal-to-create-a-service-bus-queue"></a>Início Rápido: Usar o portal do Azure para criar uma fila do Barramento de Serviço
 Este início rápido descreve como enviar e receber mensagens de e para uma fila do Barramento de Serviço, usando o [portal do Azure][Azure portal] para criar uma fila e um namespace de mensagens nesse namespace e obter as credenciais de autorização nesse namespace. O procedimento mostra como enviar e receber mensagens dessa fila usando a [	Biblioteca do .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus).
@@ -34,6 +33,18 @@ Para concluir este tutorial, verifique se você tem o seguinte instalado:
 [!INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
 ## <a name="send-and-receive-messages"></a>Enviar e receber mensagens
+
+> [!NOTE]
+> A amostra usada nesta seção para enviar e receber mensagens é uma amostra do .NET. Para obter amostras para enviar/receber mensagens usando outras linguagens de programação, confira [Amostras do Barramento de Serviço](service-bus-samples.md). 
+> 
+> Para obter instruções passo a passo de como enviar/receber mensagens usando várias linguagens de programação, confira os inícios rápidos a seguir:
+> - [.NET](service-bus-dotnet-get-started-with-queues.md)
+> - [Java](service-bus-java-how-to-use-queues.md)
+> - [Node.js usando o pacote azure/service-bus](service-bus-nodejs-how-to-use-queues-new-package.md)
+> - [Node.js usando o pacote azure-sb](service-bus-nodejs-how-to-use-queues.md)
+> - [PHP](service-bus-php-how-to-use-queues.md)
+> - [Python](service-bus-python-how-to-use-queues.md)
+> - [Ruby](service-bus-ruby-how-to-use-queues.md)
 
 Depois que o namespace e a fila forem provisionados e você tiver as credenciais necessárias, estará pronto para enviar e receber mensagens. É possível examinar o código [nesta pasta de exemplo do GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/TopicFilters).
 

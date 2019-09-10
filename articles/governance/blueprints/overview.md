@@ -3,16 +3,16 @@ title: Visão geral do Azure Blueprint
 description: Entenda como o serviço do Azure Blueprints permite criar, definir e implantar artefatos no seu ambiente do Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 02/08/2019
+ms.date: 08/26/2019
 ms.topic: overview
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: be7e3043172f988a429bbf02dec08bfbbc1a70b7
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 631aa956573fd611988030af8ea7e34c6c266045
+ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848434"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70146112"
 ---
 # <a name="overview-of-the-azure-blueprints-service"></a>Visão geral do serviço do Azure Blueprints
 
@@ -106,14 +106,23 @@ Para atribuir ou desatribuir um plano gráfico, sua conta precisa das seguintes 
 > [!NOTE]
 > Como as atribuições de especificações técnicas são criadas em uma assinatura, atribua o plano gráfico e cancelar a atribuição de permissões devem ser concedidas em um escopo de assinatura ou ser herdadas para um escopo de assinatura.
 
-Todas as permissões acima são incluídas na função **Proprietário**. A função **Colaborador** precisa das permissões para criar blueprint e excluir blueprint, mas não tem permissões de atribuição de blueprint. Se essas funções internas não se ajustarem às suas necessidades de segurança, considere a criação de uma [função personalizada](../../role-based-access-control/custom-roles.md).
+As seguintes funções internas estão disponíveis:
+
+|Função RBAC | DESCRIÇÃO |
+|-|-|
+|[Proprietário](../../role-based-access-control/built-in-roles.md#owner) | Além de outras permissões, inclui todas as permissões relacionadas ao Azure Blueprint. |
+|[Colaborador](../../role-based-access-control/built-in-roles.md#contributor) | Além de outras permissões, pode criar e excluir definições de blueprint, mas não tem permissões de atribuição de blueprint. |
+|[Colaborador do Blueprint](../../role-based-access-control/built-in-roles.md#blueprint-contributor) | Pode gerenciar definições de blueprint, mas não as atribuir. |
+|[Operador do Blueprint](../../role-based-access-control/built-in-roles.md#blueprint-operator) | Pode atribuir blueprints publicados existentes, mas não pode criar definições de blueprint. A atribuição de blueprint só funcionará se a atribuição for concluída com uma identidade gerenciada atribuída pelo usuário. |
+
+Se essas funções internas não se ajustarem às suas necessidades de segurança, considere a criação de uma [função personalizada](../../role-based-access-control/custom-roles.md).
 
 > [!NOTE]
 > Se estiver usando uma identidade gerenciada atribuída pelo sistema, a entidade de serviço para o Azure BluePrints requer a função **Proprietário** na assinatura atribuída para habilitar a implantação. Se estiver usando o portal, essa função é concedida automaticamente e revogada para a implantação. Se usando a API REST, essa função deve ser concedida manualmente, mas é revogada ainda automaticamente após a conclusão da implantação. Se estiver usando uma identidade gerenciada atribuída pelo usuário, somente o usuário que está criando a atribuição de especificação técnica precisa de permissões de **Proprietário**.
 
 ## <a name="naming-limits"></a>Limites de nomenclatura
 
-A seguir está uma lista de limitações que existem para determinados campos:
+As seguintes limitações existem para determinados campos:
 
 |Objeto|Campo|Caracteres Permitidos|Máx. Comprimento|
 |-|-|-|-|

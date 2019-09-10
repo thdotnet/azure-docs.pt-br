@@ -6,17 +6,29 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: tutorial
-ms.date: 07/03/2019
+ms.date: 09/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 84db33e4c7ac612353c590ac9d2904ac3bc48d38
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.localizationpriority: high
+ms.openlocfilehash: e438fb38afb649f6f4c7f595059ef64800977242
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592387"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70240341"
 ---
+::: zone target = "docs"
+
 # <a name="tutorial-return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Tutorial: Devolver o Azure Data Box Heavy e verificar o upload de dados no Azure
 
+::: zone-end
+
+::: zone target = "chromeless"
+
+# <a name="return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Devolver o Azure Data Box Heavy e verificar o upload de dados no Azure
+
+::: zone-end
+
+::: zone target = "docs"
 
 Este tutorial descreve como devolver o Azure Data Box Heavy e verificar os dados carregados no Azure.
 
@@ -36,9 +48,25 @@ Antes de começar, verifique se:
 - Você concluiu o [Tutorial: Copiar dados para o Azure Data Box e verificá-los](data-box-heavy-deploy-copy-data.md).
 - Trabalhos de cópia estão concluídos. A Preparação para o envio não poderá ser executada se os trabalhos de cópia estiverem em andamento.
 
+
 ## <a name="prepare-to-ship"></a>Preparar para o envio
 
 [!INCLUDE [data-box-heavy-prepare-to-ship](../../includes/data-box-heavy-prepare-to-ship.md)]
+
+::: zone-end
+
+::: zone target = "chromeless"
+
+## <a name="prepare-to-ship"></a>Preparar para o envio
+
+Antes da preparação para o envio, verifique se os trabalhos de cópia foram concluídos.
+
+1. Acesse a página de Preparar para o envio na IU da Web local e inicie a preparação para o envio.
+2. Desligue o dispositivo por meio da interface do usuário da Web local. Remova os cabos do dispositivo.
+
+Agora, você está pronto para enviar o dispositivo de volta.
+
+::: zone-end
 
 ## <a name="ship-data-box-heavy-back"></a>Devolver o Data Box Heavy
 
@@ -50,6 +78,8 @@ Antes de começar, verifique se:
     3. Certifique-se de que a etiqueta de remessa é exibida com destaque no exterior da remessa.
     4. Lembre-se de remover do dispositivo as etiquetas de remessa antigas da remessa anterior.
 3. Após a retirada e o exame do Data Box Heavy pela transportadora, o status do pedido no portal será atualizado para **Retirado**. Uma ID de rastreamento também é exibida.
+
+::: zone target = "docs"
 
 ## <a name="verify-data-upload-to-azure"></a>Verificar o carregamento de dados para o Azure
 
@@ -79,10 +109,25 @@ Verifique se seus dados estão carregados no Azure antes de excluí-los da fonte
         ![Disco gerenciado anexado aos grupos de recursos](media/data-box-deploy-copy-data-from-vhds/managed-disks-resource-group.png)
 
     - Se você copiou um VHDX, ou um VHD diferencial/dinâmico, o VHDX/VHD será carregado para a conta de armazenamento de preparo como um blob de páginas, mas a conversão de VHD para as falhas de disco gerenciado. Acesse sua **Conta de armazenamento de preparo > Blobs** e selecione o contêiner apropriado - SSD Standard, HDD Standard ou SSD Premium. Os VHDs serão carregados como blob de páginas na conta de armazenamento temporário.
+    
+::: zone-end
+
+::: zone target = "chromeless"
+
+## <a name="verify-data-upload-to-azure"></a>Verificar o carregamento de dados para o Azure
+
+Quando o dispositivo Data Box Heavy estiver conectado à rede de datacenter do Azure, o upload de dados do Azure será iniciado automaticamente. O serviço Data Box notifica que a cópia de dados foi concluída por meio do portal do Azure.
+
+- Verifique se há logs de erros para quaisquer falhas e tome as medidas apropriadas.
+- Verifique se seus dados estão nas contas de armazenamento antes de excluí-los da fonte.
+
+::: zone-end
 
 ## <a name="erasure-of-data-from-data-box-heavy"></a>Eliminar dados do Data Box Heavy
  
 Após a conclusão do upload no Azure, o Data Box apaga os dados nos discos de acordo com as [diretrizes NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi). Após a conclusão da eliminação, você poderá [Baixar o histórico de pedidos](data-box-portal-admin.md#download-order-history).
+
+::: zone target = "docs"
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -99,5 +144,7 @@ Avance para o artigo a seguir para saber como gerenciar o Data Box Heavy por mei
 
 > [!div class="nextstepaction"]
 > [Usar a interface do usuário Web local para administrar o Azure Data Box](./data-box-local-web-ui-admin.md)
+
+::: zone-end
 
 

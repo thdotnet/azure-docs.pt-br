@@ -272,6 +272,6 @@ Para fornecer feedback, use a opção de feedback.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para saber mais sobre como a correlação funciona em Application Insights consulte o [artigo de correlação de https://docs.microsoft.com/azure/application-insights/application-insights-correlation) telemetria] (.
+* Para saber mais sobre como a correlação funciona em Application Insights consulte o [artigo de correlação de telemetria](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
 * A [experiência de diagnóstico de transação de ponta a ponta](transaction-diagnostics.md) correlaciona a telemetria do lado do servidor em todos os seus Application insights componentes monitorados em uma única exibição.
 * Para cenários de correlação avançada em ASP.NET Core e ASP.NET, consulte o artigo [rastrear operações personalizadas](custom-operations-tracking.md) .

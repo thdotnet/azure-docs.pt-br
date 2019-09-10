@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: quickstart
-ms.date: 08/28/2019
+ms.date: 09/03/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: cbc55433517174c8080b941ca8526e5a4fd3427d
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: b07adc955b7904c6e6a3278480cec5a2be91ec35
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126008"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70232900"
 ---
 ::: zone target="docs"
 
@@ -40,7 +41,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ::: zone target="chromeless"
 
-Este guia descreve como implantar o Azure Data Box Disk no portal do Azure. As etapas incluem examinar os pré-requisitos, desbloquear os discos, conectar e copiar dados para discos para carregá-los no Azure.
+Este guia descreve as etapas necessárias para usar o Azure Data Box Disk no portal do Azure. Este guia ajuda a responder às perguntas a seguir.
 
 ::: zone-end
 
@@ -60,17 +61,16 @@ Entre no Portal do Azure em [https://aka.ms/azuredataboxfromdiskdocs](https://ak
 
 ::: zone target="chromeless"
 
-### <a name="prerequisites"></a>Pré-requisitos
-
-- Você fez o pedido para o Data Box Disk usando o [Tutorial: Solicitar o Azure Data Box Disk](data-box-disk-deploy-ordered.md).
-- Você recebeu os discos e o status do trabalho o portal foi atualizado para **Entregue**.
-- Você verificou o número de discos recebidos e tem um cabo de conexão por disco.
-- Você tem um computador cliente disponível do qual você pode copiar os dados. Computador cliente deve:
-
-    - Executar um [sistema operacional com suporte](data-box-disk-system-requirements.md#supported-operating-systems-for-clients).
-    - Ter outro [software obrigatório](data-box-disk-system-requirements.md#other-required-software-for-windows-clients) instalado se for um cliente do Windows.
+> [!div class="checklist"]
+>
+> - **Examinar os pré-requisitos**: verifique o número de discos e cabos, o sistema operacional e outros softwares.
+> - **Conectar e desbloquear**: conecte o dispositivo e desbloqueie o disco para copiar os dados.
+> - **Copiar dados para o disco e validá-los**: copie dados para os discos nas pastas pré-criadas.
+> - **Devolver os discos**: devolva os discos para o datacenter do Azure em que os dados foram carregados em sua conta de armazenamento.
+> - **Verificar os dados no Azure**: verifique se os dados foram carregados em sua conta de armazenamento antes de excluí-los do servidor de dados de origem.
 
 ::: zone-end
+
 
 ::: zone target="docs"
 

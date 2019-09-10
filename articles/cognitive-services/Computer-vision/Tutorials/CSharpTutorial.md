@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 63b5130e3cade54a2fbc432b2391ad3ee1ea8a1a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 3da22d11dce1e535763476d906ac45f3da22bc8d
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004016"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70141281"
 ---
 # <a name="sample-explore-an-image-processing-app-with-c"></a>Exemplo: Explorar um aplicativo de processamento de imagens com o C#
 
@@ -33,7 +33,7 @@ Explore um aplicativo básico do Windows que usa o Computer Vision para executar
 Antes de explorar o aplicativo de amostra, verifique se você atendeu aos seguintes pré-requisitos:
 
 * Você deve ter o [Visual Studio 2015 ](https://visualstudio.microsoft.com/downloads/) ou posterior.
-* Você precisa ter uma chave de assinatura para a Pesquisa Visual Computacional. É possível obter uma chave de avaliação gratuita em [Experimente os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). Ou siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar a Pesquisa Visual Computacional e obter sua chave.
+* Você precisa ter uma chave de assinatura para a Pesquisa Visual Computacional. É possível obter uma chave de avaliação gratuita em [Experimente os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). Ou siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar a Pesquisa Visual Computacional e obter sua chave. Anote a URL do ponto de extremidade de serviço também.
 
 ## <a name="get-the-sample-app"></a>Obter o aplicativo de exemplo
 
@@ -79,8 +79,9 @@ Você pode executar o aplicativo de amostra para ver como ele interage com você
 1. Quando o aplicativo de amostra for exibido, escolha **Gerenciamento de Chave de Assinatura** no painel de navegação para exibir a página Gerenciamento de Chave de Assinatura.
    ![Página de gerenciamento de chaves de assinatura](../Images/Vision_UI_Subscription.PNG)  
 1. Digite sua chave de assinatura na **Chave de assinatura**.
-1. Digite o URL do terminal, omitindo o `/vision/v1.0`, do recurso Visão de Computação para sua chave de assinatura no **Endpoint**.  
-   Por exemplo, se você estiver usando a chave de assinatura na avaliação gratuita do Computer Vision, insira o seguinte URL de terminal para a região do Azure do West Central nos EUA: `https://westcentralus.api.cognitive.microsoft.com`
+1. Insira a URL do ponto de extremidade no **Ponto de extremidade**.  
+   Por exemplo, se você estiver usando a chave de assinatura na avaliação gratuita da Pesquisa Visual Computacional, insira a seguinte URL de ponto de extremidade: `https://westcentralus.api.cognitive.microsoft.com`
+   [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 1. Se você não quiser inserir sua chave de assinatura e o URL do endpoint na próxima vez que executar o aplicativo de amostra, escolha **Save Setting** para salvar a chave de assinatura e o URL do endpoint em seu computador. Se você deseja excluir sua chave de assinatura e URL de ponto de extremidade previamente salvas, escolha **Excluir configuração**.
 
    > [!NOTE]

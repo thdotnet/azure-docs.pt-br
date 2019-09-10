@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 08/05/2019
+ms.date: 08/28/2019
 ms.author: assafi
-ms.openlocfilehash: deb8c742161d59c8926c1ec139978d15b891bd4a
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 6e6f1d5cfe1f5e745e6f780b5cb9f979520a1f91
+ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019482"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70134926"
 ---
 # <a name="quickstart-text-analytics-client-library-for-net"></a>Início Rápido: Biblioteca de cliente de Análise de Texto para .NET
 <a name="HOLTop"></a>
@@ -89,19 +89,36 @@ using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 using Microsoft.Rest;
 ```
 
-No método `Main` do aplicativo, crie variáveis para a chave e o ponto de extremidade do Azure do recurso. Se você criou a variável de ambiente depois de iniciar o aplicativo, será necessário fechar e recarregar o editor, o IDE ou o shell em execução para acessar a variável. Você definirá os métodos mais tarde.
+Na classe `Program` do aplicativo, crie variáveis para a chave de assinatura e o Ponto de Extremidade do Azure do seu recurso. Em um construtor estático, obtenha esses valores das variáveis de ambiente `TEXT_ANALYTICS_SUBSCRIPTION_KEY` e `TEXT_ANALYTICS_ENDPOINT`. Se você tiver criado essas variáveis de ambiente depois que começou a editar o aplicativo, precisará fechar e reabrir o editor, o IDE ou o shell que você está usando para acessar as variáveis.
+
+```csharp
+private const string key_var = "TEXT_ANALYTICS_SUBSCRIPTION_KEY";
+private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+private const string endpoint_var = "TEXT_ANALYTICS_ENDPOINT";
+private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+static Program()
+{
+    if (null == subscriptionKey)
+    {
+        throw new Exception("Please set/export the environment variable: " + key_var);
+    }
+    if (null == endpoint)
+    {
+        throw new Exception("Please set/export the environment variable: " + endpoint_var);
+    }
+}
+```
+
+No método `Main` do aplicativo, crie credenciais para acessar o ponto de extremidade de Análise de Texto.  Você definirá os métodos chamados pelo método `Main` posteriormente.
 
 [!INCLUDE [text-analytics-find-resource-information](../includes/find-azure-resource-info.md)]
 
 ```csharp
 static void Main(string[] args)
 {
-    // replace this endpoint with the correct one for your Azure resource. 
-    string endpoint = $"https://westus.api.cognitive.microsoft.com";
-    //This sample assumes you have created an environment variable for your key
-    string key = Environment.GetEnvironmentVariable("TEXT_ANALYTICS_SUBSCRIPTION_KEY");
-
-    var credentials = new ApiKeyServiceClientCredentials(key);
+    var credentials = new ApiKeyServiceClientCredentials(subscriptionKey);
     TextAnalyticsClient client = new TextAnalyticsClient(credentials)
     {
         Endpoint = endpoint
@@ -110,9 +127,11 @@ static void Main(string[] args)
     Console.OutputEncoding = System.Text.Encoding.UTF8;
     SentimentAnalysisExample(client);
     // languageDetectionExample(client);
-    // RecognizeEntitiesExample(client);
+    // entityRecognitionExample(client);
     // KeyPhraseExtractionExample(client);
-    Console.ReadLine();
+    
+    Console.Write("Press any key to exit.");
+    Console.ReadKey();
 }
 ```
 
@@ -263,14 +282,17 @@ Entities:
 Crie uma nova função chamada `KeyPhraseExtractionExample()` que use o cliente que você criou anteriormente e chame sua função [KeyPhrases()](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.keyphrases?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_KeyPhrases_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_). O resultado conterá a lista de frases-chave detectadas em `KeyPhrases` se for bem sucedido e um `errorMessage` se não. Imprima todas as frases-chave detectadas.
 
 ```csharp
-var result = client.KeyPhrases("My cat might need to see a veterinarian.");
-
-// Printing key phrases
-Console.WriteLine("Key phrases:");
-
-foreach (string keyphrase in result.KeyPhrases)
+static void KeyPhraseExtractionExample(TextAnalyticsClient client)
 {
-    Console.WriteLine($"\t{keyphrase}");
+    var result = client.KeyPhrases("My cat might need to see a veterinarian.");
+
+    // Printing key phrases
+    Console.WriteLine("Key phrases:");
+
+    foreach (string keyphrase in result.KeyPhrases)
+    {
+        Console.WriteLine($"\t{keyphrase}");
+    }
 }
 ```
 

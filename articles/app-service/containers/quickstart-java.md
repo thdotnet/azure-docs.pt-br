@@ -15,15 +15,15 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: msangapu
-ms.custom: mvc, seo-java-july2019
-ms.openlocfilehash: 4f31820357048515ddf30b53a93c03f7eecec3be
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.custom: mvc, seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: 10e5c31b4fbeb8af0235a067c57c3b209fe892af
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678229"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70171299"
 ---
-# <a name="quickstart-create-a-java-app-in-app-service-on-linux"></a>Início Rápido: Criar um aplicativo Java no Serviço de Aplicativo no Linux
+# <a name="quickstart-create-a-java-app-on-azure-app-service-on-linux"></a>Início Rápido: Criar um aplicativo Java no Serviço de Aplicativo do Azure no Linux
 
 O [Serviço de Aplicativo no Linux](app-service-linux-intro.md) fornece um serviço de hospedagem na Web altamente escalonável e com aplicação automática de patches usando o sistema operacional Linux. Este início rápido mostra como usar a [CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) com o [Plug-in do Maven para o Serviço de Aplicativo do Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) para implantar um arquivo WAR (Arquivo Web) Java.
 > [!NOTE]

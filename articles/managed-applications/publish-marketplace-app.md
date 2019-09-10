@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 07/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0e2e161c22ee87d11156c4818bd689c316799e87
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 372c65f1ac9a08d066f26e637f3af86807b35f11
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305608"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70182812"
 ---
 # <a name="azure-managed-applications-in-the-marketplace"></a>Aplicativos gerenciados do Azure no Marketplace
 
@@ -177,5 +177,6 @@ Depois de preencher todas as seções, selecione **Publicar** para iniciar o pro
 
 ## <a name="next-steps"></a>Próximas etapas
 
+* Para obter informações sobre o que acontece depois que você clica em **Publicar**, confira [Publicar uma oferta de aplicativo do Azure](../marketplace/cloud-partner-portal/azure-applications/cpp-publish-offer.md)
 * Para obter uma introdução aos aplicativos gerenciados, consulte [Visão geral de aplicativos gerenciados](overview.md).
 * Para obter informações sobre como publicar um aplicativo gerenciado do Catálogo de Serviços, consulte [Criar e publicar um aplicativo gerenciado do Catálogo de Serviços](publish-service-catalog-app.md).

@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: iainfou
-ms.openlocfilehash: 86e0f09e957df308f3af868d9590951f29d226b1
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 3fd2a50946f0857d527c34b62687b2dbdd71298e
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073885"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172035"
 ---
 # <a name="tutorial-join-a-windows-server-virtual-machine-to-a-managed-domain"></a>Tutorial: Ingressar uma máquina virtual do Windows Server em um domínio gerenciado
 
@@ -214,7 +214,7 @@ Após tentar cada uma dessas etapas de solução de problemas, tente ingressar a
 * Certifique-se de que a conta de usuário especificada pertença ao grupo *Administradores do AAD DC*.
 * Tente usar o formato UPN para especificar as credenciais, como `contosoadmin@contoso.onmicrosoft.com`. Se houver vários usuários com o mesmo prefixo UPN no seu locatário ou se o prefixo UPN for muito longo, o *SAMAccountName* da sua conta poderá ser gerado automaticamente. Nesses casos, o formato de *SAMAccountName* da sua conta pode ser diferente do que você espera ou usa em seu domínio local.
 * Verifique se você [habilitou a sincronização de senhas][password-sync] para o domínio gerenciado. Sem esta etapa de configuração, os hashes de senha exigidos não estarão presentes no domínio gerenciado do Azure AD DS para autenticar corretamente sua tentativa de logon.
-* Aguarde a conclusão da sincronização de senha. Quando a senha de uma conta de usuário é alterada, pode levar de 15 a 20 minutos para ela ser disponibilizada para uso em ingresso no domínio.
+* Aguarde a conclusão da sincronização de senha. Quando a senha de uma conta de usuário é alterada, uma sincronização automática em segundo plano do Azure AD a atualiza no Azure AD DS. Leva algum tempo para que a senha fique disponível para ser usada para ingresso no domínio.
 
 ## <a name="next-steps"></a>Próximas etapas
 

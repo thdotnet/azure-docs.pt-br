@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 08/12/2019
+ms.date: 08/30/2019
 ms.author: diberry
-ms.openlocfilehash: 11f40d99a36493272cb6cd51e4a339c19cd0358b
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: d7668f49df1caca6b4261424b0d2c025a640d572
+ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966727"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70258779"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-net"></a>Início Rápido: Biblioteca de clientes de criação do LUIS (Reconhecimento Vocal) para .NET
 
@@ -37,9 +37,9 @@ Use a biblioteca de clientes de criação de LUIS (Reconhecimento Vocal) para .N
 
 ## <a name="setting-up"></a>Configurando
 
-### <a name="get-your-language-understanding-luis-authoring-key"></a>Obtenha sua chave de criação do LUIS (Reconhecimento Vocal)
+### <a name="get-your-language-understanding-luis-starter-key"></a>Obtenha sua chave inicial do LUIS (Reconhecimento vocal)
 
-Obtenha sua [chave de criação](luis-how-to-account-settings.md) e [crie uma variável de ambiente](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) para a chave, denominada `COGNITIVESERVICE_AUTHORING_KEY`.
+Obtenha sua [chave inicial](luis-how-to-azure-subscription.md#starter-key) e [crie uma variável de ambiente](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) para a chave, denominada `COGNITIVESERVICE_AUTHORING_KEY`.
 
 ### <a name="create-a-new-c-application"></a>Criar um aplicativo em C#
 
@@ -190,7 +190,7 @@ Publique o aplicativo do LUIS usando o método [PublishAsync](https://docs.micro
 
 Execute o aplicativo em seu próprio diretório com o comando `run` de dotnet.
 
-```dotnet
+```console
 dotnet run
 ```
 

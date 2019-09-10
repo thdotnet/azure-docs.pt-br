@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: 7885b03e9f92fc8e8c5b2c78049760cbed8d4dc7
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/09/2019
 ms.locfileid: "67703969"
@@ -260,7 +260,7 @@ Vá para o [Portal do Azure](https://portal.azure.com):
     | Selecionar um script | Para usar seu próprio script, selecione __personalizado__. Caso contrário, selecione um script fornecido. |
     | Nome |Especifique um nome para a ação de script. |
     | URI do script Bash |Especificar o URI do script. |
-    | Cabeçalho/Trabalho/Zookeeper |Especifique os nós em que o script deve ser executado: **Cabeçalho**, **Trabalho** ou **ZooKeeper**. |
+    | Head/Worker/ZooKeeper |Especifique os nós em que o script deve ser executado: **Head**, **Worker** ou **ZooKeeper**. |
     | parâmetros |Especifique os parâmetros, se exigido pelo script. |
 
     Use a entrada __Persistir essa ação de script__ para garantir que o script seja aplicado durante operações de colocação em escala.

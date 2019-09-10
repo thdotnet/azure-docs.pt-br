@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af98633e1dfdbe6392199ade282a918c6134a033
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: c0b1471abd7e057af919ed274547daf94d356c2b
+ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347409"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70213596"
 ---
 # <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>Tutorial: integrar o The Cloud Security Fabric ao Azure Active Directory
 
@@ -104,7 +104,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     ![O link de download do Certificado](common/metadataxml.png)
 
-5. Para modificar as opções de **Autenticação**  de acordo com seus requisitos, clique no botão  **Editar**  para abrir a caixa de diálogo  **Certificado de Autenticação SAML** .
+5. Para modificar as opções de **Assinatura** de acordo com seus requisitos, clique no botão **Editar** para abrir a caixa de diálogo **Certificado de Autenticação SAML**.
 
     ![Resposta SAML](./media/ciscocloudlock-tutorial/saml.png)
 
@@ -153,7 +153,7 @@ Nesta seção, você permitirá que o usuário B.Fernandes use o logon único do
 
 ### <a name="create-the-cloud-security-fabric-test-user"></a>Criar usuário de teste do The Cloud Security Fabric
 
-Nesta seção, você cria um usuário chamado B.Fernandes no The Cloud Security Fabric. Trabalhe com a  [equipe de suporte do The Cloud Security Fabric](mailto:support@cloudlock.com) para adicionar os usuários à plataforma do The Cloud Security Fabric. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você cria um usuário chamado B.Fernandes no The Cloud Security Fabric. Trabalhe com a [equipe de suporte do The Cloud Security Fabric](mailto:support@cloudlock.com) para adicionar os usuários à plataforma do The Cloud Security Fabric. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-sso"></a>Testar o SSO 
 

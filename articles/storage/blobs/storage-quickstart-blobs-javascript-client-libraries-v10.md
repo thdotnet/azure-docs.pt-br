@@ -1,22 +1,20 @@
 ---
 title: Início rápido – Criar um blob no Armazenamento do Azure usando JavaScript e HTML no navegador
-description: Aprenda a usar uma instância de BlobService para carregar, listar e excluir blobs usando JavaScript em uma página HTML.
+description: Aprenda a carregar, listar e excluir blobs usando JavaScript em uma página HTML.
 services: storage
-keywords: armazenamento, javascript, html
 author: KarlErickson
 ms.custom: mvc
 ms.service: storage
 ms.author: karler
-ms.reviewer: seguler
-ms.date: 05/20/2019
+ms.date: 08/29/2019
 ms.topic: quickstart
 ms.subservice: blobs
-ms.openlocfilehash: ea5dfe2261be4512d4ba8edda1e7fbd5219a50c0
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: fc6ccaae698043db631c7724c6aabbca16f4328f
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986871"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70172827"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -38,7 +36,7 @@ Antes de seu aplicativo Web poder acessar um armazenamento de blobs do cliente, 
 
 Retorne ao portal do Azure e selecione a conta de armazenamento. Para definir uma nova regra de CORS, navegue até a seção **Configurações** e clique no link **CORS**. Em seguida, clique no botão **Adicionar** para abrir a janela **Adicionar regra de CORS**. Para este início rápido, crie uma regra de CORS aberta:
 
-![Configurações de CORS da conta do Armazenamento de Blobs do Azure](media/storage-quickstart-blobs-javascript-client-libraries/azure-blob-storage-cors-settings.png)
+![Configurações de CORS da conta do Armazenamento de Blobs do Azure](media/storage-quickstart-blobs-javascript-client-libraries-v10/azure-blob-storage-cors-settings.png)
 
 A tabela a seguir descreve cada configuração de CORS e explica os valores usados para definir a regra.
 

@@ -1,8 +1,6 @@
 ---
 title: Criar uma função disparada por HTTP no Azure
 description: Aprenda a criar sua primeira função Python no Azure usando o Azure Functions Core Tools e a CLI do Azure.
-services: functions
-keywords: ''
 author: ggailey777
 ms.author: glenga
 ms.date: 04/24/2019
@@ -10,13 +8,13 @@ ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
-manager: jeconnoc
-ms.openlocfilehash: 5b90702f89af260a67b69bf96c2e079a45298723
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+manager: gwallace
+ms.openlocfilehash: cb7f5a10169c8baaecae0fc1916a439d61bfbf7c
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575449"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70170860"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Criar uma função disparada por HTTP no Azure
 
@@ -28,7 +26,7 @@ Este artigo é o primeiro de dois inícios rápidos do Azure Functions. Depois d
 
 Antes de começar, é necessário ter o seguinte:
 
-+ Instale o [Python 3.6](https://www.python.org/downloads/).
++ Instale o [Python 3.6.x](https://www.python.org/downloads/).
 
 + Instale o [Azure Functions Core Tools](./functions-run-local.md#v2) versão 2.7.1575 ou posterior.
 
@@ -104,7 +102,7 @@ Uma subpasta chamada _HttpTrigger_ será criada, que contém os seguintes arquiv
 
 O comando a seguir inicia o aplicativo de funções, que é executado localmente usando o mesmo Azure Functions Runtime encontrado no Azure.
 
-```bash
+```console
 func host start
 ```
 
@@ -134,7 +132,7 @@ Application started. Press Ctrl+C to shut down.
 
 Http Functions:
 
-        HttpTrigger: http://localhost:7071/api/MyHttpTrigger
+        HttpTrigger: http://localhost:7071/api/HttpTrigger
 
 [8/27/2018 10:38:27 PM] Host started (29486ms)
 [8/27/2018 10:38:27 PM] Job host started
@@ -168,7 +166,33 @@ Esse comando também provisionará uma instância do Azure Application Insights 
 
 Agora você está pronto para publicar seu projeto de funções local no aplicativo de funções no Azure.
 
-[!INCLUDE [functions-publish-project](../../includes/functions-publish-project.md)]
+## <a name="deploy-the-function-app-project-to-azure"></a>Implantar o projeto de aplicativo de funções no Azure
+
+Depois que o aplicativo de funções for criado no Azure, você poderá usar o comando do Core Tools [`func azure functionapp publish`](functions-run-local.md#project-file-deployment) para implantar o código do projeto no Azure. Nestes exemplos, substitua `<APP_NAME>` pelo nome do seu aplicativo da etapa anterior.
+
+```command
+func azure functionapp publish <APP_NAME> --build remote
+```
+
+A opção `--build remote` cria seu projeto do Python remotamente no Azure usando os arquivos no pacote de implantação. 
+
+Você verá a saída semelhante à seguinte, que foi truncada para facilitar a leitura:
+
+```output
+Getting site publishing info...
+...
+
+Preparing archive...
+Uploading content...
+Upload completed successfully.
+Deployment completed successfully.
+Syncing triggers...
+Functions in myfunctionapp:
+    HttpTrigger - [httpTrigger]
+        Invoke url: https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....
+```
+
+Copie o valor `Invoke url` para seu `HttpTrigger`, que você agora poderá usar para testar sua função no Azure. A URL contém um valor da cadeia de caracteres de consulta `code` que é sua chave de função. Essa chave dificulta para outras pessoas chamarem seu ponto de extremidade de gatilho HTTP no Azure.
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
 

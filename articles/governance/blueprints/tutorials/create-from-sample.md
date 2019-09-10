@@ -7,12 +7,12 @@ ms.date: 03/05/2019
 ms.topic: tutorial
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: b0d5d96ff897ac1710206eb49bca785e8809cb7d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 137764cba91ab94adef4719a0d34b6fb9e6efe29
+ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65798307"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70232620"
 ---
 # <a name="tutorial-create-an-environment-from-a-blueprint-sample"></a>Tutorial: Criar um ambiente com base em um exemplo de blueprint
 
@@ -104,11 +104,11 @@ Quando a cópia do exemplo de blueprint for **Publicada** com êxito, ele poder�
 
      |Nome do artefato|Tipo de artefato|Nome do parâmetro|Valor|DESCRIÇÃO|
      |-|-|-|-|-|
-     |Grupo de recursos ProdRG|Grupo de recursos|NOME|ProductionRG|Define o nome do primeiro grupo de recursos.|
-     |Grupo de recursos ProdRG|Grupo de recursos|Local padrão|Oeste dos EUA 2|Define a localização do primeiro grupo de recursos.|
+     |Grupo de recursos ProdRG|Resource group|NOME|ProductionRG|Define o nome do primeiro grupo de recursos.|
+     |Grupo de recursos ProdRG|Resource group|Location|Oeste dos EUA 2|Define a localização do primeiro grupo de recursos.|
      |Colaborador|Atribuição de função|Usuário ou Grupo|{Sua ID}|Define a qual usuário ou grupo conceder a atribuição de função _Colaborador_ dentro do primeiro grupo de recursos.|
-     |Grupo de recursos PreProdRG|Grupo de recursos|NOME|PreProductionRG|Define o nome do segundo grupo de recursos.|
-     |Grupo de recursos PreProdRG|Grupo de recursos|Local padrão|Oeste dos EUA|Define a localização do segundo grupo de recursos.|
+     |Grupo de recursos PreProdRG|Resource group|NOME|PreProductionRG|Define o nome do segundo grupo de recursos.|
+     |Grupo de recursos PreProdRG|Resource group|Location|Oeste dos EUA|Define a localização do segundo grupo de recursos.|
      |Proprietário|Atribuição de função|Usuário ou Grupo|{Sua ID}|Define a qual usuário ou grupo conceder a atribuição de função _Proprietário_ dentro do segundo grupo de recursos.|
      |Leitores|Atribuição de função|Usuário ou Grupo|{Sua ID}|Define a qual usuário ou grupo conceder a atribuição de função _Leitor_ dentro do segundo grupo de recursos.|
 
@@ -150,7 +150,7 @@ A atribuição de blueprint cria e controla os artefatos definidos na definiçã
 
    A atribuição de negação está impedindo todas as operações com **\*** e a configuração **Ação**, mas permite o acesso de leitura excluindo **\*/read** por meio de **NotActions**.
 
-1. Na trilha do portal do Azure, selecione **PreProductionRG – Controle de acesso (IAM)**. Depois, selecione a página **Visão geral** à esquerda e, em seguida, o botão **Excluir grupo de recursos**. Insira o nome _PreProductionRG_ para confirmar a exclusão e selecione **Excluir** na parte inferior do painel.
+1. Na trilha do portal do Azure, selecione **PreProductionRG – Controle de acesso (IAM)** . Depois, selecione a página **Visão geral** à esquerda e, em seguida, o botão **Excluir grupo de recursos**. Insira o nome _PreProductionRG_ para confirmar a exclusão e selecione **Excluir** na parte inferior do painel.
 
    A notificação do portal, **Falha ao excluir grupo de recursos PreProductionRG**, é exibida. O erro informa que, embora sua conta tenha permissão para excluir o grupo de recursos, o acesso é negado pela atribuição de blueprint. Lembre-se de que selecionamos o modo de bloqueio de blueprint _Somente Leitura_ durante a atribuição de blueprint. O bloqueio de blueprint impede que uma conta com permissão, até mesmo _Proprietário_, exclua o recurso. Para obter mais informações, consulte [bloqueio de recursos de projetos](../concepts/resource-locking.md).
 
@@ -187,7 +187,7 @@ Quando terminar este tutorial, exclua os seguintes recursos:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Aprenda sobre o [ciclo de vida do blueprint](../concepts/lifecycle.md)
+- Saiba mais sobre o [ciclo de vida do blueprint](../concepts/lifecycle.md)
 - Entenda como usar [parâmetros estáticos e dinâmicos](../concepts/parameters.md)
 - Saiba como fazer uso do [bloqueio de recurso de blueprint](../concepts/resource-locking.md)
 - Aprenda a personalizar a [ordem de sequenciamento de blueprint](../concepts/sequencing-order.md)

@@ -1,5 +1,5 @@
 ---
-title: Criar um trabalho do Stream Analytics usando as ferramentas do Azure Stream Analytics para Visual Studio
+title: Criar um trabalho do Azure Stream Analytics usando o Visual Studio
 description: Este início rápido mostra como começar com a criação de um trabalho do Stream Analytics, a configuração das entradas e saídas e a definição de uma consulta com o Visual Studio.
 services: stream-analytics
 author: mamccrea
@@ -7,14 +7,14 @@ ms.author: mamccrea
 ms.date: 06/11/2019
 ms.topic: quickstart
 ms.service: stream-analytics
-ms.openlocfilehash: bd27495266918063c65bf4648b3453e25767e293
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb3b25387df33f8d366a088f9fa63e0dc96290bf
+ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076195"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70173264"
 ---
-# <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-stream-analytics-tools-for-visual-studio"></a>Início Rápido: Criar um trabalho do Stream Analytics usando as ferramentas do Azure Stream Analytics para Visual Studio
+# <a name="quickstart-create-an-azure-stream-analytics-job-by-using-visual-studio"></a>Início Rápido: Criar um trabalho do Azure Stream Analytics usando o Visual Studio
 
 Este guia de início rápido mostra como criar e executar um trabalho do Stream Analytics usando ferramentas do Azure Stream Analytics para Visual Studio. O trabalho de exemplo lê dados de streaming de um dispositivo Hub IoT. Você definirá um trabalho que calcula a temperatura média quando ela ultrapassa 27° e que grava os eventos de saída resultantes em um novo arquivo no armazenamento de blobs.
 
@@ -40,8 +40,8 @@ Antes de definir o trabalho do Stream Analytics, você deve preparar os dados, q
    
    |**Configuração**  |**Valor sugerido**  |**Descrição**  |
    |---------|---------|---------|
-   |Assinatura  | \<Sua assinatura\> |  Selecione a assinatura do Azure que você deseja usar. |
-   |Grupo de recursos   |   asaquickstart-resourcegroup  |   Selecione **Criar Novo** e insira um novo nome de grupo de recursos para a conta. |
+   |Subscription  | \<Sua assinatura\> |  Selecione a assinatura do Azure que você deseja usar. |
+   |Resource group   |   asaquickstart-resourcegroup  |   Selecione **Criar Novo** e insira um novo nome de grupo de recursos para a conta. |
    |Região  |  \<Selecione a região mais próxima de seus usuários\> | Selecione uma localização geográfica na qual você possa hospedar o Hub IoT. Use a localização mais próxima dos usuários. |
    |Nome do Hub IoT  | MyASAIoTHub  |   Selecione um nome para o Hub IoT.   |
 
@@ -114,7 +114,7 @@ Observe os elementos que são incluídos em um projeto do Azure Stream Analytics
    |Tipo de Fonte   |  Fluxo de dados |  Escolha a fonte de entrada apropriada: Fluxo de Dados ou Dados de Referência.   |
    |Fonte  |  Hub IoT |  Escolha a fonte de entrada apropriada.   |
    |Recurso  | Escolha fonte de dados da conta atual | Escolha entre inserir os dados manualmente ou selecione uma conta existente.   |
-   |Assinatura  |  \<Sua assinatura\>   | Selecione a assinatura do Azure que tem o Hub IoT criado.   |
+   |Subscription  |  \<Sua assinatura\>   | Selecione a assinatura do Azure que tem o Hub IoT criado.   |
    |Hub IoT  |  MyASAIoTHub   |  Escolha ou insira o nome do Hub IoT. Os nomes do Hub IoT são detectados automaticamente se eles são criados na mesma assinatura.   |
    
 3. Deixe as outras opções com os valores padrão e selecione **Salvar** para salvar as configurações.  
@@ -132,7 +132,7 @@ Observe os elementos que são incluídos em um projeto do Azure Stream Analytics
    |Alias de saída  |  Saída   |  Insira um nome para identificar a saída do trabalho.   |
    |Coletor   |  Armazenamento de Blobs |  Escolha o coletor apropriado.    |
    |Recurso  |  Forneça as configurações da fonte de dados manualmente |  Escolha entre inserir os dados manualmente ou selecione uma conta existente.   |
-   |Assinatura  |  \<Sua assinatura\>   | Selecione a assinatura do Azure que tem a conta de armazenamento criada. A conta de armazenamento pode estar na mesma assinatura ou em uma diferente. Este exemplo pressupõe que você criou a conta de armazenamento na mesma assinatura.   |
+   |Subscription  |  \<Sua assinatura\>   | Selecione a assinatura do Azure que tem a conta de armazenamento criada. A conta de armazenamento pode estar na mesma assinatura ou em uma diferente. Este exemplo pressupõe que você criou a conta de armazenamento na mesma assinatura.   |
    |Conta de armazenamento  |  asaquickstartstorage   |  Escolha ou insira o nome da conta de armazenamento. Os nomes das contas de armazenamento são detectados automaticamente quando elas são criadas na mesma assinatura.   |
    |Contêiner  |  container1   |  Selecione o contêiner existente que você criou em sua conta de armazenamento.   |
    |Padrão de caminho  |  output   |  Digite o nome do caminho de arquivo a ser criado dentro do contêiner.   |

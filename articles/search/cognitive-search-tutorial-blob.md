@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial do REST: Criar um pipeline de enriquecimento de IA usando a pesquisa cognitiva – Azure Search'
 description: Veja um exemplo de extração de texto e processamento de idioma natural do conteúdo em blobs JSON usando o Postman e as APIs REST do Azure Search.
-manager: pablocas
+manager: nitinme
 author: luiscabrer
 services: search
 ms.service: search
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/23/2019
 ms.author: luisca
 ms.subservice: cognitive-search
-ms.openlocfilehash: e647d3c66d339a60278fa7d0f078497157b3fff1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 726fdd6aeebac970142fa9225381af77114bfe42
+ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102779"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70274124"
 ---
 # <a name="tutorial-add-structure-to-unstructured-content-with-cognitive-search"></a>Tutorial: Adicionar uma estrutura ao "conteúdo não estruturado" com a pesquisa cognitiva
 
@@ -22,10 +22,10 @@ Se você tiver conteúdo de imagem ou texto não estruturado, o recurso de [pesq
 
 > [!div class="checklist"]
 > * Comece com documentos inteiros (texto não estruturado), como PDF, MD, DOCX e PPTX no Armazenamento de Blobs do Azure.
-> * Crie um pipeline que extrai texto, detecta o idioma, reconhece entidades e detecta frases-chave.
+> * Defina um pipeline que extrai texto, detecta o idioma, reconhece entidades e detecta frases-chave.
 > * Defina um índice para armazenar a saída (conteúdo bruto, além de pares nome-valor gerados pelo pipeline).
-> * Execute o pipeline para criar e carregar o índice.
-> * Explore o conteúdo usando a pesquisa de texto completo e uma sintaxe de consulta avançada.
+> * Execute o pipeline para começar com as transformações e a análise e para criar e carregar o índice.
+> * Explore os resultados usando a pesquisa de texto completo e uma sintaxe de consulta avançada.
 
 Você precisará de vários serviços para concluir este passo a passos, além do [aplicativo da área de trabalho Postman](https://www.getpostman.com/) ou de outra ferramenta de teste da Web para fazer chamadas à API REST. 
 

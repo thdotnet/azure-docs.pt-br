@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/09/2019
+ms.date: 09/04/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 4a88e9dddd492d5c24698bcde8c3a1fd942eaf66
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 755bb6d019418cf9dae22ebf7ee6a3c94af3c750
+ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854187"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70309439"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Migrar VMs do Hyper-V para o Azure 
 
@@ -132,6 +132,9 @@ Instale o arquivo de configuração baixado (AzureSiteRecoveryProvider.exe) em c
 ## <a name="replicate-hyper-v-vms"></a>Replicar VMs do Hyper-V
 
 Com a descoberta concluída, você poderá iniciar a replicação de VMs do Hyper-V para o Azure.
+
+> [!NOTE]
+> Você pode replicar até 10 computadores juntos. Se precisar replicar mais, replique-os simultaneamente em lotes de 10.
 
 1. No projeto das Migrações para Azure > **Servidores**, **Migrações para Azure: Migração de Servidor**, clique em **Replicar**.
 2. Em **Replicar**, > **Configurações de origem** > **Os computadores estão virtualizados?** , selecione **Sim, com o Hyper-V**. Em seguida, clique em **Próximo: Máquinas virtuais**.

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e22b616e50929d4ac099c3412e89db426b09307
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 95c898dd36387d4474f5129943c6bd76f754ffe2
+ms.sourcegitcommit: ac29357a47cc05afdf0f84834de5277598f4d87c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489483"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70213539"
 ---
 # <a name="tutorial-integrate-pronovos-ops-manager-with-azure-active-directory"></a>Tutorial: Integrar o ProNovos Ops Manager ao Azure Active Directory
 
@@ -81,7 +81,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-1. Na seção  **Configuração Básica de SAML** , o aplicativo é pré-configurado no modo iniciado por  **IDP**  e as URLs necessárias já são preenchidas previamente com o Azure. É necessário que o usuário salve a configuração, clicando no botão  **Salvar** .
+1. Na seção **Configuração Básica de SAML**, o aplicativo é pré-configurado no modo iniciado do **IDP** e as URLs necessárias já são preenchidas previamente com o Azure. É necessário que o usuário salve a configuração, clicando no botão **Salvar**.
 
 1. Clique em **Definir URLs adicionais** e execute o passo seguinte se quiser configurar a aplicação no modo **SP** iniciado:
 
@@ -131,7 +131,7 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure perm
 
 ### <a name="create-pronovos-ops-manager-test-user"></a>Criar um usuário de teste do ProNovos Ops Manager
 
-Nesta seção, você criará um usuário chamado B.Fernandes no ProNovos Ops Manager. Trabalhe com a  [equipe de suporte do ProNovos Ops Manager](mailto:support@pronovos.com) para adicionar os usuários na plataforma do ProNovos Ops Manager. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado B.Fernandes no ProNovos Ops Manager. Trabalhe com a [equipe de suporte do ProNovos Ops Manager](mailto:support@pronovos.com) para adicionar os usuários na plataforma do ProNovos Ops Manager. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-sso"></a>Testar o SSO 
 

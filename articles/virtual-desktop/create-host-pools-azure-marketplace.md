@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 04/05/2019
+ms.date: 08/30/2019
 ms.author: helohr
-ms.openlocfilehash: f692303140db1441aa34aacef62523d7f596dba1
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: d6628f1522880f650bfd8c728fe46fd050a8e6a0
+ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204729"
+ms.lasthandoff: 09/01/2019
+ms.locfileid: "70208391"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Tutorial: Criar um pool de host usando o Azure Marketplace
 
@@ -26,7 +26,11 @@ Este tutorial descreve como criar um pool de hosts em um locatário de Área de 
 > * Associar as VMs ao domínio do Active Directory.
 > * Registrar as VMs com a Área de Trabalho Virtual do Windows.
 
-Antes de começar, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual do Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) para usar na sessão do PowerShell, caso ainda não tenha feito isso.
+Antes de começar, [baixe e importe o módulo do PowerShell da Área de Trabalho Virtual do Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) para usar na sessão do PowerShell, caso ainda não tenha feito isso. Depois disso, execute o seguinte cmdlet para entrar em sua conta:
+
+```powershell
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+```
 
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
@@ -40,7 +44,7 @@ Para executar a oferta do Azure Marketplace para provisionar um novo pool de hos
 2. Insira **Área de Trabalho Virtual do Windows** na janela de pesquisa do Marketplace.
 3. Selecione **Área de Trabalho Virtual do Windows – Provisionar um pool de hosts** e selecione **Criar**.
 
-Siga as diretrizes para inserir as informações nas folhas apropriadas.
+Depois disso, siga as instruções na próxima seção para inserir as informações para as folhas apropriadas.
 
 ### <a name="basics"></a>Noções básicas
 
@@ -52,6 +56,9 @@ Veja o que você faz para a folha **Noções básicas**:
 4. Selecione **Criar** e forneça um nome para o novo grupo de recursos.
 5. Para **Local**, selecione o mesmo local da rede virtual que tenha conectividade com o servidor do Active Directory.
 6. Selecione **OK**.
+
+>[!IMPORTANT]
+>Se você estiver usando o Azure Active Directory Domain Services e a solução do Azure Active Directory, não se esqueça de implantar o pool de hosts na mesma região que o Azure Active Directory Domain Services para evitar erros de associação de domínio e de credenciais.
 
 ### <a name="configure-virtual-machines"></a>Configurar máquinas virtuais
 
@@ -66,7 +73,7 @@ Para a folha **Configurar máquinas virtuais**:
 Para a folha de **configurações da máquina virtual**:
 
 >[!NOTE]
-> Se você estiver unindo suas VMs em um ambiente do Azure Active Directory Domain Services (Azure AD DS), verifique se o usuário de ingresso no domínio também é um membro do [grupo de Administradores do AAD DC](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
+> Se você estiver unindo suas VMs em um ambiente do Azure Active Directory Domain Services (Azure AD DS), verifique se o usuário de ingresso no domínio também é um membro do [grupo de Administradores do AAD DC](../active-directory-domain-services/tutorial-create-instance.md#configure-an-administrative-group).
 
 1. Para **Origem da imagem**, selecione a origem e insira as informações apropriadas para saber como encontrá-las e como armazená-las. Se você optar por não usar discos gerenciados, selecione a conta de armazenamento que contém o arquivo .vhd.
 2. Insira o nome UPN e a senha para a conta de domínio que ingressará as VMs ao domínio do Azure Directory. Esse mesmo nome de usuário e senha será criado nas máquinas virtuais como uma conta local. É possível redefinir essas contas locais mais tarde.

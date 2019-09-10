@@ -6,15 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 08/28/2019
+ms.date: 09/03/2019
+ms.localizationpriority: high
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 1104c017541b8124366a6121763318f199f3aad5
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: aab97257ff2e917dc264017043d3ca11a2ced1fc
+ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126081"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70240205"
 ---
 ::: zone target="chromeless"
 
@@ -49,18 +50,7 @@ Antes de começar, verifique se você concluiu o [Tutorial: copiar dados para o 
     - É recomendável que empacotar os discos usando um plástico bolha bem ajustado.
     - Verifique se que o ajuste é firme para reduzir qualquer movimentos dentro da caixa.
 
-As próximas etapas são determinadas pelo local em você está devolvendo o dispositivo. As instruções são diferentes para EUA/Canadá, Austrália ou países da Ásia.
-
-- [Agende uma retirada com a UPS se estiver devolvendo o dispositivo nos EUA e no Canadá](data-box-disk-deploy-picked-up.md#pick-up-in-us-canada).
-- [Agende uma retirada com a DHL para a Europa](data-box-disk-deploy-picked-up.md#pick-up-in-europe) visitando seu site e especificando o número de conhecimento aéreo.
-- [Agende uma retirada na Austrália](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-picked-up#pick-up-in-australia).
-- [Agende uma retirada em países da Ásia](data-box-disk-deploy-picked-up.md#pick-up-in-asia), como Japão, Coreia do Sul e Singapura.
-
-::: zone target="chromeless"
-
-Depois que os discos forem retirados pela transportadora, o status do pedido no portal será atualizado e uma ID de acompanhamento será exibida.
-
-::: zone-end
+As próximas etapas são determinadas pelo local em você está devolvendo o dispositivo. As instruções são diferentes para EUA/Canadá, UE (União Europeia), Austrália ou países da Ásia.
 
 ### <a name="pick-up-in-us-canada"></a>Retirada nos EUA, Canadá
 
@@ -151,9 +141,6 @@ Se necessário, você poderá contatar o Suporte da Quantium Solutions (em japon
 
 1. Imprima a etiqueta de remessa e anexe à caixa. Se o rótulo estiver danificado ou tiver sido perdido:
     - Acesse **Visão Geral > Baixar etiqueta de remessa** e obtenha uma etiqueta de remessa de devolução.
-
-        ![Faça o download da etiqueta de remessa](media/data-box-disk-deploy-picked-up/download-shipping-label.png)
-
     - Afixe o rótulo ao dispositivo. Certifique-se que a etiqueta está visível.
 
 2. Para solicitar retirada:

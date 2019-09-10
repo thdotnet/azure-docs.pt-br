@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: overview
-ms.date: 03/27/2019
+ms.date: 08/30/2019
 ms.author: scottwhi
-ms.openlocfilehash: 15abbfd8892464f3a2c21a85c07bc5b8e94e47ad
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 22a8bb2609439a82a825bf7f542709d46771ad92
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68594695"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195208"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>O que é a API da Pesquisa Visual do Bing?
 
-A API da Pesquisa Visual do Bing retorna informações para uma imagem. Você pode carregar uma imagem ou fornecer uma URL para uma. Informações são imagens visualmente semelhantes, fontes de compras, páginas da Web que incluem a imagem e muito mais. As informações retornadas pela API da Pesquisa Visual do Bing são similares às mostradas em Bing.com/images.
+A API da Pesquisa Visual do Bing retorna informações para uma imagem. Você pode carregar uma imagem ou fornecer uma URL para uma. Informações são imagens visualmente semelhantes, fontes de compras, páginas da Web que incluem a imagem e muito mais. As informações retornadas pela API da Pesquisa Visual do Bing são similares às mostradas em Bing.com/images. 
 
 Se você usar a [API de Pesquisa de Imagem do Bing](../bing-image-search/overview.md), poderá usar tokens de informações dos resultados da pesquisa da API da sua Pesquisa Visual do Bing, em vez de carregar uma imagem.
 
@@ -38,6 +38,7 @@ Você pode descobrir as seguintes informações usando a Pesquisa Visual do Bing
 | Pesquisas relacionadas                     | Pesquisas relacionadas feitas por outras pessoas ou que se baseiam no conteúdo da imagem.            |
 | Páginas da Web que incluem a imagem     | Páginas da Web que incluem a imagem de entrada.            |
 | Receitas                              | Páginas da Web que incluem receitas para preparação do prato mostrado na imagem de entrada.            |
+| Entidades                             | Pessoas, locais e coisas conhecidas. |
 
 Além de informações, a Pesquisa Visual do Bing retorna uma variedade de termos (ou seja, marcas) derivados da imagem de entrada. As marcas permitem aos usuários explorar os conceitos encontrados na imagem. Por exemplo, se a imagem de entrada for a de um atleta famoso, uma das marcas poderá ser o nome do atleta e a outra marca poderá ser Esportes. Se a imagem de entrada for de uma torta de maçã, as marcas poderão ser Torta de Maçã, Tortas e Sobremesas.
 
