@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/9/2019
+ms.date: 09/09/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: ff267a524001802f8bcd0903fcb7119bab16ef11
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: HT
+ms.openlocfilehash: afa6c5e40918906eb9fe0e40ed633715e3f2741d
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813323"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844808"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Limites para seu modelo e suas chaves do LUIS
 O LUIS tem várias áreas de limite. A primeira é o [limite de modelo](#model-boundaries), que controla intenções, entidades e recursos no LUIS. A segunda área é [limites de cota](#key-limits) com base no tipo de chave. A terceira área de limites é a [combinação de teclado](#keyboard-controls) para controlar o site do LUIS. Uma quarta área é o [mapeamento de região do mundo](luis-reference-regions.md) entre o site de criação do LUIS e as APIs do [ponto de extremidade](luis-glossary.md#endpoint) do LUIS. 
@@ -29,7 +29,7 @@ Se seu aplicativo exceder os limites e os perímetros do modelo LUIS, considere 
 |Área|Limite|
 |--|:--|
 | [Nome do aplicativo][luis-get-started-create-app] | *Máximo de caracteres padrão |
-| Aplicativos| 500 aplicativos por recurso do Azure |
+| Aplicativos| 500 aplicativos por recurso de criação do Azure |
 | [Teste em lote][batch-testing]| 10 conjuntos de dados, 1000 declarações por conjunto de dados|
 | Lista explícita | 50 por aplicativo|
 | Entidades externas | sem limites |
@@ -65,21 +65,24 @@ Não use os seguintes caracteres nos nomes a seguir.
 
 O Reconhecimento Vocal tem chaves separadas: um tipo para criação e outro para consulta do ponto de extremidade de previsão. Para saber mais sobre as diferenças entre tipos de chaves, confira [Chaves de ponto de extremidade de previsão de criação e consulta no LUIS](luis-concept-keys.md).
 
-## <a name="key-limits"></a>Limites de chave
+<a name="key-limits"></a>
 
-A chave de criação tem diferentes limites para criação e ponto de extremidade. A chave de ponto de extremidade de serviço de LUIS é válida apenas para consultas de ponto de extremidade.
+## <a name="resource-key-limits"></a>Limites de chave de recurso
 
-* 500 aplicativos por recurso do Azure 
-* 100 versões por aplicativo
+As chaves de recurso têm limites diferentes para criação e ponto de extremidade. A chave do ponto de extremidade de consulta de previsão LUIS só é válida para consultas de ponto de extremidade. 
+
+* 500 aplicativos por recurso de criação do Azure 
 
 |Chave|Criação|Ponto de extremidade|Finalidade|
 |--|--|--|--|
-|Criação/Início de Reconhecimento Vocal|1 milhão/mês, 5/segundo|1 mil/mês, 5/segundo|Criando seu aplicativo LUIS|
-|[Assinatura][pricing] reconhecimento vocal-F0-camada gratuita |inválido|10 mil/mês, 5/segundo|Consultando seu ponto de extremidade LUIS|
-|[Assinatura][pricing] reconhecimento vocal-S0-camada básica|inválido|50/segundo|Consultando seu ponto de extremidade LUIS|
-|[Assinatura][pricing] de serviço cognitiva-S0-camada Standard|inválido|50/segundo|Consultando seu ponto de extremidade LUIS|
-|[Integração de análise de sentimento](luis-how-to-publish-app.md#enable-sentiment-analysis)|inválido|sem encargos|Adicionando informações de sentimento incluindo extração de dados de frase de chave |
-|[Integração de fala](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|inválido|US$ 5,50/1 mil solicitações de ponto de extremidade|Converter declaração falada em declaração de texto e retornar resultados do LUIS|
+|Starter|1 milhão/mês, 5/segundo|1 mil/mês, 5/segundo|Criando seu aplicativo LUIS|
+|F0-camada gratuita |1 milhão/mês, 5/segundo|10 mil/mês, 5/segundo|Consultando seu ponto de extremidade LUIS|
+|S0 – camada básica|-|50/segundo|Consultando seu ponto de extremidade LUIS|
+|S0 – camada padrão|-|50/segundo|Consultando seu ponto de extremidade LUIS|
+|[Integração de análise de sentimento](luis-how-to-publish-app.md#enable-sentiment-analysis)|-|-|Adicionar informações de sentimentos, incluindo extração de dados de frase-chave, é fornecido sem a necessidade de outro recurso do Azure. |
+|[Integração de fala](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|-|1000 solicitações de ponto de extremidade por custo unitário|Converter declaração falada em declaração de texto e retornar resultados do LUIS|
+
+[Saiba mais sobre preços.][pricing]
 
 ## <a name="keyboard-controls"></a>Controles de teclado
 

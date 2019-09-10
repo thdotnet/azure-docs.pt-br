@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 09/06/2019
 ms.author: dapine
-ms.openlocfilehash: 6dd047b0ba7f9a123ffcc014cff5604466946d07
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 752613becb92711866d520e6fcd46ed3a320353f
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564114"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860261"
 ---
 # <a name="configure-face-docker-containers"></a>Configurar contêineres do Docker de Detecção Facial
 
@@ -63,7 +63,7 @@ As definições de configuração na seção `CloudAI` fornecem opções especí
 
 | Nome | Tipo de dados | Descrição |
 |------|-----------|-------------|
-| `Storage` | Objeto | O cenário de armazenamento usado pelo contêiner de Detecção Facial. Para obter mais informações sobre cenários de armazenamento e configurações associadas para o objeto `Storage`, confira [Configurações de cenário de armazenamento](#storage-scenario-settings) |
+| `Storage` | Object | O cenário de armazenamento usado pelo contêiner de Detecção Facial. Para obter mais informações sobre cenários de armazenamento e configurações associadas para o objeto `Storage`, confira [Configurações de cenário de armazenamento](#storage-scenario-settings) |
 
 ### <a name="storage-scenario-settings"></a>Configurações de cenário de armazenamento
 
@@ -139,7 +139,9 @@ Substitua {_argument_name_} pelos seus próprios valores:
 | Espaço reservado | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{API_KEY} | A chave do ponto de extremidade do recurso de serviços cognitivas. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{ENDPOINT_URI} | O valor do ponto de extremidade, incluindo roteamento de região e face.|`https://westcentralus.api.cognitive.microsoft.com/face/v1.0`|
+|{ENDPOINT_URI} | O valor da URL do ponto de extremidade.|`https://myresourcename.cognitive.microsoft.com/face/v1.0`|
+
+[!INCLUDE [subdomains-note](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 > [!IMPORTANT]
 > As opções `Eula`, `Billing` e `ApiKey` devem ser especificadas para executar o contêiner; caso contrário, o contêiner não será iniciado.  Para mais informações, consulte [Faturamento](face-how-to-install-containers.md#billing).
