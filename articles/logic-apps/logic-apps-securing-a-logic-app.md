@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 06/28/2019
-ms.openlocfilehash: 15ec46511f1269606e0b0416c7c4a25f93012bec
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 6c16b38cce31c45158a5871c10dbd01339da9203
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736893"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845424"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Proteger o acesso e os dados no aplicativo lógico do Azure
 
@@ -440,7 +440,7 @@ Este modelo de exemplo que tem várias definições de parâmetros protegidas `s
 | Nome do parâmetro | Descrição |
 |----------------|-------------|
 | `TemplatePasswordParam` | Um parâmetro de modelo que aceita uma senha que é passada para o parâmetro da `basicAuthPasswordParam` definição de fluxo de trabalho |
-| `TemplatePasswordParam` | Um parâmetro de modelo que aceita um nome de usuário que é passado para o parâmetro `basicAuthUserNameParam` da definição de fluxo de trabalho |
+| `TemplateUsernameParam` | Um parâmetro de modelo que aceita um nome de usuário que é passado para o parâmetro `basicAuthUserNameParam` da definição de fluxo de trabalho |
 | `basicAuthPasswordParam` | Um parâmetro de definição de fluxo de trabalho que aceita a senha para autenticação básica em uma ação HTTP |
 | `basicAuthUserNameParam` | Um parâmetro de definição de fluxo de trabalho que aceita o nome de usuário para autenticação básica em uma ação HTTP |
 |||

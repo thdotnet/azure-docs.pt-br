@@ -1,20 +1,20 @@
 ---
-title: 'Conectar um computador a uma rede virtual do Azure usando autenticação ponto a site e autenticação de certificado nativa do Azure: PowerShell | Microsoft Docs'
+title: 'Conecte-se a uma rede virtual do Azure de um computador usando VPN ponto a site e autenticação de certificado nativa do Azure: PowerShell | Microsoft Docs'
 description: Conecte clientes Windows e Mac OS X com segurança a uma rede virtual do Azure usando P2S e certificados autoassinados ou emitidos por autoridade de certificação. Este artigo usa o PowerShell.
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 822cbc7401de90d63f9079561ced0dfbb911fa2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 17d07b508c7ecd8b5750bf5f4108cb789a419c42
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65989435"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70843542"
 ---
-# <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-powershell"></a>Para isso, configure uma conexão ponto a site em uma VNet usando a autenticação de certificado nativa do Azure: PowerShell
+# <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-powershell"></a>Configure uma conexão VPN ponto a site para uma VNet usando a autenticação de certificado nativa do Azure: PowerShell
 
 Este artigo ajuda você a conectar clientes individuais que executem Windows, Linux ou Mac OS X a uma VNet do Azure com segurança. As conexões VPN Ponto a Site são úteis quando você deseja se conectar à rede virtual de um local remoto, como ao trabalhar de casa ou em uma conferência. Também é possível usar P2S em vez de uma VPN Site a Site, quando você tiver apenas alguns clientes que precisam se conectar a uma VNet. As conexões Ponto a Site não exigem um dispositivo VPN ou um endereço IP voltado para o público. A P2S cria a conexão VPN no SSTP (Secure Socket Tunneling Protocol) ou IKEv2. Para obter mais informações sobre conexões VPN Ponto a Site, consulte [Sobre VPN Ponto a Site](point-to-site-about.md).
 
@@ -131,8 +131,8 @@ Declare as variáveis que você quer usar. Use o exemplo a seguir, substituindo 
 Configurar e criar o gateway de rede virtual para sua rede virtual.
 
 * O -GatewayType deve ser **Vpn** e o -VpnType deve ser **RouteBased**.
-* O -VpnClientProtocols é usado para especificar os tipos de túneis que você deseja habilitar. São as opções de túneis **OpenVPN, SSTP** e **IKEv2**. Você pode optar por habilitar um deles ou qualquer combinação com suporte. Se você quiser habilitar vários tipos, em seguida, especifica os nomes separados por uma vírgula. OpenVPN e SSTP não podem ser habilitados juntos. O cliente strongSwan no Android e no Linux, e o cliente VPN IKEv2 nativo no iOS e no OSX usarão somente o túnel IKEv2 para se conectar. Os clientes Windows tentam o IKEv2 primeiro e, se isso gerar a conexão, retornarão ao SSTP. Você pode usar o cliente OpenVPN para se conectar ao tipo de túnel OpenVPN.
-* O gateway de rede virtual SKU 'Basic' não oferece suporte a autenticação IKEv2, OpenVPN ou RADIUS. Se você estiver planejando clientes Mac, se conecte à sua rede virtual, não use a SKU básica.
+* O -VpnClientProtocols é usado para especificar os tipos de túneis que você deseja habilitar. As opções de túnel são **OpenVPN, SSTP** e **IKEv2**. Você pode optar por habilitar uma delas ou qualquer combinação com suporte. Se você quiser habilitar vários tipos, especifique os nomes separados por uma vírgula. OpenVPN e SSTP não podem ser habilitados juntos. O cliente strongSwan no Android e no Linux, e o cliente VPN IKEv2 nativo no iOS e no OSX usarão somente o túnel IKEv2 para se conectar. Os clientes Windows tentam o IKEv2 primeiro e, se isso gerar a conexão, retornarão ao SSTP. Você pode usar o cliente OpenVPN para se conectar ao tipo de túnel OpenVPN.
+* O SKU ' básico ' do gateway de rede virtual não oferece suporte à autenticação IKEv2, OpenVPN ou RADIUS. Se você estiver planejando clientes Mac, se conecte à sua rede virtual, não use a SKU básica.
 * Um gateway de VPN pode levar até 45 minutos para ser concluído, dependendo do [SKU de gateway](vpn-gateway-about-vpn-gateway-settings.md) selecionado. Este exemplo usa IKEv2.
 
 ```azurepowershell-interactive

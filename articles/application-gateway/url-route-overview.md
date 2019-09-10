@@ -1,25 +1,20 @@
 ---
 title: Visão geral do roteamento de conteúdo baseado na URL do Gateway de Aplicativo do Azure
-description: Este artigo fornece uma visão geral do roteamento de conteúdo baseado em URL do Gateway de Aplicativo, da configuração de UrlPathMap e da regra de PathBasedRouting.
-documentationcenter: na
+description: Este artigo fornece uma visão geral do roteamento de conteúdo baseado em URL Aplicativo Azure gateway, configuração de UrlPathMap e regra PathBasedRouting.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 4/23/2018
+ms.date: 09/10/2019
 ms.author: victorh
-ms.openlocfilehash: ee0267146140d095487b293331a7de493ba151c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.openlocfilehash: 0dfeb6a80cbf227f20b24def7641882ad0444489
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61361936"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844603"
 ---
-# <a name="azure-application-gateway-url-path-based-routing-overview"></a>Visão geral do roteamento baseado do caminho da URL de Gateway de Aplicativo do Azure
+# <a name="url-path-based-routing-overview"></a>Visão geral do Roteamento Baseado em Caminho de URL
 
 O Roteamento Baseado em Caminho de URL permite rotear o tráfego para pools do servidor de back-end com base nos Caminhos de URL da solicitação. 
 
@@ -27,9 +22,9 @@ Um dos cenários possíveis é rotear as solicitações de tipos de conteúdo di
 
 No exemplo a seguir, o Gateway de Aplicativo está fornecendo tráfego para contoso.com de três pools de servidor de back-end, como por exemplo: VideoServerPool, ImageServerPool e DefaultServerPool.
 
-![imageURLroute](./media/url-route-overview/figure1.png)
+![imageURLroute](./media/application-gateway-url-route-overview/figure1.png)
 
-As solicitações para <http://contoso.com/video/*> são roteadas para VideoServerPool, e <http://contoso.com/images/*> são roteadas para ImageServerPool. O DefaultServerPool será selecionado se nenhum dos padrões de caminho forem compatíveis.
+As solicitações de http\://contoso.com/video/* são roteadas para VideoServerPool e as de http\://contoso.com/images/* são roteadas para ImageServerPool. O DefaultServerPool será selecionado se nenhum dos padrões de caminho forem compatíveis.
 
 > [!IMPORTANT]
 > As regras são processadas na ordem em que elas são listadas no portal. É altamente recomendável configurar primeiro os ouvintes de vários locais para configurar um ouvinte básico.  Isso garante que o tráfego seja roteado para o back-end correto. Se um ouvinte básico for listado primeiro e corresponder a uma solicitação de entrada, ele é processado por esse ouvinte.
@@ -67,8 +62,37 @@ O elemento urlPathMap é usado para especificar padrões de Caminho para mapeame
 }]
 ```
 
-> [!NOTE]
-> PathPattern: Essa configuração é uma lista de padrões de caminho para correspondência. Cada um deve começar com / e o único lugar onde um "*" é permitido é no final após um "/". A cadeia de caracteres inserida no correspondente de caminho não inclui nenhum texto após o primeiro ? ou #, e esses caracteres não são permitidos aqui.
+### <a name="pathpattern"></a>PathPattern
+
+PathPattern é uma a lista de padrões de caminho para correspondência. Cada um deve começar com / e o único lugar onde um "*" é permitido é no final após um "/". A cadeia alimentada para o correspondente de caminho não inclui nenhum texto após o primeiro? ou #, e esses caracteres não são permitidos aqui. Caso contrário, todos os caracteres permitidos em um URL serão permitidos no PathPattern.
+
+Os padrões compatíveis dependem de se você implanta o Gateway de Aplicativo v1 ou v2:
+
+#### <a name="v1"></a>v1
+
+As regras de caminho não diferenciam maiúsculas de minúsculas.
+
+|Padrão de caminho v1  |É compatível?  |
+|---------|---------|
+|`/images/*`     |sim|
+|`/images*`     |não|
+|`/images/*.jpg`     |não|
+|`/*.jpg`     |não|
+|`/Repos/*/Comments/*`     |não|
+|`/CurrentUser/Comments/*`     |sim|
+
+#### <a name="v2"></a>v2
+
+As regras de caminho diferenciam maiúsculas de minúsculas.
+
+|Padrão de caminho v2  |É compatível?  |
+|---------|---------|
+|`/images/*`     |sim|
+|`/images*`     |sim|
+|`/images/*.jpg`     |não|
+|`/*.jpg`     |não|
+|`/Repos/*/Comments/*`     |não|
+|`/CurrentUser/Comments/*`     |sim|
 
 Você pode conferir um [modelo do Resource Manager usando o roteamento baseado em URL](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) para obter mais informações.
 
@@ -99,4 +123,4 @@ snippet de código da regra de PathBasedRouting:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois de conhecer o roteamento de conteúdo baseado em URL, acesse [criar um application gateway usando o roteamento baseado em URL](tutorial-url-route-powershell.md) para criar um application gateway com as regras de roteamento de URL.
+Depois de conhecer o roteamento de conteúdo baseado em URL, acesse [criar um application gateway usando o roteamento baseado em URL](create-url-route-portal.md) para criar um application gateway com as regras de roteamento de URL.

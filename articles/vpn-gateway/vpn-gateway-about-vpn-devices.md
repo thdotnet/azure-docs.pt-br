@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 09/06/2019
 ms.author: yushwang
-ms.openlocfilehash: 2fd83162c17950b34394e4fce52f2f40805ca84c
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: dea90425e3cd46856262f98d60858b220635d2f4
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801582"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70843853"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>Sobre dispositivos VPN e os parâmetros IPsec/IKE para conexões do Gateway de VPN site a site
 
@@ -38,7 +38,7 @@ Para ajudar a configurar seu dispositivo VPN, consulte os links que correspondem
 |**Fornecedor**          |**Família do dispositivo**     |**Versão mínima do sistema operacional** |**Instruções de configuração PolicyBased** |**Instruções de configuração RouteBased** |
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Não compatível  |[Guia de Configuração](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
-| Allied Telesis     |Série AR de roteadores VPN |Série AR 5.4.7 e superior               |Em breve     |[Guia de Configuração](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
+| Allied Telesis     |Série AR de roteadores VPN |Série AR 5.4.7 e superior               | [Guia de Configuração](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router) |[Guia de Configuração](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
 | Barracuda Networks, Inc. |Barracuda NextGen Firewall F-series |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Guia de Configuração](https://techlib.barracuda.com/NGF/AzurePolicyBasedVPNGW) |[Guia de Configuração](https://techlib.barracuda.com/NGF/AzureRouteBasedVPNGW) |
 | Barracuda Networks, Inc. |Barracuda NextGen Firewall X-series |Barracuda Firewall 6.5 |[Guia de Configuração](https://techlib.barracuda.com/BFW/ConfigAzureVPNGateway) |Não compatível |
 | Ponto de Verificação |Gateway de segurança |R80.10 |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |

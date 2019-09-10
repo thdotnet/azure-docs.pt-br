@@ -11,12 +11,12 @@ ms.author: marthalc
 author: marthalc
 ms.date: 07/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 81ffe8618e07f2e49e4439ea57e254e5d37974f9
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 16fac492fe4c193ecd7ffa7eeff1e884acb742ae
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227956"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860528"
 ---
 # <a name="collect-data-for-models-in-production"></a>Coletar dados para modelos em produção
 
@@ -109,7 +109,7 @@ Para habilitá-lo, você precisa:
 
 Se você já tiver um serviço com as dependências instaladas no **arquivo de ambiente** e no **arquivo de pontuação**, ative a coleta de dados:
 
-1. Vá para [Portal do Azure](https://portal.azure.com).
+1. Vá para [portal do Azure](https://portal.azure.com).
 
 1. Abra seu workspace.
 
@@ -144,6 +144,8 @@ Você pode parar de coletar dados a qualquer momento. Use o código Python ou o 
 
   1. Selecione **Atualizar** para aplicar a alteração.
 
+  Você também pode acessar essas configurações na [página de aterrissagem do espaço de trabalho (versão prévia)](https://ml.azure.com).
+
 + Opção 2 - Use o Python para desabilitar a coleta de dados:
 
   ```python 
@@ -172,7 +174,7 @@ Para acessar rapidamente os dados do blob:
 
 ### <a name="analyzing-model-data-through-power-bi"></a>Analisando dados do modelo por meio do Power BI
 
-1. Faça o download e abra o [PowerBi Desktop](https://www.powerbi.com)
+1. Baixar e abrir [Power bi desktop](https://www.powerbi.com)
 
 1. Selecione **Obter Dados** e clique em [**Armazenamento de Blobs do Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
 

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: dacurwin
-ms.openlocfilehash: f053cc9bf6b08b9cf76b6e992c3d8cbdf5f759da
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 1b3d02d5cfdae2f196f2f35f075dd8c250b5ece1
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258976"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860336"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Solucionando problemas de falhas de backup em máquinas virtuais do Azure
 
@@ -25,7 +25,7 @@ Esta seção aborda a falha da operação de backup da máquina virtual do Azure
 
 ### <a name="basic-troubleshooting"></a>Solução básica de problemas
 
-* Verifique se o agente de VM (agente de WA) é a [versão mais recente](https://docs.microsoft.com/azure/backup/backup-azure-arm-vms-prepare#install-the-vm-agent-on-the-virtual-machine).
+* Verifique se o agente de VM (agente de WA) é a [versão mais recente](https://docs.microsoft.com/azure/backup/backup-azure-arm-vms-prepare#install-the-vm-agent).
 * Verifique se há suporte para a versão do so da VM do Windows ou Linux, consulte a [matriz de suporte de backup da VM IaaS](https://docs.microsoft.com/azure/backup/backup-support-matrix-iaas).
 * Verifique se outro serviço de backup não está em execução.
    * Para garantir que não haja problemas de extensão de instantâneo, [desinstale as extensões para forçar a recarga e repita o backup](https://docs.microsoft.com/azure/backup/backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout#the-backup-extension-fails-to-update-or-load).
@@ -109,7 +109,7 @@ Código de erro: ExtensionConfigParsingFailure<br/>
 Mensagem de erro: Falha ao analisar a configuração da extensão de backup.
 
 Esse erro acontece por causa das permissões alteradas no diretório **MachineKeys**: **%systemdrive%\programdata\microsoft\crypto\rsa\machinekeys**.
-Execute o comando a seguir e verifique se as permissões no diretório MachineKeys são padrão:**icacls%systemdrive%\ProgramData\Microsoft\Crypto\RSA\MachineKeys**.
+Execute o comando a seguir e verifique se as permissões no diretório **MachineKeys** são padrão:**icacls%systemdrive%\ProgramData\Microsoft\Crypto\RSA\MachineKeys**.
 
 As permissões padrão são:
 * Todos: (R,W)

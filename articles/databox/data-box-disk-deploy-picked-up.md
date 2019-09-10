@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/03/2019
-ms.localizationpriority: high
+ms.date: 09/05/2019
 ms.author: alkohli
+ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: aab97257ff2e917dc264017043d3ca11a2ced1fc
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: b982e0bcd87a60e29b11c7123fbe5d675ab017b3
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240205"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390417"
 ---
 ::: zone target="chromeless"
 
@@ -85,12 +85,9 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo na Europa.
 
 Datacenters do Azure na Austrália têm uma notificação de segurança adicional. Todas as remessas de entrada devem ter uma notificação avançada. Execute as seguintes etapas para retirada na Austrália.
 
-1. Envie um email para `adbops@microsoft.com` para solicitar a etiqueta de remessa com a ID exclusiva de entrada ou o código TAU. Faça a solicitação com pelo menos 3 dias com antecedência à data de remessa planejada para receber a etiqueta a tempo.
-2. O assunto do email deve ser – *Solicitação de etiqueta de remessa reversa com o código TAU*. Inclua os seguintes detalhes no email: 
-
-    - Nome do pedido
-    - Endereço
-    - Nome de contato
+1. Use a etiqueta de remessa de devolução fornecida e verifique se o código TAU (número de referência) está escrito nela. Caso não tenha mais a etiqueta de remessa fornecida ou tenha qualquer outro problema, envie um email para [Operações do Data Box na Ásia](mailto:adbo@microsoft.com). Forneça o nome do pedido no assunto do cabeçalho e os detalhes do problema que você está enfrentando.
+3. Afixe a etiqueta à caixa. 
+4. Agende online no link https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference uma retirada. 
 
 ### <a name="pick-up-in-asia"></a>Retirada na Ásia
 

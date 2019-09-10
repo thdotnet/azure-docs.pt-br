@@ -6,13 +6,13 @@ author: banisadr
 ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
-ms.date: 01/17/2019
-ms.openlocfilehash: 0042b0bd8c6ed9e9d253c44151dcf0588c742b48
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.date: 07/11/2019
+ms.openlocfilehash: 9d7cef35ef6d1138b037f7c520f21bee86567aa8
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137836"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842573"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Gerenciar tópicos e publicar eventos usando domínios de eventos
 
@@ -27,27 +27,39 @@ Para saber mais sobre domínios de eventos, consulte [Entender os domínios de e
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
+## <a name="install-preview-feature"></a>Instalar versão prévia do recurso
+
+[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
+
 ## <a name="create-an-event-domain"></a>Crie um domínio de evento
 
 Para gerenciar grandes conjuntos de tópicos, crie um domínio de evento.
 
-Para a CLI do Azure, use:
+# <a name="azure-clitabazurecli"></a>[CLI do Azure](#tab/azurecli)
 
 ```azurecli-interactive
+# If you haven't already installed the extension, do it now.
+# This extension is required for preview features.
+az extension add --name eventgrid
+
 az eventgrid domain create \
   -g <my-resource-group> \
   --name <my-domain-name> \
   -l <location>
 ```
 
-Para o PowerShell, use:
-
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 ```azurepowershell-interactive
+# If you have not already installed the module, do it now.
+# This module is required for preview features.
+Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
+
 New-AzureRmEventGridDomain `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain-name> `
   -Location <location>
 ```
+---
 
 A criação com êxito retornará os seguintes valores:
 
@@ -74,6 +86,7 @@ O gerenciamento de acesso aos tópicos é feito por meio da [atribuição de fun
 
 A Grade de Eventos possui duas funções internas que podem ser utilizadas para atribuir acesso de usuários específicos a vários tópicos em um domínio. Essas funções são `EventGrid EventSubscription Contributor (Preview)`, o que permite a criação e exclusão de assinaturas, e `EventGrid EventSubscription Reader (Preview)`, que permite apenas a listagem de assinaturas de eventos.
 
+# <a name="azure-clitabazurecli"></a>[CLI do Azure](#tab/azurecli)
 O comando da CLI do Azure a seguir limita `alice@contoso.com` para criação e exclusão de assinaturas de eventos apenas no tópico `demotopic1`:
 
 ```azurecli-interactive
@@ -83,6 +96,7 @@ az role assignment create \
   --scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
 ```
 
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 O comando do PowerShell a seguir limita `alice@contoso.com` para criação e exclusão de assinaturas de eventos apenas no tópico `demotopic1`:
 
 ```azurepowershell-interactive
@@ -91,6 +105,7 @@ New-AzureRmRoleAssignment `
   -RoleDefinitionName "EventGrid EventSubscription Contributor (Preview)" `
   -Scope /subscriptions/<sub-id>/resourceGroups/<my-resource-group>/providers/Microsoft.EventGrid/domains/<my-domain-name>/topics/demotopic1
 ```
+---
 
 Para obter mais informações sobre como gerenciar o acesso às operações da Grade de Eventos, consulte [Segurança e autenticação da Grade de Eventos](./security-authentication.md).
 
@@ -102,7 +117,7 @@ Assinar um tópico em um domínio é o mesmo que assinar qualquer outro recurso 
 
 Normalmente, o usuário a quem você concedeu acesso na seção anterior criaria a assinatura. Para simplificar este artigo, você cria a assinatura. 
 
-Para a CLI do Azure, use:
+# <a name="azure-clitabazurecli"></a>[CLI do Azure](#tab/azurecli)
 
 ```azurecli-interactive
 az eventgrid event-subscription create \
@@ -111,7 +126,7 @@ az eventgrid event-subscription create \
   --endpoint https://contoso.azurewebsites.net/api/updates
 ```
 
-Para o PowerShell, use:
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
 ```azurepowershell-interactive
 New-AzureRmEventGridSubscription `
@@ -119,6 +134,8 @@ New-AzureRmEventGridSubscription `
   -EventSubscriptionName <event-subscription> `
   -Endpoint https://contoso.azurewebsites.net/api/updates
 ```
+
+---
 
 Se você precisar de um endpoint de teste para assinar seus eventos, poderá sempre implantar um aplicativo da Web [pré-criado](https://github.com/Azure-Samples/azure-event-grid-viewer) que exiba os eventos de entrada. Você pode enviar seus eventos para o website de teste em `https://<your-site-name>.azurewebsites.net/api/updates`.
 
@@ -158,6 +175,7 @@ Publicar eventos em um domínio é o mesmo que [publicar em um tópico personali
 }]
 ```
 
+# <a name="azure-clitabazurecli"></a>[CLI do Azure](#tab/azurecli)
 Para obter o ponto de extremidade de domínio com a CLI do Azure, use
 
 ```azurecli-interactive
@@ -174,6 +192,7 @@ az eventgrid domain key list \
   -n <my-domain>
 ```
 
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 Para obter o ponto de extremidade de domínio com o PowerShell, use
 
 ```azurepowershell-interactive
@@ -189,25 +208,9 @@ Get-AzureRmEventGridDomainKey `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain>
 ```
+---
 
 E, em seguida, use seu método favorito de fazer um HTTP POST para publicar os eventos no domínio da Grade de Eventos.
-
-## <a name="search-lists-of-topics-or-subscriptions"></a>Listas de pesquisa de tópicos ou assinaturas
-
-Para tornar a pesquisa e gerenciamento de um grande número de tópicos ou assinaturas, a APIs da grade de eventos dar suporte à listagem e a paginação.
-
-### <a name="using-cli"></a>Usando a CLI
-
-Para usar-Verifique se você está usando a versão da extensão de grade de eventos do Azure CLI 0.4.1 ou mais recente.
-
-```azurecli-interactive
-# If you haven't already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
-az eventgrid topic list \
-    --odata-query "contains(name, 'my-test-filter')"
-```
 
 ## <a name="next-steps"></a>Próximas etapas
 

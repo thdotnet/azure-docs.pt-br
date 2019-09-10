@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/07/2019
-ms.openlocfilehash: 81e8601ac83d43bde0767e38eb387f489d76125b
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: e1029ad34a05d342e5aed5bb30407dee7c914f3c
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165236"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873567"
 ---
 # <a name="enterprise-security-for-the-azure-machine-learning-service"></a>Segurança da empresa para o serviço de Azure Machine Learning
 
@@ -132,7 +132,7 @@ Para obter mais informações sobre identidades gerenciadas, consulte [identidad
 
 Não recomendamos que os administradores revoguem o acesso da identidade gerenciada aos recursos mencionados na tabela anterior. Você pode restaurar o acesso usando a operação de ressincronização de chaves.
 
-O serviço de Azure Machine Learning cria um aplicativo adicional (o nome começa `aml-`com) com o acesso no nível de colaborador em sua assinatura para cada região do espaço de trabalho. Por exemplo, se você tiver um espaço de trabalho no leste dos EUA e outro espaço de trabalho em Europa Setentrional na mesma assinatura, você verá dois desses aplicativos. Esses aplicativos permitem que o serviço Azure Machine Learning para ajudá-lo a gerenciar recursos de computação.
+O serviço de Azure Machine Learning cria um aplicativo adicional (o nome começa `aml-` com `Microsoft-AzureML-Support-App-`ou) com acesso no nível de colaborador em sua assinatura para cada região do espaço de trabalho. Por exemplo, se você tiver um espaço de trabalho no leste dos EUA e outro espaço de trabalho em Europa Setentrional na mesma assinatura, você verá dois desses aplicativos. Esses aplicativos permitem que o serviço Azure Machine Learning para ajudá-lo a gerenciar recursos de computação.
 
 ## <a name="network-security"></a>Segurança de rede
 

@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/02/2019
 ms.author: babanisa
-ms.openlocfilehash: 9464ab89e08f53f61cb6f5a4b1e91da35b785af0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6129c7f498ce6c52fce4266f693c6a304642f8c3
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822795"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845464"
 ---
 # <a name="event-grid-subscription-schema"></a>Esquema de assinatura de Grade de Eventos
 
@@ -33,26 +33,26 @@ O nome da assinatura de evento deve ter 3 a 64 caracteres de comprimento e só p
  
 ## <a name="event-subscription-properties"></a>Propriedades da assinatura do evento
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Tipo | Descrição |
 | -------- | ---- | ----------- |
 | destination | objeto | O objeto que define o ponto de extremidade. |
 | filter | objeto | Um campo opcional para filtrar os tipos de eventos. |
 
 ### <a name="destination-object"></a>objeto de destino
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Tipo | Descrição |
 | -------- | ---- | ----------- |
-| endpointType | string | O tipo de ponto de extremidade para a assinatura (webhook/HTTP, o Hub de evento ou fila). | 
-| endpointUrl | string | A URL de destino para eventos nesta assinatura de evento. | 
+| endpointType | cadeia de caracteres | O tipo de ponto de extremidade para a assinatura (webhook/HTTP, o Hub de evento ou fila). | 
+| endpointUrl | cadeia de caracteres | A URL de destino para eventos nesta assinatura de evento. | 
 
 ### <a name="filter-object"></a>objeto filter
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Tipo | Descrição |
 | -------- | ---- | ----------- |
-| includedEventTypes | matriz | Correspondência quando o tipo de evento na mensagem de evento é uma correspondência exata para esses nomes de tipo de evento. Gera um erro quando o nome do evento não coincide com os nomes de tipo de evento registrados para a origem do evento. O padrão corresponde a todos os tipos de evento. |
-| subjectBeginsWith | string | Uma correspondência de prefixo de filtro para o campo de assunto no evento mensagem. A cadeia de caracteres padrão ou vazia corresponde a tudo. | 
-| subjectEndsWith | string | Uma correspondência de sufixo de filtro para o campo de assunto no evento mensagem. A cadeia de caracteres padrão ou vazia corresponde a tudo. |
-| isSubjectCaseSensitive | string | Controla a correspondência que diferencia maiúsculas e minúsculas para filtros. |
+| includedEventTypes | array | Correspondência quando o tipo de evento na mensagem de evento é uma correspondência exata para esses nomes de tipo de evento. Gera um erro quando o nome do evento não coincide com os nomes de tipo de evento registrados para a origem do evento. O padrão corresponde a todos os tipos de evento. |
+| subjectBeginsWith | cadeia de caracteres | Uma correspondência de prefixo de filtro para o campo de assunto no evento mensagem. A cadeia de caracteres padrão ou vazia corresponde a tudo. | 
+| subjectEndsWith | cadeia de caracteres | Uma correspondência de sufixo de filtro para o campo de assunto no evento mensagem. A cadeia de caracteres padrão ou vazia corresponde a tudo. |
+| isSubjectCaseSensitive | cadeia de caracteres | Controla a correspondência que diferencia maiúsculas e minúsculas para filtros. |
 
 
 ## <a name="example-subscription-schema"></a>Esquema de assinatura de exemplo
@@ -68,7 +68,7 @@ O nome da assinatura de evento deve ter 3 a 64 caracteres de comprimento e só p
     },
     "filter": {
       "includedEventTypes": [ "Microsoft.Storage.BlobCreated", "Microsoft.Storage.BlobDeleted" ],
-      "subjectBeginsWith": "blobServices/default/containers/mycontainer/log",
+      "subjectBeginsWith": "/blobServices/default/containers/mycontainer/log",
       "subjectEndsWith": ".jpg",
       "isSubjectCaseSensitive ": "true"
     }

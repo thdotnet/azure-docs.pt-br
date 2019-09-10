@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: d7c538bd98b3924b422a93bc67cac405a6e4b7af
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 818285e089ab01c2c603f2b0181fbd6d9179eba1
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70383116"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873460"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Como um CSP, criar e gerenciar um aplicativo do Azure IoT Central em nome de seu cliente
 
@@ -71,14 +71,14 @@ Para saber mais, consulte [Assinaturas do Azure](https://docs.microsoft.com/azur
 
 ## <a name="region"></a>Região
 
-Escolha a região onde você gostaria de criar o Aplicativo Azure IoT Central. Normalmente, você deve escolher a região mais próxima fisicamente de seus dispositivos para obter um desempenho ideal.
+Escolha a região ou [geografia](https://azure.microsoft.com/global-infrastructure/geographies/) onde você gostaria de criar seu aplicativo de IOT central do Azure. Normalmente, você deve escolher a região mais próxima fisicamente em seus dispositivos para obter o desempenho ideal.
 
 > [!NOTE]
 > No momento, o modelo de **aplicativo de visualização** só está disponível nas regiões **Europa setentrional** e **EUA Central** .
 
-Para saber mais, consulte [Regiões do Azure](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#azure-regions).
+Para saber mais, confira [regiões do Azure](https://azure.microsoft.com/global-infrastructure/regions/) e [geografias do Azure](https://azure.microsoft.com/global-infrastructure/geographies/).
 
-É possível visualizar as regiões nas quais o Azure IoT Central está disponível, na página [Produtos disponíveis por região](https://azure.microsoft.com/regions/services/).
+É possível visualizar as regiões nas quais o Azure IoT Central está disponível, na página [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=iot-central).
 
 > [!Note]
 > Após escolher uma região, não será mais possível mover posteriormente o aplicativo para uma região diferente.

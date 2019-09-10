@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 4d17f0e5273c7397bd9c6a71d14b7992d8652768
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 38cbe43e9038a47c4e222fd4744f0b844f9ddb4e
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165873"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845690"
 ---
 # <a name="monitor-device-connectivity-using-the-azure-iot-central-explorer"></a>Monitorar a conectividade de dispositivo usando o Azure IoT Central Explorer
 
@@ -21,14 +21,14 @@ ms.locfileid: "67165873"
 
 Use a CLI do IoT Central Explorer para ver as mensagens que os dispositivos estão enviando para o IoT Central e observe as alterações no dispositivo gêmeo do Hub IoT. É possível usar essa ferramenta de software livre para obter informações mais detalhadas sobre o estado da conectividade de dispositivo e diagnosticar problemas de mensagens do dispositivo que não alcançam a nuvem ou dispositivos que não estão respondendo a alterações do dispositivo gêmeo.
 
-[Visite o repositório iotc explorer no GitHub.](https://aka.ms/iotciotcexplorercligithub)
+[Visite o repositório IOTC-Explorer no GitHub.](https://aka.ms/iotciotcexplorercligithub)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 + Node.js versão 8.x ou superior - https://nodejs.org
-+ Um administrador do seu aplicativo deve gerar um token de acesso para uso no Gerenciador de iotc
++ Um administrador do seu aplicativo deve gerar um token de acesso para você usar no IOTC-Explorer
 
-## <a name="install-iotc-explorer"></a>Instale o Gerenciador de iotc
+## <a name="install-iotc-explorer"></a>Instalar o IOTC-Explorer
 
 Para instalar, execute o comando a seguir na linha de comando:
 
@@ -37,23 +37,23 @@ npm install -g iotc-explorer
 ```
 
 > [!NOTE]
-> Normalmente, você precisará executar o comando de instalação com `sudo` em ambientes Unix-like.
+> Normalmente, você precisa executar o comando install com `sudo` o em ambientes semelhantes ao Unix.
 
-## <a name="run-iotc-explorer"></a>Executar o Gerenciador de iotc
+## <a name="run-iotc-explorer"></a>Executar o IOTC-Explorer
 
-As seções a seguir descrevem comum de comandos e opções que você pode usar ao executar `iotc-explorer`. Para exibir o conjunto completo de comandos e opções, passe `--help` para `iotc-explorer` ou qualquer um dos seus subcomandos.
+As seções a seguir descrevem comandos e opções comuns que você pode usar ao executar `iotc-explorer`o. Para exibir o conjunto completo de comandos e opções, passe `--help` para `iotc-explorer` ou qualquer um de seus subcomandos.
 
 ### <a name="login"></a>Logon
 
 Antes de começar, é necessário ter um administrador do aplicativo IoT Central para obter um token de acesso para você usar. O administrador executa as etapas a seguir:
 
-1. Navegue até **Administration** , em seguida, **Tokens de acesso**.
-1. Selecione **gerar Token**.
+1. Navegue até **Administração** e, em seguida, **acesse tokens**.
+1. Selecione **gerar token**.
     ![Captura de tela da página de token de acesso](media/howto-use-iotc-explorer/accesstokenspage.png)
 
-1. Insira um nome de Token, selecione **próxima**e então **cópia**.
+1. Insira um nome de token, selecione **Avançar**e, em seguida, **copiar**.
     > [!NOTE]
-    > O valor do token é mostrado apenas uma vez, portanto, ele deverá ser copiado antes de fechar a caixa de diálogo. Depois de fechar a caixa de diálogo, ele nunca é mostrado novamente.
+    > O valor do token é mostrado apenas uma vez, portanto, ele deve ser copiado antes de fechar a caixa de diálogo. Depois de fechar a caixa de diálogo, ela nunca é mostrada novamente.
 
     ![Copiar captura de tela do token de acesso](media/howto-use-iotc-explorer/copyaccesstoken.png)
 
@@ -63,7 +63,7 @@ Você pode usar o token para fazer logon na CLI da seguinte maneira:
 iotc-explorer login "<Token value>"
 ```
 
-Se você preferir não ter o token persistentes em seu histórico de shell, você pode deixar o token de saída e em vez disso, forneça-a quando solicitado:
+Se preferir não ter o token persistido no histórico do Shell, você poderá deixar o token fora e, em vez disso, fornecê-lo quando solicitado:
 
 ```cmd/sh
 iotc-explorer login
@@ -71,7 +71,7 @@ iotc-explorer login
 
 ### <a name="monitor-device-messages"></a>Monitorar mensagens de dispositivo
 
-É possível inspecionar as mensagens provenientes de um dispositivo específico ou de todos os dispositivos no aplicativo usando o comando `monitor-messages`. Esse comando inicia um inspetor que gera continuamente novas mensagens assim que chegarem:
+É possível inspecionar as mensagens provenientes de um dispositivo específico ou de todos os dispositivos no aplicativo usando o comando `monitor-messages`. Esse comando inicia um observador que gera continuamente novas mensagens à medida que elas chegam:
 
 Para inspecionar todos os dispositivos no aplicativo, execute o comando a seguir:
 
@@ -83,15 +83,15 @@ Saída:
 
 ![monitor-messages command output](media/howto-use-iotc-explorer/monitormessages.png)
 
-Para assistir a um dispositivo específico, basta adicione a id do dispositivo para o final do comando:
+Para assistir a um dispositivo específico, basta adicionar a ID do dispositivo ao final do comando:
 
 ```cmd/sh
 iotc-explorer monitor-messages <your-device-id>
 ```
 
-Você também poderá gerar um formato mais amigável para o computador adicionando as `--raw` opção para o comando:
+Você também pode gerar um formato mais amigável adicionando a `--raw` opção ao comando:
 
-```
+```cmd/sh
 iotc-explorer monitor-messages --raw
 ```
 
@@ -115,4 +115,4 @@ iotc-explorer get-twin <your-device-id> --raw
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você aprendeu como usar o Gerenciador de IoT Central, a próxima etapa sugerida é explorar [gerenciamento de dispositivos IoT Central](howto-manage-devices.md).
+Agora que você aprendeu a usar o IoT Central Explorer, a próxima etapa sugerida é explorar o [Gerenciamento de dispositivos IOT central](howto-manage-devices.md).

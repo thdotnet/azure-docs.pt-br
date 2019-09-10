@@ -9,21 +9,21 @@ ms.date: 05/28/2019
 ms.author: lahugh
 ms.custom: include file
 ms.openlocfilehash: 22bfc3c86605f4c2eed4c022919b3643f394ea95
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67080914"
 ---
 | **Recurso** | **Limite padrão** | **Limite máximo** |
 | --- | --- | --- |
-| Contas do lote do Azure por região e assinatura | 1-3 |50 |
-| Núcleos dedicados por conta do Lote | 90-900 | Contate o suporte |
-| Núcleos de baixa prioridade por conta do Lote | 10-100 | Contate o suporte |
-| **[Active Directory](https://docs.microsoft.com/rest/api/batchservice/job/get#jobstate)**  trabalhos e agendas de trabalho por conta do lote (**concluída** trabalhos não têm nenhum limite) | 100-300 | 1,000<sup>1</sup> |
-| Núcleos por conta do Lote | 20-100 | 500<sup>1</sup> |
+| Contas do lote do Azure por região por assinatura | 1-3 |50 |
+| Núcleos dedicados por conta do Lote | 90-900 | Contatar o suporte |
+| Núcleos de baixa prioridade por conta do Lote | 10-100 | Contatar o suporte |
+| Trabalhos **[ativos](https://docs.microsoft.com/rest/api/batchservice/job/get#jobstate)** e agendas de trabalho por conta do lote (trabalhos**concluídos** não têm limite) | 100-300 | 1\.000<sup>1</sup> |
+| Pools por conta do Lote | 20-100 | 500<sup>1</sup> |
 
 > [!NOTE]
 > Os limites padrão variam dependendo do tipo de assinatura que você usa para criar uma conta do Lote. As cotas de núcleos mostradas são para as contas do Lote no modo do Serviço de lote. [Exibir as cotas na conta do Lote](../articles/batch/batch-quota-limit.md#view-batch-quotas).
 
-<sup>1</sup>para solicitar um aumento além desse limite, entre em contato com o suporte do Azure.
+<sup>1</sup> Para solicitar um aumento além desse limite, entre em contato com o suporte do Azure.

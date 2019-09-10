@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 85f7395cbfa4ef2ba6ab448c9541b3f107eb0e96
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: ac8d059c2bcad7aaa005b4afe1fb7814d49f9339
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68249812"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844953"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-using-a-resource-manager-template-for-a-windows-virtual-machine"></a>Enviar métricas do SO convidado para o repositório de métricas do Azure Monitor usando um modelo do Resource Manager para uma máquina virtual do Windows
 
@@ -32,6 +32,8 @@ Se você é novo nos modelos do Resource Manager, aprenda sobre [implantações 
 - Sua assinatura deve ser registrada com [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
 - Você precisará ter o [Azure PowerShell](/powershell/azure) ou o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) instalado.
+
+- O recurso da VM deve estar em uma [região que ofereça suporte a métricas personalizadas](metrics-custom-overview.md#supported-regions). 
 
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Configurar o Azure Monitor como um coletor de dados

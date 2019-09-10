@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: damaerte
-ms.openlocfilehash: 2511f2c8fb706e232cde9ee4c02c7f8114bd3a2b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3435d958049012750e775e2a17f43f463a0cc358
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60200540"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860312"
 ---
 # <a name="using-the-azure-cloud-shell-window"></a>Usando a janela do Azure Cloud Shell
 
@@ -28,7 +28,7 @@ Este documento explica como usar a janela do Cloud Shell.
 ## <a name="swap-between-bash-and-powershell-environments"></a>Alternar entre os ambientes Bash e PowerShell
 
 Use o seletor de ambiente na barra de ferramentas do Cloud Shell para alternar entre os ambientes Bash e PowerShell.  
-![Selecione o ambiente](media/using-the-shell-window/env-selector.png)
+![Selecionar ambiente](media/using-the-shell-window/env-selector.png)
 
 ## <a name="restart-cloud-shell"></a>Reiniciar o Cloud Shell
 Clique no ícone de reinicialização na barra de ferramentas do Cloud Shell para redefinir o estado da máquina.  
@@ -41,33 +41,33 @@ Clique no ícone de configurações na parte superior esquerda da janela, em seg
 ![Tamanho do texto](media/using-the-shell-window/text-size.png)
 
 ## <a name="change-the-font"></a>Alterar a fonte
-Clique no ícone de configurações na parte superior esquerdo da janela, em seguida, passe o mouse sobre a opção "Fonte" e selecione sua fonte desejada.  Sua seleção persistirá entre as sessões.
-![Font](media/using-the-shell-window/text-font.png)
+Clique no ícone de configurações na parte superior esquerda da janela, em seguida, passe o mouse sobre a opção "fonte" e selecione a fonte desejada.  Sua seleção persistirá entre as sessões.
+![Fonte](media/using-the-shell-window/text-font.png)
 
 ## <a name="upload-and-download-files"></a>Carregar e baixar arquivos
-Clique no ícone de arquivos de upload/download de na parte superior esquerdo da janela, em seguida, selecione upload ou download.  
-![Upload/download de arquivos](media/using-the-shell-window/uploaddownload.png)
-* Para carregar arquivos, use o pop-up para navegar até o arquivo no computador local, selecione o arquivo desejado e clique no botão "Abrir".  O arquivo será carregado para o `/home/user` directory.
-* Para baixar arquivos, insira o caminho de arquivo totalmente qualificado para a janela pop-up e selecione o botão "Download".  
+Clique no ícone carregar/baixar arquivos na parte superior esquerda da janela e, em seguida, selecione carregar ou baixar.  
+![Carregar/baixar arquivos](media/using-the-shell-window/uploaddownload.png)
+* Para carregar arquivos, use o pop-up para navegar até o arquivo no computador local, selecione o arquivo desejado e clique no botão "abrir".  O arquivo será carregado no `/home/user` diretório.
+* Para baixar o arquivo, insira o caminho do arquivo totalmente qualificado na janela pop-up (ou seja, basicamente um caminho sob `/home/user` o diretório que aparece por padrão) e selecione o botão "baixar".  
 > [!NOTE] 
-> Arquivos e caminhos de arquivo diferenciam maiusculas de minúsculas no Cloud Shell. Verifique novamente seu uso de maiusculas e minúsculas em seu caminho de arquivo.
+> Arquivos e caminhos de arquivo diferenciam maiúsculas de minúsculas no Cloud Shell. Verifique novamente sua capitalização no caminho do arquivo.
 
-## <a name="open-another-cloud-shell-window"></a>Abrir outra janela do Cloud Shell
-O Cloud Shell permite várias sessões simultâneas em guias do navegador, permitindo que cada sessão exista como um processo separado.
+## <a name="open-another-cloud-shell-window"></a>Abrir outra janela de Cloud Shell
+O Cloud Shell permite várias sessões simultâneas nas guias do navegador, permitindo que cada sessão exista como um processo separado.
 Ao sair de uma sessão, saia de cada janela de sessão, pois cada processo é executado de forma independente apesar de serem executados no mesmo computador.  
-Clique no ícone de nova sessão aberta na parte superior esquerdo da janela. Uma nova guia será aberta com outra sessão conectada ao contêiner existente.
+Clique no ícone abrir nova sessão na parte superior esquerda da janela. Uma nova guia será aberta com outra sessão conectada ao contêiner existente.
 ![Abrir nova sessão](media/using-the-shell-window/newsession.png)
 
 ## <a name="cloud-shell-editor"></a>Editor do Cloud Shell
-* Consulte a [usando o editor do Azure Cloud Shell](using-cloud-shell-editor.md) página.
+* Consulte a página [usando o editor de Azure cloud Shell](using-cloud-shell-editor.md) .
 
 ## <a name="web-preview"></a>Visualização da Web
-Clique no ícone de visualização da web na parte superior esquerda da janela, selecione "Configurar", especifique a porta desejada ao abrir.  Selecione qualquer um dos "porta aberta" apenas para abre a porta, ou "abrir e procurar" para abrir a porta e a porta em uma nova guia de visualização.  
+Clique no ícone de visualização da Web na parte superior esquerda da janela, selecione "configurar", especifique a porta desejada a ser aberta.  Selecione "abrir porta" para abrir apenas a porta ou "abrir e procurar" para abrir a porta e visualizar a porta em uma nova guia.  
 ![Visualização da Web](media/using-the-shell-window/preview.png)  
 <br>
-![Configurar a porta](media/using-the-shell-window/preview-configure.png)  
-Clique no ícone de visualização da web na parte superior esquerdo da janela, selecione "Visualizar a porta..." Para visualizar uma porta aberta em uma nova guia. Clique no ícone de visualização da web na parte superior esquerdo da janela, selecione "Fechar porta..." para fechar a porta aberta.  
-![Porta de visualização/de fechamento](media/using-the-shell-window/preview-options.png)
+![Configurar porta](media/using-the-shell-window/preview-configure.png)  
+Clique no ícone de visualização da Web na parte superior esquerda da janela, selecione "porta de visualização..." para visualizar uma porta aberta em uma nova guia. Clique no ícone de visualização da Web na parte superior esquerda da janela, selecione "fechar porta..." para fechar a porta aberta.  
+![Visualizar/fechar porta](media/using-the-shell-window/preview-options.png)
 
 ## <a name="minimize--maximize-cloud-shell-window"></a>Minimizar e maximizar a janela do Cloud Shell
 Clique no ícone de minimizar no canto superior direito da janela para ocultá-lo. Clique novamente no ícone do Cloud Shell para reexibir.

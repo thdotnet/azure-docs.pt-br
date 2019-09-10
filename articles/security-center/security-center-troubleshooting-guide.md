@@ -1,31 +1,25 @@
 ---
 title: Guia de solução de problemas da Central de Segurança do Azure | Microsoft Docs
-description: Este documento ajuda a solucionar problemas na Central de Segurança do Azure.
+description: Este documento ajuda a solucionar problemas na central de segurança do Azure.
 services: security-center
-documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
-ms.assetid: 44462de6-2cc5-4672-b1d3-dbb4749a28cd
+author: memildin
+manager: rkarlin
 ms.service: security-center
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 3/20/2019
-ms.author: rkarlin
-ms.openlocfilehash: 93656578fac52e4ba5ff96e655ea51678f2292cd
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.date: 09/10/2019
+ms.author: memildin
+ms.openlocfilehash: 26615819dc407e51281254c73076a1d721e6059f
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68609911"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873398"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Guia de solução de problemas da Central de Segurança do Azure
 Este guia é para os profissionais de TI (tecnologia da informação), analistas de segurança de informações e administradores de nuvem cujas organizações estão usando a Central de Segurança do Azure e precisam solucionar os problemas relacionados a Central de Segurança.
 
 >[!NOTE]
->Desde o início de junho de 2017, a Central de Segurança usa o Microsoft Monitoring Agent para coletar e armazenar dados. Veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md) para saber mais. As informações deste artigo representam a funcionalidade da Central de Segurança após a transição para o Microsoft Monitoring Agent.
+>A central de segurança usa o Microsoft Monitoring Agent para coletar e armazenar dados. Veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md) para saber mais.
 >
 
 ## <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
@@ -56,9 +50,9 @@ Para ver qual versão do agente que você tem, abra **Gerenciador de Tarefas**, 
 ## <a name="microsoft-monitoring-agent-installation-scenarios"></a>Cenários de instalação do Microsoft Monitoring Agent
 Há dois cenários de instalação que podem produzir resultados diferentes ao instalar o Microsoft Monitoring Agent em seu computador. Os cenários compatíveis são:
 
-* **Agente instalado automaticamente pela Central de Segurança**: neste cenário você poderá exibir os alertas em Locais, na Central de Segurança e na Pesquisa de Logs. Você receberá notificações por email para o endereço de email configurado na política de segurança para a assinatura à qual o recurso pertence.
+* **Agente instalado automaticamente pela Central de Segurança**: neste cenário você poderá exibir os alertas em Locais, na Central de Segurança e na Pesquisa de Logs. Você receberá notificações por email para o endereço de email que foi configurado na política de segurança para a assinatura à qual o recurso pertence.
 .
-* **Agente instalado manualmente em uma máquina virtual localizada no Azure**: nesse cenário, se você estiver usando agentes baixados e instalados manualmente antes de fevereiro de 2017, será capaz de exibir os alertas no portal da Central de Segurança somente se filtrar na assinatura à qual o workspace pertence. No caso de você filtrar a assinatura à qual o recurso pertence, não será possível ver todos os alertas. Você receberá notificações por email para o endereço de email configurado na política de segurança para a assinatura à qual o workspace pertence.
+* **Agente instalado manualmente em uma VM localizada no Azure**: nesse cenário, se você estiver usando agentes baixados e instalados manualmente antes de fevereiro de 2017, você poderá exibir os alertas no portal da central de segurança somente se filtrar a assinatura no espaço de trabalho pertence a. Se você filtrar a assinatura à qual o recurso pertence, você não verá nenhum alerta. Você receberá notificações por email para o endereço de email que foi configurado na política de segurança para a assinatura à qual o espaço de trabalho pertence.
 
 >[!NOTE]
 > Para evitar o comportamento explicado no segundo cenário, baixe a versão mais recente do agente.

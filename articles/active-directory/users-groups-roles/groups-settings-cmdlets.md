@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5ccc4ef6c095eacd29590504d46756ead856574
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 73784afd9577d66850596056df1974accd62e4b4
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058611"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844453"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Cmdlets do Azure Active Directory para definir configurações de grupo
 Este artigo contém instruções sobre como usar cmdlets do PowerShell do Azure Active Directory (Azure AD) para criar e atualizar grupos. Este conteúdo aplica-se somente aos Grupos do Office 365 (às vezes chamados de grupos unificados). 
@@ -28,13 +28,11 @@ Este artigo contém instruções sobre como usar cmdlets do PowerShell do Azure 
 > [!IMPORTANT]
 > Algumas configurações exigem uma licença do Azure Active Directory Premium P1. Para obter mais informações, consulte a tabela [Configurações de modelo](#template-settings).
 
-Para saber mais sobre como evitar que usuários não administradores criem grupos de segurança, defina `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` conforme descrito em [Set-MSOLCompanySettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0). 
+Para saber mais sobre como evitar que usuários não administradores criem grupos de segurança, defina `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` conforme descrito em [Set-MSOLCompanySettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 
 As configurações de Grupos do Office 365 são definidas usando um objeto Settings e um SettingsTemplate. Inicialmente, você não verá objetos Settings no seu diretório, pois o diretório foi configurado com as definições padrão. Para alterar as configurações padrão, você deve criar um novo objeto de configurações usando um modelo de configurações. Modelos de configurações são definidos pela Microsoft. Há vários modelos de configurações diferentes. Para definir as configuração de grupo do Office 365 para seu diretório, use o modelo chamado "Group.Unified". Para definir as configurações de grupo do Office 365 em um único grupo, use o modelo chamado "Group.Unified.Guest". Esse modelo é usado para gerenciar o acesso de convidado a um grupo do Office 365. 
 
 Os cmdlets fazem parte do Módulo do Azure Active Directory PowerShell V2. Para obter instruções de como baixar e instalar o módulo no seu computador, confira o artigo [Azure Active Directory PowerShell Version 2](https://docs.microsoft.com/powershell/azuread/) (PowerShell Versão 2 do Azure Active Directory). Você pode instalar a versão 2 do módulo da [galeria do PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
-
-
 
 ## <a name="create-settings-at-the-directory-level"></a>Criar configurações no nível do diretório
 Essas etapas criam configurações no nível de diretório, que são aplicáveis a todos os Grupos do Office 365 no diretório. O cmdlet Get-AzureADDirectorySettingTemplate está disponível apenas no [módulo de versão prévia do Azure AD PowerShell para Graph](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137).
@@ -71,7 +69,7 @@ Essas etapas criam configurações no nível de diretório, que são aplicáveis
    ```powershell
    $Setting["UsageGuidelinesUrl"] = "https://guideline.example.com"
    ```  
-5. Em seguida, aplica a configuração:
+5. Em seguida, aplique a configuração:
   
    ```powershell
    Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
@@ -82,7 +80,7 @@ Essas etapas criam configurações no nível de diretório, que são aplicáveis
    $Setting.Values
    ```  
 ## <a name="update-settings-at-the-directory-level"></a>Atualizar configurações no nível do diretório
-Para atualizar o valor do UsageGuideLinesUrl no modelo de configuração, simplesmente edite a URL com a etapa 4 acima e executar a etapa 5 para definir o novo valor.
+Para atualizar o valor de UsageGuideLinesUrl no modelo de configuração, basta editar a URL com a etapa 4 acima e, em seguida, executar a etapa 5 para definir o novo valor.
 
 Para remover o valor de UsageGuideLinesUrl, edite a URL para ser uma cadeia de caracteres vazia usando a etapa 4 acima:
 
@@ -96,26 +94,26 @@ Aqui estão as configurações definidas no Group.Unified SettingsTemplate. A me
 
 | **Configuração** | **Descrição** |
 | --- | --- |
-|  <ul><li>EnableGroupCreation<li>Digite: Boolean<li>Padrão: True |O sinalizador indicando se a criação do Grupo do Office 365 é permitida no diretório pelos usuários não administradores. Essa configuração não requer uma licença do Azure Active Directory Premium P1.|
-|  <ul><li>GroupCreationAllowedGroupId<li>Digite: Cadeia de caracteres<li>Padrão: “” |GUID do grupo de segurança para o qual os membros podem criar Grupos do Office 365 mesmo quando EnableGroupCreation == falso. |
-|  <ul><li>UsageGuidelinesUrl<li>Digite: Cadeia de caracteres<li>Padrão: “” |Um link para as Diretrizes de Uso do Grupo. |
-|  <ul><li>ClassificationDescriptions<li>Digite: Cadeia de caracteres<li>Padrão: “” | Uma lista delimitada por vírgulas de descrições de classificação. O valor de ClassificationDescriptions somente é válido neste formato:<br>$setting[“ClassificationDescriptions”] ="Classification:Description,Classification:Description"<br>em que a classificação coincide com cadeias de caracteres a ClassificationList.|
-|  <ul><li>DefaultClassification<li>Digite: Cadeia de caracteres<li>Padrão: “” | A classificação que deve ser usada como a classificação padrão para um grupo, se nenhuma for especificada.|
-|  <ul><li>PrefixSuffixNamingRequirement<li>Digite: Cadeia de caracteres<li>Padrão: “” | Cadeia de caracteres de um comprimento máximo de 64 caracteres que define a convenção de nomenclatura configurada para Grupos do Office 365. Para obter mais informações, confira [Impor uma política de nomenclatura para grupos do Office 365](groups-naming-policy.md). |
-| <ul><li>CustomBlockedWordsList<li>Digite: Cadeia de caracteres<li>Padrão: “” | Cadeia de caracteres de frases separadas por vírgulas que os usuários não serão autorizados a usar em nomes de grupos ou alias. Para obter mais informações, confira [Impor uma política de nomenclatura para grupos do Office 365](groups-naming-policy.md). |
+|  <ul><li>EnableGroupCreation<li>Digite: Boolean<li>Padrão: verdadeiro |O sinalizador indicando se a criação do Grupo do Office 365 é permitida no diretório pelos usuários não administradores. Essa configuração não requer uma licença do Azure Active Directory Premium P1.|
+|  <ul><li>GroupCreationAllowedGroupId<li>Digite: Cadeia<li>Padrão: “” |GUID do grupo de segurança para o qual os membros podem criar Grupos do Office 365 mesmo quando EnableGroupCreation == falso. |
+|  <ul><li>UsageGuidelinesUrl<li>Digite: Cadeia<li>Padrão: “” |Um link para as Diretrizes de Uso do Grupo. |
+|  <ul><li>ClassificationDescriptions<li>Digite: Cadeia<li>Padrão: “” | Uma lista delimitada por vírgulas de descrições de classificação. O valor de ClassificationDescriptions somente é válido neste formato:<br>$setting ["ClassificationDescriptions"] = "classificação: descrição, classificação: Descrição"<br>em que a classificação corresponde às cadeias de caracteres na classificação.|
+|  <ul><li>DefaultClassification<li>Digite: Cadeia<li>Padrão: “” | A classificação que deve ser usada como a classificação padrão para um grupo, se nenhuma for especificada.|
+|  <ul><li>PrefixSuffixNamingRequirement<li>Digite: Cadeia<li>Padrão: “” | Cadeia de caracteres de um comprimento máximo de 64 caracteres que define a convenção de nomenclatura configurada para Grupos do Office 365. Para obter mais informações, confira [Impor uma política de nomenclatura para grupos do Office 365](groups-naming-policy.md). |
+| <ul><li>CustomBlockedWordsList<li>Digite: Cadeia<li>Padrão: “” | Cadeia de caracteres de frases separadas por vírgulas que os usuários não serão autorizados a usar em nomes de grupos ou alias. Para obter mais informações, confira [Impor uma política de nomenclatura para grupos do Office 365](groups-naming-policy.md). |
 | <ul><li>EnableMSStandardBlockedWords<li>Digite: Boolean<li>Padrão: “False” | Não use
-|  <ul><li>AllowGuestsToBeGroupOwner<li>Digite: Boolean<li>Padrão: Falso | Booliano que indica se um usuário convidado pode ser um proprietário de grupos. |
-|  <ul><li>AllowGuestsToAccessGroups<li>Digite: Boolean<li>Padrão: True | Booliano que indica se um usuário convidado pode ter acesso ao conteúdo dos Grupos do Office 365.  Essa configuração não requer uma licença do Azure Active Directory Premium P1.|
-|  <ul><li>GuestUsageGuidelinesUrl<li>Digite: Cadeia de caracteres<li>Padrão: “” | A url de um link para as diretrizes de uso do convidado. |
-|  <ul><li>AllowToAddGuests<li>Digite: Boolean<li>Padrão: True | Um booliano que indica se há permissão para adicionar convidados a este diretório.|
-|  <ul><li>ClassificationList<li>Digite: Cadeia de caracteres<li>Padrão: “” |Uma lista delimitada por vírgulas de valores de classificação válidos que podem ser aplicados aos Grupos do Office 365. |
+|  <ul><li>AllowGuestsToBeGroupOwner<li>Digite: Boolean<li>Padrão: False | Booliano que indica se um usuário convidado pode ser um proprietário de grupos. |
+|  <ul><li>AllowGuestsToAccessGroups<li>Digite: Boolean<li>Padrão: verdadeiro | Booliano que indica se um usuário convidado pode ter acesso ao conteúdo dos Grupos do Office 365.  Essa configuração não requer uma licença do Azure Active Directory Premium P1.|
+|  <ul><li>GuestUsageGuidelinesUrl<li>Digite: Cadeia<li>Padrão: “” | A url de um link para as diretrizes de uso do convidado. |
+|  <ul><li>AllowToAddGuests<li>Digite: Boolean<li>Padrão: verdadeiro | Um booliano que indica se há permissão para adicionar convidados a este diretório.|
+|  <ul><li>ClassificationList<li>Digite: Cadeia<li>Padrão: “” |Uma lista delimitada por vírgulas de valores de classificação válidos que podem ser aplicados aos Grupos do Office 365. |
 
 ## <a name="example-configure-guest-policy-for-groups-at-the-directory-level"></a>Exemplo: Configurar a política de convidado para grupos no nível do diretório
-1. Obter todos os modelos de configuração:
+1. Obtenha todos os modelos de configuração:
    ```powershell
    Get-AzureADDirectorySettingTemplate
    ```
-2. Para definir a política de convidado para grupos no nível do diretório, você precisa Unified modelo
+2. Para definir a política de convidado para grupos no nível do diretório, você precisa de grupo. modelo unificado
    ```powershell
    $Template = Get-AzureADDirectorySettingTemplate -Id 62375ab9-6b52-47ed-826b-58e47e0e304b
    ```
@@ -124,11 +122,11 @@ Aqui estão as configurações definidas no Group.Unified SettingsTemplate. A me
    ```powershell
    $Setting = $template.CreateDirectorySetting()
    ```  
-4. Em seguida, atualize a configuração de AllowToAddGuests
+4. Em seguida, atualize a configuração AllowToAddGuests
    ```powershell
    $Setting["AllowToAddGuests"] = $False
    ```  
-5. Em seguida, aplica a configuração:
+5. Em seguida, aplique a configuração:
   
    ```powershell
    Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
@@ -164,7 +162,7 @@ Estas etapas leem configurações no nível do diretório, que se aplicam a todo
    Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups
    ```
 
-3. Ler todos os valores de configurações do diretório de um objeto de configurações de diretório específico, usando o GUID da ID de configurações:
+3. Leia todos os valores de configurações de diretório de um objeto de configurações de diretório específico, usando o GUID de ID de configurações:
    ```powershell
    (Get-AzureADDirectorySetting -Id c391b57d-5783-4c53-9236-cefb5c6ef323).values
    ```
@@ -219,7 +217,7 @@ Esta etapa remove configurações no nível do diretório, que se aplicam a todo
    ```powershell
    $SettingCopy["AllowToAddGuests"]=$False
    ```
-5. Obtenha a ID do grupo que você deseja aplicar essa configuração para:
+5. Obtenha a ID do grupo ao qual você deseja aplicar essa configuração:
    ```powershell
    $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
    ```
@@ -237,15 +235,15 @@ Esta etapa remove configurações no nível do diretório, que se aplicam a todo
    ```powershell
    $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
    ```
-2. Recupere a configuração do grupo:
+2. Recupere a configuração do Grupo:
    ```powershell
    $Setting = Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
    ```
-3. Atualizar a configuração do grupo, conforme necessário, por exemplo
+3. Atualize a configuração do grupo conforme necessário, por exemplo,
    ```powershell
    $Setting["AllowToAddGuests"] = $True
    ```
-4. Em seguida, obtenha a ID da configuração para esse grupo específico:
+4. Em seguida, obtenha a ID da configuração para este grupo específico:
    ```powershell
    Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
    ```
@@ -259,7 +257,7 @@ Esta etapa remove configurações no nível do diretório, que se aplicam a todo
    ```powershell
    Set-AzureADObjectSetting -TargetType Groups -TargetObjectId $groupID -Id 2dbee4ca-c3b6-4f0d-9610-d15569639e1a -DirectorySetting $Setting
    ```
-6. Você pode ler o valor da configuração para garantir que ele foi atualizado corretamente:
+6. Você pode ler o valor da configuração para certificar-se de que ele foi atualizado corretamente:
    ```powershell
    Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups | fl Values
    ```

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 6e41453a096f4812b9ba541a2693b9c9b975b7c9
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 33ce4c3c7f7cba8310ca75ffd0de3ecb24ad6d8d
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68779073"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873416"
 ---
 # <a name="azure-security-center-frequently-asked-questions-faq"></a>Perguntas frequentes sobre a Central de Segurança do Azure
 Estas perguntas frequentes estão relacionadas à Central de Segurança do Azure, um serviço que ajuda você a impedir, detectar e responder a ameaças com maior visibilidade e controle sobre a segurança dos recursos do Microsoft Azure.
 
 > [!NOTE]
-> A partir do início de junho de 2017, a Central de Segurança usará o Microsoft Monitoring Agent para coletar e armazenar dados. Para saber mais, veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md). As informações deste artigo representam a funcionalidade da Central de Segurança após a transição para o Microsoft Monitoring Agent.
+> A central de segurança usa o Microsoft Monitoring Agent para coletar e armazenar dados. Para saber mais, veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md).
 >
 >
 
@@ -63,7 +63,7 @@ Nº Os espaços de trabalho criados pela central de segurança, enquanto configu
 - **Camada gratuita**: a Central de Segurança instala a solução 'SecurityCenterFree' no workspace padrão. Você não será cobrado pela Camada gratuita.
 - **Camada Standard**: a Central de Segurança habilita a solução 'Security' no workspace padrão.
 
-Para saber mais sobre preços, confira [preços da Central de Segurança](https://azure.microsoft.com/pricing/details/security-center/). A página de preços aborda as mudanças no armazenamento de dados de segurança e cobrança rateada começando em junho de 2017.
+Para saber mais sobre preços, confira [preços da Central de Segurança](https://azure.microsoft.com/pricing/details/security-center/).
 
 > [!NOTE]
 > O tipo de preço do log Analytics de espaços de trabalho criados pela central de segurança não afeta a cobrança da central de segurança.
@@ -161,7 +161,7 @@ Você pode desligar o provisionamento automático para suas assinaturas na polí
 Talvez seja ideal recusar o provisionamento automático nos seguintes casos:
 
 - A instalação automática do agente pela Central de Segurança se aplica a toda a assinatura.  Você não pode aplicar a instalação automática em um subconjunto de VMs. Se houver VMs essenciais que não podem ser instaladas com o Microsoft Monitoring Agent, você deverá recusar o provisionamento automático.
-- A instalação da extensão Microsoft Monitoring Agent (MMA) atualiza a versão do agente. Isso se aplica a um agente direto e a um agente do SCOM (no último, o SCOM e o MMA compartilham bibliotecas comuns de tempo de execução, que serão atualizadas no processo). Se a versão do agente SCOM instalada for 2012 e estiver atualizada, os recursos de gerenciamento poderão ser perdidos quando o servidor SCOM também for a versão 2012. Você deve pensar em recusar o provisionamento automático se a versão do agente SCOM instalada é 2012.
+- A instalação da extensão Microsoft Monitoring Agent (MMA) atualiza a versão do agente. Isso se aplica a um agente direto e a um agente do SCOM (no último, o SCOM e o MMA compartilham bibliotecas comuns de tempo de execução, que serão atualizadas no processo). Se a versão do agente SCOM instalada for 2012 e estiver atualizada, os recursos de gerenciamento poderão ser perdidos quando o servidor SCOM também for a versão 2012. Considere a possibilidade de recusar o provisionamento automático se o agente SCOM instalado for a versão 2012.
 - Se você tiver um workspace personalizado fora da assinatura (um workspace centralizado), recuse o provisionamento automático. Você pode instalar a extensão do Microsoft Monitoring Agent manualmente e conectá-la ao workspace sem que a Central de Segurança substitua a conexão.
 - Se você quiser evitar a criação de vários workspaces por assinatura e tiver seu próprio workspace personalizado na assinatura, terá duas opções:
 
@@ -329,7 +329,7 @@ A latência na Central de Segurança examina vulnerabilidades, atualizações e 
 A Central de segurança normalmente procura novos dados a cada hora e atualiza as recomendações de forma adequada. 
 
 > [!NOTE]
-> A partir do início de junho de 2017, a Central de Segurança usará o Microsoft Monitoring Agent para coletar e armazenar dados. Para saber mais, veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md). As informações deste artigo representam a funcionalidade da Central de Segurança após a transição para o Microsoft Monitoring Agent.
+> A central de segurança usa o Microsoft Monitoring Agent para coletar e armazenar dados. Para saber mais, veja [Migração da Plataforma Central de Segurança do Azure](security-center-platform-migration.md).
 >
 >
 

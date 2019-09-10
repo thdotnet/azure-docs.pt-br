@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03c9f0908d8b5290dc4585a330a7ea78a6577ab9
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 60f38b60b5fbf0166f25c423663d157cf8f13ee2
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68942968"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860897"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Gerenciar identidades de dispositivo usando o portal do Azure
 
@@ -67,12 +67,12 @@ A página de configurações do dispositivo permite que você configure:
 - **Exigir autenticação multifator para ingressar em dispositivos** – você pode escolher se os usuários precisam fornecer um fator de autenticação adicional para ingressar seu dispositivo no Azure AD. O padrão é **Não**. É recomendável exigir a autenticação multifator ao registrar um dispositivo. Antes de habilitar a autenticação multifator para este serviço, você deve garantir que a autenticação multifator esteja configurada para os usuários que registram seus dispositivos. Para saber mais sobre os diferentes serviços de autenticação multifator do Azure, consulte [Introdução à autenticação multifator do Azure](../authentication/concept-mfa-whichversion.md). 
 
 > [!NOTE]
-> **A configuração exigir autenticação multifator para unir dispositivos** não se aplica a dispositivos ingressados no Azure ad híbrido.
+> **Exigir a configuração de autenticação multifator para ingressar dispositivos** se aplica a dispositivos que estão ingressados no Azure ad ou o Azure ad registrado. Essa configuração não se aplica a dispositivos ingressados no Azure AD híbrido.
 
-- **Número máximo de dispositivos** – essa configuração permite selecionar o número máximo de dispositivos que um usuário pode ter no Azure AD. Se um usuário atingir esta cota, ele não poderá adicionar mais dispositivos até que um ou mais dos seus dispositivos existentes sejam removidos. A cota do dispositivo é contada para todos os dispositivos que estão ingressados no Azure AD ou o Azure AD registrado hoje. O valor padrão é **20**.
+- **Número máximo de dispositivos** – essa configuração permite que você selecione o número máximo de dispositivos registrados no Azure ad ou do AD do Azure que um usuário pode ter no Azure AD. Se um usuário atingir esta cota, ele não poderá adicionar mais dispositivos até que um ou mais dos seus dispositivos existentes sejam removidos. O valor padrão é **20**.
 
 > [!NOTE]
-> A configuração **número máximo de dispositivos** não se aplica a dispositivos ingressados no Azure ad híbrido.
+> A configuração **de número máximo de dispositivos** se aplica a dispositivos que estão ingressados no Azure ad ou no Azure ad registrados. Essa configuração não se aplica a dispositivos ingressados no Azure AD híbrido.
 
 - **Os usuários podem sincronizar configurações e dados de aplicativo em dispositivos** – por padrão, essa configuração é definida como **NENHUM**. Selecionar usuários específicos ou grupos ou TODOS permite que as configurações do usuário e os dados de aplicativo sejam sincronizados em seus dispositivos Windows 10. Saiba mais sobre como a sincronização funciona no Windows 10.
 Essa opção é uma funcionalidade premium disponível por meio de produtos como o Azure AD Premium ou o EMS (Enterprise Mobility Suite).
@@ -215,7 +215,7 @@ Para restringir os dados relatados a um nível que funciona para você, filtre o
 - Atividade
 - Intervalo de datas
 - Destino
-- Iniciado Por (Ator)
+- Iniciado por (ator)
 
 Além dos filtros, você pode pesquisar itens específicos.
 

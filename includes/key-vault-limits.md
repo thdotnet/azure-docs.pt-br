@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
 ms.openlocfilehash: 0b9d87fd7929607da8407ae5bbfb2f6dd6d69dab
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67172327"
 ---
-#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Transações principais (máximo de transações permitidas em 10 segundos, por cofre, por região<sup>1</sup>):
+#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Transações de chave (máximo de transações permitidas em 10 segundos, por cofre por região<sup>1</sup>):
 
 |Tipo de chave|Chave HSM<br>CRIAR chave|Chave HSM<br>Todas as outras transações|Chave de software<br>CRIAR chave|Chave de software<br>Todas as outras transações|
 |:---|---:|---:|---:|---:|
@@ -24,21 +24,21 @@ ms.locfileid: "67172327"
 |ECC SECP256K1|5|1\.000|10|2\.000|
 
 > [!NOTE]
-> Na tabela anterior, podemos ver que para chaves de software RSA de 2.048 bits, são permitidas transações de GET 2.000 por 10 segundos. Para chaves de HSM RSA de 2.048 bits, são permitidas transações de GET de 1.000 por 10 segundos.
+> Na tabela anterior, vemos que, para chaves de software RSA de 2.048 bits, são permitidas 2.000 transações GET por 10 segundos. Para chaves RSA de 2.048 bits HSM-Keys, são permitidas 1.000 transações GET por 10 segundos.
 >
-> Os limites de limitação são ponderados e imposição está em sua soma. Por exemplo, conforme mostrado na tabela anterior, quando você executa operações GET em chaves de HSM RSA, ele é oito vezes mais caro para usar chaves de 4.096 bits comparadas às chaves de 2.048 bits. Isso ocorre porque 1.000/125 = 8.
+> Os limites de limitação são ponderados e a imposição está em sua soma. Por exemplo, conforme mostrado na tabela anterior, quando você executa operações GET em chaves RSA HSM, é oito vezes mais caro usar chaves de 4.096 bits comparadas com chaves de 2.048 bits. Isso ocorre porque 1000/125 = 8.
 >
-> Em um determinado intervalo de 10 segundos, um cliente do Azure Key Vault pode fazer *apenas uma* das seguintes operações antes de encontrar um `429` limitação do código de status HTTP:
-> - 2\.000 transações de GET de chave de software RSA de 2.048 bits
-> - 1\.000 transações da RSA de 2.048 bits HSM-chave GET
-> - Transações de 125 RSA de 4.096 bits HSM-chave GET
-> - Transações de HSM-chave RSA de 4.096 bits GET 124 e 8 de RSA de 2.048 bits HSM-chave GET
+> Em um determinado intervalo de 10 segundos, um cliente Azure Key Vault pode fazer *apenas uma* das seguintes operações antes de encontrar um código `429` de status HTTP de limitação:
+> - 2\.000 RSA 2.048-bit software-chave obter transações
+> - 1\.000 RSA 2.048 bits HSM-chave obter transações
+> - 125 RSA 4.096 bits HSM-chave obter transações
+> - 124 RSA 4.096 bits HSM-Key GET Transactions e 8 RSA 2.048-bit HSM-Key GET Transactions
 
 #### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Segredos, chaves de conta de armazenamento gerenciado e transações de cofre:
-| Tipo de transação | Máximo de transações permitidas em 10 segundos, por cofre, por região<sup>1</sup> |
+| Tipo de transação | Máximo de transações permitidas em 10 segundos, por cofre por região<sup>1</sup> |
 | --- | --- |
 | Todas as transações |2\.000 |
 
-Para obter informações sobre como lidar com a limitação quando esses limites são excedidos, consulte [diretrizes de limitação do Azure Key Vault](../articles/key-vault/key-vault-ovw-throttling.md).
+Para obter informações sobre como lidar com a limitação quando esses limites são excedidos, consulte [diretrizes de limitação de Azure Key Vault](../articles/key-vault/key-vault-ovw-throttling.md).
 
-<sup>1</sup> um limite de toda a assinatura para todos os tipos de transação é cinco vezes por limite do Cofre de chaves. Por exemplo, HSM-outras transações por assinatura são limitadas a 5.000 transações em 10 segundos por assinatura.
+<sup>1</sup> um limite de toda a assinatura para todos os tipos de transação é cinco vezes por limite de cofre de chaves. Por exemplo, HSM-outras transações por assinatura são limitadas a 5.000 transações em 10 segundos por assinatura.

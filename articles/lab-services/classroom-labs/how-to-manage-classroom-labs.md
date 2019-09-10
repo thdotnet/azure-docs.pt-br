@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: spelluru
-ms.openlocfilehash: 6ba41132c93ebdb2578bafb100416ca3fe579298
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1f9cb82abd5bc0823f5e7bc23fe437007bccc8e0
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67123287"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873585"
 ---
 # <a name="manage-classroom-labs-in-azure-lab-services"></a>Gerenciar laboratórios de sala de aula no Azure Lab Services 
 Este artigo descreve como criar e excluir um laboratório de sala de aula. Isso também mostra como exibir todos os laboratórios de sala de aula em uma conta de laboratório. 
@@ -37,7 +37,7 @@ Para configurar um laboratório de sala de aula em uma conta de laboratório, vo
 
         ![Criar um laboratório de sala de aula](../media/tutorial-setup-classroom-lab/new-lab-window.png)
 4. Na página **Selecionar especificações da máquina virtual**, siga estas etapas:
-    1. Selecione um **tamanho** para as VMs (máquinas virtuais) criadas no laboratório. No momento, **pequena**, **médio**, **médio (de virtualização)** , **grande**, e **GPU** são de tamanhos permitido. Para obter detalhes, consulte o [tamanhos de VM](#vm-sizes) seção.
+    1. Selecione um **tamanho** para as VMs (máquinas virtuais) criadas no laboratório. No momento, os tamanhos **pequeno**, **médio**, **médio (virtualização)** , **grande** e **GPU** são permitidos. Para obter detalhes, consulte a seção [tamanhos de VM](#vm-sizes) .
     1. Selecione a **região** na qual você deseja criar as VMs. 
     1. Selecione a **imagem da VM** a ser usada para criar as VMs no laboratório. Se você selecionar uma imagem do Linux, verá uma opção para habilitar a conexão de área de trabalho remota para ela. Para obter detalhes, veja [Habilitar conexão de área de trabalho remota para Linux](how-to-enable-remote-desktop-linux.md).
     1. Selecione **Avançar**.
@@ -49,12 +49,12 @@ Para configurar um laboratório de sala de aula em uma conta de laboratório, vo
 
         > [!IMPORTANT]
         > Anote o nome de usuário e a senha. Eles não serão mostrados novamente.
-    3. Desabilitar **usar a mesma senha para todas as máquinas virtuais** opção se você quiser que os alunos para definir suas próprias senhas. Esta etapa é **opcional**. 
+    3. Desabilitar a opção **usar a mesma senha para todas as máquinas virtuais** se desejar que os alunos definam suas próprias senhas. Esta etapa é **opcional**. 
 
-        Um professor pode optar por usar a mesma senha para todas as VMs no laboratório, ou que os alunos possam definir senhas para suas VMs. Por padrão, essa configuração é habilitada para imagens de todos os Windows e Linux, exceto para o Ubuntu. Quando você seleciona **Ubuntu** VM, essa configuração estiver desabilitada, portanto, os alunos serão solicitados a definir uma senha quando eles entrarem pela primeira vez.
+        Um professor pode optar por usar a mesma senha para todas as VMs no laboratório ou permitir que os alunos definam senhas para suas VMs. Por padrão, essa configuração é habilitada para todas as imagens do Windows e do Linux, exceto para Ubuntu. Quando você seleciona VM **Ubuntu** , essa configuração é desabilitada, portanto, os alunos serão solicitados a definir uma senha quando entrarem pela primeira vez.
     1. Selecione **Criar**. 
 
-        ![Definir as credenciais](../media/tutorial-setup-classroom-lab/set-credentials.png)
+        ![Definir credenciais](../media/tutorial-setup-classroom-lab/set-credentials.png)
 6. Na página **Configurar modelo**, você vê o status do processo de criação do laboratório. A criação do modelo no laboratório leva até 20 minutos. Um modelo em um laboratório é uma imagem básica da máquina virtual a partir do qual todas as máquinas virtuais de todos os usuários são criadas. Configure a máquina virtual do modelo para que ela seja configurada exatamente com o que você deseja fornecer aos usuários de laboratório.  
 
     ![Configurar o modelo](../media/tutorial-setup-classroom-lab/configure-template.png)
@@ -63,7 +63,7 @@ Para configurar um laboratório de sala de aula em uma conta de laboratório, vo
     ![Página de configuração do modelo após a conclusão](../media/tutorial-setup-classroom-lab/configure-template-after-complete.png)
 8. As seguintes etapas do tutorial são opcionais: 
     2. Conecte-se à VM modelo selecionando **Conectar**. Se for uma VM de modelo do Linux, você escolherá se deseja se conectar usando SSH ou RDP (se RDP estiver habilitado).
-    1. Selecione **redefinição de senha** para redefinir a senha para a VM. 
+    1. Selecione **Redefinição de senha** para redefinir a senha da VM. 
     1. Instale e configure software em sua VM modelo. 
     1. **Pare** a VM.  
     1. Insira uma **descrição** do modelo
@@ -91,13 +91,15 @@ Para configurar um laboratório de sala de aula em uma conta de laboratório, vo
 
 ### <a name="vm-sizes"></a>Tamanhos de VM  
 
-| Tamanho | Núcleos | RAM | DESCRIÇÃO | 
+| Size | Núcleos | RAM | Descrição | 
 | ---- | ----- | --- | ----------- | 
-| Pequeno | 2 | 3,5 GB | Esse tamanho é mais adequado para a linha de comando, abrindo o navegador da web, servidores web de tráfego baixo, pequenos para bancos de dados médios. |
-| Média | 4 | 7 GB | Esse tamanho é mais adequado para bancos de dados relacionais, o cache na memória e análise | 
-| Médio (Nested virtualization) | 4 | 16 GB | Esse tamanho é mais adequado para bancos de dados relacionais, o cache na memória e a análise. Esse tamanho também dá suporte a virtualização aninhada. <p>Esse tamanho pode ser usado em cenários em que cada aluno precisa de várias VMs. Professores podem usar a virtualização aninhada para configurar algumas máquinas virtuais de tamanho pequeno aninhada dentro da máquina virtual. </p> |
-| Grande | 8 | 32 GB | Esse tamanho é mais adequado para aplicativos que precisam de CPUs mais rápidas, desempenho de disco local aprimorado, grandes bancos de dados, caches de memória grande. Esse tamanho também dá suporte a virtualização aninhada |  
-| GPU | 12 | 112 GB | Esse tamanho é mais adequado para cargas de trabalho de computação intensiva, intensivo de gráficos e visualização | 
+| Pequeno | 2 | 3,5 GB | Esse tamanho é mais adequado para linha de comando, abertura de navegador da Web, servidores Web de tráfego baixo, bancos de dados pequenos a médios. |
+| Média | 4 | 7 GB | Esse tamanho é mais adequado para bancos de dados relacionais, cache na memória e análise | 
+| Médio (virtualização aninhada) | 4 | 16 GB | Esse tamanho é mais adequado para bancos de dados relacionais, cache na memória e análise. Esse tamanho também dá suporte à virtualização aninhada. <p>Esse tamanho pode ser usado em cenários em que cada aluno precisa de várias VMs. Os professores podem usar a virtualização aninhada para configurar algumas máquinas virtuais aninhadas de pequeno tamanho dentro da máquina virtual. </p> |
+| Grande | 8 | 32 GB | Esse tamanho é mais adequado para aplicativos que precisam de CPUs mais rápidas, melhor desempenho de disco local, bancos de dados grandes, caches de memória grande. Esse tamanho também dá suporte à virtualização aninhada |  
+| GPU pequena (visualização) | 6 | 56 GB | Esse tamanho é mais adequado para visualização remota, streaming, jogos, codificação usando estruturas como OpenGL e DirectX. | 
+| GPU pequena (computação) | 6 | 56 GB | Esse tamanho é mais adequado para aplicativos com uso intensivo de computação e rede, como inteligência artificial e aplicativos de aprendizado profundo. | 
+| GPU média (visualização) | 12 | 112 GB | Esse tamanho é mais adequado para visualização remota, streaming, jogos, codificação usando estruturas como OpenGL e DirectX. | 
 
 ## <a name="view-all-classroom-labs"></a>Exibir todos os laboratórios de sala de aula
 1. Navegue até [Portal do Azure Lab Services](https://labs.azure.com).

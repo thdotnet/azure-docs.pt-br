@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12fd08fa301cb22857470e3c81d7f4f7c1f04de9
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 9eab92f044f62a1ca32062753f824ea76a2726a8
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68948882"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860287"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Configurar a Autenticação Multifator do Azure
 
@@ -159,23 +159,23 @@ Scripts de exemplo para a criação de mensagens personalizadas.
 | Autenticação bem-sucedida | Sua entrada foi verificada com êxito. Logo. |
 | Prompt de ramal | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para continuar. |
 | Confirmação de Fraude | Um alerta de fraude foi enviado. Para desbloquear sua conta, entre em contato com o suporte técnico de ti da sua empresa. |
-| Saudação de fraude (Padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. Se você não iniciou essa verificação, alguém pode estar tentando acessar sua conta. Pressione a tralha zero para enviar um alerta de fraude. Isso notificará a equipe de ti da sua empresa e poderá bloquear outras tentativas de verificação. |
+| Saudação de fraude (padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. Se você não iniciou essa verificação, alguém pode estar tentando acessar sua conta. Pressione a tralha zero para enviar um alerta de fraude. Isso notificará a equipe de ti da sua empresa e poderá bloquear outras tentativas de verificação. |
 | A fraude relatou que um alerta de fraude foi enviado. | Para desbloquear sua conta, entre em contato com o suporte técnico de ti da sua empresa. |
-| Ativação | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. |
+| Ativação | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. |
 | Repetição de autenticação negada | Verificação negada. |
-| Repetir (Padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. |
-| Saudação (Padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. |
+| Repetir (padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. |
+| Saudação (padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. |
 | Saudação (PIN) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Insira seu PIN seguido pela tecla tralha para concluir a verificação. |
 | Saudação de fraude (PIN) | Obrigado por usar o sistema de verificação de entrada da Microsoft.  Insira seu PIN seguido pela tecla tralha para concluir a verificação. Se você não iniciou essa verificação, alguém pode estar tentando acessar sua conta. Pressione a tralha zero para enviar um alerta de fraude. Isso notificará a equipe de ti da sua empresa e poderá bloquear outras tentativas de verificação. |
 | Tentar novamente (PIN) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Insira seu PIN seguido pela tecla tralha para concluir a verificação. |
-| Prompt de ramal após os dígitos | Se já estiver nesse ramal, pressione a tecla tralha para continuar. |
+| Prompt de ramal após os dígitos | Se já estiver nessa extensão, pressione a tecla tralha para continuar. |
 | Autenticação negada | Desculpe, não é possível conectá-lo no momento. Tente novamente mais tarde. |
-| Saudação de ativação (Padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. |
-| Repetição de ativação (Padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir sua verificação. |
+| Saudação de ativação (padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. |
+| Repetição de ativação (padrão) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Pressione a tecla tralha para concluir a verificação. |
 | Saudação de ativação (PIN) | Obrigado por usar o sistema de verificação de entrada da Microsoft. Insira seu PIN seguido pela tecla tralha para concluir a verificação. |
 | Prompt de ramal antes dos dígitos | Obrigado por usar o sistema de verificação de entrada da Microsoft. Transfira esta chamada para a extensão... |
 
-## <a name="one-time-bypass"></a>Bypass avulso
+## <a name="one-time-bypass"></a>Desvio único
 
 O recurso _bypass avulso_ permite que um usuário se autentique uma única vez sem executar a verificação em duas etapas. O bypass é temporário e expira após um número de segundos especificado. Quando o aplicativo móvel ou o telefone não estiver recebendo notificações ou chamadas telefônicas, você poderá permitir um bypass avulso para que o usuário possa acessar o recurso desejado.
 
@@ -274,7 +274,7 @@ O Azure AD é compatível com federação ou SSO (logon único), com AD DS (Acti
 Por padrão, os usuários não podem criar senhas de aplicativo. O recurso de senhas de aplicativo deve ser habilitado. Para permitir que os usuários criem senhas de aplicativo, faça o seguinte:
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **Usuários e grupos** > **Todos os usuários**.
+2. Na esquerda, selecione **Azure Active Directory** > **Usuários**.
 3. Selecione **Autenticação Multifator**.
 4. Em Autenticação Multifator do Microsoft Azure, selecione **configurações de serviço**.
 5. Na página **Configurações do Serviço**, selecione a opção **Permitir que usuários criem senhas de aplicativo para entrarem em aplicativos que não são navegadores**.
@@ -314,7 +314,7 @@ Independentemente se o recurso IPs Confiáveis estiver habilitado, a verificaç�
 ### <a name="enable-named-locations-by-using-conditional-access"></a>Habilitar locais nomeados usando o acesso condicional
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **locais nomeados**de**acesso** > condicional.
+2. À esquerda, selecione **Azure Active Directory** > **segurança** > **condicional acessar** > **locais nomeados**.
 3. Selecione **Novo local**.
 4. Insira um nome para o local.
 5. Selecione **Marcar como local confiável**.
@@ -324,7 +324,7 @@ Independentemente se o recurso IPs Confiáveis estiver habilitado, a verificaç�
 ### <a name="enable-the-trusted-ips-feature-by-using-conditional-access"></a>Habilitar o recurso IPs confiáveis usando o acesso condicional
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **locais nomeados**de**acesso** > condicional.
+2. À esquerda, selecione **Azure Active Directory** > **segurança** >  **condicional acessar** > **locais nomeados**.
 3. Selecione **Configurar IPs confiáveis de MFA**.
 4. Na página **Configuração do Serviço**, em **IPs Confiáveis**, escolha uma das duas opções a seguir:
 
@@ -374,7 +374,7 @@ Quando os usuários registram suas contas na Autenticação Multifator do Azure,
 ### <a name="enable-and-disable-verification-methods"></a>Habilitar e desabilitar métodos de verificação
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **Usuários e grupos** > **Todos os usuários**.
+2. Na esquerda, selecione **Azure Active Directory** > **Usuários**.
 3. Selecione **Autenticação Multifator**.
 4. Em Autenticação Multifator do Microsoft Azure, selecione **configurações de serviço**.
 5. Na página **Configurações do Serviço**, em **Opções de verificação**, selecione/cancele a seleção dos métodos a serem fornecidos aos usuários.
@@ -382,7 +382,7 @@ Quando os usuários registram suas contas na Autenticação Multifator do Azure,
 
 Detalhes adicionais sobre o uso de métodos de autenticação podem ser encontrados no artigo [O que são os métodos de autenticação](concept-authentication-methods.md).
 
-## <a name="remember-multi-factor-authentication"></a>Lembrar a Autenticação Multifator
+## <a name="remember-multi-factor-authentication"></a>Lembre-se da Autenticação Multifator
 
 O recurso _Lembrar a Autenticação Multifator_ para dispositivos e navegadores que são confiáveis para o usuário é um recurso gratuito para todos os usuários da Autenticação Multifator. Os usuários podem ignorar as verificações subsequentes durante um número especificado de dias, depois de se conectarem com êxito a um dispositivo usando a Autenticação Multifator. O recurso melhora a usabilidade, minimizando o número de vezes que um usuário tem que realizar a verificação em duas etapas no mesmo dispositivo.
 
@@ -408,7 +408,7 @@ O recurso reduz o número de autenticações em aplicativos Web, que normalmente
 ### <a name="enable-remember-multi-factor-authentication"></a>Habilitar a opção Lembrar a Autenticação Multifator
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. À esquerda, selecione **Azure Active Directory** > **Usuários e grupos** > **Todos os usuários**.
+2. Na esquerda, selecione **Azure Active Directory** > **Usuários**.
 3. Selecione **Autenticação Multifator**.
 4. Em Autenticação Multifator do Microsoft Azure, selecione **configurações de serviço**.
 5. Na página **Configurações do Serviço**, **Gerenciar Lembrar a Autenticação Multifator**, selecione a opção **Permite aos usuários lembrar a autenticação multifator em dispositivos que eles confiam**.

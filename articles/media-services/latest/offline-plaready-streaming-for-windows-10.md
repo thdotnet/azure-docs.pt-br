@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
-ms.openlocfilehash: ae5fdd51d9bc1a3e7e2521c6ca1ff64d884c96f8
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 25559c7a6f66a1092007054c72f601b428fa4e7b
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341772"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845518"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>PlayReady offline para Windows 10
 
@@ -29,22 +29,22 @@ Os serviços de mídia do Azure dão suporte offline ao download/reprodução co
 - [Streaming offline do Widevine para Android](offline-widevine-for-android.md)
 
 > [!NOTE]
-> DRM offline é cobrado apenas para fazer uma única solicitação para uma licença ao baixar o conteúdo. Os erros não são cobrados.
+> O DRM offline é cobrado apenas para fazer uma única solicitação de licença quando você baixa o conteúdo. Quaisquer erros não são cobrados.
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Esta seção fornece algumas informações básicas sobre a reprodução de modo offline, especialmente porque:
 
-* Em alguns países ou regiões, disponibilidade de Internet e/ou largura de banda ainda é limitada. Os usuários podem optar por fazer o download primeiro para que seja possível assistir o conteúdo em resolução alta o suficiente para uma experiência de exibição satisfatória. Nesse caso, com mais frequência, o problema não é a disponibilidade da rede, mas a limitação da largura de banda. Provedores OTT/OVP solicitando suporte ao modo offline.
+* Em alguns países/regiões, a disponibilidade e/ou a largura de banda da Internet ainda é limitada. Os usuários podem optar por fazer o download primeiro para que seja possível assistir o conteúdo em resolução alta o suficiente para uma experiência de exibição satisfatória. Nesse caso, com mais frequência, o problema não é a disponibilidade da rede, mas a limitação da largura de banda. Provedores OTT/OVP solicitando suporte ao modo offline.
 * Conforme divulgado na conferência do acionista da Netflix 2016 Q3, fazer o download de conteúdo é um "recurso muito solicitado" e "estamos abertos para que ele" de acordo com Reed Hastings, CEO da Netflix.
-* Alguns provedores de conteúdo pode não permitir a entrega de licença do DRM além das fronteiras de um país/região. Se um usuário quiser ver o conteúdo durante uma viagem para o exterior, é necessário fazer o download offline.
+* Alguns provedores de conteúdo podem impedir a entrega de licença do DRM além da borda de um país/região. Se um usuário quiser ver o conteúdo durante uma viagem para o exterior, é necessário fazer o download offline.
  
 O desafio que enfrentamos em implementar o modo offline é o seguinte:
 
 * O Mp4 é compatível com vários jogadores, ferramentas de codificador, mas não há nenhuma associação entre o contêiner MP4 e o DRM;
 * A longo prazo, o CFF com CENC é a melhor opção. No entanto, o ecossistema de suporte de ferramentas/player não ainda existe ainda. Precisamos de uma solução no momento.
  
-A ideia é: formato de arquivo de streaming suave ([PIFF](https://go.microsoft.com/?linkid=9682897)) com H264/AAC que possui uma associação com o PlayReady (AES-128 CTR). O arquivo individual Smooth streaming. ismv (supondo que o áudio está em vídeo) é um fMP4 que pode ser usado para reprodução. Se um conteúdo de streaming suave passar pela criptografia do PlayReady, cada arquivo. ismv se torna um MP4 fragmentado e protegido por PlayReady. Pode-se escolher um arquivo. ismv com a taxa de bits preferencial e renomeá-lo como .mp4 para fazer o download.
+A ideia é: formato de arquivo de streaming suave ([PIFF](https://docs.microsoft.com/iis/media/smooth-streaming/protected-interoperable-file-format)) com H264/AAC que possui uma associação com o PlayReady (AES-128 CTR). O arquivo individual Smooth streaming. ismv (supondo que o áudio está em vídeo) é um fMP4 que pode ser usado para reprodução. Se um conteúdo de streaming suave passar pela criptografia do PlayReady, cada arquivo. ismv se torna um MP4 fragmentado e protegido por PlayReady. Pode-se escolher um arquivo. ismv com a taxa de bits preferencial e renomeá-lo como .mp4 para fazer o download.
 
 Há duas opções para hospedar o MP4 protegido por PlayReady para fazer o download progressivo:
 
@@ -66,7 +66,7 @@ Ativo #1:
 Ativo #2:
 
 * Fazer o download progressivo da URL: [https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4](https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500_H264_1644kbps_AAC_und_ch2_256kbps.mp4)
-* LA_URL do PlayReady (local): [https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
+* PlayReady LA_URL (local):[https://willzhan12.cloudapp.net/playready/rightsmanager.asmx](https://willzhan12.cloudapp.net/playready/rightsmanager.asmx)
 
 Para reprodução de teste, usamos um Aplicativo Universal do Windows no Windows 10. Nas [amostras do Windows 10 Universal](https://github.com/Microsoft/Windows-universal-samples), há um exemplo de player básico chamado [exemplo de Streaming adaptável](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming). Só é necessário adicionar o código para que seja possível escolher o vídeo que foi feito o download e usá-lo como a origem, em vez da origem de streaming adaptável. As alterações estão acontecem ao clicar no botão manipulador de eventos:
 

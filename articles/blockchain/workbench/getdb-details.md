@@ -1,25 +1,25 @@
 ---
-title: Obter detalhes do banco de dados do Azure Blockchain Workbench
-description: Saiba como obter informações do servidor de banco de dados e de banco de dados do Azure Blockchain Workbench.
+title: Obter detalhes do banco de dados de visualização do Azure Blockchain Workbench
+description: Saiba como obter informações de banco de dados e servidor de banco de dados do Azure Blockchain Workbench.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/09/2019
+ms.date: 09/05/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: 42d119acd8880458eadc1760a7cb9713f91e3f6f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4a4eaab9a03aeed27e29eb645b6e22a028b243b
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65509975"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845066"
 ---
-# <a name="get-information-about-your-azure-blockchain-workbench-database"></a>Obter informações sobre seu banco de dados do Azure Blockchain Workbench
+# <a name="get-information-about-your-azure-blockchain-workbench-preview-database"></a>Obter informações sobre o banco de dados de visualização do Azure Blockchain Workbench
 
-Este artigo mostra como obter informações detalhadas sobre seu banco de dados do Azure Blockchain Workbench.
+Este artigo mostra como obter informações detalhadas sobre o banco de dados de visualização do Azure Blockchain Workbench.
 
 ## <a name="overview"></a>Visão geral
 

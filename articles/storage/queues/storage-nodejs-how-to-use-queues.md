@@ -1,5 +1,5 @@
 ---
-title: Como usar o armazenamento de fila do node. js – armazenamento do Azure
+title: Usar o armazenamento de filas do Azure do node. js – armazenamento do Azure
 description: Saiba como usar o serviço Fila do Azure para criar e excluir filas, bem como para inserir, obter e excluir mensagens. Amostras escritas em Node.js.
 author: mhopkins-msft
 ms.service: storage
@@ -8,12 +8,13 @@ ms.date: 12/08/2016
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
-ms.openlocfilehash: 13da3adc1a3f95f9fdb29eb181eb9759e175cffe
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: 83aecc9c05fec5869a82930f2d687ac907981c00
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721279"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858674"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Como usar o Armazenamento de Fila do Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]

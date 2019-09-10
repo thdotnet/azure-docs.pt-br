@@ -9,54 +9,54 @@ ms.date: 12/13/2018
 ms.author: gwallace
 ms.custom: include file
 ms.openlocfilehash: 2823a33b25812a69ad463433bacd9710655c9176
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67172329"
 ---
 #### <a name="process-automation"></a>Automação de processos
 
-| Resource | Limite máximo |Observações|
+| Recurso | Limite máximo |Observações|
 | --- | --- |---|
-| Número máximo de novos trabalhos podem ser enviados a cada 30 segundos por conta de automação do Azure (trabalhos não agendados) |100 |Quando esse limite for atingido, as solicitações subsequentes para criar um trabalho falharem. O cliente recebe uma resposta de erro.|
-| Número máximo de trabalhos simultâneos em execução na mesma instância do tempo por conta de automação (trabalhos não agendados) |200 |Quando esse limite for atingido, as solicitações subsequentes para criar um trabalho falharem. O cliente recebe uma resposta de erro.|
-| Tamanho máximo de armazenamento de metadados de trabalho por um período de 30 dias sem interrupção | 10 GB (aproximadamente 4 milhões trabalhos)|Quando esse limite for atingido, as solicitações subsequentes para criar um trabalho falharem. |
-| Limite de fluxo de trabalho máximo|1 MB|Um único fluxo não pode ser maior que 1 MB.|
-| Número máximo de módulos que podem ser importados por conta de automação a cada 30 segundos |5 ||
+| Número máximo de novos trabalhos que podem ser enviados a cada 30 segundos por conta de automação do Azure (trabalhos não agendados) |100 |Quando esse limite é atingido, as solicitações subsequentes para criar um trabalho falham. O cliente recebe uma resposta de erro.|
+| Número máximo de trabalhos em execução simultâneos na mesma instância de tempo por conta de automação (trabalhos não agendados) |200 |Quando esse limite é atingido, as solicitações subsequentes para criar um trabalho falham. O cliente recebe uma resposta de erro.|
+| Tamanho máximo de armazenamento dos metadados de trabalho para um período sem interrupção de 30 dias | 10 GB (aproximadamente 4 milhões trabalhos)|Quando esse limite é atingido, as solicitações subsequentes para criar um trabalho falham. |
+| Limite máximo de fluxo de trabalho|1 MB|Um único fluxo não pode ser maior que 1 MB.|
+| Número máximo de módulos que podem ser importados a cada 30 segundos por conta de automação |5 ||
 | Tamanho máximo de um módulo |100 MB ||
-| Trabalho de tempo de execução, camada gratuita |500 minutos por assinatura por mês ||
-| Quantidade máxima de espaço em disco permitida por área restrita<sup>1</sup> |1 GB |Aplica-se a áreas de segurança do Azure.|
-| Quantidade máxima de memória fornecida a uma área restrita<sup>1</sup> |400 MB |Aplica-se a áreas de segurança do Azure.|
-| Número máximo de soquetes de rede permitido por área restrita<sup>1</sup> |1\.000 |Aplica-se a áreas de segurança do Azure.|
-| Tempo de execução máximo permitido por runbook<sup>1</sup> |3 horas |Aplica-se a áreas de segurança do Azure.|
+| Tempo de execução do trabalho, camada gratuita |500 minutos por assinatura por mês ||
+| Quantidade máxima de espaço em disco permitida por sandbox<sup>1</sup> |1 GB |Aplica-se somente a áreas restritas do Azure.|
+| Quantidade máxima de memória fornecida para uma área restrita<sup>1</sup> |400 MB |Aplica-se somente a áreas restritas do Azure.|
+| Número máximo de soquetes de rede permitidos por sandbox<sup>1</sup> |1\.000 |Aplica-se somente a áreas restritas do Azure.|
+| Tempo de execução máximo permitido por runbook<sup>1</sup> |3 horas |Aplica-se somente a áreas restritas do Azure.|
 | Número máximo de contas de automação em uma assinatura |Sem limite ||
-| Número máximo de grupos do Hybrid Worker por conta de automação|4\.000||
-|Número máximo de trabalhos simultâneos que podem ser executados em um único trabalho de Runbook híbrido|50 ||
-| Tamanho do parâmetro de trabalho de runbook máximo   | 512 Kbps||
-| Parâmetros de runbook máximo   | 50|Se você atingir o limite de 50 parâmetros, você pode passar uma cadeia de caracteres JSON ou XML para um parâmetro e analisá-lo com o runbook.|
-| Tamanho da carga máxima de webhook |  512 Kbps|
+| Número máximo de grupos de Hybrid Worker por conta de automação|4\.000||
+|Número máximo de trabalhos simultâneos que podem ser executados em um único Hybrid Runbook Worker|50 ||
+| Tamanho máximo do parâmetro de trabalho do runbook   | 512 kilobits||
+| Parâmetros de runbook máximos   | 50|Se você alcançar o limite de 50 parâmetros, poderá passar uma cadeia de caracteres JSON ou XML para um parâmetro e analisá-lo com o runbook.|
+| Tamanho máximo do conteúdo do webhook |  512 kilobits|
 | Máximo de dias que os dados de trabalho são retidos|30 dias|
-| Tamanho máximo de estado de fluxo de trabalho do PowerShell |5 MB| Aplica-se a runbooks de fluxo de trabalho do PowerShell ao fluxo de trabalho de ponto de verificação.|
+| Tamanho máximo do estado do fluxo de trabalho do PowerShell |5 MB| Aplica-se a runbooks de fluxo de trabalho do PowerShell ao aplicar o fluxo de trabalho.|
 
-<sup>1</sup>uma área restrita é um ambiente compartilhado que pode ser usado por vários trabalhos. Trabalhos que usam a mesma área de segurança são associados por limitações de recursos de área restrita.
+<sup>1</sup> Uma área restrita é um ambiente compartilhado que pode ser usado por vários trabalhos. Os trabalhos que usam a mesma área restrita são associados às limitações de recurso da área restrita.
 
 #### <a name="change-tracking-and-inventory"></a>Controle de Alterações e Inventário
 
-A tabela a seguir mostra os limites de item controladas por máquina para o controle de alterações.
+A tabela a seguir mostra os limites de item acompanhados por computador para o controle de alterações.
 
 | **Recurso** | **Limite**| **Observações** |
 |---|---|---|
 |Arquivo|500||
 |Registro|250||
-|Software do Windows|250|Não inclui as atualizações de software.|
-|Pacotes do Linux|1,250||
+|Software do Windows|250|Não inclui atualizações de software.|
+|Pacotes do Linux|1\.250||
 |Serviços|250||
 |Daemon|250||
 
-#### <a name="update-management"></a>Gerenciamento de atualizações
+#### <a name="update-management"></a>Gerenciamento de Atualizações
 
-A tabela a seguir mostra os limites para o gerenciamento de atualizações.
+A tabela a seguir mostra os limites para Gerenciamento de Atualizações.
 
 | **Recurso** | **Limite**| **Observações** |
 |---|---|---|

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 3f91e09e35eec0685cb4333802b860fb08412cb6
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 5c6e99c62d199c36081113011845a3bf2607bcb3
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019754"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842563"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Conectar um Raspberry Pi ao aplicativo Azure IoT Central (Python)
 
@@ -28,7 +28,7 @@ Este artigo descreve como um desenvolvedor de dispositivos conecta um Raspberry 
 Para concluir as etapas deste artigo, você precisa dos seguintes componentes:
 
 * Um aplicativo Azure IoT Central criado a partir do modelo de aplicativo de **Devkits de Exemplo**. Para obter mais informações, consulte o [Criar um início rápido de aplicativo](quick-deploy-iot-central.md).
-* Um dispositivo Raspberry Pi executando o sistema operacional Raspbian. O Raspberry Pi deve ser capaz de se conectar à Internet. Para obter mais informações, consulte Configurando [o Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
+* Um dispositivo Raspberry Pi executando o sistema operacional Raspbian. O Raspberry Pi deve ser capaz de se conectar à Internet. Para obter mais informações, consulte [Configurando o Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/3).
 
 > [!TIP]
 > Para saber mais sobre como configurar e conectar-se a um dispositivo Raspberry Pi, visite introdução [ao Raspberry Pi](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi)
@@ -70,13 +70,13 @@ As etapas a seguir descrevem como baixar e configurar o aplicativo Python de exe
 
 1. Execute o seguinte comando para instalar o IoT Central cliente Python:
 
-    ```sh
+    ```bash
     pip install iotc
     ```
 
 1. Baixe o código Python de exemplo:
 
-    ```sh
+    ```bash
     curl -O https://raw.githubusercontent.com/Azure/iot-central-firmware/master/RaspberryPi/app.py
     ```
 
@@ -85,9 +85,9 @@ As etapas a seguir descrevem como baixar e configurar o aplicativo Python de exe
     > [!TIP]
     > No Shell no Raspberry Pi, você pode usar os editores de texto **nano** ou **vi** .
 
-1. Use o seguinte comando para executar o exemplo:
+1. Use o seguinte comando para executar a amostra:
 
-    ```sh
+    ```bash
     python app.py
     ```
 
@@ -97,7 +97,7 @@ As etapas a seguir descrevem como baixar e configurar o aplicativo Python de exe
 
     * Na página **Medidas** do dispositivo real, é possível ver a telemetria enviada do Raspberry Pi.
     * Na página **Propriedades** , você pode ver a propriedade de dispositivo **número de matriz** .
-    * Na página **configurações** , você pode alterar as configurações no Raspberry Pi, como tensão e velocidade do ventilador. Quando o Raspberry Pi reconhece a alteração, a configuração é mostradacomo sincronizada.
+    * Na página **configurações** , você pode alterar as configurações no Raspberry Pi, como tensão e velocidade do ventilador. Quando o Raspberry Pi reconhece a alteração, a configuração é mostrada como **sincronizada**.
 
 ## <a name="raspberry-pi-device-template-details"></a>Detalhes do modelo de dispositivo Raspberry Pi
 

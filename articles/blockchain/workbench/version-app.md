@@ -1,25 +1,25 @@
 ---
-title: Controle de versão de aplicativo blockchain no Azure Blockchain Workbench
-description: Como usar versões de aplicativo no Azure Blockchain Workbench.
+title: Controle de versão do aplicativo Blockchain na visualização do Azure Blockchain Workbench
+description: Como usar versões de aplicativo na visualização do Azure Blockchain Workbench.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 04/15/2019
+ms.date: 09/05/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 63f18e3ee316b9791bb62bfcd20c07a30cbebb5e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33ecb6dea48117edd876b90eda54768785f25c20
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60896841"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70843886"
 ---
-# <a name="azure-blockchain-workbench-application-versioning"></a>Controle de versão de aplicativos do Azure Blockchain Workbench
+# <a name="azure-blockchain-workbench-preview-application-versioning"></a>Versão prévia do aplicativo do Azure Blockchain Workbench
 
-Você pode criar e usar várias versões de um aplicativo Azure Blockchain Workbench. Se várias versões do mesmo aplicativo forem carregadas, um histórico de versão estará disponível e os usuários poderão escolher qual versão desejam usar.
+Você pode criar e usar várias versões de um aplicativo de visualização do Azure Blockchain Workbench. Se várias versões do mesmo aplicativo forem carregadas, um histórico de versão estará disponível e os usuários poderão escolher qual versão desejam usar.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

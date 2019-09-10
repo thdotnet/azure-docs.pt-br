@@ -1,20 +1,20 @@
 ---
 title: Implantar o módulo de armazenamento de BLOBs do Azure em dispositivos-Azure IoT Edge | Microsoft Docs
 description: Implante um módulo do Armazenamento de Blobs do Azure no dispositivo do IoT Edge para armazenar dados na borda.
-author: kgremban
-ms.author: kgremban
+author: arduppal
+ms.author: arduppal
 ms.date: 08/07/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.reviewer: kgremban
+ms.reviewer: arduppal
 manager: mchad
-ms.openlocfilehash: 089c90abb999751db77bbe1d89d1d118ae712b52
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: e5420bbe7f65dcef4997d909b3bc4ede00dd9902
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68947073"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844218"
 ---
 # <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Implantar o armazenamento de BLOBs do Azure no módulo IoT Edge em seu dispositivo
 
@@ -93,7 +93,7 @@ Um manifesto de implantação é um documento JSON que descreve quais módulos i
      > [!IMPORTANT]
      > Não altere a segunda metade do valor de montagem de armazenamento, que aponta para um local específico no módulo. A montagem de armazenamento sempre deve terminar com **:/blobroot** para contêineres do Linux e **: C:/blobroot** para contêineres do Windows.
 
-1. Defina as propriedades [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) para o seu módulo copiando o JSON a seguir e colando-o na caixa de **propriedades desejadas do módulo Set** . Configure cada propriedade com um valor apropriado, salve-a e continue com a implantação.
+1. Defina as propriedades [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) para o seu módulo copiando o JSON a seguir e colando-o na caixa de **propriedades desejadas do módulo Set** . Configure cada propriedade com um valor apropriado, salve-a e continue com a implantação. Se você estiver usando o simulador de IoT Edge, defina os valores para as variáveis de ambiente relacionadas para essas propriedades, que você pode encontrar na seção de explicação de [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties).
 
    ```json
    {
@@ -121,7 +121,7 @@ Um manifesto de implantação é um documento JSON que descreve quais módulos i
 
    ![definir opções de criação de contêiner, Propriedades deviceAutoDeleteProperties e deviceToCloudUploadProperties](./media/how-to-deploy-blob/iotedge-custom-module.png)
 
-   Para obter informações sobre como configurar o deviceToCloudUploadProperties e o deviceAutoDeleteProperties depois que o módulo tiver sido implantado, consulte [Editar o módulo](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin)... Para obter mais informações sobre as propriedades desejadas, consulte [definir ou atualizar as propriedades](module-composition.md#define-or-update-desired-properties)desejadas.
+   Para obter informações sobre como configurar o deviceToCloudUploadProperties e o deviceAutoDeleteProperties depois que o módulo tiver sido implantado, consulte [Editar o módulo](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin)... Para obter mais informações sobre as propriedades desejadas, consulte [definir ou atualizar as propriedades desejadas](module-composition.md#define-or-update-desired-properties).
 
 1. Clique em **Salvar**.
 
@@ -207,7 +207,7 @@ O Azure IoT Edge disponibiliza modelos no Visual Studio Code para ajudar você a
      > [!IMPORTANT]
      > Não altere a segunda metade do valor de montagem de armazenamento, que aponta para um local específico no módulo. A montagem de armazenamento sempre deve terminar com **:/blobroot** para contêineres do Linux e **: C:/blobroot** para contêineres do Windows.
 
-1. Configure o [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e o [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) para o módulo adicionando o JSON a seguir ao arquivo *Deployment. Template. JSON* . Configure cada propriedade com um valor apropriado e salve o arquivo.
+1. Configure o [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e o [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) para o módulo adicionando o JSON a seguir ao arquivo *Deployment. Template. JSON* . Configure cada propriedade com um valor apropriado e salve o arquivo. Se você estiver usando o simulador de IoT Edge, defina os valores para as variáveis de ambiente relacionadas para essas propriedades, que você pode encontrar na seção de explicação de [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) e [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties)
 
    ```json
    "<your azureblobstorageoniotedge module name>":{
@@ -246,7 +246,7 @@ O Azure IoT Edge disponibiliza modelos no Visual Studio Code para ajudar você a
 
 Se desejar implantar várias instâncias do armazenamento de BLOBs do Azure no módulo IOT Edge, você precisará fornecer um caminho de armazenamento diferente e alterar `HostPort` o valor ao qual o módulo é associado. Os módulos do armazenamento de blobs sempre expõem a porta 11002 no contêiner, mas é possível declarar a qual porta ele está associado no host.
 
-Edite **as opções de criação de contêiner** (no portal do Azure ) ou o campo (no arquivo *Deployment. Template. JSON* em Visual Studio Code) para `HostPort` alterar o valor:
+Edite **as opções de criação de contêiner** (no portal do Azure) **ou o campo** (no arquivo *Deployment. Template. JSON* em Visual Studio Code) para `HostPort` alterar o valor:
 
 ```json
 "PortBindings":{

@@ -1,5 +1,5 @@
 ---
-title: 'Conectar um computador a uma rede virtual do Azure usando autenticação ponto a site e autenticação de certificado nativa do Azure: Portal do Azure | Microsoft Docs'
+title: 'Conecte-se a uma rede virtual do Azure de um computador usando VPN ponto a site e autenticação de certificado nativa do Azure: Portal do Azure | Microsoft Docs'
 description: Conecte clientes Windows, Linux e Mac OS X com segurança a uma rede virtual do Azure usando P2S e certificados autoassinados ou emitidos por autoridade de certificação. Este artigo usa o portal do Azure.
 services: vpn-gateway
 author: cherylmc
@@ -7,14 +7,14 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: cherylmc
-ms.openlocfilehash: e603eed34aaff4ad7303819a730fea09a332b7a8
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: fc8c2ff72da49d8542508443eb9423f028da0d39
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68706752"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70843670"
 ---
-# <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Para isso, configure uma conexão ponto a site em uma VNet usando a autenticação de certificado nativa do Azure: Portal do Azure
+# <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Configure uma conexão VPN ponto a site para uma VNet usando a autenticação de certificado nativa do Azure: Portal do Azure
 
 Este artigo ajuda você a conectar clientes individuais que executem Windows, Linux ou Mac OS X a uma VNet do Azure com segurança. As conexões VPN Ponto a Site são úteis quando você deseja se conectar à rede virtual de um local remoto, como ao trabalhar de casa ou em uma conferência. Também é possível usar P2S em vez de uma VPN Site a Site, quando você tiver apenas alguns clientes que precisam se conectar a uma VNet. As conexões Ponto a Site não exigem um dispositivo VPN ou um endereço IP voltado para o público. A P2S cria a conexão VPN no SSTP (Secure Socket Tunneling Protocol) ou IKEv2. Para obter mais informações sobre conexões VPN Ponto a Site, consulte [Sobre VPN Ponto a Site](point-to-site-about.md).
 
@@ -44,7 +44,7 @@ Você pode usar os seguintes valores para criar um ambiente de teste ou fazer re
 * **Servidor DNS:** (opcional) endereço IP do servidor DNS que você deseja usar para a resolução de nome.
 * **Nome do gateway de rede virtual:** VNet1GW
 * **Tipo de gateway:** VPN
-* **Tipo de VPN:** Baseado em rota
+* **Tipo de VPN:** Baseado em rotas
 * **Nome do endereço IP público:** VNet1GWpip
 * **Tipo de conexão**: Point-to-site
 * **Pool de endereços do cliente:** 172.16.201.0/24<br>Os clientes VPN que se conectarem à rede virtual usando esta conexão Ponto a Site receberão um endereço IP do pool de endereços do cliente.

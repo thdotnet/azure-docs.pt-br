@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 08/27/2019
-ms.openlocfilehash: c0bfbbd8b85f0b3eadf468cdd1261f52bff26abe
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: HT
+ms.openlocfilehash: 33e21b54927280e2692a58c311e2de23e257f923
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813372"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845371"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Visão geral dos limites de recursos de instância gerenciada do banco de dados SQL
 
@@ -65,9 +65,9 @@ A instância gerenciada tem duas camadas de serviço: Uso Geral e Comercialmente
 | Tamanho máximo de TempDB | 192 – 1.920 GB (24 GB por vCore)<br/>Adicione mais vCores para obter mais espaço de TempDB. | Limitado pelo tamanho máximo de armazenamento da instância. O tamanho do arquivo de log de TempDB está limitado atualmente a 24 GB/vCore. |
 | OLTP na memória | Sem suporte | Disponível |
 | Máx. de sessões | 30000 | 30000 |
-| Réplicas legíveis | 0 | 1 (incluído no preço) |
-| Preço/cobrança | vCore, armazenamento reservado  <br/> IOPS não cobrado, o armazenamento de backup ainda não foi cobrado. | vCore, armazenamento reservado  <br/> IOPS não cobrado, o armazenamento de backup ainda não foi cobrado. | 
-| Modelos de desconto | [Instâncias reservadas](sql-database-reserved-capacity.md)<br/>[Benefício híbrido do Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (não disponível em assinaturas de desenvolvimento/teste) | [Instâncias reservadas](sql-database-reserved-capacity.md)<br/>[Benefício híbrido do Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (não disponível em assinaturas de desenvolvimento/teste)|
+| [Réplicas somente leitura](sql-database-read-scale-out.md) | 0 | 1 (incluído no preço) |
+| Preço/cobrança | o [vCore e o armazenamento reservado](https://azure.microsoft.com/pricing/details/sql-database/managed/) são cobrados. <br/>O IOPS não é cobrado.<br/>O armazenamento de backup ainda não foi cobrado. | o [vCore e o armazenamento reservado](https://azure.microsoft.com/pricing/details/sql-database/managed/) são cobrados. <br/>O IOPS não é cobrado.<br/>O armazenamento de backup ainda não foi cobrado. | 
+| Modelos de desconto | [Instâncias reservadas](sql-database-reserved-capacity.md)<br/>[Benefício híbrido do Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (não disponível em assinaturas de desenvolvimento/teste)<br/>Assinaturas de desenvolvimento/teste [Enterprise](https://azure.microsoft.com/offers/ms-azr-0148p/) e [pago conforme o uso](https://azure.microsoft.com/offers/ms-azr-0023p/)| [Instâncias reservadas](sql-database-reserved-capacity.md)<br/>[Benefício híbrido do Azure](sql-database-service-tiers-vcore.md#azure-hybrid-benefit) (não disponível em assinaturas de desenvolvimento/teste)<br/>Assinaturas de desenvolvimento/teste [Enterprise](https://azure.microsoft.com/offers/ms-azr-0148p/) e [pago conforme o uso](https://azure.microsoft.com/offers/ms-azr-0023p/)|
 
 > [!NOTE]
 > - O tamanho do arquivo de log e de dados nos bancos de dados de sistema e de usuário são incluídos no tamanho de armazenamento de instância que é comparado ao limite de tamanho de armazenamento máximo. Usar a exibição do sistema <a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql">sys. master_files</a> para determinar o total o espaço usado pelos bancos de dados. Logs de erros não são persistentes e não são incluídos no tamanho. Backups não são incluídos no tamanho de armazenamento.

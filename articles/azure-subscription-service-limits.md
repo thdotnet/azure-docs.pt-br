@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
 ms.openlocfilehash: 7c4c80950e43f374b40085cb4e1c3e026e5f3abd
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "68698270"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Assinatura do Azure e limite de serviços, cotas e restrições
@@ -23,7 +23,7 @@ Este documento lista alguns dos limites mais comuns do Microsoft Azure, que tamb
 Para saber mais sobre os preços do Azure, consulte [visão geral de preços do Azure](https://azure.microsoft.com/pricing/). Lá, você pode estimar seus custos usando a [calculadora de preços](https://azure.microsoft.com/pricing/calculator/). Você também pode ir para a página de detalhes de preços de um serviço específico, por exemplo, [VMs do Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows). Para obter dicas sobre como ajudar a gerenciar custos, consulte [Evitar custos inesperados com o gerenciamento de custo e cobrança do Azure](billing/billing-getting-started.md).
 
 > [!NOTE]
-> Se você quiser aumentar o limite ou a cota acima do limite padrão, [abra uma solicitação de atendimento ao cliente online sem](azure-resource-manager/resource-manager-quota-errors.md)encargos. Os limites não podem ser gerados acima do valor de limite máximo mostrado nas tabelas a seguir. Se não houver uma coluna de limite máximo, o recurso não terá limites ajustáveis.
+> Se você quiser aumentar o limite ou a cota acima do limite padrão, [abra uma solicitação de atendimento ao cliente online sem encargos](azure-resource-manager/resource-manager-quota-errors.md). Os limites não podem ser gerados acima do valor de limite máximo mostrado nas tabelas a seguir. Se não houver uma coluna de limite máximo, o recurso não terá limites ajustáveis.
 >
 > As [assinaturas de avaliação gratuita](https://azure.microsoft.com/offers/ms-azr-0044p) não estão qualificadas para aumentos de cota ou limite. Se você tiver uma [assinatura de Avaliação Gratuita](https://azure.microsoft.com/offers/ms-azr-0044p), você poderá atualizar para uma assinatura de [pagamento conforme o uso](https://azure.microsoft.com/offers/ms-azr-0003p/). Para obter mais informações, consulte [atualizar sua assinatura de avaliação gratuita do Azure para uma assinatura paga conforme o uso](billing/billing-upgrade-azure-subscription.md) e as [perguntas frequentes sobre assinatura de avaliação gratuita](https://azure.microsoft.com/free/free-account-faq).
 >
@@ -85,7 +85,7 @@ Na lista de limites a seguir, uma nova tabela reflete as diferenças em limites 
 * [Rede](#networking-limits)
   * [Gateway de Aplicativo](#application-gateway-limits)
   * [DNS do Azure](#azure-dns-limits)
-  * [Serviço de porta frontal do Azure](#azure-front-door-service-limits)
+  * [Azure Front Door Service](#azure-front-door-service-limits)
   * [Firewall do Azure](#azure-firewall-limits)
   * [ExpressRoute](#expressroute-limits)
   * [Balanceador de Carga](#load-balancer)
@@ -105,7 +105,7 @@ Na lista de limites a seguir, uma nova tabela reflete as diferenças em limites 
 * [Sistema StorSimple](#storsimple-system-limits)
 * [Análise de fluxo](#stream-analytics-limits)
 * [Assinatura](#subscription-limits)
-* [Máquinas virtuais](#virtual-machines-limits)
+* [Máquinas Virtuais](#virtual-machines-limits)
 * [Conjuntos de dimensionamento de máquinas virtuais](#virtual-machine-scale-sets-limits)
 
 ### <a name="subscription-limits"></a>Limites de assinatura

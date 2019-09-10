@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/06/2016
 ms.author: gwallace
-ms.openlocfilehash: 4beed4dd874c23c36e125b5855e2e8380859ef83
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: f2b7e51971cc2e540ee7745b3b44571c58359613
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359166"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860222"
 ---
 # <a name="enable-diagnostics-in-azure-cloud-services-using-powershell"></a>Habilitar o diagnóstico nos Serviços de Nuvem do Azure usando o PowerShell
 Você pode coletar dados de diagnóstico, como logs de aplicativo, contador de desempenho, etc., a partir de um Serviço de Nuvem usando a extensão de Diagnóstico do Azure. Este artigo descreve como habilitar a extensão de Diagnóstico do Azure para um Serviço de Nuvem usando o PowerShell.  Consulte [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview) para os pré-requisitos necessários para este artigo.
@@ -131,5 +131,5 @@ Remove-AzureServiceDiagnosticsExtension -ServiceName "MyService" -Role "WebRole"
 
 ## <a name="next-steps"></a>Próximas etapas
 * Para obter orientação adicional sobre como usar o diagnóstico do Azure e outras técnicas para solucionar problemas, consulte [Habilitar o Diagnóstico nos Serviços de Nuvem do Azure e Máquinas Virtuais](cloud-services-dotnet-diagnostics.md).
-* O [Esquema de Configuração de Diagnóstico](/azure/azure-monitor/platform/diagnostics-extension-schema-1dot2) explica as várias opções de configurações de XML para a extensão de diagnóstico.
+* O [Esquema de Configuração de Diagnóstico](/azure/azure-monitor/platform/diagnostics-extension-schema-1dot3) explica as várias opções de configurações de XML para a extensão de diagnóstico.
 * Para saber como habilitar a extensão de diagnóstico para Máquinas Virtuais, consulte [Criar uma Máquina Virtual do Windows com monitoramento e diagnóstico usando o Modelo do Gerenciador de Recursos do Azure](../virtual-machines/windows/extensions-diagnostics-template.md)

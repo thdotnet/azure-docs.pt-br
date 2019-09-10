@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/06/2019
-ms.openlocfilehash: d9d70444adee26eab77c0e3d256cd8f340a1b4c8
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: 1d70c5d86221213ae3f9a2d31fdf40857cb516be
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981158"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845666"
 ---
 # <a name="hyperscale-service-tier-for-up-to-100-tb"></a>Camada de serviço de hiperescala para até 100 TB
 
@@ -186,7 +186,7 @@ Para solicitar a capacidade de criar bancos de dados de hiperescala em regiões 
 
 2. Clique em [ **nova solicitação de suporte**](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-    ![Folha de ajuda e suporte do Azure](media/sql-database-service-tier-hyperscale/whitelist-request-screen-1.png)
+    ![Folha de ajuda e suporte do Azure](media/sql-database-service-tier-hyperscale/request-screen-1.png)
 
 3. Para **tipo de problema**, selecione **limites de serviço e assinatura (cotas)**
 
@@ -198,13 +198,13 @@ Para solicitar a capacidade de criar bancos de dados de hiperescala em regiões 
 
 1. Clique em **fornecer detalhes**
 
-    ![Detalhes do problema](media/sql-database-service-tier-hyperscale/whitelist-request-screen-2.png)
+    ![Detalhes do problema](media/sql-database-service-tier-hyperscale/request-screen-2.png)
 
 8. Escolha o **tipo de cota do banco de dados SQL**: **Outra solicitação de cota**
 
 9. Preencha o seguinte modelo:
 
-    ![Detalhes da cota](media/sql-database-service-tier-hyperscale/whitelist-request-screen-3.png)
+    ![Detalhes da cota](media/sql-database-service-tier-hyperscale/request-screen-3.png)
 
     No modelo, forneça as seguintes informações
 

@@ -11,12 +11,12 @@ author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: 2edd12435643f88a0923abf0927149993d49e424
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: dead041845c123672d881a8538644b56c34a58a2
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567807"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845594"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>DBA novo na nuvem – gerenciamento de bancos de dados individuais e em pool no Banco de Dados SQL do Azure
 
@@ -142,7 +142,7 @@ Pontos de extremidade de serviço (SE) permitem que você exponha seus recursos 
 
 #### <a name="reserved-ips"></a>IPs Reservados
 
-Outra opção é provisionar [IPs reservados](../virtual-network/virtual-networks-reserved-public-ip.md) para suas VMs e a colocar na lista de permissões os endereços IP dessas VMs nas configurações de firewall do servidor. Ao atribuir IPs reservados, você evita a necessidade de ter que atualizar as regras de firewall com a alteração dos endereços IP.
+Outra opção é provisionar [IPS reservados](../virtual-network/virtual-networks-reserved-public-ip.md) para suas VMs e adicionar esses endereços IP de VM específicos nas configurações de firewall do servidor. Ao atribuir IPs reservados, você evita a necessidade de ter que atualizar as regras de firewall com a alteração dos endereços IP.
 
 ### <a name="what-port-do-i-connect-to-sql-database-on"></a>Em qual porta eu me conecto ao Banco de Dados SQL
 

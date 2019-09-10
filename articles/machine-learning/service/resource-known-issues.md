@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 74d345249e1cbaeb45a1a35d3c3d2f61a4c0b9cf
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 96af61089f2b7b85d58a8a2ab61936459cef158b
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69032967"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858679"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Problemas conhecidos e solução de problemas do serviço Azure Machine Learning
 
@@ -49,7 +49,7 @@ SDK do Azure Machine Learning para Python: O PyYAML é um projeto de distutils i
 pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 ```
 
-**Mensagem de erro:`ERROR: No matching distribution found for azureml-dataprep-native`**
+**Mensagem de erro: `ERROR: No matching distribution found for azureml-dataprep-native`**
 
 A distribuição do Python 3.7.4 do Anaconda tem um bug que interrompe a instalação do azureml-SDK. Esse problema é abordado neste [problema do GitHub](https://github.com/ContinuumIO/anaconda-issues/issues/11195) , que pode ser solucionado criando um novo ambiente Conda usando este comando:
 ```bash
@@ -140,7 +140,7 @@ Se você for diretamente exibir seu workspace a partir de um link de compartilha
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
 
-Às vezes, pode ser útil fornecer informações de diagnóstico ao pedir ajuda. Para ver alguns logs, visite [portal do Azure](https://portal.azure.com) e vá para seu espaço de trabalho e selecione **espaço de trabalho > teste > executar logs do >** .
+Às vezes, pode ser útil fornecer informações de diagnóstico ao pedir ajuda. Para ver alguns logs, visite [portal do Azure](https://portal.azure.com) e vá para seu espaço de trabalho e selecione **espaço de trabalho > teste > executar logs do >** .  Você também pode encontrar essas informações na seção **experimentos** da [página de aterrissagem do espaço de trabalho (versão prévia)](https://ml.azure.com).
 
 > [!NOTE]
 > Azure Machine Learning serviço registra informações de uma variedade de fontes durante o treinamento, como AutoML ou o contêiner do Docker que executa o trabalho de treinamento. Muitos desses logs não estão documentados. Se você encontrar problemas e entrar em contato com o suporte da Microsoft, eles podem ser capazes de usar esses logs durante a solução de problemas.

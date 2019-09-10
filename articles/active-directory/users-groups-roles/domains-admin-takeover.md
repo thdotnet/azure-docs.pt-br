@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 553118486d1148f63e79ca25c32ed7dd8a3b7414
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: a756f0d9fe3669ab9d0f2b4576a35be5d2112a87
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736791"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872205"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Controlar um diretório não gerenciado como administrador no Azure Active Directory
 
@@ -102,15 +102,17 @@ Os planos de serviço com suporte incluem:
 - Microsoft Stream
 - Avaliação gratuita do Dynamics 365
 
-O tomada de administração externa não tem suporte para nenhum serviço que tenha planos de serviço que incluam o SharePoint, OneDrive ou Skype for Business; por exemplo, por meio de uma assinatura gratuita do Office. Opcionalmente, você pode usar a opção [ **ForceTakeover**](#azure-ad-powershell-cmdlets-for-the-forcetakeover-option) para remover o nome de domínio do locatário não gerenciado e verificá-lo no locatário desejado. Essa opção ForceTakeover não moverá os usuários ou manterá o acesso à assinatura. Em vez disso, essa opção só move o nome de domínio. 
+O tomada de administração externa não tem suporte para nenhum serviço que tenha planos de serviço que incluam o SharePoint, OneDrive ou Skype for Business; por exemplo, por meio de uma assinatura gratuita do Office. 
+
+Opcionalmente, você pode usar a opção [ **ForceTakeover**](#azure-ad-powershell-cmdlets-for-the-forcetakeover-option) para remover o nome de domínio do locatário não gerenciado e verificá-lo no locatário desejado. **A opção ForceTakeover não se move por usuários nem mantém o acesso à assinatura. Essa opção move apenas o nome de domínio.**
 
 #### <a name="more-information-about-rms-for-individuals"></a>Mais informações sobre o RMS para pessoas
 
-Para [RMS para pessoas](/azure/information-protection/rms-for-individuals), quando o locatário não gerenciado está na mesma região que o locatário que você possui, a [chave de locatário da Proteção de Informações do Azure](/azure/information-protection/plan-implement-tenant-key) e os [modelos de proteção padrão](/azure/information-protection/configure-usage-rights#rights-included-in-the-default-templates) criados automaticamente são movidos adicionalmente com o nome de domínio. 
+Para [RMS para pessoas](/azure/information-protection/rms-for-individuals), quando o locatário não gerenciado está na mesma região que o locatário que você possui, a [chave de locatário da Proteção de Informações do Azure](/azure/information-protection/plan-implement-tenant-key) e os [modelos de proteção padrão](/azure/information-protection/configure-usage-rights#rights-included-in-the-default-templates) criados automaticamente são movidos adicionalmente com o nome de domínio.
 
-A chave e os modelos não são movidos quando o locatário não gerenciado está em uma região diferente. Por exemplo, o locatário não gerenciado está na Europa, e o locatário que você possui está na América do Norte. 
+A chave e os modelos não são movidos quando o locatário não gerenciado está em uma região diferente. Por exemplo, se o locatário não gerenciado estiver na Europa e a organização que você possui estiver em América do Norte.
 
-Embora o RMS para pessoas seja projetado para oferecer suporte à autenticação do Microsoft Azure Active Directory para abrir o conteúdo protegido, ele não impede que os usuários também protejam o conteúdo. Se os usuários tiverem protegido o conteúdo com a assinatura do RMS para pessoas, e a chave e os modelos não tiverem sido movidos, esse conteúdo não ficará acessível após o controle de domínio.
+Embora o RMS para pessoas seja projetado para oferecer suporte à autenticação do Microsoft Azure Active Directory para abrir o conteúdo protegido, ele não impede que os usuários também protejam o conteúdo. Se os usuários tiverem protegido o conteúdo com a assinatura do RMS para pessoas físicas e a chave e os modelos não tiverem sido movidos, esse conteúdo não poderá ser acessado após o tomada de domínio.
 
 #### <a name="more-information-about-power-bi"></a>Mais informações sobre Power BI
 
@@ -119,8 +121,7 @@ Ao executar uma tomada de controle externa, o conteúdo do Power BI que foi cria
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Cmdlets do Azure AD PowerShell para a opção ForceTakeover
 Você pode ver esses cmdlets usados no [exemplo do PowerShell](#powershell-example).
 
-
-cmdlet | Uso 
+cmdlet | Uso
 ------- | -------
 `connect-msolservice` | Quando solicitado, entre no seu locatário gerenciado.
 `get-msoldomain` | Mostra os nomes de domínio associados ao locatário atual.
@@ -129,6 +130,9 @@ cmdlet | Uso
 `get-msoldomainverificationdns –Domainname <domainname> –Mode DnsTxtRecord` | Fornece informações que serão colocadas no novo registro TXT do DNS para o domínio (MS=xxxxx). A verificação pode não acontecer imediatamente porque demora algum tempo para o registro TXT se propagar, portanto, aguarde alguns minutos antes de considerar a opção **-ForceTakeover**. 
 `confirm-msoldomain –Domainname <domainname> –ForceTakeover Force` | <li>Se seu nome de domínio ainda não foi verificado, você pode prosseguir com a opção **-ForceTakeover**. Ele verifica se o registro TXT foi criado e inicia o processo de tomada de controle.<li>A opção **-ForceTakeover** deve ser adicionada ao cmdlet apenas ao forçar um controle de administrador externo, como quando o locatário não gerenciado tem serviços do Office 365 que bloqueiam o controle.
 `get-msoldomain` | A lista de domínios agora mostra o nome de domínio como **Verificado**.
+
+> [!NOTE]
+> A organização não gerenciada do Azure AD é excluída 10 dias depois que você exercita a opção de força de tomada externa.
 
 ### <a name="powershell-example"></a>Exemplo de PowerShell
 

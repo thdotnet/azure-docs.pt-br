@@ -1,27 +1,27 @@
 ---
-title: Arquitetura do Azure Blockchain Workbench
-description: Visão geral da arquitetura do Azure Blockchain Workbench e seus componentes.
+title: Arquitetura de visualização do Azure Blockchain Workbench
+description: Visão geral da arquitetura de visualização do Azure Blockchain Workbench e seus componentes.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/20/2019
+ms.date: 09/05/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 5333f02edd6a4ff888e28ed36c2b78f75309f4d4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d50ee0fa06f34167cd4be9e787f6e351d3ef7e3b
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67060912"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845202"
 ---
-# <a name="azure-blockchain-workbench-architecture"></a>Arquitetura do Azure Blockchain Workbench
+# <a name="azure-blockchain-workbench-preview-architecture"></a>Arquitetura de visualização do Azure Blockchain Workbench
 
-O Azure Blockchain Workbench simplifica o desenvolvimento de aplicativo blockchain, fornecendo uma solução que usa vários componentes do Azure. O Blockchain Workbench pode ser implantado usando um modelo de solução no Azure Marketplace. O modelo permite que você escolha módulos e componentes para implantar, incluindo pilha de blockchain, tipo de aplicativo de cliente e suporte para a integração de IoT. Uma vez implantado, o Blockchain Workbench fornece acesso a um aplicativo web, aplicativo iOS e aplicativo Android.
+A visualização do Azure Blockchain Workbench simplifica o desenvolvimento de aplicativos Blockchain fornecendo uma solução usando vários componentes do Azure. O Blockchain Workbench pode ser implantado usando um modelo de solução no Azure Marketplace. O modelo permite que você escolha módulos e componentes para implantar, incluindo pilha de blockchain, tipo de aplicativo de cliente e suporte para a integração de IoT. Uma vez implantado, o Blockchain Workbench fornece acesso a um aplicativo web, aplicativo iOS e aplicativo Android.
 
-![Arquitetura de Blockchain Workbench](./media/architecture/architecture.png)
+![Arquitetura do Blockchain Workbench](./media/architecture/architecture.png)
 
 ## <a name="identity-and-authentication"></a>Identidade e autenticação
 
@@ -99,7 +99,7 @@ Os eventos refletem as informações relevantes para indivíduos e sistemas. Por
 
 Por exemplo, o consumidor SQL monitora os eventos, consome e preenche o banco de dados do SQL com os valores incluídos. A cópia permite que a recriação de uma réplica dos dados em cadeia em um repositório fora de cadeia.
 
-## <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
+## <a name="azure-sql-database"></a>Banco de dados SQL do Azure
 
 O banco de dados SQL do Azure anexado ao Blockchain Workbench armazena as definições de contrato, metadados de configuração e uma réplica SQL acessível dos dados armazenados no blockchain. Esses dados poderão ser facilmente consultados, visualizados ou analisados acessando diretamente o banco de dados. Os desenvolvedores e outros usuários podem usar o banco de dados para relatórios, análise ou outras integrações centradas em dados. Por exemplo, os usuários podem visualizar dados de transações usando o Power BI.
 
@@ -113,7 +113,7 @@ Desde ordens de compra e documentos de embarque, a imagens usadas nas notícias 
 
 O Blockchain Workbench oferece suporte a capacidade de adicionar documentos ou outro conteúdo de mídia com a lógica de negócios blockchain. Um hash do documento ou conteúdo de mídia é armazenado no blockchain e o documento real ou conteúdo de mídia é armazenado no Armazenamento do Azure. As informações de transação associadas são entregues ao agente de mensagem de entrada, empacotadas, assinadas e roteadas para o blockchain. Esse processo aciona eventos que são compartilhados por meio do agente de mensagens de saída. O banco de dados SQL consome essas informações e as envia para o banco de dados para consultas posteriores. Os sistemas downstream também podem consumir esses eventos para agir conforme apropriado.
 
-## <a name="monitoring"></a>Monitoramento
+## <a name="monitoring"></a>Monitorando
 
 O Workbench fornece o log de aplicativo usando o Application Insights e o Azure Monitor. O Application Insights é usado para armazenar todas as informações registradas no Blockchain Workbench e inclui erros, avisos e operações bem-sucedidas. O Application Insights pode ser usado por desenvolvedores para depurar problemas com Blockchain Workbench. 
 

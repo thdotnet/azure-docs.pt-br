@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: juliako
-ms.openlocfilehash: ff85638a05855d0b755a7b1812ee7025274b559c
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: 6fea7b7d3d3ef3b1a46aeeff0bab8fef2a9bf3ad
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019306"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860361"
 ---
 # <a name="azure-media-services-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure
 
@@ -29,7 +29,7 @@ Estas notas de versão para os Serviços de Mídia do Azure resumem as alteraç�
 
 Queremos ouvir nossos clientes para que possamos focar na correção de problemas que afetam você. Para relatar um problema ou fazer uma pergunta, faça uma postagem no [Fórum MSDN de Serviços de Mídia do Azure]. 
 
-## <a name="a-idissuescurrently-known-issues"></a><a id="issues"/>Problemas conhecidos no momento
+## <a name="a-idissuesknown-issues"></a><a id="issues"/>Problemas conhecidos
 ### <a name="a-idgeneral_issuesmedia-services-general-issues"></a><a id="general_issues"/>Problemas gerais dos Serviços de Mídia
 
 | Problema | Descrição |
@@ -41,6 +41,7 @@ Queremos ouvir nossos clientes para que possamos focar na correção de problema
 | Ao consultar entidades, no máximo 1.000 entidades são retornadas ao mesmo tempo porque a REST versão 2 pública limita os resultados da consulta a 1.000 resultados. |Use Skip e Take (.NET)/ top (REST), conforme descrito [neste exemplo de .NET](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) e [neste exemplo de API REST](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities). |
 | Alguns clientes podem se deparar com um problema de marcas repetidas no manifesto do Smooth Streaming. |Para saber mais, consulte [esta seção](media-services-deliver-content-overview.md#known-issues). |
 | Os objetos do SDK do .NET dos Serviços de Mídia não podem ser serializados e, por isso, não funcionam com o Cache para Redis do Azure. |Se você tentar serializar o objeto AssetCollection do SDK para adicioná-lo ao Cache para Redis do Azure, uma exceção será lançada. |
+|A API REST responde com uma mensagem de erro dizendo "o filtro não pode ser acessado por esta versão da API REST" ao tentar obter um filtro de nível de conta ou ativo.|O filtro foi criado ou modificado com uma versão de API mais recente do que está sendo usado para tentar obter o filtro. Isso pode acontecer se duas versões de API estiverem sendo usadas pelo código ou por ferramentas que estão sendo usadas pelo cliente.  A melhor solução aqui é atualizar o código ou as ferramentas para usar as duas versões de API mais recentes.|
 
 ## <a name="a-idrest_version_historyrest-api-version-history"></a><a id="rest_version_history"/>Histórico de versão da API REST
 Para obter informações sobre o histórico de versões da API REST dos Serviços de Mídia, consulte a [Referência da API REST dos Serviços de Mídia do Azure].

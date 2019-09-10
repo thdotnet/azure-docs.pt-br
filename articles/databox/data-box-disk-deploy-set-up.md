@@ -10,12 +10,12 @@ ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: a0c43a43525b208927cc3512872e7f79fddab217
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 91baec55cb976a3bc64ac60b1759c80e64fd18a3
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307159"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375894"
 ---
 ::: zone target="docs"
 
@@ -314,9 +314,7 @@ Se você tiver algum problema ao desbloquear os discos, veja como [solucionar pr
 
 Depois que o disco for desbloqueado, você poderá exibir o conteúdo do disco.
 
-Para obter mais informações sobre como configurar discos, acesse [Desempacotar o Data Box Disk](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-set-up?context=context/chromeless&linktarget=new).
-
-Para obter mais informações sobre como desbloquear discos, acesse [Desbloquear o Data Box Disk no cliente Windows](https://docs.microsoft.com/azure/databox/data-box-disk-deploy-set-up?context=context/chromeless&fromOrigin=https://ms.azure.com&linktarget=new).
+Para obter mais informações sobre como configurar e desbloquear discos, acesse [Configurar o Data Box Disk](data-box-disk-deploy-set-up.md).
 
 ::: zone-end
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: e758707511989cca64fdef45b1c673dd3d96d6d2
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: HT
+ms.openlocfilehash: b7672ff83dac31968dff7ef7a66ff40b36b69d59
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812144"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845198"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -137,7 +137,7 @@ A tabela a seguir mostra locais pelo provedor de serviços. Se você quiser exib
 | **[PacketFabric](https://www.packetfabric.com/packetcor/microsoft-azure/)** |Suportado |Suportado |Chicago, Vale do Silício, Washington D.C. |
 | **[PCCW Global Limited](https://consoleconnect.com/clouds/#azureRegions)** |Suportado |Suportado |Chicago, RAE de Hong Kong, Londres |
 | **[Sejong Telecom](https://www.sejongtelecom.net/en/pages/service/cloud_ms)** |Suportado |Suportado |Seul |
-| **EAS** | Suportado |Suportado | Washington, D.C. |
+| **[EAS](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)** | Suportado |Suportado | Washington, D.C. |
 | **[SIFY](http://telecom.sify.com/azure-expressroute.html)** |Suportado |Suportado |Chennai, Mumbai2 |
 | **[SingTel](https://www.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** |Suportado |Suportado |Singapura, Singapura2 |
 | **[Softbank](https://www.softbank.jp/biz/cloud/cloud_access/direct_access_for_az/)** |Suportado |Suportado |Osaka, Tóquio |
@@ -220,7 +220,7 @@ Se seu provedor de conectividade não estiver listado em seções anteriores, vo
 Se você for remoto e não tiver conectividade de fibra ou se quiser explorar outras opções de conectividade, poderá verificar os seguintes operadores de satélite. 
 
 * Intelsat
-* EAS
+* [EAS](https://www.ses.com/networks/signature-solutions/signature-cloud/ses-and-azure-expressroute)
 * Viasat
 
 ## <a name="connectivity-through-additional-service-providers"></a>Conectividade por meio de provedores de serviço adicionais

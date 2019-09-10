@@ -9,10 +9,10 @@ ms.date: 05/14/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: ee8ff3529524a63ca2e54a64327570197f363538
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 09/10/2019
 ms.locfileid: "67172286"
 ---
 | Recurso | Basic | Standard | Premium |
@@ -24,7 +24,7 @@ ms.locfileid: "67172286"
 | MBps de largura de banda de download<sup>2</sup> | 30 | 60 | 100 |
 | MBps de largura de banda de upload<sup>2</sup> | 10 | 20 | 50 |
 | webhooks | 2 | 10 | 100 |
-| Replicação Geográfica | N/D | N/D | [Com suporte][geo-replication] |
+| Replicação geográfica | N/D | N/D | [Com suporte][geo-replication] |
 | Confiança em conteúdo | N/D | N/D | [Com suporte][content-trust] |
 
 <sup>1</sup> Os limites de armazenamento especificados são a quantidade de armazenamento *incluído* para cada camada. Será cobrada uma taxa diária adicional por GiB para o armazenamento de imagens acima desses limites. Para obter informações de taxa, consulte [preços do registro de contêiner do Azure][pricing].
@@ -33,7 +33,7 @@ ms.locfileid: "67172286"
 
 <sup>3</sup> Uma [Docker pull](https://docs.docker.com/registry/spec/api/#pulling-an-image) se traduz em várias operações de leitura com base no número de camadas na imagem, além da recuperação do manifesto.
 
-<sup>4</sup> Um [Push](https://docs.docker.com/registry/spec/api/#pushing-an-image) do Docker se traduz em várias operações de gravação, com base no número de camadas que devem ser enviadas por push. Um `docker push` inclui *ReadOps* para recuperar um manifesto para uma imagem existente.
+<sup>4</sup> Um [push do Docker](https://docs.docker.com/registry/spec/api/#pushing-an-image) se traduz em várias operações de gravação, com base no número de camadas que devem ser enviadas por push. Um `docker push` inclui *ReadOps* para recuperar um manifesto para uma imagem existente.
 
 <!-- LINKS - External -->
 [pricing]: https://azure.microsoft.com/pricing/details/container-registry/
