@@ -132,6 +132,8 @@
           href: using-metrics.md
     - name: Integrar com outras ferramentas
       items:
+        - name: Copiar dados em massa usando o modelo do Azure Data Factory
+          href: data-factory-template.md
         - name: Conector do Apache Spark
           href: spark-connector.md
         - name: Conectar-se do Databricks usando o Python
