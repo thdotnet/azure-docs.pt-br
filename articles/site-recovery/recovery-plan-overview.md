@@ -1,25 +1,25 @@
 ---
-title: Usar planos de recuperação na recuperação de desastre com o Azure Site Recovery | Microsoft Docs
+title: Usando planos de recuperação em recuperação de desastre com o Azure Site Recovery
 description: Saiba mais sobre como usar planos de recuperação para recuperação de desastres com o serviço Azure Site Recovery.
 author: rayne-wiselman
 manager: carmonm
 services: site-recovery
 ms.service: site-recovery
-ms.topic: article
-ms.date: 05/30/2019
+ms.topic: conceptual
+ms.date: 09/09/2019
 ms.author: raynew
-ms.openlocfilehash: 0df9e4b41ff89dd295fe644900b78640a083e985
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 8502e08db48700aefe51a6e4f0e79d1b08f6ca79
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514573"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814431"
 ---
 # <a name="about-recovery-plans"></a>Sobre planos de recuperação
 
 Este artigo descreve os planos de recuperação no [Azure Site Recovery](site-recovery-overview.md).
 
-Um plano de recuperação reúne computadores em grupos de recuperação. É possível personalizar um plano, adicionando ordem, instruções e tarefas ao plano. Após definir um plano, você poderá executar um failover nele.  As máquinas podem ser referenciadas em vários planos de recuperação, no qual planos subsequentes vai ignorar a implantação/inicialização do computador se ele tiver sido implantado anteriormente por meio de outro plano de recuperação.
+Um plano de recuperação reúne computadores em grupos de recuperação. É possível personalizar um plano, adicionando ordem, instruções e tarefas ao plano. Após definir um plano, você poderá executar um failover nele.  Os computadores podem ser referenciados em vários planos de recuperação, nos quais os planos subsequentes irão ignorar a implantação/inicialização do computador se ele foi implantado anteriormente por outro plano de recuperação.
 
 
 ## <a name="why-use-a-recovery-plan"></a>Por que usar um plano de recuperação?
@@ -69,7 +69,7 @@ Recuperar aplicativos grandes pode ser uma tarefa complexa. Etapas manuais torna
     * Altere as regras ou a configuração do servidor Web.
 
 
-## <a name="test-failover"></a>Failover de Teste
+## <a name="test-failover"></a>Failover de teste
 
 É possível usar um plano de recuperação para acionar um failover de teste. Utilize as melhores práticas a seguir:
 
@@ -83,7 +83,7 @@ Recuperar aplicativos grandes pode ser uma tarefa complexa. Etapas manuais torna
 
 ## <a name="watch-the-video"></a>Assista ao vídeo
 
-Assista a um vídeo de exemplo rápido mostrando um failover de clicar em um aplicativo do WordPress de duas camadas.
+Assista a um vídeo de exemplo rápido mostrando um failover de clique para um aplicativo WordPress de duas camadas.
     
 > [!VIDEO https://channel9.msdn.com/Series/Azure-Site-Recovery/One-click-failover-of-a-2-tier-WordPress-application-using-Azure-Site-Recovery/player]
 
