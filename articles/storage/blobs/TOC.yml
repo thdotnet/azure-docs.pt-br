@@ -1,5 +1,5 @@
-- name: Documentação do Armazenamento do Azure
-  href: /azure/storage/
+- name: Documentação do armazenamento de blobs do Azure
+  href: /azure/storage/blobs/
 - name: Visão geral
   expanded: true
   items:
