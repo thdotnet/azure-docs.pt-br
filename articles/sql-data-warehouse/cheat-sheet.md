@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 08/23/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 6c198b6d5e9ecfed3f36ddc3be831af85a913ca5
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: 1bbb0148e6f4be2afc777960afcda9c727328206
+ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69995829"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70195068"
 ---
 # <a name="cheat-sheet-for-azure-sql-data-warehouse"></a>Roteiro do SQL Data Warehouse do Azure
 Esta folha de referências fornece dicas úteis e melhores práticas para a compilação de suas soluções do SQL Data Warehouse do Azure. Antes da introdução, saiba mais sobre cada etapa detalhadamente, lendo os [Padrões de Carga de Trabalho do SQL Data Warehouse do Azure e Anti-Padrões](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns), que explica o que é SQL Data Warehouse e o que não é.
@@ -35,7 +35,7 @@ Saber os tipos de operações antecipadamente ajuda-o a otimizar o design de sua
 
 ## <a name="data-migration"></a>Migração de dados
 
-Primeiro, carregue os dados no [Azure Data Lake Store](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store) ou no Armazenamento de Blobs do Azure. Em seguida, use o PolyBase para carregar os dados no SQL Data Warehouse em uma tabela de preparo. Use a seguinte configuração:
+Primeiro, carregue os dados no [Azure Data Lake Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store) ou no Armazenamento de Blobs do Azure. Em seguida, use o PolyBase para carregar os dados no SQL Data Warehouse em uma tabela de preparo. Use a seguinte configuração:
 
 | Design | Recomendações |
 |:--- |:--- |
@@ -161,6 +161,6 @@ Implante com um clique seus spokes nos Bancos de Dados SQL do SQL Data Warehouse
 [is and is not]:https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns/
 [migração de dados]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
 
-[Azure Data Lake Store]: ../data-factory/connector-azure-data-lake-store.md
+[Azure Data Lake Storage]: ../data-factory/connector-azure-data-lake-store.md
 [sys.dm_pdw_nodes_db_partition_stats]: /sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql
 [sys.dm_pdw_request_steps]:/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql
