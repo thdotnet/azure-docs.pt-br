@@ -333,7 +333,7 @@
             - name: TDE com Bring Your Own Key
               href: transparent-data-encryption-byok-azure-sql.md
         - name: Atributos de segurança
-          href: sql-database-security-attributes.md
+          href: sql-database-security-controls.md
         - name: Restrições de recurso
           href: sql-database-feature-restrictions.md
     - name: Escalabilidade
@@ -512,6 +512,8 @@
           href: sql-database-managed-instance-migrate.md
         - name: Migrar certificado TDE para Instância Gerenciada
           href: sql-database-managed-instance-migrate-tde-certificate.md
+        - name: Restaurar ponto no tempo
+          href: sql-database-managed-instance-point-in-time-restore.md
         - name: Determinar o tamanho da sub-rede da instância gerenciada
           href: sql-database-managed-instance-determine-size-vnet-subnet.md
         - name: Criar rede virtual e sub-rede para a instância gerenciada
@@ -534,8 +536,6 @@
           href: sql-database-managed-instance-connect-app.md
     - name: Carregar e mover dados
       items:
-        - name: Restaurar ponto no tempo
-          href: sql-database-managed-instance-point-in-time-restore.md
         - name: Mover um recurso para uma nova região
           href: sql-database-move-resources-across-regions.md
         - name: Copiar um banco de dados dentro do Azure

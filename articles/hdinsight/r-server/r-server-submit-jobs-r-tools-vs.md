@@ -8,16 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: d977d5a25db0cbe641179bce860e9f67c60f29ab
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 0ae717487f1538536601c8578e744d976798bf76
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340812"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899965"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Enviar trabalhos a partir das Ferramentas do R para Visual Studio
 
-[Ferramentas R para Visual Studio](https://www.visualstudio.com/vs/rtvs/) (RTVS) é uma extensão gratuita e de código-fonte aberto para as edições Community (gratuita), Professional e Enterprise do [Visual Studio 2017](https://www.visualstudio.com/downloads/), e [Visual Studio 2015 Atualização 3](https://go.microsoft.com/fwlink/?LinkId=691129) ou superior. As RTVS não está disponível para [Visual Studio de 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019).
+[Ferramentas R para Visual Studio](https://www.visualstudio.com/vs/rtvs/) (RTVS) é uma extensão gratuita e de código-fonte aberto para as edições Community (gratuita), Professional e Enterprise do [Visual Studio 2017](https://www.visualstudio.com/downloads/), e [Visual Studio 2015 Atualização 3](https://go.microsoft.com/fwlink/?LinkId=691129) ou superior. O RTVS não está disponível para o [Visual Studio 2019](https://docs.microsoft.com/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects?view=vs-2019).
 
 RTVS aprimora seu fluxo de trabalho de R, oferecendo ferramentas como o [janela de R Interativo](https://docs.microsoft.com/visualstudio/rtvs/interactive-repl) (REPL), intellisense (conclusão de código), [plotar visualização](https://docs.microsoft.com/visualstudio/rtvs/visualizing-data) por meio de bibliotecas de R como ggplot2 e ggviz, [depuração de código de R](https://docs.microsoft.com/visualstudio/rtvs/debugging)e muito mais.
 
@@ -48,7 +48,7 @@ RTVS aprimora seu fluxo de trabalho de R, oferecendo ferramentas como o [janela 
 
 ## <a name="execute-local-r-methods"></a>Executar métodos locais de R
 
-1. Crie seu cluster HDInsight os serviços do ML.
+1. Crie seu cluster de serviços do HDInsight ML.
 2. Instale a [extensão RTVS](https://docs.microsoft.com/visualstudio/rtvs/installation).
 3. Faça o download do [arquivo zip de exemplos](https://github.com/Microsoft/RTVS-docs/archive/master.zip).
 4. Abra `examples/Examples.sln` para iniciar a solução no Visual Studio.
@@ -59,13 +59,13 @@ RTVS aprimora seu fluxo de trabalho de R, oferecendo ferramentas como o [janela 
 
 7. Depois de executar todas as linhas no script, você verá uma saída semelhante a este:
 
-    ![Configurações da Ciência de Dados...](./media/r-server-submit-jobs-r-tools-vs/workspace.png)
+    ![Workspace](./media/r-server-submit-jobs-r-tools-vs/visual-studio-workspace.png)
 
 ## <a name="submit-jobs-to-an-hdinsight-ml-services-cluster"></a>Enviar trabalhos para um cluster ML Services do HDInsight
 
 Usando um Microsoft ML Server/Microsoft R Client de um computador com Windows equipado com PuTTY, você pode criar um contexto de computação que executará funções distribuídas `RevoScaleR` de seu cliente local para seu cluster HDInsight. Use `RxSpark` para criar o contexto de computação, especificando seu nome de usuário, o nó de borda do cluster do Apache Hadoop, os switches SSH e assim por diante.
 
-1. É o endereço do nó de borda dos serviços de ML no HDInsight `CLUSTERNAME-ed-ssh.azurehdinsight.net` onde `CLUSTERNAME` é o nome do seu cluster de serviços do ML.
+1. O endereço do nó de borda dos serviços ml `CLUSTERNAME-ed-ssh.azurehdinsight.net` no `CLUSTERNAME` HDInsight é onde é o nome do seu cluster de serviços ml.
 
 1. Cole o código a seguir na janela de R Interativo no Visual Studio, alterando os valores das variáveis de programa de instalação para coincidir com seu ambiente.
 
@@ -119,7 +119,7 @@ Usando um Microsoft ML Server/Microsoft R Client de um computador com Windows eq
 
     3. Selecione **Contêineres** no menu à esquerda no painel de conta de armazenamento.
 
-        ![Contêineres](./media/r-server-submit-jobs-r-tools-vs/containers.png)
+        ![Contêineres](./media/r-server-submit-jobs-r-tools-vs/hdi-storage-containers.png)
 
     4. Selecione nome do contêiner do cluster, navegue até a pasta **Usuário** (você talvez precise clicar *Carregar mais* na parte inferior da lista), em seguida, selecione *RevoShare*, em seguida, **newUser**. O `people.json` arquivo deve ser exibido no `newUser` pasta.
 
