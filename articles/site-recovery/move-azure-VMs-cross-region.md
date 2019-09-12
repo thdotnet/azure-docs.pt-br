@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 10966a7e658e02f04137b594fc12ec09cb676cf8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: ec78e4c260c2ca5e0469f9373f60d8bca29ada7f
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65793735"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375714"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Mover VMs do Azure para outra região
 
@@ -67,8 +67,8 @@ Talvez você queira mover a infraestrutura do Azure como uma máquina virtual de
    Quando você habilita a replicação para a VM de origem, o Azure Site Recovery automaticamente descobre e cria uma conta de armazenamento e rede virtual. Você também pode pré-criar esses recursos e atribuí-los à VM como parte da etapa de habilitação da replicação. Mas será necessário criar manualmente outros recursos na região de destino. Consulte os documentos a seguir para criar os recursos de rede mais comumente usados que são relevantes para você, com base na configuração da VM de origem:
 
    - [Grupos de segurança de rede](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
-   - [Balanceadores de carga](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-   - [IP público](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+   - [Balanceadores de carga](https://docs.microsoft.com/azure/load-balancer)
+   - [IP público](../virtual-network/virtual-network-public-ip-address.md)
     
    Para quaisquer outros componentes de rede, consulte a [documentação da rede Azure](https://docs.microsoft.com/azure/#pivot=products&panel=network). 
 
@@ -84,7 +84,7 @@ As etapas a seguir usam o Azure Site Recovery para copiar dados para a região d
 3. Em **Nome**, especifique o nome amigável **ContosoVMVault**. Se você tiver mais de uma assinatura, selecione uma delas.
 4. Crie um grupo de recursos **ContosoRG**.
 5. Especifique uma região do Azure. Para verificar as regiões com suporte, consulte os [Detalhes do Preço do Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-6. Nos cofres dos Serviços de Recuperação, clique em **Visão Geral** > **ConsotoVMVault** > **+Replicar**.
+6. Nos cofres dos Serviços de Recuperação, clique em **Visão Geral** > **ConsotoVMVault** >  **+Replicar**.
 7. Em **Origem**, selecione **Azure**.
 8. Em **Local de origem**, selecione a fonte de região do Azure em que suas VMs estão sendo executadas.
 9. Selecione o modelo de implantação do Azure Resource Manager. Em seguida, selecione a **Assinatura de origem** e o **Grupo de recursos de origem**.

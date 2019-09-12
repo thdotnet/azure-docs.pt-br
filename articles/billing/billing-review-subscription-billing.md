@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/06/2018
 ms.author: banders
 ms.openlocfilehash: 8cfa429b18fb282f5c1f85d2fd1637704653b855
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68443041"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Revise o faturamento de assinatura usando APIs REST
@@ -45,12 +45,12 @@ Os parâmetros `${startDate}` e `${endDate}` são obrigatórios para este exempl
 
 Os cabeçalhos a seguir são necessários:
 
-|Cabeçalho da solicitação|Descrição|
+|Cabeçalho da solicitação|DESCRIÇÃO|
 |--------------------|-----------------|
-|*Content-Type:*|Obrigatória. Defina como `application/json`.|
-|*Authorization:*|Obrigatória. Defina como um `Bearer` [token de acesso](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) válido. |
+|*Tipo de Conteúdo:*|Obrigatório. Defina como `application/json`.|
+|*Autorização:*|Obrigatório. Defina como um `Bearer` [token de acesso](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) válido. |
 
-## <a name="response"></a>Resposta
+## <a name="response"></a>Response
 
 O código de status 200 (OK) é retornado para uma resposta bem-sucedida, que contém uma lista de custos detalhados para sua conta.
 
@@ -81,7 +81,7 @@ O código de status 200 (OK) é retornado para uma resposta bem-sucedida, que co
 
 Cada item no **valor** representa detalhes sobre o uso de um serviço:
 
-|Propriedade de resposta|Descrição|
+|Propriedade de resposta|DESCRIÇÃO|
 |----------------|----------|
 |**subscriptionGuid** | ID exclusivo global da assinatura. |
 |**startDate** | Data em que o uso foi iniciado. |

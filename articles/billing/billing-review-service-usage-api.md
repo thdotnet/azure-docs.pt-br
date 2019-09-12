@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 08/15/2018
 ms.author: banders
 ms.openlocfilehash: 47e19fae26d6e3bc465799980c587d7bb7ed5e92
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68443055"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Revisar o uso de recursos de serviço do Azure usando a API REST
@@ -43,10 +43,10 @@ O parâmetro `{subscriptionGuid}` é obrigatório e deve conter uma ID da assina
 
 Os cabeçalhos a seguir são necessários: 
 
-|Cabeçalho da solicitação|Descrição|  
+|Cabeçalho da solicitação|DESCRIÇÃO|  
 |--------------------|-----------------|  
-|*Content-Type:*| Obrigatória. Defina como `application/json`. |  
-|*Authorization:*| Obrigatória. Defina como um token `Bearer` válido. |
+|*Tipo de Conteúdo:*| Obrigatório. Defina como `application/json`. |  
+|*Autorização:*| Obrigatório. Defina como um token `Bearer` válido. |
 
 Configure os parâmetros do relatório no corpo da solicitação HTTP. No exemplo a seguir, o relatório é definido para ser gerado todos os dias quando ativo, é um arquivo CSV gravado em um contêiner de blob de Armazenamento do Microsoft Azure e contém informações de custo por hora para todos os recursos no grupo de recursos `westus`.
 

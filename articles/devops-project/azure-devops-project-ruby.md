@@ -6,23 +6,22 @@ ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: mlearned
-manager: douge
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 4cf3feeb92f04b4e97cbdc83c539c206790a78c8
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 5cb47cdd76d1de284c4dc6dbdfbfedd0095653ab
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52264515"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899577"
 ---
 # <a name="create-a-cicd-pipeline-for-ruby-on-rails-by-using-azure-devops-projects"></a>Criar um pipeline de CI/CD para Ruby on Rails usando o Azure DevOps Projects
 
@@ -38,7 +37,7 @@ O Azure DevOps Projects cria um pipeline de CI/CD no Azure Repos. É possível c
 
 1. No painel esquerdo, selecione **Criar um recurso**.
 
-1. Na caixa de pesquisa, digite **DevOps Projects**, depois selecione **Criar**.
+1. Na caixa de pesquisa, digite **DevOps Projects** e selecione **Criar**.
 
     ![O painel do DevOps Projects](_img/azure-devops-project-github/fullbrowser.png)
 
@@ -94,7 +93,7 @@ O Azure DevOps Projects configura automaticamente um pipeline de CI/CD completo 
 1. Na parte superior, selecione **Pipeline de build**.  
     Uma guia do navegador exibe o pipeline de build do seu novo projeto.
 
-1. Aponte para o campo **Status**, depois selecione as reticências (...).  
+1. Aponte para o campo **Status** e selecione as reticências (...).  
     Um menu exibe várias opções, como o enfileiramento de um novo build, pausando um build e editando o pipeline de build.
 
 1. Selecione **Editar**.
@@ -110,7 +109,7 @@ O Azure DevOps Projects configura automaticamente um pipeline de CI/CD completo 
     Esse painel exibe uma trilha de auditoria das alterações recentes do build. O Azure DevOps controla quaisquer alterações feitas no pipeline de build e permite que você compare versões.
 
 1. Selecione **Gatilhos**.  
-    O DevOps Projects criou automaticamente um gatilho de CI, e cada confirmação no repositório inicia um novo build. Como opção, é possível incluir ou excluir os branches do processo de CI.
+    O DevOps Projects cria automaticamente um gatilho de CI, e cada confirmação no repositório inicia um novo build. Como opção, é possível incluir ou excluir os branches do processo de CI.
 
 1. Selecione **Retenção**.  
     Dependendo do seu cenário, você pode especificar políticas para manter ou remover um determinado número de compilações.
@@ -118,7 +117,7 @@ O Azure DevOps Projects configura automaticamente um pipeline de CI/CD completo 
 1. Selecione **Build e lançamento**, depois selecione **Lançamentos**.  
     O DevOps Projects cria um pipeline de lançamento para gerenciar implantações no Azure.
 
-1. Selecione as reticências (...) ao lado do pipeline de lançamento, depois selecione **Editar**.  
+1. Selecione as reticências (...) ao lado do pipeline de lançamento e selecione **Editar**.  
     O pipeline de lançamento contém um *pipeline* que define o processo de lançamento.
 
 1. Em **Artefatos**, selecione **Soltar**.  
@@ -132,7 +131,7 @@ O Azure DevOps Projects configura automaticamente um pipeline de CI/CD completo 
 
 1. À direita, selecione **Exibir versões** para exibir um histórico de versões.
 
-1. Selecione as reticências (...) ao lado de uma versão, depois selecione **Abrir**.  
+1. Selecione as reticências (...) ao lado de uma versão e selecione **Abrir**.  
     É possível explorar vários menus, como um resumo da versão, itens de trabalho associados e testes.
 
 1. Selecione **Confirmações**.  

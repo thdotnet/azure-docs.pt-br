@@ -6,23 +6,22 @@ ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: mlearned
-manager: douge
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 695056be67294c6a0787bad61bf5ee00378275b0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cb4e27aeada4f1b5f9e06279382327dcc51cc7dc
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58111422"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899599"
 ---
 # <a name="create-a-cicd-pipeline-for-python-with-azure-devops-projects"></a>Criar um pipeline de CI/CD para Python com o Azure DevOps Projects
 
@@ -55,7 +54,7 @@ O Aplicativo Web para Contêineres é o destino de implantação padrão. A estr
 
 1. Crie uma nova organização do Azure DevOps ou escolha uma organização existente. 
 
-     a. Insira um nome para seu projeto do Azure DevOps.  
+    a. Insira um nome para seu projeto do Azure DevOps.  
 
     b. Selecione a assinatura e o local do Azure, insira um nome para o aplicativo e selecione **Concluído**.  
      Após alguns minutos, o painel do projeto é exibido no portal do Azure. Um aplicativo de exemplo é configurado em um repositório em sua organização do Azure DevOps, é executado um build, e seu aplicativo é implantado no Azure. Esse painel oferece visibilidade no seu repositório de código, pipeline de CI/CD e aplicativo no Azure.  

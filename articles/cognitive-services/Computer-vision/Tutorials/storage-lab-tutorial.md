@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: tutorial
-ms.date: 04/17/2019
+ms.date: 09/04/2019
 ms.author: pafarley
-ms.openlocfilehash: c125941414c73b14138f2b2fc15e470d9ed2d905
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 8ecf5fb7d54e7c9411c1153610d3a637477285bf
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70137551"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382966"
 ---
 # <a name="tutorial-use-computer-vision-to-generate-image-metadata-in-azure-storage"></a>Tutorial: Use a Pesquisa Visual Computacional para gerar metadados de imagem no Armazenamento do Azure
 
@@ -42,7 +42,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Você precisará criar um recurso da Pesquisa Visual Computacional para sua conta do Azure; esse recurso gerencia seu acesso ao serviço de Pesquisa Visual Computacional do Azure. 
 
-1. Siga as instruções em [Criar um recurso de Serviços Cognitivos do Azure](../../cognitive-services-apis-create-account.md#single-service-resource) para criar um recurso de Pesquisa Visual Computacional.
+1. Siga as instruções em [Criar um recurso de Serviços Cognitivos do Azure](../../cognitive-services-apis-create-account.md) para criar um recurso de Pesquisa Visual Computacional.
 
 1. Depois vá ao menu do grupo de recursos e clique na assinatura da API da Pesquisa Visual Computacional recém-criada. Copie a URL em **Ponto de extremidade** para algum lugar em que poderá recuperá-la com facilidade em pouco tempo. Em seguida, clique em **Mostrar chaves de acesso**.
 

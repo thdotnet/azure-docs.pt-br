@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 11/21/2018
 ms.author: banders
 ms.openlocfilehash: 39526defb8f41ddacb0a26d7ad852f820ca6ea77
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "70034535"
 ---
 # <a name="understand-azure-enterprise-agreement-administrative-roles-in-azure"></a>Entenda as funções administrativas do Contrato Azure Enterprise no Azure
@@ -26,7 +26,7 @@ Para ajudar a gerenciar o uso e o gasto de sua organização, os clientes do Azu
 
 - Administrador corporativo
 - Administrador da empresa (somente leitura)
-- Administrador do Departamento
+- Administrador de departamento
 - Administrador de departamento (somente leitura)
 - Proprietário da conta
  
@@ -36,11 +36,11 @@ As seções a seguir descrevem as limitações e os recursos de cada função.
 
 ## <a name="user-limit-for-admin-roles"></a>Limite de usuários para funções de administrador
 
-|Role| Limite de usuário|
+|Função| Limite de usuários|
 |---|---|
-|Administrador Corporativo|Ilimitado|
+|Administrador corporativo|Ilimitado|
 |Administrador da empresa (somente leitura)|Ilimitado|
-|Administrador do Departamento|Ilimitado|
+|Administrador de departamento|Ilimitado|
 |Administrador de departamento (somente leitura)|Ilimitado|
 |Proprietário da conta|1 por conta<sup>1</sup>|
 
@@ -48,7 +48,7 @@ As seções a seguir descrevem as limitações e os recursos de cada função.
 
 ## <a name="organization-structure-and-permissions-by-role"></a>Estrutura de organização e permissões por função
 
-|Tarefas| Administrador Corporativo|Administrador da empresa (somente leitura)|Administrador do Departamento|Administrador de departamento (somente leitura)|Proprietário da conta|
+|Tarefas| Administrador corporativo|Administrador da empresa (somente leitura)|Administrador de departamento|Administrador de departamento (somente leitura)|Proprietário da conta|
 |---|---|---|---|---|---|
 |Exibir administradores de empresa|✔|✔|✘|✘|✘|
 |Administradores da Empresa|✔|✘|✘|✘|✘|
@@ -67,7 +67,7 @@ As seções a seguir descrevem as limitações e os recursos de cada função.
 
 ## <a name="usage-and-costs-access-by-role"></a>Acesso de uso e os custos por função
 
-|Tarefas| Administrador Corporativo|Administrador da empresa (somente leitura)|Administrador do Departamento|Administrador de departamento (somente leitura) |Proprietário da conta|
+|Tarefas| Administrador corporativo|Administrador da empresa (somente leitura)|Administrador de departamento|Administrador de departamento (somente leitura) |Proprietário da conta|
 |---|---|---|---|---|---|
 |Exibir o saldo de crédito incluindo compromisso monetário|✔|✔|✘|✘|✘|
 |Cotas de gastos do departamento de exibição|✔|✔|✘|✘|✘|
@@ -95,8 +95,8 @@ A tabela a seguir mostra o relacionamento entre as funções de administração 
 |---|---|---|---|
 |Proprietário da conta ou administrador de departamento|✔ Habilitado|Proprietário|Preços de EA da organização|
 |Proprietário da conta ou administrador de departamento|✘ Desabilitado|Proprietário|Preço de varejo|
-|Proprietário da conta ou administrador de departamento|✔ Habilitado |nenhum|Não há preços|
-|Proprietário da conta ou administrador de departamento|✘ Desabilitado |nenhum|Não há preços|
+|Proprietário da conta ou administrador de departamento|✔ Habilitado |Nenhum|Não há preços|
+|Proprietário da conta ou administrador de departamento|✘ Desabilitado |Nenhum|Não há preços|
 |Nenhum|Não aplicável |Proprietário|Preço de varejo|
 
 Você define a função de administrador da empresa e exibe as políticas de cobranças no portal da empresa. A função RBAC pode ser atualizada no portal do Azure. Para obter mais informações, confira [gerenciar o acesso usando o portal do Azure e o RBAC](../role-based-access-control/role-assignments-portal.md).

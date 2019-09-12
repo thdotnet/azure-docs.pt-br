@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 08/28/2019
 ms.author: aahi
-ms.openlocfilehash: 669cd43b73bc66289a355f7fbf9c4498d8a7b99a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: e763c1a5bebddcb76647b4ecff02506fc41f6a47
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135034"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387382"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Início Rápido: Uso da API REST do Python para chamar o Serviço Cognitivo de Análise de Texto 
 <a name="HOLTop"></a>
@@ -71,7 +71,7 @@ As seções a seguir descrevem como chamar cada recurso da API.
 
 ## <a name="detect-languages"></a>Detectar idiomas
 
-Acrescente `languages` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/languages`
+Acrescente `/text/analytics/v2.1/languages` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`
     
 ```python
 language_api_url = endpoint + "/text/analytics/v2.1/languages"
@@ -140,7 +140,7 @@ pprint(languages)
 
 ## <a name="analyze-sentiment"></a>Analisar sentimento
 
-Para detectar o sentimento (que varia entre positivo ou negativo) de um conjunto de documentos, acrescente `sentiment` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment`
+Para detectar o sentimento (que varia entre positivo ou negativo) de um conjunto de documentos, acrescente `/text/analytics/v2.1/sentiment` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/sentiment`
     
 ```python
 sentiment_url = endpoint + "/text/analytics/v2.1/sentiment"
@@ -202,7 +202,7 @@ A pontuação de sentimento de um documento está entre 0,0 e 1,0, com uma pontu
 
 ## <a name="extract-key-phrases"></a>Extraia frases-chave
  
-Para extrair as frases-chave de um conjunto de documentos, acrescente `keyPhrases` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
+Para extrair as frases-chave de um conjunto de documentos, acrescente `/text/analytics/v2.1/keyPhrases` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/keyPhrases`
     
 ```python
 keyphrase_url = endpoint + "/text/analytics/v2.1/keyphrases"
@@ -278,7 +278,7 @@ pprint(key_phrases)
 
 ## <a name="identify-entities"></a>Identificar entidades
 
-Para identificar entidades conhecidas (pessoas, lugares e coisas) em documentos de texto, acrescente `entities` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://westcentralus.api.cognitive.microsoft.com/text/analytics/v2.1/entities`
+Para identificar entidades conhecidas (pessoas, lugares e coisas) em documentos de texto, acrescente `/text/analytics/v2.1/entities` ao ponto de extremidade de base de Análise de Texto para formar a URL de detecção de idioma. Por exemplo: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
     
 ```python
 entities_url = endpoint + "/text/analytics/v2.1/entities"

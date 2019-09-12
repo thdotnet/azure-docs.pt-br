@@ -1,28 +1,27 @@
 ---
-title: 'Início rápido: Criar um pipeline de CI/CD para PHP com o Azure DevOps Projects'
+title: 'Início Rápido: Criar um pipeline de CI/CD para PHP com o Azure DevOps Projects'
 description: O DevOps Projects facilita o uso inicial do Azure. Ele ajuda você a iniciar um aplicativo em um serviço do Azure de sua escolha em algumas etapas rápidas.
 ms.prod: devops
 ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: mlearned
-manager: douge
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 82310857276c53c85af033ae32a3aeef4f33c8da
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7c097c2a7247c9cad6cdce8a89059ee8d90d159e
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58109368"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899586"
 ---
 # <a name="create-a-cicd-pipeline-for-php-with-azure-devops-projects"></a>Criar um pipeline de CI/CD para PHP com o Azure DevOps Projects
 
@@ -56,7 +55,7 @@ Caso não tenha uma assinatura do Azure, você pode obter uma gratuitamente via 
 
 1. Crie uma nova organização do Azure DevOps ou selecione uma organização existente. 
 
-     a. Escolha um nome para seu projeto do Azure DevOps. 
+    a. Escolha um nome para seu projeto do Azure DevOps. 
     
     b. Selecione a assinatura e o local do Azure, insira um nome para o aplicativo e selecione **Concluído**.   
         Após alguns minutos, o painel do DevOps Projects é exibido no portal do Azure. Um aplicativo de exemplo é configurado em um repositório em sua organização do Azure DevOps, um build é executado, e seu aplicativo é implantado no Azure. Esse painel oferece visibilidade no seu repositório de código, pipeline de CI/CD e aplicativo no Azure.  

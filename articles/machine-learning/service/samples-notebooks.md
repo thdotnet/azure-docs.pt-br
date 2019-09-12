@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2ea124ecf6786142ac1703dab1e267b225751079
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 14962b936d1c09a6c50daa7bec460ce11dbefe5d
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70035935"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70860386"
 ---
 # <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Explore o serviço do Azure Machine Learning com notebooks Jupyter
 
@@ -27,7 +27,6 @@ Este artigo mostra como acessar o repositório nos seguintes ambientes:
 - [VM do Notebook do Azure Machine Learning](#notebookvm)
 - [Trazer seu próprio servidor de notebook](#byo)
 - [Máquina Virtual de Ciência de Dados](#dsvm)
-- [Azure Notebooks](#aznb)
 
 > [!NOTE]
 > Depois de clonar o repositório, você encontrará notebooks do tutorial na pasta **tutorials** e notebooks específicos do recurso na pasta **how-to-use-azureml**.
@@ -53,13 +52,6 @@ Essas instruções instalam os pacotes base do SDK necessários para o início r
 A DSVM (Máquina Virtual de Ciência de Dados) é uma imagem de VM personalizada, especificamente criada para ciência de dados. Se você [criar uma DSVM](how-to-configure-environment.md#dsvm), o SDK e o servidor de notebook serão instalados e configurados para você. No entanto, você ainda precisará criar um workspace e clonar o repositório de exemplo.
 
 [!INCLUDE [aml-dsvm-server](../../../includes/aml-dsvm-server.md)]
-
-<a name="aznb"></a>
-## <a name="get-samples-on-azure-notebooks"></a>Obter amostras do Azure Notebooks
-
-No [Azure Notebooks](https://notebooks.azure.com/), o SDK e o servidor de notebook são instalados e configurados para você. O Azure Notebooks fornece um ambiente de notebook leve e totalmente gerenciado para você explorar.
-
-Para acessar o repositório de exemplo no Azure Notebooks, navegue até o workspace do Azure Machine Learning por meio do [portal do Azure](https://portal.azure.com). Na seção **Visão Geral**, selecione **Introdução ao Azure Notebooks**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

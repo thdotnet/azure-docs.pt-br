@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 12/04/2018
-ms.openlocfilehash: 48cde2f96083779bdeb13ba5f39b68c18b395045
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 9e398fd7d370d30fac87035b27a218834b4fab22
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515368"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899730"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Camada Comercialmente Crítico - Banco de Dados SQL do Azure
 
@@ -45,6 +45,17 @@ Além disso, o cluster Business Critical possui o recurso interno [Expansão Sca
 ## <a name="when-to-choose-this-service-tier"></a>Quando escolher essa camada de serviço?
 
 A camada de serviço Comercialmente Crítico foi projetada para os aplicativos que requerem respostas de baixa latência do armazenamento SSD subjacente (1 a 2 ms em média), recuperação rápida a infraestrutura subjacente falhar ou precisar carregar relatórios, análise e consultas somente leitura para a réplica secundária do banco de dados primário legível.
+
+Os principais motivos pelos quais você deve escolher Comercialmente Crítico camada de serviço em vez de Uso Geral camada são:
+-   Requisitos de latência de e/s baixos – a carga de trabalho que precisa da resposta rápida da camada de armazenamento (1-2 milissegundos em média) deve usar a camada de Comercialmente Crítico. 
+-   Comunicação frequente entre o aplicativo e o banco de dados. O aplicativo que não pode aproveitar o cache da camada de aplicativo ou solicitar o envio [em lote](sql-database-use-batching-to-improve-performance.md) e precisa enviar muitas consultas SQL que devem ser processadas rapidamente são bons candidatos à camada de comercialmente crítico.
+-   Grande número de atualizações – as operações de inserção, atualização e exclusão modificam as páginas de dados na memória (página suja) que devem ser salvas `CHECKPOINT` em arquivos de dados com a operação. A falha do processo do mecanismo de banco de dados potencial ou um failover do banco de dados com um grande número de páginas sujas pode aumentar o tempo de recuperação na camada Uso Geral. Use Comercialmente Crítico camada se você tiver uma carga de trabalho que cause muitas alterações na memória. 
+-   Transações de longa execução que modificam dados. As transações que são abertas por um tempo maior impedem o truncamento do arquivo de log que pode aumentar o tamanho do log e o número de [arquivos de log virtuais (VLF)](https://docs.microsoft.com/sql/relational-databases/sql-server-transaction-log-architecture-and-management-guide#physical_arch). O alto número de VLF pode retardar a recuperação do banco de dados após o failover.
+-   Carga de trabalho com consultas analíticas e de relatório que podem ser redirecionadas para a réplica somente leitura secundária de liberação de custo.
+- Maior resiliência e recuperação mais rápida a partir das falhas. Em caso de falha do sistema, o banco de dados na instância primária será desabilitado e uma das réplicas secundárias se tornará imediatamente o novo banco de dados primário de leitura/gravação que está pronto para processar as consultas. O mecanismo de banco de dados não precisa analisar e refazer transações do arquivo de log e carregar todos os dados no buffer de memória.
+- Proteção de corrupção de dados avançada-a camada de Comercialmente Crítico aproveita as réplicas de banco de dado nos bastidores para fins de continuidade dos negócios e, portanto, o serviço também utiliza o reparo automático de página, que é a mesma tecnologia usada para SQL Server banco de dados [espelhamento e grupos de disponibilidade](https://docs.microsoft.com/sql/sql-server/failover-clusters/automatic-page-repair-availability-groups-database-mirroring). Caso uma réplica não possa ler uma página devido a um problema de integridade de dados, uma cópia nova da página será recuperada de outra réplica, substituindo a página ilegível sem perda de dados ou tempo de inatividade do cliente. Essa funcionalidade será aplicável na camada Uso Geral se o banco de dados tiver uma réplica geográfica-secundária.
+- Maior disponibilidade-a camada de Comercialmente Crítico na configuração multi-AZ garante 99,995% de disponibilidade, em comparação com 99,99% da camada Uso Geral.
+- A Comercialmente Crítico camada de recuperação geográfica rápida configurada com replicação geográfica tem um RPO (objetivo de ponto de recuperação) garantido de 5 s e RTO (objetivo de tempo de recuperação) de 30 segundos para 100% de horas implantadas.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: tutorial
 ms.date: 06/25/2019
 ms.author: hrasheed
-ms.openlocfilehash: 48b02a042b55af9ff65f57220f7a64c9cbde8848
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: df216c4d634ac20365cc5a1cc6e26fbd78be7ab9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445556"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917402"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Tutorial: Usar o Apache HBase no Azure HDInsight
 
@@ -41,15 +41,15 @@ O procedimento a seguir usa um modelo do Azure Resource Manager para criar um cl
 
 1. Selecione a imagem a seguir para abrir o modelo no portal do Azure. O modelo está localizado em [Modelos de início rápido do Azure](https://azure.microsoft.com/resources/templates/).
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-tutorial-get-started-linux/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 
 2. Na folha **Implantação personalizada**, insira os seguintes valores:
 
     |Propriedade |DESCRIÇÃO |
     |---|---|
-    |Assinatura|Selecione sua assinatura do Azure que é usada para criar o cluster.|
-    |Grupo de recursos|Crie um grupo de gerenciamento de recursos do Azure ou use um existente.|
-    |Local padrão|Especifique o local do grupo de recursos. |
+    |Subscription|Selecione sua assinatura do Azure que é usada para criar o cluster.|
+    |Resource group|Crie um grupo de gerenciamento de recursos do Azure ou use um existente.|
+    |Location|Especifique o local do grupo de recursos. |
     |ClusterName|Insira um nome para o cluster HBase.|
     |Nome e senha de logon do cluster|O nome padrão de logon é **admin**.|
     |Nome de usuário e senha SSH|O nome de usuário padrão é **sshuser**.|
