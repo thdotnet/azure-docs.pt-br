@@ -123,8 +123,6 @@
       href: billing-how-to-change-azure-account-profile.md
     - name: Conceder acesso à cobrança
       href: billing-manage-access.md
-    - name: Funções de EA no Azure
-      href: billing-understand-ea-roles.md
     - name: Funções dos Contratos de Cliente Microsoft no Azure
       href: billing-understand-mca-roles.md
     - name: Vincular ID do parceiro
@@ -133,8 +131,26 @@
       href: billing-view-all-accounts.md
     - name: Organizar os custos com seções da fatura
       href: billing-mca-section-invoice.md
-    - name: Tarefas de EA no Contrato de Cliente Microsoft
-      href: billing-mca-enterprise-operations.md
+    - name: Gerenciamento de EA
+      items:
+        - name: Introdução ao portal de EA do Azure
+          href: billing-ea-portal-get-started.md
+        - name: Funções de EA no Azure
+          href: billing-understand-ea-roles.md
+        - name: Administração do portal de EA do Azure
+          href: billing-ea-portal-administration.md
+        - name: Contratos e aditamentos de EA do Azure
+          href: billing-ea-portal-agreements.md
+        - name: Faturas do Registro Enterprise
+          href: billing-ea-portal-enrollment-invoices.md
+        - name: APIs REST do Azure Enterprise
+          href: billing-ea-portal-rest-apis.md
+        - name: Instâncias reservadas de VM de EA do Azure
+          href: billing-ea-portal-vm-reservations.md
+        - name: Solucionar problemas de acesso ao portal de EA do Azure
+          href: billing-ea-portal-troubleshoot.md
+        - name: Tarefas de EA no Contrato de Cliente Microsoft
+          href: billing-mca-enterprise-operations.md
     - name: Resolver saldo vencido
       href: billing-azure-subscription-past-due-balance.md
     - name: Configurar conta de cobrança para o Contrato de Cliente Microsoft

@@ -255,6 +255,10 @@
           href: manage-public-ip-address-prefix.md
     - name: Solucionar problemas
       items:
+        - name: Solucionar problemas de emparelhamento de rede virtual
+          href: virtual-network-troubleshoot-peering-issues.md
+        - name: Configurar e validar as conexões de VNet ou VPN
+          href: virtual-network-configure-vnet-connections.md
         - name: Grupos de segurança de rede
           href: diagnose-network-traffic-filter-problem.md
         - name: Rotas
