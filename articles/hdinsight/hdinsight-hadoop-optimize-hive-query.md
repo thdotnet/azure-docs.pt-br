@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
-ms.openlocfilehash: 60c725e084a18326cc4bc9cc05d02d103261f5a4
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: d545cd997b35cfa5e7fec58b17507ce63097fd20
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809264"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898808"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Otimizar as consultas do Apache Hive no Azure HDInsight
 
@@ -29,11 +29,11 @@ O aumento do número de nós de trabalho em um cluster HDInsight permite que o t
 
 * No momento da criação de um cluster, você pode especificar o número de nós de trabalho usando o portal do Azure, o Azure PowerShell ou a interface de linha de comando.  Para saber mais, veja [Criar clusters HDInsight](hdinsight-hadoop-provision-linux-clusters.md). A seguinte captura de tela mostra a configuração de nó de trabalho no Portal do Azure:
   
-    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/scaleout_1.png "scaleout_1")
+    ![scaleout_1](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-scaleout-1.png "scaleout_1")
     
 * Após a criação, você também pode editar o número de nós de trabalho para escalar horizontalmente ainda mais um cluster sem recriar um:
 
-    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/scaleout_2.png "scaleout_2")
+    ![scaleout_2](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-scaleout-2.png "scaleout_2")
 
 Para saber mais sobre dimensionamento do HDInsight, consulte [Dimensionar clusters HDInsight](hdinsight-scaling-best-practices.md)
 
@@ -41,7 +41,7 @@ Para saber mais sobre dimensionamento do HDInsight, consulte [Dimensionar cluste
 
 [Apache Tez](https://tez.apache.org/) é um mecanismo de execução alternativo ao mecanismo MapReduce. Clusters HDInsight baseados em Linux têm o Tez habilitado por padrão.
 
-![tez_1][image-hdi-optimize-hive-tez_1]
+![tez_1](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-tez-engine.png)
 
 O Tez é mais rápido porque:
 
@@ -65,7 +65,7 @@ As operações de E/S são o principal gargalo de desempenho para executar consu
 
 O particionamento do Hive é implementado pela reorganização dos dados brutos em novos diretórios. Cada partição tem seu próprio diretório de arquivos. O particionamento é definido pelo usuário. O diagrama a seguir ilustra o particionamento de uma tabela do Hive pela coluna *Ano*. Um novo diretório é criado para cada ano.
 
-![Particionamento do Hive][image-hdi-optimize-hive-partitioning_1]
+![Particionamento do Hive](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-partitioning.png)
 
 Algumas considerações sobre particionamento:
 
@@ -197,7 +197,3 @@ Neste artigo, você aprendeu a vários métodos comuns de otimização de consul
 * [Usar o Apache Hive no HDInsight](hadoop/hdinsight-use-hive.md)
 * [Analisar dados de atraso de voo usando a consulta interativa no HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)
 * [Analise os dados do Twitter usando o Apache Hive no HDInsight](hdinsight-analyze-twitter-data-linux.md)
-
-
-[image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
-[image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png

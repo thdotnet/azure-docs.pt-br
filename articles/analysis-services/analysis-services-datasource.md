@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 09/10/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7abd0ac3d95825594dffe385bccc1672d0f71c5f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 096f8b3aa6ae66e65bbbd9ea6e2204af619199dd
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66142554"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899425"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Fontes de dados com suporte no Azure Analysis Services
 
@@ -24,7 +24,7 @@ Fontes de dados e conectores mostrados no Get Data ou no Assistente de Importaç
 |Fonte de dados  |Na memória  |DirectQuery  |
 |---------|---------|---------|
 |Banco de Dados SQL do Azure<sup>[2](#azsqlmanaged)</sup>     |   Sim      |    Sim      |
-|Azure SQL Data Warehouse     |   Sim      |   Sim       |
+|SQL Data Warehouse do Azure     |   Sim      |   Sim       |
 |Armazenamento de Blobs do Azure<sup>[1](#tab1400a)</sup>     |   Sim       |    Não      |
 |Armazenamento de tabelas do Azure<sup>[1](#tab1400a)</sup>    |   Sim       |    Não      |
 |Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Sim        |  Não        |
@@ -34,7 +34,7 @@ Fontes de dados e conectores mostrados no Get Data ou no Assistente de Importaç
 ||||
 
 <a name="tab1400a">1</a> - Tabular 1.400 e modelos superiores somente.   
-<a name="azsqlmanaged">2</a> - Há suporte para a Instância Gerenciada do Banco de Dados SQL do Azure. Como uma instância gerenciada é executada dentro da VNet do Azure com um endereço IP privado, um gateway de dados local é necessário. Azure banco de dados de instância gerenciada do SQL com um ponto de extremidade público não é suportada atualmente.   
+<a name="azsqlmanaged">2</a> - Há suporte para a Instância Gerenciada do Banco de Dados SQL do Azure. Como a instância gerenciada é executada na VNet do Azure com um endereço IP privado, o ponto de extremidade público deve ser habilitado na instância. Se não estiver habilitado, um gateway de dados local será necessário.    
 <a name="databricks">3</a> - No momento, não há suporte para o Azure Databricks usando o conector do Spark.   
 <a name="gen2">4</a> - No momento, não há suporte para o ADLS Gen2.
 
@@ -52,7 +52,7 @@ Conectar a fontes de dados locais e ao servidor de AS do Azure requer um gateway
 |  --- | --- | --- |
 | SQL Server |SQL Server Native Client 11.0, Provedor Microsoft OLE DB para SQL Server, Provedor de Dados .NET Framework para SQL Server | Provedor de Dados .NET Framework para SQL Server |
 | SQL Server Data Warehouse |SQL Server Native Client 11.0, Provedor Microsoft OLE DB para SQL Server, Provedor de Dados .NET Framework para SQL Server | Provedor de Dados .NET Framework para SQL Server |
-| Oracle | Provedor OLE DB para Oracle, o provedor de dados Oracle para .NET |Provedor de Dados Oracle para .NET |
+| Oracle | Provedor de OLE DB para Oracle, Oracle Provedor de Dados para .NET |Provedor de Dados Oracle para .NET |
 | Teradata |Provedor OLE DB para Teradata, Provedor de Dados Teradata para .NET |Provedor de Dados Teradata para .NET |
 | | | |
 
@@ -62,7 +62,7 @@ Conectar a fontes de dados locais e ao servidor de AS do Azure requer um gateway
 |---------|
 |Banco de Dados do Access     |  
 |Active Directory<sup>[1](#tab1400b)</sup>     |  
-|Serviços de análise     |  
+|Analysis Services     |  
 |Analytics Platform System     |  
 |Arquivo CSV  |
 |Dynamics CRM<sup>[1](#tab1400b)</sup>     |  
@@ -76,19 +76,19 @@ Conectar a fontes de dados locais e ao servidor de AS do Azure requer um gateway
 |OData Feed<sup>[1](#tab1400b)</sup>     |  
 |Consulta ODBC     | 
 |OLE DB     |   
-|Banco de Dados SQL Postgre<sup>[1](#tab1400b)</sup>    | 
+|Banco de dados PostgreSQL<sup>[1](#tab1400b)</sup>    | 
 |Objetos do Salesforce<sup>[1](#tab1400b)</sup> |  
 |Relatórios do Salesforce<sup>[1](#tab1400b)</sup> |
 |SAP HANA<sup>[1](#tab1400b)</sup>    |  
 |SAP Business Warehouse<sup>[1](#tab1400b)</sup>    |  
 |SharePoint List<sup>[1](#tab1400b)</sup>, <sup>[2](#filesSP)</sup>     |   
-|Banco de dados Sybase     |  
+|Banco de Dados Sybase     |  
 |Arquivo TXT  |
 |Tabela XML<sup>[1](#tab1400b)</sup>    |  
 ||
  
 <a name="tab1400b">1</a> - Tabular 1.400 e modelos superiores somente.   
-<a name="filesSP">2</a> -não há suporte para arquivos no SharePoint local.
+<a name="filesSP">2</a> -não há suporte para os arquivos no SharePoint local.
 
 ## <a name="specifying-a-different-provider"></a>Especificar um provedor diferente
 

@@ -163,8 +163,8 @@
           maintainContext: true
     - name: Perguntas frequentes sobre conjunto de dimensionamento
       href: virtual-machine-scale-sets-faq.md
-    - name: Atributos de segurança
-      href: virtual-machine-scale-sets-security-attributes.md
+    - name: Controles de segurança interna
+      href: virtual-machine-scale-sets-security-controls.md
 - name: Como
   items:
     - name: Planejar e projetar

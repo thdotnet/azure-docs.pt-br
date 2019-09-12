@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: zarhoads
-ms.openlocfilehash: c25bc316a345404c759b346b4fb877de42ee4d13
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4fc34ed5cdd53977aa20bef84200ba2bf5386979
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561563"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899483"
 ---
 # <a name="scaling-options-for-applications-in-azure-kubernetes-service-aks"></a>Opções dimensionamento para aplicativos no AKS (Serviço de Kubernetes do Azure)
 
@@ -51,7 +51,7 @@ No momento, não é possível ajustar esses valores de cooldown do padrão.
 
 ## <a name="cluster-autoscaler"></a>Dimensionador automático do cluster
 
-Para responder à alteração das demandas de Pod, o kubernetes tem um cluster de dimensionamento automática (atualmente em visualização no AKS) que ajusta o número de nós com base nos recursos de computação solicitados no pool de nós. Por padrão, o dimensionador automático de cluster verifica o servidor de API a cada 10 segundos quanto a alterações necessárias na contagem de nós. Se o dimensionamento automático de cluster determinar que uma alteração é necessária, o número de nós no cluster do AKS aumentará ou diminuirá de acordo. O dimensionador automático de cluster funciona com clusters AKS habilitados para RBAC que executam o Kubernetes 1.10.x ou superior.
+Para responder à alteração das demandas de Pod, o kubernetes tem um cluster de dimensionamento automática (atualmente em visualização no AKS) que ajusta o número de nós com base nos recursos de computação solicitados no pool de nós. Por padrão, o dimensionador automática do cluster verifica o servidor de API de métrica a cada 10 segundos para todas as alterações necessárias na contagem de nós. Se o dimensionamento automático de cluster determinar que uma alteração é necessária, o número de nós no cluster do AKS aumentará ou diminuirá de acordo. O dimensionador automático de cluster funciona com clusters AKS habilitados para RBAC que executam o Kubernetes 1.10.x ou superior.
 
 ![Dimensionador automático de cluster do Kubernetes](media/concepts-scale/cluster-autoscaler.png)
 
@@ -59,7 +59,7 @@ O dimensionador automático do cluster normalmente é usado junto com o dimensio
 
 O autoescalar do cluster só deve ser testado na visualização em clusters AKS.
 
-Para começar a usar o cluster de dimensionamento em AKS, consulte o dimensionamento de [cluster em AKs][aks-cluster-autoscaler].
+Para começar a usar o cluster de dimensionamento em AKS, consulte o [dimensionamento de cluster em AKs][aks-cluster-autoscaler].
 
 ### <a name="scale-up-events"></a>Eventos de aumento
 

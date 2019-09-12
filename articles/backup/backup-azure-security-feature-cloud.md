@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 08/04/2019
 ms.author: dacurwin
-ms.openlocfilehash: 938c65371b05807c774c9f2d73d4c27efe706c47
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 173e261266bffd042e12b327e26fda3a4e55ea4b
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70143564"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898999"
 ---
 # <a name="security-features-to-help-protect-cloud-workloads-that-use-azure-backup"></a>Recursos de segurança para ajudar a proteger cargas de trabalho de nuvem que usam o backup do Azure
 
@@ -26,7 +26,7 @@ Preocupações sobre problemas de segurança, como malware, ransomware e invasã
 
 ### <a name="supported-regions"></a>Regiões com suporte
 
-A exclusão reversível tem suporte no momento na região do EUA Central ocidental.
+A exclusão reversível tem suporte no momento na região EUA Central ocidental e Ásia Oriental.
 
 ### <a name="soft-delete-for-vms"></a>Exclusão reversível para VMs
 
@@ -58,7 +58,7 @@ Neste ponto, você também pode restaurar a VM selecionando **restaurar VM** do 
    ![Captura de tela de portal do Azure, opção restaurar VM](./media/backup-azure-security-feature-cloud/restore-vm.png)
 
 > [!NOTE]
-> O coletor de lixo só executará e limpará os pontos de recuperação expirados depois que o usuário executar a operação de retomada de **backup** .
+> O coletor de lixo só executará e limpará os pontos de recuperação expirados depois que o usuário executar a operação de **retomada de backup** .
 
 5. Depois que o processo de reinicialização for concluído, o status retornará "parar backup com reter dados" e você poderá escolher **retomar backup**. A operação **retomar backup** retorna o item de backup no estado ativo, associado a uma política de backup selecionada pelo usuário que define os agendamentos de backup e retenção.
 
@@ -136,4 +136,4 @@ Nº Atualmente, há suporte para a exclusão reversível em máquinas virtuais d
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Leia sobre [atributos de segurança para o backup do Azure](https://docs.microsoft.com/en-us/azure/backup/backup-security-attributes).
+* Leia sobre os [controles de segurança para o backup do Azure](backup-security-controls.md).

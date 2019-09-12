@@ -1,34 +1,33 @@
 ---
-title: Preparar servidores Hyper-V locais para recuperação de desastres de VMs do Hyper-V para o Azure | Microsoft Docs
+title: Preparar servidores Hyper-V locais para recuperação de desastre de VMs Hyper-V no Azure
 description: Saiba como preparar VMs do Hyper-V no local para recuperação de desastre no Azure com o serviço Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
-ms.topic: article
-ms.date: 05/30/2019
+ms.topic: tutorial
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: aec5632b5ea29d52426c5d065ca41e18573fd5b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: b17e42378daf51543a2664315f2971d15c288611
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399398"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813719"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Preparar servidores Hyper-V locais para recuperação de desastre no Azure
 
-Este artigo descreve como preparar sua infraestrutura de Hyper-V local quando você deseja configurar a recuperação de desastre de VMs do Hyper-v para o Azure, usando [Azure Site Recovery](site-recovery-overview.md).
+Este artigo descreve como preparar a infraestrutura de Hyper-V local quando você deseja configurar a recuperação de desastre para VMs Hyper-V no Azure, usando o [Azure Site Recovery](site-recovery-overview.md).
 
 
-Esse é o segundo tutorial em uma série que mostra como configurar a recuperação de desastres para o Azure para VMs do Hyper-V local. No primeiro tutorial, estamos [configurar os componentes do Azure](tutorial-prepare-azure.md) necessários para recuperação de desastre do Hyper-V.
+Este é o segundo tutorial em uma série que mostra como configurar a recuperação de desastre para o Azure para VMs Hyper-V locais. No primeiro tutorial, [configuramos os componentes do Azure](tutorial-prepare-azure.md) necessários para a recuperação de desastre do Hyper-V.
 
 Neste tutorial, você aprenderá a:
 
 > [!div class="checklist"]
-> * Examine os requisitos do Hyper-V e requisitos do VMM se seus hosts Hyper-V forem gerenciados pelo System Center VMM.
-> * Prepare o VMM se aplicável.
-> * Verifique se o acesso à internet para locais do Azure.
-> * Prepare VMs para que você pode acessá-los após o failover no Azure.
+> * Examinar os requisitos do Hyper-V e do VMM se os seus hosts Hyper-V forem gerenciados pelo System Center VMM.
+> * Preparar o VMM, se aplicável.
+> * Verificar o acesso à Internet para locais do Azure.
+> * Preparar as VMs para que seja possível acessá-las após o failover para o Azure.
 
 > [!NOTE]
 > Os tutoriais mostram o caminho de implantação mais simples para um cenário. Eles usam opções padrão quando possível e não mostram todas as possíveis configurações e caminhos. Para obter instruções detalhadas, leia o artigo na seção Instruções do Sumário do Site Recovery.

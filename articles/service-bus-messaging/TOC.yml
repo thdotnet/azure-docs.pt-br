@@ -108,8 +108,8 @@
                   href: service-bus-managed-service-identity.md
                 - name: Autenticar a partir de um aplicativo
                   href: authenticate-application.md
-        - name: Atributos de segurança comuns do Azure
-          href: service-bus-messaging-security-attributes.md
+        - name: Controles de segurança interna
+          href: service-bus-messaging-security-controls.md
 - name: Guias de instruções
   items:
     - name: Criar um namespace
