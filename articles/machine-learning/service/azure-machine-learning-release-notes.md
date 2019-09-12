@@ -10,12 +10,12 @@ ms.author: jmartens
 author: j-martens
 ms.date: 08/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6aca340994f10bd546a25e577258d90d7b7b1368
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
-ms.translationtype: MT
+ms.openlocfilehash: 48da5e27184076676edb3f3b89b478bcf2fe347f
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860925"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900460"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Notas de versão do serviço de aprendizado de máquina do Azure
 
@@ -34,7 +34,7 @@ A nova experiência na Web permite que cientistas de dados e engenheiros de dado
 
 Usando essa nova interface de Azure Machine Learning, agora você pode:
 + Gerencie seus notebooks ou conecte-se ao Jupyter
-+ Executar experimentos de ML automatizados
++ [Executar experimentos de ML automatizados](tutorial-first-experiment-automated-ml.md)
 + [Criar conjuntos de itens de arquivos locais, repositórios de armazenamento & arquivos da Web](how-to-create-register-datasets.md)
 + Explorar & preparar conjuntos de valores para a criação do modelo
 + Monitorar descompasso de dados para seus modelos 

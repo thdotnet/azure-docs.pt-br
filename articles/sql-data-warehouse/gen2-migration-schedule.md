@@ -10,12 +10,12 @@ ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 07/22/2019
-ms.openlocfilehash: cd55e078e14ec34006df05096f161e7bdef39a03
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: ac478a7b75bbac0c5e7f59cbe565ec2bbcd643ce
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827215"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900314"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Atualizar o seu data warehouse para Gen2
 
@@ -63,7 +63,7 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 | Norte dos EAU |20 de julho de 2019 |Complete |
 | Sul do Reino Unido |Disponível |Em andamento |
 | Oeste do Reino Unido |Disponível |Em andamento |
-| Centro-oeste dos EUA |1º de setembro de 2019 |1 de outubro de 2019|
+| Centro-oeste dos EUA |1º de novembro de 2019 |1º de dezembro de 2019|
 | Europa Ocidental |Disponível |Complete |
 | Oeste dos EUA |Disponível |Complete |
 | Oeste dos EUA 2 |Disponível |Complete |

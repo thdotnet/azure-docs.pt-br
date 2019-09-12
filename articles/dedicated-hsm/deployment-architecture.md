@@ -2,8 +2,8 @@
 title: Arquitetura de implantação - HSM Dedicado do Azure | Microsoft Docs
 description: Considerações de design básicas ao usar HSM Dedicado do Azure como parte de uma arquitetura do aplicativo
 services: dedicated-hsm
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 ms.custom: mvc, seodec18
 ms.service: key-vault
 ms.workload: identity
@@ -11,15 +11,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/27/2019
-ms.author: barclayn
-ms.openlocfilehash: f078df7677e771d131f15056ac4a54a58a3134bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mbaldwin
+ms.openlocfilehash: 93755ded8f9db27cf8e78079f32e90cccfac2831
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60912244"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883822"
 ---
-# <a name="azure-dedicated-hsm-deployment-architecture"></a>Arquitetura de implantação do Azure dedicado HSM
+# <a name="azure-dedicated-hsm-deployment-architecture"></a>Arquitetura de implantação do HSM dedicada do Azure
 
 O HSM dedicado do Azure fornece armazenamento de chave criptográfica no Azure. Atende aos rigorosos requisitos de segurança. Os clientes se beneficiarão do uso do HSM dedicado do Azure se:
 
@@ -29,13 +29,13 @@ O HSM dedicado do Azure fornece armazenamento de chave criptográfica no Azure. 
 
 Os HSMs são distribuídos pelos datacenters da Microsoft e podem ser facilmente provisionados como um par de dispositivos como a base de uma solução altamente disponível. Eles também podem ser implantados em várias regiões para uma solução resiliente a desastres. As regiões com HSM dedicado atualmente disponíveis são:
 
-* Leste dos EUA
+* East US
 * Leste dos EUA 2
 * Oeste dos EUA
-* Centro-Sul dos Estados Unidos
-* Sudeste Asiático
+* Centro-Sul dos EUA
+* Sudeste da Ásia
 * Ásia Oriental
-* Norte da Europa
+* Europa Setentrional
 * Europa Ocidental
 * Sul do Reino Unido
 * Oeste do Reino Unido

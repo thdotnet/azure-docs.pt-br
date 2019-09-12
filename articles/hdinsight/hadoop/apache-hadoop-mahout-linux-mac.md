@@ -8,20 +8,20 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: d566b57ae12520b9eee26334a67d2e10c05f8040
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a3919cf84714b69776222fa35d3163e0915869f7
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64709087"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881983"
 ---
-# <a name="generate-movie-recommendations-by-using-apache-mahout-with-linux-based-apache-hadoop-in-hdinsight-ssh"></a>Gerar recomendações de vídeos usando o Apache Mahout com o Apache Hadoop baseado em Linux no HDInsight (SSH)
+# <a name="generate-movie-recommendations-using-apache-mahout-with-apache-hadoop-in-hdinsight-ssh"></a>Gerar recomendações de filme usando o Apache Mahout com o Apache Hadoop no HDInsight (SSH)
 
 [!INCLUDE [mahout-selector](../../../includes/hdinsight-selector-mahout.md)]
 
 Saiba como usar a biblioteca de aprendizado de máquina do [Apache Mahout](https://mahout.apache.org) com o Azure HDInsight para gerar recomendações de vídeos.
 
-O mahout é uma [aprendizado de máquina](https://en.wikipedia.org/wiki/Machine_learning) biblioteca para o Apache Hadoop. O Mahout contém algoritmos para processamento de dados, como filtragem, classificação e clustering. Neste artigo, você utiliza um mecanismo de recomendação para gerar recomendações de filmes baseadas nos vídeos que seus amigos assistiram.
+Mahout é uma biblioteca de [aprendizado de máquina](https://en.wikipedia.org/wiki/Machine_learning) para Apache Hadoop. O Mahout contém algoritmos para processamento de dados, como filtragem, classificação e clustering. Neste artigo, você utiliza um mecanismo de recomendação para gerar recomendações de filmes baseadas nos vídeos que seus amigos assistiram.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -47,7 +47,7 @@ O fluxo de trabalho a seguir é um exemplo simplificado que usa dados de filmes:
 
 ### <a name="understanding-the-data"></a>Compreendendo os dados
 
-Convenientemente, [GroupLens Research](https://grouplens.org/datasets/movielens/) oferece dados de classificação para filmes em um formato que seja compatível com o Mahout. Esses dados estão disponíveis no armazenamento padrão do cluster em `/HdiSamples/HdiSamples/MahoutMovieData`.
+Convenientemente, a [pesquisa do GroupLens](https://grouplens.org/datasets/movielens/) fornece dados de classificação para filmes em um formato compatível com o Mahout. Esses dados estão disponíveis no armazenamento padrão do cluster em `/HdiSamples/HdiSamples/MahoutMovieData`.
 
 Existem dois arquivos, `moviedb.txt` e `user-ratings.txt`. O arquivo `user-ratings.txt` é usado durante a análise. O `moviedb.txt` é usado para fornecer informações de texto fáceis e simples ao exibir os resultados.
 

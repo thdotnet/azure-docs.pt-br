@@ -7,19 +7,19 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 09/11/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bbce41271914df4bb8a75804bc66ae538fe766fa
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 5ae12742c2ad50d5bf1caaf14ae2f6d34bd6d3a2
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716759"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70880791"
 ---
 # <a name="about-user-interface-customization-in-azure-active-directory-b2c"></a>Sobre a personalização da interface do usuário no Azure Active Directory B2C
 
-A capacidade de definir a marca e personalizar a interface do usuário que o Azure AD (Azure Active Directory) B2C fornece a seus aplicativos é importante para fornecer uma experiência perfeita para o seu cliente. Essas experiências incluem inscrição, entrada, edição de perfil e redefinição de senha. Este artigo fornece informações para ajudá-lo a personalizar a interface do usuário dos seus aplicativos.
+A capacidade de você marcar e personalizar a interface do usuário (IU) que Azure Active Directory B2C (Azure AD B2C) serve aos seus aplicativos é importante para fornecer uma experiência direta ao cliente. Essas experiências incluem inscrição, entrada, edição de perfil e redefinição de senha. Este artigo fornece informações para ajudá-lo a personalizar a interface do usuário dos seus aplicativos.
 
 Dependendo de suas necessidades quando se trata dessas experiências, personalize a interface do usuário do seu aplicativo de maneiras diferentes. Por exemplo:
 
@@ -134,6 +134,9 @@ Para obter exemplos de personalização, baixe e examine estes [arquivos de mode
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Se você estiver usando fluxos de usuário, você pode começar a personalizar a interface do usuário com o tutorial: [Personalizar a interface do usuário dos aplicativos no Azure Active Directory B2C](tutorial-customize-ui.md).
-- Se você estiver usando políticas personalizadas, você pode começar a personalização da interface com o artigo: [Personalizar a interface do usuário do aplicativo usando uma política personalizada no Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).
+- Se você estiver usando **fluxos de usuário**, você pode começar a personalizar sua interface de usuário com o tutorial:
 
+    [Personalizar a interface do usuário dos aplicativos no Azure Active Directory B2C](tutorial-customize-ui.md).
+- Se você estiver usando **políticas personalizadas**, poderá começar a personalizar a interface do usuário com o artigo:
+
+    [Personalizar a interface do usuário do aplicativo usando uma política personalizada no Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).

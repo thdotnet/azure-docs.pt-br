@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 47b8fdbe48514665f40114c9820fdc5def38c778
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 26578e277a9f6747063ee377e72845b599a0301b
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70241359"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772742"
 ---
 ::: zone target="docs"
 
@@ -80,10 +80,6 @@ Antes de começar, verifique se você:
     - Executar um [Sistema operacional com suporte](data-box-system-requirements.md).
     - Estar conectado a uma rede de alta velocidade. É altamente recomendável que você tenha pelo menos uma conexão de 10 GbE. Se uma conexão de 10 GbE não estiver disponível, um link de dados de 1 GbE poderá ser usado, mas as velocidades de cópia serão afetadas. 
 6. Acesso a uma superfície plana para posicionar o Data Box. Para colocar o dispositivo na posição horizontal ou vertical em uma prateleira de rack padrão, você precisará de um slot 7U no rack.
-7. Adquiriu os cabos a seguir para conectar o Data Box ao computador host.
-    - Um ou mais cabos de cobre SFP+ Twinax de 10 GbE ou cabos de fibra ótica SFP+ (usar com adaptadores de rede DATA 1 ou DATA 2). Para saber mais, confira a [lista de cabos e comutadores da Mellanox com suporte](https://www.mellanox.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf), que são compatíveis com adaptadores Mellanox ConnectX®-3 Pro EN Dual-Port 10GBASE-T com o adaptador de rede PCI Express 3.0.
-    - Um cabo de rede RJ-45 CAT 6 (usar com adaptador de rede MGMT)
-    - Um cabo de rede RJ-45 CAT 6A OU RJ-45 CAT 6 (usar com adaptador de rede DATA 3 configurado como 10 Gbps ou 1 Gbps respectivamente)
 
 ::: zone-end
 

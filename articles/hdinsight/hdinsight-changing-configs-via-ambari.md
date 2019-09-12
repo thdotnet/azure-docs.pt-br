@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: 57e5eef8563bca0e27024d6ff5a46b983273df07
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
-ms.translationtype: MT
+ms.openlocfilehash: 5c533c3b0005528eae646744e8e720e2c54436e1
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810667"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70880280"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Use o Apache Ambari para otimizar as configurações de cluster do HDInsight
 
@@ -146,7 +146,7 @@ Por padrão, o Hive segue um conjunto de regras para encontrar um plano de execu
 
 Para habilitar a CBO, navegue até a guia **Configurações** do Hive, pesquise por `parameter hive.cbo.enable` e, em seguida, mude o botão de alternância para **Ativado**.
 
-![Configuração de CBO](./media/hdinsight-changing-configs-via-ambari/cbo.png)
+![Configuração de CBO](./media/hdinsight-changing-configs-via-ambari/hdinsight-cbo-config.png)
 
 Os seguintes parâmetros de configuração adicionais aumentam o desempenho de consulta do Hive quando a CBO está habilitada:
 

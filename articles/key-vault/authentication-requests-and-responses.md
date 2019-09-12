@@ -3,18 +3,18 @@ title: Autenticação, solicitações e respostas
 description: Autenticar no AD para usar o Key Vault
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4160d6ce324cf419cd4b9a61b68bb39b0443321c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2b4f198d596ddcb475e123c355c38ada784d21d3
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64694730"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70884004"
 ---
 # <a name="authentication-requests-and-responses"></a>Autenticação, solicitações e respostas
 
@@ -22,7 +22,7 @@ O Azure Key Vault oferece suporte a solicitações e respostas no formato JSON. 
 
 Este tópico aborda informações específicas para o serviço do Azure Key Vault. Para obter informações gerais sobre o uso de interfaces de REST do Azure, incluindo autenticação/autorização e como adquirir um token de acesso, consulte a [Referência da API REST do Azure](https://docs.microsoft.com/rest/api/azure).
 
-## <a name="request-url"></a>URL de Solicitação  
+## <a name="request-url"></a>URL da solicitação  
  As principais operações de gerenciamento usam HTTP DELETE, GET, PATCH, PUT e HTTP POST e operações criptográficas em relação a objetos de chave existentes usam HTTP POST. Os clientes que não suportam verbos HTTP específicos também podem usar HTTP POST usando o cabeçalho X-HTTP-REQUEST para especificar o verbo pretendido; solicitações que normalmente não exigem um corpo devem incluir um corpo vazio quando usando HTTP POST, por exemplo, ao usar POST em vez de DELETE.  
 
  Para trabalhar com objetos no Azure Key Vault, a seguir estão exemplos de URLs:  
@@ -44,14 +44,14 @@ Este tópico aborda informações específicas para o serviço do Azure Key Vaul
 
  As versões do protocolo do Azure Key Vault seguem um esquema de numeração de data usando o formato {AAAA}.{MM}.{DD}.  
 
-## <a name="request-body"></a>Corpo da solicitação  
+## <a name="request-body"></a>Corpo de Solicitação  
  De acordo com a especificação de HTTP, operações GET NÃO devem ter um corpo de solicitação e operações POST e PUT devem ter um corpo de solicitação. O corpo em operações DELETE é opcional no HTTP.  
 
  Salvo indicação em contrário na descrição da operação, o tipo de conteúdo de corpo de solicitação deve ser application/json e deve conter uma objeto JSON serializado em conformidade com o tipo de conteúdo.  
 
  Salvo indicação em contrário na descrição da operação, o cabeçalho de solicitação Accept deve conter o tipo de mídia application/json.  
 
-## <a name="response-body"></a>Corpo da resposta  
+## <a name="response-body"></a>Corpo da Resposta  
  Salvo indicação em contrário na descrição da operação, o tipo de conteúdo do corpo de resposta de operações bem-sucedidas e com falhas será application/json e contém informações de erro detalhadas.  
 
 ## <a name="using-http-post"></a>Usar HTTP POST  
@@ -87,7 +87,7 @@ Este tópico aborda informações específicas para o serviço do Azure Key Vaul
 
 ```  
 
-## <a name="authentication"></a>Authentication  
+## <a name="authentication"></a>Autenticação  
  Todas as solicitações para o Azure Key Vault DEVEM ser autenticadas. O Azure Key Vault oferece suporte a tokens de acesso do Azure Active Directory que podem ser obtidos usando OAuth2 [[RFC6749](https://tools.ietf.org/html/rfc6749)]. 
  
  Para obter mais informações sobre como registrar seu aplicativo e sobre a autenticação para usar o Azure Key Vault, consulte [Registrar seu aplicativo cliente com o Azure AD](https://docs.microsoft.com/rest/api/azure/index#register-your-client-application-with-azure-ad).
@@ -114,5 +114,5 @@ WWW-Authenticate: Bearer authorization="…", resource="…"
 
 -   resource: o nome do recurso a ser usado na solicitação de autorização.  
 
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte também  
  [Sobre chaves, segredos e certificados](about-keys-secrets-and-certificates.md)
