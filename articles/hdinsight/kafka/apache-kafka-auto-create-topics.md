@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/18/2018
-ms.openlocfilehash: af26bcee08ded8eb66d640f954113be3e7672e1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4f40a625b10243ca13163e549a51a760cf105917
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64709127"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70900442"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Como configurar o Apache Kafka no HDInsight para criar tópicos automaticamente
 
@@ -42,7 +42,7 @@ Para habilitar a criação automática de tópico em um cluster existente por me
 
 5. No campo Filtrar, digite um valor de `auto.create`. 
 
-    ![Imagem do campo de filtro](./media/apache-kafka-auto-create-topics/filter.png)
+    ![Imagem do campo de filtro](./media/apache-kafka-auto-create-topics/hdinsight-filter-field.png)
 
     Isso filtrará a lista de propriedades e exibirá a configuração `auto.create.topics.enable`.
 

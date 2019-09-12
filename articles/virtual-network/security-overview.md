@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: malop
 ms.reviewer: kumud
-ms.openlocfilehash: 25c732d1311e2bcffe0fda0d5e427d5df5f99da6
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 1d9fc022a0b0d5ba96517b4ed06b4a2576245a26
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065937"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70886019"
 ---
 # <a name="security-groups"></a>Grupos de segurança
 <a name="network-security-groups"></a>
@@ -87,7 +87,7 @@ As seguintes marcas de serviço estão disponíveis para uso em [regras de grupo
 * **SQL*** (somente Gerenciador de recursos): Essa marca denota os prefixos de endereço do banco de dados SQL do Azure, banco de dados do Azure para MySQL, banco de dados do Azure para PostgreSQL e serviços de SQL Data Warehouse do Azure. Se você especificar *Sql* como valor, o tráfego será permitido ou negado para o Sql. Se você quiser permitir o acesso ao SQL em uma [região](https://azure.microsoft.com/regions)específica, poderá especificar a região no formato SQL a seguir. [nome da região]. A marca representa o serviço, mas não as instâncias específicas do serviço. Por exemplo, a marca representa o serviço Banco de Dados SQL do Azure, mas não um banco de dados ou servidor SQL específico. Essa marca é recomendada para a regra de segurança de saída. 
 * **SqlManagement*** (somente no Gerenciador de recursos): Essa marca denota os prefixos de endereço do tráfego de gerenciamento para implantações dedicadas do SQL. Se você especificar *SqlManagement* para o valor, o tráfego será permitido ou negado ao SqlManagement. Essa marca é recomendada para a regra de segurança de entrada/saída. 
 * **Armazenamento*** (somente no Gerenciador de recursos): Essa tag denota o espaço de endereços IP para o serviço Armazenamento do Azure. Se você especificar *Armazenamento* como valor, o tráfego será permitido ou negado para o armazenamento. Se você quiser permitir o acesso ao armazenamento em uma [região](https://azure.microsoft.com/regions)específica, poderá especificar a região no armazenamento de formato a seguir. [nome da região]. A marca representa o serviço, mas não as instâncias específicas do serviço. Por exemplo, a marca representa o serviço Armazenamento do Azure, mas não uma conta do Armazenamento do Azure específica. Essa marca é recomendada para a regra de segurança de saída. 
-* **VirtualNetwork** (Resource Manager) (**VIRTUAL_NETWORK** para clássico): Essa marca inclui o espaço de endereço de rede virtual (todos os intervalos CIDR definidos para a rede virtual), todos os espaços de endereço locais conectados, redes virtuais [emparelhadas](virtual-network-peering-overview.md) ou rede virtual conectada a um [Gateway de rede virtual](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json) e endereço prefixos usados em [rotas definidas pelo usuário](virtual-networks-udr-overview.md). Lembre-se de que essa marca pode conter a rota padrão. 
+* **VirtualNetwork** (Resource Manager) (**VIRTUAL_NETWORK** para clássico): Essa marca inclui o espaço de endereço de rede virtual (todos os intervalos CIDR definidos para a rede virtual), todos os espaços de endereço locais conectados, redes virtuais [emparelhadas](virtual-network-peering-overview.md) ou rede virtual conectada a um [Gateway de rede virtual](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json), o [ Endereço IP virtual dos](security-overview.md#azure-platform-considerations) prefixos de endereço e host usados em [rotas definidas pelo usuário](virtual-networks-udr-overview.md). Lembre-se de que essa marca pode conter a rota padrão. 
 
 > [!NOTE]
 > Marcas de serviço dos serviços do Microsoft Azure indicam os prefixos de endereço da nuvem específica que está sendo usada. 

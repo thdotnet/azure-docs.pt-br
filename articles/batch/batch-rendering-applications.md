@@ -5,14 +5,14 @@ services: batch
 ms.service: batch
 author: laurenhughes
 ms.author: lahugh
-ms.date: 07/29/2019
+ms.date: 09/10/2019
 ms.topic: conceptual
-ms.openlocfilehash: 133742bf45bddf866d2dfcae97a331ee2a0f84fc
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 2b0a132c156cc12d317bf51488625191bb8091fc
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639388"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881473"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Aplicativos pré-instalados de renderização de imagens da VM
 
@@ -24,19 +24,22 @@ Alguns aplicativos dão suporte apenas para Windows, mas a maioria tem suporte n
 
 ## <a name="applications-on-centos-7-rendering-images"></a>Aplicativos em imagens de renderização CentOS 7
 
-A lista a seguir se aplica a imagens de renderização CentOS 7,6, 1.1.5 de versão.
+A lista a seguir se aplica a imagens de renderização CentOS 7,6, 1.1.6 de versão.
 
 * E/S de Autodesk Maya 2017 Atualização 5 (recortar 201708032230)
 * Autodesk Maya I/O 2018 Atualização 2 (recortar 201711281015)
-* Autodesk Arnold for Maya 2017 (versão Arnold 5.0.1.1) MtoA 2.0.1.1 2017
-* Autodesk Arnold for Maya 2018 (versão Arnold 5.0.1.4) MtoA-2.1.0.3-2018
+* Autodesk Maya de e/s 2019 atualização 1
+* Autodesk Arnold para Maya 2017 (Arnold versão 5.3.1.1) MtoA-3.2.1.1-2017
+* Autodesk Arnold para Maya 2018 (Arnold versão 5.3.1.1) MtoA-3.2.1.1-2018
+* Autodesk Arnold para Maya 2019 (Arnold versão 5.3.1.1) MtoA-3.2.1.1-2019
 * Chaos Group V-Ray for Maya 2017 (versão 3.60.04)
 * Chaos Group V-Ray for Maya 2018 (versão 3.60.04)
 * Blender (2.68)
+* Blender (2,8)
 
 ## <a name="applications-on-latest-windows-server-2016-rendering-images"></a>Aplicativos nas imagens mais recentes de renderização do Windows Server 2016
 
-A lista a seguir se aplica às imagens de renderização do Windows Server 2016, versão 1.3.4.
+A lista a seguir se aplica às imagens de renderização do Windows Server 2016, versão 1.3.7.
 
 * E/S de Autodesk Maya 2017 Atualização 5 (versão 17.4.5459)
 * Autodesk Maya I/O 2018 Atualização 4 (versão 18.4.0.7622)
@@ -44,12 +47,14 @@ A lista a seguir se aplica às imagens de renderização do Windows Server 2016,
 * E/S de Autodesk 3ds Max 2018 Atualização 4 (versão 20.4.0.4254)
 * Autodesk Arnold for Maya 2017 (Arnold versão 5.2.0.1) MtoA-3.1.0.1-2017
 * Autodesk Arnold for Maya 2018 (Arnold versão 5.2.0.1) MtoA-3.1.0.1-2018
-* Autodesk Arnold for 3ds Max (Arnold versão 5.0.2.4)(versão 1.2.926)
+* Autodesk Arnold para 3ds Max 2018 (Arnold versão 5.0.2.4) (versão 1.2.926)
+* Autodesk Arnold para 3ds Max 2019 (Arnold versão 5.0.2.4) (versão 1.2.926)
 * Grupo de caos V-Ray para Maya 2018 (versão 3.52.03)
 * Grupo de caos V-Ray para 3ds Max 2018 (versão 3.60.02)
 * Grupo de caos V-Ray para Maya 2019 (versão 3.52.03)
 * Grupo de caos V-Ray para 3ds Max 2019 (versão 4.10.01)
 * Blender (2.79)
+
 
 > [!NOTE]
 > O grupo de caos V-Ray para 3ds Max 2019 (versão 4.10.01) apresenta alterações significativas no V-Ray. Para usar a versão anterior (versão 3.60.02), use os nós de renderização do Windows Server 2016, versão 1.3.2.

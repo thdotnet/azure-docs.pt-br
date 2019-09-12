@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: c6f55b40b3ee077b81a3cdd6f3add7a2cad23f95
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: dca329ce598a9ecbc7da71cc1c24bf7731a4c994
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70809927"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885374"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Personalizar clusters do Azure HDInsight usando ações de script
 
@@ -310,7 +310,7 @@ Antes de começar, instale e configure a CLI do Azure. Para saber mais, confira 
 
     Se você omitir parâmetros para esse comando, será solicitado a fornecê-los. Caso o script especificado com `-u` aceite parâmetros, especifique-os usando o parâmetro `-p`.
 
-    Os tipos de nós válidos são `headnode`, `workernode` e `zookeeper`. Caso o script deva ser aplicado a vários tipos de nós, especifique os tipos separados por um ponto-e-vírgula `;`. Por exemplo, `-n headnode;workernode`.
+    Os tipos de nós válidos são `headnode`, `workernode` e `zookeeper`. Caso o script deva ser aplicado a vários tipos de nós, especifique os tipos separados por um ponto-e-vírgula `;`. Por exemplo: `-n headnode;workernode`.
 
     Para persistir o script, adicione `--persistOnSuccess`. Também é possível persistir o script posteriormente usando `azure hdinsight script-action persisted set`.
 
@@ -356,7 +356,7 @@ Para obter um exemplo de como usar o SDK .NET para aplicar scripts a um cluster,
 
 6. Também é possível usar as reticências ( **…** ) à direita das entradas na seção de ações de script para executar ações.
 
-    ![Ações de script, reticências](./media/hdinsight-hadoop-customize-cluster-linux/deletepromoted.png)
+    ![Ações de script, reticências](./media/hdinsight-hadoop-customize-cluster-linux/hdi-delete-promoted-sa.png)
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -442,7 +442,7 @@ Você pode usar a interface de usuário Web do Ambari para exibir as informaçõ
 
 3. Localize as entradas com **run\_customscriptaction** na coluna **Operações**. Essas entradas são criadas quando as ações de script são executadas.
 
-    ![Captura de tela de operações](./media/hdinsight-hadoop-customize-cluster-linux/ambariscriptaction.png)
+    ![Captura de tela de operações](./media/hdinsight-hadoop-customize-cluster-linux/ambari-script-action.png)
 
     Para exibir as saídas **STDOUT** e **STDERR**, selecione a entrada **run\customscriptaction** e faça drill down pelos links. Essa saída é gerada ao executar o script e pode conter informações úteis.
 
@@ -452,7 +452,7 @@ Se a criação do cluster falhar devido a um erro de script, os logs serão mant
 
 * Os logs de armazenamento estão disponíveis em `\STORAGE_ACCOUNT_NAME\DEFAULT_CONTAINER_NAME\custom-scriptaction-logs\CLUSTER_NAME\DATE`.
 
-    ![Logs de ação de script](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
+    ![Logs de ação de script](./media/hdinsight-hadoop-customize-cluster-linux/script-action-logs-in-storage.png)
 
     Nesse diretório, os logs são organizados separadamente em **nó de cabeçalho**, **nó de trabalho** e **nó do zookeeper**. Consulte os exemplos a seguir:
 

@@ -3,17 +3,17 @@ title: Guia do desenvolvedor do Cofre da Chave do Azure
 description: Os desenvolvedores podem usar o Cofre da Chave do Azure para gerenciar chaves de criptografia no ambiente do Microsoft Azure.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 72ec3080658b98376952f72f746c1b53fdf7de77
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ca640b058a1d91d15c5accb9367936368511a3ef
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64704332"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881600"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Guia do desenvolvedor do Cofre da Chave do Azure
 
@@ -39,7 +39,7 @@ Essa versão prévia inclui nosso novo recurso de Chaves de Conta de Armazenamen
 
 Para obter mais informações sobre o novo recurso de Chaves de Conta de Armazenamento, consulte [Visão geral de chaves de conta de armazenamento Azure Key Vault](key-vault-ovw-storage-keys.md).
 
-## <a name="videos"></a>vídeos
+## <a name="videos"></a>Vídeos
 
 Este vídeo mostra como criar seu próprio cofre de chaves e como usá-lo por meio do aplicativo de exemplo “Hello Key Vault”.
 
@@ -148,7 +148,7 @@ Estes artigos abordam outros cenários e serviços que usam ou se integram ao Ke
 - [Visão geral de chaves de conta de armazenamento do Key Vault](key-vault-ovw-storage-keys.md) descreve as chaves de Contas de Armazenamento do Azure de integração do Key Vault.
 - [Mundos de segurança do Key Vault](key-vault-ovw-security-worlds.md) descreve as relações entre regiões e áreas de segurança.
 
-## <a name="social"></a>Redes sociais
+## <a name="social"></a>Social
 
 - [Blog do Cofre de Chaves](https://aka.ms/kvblog)
 - [Fórum do Cofre de Chaves](https://aka.ms/kvforum)
