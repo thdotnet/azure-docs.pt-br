@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 08/06/2019
+ms.date: 09/12/2019
 ms.author: raynew
-ms.openlocfilehash: dc98a0ab47e269aa99f21d3f10952cdabe2c897f
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 950ad6d5f55186b63f879bac3f0675c501b57276
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736032"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70934448"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Matriz de suporte para replicação de VMs do Azure de uma região para outra
 
@@ -72,6 +72,7 @@ Esta tabela resume o suporte para a conta de armazenamento em cache usada pelo S
 **Configuração** | **Suporte** | **Detalhes**
 --- | --- | ---
 Contas de armazenamento do uso geral V2 (quente e a camada fria) | Suportado | O uso de GPv2 não é recomendado porque os custos de transação para v2 são consideravelmente maiores que as contas de armazenamento v1.
+Armazenamento Premium | Sem suporte | As contas de armazenamento standard são usadas para o armazenamento em cache, para ajudar a otimizar os custos.
 Firewalls de Armazenamento do Azure para redes virtuais  | Suportado | Caso esteja usando a conta de armazenamento de destino ou a conta de armazenamento de cache habilitada para firewall, escolha ['Permitir serviços confiáveis da Microsoft'](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
 
 

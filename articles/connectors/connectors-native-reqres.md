@@ -1,115 +1,238 @@
 ---
-title: Usar ações de solicitação e resposta | Microsoft Docs
-description: Visão geral do gatilho e da ação da solicitação e da resposta em um aplicativo lógico do Azure
-services: ''
-documentationcenter: ''
-author: jeffhollan
-manager: erikre
-editor: ''
-tags: connectors
-ms.assetid: 566924a4-0988-4d86-9ecd-ad22507858c0
+title: Responder a solicitações HTTP-aplicativos lógicos do Azure
+description: Responder a eventos em tempo real sobre HTTP usando aplicativos lógicos do Azure
+services: logic-apps
 ms.service: logic-apps
-ms.devlang: na
+ms.suite: integration
+author: ecfan
+ms.author: estfan
+ms.reviewers: klam, LADocs
+manager: carmonm
+ms.assetid: 566924a4-0988-4d86-9ecd-ad22507858c0
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 07/18/2016
-ms.author: jehollan
-ms.openlocfilehash: 0f6ee8729cbed9cb8baf3668f7b1a332bc5eddc1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 09/06/2019
+tags: connectors
+ms.openlocfilehash: 07f143b261d0cff9eba0d4b1803753446c311818
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60538087"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914367"
 ---
-# <a name="get-started-with-the-request-and-response-components"></a>Introdução aos componentes de solicitação e resposta
-Com os componentes de solicitação e resposta em um aplicativo lógico, você pode responder em tempo real a eventos.
+# <a name="respond-to-http-requests-by-using-azure-logic-apps"></a>Responder a solicitações HTTP usando aplicativos lógicos do Azure
 
-Por exemplo, você pode:
+Com os [aplicativos lógicos do Azure](../logic-apps/logic-apps-overview.md) e a ação de resposta ou gatilho de solicitação interna, você pode criar tarefas automatizadas e fluxos de trabalho que recebem e respondem em tempo real a solicitações HTTP. Por exemplo, você pode ter seu aplicativo lógico:
 
-* Responder a uma solicitação HTTP com dados de um banco de dados local por meio de um aplicativo lógico.
-* Dispare um aplicativo lógico de um evento de webhook externo.
-* Chamar um aplicativo lógico com uma ação de solicitação e resposta de dentro de outro aplicativo lógico.
+* Responder a uma solicitação HTTP para dados em um banco de dado local.
+* Disparar um fluxo de trabalho quando ocorrer um evento de webhook externo.
+* Chamar um aplicativo lógico de dentro de outro aplicativo lógico.
 
-Para começar a usar as ações de solicitação e resposta em um aplicativo lógico, confira [Criar um aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+## <a name="prerequisites"></a>Pré-requisitos
 
-## <a name="use-the-http-request-trigger"></a>Usar o gatilho de Solicitação HTTP
-Um gatilho é um evento que pode ser usado para iniciar o fluxo de trabalho definido em um aplicativo lógico. 
-[Saiba mais sobre gatilhos](../connectors/apis-list.md).
+* Uma assinatura do Azure. Se você não tiver uma assinatura, poderá se [inscrever para uma conta gratuita do Azure](https://azure.microsoft.com/free/).
 
-Aqui está uma sequência de exemplo de como configurar uma solicitação HTTP no Designer do aplicativo lógico.
+* Conhecimento básico sobre [aplicativos lógicos](../logic-apps/logic-apps-overview.md). Se você for novo em aplicativos lógicos, saiba [como criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-1. Adicione o gatilho **Solicitação — quando uma solicitação HTTP é recebida** no seu aplicativo lógico. Como opção, você pode fornecer um esquema JSON (usando uma ferramenta como [JSONSchema.net](https://jsonschema.net)) para o corpo da solicitação. Isso permite que o designer gere tokens para propriedades na solicitação HTTP.
-2. Adicione outra ação para que seja possível salvar o aplicativo lógico.
-3. Depois de salvar o aplicativo lógico, você pode obter a URL da solicitação HTTP do cartão de solicitação.
-4. Um HTTP POST (você pode usar uma ferramenta como [Postman](https://www.getpostman.com/)) para a URL que dispara o aplicativo lógico.
+<a name="add-request"></a>
 
-> [!NOTE]
-> Se você não definir uma ação de resposta, uma resposta `202 ACCEPTED` será retornada imediatamente ao chamador. Você pode usar a ação de resposta para personalizar uma resposta.
-> 
-> 
+## <a name="add-a-request-trigger"></a>Adicionar um gatilho de solicitação
 
-![Gatilho de resposta](./media/connectors-native-reqres/using-trigger.png)
+Esse gatilho interno cria um ponto de extremidade que pode ser chamado manualmente que recebe uma solicitação HTTP de entrada. Quando esse evento acontece, o gatilho é acionado e executa o aplicativo lógico. Para obter mais informações sobre a definição de JSON subjacente do gatilho e como chamar esse gatilho, consulte o [tipo de gatilho de solicitação](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) e [chamar, disparar ou aninhar fluxos de trabalho com pontos de extremidade http em aplicativos lógicos do Azure](../logic-apps/logic-apps-http-endpoint.md)
 
-## <a name="use-the-http-response-action"></a>Usar a ação de Resposta HTTP
-A ação de Resposta HTTP só será válida quando usada em um fluxo de trabalho disparado por uma solicitação HTTP. Se você não definir uma ação de resposta, uma resposta `202 ACCEPTED` será retornada imediatamente ao chamador.  Você pode adicionar uma ação de resposta a qualquer etapa do fluxo de trabalho. O aplicativo lógico só mantém a solicitação de entrada aberta por um minuto para uma resposta.  Após um minuto, se nenhuma resposta for enviada do fluxo de trabalho (e se existir uma ação de resposta na definição), um `504 GATEWAY TIMEOUT` será retornado ao chamador.
+1. Entre no [Portal do Azure](https://portal.azure.com). Criar um aplicativo lógico em branco.
 
-Veja como adicionar uma ação de Resposta HTTP:
+1. Depois que o designer de aplicativo lógico for aberto, na caixa de pesquisa, digite "solicitação HTTP" como filtro. Na lista de gatilhos, selecione o gatilho **quando uma solicitação HTTP é recebida** , que é a primeira etapa no fluxo de trabalho do aplicativo lógico.
 
-1. Selecione o botão **Nova Etapa** .
-2. Escolha **Adicionar uma ação**.
-3. Na caixa de pesquisa de ação, digite **resposta** para listar a ação de Resposta.
-   
-    ![Selecionar a ação de resposta](./media/connectors-native-reqres/using-action-1.png)
-4. Adicione todos os parâmetros necessários para a mensagem de resposta HTTP.
-   
-    ![Concluir a ação de resposta](./media/connectors-native-reqres/using-action-2.png)
-5. Clique no canto superior esquerdo da barra de ferramentas para salvar e seu aplicativo lógico será salvo e publicado (ativado).
+   ![Selecionar o gatilho de solicitação HTTP](./media/connectors-native-reqres/select-request-trigger.png)
 
-## <a name="request-trigger"></a>Gatilho de solicitação
-Veja os detalhes do gatilho com suporte deste conector. Há um único gatilho de solicitação.
+   O gatilho de solicitação mostra essas propriedades:
 
-| Gatilho | DESCRIÇÃO |
-| --- | --- |
-| Solicitação |Ocorre quando uma solicitação HTTP é recebida |
+   ![Gatilho de solicitação](./media/connectors-native-reqres/request-trigger.png)
 
-## <a name="response-action"></a>Ação de resposta
-Veja os detalhes da ação com suporte deste conector. Há uma única ação de resposta que pode ser usada apenas quando acompanhada por um gatilho de solicitação.
+   | Nome da propriedade | Nome da propriedade JSON | Necessário | Descrição |
+   |---------------|--------------------|----------|-------------|
+   | **URL HTTP POST** | {none} | Sim | A URL do ponto de extremidade que é gerada depois que você salva o aplicativo lógico e é usada para chamar seu aplicativo lógico |
+   | **Esquema JSON do corpo da solicitação** | `schema` | Não | O esquema JSON que descreve as propriedades e os valores no corpo da solicitação HTTP de entrada |
+   |||||
 
-| Ação | DESCRIÇÃO |
-| --- | --- |
-| resposta |Retorna uma resposta à solicitação HTTP correlacionada |
+1. Na caixa **esquema JSON do corpo da solicitação** , opcionalmente, insira um esquema JSON que descreve o corpo da solicitação HTTP na solicitação de entrada, por exemplo:
 
-### <a name="trigger-and-action-details"></a>Detalhes de gatilho e da ação
-As tabelas a seguir descrevem os campos de entrada para o gatilho e a ação e os detalhes de saída correspondentes.
+   ![Esquema JSON de exemplo](./media/connectors-native-reqres/provide-json-schema.png)
 
-#### <a name="request-trigger"></a>Gatilho de solicitação
-A seguir, um campo de entrada para o gatilho de uma solicitação HTTP de entrada.
+   O designer usa esse esquema para gerar tokens para as propriedades na solicitação. Dessa forma, seu aplicativo lógico pode analisar, consumir e passar dados da solicitação por meio do gatilho para seu fluxo de trabalho.
 
-| Display name | Nome da propriedade | DESCRIÇÃO |
-| --- | --- | --- |
-| Esquema JSON |schema |O esquema JSON do corpo da solicitação HTTP |
+   Aqui está o esquema de exemplo:
 
-<br>
+   ```json
+   {
+      "type": "object",
+      "properties": {
+         "account": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string"
+               },
+               "ID": {
+                  "type": "string"
+               },
+               "address": {
+                  "type": "object",
+                  "properties": {
+                     "number": {
+                        "type": "string"
+                     },
+                     "street": {
+                        "type": "string"
+                     },
+                     "city": {
+                        "type": "string"
+                     },
+                     "state": {
+                        "type": "string"
+                     },
+                     "country": {
+                        "type": "string"
+                     },
+                     "postalCode": {
+                        "type": "string"
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   ```
 
-**Detalhes de saída**
+   Quando você insere um esquema JSON, o designer mostra um lembrete para incluir `Content-Type` o cabeçalho em sua solicitação e definir esse valor de `application/json`cabeçalho como. Para obter mais informações, consulte [manipular tipos de conteúdo](../logic-apps/logic-apps-content-type.md).
 
-A seguir, os detalhes de saída para a solicitação.
+   ![Lembrete para incluir o cabeçalho "Content-Type"](./media/connectors-native-reqres/include-content-type.png)
 
-| Nome da propriedade | Tipo de dados | DESCRIÇÃO |
-| --- | --- | --- |
-| headers |objeto |Cabeçalhos da solicitação |
-| Corpo |objeto |Objeto da solicitação |
+   Veja a aparência desse cabeçalho no formato JSON:
 
-#### <a name="response-action"></a>Ação de resposta
-Estes são os campos de entrada da ação de Resposta HTTP. Um * significa que é um campo obrigatório.
+   ```json
+   {
+      "Content-Type": "application/json"
+   }
+   ```
 
-| Display name | Nome da propriedade | DESCRIÇÃO |
-| --- | --- | --- |
-| Código de status* |statusCode |O código de status HTTP |
-| Cabeçalhos |headers |Um objeto JSON de cabeçalhos de resposta a serem incluídos |
-| Corpo |body |O corpo da resposta |
+   Para gerar um esquema JSON baseado na carga esperada (dados), você pode usar uma ferramenta como [JSONSchema.net](https://jsonschema.net)ou pode seguir estas etapas:
+
+   1. No gatilho de Solicitação, selecione **Usar o conteúdo de amostra para gerar o esquema**.
+
+      ![Gerar esquema com base na carga](./media/connectors-native-reqres/generate-from-sample-payload.png)
+
+   1. Insira a carga de exemplo e selecione **concluído**.
+
+      ![Gerar esquema com base na carga](./media/connectors-native-reqres/enter-payload.png)
+
+      Aqui está o conteúdo de exemplo:
+
+      ```json
+      {
+         "account": {
+            "name": "Contoso",
+            "ID": "12345",
+            "address": { 
+               "number": "1234",
+               "street": "Anywhere Street",
+               "city": "AnyTown",
+               "state": "AnyState",
+               "country": "USA",
+               "postalCode": "11111"
+            }
+         }
+      }
+      ```
+
+1. Para especificar propriedades adicionais, abra a lista **Adicionar novo parâmetro** e selecione os parâmetros que você deseja adicionar.
+
+   | Nome da propriedade | Nome da propriedade JSON | Necessário | Descrição |
+   |---------------|--------------------|----------|-------------|
+   | **Método** | `method` | Não | O método que a solicitação de entrada deve usar para chamar o aplicativo lógico |
+   | **Caminho relativo** | `relativePath` | Não | O caminho relativo para o parâmetro que a URL do ponto de extremidade do aplicativo lógico pode aceitar |
+   |||||
+
+   Este exemplo adiciona a propriedade do **método** :
+
+   ![Adicionar parâmetro de método](./media/connectors-native-reqres/add-parameters.png)
+
+   A propriedade **Method** aparece no gatilho para que você possa selecionar um método na lista.
+
+   ![Selecione o método](./media/connectors-native-reqres/select-method.png)
+
+1. Agora, adicione outra ação como a próxima etapa no fluxo de trabalho. No gatilho, selecione **próxima etapa** para que você possa encontrar a ação que deseja adicionar.
+
+   Por exemplo, você pode responder à solicitação [adicionando uma ação de resposta](#add-response), que pode ser usada para retornar uma resposta personalizada e é descrita mais adiante neste tópico.
+
+   Seu aplicativo lógico mantém a solicitação de entrada aberta somente por um minuto. Supondo que o fluxo de trabalho do aplicativo lógico inclua uma ação de resposta, se o aplicativo lógico não retornar uma resposta após esse tempo passar, `504 GATEWAY TIMEOUT` seu aplicativo lógico retornará um para o chamador. Caso contrário, se seu aplicativo lógico não incluir uma ação de resposta, seu aplicativo lógico retornará `202 ACCEPTED` imediatamente uma resposta ao chamador.
+
+1. Quando terminar, salve o aplicativo lógico. Selecione **Salvar** na barra de ferramentas do designer. 
+
+   Esta etapa gera a URL a ser usada para enviar a solicitação que dispara o aplicativo lógico. Para copiar essa URL, selecione o ícone de cópia ao lado da URL.
+
+   ![URL para usar o disparo do seu aplicativo lógico](./media/connectors-native-reqres/generated-url.png)
+
+1. Para disparar seu aplicativo lógico, envie um HTTP POST para a URL gerada. Por exemplo, você pode usar uma ferramenta como o [postmaster](https://www.getpostman.com/).
+
+### <a name="trigger-outputs"></a>Saídas do gatilho
+
+Veja mais informações sobre as saídas do gatilho de solicitação:
+
+| Nome da propriedade JSON | Tipo de dados | Descrição |
+|--------------------|-----------|-------------|
+| `headers` | Object | Um objeto JSON que descreve os cabeçalhos da solicitação |
+| `body` | Object | Um objeto JSON que descreve o conteúdo do corpo da solicitação |
+||||
+
+<a name="add-response"></a>
+
+## <a name="add-a-response-action"></a>Adicionar uma ação de resposta
+
+Você pode usar a ação de resposta para responder com uma carga (dados) a uma solicitação HTTP de entrada, mas somente em um aplicativo lógico que é disparado por uma solicitação HTTP. Você pode adicionar a ação de resposta em qualquer ponto do fluxo de trabalho. Para obter mais informações sobre a definição de JSON subjacente para esse gatilho, consulte o [tipo de ação de resposta](../logic-apps/logic-apps-workflow-actions-triggers.md#response-action).
+
+Seu aplicativo lógico mantém a solicitação de entrada aberta somente por um minuto. Supondo que o fluxo de trabalho do aplicativo lógico inclua uma ação de resposta, se o aplicativo lógico não retornar uma resposta após esse tempo passar, `504 GATEWAY TIMEOUT` seu aplicativo lógico retornará um para o chamador. Caso contrário, se seu aplicativo lógico não incluir uma ação de resposta, seu aplicativo lógico retornará `202 ACCEPTED` imediatamente uma resposta ao chamador.
+
+1. No designer do aplicativo lógico, na etapa em que você deseja adicionar uma ação de resposta, selecione **nova etapa**.
+
+   Por exemplo, usando o gatilho de solicitação anterior:
+
+   ![Adicionar nova etapa](./media/connectors-native-reqres/add-response.png)
+
+   Para adicionar uma ação entre etapas, mova o ponteiro sobre a seta entre essas etapas. Selecione o sinal de adição **+** () que aparece e, em seguida, selecione **Adicionar uma ação**.
+
+1. Em **escolher uma ação**, na caixa de pesquisa, insira "resposta" como filtro e selecione a ação de **resposta** .
+
+   ![Selecionar a ação de resposta](./media/connectors-native-reqres/select-response-action.png)
+
+   O gatilho de solicitação é recolhido neste exemplo para simplificar.
+
+1. Adicione quaisquer valores necessários para a mensagem de resposta. 
+
+   Em alguns campos, clicar dentro de suas caixas abre a lista de conteúdo dinâmico. Em seguida, você pode selecionar tokens que representam as saídas disponíveis de etapas anteriores no fluxo de trabalho. As propriedades do esquema especificado no exemplo anterior agora aparecem na lista de conteúdo dinâmico.
+
+   Por exemplo, para a caixa **cabeçalhos** , inclua `Content-Type` como o nome da chave e defina `application/json` o valor da chave como mencionado anteriormente neste tópico. Para a caixa **corpo** , você pode selecionar a saída do corpo do gatilho na lista de conteúdo dinâmico.
+
+   ![Detalhes da ação de resposta](./media/connectors-native-reqres/response-details.png)
+
+   Para exibir os cabeçalhos no formato JSON, selecione **alternar para exibição de texto**.
+
+   ![Cabeçalhos – alternar para a exibição de texto](./media/connectors-native-reqres/switch-to-text-view.png)
+
+   Aqui estão mais informações sobre as propriedades que podem ser definidas na ação de resposta. 
+
+   | Nome da propriedade | Nome da propriedade JSON | Necessário | Descrição |
+   |---------------|--------------------|----------|-------------|
+   | **Código de status** | `statusCode` | Sim | O código de status HTTP a ser retornado na resposta |
+   | **Cabeçalhos** | `headers` | Não | Um objeto JSON que descreve um ou mais cabeçalhos a serem incluídos na resposta |
+   | **Corpo** | `body` | Não | O corpo da resposta |
+   |||||
+
+1. Para especificar propriedades adicionais, como um esquema JSON para o corpo da resposta, abra a lista **Adicionar novo parâmetro** e selecione os parâmetros que você deseja adicionar.
+
+1. Quando terminar, salve o aplicativo lógico. Selecione **Salvar** na barra de ferramentas do designer. 
 
 ## <a name="next-steps"></a>Próximas etapas
-Agora, experimente a plataforma e [crie um aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md). Você pode explorar os outros conectores disponíveis em aplicativos lógicos examinando nossa [lista de APIs](apis-list.md).
 
+* [Conectores para aplicativos lógicos](../connectors/apis-list.md)

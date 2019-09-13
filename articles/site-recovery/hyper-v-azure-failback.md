@@ -6,23 +6,25 @@ author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 09/12/2019
 ms.author: rajanaki
-ms.openlocfilehash: 4030b1905f8d5b50ef6be3ffa61eda74d8a27951
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 07ecc8547ab155600bccfd1ad8f1ecbb58a18fa3
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60552409"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931838"
 ---
 # <a name="run-a-failback-for-hyper-v-vms"></a>Executar um failback de VMs Hyper-V
 
 Este artigo descreve como executar o failback para máquinas virtuais do Hyper-V protegidas pelo Site Recovery.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-1. Certifique-se de que você tenha lido os detalhes sobre os [tipos diferentes de failback](concepts-types-of-failback.md) e as perdas correspondentes.
-1. Verifique se o servidor VMM do site primário ou o servidor Hyper-V está conectado.
-2. Você deve ter executado **Confirmar** na máquina virtual.
+
+- Certifique-se de que você tenha lido os detalhes sobre os [tipos diferentes de failback](concepts-types-of-failback.md) e as perdas correspondentes.
+- Verifique se o servidor VMM do site primário ou o servidor Hyper-V está conectado.
+- Você deve ter executado **Confirmar** na máquina virtual.
+- Verifique se você está usando uma conta de armazenamento para replicação e não para discos gerenciados. Não há suporte para o failback de VMs do Hyper-V replicadas usando discos de gerenciamento.
 
 ## <a name="perform-failback"></a>Executar um failback
 Depois do failover do local primário no secundário, as máquinas virtuais replicadas não são protegidas pela Recuperação de Site, e o local secundário agora atuará como local ativo. Para fazer failback de VMs em um plano de recuperação, execute um failover planejado do site secundário para o primário como mostrado a seguir. 
@@ -54,7 +56,7 @@ Se você implantou a proteção entre um [site do Hyper-V e o Azure](site-recove
 
 1. Se você estiver definindo um novo hardware, instale o Windows Server 2012 R2 e a função do Hyper-V no servidor.
 2. Crie um comutador de rede virtual com o mesmo nome que você tinha no servidor original.
-3. Selecione **itens protegidos** -> **grupo de proteção** -> \<Nomegrupoproteção > -> \<VirtualMachineName > você deseja realizar o failback, e selecione **Failover planejado**.
+3. Selecione **itens** -> protegidos grupo \< -> deproteçãoProtectionGroupName>->VirtualMachineName>vocêdesejafazerfailbackeselecionefailoverplanejado.\<
 4. Em **Confirmar Failover Planejado** select **Criar máquina virtual local se ela não existir**.
 5. Em Nome do Host,** selecione o novo servidor host do Hyper-V no qual deseja colocar a máquina virtual.
 6. Em Sincronização de Dados, é recomendável selecionar a opção para sincronizar os dados antes do failover. Essa opção minimiza o tempo de inatividade das máquinas virtuais, uma vez que faz a sincronização sem desligá-las. Ele faz o seguinte:
@@ -63,7 +65,7 @@ Se você implantou a proteção entre um [site do Hyper-V e o Azure](site-recove
     - Fase 2: Desliga a máquina virtual no Azure para que nenhuma alteração seja feita lá. O conjunto final de alterações é transferido para o servidor local e a máquina virtual local é inicializada.
     
 7. Clique na marca de seleção para iniciar o failover (failback).
-8. Depois que a sincronização inicial for concluída e você está pronto para desligar a máquina virtual no Azure, clique em **trabalhos** > \<trabalho de failover planejado >> **concluir Failover** . Isso desliga a máquina do Azure, transfere as alterações mais recentes para a máquina virtual local e a inicia.
+8. Depois que a sincronização inicial for concluída e você estiver pronto para desligar a máquina virtual no Azure, clique em **trabalhos** > \<trabalho de failover planejado > > **concluir failover**. Isso desliga a máquina do Azure, transfere as alterações mais recentes para a máquina virtual local e a inicia.
 9. Você pode fazer logon na máquina virtual local para verificar se tudo está funcionando conforme o esperado. Em seguida, clique em **Confirmar** para concluir o failover. A confirmação exclui a máquina virtual do Azure e seus discos e prepara a VM para ser protegida novamente.
 10. Clique em **Replicação Inversa** para iniciar a proteção da máquina virtual local.
 

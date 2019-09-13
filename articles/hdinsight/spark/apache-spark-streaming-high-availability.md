@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: dcd9095a1e5010a3d0dd5ea7ad884e36e24c7c1d
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 9424ebbd4ed2e1536a10d77a88257bad948628e2
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814015"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915403"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Crie tarefas do Apache Spark Streaming de alta disponibilidade com o YARN
 
@@ -29,7 +29,7 @@ O streaming do Spark representa um fluxo contínuo de dados usando um *DStream* 
 
 O núcleo do Spark usa *RDDs* (conjuntos de dados distribuídos resilientes). Os RDDs distribuem dados em vários nós no cluster, onde cada nó geralmente mantém seus dados completamente na memória para obter o melhor desempenho. Cada RDD representa eventos coletados ao longo de um intervalo de lotes. Quando o intervalo de lotes tiver decorrido, o streaming do Spark produz um novo RDD contendo todos os dados desse intervalo. Esse conjunto contínuo de RDDs é coletado em um DStream. Um aplicativo de streaming do Spark processa os dados armazenados no RDD de cada lote.
 
-![DStream do Spark](./media/apache-spark-streaming-high-availability/DStream.png)
+![DStream do Spark](./media/apache-spark-streaming-high-availability/apache-spark-dstream.png)
 
 ## <a name="spark-structured-streaming-jobs"></a>Trabalhos de streaming estruturado do Spark
 

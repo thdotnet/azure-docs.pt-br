@@ -9,20 +9,20 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 7b357189a9ce67f27952985b78dd3134517ffba5
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 5a3cfb78fe97b52abb1406dff64132fc1b3fb985
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734300"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933422"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Lidando com erros nas Funções Duráveis (Azure Functions)
 
-Orquestrações de Funções Duráveis são implementadas no código e podem usar os recursos de tratamento de erros da linguagem de programação. Com isso em mente, realmente não há nenhum novo conceito que você precisa saber sobre a incorporação de tratamento de erros e a compensação em suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
+Orquestrações de função duráveis são implementadas no código e podem usar os recursos internos de tratamento de erros da linguagem de programação. Na verdade, não há nenhum novo conceito que você precise aprender para adicionar o tratamento de erros e a compensação às suas orquestrações. No entanto, há alguns comportamentos a que você deve estar atento.
 
 ## <a name="errors-in-activity-functions"></a>Erros em funções de atividade
 
-Qualquer exceção que é lançada em uma função de atividade sofre marshaling de volta para a função de orquestrador e é lançada como um `FunctionFailedException`. Você pode escrever o código de compensação e tratamento de erro que atenda às suas necessidades na função de orquestrador.
+Qualquer exceção gerada em uma função de atividade é empacotada de volta para a função de orquestrador e lançada como `FunctionFailedException`um. Você pode escrever o código de compensação e tratamento de erro que atenda às suas necessidades na função de orquestrador.
 
 Por exemplo, considere a seguinte função de orquestrador, que transfere fundos de uma conta para outra:
 
@@ -139,7 +139,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-Se a chamada para a função **CreditAccount** falhar para a conta de destino, a função de orquestrador compensará isso creditando os fundos de volta na conta de origem.
+Se a primeira chamada de função **CreditAccount** falhar, a função de orquestrador compensa creditando os fundos de volta para a conta de origem.
 
 ## <a name="automatic-retry-on-failure"></a>Repetição automática em caso de falha
 
@@ -192,18 +192,18 @@ module.exports = df.orchestrator(function*(context) {
 
 A API `CallActivityWithRetryAsync` (.NET) ou `callActivityWithRetry` (JavaScript) usa um parâmetro `RetryOptions`. As chamadas de suborquestração usando a API `CallSubOrchestratorWithRetryAsync` (.NET) ou `callSubOrchestratorWithRetry` (JavaScript) podem usar essas mesmas políticas de repetição.
 
-Há várias opções para personalizar a política de repetição automática. Elas incluem o seguinte:
+Há várias opções para personalizar a política de repetição automática:
 
 * **Número máximo de tentativas**: O número máximo de tentativas de repetição.
 * **Intervalo da primeira repetição**: O tempo de espera antes de fazer a primeira tentativa.
 * **Coeficiente de retirada**: O coeficiente usado para determinar a taxa de aumento de retirada. O valor padrão é 1.
 * **Intervalo máximo de repetição**: O tempo máximo de espera entre tentativas de repetição.
 * **Tempo limite de repetição**: O tempo máximo a ser dedicado às novas tentativas. O comportamento padrão é repetir indefinidamente.
-* **Identificador**: É possível especificar um retorno de chamada definido pelo usuário, que determina se uma chamada de função deve ser repetida ou não.
+* **Identificador**: Um retorno de chamada definido pelo usuário pode ser especificado para determinar se uma função deve ser repetida.
 
 ## <a name="function-timeouts"></a>Tempos limite de função
 
-Talvez você queira abandonar uma chamada de função em uma função de orquestrador se ela estiver demorando muito para ser concluída. No momento, o modo adequado de fazer isso é criar um [temporizador durável](durable-functions-timers.md) usando `context.CreateTimer` (.NET) ou `context.df.createTimer` (JavaScript) em conjunto com `Task.WhenAny` (.NET) ou `context.df.Task.any` (JavaScript), conforme mostrado no exemplo a seguir:
+Talvez você queira abandonar uma chamada de função dentro de uma função de orquestrador se estiver demorando muito tempo para ser concluída. No momento, o modo adequado de fazer isso é criar um [temporizador durável](durable-functions-timers.md) usando `context.CreateTimer` (.NET) ou `context.df.createTimer` (JavaScript) em conjunto com `Task.WhenAny` (.NET) ou `context.df.Task.any` (JavaScript), conforme mostrado no exemplo a seguir:
 
 ### <a name="precompiled-c"></a>C# pré-compilado
 
@@ -296,6 +296,9 @@ module.exports = df.orchestrator(function*(context) {
 Se uma função de orquestrador falhar com uma exceção sem tratamento, os detalhes da exceção serão registrados e a instância será concluída com um status `Failed`.
 
 ## <a name="next-steps"></a>Próximas etapas
+
+> [!div class="nextstepaction"]
+> [Saiba mais sobre orquestrações do eternas](durable-functions-eternal-orchestrations.md)
 
 > [!div class="nextstepaction"]
 > [Saiba como diagnosticar problemas](durable-functions-diagnostics.md)

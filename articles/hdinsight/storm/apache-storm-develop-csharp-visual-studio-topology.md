@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9d459f88cd252303384acb4a72d0af0cce6ee226
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e6f6ba131a4fb5dd31f113afd2b6de2d65aeaea0
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67428463"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915183"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Desenvolver topologias C# para Apache Storm usando ferramentas do Data Lake para Visual Studio
 
@@ -28,9 +28,9 @@ Para usar uma topologia do C# com um cluster baseado em Linux, você deverá atu
 
 | Versão do HDInsight | Versão do Apache Storm | Versão do SCP.NET | Versão Mono padrão |
 |:-----------------:|:-------------:|:---------------:|:--------------------:|
-| 3.3 |0.10.x |0.10.x.x</br>(somente em HDInsight baseado no Windows) | ND |
+| 3.3 |0.10.x |0.10.x.x</br>(somente em HDInsight baseado no Windows) | N/A |
 | 3.4 | 0.10.0.x | 0.10.0.x | 3.2.8 |
-| 3,5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
+| 3.5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
 | 3.6 | 1.1.0.x | 1.0.0.x | 4.2.8 |
 
 > [!IMPORTANT]  
@@ -155,7 +155,7 @@ Para uma topologia de exemplo que usa esse componente e funciona com Storm no HD
 
    * **NextTuple**: Chamado pelo Storm quando o spout pode emitir novas tuplas.
 
-   * **Ack** (apenas topologia transacional): Lida com confirmações iniciadas por outros componentes na topologia, para cadeias de identificação enviadas do spout. Confirmar uma tupla informa ao spout que ele foi processado com êxito por componentes downstream.
+   * **Ack** (apenas topologia transacional): Lida com confirmações iniciadas por outros componentes na topologia para tuplas enviadas do Spout. Confirmar uma tupla informa ao spout que ele foi processado com êxito por componentes downstream.
 
    * **Falha** : (apenas topologia transacional): Lida com tuplas que falham ao processar outros componentes na topologia. A implementação um método Fail permite emitir novamente a tupla para que ela possa ser processada novamente.
 
@@ -432,7 +432,7 @@ As topologias transacionais implementam o seguinte para suportar a reprodução 
 
 * **Cache de metadados**: O spout deve armazenar metadados sobre os dados emitidos para que os dados possam ser recuperados e emitidos novamente caso ocorra uma falha. Como os dados emitidos pela amostra são pequenos, os dados brutos de cada tupla são armazenados em um dicionário para reprodução.
 
-* **Ack**: Cada bolt na topologia pode chamar `this.ctx.Ack(tuple)` para confirmar que processou uma tupla com êxito. Quando todos os bolts reconheceram a tupla, o `Ack` método do spout é invocado. O método `Ack` permite que o spout remova os dados armazenados em cache para reprodução.
+* **Ack**: Cada bolt na topologia pode chamar `this.ctx.Ack(tuple)` para confirmar que processou uma tupla com êxito. Quando todos os parafusos confirmaram a tupla, o `Ack` método de Spout é invocado. O método `Ack` permite que o spout remova os dados armazenados em cache para reprodução.
 
 * **Falha**: Cada bolt pode chamar `this.ctx.Fail(tuple)` para indicar que o processamento falhou para uma tupla. A falha é propagada para o método `Fail` do spout, onde a tupla pode ser reproduzida usando os metadados armazenados em cache.
 
@@ -475,7 +475,7 @@ Considere o seguinte ao criar e enviar uma topologia híbrida:
 
 * Ao enviar a topologia para o servidor, você deve usar a opção **Configurações adicionais** para especificar **Caminhos de arquivo Java**. O caminho especificado deve ser o diretório que contém os arquivos JAR com suas classes Java.
 
-### <a name="azure-event-hubs"></a>Hubs de eventos do Azure
+### <a name="azure-event-hubs"></a>Hubs de Eventos do Azure
 
 A versão 0.9.4.203 do SCP.NET introduz uma classe e um método novos especificamente para trabalhar com o spout do Hub de Eventos (um spout Java que lê de Hubs de Eventos). Ao criar uma topologia que usa um spout de Hub de Eventos, use os seguintes métodos:
 
@@ -566,7 +566,7 @@ Embora seja fácil implantar uma topologia em um cluster, em alguns casos poder�
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse no projeto e selecione **Propriedades**. Nas propriedades do projeto, altere **Tipo de saída** para **Aplicativo de Console**.
 
-    ![Captura de tela de propriedades do projeto, com Tipo de saída realçado](./media/apache-storm-develop-csharp-visual-studio-topology/outputtype.png)
+    ![Captura de tela de propriedades do projeto, com Tipo de saída realçado](./media/apache-storm-develop-csharp-visual-studio-topology/hdi-output-type-window.png)
 
    > [!NOTE]
    > Lembre-se de alterar o **Tipo de saída** de volta para **Biblioteca de Classes** antes de implantar a topologia em um cluster.
@@ -683,7 +683,7 @@ Embora seja fácil implantar uma topologia em um cluster, em alguns casos poder�
 
 2. Salve as alterações e use **F5** ou selecione **Depurar** > **Iniciar Depuração** para iniciar o projeto. Uma janela de console deve aparecer e o status do log colocado como progresso dos testes. Quando **Testes concluídos** aparecer, pressione qualquer tecla para fechar a janela.
 
-3. Use **Windows Explorer** para localizar o diretório que contém seu projeto. Por exemplo:  **C:\Users\<your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**. Nesse diretório, abra **Bin** e clique em **Depurar**. Você deve ver os arquivos de texto produzidos após a execução dos testes: sentences.txt, counter.txt e splitter.txt. Abra cada arquivo de texto e inspecione os dados.
+3. Use **Windows Explorer** para localizar o diretório que contém seu projeto. Por exemplo: **C:\Users\<your_user_name>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**. Nesse diretório, abra **Bin** e clique em **Depurar**. Você deve ver os arquivos de texto produzidos após a execução dos testes: sentences.txt, counter.txt e splitter.txt. Abra cada arquivo de texto e inspecione os dados.
 
    > [!NOTE]  
    > Os dados da cadeia de caracteres persistem como uma matriz de valores decimais nesses arquivos. Por exemplo, \[[97,103,111]] no arquivo **splitter.txt** é a palavra *and*.
@@ -712,7 +712,7 @@ Para exibir erros ocorridos em uma topologia em execução, use as etapas a segu
 
 2. Para **Spout** e **Bolts**, a coluna **Último Erro** contém informações sobre o último erro ocorrido.
 
-3. Selecione **ID do Spout** ou **ID do Bolt** para o componente com um erro listado. Na página de detalhes exibida, as informações adicionais do erro serão listadas na seção **Erros** na parte inferior da página.
+3. Selecione a **ID do Spout** ou a **ID do parafuso** do componente que tem um erro listado. Na página de detalhes exibida, as informações adicionais do erro serão listadas na seção **Erros** na parte inferior da página.
 
 4. Para obter mais informações, selecione uma **Porta** na seção **Executores** da página para ver o log de trabalho do Storm nos últimos minutos.
 

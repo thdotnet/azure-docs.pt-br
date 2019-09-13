@@ -3,18 +3,18 @@ title: Proteger o acesso ao cofre de chaves – Azure Key Vault | Microsoft Docs
 description: Gerencie permissões de acesso para Azure Key Vault, chaves e segredos. Abrange o modelo de autenticação e autorização do Key Vault e descreve como proteger o cofre de chaves.
 services: key-vault
 author: amitbapat
-manager: barbkess
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: 67925f2123f2a4f2524002eb075754c38fad4b42
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4857cda7c3387e72be8837422469888adc5504d1
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67118992"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883099"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Proteger o acesso a um cofre de chaves
 
@@ -24,7 +24,7 @@ O Azure Key Vault é um serviço de nuvem que protege segredos e chaves de cript
 
 ## <a name="access-model-overview"></a>Visão geral do modelo de acesso
 
-O acesso a um cofre de chaves é controlado por meio de duas interfaces: o **plano de gerenciamento** e o **plano de dados**. É no plano de gerenciamento que você administra o cofre de chaves em si. As operações nesse plano incluem criar e excluir cofres de chaves, recuperar propriedades do Key Vault e atualizar as políticas de acesso. No plano de dados, você trabalha com os dados armazenados em um cofre de chaves. Você pode adicionar, excluir e alterar chaves, segredos e certificados.
+O acesso a um cofre de chaves é controlado por meio de duas interfaces: o **plano de gerenciamento** e o **plano de dados**. É no plano de gerenciamento que você administra o cofre de chaves em si. As operações nesse plano incluem criar e excluir cofres de chaves, recuperando propriedades do Key Vault e atualizando as políticas de acesso. No plano de dados você trabalha com os dados armazenados em um cofre de chaves. Você pode adicionar, excluir e alterar chaves, segredos e certificados.
 
 Para acessar um cofre de chaves em qualquer dos planos, todos os chamadores (usuários ou aplicativos) devem ter a autenticação e a autorização adequadas. A autenticação estabelece a identidade do chamador. A autorização determina quais operações o chamador pode executar. 
 
@@ -32,12 +32,12 @@ Os dois planos usam o Azure AD (Azure Active Directory) para autenticação. Par
 
 ## <a name="active-directory-authentication"></a>Autenticação do Active Directory
 
-Quando você cria um cofre de chaves em uma assinatura do Azure, ele é automaticamente associado ao locatário do Azure Active Directory da assinatura. Todos os chamadores em ambos os planos devem se registrar neste locatário e se autenticar para acessar o cofre de chaves. Em ambos os casos, o aplicativo pode acessar o Key Vault de duas maneiras:
+Ao criar um cofre de chaves em uma assinatura do Azure, ele é automaticamente associado ao locatário do Azure Active Directory da assinatura. Todos os chamadores em ambos os planos devem se registrar neste locatário e autenticar para acessar o cofre de chaves. Em ambos os casos, o aplicativo pode acessar o Key Vault de duas maneiras:
 
 - **Acesso Aplicativo mais usuário**: o aplicativo acessa o Key Vault em nome do usuário conectado. Exemplos deste tipo de acesso incluem o Azure PowerShell e o portal do Azure. O usuário recebe acesso de duas maneiras. Os usuários podem acessar o Key Vault com qualquer aplicativo ou devem usar um aplicativo específico (conhecido como _identidade composta_).
 - **Acesso Somente por aplicativo**: O aplicativo é executado como um trabalho em segundo plano ou serviço daemon. A identidade do aplicativo recebe acesso ao cofre de chaves.
 
-Para os dois tipos de acesso, o aplicativo se autentica com o Azure Active Directory. O aplicativo usa qualquer [método de autenticação compatível](../active-directory/develop/authentication-scenarios.md) com base no tipo de aplicativo. O aplicativo adquire um token para um recurso no plano para conceder acesso. O recurso é um ponto de extremidade no plano de gerenciamento ou de dados, com base no ambiente do Azure. O aplicativo usa esse token e envia uma solicitação da API REST ao Key Vault. Para saber mais, examine o [fluxo de autenticação completo](../active-directory/develop/v1-protocols-oauth-code.md).
+Para os dois tipos de acesso, o aplicativo autentica com o Azure Active Directory. O aplicativo usa qualquer [método de autenticação compatível](../active-directory/develop/authentication-scenarios.md) com base no tipo de aplicativo. O aplicativo adquire um token para um recurso no plano para conceder acesso. O recurso é um ponto de extremidade no plano de gerenciamento ou de dados, com base no ambiente do Azure. O aplicativo usa este token e envia uma solicitação da API REST ao Key Vault. Para saber mais, examine o [fluxo de autenticação completo](../active-directory/develop/v1-protocols-oauth-code.md).
 
 O modelo de mecanismo único para autenticação em ambos os planos tem vários benefícios:
 
@@ -58,9 +58,9 @@ A tabela a seguir mostra os pontos de extremidade para os planos de gerenciament
 
 ## <a name="management-plane-and-rbac"></a>RBAC e o plano de gerenciamento
 
-No plano de gerenciamento, você pode usar o RBAC (controle de acesso baseado em função) para autorizar as operações que um chamador pode executar. No modelo de RBAC, cada assinatura do Azure tem uma instância do Azure Active Directory. Você pode conceder acesso a usuários, grupos e aplicativos desse diretório. O acesso é concedido para gerenciar recursos na assinatura do Azure que usa o modelo de implantação do Azure Resource Manager. Para conceder acesso, use o [Portal do Azure](https://portal.azure.com/), a [CLI do Azure](../cli-install-nodejs.md), o [Azure PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
+No plano de gerenciamento, você usa o RBAC (controle de acesso baseado em função) para autorizar as operações que um chamador pode executar. No modelo de RBAC, cada assinatura do Azure tem uma instância do Azure Active Directory. Você pode conceder acesso a usuários, grupos e aplicativos desse diretório. O acesso é concedido para gerenciar recursos na assinatura do Azure que usa o modelo de implantação do Azure Resource Manager. Para conceder acesso, use o [Portal do Azure](https://portal.azure.com/), a [CLI do Azure](../cli-install-nodejs.md), o [Azure PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST do Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
 
-Crie um cofre de chaves em um grupo de recursos e gerencie o acesso usando o Azure Active Directory. Conceda a usuários ou grupos a capacidade de gerenciar os cofres de chaves em um grupo de recursos. Conceda o acesso em um nível de escopo específico atribuindo funções RBAC apropriadas. Para conceder acesso a um usuário para gerenciar os cofres de chaves, atribua uma função `key vault Contributor` predefinida ao usuário em um escopo específico. Os seguintes níveis de escopos podem ser atribuídos a uma função RBAC:
+Crie um cofre de chaves em um grupo de recursos e gerencie o acesso usando o Azure Active Directory. Conceda a usuários ou grupos a capacidade de gerenciar os cofres de chaves em um grupo de recursos. Conceda o acesso em um nível de escopo específico ao atribuir funções RBAC apropriadas. Para conceder acesso a um usuário para gerenciar os cofres de chaves, atribua uma função `key vault Contributor` predefinida ao usuário em um escopo específico. Os seguintes níveis de escopos podem ser atribuídos a uma função RBAC:
 
 - **Assinatura**: uma função RBAC atribuída no nível da assinatura que se aplica a todos os grupos de recursos e recursos dentro dessa assinatura.
 - **Grupo de recursos**: uma função RBAC atribuída no nível do grupo de recursos que se aplica a todos os recursos nesse grupo de recursos.
@@ -69,7 +69,7 @@ Crie um cofre de chaves em um grupo de recursos e gerencie o acesso usando o Azu
 Há várias funções predefinidas. Se uma função predefinida não atender às suas necessidades, você poderá definir sua própria função. Para saber mais, confira [RBAC: funções internas](../role-based-access-control/built-in-roles.md).
 
 > [!IMPORTANT]
-> Se um usuário tem permissões `Contributor` para um plano de gerenciamento de cofre de chaves, pode conceder a si mesmo o acesso ao plano de dados definindo a política de acesso do Key Vault. Você deve controlar rigorosamente quem tem função de acesso `Contributor` aos cofres de chaves. Certifique-se de que apenas pessoas autorizadas possam acessar e gerenciar seus cofres de chaves, chaves, segredos e certificados.
+> Se um usuário tem permissões `Contributor` para um plano de gerenciamento de cofre de chaves, pode conceder a si mesmo o acesso ao plano de dados ao definir a política de acesso do Key Vault. Você deve controlar rigorosamente quem tem função de acesso `Contributor` aos cofres de chaves. Certifique-se de que apenas pessoas autorizadas possam acessar e gerenciar seus cofres de chaves, chaves, segredos e certificados.
 >
 
 <a id="data-plane-access-control"></a> 
@@ -77,7 +77,7 @@ Há várias funções predefinidas. Se uma função predefinida não atender às
 
 Conceda acesso ao plano de dados definindo as políticas de acesso ao Key Vault para um cofre de chaves. Para definir essas políticas de acesso, o usuário, grupo ou aplicativo deve ter permissões `Contributor` para o plano de gerenciamento desse cofre de chaves.
 
-Conceda acesso a um usuário, grupo ou aplicativo para executar operações específicas para chaves ou segredos em um cofre de chaves. O Key Vault dá suporte a até 1.024 entradas de política de acesso para um cofre de chaves. Para conceder acesso ao plano de dados a vários usuários, crie um grupo de segurança do Azure Active Directory e adicione usuários a esse grupo.
+Conceda acesso a um usuário, grupo ou aplicativo para executar operações específicas para chaves ou segredos em um cofre de chaves. O Key Vault suporta até 1.024 entradas de política de acesso para um cofre de chaves. Para conceder acesso ao plano de dados a vários usuários, crie um grupo de segurança do Azure Active Directory e adicione usuários a esse grupo.
 
 <a id="key-vault-access-policies"></a> As políticas de acesso ao Key Vault concedem separadamente as permissões a chaves, segredos e certificados. Você pode conceder a um usuário o acesso apenas às chaves e não aos segredos. As permissões de acesso para chaves, segredos e certificados estão no nível do cofre. As políticas de acesso do Key Vault não aceitam permissões granulares no nível do objeto, como uma chave, um segredo ou um certificado específicos. Para definir as políticas de acesso para um cofre de chaves, use o [Portal do Microsoft Azure](https://portal.azure.com/), a [CLI do Azure](../cli-install-nodejs.md), o [Azure PowerShell](/powershell/azureps-cmdlets-docs) ou as [APIs REST de gerenciamento do Key Vault](https://msdn.microsoft.com/library/azure/mt620024.aspx).
 
@@ -89,7 +89,7 @@ Você pode restringir o acesso ao plano de dados usando [pontos de extremidade d
 
 ## <a name="example"></a>Exemplo
 
-Neste exemplo, estamos desenvolvendo um aplicativo que usa um certificado para SSL, o Armazenamento do Microsoft Azure para armazenamento de dados e uma chave RSA de 2.048 bits para operações de assinatura. Nosso aplicativo é executado em uma máquina virtual (VM) do Azure (ou em um conjunto de dimensionamento de máquinas virtuais). Podemos usar um cofre de chaves para armazenar os segredos do aplicativo. Podemos armazenar o certificado de inicialização usado pelo aplicativo para se autenticar com o Azure Active Directory.
+Neste exemplo, estamos desenvolvendo um aplicativo que usa um certificado para SSL, o Armazenamento do Microsoft Azure para armazenamento de dados e uma chave RSA de 2.048 bits para operações de assinatura. Nosso aplicativo é executado em uma máquina virtual (VM) do Azure (ou em um conjunto de dimensionamento de máquinas virtuais). Podemos usar um cofre de chaves para armazenar os segredos do aplicativo. Podemos armazenar o certificado de inicialização usado pelo aplicativo para autenticar com o Azure Active Directory.
 
 Precisamos de acesso aos seguintes segredos e chaves armazenados:
 - **Certificado SSL**: Usado para SSL.
@@ -119,11 +119,11 @@ Há outra função que está fora do escopo do nosso aplicativo: o administrador
 - Desenvolver e implantar o aplicativo para acessar chaves e segredos via programação.
 
 **Auditores**
-- Examinar os logs do Key Vault para confirmar o uso adequado de chaves e segredos e a conformidade com padrões de segurança de dados.
+- Examinar os logs do Key Vault para confirmar o uso adequado de chaves e segredos, e a conformidade com padrões de segurança de dados.
 
 A tabela a seguir resume as permissões de acesso para as funções e o aplicativo. 
 
-| Função | Permissões do plano de gerenciamento | Permissões do plano de dados |
+| Role | Permissões do plano de gerenciamento | Permissões do plano de dados |
 | --- | --- | --- |
 | Equipe de segurança | Colaborador do Key Vault | Chaves: fazer backup, criar, excluir, obter, importar, listar, restaurar<br>Segredos: todas as operações |
 | Desenvolvedores e&nbsp;operadores | Permissão para implantar o Key Vault<br><br> **Observação**: essa permissão possibilita que as VMs implantadas busquem segredos do cofre de chaves. | Nenhum |
@@ -133,7 +133,7 @@ A tabela a seguir resume as permissões de acesso para as funções e o aplicati
 As três funções da equipe precisam ter acesso a outros recursos e a permissões do Key Vault. Para implantar VMs (ou o recurso de Aplicativos Web do Serviço de Aplicativo do Azure), os desenvolvedores e operadores precisam de acesso `Contributor` a esses tipos de recursos. Os auditores precisam de acesso de leitura para a Conta de armazenamento em que os logs do Key Vault estão armazenados.
 
 Para saber mais sobre como implantar certificados, chaves de acesso e segredos via programação, consulte estes recursos:
-- Saiba como [implantar certificados em VMs de um cofre de chaves gerenciado pelo cliente](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/) (postagem de blog).
+- Saiba como [implantar certificados em VMs a partir de um cofre de chaves gerenciado pelo cliente](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/) (postagem de blog).
 - Baixe os [exemplos de cliente do Azure Key Vault](https://www.microsoft.com/download/details.aspx?id=45343). Este conteúdo ilustra como usar um certificado de inicialização para autenticação no Microsoft Azure AD a fim de acessar um cofre de chaves.
 
 É possível conceder a maioria das permissões de acesso usando o portal do Azure. Para conceder permissões granulares, você pode usar o Azure PowerShell ou a CLI do Azure.
@@ -185,7 +185,7 @@ As funções personalizadas definidas podem ser atribuídas somente à assinatur
 
 Para a equipe de DevOps, a atribuição de função personalizada para a permissão `deploy/action` do cofre de chaves tem como escopo o grupo de recursos. Somente as VMs criadas no grupo de recursos **ContosoAppRG** têm permissão de acesso aos segredos (certificados de inicialização e SSL). As VMs criadas em outros grupos de recursos por um membro do DevOps não podem acessar esses segredos, mesmo se a VM tiver as URIs do segredo.
 
-Este exemplo descreve um cenário simples. Os cenários da vida real podem ser mais complexos. Você pode ajustar as permissões do cofre de chaves com base em suas necessidades. Vamos presumir que a equipe de segurança forneceu as referências de chave e segredo (URIs e impressões digitais), usadas pela equipe de DevOps nos aplicativos. Desenvolvedores e operadores não precisam de nenhum acesso ao plano de dados. Vimos como proteger seu cofre de chaves. Pense da mesma maneira ao proteger [suas VMs](https://azure.microsoft.com/services/virtual-machines/security/), [contas de armazenamentos](../storage/common/storage-security-guide.md) e outros recursos do Azure.
+Este exemplo descreve um cenário simples. Os cenários da vida real podem ser mais complexos. Você pode ajustar as permissões do cofre de chaves com base em suas necessidades. Vamos assumir que a equipe de segurança forneceu as referências de chave e segredo (URIs e impressões digitais), usadas pela equipe de DevOps nos aplicativos. Desenvolvedores e operadores não precisam de nenhum acesso ao plano de dados. Nos concentramos em proteger seu cofre de chaves. Pense da mesma maneira ao proteger [suas VMs](https://azure.microsoft.com/services/virtual-machines/security/), [contas de armazenamentos](../storage/common/storage-security-guide.md) e outros recursos do Azure.
 
 > [!NOTE]
 > Esse exemplo mostra como o acesso ao Key Vault é bloqueado na produção. Os desenvolvedores devem ter sua própria assinatura ou grupo de recursos com permissões totais para gerenciar seus cofres, VMs e a conta de armazenamento onde desenvolvem o aplicativo.

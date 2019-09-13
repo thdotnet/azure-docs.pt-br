@@ -1,22 +1,22 @@
 ---
-title: Diretrizes de limitação do Azure Key Vault
+title: Orientação de limitação do Azure Key Vault
 description: A limitação do Azure Key Vault limita o número de chamadas simultâneas para evitar o uso excessivo de recursos.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: ''
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: mbaldwin
-ms.openlocfilehash: 06b96ac6ea0202b74638b9331d754c0e0cc28ad0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f10f40551701cafd94692afc0916972b1fd73aff
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64695240"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883055"
 ---
-# <a name="azure-key-vault-throttling-guidance"></a>Diretrizes de limitação do Azure Key Vault
+# <a name="azure-key-vault-throttling-guidance"></a>Orientação de limitação do Azure Key Vault
 
 A limitação é o processo que você iniciar para limitar o número de chamadas simultâneas para o serviço do Azure a fim de evitar o uso excessivo de recursos. O AKV (Azure Key Vault) foi projetado para lidar com um grande volume de solicitações. No caso de ocorrer um grande número de solicitações, limitar as solicitações do seu cliente ajuda a manter o desempenho ideal e a confiabilidade do serviço AKV.
 
@@ -31,7 +31,7 @@ Se você tiver um caso comercial válido para restrições mais altas, entre em 
 
 ## <a name="how-to-throttle-your-app-in-response-to-service-limits"></a>Como restringir o seu aplicativo em resposta aos limites de serviço
 
-Veja a seguir **práticas recomendadas** você deve implementar quando seu serviço está limitado:
+Veja a seguir as **práticas recomendadas** que você deve implementar quando o serviço for limitado:
 - Reduza o número de operações por solicitação.
 - Reduza a frequência de solicitações.
 - Evite tentativas imediatas. 
@@ -112,7 +112,7 @@ O código que implementa a retirada exponencial é mostrado abaixo.
 ```
 
 
-Usando este código em um cliente C\# aplicativo é simples. O exemplo a seguir mostra como fazer isso, usando a classe HttpClient.
+O uso desse código em um aplicativo\# cliente C é simples. O exemplo a seguir mostra como fazer isso, usando a classe HttpClient.
 
 ```csharp
 public async Task<Cart> GetCartItems(int page)

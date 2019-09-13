@@ -1,6 +1,6 @@
 ---
-title: Diagnosticar e solucionar problemas ao usar o SDK do .NET do Azure Cosmos DB
-description: Use recursos como o registro em log do lado do cliente e outras ferramentas de terceiros para identificar, diagnosticar e solucionar problemas do Azure Cosmos DB usando o SDK do .NET.
+title: Diagnosticar e solucionar problemas ao usar o SDK do .NET Azure Cosmos DB
+description: Use recursos como registro em log do lado do cliente e outras ferramentas de terceiros para identificar, diagnosticar e solucionar problemas de Azure Cosmos DB ao usar o SDK do .NET.
 author: j82w
 ms.service: cosmos-db
 ms.date: 05/28/2019
@@ -8,59 +8,59 @@ ms.author: jawilley
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: b9511562b81f7ac0c1582897d703f4c5ccb89716
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 51b37c43b94ad59090f32af0d57bbefaa57f30fa
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67806392"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932550"
 ---
-# <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnosticar e solucionar problemas ao usar o SDK do .NET do Azure Cosmos DB
-Este artigo aborda problemas comuns, as soluções alternativas, etapas de diagnóstico e ferramentas quando você usa o [SDK do .NET](sql-api-sdk-dotnet.md) com contas da API de SQL do Azure Cosmos DB.
-O SDK do .NET fornece uma representação lógica do lado do cliente para acessar a API de SQL do Azure Cosmos DB. Este artigo descreve as ferramentas e as abordagens para ajudá-lo se você tiver algum problema.
+# <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Diagnosticar e solucionar problemas ao usar o SDK do .NET Azure Cosmos DB
+Este artigo aborda problemas comuns, soluções alternativas, etapas de diagnóstico e ferramentas quando você usa o [SDK do .net](sql-api-sdk-dotnet.md) com Azure Cosmos DB contas da API do SQL.
+O SDK do .NET fornece a representação lógica do lado do cliente para acessar a API do SQL do Azure Cosmos DB. Este artigo descreve as ferramentas e as abordagens para ajudá-lo se você tiver algum problema.
 
-## <a name="checklist-for-troubleshooting-issues"></a>Lista de verificação para solução de problemas:
-Considere a seguinte lista de verificação antes de mover seu aplicativo para produção. Usando a lista de verificação impedirá que vários problemas comuns que você pode ver. Você pode diagnosticar rapidamente quando ocorrer um problema:
+## <a name="checklist-for-troubleshooting-issues"></a>Lista de verificação para solucionar problemas:
+Considere a seguinte lista de verificação antes de mover seu aplicativo para produção. O uso da lista de verificação impedirá vários problemas comuns que você possa ver. Você também pode diagnosticar rapidamente quando ocorrer um problema:
 
-*   Use a versão mais recente [SDK](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/changelog.md). SDKs de visualização não devem ser usados para produção. Isso impedirá a atingir os problemas conhecidos que já foram corrigidos.
+*   Use o [SDK](https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/changelog.md)mais recente. Os SDKs de visualização não devem ser usados para produção. Isso evitará o pressionamento de problemas conhecidos que já foram corrigidos.
 *   Examine [dicas de desempenho](performance-tips.md) e siga as práticas sugeridas. Isso ajudará a evitar o dimensionamento, latência e outros problemas de desempenho.
-*   Habilite o registro em log do SDK para ajudá-lo a solucionar um problema. Habilitar o registro em log pode afetar o desempenho, portanto, é melhor para habilitá-lo somente quando a solução de problemas. Você pode habilitar os logs a seguir:
-    *   [Registrar métricas](monitor-accounts.md) por meio do portal do Azure. Métricas do portal mostram a telemetria do Azure Cosmos DB, que é útil para determinar se o problema corresponde ao Azure Cosmos DB ou se ele for do lado do cliente.
-    *   Log de [cadeia de caracteres de diagnóstico](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring?view=azure-dotnet) entre as respostas de operação de ponto.
-    *   Log de [métricas de consulta SQL](sql-api-query-metrics.md) de todas as respostas de consulta 
-    *   Execute a instalação para [registro em log do SDK]( https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/docs/documentdb-sdk_capture_etl.md)
+*   Habilite o log do SDK para ajudá-lo a solucionar um problema. Habilitar o registro em log pode afetar o desempenho para que seja melhor habilitá-lo somente ao solucionar problemas. Você pode habilitar os seguintes logs:
+    *   [Métricas de log](monitor-accounts.md) usando o portal do Azure. As métricas do portal mostram a telemetria do Azure Cosmos DB, o que é útil para determinar se o problema corresponde a Azure Cosmos DB ou se ele é do lado do cliente.
+    *   Registre a [cadeia de caracteres de diagnóstico](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring?view=azure-dotnet) das respostas de operação de ponto.
+    *   Registrar as [métricas de consulta SQL](sql-api-query-metrics.md) de todas as respostas de consulta 
+    *   Siga a configuração para o [log do SDK]( https://github.com/Azure/azure-cosmos-dotnet-v2/blob/master/docs/documentdb-sdk_capture_etl.md)
 
 Dê uma olhada na seção [Problemas comuns e soluções alternativas](#common-issues-workarounds) neste artigo.
 
-Verifique as [seção de problemas do GitHub](https://github.com/Azure/azure-cosmos-dotnet-v2/issues) que está sendo ativamente monitorado. Verifique se você encontrar algum problema semelhante com uma solução alternativa já arquivada. Se você não encontrar uma solução, em seguida, registre um problema do GitHub. Você pode abrir um tique de suporte para problemas urgentes.
+Verifique a [seção de problemas do GitHub](https://github.com/Azure/azure-cosmos-dotnet-v2/issues) monitorado ativamente. Verifique se você encontrar algum problema semelhante com uma solução alternativa já arquivada. Se você não encontrar uma solução, então, execute um problema do GitHub. Você pode abrir um tique de suporte para problemas urgentes.
 
 
 ## <a name="common-issues-workarounds"></a>Problemas comuns e soluções alternativas
 
 ### <a name="general-suggestions"></a>Sugestões gerais
-* Execute seu aplicativo na mesma região do Azure com sua conta do Azure Cosmos DB, sempre que possível. 
-* Você pode ter problemas de conectividade/disponibilidade devido à falta de recursos no computador cliente. Recomendamos monitorar a utilização da CPU em nós que executam o cliente do Azure Cosmos DB e escalar vertical/horizontalmente se elas estão em execução com carga elevada.
+* Execute seu aplicativo na mesma região do Azure que sua conta de Azure Cosmos DB, sempre que possível. 
+* Você pode encontrar problemas de conectividade/disponibilidade devido à falta de recursos no computador cliente. É recomendável monitorar a utilização da CPU em nós que executam o cliente Azure Cosmos DB e escalar verticalmente se eles estiverem sendo executados com alta carga.
 
-### <a name="check-the-portal-metrics"></a>Verifique as métricas do portal
-Verificando a [métricas do portal](monitor-accounts.md) ajudará a determinar se é um problema do lado do cliente ou se houver um problema com o serviço. Por exemplo se as métricas contêm uma alta taxa de solicitações de taxa limitada (código de status HTTP 429) que significa que a solicitação está sendo limitada, em seguida, verificar a [taxa de solicitação muito grande] seção. 
+### <a name="check-the-portal-metrics"></a>Verificar as métricas do portal
+Verificar as [métricas do portal](monitor-accounts.md) ajudará a determinar se é uma questão do lado do cliente ou se há um problema com o serviço. Por exemplo, se as métricas contiverem uma alta taxa de solicitações limitadas por taxa (código de status HTTP 429), o que significa que a solicitação está sendo limitada e, em seguida, verifique a seção [taxa de solicitação muito grande] . 
 
 ### <a name="request-timeouts"></a>Tempos limite de solicitações
-RequestTimeout geralmente ocorre ao usar o Direct/TCP, mas pode ocorrer no modo de Gateway. Essas são as causas conhecidas comuns e sugestões sobre como corrigir o problema.
+RequestTimeout geralmente ocorre ao usar Direct/TCP, mas pode acontecer no modo de gateway. Essas são as causas conhecidas comuns e sugestões sobre como corrigir o problema.
 
-* Utilização da CPU é alta, que irá fazer com que a latência de e/ou tempos limite da solicitação. O cliente pode escalar verticalmente a máquina host para dar a ele mais recursos ou a carga pode ser distribuída em mais computadores.
-* Soquete / disponibilidade da porta pode ser baixa. Ao usar os SDKs do .NET anterior à versão 2.0, os clientes em execução no Azure podem atingir o [Esgotamento da porta SNAT (PAT) do Azure]. Este exemplo de por que é recomendável sempre executar a versão mais recente do SDK.
-* Criando várias instâncias de DocumentClient pode levar à contenção de conexão e problemas de tempo limite. Siga as [dicas de desempenho](performance-tips.md)e use uma única instância de DocumentClient em todo o processo.
-* Os usuários veem, às vezes, tempos limite de latência ou a solicitação com privilégios elevados, porque suas coleções são provisionadas de forma insuficientemente, o back-end restringe as solicitações e o cliente tentará novamente internamente sem identificando isso ao chamador. Verifique as [métricas do portal](monitor-accounts.md).
-* O Azure Cosmos DB distribui a produtividade provisionada uniformemente entre partições físicas. Verifique as métricas do portal para ver se a carga de trabalho está encontrando um hot [chave de partição](partition-data.md). Isso fará com que a produtividade agregada consumida (RU/s) para ser parece estar sob o RUs provisionado, mas uma única partição consumida taxa de transferência (RU/s) excederá a taxa de transferência provisionada. 
-* Além disso, o SDK 2.0 adiciona semântica de canal para conexões direct/TCP. Uma conexão de TCP é usado para várias solicitações ao mesmo tempo. Isso pode levar a problemas de dois em casos específicos:
+* A utilização da CPU é alta, o que causará latência e/ou tempos limite de solicitação. O cliente pode escalar verticalmente o computador host para fornecer mais recursos ou a carga pode ser distribuída entre mais computadores.
+* A disponibilidade de soquete/porta pode estar baixa. Ao executar no Azure, os clientes que usam o SDK do .NET podem atingir o esgotamento de porta de SNAT do Azure (PAT). Para reduzir a chance de atingir esse problema, use a versão 2. x ou 3. x mais recente do SDK do .NET. Este é um exemplo de por que é recomendável sempre executar a versão mais recente do SDK.
+* A criação de várias instâncias de DocumentClient pode levar à contenção de conexão e a problemas de tempo limite. Siga as [dicas de desempenho](performance-tips.md)e use uma única instância de DocumentClient em todo o processo.
+* Os usuários às vezes veem latência elevada ou tempos limite de solicitação porque suas coleções são provisionadas insuficientemente, as solicitações de restrição de back-end e o cliente tenta novamente internamente sem identificando-lo ao chamador. Verifique as [métricas do portal](monitor-accounts.md).
+* Azure Cosmos DB distribui a taxa de transferência provisionada de maneira uniforme entre as partições físicas. Verifique as métricas do portal para ver se a carga de trabalho está encontrando uma [chave de partição](partition-data.md)ativa. Isso fará com que a taxa de transferência consumida de agregação (RU/s) pareça estar sob o RUs provisionado, mas uma taxa de transferência consumida de partição única (RU/s) excederá a taxa de transferência provisionada. 
+* Além disso, o SDK 2,0 adiciona a semântica de canal a conexões diretas/TCP. Uma conexão TCP é usada para várias solicitações ao mesmo tempo. Isso pode levar a dois problemas em casos específicos:
     * Um alto grau de simultaneidade pode levar à contenção no canal.
-    * Grandes solicitações ou respostas podem levar ao bloqueio do cabeçalho de linha no canal e aumentam a contenção, mesmo com um nível relativamente baixo de simultaneidade.
-    * Se o caso de ficar em qualquer uma dessas duas categorias (ou se houver suspeita de alta utilização da CPU), essas são as possíveis atenuações:
-        * Tente dimensionar o aplicativo vertical/horizontalmente.
-        * Além disso, os logs do SDK podem ser capturados por meio [ouvinte de rastreamento](https://github.com/Azure/azure-cosmosdb-dotnet/blob/master/docs/documentdb-sdk_capture_etl.md) para obter mais detalhes.
+    * Solicitações ou respostas grandes podem levar ao bloqueio de cabeçalho de linha no canal e exacerbar a contenção, mesmo com um grau relativamente baixo de simultaneidade.
+    * Se o caso cair em qualquer uma dessas duas categorias (ou se a alta utilização da CPU for suspeita), essas são possíveis mitigações:
+        * Tente dimensionar o aplicativo para cima/para fora.
+        * Além disso, os logs do SDK podem ser capturados por meio do [ouvinte de rastreamento](https://github.com/Azure/azure-cosmosdb-dotnet/blob/master/docs/documentdb-sdk_capture_etl.md) para obter mais detalhes.
 
 ### <a name="connection-throttling"></a>Limitação de conexão
-A limitação de Conexão pode ocorrer devido a um limite de conexão em um computador host. Anteriores ao 2.0, os clientes em execução no Azure podem atingir o [Esgotamento da porta SNAT (PAT) do Azure].
+A limitação de conexão pode ocorrer devido a um limite de conexão em um computador host. Anterior a 2,0, os clientes em execução no Azure podem atingir o [Esgotamento da porta SNAT (PAT) do Azure].
 
 ### <a name="snat"></a>Esgotamento da porta SNAT (PAT) do Azure
 
@@ -78,12 +78,12 @@ Se você usar um proxy HTTP, certifique-se que pode suportar o número de conex�
 Caso contrário, você enfrentará problemas de conexão.
 
 ### Taxa de solicitação muito grande<a name="request-rate-too-large"></a>
-Muito grande de taxa de solicitação ou o código de erro 429 indica que as solicitações estão sendo limitadas, porque a taxa de transferência (RU/s) consumida excedeu a taxa de transferência provisionada. O SDK automaticamente tentará solicitações com base em especificado [política de repetição](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions?view=azure-dotnet). Se você receber essa falha com frequência, considere aumentar a taxa de transferência da coleção. Verifique as [métricas do portal](use-metrics.md) para ver se você estiver recebendo 429 erros. Examine sua [chave de partição](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey) para garantir que ele resulta em uma distribuição uniforme de volume de armazenamento e a solicitação. 
+' Taxa de solicitação muito grande ' ou código de erro 429 indica que suas solicitações estão sendo limitadas, pois a taxa de transferência consumida (RU/s) excedeu a taxa de transferência provisionada. O SDK tentará automaticamente as solicitações com base na [política de repetição](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.connectionpolicy.retryoptions?view=azure-dotnet)especificada. Se você receber essa falha com frequência, considere aumentar a taxa de transferência na coleção. Verifique as [métricas do portal](use-metrics.md) para ver se você está recebendo erros 429. Examine sua [chave de partição](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey) para garantir que ela resulte em uma distribuição uniforme do armazenamento e do volume de solicitação. 
 
-### <a name="slow-query-performance"></a>Desempenho de consultas lentas
-O [consultar métricas](sql-api-query-metrics.md) ajudará a determinar onde a consulta passa a maior parte do tempo. As métricas de consulta, você pode ver quanto ela está sendo gasto no vs back-end do cliente.
-* Se a consulta de back-end retorna rapidamente e gasta um tempo grande no cliente Verifique a carga no computador. É provável que não há recursos suficientes e o SDK está aguardando recursos estejam disponíveis para tratar da resposta.
-* Se a consulta de back-end estiver lenta, tente [otimizar a consulta](optimize-cost-queries.md) e observando atual [política de indexação](index-overview.md) 
+### <a name="slow-query-performance"></a>Desempenho de consulta lento
+As [métricas de consulta](sql-api-query-metrics.md) ajudarão a determinar onde a consulta está sendo gasta na maior parte do tempo. A partir das métricas de consulta, você pode ver quanto ele está sendo gasto no back-end em vez do cliente.
+* Se a consulta de back-end retornar rapidamente e passar um tempo grande no cliente, verifique a carga no computador. É provável que não haja recursos suficientes e o SDK esteja aguardando que os recursos estejam disponíveis para lidar com a resposta.
+* Se a consulta de back-end estiver lenta, tente [otimizar a consulta](optimize-cost-queries.md) e examinar a [política de indexação](index-overview.md) atual 
 
  <!--Anchors-->
 [Common issues and workarounds]: #common-issues-workarounds

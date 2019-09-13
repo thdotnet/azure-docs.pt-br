@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: cfa6a363725c35083b32d6de1dd1371777f91907
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7133e8bc7d04b3653b6b788347b7bc5176087f4c
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240298"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883465"
 ---
 # <a name="client-and-server-versioning-in-mobile-apps-and-mobile-services"></a>Controle de versão de cliente e servidor em Aplicativos Móveis e Serviços Móveis
 A versão mais recente dos Serviços Móveis do Azure é o recurso **Aplicativos Móveis** do Serviço de Aplicativo do Azure.
@@ -28,8 +28,6 @@ Os SDKs de cliente e servidor de Aplicativos Móveis são baseados originalmente
 Ou seja, você deve usar um SDK de cliente de *Aplicativos Móveis* com SDK de servidor de *Aplicativos Móveis* e da mesma forma para *Serviços Móveis*. Esse contrato é imposto por meio de um valor de cabeçalho especial usado pelos SDKs de cliente e servidor, `ZUMO-API-VERSION`.
 
 Observação: sempre que este documento se refere a um back-end de *Serviços Móveis* , ele não necessariamente precisa estar hospedados nos Serviços Móveis. Agora é possível migrar um serviço móvel para ser executado em um Serviço de Aplicativo sem qualquer alteração de código, mas o serviço ainda estaria usando versões de SDK de *Serviços Móveis*.
-
-Para saber mais sobre como migrar para o serviço de aplicativo sem qualquer alteração de código, consulte o artigo [migrar um serviço móvel no serviço de aplicativo do Azure].
 
 ## <a name="header-specification"></a>Especificação de cabeçalho
 A chave `ZUMO-API-VERSION` pode ser especificada no cabeçalho HTTP ou na cadeia de consulta. O valor é uma cadeia de caracteres de versão no formulário **x.y.z**.
@@ -61,15 +59,15 @@ A verificação de versão foi introduzida começando com as seguintes versões 
 ### <a name="mobile-apps-server-sdks"></a>SDKs de servidor dos *Aplicativos* Móveis
 A verificação de versão está incluída nas seguintes versões do SDK do servidor:
 
-| Plataforma servidor | . | Cabeçalho de versão aceito |
+| Plataforma servidor | SDK | Cabeçalho de versão aceito |
 | --- | --- | --- |
 | .NET |[Microsoft.Azure.Mobile.Server](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/) |2.0.0 |
 | Node.js |[azure-mobile-apps)](https://www.npmjs.com/package/azure-mobile-apps) |2.0.0 |
 
 ### <a name="behavior-of-mobile-apps-backends"></a>Comportamento dos back-ends de Aplicativos Móveis
-| ZUMO-API-VERSION | Valor de MS_SkipVersionCheck | Response |
+| ZUMO-API-VERSION | Valor de MS_SkipVersionCheck | Resposta |
 | --- | --- | --- |
-| x.y.z ou Null |True |200 - OK |
+| x.y.z ou Null |verdadeiro |200 - OK |
 | Nulo |Falso/não especificado |400 - solicitação inválida |
 | 1.x.y |Falso/não especificado |400 - solicitação inválida |
 | 2.0.0-2.x.y |Falso/não especificado |200 - OK |

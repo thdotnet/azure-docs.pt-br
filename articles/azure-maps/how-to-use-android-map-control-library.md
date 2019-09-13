@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 9abe9eb9cdad6351f49fba2dace64095783455cf
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: 934fe2219ccca917999cf49cb9c9826276545e73
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376016"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915671"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Introdução ao Azure Maps SDK do Android
 
@@ -24,7 +24,7 @@ O Azure Maps SDK do Android é uma biblioteca de mapas de vetor para Android. Es
 
 ### <a name="create-an-azure-maps-account"></a>Criar uma conta dos Mapas do Azure
 
-Para concluir os procedimentos deste artigo, primeiro você precisa [criar uma conta do Azure Maps](how-to-manage-account-keys.md) no tipo de preço S1.
+Para concluir os procedimentos deste artigo, primeiro você precisa [criar uma conta do Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) no tipo de preço S1.
 
 ### <a name="download-android-studio"></a>Baixar Android Studio
 

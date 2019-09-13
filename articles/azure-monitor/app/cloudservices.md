@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 64995ad0560efd06bfa0084c948527e8a01e1890
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 9325d2dd6c897f4c8dacb3dcf3a382f9f0e856a8
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67443328"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933003"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights para serviços de nuvem do Azure
 [Application insights][start] pode monitorar os [aplicativos de serviço de nuvem do Azure](https://azure.microsoft.com/services/cloud-services/) quanto à disponibilidade, ao desempenho, às falhas e ao uso combinando dados de SDKs de Application Insights com dados de [diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) de seus serviços de nuvem. Com os comentários que você obtiver sobre o desempenho e a eficiência de seu aplicativo em uso, você pode fazer escolhas informadas sobre a direção do projeto em cada ciclo de vida de desenvolvimento.
@@ -84,8 +84,9 @@ Se você decidiu criar um recurso separado para cada função (e talvez um conju
 
     ![Painel do Application Insights](./media/cloudservices/01-new.png)
 
-1. Na lista suspensa **Tipo de Aplicativo**, selecione **Aplicativo Web ASP.NET**.  
-    Cada recurso é identificado por uma chave de instrumentação. Você pode precisar dessa chave mais tarde, caso deseje configurar ou verificar a configuração do SDK manualmente.
+1. Na lista suspensa **Tipo de Aplicativo**, selecione **Aplicativo Web ASP.NET**.
+
+Cada recurso é identificado por uma chave de instrumentação. Você pode precisar dessa chave mais tarde, caso deseje configurar ou verificar a configuração do SDK manualmente.
 
 
 ## <a name="set-up-azure-diagnostics-for-each-role"></a>Configurar o diagnóstico do Azure para cada função
@@ -133,8 +134,9 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
     * [Função de trabalho](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L232)
     * [Para páginas da Web](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/MvcWebRole/Views/Shared/_Layout.cshtml#L13) 
 
-1. Defina o arquivo *ApplicationInsights.config* para sempre ser copiado no diretório de saída.  
-    Uma mensagem no arquivo *. config* solicitará que você coloque a chave de instrumentação lá. No entanto, para aplicativos de nuvem, é melhor defini-la no arquivo *.cscfg*. Essa abordagem garante que a função seja identificada corretamente no portal.
+1. Defina o arquivo *ApplicationInsights.config* para sempre ser copiado no diretório de saída.
+
+   Uma mensagem no arquivo *. config* solicitará que você coloque a chave de instrumentação lá. No entanto, para aplicativos de nuvem, é melhor defini-la no arquivo *.cscfg*. Essa abordagem garante que a função seja identificada corretamente no portal.
 
 ## <a name="set-up-status-monitor-to-collect-full-sql-queries-optional"></a>Configurar Status Monitor para coletar consultas SQL completas (opcional)
 
@@ -171,16 +173,19 @@ Esta etapa só será necessária se você quiser capturar consultas SQL completa
 
 1. Execute o aplicativo e entre no Azure. 
 
-1. Abra os recursos criados do Application Insights.  
-    Os pontos de dados individuais são exibidos na [Pesquisa](../../azure-monitor/app/diagnostic-search.md), e os dados agregados são exibidos no [Metrics Explorer](../../azure-monitor/app/metrics-explorer.md). 
+1. Abra os recursos criados do Application Insights.
+
+   Os pontos de dados individuais são exibidos na [Pesquisa][diagnostic], e os dados agregados são exibidos no [Metrics Explorer](../../azure-monitor/app/metrics-explorer.md).
 
 1. Adicione mais telemetria (consulte as próximas seções) e, em seguida, publique seu aplicativo para obter comentários em tempo real sobre o diagnóstico e o uso. 
 
 Se não houver nenhum dado, faça o seguinte:
+
 1. Para exibir eventos individuais, abra o bloco [Pesquisar][diagnostic] .
 1. No aplicativo, abra várias páginas para que ele gere alguma telemetria.
 1. Aguarde alguns segundos e, então, clique em **Atualizar**.  
-    Para saber mais, confira [Solução de problemas][qna].
+
+Para saber mais, confira [Solução de problemas][qna].
 
 ## <a name="view-azure-diagnostics-events"></a>Exibir eventos do Diagnóstico do Azure
 É possível encontrar as informações do [Diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) no Application Insights, nos seguintes locais:

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: 38d3c61acee9dca18ab1f863d878e02f7437a600
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a93f8286c6927a3e87e03fb73e680c9638285336
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433729"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917804"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Configurar a replicação de cluster do Apache HBase em redes virtuais do Azure
 
@@ -21,7 +21,7 @@ Saiba como configurar a replicação do [Apache HBase](https://hbase.apache.org/
 
 A replicação de cluster usa uma metodologia de envio de origem. Um cluster HBase pode ser uma fonte, um destino ou pode atender a ambas as funções de uma vez. A replicação é assíncrona. A meta da replicação é a consistência eventual. Quando a origem recebe uma edição para uma família de coluna com replicação habilitada, essa edição é propagada para todos os clusters de destino. Quando os dados são replicados de um cluster para outro, o cluster de origem e todos os clusters que já consumiram os dados são rastreados para evitar loops de replicação.
 
-Neste artigo, você configurar uma replicação de origem / destino. Para obter outras topologias de cluster, consulte o [Guia de referência do Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
+Neste artigo, você configura uma replicação de origem/destino. Para obter outras topologias de cluster, consulte o [Guia de referência do Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
 
 Casos de uso de replicação de HBase para uma única rede virtual:
 
@@ -60,13 +60,13 @@ Para facilitar a configuração dos ambientes, alguns [modelos do Azure Resource
 
 Para usar um modelo que cria duas redes virtuais em duas regiões diferentes e a conexão VPN entre as VNETs, selecione o botão **Implantar no Azure** a seguir. A definição de modelo está armazenada em um [armazenamento de blobs público](https://hditutorialdata.blob.core.windows.net/hbaseha/azuredeploy.json).
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhbaseha%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-replication/deploy-to-azure.png" alt="Deploy to Azure"></a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhbaseha%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-replication/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 
 Alguns dos valores embutidos em código no modelo:
 
 **VNet 1**
 
-| Propriedade | Value |
+| Propriedade | Valor |
 |----------|-------|
 | Location | Oeste dos EUA |
 | Nome da VNet | &lt;ClusterNamePrevix>-vnet1 |
@@ -83,7 +83,7 @@ Alguns dos valores embutidos em código no modelo:
 
 **VNet 2**
 
-| Propriedade | Value |
+| Propriedade | Valor |
 |----------|-------|
 | Location | East US |
 | Nome da VNet | &lt;ClusterNamePrevix>-vnet2 |
@@ -135,7 +135,7 @@ Para instalar o Bind, use o seguinte procedimento:
     sudo apt-get install bind9 -y
     ```
 
-3. Configure o Bind para encaminhar solicitações de resolução de nome para seu servidor DNS local. Para fazer isso, use o seguinte texto como o conteúdo do arquivo `/etc/bind/named.conf.options`:
+3. Configure o BIND para encaminhar solicitações de resolução de nomes para o servidor DNS local. Para fazer isso, use o seguinte texto como o conteúdo do arquivo `/etc/bind/named.conf.options`:
 
     ```
     acl goodclients {
@@ -275,7 +275,7 @@ Ao replicar um cluster, é necessário especificar as tabelas a serem replicadas
 
 Para criar uma tabela de **Contatos** e inserir alguns dados na tabela, siga as instruções em [Tutorial Apache HBase: Introdução ao uso do Apache HBase no HDInsight](apache-hbase-tutorial-get-started-linux.md).
 
-## <a name="enable-replication"></a>Habilitar a replicação
+## <a name="enable-replication"></a>Habilitar replicação
 
 As etapas a seguir mostram como chamar o script de ação de script no Portal do Azure. Para obter informações de como executar uma ação de script usando o Azure PowerShell e a CLI Clássica do Azure, confira [Personalizar clusters do HDInsight usando a ação de script](../hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -301,7 +301,7 @@ As etapas a seguir mostram como chamar o script de ação de script no Portal do
 
 Argumentos necessários:
 
-|NOME|DESCRIÇÃO|
+|Nome|Descrição|
 |----|-----------|
 |-s, --src-cluster | Especifica o nome DNS do cluster HBase de origem. Por exemplo: -s hbsrccluster, --src-cluster=hbsrccluster |
 |-d, --dst-cluster | Especifica o nome DNS do cluster HBase de destino (réplica). Por exemplo: -s dsthbcluster, --src-cluster=dsthbcluster |
@@ -310,7 +310,7 @@ Argumentos necessários:
 
 Argumentos opcionais:
 
-|NOME|DESCRIÇÃO|
+|Nome|Descrição|
 |----|-----------|
 |-su, --src-ambari-user | Especifica o nome de usuário administrador para Ambari no cluster HBase de origem. O valor padrão é **admin**. |
 |-du, --dst-ambari-user | Especifica o nome de usuário administrador para Ambari no cluster HBase de destino. O valor padrão é **admin**. |
@@ -386,7 +386,7 @@ A seção `print_usage()` do [script](https://raw.githubusercontent.com/Azure/hb
 - **Desabilitar a replicação em todas as tabelas**:
 
         -m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all
-  ou o
+  ou
 
         --src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>
 

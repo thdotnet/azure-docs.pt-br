@@ -2,24 +2,18 @@
 title: Definições de diretiva do Azure monitoradas na Central de Segurança do Azure | Microsoft Docs
 description: Definições de política do Azure monitoradas na Central de Segurança do Azure.
 services: security-center
-documentationcenter: na
 author: monhaber
 manager: barbkess
-editor: ''
-ms.assetid: c89cb1aa-74e8-4ed1-980a-02a7a25c1a2f
 ms.service: security-center
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 8/22/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 56e6285501529f26e3622e2f773dbd373c169c10
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 37c29a40596a0ea7989b91d1ffcbabf930e5ed93
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69990500"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910347"
 ---
 # <a name="azure-security-policies-monitored-by-security-center"></a>Políticas de segurança do Azure monitoradas pela central de segurança
 Este artigo fornece uma lista de definições de Azure Policy que você pode monitorar na central de segurança do Azure. Para obter mais informações sobre políticas de segurança, confira [Trabalhando com políticas de segurança](tutorial-security-policy.md).
@@ -50,7 +44,7 @@ Para saber mais sobre as políticas internas que são monitoradas pela central d
 |Os logs de diagnóstico no Azure Data Lake Store devem ser habilitados|Auditar a habilitação de logs e mantê-los em um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |Os logs de diagnóstico no Data Lake Analytics devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |As contas de armazenamento devem ser migradas para novos recursos do AzureRM|Use Azure Resource Manager para suas contas de armazenamento para fornecer aprimoramentos de segurança. Elas incluem: <br>-Controle de acesso mais forte (RBAC)<br>-Melhor auditoria<br>-Implantação e governança com base em Azure Resource Manager<br>-Acesso a identidades gerenciadas<br>-Acesso a Azure Key Vault para segredos<br>-Autenticação baseada no Azure AD<br>-Suporte para marcas e grupos de recursos para facilitar o gerenciamento da segurança|
-|As máquinas virtuais devem ser migradas para novos recursos do AzureRM|Use Azure Resource Manager para suas máquinas virtuais para fornecer aprimoramentos de segurança.  Elas incluem: <br>-Controle de acesso mais forte (RBAC)<br>-Melhor auditoria<br>-Implantação e governança com base em Azure Resource Manager<br>-Acesso a identidades gerenciadas<br>-Acesso a Azure Key Vault para segredos<br>-Autenticação baseada no Azure AD<br>-Suporte para marcas e grupos de recursos para facilitar o gerenciamento da segurança|
+|As máquinas virtuais devem ser migradas para novos recursos do AzureRM|Use Azure Resource Manager para suas máquinas virtuais para fornecer aprimoramentos de segurança. Elas incluem: <br>-Controle de acesso mais forte (RBAC)<br>-Melhor auditoria<br>-Implantação e governança com base em Azure Resource Manager<br>-Acesso a identidades gerenciadas<br>-Acesso a Azure Key Vault para segredos<br>-Autenticação baseada no Azure AD<br>-Suporte para marcas e grupos de recursos para facilitar o gerenciamento da segurança|
 |As regras de alerta de métrica devem ser configuradas em contas do lote|Auditar a configuração de regras de alerta de métricas em contas do lote do Azure para habilitar a métrica necessária.|
 |Os logs de diagnóstico em contas do lote devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |A criptografia deve ser habilitada em variáveis de conta de automação|É importante habilitar a criptografia de ativos de variável de conta de automação do Azure ao armazenar dados confidenciais.|
@@ -59,12 +53,12 @@ Para saber mais sobre as políticas internas que são monitoradas pela central d
 |A auditoria do SQL Server deve ser habilitada|Auditar a existência de auditoria do SQL no nível do servidor.|
 |\[Visualização]: monitora o banco de dados SQL não criptografado na Central de Segurança do Azure|A central de segurança do Azure monitora servidores ou bancos de dados SQL não criptografados, conforme recomendado.|
 |\[Visualização]: monitora o banco de dados SQL não auditado na Central de Segurança do Azure|A central de segurança do Azure monitora os servidores SQL e os bancos de dados que não têm a auditoria do SQL ativada conforme recomendado.|
-|\[Visualização]: As atualizações do sistema devem ser instaladas em seus computadores|A central de segurança do Azure monitora atualizações de sistema de segurança ausentes em seus servidores, conforme recomendado.|
+|\[Visualização]: As atualizações do sistema devem ser instaladas em suas máquinas|A central de segurança do Azure monitora atualizações de sistema de segurança ausentes em seus servidores, conforme recomendado.|
 |\[Visualização]: audita a criptografia de blob ausente para contas de armazenamento|Auditar contas de armazenamento que não usam criptografia de BLOB. Isso se aplica somente aos tipos de recursos de armazenamento da Microsoft, não ao armazenamento de outros provedores. A central de segurança do Azure monitora o possível acesso just-in-time de rede, conforme recomendado.|
 |\[Visualização]: O controle de acesso à rede just-in-time deve ser aplicado em máquinas virtuais|A central de segurança do Azure monitora o possível acesso just-in-time de rede, conforme recomendado.|
 |\[Visualização]: Os controles de aplicativos adaptáveis devem ser habilitados em máquinas virtuais|A central de segurança do Azure monitora a configuração da lista de permissões do aplicativo.|
 |\[Visualização]: Grupos de segurança de rede ausentes para máquinas virtuais devem ser configurados|A central de segurança do Azure monitora os grupos de segurança de rede que têm regras muito permissivas, conforme recomendado.|
-|\[Visualização]: Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas|A central de segurança do Azure monitora servidores que não atendem à linha de base configurada conforme recomendado.| 
+|\[Visualização]: As vulnerabilidades da configuração de segurança nas máquinas devem ser corrigidas|A central de segurança do Azure monitora servidores que não atendem à linha de base configurada conforme recomendado.| 
 |\[Visualização]: O Endpoint Protection deve ser instalado em máquinas virtuais|A central de segurança do Azure monitora servidores que não têm um agente de Endpoint Protection do Microsoft System Center instalado, conforme recomendado.|
 |\[Visualização]: A criptografia de disco deve ser aplicada em máquinas virtuais|A central de segurança do Azure monitora as máquinas virtuais que não têm a criptografia de disco habilitada conforme recomendado.|
 |\[Visualização]: As vulnerabilidades devem ser corrigidas por uma solução de Avaliação de Vulnerabilidades|Monitore as vulnerabilidades detectadas pela solução de avaliação de vulnerabilidade e VMs que não têm uma solução de avaliação de vulnerabilidade na central de segurança do Azure, conforme recomendado.|

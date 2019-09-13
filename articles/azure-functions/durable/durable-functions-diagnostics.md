@@ -2,19 +2,19 @@
 title: Diagnóstico nas Funções Duráveis – Azure
 description: Saiba como diagnosticar problemas com a extensão de Funções Duráveis do Azure Functions.
 services: functions
-author: ggailey777
+author: cgillum
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 7c02d4dfde7869da7985817b06f6de398bbef38d
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: d2badee3eaa5a9af48e89adc1b59beacc1571792
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734484"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933515"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Diagnóstico no Durable Functions no Azure
 
@@ -32,7 +32,7 @@ Cada evento de ciclo de vida de uma instância de orquestração faz com que um 
 
 * **hubName**: o nome do hub de tarefas no qual suas orquestrações estão em execução.
 * **appName**: O nome do aplicativo de funções. Ele é útil quando você tem vários aplicativos de funções compartilhando a mesma instância do Application Insights.
-* **slotName**: o [slot de implantação](https://blogs.msdn.microsoft.com/appserviceteam/2017/06/13/deployment-slots-preview-for-azure-functions/) no qual o aplicativo de funções atual está sendo executado. Ele é útil quando você aproveitar os slots de implantação para controlar a versão de suas orquestrações.
+* **slotName**: o [slot de implantação](../functions-deployment-slots.md) no qual o aplicativo de funções atual está sendo executado. Ele é útil quando você aproveitar os slots de implantação para controlar a versão de suas orquestrações.
 * **functionName**: o nome da função de orquestrador ou atividade.
 * **functionType**: o tipo da função, como **Orquestrador** ou **Atividade**.
 * **instanceId**: a ID exclusiva da instância de orquestração.
@@ -349,12 +349,13 @@ O clientes terão a seguinte resposta:
 
 O Azure Functions dá suporte à depuração do código de função diretamente e esse mesmo suporte se estende às Funções Duráveis, seja em execução no Azure ou localmente. No entanto, há alguns comportamentos a que você deve estar atento ao depurar:
 
-* **Reprodução**: Funções de orquestrador são reproduzidas regularmente quando novas entradas são recebidas. Isso significa que uma única execução *lógica* de uma função de orquestrador pode atingir o mesmo ponto de interrupção várias vezes, especialmente se ele estiver definido no início do código da função.
-* **Aguardar**: sempre que um `await` é encontrado, ele leva o controle de volta para o dispatcher do Framework de Tarefa Durável. Se esta for a primeira vez que um determinado `await` foi encontrado, a tarefa associada *nunca* será retomada. Uma vez que a tarefa nunca é retomada, *ignorar* a espera (F10 no Visual Studio) não é possível. Ignorar só funciona quando uma tarefa está sendo reproduzida.
-* **Tempos limite de mensagem**: as Durable Functions usam internamente mensagens de fila para acionar a execução de funções de orquestrador e de funções de atividade. Em um ambiente com várias VMs, interromper a depuração por longos períodos pode fazer com que outra VM receba a mensagem, resultando em uma execução duplicada. Esse comportamento também existe para funções de gatilho de fila regulares, mas é importante ressaltar neste contexto, uma vez que as filas são um detalhe de implementação.
+* **Reprodução**: As funções do Orchestrator são [reproduzidas](durable-functions-orchestrations.md#reliability) regularmente quando novas entradas são recebidas. Isso significa que uma única execução *lógica* de uma função de orquestrador pode atingir o mesmo ponto de interrupção várias vezes, especialmente se ele estiver definido no início do código da função.
+* **Aguardar**: Sempre que `await` um for encontrado em uma função de orquestrador, ele resultará no controle de volta para o Dispatcher do Framework de tarefa durável. Se esta for a primeira vez que um determinado `await` foi encontrado, a tarefa associada *nunca* será retomada. Uma vez que a tarefa nunca é retomada, *ignorar* a espera (F10 no Visual Studio) não é possível. Ignorar só funciona quando uma tarefa está sendo reproduzida.
+* **Tempos limite de mensagem**: O Durable Functions usa internamente mensagens de fila para conduzir a execução de funções de orquestrador, atividade e entidade. Em um ambiente com várias VMs, interromper a depuração por longos períodos pode fazer com que outra VM receba a mensagem, resultando em uma execução duplicada. Esse comportamento também existe para funções de gatilho de fila regulares, mas é importante ressaltar neste contexto, uma vez que as filas são um detalhe de implementação.
+* **Parando e iniciando**: As mensagens nas funções duráveis persistem entre as sessões de depuração. Se você parar a depuração e encerrar o processo de host local enquanto uma função durável estiver em execução, essa função poderá ser executada automaticamente em uma sessão de depuração futura. Isso pode ser confuso quando não esperado. Limpar todas as mensagens das [filas de armazenamento internas](durable-functions-perf-and-scale.md#internal-queue-triggers) entre sessões de depuração é uma técnica para evitar esse comportamento.
 
 > [!TIP]
-> Ao definir pontos de interrupção, se quiser interromper somente a execução que não é de repetição, você pode definir um ponto de interrupção condicional que interrompe somente se `IsReplaying` for `false`.
+> Ao definir pontos de interrupção em funções de orquestrador, se você quiser interromper apenas a execução sem repetição, poderá definir um ponto de interrupção condicional que só se `IsReplaying` encontra. `false`
 
 ## <a name="storage"></a>Armazenamento
 
@@ -370,4 +371,4 @@ Isso é útil para a depuração, pois você vê exatamente em qual estado uma o
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Saiba como usar temporizadores duráveis](durable-functions-timers.md)
+> [Saiba mais sobre monitoramento no Azure Functions](../functions-monitoring.md)

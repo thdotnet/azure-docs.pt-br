@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: ac1a4c77589f4ef88c9ee862cb871b376ca8a0fe
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1c219c85836eb4730fa90918385555c433a12449
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483844"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915078"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Implantar e gerenciar topologias Apache Storm no Microsoft Azure HDInsight 
 
@@ -21,12 +21,12 @@ Neste documento, conheça as noções básicas de gerenciamento e monitoramento 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um cluster do Apache Storm no HDInsight. Ver [criar Apache clusters Hadoop usando o portal do Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) e selecione **Storm** para **tipo de Cluster**.
+* Um cluster do Apache Storm no HDInsight. Confira [Criar clusters Apache Hadoop usando o portal do Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) e selecione **Storm** como **Tipo de cluster**.
 
 
-* (Opcional) Familiaridade com SSH e SCP: Para obter mais informações, confira [Usar SSH com HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* Adicional Familiaridade com SSH e SCP: Para obter mais informações, confira [Usar SSH com HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* (Opcional) Visual Studio: SDK do Azure 2.5.1 ou mais recente e as Ferramentas do Data Lake para Visual Studio. Para obter mais informações, consulte [Introdução ao uso das Ferramentas do Data Lake para Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
+* Adicional Visual Studio: SDK do Azure 2.5.1 ou mais recente e as Ferramentas do Data Lake para Visual Studio. Para obter mais informações, consulte [Introdução ao uso das Ferramentas do Data Lake para Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 
     Uma das seguintes versões do Visual Studio:
 
@@ -54,7 +54,7 @@ As Ferramentas do HDInsight podem ser usadas para enviar topologias C# ou híbri
 
 3. Na caixa de diálogo **Novo Projeto**, expanda **Instalados** > **Modelos** e selecione **HDInsight**. Na lista de modelos, selecione **Amostra do Storm**. Na parte inferior da caixa de diálogo, digite um nome para o aplicativo.
 
-    ![image](./media/apache-storm-deploy-monitor-topology-linux/sample.png)
+    ![imagem](./media/apache-storm-deploy-monitor-topology-linux/apache-storm-sample1.png)
 
 4. No **Gerenciador de Soluções**, clique com o botão direito do mouse no projeto e selecione **Enviar para o Storm no HDInsight**.
 
@@ -90,7 +90,7 @@ As Ferramentas do HDInsight podem ser usadas para enviar topologias C# ou híbri
 
 Quando uma topologia for enviada usando o Visual Studio, a exibição **Topologias do Storm** será mostrada. Selecione a topologia da lista para exibir informações sobre a topologia em execução.
 
-![monitor do visual studio](./media/apache-storm-deploy-monitor-topology-linux/vsmonitor.png)
+![monitor do visual studio](./media/apache-storm-deploy-monitor-topology-linux/visual-studio-monitor.png)
 
 > [!NOTE]  
 > Você também pode exibir **Topologias Storm** no **Gerenciador de Servidores** expandindo **Azure** > **HDInsight** e clicando com o botão direito do mouse em um Storm no cluster do HDInsight e selecionando **Exibir Topologias Storm**.
@@ -101,7 +101,7 @@ Escolha a forma dos spouts ou bolts para exibir informações sobre esses compon
 
 A desativação de uma topologia pausa até que seja interrompido ou reativado. Para executar essas operações, use os botões __Desativar__ e __Reativar__ na parte superior do __Resumo da Topologia__.
 
-### <a name="rebalance"></a>Rebalanceamento
+### <a name="rebalance"></a>Redistribuir
 
 Rebalancear uma topologia permite que o sistema revise o paralelismo da topologia. Por exemplo, se você tiver redimensionado o cluster para adicionar mais anotações, o rebalanceamento permitirá que uma topologia veja os novos nós.
 
@@ -209,7 +209,7 @@ Para obter mais informações, veja [API REST da interface do usuário do Apache
 
 ### <a name="base-uri"></a>URI de base
 
-O URI de base para a API REST em clusters HDInsight baseados em Linux está disponível no nó principal em **https:\//HEADNODEFQDN:8744/api/v1/** . O nome de domínio do nó de cabeçalho é gerado durante a criação do cluster e não é estático.
+O URI de base para a API REST em clusters HDInsight baseados em Linux está disponível no nó principal em **https:\//HEADNODEFQDN: 8744/API/v1/** . O nome de domínio do nó de cabeçalho é gerado durante a criação do cluster e não é estático.
 
 Você pode encontrar o FQDN (Nome de Domínio Totalmente Qualificado) para o nó de cabeçalho do cluster de várias maneiras diferentes:
 
@@ -217,7 +217,7 @@ Você pode encontrar o FQDN (Nome de Domínio Totalmente Qualificado) para o nó
 * **Do Ambari Web**: Selecione **Serviços** na parte superior da página e, em seguida, selecione **Storm**. Na guia **Resumo** selecione **Servidor de IU do Storm**. O FQDN do nó que hospeda a interface do usuário do Storm e a API REST são exibidos na parte superior da página.
 * **Da API REST do Ambari**: Use o comando `curl -u admin -G "https:\//CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"` para recuperar informações sobre o nó em que a interface do usuário do Storm e a API REST estão em execução. Substitua **CLUSTERNAME** pelo nome do cluster. Quando solicitado, insira a senha para a conta de logon (administrador). Na resposta, a entrada "host_name" contém o FQDN do nó.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 As solicitações para a API REST devem usar a **autenticação básica**e, portanto, você usará o nome do administrador e a senha do cluster HDInsight.
 

@@ -3,7 +3,7 @@ title: Capacidade de suporte - HSM Dedicado do Azure | Microsoft Docs
 description: Opções de suporte e áreas de responsabilidade para o HSM Dedicado do Azure em cenários diferentes
 services: dedicated-hsm
 author: johndaw
-manager: barbkess
+manager: rkarlin
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -11,13 +11,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 03/27/2019
-ms.author: barclayn
-ms.openlocfilehash: 8341e9057b07fbb72957eddc342ae875e4591993
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mbaldwin
+ms.openlocfilehash: d83d688707baf6098d63dfde9b4181eb04fb9729
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60912240"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881010"
 ---
 # <a name="azure-dedicated-hsm-supportability"></a>Capacidade de Suporte do HSM Dedicado do Azure
 
@@ -26,19 +26,19 @@ Os clientes são totalmente responsáveis por aplicativos que usam os HSMs e dev
 
 ## <a name="getting-support"></a>Obtendo suporte
 
-Atendimento ao cliente para o HSM dedicado é um esforço conjunto entre a Microsoft e a Gemalto. Quaisquer problemas de hardware ou problemas de caminho de rede serão abordados pela Microsoft, e nada a ver com o HSM real, como configuração, software, firmware e desenvolvimento de aplicativos, será tratado por Gemalto. Esse modelo de suporte garante que a rota mais rápida para o suporte mais eficaz. Em caso de dúvida, com um problema específico, envie uma solicitação de suporte com a Microsoft e estamos garantirá que você é direcionado corretamente. A Microsoft se envolvam em todos os cenários de suporte e se esforçar para ter a melhor experiência de suporte para nossos clientes.
+O atendimento ao cliente para HSM dedicado é um esforço conjunto entre a Microsoft e o Gemalto. Quaisquer problemas de hardware ou de caminho de rede serão abordados pela Microsoft, e qualquer coisa a fazer com o HSM real, como configuração, software, firmware e desenvolvimento de aplicativos, será abordada pelo Gemalto. Esse modelo de suporte garante a rota mais rápida para o suporte mais eficaz. Se estiver em dúvida com um problema específico, gere uma solicitação de suporte com a Microsoft e garantiremos que você será direcionado adequadamente. A Microsoft se manterá envolvida em todos os cenários de suporte e buscará a melhor experiência de suporte para nossos clientes.
 
 ## <a name="gemalto-support"></a>Suporte a Gemalto
 
-Os clientes que usam o serviço HSM dedicado se qualifica para o suporte da Gemalto, de acordo com suas além de plano de suporte. Isso requer apenas um processo de registro usando o portal de suporte a Gemalto. Uma ID de cliente e instruções serão fornecidas para isso como parte do contrato inicial com a Microsoft para acessar o serviço HSM dedicado. O mecanismo para obter suporte da Gemalto é por meio de seu [portal de suporte do cliente](https://supportportal.gemalto.com/csm/).
-Um ponto-chave de nota é que a Gemalto fornecerá todos os software e a documentação necessária para usar o HSM (por exemplo, software de acesso de cliente e SDKs) por meio de download no portal de suporte do cliente.
+Os clientes que usam o serviço HSM dedicado se qualificam para o suporte do Gemalto de acordo com seu plano de suporte Plus. Isso apenas requer um processo de registro usando o portal de suporte do Gemalto. Uma ID de cliente e instruções serão fornecidas para isso como parte do envolvimento inicial com a Microsoft para obter acesso ao serviço HSM dedicado. O mecanismo para obter suporte da Gemalto é por meio de seu [portal de suporte do cliente](https://supportportal.gemalto.com/csm/).
+Um ponto importante de observação é que o Gemalto fornecerá todos os softwares e a documentação necessários para usar o HSM (por exemplo, software de acesso para cliente e SDKs) por meio do download no portal de atendimento ao cliente.
 
 ### <a name="software-components"></a>Componentes de software
 
 Vários componentes de software são usados na configuração de dispositivos HSM:
 
 * Software cliente
-* .
+* SDK
 * Ferramentas
 
 ### <a name="guidance"></a>Diretrizes
@@ -55,7 +55,7 @@ Para obter assistência no design, desenvolvimento e implantação de aplicativo
 
 ## <a name="microsoft-support"></a>Suporte da Microsoft
 
-Microsoft garantirá que os dispositivos HSM físicos são acessível e em um estado operacional para o uso exclusivo de um único cliente de rede. Os clientes são responsáveis por configuração, administração e gerenciamento do dispositivo. As responsabilidades da Microsoft incluem:
+A Microsoft garantirá que os dispositivos HSM físicos estejam acessíveis à rede e em um estado operacional para o uso exclusivo de um único cliente. Os clientes são responsáveis pela configuração, administração e gerenciamento do dispositivo. As responsabilidades da Microsoft incluem:
 
 * Certificar-se que o dispositivo tenha alimentação e resfriamento
 * Manter um estado operacional do HSM (por exemplo, cenários de reparos)
@@ -76,7 +76,7 @@ Depois que um cliente tiver um registro aprovado para o serviço HSM Dedicado, p
 
 ### <a name="hardware-issues"></a>Problemas de hardware
 
-O dispositivo HSM tem fontes de alimentação redundantes e substituíveis e unidades de ventilador.  No entanto, a remoção do ventilador unidade ainda fará com que um evento de violação. Quando ocorrer uma falha de componente, a Microsoft usará o processo mais apropriado para resolver o problema de nível de componente de forma que faça com o mínimo de interrupção e menor risco a disponibilidade do serviço de nossos clientes.
+O dispositivo HSM tem fontes de alimentação redundantes e substituíveis e unidades de ventilador.  No entanto, a remoção da unidade do ventilador ainda causará um evento de violação. Quando ocorrer uma falha de componente, a Microsoft usará o processo mais apropriado para resolver o problema de nível de componente de forma que faça com o mínimo de interrupção e menor risco a disponibilidade do serviço de nossos clientes.
 Qualquer falha mais grave do dispositivo fará com que o dispositivo seja substituído por um novo do pool livre. O cliente simplesmente inclui o novo dispositivo no par HA existente para sincronizar e retornar para o estado operacional completo. O dispositivo com falha terá seus dados que contêm dispositivos removidos e destruídos no site no data center. Somente o chassi será retornado a Gemalto para reciclagem.
 
 

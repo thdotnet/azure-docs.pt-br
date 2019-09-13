@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 04/08/2019
-ms.openlocfilehash: f7fc5b32fb18da60816056c72dde8c53d439befe
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: d7cb473c54dc9cf735e43c65bc079fb4f21e4c97
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812198"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70913984"
 ---
 # <a name="what-is-azure-sql-database-service"></a>O que é o serviço de banco de dados SQL do Azure
 
@@ -26,6 +26,8 @@ Com a estratégia de prioridade de nuvem da Microsoft, os recursos mais recentes
 
 > [!NOTE]
 > Para obter um glossário de termos no Banco de Dados SQL do Azure, consulte [Glossário de termos do Banco de Dados SQL](sql-database-glossary-terms.md)
+
+## <a name="deployment-models"></a>Modelos de implantação
 
 O banco de dados SQL do Azure fornece as seguintes opções de implantação para um banco de dados SQL do Azure:
 
@@ -43,7 +45,7 @@ O Banco de Dados SQL oferece desempenho previsível com vários tipos de recurso
 ## <a name="scalable-performance-and-pools"></a>Pools e desempenho dimensionável
 
 Todos os tipos de banco de dados SQL permitem que você defina a quantidade de recursos que serão atribuídos. 
-- Com bancos de dados individuais, cada banco de dados é isolado do outro e é portátil, cada um com sua própria quantidade garantida de recursos de computação, memória e armazenamento. A quantidade de recursos que é atribuída ao banco de dados é dedicada a esse banco de dados e não será compartilhada com outros banco de dados na nuvem do Azure. Ele também oferece a capacidade de escalar e reduzir dinamicamente os [recursos de um banco de dados individual](sql-database-single-database-scale.md) . O Banco de Dados Individual fornece recursos diferentes de computação, memória e armazenamento para diferentes necessidades que variam de 1 a 80 vCores, 32 GB a 4 TB etc. A [camada de serviço de hiperescala](sql-database-service-tier-hyperscale.md) para um único banco de dados permite que você dimensione para 100 TB, com recursos rápidos de backup e restauração.
+- Com bancos de dados individuais, cada banco de dados é isolado do outro e é portátil, cada um com sua própria quantidade garantida de recursos de computação, memória e armazenamento. A quantidade de recursos que é atribuída ao banco de dados é dedicada a esse banco de dados e não será compartilhada com outros banco de dados na nuvem do Azure. Ele também oferece a capacidade de escalar e reduzir dinamicamente os [recursos de um banco de dados individual](sql-database-single-database-scale.md) . O Banco de Dados Individual fornece recursos diferentes de computação, memória e armazenamento para diferentes necessidades que variam de 1 a 80 vCores, 32 GB a 4 TB etc. A [camada de serviço](sql-database-service-tier-hyperscale.md) de hiperescala para um único banco de dados permite que você dimensione para 100 TB, com recursos rápidos de backup e restauração.
 - Com os pools elásticos, você pode atribuir recursos que serão compartilhados por todos os bancos de dados no pool. Você pode criar um novo banco de dados ou movê-los para um pool de recursos a fim de maximizar o uso de recursos e economizar dinheiro e a capacidade de dimensionar dinamicamente os [recursos do pool elástico](sql-database-elastic-pool-scale.md) para cima e para baixo.
 - Com instâncias gerenciadas, cada instância gerenciada é isolada de outras instâncias com recursos garantidos. Em uma instância gerenciada, os bancos de dados da instância compartilham um conjunto de recursos – e a capacidade de aumentar e reduzir [recursos de instância gerenciada](sql-database-managed-instance-resource-limits.md).
 
@@ -51,11 +53,19 @@ Você pode criar seu primeiro aplicativo em um banco de dados individual pequeno
 
 A escalabilidade dinâmica é diferente do dimensionamento automático. O dimensionamento automático é quando um serviço pode ser dimensionado automaticamente com base em critérios, enquanto a escalabilidade dinâmico permite o redimensionamento manual sem tempo de inatividade. Um banco de dados individual dá suporte à escalabilidade dinâmica manual, mas não ao dimensionamento automático. Para uma experiência mais *automática*, considere o uso de pools elásticos, que permitem que os bancos de dados compartilhem recursos em um pool com base nas necessidades individuais do banco de dados. No entanto, há scripts que podem ajudar a automatizar a escalabilidade de um banco de dados individual. Para ver um exemplo, consulte [Usar o PowerShell para monitorar e dimensionar um banco de dados individual](scripts/sql-database-monitor-and-scale-database-powershell.md).
 
-### <a name="purchasing-models-service-tiers-compute-sizes-and-storage-amounts"></a>Modelos de compra, camadas de serviço, tamanhos de computação e quantidades de armazenamento
+### <a name="purchasing-models"></a>Modelos de compra
 
 O Banco de Dados SQL oferece dois modelos de compra:
-- O [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) permite que você escolha o número de vCores, a quantidade de memória e a quantidade e a velocidade de armazenamento. O modelo de compra baseado em vCore também permite que você use o [Benefício Híbrido do Azure para SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/) para poupar custos. Para obter mais informações sobre o Benefício Híbrido do Azure, consulte as [perguntas frequentes](#sql-database-frequently-asked-questions-faq).
+- O [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) permite que você escolha o número de vCores, a quantidade de memória e a quantidade e a velocidade de armazenamento. O modelo de compra baseado em vCore também permite que você use **[benefício híbrido do Azure para SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/)** para obter economias de custos. Para obter mais informações sobre o Benefício Híbrido do Azure, consulte as [perguntas frequentes](#sql-database-frequently-asked-questions-faq).
 - O [modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) oferece uma combinação de computação, memória e recursos de E/S em três camadas de serviço para dar suporte a cargas de trabalho leves e pesadas de banco de dados. Os tamanhos da computação dentro de cada camada fornecem uma mistura diferente desses recursos, aos quais você pode adicionar recursos de armazenamento.
+- O [modelo sem servidor](sql-database-serverless.md) que dimensiona automaticamente a computação com base na demanda de carga de trabalho e cobra pela quantidade de computação usada por segundo. A camada de computação sem servidor também pausa automaticamente os bancos de dados durante períodos inativos quando apenas o armazenamento é cobrado e retoma automaticamente os bancos de dados quando a atividade retorna.
+
+### <a name="service-tiers"></a>Camadas de serviço
+
+O banco de dados SQL do Azure oferece três camadas de serviço que são projetadas para diferentes tipos de aplicativos:
+- Camada de serviço [uso geral/Standard](sql-database-service-tier-general-purpose.md) projetada para cargas de trabalho comuns. Oferece opções equilibradas de computação e armazenamento orientadas ao orçamento.
+- Camada de serviço [comercialmente crítico/Premium](sql-database-service-tier-business-critical.md) projetada para aplicativos OLTP com alta taxa de transação e e/s de latência mais baixa. Oferece maior resiliência a falhas usando várias réplicas isoladas.
+- Camada de serviço de [hiperescala](sql-database-service-tier-hyperscale.md) projetada para banco de dados OLTP muito grande e a capacidade de dimensionar automaticamente o armazenamento e dimensionar a computação de forma fluida. 
 
 ### <a name="elastic-pools-to-maximize-resource-utilization"></a>Pools elásticos para maximizar a utilização de recursos
 

@@ -8,27 +8,27 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 497ffb5acf6262dfb42f490efe68e1ea26c777cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a41a811e9313f79c9c3165e02cb5eaa4353b65ab
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64572378"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914464"
 ---
 # <a name="find-an-address-using-the-azure-maps-search-service"></a>Encontrar um endereço usando o serviço de pesquisa do Azure Maps
 
 O serviço de pesquisa do Maps é um conjunto de APIs RESTful projetadas para desenvolvedores pesquisarem endereços, locais, pontos de interesse, listagens de empresas e outras informações geográficas. O serviço atribui um valor de latitude/longitude para um endereço específico, cruzamento, recurso geográfico ou POI (ponto de interesse). Os valores de latitude e longitude retornados pela pesquisa podem ser usados como parâmetros em outros serviços de mapas, como rota e fluxo de tráfego.
 
-Neste artigo você aprenderá como:
+Neste artigo, você aprenderá a:
 
-* Procure um endereço usando [API de pesquisa difusa](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
-* Procurar um endereço, juntamente com as propriedades e coordenadas
-* Fazer uma [pesquisa invertida de endereço](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) para procurar um endereço de rua
-* Procure uma rua cruzada usando [endereço Inverter cruzada Rua API de pesquisa](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreversecrossstreet)
+* Pesquisar um endereço usando a [API de pesquisa difusa](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
+* Pesquisar um endereço juntamente com propriedades e coordenadas
+* Fazer uma [pesquisa de endereço inversa](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) para pesquisar um endereço
+* Procurar uma cruzada usando o [endereço de pesquisa API de várias ruas inversa](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreversecrossstreet)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para fazer todas as chamadas para as APIs do serviço de mapas, você precisa de uma conta de mapas e chave. Para obter mais informações sobre como criar uma conta e recuperar uma chave, consulte [Como gerenciar as chaves e a conta dos Mapas do Azure](how-to-manage-account-keys.md).
+Para fazer todas as chamadas para as APIs do serviço de mapas, você precisa de uma conta de mapas e chave. Para obter informações sobre como criar uma conta, siga as instruções em [gerenciar conta](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) e siga as etapas em [obter chave primária](./tutorial-search-location.md#getkey) para recuperar uma chave de assinatura primária para sua conta.
 
 Este artigo usa o [aplicativo Postman](https://www.getpostman.com/apps) para criar chamadas REST. Você pode usar qualquer ambiente de desenvolvimento de API que você preferir.
 
@@ -48,8 +48,8 @@ A maioria das consultas de pesquisa é padronizada para `maxFuzzyLevel=1` para o
 
     | Parâmetro | Valor sugerido |
     |---------------|------------------------------------------------|
-    | Método HTTP | GET |
-    | URL de Solicitação | [https://atlas.microsoft.com/search/fuzzy/json?](https://atlas.microsoft.com/search/fuzzy/json?) |
+    | Método HTTP | OBTER |
+    | URL da solicitação | [https://atlas.microsoft.com/search/fuzzy/json?](https://atlas.microsoft.com/search/fuzzy/json?) |
     | Autorização | Sem autenticação |
 
     O atributo **json** no caminho da URL determina o formato da resposta. Você está usando json neste artigo pela facilidade de uso e leitura. Você pode encontrar os formatos de resposta disponíveis na **obter pesquisa difusa** definição da [referência da API de mapas funcionais](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy).
@@ -58,7 +58,7 @@ A maioria das consultas de pesquisa é padronizada para `maxFuzzyLevel=1` para o
 
     ![Pesquisa Difusa](./media/how-to-search-for-address/fuzzy_search_params.png)
 
-    | Chave | Value |
+    | Chave | Valor |
     |------------------|-------------------------|
     | api-version | 1.0 |
     | subscription-key | \<sua chave de mapas do Azure\> |
@@ -68,11 +68,11 @@ A maioria das consultas de pesquisa é padronizada para `maxFuzzyLevel=1` para o
 
     A string de consulta ambígua de "pizza" retornou 10 [resultados de resultado de ponto de interesse](https://docs.microsoft.com/rest/api/maps/search/getsearchpoi#searchpoiresponse) (POI) com categorias que se enquadram em "pizza" e "restaurante". Cada resultado retorna um endereço de rua, valores de latitude/longitude, exibições de porta e pontos de entrada para o local.
   
-    Os resultados variam para essa consulta, não associados a nenhum local de referência específico. Você pode usar o **countrySet** parâmetro para especificar apenas os países/regiões para o qual seu aplicativo precisa de cobertura, como o comportamento padrão é pesquisar no mundo inteiro, retornando possivelmente resultados desnecessários.
+    Os resultados variam para essa consulta, não associados a nenhum local de referência específico. Você pode usar o parâmetro **countryset** para especificar apenas os países/regiões para os quais seu aplicativo precisa de cobertura, pois o comportamento padrão é Pesquisar o mundo inteiro, potencialmente retornando resultados desnecessários.
 
 5. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |------------------|-------------------------|
     | countrySet | EUA |
   
@@ -84,7 +84,7 @@ A maioria das consultas de pesquisa é padronizada para `maxFuzzyLevel=1` para o
 
     ![Pesquisa Difusa](./media/how-to-search-for-address/fuzzy_search_latlon.png)
   
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | lat | 47.620525 |
     | long | -122.349274 |
@@ -100,15 +100,15 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
   
     | Parâmetro | Valor sugerido |
     |---------------|------------------------------------------------|
-    | Método HTTP | GET |
-    | URL de Solicitação | [https://atlas.microsoft.com/search/address/json?](https://atlas.microsoft.com/search/address/json?) |
+    | Método HTTP | OBTER |
+    | URL da solicitação | [https://atlas.microsoft.com/search/address/json?](https://atlas.microsoft.com/search/address/json?) |
     | Autorização | Sem autenticação |
 
 3. Clique em **Params** e digite os seguinte pares Chave/Valor para uso como parâmetros de consulta ou de caminho na URL da solicitação:
   
     ![Pesquisa de Endereço](./media/how-to-search-for-address/address_search_params.png)
   
-    | Chave | Value |
+    | Chave | Valor |
     |------------------|-------------------------|
     | api-version | 1.0 |
     | subscription-key | \<sua chave de mapas do Azure\> |
@@ -125,7 +125,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
 6. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | typeahead | true |
 
@@ -141,15 +141,15 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
   
     | Parâmetro | Valor sugerido |
     |---------------|------------------------------------------------|
-    | Método HTTP | GET |
-    | URL de Solicitação | [https://atlas.microsoft.com/search/address/reverse/json?](https://atlas.microsoft.com/search/address/reverse/json?) |
+    | Método HTTP | OBTER |
+    | URL da solicitação | [https://atlas.microsoft.com/search/address/reverse/json?](https://atlas.microsoft.com/search/address/reverse/json?) |
     | Autorização | Sem autenticação |
   
 3. Clique em **Params** e digite os seguinte pares Chave/Valor para uso como parâmetros de consulta ou de caminho na URL da solicitação:
   
     ![Parâmetros de Pesquisa Invertida de Endereço](./media/how-to-search-for-address/reverse_address_search_params.png)
   
-    | Chave | Value |
+    | Chave | Valor |
     |------------------|-------------------------|
     | api-version | 1.0 |
     | subscription-key | \<sua chave de mapas do Azure\> |
@@ -161,7 +161,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
   
 5. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | número | true |
 
@@ -169,7 +169,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
   
 6. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | returnSpeedLimit | true |
   
@@ -177,7 +177,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
 7. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | returnRoadUse | true |
 
@@ -185,7 +185,7 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
 
 8. Adicione a seguinte par de Chave/Valor para a seção **Params** e clique em **Enviar**:
 
-    | Chave | Value |
+    | Chave | Valor |
     |-----|------------|
     | roadUse | true |
 
@@ -201,13 +201,13 @@ Você pode transmitir um endereço de rua completo ou parcial para a API de pesq
   
     | Parâmetro | Valor sugerido |
     |---------------|------------------------------------------------|
-    | Método HTTP | GET |
-    | URL de Solicitação | [https://atlas.microsoft.com/search/address/reverse/crossstreet/json?](https://atlas.microsoft.com/search/address/reverse/crossstreet/json?) |
+    | Método HTTP | OBTER |
+    | URL da solicitação | [https://atlas.microsoft.com/search/address/reverse/crossstreet/json?](https://atlas.microsoft.com/search/address/reverse/crossstreet/json?) |
     | Autorização | Sem autenticação |
   
 3. Clique em **Params** e digite os seguinte pares Chave/Valor para uso como parâmetros de consulta ou de caminho na URL da solicitação:
   
-    | Chave | Value |
+    | Chave | Valor |
     |------------------|-------------------------|
     | api-version | 1.0 |
     | subscription-key | \<sua chave de mapas do Azure\> |

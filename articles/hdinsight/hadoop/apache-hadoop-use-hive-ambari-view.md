@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: hrasheed
-ms.openlocfilehash: 55f8f453faf35d52c5c292e6b309194443980466
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3ab2bf0334b58f3a5ac8ad4abacfcc45e0366240
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64719571"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70917728"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Use o Apache Ambari Hive View com o Apache Hadoop no HDInsight
 
@@ -23,22 +23,22 @@ Saiba como executar as consultas do Hive usando o Apache Ambari Hive View. A Exi
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um cluster de Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
+* Um cluster Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./apache-hadoop-linux-tutorial-get-started.md).
 * Um navegador da Web
 
 ## <a name="run-a-hive-query"></a>Executar um trabalho do Hive
 
-1. Dos [portal do Azure](https://portal.azure.com/), selecione o cluster.  Ver [listar e mostrar clusters](../hdinsight-administer-use-portal-linux.md#showClusters) para obter instruções. O cluster é aberto em uma nova folha de portal.
+1. No [portal do Azure](https://portal.azure.com/), selecione o cluster.  Consulte [listar e mostrar clusters](../hdinsight-administer-use-portal-linux.md#showClusters) para obter instruções. O cluster é aberto em uma nova folha de portal.
 
-2. Partir **painéis do Cluster**, selecione **Ambari views**. Quando solicitado a autenticar, use o nome e senha da conta de logon de cluster (padrão `admin`) que você forneceu ao criar o cluster.
+2. Em **painéis do cluster**, selecione **exibições do Ambari**. Quando solicitado a autenticar, use o nome e senha da conta de logon de cluster (padrão `admin`) que você forneceu ao criar o cluster.
 
 3. Na lista de exibições, selecione __Exibição de Hive__.
 
-    ![A exibição de Hive selecionada](./media/apache-hadoop-use-hive-ambari-view/select-hive-view.png)
+    ![A exibição de Hive selecionada](./media/apache-hadoop-use-hive-ambari-view/select-apache-hive-view.png)
 
     A página de exibição do Hive é semelhante à seguinte imagem:
 
-    ![Imagem da planilha de consulta para a exibição de Hive](./media/apache-hadoop-use-hive-ambari-view/ambari-hive-view.png)
+    ![Imagem da planilha de consulta para a exibição de Hive](./media/apache-hadoop-use-hive-ambari-view/ambari-worksheet-view.png)
 
 4. Da guia __Consulta__, cole as seguintes instruções HiveQL na planilha:
 
@@ -75,17 +75,17 @@ Saiba como executar as consultas do Hive usando o Apache Ambari Hive View. A Exi
    > [!IMPORTANT]  
    > Deixe a seleção __Banco de dados__ em __padrão__. Os exemplos neste documento usam o banco de dados padrão incluído no HDInsight.
 
-5. Para iniciar a consulta, selecione **Execute** abaixo da planilha. O botão fica laranja e o texto é alterado para **Parar**.
+5. Para iniciar a consulta, selecione **executar** abaixo da planilha. O botão fica laranja e o texto é alterado para **Parar**.
 
 6. Depois que a consulta for concluída, a seção **Resultados** exibirá os resultados da operação. O texto a seguir é o resultado da consulta:
 
         loglevel       count
         [ERROR]        3
 
-    Você pode usar o **LOG** guia para exibir as informações de log criadas pelo trabalho.
+    Você pode usar a guia **log** para exibir as informações de log criadas pelo trabalho.
 
    > [!TIP]  
-   > Baixe ou salve os resultados do **ações** caixa de diálogo suspensa sob a **resultados** guia.
+   > Baixe ou salve os resultados na caixa de diálogo suspensa **ações** na guia **resultados** .
 
 ### <a name="visual-explain"></a>Explicação visual
 
@@ -95,7 +95,7 @@ O modo de exibição **Explicação Visual** da consulta pode ser útil na compr
 
 ### <a name="tez-ui"></a>Interface de usuário do Tez
 
-Para exibir a UI Tez para a consulta, selecione a **Tez UI** guia abaixo da planilha.
+Para exibir a interface do usuário do amTez para a consulta, selecione a guia **interface do usuário do tez** abaixo da planilha.
 
 > [!IMPORTANT]  
 > O Tez não é usado para resolver todas as consultas. Muitas consultas podem ser resolvidas sem usar o Tez. 
@@ -104,19 +104,19 @@ Para exibir a UI Tez para a consulta, selecione a **Tez UI** guia abaixo da plan
 
 A guia __Trabalhos__ exibe um histórico das consultas de Hive.
 
-![Imagem do histórico de trabalhos](./media/apache-hadoop-use-hive-ambari-view/job-history.png)
+![Imagem do histórico de trabalhos](./media/apache-hadoop-use-hive-ambari-view/apache-hive-job-history.png)
 
 ## <a name="database-tables"></a>Tabelas de banco de dados
 
 Você pode usar a guia __tabelas__ para trabalhar com tabelas em um banco de dados de Hive.
 
-![Imagem da guia tabelas](./media/apache-hadoop-use-hive-ambari-view/tables.png)
+![Imagem da guia tabelas](./media/apache-hadoop-use-hive-ambari-view/hdinsight-tables-tab.png)
 
 ## <a name="saved-queries"></a>Consultas salvas
 
 Na guia **Consulta** você pode, opcionalmente, salvar consultas. Depois de salvar uma consulta, você pode reutilizá-la da guia __Consultas Salvas__.
 
-![Imagem da guia Consultas Salvas](./media/apache-hadoop-use-hive-ambari-view/saved-queries.png)
+![Imagem da guia Consultas Salvas](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
 
 > [!TIP]  
 > Consultas salvas são armazenadas no armazenamento de cluster padrão. Você pode encontrar as consultas salvas no caminho `/user/<username>/hive/scripts`. Elas são armazenadas como arquivos de texto sem formatação `.hql`.

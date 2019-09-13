@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: hrasheed
-ms.openlocfilehash: 608d097f1ebad9e4e1092c7ec54a573ccb58ad81
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 64de4078fb529140859f1d4ff2e973fd081a5400
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70734657"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916573"
 ---
 # <a name="capacity-planning-for-hdinsight-clusters"></a>Planejamento de capacidade para clusters HDInsight
 
@@ -96,9 +96,6 @@ Você é cobrado pelo tempo de vida do cluster. Se houver apenas momentos espec�
 
 Às vezes, os erros podem ocorrer devido à execução paralela de vários mapas e componentes de redução em um cluster de vários nós. Para ajudar a isolar o problema, experimente o teste distribuído executando vários trabalhos simultâneos em um único cluster de nó de trabalho e, em seguida, expanda essa abordagem para executar vários trabalhos simultaneamente em clusters que contenham mais de um nó. Para criar um cluster HDInsight de nó único no Azure, use a opção *personalizado (tamanho, configurações, aplicativos)* e use um valor de 1 para o *número de nós de trabalho* na seção **tamanho do cluster** ao provisionar um novo cluster no Portal.
 
-Você também pode instalar um ambiente de desenvolvimento de nó único em seu computador local e testar a solução nesse ambiente. A Hortonworks fornece um ambiente de desenvolvimento local de nó único para soluções baseadas em Hadoop que é útil para o desenvolvimento inicial, a prova de conceito e o teste. Para obter mais informações, consulte a [Área Restrita do Hortonworks](https://hortonworks.com/products/hortonworks-sandbox/).
-
-Para identificar o problema em um cluster local de nó único, você pode executar novamente os trabalhos com falha e ajustar os dados de entrada ou usar conjuntos de dados menores. A forma como você executa esses trabalhos depende da plataforma e do tipo da aplicação.
 
 ## <a name="quotas"></a>Cotas
 

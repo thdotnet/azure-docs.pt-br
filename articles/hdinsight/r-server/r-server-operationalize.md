@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 91407fc76d0a7555a87a8a3dcd1b3ad04ee2af80
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: f9dbddcba1545e0a110faa9fbf8e3de9ff189525
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736230"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70879499"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Operacionalizar o cluster do ML Services no Azure HDInsight
 
@@ -50,31 +50,31 @@ Após usar o cluster do ML Services no HDInsight para concluir a modelagem de da
 
 1. São apresentadas as opções para escolher. Escolha a primeira opção, conforme mostrado na captura de tela a seguir, para **Configurar o ML Server para operacionalização**.
 
-    ![operações de uma caixa](./media/r-server-operationalize/admin-util-one-box-1.png)
+    ![OP1 de uma caixa](./media/r-server-operationalize/admin-util-one-box-1.png)
 
 1. Agora, é possível escolher como você quer operacionalizar o ML Server. A partir das opções apresentadas, escolha a primeiro inserindo **A**.
 
-    ![operações de uma caixa](./media/r-server-operationalize/admin-util-one-box-2.png)
+    ![OP2 de uma caixa](./media/r-server-operationalize/admin-util-one-box-2.png)
 
 1. Quando solicitado, digite e insira novamente a senha para um usuário de administrador local.
 
 1. Você deve ver sugestões de saídas que a operação foi bem-sucedida. Você também precisará selecionar outra opção de menu. Selecione E para retornar ao menu principal.
 
-    ![operações de uma caixa](./media/r-server-operationalize/admin-util-one-box-3.png)
+    ![OP3 de uma caixa](./media/r-server-operationalize/admin-util-one-box-3.png)
 
 1. Como opção, você pode executar verificações de diagnóstico com um teste de diagnóstico da seguinte forma:
 
     a. No menu principal, selecione **6** para executar testes de diagnóstico.
 
-    ![operações de uma caixa](./media/r-server-operationalize/diagnostic-1.png)
+    ![diagnostic1](./media/r-server-operationalize/diagnostic-1.png)
 
     b. No menu de Testes de Diagnóstico, selecione **A**. Quando solicitado, insira a senha que você forneceu para o usuário de administrador local.
 
-    ![operações de uma caixa](./media/r-server-operationalize/diagnostic-2.png)
+    ![diagnostic2](./media/r-server-operationalize/diagnostic-2.png)
 
     c. Verifique se a saída mostra que a integridade geral é uma passagem.
 
-    ![operações de uma caixa](./media/r-server-operationalize/diagnostic-3.png)
+    ![diagnostic3](./media/r-server-operationalize/diagnostic-3.png)
 
     d. Nas opções de menu apresentadas, insira **E** para retornar ao menu principal e, em seguida, digite **8** para sair do utilitário de administração.
 

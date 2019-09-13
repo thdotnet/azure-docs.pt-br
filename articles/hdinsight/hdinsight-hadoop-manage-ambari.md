@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: hrasheed
-ms.openlocfilehash: d0641a1c058db59acd5e9a64b10bb57b334f82bd
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 3ca9c12caa7fa9b54cd63c2655166d95477dffa2
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442063"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885297"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Gerenciar clusters HDInsight usando a interface do usuário da Web do Apache Ambari
 
@@ -76,7 +76,7 @@ Os alertas diferentes de **OK** fazem com que a entrada **nº alertas** na parte
 
 Os alertas estão organizados em vários grupos padrão, que podem ser exibidos na página **Alertas** .
 
-![página alertas](./media/hdinsight-hadoop-manage-ambari/alerts.png)
+![página alertas](./media/hdinsight-hadoop-manage-ambari/hdinsight-alerts-page.png)
 
 Você pode gerenciar os grupos usando o menu **Ações** e selecionando **Gerenciar Grupos de Alerta**.
 
@@ -92,11 +92,11 @@ Por fim, selecionar __Gerenciar Definições de Alerta__ do menu __Ações__ per
 
 A guia **Métricas** do painel contém uma série de widgets que facilitam monitorar o status do cluster em um relance. Vários widgets, tais como **Uso de CPU**, fornecem informações adicionais quando são clicados.
 
-![painel com metrics](./media/hdinsight-hadoop-manage-ambari/metrics.png)
+![painel com metrics](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
 
 A guia **Mapa de Dados** exibe as métricas na forma de mapas de dados coloridos, que vão do verde ao vermelho.
 
-![painel com heatmaps](./media/hdinsight-hadoop-manage-ambari/heatmap.png)
+![painel com heatmaps](./media/hdinsight-hadoop-manage-ambari/hdi-heatmap-dashboard.png)
 
 Para obter mais informações sobre os nós no cluster, selecione **Hosts**. Selecione o nó específico em que você está interessado.
 
@@ -142,7 +142,7 @@ O trabalho com usuários, grupos e permissões tem suporte ao usar um cluster HD
 
 A página **Hosts** lista todos os hosts no cluster. Para gerenciar hosts, siga estas etapas.
 
-![página hosts](./media/hdinsight-hadoop-manage-ambari/hosts.png)
+![página hosts](./media/hdinsight-hadoop-manage-ambari/hdinsight-hosts-page.png)
 
 > [!NOTE]  
 > As ações de adicionar, encerrar e reativar um host não devem ser realizadas com clusters HDInsight.

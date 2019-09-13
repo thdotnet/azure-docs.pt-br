@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/20/2019
+ms.date: 03/20/2019
 ms.author: v-mohabe
-ms.openlocfilehash: cb6025b47aec50121a0f96f7b6cba7ad726db291
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: c8f381a3440d742cca880f44b73cbc22bde92ecc
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69907964"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910553"
 ---
 # <a name="protecting-your-machines-and-applications-in-azure-security-center"></a>Protegendo suas máquinas e aplicativos na Central de Segurança do Azure
 A central de segurança do Azure analisa o estado de segurança de seus recursos do Azure, servidores não Azure e máquinas virtuais. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria recomendações que orientam você durante o processo de configuração dos controles necessários. As recomendações aplicam-se aos tipos de recursos do Azure: VMs (máquinas virtuais) e computadores, aplicativos, rede, SQL e a identidade e acesso.
@@ -108,7 +108,6 @@ Há quatro tipos de ícones representados nesta lista:
 O ícone que aparece em cada recomendação ajuda a identificar rapidamente a VM e o computador que precisa de atenção e o tipo de recomendação. Você também pode usar os filtros para pesquisar a lista por **Tipo de recurso** e por **Gravidade**.
 
 Para detalhar as recomendações de segurança para cada VM, clique na VM.
-Veja aqui os detalhes de segurança da VM ou do computador. Na parte inferior, você pode ver a ação recomendada e a gravidade de cada problema.
 ![Serviços de nuvem](./media/security-center-virtual-machine-recommendations/recommendation-list.png)
 
 ### <a name="cloud-services"></a>Serviços de nuvem
@@ -125,7 +124,7 @@ Para ver uma explicação mais detalhada sobre essa recomendação, clique em **
 ![Atualizar versão do SO](./media/security-center-virtual-machine-recommendations/security-center-monitoring-fig8-new4.png)
 
 ### <a name="app-services"></a>Serviços de Aplicativos
-Você precisa habilitar o Serviço de Aplicativo em sua assinatura para exibir as informações de Serviço de Aplicativo. Para obter instruções sobre como habilitar esse recurso, confira [Proteger o Serviço de Aplicativo com a Central de Segurança do Azure](security-center-app-services.md).
+Para exibir as informações do serviço de aplicativo, você deve habilitar o serviço de aplicativo em sua assinatura. Para obter instruções sobre como habilitar esse recurso, consulte [proteger o serviço de aplicativo com a central de segurança do Azure](security-center-app-services.md).
 [!NOTE]
 > O monitoramento do Serviço de Aplicativo está na versão prévia e está disponível apenas no nível Standard da Central de Segurança.
 
@@ -170,7 +169,7 @@ Para instalar o Microsoft Monitoring Agent:
 
    ![Instalar o MMS](./media/security-center-virtual-machine-recommendations/install-mms.png)
 
-Se você quiser definir novos conjuntos de dimensionamento para instalar automaticamente o Microsoft Monitoring Agent:
+Para definir novos conjuntos de dimensionamento para instalar automaticamente o Microsoft Monitoring Agent:
 1. Vá para Azure Policy e clique em **Definições**.
 2. Procure a política **implantar log Analytics agente para conjuntos de dimensionamento de máquinas virtuais do Windows** e clique nele.
 3. Clique em **Atribuir**.
@@ -208,10 +207,10 @@ Se você quiser definir todos os conjuntos de dimensionamento existentes para in
 |Machine|40|Resolver problemas de integridade do agente de monitoramento em suas máquinas|Para obter a proteção completa da Central de Segurança, resolva os problemas do agente de monitoramento em suas máquinas seguindo as instruções no guia de Resolução de Problemas.| 
 |Machine|40|Resolver problemas de integridade da proteção do endpoint em suas máquinas|Para obter a proteção completa da Central de Segurança, resolva os problemas do agente de monitoramento em suas máquinas seguindo as instruções no guia de solução de problemas.|
 |Machine|40|Solucione problemas de dados de varredura ausentes em suas máquinas|Solucione problemas de dados de varredura ausentes em máquinas virtuais e computadores. A falta de dados de varredura em suas máquinas resulta em avaliações de segurança ausentes, como varredura de atualização, varredura de linha de base e varredura de solução de proteção de ponto de extremidade ausente.|
-|Machine|40|As atualizações do sistema devem ser instaladas em seus computadores|Instale a segurança do sistema ausente e atualizações críticas para proteger suas máquinas virtuais Windows e Linux e computadores
+|Machine|40|As atualizações do sistema devem ser instaladas em suas máquinas|Instale a segurança do sistema ausente e atualizações críticas para proteger suas máquinas virtuais Windows e Linux e computadores
 |Machine|15|Adicionar um firewall do aplicativo Web| Implemente uma solução WAF (firewall de aplicativo da web) para proteger seus aplicativos da web. |
 |Machine|40|Atualize a versão do sistema operacional para suas funções de serviço em nuvem|Atualize a versão do sistema operacional (OS) para suas funções de serviço em nuvem para a versão mais recente disponível para sua família de sistemas operacionais.|
-|Machine|35|Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas|Corrigir vulnerabilidades na configuração de segurança em suas máquinas para protegê-las contra ataques.|
+|Machine|35|As vulnerabilidades da configuração de segurança nas máquinas devem ser corrigidas|Corrigir vulnerabilidades na configuração de segurança em suas máquinas para protegê-las contra ataques.|
 |Machine|35|Corrigir vulnerabilidades na configuração de segurança em seus contêineres|Corrigir vulnerabilidades na configuração de segurança em computadores com o Docker instalado para protegê-los contra ataques.|
 |Machine|25|Habilitar Controles de Aplicativo Adaptáveis|Ative o controle de aplicativos para controlar quais aplicativos podem ser executados em suas VMs localizadas no Azure. Isso ajudará a proteger suas VMs contra malware. O Security Center usa aprendizado de máquina para analisar os aplicativos em execução em cada VM e ajuda você a aplicar regras de permissão usando essa inteligência. Esse recurso simplifica o processo de configuração e manutenção de regras de permissão do aplicativo.|
 |Machine|20|Instale a solução de proteção de ponto de extremidade em suas máquinas|Instale uma solução de proteção de ponto de extremidade em suas máquinas virtuais para protegê-las contra ameaças e vulnerabilidades.|

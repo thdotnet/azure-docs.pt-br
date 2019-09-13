@@ -10,13 +10,13 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/14/2018
-ms.openlocfilehash: 3fb958b446c3f1e78f78f40f112d8d55d37b0986
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 09/11/2019
+ms.openlocfilehash: 7600398d213748bdea9da5a483a8c10d486a8048
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141563"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70915538"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-tumbling-window"></a>Criar um gatilho que execute um pipeline em uma janela em cascata
 Este artigo fornece etapas para criar, iniciar e monitorar um gatilho de janela em cascata. Para obter informações gerais sobre gatilhos e os tipos com suporte, consulte [Gatilhos e execução de pipeline](concepts-pipeline-execution-triggers.md).
@@ -25,11 +25,14 @@ Os gatilhos de janela em cascata são um tipo de gatilho acionado em um interval
 
 ## <a name="data-factory-ui"></a>IU do Data Factory
 
-Para criar um gatilho de janela em cascata no portal do Azure, selecione **disparador > janela em cascata > Avançar**e, em seguida, configure as propriedades que definem a janela em cascata.
+1. Para criar um gatilho de janela do em cascata na interface do usuário do Data Factory, selecione a guia **gatilhos** e, em seguida, selecione **novo**. 
+1. Depois que o painel de configuração do gatilho for aberto, selecione **janela em cascata**e defina as propriedades do gatilho da janela em cascata. 
+1. Quando terminar, selecione **Salvar**.
 
 ![Criar um gatilho de janela em cascata no portal do Azure](media/how-to-create-tumbling-window-trigger/create-tumbling-window-trigger.png)
 
 ## <a name="tumbling-window-trigger-type-properties"></a>Propriedades do tipo de gatilho da janela em cascata
+
 Uma janela em cascata tem as seguintes propriedades de tipo de gatilho:
 
 ```
@@ -94,7 +97,7 @@ A seguinte tabela fornece uma visão geral de alto nível dos principais element
 | **type** | O tipo do gatilho. O tipo é o valor fixo "TumblingWindowTrigger". | Cadeia | "TumblingWindowTrigger" | Sim |
 | **runtimeState** | O estado atual do tempo de execução do gatilho.<br/>**Observação**: Este elemento é \<readOnly >. | Cadeia | “Iniciado”, “Interrompido”, “Desabilitado” | Sim |
 | **frequency** | Uma cadeia de caracteres que representa a unidade de frequência (em minutos ou horas) no qual o gatilho ocorre periodicamente. Se os valores de dados **startTime** são mais granulares do que o valor de **frequência**, os dados **startTime** são consideradas quando os limites da janela são computados. Por exemplo, se o valor de **frequência** for de hora em hora e o valor **startTime** for 2017-09-01T10:10:10Z, a primeira janela será (2017-09-01T10:10:10Z, 2017-09-01T11:10:10Z). | Cadeia | "minuto", "hora"  | Sim |
-| **interval** | Um inteiro positivo que indica o intervalo para o valor de **frequência**, que determina a frequência com a qual o gatilho é executado. Por exemplo, se **intervalo** for 3 e **frequência** é "hora", o gatilho é repetido a cada 3 horas. | Inteiro | Um número inteiro positivo. | Sim |
+| **interval** | Um inteiro positivo que indica o intervalo para o valor de **frequência**, que determina a frequência com a qual o gatilho é executado. Por exemplo, se **intervalo** for 3 e **frequência** é "hora", o gatilho é repetido a cada 3 horas. <br/>**Observação**: O intervalo mínimo da janela é de 15 minutos. | Inteiro | Um número inteiro positivo. | Sim |
 | **startTime**| A primeira ocorrência, que pode estar no passado. O primeiro intervalo do gatilho é (**startTime**, **startTime** + **intervalo**). | DateTime | Um valor Datetime. | Sim |
 | **endTime**| A última ocorrência, que pode estar no passado. | DateTime | Um valor Datetime. | Sim |
 | **delay** | A quantidade de tempo para atrasar o início do processamento de dados para a janela. A execução do pipeline é iniciada após o tempo de execução esperado mais a quantidade de **atraso**. O **atraso** define quanto tempo o gatilho espera antes de disparar uma nova execução. O **atraso** não altera a janela **startTime**. Por exemplo, um valor **atraso** igual a 00:10:00 indica um atraso de 10 minutos. | Intervalo de tempo<br/>(hh:mm:ss)  | Um valor temporal em que o padrão é 00:00:00. | Não |

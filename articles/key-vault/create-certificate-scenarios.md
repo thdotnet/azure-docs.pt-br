@@ -3,18 +3,18 @@ title: Monitorar e gerenciar a criação de certificados
 description: Os cenários demonstram uma gama de opções para a criação, monitoramento e interação com o processo de criação de certificado com o Key Vault.
 services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3d86960e726ae18fba8d171ab9f85d7c991b4e40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9f88af7027f6c907b5b55eb9aac545d98e2fbb7a
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64729227"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70880839"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Monitorar e gerenciar a criação de certificados
 Aplica-se a: Azure
@@ -37,13 +37,13 @@ Os cenários / operações descritas neste artigo são:
 
 ## <a name="request-a-kv-certificate-with-a-supported-issuer"></a>Solicitar um certificado KV com um emissor com suporte 
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|POSTAR|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
 Os exemplos a seguir exigem que um objeto chamado "mydigicert" já esteja disponível em seu Key Vault com o provedor de emissor como DigiCert. O emissor do certificado é uma entidade representada no Azure Key Vault (KV) como um recurso CertificateIssuer. Ele é usado para fornecer informações sobre a origem de um certificado KV; nome do emissor, provedor, credenciais e outros detalhes administrativos.
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
 ```json
 {
@@ -59,7 +59,7 @@ Os exemplos a seguir exigem que um objeto chamado "mydigicert" já esteja dispon
 }
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -80,11 +80,11 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ## <a name="get-pending-request---request-status-is-inprogress"></a>Obter solicitação pendente - status da solicitação é “em andamento”
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|OBTER|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
 OU
@@ -94,7 +94,7 @@ GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-vers
 > [!NOTE]
 > Se *request_id* for especificado na consulta, ele atua como um filtro. Se o *request_id* na consulta e no objeto pendente forem diferentes, um código de status http de 404 é retornado.
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -114,11 +114,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ## <a name="get-pending-request---request-status-is-complete"></a>Obter solicitação pendente - status da solicitação é “concluída”
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|OBTER|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
@@ -126,7 +126,7 @@ OU
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -146,11 +146,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ## <a name="get-pending-request---pending-request-status-is-canceled-or-failed"></a>Obter solicitação pendente - o status da solicitação pendente é “cancelada” ou está “ocorreu um erro”
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|OBTER|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
@@ -158,7 +158,7 @@ OU
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -186,18 +186,18 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ## <a name="get-pending-request---pending-request-status-is-deleted-or-overwritten"></a>Obter solicitação pendente - o status da solicitação pendente é “excluída” ou “substituída”
 Um objeto pendente pode ser excluído ou substituído por uma operação de criar/importar quando seu status não é "em andamento."
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|OBTER|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
 OU
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 404, ReasonPhrase: 'Not Found'
@@ -224,11 +224,11 @@ Para corrigir um conflito:
 > [!NOTE]
 > A exclusão de um objeto pendente pode ou não cancelar a solicitação do certificado x509 com o provedor.
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|POSTAR|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
 ```json
 {
@@ -243,7 +243,7 @@ Para corrigir um conflito:
 }
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 409, ReasonPhrase: 'Conflict'
@@ -261,11 +261,11 @@ Mesclagem não é permitida quando um objeto pendente é criado com um emissor, 
 
 Se a solicitação para criar o certificado x509 falhar ou for cancelada por algum motivo, e se um certificado x509 pode ser recuperado por fora da banda, uma operação de mesclagem pode ser feita para concluir o certificado KV.
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
+|POSTAR|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
 ```json
 {
@@ -274,7 +274,7 @@ Se a solicitação para criar o certificado x509 falhar ou for cancelada por alg
 
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```json
 StatusCode: 403, ReasonPhrase: 'Forbidden'
@@ -290,11 +290,11 @@ StatusCode: 403, ReasonPhrase: 'Forbidden'
 ## <a name="request-a-cancellation-while-the-pending-request-status-is-inprogress"></a>Solicitar um cancelamento enquanto o status da solicitação pendente é "em andamento"
 Um cancelamento só pode ser solicitado. Uma solicitação pode ou não ser cancelada. Se uma solicitação não estiver "em andamento", será retornado um status http de 400 (Solicitação incorreta).
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
 |PATCH|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
 OU
@@ -308,7 +308,7 @@ PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-ve
 
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -330,18 +330,18 @@ StatusCode: 200, ReasonPhrase: 'OK'
 > [!NOTE]
 > A exclusão do objeto pendente pode ou não cancelar a solicitação do certificado x509 com o provedor.
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
 |DELETE|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
 OU
 
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -360,11 +360,11 @@ StatusCode: 200, ReasonPhrase: 'OK'
 ## <a name="create-a-kv-certificate-manually"></a>Criar um certificado KV manualmente
 Você pode criar um certificado emitido com uma autoridade de certificação de sua escolha por meio de um processo de criação manual. Defina o nome do emissor como "Desconhecido" ou não especifique o campo de emissor.
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
+|POSTAR|`https://mykeyvault.vault.azure.net/certificates/mycert1/create?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
 ```json
 {
@@ -380,7 +380,7 @@ Você pode criar um certificado emitido com uma autoridade de certificação de 
 
 ```
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -400,11 +400,11 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ## <a name="merge-when-a-pending-request-is-created---manual-certificate-creation"></a>Mesclar quando uma solicitação pendente é criada - criação manual de certificado
 
-|Método|URI da solicitação|
+|Método|URI de Solicitação|
 |------------|-----------------|
-|POST|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
+|POSTAR|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending/merge?api-version={api-version}`|
 
-### <a name="request"></a>Solicitação
+### <a name="request"></a>Solicitar
 
 ```json
 {
@@ -413,11 +413,11 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ```
 
-|Nome do elemento|Obrigatório|Type|Version|DESCRIÇÃO|
+|Nome do elemento|Necessário|Tipo|Version|Descrição|
 |------------------|--------------|----------|-------------|-----------------|
-|x5c|Sim|matriz|\<introdução à versão >|Cadeia confiável x509 como matriz de cadeia de caracteres de base 64.|
+|x5c|Sim|array|\<introdução à versão >|Cadeia confiável x509 como matriz de cadeia de caracteres de base 64.|
 
-### <a name="response"></a>Response
+### <a name="response"></a>Resposta
 
 ```
 StatusCode: 201, ReasonPhrase: 'Created'
@@ -475,5 +475,5 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1?api-version
 
 ```
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 - [Sobre chaves, segredos e certificados](about-keys-secrets-and-certificates.md)

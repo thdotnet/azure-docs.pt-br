@@ -1,6 +1,6 @@
 ---
-title: Conceitos ‑ Azure e terminologia de serviços de mídia do Azure | Microsoft Docs
-description: Este tópico fornece uma visão geral dos conceitos e terminologia de serviços de mídia do Azure e fornece links para obter mais detalhes.
+title: Conceitos e terminologia dos serviços de mídia do Azure – Azure | Microsoft Docs
+description: Este tópico fornece uma breve visão geral da terminologia e dos conceitos dos serviços de mídia do Azure e fornece links para obter mais detalhes.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,19 +9,19 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/13/2019
+ms.date: 09/10/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 1e76569c7f5157dce681d15ec8d499b90e080102
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 47c7e35f71fd33cc53d498867ef015364252d5ea
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762300"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910314"
 ---
-# <a name="media-services-concepts"></a>Conceitos de serviços de mídia
+# <a name="media-services-concepts"></a>Conceitos dos serviços de mídia
 
-Este tópico fornece uma visão geral dos conceitos e terminologia de serviços de mídia do Azure. O artigo também fornece links para artigos com a explicação detalhada sobre os serviços de mídia v3 conceitos e funcionalidade. 
+Este tópico fornece uma breve visão geral da terminologia e dos conceitos dos serviços de mídia do Azure. O artigo também fornece links para artigos com uma explicação detalhada dos conceitos e da funcionalidade dos serviços de mídia v3. 
 
 Os conceitos fundamentais descritos nestes tópicos devem ser examinados antes do início do desenvolvimento.
 
@@ -32,63 +32,63 @@ Os conceitos fundamentais descritos nestes tópicos devem ser examinados antes d
 
 Esta seção mostra como alguns termos comuns do setor são mapeados para a API dos serviços de mídia v3.
 
-### <a name="live-event"></a>Evento ao vivo
+### <a name="live-event"></a>Evento ao Vivo
 
-Um **evento ao vivo** representa um pipeline para ingestão, transcodificação (opcionalmente) e transmissões ao vivo de metadados de vídeo, áudio e em tempo real de empacotamento.
+Um **evento ao vivo** representa um pipeline para ingestão, transcodificação (opcionalmente) e empacotamento de fluxos ao vivo de vídeo, áudio e metadados em tempo real.
 
-Migrando de APIs do serviços de mídia v2, o **evento ao vivo** substitui a **canal** entidade no v2. Para obter mais informações, consulte [Migrando do v2 para v3](migrate-from-v2-to-v3.md).
+Para clientes que migram de APIs do Media Services v2, o **evento ao vivo** substitui a entidade de **canal** na v2. Para obter mais informações, consulte [migrando de v2 para v3](migrate-from-v2-to-v3.md).
 
-### <a name="streaming-endpoint-packaging-and-origin"></a>Ponto de extremidade Streaming (empacotamento e a origem)
+### <a name="streaming-endpoint-packaging-and-origin"></a>Ponto de extremidade de streaming (empacotamento e origem)
 
-Um **ponto de extremidade de Streaming** representa um dinâmico (just-in-time) empacotamento e a origem serviço que pode entregar seu conteúdo ao vivo e sob demanda diretamente a um aplicativo de player de cliente, usando um dos protocolos de mídia streaming (HLS comuns ou DASH). Além disso, o **ponto de extremidade de Streaming** fornece a criptografia dinâmica (just-in-time) para DRMs de líderes do setor.
+Um **ponto de extremidade de streaming** representa um serviço de empacotamento e origem (just-in-time) dinâmico que pode entregar seu conteúdo ao vivo e sob demanda diretamente a um aplicativo de player de cliente, usando um dos protocolos de mídia de streaming comuns (HLS ou Dash). Além disso, o **ponto de extremidade de streaming** fornece criptografia dinâmica (just-in-time) para a DRMs líder do setor.
 
-Na mídia de streaming do setor, esse serviço é conhecido como um **Packager** ou **origem**.  Outros termos comuns do setor para essa funcionalidade incluem JITP (Just-no-tempo-packager) ou JITE (Just-no-tempo-criptografia). 
+No setor de streaming de mídia, esse serviço é comumente conhecido como um **empacotador** ou **origem**.  Outros termos comuns do setor para esse recurso incluem JITP (just-in-time-Packager) ou JITE (codificação just-in-time). 
  
 ## <a name="cloud-upload-and-storage"></a>Upload e armazenamento na nuvem
 
-Para começar a gerenciar, criptografar, codificação, analisar e streaming de conteúdo de mídia no Azure, você precisa criar uma conta de serviços de mídia e carregar seus arquivos digitais em **ativos**.
+Para começar a gerenciar, criptografar, codificar, analisar e transmitir conteúdo de mídia no Azure, você precisa criar uma conta de serviços de mídia e carregar seus arquivos digitais em **ativos**.
 
 - [Upload e armazenamento na nuvem](storage-account-concept.md)
 - [Conceito de ativos](assets-concept.md)
 
-## <a name="encoding"></a>Codificação
+## <a name="encoding"></a>Codificando
 
-Depois de carregar arquivos de mídia digital de alta qualidade em ativos, você poderá codificá-los em formatos que podem ser executados em uma ampla variedade de navegadores e dispositivos. 
+Depois de carregar seus arquivos de mídia digital de alta qualidade em ativos, você pode codificá-los em formatos que podem ser reproduzidos em uma ampla variedade de navegadores e dispositivos. 
 
-Para codificar com os serviços de mídia v3, você precisará criar **transforma** e **trabalhos**.
+Para codificar com os serviços de mídia v3, você precisa criar **transformações** e **trabalhos**.
 
 ![Transformações](./media/encoding/transforms-jobs.png)
 
 - [Transformações e Trabalhos](transforms-jobs-concept.md)
 - [Codificação com os serviços de mídia](encoding-concept.md)
 
-## <a name="media-analytics"></a>Análise de mídia
+## <a name="media-analytics"></a>Análise de Mídia
 
-Para analisar seus arquivos de áudio e vídeos, você também precisará criar **transforma** e **trabalhos**.
+Para analisar os arquivos de vídeo e áudio, você também precisa criar **transformações** e **trabalhos**.
 
-- [Analisando os arquivos de áudio e vídeos](analyzing-video-audio-files-concept.md)
+- [Analisando arquivos de áudio e vídeo](analyzing-video-audio-files-concept.md)
 
 ## <a name="packaging-delivery-protection"></a>Empacotamento, entrega, proteção
 
-Depois que seu conteúdo é codificado, você pode aproveitar **empacotamento dinâmico**. Nos serviços de mídia, uma **ponto de extremidade de Streaming**  /origem é o serviço de empacotamento dinâmico usado para distribuir o conteúdo de mídia para jogadores do cliente. Para disponibilizar vídeos no ativo de saída para os clientes de reprodução, você precisa criar uma **localizador de Streaming** e, em seguida, criar URLs de streaming. 
+Depois que o conteúdo é codificado, você pode tirar proveito do **empacotamento dinâmico**. Nos serviços de mídia, um **ponto de extremidade de streaming**/Origin é o serviço de empacotamento dinâmico usado para fornecer conteúdo de mídia aos players cliente. Para disponibilizar vídeos no ativo de saída para os clientes para reprodução, você precisa criar um **localizador de streaming** e, em seguida, criar URLs de streaming. 
 
-Ao criar o **localizador de Streaming**, além do nome do ativo, você precisará especificar **Streaming política**. **Políticas de streaming** permitem que você definir os protocolos de streaming e opções de criptografia (se houver) para seus **localizadores de Streaming**.
+Ao criar o **localizador de streaming**, além do nome do ativo, você precisa especificar a **política de streaming**. **As políticas de streaming** permitem definir protocolos de streaming e opções de criptografia (se houver) para seus **localizadores de streaming**.
 
-Empacotamento dinâmico é usado se você transmitir seu conteúdo ao vivo ou sob demanda. O diagrama a seguir mostra o streaming sob demanda com o fluxo de trabalho de empacotamento dinâmico.
+O empacotamento dinâmico é usado se você transmite seu conteúdo ao vivo ou sob demanda. O diagrama a seguir mostra o streaming sob demanda com fluxo de trabalho de empacotamento dinâmico.
 
-![Empacotamento dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.png)
+![Empacotamento dinâmico](./media/dynamic-packaging-overview/media-services-dynamic-packaging.svg)
 
-Com os serviços de mídia, você pode entregar seu conteúdo ao vivo e sob demanda criptografado dinamicamente com criptografia AES (AES-128) ou / e qualquer um dos três sistemas DRM (gerenciamento) principais de direitos digitais: Microsoft PlayReady, Google Widevine e Apple FairPlay. Os serviços de mídia também fornecem um serviço de distribuição de chaves AES e licenças DRM (PlayReady, Widevine e FairPlay) para os clientes autorizados.
+Com os serviços de mídia, você pode entregar seu conteúdo ao vivo e sob demanda criptografado dinamicamente com criptografia AES (AES-128) ou/e qualquer um dos três principais sistemas de DRM (gerenciamento de direitos digitais): Microsoft PlayReady, Google Widevine e Apple FairPlay. Os serviços de mídia também fornecem um serviço de distribuição de chaves AES e licenças DRM (PlayReady, Widevine e FairPlay) para os clientes autorizados.
 
-Se especificar opções de criptografia em seu fluxo, crie o **política de chave de conteúdo** e associá-la com seus **localizador de Streaming**. O **política de chave de conteúdo** permite que você configure como a chave de conteúdo é entregue para os clientes finais.
+Se especificar as opções de criptografia em seu fluxo, crie a **política de chave de conteúdo** e associe-a ao seu **localizador de streaming**. A **política de chave de conteúdo** permite que você configure como a chave de conteúdo é entregue aos clientes finais.
 
 A seguinte imagem ilustra o fluxo de trabalho de proteção de conteúdo dos Serviços de Mídia: 
 
 ![Proteger conteúdo](./media/content-protection/content-protection.svg)
 
-&#42;criptografia dinâmica dá suporte a chave AES-128"Limpar", CBCS e CENC. 
+&#42;a criptografia dinâmica dá suporte ao AES-128 "Clear Key", CBCS e CENC. 
 
-Você pode usar os serviços de mídia **manifestos dinâmico** transmitir apenas uma representação específica ou subclipes do vídeo. No exemplo a seguir, o codificador foi usado para codificar um ativo mezzanine em sete representações de vídeo ISO MP4s (de 180p para 1080p). O recurso codificado pode ser empacotado dinamicamente em qualquer um dos seguintes protocolos de streaming: HLS, MPEG DASH e Smooth.  Na parte superior do diagrama, é mostrado o manifesto HLS para o ativo sem filtros (ele contém todas as sete representações).  Na parte inferior esquerda, é mostrado o manifesto HLS ao qual foi aplicado um filtro chamado "ott". O filtro "ott" especifica a remoção de todas as taxas de bits abaixo de 1 Mbps, o que resultou na remoção dos dois níveis de qualidade inferiores na resposta. Na parte inferior direita, é mostrado o manifesto HLS, ao qual foi aplicado um filtro chamado "mobile". O filtro "mobile" especifica a remoção de representações em que a resolução é maior do que 720p, resultando na remoção de duas representações de 1080p.
+Você pode usar **manifestos dinâmicos** dos serviços de mídia para transmitir apenas uma rendição ou subclipes específicos do seu vídeo. No exemplo a seguir, o codificador foi usado para codificar um ativo mezzanine em sete representações de vídeo ISO MP4s (de 180p para 1080p). O recurso codificado pode ser empacotado dinamicamente em qualquer um dos seguintes protocolos de streaming: HLS, MPEG DASH e Smooth.  Na parte superior do diagrama, é mostrado o manifesto HLS para o ativo sem filtros (ele contém todas as sete representações).  Na parte inferior esquerda, é mostrado o manifesto HLS ao qual foi aplicado um filtro chamado "ott". O filtro "ott" especifica a remoção de todas as taxas de bits abaixo de 1 Mbps, o que resultou na remoção dos dois níveis de qualidade inferiores na resposta. Na parte inferior direita, é mostrado o manifesto HLS, ao qual foi aplicado um filtro chamado "mobile". O filtro "mobile" especifica a remoção de representações em que a resolução é maior do que 720p, resultando na remoção de duas representações de 1080p.
 
 ![Filtragem de representação](./media/filters-dynamic-manifest-overview/media-services-rendition-filter.png)
 
@@ -103,7 +103,7 @@ Você pode usar os serviços de mídia **manifestos dinâmico** transmitir apena
 
 ## <a name="live-streaming"></a>Transmissão ao vivo
 
-O Azure Media Services permite entregar eventos ao vivo para seus clientes na nuvem do Azure. **Eventos ao Vivo** são responsáveis pela ingestão e pelo processamento dos feeds de vídeo ao vivo. Quando você cria um **evento ao vivo**, um ponto de extremidade de entrada é criado que você pode usar para enviar um sinal ao vivo de um codificador remoto. Uma vez que o fluxo está fluindo para o **evento ao vivo**, você pode começar o evento de transmissão criando um **ativo**, **Live saída**, e **localizador de Streaming** . **Live saída** arquivará a transmitir para o **ativo** e torná-lo disponível para visualizadores por meio de **ponto de extremidade de Streaming**. Um **evento ao vivo** pode ser um dos dois tipos: **passagem** e **codificação ativa**.
+O Azure Media Services permite entregar eventos ao vivo para seus clientes na nuvem do Azure. **Eventos ao Vivo** são responsáveis pela ingestão e pelo processamento dos feeds de vídeo ao vivo. Quando você cria um **evento ao vivo**, é criado um ponto de extremidade de entrada que pode ser usado para enviar um sinal ao vivo de um codificador remoto. Depois que o fluxo fluir para o **evento ao vivo**, você poderá iniciar o evento de streaming criando um **ativo**, uma **saída ao vivo**e um **localizador de streaming**. A **saída ao vivo** arquivará o fluxo no **ativo** e o tornará disponível para os visualizadores por meio do ponto de **extremidade de streaming**. Um **evento ao vivo** pode ser um dos dois tipos: **codificação ativa**e de **passagem** .
 
 A imagem a seguir ilustra o fluxo de trabalho do tipo de passagem:
 
@@ -112,25 +112,25 @@ A imagem a seguir ilustra o fluxo de trabalho do tipo de passagem:
 - [Visão geral da transmissão ao vivo](live-streaming-overview.md)
 - [Eventos ao Vivo e Saídas Dinâmicas](live-events-outputs-concept.md)
 
-## <a name="monitoring"></a>Monitoramento
+## <a name="monitoring"></a>Monitorando
 
-### <a name="event-grid"></a>Grade de Eventos
+### <a name="event-grid"></a>Grade do Evento
 
-Para ver o andamento do trabalho, você deve usar **grade de eventos**. Os serviços de mídia também emite os tipos de evento ao vivo. Com a Grade de Eventos, seus aplicativos podem escutar e reagir a eventos de praticamente todos os serviços do Azure, bem como de origens personalizadas. 
+Para ver o progresso do trabalho, você deve usar a **grade de eventos**. Os serviços de mídia também emite os tipos de evento ao vivo. Com a Grade de Eventos, seus aplicativos podem escutar e reagir a eventos de praticamente todos os serviços do Azure, bem como de origens personalizadas. 
 
-- [Manipulação de eventos da grade de eventos](reacting-to-media-services-events.md)
-- [Schemas](media-services-event-schemas.md)
+- [Manipulando eventos de grade de eventos](reacting-to-media-services-events.md)
+- [Esquemas](media-services-event-schemas.md)
 
 ### <a name="azure-monitor"></a>Azure Monitor
 
-Monitorar métricas e logs de diagnóstico que ajudam você a entendem como os seus aplicativos são executados com o Azure Monitor.
+Monitore métricas e logs de diagnóstico que ajudam você a entender como seus aplicativos estão sendo executados com o Azure Monitor.
 
-- [As métricas e logs de diagnóstico](media-services-metrics-diagnostic-logs.md)
+- [Métricas e logs de diagnóstico](media-services-metrics-diagnostic-logs.md)
 - [Esquemas de logs de diagnóstico](media-services-diagnostic-logs-schema.md)
 
 ## <a name="player-clients"></a>Clientes do Player
 
-Você pode usar o Player de mídia do Azure para reproduzir conteúdo de mídia transmitido pelos serviços de mídia em uma grande variedade de navegadores e dispositivos. O Player de Mídia do Azure usa padrões do setor, como HTML5, MSE (Media Source Extensions) e EME (Encrypted Media Extensions) para fornecer uma experiência avançada de streaming adaptável. 
+Você pode usar Player de Mídia do Azure para reproduzir conteúdo de mídia transmitido pelos serviços de mídia em uma ampla variedade de navegadores e dispositivos. O Player de Mídia do Azure usa padrões do setor, como HTML5, MSE (Media Source Extensions) e EME (Encrypted Media Extensions) para fornecer uma experiência avançada de streaming adaptável. 
 
 - [Visão geral do Player de Mídia do Azure](use-azure-media-player.md)
 
