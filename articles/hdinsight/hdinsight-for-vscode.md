@@ -292,7 +292,7 @@ Envie um arquivo e observe que a pasta. vscode é adicionada automaticamente à 
 
     | name | description | type | 
     | :- | :- | :- | 
-    | Arquivo | Arquivo que contém o aplicativo a ser executado | caminho (obrigatório) |
+    | file | Arquivo que contém o aplicativo a ser executado | caminho (obrigatório) |
     | proxyUser | Usuário a ser representado ao executar o trabalho | Cadeia |
     | className | Classe principal Java/Spark do aplicativo | Cadeia |
     | args | Argumentos de linha de comando para o aplicativo | lista de cadeias de caracteres |

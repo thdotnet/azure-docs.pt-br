@@ -35,8 +35,8 @@ O nome da assinatura de evento deve ter 3 a 64 caracteres de comprimento e só p
 
 | Propriedade | Tipo | Descrição |
 | -------- | ---- | ----------- |
-| destination | objeto | O objeto que define o ponto de extremidade. |
-| filter | objeto | Um campo opcional para filtrar os tipos de eventos. |
+| destination | object | O objeto que define o ponto de extremidade. |
+| filter | object | Um campo opcional para filtrar os tipos de eventos. |
 
 ### <a name="destination-object"></a>objeto de destino
 
