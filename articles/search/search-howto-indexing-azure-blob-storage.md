@@ -3,19 +3,19 @@ title: Indexar o conteúdo do Armazenamento de Blobs do Azure para pesquisa de t
 description: Saiba como indexar o Armazenamento de Blobs do Azure e extrair texto de documentos com o Azure Search.
 ms.date: 05/02/2019
 author: mgottein
-manager: cgronlun
+manager: nitinme
 ms.author: magottei
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 832be20f78d1e88a3bb6d1c25c7aaf5d7354e857
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 03f828be603720871672b9b5d90eb87dd283c002
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66753969"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842534"
 ---
 # <a name="indexing-documents-in-azure-blob-storage-with-azure-search"></a>Indexação de documentos no Armazenamento de Blobs do Azure com o Azure Search
 Este artigo mostra como usar o Azure Search para indexar documentos (como PDFs, documentos do Microsoft Office e vários outros formatos comuns) armazenados no armazenamento de blobs do Azure. Primeiro, ele explica as noções básicas de configuração de um indexador de blob. Em seguida, ele explora mais profundamente os comportamentos e cenários que você pode encontrar.
@@ -68,7 +68,7 @@ Para obter mais informações sobre Criar a API da Fonte de Dados, consulte [Cri
 
 Você pode fornecer as credenciais para o contêiner de blobs de uma das seguintes maneiras:
 
-- **Cadeia de conexão da conta de armazenamento com acesso completo**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` Você pode obter a cadeia de conexão do portal do Azure, navegando até a folha da conta de armazenamento > Configurações > chaves (para contas de armazenamento clássicas) ou configurações > chaves de acesso (para contas de armazenamento do Azure Resource Manager).
+- **Cadeia de conexão da conta de armazenamento com acesso completo**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>`Você pode obter a cadeia de conexão do portal do Azure navegando até a folha da conta de armazenamento > Configurações > chaves (para contas de armazenamento clássicas) ou configurações > chaves de acesso (para contas de armazenamento Azure Resource Manager).
 - Cadeia de conexão da SAS **(assinatura de acesso compartilhado) de conta de armazenamento**: `BlobEndpoint=https://<your account>.blob.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=b&sp=rl` As SAS devem ter as permissões de lista e leitura nos contêineres e objetos (blobs neste caso).
 -  **Assinatura de Acesso Compartilhado do contêiner**: `ContainerSharedAccessUri=https://<your storage account>.blob.core.windows.net/<container name>?sv=2016-05-31&sr=c&sig=<the signature>&se=<the validity end time>&sp=rl` As SAS devem ter a lista e permissões de leitura no contêiner.
 
@@ -116,14 +116,14 @@ Esse indexador será executado a cada duas horas (o intervalo de agendamento é 
 
 Para saber mais sobre a API Criar Indexador, veja [Criar indexador](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
-Para obter mais informações sobre como definir agendas do indexador, consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
+Para obter mais informações sobre como definir agendas do indexador, consulte [como agendar indexadores para Azure Search](search-howto-schedule-indexers.md).
 
 ## <a name="how-azure-search-indexes-blobs"></a>Como o Azure Search indexa os blobs
 
 Dependendo da [configuração do indexador](#PartsOfBlobToIndex), o indexador de blobs pode indexar somente metadados de armazenamento (algo útil quando você está preocupado apenas com os metadados e não precisa indexar o conteúdo dos blobs), metadados de armazenamento e conteúdo ou conteúdo textual e de metadados. Por padrão, o indexador extrai os metadados e o conteúdo.
 
 > [!NOTE]
-> Por padrão, os blobs com conteúdo estruturado, como JSON, CSV e indexados como uma única parte de texto. Se você quiser indexar blobs JSON e CSV de maneira estruturada, consulte [indexando blobs JSON](search-howto-index-json-blobs.md) e [indexando blobs CSV](search-howto-index-csv-blobs.md) para obter mais informações.
+> Por padrão, os blobs com conteúdo estruturado, como JSON, CSV e indexados como uma única parte de texto. Se você quiser indexar BLOBs JSON e CSV de forma estruturada, consulte [indexando BLOBs JSON](search-howto-index-json-blobs.md) e [indexando BLOBs CSV](search-howto-index-csv-blobs.md) para obter mais informações.
 >
 > Um documento composto ou incorporado (como um arquivo ZIP ou um documento do Word com email do Outlook incorporado contendo anexos) também é indexado como um único documento.
 
@@ -141,7 +141,7 @@ Dependendo da [configuração do indexador](#PartsOfBlobToIndex), o indexador de
   * **metadata\_storage\_last\_modified** (Edm.DateTimeOffset): último carimbo de data/hora modificado para o blob. O Azure Search usa esse carimbo de data/hora para identificar os blobs alterados, a fim de evitar a reindexação total após a indexação inicial.
   * **metadata\_storage\_size** (Edm.Int64): tamanho do blob em bytes.
   * **metadata\_storage\_content\_md5** (Edm.String): hash MD5 do conteúdo do blob, se estiver disponível.
-  * **metadados\_armazenamento\_sas\_token** (EDM. String): um token SAS temporário que pode ser usado por [habilidades personalizadas](cognitive-search-custom-skill-interface.md) para obter acesso ao blob. Esse token não deve ser armazenado para uso posterior, pois ela pode expirar.
+  * **token\_ SAS\_ de armazenamento\_ de metadados** (EDM. String)-um token SAS temporário que pode ser usado por [habilidades personalizadas](cognitive-search-custom-skill-interface.md) para obter acesso ao blob. Esse token não deve ser armazenado para uso posterior, pois ele pode expirar.
 
 * As propriedades de metadados específicas a cada formato de documento são extraídas nos campos listados [aqui](#ContentSpecificMetadata).
 
@@ -232,7 +232,7 @@ Você pode controlar quais partes dos blobs são indexadas usando o parâmetro d
 
 * `storageMetadata` – especifica que somente [as propriedades de blob padrão e os metadados especificados pelo usuário](../storage/blobs/storage-properties-metadata.md) são indexados.
 * `allMetadata` – especifica que os metadados de armazenamento e os [metadados específicos do tipo de conteúdo](#ContentSpecificMetadata) extraídos do conteúdo do blob são indexados.
-* `contentAndMetadata` – especifica que todos os metadados e conteúdo textual extraídos do blob são indexados. Esse é o valor padrão.
+* `contentAndMetadata` – especifica que todos os metadados e conteúdo textual extraídos do blob são indexados. Este é o valor padrão.
 
 Por exemplo, para indexar apenas os metadados de armazenamento, use:
 
@@ -337,7 +337,7 @@ A indexação de blobs pode ser um processo demorado. Nos casos em que você tem
 
 Talvez você queira "montar" documentos de várias fontes em seu índice. Por exemplo, convém mesclar texto de blobs com outros metadados armazenados no Cosmos DB. Você pode até usar a API de indexação por push junto a vários indexadores para criar documentos de pesquisa de várias partes. 
 
-Para que isso funcione, todos os indexadores e outros componentes precisam concordar com a chave de documento. Para obter um passo a passo detalhado, confira este artigo externo: [Combinar documentos com outros dados no Azure Search](https://blog.lytzen.name/2017/01/combine-documents-with-other-data-in.html).
+Para que isso funcione, todos os indexadores e outros componentes precisam concordar com a chave de documento. Para obter detalhes adicionais sobre este tópico, consulte [indexar várias fontes de dados do Azure](https://docs.microsoft.com/azure/search/tutorial-multiple-data-sources). Para obter um passo a passo detalhado, confira este artigo externo: [Combine documentos com outros dados no Azure Search](https://blog.lytzen.name/2017/01/combine-documents-with-other-data-in.html).
 
 <a name="IndexingPlainText"></a>
 ## <a name="indexing-plain-text"></a>Indexação de texto sem formatação 
@@ -367,21 +367,31 @@ A tabela a seguir resume o processo executado para cada formato de documento, e 
 
 | Formato de documento/tipo de conteúdo | Propriedades de metadados específicas do tipo de conteúdo | Detalhes do processamento |
 | --- | --- | --- |
-| HTML (`text/html`) |`metadata_content_encoding`<br/>`metadata_content_type`<br/>`metadata_language`<br/>`metadata_description`<br/>`metadata_keywords`<br/>`metadata_title` |Remoção da marcação HTML e extração do texto |
-| PDF (`application/pdf`) |`metadata_content_type`<br/>`metadata_language`<br/>`metadata_author`<br/>`metadata_title` |Extração do texto, incluindo documentos incorporados (excluindo imagens) |
+| HTML (texto/HTML) |`metadata_content_encoding`<br/>`metadata_content_type`<br/>`metadata_language`<br/>`metadata_description`<br/>`metadata_keywords`<br/>`metadata_title` |Remoção da marcação HTML e extração do texto |
+| PDF (aplicativo/PDF) |`metadata_content_type`<br/>`metadata_language`<br/>`metadata_author`<br/>`metadata_title` |Extração do texto, incluindo documentos incorporados (excluindo imagens) |
 | DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` |Extração de texto, incluindo documentos incorporados |
 | DOC (application/msword) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` |Extração de texto, incluindo documentos incorporados |
+| DOCM (aplicativo/vnd. MS-Word. Document. macroenabled. 12) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` |Extração de texto, incluindo documentos incorporados |
+| XML do WORD (application/vnd. ms-word2006ml) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` |Remoção da marcação XML e extração do texto |
+| WORD 2003 XML (application/vnd. ms-WordML) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date` |Remoção da marcação XML e extração do texto |
 | XLSX (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` |Extração de texto, incluindo documentos incorporados |
 | XLS (application/vnd.ms-excel) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` |Extração de texto, incluindo documentos incorporados |
+| XLSM (application/vnd. MS-Excel. Sheet. macroenabled. 12) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` |Extração de texto, incluindo documentos incorporados |
 | PPTX (application/vnd.openxmlformats-officedocument.presentationml.presentation) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` |Extração de texto, incluindo documentos incorporados |
 | PPT (application/vnd.ms-powerpoint) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` |Extração de texto, incluindo documentos incorporados |
-| MSG (application/vnd.ms-outlook) |`metadata_content_type`<br/>`metadata_message_from`<br/>`metadata_message_to`<br/>`metadata_message_cc`<br/>`metadata_message_bcc`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_subject` |Extração do texto, incluindo anexos |
+| PPTM (application/vnd. ms-PowerPoint. Presentation. macroenabled. 12) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` |Extração de texto, incluindo documentos incorporados |
+| MSG (application/vnd.ms-outlook) |`metadata_content_type`<br/>`metadata_message_from`<br/>`metadata_message_from_email`<br/>`metadata_message_to`<br/>`metadata_message_to_email`<br/>`metadata_message_cc`<br/>`metadata_message_cc_email`<br/>`metadata_message_bcc`<br/>`metadata_message_bcc_email`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_subject` |Extração do texto, incluindo anexos |
+| ODT (application/vnd. Oasis. OpenDocument. Text) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` |Extração de texto, incluindo documentos incorporados |
+| ODS (application/vnd. Oasis. OpenDocument. Spreadsheet) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` |Extração de texto, incluindo documentos incorporados |
+| ODP (application/vnd. Oasis. OpenDocument. Presentation) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`title` |Extração de texto, incluindo documentos incorporados |
 | ZIP (application/zip) |`metadata_content_type` |Extração do texto de todos os documentos no arquivo |
-| XML (application/xml) |`metadata_content_type`</br>`metadata_content_encoding`</br> |Remoção da marcação XML e extração do texto |
-| JSON (application/json) |`metadata_content_type`</br>`metadata_content_encoding` |Extrair texto<br/>OBSERVAÇÃO:  se precisar extrair vários campos de documento de um blob JSON, confira [Como indexar blobs JSON](search-howto-index-json-blobs.md) para obter detalhes |
+| GZ (aplicativo/gzip) |`metadata_content_type` |Extração do texto de todos os documentos no arquivo |
+| EPUB (Application/ePub + zip) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_title`<br/>`metadata_description`<br/>`metadata_language`<br/>`metadata_keywords`<br/>`metadata_identifier`<br/>`metadata_publisher` |Extração do texto de todos os documentos no arquivo |
+| XML (application/xml) |`metadata_content_type`<br/>`metadata_content_encoding`<br/> |Remoção da marcação XML e extração do texto |
+| JSON (application/json) |`metadata_content_type`<br/>`metadata_content_encoding` |Extrair texto<br/>OBSERVAÇÃO:  se precisar extrair vários campos de documento de um blob JSON, confira [Como indexar blobs JSON](search-howto-index-json-blobs.md) para obter detalhes |
 | EML (message/rfc822) |`metadata_content_type`<br/>`metadata_message_from`<br/>`metadata_message_to`<br/>`metadata_message_cc`<br/>`metadata_creation_date`<br/>`metadata_subject` |Extração do texto, incluindo anexos |
-| RTF (aplicativo/rtf) |`metadata_content_type`</br>`metadata_author`</br>`metadata_character_count`</br>`metadata_creation_date`</br>`metadata_page_count`</br>`metadata_word_count`</br> | Extrair texto|
-| Texto sem formatação (text/plain) |`metadata_content_type`</br>`metadata_content_encoding`</br> | Extrair texto|
+| RTF (aplicativo/rtf) |`metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_page_count`<br/>`metadata_word_count`<br/> | Extrair texto|
+| Texto sem formatação (text/plain) |`metadata_content_type`<br/>`metadata_content_encoding`<br/> | Extrair texto|
 
 
 ## <a name="help-us-make-azure-search-better"></a>Ajude-nos a aprimorar o Azure Search

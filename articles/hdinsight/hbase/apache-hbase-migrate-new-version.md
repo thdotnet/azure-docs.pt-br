@@ -1,6 +1,6 @@
 ---
 title: Migrar um cluster HBase para uma nova versão – Azure HDInsight
-description: Como migrar clusters HBase para uma nova versão.
+description: Como migrar clusters do Apache HBase para uma versão mais recente no Azure HDInsight.
 author: ashishthaps
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -8,16 +8,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: ashishth
-ms.openlocfilehash: a152b815daeefa4c199af9b159eee8e5783971e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 546d491c24198d5f7a92765876e5f6919ca32020
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65143313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735800"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Migrar um cluster Apache HBase para uma nova versão
 
-Este artigo discute as etapas necessárias para atualizar seu cluster do Apache HBase no HDInsight do Azure para uma versão mais recente.
+Este artigo discute as etapas necessárias para atualizar o cluster do Apache HBase no Azure HDInsight para uma versão mais recente.
 
 > [!NOTE]  
 > O tempo de inatividade durante a atualização deve ser mínimo, na ordem de minutos. Esse tempo de inatividade é causado pelas etapas para liberar todos os dados na memória, e então, pelo tempo para configurar e reiniciar os serviços no novo cluster. Os resultados vão variar, dependendo do número de nós, da quantidade de dados e de outras variáveis.
@@ -29,7 +29,7 @@ Antes de atualizar o Apache HBase, verifique se as versões do HBase nos cluster
 > [!NOTE]  
 > É altamente recomendável que você examine a matriz de compatibilidade de versão no [Catálogo do HBase](https://hbase.apache.org/book.html#upgrading).
 
-Aqui está uma matriz de compatibilidade de versão de exemplo. Y indica compatibilidade e N indica uma potencial incompatibilidade:
+Aqui está um exemplo de matriz de compatibilidade de versão. Y indica compatibilidade e N indica uma possível incompatibilidade:
 
 | Tipo de compatibilidade | Versão principal| Versão secundária | Patch |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ Aqui está uma matriz de compatibilidade de versão de exemplo. Y indica compati
 
 ## <a name="upgrade-with-same-apache-hbase-major-version"></a>Atualizar com a mesma versão principal do Apache HBase
 
-Para atualizar seu cluster do Apache HBase no HDInsight do Azure, conclua as seguintes etapas:
+Para atualizar o cluster do Apache HBase no Azure HDInsight, conclua as seguintes etapas:
 
 1. Certifique-se de que seu aplicativo é compatível com a nova versão, conforme mostrado na matriz de compatibilidade e nas notas de versão do HBase. Teste seu aplicativo em um cluster que esteja executando a versão de destino do HDInsight e do HBase.
 
@@ -58,7 +58,7 @@ Para atualizar seu cluster do Apache HBase no HDInsight do Azure, conclua as seg
 
     ![Usar a mesma Conta de armazenamento, mas criar um Contêiner diferente](./media/apache-hbase-migrate-new-version/same-storage-different-container.png)
 
-3. Libere seu cluster HBase de origem, que é o cluster que você está atualizando. O HBase grava os dados de entrada em um repositório na memória, chamado _memstore_. Após atingir um determinado tamanho, o HBase libera-o no disco para armazenamento de longo prazo na conta de armazenamento do cluster. Ao excluir o cluster antigo, os memstores são reciclados, possivelmente perdendo dados. Para liberar manualmente o memstore para cada tabela para o disco, execute o script a seguir. A versão mais recente do script está no [GitHub](https://raw.githubusercontent.com/Azure/hbase-utils/master/scripts/flush_all_tables.sh) do Azure.
+3. Libere o cluster HBase de origem, que é o cluster que você está atualizando. O HBase grava os dados de entrada em um repositório na memória, chamado _memstore_. Depois que o memstore atingir um determinado tamanho, o HBase o liberará para o disco para armazenamento de longo prazo na conta de armazenamento do cluster. Ao excluir o cluster antigo, os memstores são reciclados, possivelmente perdendo dados. Para liberar manualmente o memstore para cada tabela para o disco, execute o script a seguir. A versão mais recente do script está no [GitHub](https://raw.githubusercontent.com/Azure/hbase-utils/master/scripts/flush_all_tables.sh) do Azure.
 
     ```bash
     #!/bin/bash
@@ -178,30 +178,30 @@ Para atualizar seu cluster do Apache HBase no HDInsight do Azure, conclua as seg
     
 4. Interrompa a ingestão para o cluster antigo do HBase.
 5. Para garantir que nenhum dado recente do memstore seja liberado, execute novamente o script anterior.
-6. Entrar no [Apache Ambari](https://ambari.apache.org/) no cluster antigo (https://OLDCLUSTERNAME.azurehdidnsight.net) e parar os serviços do HBase. Quando solicitado a confirmar que você gostaria de interromper os serviços, marque a caixa para ativar o modo de manutenção para o HBase. Para saber mais sobre como usar e conectar-se ao Ambari, confira [Gerenciar clusters HDInsight usando a interface de usuário do Ambari Web](../hdinsight-hadoop-manage-ambari.md).
+6. Entre no [Apache Ambari](https://ambari.apache.org/) no cluster antigo (https://OLDCLUSTERNAME.azurehdidnsight.net) e pare os serviços do HBase. Quando você receber uma solicitação para confirmar que deseja parar os serviços, marque a caixa para ativar o modo de manutenção do HBase. Para saber mais sobre como usar e conectar-se ao Ambari, confira [Gerenciar clusters HDInsight usando a interface de usuário do Ambari Web](../hdinsight-hadoop-manage-ambari.md).
 
-    ![No Ambari, clique em serviços > HBase > interromper em ações de serviço](./media/apache-hbase-migrate-new-version/stop-hbase-services.png)
+    ![No Ambari, clique em serviços > HBase > parar em ações de serviço](./media/apache-hbase-migrate-new-version/stop-hbase-services.png)
 
     ![Marque a caixa de seleção Ativar no modo de manutenção para o HBase e confirme.](./media/apache-hbase-migrate-new-version/turn-on-maintenance-mode.png)
 
 7. Entre no Ambari no novo cluster HDInsight. Altere a configuração `fs.defaultFS` HDFS para apontar para o nome do contêiner usado pelo cluster original. Essa configuração está em **HDFS > Configurações > Avançado > Site principal avançado**.
 
-    ![No Ambari, clique em serviços > HDFS > Configurações > Avançado](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
+    ![No Ambari, clique em serviços > HDFS > Configurações > avançado](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
 
     ![Em Ambari, altere o nome do contêiner.](./media/apache-hbase-migrate-new-version/change-container-name.png)
 
-8. **Se você não estiver usando clusters do HBase com o recurso avançado grava, ignore esta etapa. Ela é necessária somente para clusters do HBase com recurso aprimorado grava.**
+8. **Se você não estiver usando clusters HBase com o recurso de gravações avançadas, ignore esta etapa. Ele é necessário apenas para clusters do HBase com o recurso de gravações avançadas.**
    
-   Alterar o `hbase.rootdir` path para apontar para o contêiner do cluster original.
+   Altere o `hbase.rootdir` caminho para apontar para o contêiner do cluster original.
 
-    ![Em Ambari, altere o nome do contêiner para rootdir HBase](./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png)
-1. Se você estiver atualizando o HDInsight 3.6 4.0, siga as etapas abaixo, caso contrário, pule para a etapa 10:
-    1. Reiniciar todos os serviços necessários no Ambari, selecionando **Services** > **reiniciar todos os necessários**.
+    ![Em Ambari, altere o nome do contêiner para o HBase rootdir](./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png)
+1. Se você estiver atualizando o HDInsight 3,6 para 4,0, siga as etapas abaixo, caso contrário, pule para a etapa 10:
+    1. Reinicie todos os serviços necessários no Ambari selecionando **Serviços** > **reiniciar todos os necessários**.
     1. Interrompa o serviço HBase.
-    1. SSH para o nó do Zookeeper e executar o [zkCli](https://github.com/go-zkcli/zkcli) comando `rmr /hbase-unsecure` para remover o znode de raiz do HBase do Zookeeper.
+    1. Use o ssh para o nó Zookeeper e execute o comando [zkCli](https://github.com/go-zkcli/zkcli) `rmr /hbase-unsecure` para remover o znode raiz do HBase de Zookeeper.
     1. Reinicie o HBase.
-1. Se você estiver atualizando para qualquer outra versão do HDInsight, além do 4.0, siga estas etapas:
-    1. Salve suas alterações.
+1. Se você estiver atualizando para qualquer outra versão do HDInsight além de 4,0, siga estas etapas:
+    1. Salve as alterações.
     1. Reinicie todos os serviços necessários conforme indicado pelo Ambari.
 1. Aponte seu aplicativo para o novo cluster.
 
