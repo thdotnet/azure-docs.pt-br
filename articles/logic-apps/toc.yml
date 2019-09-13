@@ -15,7 +15,7 @@
       href: quickstart-create-logic-apps-visual-studio-code.md
 - name: Tutoriais
   items:
-    - name: Verificar tráfego regularmente
+    - name: Criar fluxos de trabalho baseados em agendamento
       href: tutorial-build-schedule-recurring-logic-app-workflow.md
     - name: Gerenciar solicitações da lista de correspondência
       href: tutorial-process-mailing-list-subscriptions-workflow.md

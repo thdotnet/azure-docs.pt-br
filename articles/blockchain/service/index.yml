@@ -10,12 +10,12 @@ metadata:
   author: PatAltimore
   ms.author: patricka
   ms.date: 08/29/2019
-  ms.openlocfilehash: c5816bb2278c138a8df07c5c289d53a818614d86
-  ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+  ms.openlocfilehash: 58aba8438b49b034fc78a8814869e819804cff1c
+  ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/04/2019
-  ms.locfileid: "70240831"
+  ms.lasthandoff: 09/12/2019
+  ms.locfileid: "70932817"
 landingContent:
 - title: Sobre o serviço Azure Blockchain
   linkLists:
@@ -41,6 +41,8 @@ landingContent:
       url: create-member-cli.md
   - linkListType: quickstart
     links:
+    - text: Usar o Visual Studio Code para se conectar a uma rede de consórcio
+      url: connect-vscode.md
     - text: Usar o MetaMask para se conectar e o Remix para implantar um contrato inteligente
       url: connect-metamask.md
     - text: Usar o Geth para se conectar a um nó de transação
@@ -49,7 +51,7 @@ landingContent:
       url: connect-truffle.md
   - linkListType: tutorial
     links:
-    - text: Usar contratos inteligentes no Azure Blockchain Service
+    - text: Usar o Visual Studio Code para criar e implantar contratos inteligentes
       url: send-transaction.md
   - linkListType: video
     links:

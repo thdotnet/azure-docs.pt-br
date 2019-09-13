@@ -37,10 +37,12 @@
       href: concepts-limits-quotas.md
 - name: Guias de instruções
   items:
-    - name: Usar o IoT Device Workbench
-      href: howto-use-iot-device-workbench.md
+    - name: Desenvolver com o Visual Studio e o Visual Studio Code
+      href: howto-develop-with-vs-vscode.md
     - name: Instalar o explorador de IoT
       href: howto-install-iot-explorer.md
+    - name: Instalar a extensão de CLI do Azure
+      href: howto-install-pnp-cli.md
     - name: Integrar ao portal de IoT
       href: howto-onboard-portal.md
     - name: Gerenciar modelos
