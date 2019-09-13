@@ -8,12 +8,12 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.date: 07/19/2019
 ms.author: bwren
-ms.openlocfilehash: cf2aee475f5d3933421de45fa5b2ade687bed62f
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 18e6e162764ce190a1953a4126e4f9ef2eb717f5
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348077"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899526"
 ---
 # <a name="get-started-with-log-analytics-in-azure-monitor"></a>Introdução ao Log Analytics no Azure Monitor
 
@@ -162,7 +162,7 @@ Em um gráfico de tempo, se houver uma alteração ou pico repentino em seus dad
 ![Diagnóstico inteligente](media/get-started-portal/smart-diagnostics.png)
 
 ## <a name="pin-to-dashboard"></a>Fixar no painel
-Para fixar um diagrama ou tabela em um dos seus painéis compartilhados do Azure, clique no ícone de alfinete.
+Para fixar um diagrama ou tabela em um dos seus painéis compartilhados do Azure, clique no ícone de alfinete. Observe que esse ícone foi movido para a parte superior da janela de Log Analytics, diferente da captura de tela abaixo.
 
 ![Fixar no painel](media/get-started-portal/pin-dashboard.png)
 
