@@ -249,10 +249,10 @@ O objeto de dados tem as seguintes propriedades:
 
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
-| authorization | objeto | A autorização solicitada para a operação. |
-| claims | objeto | As propriedades da declaração. Para obter mais informações, consulte [especificação JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
+| authorization | object | A autorização solicitada para a operação. |
+| claims | object | As propriedades da declaração. Para obter mais informações, consulte [especificação JWT](https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | string | Uma ID de operação para solução de problemas. |
-| httpRequest | objeto | Os detalhes da operação. Esse objeto é apenas incluído ao atualizar um recurso existente ou excluir um recurso. |
+| httpRequest | object | Os detalhes da operação. Esse objeto é apenas incluído ao atualizar um recurso existente ou excluir um recurso. |
 | ResourceProvider | string | O provedor de recursos para a operação. |
 | resourceUri | string | O URI do recurso na operação. |
 | operationName | string | A operação que foi feita. |
