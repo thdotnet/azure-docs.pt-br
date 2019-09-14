@@ -17,15 +17,15 @@ ms.locfileid: "68883159"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-serializer"></a>SDK do dispositivo IoT do Azure para C – mais sobre o serializador
 
-O primeiro artigo desta série apresentou a [Introdução ao SDK do dispositivo IoT do Azure para C](iot-hub-device-sdk-c-intro.md). O próximo artigo fornece uma descrição mais detalhada do [SDK do dispositivo IoT do Azure para C ‒ IoTHubClient](iot-hub-device-sdk-c-iothubclient.md). Este artigo conclui a abordagem do SDK com uma descrição mais detalhada do componente restante: a biblioteca do **serializador** .
+O primeiro artigo desta série apresentou a [Introdução ao SDK do dispositivo IoT do Azure para C](iot-hub-device-sdk-c-intro.md). O próximo artigo fornece uma descrição mais detalhada do [SDK do dispositivo IoT do Azure para C ‒ IoTHubClient](iot-hub-device-sdk-c-iothubclient.md). Este artigo conclui a abordagem do SDK com uma descrição mais detalhada do componente restante: a biblioteca do **serializer** .
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
-O artigo de introdução descreve como usar a biblioteca do **serializador** para enviar eventos ao Hub IoT e receber mensagens dele. Neste artigo, estenderemos a discussão com uma explicação mais completa de como modelar seus dados com a linguagem de macro do **serializador** . O artigo também inclui mais detalhes sobre como a biblioteca serializa as mensagens (e, em alguns casos, como você pode controlar o comportamento da serialização). Descreveremos alguns parâmetros que você poderá modificar e que determinam o tamanho dos modelos criados por você.
+O artigo de introdução descreve como usar a biblioteca do **serializer** para enviar eventos ao Hub IoT e receber mensagens dele. Neste artigo, estenderemos a discussão com uma explicação mais completa de como modelar seus dados com a linguagem de macro do **serializer** . O artigo também inclui mais detalhes sobre como a biblioteca serializa as mensagens (e, em alguns casos, como você pode controlar o comportamento da serialização). Descreveremos alguns parâmetros que você poderá modificar e que determinam o tamanho dos modelos criados por você.
 
-Por fim, o artigo revê alguns tópicos abordados em artigos anteriores, como o tratamento de mensagens e de propriedades. Como veremos, esses recursos funcionam da mesma forma ao usar a biblioteca do **serializador** e a biblioteca **IoTHubClient**.
+Por fim, o artigo revê alguns tópicos abordados em artigos anteriores, como o tratamento de mensagens e de propriedades. Como veremos, esses recursos funcionam da mesma forma ao usar a biblioteca do **serializer** e a biblioteca **IoTHubClient**.
 
-Todo o conteúdo do artigo baseia-se nas amostras do SDK do **serializador** . Se você quiser acompanhar, confira os aplicativos **simplesample\_amqp** e **simplesample\_http** incluídos no SDK do dispositivo IoT do Azure para C.
+Todo o conteúdo do artigo baseia-se nas amostras do SDK do **serializer** . Se você quiser acompanhar, confira os aplicativos **simplesample\_amqp** e **simplesample\_http** incluídos no SDK do dispositivo IoT do Azure para C.
 
 Você pode encontrar o [**SDK do dispositivo IoT do Azure para C**](https://github.com/Azure/azure-iot-sdk-c) no repositório GitHub e exibir os detalhes da API [na referência da API do C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
 
@@ -62,7 +62,7 @@ O que não foi demonstrado neste exemplo são os tipos de dados adicionais que r
 
 ## <a name="supported-data-types"></a>Tipos de dados com suporte
 
-Os tipos de dados a seguir têm suporte em modelos criados com a biblioteca do **serializador** :
+Os tipos de dados a seguir têm suporte em modelos criados com a biblioteca do **serializer** :
 
 | Tipo | Descrição |
 | --- | --- |
@@ -106,7 +106,7 @@ WITH_DATA(TestType, Test)
 );
 ```
 
-Nosso modelo contém um único evento de dados do tipo **TestType**. **TestType** é um tipo complexo que inclui vários membros, que demonstram coletivamente os tipos primitivos com suporte da linguagem de modelagem do **serializador**.
+Nosso modelo contém um único evento de dados do tipo **TestType**. **TestType** é um tipo complexo que inclui vários membros, que demonstram coletivamente os tipos primitivos com suporte da linguagem de modelagem do **serializer**.
 
 Com um modelo assim, podemos escrever um código parecido com o seguinte para enviar dados ao Hub IoT:
 
