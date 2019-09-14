@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/07/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 74f33a1ce1026424a6cdb97699223aeb5ff8277f
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 7b5e811daecbb7687abe7a37b75e2730d7830c2c
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933139"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983611"
 ---
 # <a name="sub-orchestrations-in-durable-functions-azure-functions"></a>Suborquestrações em Funções Duráveis (Azure Functions)
 
@@ -22,7 +22,10 @@ Além de chamar funções de atividade, as funções de orquestrador podem chama
 
 Uma função de orquestrador pode chamar outra função de orquestrador chamando os métodos [CallSubOrchestratorAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallSubOrchestratorAsync_) ou [CallSubOrchestratorWithRetryAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CallSubOrchestratorWithRetryAsync_) no .NET ou os métodos `callSubOrchestrator` ou `callSubOrchestratorWithRetry` no JavaScript. O artigo [Tratamento de Erro e Compensação](durable-functions-error-handling.md#automatic-retry-on-failure) fornece mais informações sobre a repetição automática.
 
-Da perspectiva do chamador, as funções de suborquestrador se comportam como funções de atividade. Elas podem retornar um valor, lançar uma exceção e podem ser aguardadas pela função de orquestrador pai.
+Da perspectiva do chamador, as funções de suborquestrador se comportam como funções de atividade. Elas podem retornar um valor, lançar uma exceção e podem ser aguardadas pela função de orquestrador pai. 
+
+> [!NOTE]
+> Atualmente, é necessário fornecer um `instanceId` valor de argumento para a API de suborquestração em JavaScript.
 
 ## <a name="example"></a>Exemplo
 
@@ -107,9 +110,12 @@ module.exports = df.orchestrator(function*(context) {
 
     // Run multiple device provisioning flows in parallel
     const provisioningTasks = [];
+    var id = 0;
     for (const deviceId of deviceIds) {
-        const provisionTask = context.df.callSubOrchestrator("DeviceProvisioningOrchestration", deviceId);
+        const child_id = context.df.instanceId+`:${id}`;
+        const provisionTask = context.df.callSubOrchestrator("DeviceProvisioningOrchestration", deviceId, child_id);
         provisioningTasks.push(provisionTask);
+        id++;
     }
 
     yield context.df.Task.all(provisioningTasks);

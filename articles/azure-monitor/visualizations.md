@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 4e9bb9bd86e22efa5dd514e742481911b09c5e17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6390384220830d473b56f4082a98dfaa8aa686d1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61088203"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984181"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Visualizando dados do Monitor do Azure
 Este artigo fornece um resumo dos métodos disponíveis para visualizar os dados de log e métrica armazenados no Azure Monitor.
@@ -29,14 +29,14 @@ Visualizações como tabelas e gráficos podem ajudá-lo a analisar seus dados d
 ## <a name="azure-dashboards"></a>Painéis do Azure
 Os [painéis do Azure](../azure-portal/azure-portal-dashboards.md) são a principal tecnologia de painéis do Azure. Eles são particularmente úteis para fornecer um único painel de controle sobre sua infraestrutura e serviços do Azure, permitindo que você identifique rapidamente problemas importantes.
 
-![painel](media/visualizations/dashboard.png)
+![Painel](media/visualizations/dashboard.png)
 
 ### <a name="advantages"></a>Vantagens
-- Integração profunda no Azure. Visualizações podem ser fixadas em painéis de várias páginas do Azure, incluindo o Metrics Explorer, do Log Analytics e Application Insights.
+- Integração profunda no Azure. As visualizações podem ser fixadas em painéis de várias páginas do Azure, incluindo Metrics Explorer, Log Analytics e Application Insights.
 - Suporta métricas e logs.
-- Combinar dados de várias fontes, incluindo a saída do [do metrics explorer](platform/metrics-charts.md), [consultas de Log](log-query/log-query-overview.md), e [mapeia](app/app-map.md) e a disponibilidade no Application Insights.
+- Combine dados de várias fontes, incluindo a saída de [métricas Explorer](platform/metrics-charts.md), [consultas de log](log-query/log-query-overview.md)e [mapas](app/app-map.md) e disponibilidade no Application insights.
 - Opção para os painéis de pessoais ou compartilhadas. Integrado com a autenticação baseada em função do Azure [(RBAC)](../role-based-access-control/overview.md).
-- Atualização automática. A atualização de métricas depende do intervalo de tempo com um mínimo de cinco minutos. Registra a atualização em um minuto.
+- Atualização automática. A atualização de métricas depende do intervalo de tempo com um mínimo de cinco minutos. Os logs são atualizados a cada hora, com uma opção de atualização manual sob demanda clicando no ícone "atualizar" em uma determinada visualização ou atualizando o painel completo.
 - Painéis de métricas parametrizadas com carimbo de data/hora e parâmetros personalizados.
 - Opções de layout flexível.
 - Modo de tela inteira.
@@ -53,7 +53,7 @@ Os [painéis do Azure](../azure-portal/azure-portal-dashboards.md) são a princi
 ## <a name="azure-monitor-views"></a>Modos de exibição do Monitor do Azure
 As [exibições no Azure Monitor](platform/view-designer.md) permitem que você crie visualizações personalizadas com os dados de log. Elas são usadas pelas [soluções de monitoramento](insights/solutions.md) para apresentar os dados coletados.
 
-![Visualizar](media/visualizations/view.png)
+![Exibir](media/visualizations/view.png)
 
 ### <a name="advantages"></a>Vantagens
 - Visualizações ricas para dados de log.
@@ -74,7 +74,7 @@ As [exibições no Azure Monitor](platform/view-designer.md) permitem que você 
 ## <a name="workbooks"></a>Pastas de trabalho
 [As pastas de trabalho](../azure-monitor/app/usage-workbooks.md) são documentos interativos que fornecem informações detalhadas sobre seus dados, investigação e colaboração dentro da equipe. Exemplos específicos em que as pastas de trabalho são úteis são guias de solução de problemas e postmortem de incidentes.
 
-![Pasta de trabalho](media/visualizations/workbook.png)
+![Pastas de trabalho](media/visualizations/workbook.png)
 
 ### <a name="advantages"></a>Vantagens
 - Suporta métricas e logs.

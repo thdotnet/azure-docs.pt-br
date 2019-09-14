@@ -9,14 +9,14 @@ displayName: chat history, history, chat logs, logs
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 08/30/2019
+ms.date: 09/12/2019
 ms.author: diberry
-ms.openlocfilehash: ebc06057dfa4bce72821ddf807cda46270e8ff3e
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 5c55084a57e46931049841f5011941b2115e9e69
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70206841"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961523"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Obter a análise em sua base de dados de conhecimento
 
@@ -26,9 +26,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
     ![Selecione o seu recurso do Application Insights](../media/qnamaker-how-to-analytics-kb/resources-created.png)
 
-2. Selecione **Análise**. Uma nova janela será aberta onde você pode consultar os dados de telemetria do QnA Maker.
-
-    ![Selecionar análise](../media/qnamaker-how-to-analytics-kb/analytics.png)
+2. Selecione **Log (Analytics)** . Uma nova janela será aberta onde você pode consultar os dados de telemetria do QnA Maker.
 
 3. Cole a consulta a seguir e execute-a.
 
@@ -48,7 +46,7 @@ O QnA Maker armazena todos os logs de bate-papo e outros dados de telemetria, se
 
     Clique em **Executar** para executar a consulta.
 
-    ![Executar consulta](../media/qnamaker-how-to-analytics-kb/run-query.png)
+    [![Executar a consulta para determinar as perguntas, as respostas e a Pontuação dos usuários](../media/qnamaker-how-to-analytics-kb/run-query.png)](../media/qnamaker-how-to-analytics-kb/run-query.png#lightbox)
 
 ## <a name="run-queries-for-other-analytics-on-your-qna-maker-knowledge-base"></a>Executar consultas para outras análises em sua base de dados de conhecimento do QnA Maker
 
