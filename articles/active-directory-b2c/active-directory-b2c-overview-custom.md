@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: be6d54886f23b0fa219b1e4b8948b4a4c51f5864
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: a3ded11ac6a68e82fba76e7551699f29f3cb6075
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716835"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998427"
 ---
 # <a name="custom-policies-in-azure-active-directory-b2c"></a>Políticas personalizadas no Azure Active Directory B2C
 
@@ -55,7 +55,7 @@ O serviço de CIAM (gerenciamento de acesso e identidade do cliente) no Azure in
 
 O Azure AD B2C interage com provedores de identidade, usuários, outros sistemas e com o diretório do usuário local em sequência para obter uma tarefa de identidade. Por exemplo, entre em um usuário, registre um novo usuário ou redefina uma senha. A Estrutura de Experiência de Identidade e uma política (também chamada de percurso do usuário ou uma política de estrutura confiável) estabelecem a confiança de vários participantes e define explicitamente os atores, as ações, os protocolos e a sequência de etapas a serem concluídas.
 
-A estrutura de experiência de identidade é uma plataforma do Azure baseada em nuvem, orientada por políticas e totalmente configurável, que orquestra a confiança entre entidades em formatos de protocolo padrão, como OpenID Connect, OAuth, SAML, WSFed e alguns não padrão, por exemplo, REST As trocas de declarações do sistema para o sistema baseadas em API. A estrutura cria experiências fáceis de usar e rotuladas em branco que dão suporte a HTML e CSS.
+A estrutura de experiência de identidade é uma plataforma do Azure baseada em nuvem, orientada por políticas, totalmente configurável que orquestra a confiança entre entidades em formatos de protocolo padrão, como OpenID Connect, OAuth, SAML e alguns não padrão, por exemplo, REST As trocas de declarações do sistema para o sistema baseadas em API. A estrutura cria experiências fáceis de usar e rotuladas em branco que dão suporte a HTML e CSS.
 
 Uma política personalizada é representada como um ou vários arquivos formatados em XML que se referenciam entre si em uma cadeia hierárquica. Os elementos XML definem o esquema de declarações, as transformações de declarações, as definições de conteúdo, os provedores de declarações, os perfis técnicos e as etapas de orquestração do percurso do usuário, entre outros elementos. Uma política personalizada é acessível como um ou vários arquivos XML que são executados pela Estrutura de Experiência de Identidade quando invocados por uma terceira parte confiável. Os desenvolvedores que configuram as políticas personalizadas devem definir as relações de confiança em detalhes para incluir pontos de extremidade de metadados, definições exatas de troca de declarações e configurar segredos, chaves e certificados, conforme necessário, para cada provedor de identidade.
 

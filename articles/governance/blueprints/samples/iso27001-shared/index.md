@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: b590eeb86972a8e769fc240b1935c6c8ed32530a
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: e723fab12c6ba88ec5698a697ba1ddd774eed7e2
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231726"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000505"
 ---
 # <a name="overview-of-the-iso-27001-shared-services-blueprint-sample"></a>Visão geral do exemplo de blueprint dos Serviços Compartilhados do ISO 27001
 
@@ -38,7 +38,7 @@ Este ambiente é composto de vários serviços do Azure usados para oferecer uma
   - Um host de jumpbox ou bastião usado para fins de gerenciamento, que pode ser acessado somente por um [Firewall do Azure](../../../../firewall/overview.md) implantado na sub-rede de pilha de entrada
   - Duas máquinas virtuais que executam o ADDS (Active Directory Domain Services) e o DNS podem ser acessadas somente por meio da jumpbox e podem ser configuradas apenas para replicar o AD em uma VPN ou conexão do [ExpressRoute](../../../../expressroute/expressroute-introduction.md) (não implantada pelo blueprint)
   - Uso do [Observador de Rede do Azure](../../../../network-watcher/network-watcher-monitoring-overview.md) e proteção contra DDoS padrão
-- Uma instância do [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) usada para hospedar segredos usados para as VMs implantadas no ambiente de serviços compartilhados
+- Uma instância do [Azure Key Vault](../../../../key-vault/key-vault-overview.md) usada para hospedar segredos usados para as VMs implantadas no ambiente de serviços compartilhados
 
 Todos esses elementos cumprem as práticas comprovadas publicadas no [Centro de Arquitetura do Azure – Arquiteturas de Referência](/azure/architecture/reference-architectures/).
 

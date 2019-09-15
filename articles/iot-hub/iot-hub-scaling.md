@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: wesmc
-ms.openlocfilehash: 9be0b93335cef919db4efa2fce361bda1f9b934e
-ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
+ms.openlocfilehash: 18864a662464f77d799e54d583092a371bc2d137
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69891987"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999959"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Escolher a camada certa do Hub IoT para a solução
 
@@ -33,7 +33,7 @@ Cada camada do Hub IoT está disponível em três tamanhos, com base na quantida
 
 A camada Standard do Hub IoT permite todos os recursos e é necessária para qualquer solução de IoT que pretende usar os recursos de comunicação bidirecional. A camada Básica permite um subconjunto dos recursos e destina-se a soluções de IoT que precisam apenas de comunicação unidirecional dos dispositivos para a nuvem. Ambas as camadas oferecem os mesmos recursos de segurança e autenticação.
 
-Somente um tipo de [edição](https://azure.microsoft.com/pricing/details/iot-hub/) em uma camada pode ser escolhido por Hub IoT. Por exemplo, você pode criar um Hub IoT com várias unidades do S1, mas não com uma mistura de unidades de edições diferentes, como S1 e B3, ou S1 e S2.
+Somente um tipo de [edição](https://azure.microsoft.com/pricing/details/iot-hub/) em uma camada pode ser escolhido por Hub IoT. Por exemplo, você pode criar um hub IoT com várias unidades S1, mas não com uma combinação de unidades de diferentes edições, como S1 e S2.
 
 | Funcionalidade | Camada básica | Camada gratuita/Standard |
 | ---------- | ---------- | ------------- |
@@ -86,6 +86,10 @@ A diferença nos recursos com suporte entre as camadas Básica e Standard do Hub
 | Enviar eventos de módulo | Somente AMQP e MQTT | Somente AMQP e MQTT |
 | [Atualizar o status de upload de arquivo](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Sim | Sim |
 | [Operação de dispositivo em massa](https://docs.microsoft.com/rest/api/iothub/service/bulkcreateorupdatedevices) | Sim, exceto pelos recursos do IoT Edge | Sim |
+| [Cancelar trabalho de importação/exportação](https://docs.microsoft.com/rest/api/iothub/service/cancelimportexportjob) | Sim | Sim |
+| [Criar trabalho de importação/exportação](https://docs.microsoft.com/rest/api/iothub/service/createimportexportjob) | Sim | Sim |
+| [Obter trabalho de importação/exportação](https://docs.microsoft.com/rest/api/iothub/service/getimportexportjob) | Sim | Sim |
+| [Obter trabalhos de importação/exportação](https://docs.microsoft.com/rest/api/iothub/service/getimportexportjobs) | Sim | Sim |
 | [Limpar fila de comandos](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Sim |
 | [Obter dispositivo gêmeo](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Sim |
 | [Obter módulo "ir para"](https://docs.microsoft.com/rest/api/iothub/service/getmoduletwin) |   | Sim |
@@ -107,17 +111,17 @@ A melhor maneira de dimensionar uma solução do Hub IoT é avaliar o tráfego d
 * Mensagens da nuvem para o dispositivo
 * Operações de registro de identidade
 
-O tráfego é medido por unidade, não por hub. Uma instância do Hub IoT de nível 1 ou 2 pode ter até 200 unidades associadas a ela. Uma instância do Hub IoT de nível 3 pode ter até 10 unidades. Após criar o Hub IoT, será possível alterar o número de unidades ou mover entre os tamanhos 1, 2 e 3 em uma camada específica sem interromper as operações existentes. Para obter mais informações, consulte [Como fazer upgrade do Hub IoT](iot-hub-upgrade.md).
+O tráfego é medido para o Hub IoT em uma base por unidade. Ao criar um hub IoT, você escolhe sua camada e edição e define o número de unidades disponíveis. Você pode comprar até 200 unidades para a edição B1, B2, S1 ou S2, ou até 10 unidades para a edição B3 ou S3. Depois que o Hub IoT for criado, você poderá alterar o número de unidades disponíveis em sua edição, atualizar ou fazer downgrade entre as edições dentro de sua camada (B1 para B2) ou atualizar da camada básica para a padrão (B1 para S1) sem interromper as operações existentes. Para obter mais informações, consulte [Como fazer upgrade do Hub IoT](iot-hub-upgrade.md).  
 
 Como um exemplo dos recursos de tráfego de cada camada, as mensagens de dispositivo para nuvem seguem estas diretrizes de taxa de transferência sustentada:
 
-| Tipo | Taxa de transferência sustentada | Taxa de envio sustentada |
+| Camada de edição | Taxa de transferência sustentada | Taxa de envio sustentada |
 | --- | --- | --- |
 | B1, S1 |Até 1111 KB/minuto por unidade<br/>(1,5 GB/dia/unidade) |Média de 278 mensagens/minuto por unidade<br/>(400.000 mensagens/dia por unidade) |
 | B2, S2 |Até 16 MB/minuto por unidade<br/>(22,8 GB/dia/unidade) |Média de 4.167 mensagens/minuto por unidade<br/>(6 milhões de mensagens/dia por unidade) |
 | B3, S3 |Até 814 MB/minuto por unidade<br/>(1144,4 GB/dia/unidade) |Média de 208,333 mensagens/minuto por unidade<br/>(300 milhões de mensagens/dia por unidade) |
 
-Além dessas informações sobre produtividade, confira as [Cotas e limites do Hub IoT](iot-hub-devguide-quotas-throttling.md) e crie sua solução adequadamente.
+A taxa de transferência do dispositivo para a nuvem é apenas uma das métricas que você precisa considerar ao criar uma solução de IoT. Para obter informações mais abrangentes, consulte [cotas e limitações do Hub IOT](iot-hub-devguide-quotas-throttling.md).
 
 ### <a name="identity-registry-operation-throughput"></a>Taxa de transferência de operações de registro de identidade
 
@@ -127,10 +131,10 @@ Consulte [Cotas e limites do Hub IoT](iot-hub-devguide-quotas-throttling.md)para
 
 ## <a name="auto-scale"></a>Dimensionamento automático
 
-Se você está se aproximando o limite permitido de mensagens no Hub IoT, você pode usar essas [etapas para dimensionar automaticamente](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/) para incrementar uma unidade de Hub IoT na mesma camada do Hub IoT.
+Se estiver se aproximando do limite de mensagens permitido em seu hub IoT, você poderá usar estas [etapas para dimensionar automaticamente](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/) para incrementar uma unidade do Hub IOT na mesma camada do Hub IOT.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para obter mais informações sobre os recursos do Hub IoT e detalhes de desempenho, consulte [preços do Hub IOT](https://azure.microsoft.com/pricing/details/iot-hub) ou cotas e restrições do [Hub IOT](iot-hub-devguide-quotas-throttling.md).
+* Para obter mais informações sobre os recursos do Hub IoT e detalhes de desempenho, consulte [preços do Hub IOT](https://azure.microsoft.com/pricing/details/iot-hub) ou [cotas e restrições do Hub IOT](iot-hub-devguide-quotas-throttling.md).
 
 * Para alterar a camada do Hub IoT, siga as etapas em [Fazer upgrade do Hub IoT](iot-hub-upgrade.md).

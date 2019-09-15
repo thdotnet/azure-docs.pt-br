@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/04/2017
 ms.author: tomsh
-ms.openlocfilehash: ca2f346950d84fda736437f439efc5d35e342799
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 5329323122d8470b19055040b6f00b6db7c0e75f
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934581"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998942"
 ---
 # <a name="azure-service-fabric-security-overview"></a>Visão geral de segurança do Azure Service Fabric
 O [Azure Service Fabric](../../service-fabric/service-fabric-overview.md) é uma plataforma de sistemas distribuídos que facilita o empacotamento, a implantação e o gerenciamento de microsserviços escalonáveis e confiáveis. O Service Fabric resolve os desafios de desenvolvimento e gerenciamento de aplicativos em nuvem. Desenvolvedores e administradores podem evitar problemas complexos de infraestrutura e se concentrarem na implementação de cargas de trabalho essenciais e exigentes que são escalonáveis.
@@ -88,7 +88,7 @@ O fluxo de trabalho do monitoramento e diagnóstico consiste em três etapas:
 
 2.  **Agregação de eventos**: os eventos gerados precisam ser coletados e agregados antes que possam ser exibidos. Normalmente, recomendamos usar o [Diagnóstico do Azure](../../service-fabric/service-fabric-diagnostics-event-aggregation-wad.md) (semelhante à coleta de log com base em agente) ou [EventFlow](../../service-fabric/service-fabric-diagnostics-event-aggregation-eventflow.md) (coleta de log durante o processo).
 
-3.  **Análise**: os eventos precisam ser visualizados e estar acessíveis em algum formato, para permitir a análise e a exibição. Há várias plataformas para a análise e a visualização de dados de monitoramento e diagnóstico. É recomendável [Azure monitor logs](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) e [aplicativo Azure](../../service-fabric/service-fabric-diagnostics-event-analysis-appinsights.md) insights porque eles se integram bem com o Service Fabric.
+3.  **Análise**: os eventos precisam ser visualizados e estar acessíveis em algum formato, para permitir a análise e a exibição. Há várias plataformas para a análise e a visualização de dados de monitoramento e diagnóstico. É recomendável [Azure monitor logs](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) e [aplicativo Azure insights](../../service-fabric/service-fabric-diagnostics-event-analysis-appinsights.md) porque eles se integram bem com o Service Fabric.
 
 Você também pode usar o [Azure Monitor](../../azure-monitor/overview.md) para monitorar muitos dos recursos do Azure onde um cluster de Service Fabric é criado.
 
@@ -132,7 +132,7 @@ Configure a segurança de cliente para nó usando ClientIdentities. Você deve c
 ### <a name="manage-secrets-in-service-fabric-applications"></a>Gerenciar segredos nos aplicativos do Service Fabric
 Os segredos podem ser informações confidenciais, como cadeias de conexão de armazenamento, senhas ou outros valores que não devem ser tratados como texto sem formatação.
 
-Você pode usar o [Cofre de Chaves do Azure](../../key-vault/key-vault-whatis.md) para gerenciar chaves e segredos. No entanto, o uso de segredos em um aplicativo não depende de uma plataforma de nuvem específica. Você pode implantar aplicativos em um cluster hospedado em qualquer lugar. Há quatro etapas principais nesse fluxo:
+Você pode usar o [Cofre de Chaves do Azure](../../key-vault/key-vault-overview.md) para gerenciar chaves e segredos. No entanto, o uso de segredos em um aplicativo não depende de uma plataforma de nuvem específica. Você pode implantar aplicativos em um cluster hospedado em qualquer lugar. Há quatro etapas principais nesse fluxo:
 
 1.  Obtenha um certificado de codificação de dados.
 2.  Instale o certificado em seu cluster.

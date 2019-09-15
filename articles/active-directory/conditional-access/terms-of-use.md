@@ -1,6 +1,6 @@
 ---
-title: Termos de uso - Azure Active Directory | Microsoft Docs
-description: Introdução ao uso de termos de uso para apresentar as informações antes de obter acesso a funcionários ou convidados do Azure Active Directory.
+title: Termos de uso-Azure Active Directory | Microsoft Docs
+description: Comece a usar Azure Active Directory termos de uso para apresentar informações a funcionários ou convidados antes de obter acesso.
 services: active-directory
 ms.service: active-directory
 ms.subservice: compliance
@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f891642761a2f692158efbd9111ff96444c4269d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 31d84d5bf43bac55769a6479917794a51c1ccd0c
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476197"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70999112"
 ---
-# <a name="azure-active-directory-terms-of-use"></a>Termos de uso do Active Directory do Azure
+# <a name="azure-active-directory-terms-of-use"></a>Azure Active Directory termos de uso
 
-Os termos de uso do AD do Azure fornece um método simples que as organizações podem usar para apresentar informações aos usuários finais. Essa apresentação faz com que os usuários vejam os avisos de isenção de responsabilidade relevantes para os requisitos de conformidade ou legais. Este artigo descreve como começar com os termos de uso.
+Os termos de uso do Azure AD fornecem um método simples que as organizações podem usar para apresentar informações aos usuários finais. Essa apresentação faz com que os usuários vejam os avisos de isenção de responsabilidade relevantes para os requisitos de conformidade ou legais. Este artigo descreve como começar a usar os termos de uso.
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="overview-videos"></a>Vídeos de visão geral
 
-O vídeo a seguir fornece uma visão geral dos termos de uso.
+O vídeo a seguir fornece uma visão geral rápida dos termos de uso.
 
 >[!VIDEO https://www.youtube.com/embed/tj-LK0abNao]
 
@@ -34,23 +34,23 @@ Para ver outros vídeos, consulte:
 - [Como implantar os termos de uso no Azure Active Directory](https://www.youtube.com/embed/N4vgqHO2tgY)
 - [Como distribuir os termos de uso no Azure Active Directory](https://www.youtube.com/embed/t_hA4y9luCY)
 
-## <a name="what-can-i-do-with-terms-of-use"></a>O que pode fazer com os termos de uso?
+## <a name="what-can-i-do-with-terms-of-use"></a>O que posso fazer com os termos de uso?
 
-Os termos de uso do AD do Azure tem os seguintes recursos:
+Os termos de uso do Azure AD têm os seguintes recursos:
 
-- Exigir que os funcionários ou convidados aceitar os termos de uso antes de obter acesso.
-- Exigir que os funcionários ou convidados aceitar os termos de uso em todos os dispositivos antes de obter acesso.
-- Exigir que os funcionários ou convidados aceitar os termos de uso em um agendamento recorrente.
-- Exigir que os funcionários ou convidados aceitar os termos de uso antes de registrar informações de segurança na autenticação de multifator do Azure (MFA).
-- Exigir que os funcionários aceitar os termos de uso antes de registrar informações de segurança na redefinição de senha de autoatendimento do Azure AD (SSPR).
-- Apresentar os termos gerais de uso para todos os usuários na sua organização.
-- Apresentar os termos específicos de uso com base em atributos de um usuário (por exemplo médicos, enfermeiras, funcionários locais ou internacionais, usando [grupos dinâmicos](../users-groups-roles/groups-dynamic-membership.md)).
-- Apresentar os termos de uso específicos ao acessar a aplicativos do impacto comercial alto, como o Salesforce.
-- Apresentar os termos de uso em diferentes idiomas.
-- Lista que tem ou não tiver aceitado seus termos de uso.
+- Exigir que os funcionários ou convidados aceitem seus termos de uso antes de obter acesso.
+- Exigir que os funcionários ou convidados aceitem seus termos de uso em cada dispositivo antes de obter acesso.
+- Exigir que os funcionários ou convidados aceitem seus termos de uso em um agendamento recorrente.
+- Exigir que os funcionários ou convidados aceitem seus termos de uso antes de registrar as informações de segurança na MFA (autenticação multifator do Azure).
+- Exigir que os funcionários aceitem seus termos de uso antes de registrar informações de segurança na redefinição de senha de autoatendimento (SSPR) do Azure AD.
+- Apresente os termos de uso gerais para todos os usuários em sua organização.
+- Apresentar termos de uso específicos com base em atributos de usuário (por exemplo, médicos, enfermeiras, funcionários locais ou internacionais, usando [grupos dinâmicos](../users-groups-roles/groups-dynamic-membership.md)).
+- Apresente termos de uso específicos ao acessar aplicativos de alto impacto nos negócios, como o Salesforce.
+- Apresente os termos de uso em diferentes idiomas.
+- Liste quem tem ou não aceito para seus termos de uso.
 - Ajudar a atender às normas de privacidade.
-- Exiba um log dos termos de uso de atividade para conformidade e auditoria.
-- Criar e gerenciar os termos de uso usando [APIs do Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/agreement) (atualmente em versão prévia).
+- Exibir um log de atividades de termos de uso para conformidade e auditoria.
+- Crie e gerencie os termos de uso usando [APIs de Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/agreement) (atualmente em versão prévia).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -59,109 +59,109 @@ Para usar e configurar os termos de uso do Azure AD, você deve ter:
 - Assinatura do Azure AD Premium P1, P2, EMS E3 ou EMS E5.
    - Se você não tiver uma dessas assinaturas, poderá [obter o Azure AD Premium](../fundamentals/active-directory-get-started-premium.md) ou [habilitar a avaliação do Azure AD Premium](https://azure.microsoft.com/trial/get-started-active-directory/).
 - Uma das seguintes contas de administrador para o diretório que você deseja configurar:
-   - Administrador global
-   - Administrador de segurança
-   - Administrador de acesso condicional
+   - Administrador Global
+   - Administrador de Segurança
+   - Administrador de Acesso Condicional
 
-## <a name="terms-of-use-document"></a>Documento Termos de uso
+## <a name="terms-of-use-document"></a>Documento dos Termos de uso
 
-Termos de uso do Azure AD usa o formato PDF para apresentar conteúdo. O arquivo em PDF pode ter qualquer conteúdo, por exemplo, contratos existentes, o que permite que você colete os contratos do usuário final na entrada do usuário. Para dar suporte a usuários em dispositivos móveis, o tamanho de fonte recomendado em PDF é de 24 pontos.
+Os termos de uso do Azure AD usam o formato PDF para apresentar o conteúdo. O arquivo em PDF pode ter qualquer conteúdo, por exemplo, contratos existentes, o que permite que você colete os contratos do usuário final na entrada do usuário. Para dar suporte a usuários em dispositivos móveis, o tamanho de fonte recomendado em PDF é de 24 pontos.
 
 ## <a name="add-terms-of-use"></a>Adicionar termos de uso
 
-Depois de preparar os seus termos de uso de documento, use o procedimento a seguir para adicioná-lo.
+Depois de ter finalizado seu documento de termos de uso, use o procedimento a seguir para adicioná-lo.
 
 1. Entre no Azure como administrador global, administrador de segurança ou administrador de acesso condicional.
 1. Navegue até **Termos de uso** em [https://aka.ms/catou](https://aka.ms/catou).
 
-   ![Acesso condicional – termos de uso de folha](./media/terms-of-use/tou-blade.png)
+   ![Acesso condicional-folha Termos de uso](./media/terms-of-use/tou-blade.png)
 
 1. Clique em **Novos termos**.
 
-   ![Novo termo do painel de uso para especificar os termos de uso de configurações](./media/terms-of-use/new-tou.png)
+   ![Novo termo do painel de uso para especificar as configurações dos termos de uso](./media/terms-of-use/new-tou.png)
 
-1. No **nome** , digite um nome para os termos de uso que serão usadas no portal do Azure.
+1. Na caixa **nome** , insira um nome para os termos de uso que serão usados no portal do Azure.
 1. Na caixa **Nome de exibição**, insira um título que os usuários visualizam ao entrar.
-1. Para **termos de uso documento**, navegue até seu finalizados termos de uso em PDF e selecioná-lo.
-1. Selecione o idioma para os termos de uso de documento. A opção de idioma permite carregar vários termos de uso, cada um com um idioma diferente. A versão dos termos de uso que um usuário final verá terá base em suas preferências de navegador.
-1. Para exigir que os usuários finais exibir os termos de uso antes de aceitá-los, defina **exigem que os usuários expandam os termos de uso** à **em**.
-1. Para exigir que os usuários finais aceitar os termos de uso em todos os dispositivos estiverem acessando de, defina **exigir que os usuários em todos os dispositivos de consentimento** ao **em**. Para obter mais informações, consulte [termos de uso por dispositivo](#per-device-terms-of-use).
-1. Se deseja expirar os termos de consentimentos de uso em um agendamento, defina **expirar consentimentos** à **em**. Quando definido como On, duas configurações de cronograma adicionais são exibidas.
+1. Para **termos de uso documento**, navegue até o PDF de termos de uso finalizado e selecione-o.
+1. Selecione o idioma do documento dos termos de uso. A opção de idioma permite carregar vários termos de uso, cada um com um idioma diferente. A versão dos termos de uso que um usuário final verá terá base em suas preferências de navegador.
+1. Para exigir que os usuários finais exibam os termos de uso antes de aceitá-los, defina **exigir que os usuários expandam os termos de uso** para **ativado**.
+1. Para exigir que os usuários finais aceitem os termos de uso em cada dispositivo do qual estão acessando, defina **exigir que os usuários consigam em cada dispositivo** para **o.** Para obter mais informações, consulte [termos de uso por dispositivo](#per-device-terms-of-use).
+1. Se você quiser expirar os termos de uso de consentir de acordo com uma agenda, defina **expirar consentir** como **ativado**. Quando definido como On, duas configurações de cronograma adicionais são exibidas.
 
-   ![Expirar consentimentos configurações para definir a data de início, frequência e duração](./media/terms-of-use/expire-consents.png)
+   ![Expirar as configurações para definir a data de início, a frequência e a duração](./media/terms-of-use/expire-consents.png)
 
-1. Usar o **expirar, iniciando em** e **frequência** configurações para especificar o agendamento para termos de expirações de usar. A tabela a seguir mostra o resultado para duas configurações de exemplo:
+1. Use as configurações de **expiração de início** e de **frequência** para especificar o agendamento de expirações de termos de uso. A tabela a seguir mostra o resultado para duas configurações de exemplo:
 
-   | Expirar a partir de | Frequência | Result |
+   | Expirar a partir de | Frequência | Resultado |
    | --- | --- | --- |
-   | Data de hoje  | Mensalmente | A partir de hoje, os usuários devem aceitar os termos de uso e, em seguida, aceitem novamente todos os meses. |
+   | Data de hoje  | Mensalmente | A partir de hoje, os usuários devem aceitar os termos de uso e, em seguida, reaceitar todos os meses. |
    | Data no futuro  | Mensalmente | A partir de hoje, os usuários devem aceitar os termos de uso. Quando a data futura chegar, os consentimentos irão expirar e depois os usuários devem aceitar novamente a todos os meses.  |
 
    Por exemplo, se você definir a expiração a partir da data para **1 de janeiro** e a frequência para **Mensal**, segue como ocorreriam as expirações para dois usuários:
 
-   | Usuário | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
+   | User | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
    | --- | --- | --- | --- | --- |
    | Alice | 1 de janeiro | 1 de fevereiro | 1 de março | 1 de abril |
    | Roberto | 15 de janeiro | 1 de fevereiro | 1 de março | 1 de abril |
 
-1. Use o **duração antes de (dias) requer o re-aceitação** configuração para especificar o número de dias antes que o usuário deve aceitem novamente os termos de uso. Isso permite que os usuários sigam seu próprio cronograma. Por exemplo, se você definir a duração como **30** dias, segue como ocorreriam as expirações para dois usuários:
+1. Use a configuração **duração antes da reaceitação requer (dias)** para especificar o número de dias antes que o usuário precise aceitar os termos de uso novamente. Isso permite que os usuários sigam seu próprio cronograma. Por exemplo, se você definir a duração como **30** dias, segue como ocorreriam as expirações para dois usuários:
 
-   | Usuário | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
+   | User | Primeira data de aceitação | Primeira data de expiração | Segunda data de expiração | Terceira data de expiração |
    | --- | --- | --- | --- | --- |
    | Alice | 1 de janeiro | 31 de janeiro | 2 de março | 1 de abril |
    | Roberto | 15 de janeiro | 14 de fevereiro | 16 de março | 15 de abril |
 
    É possível usar as configurações **Expirar consentimentos** e **Duração (dias) até exigir a nova aceitação** juntas, mas normalmente você usa uma ou a outra.
 
-1. Sob **acesso condicional**, use o **impor com o modelo de política de acesso condicional** lista para selecionar o modelo para impor os termos de uso.
+1. Em **acesso condicional**, use a lista **impor com modelo de política de acesso condicional** para selecionar o modelo para impor os termos de uso.
 
-   ![Lista de lista suspensa de acesso condicional para selecionar um modelo de política](./media/terms-of-use/conditional-access-templates.png)
+   ![Lista suspensa acesso condicional para selecionar um modelo de política](./media/terms-of-use/conditional-access-templates.png)
 
-   | Modelo | DESCRIÇÃO |
+   | Modelo | Descrição |
    | --- | --- |
    | **Acesso a aplicativos de nuvem para todos os convidados** | Uma política de acesso condicional será criada para todos os convidados e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, talvez seja necessário sair e entrar novamente. |
    | **Acesso a aplicativos de nuvem para todos os usuários** | Uma política de acesso condicional será criada para todos os usuários e todos os aplicativos de nuvem. Essa política afeta o portal do Azure. Após ela ser criada, será necessário sair e entrar novamente. |
-   | **Política personalizada** | Selecione os usuários, grupos e aplicativos que serão aplicados a estes termos de uso. |
-   | **Criar política de acesso condicional mais tarde** | Estes termos de uso aparecerá na lista de controle de concessão ao criar uma política de acesso condicional. |
+   | **Política personalizada** | Selecione os usuários, grupos e aplicativos aos quais esses termos de uso serão aplicados. |
+   | **Criar política de acesso condicional mais tarde** | Esses termos de uso aparecerão na lista de controle de concessão ao criar uma política de acesso condicional. |
 
    >[!IMPORTANT]
-   >Controles de política de acesso condicionais (incluindo termos de uso) não dá suporte à imposição em contas de serviço. É recomendável excluir todas as contas de serviço da política de acesso condicional.
+   >Controles de política de acesso condicional (incluindo termos de uso) não dão suporte à imposição em contas de serviço. É recomendável excluir todas as contas de serviço da política de acesso condicional.
 
-    Políticas de acesso condicional personalizadas permitem termos de uso, para baixo até um aplicativo de nuvem específica ou um grupo de usuários granulares. Para saber mais, confira [Início Rápido: Exigir a aceitação dos termos de uso antes de acessar os aplicativos de nuvem](require-tou.md).
+    As políticas de acesso condicional personalizadas permitem termos de uso granulares, até um aplicativo de nuvem ou grupo de usuários específico. Para obter mais informações, confira [Início Rápido: Exigir a aceitação dos termos de uso antes de acessar os aplicativos de nuvem](require-tou.md).
 
 1. Clique em **Criar**.
 
-   Se você tiver selecionado um modelo de acesso condicional personalizado, uma nova tela é exibida que permite que você crie a política de acesso condicional personalizada.
+   Se você selecionou um modelo de acesso condicional personalizado, uma nova tela será exibida, permitindo que você crie a política de acesso condicional personalizada.
 
    ![Novo painel de acesso condicional se você escolheu o modelo de política de acesso condicional personalizado](./media/terms-of-use/custom-policy.png)
 
    Agora você deve ver seus novos termos de uso.
 
-   ![Novos termos de uso listados nos termos da folha de uso](./media/terms-of-use/create-tou.png)
+   ![Novos termos de uso listados na folha termos de uso](./media/terms-of-use/create-tou.png)
 
 ## <a name="view-report-of-who-has-accepted-and-declined"></a>Exibir relatório de quem aceitou e recusou
 
-A folha Termos de uso mostra uma contagem de usuários que os aceitaram e recusaram. Essas contagens e quem aceitou/recusadas são armazenados durante a vida útil dos termos de uso.
+A folha Termos de uso mostra uma contagem de usuários que os aceitaram e recusaram. Essas contagens e quem aceitou/recusou são armazenados durante a vida útil dos termos de uso.
 
 1. Entre no Azure e navegue até **Termos de uso** em [https://aka.ms/catou](https://aka.ms/catou).
 
-   ![Termos de folha de uso listando o número de Mostrar usuário aceitaram e recusaram](./media/terms-of-use/view-tou.png)
+   ![Termos de uso folha listando o número de usuários mostrar foram aceitos e recusados](./media/terms-of-use/view-tou.png)
 
-1. Para termos de uso, clique no número sob **aceito** ou **recusadas** para exibir o estado atual para os usuários.
+1. Para obter os termos de uso, clique nos números em **aceito** ou **recusado** para exibir o estado atual dos usuários.
 
-   ![Termos de uso de painel de consentimentos listando os usuários que aceitaram](./media/terms-of-use/accepted-tou.png)
+   ![Termos de uso painel consentis listando os usuários que aceitaram](./media/terms-of-use/accepted-tou.png)
 
 1. Para exibir o histórico de um usuário individual, clique no botão de reticências ( **...** ) e, em seguida **Exibir histórico**.
 
-   ![Menu de contexto de histórico de exibição para um usuário](./media/terms-of-use/view-history-menu.png)
+   ![Exibir o menu de contexto do histórico para um usuário](./media/terms-of-use/view-history-menu.png)
 
    No painel de exibição de histórico, você vê um histórico de todos os aceites, recusas e expirações.
 
-   ![Exibir o histórico aceita o painel lista de histórico, recusas e expirações de um usuário](./media/terms-of-use/view-history-pane.png)
+   ![Painel exibir histórico lista o histórico aceita, recusa e expirações de um usuário](./media/terms-of-use/view-history-pane.png)
 
 ## <a name="view-azure-ad-audit-logs"></a>Exibir logs de auditoria do Azure AD
 
-Se você quiser exibir a atividade adicional, termos de uso do Azure AD inclui logs de auditoria. Cada consentimento do usuário dispara um evento nos logs de auditoria que ficam armazenados durante **30 dias**. Você pode exibir esses logs no portal ou baixá-los como um arquivo .csv.
+Se você quiser exibir atividades adicionais, os termos de uso do Azure AD incluirão logs de auditoria. Cada consentimento do usuário dispara um evento nos logs de auditoria que ficam armazenados durante **30 dias**. Você pode exibir esses logs no portal ou baixá-los como um arquivo .csv.
 
 Para começar a usar os logs de auditoria do Microsoft Azure AD, use o procedimento a seguir:
 
@@ -169,103 +169,103 @@ Para começar a usar os logs de auditoria do Microsoft Azure AD, use o procedime
 1. Selecione os termos de uso.
 1. Clique em **Exibir logs de auditoria**.
 
-   ![Termos da folha de uso com o modo de exibição realçada de opção de logs de auditoria](./media/terms-of-use/audit-tou.png)
+   ![Termos de uso folha com a opção Exibir logs de auditoria realçada](./media/terms-of-use/audit-tou.png)
 
 1. Na tela de logs de auditoria do Azure AD, é possível filtrar as informações usando as listas fornecidas para buscar informações de log de auditoria específico.
 
    Você também pode clicar em **Download** para baixar as informações em um arquivo .csv para uso local.
 
-   ![Listagem data, a política de destino, iniciada por e a atividade de tela de logs de auditoria do AD do Azure](./media/terms-of-use/audit-logs-tou.png)
+   ![Lista de logs de auditoria do Azure AD data de listagem, política de destino, iniciada por e atividade](./media/terms-of-use/audit-logs-tou.png)
 
    Se você clicar em um log, um painel é exibido com detalhes adicionais da atividade.
 
-   ![Detalhes de atividade para um log mostrando a atividade, status da atividade, iniciada por, direcionar a política](./media/terms-of-use/audit-log-activity-details.png)
+   ![Detalhes da atividade para um log que mostra a atividade, o status da atividade, iniciado por, política de destino](./media/terms-of-use/audit-log-activity-details.png)
 
-## <a name="what-terms-of-use-looks-like-for-users"></a>Quais termos de uso é semelhante para os usuários
+## <a name="what-terms-of-use-looks-like-for-users"></a>A aparência dos termos de uso para os usuários
 
-Depois de termos de uso é criado e imposta, os usuários, que estão no escopo, verá a tela a seguir durante a entrada.
+Depois que os termos de uso forem criados e impostos, os usuários, que estão no escopo, verão a tela a seguir durante a entrada.
 
-![Exemplo de termos de uso que aparece quando um usuário entra em](./media/terms-of-use/user-tou.png)
+![Exemplo de termos de uso que aparece quando um usuário entra](./media/terms-of-use/user-tou.png)
 
-Os usuários podem exibir os termos de uso e, se necessário, use os botões para ampliar e reduzir.
+Os usuários podem exibir os termos de uso e, se necessário, usar os botões para ampliar e reduzir.
 
 ![Exibição dos termos de uso com botões de zoom](./media/terms-of-use/zoom-buttons.png)
 
-A tela a seguir mostra a aparência dos termos de uso em dispositivos móveis.
+A tela a seguir mostra como os termos de uso são examinados em dispositivos móveis.
 
-![Exemplo de termos de uso que aparece quando um usuário faz logon em um dispositivo móvel](./media/terms-of-use/mobile-tou.png)
+![Exemplo de termos de uso que aparece quando um usuário entra em um dispositivo móvel](./media/terms-of-use/mobile-tou.png)
 
-Os usuários só precisam aceitar os termos de uso de uma vez e não poderão ver os termos de uso novamente em conexões subsequentes.
+Os usuários só precisam aceitar os termos de uso uma vez e não verão os termos de uso novamente em entradas subsequentes.
 
-### <a name="how-users-can-review-their-terms-of-use"></a>Como os usuários podem examinar seus termos de uso
+### <a name="how-users-can-review-their-terms-of-use"></a>Como os usuários podem revisar seus termos de uso
 
-Os usuários podem examinar e ver os termos de uso que eles tiverem aceitado usando o procedimento a seguir.
+Os usuários podem examinar e ver os termos de uso que aceitaram usando o procedimento a seguir.
 
 1. Entre em [https://myapps.microsoft.com](https://myapps.microsoft.com).
 1. No canto superior direito, clique em seu nome e selecione **Perfil**.
 
-   ![Site do MyApps com aberto de painel do usuário](./media/terms-of-use/tou14.png)
+   ![Site myapps com o painel do usuário aberto](./media/terms-of-use/tou14.png)
 
 1. Na página de seu perfil, clique em **Analisar termos de uso**.
 
-   ![Página de perfil para um usuário, mostrando os termos de revisão de link de uso](./media/terms-of-use/tou13a.png)
+   ![Página de perfil para um usuário que mostra o link revisar termos de uso](./media/terms-of-use/tou13a.png)
 
 1. A partir daí, você pode revisar os termos de uso aceitos.
 
-## <a name="edit-terms-of-use-details"></a>Editar os termos de detalhes de uso
+## <a name="edit-terms-of-use-details"></a>Editar os detalhes dos termos de uso
 
-Você pode editar alguns detalhes dos termos de uso, mas não é possível modificar um documento existente. O procedimento a seguir descreve como editar os detalhes.
+Você pode editar alguns detalhes dos termos de uso, mas não pode modificar um documento existente. O procedimento a seguir descreve como editar os detalhes.
 
 1. Entre no Azure e navegue até **Termos de uso** em [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecione os termos de uso que você deseja editar.
 1. Clique em **editar termos**.
 1. Em termos de edição do painel de uso, altere o nome, nome de exibição ou exigir que os usuários expandam os valores.
 
-   Se não houver outras configurações que você deseja alterar, como o documento PDF, exigir que os usuários consentir em todos os dispositivos, expirar consentimentos, duração antes reacceptance ou política de acesso condicional, você deve criar novos termos de uso.
+   Se houver outras configurações que você queira alterar, como documento PDF, exigir que os usuários consigam em cada dispositivo, expirem consentidos, duração antes da reaceitação ou política de acesso condicional, você deve criar novos termos de uso.
 
-   ![Editar os termos de nome de exibição do painel de uso e opções](./media/terms-of-use/edit-tou.png)
+   ![Editar o painel termos de uso mostrando as opções nome e expandir](./media/terms-of-use/edit-tou.png)
 
 1. Clique em **Salvar** para salvar as alterações.
 
    Depois de salvar as alterações, os usuários terão que aceitar novamente essas edições.
 
-## <a name="add-a-terms-of-use-language"></a>Adicionar termos de uso de linguagem
+## <a name="add-a-terms-of-use-language"></a>Adicionar um idioma de termos de uso
 
-O procedimento a seguir descreve como adicionar termos de uso de idioma.
+O procedimento a seguir descreve como adicionar um idioma de termos de uso.
 
 1. Entre no Azure e navegue até **Termos de uso** em [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecione os termos de uso que você deseja editar.
 1. No painel de detalhes, clique na guia **Idiomas**.
 
-   ![Termos de uso selecionado e mostrando a guia de idiomas no painel de detalhes](./media/terms-of-use/languages-tou.png)
+   ![Termos de uso selecionado e mostrando a guia idiomas no painel de detalhes](./media/terms-of-use/languages-tou.png)
 
 1. Clique em **Adicionar idioma**.
 1. Em termos do painel de linguagem do uso de Add, carregar o PDF localizado e selecione o idioma.
 
-   ![Adicionar termos de painel de linguagem de uso com opções para carregar PDFs localizadas](./media/terms-of-use/language-add-tou.png)
+   ![Adicionar o painel de idiomas termos de uso com opções para carregar PDFs localizados](./media/terms-of-use/language-add-tou.png)
 
 1. Clique em **adicionar** para adicionar o idioma.
 
 ## <a name="per-device-terms-of-use"></a>Termos de uso por dispositivo
 
-O **exigem o consentimento em todos os dispositivos dos usuários** configuração permite que você exija que os usuários finais aceitar os termos de uso em todos os dispositivos estiverem acessando de. O usuário final precisará ingressar o dispositivo dele no Azure AD. Quando o dispositivo está associado, a ID do dispositivo é usada para impor os termos de uso em cada dispositivo.
+A configuração **exigir que os usuários consentim em cada dispositivo** permite que você exija que os usuários finais aceitem os termos de uso em cada dispositivo do qual estão acessando. O usuário final precisará ingressar o dispositivo dele no Azure AD. Quando o dispositivo é Unido, a ID do dispositivo é usada para impor os termos de uso em cada dispositivo.
 
 Segue uma lista dos softwares e plataformas com suporte.
 
 > [!div class="mx-tableFixed"]
 > |  | iOS | Android | Windows 10 | Outros |
 > | --- | --- | --- | --- | --- |
-> | **Aplicativo nativo** | Sim | sim | Sim |  |
-> | **Microsoft Edge** | Sim | sim | Sim |  |
-> | **Internet Explorer** | Sim | sim | Sim |  |
-> | **Chrome (com extensão)** | Sim | sim | Sim |  |
+> | **Aplicativo nativo** | Sim | Sim | Sim |  |
+> | **Microsoft Edge** | Sim | Sim | Sim |  |
+> | **Internet Explorer** | Sim | Sim | Sim |  |
+> | **Chrome (com extensão)** | Sim | Sim | Sim |  |
 
-Termos de acordo com o dispositivo de uso tem as seguintes restrições:
+Os termos de uso por dispositivo têm as seguintes restrições:
 
 - Um dispositivo somente pode ser unido a um locatário.
 - Um usuário deve ter permissões para ingressar seu dispositivo.
 - Não há suporte para o aplicativo de registro do Intune.
-- Não há suporte para os usuários de B2B do AD do Azure.
+- Não há suporte para usuários B2B do Azure AD.
 
 Se o dispositivo do usuário não estiver ingressado, ele receberá uma mensagem de que é necessário ingressar o dispositivo dele. A experiência dele será dependente da plataforma e do software.
 
@@ -273,7 +273,7 @@ Se o dispositivo do usuário não estiver ingressado, ele receberá uma mensagem
 
 Se um usuário estiver usando o Windows 10 e o Microsoft Edge, ele receberá uma mensagem semelhante à seguinte para [ingressar o dispositivo](../user-help/user-help-join-device-on-network.md#to-join-an-already-configured-windows-10-device).
 
-![Windows 10 e Microsoft Edge - mensagem indicando que o dispositivo devem ser registrado](./media/terms-of-use/per-device-win10-edge.png)
+![Windows 10 e Microsoft Edge-mensagem indicando que o dispositivo deve ser registrado](./media/terms-of-use/per-device-win10-edge.png)
 
 Se estiver usando o Chrome, o usuário será solicitado a instalar a [Extensão de Contas do Windows 10](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji).
 
@@ -281,42 +281,42 @@ Se estiver usando o Chrome, o usuário será solicitado a instalar a [Extensão 
 
 Se um usuário estiver usando um navegador sem suporte, ele será solicitado a usar um navegador diferente.
 
-![Mensagem indicando que o seu dispositivo deve ser registrado, mas não há suporte para o navegador](./media/terms-of-use/per-device-browser-unsupported.png)
+![Mensagem indicando que o dispositivo deve ser registrado, mas não há suporte para o navegador](./media/terms-of-use/per-device-browser-unsupported.png)
 
 ## <a name="delete-terms-of-use"></a>Excluir termos de uso
 
-Você pode excluir o antigos termos de uso usando o procedimento a seguir.
+Você pode excluir os termos de uso antigos usando o procedimento a seguir.
 
 1. Entre no Azure e navegue até **Termos de uso** em [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecione os termos de uso que você deseja remover.
 1. Clique em **Excluir termos**.
 1. Na mensagem que será exibida perguntando se deseja continuar, clique em **Sim**.
 
-   ![Mensagem que solicita confirmação excluir termos de uso](./media/terms-of-use/delete-tou.png)
+   ![Mensagem solicitando a confirmação para excluir os termos de uso](./media/terms-of-use/delete-tou.png)
 
-   Você não deve ver os termos de uso.
+   Você não deve mais ver seus termos de uso.
 
-## <a name="deleted-users-and-active-terms-of-use"></a>Usuários excluídos e os termos de uso do Active Directory
+## <a name="deleted-users-and-active-terms-of-use"></a>Usuários excluídos e termos de uso ativos
 
-Por padrão, um usuário excluído permanece excluído no Azure AD por 30 dias, durante os quais ele pode ser restaurado por um administrador, se necessário. Após 30 dias, esse usuário será excluído permanentemente. Além disso, usando o portal do Azure Active Directory, um Administrador Global pode explicitamente [excluir permanentemente um usuário excluído recentemente](../fundamentals/active-directory-users-restore.md) antes de atingir o período de tempo. Um usuário foi excluído permanentemente, dados subsequentes sobre o que o usuário serão removidos do Active Directory termos de uso. Auditar informações sobre usuários excluídos na trilha de auditoria.
+Por padrão, um usuário excluído permanece excluído no Azure AD por 30 dias, durante os quais ele pode ser restaurado por um administrador, se necessário. Após 30 dias, esse usuário será excluído permanentemente. Além disso, usando o portal do Azure Active Directory, um Administrador Global pode explicitamente [excluir permanentemente um usuário excluído recentemente](../fundamentals/active-directory-users-restore.md) antes de atingir o período de tempo. Um usuário foi excluído permanentemente, os dados subsequentes sobre esse usuário serão removidos dos termos de uso ativos. Auditar informações sobre usuários excluídos na trilha de auditoria.
 
 ## <a name="policy-changes"></a>Alterações na política
 
-Políticas de acesso condicional entram em vigor imediatamente. Quando isso acontece, o administrador começa a ver uma imagem de "nuvens tristes" ou "problemas de token do Azure AD". O administrador precisa sair e entrar novamente para atender à nova política.
+As políticas de acesso condicional entram em vigor imediatamente. Quando isso acontece, o administrador começa a ver uma imagem de "nuvens tristes" ou "problemas de token do Azure AD". O administrador precisa sair e entrar novamente para atender à nova política.
 
 > [!IMPORTANT]
 > Os usuários que estão no escopo precisarão sair e entrar novamente para atender a uma nova política se:
 >
-> - uma política de acesso condicional é habilitada em termos de uso
+> - uma política de acesso condicional está habilitada em termos de uso
 > - ou se outros termos de uso forem criados
 
 ## <a name="b2b-guests-preview"></a>Convidados B2B (versão prévia)
 
-A maioria das organizações tem um processo em vigor para seus funcionários para concordar com os termos de sua organização de instruções de uso e a privacidade. Mas como você pode impor os mesmos consentimentos para convidados B2B (business-to-business) do Azure AD quando eles forem adicionados por meio do SharePoint ou Teams? Usando o acesso condicional e termos de uso, você pode impor uma política diretamente para os usuários convidados de B2B. Durante o fluxo de resgate do convite, o usuário é apresentado com os termos de uso. No momento, esse suporte está na versão prévia.
+A maioria das organizações tem um processo em vigor para seus funcionários consentirem com os termos de uso e as declarações de privacidade de sua organização. Mas como você pode impor os mesmos consentimentos para convidados B2B (business-to-business) do Azure AD quando eles forem adicionados por meio do SharePoint ou Teams? Usando o acesso condicional e os termos de uso, você pode impor uma política diretamente para usuários de convidados B2B. Durante o fluxo de resgate de convite, o usuário recebe os termos de uso. No momento, esse suporte está na versão prévia.
 
-Termos de uso só serão exibidos quando o usuário tiver uma conta de convidado no Azure AD. SharePoint Online no momento, tem um [experiência de destinatário compartilhamento externa ad-hoc](/sharepoint/what-s-new-in-sharing-in-targeted-release) para compartilhar um documento ou uma pasta que não requer que o usuário tenha uma conta de convidado. Nesse caso, os termos de uso não é exibida.
+Termos de uso só serão exibidos quando o usuário tiver uma conta de convidado no Azure AD. O SharePoint Online atualmente tem uma [experiência de destinatário de compartilhamento externo ad hoc](/sharepoint/what-s-new-in-sharing-in-targeted-release) para compartilhar um documento ou uma pasta que não exige que o usuário tenha uma conta de convidado. Nesse caso, os termos de uso não são exibidos.
 
-![Incluir usuários e grupos - guia com a opção de todos os usuários de convidado é verificada](./media/terms-of-use/b2b-guests.png)
+![Painel usuários e grupos – incluir guia com todos os usuários convidados opção marcada](./media/terms-of-use/b2b-guests.png)
 
 ## <a name="support-for-cloud-apps-preview"></a>Suporte para aplicativos de nuvem (versão prévia)
 
@@ -324,62 +324,62 @@ Termos de uso podem ser usados para diferentes aplicativos de nuvem, como Prote�
 
 ### <a name="azure-information-protection"></a>Proteção de Informações do Azure
 
-Você pode configurar uma política de acesso condicional para o aplicativo de proteção de informações do Azure e exigem termos de uso, quando um usuário acessa um documento protegido. Isso vai disparar um termos de uso antes de um usuário que acessa um documento protegido pela primeira vez.
+Você pode configurar uma política de acesso condicional para o aplicativo de proteção de informações do Azure e exigir os termos de uso quando um usuário acessa um documento protegido. Isso irá disparar os termos de uso antes de um usuário acessar um documento protegido pela primeira vez.
 
-![Painel de aplicativos de nuvem com o aplicativo de proteção de informações do Microsoft Azure selecionado](./media/terms-of-use/cloud-app-info-protection.png)
+![Painel de aplicativos de nuvem com o aplicativo Proteção de Informações do Microsoft Azure selecionado](./media/terms-of-use/cloud-app-info-protection.png)
 
 ### <a name="microsoft-intune-enrollment"></a>Registro do Microsoft Intune
 
-Você pode configurar uma política de acesso condicional para o aplicativo de registro do Microsoft Intune e exigem termos de uso antes do registro de um dispositivo no Intune. Para obter mais informações, leia [Escolher a solução de Termos correta para a postagem no blog da organização](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
+Você pode configurar uma política de acesso condicional para o aplicativo de registro de Microsoft Intune e exigir os termos de uso antes do registro de um dispositivo no Intune. Para obter mais informações, leia [Escolher a solução de Termos correta para a postagem no blog da organização](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
-![Painel de aplicativos de nuvem com o Microsoft Intune aplicativo selecionado](./media/terms-of-use/cloud-app-intune.png)
+![Painel de aplicativos de nuvem com o aplicativo Microsoft Intune selecionado](./media/terms-of-use/cloud-app-intune.png)
 
 > [!NOTE]
-> Não há suporte para o aplicativo de registro do Intune para [termos de uso por dispositivo](#per-device-terms-of-use).
+> O aplicativo de registro do Intune não tem suporte para os [termos de uso por dispositivo](#per-device-terms-of-use).
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
-**P: Como ver quando / se um usuário aceitou os termos de uso?**<br />
+**P: Como fazer ver quando/se um usuário aceitou os termos de uso?**<br />
 R: Na folha de Termos de uso, clique no número em **Aceito**. Também é possível exibir ou pesquisar a atividade de aceitação nos logs de auditoria do Azure AD. Para obter mais informações, confira Exibir relatório de quem aceitou e recusou e [Exibir logs de auditoria do Azure AD](#view-azure-ad-audit-logs).
 
 **P: Por quanto tempo as informações ficam armazenadas?**<br />
-R: Conta de usuário nos termos do relatório de uso e que aceita/recusadas são armazenadas durante a vida útil dos termos de uso. Os logs de auditoria do Azure AD são armazenados por 30 dias.
+R: O usuário conta no relatório termos de uso e quem aceitou/recusado são armazenados durante a vida útil dos termos de uso. Os logs de auditoria do Azure AD são armazenados por 30 dias.
 
-**P: Por que vejo logs de auditoria de um número diferente de consentimentos em termos de uso relatório versus o Azure AD?**<br />
-R: Os termos de uso de relatório é armazenado para o tempo de vida dos termos de uso, enquanto a auditoria do AD do Azure que os logs são armazenados por 30 dias. Além disso, os termos de uso de relatório só exibe o estado de consentimento dos usuários atuais. Por exemplo, se um usuário recusa e, em seguida, aceita, os termos de uso de relatório somente mostrará que o usuário aceite. Se você precisar ver o histórico, poderá usar os logs de auditoria do Azure AD.
+**P: Por que vejo um número diferente de consentirs no relatório termos de uso versus nos logs de auditoria do Azure AD?**<br />
+R: O relatório de termos de uso é armazenado durante o tempo de vida dos termos de uso, enquanto os logs de auditoria do Azure AD são armazenados por 30 dias. Além disso, o relatório termos de uso exibe apenas o estado de consentimento atual dos usuários. Por exemplo, se um usuário recusar e, em seguida, aceitar, o relatório de termos de uso mostrará apenas a aceitação desse usuário. Se você precisar ver o histórico, poderá usar os logs de auditoria do Azure AD.
 
-**P: Se eu editar os detalhes para termos de uso, ele requer que os usuários aceitem novamente?**<br />
-R: Não, se um administrador editar os detalhes para termos de uso (nome, nome de exibição, exigem que os usuários expandam ou adicionar um idioma), ele não requer que os usuários aceitem novamente os novos termos.
+**P: Se eu editar os detalhes para os termos de uso, ele exigirá que os usuários aceitem novamente?**<br />
+R: Não, se um administrador editar os detalhes de um termo de uso (nome, nome de exibição, exigir que os usuários expandam ou adicionem um idioma), ele não exigirá que os usuários aceitem novamente os novos termos.
 
-**P: Posso atualizar uma existente de condições de uso de documento?**<br />
-R: No momento, você não pode atualizar uma existente de condições de uso de documento. Para alterar os termos de uso de documento, você terá que criar novos termos de uso de instância.
+**P: Posso atualizar um documento de termos de uso existente?**<br />
+R: No momento, não é possível atualizar um documento de termos de uso existente. Para alterar um documento de termos de uso, você precisará criar uma nova instância de termos de uso.
 
-**P: Se forem hiperlinks em termos de usar o documento PDF, os usuários finais conseguirá clicar nelas?**<br />
-R: O PDF é renderizado por padrão como JPEG, portanto, os hiperlinks não são clicáveis. Os usuários têm a opção de selecionar **Você está tendo problemas para exibir? Clique aqui**, que renderiza o PDF nativamente onde os hiperlinks têm suporte.
+**P: Se os hiperlinks estiverem no documento PDF termos de uso, os usuários finais poderão clicar neles?**<br />
+R: Sim, os usuários finais são capazes de selecionar hiperlinks para páginas adicionais, mas não há suporte para links para seções dentro do documento.
 
-**P: Termos de uso podem dar suporte a vários idiomas?**<br />
-R: Sim. Atualmente, há 108 idiomas diferentes, um administrador pode configurar para um único termos de uso. Um administrador pode carregar vários documentos em PDF e marcar esses documentos com um idioma correspondente (até 108). Quando os usuários finais entram, examinamos a preferência de idioma do navegador deles e exibimos o documento correspondente. Se não houver nenhuma correspondência, exibimos o documento padrão, que é o primeiro documento carregado.
+**P: Os termos de uso podem dar suporte a vários idiomas?**<br />
+R: Sim. Atualmente, há 108 diferentes idiomas que um administrador pode configurar para um único termo de uso. Um administrador pode carregar vários documentos em PDF e marcar esses documentos com um idioma correspondente (até 108). Quando os usuários finais entram, examinamos a preferência de idioma do navegador deles e exibimos o documento correspondente. Se não houver nenhuma correspondência, exibimos o documento padrão, que é o primeiro documento carregado.
 
-**P: Quando é os termos de uso são acionados?**<br />
-R: Os termos de uso é disparada durante a experiência de entrada.
+**P: Quando os termos de uso são disparados?**<br />
+R: Os termos de uso são disparados durante a experiência de entrada.
 
-**P: Quais aplicativos posso empregar os termos de uso para?**<br />
-R: Você pode criar uma política de acesso condicional em aplicativos empresariais usando autenticação moderna. Para obter mais informações, consulte [aplicativos empresariais](./../manage-apps/view-applications-portal.md).
+**P: Para quais aplicativos posso direcionar os termos de uso?**<br />
+R: Você pode criar uma política de acesso condicional nos aplicativos empresariais usando a autenticação moderna. Para obter mais informações, consulte [aplicativos empresariais](./../manage-apps/view-applications-portal.md).
 
-**P: Pode adicionar vários termos de uso para um determinado usuário ou aplicativo?**<br />
-R: Sim, com a criação de várias políticas de acesso condicional direcionar esses grupos ou aplicativos. Se um usuário estiver no escopo de vários termos de uso, eles aceitam uma termos de uso por vez.
+**P: Posso adicionar vários termos de uso a um determinado usuário ou aplicativo?**<br />
+R: Sim, criando várias políticas de acesso condicional direcionadas a esses grupos ou aplicativos. Se um usuário estiver no escopo de vários termos de uso, eles aceitarão um termo de uso de cada vez.
 
-**P: O que acontece se um usuário recusar os termos de uso?**<br />
+**P: O que acontecerá se um usuário recusar os termos de uso?**<br />
 R: O usuário é impedido de acessar o aplicativo. O usuário precisa entrar novamente e aceitar os termos para obter acesso.
 
-**P: É possível unaccept termos de uso que anteriormente foi aceita?**<br />
-R: Você pode [revisão anteriormente aceitou os termos de uso](#how-users-can-review-their-terms-of-use), mas atualmente não há uma maneira unaccept.
+**P: É possível não aceitar os termos de uso que foram aceitos anteriormente?**<br />
+R: Você pode [revisar os termos de uso aceitos anteriormente](#how-users-can-review-their-terms-of-use), mas atualmente não há uma maneira de não aceitar.
 
 **P: O que acontece se também estiver usando os termos e condições do Intune?**<br />
-R: Se você configurou ambos os termos de uso do AD do Azure e [Intune dos termos e condições](/intune/terms-and-conditions-create), o usuário precisará aceitar os dois. Para obter mais informações, consulte a [Escolha da solução de Termos correta para a publicação do seu blog da organização](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
+R: Se você tiver configurado os termos de uso do Azure AD e os [termos e condições do Intune](/intune/terms-and-conditions-create), o usuário será solicitado a aceitar os dois. Para obter mais informações, consulte a [Escolha da solução de Termos correta para a publicação do seu blog da organização](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
-**P: Quais pontos de extremidade os termos de uso de serviço pode usar para autenticação?**<br />
-R: Termos de uso utiliza os seguintes pontos de extremidade para autenticação: https://tokenprovider.termsofuse.identitygovernance.azure.com e https://account.activedirectory.windowsazure.com. Se sua organização tiver uma lista de permissões de URLs para o registro, você precisará adicionar esses pontos de extremidade para sua lista de permissões, juntamente com os pontos de extremidade do Azure AD para entrar.
+**P: Quais pontos de extremidade os termos de uso do serviço usam para autenticação?**<br />
+R: Termos de uso utiliza os seguintes pontos de extremidade para autenticação: https://tokenprovider.termsofuse.identitygovernance.azure.com e. https://account.activedirectory.windowsazure.com Se sua organização tiver uma lista de permissões de URLs para registro, você precisará adicionar esses pontos de extremidade à sua lista de permissões, juntamente com os pontos de extremidade do Azure AD para entrar.
 
 ## <a name="next-steps"></a>Próximas etapas
 

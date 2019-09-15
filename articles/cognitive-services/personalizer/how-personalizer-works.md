@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 06/07/2019
+ms.date: 09/13/2019
 ms.author: diberry
-ms.openlocfilehash: c258799b1305c4204d08d66aa36a0be7c71a4944
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 7c163dacae24749dbe309bca33bac016a3be7aa5
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034383"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002884"
 ---
 # <a name="how-personalizer-works"></a>Como funciona o Personalizador
 
@@ -89,31 +89,6 @@ O Personalizador se baseia em ciência e pesquisa de ponta na área de [Aprendiz
 * Características de bot e tom: para bots que podem variar o tom, o nível de detalhes e o estilo de escrita, considere variar essas características de maneiras personalizadas.
 * Conteúdo de notificação e alerta: decida que texto usar para alertas a fim de envolver mais os usuários.
 * Tempo de alerta e notificação: tenha um aprendizado personalizado de quando enviar notificações para os usuários para envolvê-los mais.
-
-## <a name="checklist-for-applying-personalizer"></a>Lista de verificação para aplicar o Personalizador
-
-Você pode aplicar o Personalizador em situações em que:
-
-* Você tem uma meta de negócios ou de usabilidade para seu aplicativo.
-* Você tem um lugar em seu aplicativo, em que a tomada de uma decisão contextual do que mostrar aos usuários melhorará essa meta.
-* A melhor opção pode e deve ser aprendida com o comportamento coletivo dos usuários e a pontuação total das recompensas.
-* O uso do aprendizado de máquina para personalização segue as [diretrizes de uso responsável](ethics-responsible-use.md) e as opções para sua equipe.
-* A decisão pode ser expressa como a classificação da melhor opção ([ação](concepts-features.md#actions-represent-a-list-of-options)) de um conjunto limitado de opções.
-* Saber se essa opção funcionou bem pode ser calculado pela lógica de negócios, medindo algum aspecto do comportamento do usuário e expressando-o em um número entre -1 e 1.
-* A pontuação de recompensa não traz muitos fatores de confusão ou externos, principalmente se a duração do experimento é curta o suficiente para que a pontuação de recompensa possa ser computada enquanto ainda é relevante.
-* É possível expressar o contexto da classificação como um dicionário de pelo menos cinco recursos que você acha que ajudariam a fazer a escolha certa e isso não inclui informações de identificação pessoal.
-* Você tem informações sobre cada ação como um dicionário de pelo menos cinco atributos ou recursos que você acha que ajudarão o Personalizador a fazer a escolha certa.
-* É possível reter dados por tempo suficiente para acumular um histórico de pelo menos 100 mil interações.
-
-## <a name="machine-learning-considerations-for-applying-personalizer"></a>Considerações sobre o aprendizado de máquina para aplicação do Personalizador
-
-O Personalizador é baseado no aprendizado de reforço, uma abordagem do aprendizado de máquina ensinada pelos comentários que você fornece a ele. 
-
-O Personalizador aprenderá melhor em situações em que:
-* Não há eventos suficientes para permanecer acima da personalização ideal se o problema se desloca com o tempo (por exemplo, preferências de notícias ou moda). O Personalizador se adaptará a alterações contínuas no mundo real, mas os resultados não serão ideais se não houver eventos e dados suficientes para aprendizado, a fim de descobrir e estabelecer novos padrões. Você deve escolher um caso de uso que ocorre com uma frequência suficiente. Considere buscar casos de uso que ocorram, pelo menos, 500 vezes por dia.
-* O contexto e as ações têm recursos suficientes para facilitar o aprendizado.
-* Há menos de 50 ações a serem classificadas por chamada.
-* Suas configurações de retenção de dados permitem ao Personalizador coletar dados suficientes para realizar avaliações offline e a otimização de política. Normalmente, isso representa, pelo menos, 50.000 pontos de dados.
 
 ## <a name="how-to-use-personalizer-in-a-web-application"></a>Como usar o Personalizador em um aplicativo Web
 

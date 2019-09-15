@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: rkarlin
 ms.date: 03/01/2019
-ms.openlocfilehash: 86ac58aea174ca05580da99b6bde0cc3823ab151
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 68c9279333e9ee92cbca1034f70801c153b6cdb8
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883070"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000543"
 ---
 # <a name="manage-storage-account-keys-with-azure-key-vault-and-the-azure-cli"></a>Gerenciar chaves de conta de armazenamento com Azure Key Vault e o CLI do Azure 
 
@@ -158,7 +158,7 @@ Há três maneiras de se autenticar no Key Vault:
 - Use uma entidade de serviço e um certificado. 
 - Use uma entidade de serviço e uma senha. Essa abordagem não é recomendada.
 
-Para obter mais informações, [consulte Azure Key Vault: Conceitos](key-vault-whatis.md#basic-concepts)básicos.
+Para obter mais informações, [consulte Azure Key Vault: Conceitos](basic-concepts.md)básicos.
 
 O exemplo a seguir demonstra como buscar tokens de assinatura de acesso compartilhado. Você busca os tokens depois de criar uma definição de assinatura de acesso compartilhado. 
 
