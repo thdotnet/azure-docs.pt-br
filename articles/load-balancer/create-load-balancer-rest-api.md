@@ -35,10 +35,10 @@ Use a seguinte solicitação HTTP PUT para criar um novo Azure Load Balancer Bá
 
 |Nome  |No  |Obrigatório |Tipo |DESCRIÇÃO |
 |---------|---------|---------|---------|--------|
-|subscriptionId   |  path       |  verdadeiro       |   cadeia de caracteres      |  As credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure. A ID da assinatura faz parte do URI para cada chamada de serviço.      |
-|resourceGroupName     |     path    | verdadeiro        |  cadeia de caracteres       |   O nome do grupo de recursos.     |
-|loadBalancerName     |  path       |      verdadeiro   |    cadeia de caracteres     |    O nome do balanceador de carga.    |
-|api-version    |   query     |  verdadeiro       |     cadeia de caracteres    |  Versão de API do cliente.      |
+|subscriptionId   |  path       |  verdadeiro       |   string      |  As credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure. A ID da assinatura faz parte do URI para cada chamada de serviço.      |
+|resourceGroupName     |     path    | verdadeiro        |  string       |   O nome do grupo de recursos.     |
+|loadBalancerName     |  path       |      verdadeiro   |    string     |    O nome do balanceador de carga.    |
+|api-version    |   query     |  verdadeiro       |     string    |  Versão de API do cliente.      |
 
 
 
@@ -48,7 +48,7 @@ O único parâmetro necessário é `location`. Se você não definir a versão d
 
 | Nome | Tipo | DESCRIÇÃO |
 | :--- | :--- | :---------- |
-| location | cadeia de caracteres | Local do recurso. Obtenha uma lista atual de locais usando a operação [Listar locais](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
+| location | string | Local do recurso. Obtenha uma lista atual de locais usando a operação [Listar locais](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
 
 
 ## <a name="example-create-and-update-a-basic-load-balancer"></a>Exemplo: criar e atualizar um Load Balancer Básico
