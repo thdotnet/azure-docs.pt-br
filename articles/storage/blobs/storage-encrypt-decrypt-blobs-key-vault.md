@@ -9,12 +9,12 @@ ms.date: 05/14/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: d7c740133911689c6d3f8e29c2cb20aa8873f0c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34dbcaeedb544a8a8808aab3e8e3315f1790dd9a
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65788003"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003441"
 ---
 # <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Tutorial: Criptografar e Descriptografar Blobs no Armazenamento do Microsoft Azure usando o Azure Key Vault
 
@@ -23,7 +23,7 @@ Este tutorial aborda como aproveitar a criptografia de armazenamento do cliente 
 
 **Tempo estimado para conclusão:** 20 minutos
 
-Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte [O que é o Cofre de Chaves do Azure?](../../key-vault/key-vault-whatis.md).
+Para obter informações gerais sobre o Cofre de Chaves do Azure, consulte [O que é o Cofre de Chaves do Azure?](../../key-vault/key-vault-overview.md).
 
 Para obter informações gerais sobre a criptografia de cliente do armazenamento do Azure, consulte [Criptografia do lado do cliente e Cofre de Chaves do Azure para o Armazenamento do Microsoft Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
@@ -48,7 +48,7 @@ Aqui está uma breve descrição de como funciona a criptografia do lado do clie
 
 ## <a name="set-up-your-azure-key-vault"></a>Configure o seu Cofre da Chave do Azure
 
-Para continuar com este tutorial, você precisa fazer as seguintes etapas são descritas no tutorial [guia de início rápido: Definir e recuperar um segredo do Cofre de chaves do Azure por meio de um aplicativo web .NET](../../key-vault/quick-create-net.md):
+Para continuar com este tutorial, você precisa executar as etapas a seguir, que são descritas no guia de início rápido do [tutorial: Definir e recuperar um segredo de Azure Key Vault usando um aplicativo](../../key-vault/quick-create-net.md)Web .net:
 
 * Crie um cofre da chave.
 * Adicionar uma chave ou segredo ao cofre da chave.

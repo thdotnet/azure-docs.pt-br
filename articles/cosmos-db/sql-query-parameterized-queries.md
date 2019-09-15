@@ -1,25 +1,25 @@
 ---
 title: Consultas parametrizadas no Azure Cosmos DB
-description: Saiba mais sobre consultas SQL parametrizada
+description: Saiba mais sobre consultas parametrizadas do SQL
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: tisande
-ms.openlocfilehash: 2bfc22346c1dd43d7d3c2937ffc286e48ae774d0
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 45c1344c32e35f60f35ba8ed105e912d92574cce
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342802"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003598"
 ---
 # <a name="parameterized-queries-in-azure-cosmos-db"></a>Consultas parametrizadas no Azure Cosmos DB
 
-O cosmos DB dá suporte a consultas com parâmetros expressados pela familiar notação @. SQL parametrizado fornece tratamento robusto e escape da entrada do usuário e evita a exposição acidental de dados por meio de injeção de SQL.
+Cosmos DB dá suporte a consultas com parâmetros expressos pela conhecida @ Notation. O SQL com parâmetros fornece manipulação e saída robustas de entrada do usuário e impede a exposição acidental de dados por meio de injeção de SQL.
 
 ## <a name="examples"></a>Exemplos
 
-Por exemplo, você pode escrever uma consulta que demora `lastName` e `address.state` como parâmetros e executá-lo para vários valores de `lastName` e `address.state` com base na entrada do usuário.
+Por exemplo, você pode escrever uma consulta que aceite `lastName` e `address.state` como parâmetros e execute-a para vários valores de `lastName` e `address.state` com base na entrada do usuário.
 
 ```sql
     SELECT *
@@ -27,7 +27,7 @@ Por exemplo, você pode escrever uma consulta que demora `lastName` e `address.s
     WHERE f.lastName = @lastName AND f.address.state = @addressState
 ```
 
-Você pode enviar essa solicitação ao Cosmos DB como uma consulta JSON parametrizada semelhante ao seguinte:
+Em seguida, você pode enviar essa solicitação para Cosmos DB como uma consulta JSON parametrizada como a seguinte:
 
 ```sql
     {
@@ -39,7 +39,7 @@ Você pode enviar essa solicitação ao Cosmos DB como uma consulta JSON paramet
     }
 ```
 
-O exemplo a seguir define o argumento TOP com uma consulta parametrizada: 
+O exemplo a seguir define o argumento superior com uma consulta parametrizada: 
 
 ```sql
     {
@@ -50,10 +50,10 @@ O exemplo a seguir define o argumento TOP com uma consulta parametrizada:
     }
 ```
 
-Valores de parâmetro podem ser qualquer JSON válido: cadeias de caracteres, números, boolianos, nulos, ou mesmo matrizes e JSON aninhado. Como o Cosmos DB é sem esquema, os parâmetros não são validados em relação a qualquer tipo.
+Os valores de parâmetro podem ser qualquer JSON: cadeias de caracteres, números, Boolianos, nulos, pares ou JSON aninhados válidos. Como Cosmos DB não tem Esquema, os parâmetros não são validados em relação a nenhum tipo.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Amostras do .NET no Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-dotnet)
+- [Amostras do .NET no Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Dados de documento de modelo](modeling-data.md)

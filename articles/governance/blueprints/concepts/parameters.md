@@ -7,18 +7,18 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 9670433284ae963783b655322c4b18f748df52c5
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: ee44d744c580dd9fbf20e7186b6e76fdc74cc5d0
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231961"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004076"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Criando blueprints dinâmicos por meio de parâmetros
 
 Um blueprint totalmente definido com vários artefatos (como grupos de recursos, modelos, diretivas ou atribuições de funções do Resource Manager) oferece a criação rápida e a criação consistente de objetos no Azure. Para permitir o uso flexível desses contêineres e padrões de design reutilizáveis, o Azure Blueprints dá suporte a parâmetros. O parâmetro cria flexibilidade, tanto durante a definição quanto na atribuição, para alterar as propriedades nos artefatos implantados pelo blueprint.
 
-Um exemplo simples é o artefato do grupo de recursos. Quando um grupo de recursos é criado, ele tem dois valores obrigatórios que devem ser fornecidos: nome e local. Ao adicionar um grupo de recursos ao seu blueprint, se os parâmetros não existissem, você definiria esse nome e local para todo uso do blueprint. Essa repetição faria com que todo uso do blueprint criasse artefatos no mesmo grupo de recursos. Os recursos dentro desse grupo de recursos seriam duplicados e causariam um conflito.
+Um exemplo simples é o artefato do grupo de recursos. Quando um grupo de recursos é criado, ele tem dois valores obrigatórios que devem ser fornecidos: nome e local. Ao adicionar um grupo de recursos ao seu plano gráfico, se não houver parâmetros, você definiria esse nome e o local para cada uso do plano gráfico. Essa repetição faria com que todo uso do blueprint criasse artefatos no mesmo grupo de recursos. Os recursos dentro desse grupo de recursos seriam duplicados e causariam um conflito.
 
 > [!NOTE]
 > Não é um problema o fato de dois blueprints diferentes incluírem um grupo de recursos com o mesmo nome.

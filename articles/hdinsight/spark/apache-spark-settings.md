@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: 2d369af7c11473d811677f33f9112d41260fcecf
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 48f19e5da8c7703cc597518246c2f62ebce3ae17
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736014"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003132"
 ---
 # <a name="configure-apache-spark-settings"></a>Definir configurações do Apache Spark
 
@@ -44,11 +44,11 @@ Apache Spark tem três locais de configuração do sistema:
 Quando você seleciona uma versão específica do Spark, seu cluster inclui as definições de configuração padrão.  Você pode alterar os valores de configuração do Spark padrão usando um arquivo de configuração personalizado do Spark.  Um exemplo é mostrado abaixo.
 
 ```
-    spark.hadoop.io.compression.codecs org.apache.hadoop.io.compress.GzipCodec
-    spark.hadoop.mapreduce.input.fileinputformat.split.minsize 1099511627776
-    spark.hadoop.parquet.block.size 1099511627776
-    spark.sql.files.maxPartitionBytes 1099511627776
-    spark.sql.files.openCostInBytes 1099511627776
+spark.hadoop.io.compression.codecs org.apache.hadoop.io.compress.GzipCodec
+spark.hadoop.mapreduce.input.fileinputformat.split.minsize 1099511627776
+spark.hadoop.parquet.block.size 1099511627776
+spark.sql.files.maxPartitionBytes 1099511627776
+spark.sql.files.openCostInBytes 1099511627776
 ```
 
 O exemplo mostrado acima substitui vários valores padrão para cinco parâmetros de configuração do Spark.  Esses são o codec de compactação, o tamanho mínimo de divisão do Apache Hadoop MapReduce e os tamanhos de blocos de parquete, além dos valores padrão da partição Spar SQL e do tamanho de arquivo aberto.  Essas alterações de configuração são escolhidas porque os trabalhos e dados associados (por exemplo, dados de genoma) têm características específicas que executarão melhor usando essas configurações personalizadas.
@@ -63,7 +63,7 @@ A interface da Web do Apache Ambari aparece, com uma visualização do painel de
 
 Para ver os valores de configuração para o Apache Spark, selecione **Histórico de Configuração**, em seguida, selecione **Spark2**.  Selecione a guia **configurações** e, em seguida, selecione o link `Spark` (ou `Spark2`, dependendo de sua versão) na lista de serviços.  Você verá uma lista de valores de configuração para o cluster:
 
-![Configurações Spark](./media/apache-spark-settings/spark-config.png)
+![Configurações Spark](./media/apache-spark-settings/spark-configurations.png)
 
 Para ver e alterar valores de configuração Spark individuais, selecione qualquer link com a palavra "spark" no título do link.  Configurações para Spark incluem os dois valores de configuração avançada e personalizada nestas categorias:
 
@@ -82,7 +82,7 @@ Se você criar um conjunto de valores de configuração não-padrão, você tamb
 
 O diagrama a seguir mostra os objetos de chave Spark: o programa de driver e seu contexto Spark associado e o gerenciador de cluster e seus *n* nós de trabalho.  Cada nó de trabalho inclui um Executor, um cache, e *n* instâncias da tarefa.
 
-![Objetos de cluster](./media/apache-spark-settings/spark-arch.png)
+![Objetos de cluster](./media/apache-spark-settings/hdi-spark-architecture.png)
 
 Os trabalhos de Spark usam recursos de trabalho, particularmente, memória, portanto, é comum para ajustar os valores de configuração do Spark para executores de nó de trabalho.
 
@@ -93,7 +93,7 @@ Três parâmetros de chave que geralmente são ajustados para ajustar as configu
 
 Outra fonte de informações sobre os recursos que estão sendo usados pelos executores Spark é a interface do usuário do aplicativo Spark.  Na IU do Spark, selecione a guia **Executores** para exibir os modos de exibição de resumo e detalhes da configuração e recursos consumidos pelos executores.  Esses modos de exibição podem ajudá-lo a determinar se alterar os valores padrão para executores Spark para todo o cluster ou um conjunto específico de execuções de trabalho.
 
-![Executores Spark](./media/apache-spark-settings/spark-executors.png)
+![Executores Spark](./media/apache-spark-settings/apache-spark-executors.png)
 
 Como alternativa, você pode usar a API REST do Ambari para verificar periodicamente as configurações de cluster HDInsight e o Spark.  Mais informações estão disponíveis na [Referência da API do Apache Ambari no GitHub](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
@@ -105,7 +105,7 @@ Dependendo da carga de trabalho do Spark, você poderá determinar que uma confi
 
 Aqui está um exemplo de dois nós de trabalho com valores de configuração diferentes:
 
-![Duas configurações de nó](./media/apache-spark-settings/executor-config.png)
+![Duas configurações de nó](./media/apache-spark-settings/executor-configuration.png)
 
 A lista a seguir mostra os principais parâmetros de memória de executor Spark.
 
@@ -116,7 +116,7 @@ A lista a seguir mostra os principais parâmetros de memória de executor Spark.
 
 O YARN controla a soma máxima da memória usada por todos os contêineres em cada nó do Spark. O diagrama a seguir mostra as relações por nó entre objetos de configuração YARN e objetos Spark.
 
-![Gerenciamento de memória YARN do Spark](./media/apache-spark-settings/yarn-spark-memory.png)
+![Gerenciamento de memória YARN do Spark](./media/apache-spark-settings/hdi-yarn-spark-memory.png)
 
 ## <a name="change-parameters-for-an-application-running-in-jupyter-notebook"></a>Alterar parâmetros para um aplicativo em execução no bloco de notas do Jupyter
 
@@ -136,8 +136,8 @@ Para aplicativos em execução no bloco de notas Jupyter, você pode usar o coma
 O código abaixo mostra como alterar a configuração para um aplicativo em execução em um bloco de notas do Jupyter.
 
 ```
-    %%configure
-    {"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
+%%configure
+{"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
 ```
 
 ## <a name="conclusion"></a>Conclusão

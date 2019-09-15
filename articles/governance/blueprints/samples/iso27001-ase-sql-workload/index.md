@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 8877c29341c95d5cd0fe8e35887c44594e0b6d41
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: cee3867449aea1cb1c59ac5a7c3be57291d1aebc
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231771"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000130"
 ---
 # <a name="overview-of-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Visão geral do exemplo de blueprint de carga de trabalho do Ambiente do Serviço de Aplicativo/Banco de Dados SQL do ISO 27001
 
@@ -36,7 +36,7 @@ Este ambiente é composto de vários serviços do Azure usados para oferecer uma
 - [Políticas do Azure](../../../policy/overview.md) para bloquear os serviços que podem ser implantados no ambiente e negar a criação de recursos de PIP (endereço IP público)
 - Uma rede virtual que contém uma sub-rede e emparelha com um ambiente de [serviços compartilhados](../iso27001-shared/index.md) já existente e força a passagem de todo o tráfego pelo firewall dos [serviços compartilhados](../iso27001-shared/index.md). A rede virtual hospeda os recursos a seguir:
   - Um [Ambiente do Serviço de Aplicativo do Azure](../../../../app-service/environment/intro.md) que pode ser usado para hospedar um ou mais aplicativos Web, APIs Web ou funções
-  - Uma instância do [Azure Key Vault](../../../../key-vault/key-vault-whatis.md) que usa um ponto de extremidade de serviço de VNet para armazenar segredos usados pelos aplicativos em execução no ambiente de carga de trabalho
+  - Uma instância do [Azure Key Vault](../../../../key-vault/key-vault-overview.md) que usa um ponto de extremidade de serviço de VNet para armazenar segredos usados pelos aplicativos em execução no ambiente de carga de trabalho
   - Uma instância de servidor do [Banco de Dados SQL do Azure](../../../../sql-database/sql-database-technical-overview.md) que usa um ponto de extremidade de serviço de VNet para hospedar bancos de dados usados para aplicativos no ambiente de carga de trabalho
 
 ## <a name="next-steps"></a>Próximas etapas

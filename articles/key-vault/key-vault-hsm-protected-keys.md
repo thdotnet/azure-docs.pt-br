@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3cd8cd0b72f1b3ccea557ce0e12394081329dc5b
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 71b7e4bd9406e7fb300ebccd86908820b7628c29
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883306"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000773"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Como gerar e transferir chaves de HSM protegido para o Cofre da Chave do Azure
 
@@ -27,7 +27,7 @@ Use as informações neste tópico para ajudá-lo a planejar, gerar e transferir
 Essa funcionalidade não está disponível para o Azure China.
 
 > [!NOTE]
-> Para obter mais informações sobre o Cofre da Chave do Azure, consulte [O que é o Cofre da Chave do Azure?](key-vault-whatis.md)  
+> Para obter mais informações sobre o Cofre da Chave do Azure, consulte [O que é o Cofre da Chave do Azure?](key-vault-overview.md)  
 > Para obter um tutorial de Introdução, que inclui a criação de um cofre da chaves para chaves de HSM protegido, confira [O que é o Azure Key Vault?](key-vault-overview.md).
 
 Para mais informações sobre como gerar e transferir uma chave de HSM protegido pela Internet:

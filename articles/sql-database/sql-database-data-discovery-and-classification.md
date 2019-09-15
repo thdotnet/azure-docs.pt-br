@@ -11,16 +11,16 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: 5aaad8c44328e1cc2aeb7729e3e221665823a467
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 0bba755ec5683e988bb8ae3f2308a1c298b228b0
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072958"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000556"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Classificação & do banco de dados SQL do Azure e SQL Data Warehouse data Discovery
 
-A classificação de & da descoberta de dados fornece recursos avançados incorporados ao banco de dados SQL do Azure para **descobrir**, **classificar** & , rotular a**proteção** de informações confidenciais em seus bancos.
+A classificação de & da descoberta de dados fornece recursos avançados incorporados ao banco de dados SQL do Azure para **descobrir**, **classificar** & , **rotular**a**proteção** de informações confidenciais em seus bancos.
 
 Descobrir e classificar seus dados mais confidenciais (negócios, financeiros, atendimento à saúde, PII [informações de identificação pessoal] etc.) pode desempenhar uma função essencial para a estatura de proteção das informações organizacionais. Pode servir como infraestrutura para:
 
@@ -137,6 +137,8 @@ Você pode usar o T-SQL para adicionar/remover classificações de coluna, bem c
 - Adicione/atualize a classificação de uma ou mais colunas: [ADICIONAR A CLASSIFICAÇÃO DE CONFIDENCIALIDADE](https://docs.microsoft.com/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
 - Remova a classificação de uma ou mais colunas: [REMOVER A CLASSIFICAÇÃO DE CONFIDENCIALIDADE](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
 - Exiba todas as classificações no banco de dados: [sys.sensitivity_classifications](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
+
+### <a name="manage-classifications-using-rest-apis"></a>Gerenciar classificações usando APIs REST
 
 Também é possível usar APIs REST para gerenciar programaticamente as classificações. As APIs REST publicadas dão suporte às seguintes operações:
 

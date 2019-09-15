@@ -15,16 +15,16 @@ ms.date: 10/16/2018
 ms.author: cephalin
 ms.reviewer: apurvajo
 ms.custom: seodec18
-ms.openlocfilehash: d6d3e91bef6c4f837b068d755994b2f3268600da
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 7c899bae6cf36e68664a3ce60939f72a4b5bd1ab
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074049"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001200"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Comprar e configurar um certificado SSL para o Serviço de Aplicativo do Azure
 
-Este tutorial mostra como proteger seu [aplicativo do Serviço de Aplicativo](https://docs.microsoft.com/azure/app-service/) ou [aplicativo de função](https://docs.microsoft.com/azure/azure-functions/) criando (comprando) um certificado do Serviço de Aplicativo no [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) e vinculando-o a um aplicativo do Serviço de Aplicativo.
+Este tutorial mostra como proteger seu [aplicativo do Serviço de Aplicativo](https://docs.microsoft.com/azure/app-service/) ou [aplicativo de função](https://docs.microsoft.com/azure/azure-functions/) criando (comprando) um certificado do Serviço de Aplicativo no [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) e vinculando-o a um aplicativo do Serviço de Aplicativo.
 
 > [!TIP]
 > Certificados do Serviço de Aplicativo podem ser usados para qualquer Serviço Azure ou não Azure e não se limitam aos Serviços de Aplicativos. Para fazer isso, você precisa criar uma cópia local do PFX de um Certificado do Serviço de Aplicativo para que possa usá-lo em qualquer lugar. Para obter mais informações, leia [Como criar uma cópia local do PFX de um Certificado do Serviço de Aplicativo](https://blogs.msdn.microsoft.com/benjaminperkins/2017/04/12/export-an-azure-app-service-certificate-pfx-powershell/).
@@ -50,7 +50,7 @@ Use a tabela a seguir para ajudá-lo a configurar o certificado. Ao terminar, cl
 | Configuração | Descrição |
 |-|-|
 | Nome | Um nome amigável para o seu certificado de Serviço de Aplicativo. |
-| Nome do Host do Domínio Raiz | Especifique o domínio raiz aqui. O certificado emitido protege o domínio raiz e o `www` subdomínio. No certificado emitido, o campo nome comum contém o domínio raiz e o campo nome alternativo da entidade contém o `www` domínio. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`).|
+| Nome do Host do Domínio Raiz | Especifique o domínio raiz aqui. *O certificado emitido protege o domínio* raiz e o `www` subdomínio. No certificado emitido, o campo nome comum contém o domínio raiz e o campo nome alternativo da entidade contém o `www` domínio. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`).|
 | Assinatura | O datacenter onde o aplicativo Web está hospedado. |
 | Grupo de recursos | O grupo de recursos que contém o certificado. Você pode usar um novo grupo de recursos ou selecionar o mesmo grupo de recursos que seu aplicativo de Serviço de Aplicativo, por exemplo. |
 | SKU do Certificado | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
@@ -64,7 +64,7 @@ Selecione o certificado na página [Certificados do Serviço de Aplicativo](http
 
 ![inserir imagem de pronto para armazenar no KV](./media/app-service-web-purchase-ssl-web-site/ReadyKV.png)
 
-O [Cofre da Chave](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) do Azure ajuda a proteger chaves criptográficas e segredos usados por aplicativos e serviços em nuvem. É o armazenamento de escolha para certificados de Serviço de Aplicativo.
+O [Cofre da Chave](https://docs.microsoft.com/azure/key-vault/key-vault-overview) do Azure ajuda a proteger chaves criptográficas e segredos usados por aplicativos e serviços em nuvem. É o armazenamento de escolha para certificados de Serviço de Aplicativo.
 
 Na página **Status do Key Vault**, clique em **Repositório do Key Vault** para criar um novo cofre ou escolher um cofre existente. Se você optar por criar um novo cofre, use a tabela a seguir para ajudá-lo a configurar o cofre e clique em Criar. veja para criar novo Key Vault no mesmo grupo de recursos e assinatura.
 
@@ -123,9 +123,9 @@ Visite seu aplicativo usando `HTTPS://<domain_name>`, em vez de `HTTP://<domain_
 
 ## <a name="rekey-certificate"></a>Certificado de rechaveamento
 
-Se você considerar que a chave privada do certificado está comprometida, poderá refazer o seu certificado. Selecione o certificado na página [certificados do serviço de aplicativo](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) e, em seguida, selecione rechaveamento **e sincronização** no painel de navegação esquerdo.
+Se você considerar que a chave privada do certificado está comprometida, poderá refazer o seu certificado. Selecione o certificado na página [certificados do serviço de aplicativo](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) e, em seguida, selecione **rechaveamento e sincronização** no painel de navegação esquerdo.
 
-Clique em rechaveamento para iniciar o processo. Esse processo pode demorar de um a 10 minutos para ser concluído.
+Clique em **rechaveamento** para iniciar o processo. Esse processo pode demorar de um a 10 minutos para ser concluído.
 
 ![inserir imagem de Rechaveamento SSL](./media/app-service-web-purchase-ssl-web-site/Rekey.png)
 

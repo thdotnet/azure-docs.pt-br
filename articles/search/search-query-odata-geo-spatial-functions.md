@@ -1,7 +1,7 @@
 ---
 title: Referência de função espacial geográfica OData-Azure Search
 description: Funções geoespaciais do OData, geográficas e geográficas. interseção, em Azure Search consultas.
-ms.date: 06/13/2019
+ms.date: 09/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -19,18 +19,21 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 9585a9a7ea976ed32ccb8eed1e69877339196f87
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 03220786c65ab510a632252b20d593cd96a90494
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69647573"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003451"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-search---geodistance-and-geointersects"></a>Funções geoespaciais OData no Azure Search- `geo.distance` e`geo.intersects`
 
 O Azure Search dá suporte a consultas geoespaciais em expressões de `geo.distance` [filtro OData](query-odata-filter-orderby-syntax.md) por meio das funções e. `geo.intersects` A `geo.distance` função retorna a distância em quilômetros entre dois pontos, um sendo um campo ou uma variável de intervalo, e um é uma constante passada como parte do filtro. A `geo.intersects` função retorna `true` se um determinado ponto estiver dentro de um determinado polígono, em que o ponto é um campo ou uma variável de intervalo e o polígono é especificado como uma constante passada como parte do filtro.
 
 A `geo.distance` função também pode ser usada no parâmetro [ **$OrderBy** ](search-query-odata-orderby.md) para classificar os resultados da pesquisa por distância de um determinado ponto. A sintaxe para `geo.distance` em **$orderby** é a mesma que em **$filter**. Ao usar `geo.distance` o no **$OrderBy**, o campo ao qual ele se aplica deve ser `Edm.GeographyPoint` do tipo e também deve ser **classificável**.
+
+> [!NOTE]
+> Ao usar `geo.distance` no parâmetro **$OrderBy** , o campo que você passa para a função deve conter apenas um único ponto geográfico. Em outras palavras, ele deve ser do tipo `Edm.GeographyPoint` e não `Collection(Edm.GeographyPoint)`. Não é possível classificar em campos de coleção em Azure Search.
 
 ## <a name="syntax"></a>Sintaxe
 

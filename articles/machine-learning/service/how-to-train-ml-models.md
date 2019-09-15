@@ -1,7 +1,7 @@
 ---
 title: Treinar modelos ML com estimadores
-titleSuffix: Azure Machine Learning service
-description: Saiba como realizar o treinamento de nó único e distribuído de máquina tradicional de aprendizado e modelos usando a classe de estimador do serviço do Machine Learning de aprendizado profundo
+titleSuffix: Azure Machine Learning
+description: Saiba como executar um único nó e treinamento distribuído de aprendizado de máquina tradicional e modelos de aprendizado profundo usando Azure Machine Learning classe de estimador
 ms.author: maxluk
 author: maxluk
 services: machine-learning
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 10aee302377c4f71e47d93f5cd975043efcea375
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 041f80937e3ebae15dd5bd64858ccbd8269104a0
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815908"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002590"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Treinar modelos com o Azure Machine Learning usando o estimador
 

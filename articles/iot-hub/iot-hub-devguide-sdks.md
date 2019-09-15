@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: e51313bbed21459de9f717edd123887caed18f4b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7113914fe8681ca099fc0f3fc1e4a7d064c19480
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60400653"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000260"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Entender e usar os SDKs de Hub IoT do Azure
 
@@ -59,7 +59,7 @@ SDK de dispositivos do Hub IoT do Azure para C (ANSIC - C99):
 * [Referência do módulo](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h)
 * [Portabilidade do SDK C para outras plataformas](https://github.com/Azure/azure-c-shared-utility/blob/master/devdoc/porting_guide.md)
 * [Documentação do desenvolvedor](https://github.com/Azure/azure-iot-sdk-c/tree/master/doc) para saber mais sobre compilação cruzada, introdução em diferentes plataformas, etc.
-* [Informações de consumo de recursos de SDK de C do Hub IoT do Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
+* [Informações de consumo de recursos do SDK C do Hub IoT do Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/c_sdk_resource_information.md)
 
 SDK do dispositivo de Hub IoT do Azure para Java: 
 
@@ -77,14 +77,14 @@ SDK do dispositivo de Hub IoT do Azure para Node.js:
 
 SDK do dispositivo de Hub IoT do Azure para Python: 
 
-* Instalar do arquivo [pip](https://pypi.python.org/pypi/azure-iothub-device-client/)
+* Instalar do arquivo [pip](https://pypi.org/project/azure-iot-device/)
 * [Código-fonte](https://github.com/Azure/azure-iot-sdk-python)
-* Referência da API: consulte [referência da API C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
+* [Referência de API](https://docs.microsoft.com/python/api/azure-iot-device)
 
 SDK do dispositivo do Hub IoT para iOS: 
 
 * Instalar de [CocoaPod](https://cocoapods.org/pods/AzureIoTHubClient)
-* [Exemplos](https://github.com/Azure-Samples/azure-iot-samples-ios)
+* [Amostras](https://github.com/Azure-Samples/azure-iot-samples-ios)
 * Referência da API: consulte [referência da API C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 
 ## <a name="azure-iot-hub-service-sdks"></a>SDKs de serviços do Hub IoT
@@ -112,7 +112,7 @@ SDK de serviço de Hub IoT do Azure para Node.js:
 SDK de serviço de Hub IoT do Azure para Python: 
 
 * Fazer download do [pip](https://pypi.python.org/pypi/azure-iothub-service-client/)
-* [Código-fonte](https://github.com/Azure/azure-iot-sdk-python)
+* [Código-fonte](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated)
 
 SDK de serviço de Hub IoT do Azure para C: 
 
@@ -122,7 +122,7 @@ SDK de serviço de Hub IoT do Azure para C:
 SDK do serviço do Hub IoT para iOS: 
 
 * Instalar de [CocoaPod](https://cocoapods.org/pods/AzureIoTHubServiceClient)
-* [Exemplos](https://github.com/Azure-Samples/azure-iot-samples-ios)
+* [Amostras](https://github.com/Azure-Samples/azure-iot-samples-ios)
 
 > [!NOTE]
 > Consulte os arquivos Leiame nos repositórios GitHub para obter informações sobre como usar os gerenciadores de pacotes específicos à linguagem e à plataforma para instalar binários e dependências em seu computador de desenvolvimento.
@@ -157,8 +157,8 @@ Dispositivo de Provisionamento do Azure e SDKs de serviço para Node.js:
 
 Dispositivo de Provisionamento do Azure e SDKs de serviço para Python:
 
-* [Código-fonte](https://github.com/Azure/azure-iot-sdk-python)
-* Baixe a [SDK de Dispositivo](https://pypi.org/project/azure-iot-provisioning-device-client/) e a [SDK de Serviço](https://pypi.org/project/azure-iothub-provisioningserviceclient/) no pip
+* [Código-fonte](https://github.com/Azure/azure-iot-device)
+* Baixe a [SDK de Dispositivo](https://pypi.org/project/azure-iot-device/) e a [SDK de Serviço](https://pypi.org/project/azure-iothub-provisioningserviceclient/) no pip
 
 ## <a name="next-steps"></a>Próximas etapas
 

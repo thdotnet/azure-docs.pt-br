@@ -1,6 +1,6 @@
 ---
 title: Gerenciar e solicitar cotas de recursos
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Este guia de instruções explica as várias cotas em recursos para o Azure Machine Learning e como exibir e solicitar mais cota.
 services: machine-learning
 ms.service: machine-learning
@@ -11,26 +11,26 @@ author: nishankgu
 ms.author: nigup
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: bc0455b34ebdcb080e0cd702e58d8163228b60ff
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 2ee819625f772c96ac6c5a771935da17ee05f3aa
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278059"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002681"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Gerenciar e solicitar cotas para recursos do Azure
 
-Como acontece com outros serviços do Azure, há limites em determinados recursos associados ao serviço do Azure Machine Learning. Esses limites variam de um limite no número de espaços de trabalho que você pode criar para limites na computação subjacente real que é usada para treinamento de modelo ou inferência/Pontuação. 
+Assim como ocorre com outros serviços do Azure, há limites em determinados recursos associados a Azure Machine Learning. Esses limites variam de um limite no número de espaços de trabalho que você pode criar para limites na computação subjacente real que é usada para treinamento de modelo ou inferência/Pontuação. 
 
 Este artigo fornece mais detalhes sobre os limites pré-configurados em vários recursos do Azure para sua assinatura e também contém links úteis para solicitar aprimoramentos de cota para cada tipo de recurso. Esses limites são estabelecidos para evitar estouros de orçamento devido a fraudes e respeitar as restrições de capacidade do Azure.
 
-Lembre-se dessas cotas enquanto cria e aumenta seus recursos do Serviço do Azure Machine Learning para cargas de trabalho de produção. Por exemplo, se o cluster não alcançar o número de destino de nós especificado, você poderá ter atingido um limite de núcleos de computação Azure Machine Learning para sua assinatura. Se você desejar aumentar o limite ou a cota acima do limite padrão, abra uma solicitação de suporte ao cliente online sem custo. Os limites não podem ser aumentados além do valor Limite Máximo mostrado nas tabelas a seguir devido a restrições de Capacidade do Azure. Se não houver nenhuma coluna Limite Máximo, o recurso não terá limites ajustáveis.
+Lembre-se dessas cotas ao projetar e escalar verticalmente seus recursos de Azure Machine Learning para cargas de trabalho de produção. Por exemplo, se o cluster não alcançar o número de destino de nós especificado, você poderá ter atingido um limite de núcleos de computação Azure Machine Learning para sua assinatura. Se você desejar aumentar o limite ou a cota acima do limite padrão, abra uma solicitação de suporte ao cliente online sem custo. Os limites não podem ser aumentados além do valor Limite Máximo mostrado nas tabelas a seguir devido a restrições de Capacidade do Azure. Se não houver nenhuma coluna Limite Máximo, o recurso não terá limites ajustáveis.
 
 ## <a name="special-considerations"></a>Considerações especiais
 
 + Uma cota é um limite de crédito, não uma garantia de capacidade. Se precisar de capacidade em larga escala, contate o suporte do Azure.
 
-+ A cota é compartilhada entre todos os serviços em suas assinaturas, incluindo o serviço do Azure Machine Learning. A única exceção é a Computação do Azure Machine Learning, que tem uma cota separada da cota de computação principal. Certifique-se de calcular o uso da cota em todos os serviços ao avaliar suas necessidades de capacidade.
++ Sua cota é compartilhada entre todos os serviços em suas assinaturas, incluindo Azure Machine Learning. A única exceção é a Computação do Azure Machine Learning, que tem uma cota separada da cota de computação principal. Certifique-se de calcular o uso da cota em todos os serviços ao avaliar suas necessidades de capacidade.
 
 + Os limites padrão variam de acordo com o tipo de categoria oferecido, como avaliação gratuita, pago conforme o uso e séries como Dv2, F, G e assim por diante.
 

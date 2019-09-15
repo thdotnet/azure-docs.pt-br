@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: f619a0179849e2ca17a0528d97ef13f0788a4838
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 15638d90fe24938a45f6d4cce156e998f1f9afc2
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811550"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000110"
 ---
 # <a name="bring-your-own-key-for-apache-kafka-on-azure-hdinsight"></a>Traga sua própria chave para Apache Kafka no Azure HDInsight
 
@@ -58,7 +58,7 @@ Para criar um cluster Kafka habilitado para BYOK, vamos percorrer as seguintes e
 
         b. Defina **Opções** para **Gerar** e forneça um nome à chave.
 
-        ![Gerar nome da chave](./media/apache-kafka-byok/kafka-create-a-key.png "Gerar nome da chave")
+        ![Gerar nome da chave](./media/apache-kafka-byok/apache-kafka-create-key.png "Gerar nome da chave")
 
         c. Selecione a chave que você criou na lista de chaves.
 
@@ -96,14 +96,14 @@ Para criar um cluster Kafka habilitado para BYOK, vamos percorrer as seguintes e
 
    ![Criptografia de disco do Kafka no portal do Azure](./media/apache-kafka-byok/apache-kafka-byok-portal.png)
 
-   Durante a criação do cluster, forneça a URL completa, incluindo a versão da chave. Por exemplo, `https://contoso-kv.vault.azure.net/keys/kafkaClusterKey/46ab702136bc4b229f8b10e8c2997fa4`. Você também precisa atribuir a identidade gerenciada ao cluster e fornecer o URI da chave.
+   Durante a criação do cluster, forneça a URL completa, incluindo a versão da chave. Por exemplo: `https://contoso-kv.vault.azure.net/keys/kafkaClusterKey/46ab702136bc4b229f8b10e8c2997fa4`. Você também precisa atribuir a identidade gerenciada ao cluster e fornecer o URI da chave.
 
 ## <a name="rotating-the-encryption-key"></a>Girando a chave de criptografia
    Pode haver cenários em que você talvez queira alterar as chaves de criptografia usadas pelo cluster Kafka depois que ele tiver sido criado. Isso pode ser facilmente por meio do Portal. Para essa operação, o cluster deve ter acesso à chave atual e à nova chave pretendida, caso contrário, a operação de rotação de teclas falhará.
 
    Para girar a chave, você deve ter a URL completa da nova chave (consulte a etapa 3 de [Configurar o Key Vault e as chaves](#setup-the-key-vault-and-keys)). Depois de fazer isso, vá para a seção Propriedades do cluster Kafka no portal e clique em **alterar chave** em **URL da chave de criptografia do disco**. Insira na nova URL de chave e envie para girar a chave.
 
-   ![Kafka girar a chave de criptografia de disco](./media/apache-kafka-byok/kafka-change-key.png)
+   ![Kafka girar a chave de criptografia de disco](./media/apache-kafka-byok/apache-kafka-change-key.png)
 
 ## <a name="faq-for-byok-to-apache-kafka"></a>Perguntas frequentes para BYOK para Apache Kafka
 
@@ -146,5 +146,5 @@ Se o cluster perder o acesso à chave, os avisos serão mostrados no portal do A
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para obter mais informações sobre o Azure Key Vault, consulte [O que é o Azure Key Vault?](../../key-vault/key-vault-whatis.md)
+* Para obter mais informações sobre o Azure Key Vault, consulte [O que é o Azure Key Vault?](../../key-vault/key-vault-overview.md)
 * Para começar a usar o Azure Key Vault, consulte [Introdução ao Azure Key Vault](../../key-vault/key-vault-overview.md).

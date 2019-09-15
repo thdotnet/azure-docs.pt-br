@@ -1,6 +1,6 @@
 ---
 title: Exportar ou excluir dados do workspace
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Saiba como exportar ou excluir seu workspace com o portal do Azure, a CLI, o SDK e as APIs REST autenticadas.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ author: ph-com
 ms.author: pahusban
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3b55282adf56bedb0724eca578b8eaea00c26074
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 18e2ab18dac214e73eaf6ad7dfcb9dbbab0b5cf5
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65023970"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002834"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Exportar ou excluir dados do workspace no serviço do Machine Learning 
 
@@ -27,9 +27,9 @@ No Azure Machine Learning, você pode exportar ou excluir seus dados de workspac
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="control-your-workspace-data"></a>Controlar seus dados de workspace
-Os dados armazenados no produto pelos serviços do Azure Machine Learning estão disponíveis para exportação e exclusão por meio do portal do Azure, da CLI, do SDK e de APIs REST autenticadas. É possível acessar os dados telemétricos por meio do Portal de Privacidade do Azure. 
+Os dados no produto armazenados por Azure Machine Learning estão disponíveis para exportação e exclusão por meio do portal do Azure, da CLI, do SDK e das APIs REST autenticadas. É possível acessar os dados telemétricos por meio do Portal de Privacidade do Azure. 
 
-Nos serviços do Azure Machine Learning, os dados pessoais são formados por informações do usuário em documentos de histórico de execução e registros telemétricos de algumas interações do usuário com o serviço.
+No Azure Machine Learning, os dados pessoais são formados por informações do usuário em documentos de histórico de execução e registros telemétricos de algumas interações do usuário com o serviço.
 
 ## <a name="delete-workspace-data-with-the-rest-api"></a>Excluir dados de workspace com a API REST 
 
@@ -232,28 +232,28 @@ Fontes de Dados podem ser obtidas por:
 
     https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/DataSources/{id}
 
-## <a name="delete-visual-interface-assets"></a>Excluir ativos da interface visual
+## <a name="delete-visual-interface-assets"></a>Excluir ativos de interface visual
 
-Na interface do visual em que você criou seu experimento, exclua ativos individuais:
+Na interface visual em que você criou seu experimento, exclua ativos individuais:
 
 1. À esquerda, selecione o tipo de ativo que você deseja excluir.
 
     ![Excluir ativos](media/how-to-export-delete-data.md/delete-experiment.png)
 
-1. Na lista, selecione os ativos individuais para excluir.
+1. Na lista, selecione os ativos individuais a serem excluídos.
 
 1. Na parte inferior, selecione **excluir**.
 
 ## <a name="export-visual-interface-data"></a>Exportar dados da interface visual
 
-Na interface do visual em que você criou seu experimento, exporte os dados que foram adicionados:
+Na interface visual em que você criou o experimento, exporte os dados que adicionou:
 
 1. À esquerda, selecione **dados**.
 
-1. Na parte superior, selecione **Meus conjuntos de dados** ou **exemplos** para localizar os dados que você deseja exportar.
+1. Na parte superior, selecione **meus conjuntos** de dados ou **amostras** para localizar o dado que você deseja exportar.
 
     ![Baixar dados](media/how-to-export-delete-data.md/download-data.png)
 
-1. Na lista, selecione os conjuntos de dados individuais para exportar.
+1. Na lista, selecione os conjuntos de valores individuais a serem exportados.
 
 1. Na parte inferior, selecione **baixar**.

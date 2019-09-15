@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/26/2018
-ms.openlocfilehash: 9424ebbd4ed2e1536a10d77a88257bad948628e2
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: e4414a64b2ee34ec16fde56dd750f2faa26b2e09
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70915403"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002960"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Crie tarefas do Apache Spark Streaming de alta disponibilidade com o YARN
 
@@ -21,7 +21,7 @@ ms.locfileid: "70915403"
 
 O streaming do Spark cria trabalhos de execução longa, em que você pode aplicar transformações para os dados e, em seguida, efetuar push dos resultados para sistemas de arquivos, bancos de dados, painéis e console. O streaming do Spark processa microlotes de dados, coletando primeiro um lote de eventos ao longo de um intervalo de tempo definido. Em seguida, esse lote é enviado para processamento e saída. Os intervalos de tempo do lote geralmente são definidos em frações de um segundo.
 
-![Spark Streaming](./media/apache-spark-streaming-high-availability/spark-streaming.png)
+![Spark Streaming](./media/apache-spark-streaming-high-availability/apache-spark-streaming.png)
 
 ## <a name="dstreams"></a>DStreams
 
@@ -57,7 +57,7 @@ Para criar um aplicativo que processe cada evento uma vez (e apenas uma vez), co
 
 No HDInsight, o trabalho em cluster é coordenado por *YARN* (Another Resource Negotiator). Projetar alta disponibilidade para streaming do Spark inclui técnicas para o streaming do Spark e também para componentes YARN.  Um exemplo de configuração usando YARN é mostrado a seguir. 
 
-![Arquitetura YARN](./media/apache-spark-streaming-high-availability/yarn-arch.png)
+![Arquitetura YARN](./media/apache-spark-streaming-high-availability/hdi-yarn-architecture.png)
 
 As seções a seguir descrevem considerações de design para essa configuração.
 

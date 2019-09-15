@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 01/17/2019
-ms.openlocfilehash: 4d4fe32b5f457e2b223132006afd20bfe3161bbd
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 08/14/2019
+ms.openlocfilehash: e522cba88eaf9cb63ef7ef2f20e3b72691261073
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142616"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002412"
 ---
 # <a name="continuous-integration-and-delivery-cicd-in-azure-data-factory"></a>Integração e entrega contínua (CI / CD) no Azure Data Factory
 
@@ -424,7 +424,7 @@ Abaixo está uma explicação de como o modelo acima é construído, dividido po
 #### <a name="triggers"></a>Gatilhos
 
 * Em `typeProperties`, duas propriedades são parametrizadas. O primeiro é `maxConcurrency`, que é especificado para ter um valor padrão e é do tipo`string`. Ele tem o nome de parâmetro padrão `<entityName>_properties_typeProperties_maxConcurrency`de.
-* A `recurrence` Propriedade também é parametrizada. Sob ele, todas as propriedades nesse nível são especificadas para serem parametrizadas como cadeias de caracteres, com valores padrão e nomes de parâmetro. Uma exceção é a `interval` Propriedade, que é parametrizada como um tipo numérico, e com o nome do parâmetro com `<entityName>_properties_typeProperties_recurrence_triggerSuffix`sufixo. Da mesma forma `freq` , a propriedade é uma cadeia de caracteres e é parametrizada como uma cadeia de caracteres. No entanto `freq` , a propriedade é parametrizada sem um valor padrão. O nome é reduzido e sufixado. Por exemplo, `<entityName>_freq`.
+* A `recurrence` Propriedade também é parametrizada. Sob ele, todas as propriedades nesse nível são especificadas para serem parametrizadas como cadeias de caracteres, com valores padrão e nomes de parâmetro. Uma exceção é a `interval` Propriedade, que é parametrizada como um tipo numérico, e com o nome do parâmetro com `<entityName>_properties_typeProperties_recurrence_triggerSuffix`sufixo. Da mesma forma `freq` , a propriedade é uma cadeia de caracteres e é parametrizada como uma cadeia de caracteres. No entanto `freq` , a propriedade é parametrizada sem um valor padrão. O nome é reduzido e sufixado. Por exemplo: `<entityName>_freq`.
 
 #### <a name="linkedservices"></a>LinkedServices
 
@@ -432,7 +432,7 @@ Abaixo está uma explicação de como o modelo acima é construído, dividido po
 * A `connectionString` propriedade será parametrizada como um `securestring` valor, não terá um valor padrão e terá um nome de parâmetro abreviado com `connectionString`sufixo.
 * A propriedade `secretAccessKey` é um `AzureKeyVaultSecret` (por exemplo, em um `AmazonS3` serviço vinculado). Ele é parametrizado automaticamente como um Azure Key Vault segredo e buscado a partir do cofre de chaves configurado. Você também pode parametrizar o cofre de chaves em si.
 
-#### <a name="datasets"></a>Conjuntos de Dados
+#### <a name="datasets"></a>Conjuntos de dados
 
 * Embora a personalização específica de tipo esteja disponível para conjuntos de valores, a configuração pode ser fornecida sem \*ter explicitamente uma configuração de nível. No exemplo acima, todas as propriedades de DataSet `typeProperties` em são parametrizadas.
 

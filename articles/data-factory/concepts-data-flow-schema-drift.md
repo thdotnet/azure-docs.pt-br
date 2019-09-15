@@ -1,83 +1,72 @@
 ---
-title: Descompasso do Esquema do Fluxo de Dados do Mapeamento do Azure Data Factory
+title: Descompasso de esquema no fluxo de dados de mapeamento | Azure Data Factory
 description: Construa fluxos de dados resistentes no Azure Data Factory com descompasso de esquema
 author: kromerm
 ms.author: makromer
+ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 10/04/2018
-ms.openlocfilehash: b5777300f5033569caf3868218e747df3ff83a76
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.date: 09/12/2019
+ms.openlocfilehash: 68c0da5a7fe2b02c6115a8c1bbc24feb95e12adb
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640237"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003691"
 ---
-# <a name="mapping-data-flow-schema-drift"></a>Mapeando descompasso de esquema de fluxo de dados
+# <a name="schema-drift-in-mapping-data-flow"></a>Descompasso de esquema no fluxo de dados de mapeamento
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-O conceito de Descompasso do Esquema consiste no caso em que as suas fontes alteram frequentemente os metadados. Campos, colunas, tipos, etc. podem ser adicionados, removidos ou alterados em tempo real. Sem o manuseio do Descompasso do Esquema, seu Fluxo de Dados se torna vulnerável a mudanças nas alterações da fonte de dados upstream. Quando as colunas e os campos de entrada são alterados, os padrões típicos de ETL falham porque tendem a estar vinculados a esses nomes de origem.
+A descompasso de esquema é o caso em que suas fontes geralmente alteram metadados. Campos, colunas e tipos podem ser adicionados, removidos ou alterados em tempo real. Sem lidar com descompasso de esquema, seu fluxo de dados se torna vulnerável a alterações de fonte de dados upstream. Padrões de ETL típicos falham quando colunas e campos de entrada são alterados porque tendem a ser vinculados a esses nomes de origem.
 
-Para proteger contra o Descompasso do Esquema, é importante ter recursos em uma ferramenta de Fluxo de Dados para permitir que você, como Engenheiro de Dados:
+Para se proteger contra descompasso de esquema, é importante ter as instalações em uma ferramenta de fluxo de dados para permitir que você, como engenheiro de dados,:
 
-* Defina fontes que tenham nomes de campos, tipos de dados, valores e tamanhos mutáveis
+* Definir fontes com nomes de campo mutáveis, tipos de dados, valores e tamanhos
 * Defina parâmetros de transformação que funcionam com padrões de dados ao invés de campos e valores codificados
 * Defina expressões que compreendam padrões para corresponder aos campos recebidos, ao invés de usar campos nomeados
 
-## <a name="how-to-implement-schema-drift-in-adf-mapping-data-flows"></a>Como implementar a descompasso de esquema em fluxos de dados de mapeamento do ADF
-O ADF nativamente dá suporte a esquemas flexíveis que mudam da execução para a execução para que você possa criar uma lógica de transformação de dados genérica sem a necessidade de recompilar os fluxos de dados.
+Azure Data Factory nativamente dá suporte a esquemas flexíveis que mudam da execução para a execução para que você possa criar uma lógica de transformação de dados genérica sem a necessidade de recompilar os fluxos de dados.
 
-* Escolha "Permitir descompasso de esquema" na sua transformação de fonte
+Você precisa tomar uma decisão sobre a arquitetura de seu fluxo de dados para aceitar o descompasso de esquema em todo o fluxo. Ao fazer isso, você pode proteger contra alterações de esquema das fontes. No entanto, você perderá a ligação antecipada de suas colunas e tipos em todo o fluxo de dados. Azure Data Factory trata os fluxos de descompasso de esquema como fluxos de ligação tardia, portanto, quando você cria suas transformações, os nomes de coluna desfeitos não estarão disponíveis para você nas exibições de esquema em todo o fluxo.
 
-<img src="media/data-flow/schemadrift001.png" width="400">
+## <a name="schema-drift-in-source"></a>Descompasso de esquema na origem
 
-* Ao selecionar essa opção, todos os campos recebidos são lidos da sua fonte em cada execução do Fluxo de Dados e são passados por todo o fluxo até o Coletor.
+Em uma transformação de origem, a descompasso de esquema é definida como uma leitura de colunas que não definem seu esquema de conjunto de linhas. Para habilitar a descompasso de esquema, marque **permitir descompasso de esquema** em sua transformação de origem.
 
-* Todas as colunas recentemente detectadas (colunas descompassos) chegarão como tipo de dados de cadeia de caracteres por padrão. Em sua transformação de origem, escolha "inferir tipos de coluna desfeitas" se desejar que o ADF inferir automaticamente os tipos de dados da origem.
+![Origem de descompasso de esquema](media/data-flow/schemadrift001.png "Origem de descompasso de esquema")
 
-* Certifique-se de usar "mapa automático" para mapear todos os novos campos na transformação do coletor para que todos os novos campos sejam selecionados e descarregou em seu destino e defina "permitir descompasso de esquema" no coletor também.
+Quando a descompasso de esquema está habilitada, todos os campos de entrada são lidos de sua origem durante a execução e passados por todo o fluxo para o coletor. Por padrão, todas as colunas recentemente detectadas, conhecidas como *colunas descompassos*, chegam como um tipo de dados de cadeia de caracteres. Se você quiser que o fluxo de dados infira automaticamente os tipos de dados de colunas desfeitas, marque **inferir tipos de coluna** desfeitas em suas configurações de origem.
 
-<img src="media/data-flow/automap.png" width="400">
+## <a name="schema-drift-in-sink"></a>Descompasso de esquema no coletor
 
-* Tudo funcionará quando novos campos forem introduzidos nesse cenário com um mapeamento simples do coletor de > de origem (cópia).
+Em uma transformação de coletor, o descompasso de esquema é quando você grava colunas adicionais sobre o que é definido no esquema de dados do coletor. Para habilitar a descompasso de esquema, marque **permitir descompasso de esquema** na transformação do coletor.
 
-* Para adicionar transformações a esse fluxo de trabalho que manuseia o descompasso de esquema, use a correspondência de padrões para corresponder colunas por nome, tipo e valor.
+![Coletor de descompasso de esquema](media/data-flow/schemadrift002.png "Coletor de descompasso de esquema")
 
-* Clique em "Adicionar padrão de coluna" na transformação Coluna Derivada ou Agregação se quiser criar uma transformação que compreenda o "Descompasso de Esquema".
+Se a descompasso de esquema estiver habilitada, verifique se o controle deslizante de **mapeamento automático** na guia mapeamento está ativado. Com esse controle deslizante ativado, todas as colunas de entrada são gravadas no destino. Caso contrário, você deve usar o mapeamento baseado em regras para gravar colunas descompassos.
 
-<img src="media/data-flow/columnpattern.png" width="400">
+![Mapeamento automático do coletor](media/data-flow/automap.png "Mapeamento automático do coletor")
 
-> [!NOTE]
-> Você precisa tomar uma decisão sobre a arquitetura de seu fluxo de dados para aceitar o descompasso de esquema em todo o fluxo. Ao fazer isso, você pode proteger contra alterações de esquema das fontes. No entanto, você perde a vinculação antecipada de suas colunas e tipos em todo o fluxo de dados. O Azure Data Factory trata os fluxos de descompasso de esquema como fluxos de vinculação tardia, portanto, ao criar suas transformações, os nomes das colunas não ficam disponíveis nas visualizações de esquema durante todo o fluxo.
+## <a name="transforming-drifted-columns"></a>Transformando colunas descompassos
 
-<img src="media/data-flow/taxidrift1.png" width="400">
+Quando o fluxo de dados tiver colunas descompassos, você poderá acessá-las em suas transformações com os seguintes métodos:
 
-No fluxo de dados da amostra Taxi Demo, há um exemplo de descompasso de esquema no fluxo de dados inferior com a fonte TripFare. Na transformação Agregar, observe que estamos usando o design de "padrão de coluna" para os campos de agregação. Ao invés de nomear colunas específicas ou procurar colunas por posição, presumimos que os dados podem mudar e podem não aparecer na mesma ordem entre as execuções.
+* Use as `byPosition` expressões `byName` e para referenciar explicitamente uma coluna por nome ou número de posição.
+* Adicionar um padrão de coluna em uma coluna derivada ou transformação de agregação para corresponder a qualquer combinação de nome, fluxo, posição ou tipo
+* Adicionar mapeamento baseado em regra em uma transformação SELECT ou Sink para corresponder colunas perrespondidas a aliases de colunas por meio de um padrão
 
-Neste exemplo de manuseio do descompasso de esquema do Fluxo de Dados do Azure Data Factory, criamos uma agregação que analisa colunas do tipo 'duplo', sabendo que o domínio de dados contém preços para cada viagem. Podemos, então, executar um cálculo matemático agregado em todos os campos duplos na fonte, independentemente de onde a coluna está e da nomenclatura da coluna.
+Para obter mais informações sobre como implementar padrões de coluna, consulte [padrões de coluna no fluxo de dados de mapeamento](concepts-data-flow-column-pattern.md).
 
-A sintaxe do Fluxo de Dados do Azure Data Factory usa $$ para representar cada coluna correspondente ao seu padrão. Você também pode corresponder nomes de coluna usando funções complexas de pesquisa de cadeia de caracteres e expressão regular. Nesse caso, vamos criar um novo nome de campo agregado com base em cada correspondência de um tipo de coluna 'duplo' e anexar o texto ```_total``` a cada um desses nomes correspondentes: 
+### <a name="map-drifted-columns-quick-action"></a>Ação rápida mapear colunas descompassos
 
-```concat($$, '_total')```
+Para referenciar explicitamente colunas descompassos, você pode gerar rapidamente mapeamentos para essas colunas por meio de uma ação rápida de visualização de dados. Depois que o [modo de depuração](concepts-data-flow-debug-mode.md) estiver ativado, vá para a guia Visualização de dados e clique em **Atualizar** para buscar uma visualização de dados. Se data factory detectar que as colunas descompassos existem, você poderá clicar em **mapear descompasso** e gerar uma coluna derivada que permite que você referencie todas as colunas descompassos em exibições de esquema downstream.
 
-Em seguida, arredondaremos e somaremos os valores de cada uma dessas colunas correspondentes:
+![Mapa descompasso](media/data-flow/mapdrifted1.png "Mapa descompasso")
 
-```round(sum ($$))```
+Na transformação coluna derivada gerada, cada coluna descompasso é mapeada para seu nome e tipo de dados detectados. Na visualização de dados acima, a coluna ' MovieID ' é detectada como um inteiro. Depois que o **mapa** é clicado, o MovieID é definido na coluna derivada `toInteger(byName('movieId'))` como e incluído em exibições de esquema em transformações de downstream.
 
-Você pode ver essa funcionalidade de descompasso de esquema em funcionamento com o Azure Data Factory exemplo de fluxo de dados "demonstração de táxi". Ative a sessão de depuração usando a opção Depurar na parte superior da superfície de design do Fluxo de Dados para poder ver os resultados de forma interativa:
-
-<img src="media/data-flow/taxidrift2.png" width="800">
-
-## <a name="access-new-columns-downstream"></a>Acessar novas colunas downstream
-Quando você gera novas colunas com padrões de coluna, você pode acessar essas novas colunas posteriormente em suas transformações de fluxo de dados com estes métodos:
-
-* Use "byPosition" para identificar as novas colunas por número de posição.
-* Use "byName" para identificar as novas colunas por seu nome.
-* Em padrões de coluna, use "Name", "Stream", "position" ou "Type" ou qualquer combinação deles para corresponder a novas colunas.
-
-## <a name="rule-based-mapping"></a>Mapeamento baseado em regras
-O padrão de suporte de transformação Select e Sink correspondente por meio de mapeamento baseado em regra. Isso permitirá que você crie regras que possam mapear colunas descompassos para aliases de coluna e coletar essas colunas para o destino.
+![Mapa descompasso](media/data-flow/mapdrifted2.png "Mapa descompasso")
 
 ## <a name="next-steps"></a>Próximas etapas
-Na [linguagem de expressão de fluxo de dados](data-flow-expression-functions.md) , você encontrará recursos adicionais para padrões de coluna e descompasso de esquema, incluindo "byName" e "byPosition".
+Na [linguagem de expressão de fluxo de dados](data-flow-expression-functions.md), você encontrará recursos adicionais para padrões de coluna e descompasso de esquema, incluindo "byName" e "byPosition".

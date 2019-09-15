@@ -1,19 +1,19 @@
 ---
-title: Constantes SQL no Azure Cosmos DB
-description: Saiba mais sobre as constantes SQL no Azure Cosmos DB
+title: Constantes do SQL no Azure Cosmos DB
+description: Saiba mais sobre as constantes do SQL no Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tisande
-ms.openlocfilehash: ed337c8330eb8b3e4ad97c92cca1d0c5977f9588
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 41cafeb76b7b9481a78ffcff179676d0aa7bf6fd
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342579"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71002041"
 ---
-# <a name="azure-cosmos-db-sql-query-constants"></a>Constantes de consulta SQL do Cosmos DB do Azure  
+# <a name="azure-cosmos-db-sql-query-constants"></a>Constantes de consulta do Azure Cosmos DB SQL  
 
  Uma constante, também conhecida como valor literal ou escalar, é um símbolo que representa um valor de dados específico. O formato de uma constante depende do valor que representa o tipo de dados.  
   
@@ -26,8 +26,8 @@ ms.locfileid: "67342579"
 |**Booliano**|Valores: **falso**, **verdadeiro**.|  
 |**Número**|Um número de ponto flutuante de precisão dupla, padrão IEEE 754.|  
 |**Cadeia de caracteres**|Uma sequência de zero ou mais caracteres Unicode. As cadeias de caracteres devem ser colocadas entre aspas simples ou duplas.|  
-|**Matriz**|Uma sequência de zero ou mais elementos. Cada elemento pode ser um valor de qualquer tipo de dados escalares, exceto **Undefined**.|  
-|**Objeto**|Um conjunto ordenado de zero ou mais pares de nome/valor. Nome é uma cadeia de caracteres Unicode; o valor pode ser de qualquer tipo de dados escalares, exceto **Indefinido**.|  
+|**Matriz**|Uma sequência de zero ou mais elementos. Cada elemento pode ser um valor de qualquer tipo de dados escalar, exceto **indefinido**.|  
+|**Object**|Um conjunto ordenado de zero ou mais pares de nome/valor. Nome é uma cadeia de caracteres Unicode; o valor pode ser de qualquer tipo de dados escalares, exceto **Indefinido**.|  
   
 ## <a name="bk_syntax"></a>Sintaxe
   
@@ -59,7 +59,7 @@ ms.locfileid: "67342579"
   
 ```  
   
-##  <a name="bk_arguments"></a> Argumentos
+##  <a name="bk_arguments"></a>Argumentos
   
 * `<undefined_constant>; Undefined`  
   
@@ -118,5 +118,5 @@ ms.locfileid: "67342579"
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Amostras do .NET no Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-dotnet)
+- [Amostras do .NET no Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Dados de documento de modelo](modeling-data.md)
