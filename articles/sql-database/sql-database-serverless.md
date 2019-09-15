@@ -11,12 +11,12 @@ author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 09/06/2019
-ms.openlocfilehash: ba4e1e933b00aa8ca74be30a6ea5e1a22844b15f
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: e6c815b317e60d7a65a2f26249782451bc917097
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858506"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993459"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Banco de dados SQL do Azure sem servidor (visualização)
 
@@ -132,7 +132,7 @@ A retomada será disparada se qualquer uma das seguintes condições for verdade
 |Auditoria|Exibir os registros de auditoria.<br>Atualizando ou exibindo a política de auditoria.|
 |Mascaramento de dados|Adicionar, modificar, excluir ou exibir as regras de mascaramento de dados|
 |Transparent Data Encryption|Exibir o estado ou status de Transparent Data Encryption|
-|Consultar o armazenamento de dados (desempenho)|Modificar ou exibir configurações do repositório de consultas; ajuste automático|
+|Consultar o armazenamento de dados (desempenho)|Modificando ou exibindo configurações do repositório de consultas|
 |Ajuste automático|Aplicação e verificação de recomendações de ajuste automático, como indexação automática|
 |Cópia de banco de dados|Criar banco de dados como cópia.<br>Exportar para um arquivo BACPAC.|
 |Sincronização de dados SQL|Sincronização entre bancos de dados membro e hub que são executados em um cronograma configurável ou são executados manualmente|

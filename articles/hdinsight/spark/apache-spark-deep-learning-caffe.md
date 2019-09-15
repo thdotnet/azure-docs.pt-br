@@ -3,16 +3,17 @@ title: Use Caffe no Azure HDInsight Spark para aprendizado aprofundado distribu�
 description: Use Caffe em Apache Spark para aprendizado profundo distribuído no Azure HDInsight.
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/17/2017
-ms.openlocfilehash: 31911c6c2456ab8b4949bab6ef8e541b91fc8a2c
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: bb234e5b34bd8046c4e65d7cc6812cde0db3b5b2
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814200"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995604"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Use Caffe no Azure HDInsight Spark para aprendizado aprofundado distribuído
 
@@ -65,7 +66,7 @@ A segunda etapa é baixar, compilar e instalar protobuf 2.5.0 para Caffe durante
 
 Para começar, é possível executar esta ação de script em relação ao cluster para todos os nós de trabalho e nós principais (para HDInsight 3.5). É possível executar as ações de script em um cluster existente ou usar ações de script durante a criação do cluster. Para obter mais informações sobre as ações de script, consulte a documentação [aqui](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
-![Ações de script para instalar dependências](./media/apache-spark-deep-learning-caffe/Script-Action-1.png)
+![Ações de script para instalar dependências](./media/apache-spark-deep-learning-caffe/submit-script-action.png)
 
 
 ## <a name="step-2-build-caffe-on-apache-spark-for-hdinsight-on-the-head-node"></a>Etapa 2: Crie o Caffe no Apache Spark para o HDInsight no nó principal
@@ -175,7 +176,8 @@ Para este exemplo, como você está usando a CPU em vez de GPU, você deve alter
     # solver mode: CPU or GPU
     solver_mode: CPU
 
-![Caffe Config1](./media/apache-spark-deep-learning-caffe/Caffe-1.png)
+![Caffe Config1](./media/apache-spark-deep-learning-caffe/caffe-configuration1.png
+)
 
 Você pode alterar outras linhas conforme necessário.
 
@@ -184,7 +186,7 @@ O segundo arquivo (${CAFFE_ON_SPARK}/data/lenet_memory_train_test.prototxt) defi
 - altere "file:/Users/mridul/bigml/demodl/mnist_train_lmdb" para "wasb:///projects/machine_learning/image_dataset/mnist_train_lmdb"
 - altere "file:/Users/mridul/bigml/demodl/mnist_test_lmdb/" para "wasb:///projects/machine_learning/image_dataset/mnist_test_lmdb"
 
-![Caffe Config2](./media/apache-spark-deep-learning-caffe/Caffe-2.png)
+![Caffe Config2](./media/apache-spark-deep-learning-caffe/caffe-configuration2.png)
 
 Para obter mais informações sobre como definir a rede, confira a [documentação do Caffe no conjunto de dados MNIST](https://caffe.berkeleyvision.org/gathered/examples/mnist.html)
 
@@ -204,15 +206,15 @@ Se quiser saber o que aconteceu, geralmente você precisará obter o log do driv
 
     https://yourclustername.azurehdinsight.net/yarnui
    
-![Interface do usuário do YARN](./media/apache-spark-deep-learning-caffe/YARN-UI-1.png)
+![Interface do usuário do YARN](./media/apache-spark-deep-learning-caffe/apache-yarn-window-1.png)
 
 Você pode conferir a quantidade de recursos alocada para este aplicativo específico. Você pode clicar no link "Agendador" e verá que, para esse aplicativo, existem nove contêineres em execução. Você solicita que YARN forneça oito executores, e outro contêiner é para o processo de driver. 
 
-![Agendador do YARN](./media/apache-spark-deep-learning-caffe/YARN-Scheduler.png)
+![Agendador do YARN](./media/apache-spark-deep-learning-caffe/apache-yarn-scheduler.png)
 
 Convém verificar os logs de driver ou logs de contêiner, se houver falhas. Para logs de driver, você pode clicar na ID do aplicativo na interface do usuário do YARN e clicar no botão "Logs". Os logs de driver são gravados em stderr.
 
-![IU DO YARN 2](./media/apache-spark-deep-learning-caffe/YARN-UI-2.png)
+![IU DO YARN 2](./media/apache-spark-deep-learning-caffe/apache-yarn-window-2.png)
 
 Por exemplo, você pode ver alguns do erro abaixo dos logs do driver, indicando que você aloca um número excessivo de executores.
 

@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/20/2018
+ms.date: 09/13/2019
 ms.author: magattus
-ms.openlocfilehash: 2fd3d2f8fbc98d8c7b19cbcc365748cc088d76fd
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 8704d715a20b94dc170f232b07a0acd54bb1e6f1
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594089"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996803"
 ---
 # <a name="understanding-azure-cdn-billing"></a>Noções básicas sobre a cobrança da rede de distribuição de conteúdo do Azure
 
@@ -57,9 +57,12 @@ Se você estiver usando o armazenamento de BLOBs do Azure como a origem para o s
 
 - Uso real em GB: o armazenamento real dos seus objetos de origem.
 
+- Transações: conforme o necessário para preencher o cache.
+
 - Transferências em GB: a quantidade de dados transferidos para preencher os caches da CDN.
 
-- Transações: conforme o necessário para preencher o cache.
+> [!NOTE]
+> A partir de outubro de 2019, se você estiver usando a CDN do Azure da Microsoft, o custo da transferência de dados de origens hospedadas no Azure para PoPs da CDN será gratuito. A CDN do Azure da Verizon e a CDN do Azure da Akamai estão sujeitas às tarifas descritas abaixo.
 
 Para saber mais sobre a cobrança do Armazenamento do Microsoft Azure, confira [Noções básicas sobre cobrança no armazenamento do Azure – largura de banda, transações e capacidade](https://blogs.msdn.microsoft.com/windowsazurestorage/2010/07/08/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity/).
 
@@ -83,6 +86,36 @@ Cada vez que um POP da CDN precisa preencher seu cache, ele faz uma solicitaçã
 - Quantos nós precisam carregar o objeto: cada vez que um nó carrega um objeto de origem, ele incorre em uma transação faturável. Como resultado, mais conteúdo global (acessado a partir de outros nós) resulta em transações mais faturáveis.
 
 - Influência da TTL: uma TTL superior para um objeto significa que ele precisa ser obtido da origem com menos frequência. Isso também significa que os clientes, como navegadores, podem armazenar em cache o objeto mais longo, o que pode reduzir as transações para a CDN.
+
+## <a name="which-origin-services-are-eligible-for-free-data-transfer-with-azure-cdn-from-microsoft"></a>Quais serviços de origem estão qualificados para a transferência de dados gratuita com a CDN do Azure da Microsoft? 
+Se você usar um dos seguintes serviços do Azure como sua origem de CDN, não será cobrado da transferência de dados da origem para os PoPs da CDN. 
+
+- Armazenamento do Azure
+- Serviços de Mídia do Azure
+- Máquinas Virtuais do Azure
+- Rede Virtual
+- Load Balancer
+- Application Gateway
+- Azure DNS
+- ExpressRoute
+- Gateway de VPN
+- Gerenciador de Tráfego
+- Observador de Rede
+- Firewall do Azure
+- Azure Front Door Service
+- Azure Bastion
+- Serviço de Aplicativo do Azure
+- Verificação de
+- Azure Data Factory
+- Gerenciamento de API do Azure
+- Lote do Azure 
+- Azure Data Explorer
+- HDInsight
+- Azure Cosmos DB
+- Azure Data Lake Store
+- Serviço do Azure Machine Learning 
+- Banco de dados SQL do Azure
+- Cache Redis do Azure
 
 ## <a name="how-do-i-manage-my-costs-most-effectively"></a>Como gerencio meus custos com mais eficiência?
 Defina a vida útil mais longa possível em seu conteúdo. 

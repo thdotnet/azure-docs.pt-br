@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: d6a8ac97aa3896eaf98651f5f1120fcc6bf25516
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: c71bf9be94799c2b109d57393e70e99a0710e252
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70814106"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70995493"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Depurar trabalhos do Apache Spark em execução no Azure HDInsight
 
@@ -29,14 +29,14 @@ Você deve ter o seguinte:
 ## <a name="track-an-application-in-the-yarn-ui"></a>Rastrear um aplicativo na interface do usuário do YARN
 1. Inicie a interface do usuário do YARN. Clique em **Yarn** em **painéis do Cluster**.
    
-    ![Iniciar Interface do usuário do YARN](./media/apache-spark-job-debugging/launch-yarn-ui.png)
+    ![Iniciar Interface do usuário do YARN](./media/apache-spark-job-debugging/launch-apache-yarn-ui.png)
    
    > [!TIP]  
    > Alternativamente, também é possível iniciar a interface do usuário do YARN na interface do usuário do Ambari. Para iniciar a UI do Ambari, clique **Ambari doméstica** sob **painéis do Cluster**. Na interface do usuário do Ambari, clique em **YARN**, em **Links Rápidos**, no Resource Manager ativo e, por fim, em **Interface do Usuário do Resource Manager**. 
 
 2. Como você iniciou o trabalho do Spark usando notebooks Jupyter, o aplicativo tem o nome **remotesparkmagics** (esse é o nome de todos os aplicativos que são iniciados do notebook). Clique na ID de aplicativo com o nome do aplicativo para obter mais informações sobre o trabalho. Isso inicia o modo de exibição do aplicativo.
    
-    ![Localizar a ID de aplicativo Spark](./media/apache-spark-job-debugging/find-application-id.png)
+    ![Localizar a ID de aplicativo Spark](./media/apache-spark-job-debugging/find-application-id1.png)
    
     Para aplicativos que são iniciados do notebook Jupyter, o status é sempre **EM EXECUÇÃO** até que você saia do notebook.
 3. Na exibição de aplicativo, você pode fazer drill down para descobrir os contêineres associados ao aplicativo e os logs (stdout/stderr). Você também pode iniciar a interface do usuário do Spark clicando no link correspondente para a **URL de Rastreamento**, conforme mostrado abaixo. 
@@ -48,13 +48,13 @@ Na interface do usuário do Spark, é possível fazer drill down em trabalhos do
 
 1. Para iniciar a interface do usuário do Spark, da exibição do aplicativo, clique no link em **URL de Rastreamento**, conforme mostrado na captura de tela acima. Você pode ver todos os trabalhos do Spark que são iniciados pelo aplicativo em execução no notebook do Jupyter.
    
-    ![Exibir trabalhos do Spark](./media/apache-spark-job-debugging/view-spark-jobs.png)
+    ![Exibir trabalhos do Spark](./media/apache-spark-job-debugging/view-apache-spark-jobs.png)
 2. Clique na guia **Executores** para ver informações de processamento e armazenamento de cada executor. Você também pode recuperar a pilha de chamadas clicando no link **Thread Dump** (Despejo de Thread).
    
     ![Exibir executores do Spark](./media/apache-spark-job-debugging/view-spark-executors.png)
 3. Clique na guia **Estágios** para ver os estágios associados ao aplicativo.
    
-    ![Exibir estágios do Spark](./media/apache-spark-job-debugging/view-spark-stages.png "Exibir estágios do Spark")
+    ![Exibir estágios do Spark](./media/apache-spark-job-debugging/view-apache-spark-stages.png "Exibir estágios do Spark")
    
     Cada estágio pode ter várias tarefas para as quais você pode exibir estatísticas de execução, como mostrado abaixo.
    

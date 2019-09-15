@@ -7,18 +7,18 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: mlearned
-ms.openlocfilehash: 5aa8268fee7d43ad13ea8710760ba493683f502e
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: f150103c8e9534bfd1bb93d20e3d65d715767184
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70126865"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996958"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Acessar o painel da Web do Kubernetes no AKS (Serviço de Kubernetes do Azure)
 
 Kubernetes inclui um painel da web que pode ser usado para operações básicas de gerenciamento. Este painel permite exibir o status de integridade básico e as métricas dos seus aplicativos, criar e implantar serviços e editar aplicativos existentes. Este artigo mostra como acessar o painel do Kubernetes usando a CLI do Azure e, em seguida, orienta você por meio de algumas operações básicas do painel.
 
-Para obter mais informações sobre o painel do kubernetes, consulte [painel de interface do usuário da Web][kubernetes-dashboard]do amKubernetes.
+Para obter mais informações sobre o painel do kubernetes, consulte [painel de interface do usuário da Web do amKubernetes][kubernetes-dashboard].
 
 ## <a name="before-you-begin"></a>Antes de começar
 
@@ -36,34 +36,47 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 Este comando cria um proxy entre o sistema de desenvolvimento e a API do Kubernetes, e abre um navegador da Web para o painel do Kubernetes. Se um navegador da Web não abrir no painel do kubernetes, copie e cole o endereço da URL anotado na CLI do Azure `http://127.0.0.1:8001`, normalmente.
 
-![A página de logon do painel da Web do kubernetes](./media/kubernetes-dashboard/dashboard-login.png)
+<!--
+![The login page of the Kubernetes web dashboard](./media/kubernetes-dashboard/dashboard-login.png)
 
-Você tem as seguintes opções para entrar no painel do seu cluster:
+You have the following options to sign in to your cluster's dashboard:
 
-* Um [arquivo kubeconfig][kubeconfig-file]. Você pode gerar um arquivo kubeconfig usando [AZ AKs Get-Credentials][az-aks-get-credentials].
-* Um token, como um token de [conta de serviço][aks-service-accounts] ou token de usuário. Em [clusters habilitados para AAD][aad-cluster], esse token seria um token do AAD. Você pode usar `kubectl config view` para listar os tokens em seu arquivo kubeconfig. Para obter mais detalhes sobre como criar um token do AAD para uso com um cluster AKS, consulte [integrar o Azure Active Directory com o serviço kubernetes do Azure usando o CLI do Azure][aad-cluster].
-* A conta de serviço do painel padrão, que será usada se você clicar em *ignorar*.
+* A [kubeconfig file][kubeconfig-file]. You can generate a kubeconfig file using [az aks get-credentials][az-aks-get-credentials].
+* A token, such as a [service account token][aks-service-accounts] or user token. On [AAD-enabled clusters][aad-cluster], this token would be an AAD token. You can use `kubectl config view` to list the tokens in your kubeconfig file. For more details on creating an AAD token for use with an AKS cluster see [Integrate Azure Active Directory with Azure Kubernetes Service using the Azure CLI][aad-cluster].
+* The default dashboard service account, which is used if you click *Skip*.
 
 > [!WARNING]
-> Nunca exponha o painel do kubernetes publicamente, independentemente do método de autenticação usado.
+> Never expose the Kubernetes dashboard publicly, regardless of the authentication method used.
 > 
-> Ao configurar a autenticação para o painel do kubernetes, é recomendável que você use um token sobre a conta de serviço do painel padrão. Um token permite que cada usuário use suas próprias permissões. O uso da conta de serviço do painel padrão pode permitir que um usuário ignore suas próprias permissões e use a conta de serviço em vez disso.
+> When setting up authentication for the Kubernetes dashboard, it is recommended that you use a token over the default dashboard service account. A token allows each user to use their own permissions. Using the default dashboard service account may allow a user to bypass their own permissions and use the service account instead.
 > 
-> Se você optar por usar a conta de serviço do painel padrão e o cluster AKS usar o RBAC, um *ClusterRoleBinding* deverá ser criado para que você possa acessar o painel corretamente. Por padrão, o painel do Kubernetes é implantado com um mínimo de acesso de leitura e exibe os erros de acesso do RBAC. Um administrador de cluster pode optar por conceder acesso adicional para o *painel do kubernetes* conta de serviço, no entanto, isso pode ser um vetor para elevação de privilégios. Você também pode integrar a autenticação do Active Directory para fornecer um nível mais granular de acesso.
+> If you do choose to use the default dashboard service account and your AKS cluster uses RBAC, a *ClusterRoleBinding* must be created before you can correctly access the dashboard. By default, the Kubernetes dashboard is deployed with minimal read access and displays RBAC access errors. A cluster administrator can choose to grant additional access to the *kubernetes-dashboard* service account, however this can be a vector for privilege escalation. You can also integrate Azure Active Directory authentication to provide a more granular level of access.
 >
-> Para criar uma associação, use o comando [kubectl Create clusterrolebinding][kubectl-create-clusterrolebinding] , conforme mostrado no exemplo a seguir. **Esta associação de exemplo não aplica nenhum componente de autenticação adicional e pode levar ao uso inseguro.**
+> To create a binding, use the [kubectl create clusterrolebinding][kubectl-create-clusterrolebinding] command as shown in the following example. **This sample binding does not apply any additional authentication components and may lead to insecure use.**
 >
 > ```console
 > kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 > ```
 > 
-> Agora você pode acessar o painel do Kubernetes no seu cluster habilitado pelo RBAC. Para iniciar o painel do kubernetes, use o comando [AZ AKs Browse][az-aks-browse] conforme detalhado na etapa anterior.
+> You can now access the Kubernetes dashboard in your RBAC-enabled cluster. To start the Kubernetes dashboard, use the [az aks browse][az-aks-browse] command as detailed in the previous step.
 >
-> Se o cluster não usar o RBAC, não será recomendável criar um *ClusterRoleBinding*.
+> If your cluster does not use RBAC, it is not recommended to create a *ClusterRoleBinding*.
+> 
+> For more information on using the different authentication methods, see the Kubernetes dashboard wiki on [access controls][dashboard-authentication].
+
+After you choose a method to sign in, the Kubernetes dashboard is displayed. If you chose to use *token* or *skip*, the Kubernetes dashboard will use the permissions of the currently logged in user to access the cluster.
+-->
+
+> [!IMPORTANT]
+> Se o cluster do AKS usa RBAC, um *ClusterRoleBinding* deve ser criado antes de poder acessar o painel corretamente. Por padrão, o painel do Kubernetes é implantado com um mínimo de acesso de leitura e exibe os erros de acesso do RBAC. O painel do Kubernetes não oferece suporte a credenciais fornecidas pelo usuário para determinar o nível de acesso, em vez disso, ele usa as funções concedidas à conta de serviço. Um administrador de cluster pode optar por conceder acesso adicional para o *painel do kubernetes* conta de serviço, no entanto, isso pode ser um vetor para elevação de privilégios. Você também pode integrar a autenticação do Active Directory para fornecer um nível mais granular de acesso.
+> 
+> Para criar uma associação, use o comando [kubectl Create clusterrolebinding][kubectl-create-clusterrolebinding] . O exemplo a seguir mostra como criar uma associação de exemplo, no entanto, essa associação de exemplo não aplica nenhum componente de autenticação adicional e pode levar ao uso inseguro. O painel do Kubernetes está aberto para qualquer pessoa com acesso à URL. Não expor publicamente o painel do Kubernetes.
+>
+> ```console
+> kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+> ```
 > 
 > Para obter mais informações sobre como usar os diferentes métodos de autenticação, consulte o wiki do kubernetes Dashboard em [controles de acesso][dashboard-authentication].
-
-Depois de escolher um método para entrar, o painel do kubernetes é exibido. Se você optar por usar o *token* ou *ignorar*, o painel do kubernetes usará as permissões do usuário conectado no momento para acessar o cluster.
 
 ![A página de visão geral do painel da Web do Kubernetes](./media/kubernetes-dashboard/dashboard-overview.png)
 
@@ -117,7 +130,7 @@ Levará alguns instantes para que os pods sejam criados dentro de um conjunto de
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre o painel do kubernetes, consulte o [painel de interface do usuário da Web][kubernetes-dashboard]do amKubernetes.
+Para obter mais informações sobre o painel do kubernetes, consulte o [painel de interface do usuário da Web do amKubernetes][kubernetes-dashboard].
 
 <!-- LINKS - external -->
 [dashboard-authentication]: https://github.com/kubernetes/dashboard/wiki/Access-control
