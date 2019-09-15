@@ -30,7 +30,7 @@ Assista ao vídeo a seguir para obter uma visão geral das etapas descritas nest
 >
 
 ## <a name="overview"></a>Visão geral
-Você pode usar *artefatos* para implantar e configurar seu aplicativo depois de provisionar uma VM. Um artefato é composto por um arquivo de definição de artefato e outros arquivos de script que são armazenados em uma pasta em um repositório Git. Arquivos de definição de artefato são formados por JSON e expressões que você pode usar para especificar o que você deseja instalar em uma VM. Por exemplo, você pode definir o nome de um artefato, um comando a ser executado e parâmetros que estão disponíveis quando o comando é executado. Você pode consultar por nome outros arquivos de script dentro do arquivo de definição de artefato.
+Você pode usar *artifacts* para implantar e configurar seu aplicativo depois de provisionar uma VM. Um artefato é composto por um arquivo de definição de artefato e outros arquivos de script que são armazenados em uma pasta em um repositório Git. Arquivos de definição de artefato são formados por JSON e expressões que você pode usar para especificar o que você deseja instalar em uma VM. Por exemplo, você pode definir o nome de um artefato, um comando a ser executado e parâmetros que estão disponíveis quando o comando é executado. Você pode consultar por nome outros arquivos de script dentro do arquivo de definição de artefato.
 
 ## <a name="artifact-definition-file-format"></a>Formato do arquivo de definição de artefato
 O exemplo a seguir mostra as seções que compõem a estrutura básica de um arquivo de definição:
