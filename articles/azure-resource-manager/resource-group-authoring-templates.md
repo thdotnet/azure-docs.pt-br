@@ -4,14 +4,14 @@ description: Descreve a estrutura e as propriedades dos modelos do Azure Resourc
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 09/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: d396b6b48687e451396849cc256c25f847a219cf
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 4a5c1a99911c31f539d4f55adefb2c5f06243dd0
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306833"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984088"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Noções básicas de estrutura e sintaxe dos modelos do Azure Resource Manager
 
@@ -84,6 +84,8 @@ As propriedades disponíveis para um parâmetro são:
 | maxLength |Não |O tamanho máximo para parâmetros de tipo de matriz, cadeia de caracteres segura e cadeia de caracteres, esse valor é inclusivo. |
 | description |Não |Descrição do parâmetro exibido aos usuários pelo portal. Para obter mais informações, confira [Comentários em modelos](#comments). |
 
+Para obter exemplos de como usar parâmetros, consulte [parâmetros em modelos de Azure Resource Manager](template-parameters.md).
+
 ## <a name="variables"></a>Variáveis
 
 Na seção de variáveis, você constrói valores que podem ser usados em todo o seu modelo. Você não precisa definir variáveis, mas normalmente elas simplificam seu modelo reduzindo expressões complexas.
@@ -116,6 +118,8 @@ O exemplo a seguir mostra as opções disponíveis para definir uma variável:
 ```
 
 Para obter informações sobre `copy` como usar o para criar vários valores para uma variável, consulte [Iteration Variable](resource-group-create-multiple.md#variable-iteration).
+
+Para obter exemplos de como usar variáveis, consulte [variáveis no modelo Azure Resource Manager](template-variables.md).
 
 ## <a name="functions"></a>Funções
 
@@ -159,6 +163,8 @@ Ao definir uma função de usuário, há algumas restrições:
 | valor do parâmetro |Não |Tipo do valor do parâmetro. Os valores e tipos permitidos são **cadeia de caracteres**, **securestring**, **int**, **bool**, **objeto**, **secureObject**, e **matriz**. |
 | tipo de saída |Sim |Tipo do valor de saída. Os valores de saída dão suporte aos mesmos tipos de parâmetros de entrada de função. |
 | saída-valor |Sim |Expressão de linguagem do modelo que é avaliada e retornada da função. |
+
+Para obter exemplos de como usar funções personalizadas, consulte [funções definidas pelo usuário no modelo Azure Resource Manager](template-user-defined-functions.md).
 
 ## <a name="resources"></a>Recursos
 
@@ -259,6 +265,8 @@ O exemplo a seguir mostra a estrutura de uma definição de saída:
 | condição |Não | Valor booliano que indica se esse valor de saída é retornado. Quando `true`, o valor é incluído na saída para a implantação. Quando `false`, o valor de saída é ignorado para esta implantação. Quando não especificado, o valor padrão é `true`. |
 | type |Sim |Tipo do valor de saída. Valores de saída oferecem suporte aos mesmos tipos que os parâmetros de entrada do modelo. Se você especificar **SecureString** para o tipo de saída, o valor não será exibido no histórico de implantação e não poderá ser recuperado de outro modelo. Para usar um valor secreto em mais de um modelo, armazene o segredo em um Key Vault e referencie o segredo no arquivo de parâmetro. Para saber mais, confira [Usar o Azure Key Vault para passar um valor de parâmetro seguro durante a implantação](resource-manager-keyvault-parameter.md). |
 | value |Sim |Expressão de linguagem do modelo avaliada e retornada como valor de saída. |
+
+Para obter exemplos de como usar saídas, consulte [saídas no modelo Azure Resource Manager](template-outputs.md).
 
 <a id="comments" />
 

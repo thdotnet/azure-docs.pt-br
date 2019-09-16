@@ -3,20 +3,20 @@ title: Autenticar na Fala do Bing | Microsoft Docs
 titlesuffix: Azure Cognitive Services
 description: Solicitar autenticação para usar a API de Fala do Bing
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 11d6256fb63452b849a80abab181876d14b3b6a6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d1e708ff29293b87935d0d191ba44ad4a11917a0
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515048"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965668"
 ---
 # <a name="authenticate-to-the-speech-api"></a>Autenticar para a API de fala
 
@@ -35,7 +35,7 @@ Para uso de longo prazo ou cota maior, inscreva-se para uma [conta gratuita do A
 
 Para usar a API de REST de fala, você precisa passar a chave de assinatura no `Ocp-Apim-Subscription-Key` campo no cabeçalho da solicitação.
 
-NOME| Formatar| DESCRIÇÃO
+Nome| Formatar| Descrição
 ----|-------|------------
 Ocp-Apim-Subscription-Key | ASCII | YOUR_SUBSCRIPTION_KEY
 

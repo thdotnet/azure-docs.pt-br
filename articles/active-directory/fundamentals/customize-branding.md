@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: kexia
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ae329bd031a2a57ea4fc2eec9cde1e532439bb4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 7caf6eff9f5bd497ab6c3a500f3940549b198576
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561704"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70959049"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Adicionar identidade visual à página de entrada de sua empresa no Azure Active Directory
 Use o logotipo da organização e os esquemas de cores personalizados para fornecer uma aparência consistente nas páginas de entrada do Azure AD (Azure Active Directory). As páginas de entrada aparecem quando os usuários entram nos aplicativos baseados na Web da organização, como o Office 365, que usam o Azure AD como provedor de identidade.
@@ -29,7 +29,7 @@ Use o logotipo da organização e os esquemas de cores personalizados para forne
 ## <a name="customize-your-azure-ad-sign-in-page"></a>Personalizar a página de entrada do Azure AD
 É possível personalizar as páginas de entrada do Azure AD que aparecem quando os usuários entram nos aplicativos específicos de locatário da organização, como [ *https://outlook.com/contoso.com* ](https://outlook.com/contoso.com), ou ao passar uma variável de domínio como [ *https://passwordreset.microsoftonline.com/?whr=contoso.com* ](https://passwordreset.microsoftonline.com/?whr=contoso.com).
 
-Sua identidade visual personalizada não aparecerá imediatamente quando os usuários acessarem sites como,\.www Office.com. Em vez disso, o usuário precisa entrar antes que a identidade visual personalizada seja exibida.
+Sua identidade visual personalizada não aparecerá imediatamente quando os usuários acessarem sites como,\.www Office.com. Em vez disso, o usuário precisa entrar antes que a identidade visual personalizada seja exibida. Depois que o usuário tiver entrado, a identidade visual poderá levar 15 minutos ou mais para aparecer. 
 
 > [!NOTE]
 > Todos os elementos de identidade visual são opcionais. Por exemplo, se você especificar um logotipo do banner sem imagem de plano de fundo, a página de entrada mostrará o logotipo com uma imagem de plano de fundo padrão do site de destino (por exemplo, Office 365).<br><br>Além disso, a marca da página de entrada não é transferida para contas pessoais da Microsoft. Se os usuários ou convidados de negócios entrarem usando uma conta pessoal da Microsoft, a página de entrada não refletirá a identidade visual da organização.

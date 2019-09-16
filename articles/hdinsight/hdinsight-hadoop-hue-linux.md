@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.author: hrasheed
-ms.openlocfilehash: 74ccf2af2d379b3c1966543885df6ebe5cf0f47a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 67f338b583ef428b8dd04e859a5204fd708ce434
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059431"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962025"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Instalar e usar o Hue em clusters de Hadoop do HDInsight
 
@@ -56,7 +56,7 @@ Esta seção fornece instruções sobre como usar o script ao provisionar o clus
    >
 2. Na folha **Configuração Opcional**, selecione **Ações do Script** e forneça as informações como mostrado abaixo:
 
-    ![Fornecer parâmetros de ação de script para Matiz](./media/hdinsight-hadoop-hue-linux/hue-script-action.png "Fornecer parâmetros de ação de script para Matiz")
+    ![Fornecer parâmetros de ação de script para Matiz](./media/hdinsight-hadoop-hue-linux/hdi-hue-script-action.png "Fornecer parâmetros de ação de script para Matiz")
 
    * **NAME**: Insira um nome amigável para a ação de script.
    * **URI DO SCRIPT**: https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh
@@ -91,7 +91,7 @@ O túnel SSH é a única maneira de acessar o Hue no cluster a partir do momento
         hn0-myhdi-nfebtpfdv1nubcidphpap2eq2b.ex.internal.cloudapp.net
 
     Esse é o nome do host do nó de cabeçalho primário onde o site da Hue está localizado.
-4. Use o navegador para abrir o portal de matiz em http:\//HOSTNAME:8888. Substitua HOSTNAME pelo nome obtido na etapa anterior.
+4. Use o navegador para abrir o portal de matiz em http\/:/hostname: 8888. Substitua HOSTNAME pelo nome obtido na etapa anterior.
 
    > [!NOTE]  
    > Ao fazer logon pela primeira vez, será solicitado que você crie uma conta para poder fazer logon no portal do Hue. As credenciais que você especificar aqui serão limitadas ao portal e não serão relacionadas às credenciais de usuário SSH ou de administrador que você especificou durante o provisionamento do cluster.

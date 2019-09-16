@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/11/2018
-ms.openlocfilehash: 524386c046534b0ef0050e15d326118b84822822
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dec3cdd63f3e3ff303bfd60ca1ae77a4c4641190
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64718034"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961281"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Operacionalize um pipeline de análise de dados
 
@@ -33,7 +33,7 @@ O pipeline de exemplo aguarda a chegada de novos dados de voo, depois, armazena 
 
 O diagrama a seguir ilustra o pipeline de exemplo.
 
-![Pipeline de dados de voo](./media/hdinsight-operationalize-data-pipeline/pipeline-overview.png)
+![Pipeline de dados de voo](./media/hdinsight-operationalize-data-pipeline/flight-pipeline-overview.png)
 
 ## <a name="apache-oozie-solution-overview"></a>Visão geral da solução Apache Oozie
 
@@ -55,19 +55,19 @@ Esse pipeline exige um Banco de Dados SQL do Azure e um cluster Hadoop do HDInsi
 2. Dentro do grupo de recursos `oozie`, provisione um Servidor e Banco de Dados SQL do Azure. Você não precisa de um banco de dados maior do que o tipo de preço S1 Standard.
 3. No portal do Azure, navegue até o painel de seu Banco de Dados SQL implantado recentemente e selecione **Ferramentas**.
 
-    ![Botão Ferramentas](./media/hdinsight-operationalize-data-pipeline/sql-db-tools.png)
+    ![Botão Ferramentas](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-tools-button.png)
 
 4. Selecione **Editor de Consultas**.
 
-    ![Botão Editor de Consultas](./media/hdinsight-operationalize-data-pipeline/sql-db-query-editor.png)
+    ![Botão Editor de Consultas](./media/hdinsight-operationalize-data-pipeline/sql-db-query-editor1.png)
 
 5. No painel **Editor de Consultas**, selecione **Logon**.
 
-    ![Botão Logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login1.png)
+    ![Botão Logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window1.png)
 
 6. Insira suas credenciais do Banco de Dados SQL e selecione **OK**.
 
-   ![Formulário de logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login2.png)
+   ![Formulário de logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window2.png)
 
 7. Na área de texto do Editor de Consultas, insira as seguintes instruções SQL para criar a tabela `dailyflights` que armazenará os dados resumidos de cada execução do pipeline.
 
@@ -90,7 +90,7 @@ Esse pipeline exige um Banco de Dados SQL do Azure e um cluster Hadoop do HDInsi
 
 8. Selecione **Executar** para executar as instruções SQL.
 
-    ![Botão Executar](./media/hdinsight-operationalize-data-pipeline/sql-db-run.png)
+    ![Botão Executar](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-run-button.png)
 
 Seu Banco de dados SQL do Azure está pronto.
 
@@ -100,24 +100,24 @@ Seu Banco de dados SQL do Azure está pronto.
 2. Selecione **Criar**.
 3. No painel Informações Básicas, forneça um nome exclusivo para o cluster e escolha sua assinatura do Azure.
 
-    ![Nome do cluster HDInsight e assinatura](./media/hdinsight-operationalize-data-pipeline/hdi-name-sub.png)
+    ![Nome do cluster HDInsight e assinatura](./media/hdinsight-operationalize-data-pipeline/cluster-name-subscription.png)
 
 4. No painel **Tipo de cluster**, selecione o tipo de cluster **Hadoop**, sistema operacional **Linux** e a versão mais recente do cluster HDInsight. Deixe o **Tipo de cluster** como **Standard**.
 
-    ![Tipo de cluster HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-cluster-type.png)
+    ![Tipo de cluster HDInsight](./media/hdinsight-operationalize-data-pipeline/hdinsight-cluster-type.png)
 
 5. Escolha **Selecionar** para aplicar a seleção do tipo de cluster.
 6. Complete o painel **Informações Básicas** fornecendo uma senha de logon e selecionando seu grupo de recursos `oozie` na lista, depois, selecione **Avançar**.
 
-    ![Painel Informações Básicas do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-basics.png)
+    ![Painel Informações Básicas do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdinsight-basics-pane.png)
 
 7. No painel **Armazenamento**, deixe o tipo de armazenamento primário definido como **Armazenamento do Azure**, selecione **Criar novo** e forneça um nome para a nova conta.
 
-    ![Configurações da conta de armazenamento do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-storage.png)
+    ![Configurações da conta de armazenamento do HDInsight](./media/hdinsight-operationalize-data-pipeline/storage-account-settings.png)
 
 8. Nas **Configurações de Metastore**, em **Selecionar um Banco de Dados SQL para o Hive**, escolha o banco de dados criado anteriormente.
 
-    ![Configurações de metastore do Hive do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-metastore-hive.png)
+    ![Configurações de metastore do Hive do HDInsight](./media/hdinsight-operationalize-data-pipeline/hive-metastore-settings.png)
 
 9. Selecione **Autenticar Banco de Dados SQL**.
 
@@ -175,7 +175,7 @@ Copie o arquivo usando o SCP em sua sessão de shell `bash`.
 
 Os dados de exemplo agora disponíveis. No entanto, o pipeline exige duas tabelas do Hive para o processamento, uma para os dados de entrada (`rawFlights`) e outra para os dados resumidos (`flights`). Crie essas tabelas no Ambari da seguinte maneira.
 
-1. Faça logon no Ambari navegando para http:\//headnodehost:8080.
+1. Faça logon no Ambari navegando para http:\//headnodehost: 8080.
 2. Na lista de serviços, selecione **Hive**.
 
     ![Seleção de Hive no Ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png)
@@ -425,7 +425,7 @@ A tabela a seguir resume cada uma das propriedades e indica onde você pode enco
 | hiveDataFolder | O caminho no Armazenamento do Azure até os dados contidos na tabela de preparo. |
 | sqlDatabaseConnectionString | A cadeia de conexão da sintaxe JDBC para o seu Banco de Dados SQL do Azure. |
 | sqlDatabaseTableName | O nome da tabela no Banco de Dados SQL do Azure na qual os resumos de linha são inseridos. Deixe como `dailyflights`. |
-| year | O componente ano do dia para o qual os resumos de voo são computados. Deixe como está. |
+| ano | O componente ano do dia para o qual os resumos de voo são computados. Deixe como está. |
 | month | O componente mês do dia para o qual os resumos de voo são computados. Deixe como está. |
 | dia | O componente dia do mês do dia para o qual os resumos de voo são computados. Deixe como está. |
 

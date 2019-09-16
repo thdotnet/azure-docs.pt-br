@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 08/27/2019
-ms.openlocfilehash: d924f0eb89984fbe77f94eff553d00a25b4b7a3a
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 485c79bab90295cf9af9ef1dbbc209d46931a485
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309611"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984932"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Use os pontos de extremidade e regras de serviço de rede virtual para os servidores do banco de dados
 
@@ -244,7 +244,7 @@ Você já deve ter uma sub-rede que esteja marcada com o ponto de extremidade de
 3. Defina o controle **Permitir acesso aos serviços do Azure** como OFF.
 
     > [!IMPORTANT]
-    > Se você deixar o controle definido como ON, o servidor do Banco de Dados SQL do Azure aceitará comunicação de qualquer sub-rede. Deixar o controle definido como ON pode ocasionar acesso excessivo de um ponto de vista de segurança. O recurso de ponto de extremidade de serviço de rede virtual do Microsoft Azure, em conjunto com o recurso de regra da rede virtual do Banco de dados SQL do Microsoft Azure, pode reduzir a área de superfície de segurança.
+    > Se você deixar o controle definido como ON, seu servidor de banco de dados SQL do Azure aceitará a comunicação de qualquer sub-rede dentro do limite do Azure, ou seja, proveniente de um dos endereços IP que é reconhecido como aqueles dentro de intervalos definidos para data centers do Azure. Deixar o controle definido como ON pode ocasionar acesso excessivo de um ponto de vista de segurança. O recurso de ponto de extremidade de serviço de rede virtual do Microsoft Azure, em conjunto com o recurso de regra da rede virtual do Banco de dados SQL do Microsoft Azure, pode reduzir a área de superfície de segurança.
 
 4. Clique no controle **+ Adicionar existente**, na seção **Redes virtuais**.
 

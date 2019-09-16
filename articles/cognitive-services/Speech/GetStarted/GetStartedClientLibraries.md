@@ -3,20 +3,20 @@ title: Introdução à API de Reconhecimento de Fala do Bing usando bibliotecas 
 titlesuffix: Azure Cognitive Services
 description: Use as bibliotecas de clientes de Fala do Bing nos Serviços Cognitivos da Microsoft para desenvolver aplicativos que convertem áudio falado em texto.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 89eb18a2b4af76f6489442dc66ab12d0840e92c7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8ea0c9e7104b29456749c7f1af2a671b32a8fde2
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515245"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966857"
 ---
 # <a name="get-started-with-bing-speech-service-client-libraries"></a>Introdução às bibliotecas de clientes do Serviço de Fala do Bing
 

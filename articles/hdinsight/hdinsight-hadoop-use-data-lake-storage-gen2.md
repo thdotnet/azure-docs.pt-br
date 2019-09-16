@@ -7,12 +7,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/27/2019
 ms.author: hrasheed
-ms.openlocfilehash: 40caabc08b08e4c9268bf60d588819ce81717986
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: a8ef347b874bf01fc2832d0a785f6fcec58ef095
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900268"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961208"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Usar o Azure Data Lake Storage Gen2 com clusters do Azure HDInsight
 
@@ -56,7 +56,7 @@ Criar uma conta de armazenamento do Azure Data Lake Storage Gen2.
 1. Clique em **Criar**.
 1. Na tela **criar conta de armazenamento** :
     1. Selecione a assinatura e o grupo de recursos corretos.
-    1. Insira um nome para sua conta de Data Lake Storage Gen2. Para obter mais informações sobre o nome da conta de armazenamento convetions, consulte [convenções de nomenclatura para recursos do Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage).
+    1. Insira um nome para sua conta de Data Lake Storage Gen2. Para obter mais informações sobre as convenções de nomenclatura da conta de armazenamento, consulte [convenções de nomenclatura para recursos do Azure](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#storage).
     1. Clique na guia **avançado** .
     1. Clique em **habilitado** ao lado de **namespace hierárquico** em **Data Lake Storage Gen2**.
     1. Clique em **Revisar + Criar**.
@@ -64,7 +64,7 @@ Criar uma conta de armazenamento do Azure Data Lake Storage Gen2.
 
 Para obter mais informações sobre outras opções durante a criação da conta [de armazenamento, consulte início rápido: Criar uma conta de armazenamento do Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
-![Captura de tela mostrando a criação da conta de armazenamento no portal do Azure](./media/hdinsight-hadoop-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
+![Captura de tela mostrando a criação da conta de armazenamento no portal do Azure](./media/hdinsight-hadoop-use-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
 
 ### <a name="set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account"></a>Configurar permissões para a identidade gerenciada na conta de Data Lake Storage Gen2
 
@@ -73,12 +73,12 @@ Atribua a identidade gerenciada à função de **proprietário de dados do blob 
 1. No [portal do Microsoft Azure](https://portal.azure.com), acesse sua conta de armazenamento.
 1. Selecione sua conta de armazenamento e, em seguida, selecione **controle de acesso (iam)** para exibir as configurações de controle de acesso para a conta. Selecione a guia **Atribuições de função** para ver as atribuições de função atuais.
     
-    ![Captura de tela mostrando as configurações de controle de acesso de armazenamento](./media/hdinsight-hadoop-data-lake-storage-gen2/portal-access-control.png)
+    ![Captura de tela mostrando as configurações de controle de acesso de armazenamento](./media/hdinsight-hadoop-use-data-lake-storage-gen2/portal-access-control.png)
     
 1. Selecione o botão **+ Adicionar atribuição de função** para adicionar uma nova função.
 1. Na janela **Adicionar atribuição de função** , selecione a função **proprietário de dados do blob de armazenamento** . Em seguida, selecione a assinatura que tem a conta de armazenamento e a identidade gerenciada. Em seguida, pesquise para localizar a identidade gerenciada atribuída pelo usuário que você criou anteriormente. Por fim, selecione a identidade gerenciada e ela será listada em **Membros selecionados**.
     
-    ![Captura de tela que mostra como atribuir uma função do RBAC](./media/hdinsight-hadoop-data-lake-storage-gen2/add-rbac-role3.png)
+    ![Captura de tela que mostra como atribuir uma função do RBAC](./media/hdinsight-hadoop-use-data-lake-storage-gen2/add-rbac-role3-window.png)
     
 1. Clique em **Salvar**. A identidade atribuída pelo usuário que você selecionou agora está listada na função selecionada.
 1. Ao concluir a configuração inicial, você poderá criar um cluster usando o portal. O cluster deve estar na mesma região do Azure da conta de armazenamento. Na seção **Armazenamento** do menu de criação do cluster, selecione as seguintes opções:
@@ -86,11 +86,11 @@ Atribua a identidade gerenciada à função de **proprietário de dados do blob 
     * Para **tipo de armazenamento primário**, selecione **Azure data Lake Storage Gen2**.
     * Em **selecionar uma conta de armazenamento**, procure e selecione a conta de armazenamento de data Lake Storage Gen2 recém-criada.
         
-        ![Configurações do armazenamento para usar o Data Lake Storage Gen2 com o Azure HDInsight](./media/hdinsight-hadoop-data-lake-storage-gen2/primary-storage-type-adls-gen2.png)
+        ![Configurações do armazenamento para usar o Data Lake Storage Gen2 com o Azure HDInsight](./media/hdinsight-hadoop-use-data-lake-storage-gen2/primary-storage-type-adls-gen2.png)
     
     * Em **identidade**, selecione a assinatura correta e a identidade gerenciada atribuída pelo usuário recém-criada.
         
-        ![Configurações da identidade para usar o Data Lake Storage Gen2 com o Azure HDInsight](./media/hdinsight-hadoop-data-lake-storage-gen2/managed-identity-cluster-creation.png)
+        ![Configurações da identidade para usar o Data Lake Storage Gen2 com o Azure HDInsight](./media/hdinsight-hadoop-use-data-lake-storage-gen2/managed-identity-cluster-creation.png)
         
 > [!Note]
 > Para adicionar uma conta de Data Lake Storage Gen2 secundária, no nível da conta de armazenamento, basta atribuir a identidade gerenciada criada anteriormente à nova conta de armazenamento de Data Lake Storage Gen2 que você deseja adicionar. Lembre-se de que não há suporte para a adição de uma conta de Data Lake Storage Gen2 secundária por meio da folha "contas de armazenamento adicionais" no HDInsight. 

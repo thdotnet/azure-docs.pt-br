@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 04/19/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: d49b8bf9c62813023c1a1e06e0f8fc0d7809f48d
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: f7154da76b41198c208d02b8c563ba26ff8101a1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232037"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983608"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-twitter-login"></a>Como configurar seu aplicativo do Serviço de Aplicativo para usar o logon do Twitter
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
@@ -31,7 +31,7 @@ Para concluir o procedimento deste tópico, você deve ter uma conta do Twitter 
 ## <a name="register"> </a>Registre seu aplicativo com o Twitter
 1. Faça logon no [portal do Azure]e navegue até o seu aplicativo. Copie a **URL**. Você vai usá-lo para configurar seu aplicativo do Twitter.
 2. Navegue até o site de [Desenvolvedores do Twitter,] entre com suas credenciais da conta do Twitter e clique em **Criar Novo Aplicativo**.
-3. Digite o **Nome** e uma **Descrição** para o novo aplicativo. Cole a **URL** do aplicativo no valor **Site**. Em seguida, para a **URL de retorno de chamada**, digite a URL do seu aplicativo do serviço `/.auth/login/aad/callback`de aplicativo e acrescente o caminho. Por exemplo, `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Certifique-se de que você está usando o esquema HTTPS.
+3. Digite o **Nome** e uma **Descrição** para o novo aplicativo. Cole a **URL** do aplicativo no valor **Site**. Em seguida, para a **URL de retorno de chamada**, digite a URL do seu aplicativo do serviço `/.auth/login/twitter/callback`de aplicativo e acrescente o caminho. Por exemplo: `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Certifique-se de que você está usando o esquema HTTPS.
 4. Na parte inferior da página, leia e aceite os termos. Em seguida, clique em **Criar seu Aplicativo do Twitter**. Os detalhes do aplicativo são exibidos.
 5. Clique na guia **Configurações**, marque **Permitir que este aplicativo seja usado para entrar com o Twitter** e, em seguida, clique em **Atualizar Configurações**.
 6. Selecione a guia **Chaves e Tokens de Acesso** . Tome nota dos valores da Chave do Consumidor (Chave de API) e **Segredo do consumidor (Segredo de API)** .

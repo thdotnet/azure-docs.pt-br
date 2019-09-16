@@ -1,5 +1,5 @@
 ---
-title: Guia de mercado de oferta de aplicativo do Azure
+title: Guia Marketplace da oferta de aplicativo do Azure
 description: Use a guia Marketplace para identificar ativos de marketing para uma oferta de aplicativo do Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: pabutler
-ms.openlocfilehash: 7ea6e6be0597a114b02fad8c41e37d21ce1f6028
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b5d54e4c6744675da0dea5b095590b71df6d2641
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64942960"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962870"
 ---
 # <a name="azure-application-marketplace-tab"></a>Guia Marketplace de aplicativo do Azure
 
@@ -24,18 +24,18 @@ O formulário Visão Geral tem os campos obrigatórios e opcionais mostrados na 
 
 ![Formulário Visão Geral](./media/azureapp-marketplace-overview.png)
 
-A tabela a seguir descreve as configurações a serem usadas para a criação de uma vitrine para a oferta.   Os campos anexados com um asterisco são obrigatórios.
+A tabela a seguir descreve as configurações a serem usadas para a criação de uma vitrine para a oferta.   Os campos anexados a um asterisco são obrigatórios.
 
-|      Campo         |    DESCRIÇÃO    |
+|      Campo         |    Descrição    |
 |  ---------------   |  ---------------  |
 | **Título\***        | Título da oferta. Ele será exibido com destaque no marketplace. O tamanho máximo é de 50 caracteres. |
 | **Resumo\***      | Breve resumo da oferta. O tamanho máximo é de 100 caracteres.           |
 | **Resumo longo\*** | Resumo mais longo da oferta (embora possa ser igual ao resumo). O tamanho máximo é de 256 caracteres.           |
 | **Descrição\***  | Descrição da oferta. O tamanho máximo é de 3.000 caracteres. É permitido HTML simples, incluindo &lt;p&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;ol&gt; e marcas de cabeçalho.  |
-| **Identificador de marketing\*** | Um URL exclusivo para associar a essa oferta geralmente inclui sua organização e o nome da solução, com um comprimento máximo de 50 caracteres. Escolha um identificador de marketing curto e amigável para o serviço. Isso será usado nas URLs do marketplace para essa oferta. Por exemplo, se a ID do publicador for “contoso” e o identificador de marketing for “sampleApp”, a URL da oferta no Azure Marketplace será https://azuremarketplace.microsoft.com/en-us/marketplace/apps/contoso.sampleApp  
+| **Identificador de marketing\*** | Um URL exclusivo para associar a essa oferta geralmente inclui sua organização e o nome da solução, com um comprimento máximo de 50 caracteres. Escolha um identificador de marketing curto e amigável para o serviço. Isso será usado nas URLs do marketplace para essa oferta. Por exemplo, se a ID do publicador for “contoso” e o identificador de marketing for “sampleApp”, a URL da oferta no Azure Marketplace será https://azuremarketplace.microsoft.com/marketplace/apps/contoso.sampleApp  
 | **Visualizar IDs de assinatura\*** | Adicione de um a 100 identificadores de assinatura de visualizadores. Essas assinaturas da lista de permissões terão acesso à sua oferta enquanto ela estiver disponível em versão prévia após a publicação, antes de ser ativada.          |
-| **Links úteis**    | Opcionalmente, você pode fornecer links para vários recursos para usuários de sua oferta, como suporte, documentação, fóruns, etc.  É recomendável que você adicione pelo menos um link para a sua documentação.            |
-| **Sugerido categorias (máx. 5)\*** | Selecione uma a cinco categorias. As categorias selecionadas são usadas para mapear a oferta para as categorias de produto disponíveis no Azure Marketplace e no portal do Azure. Elas serão mostradas nas páginas de navegação e na página de detalhes do produto. |
+| **Links úteis**    | Opcionalmente, você pode fornecer links para vários recursos para os usuários de sua oferta, como suporte, documentação, fóruns, etc.  É recomendável que você adicione pelo menos um link à sua documentação.            |
+| **Categorias sugeridas (máx. 5)\*** | Selecione uma a cinco categorias. As categorias selecionadas são usadas para mapear a oferta para as categorias de produto disponíveis no Azure Marketplace e no portal do Azure. Elas serão mostradas nas páginas de navegação e na página de detalhes do produto. |
 |  |  |
 
 
@@ -47,15 +47,15 @@ O formulário Artefatos de Marketing tem os campos obrigatórios e opcionais mos
 
 A tabela a seguir descreve os artefatos de marketing.
 
-|      Campo         |    DESCRIÇÃO    |
+|      Campo         |    Descrição    |
 |  ---------------   |  ---------------  |
 | **Pequeno\***        | Logotipo pequeno: 40x40 pixels no formato PNG     |
-| **Médio\***       | Logotipo médio: 90 x 90 pixels no formato PNG    |
-| **Grande\***        | Logotipo grande: 115 x 115 pixels no formato PNG   |
-| **Ampla\***         | Logotipo grande: 255 x 115 pixels no formato PNG    |
-| **Hero**           | Logotipo hero opcionais: 815 x 290 pixels no formato PNG. **Observação:** O ícone da imagem Hero não pode ser excluído depois que ele é carregado. |
+| **Médio\***       | Logotipo médio: 90x90 pixels no formato PNG    |
+| **Grande\***        | Logotipo grande: 115x115 pixels no formato PNG   |
+| **Amplia\***         | Logotipo amplo: 255x115 pixels no formato PNG    |
+| **Hero**           | Logotipo opcional do Hero: 815x290 pixels no formato PNG. **Observação:** O ícone da imagem Hero não pode ser excluído depois que ele é carregado. |
 | **Capturas de tela (máximo de 5)** |        Capturas de tela são exibidas na sua página de detalhes do produto. Eles são uma boa maneira de comunicar visualmente o que o aplicativo faz e como ele funciona. Por exemplo, você pode mostrar diagramas de arquitetura ou usar ilustrações de casos. As capturas de tela são opcionais e limitadas a 5 por SKU. Para adicionar uma captura de tela:<ul><li>Selecione **+ Adicionar captura de tela** para abrir a janela Captura de Tela</li><li>**Nome** – Insira um nome/título (tamanho máximo de 100 caracteres).</li><li>**Upload** – Carregue a imagem. Ela precisa estar no formato PNG e o tamanho é 533x324 pixels.</li></ul>           |
-| **Adicionar um vídeo**      | Opcional, vídeos são exibidos na sua página de detalhes do produto. Eles são uma boa maneira de comunicar visualmente o que o aplicativo faz e como ele funciona. Para adicionar um vídeo: <ul><li>Selecione **+ Adicionar vídeo** para abrir a janela Vídeo</li><li>**Nome** – Insira um nome/título (tamanho máximo de 100 caracteres).</li><li>**Link** – Insira a URL do site que hospeda o vídeo (YouTube ou Vimeo)</li><li>**Miniatura** – Carregue uma miniatura. Ela precisa estar no formato PNG e o tamanho é 533x324 pixels.</li></ul>          |
+| **Adicionar vídeo**      | Opcional, os vídeos são exibidos na página de detalhes do produto. Eles são uma boa maneira de comunicar visualmente o que o aplicativo faz e como ele funciona. Para adicionar um vídeo: <ul><li>Selecione **+ Adicionar vídeo** para abrir a janela Vídeo</li><li>**Nome** – Insira um nome/título (tamanho máximo de 100 caracteres).</li><li>**Link** – Insira a URL do site que hospeda o vídeo (YouTube ou Vimeo)</li><li>**Miniatura** – Carregue uma miniatura. Ela precisa estar no formato PNG e o tamanho é 533x324 pixels.</li></ul>          |
 |  |  |
 
 
@@ -125,8 +125,8 @@ Use o formulário Jurídico para fornecer a documentação legal necessária par
 
 Forneça as seguintes informações:
 
-- **URL da política de privacidade\***  – Insira um link para a política de privacidade do seu aplicativo.
-- **Termos de uso\***  – insira os termos de uso para seu aplicativo. Os clientes precisam aceitar esses termos antes de poderem testar o aplicativo.
+- URL da política de privacidade – Insira um link para a política de privacidade do aplicativo. **\***
+- **Termosdeuso\***  – Insira os termos de uso para seu aplicativo. Os clientes precisam aceitar esses termos antes de poderem testar o aplicativo.
 
 ![Formulário Jurídico](./media/azureapp-marketplace-legal.png)
 

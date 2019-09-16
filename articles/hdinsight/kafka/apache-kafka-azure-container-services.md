@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: dc2c3e557f295bd3125c09d9b839716159dcf50b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e87ac268ab5448f38470f46bd6b0c7f2cdd204ce
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446467"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960551"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Usar o Serviço de Kubernetes do Azure com Apache Kafka no HDInsight
 
@@ -35,7 +35,7 @@ Este documento assume que você está familiarizado com a criação e utilizaç�
 * Serviço de Kubernetes do Azure
 * Redes Virtuais do Azure
 
-Este documento também considera que você percorreu o tutorial dos [Serviços de Kubernetes do Azure](../../aks/tutorial-kubernetes-prepare-app.md). Este artigo cria um serviço de contêiner, cria um cluster Kubernetes, um registro de contêiner e configura o `kubectl` utilitário.
+Este documento também considera que você percorreu o tutorial dos [Serviços de Kubernetes do Azure](../../aks/tutorial-kubernetes-prepare-app.md). Este artigo cria um serviço de contêiner, cria um cluster kubernetes, um registro de contêiner e configura o `kubectl` utilitário.
 
 ## <a name="architecture"></a>Arquitetura
 
@@ -113,7 +113,7 @@ Use as etapas a seguir para configurar o Kafka para anunciar endereços IP em ve
 
 3. Para exibir a configuração do Kafka, selecione __Configurações__ na parte central superior.
 
-    ![Links de Configurações para Kafka](./media/apache-kafka-azure-container-services/select-kafka-config.png)
+    ![Links de Configurações para Kafka](./media/apache-kafka-azure-container-services/select-kafka-config1.png)
 
 4. Para localizar a configuração __kafka-env__, digite `kafka-env` no campo __Filtro__ na parte superior direita.
 
@@ -135,7 +135,7 @@ Use as etapas a seguir para configurar o Kafka para anunciar endereços IP em ve
 
 8. Para salvar as alterações de configuração, use o botão __Salvar__. Digite uma mensagem de texto que descreva as alterações. Selecione __OK__ assim que as alterações tiverem sido salvas.
 
-    ![Botão Salvar configuração](./media/apache-kafka-azure-container-services/save-button.png)
+    ![Botão Salvar configuração](./media/apache-kafka-azure-container-services/save-configuration-button.png)
 
 9. Para evitar erros ao reiniciar o Kafka, use o botão __Ações de Serviço__ e selecione __Ativar o Modo de Manutenção__. Selecione OK para concluir essa operação.
 
@@ -143,7 +143,7 @@ Use as etapas a seguir para configurar o Kafka para anunciar endereços IP em ve
 
 10. Para reiniciar o Kafka, use o botão __Reiniciar__ e selecione __Reiniciar Todos os Afetados__. Confirme a reinicialização e, em seguida, use o botão __OK__ depois que a operação for concluída.
 
-    ![Botão Reiniciar com reiniciar todos os afetados realçada](./media/apache-kafka-azure-container-services/restart-button.png)
+    ![Botão Reiniciar com reiniciar todos os afetados realçada](./media/apache-kafka-azure-container-services/restart-required-button.png)
 
 11. Para desabilitar o modo de manutenção, use o botão __Ações de Serviço__ e selecione __Ativar o Modo de Manutenção__. Selecione **OK** para concluir essa operação.
 
@@ -212,7 +212,7 @@ Neste ponto, o Kafka e o Serviço de Kubernetes do Azure estão em comunicação
 
 11. Abra um navegador da Web e digite o endereço IP externo para o serviço. Uma página semelhante à imagem a seguir será aberta:
 
-    ![Imagem da página da web](./media/apache-kafka-azure-container-services/test-web-page.png)
+    ![Imagem da página da web](./media/apache-kafka-azure-container-services/test-web-page-image1.png)
 
 12. Digite o texto no campo e selecione o botão __Enviar__. Os dados são enviados para o Kafka. Em seguida, o consumidor do Kafka no aplicativo lê a mensagem e adiciona-a à seção __Mensagens do Kafka__.
 

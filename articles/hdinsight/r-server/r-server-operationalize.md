@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: f9dbddcba1545e0a110faa9fbf8e3de9ff189525
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 4980b4d3a4ec7165a4aba3d02561f6c666150924
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879499"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967649"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Operacionalizar o cluster do ML Services no Azure HDInsight
 
@@ -66,15 +66,15 @@ Após usar o cluster do ML Services no HDInsight para concluir a modelagem de da
 
     a. No menu principal, selecione **6** para executar testes de diagnóstico.
 
-    ![diagnostic1](./media/r-server-operationalize/diagnostic-1.png)
+    ![diagnostic1](./media/r-server-operationalize/hdinsight-diagnostic1.png)
 
     b. No menu de Testes de Diagnóstico, selecione **A**. Quando solicitado, insira a senha que você forneceu para o usuário de administrador local.
 
-    ![diagnostic2](./media/r-server-operationalize/diagnostic-2.png)
+    ![diagnostic2](./media/r-server-operationalize/hdinsight-diagnostic2.png)
 
     c. Verifique se a saída mostra que a integridade geral é uma passagem.
 
-    ![diagnostic3](./media/r-server-operationalize/diagnostic-3.png)
+    ![diagnostic3](./media/r-server-operationalize/hdinsight-diagnostic3.png)
 
     d. Nas opções de menu apresentadas, insira **E** para retornar ao menu principal e, em seguida, digite **8** para sair do utilitário de administração.
 

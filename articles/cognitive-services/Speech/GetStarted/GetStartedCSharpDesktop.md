@@ -3,20 +3,20 @@ title: Introdução à API de Reconhecimento de Fala do Bing usando a biblioteca
 titlesuffix: Azure Cognitive Services
 description: Desenvolva aplicativos básicos do Windows que usam a API de Reconhecimento de Fala do Bing para converter áudio de fala em texto.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 5f3b70a2dd9816210ed61280be38504a3980d205
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3160ccc1c8741d87fcee94a6face48551a79052d
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515382"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966895"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-c35-for-net-on-windows"></a>Início Rápido: Usar a API de Reconhecimento de Fala do Bing em C&#35; para o .NET no Windows
 

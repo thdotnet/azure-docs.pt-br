@@ -1,7 +1,7 @@
 ---
 title: Detecção de objetos – Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
-description: Aprenda os conceitos relacionados ao recurso de detecção do objeto da API de visão do computador - uso e limites.
+description: Aprenda os conceitos relacionados ao recurso de detecção de objetos do API da Pesquisa Visual Computacional-uso e limites.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 012ab849c926de332da55361c79c76c5a1311169
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0625d8371b9ecaaadd05e302413054948fd4b27b
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368027"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967031"
 ---
 # <a name="detect-common-objects-in-images"></a>Detectar objetos comuns em imagens
 
-A detecção de objetos é semelhante à [marcação](concept-tagging-images.md), mas a API retorna as coordenadas da caixa delimitadora (em pixels) para cada objeto encontrado. Por exemplo, se uma imagem contiver um cachorro, um gato e uma pessoa, a operação Detect listará esses objetos junto com as coordenadas na imagem. Você pode usar essa funcionalidade para processar as relações entre os objetos em uma imagem. Ele também permite determinar se há várias instâncias da mesma marca em uma imagem.
+A detecção de objetos é semelhante à [marcação](concept-tagging-images.md), mas a API retorna as coordenadas da caixa delimitadora (em pixels) para cada objeto encontrado. Por exemplo, se uma imagem contiver um cachorro, um gato e uma pessoa, a operação Detect listará esses objetos junto com as coordenadas na imagem. Você pode usar essa funcionalidade para processar as relações entre os objetos em uma imagem. Ele também permite que você determine se há várias instâncias da mesma marca em uma imagem.
 
-A API de Detecção se aplica a tags com base em objetos ou seres vivos identificados na imagem. Atualmente, não há nenhuma relação formal entre a taxonomia de marcação e a taxonomia de detecção de objeto. Em um nível conceitual, a API de detectar apenas Localiza objetos e seres vivos, enquanto a API de marca também pode incluir contextuais termos como "interno", que não podem ser localizados com caixas delimitadoras.
+A API de Detecção se aplica a tags com base em objetos ou seres vivos identificados na imagem. Atualmente, não há nenhuma relação formal entre a taxonomia de marcação e a taxonomia de detecção de objeto. Em um nível conceitual, a API de detecção encontra apenas objetos e coisas de vida, enquanto a API de marca também pode incluir termos contextuais como "interno", que não podem ser localizados com caixas delimitadoras.
 
 ## <a name="object-detection-example"></a>Exemplo de detecção de objetos
 
@@ -89,15 +89,15 @@ A resposta JSON a seguir ilustra o que a Pesquisa Visual Computacional retorna a
 
 ## <a name="limitations"></a>Limitações
 
-É importante observar as limitações de detecção de objetos para que possa evitar ou reduzir os efeitos de falsos negativos (objetos ausentes) e detalhes limitados.
+É importante observar as limitações da detecção de objetos para que você possa evitar ou atenuar os efeitos de falsos negativos (objetos perdidos) e detalhes limitados.
 
-* Objetos geralmente não são detectados se eles forem pequenos (menos de 5% da imagem).
-* Objetos não geralmente são detectados se são dispostos juntos (uma pilha de pratos, por exemplo).
+* Os objetos geralmente não são detectados se forem pequenos (menos de 5% da imagem).
+* Os objetos geralmente não são detectados se eles são organizados juntos (uma pilha de pratos, por exemplo).
 * Os objetos não são diferenciados por marca ou nome do produto (tipos diferentes de refrigerante na prateleira de uma loja, por exemplo). No entanto, você pode obter informações sobre a marca de uma imagem usando o recurso [Detecção de marca](concept-brand-detection.md).
 
 ## <a name="use-the-api"></a>Usar a API
 
-O recurso de detecção de objeto faz parte da API [Analisar Imagem](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Você pode chamar essa API por meio de um SDK nativo ou por meio de chamadas REST. Incluir `Objects` no **visualFeatures** parâmetro de consulta. Em seguida, quando você receber a resposta JSON completa, simplesmente analisar a cadeia de caracteres para o conteúdo do `"objects"` seção.
+O recurso de detecção de objeto faz parte da API [Analisar Imagem](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Você pode chamar essa API por meio de um SDK nativo ou por meio de chamadas REST. Inclua `Objects` no parâmetro de consulta **visualFeatures** . Em seguida, quando você obtém a resposta JSON completa, simplesmente analise a cadeia de caracteres para o `"objects"` conteúdo da seção.
 
-* [Início Rápido: Analisar uma imagem (SDK do .NET)](./quickstarts-sdk/csharp-analyze-sdk.md)
+* [Início Rápido: SDK do Pesquisa Visual Computacional .NET)](./quickstarts-sdk/csharp-sdk.md)
 * [Início Rápido: Analisar uma imagem (API REST)](./quickstarts/csharp-analyze.md)

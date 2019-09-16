@@ -3,20 +3,20 @@ title: Protocolo WebSocket da Fala do Bing | Microsoft Docs
 titlesuffix: Azure Cognitive Services
 description: Documentação do protocolo da Fala do Bing com base em WebSockets
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: d6601f57d87b518b2061df64174818432b822755
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7f51d49624d5019bec058a2d12f6ca2f1366938
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515333"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966879"
 ---
 # <a name="bing-speech-websocket-protocol"></a>Protocolo WebSocket da Fala do Bing
 
@@ -78,9 +78,9 @@ Content-Length: 0
 
 As seguintes informações de cabeçalho são necessárias para o token de acesso.
 
-| NOME | Formatar | DESCRIÇÃO |
+| Nome | Formatar | Descrição |
 |----|----|----|
-| Ocp-Apim-Subscription-Key | ASCII | Sua chave de assinatura |
+| Ocp-Apim-Subscription-Key | ASCII | A chave de sua assinatura |
 
 O serviço de token retorna o token de acesso do JWT como `text/plain`. Em seguida, o JWT é passado como um `Base64 access_token` para o handshake como um cabeçalho de *Autorização* prefixado com a cadeia de caracteres `Bearer`. Por exemplo:
 
@@ -150,7 +150,7 @@ As principais mensagens enviadas pelo cliente para os serviços são `speech.con
 
 Os cabeçalhos a seguir são necessários para todas as mensagens de origem de cliente.
 
-| Cabeçalho | Value |
+| Cabeçalho | Valor |
 |----|----|
 | Path | Caminho da mensagem conforme especificado neste documento |
 | X-RequestId | UUID no formato de "no-dash" |
@@ -172,14 +172,14 @@ O Serviço de Fala precisa saber as características de seu aplicativo para forn
 
 Os clientes *devem* enviar uma `speech.config` mensagem imediatamente depois de estabelecer a conexão ao serviço de fala e antes de enviar qualquer `audio` mensagem. Você precisa enviar uma `speech.config` mensagem apenas uma vez por conexão.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 |----|----|
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Body | O conteúdo útil como uma estrutura JSON |
 
 #### <a name="required-message-headers"></a>Cabeçalhos de mensagem necessários
 
-| Nome do cabeçalho | Value |
+| Nome do cabeçalho | Valor |
 |----|----|
 | Path | `speech.config` |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
@@ -217,19 +217,19 @@ O elemento system.version da `speech.config` mensagem contém a versão de fala 
 
 ##### <a name="os-element"></a>Elemento do SO
 
-| Campo | DESCRIÇÃO | Uso |
+| Campo | Descrição | Uso |
 |-|-|-|
-| os.platform | A plataforma OS que hospeda o aplicativo, por exemplo, Windows, Android, iOS ou SO Linux |Obrigatório |
-| os.name | Nome de produto do sistema operacional, por exemplo, Debian ou Windows 10 | Obrigatório |
-| os.version | A versão do sistema operacional no formulário *major.minor.build.branch* | Obrigatório |
+| os.platform | A plataforma OS que hospeda o aplicativo, por exemplo, Windows, Android, iOS ou SO Linux |Necessário |
+| os.name | Nome de produto do sistema operacional, por exemplo, Debian ou Windows 10 | Necessário |
+| os.version | A versão do sistema operacional no formulário *major.minor.build.branch* | Necessário |
 
 ##### <a name="device-element"></a>Elemento de dispositivo
 
-| Campo | DESCRIÇÃO | Uso |
+| Campo | Descrição | Uso |
 |-|-|-|
-| device.manufacturer | O fabricante de hardware do dispositivo | Obrigatório |
-| device.model | O modelo do dispositivo. | Obrigatório |
-| device.version | A versão do software do dispositivo fornecida pelo fabricante do dispositivo. Esse valor especifica uma versão do dispositivo que pode ser acompanhado pelo fabricante. | Obrigatório |
+| device.manufacturer | O fabricante de hardware do dispositivo | Necessário |
+| device.model | O modelo do dispositivo. | Necessário |
+| device.version | A versão do software do dispositivo fornecida pelo fabricante do dispositivo. Esse valor especifica uma versão do dispositivo que pode ser acompanhado pelo fabricante. | Necessário |
 
 ### <a name="message-audio"></a>Mensagem `audio`
 
@@ -241,7 +241,7 @@ Os clientes podem, opcionalmente, enviar um `audio` mensagem com um corpo de com
 
 O serviço de fala usa a primeira `audio` mensagem que contém um identificador exclusivo para sinalizar o início de um novo ciclo de solicitação/resposta ou *ativar*. Depois que o serviço recebe uma `audio` mensagem com um novo identificador de solicitação, descarta as mensagens na fila ou não enviadas que estão associadas a qualquer ativação anterior.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 |-------------|----------------|
 | Codificação de mensagem WebSocket | Binary |
 | Body | Dados binários para a parte de áudio. O tamanho máximo é de 8.192 bytes. |
@@ -250,7 +250,7 @@ O serviço de fala usa a primeira `audio` mensagem que contém um identificador 
 
 Os cabeçalhos a seguir são necessários `audio` para todas as mensagens.
 
-| Cabeçalho         |  Value     |
+| Cabeçalho         |  Valor     |
 | ------------- | ---------------- |
 | Path | `audio` |
 | X-RequestId | UUID no formato de "no-dash" |
@@ -305,9 +305,9 @@ Aplicativos cliente *devem* reconhecer o final de cada vez, enviando telemetria 
 
 Os clientes devem reconhecer o fim de uma curva, enviando uma `telemetry` mensagem logo após receber uma `turn.end` mensagem. Os clientes devem tentar confirmar `turn.end` assim que possível. Se um aplicativo cliente não reconhece o fim de turno, o serviço de fala pode encerrar a conexão com um erro. Os clientes devem enviar somente uma `telemetry` mensagem para cada solicitação e resposta identificada pelo valor *X RequestId*.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `telemetry` |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
 | Content-Type | `application/json` |
@@ -327,9 +327,9 @@ Esta seção descreve as mensagens que se originam no Serviço de Fala e são en
 
 A `speech.startDetected` mensagem indica que o Serviço de Fala detectado fala no fluxo de áudio.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `speech.startDetected` |
 | Content-Type | application/json; charset=utf-8 |
 | Body | Estrutura JSON que contém informações sobre as condições quando o início da fala foi detectado. O campo de *deslocamento* nessa estrutura especifica o deslocamento (em unidades de 100 nanossegundos) quando a fala for detectada no fluxo de áudio, em relação ao início do fluxo. |
@@ -352,12 +352,12 @@ Durante o reconhecimento de fala, o serviço de fala gera periodicamente hipóte
 
  A `speech.hypothesis` mensagem é aplicável para os clientes que têm alguns recursos de processamento de texto e fornece comentários quase em tempo real de reconhecimento em andamento para a pessoa que está falando.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `speech.hypothesis` |
 | X-RequestId | UUID no formato de "no-dash" |
-| Content-Type | aplicativo/json |
+| Content-Type | application/json |
 | Body | Hipótese de fala de estrutura JSON |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
@@ -384,11 +384,11 @@ Os clientes não devem fazer suposições sobre a frequência, tempo ou texto co
 
 Quando o serviço de fala determina que ele tem informações suficientes para produzir um resultado de reconhecimento que não é alterado, o serviço produzirá uma `speech.phrase` mensagem. O Serviço de Fala produz esses resultados após detectar que o usuário concluiu uma sentença ou frase.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `speech.phrase` |
-| Content-Type | aplicativo/json |
+| Content-Type | application/json |
 | Body | Estrutura JSON de frase de fala |
 
 O esquema JSON de frase de fala inclui os seguintes campos: `RecognitionStatus`, `DisplayText`, `Offset`, e `Duration`. Para obter mais informações sobre esses campos, consulte [respostas de Transcrição](../concepts.md#transcription-responses).
@@ -412,9 +412,9 @@ X-RequestId: 123e4567e89b12d3a456426655440000
 
 A `speech.endDetected` mensagem especifica que o aplicativo cliente deve parar o streaming de áudio para o serviço.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `speech.endDetected` |
 | Body | A estrutura JSON que contém o deslocamento ao final da fala foi detectado. O deslocamento é representado no deslocamento de unidades de 100 nanossegundos desde o início de áudio que é usado para o reconhecimento. |
 | Content-Type | application/json; charset=utf-8 |
@@ -437,9 +437,9 @@ O elemento de *Deslocamento* especifica o deslocamento (em unidades de 100 nanos
 
 O `turn.start` sinaliza o início de uma curva da perspectiva do serviço. A `turn.start` mensagem sempre é a primeira mensagem de resposta para qualquer solicitação que é recebida. Se você não tiver recebido uma `turn.start` mensagem, suponha que o estado de conexão de serviço é inválido.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `turn.start` |
 | Content-Type | application/json; charset=utf-8 |
 | Body | Estrutura JSON |
@@ -464,9 +464,9 @@ O corpo da `turn.start` mensagem é uma estrutura JSON que contém o contexto pa
 
 O `turn.end` sinaliza o início de uma curva da perspectiva do serviço. A `turn.end` mensagem sempre é a última mensagem de resposta para qualquer solicitação que é recebida. Os clientes podem usar o recebimento da mensagem como um sinal para atividades de limpeza e fazer a transição para um estado ocioso. Se você não tiver recebido uma `turn.end` mensagem, suponha que o estado de conexão de serviço é inválido. Nesses casos, feche a conexão existente para o serviço e se reconecte.
 
-| Campo | DESCRIÇÃO |
+| Campo | Descrição |
 | ------------- | ---------------- |
-| Codificação de mensagem WebSocket | Text |
+| Codificação de mensagem WebSocket | Texto |
 | Path | `turn.end` |
 | Body | Nenhum |
 
@@ -506,12 +506,12 @@ Os clientes devem incluir informações sobre eventos que ocorreram durante o te
 
 A `Connection` métrica especifica detalhes sobre as tentativas de conexão pelo cliente. A métrica deve incluir os carimbos de hora de quando a conexão WebSocket foi iniciada e concluída. A `Connection` métrica é necessária *somente para a primeira ativação de uma conexão*. Ativações subsequentes não precisam incluir essas informações. Se um cliente fizer várias tentativas de conexão antes de uma conexão ser estabelecida, informações sobre *todas as* as tentativas de conexão devem ser incluídas. Para obter mais informações, consulte [Telemetria de falha de conexão](#connection-failure-telemetry).
 
-| Campo | DESCRIÇÃO | Uso |
+| Campo | Descrição | Uso |
 | ----- | ----------- | ----- |
-| NOME | `Connection` | Obrigatório |
-| ID | O valor do identificador de conexão que foi usado no cabeçalho *X ConnectionId* para esta solicitação de conexão | Obrigatório |
-| Iniciar | A hora em que o cliente enviou a solicitação de conexão | Obrigatório |
-| End | A hora quando o cliente recebe a notificação de que a conexão foi estabelecida com êxito, em casos de erro, rejeitada, recusada ou com falha | Obrigatório |
+| Nome | `Connection` | Necessário |
+| Id | O valor do identificador de conexão que foi usado no cabeçalho *X ConnectionId* para esta solicitação de conexão | Necessário |
+| Início | A hora em que o cliente enviou a solicitação de conexão | Necessário |
+| End | A hora quando o cliente recebe a notificação de que a conexão foi estabelecida com êxito, em casos de erro, rejeitada, recusada ou com falha | Necessário |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se a operação de gatilho for bem-sucedida, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 A descrição do erro deve ser no máximo de 50 caracteres e idealmente deve ser um dos valores listados na tabela a seguir. Se a condição de erro não coincidir com um desses valores, os clientes podem usar uma descrição sucinta da condição de erro usando [CamelCasing](https://en.wikipedia.org/wiki/Camel_case) sem espaço em branco. A capacidade de enviar uma mensagem de *telemetria* requer uma conexão para o serviço, portanto apenas transitório ou condições de erro temporárias podem ser relatadas na mensagem de *telemetria*. As condições de erro que *permanentemente* bloqueiam um cliente de estabelecer uma conexão para o serviço evitam que o cliente envie uma mensagem para o serviço, incluindo mensagens de *telemetria*.
@@ -546,11 +546,11 @@ Use os exemplos a seguir como diretrizes para gravar os valores de tempo *Inicia
 
 O valor de tempo *Final* para a `Microphone` métrica registra a hora em que o aplicativo cliente interrompeu o streaming de entrada de áudio. Na maioria das situações, esse evento ocorre logo após o cliente receber a `speech.endDetected` mensagem do serviço. Aplicativos cliente podem verificar que estão corretamente em conformidade com o protocolo, garantindo que o valor de hora *Final* para a `Microphone` métrica que ocorre depois do valor temporal de recebimento para a `speech.endDetected` mensagem. E, como normalmente há um atraso entre o final de uma ativação e o início de outra, os clientes podem verificar a conformidade do protocolo, garantindo que o horário de *Iniciar* da `Microphone` métrica para ativar qualquer subsequente  registra corretamente a hora quando o cliente *iniciou* usando o microfone para entrada de áudio de fluxo para o serviço.
 
-| Campo | DESCRIÇÃO | Uso |
+| Campo | Descrição | Uso |
 | ----- | ----------- | ----- |
-| NOME | Microfone | Obrigatório |
-| Iniciar | A hora de quando o cliente iniciou usando a entrada de áudio do microfone ou outro fluxo de áudio ou recebeu um gatilho de spotter a palavra-chave | Obrigatório |
-| End | A hora em que o cliente interrompeu usando o fluxo de áudio ou microfone | Obrigatório |
+| Nome | Microfone | Necessário |
+| Início | A hora de quando o cliente iniciou usando a entrada de áudio do microfone ou outro fluxo de áudio ou recebeu um gatilho de spotter a palavra-chave | Necessário |
+| End | A hora em que o cliente interrompeu usando o fluxo de áudio ou microfone | Necessário |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se as operações de microfone forem bem-sucedidas, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 ### <a name="metric-listeningtrigger"></a>Métrica `ListeningTrigger`
@@ -566,11 +566,11 @@ Use os exemplos a seguir como diretrizes para valores de tempo de gravação *In
 
 * Um aplicativo cliente está processando a segunda ativação de uma solicitação de multi-desativação e é informado por uma mensagem de resposta de serviço para ativar o microfone para coletar informações para a segunda ativação. O aplicativo cliente *não* deve incluir uma `ListeningTrigger` métrica para isso por sua vez.
 
-| Campo | DESCRIÇÃO | Uso |
+| Campo | Descrição | Uso |
 | ----- | ----------- | ----- |
-| NOME | ListeningTrigger | Opcional |
-| Iniciar | A hora de início do gatilho de escuta do cliente | Obrigatório |
-| End | A hora de início do gatilho de escuta do cliente | Obrigatório |
+| Nome | ListeningTrigger | Opcional |
+| Início | A hora de início do gatilho de escuta do cliente | Necessário |
+| End | A hora de início do gatilho de escuta do cliente | Necessário |
 | Erro | Uma descrição do erro que ocorreu, se houver. Se a operação de gatilho for bem-sucedida, os clientes devem omitir esse campo. O comprimento máximo deste campo é de 50 caracteres. | Necessário para casos de erro, caso contrário omitidos |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
@@ -687,7 +687,7 @@ Como outro exemplo, suponha que um usuário faz o gatilho de palavra-chave para 
 
 ### <a name="http-status-codes"></a>Códigos de status HTTP
 
-| Código de status HTTP | DESCRIÇÃO | solução de problemas |
+| Código de status HTTP | Descrição | Solução de problemas |
 | - | - | - |
 | 400 Solicitação Inválida | O cliente enviou uma solicitação de conexão WebSocket que estava incorreta. | Verifique se você forneceu todos os parâmetros necessários e os cabeçalhos HTTP e que os valores estão corretos. |
 | 401 Não Autorizado | O cliente não incluiu as informações de autorização necessárias. | Verifique se você está enviando o cabeçalho de *Autorização* na conexão WebSocket. |
@@ -698,7 +698,7 @@ Como outro exemplo, suponha que um usuário faz o gatilho de palavra-chave para 
 
 ### <a name="websocket-error-codes"></a>Códigos de erro de WebSocket
 
-| Código WebSocketsStatus | DESCRIÇÃO | solução de problemas |
+| Código WebSocketsStatus | Descrição | Solução de problemas |
 | - | - | - |
 | Encerramento normal de 1000 | O serviço fechou a conexão WebSocket sem erro. | Se o encerramento do WebSocket foi inesperado, releia a documentação para garantir que você entende como e quando o serviço pode encerrar a conexão WebSocket. |
 | Erro de protocolo de 1002 | O cliente não conseguiu aderir aos requisitos de protocolo. | Certifique-se de que você entenda a documentação do protocolo e é clara sobre os requisitos. Leia a documentação anterior sobre os motivos de erro para ver se está violando os requisitos de protocolo. |

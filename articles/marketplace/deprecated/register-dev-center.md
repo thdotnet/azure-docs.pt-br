@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 6ba008ffdf0fe00d6720b0968dc42bfcfc651c9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0dd53689f7528e73845ab47a9791f062e0f2cb0c
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258963"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962794"
 ---
 # <a name="register-in-dev-center"></a>Registrar no Centro de Desenvolvimento  
 Abra uma nova sessão de navegação InPrivate do Internet Explorer ou Anônima do Chrome para garantir que você não tenha se conectado em uma conta pessoal.  
@@ -72,7 +72,7 @@ Abra uma nova sessão de navegação InPrivate do Internet Explorer ou Anônima 
 
     | Modelo de cobrança | Próximas etapas |  
     |:--- |:--- |  
-    | Grátis | Acesse o para Portal do Cloud Partner.<ul> <li>Para publicar no Azure Marketplace, visite a página Portal do Cloud Partner localizada em [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
+    | Gratuito | Acesse o para Portal do Cloud Partner.<ul> <li>Para publicar no Azure Marketplace, visite a página Portal do Cloud Partner localizada em [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
     | Comercial (transações) | Atualizar as informações da sua conta.<ul> <li>Para saber mais sobre como adicionar informações de conta, visite a seção [Como adicionar informações bancárias e fiscais](#add-bank-information).</li> </ul> |  
 
     *   Um exemplo de uma oferta comercial é uma oferta de VM com o modelo de cobrança por hora.  
@@ -144,7 +144,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
   > A conta do Centro de Desenvolvimento é necessária para permitir que a Microsoft cobre pelo tipo de listagem de Transact em nome do cliente. O registro da conta do Centro de Desenvolvimento permite que a Microsoft valide as informações jurídicas, fiscais e bancárias da sua empresa. Para saber mais, [clique aqui.](https://docs.microsoft.com/azure/marketplace/become-publisher)
 
 * **Como começar com o registro do Centro de Desenvolvimento?**
-  > Para evitar duplicação, verifique se sua empresa já não tem uma conta do Centro de Desenvolvimento registrada. Você deve estar conectado com a conta da Microsoft que deseja associar à sua conta de desenvolvedor. Se ainda não tem uma conta da Microsoft, você pode criar uma nova [aqui.](https://signup.live.com/signup?contextid=AEB123C8F2B1DA7A&bk=1529968434&ru=https%3a%2f%2flogin.live.com%2flogin.srf%3fcontextid%3dAEB123C8F2B1DA7A%26mkt%3dEN-US%26lc%3d1033%26bk%3d1529968434&uiflavor=web&uaid=9987e727fedb459780d95c1b9e46c82c&mkt=EN-US&lc=1033&lic=1) (exemplo: contoso_marketplace@live.com) Para entrar e registrar, vá para https://dev.windows.com/en-us/registration?accountProgram=Azure
+  > Para evitar duplicação, verifique se sua empresa já não tem uma conta do Centro de Desenvolvimento registrada. Você deve estar conectado com a conta da Microsoft que deseja associar à sua conta de desenvolvedor. Se ainda não tem uma conta da Microsoft, você pode criar uma nova [aqui.](https://signup.live.com/signup?contextid=AEB123C8F2B1DA7A&bk=1529968434&ru=https%3a%2f%2flogin.live.com%2flogin.srf%3fcontextid%3dAEB123C8F2B1DA7A%26mkt%3dEN-US%26lc%3d1033%26bk%3d1529968434&uiflavor=web&uaid=9987e727fedb459780d95c1b9e46c82c&mkt=EN-US&lc=1033&lic=1) (exemplo: contoso_marketplace@live.com) Para entrar e registrar, vá para https://dev.windows.com/registration?accountProgram=Azure
   > <br>Para saber mais sobre o processo de registro, clique [aqui.](https://docs.microsoft.com/azure/marketplace/register-dev-center)</br>
 
 * **Devo escolher tipo de conta 'Individual' ou 'Empresa'?**
@@ -157,7 +157,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
   > Verifique se que o código postal também foi inserido corretamente. Há uma validação de cidade e código postal.
 
 * **Como obter um código promocional?**
-  > Complete o formulário de [Registro do Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) para receber um código promocional do Centro de Desenvolvimento. Veja como [criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
+  > Complete o formulário de [Registro do Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) para receber um código promocional do Centro de Desenvolvimento. Consulte como [criar uma conta do Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
  
 * **O que devo esperar após concluir o registro?**
   > Procure por um email de verify@microsoft.com com linha do assunto "Ação necessária: Verifique sua conta de email com a Microsoft" Clique no link de verificação sensível a tempo para concluir o registro. *Se você não tiver recebido um email dentro de 24 horas, verifique a pasta de spam.*
@@ -171,7 +171,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
 * **Por que meu aplicativo do Centro de Desenvolvimento é rejeitado?**
   > A empresa de verificação de terceiros (Duns & Bradstreet) não pôde entrar em contato com você pelo número de telefone fornecido. Entre em contato com o suporte em [developer.microsoft.com/windows/support](https://developer.microsoft.com/windows/support) para reiniciar o processo de verificação
 
-> ou o
+> ou
 > 
 > O registro da conta foi rejeitado com base em problemas geográficos. As empresas com subsidiárias baseadas em locais diferentes da sede precisarão de apenas uma conta do Centro de Desenvolvimento.
  
@@ -182,7 +182,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
   > Você não poderá publicar ofertas de transação sem preencher as informações fiscais e bancárias em sua conta do Centro de Desenvolvimento.  Para saber mais sobre como adicionar informações de conta, visite [Como adicionar informações bancárias e fiscais](https://docs.microsoft.com/azure/marketplace/register-dev-center).
 
 * **Posso alterar a conta de logon da Microsoft do Centro de Desenvolvimento?**
-  > Não. Depois de criar um Centro de Desenvolvimento, a conta do proprietário não pode ser alterada. Você teria que começar com uma conta totalmente nova do Centro de Desenvolvimento com a conta da Microsoft desejada.
+  > Nº Depois de criar um Centro de Desenvolvimento, a conta do proprietário não pode ser alterada. Você teria que começar com uma conta totalmente nova do Centro de Desenvolvimento com a conta da Microsoft desejada.
 
 * **Onde devo contatar o suporte sobre problemas com relação ao registro do Centro de Desenvolvimento?**
   Para acessar o suporte, visite a página de suporte de desenvolvedor do Windows localizada em [developer.microsoft.com/windows/support](https://developer.microsoft.com/windows/support). 

@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 4b75b2cbd629204e7edbf1196eec9b03cb7a6736
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a6b2a7981452b47a3992b6c0efee286878e143fb
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64943151"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962893"
 ---
 <a name="web-analytics"></a>Web Analytics
 =============
@@ -43,7 +43,7 @@ Há duas maneiras de gerar sua própria campanha.
 
 Por exemplo, você pode usar: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign>
 
-1. (Avançado): Use um dos nossos campanha genérica, com suporte, IDs na URL. Desejamos poder aceitar marcas de referência adicionais que você eventualmente precise usar, portanto, damos suporte à convenção de reconhecer automaticamente estas marcas adicionais:
+1. (Avançado): Use uma das nossas IDs de campanha genéricas com suporte na URL. Desejamos poder aceitar marcas de referência adicionais que você eventualmente precise usar, portanto, damos suporte à convenção de reconhecer automaticamente estas marcas adicionais:
     
     1. **utm\_campaign**
     2. **utm\_source**
@@ -71,7 +71,7 @@ Veja um exemplo:
     2.  URL da página de aterrissagem = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
 3. O usuário clica em no link \"experimente meu produto\" e entra no AppSource.
     1. URL de referência = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
-    2. URL da página de aterrissagem (**Verifique se esta URL tem utm\_campaign e utm\_source adicionados a ela**) = [https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?**utm\_ campaign=MyCampaignAdName&utm\_ source=MySourceAdName**](https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
+    2. URL da página de aterrissagem (**Verifique se esta URL tem utm\_campaign e utm\_source adicionados a ela**) = [https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utm\_ campaign=MyCampaignAdName&utm\_ source=MySourceAdName**](https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Como avaliar o sucesso de uma campanha
 -----------------------------------------
@@ -94,7 +94,7 @@ De modo semelhante a como mostramos a taxa de conversão da oferta inteira, nest
 
 Semelhante ao modo como examinamos os domínios dos clientes, este gráfico permite que você veja a distribuição dos dados segundo a campanha pela qual os usuários estão chegando ao Marketplace. \_NoCampaign significa que o cliente não tinha uma ID de campanha na URL quando navegou para o Marketplace.
 
-<a name="next-steps"></a>**Próximas etapas**
+<a name="next-steps"></a>**Próximas Etapas**
 --------------
 
 Agora que você tem a capacidade de acompanhar o sucesso da oferta, queremos encorajá-lo a criar suas próprias campanhas.

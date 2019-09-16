@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: a8d79e15a0c967c4b00f337928f00e76f6d296fd
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: a61188ce5a0c3ba5e4170e15ed81d599af205205
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733212"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961561"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Acessar Grafana no Microsoft Azure HDInsight
 
@@ -29,7 +29,7 @@ Nesta seção, você criará um cluster do Interactive Query no HDInsight usando
 
 1. Clique no botão **Implantar no Azure** abaixo para entrar no Azure e abra o modelo do Resource Manager no portal do Azure. 
    
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-grafana/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-grafana/hdi-deploy-to-azure1.png" alt="Deploy to Azure"></a>
 
 2. Insira ou selecione os valores, conforme sugerido na captura de tela a seguir:
 
@@ -78,7 +78,7 @@ Nesta seção, você criará um cluster do Interactive Query no HDInsight usando
 
     ![Portal do painel do cluster HDInsight](./media/hdinsight-grafana/hdinsight-portal-cluster-dashboard.png "Painel do cluster HDInsight no portal")
 
-4. No painel, clique no bloco **Grafana**. Como alternativa, navegue até o caminho `/grafana/` da URL do cluster. Por exemplo, `https://<clustername>.azurehdinsight.net/grafana/`.
+4. No painel, clique no bloco **Grafana**. Como alternativa, navegue até o caminho `/grafana/` da URL do cluster. Por exemplo: `https://<clustername>.azurehdinsight.net/grafana/`.
 
 5. Insira as credenciais de usuário do cluster Hadoop.
 

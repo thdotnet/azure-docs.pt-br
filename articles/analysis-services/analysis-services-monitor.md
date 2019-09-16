@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 07/26/2019
+ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5431dd74629b9ed76a6a072d8ada286ce71a7633
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 7c7aaf911930f83775f66c47377bc68edb059519
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596107"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70958977"
 ---
 # <a name="monitor-server-metrics"></a>Monitorar métricas do servidor
 
@@ -41,13 +41,13 @@ Use essa tabela para determinar quais métricas são melhores para o seu cenári
 |Métrica|Nome de exibição da métrica|Unidade|Tipo de agregação|Descrição|
 |---|---|---|---|---|
 |CommandPoolJobQueueLength|Comprimento da fila de trabalho do pool de comando|Contagem|Average|Número de trabalhos na fila do pool de threads de comando.|
-|CurrentConnections|Conexão: Conexões atuais|Count|Average|Número atual de conexões de cliente estabelecidas.|
-|CurrentUserSessions|Sessões de usuário atuais|Count|Average|Número atual de sessões de usuário estabelecidas.|
+|CurrentConnections|Conexão: Conexões atuais|Contagem|Average|Número atual de conexões de cliente estabelecidas.|
+|CurrentUserSessions|Sessões de usuário atuais|Contagem|Average|Número atual de sessões de usuário estabelecidas.|
 |mashup_engine_memory_metric|Memória do mecanismo M|Bytes|Average|Uso de memória pelos processos do mecanismo de mashup|
-|mashup_engine_qpu_metric|QPU do mecanismo M|Count|Average|Uso de QPU por processos de mecanismo de mashup|
+|mashup_engine_qpu_metric|QPU do mecanismo M|Contagem|Average|Uso de QPU por processos de mecanismo de mashup|
 |memory_metric|Memória|Bytes|Average|Memória. Intervalo de 0 a 25 GB para S1, 0 a 50 GB para S2 e 0 a 100 GB para S4|
 |memory_thrashing_metric|Sobrecarga de memória|Percent|Average|Sobrecarga de memória média.|
-|CleanerCurrentPrice|Memória: Preço atual do limpador|Count|Average|Preço atual da memória, $/byte/tempo, normalizado em 1000.|
+|CleanerCurrentPrice|Memória: Preço atual do limpador|Contagem|Average|Preço atual da memória, $/byte/tempo, normalizado em 1000.|
 |CleanerMemoryNonshrinkable|Memória: Memória do limpador não reduzível|Bytes|Average|Quantidade de memória, em bytes, não sujeita a eliminação pelo limpador na tela de fundo.|
 |CleanerMemoryShrinkable|Memória: Memória do limpador reduzível|Bytes|Average|Quantidade de memória, em bytes, sujeita a eliminação pelo limpador na tela de fundo.|
 |MemoryLimitHard|Memória: Limite de memória física|Bytes|Average|Limite de memória física, do arquivo de configuração.|
@@ -55,34 +55,38 @@ Use essa tabela para determinar quais métricas são melhores para o seu cenári
 |MemoryLimitLow|Memória: Limite de memória inferior|Bytes|Average|Limite de memória inferior, do arquivo de configuração.|
 |MemoryLimitVertiPaq|Memória: Limite de memória VertiPaq|Bytes|Average|Limite na memória, do arquivo de configuração.|
 |MemoryUsage|Memória: Uso de Memória|Bytes|Average|Uso de memória do processo do servidor, como usado no cálculo de preço de memória do limpador. Igual ao contador Process\PrivateBytes mais o tamanho dos dados mapeados em memória, ignorando qualquer memória mapeada ou alocada pelo mecanismo de análise in-memory (VertiPaq), além do Limite de Memória do mecanismo.|
+|private_bytes_metric|Bytes Privados |Bytes|Average|A quantidade total de memória que o processo do mecanismo de Analysis Services e os processos de contêiner do mashup alocaram, não incluindo a memória compartilhada com outros processos.|
+|virtual_bytes_metric|Bytes Virtuais |Bytes|Average|O tamanho atual do espaço de endereço virtual que Analysis Services processo do mecanismo e os processos de contêiner do mashup estão usando.|
+|mashup_engine_private_bytes_metric|Bytes privados do mecanismo M |Bytes|Average|A quantidade total de processos de contêiner de mashup de memória alocados, não incluindo a memória compartilhada com outros processos.|
+|mashup_engine_virtual_bytes_metric|Bytes virtuais do mecanismo M |Bytes|Average|O tamanho atual dos processos de contêiner do mashup de espaço de endereço virtual está usando.|
 |Cota|Memória: Cota|Bytes|Average|Cota de memória atual, em bytes. A cota de memória também é conhecida como uma reserva de memória ou concessão de memória.|
-|QuotaBlocked|Memória: Cota bloqueada|Count|Average|Número atual de solicitações de cota bloqueadas até que outras cotas de memória sejam liberadas.|
+|QuotaBlocked|Memória: Cota bloqueada|Contagem|Average|Número atual de solicitações de cota bloqueadas até que outras cotas de memória sejam liberadas.|
 |VertiPaqNonpaged|Memória: VertiPaq não paginado|Bytes|Average|Bytes de memória bloqueada no conjunto de trabalho para uso pelo mecanismo na memória.|
 |VertiPaqPaged|Memória: VertiPaq paginado|Bytes|Average|Bytes de memória paginada em uso para dados na memória.|
-|ProcessingPoolJobQueueLength|Comprimento da fila de trabalho do pool de processamento|Count|Average|Número de trabalhos não de E/S na fila do pool de threads de processamento.|
+|ProcessingPoolJobQueueLength|Comprimento da fila de trabalho do pool de processamento|Contagem|Average|Número de trabalhos não de E/S na fila do pool de threads de processamento.|
 |RowsConvertedPerSec|Processamento: Linhas convertidas por segundo|CountPerSecond|Average|Taxa de linhas convertidas durante o processamento.|
 |RowsReadPerSec|Processamento: Linhas lidas por segundo|CountPerSecond|Average|Taxa de linhas lidas de todos os bancos de dados relacionais.|
 |RowsWrittenPerSec|Processamento: Linhas gravadas por segundo|CountPerSecond|Average|Taxa de linhas gravadas durante o processamento.|
-|qpu_metric|QPU|Count|Average|QPU. Intervalo de 0 a 100 para S1, 0 a 200 para S2 e 0 a 400 para S4|
-|QueryPoolBusyThreads|Threads ocupados do pool de consulta|Count|Average|Número de threads ocupados no pool de threads de consulta.|
+|qpu_metric|QPU|Contagem|Average|QPU. Intervalo de 0 a 100 para S1, 0 a 200 para S2 e 0 a 400 para S4|
+|QueryPoolBusyThreads|Threads ocupados do pool de consulta|Contagem|Average|Número de threads ocupados no pool de threads de consulta.|
 |SuccessfullConnectionsPerSec|Conexões bem-sucedidas por segundo|CountPerSecond|Average|Taxa de conclusões de conexão bem-sucedidas.|
-|CommandPoolBusyThreads|Threads: Threads ocupados do pool comando|Count|Average|Número de threads ocupados no pool de threads de comando.|
-|CommandPoolIdleThreads|Threads: Threads ociosos do pool comando|Count|Average|Número de threads ociosos no pool de threads de comando.|
+|CommandPoolBusyThreads|Threads: Threads ocupados do pool comando|Contagem|Average|Número de threads ocupados no pool de threads de comando.|
+|CommandPoolIdleThreads|Threads: Threads ociosos do pool comando|Contagem|Average|Número de threads ociosos no pool de threads de comando.|
 |LongParsingBusyThreads|Threads: Threads ocupados de análise longa|Contagem|Average|Número de threads ocupados no pool de threads de análise longa.|
 |LongParsingIdleThreads|Threads: Threads ociosos de análise longa|Contagem|Average|Número de threads ociosos no pool de threads de análise longa.|
 |LongParsingJobQueueLength|Threads: Tamanho da fila de trabalhos de análise longa|Contagem|Average|Número de trabalhos na fila do pool de threads de análise longa.|
-|ProcessingPoolIOJobQueueLength|Threads: Comprimento da fila de trabalho de E/S do pool de processamento|Count|Average|Número de trabalhos de E/S na fila do pool de threads de processamento.|
-|ProcessingPoolBusyIOJobThreads|Threads: Threads de trabalho de E/S ocupados do pool de processamento|Count|Average|Número de threads que executam trabalhos de E/S no pool de threads de processamento.|
-|ProcessingPoolBusyNonIOThreads|Threads: Threads de trabalho não E/S ocupados do pool de processamento|Count|Average|Número de threads que executam trabalhos não E/S no pool de threads de processamento.|
+|ProcessingPoolIOJobQueueLength|Threads: Comprimento da fila de trabalho de E/S do pool de processamento|Contagem|Average|Número de trabalhos de E/S na fila do pool de threads de processamento.|
+|ProcessingPoolBusyIOJobThreads|Threads: Threads de trabalho de E/S ocupados do pool de processamento|Contagem|Average|Número de threads que executam trabalhos de E/S no pool de threads de processamento.|
+|ProcessingPoolBusyNonIOThreads|Threads: Threads de trabalho não E/S ocupados do pool de processamento|Contagem|Average|Número de threads que executam trabalhos não E/S no pool de threads de processamento.|
 |ProcessingPoolIdleIOJobThreads|Threads: Threads de trabalho de E/S ociosos do pool de processamento|Contagem|Average|Número de threads ociosos para trabalhos de E/S no pool de threads de processamento.|
-|ProcessingPoolIdleNonIOThreads|Threads: Threads de trabalho não E/S ociosos do pool de processamento|Count|Average|Número de threads ociosos no pool de threads de processamento dedicado a trabalhos não E/S.|
-|QueryPoolIdleThreads|Threads: Threads ociosos do pool de consultas|Count|Average|Número de threads ociosos para trabalhos de E/S no pool de threads de processamento.|
-|QueryPoolJobQueueLength|Threads: Tamanho da fila de trabalhos do pool consultas|Count|Average|Número de trabalhos na fila do pool de threads de consulta.|
-|ShortParsingBusyThreads|Threads: Threads ocupados de análise resumida|Count|Average|Número de threads ocupados no pool de threads de análise resumida.|
-|ShortParsingIdleThreads|Threads: Threads ociosos de análise resumida|Count|Average|Número de threads ociosos no pool de threads de análise resumida.|
+|ProcessingPoolIdleNonIOThreads|Threads: Threads de trabalho não E/S ociosos do pool de processamento|Contagem|Average|Número de threads ociosos no pool de threads de processamento dedicado a trabalhos não E/S.|
+|QueryPoolIdleThreads|Threads: Threads ociosos do pool de consultas|Contagem|Average|Número de threads ociosos para trabalhos de E/S no pool de threads de processamento.|
+|QueryPoolJobQueueLength|Threads: Tamanho da fila de trabalhos do pool consultas|Contagem|Average|Número de trabalhos na fila do pool de threads de consulta.|
+|ShortParsingBusyThreads|Threads: Threads ocupados de análise resumida|Contagem|Average|Número de threads ocupados no pool de threads de análise resumida.|
+|ShortParsingIdleThreads|Threads: Threads ociosos de análise resumida|Contagem|Average|Número de threads ociosos no pool de threads de análise resumida.|
 |ShortParsingJobQueueLength|Threads: Tamanho da fila de trabalhos de análise resumida|Contagem|Average|Número de trabalhos na fila do pool de threads de análise resumida.|
 |TotalConnectionFailures|Falhas de conexão totais|Contagem|Average|Total de falhas em tentativas de conexão.|
-|TotalConnectionRequests|Solicitações de conexão totais|Count|Average|Solicitações de conexão totais. |
+|TotalConnectionRequests|Solicitações de conexão totais|Contagem|Average|Solicitações de conexão totais. |
 
 ## <a name="next-steps"></a>Próximas etapas
 [Visão geral de Azure Monitor](../azure-monitor/overview.md)      

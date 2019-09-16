@@ -7,16 +7,16 @@ ms.subservice: security
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: vainolo
-ms.author: arib
+author: barmichal
+ms.author: mibar
 ms.reviewer: vanto
 ms.date: 01/03/2019
-ms.openlocfilehash: 334d277370bb8d6678679c887f6a2b89d65652c3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 19795d5dc3998f601de8121176e52ef9dc83ee47
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569468"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70958451"
 ---
 # <a name="sql-database-audit-log-format"></a>Formato do log de auditoria do banco de dados SQL
 
@@ -77,7 +77,7 @@ Os eventos de auditoria são gravados no espaço de trabalho log Analytics defin
 | server_principal_sid | server_principal_sid_s | SID de logon atual | varbinary | cadeia de caracteres |
 | session_id | session_id_d | ID da sessão na qual o evento ocorreu | smallint | int |
 | session_server_principal_name | session_server_principal_name_s | Entidade de segurança do servidor para sessão | sysname | cadeia de caracteres |
-| privacidade | statement_s | Instrução T-SQL que foi executada (se houver) | nvarchar(4000) | cadeia de caracteres |
+| Privacidade | statement_s | Instrução T-SQL que foi executada (se houver) | nvarchar(4000) | cadeia de caracteres |
 | obteve êxito | succeeded_s | Indica se a ação que disparou o evento foi bem-sucedida. Para eventos diferentes de logon e lote, isso apenas relata se a verificação de permissão foi bem-sucedida ou falhou, não a operação. 1 = êxito, 0 = falha | bit | cadeia de caracteres |
 | target_database_principal_id | target_database_principal_id_d | A entidade de banco de dados que a operação GRANT/DENY/REVOKE é executada em. 0 se não for aplicável | int | int |
 | target_database_principal_name | target_database_principal_name_s | Usuário de destino da ação. NULL se não for aplicável | cadeia de caracteres | cadeia de caracteres |

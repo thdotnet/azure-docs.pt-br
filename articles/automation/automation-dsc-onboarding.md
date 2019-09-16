@@ -9,12 +9,12 @@ ms.author: robreed
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: b003c0cc6480c5d03c3755e7c57785ab2026194b
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: c05ac7a1894fc3e159ef8fc2b3dd2654714faccf
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498399"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965177"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Integrar computadores para gerenciamento por Configuração de Estado da Automação do Azure
 
@@ -67,7 +67,8 @@ Se você estiver gerenciando um conjunto de dimensionamento de máquinas virtuai
 
 ### <a name="powershell"></a>PowerShell
 
-O cmdlet [Register-AzAutomationDscNode](/powershell/module/az.automation/register-azautomationdscnode) pode ser usado para carregar máquinas virtuais no portal do Azure por meio do PowerShell.
+O cmdlet [Register-AzAutomationDscNode](/powershell/module/az.automation/register-azautomationdscnode) pode ser usado para carregar máquinas virtuais no Azure usando o PowerShell.
+No entanto, isso é atualmente implementado apenas para computadores que executam o Windows (o cmdlet dispara apenas a extensão do Windows).
 
 ### <a name="registering-virtual-machines-across-azure-subscriptions"></a>Registrando máquinas virtuais em assinaturas do Azure
 
@@ -317,7 +318,7 @@ Para solucionar problemas ou exibir o status da extensão de Configuração de E
 
 Depois de registrar uma máquina como um nó DSC na Configuração do Estado de Automação do Azure, há vários motivos para você precisar registrar novamente o nó no futuro:
 
-- Após o registro, cada nó negocia automaticamente um certificado exclusivo para autenticação, que expira depois de um ano. Atualmente, o protocolo de registro DSC do PowerShell não pode renovar automaticamente certificados quando eles estão prestes a expirar, então você precisa registrar novamente os nós após um ano. Antes de registrar novamente, certifique-se de que cada nó está executando o Windows Management Framework 5.0 RTM. Se o certificado de autenticação de um nó expirar e o nó não for registrado novamente, o nó não será capaz de se comunicar com a Automação do Azure e será marcado como ‘Sem resposta’. A realização de um novo registro a 90 dias ou menos do tempo de expiração do certificado, ou a qualquer momento após o tempo de expiração do certificado, vai resultar na geração e uso de um novo certificado.
+- Para versões do Windows Server anteriores ao Windows Server 2019, cada nó negocia automaticamente um certificado exclusivo para autenticação que expira após um ano. Atualmente, o protocolo de registro DSC do PowerShell não pode renovar automaticamente certificados quando eles estão prestes a expirar, então você precisa registrar novamente os nós após um ano. Antes de registrar novamente, certifique-se de que cada nó está executando o Windows Management Framework 5.0 RTM. Se o certificado de autenticação de um nó expirar e o nó não for registrado novamente, o nó não será capaz de se comunicar com a Automação do Azure e será marcado como ‘Sem resposta’. A realização de um novo registro a 90 dias ou menos do tempo de expiração do certificado, ou a qualquer momento após o tempo de expiração do certificado, vai resultar na geração e uso de um novo certificado.  Uma resolução para esse problema está incluída no Windows Server 2019 e posterior.
 - Para alterar quaisquer [valores do Gerenciador de Configuração Local do PowerShell DSC](/powershell/dsc/metaconfig4) que foram definidos durante o registro inicial do nó, como ConfigurationMode. Atualmente, esses valores de agente do DSC só podem ser alterados por meio de um novo registro. A única exceção é a Configuração de Nó atribuída ao nó, isso pode ser alterado diretamente no DSC de Automação do Azure.
 
 Um novo registro pode ser executado da mesma maneira que você registrou o nó inicialmente, usando qualquer um dos métodos de integração descritos neste documento. Você não precisa cancelar o registro de um nó da Configuração do Estado de Automação do Azure antes de registrá-lo novamente.

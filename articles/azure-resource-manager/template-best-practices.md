@@ -1,22 +1,17 @@
 ---
 title: Práticas recomendadas para modelos do Azure Resource Manager
 description: Descreve as abordagens recomendadas para a criação de modelos do Azure Resource Manager. Oferece sugestões para evitar problemas comuns ao usar os modelos.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/16/2019
+ms.date: 09/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 361fcc6b60e863ee43d348cedd6b1571f3f563a2
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: bd3167b7f0daf7ebd595b2c33b1147140415c3de
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70812912"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983815"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Práticas recomendadas para modelos do Azure Resource Manager
 
@@ -47,7 +42,8 @@ Quando você implanta recursos em um grupo de recursos, o grupo de recursos arma
 Se a região do grupo de recursos está temporariamente indisponível, você não pode atualizar os recursos no grupo de recursos porque os metadados não estão disponíveis. Os recursos em outras regiões ainda funcionarão conforme o esperado, mas não será possível atualizá-los. Para minimizar o risco, localize seu grupo de recursos e recursos na mesma região.
 
 ## <a name="parameters"></a>Parâmetros
-As informações nesta seção podem ser úteis quando você trabalha com [parâmetros](resource-group-authoring-templates.md#parameters).
+
+As informações nesta seção podem ser úteis quando você trabalha com [parâmetros](template-parameters.md).
 
 ### <a name="general-recommendations-for-parameters"></a>Recomendações gerais para parâmetros
 
@@ -149,7 +145,7 @@ As informações nesta seção podem ser úteis quando você trabalha com [parâ
 
 ## <a name="variables"></a>Variáveis
 
-As seguintes informações podem ser úteis quando você trabalha com [variáveis](resource-group-authoring-templates.md#variables):
+As seguintes informações podem ser úteis quando você trabalha com [variáveis](template-variables.md):
 
 * Use o camel case para nomes de variáveis.
 
@@ -286,7 +282,7 @@ As seguintes informações podem ser úteis quando você trabalha com [recursos]
 
 ## <a name="outputs"></a>Saídas
 
-Se você usar um modelo para criar endereços IP públicos, inclua uma [seção outputs](resource-group-authoring-templates.md#outputs) que retorne detalhes do endereço IP e o FQDN (nome de domínio totalmente qualificado). É possível usar valores de saída para recuperar facilmente detalhes sobre endereços IP públicos e FQDNs após a implantação.
+Se você usar um modelo para criar endereços IP públicos, inclua uma [seção outputs](template-outputs.md) que retorne detalhes do endereço IP e o FQDN (nome de domínio totalmente qualificado). É possível usar valores de saída para recuperar facilmente detalhes sobre endereços IP públicos e FQDNs após a implantação.
 
 ```json
 "outputs": {

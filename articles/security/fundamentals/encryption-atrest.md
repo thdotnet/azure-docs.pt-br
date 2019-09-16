@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2019
 ms.author: barclayn
-ms.openlocfilehash: 78062dd92d20da365bb4f3d9c21cc4d576bae01f
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 3e745d5f38d5623aab17ef7a3e3fbfa2c616e6d4
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918879"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984846"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Criptografia de dados em repouso no Azure
 
@@ -272,6 +272,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Azure Analysis Services          | Sim                | -                  | -                  |
 | Catálogo de Dados do Azure               | Sim                | -                  | -                  |
 | Apache Kafka no Azure HDInsight  | Sim                | Todos os comprimentos RSA.   | -                  |
+| Azure Data Explorer              | Sim                | -                  | -                  |
 | Azure Data Factory               | Sim                | -                  | -                  |
 | Azure Data Lake Store            | Sim                | Sim, RSA 2048-bit  | -                  |
 | **Contêineres**                   |                    |                    |                    |

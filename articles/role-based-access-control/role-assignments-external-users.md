@@ -1,5 +1,5 @@
 ---
-title: Gerenciar o acesso de usuários externos a recursos do Azure usando RBAC | Microsoft Docs
+title: Gerenciar o acesso aos recursos do Azure para usuários convidados externos usando o RBAC | Microsoft Docs
 description: Saiba como gerenciar o acesso de usuários externos a recursos do Azure para uma organização usando RBAC (controle de acesso baseado em função).
 services: active-directory
 documentationcenter: ''
@@ -12,123 +12,197 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 03/20/2018
+ms.date: 09/12/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: d919453816436366c00dde506210a2ed38cc69b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12f4b0276074b6732cf57443f51ef5d867f205a6
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65952213"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967467"
 ---
-# <a name="manage-access-to-azure-resources-for-external-users-using-rbac"></a>Gerenciar o acesso de usuários externos a recursos do Azure usando RBAC
+# <a name="manage-access-to-azure-resources-for-external-guest-users-using-rbac"></a>Gerenciar o acesso aos recursos do Azure para usuários convidados externos usando o RBAC
 
-O controle de acesso baseado em função (RBAC) permite um melhor gerenciamento de segurança para grandes empresas e SMBs que trabalham com colaboradores externos, fornecedores ou freelancers que precisam de acesso a recursos específicos em seu ambiente, mas não necessariamente a toda a infraestrutura nem nenhum escopo relacionado à cobrança. O RBAC proporciona a flexibilidade de ter uma assinatura do Azure gerenciada pela conta de administrador (função de administrador de serviços no nível da assinatura) e ter vários usuários convidados para trabalhar na mesma assinatura, mas sem os direitos administrativos para ela.
+O RBAC (controle de acesso baseado em função) permite um melhor gerenciamento de segurança para grandes organizações e para empresas de pequeno e médio porte que trabalham com colaboradores externos, fornecedores ou freelanceres que precisam de acesso a recursos específicos em seu ambiente, mas Não necessariamente para toda a infraestrutura ou quaisquer escopos relacionados à cobrança. Você pode usar os recursos do [Azure Active Directory B2B](../active-directory/b2b/what-is-b2b.md) para colaborar com usuários convidados externos e pode usar o RBAC para conceder apenas as permissões que os usuários convidados precisam em seu ambiente.
 
-> [!NOTE]
-> Assinaturas do Office 365 ou licenças do Azure Active Directory (por exemplo: Acesso ao Azure Active Directory) provenientes do Centro de administração não se qualificam para uso do RBAC do Microsoft 365.
+## <a name="when-would-you-invite-guest-users"></a>Quando você convidar usuários convidados?
 
-## <a name="assign-rbac-roles-at-the-subscription-scope"></a>Atribuir funções de RBAC no escopo de assinatura
+Aqui estão alguns cenários de exemplo em que você pode convidar usuários convidados para sua organização e conceder permissões:
 
-Há dois exemplos comuns de momentos em que o RBAC é usado (entre outros):
+- Permitir que um fornecedor externo autônomo tenha apenas uma conta de email para acessar os recursos do Azure para um projeto.
+- Permitir que um parceiro externo gerencie determinados recursos ou uma assinatura inteira.
+- Permitir que os engenheiros de suporte que não são da sua organização (como o suporte da Microsoft) acessem temporariamente o recurso do Azure para solucionar problemas.
 
-* Quando há usuários externos às organizações (que não fazem parte do locatário do Azure Active Directory do usuário administrador) convidados para gerenciar determinados recursos ou a assinatura inteira
-* Ao trabalhar com usuários de dentro a organização (que fazem parte do locatário do Azure Active Directory do usuário), mas que fazem parte de equipes ou grupos diferentes que precisam de acesso granular a toda a assinatura ou a determinados grupos de recursos ou escopos de recursos no ambiente
+## <a name="permission-differences-between-member-users-and-guest-users"></a>Diferenças de permissão entre usuários Membros e usuários convidados
 
-## <a name="grant-access-at-a-subscription-level-for-a-user-outside-of-azure-active-directory"></a>Conceder acesso no nível da assinatura para um usuário fora do Azure Active Directory
+Os membros nativos de um diretório (usuários Membros) têm permissões diferentes dos usuários convidados de outro diretório como um convidado de colaboração B2B (usuários convidados). Por exemplo, os membros usuário podem ler quase todas as informações de diretório enquanto os usuários convidados têm permissões de diretório restritas. Para obter mais informações sobre usuários Membros e usuários convidados, consulte [quais são as permissões de usuário padrão no Azure Active Directory?](../active-directory/fundamentals/users-default-permissions.md).
 
-Funções RBAC podem ser concedidas somente pelos **Proprietários** da assinatura. Portanto, o administrador deve estar conectado como um usuário que tenha essa função previamente atribuída ou tenha criado a assinatura do Azure.
+## <a name="add-a-guest-user-to-your-directory"></a>Adicionar um usuário convidado ao diretório
 
-No Portal do Azure, depois de entrar como administrador, selecione "Assinaturas" e escolha a desejada.
-![folha de assinatura no portal do Azure](./media/role-assignments-external-users/0.png) Por padrão, se o usuário administrador tiver comprado a assinatura do Azure, ele aparecerá como **Administrador da conta**, sendo essa a função da assinatura. Para obter mais informações sobre as funções de assinatura do Azure, confira [Adicionar ou alterar administradores de assinatura do Azure](../billing/billing-add-change-azure-subscription-administrator.md).
+Siga estas etapas para adicionar um usuário convidado ao seu diretório usando a página Azure Active Directory.
 
-Neste exemplo, o usuário "alflanigan@outlook.com" é o **Proprietário** da assinatura de "Avaliação Gratuita" no locatário AAD definido como "Locatário padrão do Azure". Uma vez que esse usuário é o criador da assinatura do Azure com a Conta da Microsoft inicial "Outlook" (Conta da Microsoft = Outlook, Live etc.), o nome de domínio padrão para todos os outros usuários adicionados neste locatário será **"\@alflaniganuoutlook.onmicrosoft.com"** . Por design, a sintaxe do novo domínio é formada reunindo o nome de usuário e o nome de domínio do usuário que criou o locatário e adicionando a extensão **".onmicrosoft.com"** .
-Além disso, os usuários podem entrar com um nome de domínio personalizado no locatário depois de o adicionarem e verificarem para o novo locatário. Para obter mais informações sobre como verificar um nome de domínio personalizado em um locatário do Azure Active Directory, consulte [Adicionar um nome de domínio personalizado ao seu diretório](../active-directory/fundamentals/add-custom-domain.md).
+1. Verifique se as configurações de colaboração externa da sua organização estão configuradas de forma que você tenha permissão para convidar convidados. Para obter mais informações, consulte [habilitar colaboração externa B2B e gerenciar quem pode convidar convidados](../active-directory/b2b/delegate-invitations.md).
 
-Neste exemplo, o diretório "Locatário padrão do Azure" contém somente usuários com o nome de domínio "\@alflanigan.onmicrosoft.com".
+1. Na portal do Azure, clique em **Azure Active Directory** > **usuários** > **novo usuário convidado**.
 
-Depois de selecionar a assinatura, o usuário administrador deve clicar em **Controle de acesso (IAM)** e, em seguida, em **Adicionar uma nova função**.
+    ![Novo recurso de usuário convidado no portal do Azure](./media/role-assignments-external-users/invite-guest-user.png)
 
-![recurso IAM de controle de acesso no portal do Azure](./media/role-assignments-external-users/1.png)
+1. Siga as etapas para adicionar um novo usuário convidado. Para obter mais informações, consulte [adicionar Azure Active Directory usuários de colaboração B2B no portal do Azure](../active-directory/b2b/add-users-administrator.md#add-guest-users-to-the-directory).
 
-![adicionar novo usuário no recurso IAM de controle de acesso no portal do Azure](./media/role-assignments-external-users/2.png)
+Depois de adicionar um usuário convidado ao diretório, você poderá enviar ao usuário convidado um link direto para um aplicativo compartilhado, ou o usuário convidado poderá clicar na URL de resgate no email de convite.
 
-A próxima etapa é selecionar a função a ser atribuída e o usuário ao qual a função de RBAC será atribuída. No menu suspenso **Função**, o usuário administrador vê apenas as funções RBAC internas que estão disponíveis no Azure. Para obter explicações mais detalhadas sobre cada função e seus escopos atribuíveis, consulte [Funções internas para recursos do Azure](built-in-roles.md).
+![Email de convite do usuário convidado](./media/role-assignments-external-users/invite-email.png)
 
-Em seguida, o usuário administrador precisa adicionar o endereço de email do usuário externo. O comportamento esperado para o usuário externo é não aparecer no locatário existente. Depois que o usuário externo foi convidado, eles estarão visíveis sob **assinaturas > controle de acesso (IAM)** com todos os usuários atuais que estão atualmente atribuídos a uma função RBAC no escopo da assinatura.
+Para que o usuário convidado possa acessar seu diretório, ele deve concluir o processo de convite.
 
-![adicionar permissões à nova função RBAC](./media/role-assignments-external-users/3.png)
+![Permissões de revisão de convite de usuário convidado](./media/role-assignments-external-users/invite-review-permissions.png)
 
-![lista de funções de RBAC no nível de assinatura](./media/role-assignments-external-users/4.png)
+Para obter mais informações sobre o processo de convite, consulte [Azure Active Directory resgate de convite de colaboração B2B](../active-directory/b2b/redemption-experience.md).
 
-O usuário "chessercarlton@gmail.com" foi convidado a ser um **Proprietário** para a assinatura de "Avaliação Gratuita". Depois de enviar o convite, o usuário externo receberá um email de confirmação com um link de ativação.
-![convite por email para a função RBAC](./media/role-assignments-external-users/5.png)
+## <a name="grant-access-to-a-guest-user"></a>Conceder acesso a um usuário convidado
 
-Sendo externo à organização, o novo usuário não tem nenhum atributo existente no diretório "Locatário padrão do Azure". Serão criados depois que o usuário externo tiver autorizado a ser gravado no diretório que está associado à assinatura eles tiverem recebido uma função.
+No RBAC, para conceder acesso, você atribui uma função. Para conceder acesso a um usuário convidado, siga [as mesmas etapas](role-assignments-portal.md#add-a-role-assignment) que você faria para um usuário membro, grupo, entidade de serviço ou identidade gerenciada. Siga estas etapas para conceder acesso a um usuário convidado em escopos diferentes.
 
-![mensagem de convite de email para a função de RBAC](./media/role-assignments-external-users/6.png)
+1. No portal do Azure, clique em **Todos os serviços**.
 
-O usuário externo aparece no locatário do Azure Active Directory de agora em diante como usuário externo e isso pode ser exibido no portal do Azure.
+1.  Selecione o conjunto de recursos ao qual o acesso se aplica, também conhecido como o escopo. Por exemplo, você pode selecionar **grupos de gerenciamento**, **assinaturas**, **grupos de recursos**, ou um recurso.
 
-![folha dos usuários no azure active-directory, portal do Azure](./media/role-assignments-external-users/7.png)
+1. Clique no recurso específico.
 
-Na exibição **Usuários**, os usuários externos podem ser reconhecidos pelo tipo de ícone diferentes no portal do Azure.
+1. Clique em **Controle de acesso (IAM)** .
 
-No entanto, conceder acesso de **Proprietário** ou **Colaborador** a um usuário externo no escopo da **Assinatura** não permite acesso ao diretório do usuário administrador, a menos que o **Administrador Global** o permita. Nas propriedades do usuário, o **Tipo de Usuário** que tem dois parâmetros comuns, **Membro** e **Convidado** pode ser identificado. Um membro é um usuário registrado no diretório, enquanto um convidado é um usuário convidado para o diretório de uma fonte externa. Para obter mais informações, consulte [Como os administradores do Azure Active Directory adicionam usuários de colaboração B2B](../active-directory/active-directory-b2b-admin-add-users.md).
+    A captura de tela a seguir mostra um exemplo da folha controle de acesso (IAM) para um grupo de recursos. Se você fizer alterações de controle de acesso aqui, elas se aplicarão apenas ao grupo de recursos.
 
-> [!NOTE]
-> Certifique-se de que, depois de inserir as credenciais no portal, o usuário externo selecione o diretório correto para entrar. O mesmo usuário pode ter acesso a vários diretórios e pode selecionar qualquer um deles clicando no nome de usuário na parte superior direita no portal do Azure e escolhendo o diretório apropriado na lista suspensa.
+    ![Lâmina de controle de acesso (IAM) para um grupo de recursos](./media/role-assignments-external-users/access-control-resource-group.png)
 
-Enquanto for um convidado no diretório, o usuário externo poderá gerenciar todos os recursos da assinatura do Azure, mas não poderá acessar o diretório.
+1. Clique na guia **Atribuições de função** para visualizar todas as atribuições de função nesse escopo.
 
-![acesso restrito ao azure active-directory, portal do Azure](./media/role-assignments-external-users/9.png)
+1. Clique em **Adicionar** > **Adicionar atribuição de função** para abrir o painel Adicionar atribuição de função.
 
-O Azure Active Directory e uma assinatura do Azure não têm uma relação de pai-filho como outros recursos do Azure (por exemplo: máquinas virtuais, redes virtuais, aplicativos Web, armazenamento etc.) têm com uma assinatura do Azure. Todos estes segundos são criados, gerenciados e cobrados em uma assinatura do Azure, enquanto uma assinatura do Azure é usada para gerenciar o acesso a um diretório do Azure. Para mais informações, consulte [Como uma assinatura do Azure está relacionada ao Microsoft Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+    Se você não tiver permissões para atribuir funções, a opção Adicionar atribuição de função será desativada.
 
-De todas as funções RBAC internas, **Proprietário** e **Colaborador** oferecem acesso de gerenciamento total a todos os recursos no ambiente, sendo a diferença que um Colaborador não pode criar nem excluir novas funções de RBAC. Outras funções internas, como **Colaborador de Máquina Virtual** oferecem acesso de gerenciamento completo apenas aos recursos indicados pelo nome, não importa o **Grupo de Recursos** em que eles estão sendo criados.
+    ![Adicionar menu](./media/role-assignments-external-users/add-menu.png)
 
-Atribuir a função de RBAC interna de **Colaborador de Máquina Virtual** em um nível de assinatura significa que o usuário atribuído à função:
+1. Na lista suspensa **Função**, selecione uma função, por exemplo, **Colaborador da Máquina Virtual**.
 
-* Pode exibir todas as máquinas virtuais, não importa a data de implantação nem os grupos de recursos dos quais fazem parte
-* Tem acesso de gerenciamento completo para as máquinas virtuais na assinatura
-* Não é possível exibir outros tipos de recursos na assinatura
-* Não é possível operar nenhuma alteração de uma perspectiva de cobrança
+1. Na lista **selecionar** , selecione o usuário convidado. Se você não vir o usuário na lista, poderá digitar na caixa **selecionar** para pesquisar o diretório em busca de nomes de exibição, endereços de email e identificadores de objeto.
 
-## <a name="assign-a-built-in-rbac-role-to-an-external-user"></a>Atribuir uma função de RBAC interna a um usuário externo
+   ![Adicionar painel de atribuição de função](./media/role-assignments-external-users/add-role-assignment.png)
 
-Para um cenário diferente nesse teste, o usuário externo "alflanigan@gmail.com" é adicionado como um **Colaborador de Máquina Virtual**.
+1. Clique em **salvar** para atribuir a função no escopo selecionado.
 
-![função interna de colaborador de máquina virtual](./media/role-assignments-external-users/11.png)
+    ![Atribuição de função para colaborador de máquina virtual](./media/role-assignments-external-users/access-control-role-assignments.png)
 
-O comportamento normal para esse usuário externo com essa função interna é ver e gerenciar somente máquinas virtuais e seus recursos do Resource Manager adjacentes necessários ao implantar. Por design, essas funções limitadas oferecem acesso apenas aos recursos correspondentes criado no portal do Azure.
+## <a name="grant-access-to-a-guest-user-not-yet-in-your-directory"></a>Conceder acesso a um usuário convidado ainda não em seu diretório
 
-![visão geral da função de colaborador de máquina virtual no portal do Azure](./media/role-assignments-external-users/12.png)
+No RBAC, para conceder acesso, você atribui uma função. Para conceder acesso a um usuário convidado, siga [as mesmas etapas](role-assignments-portal.md#add-a-role-assignment) que você faria para um usuário membro, grupo, entidade de serviço ou identidade gerenciada.
 
-## <a name="grant-access-at-a-subscription-level-for-a-user-in-the-same-directory"></a>Conceder acesso no nível da assinatura para um usuário no mesmo diretório
+Se o usuário convidado ainda não estiver em seu diretório, você poderá convidar o usuário diretamente do painel Adicionar atribuição de função.
 
-O fluxo do processo é idêntico a adicionar um usuário externo, tanto da perspectiva do administrador que está concedendo a função RBAC quanto do usuário que está recebendo acesso à função. A diferença aqui é que o usuário convidado não receberá nenhum convite por email, pois todos os escopos de recursos dentro da assinatura estarão disponíveis no painel depois do logon.
+1. No portal do Azure, clique em **Todos os serviços**.
 
-## <a name="assign-rbac-roles-at-the-resource-group-scope"></a>Atribuir funções de RBAC no escopo do grupo de recursos
+1.  Selecione o conjunto de recursos ao qual o acesso se aplica, também conhecido como o escopo. Por exemplo, você pode selecionar **grupos de gerenciamento**, **assinaturas**, **grupos de recursos**, ou um recurso.
 
-Atribuir uma função de RBAC em um escopo de **Grupo de Recursos** tem um processo idêntico ao de atribuir a função no nível de assinatura para os dois tipos de usuários, externos e internos (parte do mesmo diretório). Os usuários que recebem a função de RBAC devem ver em seu ambiente somente o grupo de recursos para o qual eles receberam acesso usando o ícone **Grupos de Recursos** no portal do Azure.
+1. Clique no recurso específico.
 
-## <a name="assign-rbac-roles-at-the-resource-scope"></a>Atribuir funções de RBAC no escopo do recurso
+1. Clique em **Controle de acesso (IAM)** .
 
-Atribuir uma função de RBAC no escopo de um recurso no Azure tem um processo idêntico ao de atribuir uma função no nível de assinatura ou no nível do grupo de recursos, seguindo o mesmo fluxo de trabalho em ambos os cenários. Novamente, os usuários que recebem a função de RBAC podem ver apenas os itens aos quais eles receberam acesso, seja na guia **Todos os Recursos** ou diretamente no painel.
+1. Clique na guia **Atribuições de função** para visualizar todas as atribuições de função nesse escopo.
 
-Um aspecto importante para RBAC tanto no escopo do grupo de recursos quanto no escopo do recurso é os usuários entrarem no diretório correto.
+1. Clique em **Adicionar** > **Adicionar atribuição de função** para abrir o painel Adicionar atribuição de função.
 
-![logon do diretório no portal do Azure](./media/role-assignments-external-users/13.png)
+    ![Adicionar menu](./media/role-assignments-external-users/add-menu.png)
 
-## <a name="assign-rbac-roles-for-an-azure-active-directory-group"></a>Atribuir funções de RBAC a um grupo do Azure Active Directory
+1. Na lista suspensa **Função**, selecione uma função, por exemplo, **Colaborador da Máquina Virtual**.
 
-Todos os cenários que usam RBAC nos três escopos diferentes no Azure oferecem o privilégio de gerenciar, implantar e administrar vários recursos como um usuário atribuído sem a necessidade de gerenciar uma assinatura pessoal. Independentemente da função de RBAC atribuída a uma assinatura, grupo de recursos ou escopo de recurso, todos os recursos criados mais adiante pelos usuários atribuídos são cobrados sob a única assinatura do Azure à qual os usuários têm acesso. Dessa forma, os usuários que têm permissões de administrador de cobrança para toda essa assinatura do Azure têm uma visão geral completa do consumo, não importa quem está gerenciando os recursos.
+1. Na lista **selecionar** , digite o endereço de email da pessoa que você deseja convidar e selecione essa pessoa.
 
-Para organizações maiores, as funções de RBAC podem ser aplicadas da mesma maneira para grupos do Azure Active Directory considerando a perspectiva de que o usuário administrador deseja conceder acesso granular a equipes ou departamentos inteiros, e não individualmente a cada usuário, considerando, portanto, essa opção muito eficiente em termos de tempo e gerenciamento. Para ilustrar esse exemplo, a função de **Colaborador** foi adicionada a um dos grupos no locatário no nível da assinatura.
+   ![Convidar usuário convidado no painel Adicionar atribuição de função](./media/role-assignments-external-users/add-role-assignment-new-guest.png)
 
-![adicionar função de RBAC a grupos do AAD](./media/role-assignments-external-users/14.png)
+1. Clique em **salvar** para adicionar o usuário convidado ao seu diretório, atribuir a função e enviar um convite.
 
-Esses grupos são grupos de segurança provisionados e gerenciados somente dentro do Azure Active Directory.
+    Após alguns instantes, você verá uma notificação da atribuição de função e informações sobre o convite.
 
+    ![Atribuição de função e notificação de usuário convidado](./media/role-assignments-external-users/invited-user-notification.png)
+
+1. Para convidar manualmente o usuário convidado, clique com o botão direito do mouse e copie o link do convite na notificação. Não clique no link de convite porque ele inicia o processo de convite.
+
+    O link do convite terá o seguinte formato:
+
+    `https://invitations.microsoft.com/redeem/...`
+
+1. Envie o link do convite para o usuário convidado para concluir o processo de convite.
+
+    Para obter mais informações sobre o processo de convite, consulte [Azure Active Directory resgate de convite de colaboração B2B](../active-directory/b2b/redemption-experience.md).
+
+## <a name="remove-a-guest-user-from-your-directory"></a>Remover um usuário convidado do seu diretório
+
+Antes de remover um usuário convidado de um diretório, primeiro você deve remover as atribuições de função para esse usuário convidado. Siga estas etapas para remover um usuário convidado de um diretório.
+
+1. **Controle de acesso aberto (iam)** em um escopo, como grupo de gerenciamento, assinatura, grupo de recursos ou recurso, em que o usuário convidado tem uma atribuição de função.
+
+1. Clique na guia **atribuições de função** para exibir todas as atribuições de função.
+
+1. Na lista de atribuições de função, adicione uma marca de seleção ao lado do usuário convidado com a atribuição de função que você deseja remover.
+
+   ![Remover atribuição de função](./media/role-assignments-external-users/remove-role-assignment-select.png)
+
+1. Clique em **Remover**.
+
+   ![Remover mensagem de atribuição de função](./media/role-assignments-external-users/remove-role-assignment.png)
+
+1. Na mensagem para remover a atribuição de função exibida, clique em **Sim**.
+
+1. Na barra de navegação à esquerda, clique em **Azure Active Directory** > **usuários**.
+
+1. Clique no usuário convidado que você deseja remover.
+
+1. Clique em **Excluir**.
+
+   ![Excluir usuário convidado](./media/role-assignments-external-users/delete-guest-user.png)
+
+1. Na mensagem de exclusão exibida, clique em **Sim**.
+
+## <a name="troubleshoot"></a>Solução de problemas
+
+### <a name="guest-user-cannot-browse-the-directory"></a>O usuário convidado não pode navegar no diretório
+
+Usuários convidados têm permissões de diretório restritas. Por exemplo, os usuários convidados não podem navegar no diretório e não podem pesquisar grupos ou aplicativos. Para obter mais informações, consulte [quais são as permissões de usuário padrão no Azure Active Directory?](../active-directory/fundamentals/users-default-permissions.md).
+
+![O usuário convidado não pode procurar usuários em um diretório](./media/role-assignments-external-users/directory-no-users.png)
+
+Se um usuário convidado precisar de privilégios adicionais no diretório, você poderá atribuir uma função de diretório ao usuário convidado. Se você realmente deseja que um usuário convidado tenha acesso de leitura total ao seu diretório, você pode adicionar o usuário convidado à função [leitores de diretório](../active-directory/users-groups-roles/directory-assign-admin-roles.md) no Azure AD. Para obter mais informações, consulte [conceder permissões a usuários de organizações parceiras em seu locatário Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+
+![Atribuir função de leitores de diretório](./media/role-assignments-external-users/directory-roles.png)
+
+### <a name="guest-user-cannot-browse-users-groups-or-service-principals-to-assign-roles"></a>O usuário convidado não pode procurar usuários, grupos ou entidades de serviço para atribuir funções
+
+Usuários convidados têm permissões de diretório restritas. Mesmo que um usuário convidado seja um [proprietário](built-in-roles.md#owner) em um escopo, se eles tentarem criar uma atribuição de função para conceder a outra pessoa acesso, eles não poderão procurar a lista de usuários, grupos ou entidades de serviço.
+
+![O usuário convidado não pode procurar entidades de segurança para atribuir funções](./media/role-assignments-external-users/directory-no-browse.png)
+
+Se o usuário convidado souber o nome de entrada exato de alguém no diretório, ele poderá conceder acesso. Se você realmente deseja que um usuário convidado tenha acesso de leitura total ao seu diretório, você pode adicionar o usuário convidado à função [leitores de diretório](../active-directory/users-groups-roles/directory-assign-admin-roles.md) no Azure AD. Para obter mais informações, consulte [conceder permissões a usuários de organizações parceiras em seu locatário Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+
+### <a name="guest-user-cannot-register-applications-or-create-service-principals"></a>O usuário convidado não pode registrar aplicativos ou criar entidades de serviço
+
+Usuários convidados têm permissões de diretório restritas. Se um usuário convidado precisar registrar aplicativos ou criar entidades de serviço, você poderá adicionar o usuário convidado à função de [desenvolvedor do aplicativo](../active-directory/users-groups-roles/directory-assign-admin-roles.md) no Azure AD. Para obter mais informações, consulte [conceder permissões a usuários de organizações parceiras em seu locatário Azure Active Directory](../active-directory/b2b/add-guest-to-role.md).
+
+![O usuário convidado não pode registrar aplicativos](./media/role-assignments-external-users/directory-access-denied.png)
+
+### <a name="guest-user-does-not-see-the-new-directory"></a>O usuário convidado não vê o novo diretório
+
+Se um usuário convidado tiver recebido acesso a um diretório, mas não vir o novo diretório listado na portal do Azure quando tentarem alternar para o seu **diretório +** painel de assinatura, verifique se o usuário convidado concluiu o processo de convite. Para obter mais informações sobre o processo de convite, consulte [Azure Active Directory resgate de convite de colaboração B2B](../active-directory/b2b/redemption-experience.md).
+
+### <a name="guest-user-does-not-see-resources"></a>O usuário convidado não vê os recursos
+
+Se um usuário convidado tiver recebido acesso a um diretório, mas não vir os recursos aos quais eles receberam acesso no portal do Azure, verifique se o usuário convidado selecionou o diretório correto. Um usuário convidado pode ter acesso a vários diretórios. Para alternar os diretórios, no canto superior esquerdo, clique em **diretório + assinatura**e, em seguida, clique no diretório apropriado.
+
+![Diretórios + painel de assinaturas no portal do Azure](./media/role-assignments-external-users/directory-subscription.png)
+
+## <a name="next-steps"></a>Próximas etapas
+
+- [Adicionar usuários de colaboração B2B do Azure Active Directory no Portal do Azure](../active-directory/b2b/add-users-administrator.md)
+- [Propriedades de um usuário de colaboração B2B do Azure Active Directory](../active-directory/b2b/user-properties.md)
+- [Os elementos do convite de colaboração B2B email-Azure Active Directory](../active-directory/b2b/invitation-email-elements.md)

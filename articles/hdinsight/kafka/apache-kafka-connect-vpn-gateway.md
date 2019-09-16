@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/28/2019
-ms.openlocfilehash: 395bb01247efde82dbb39733c1915bc989b1729d
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: ab5f8c35334b6b6c56b0ebe8714d04ad5c7c8084
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68402771"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960420"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Conecte-se ao Apache Kafka no HDInsight por meio de uma rede virtual do Azure
 
@@ -252,7 +252,7 @@ Por padrão, o Apache Zookeeper retorna o nome de domínio dos agentes Kafka aos
 
 3. Para exibir a configuração do Kafka, selecione __Configurações__ na parte central superior.
 
-    ![Links de Configurações para Kafka](./media/apache-kafka-connect-vpn-gateway/select-kafka-config.png)
+    ![Links de Configurações para Kafka](./media/apache-kafka-connect-vpn-gateway/select-kafka-config1.png)
 
 4. Para localizar a configuração __kafka-env__, digite `kafka-env` no campo __Filtro__ na parte superior direita.
 
@@ -274,7 +274,7 @@ Por padrão, o Apache Zookeeper retorna o nome de domínio dos agentes Kafka aos
 
 8. Para salvar as alterações de configuração, use o botão __Salvar__. Digite uma mensagem de texto que descreva as alterações. Selecione __OK__ assim que as alterações tiverem sido salvas.
 
-    ![Botão Salvar configuração](./media/apache-kafka-connect-vpn-gateway/save-button.png)
+    ![Botão Salvar configuração](./media/apache-kafka-connect-vpn-gateway/save-configuration-button.png)
 
 9. Para evitar erros ao reiniciar o Kafka, use o botão __Ações de Serviço__ e selecione __Ativar o Modo de Manutenção__. Selecione OK para concluir essa operação.
 
@@ -282,7 +282,7 @@ Por padrão, o Apache Zookeeper retorna o nome de domínio dos agentes Kafka aos
 
 10. Para reiniciar o Kafka, use o botão __Reiniciar__ e selecione __Reiniciar Todos os Afetados__. Confirme a reinicialização e, em seguida, use o botão __OK__ depois que a operação for concluída.
 
-    ![Botão Reiniciar com reiniciar todos os afetados realçada](./media/apache-kafka-connect-vpn-gateway/restart-button.png)
+    ![Botão Reiniciar com reiniciar todos os afetados realçada](./media/apache-kafka-connect-vpn-gateway/restart-required-button.png)
 
 11. Para desabilitar o modo de manutenção, use o botão __Ações de Serviço__ e selecione __Ativar o Modo de Manutenção__. Selecione **OK** para concluir essa operação.
 

@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: aahi
-ms.openlocfilehash: 558ce8950a1848f0cddc247f60dd4e75dd20ccf0
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: e14cb56db6e45fe86ecd5e73766c47d29dd23fa1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305471"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984239"
 ---
 # <a name="language-and-region-support-for-the-text-analytics-api"></a>Idiomas e regiões compatíveis com a API de Análise de Texto
 
 Este artigo explica quais idiomas têm suporte para cada operação: análise de sentimentos, extração de frases-chave, detecção de idioma e reconhecimento de entidade nomeada.
 
-## <a name="language-detection"></a>Detecção de Idioma
+## <a name="language-detection"></a>Detecção de idioma
 
 O API de Análise de Texto pode detectar uma ampla gama de linguagens, variantes, dialetos e alguns idiomas regionais/culturais.  A detecção de idioma retorna o "script" de um idioma. Por exemplo, a frase "Eu tenho um cachorro" retornará `en`, em vez de `en-US`. O único especial é chinês, em que a funcionalidade de detecção de idioma retornará `zh_CHS` ou `zh_CHT` se ela puder determinar o script fornecido pelo texto fornecido. Em situações em que um script específico não pode ser identificado para um documento em chinês, ela retornará simplesmente `zh`.
 
@@ -48,7 +48,7 @@ O suporte a idiomas é implantado inicialmente em versão prévia, passando para
 |:----------- |:-------------:|:---------:|:-----------:|:-----------:|:-----------:
 | Árabe      | `ar`          |           |             | ✔ \*                     | |
 | Tcheco       | `cs`          |           |             | ✔ \*                     | |
-| Chinês-simplificado | `zh-CN`|           |             | ✔         |    |
+| Chinês-simplificado | `zh-CN`| ✔ \***     |             | ✔         |    |
 | Dinamarquês      | `da`          | ✔ \*     | ✔           | ✔ \*            |     |
 | Holandês       | `nl`          | ✔ \*     | ✔          |  ✔ \*           |     |
 | Inglês     | `en`          | ✔        | ✔           |  ✔ \*\*     |      |
@@ -58,7 +58,7 @@ O suporte a idiomas é implantado inicialmente em versão prévia, passando para
 | Grego       | `el`          | ✔ \*     |             |            |     |
 | Húngaro   | `hu`          |           |             |  ✔ \*          |     | 
 | Italiano     | `it`          | ✔ \*     | ✔           |  ✔ \*           |     |
-| Japonês    | `ja`          |          | ✔           |  ✔ \*          |     |
+| Japonês    | `ja`          | ✔ \***         | ✔           |  ✔ \*          |     |
 | Coreano      | `ko`          |          | ✔           |  ✔ \*          |     |
 | Norueguês (Bokmål) | `no`  | ✔ \*     |  ✔          | ✔ \*            |     |
 | Polonês      | `pl`          | ✔ \*     |  ✔          |  ✔ \*           |     |
@@ -71,7 +71,9 @@ O suporte a idiomas é implantado inicialmente em versão prévia, passando para
 
 \*O suporte ao idioma está em versão prévia
 
-\*\*O [reconhecimento de entidade nomeada](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-ner) e a [vinculação de entidade](how-tos/text-analytics-how-to-entity-linking.md#entity-linking) estão disponíveis para esse idioma.    
+\*\*O [reconhecimento de entidade nomeada](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-ner) e a [vinculação de entidade](how-tos/text-analytics-how-to-entity-linking.md#entity-linking) estão disponíveis para esse idioma.  
+
+\** * Disponível na [Visualização pública do análise de sentimento v3](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis#sentiment-analysis-v3-public-preview)
 
 ## <a name="see-also"></a>Consulte também
 

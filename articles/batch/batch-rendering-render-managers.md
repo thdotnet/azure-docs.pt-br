@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6878d3b4fc8648db540d016389747eceb45d936a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: eb3ce47e5ffed697392065a1faacbbfaec19f4d1
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67436171"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983681"
 ---
 # <a name="using-azure-batch-with-render-farm-managers"></a>Usar o Lote do Azure com gerenciadores de farm de renderização
 
@@ -26,9 +26,15 @@ Há suporte aos seguintes gerenciadores de renderização:
 * [Royal Render](https://www.royalrender.de/)
 * [Thinkbox Deadline](https://deadline.thinkboxsoftware.com/)
 
+## <a name="azure-render-hub"></a>Hub de renderização do Azure
+
+O Hub de renderização do Azure simplifica a criação e o gerenciamento de farms de renderização do Azure.  O Hub de renderização tem suporte nativo para PipelineFx Qube e prazo 10.  Para obter mais informações e instruções detalhadas, consulte [o repositório GitHub](https://github.com/Azure/azure-render-hub).
+
 ## <a name="using-azure-with-pipelinefx-qube"></a>Usar Azure com PipelineFX Qube
 
-Scripts e instruções para habilitar que VMs de pool do Lote do Azure sejam usadas como trabalhos do Qube estão no [repositório GitHub](https://github.com/Azure/azure-qube).
+O Hub de renderização do Azure dá suporte a gerentes de renderização populares, incluindo prazo.  Para obter instruções sobre como implantar e usar o Hub de renderização, consulte [o repositório GitHub](https://github.com/Azure/azure-render-hub).
+
+Scripts e instruções para habilitar VMs do pool do lote do Azure a serem usadas como Qube Workers também estão disponíveis no [repositório GitHub](https://github.com/Azure/azure-qube).
 
 ## <a name="using-azure-with-royal-render"></a>Usar Azure com Royal Render
 
@@ -38,7 +44,7 @@ Para um exemplo de um cliente Royal Render usando a integração do Azure, consu
 
 ## <a name="using-azure-with-thinkbox-deadline"></a>Usar Azure com Thinkbox Deadline
 
-Scripts e instruções para habilitar que VMs de pool do Lote do Azure sejam usadas como subordinadas do Deadline estão no [repositório GitHub](https://github.com/Azure/azure-deadline).
+O Hub de renderização do Azure dá suporte a gerentes de renderização populares, incluindo prazo.  Para obter instruções sobre como implantar e usar o Hub de renderização, consulte [o repositório GitHub](https://github.com/Azure/azure-render-hub).
 
 ## <a name="next-steps"></a>Próximas etapas
 

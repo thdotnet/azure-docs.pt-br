@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 01/12/2019
 ms.author: ellacroi
-ms.openlocfilehash: 8bb064deae87e6545d003ffb1fa85058926f5dee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9549e40ea3b79c356867c2fe36dc336e69795c8b
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688950"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962833"
 ---
 # <a name="promote-your-business-with-microsoft"></a>Promover seu negócio com a Microsoft
 
@@ -28,7 +28,7 @@ Para promover sua oferta ou aplicativo e acessar mais benefícios e recursos, us
 
 | Benefícios | Recursos |
 |:--- |:--- |
-| Use os benefícios principais | Como parte do Microsoft Partner Network, você recebe um conjunto de benefícios essenciais que podem ajudar a economizar tempo e dinheiro. Os benefícios podem ajudá-lo a <ul> <li> fortalecer suas capacidades, </li> <li> atender melhor aos clientes e </li> <li> criar conexões para alcançar seu potencial empresarial máximo. </li> </ul> Para obter mais informações sobre os principais benefícios, visite [Principais benefícios e requisitos](https://partner.microsoft.com/en-US/membership/core-benefits#tab-content-1). |
+| Use os benefícios principais | Como parte do Microsoft Partner Network, você recebe um conjunto de benefícios essenciais que podem ajudar a economizar tempo e dinheiro. Os benefícios podem ajudá-lo a <ul> <li> fortalecer suas capacidades, </li> <li> atender melhor aos clientes e </li> <li> criar conexões para alcançar seu potencial empresarial máximo. </li> </ul> Para obter mais informações sobre os principais benefícios, visite [Principais benefícios e requisitos](https://partner.microsoft.com/membership/core-benefits#tab-content-1). |
 | Obtenha sua Competência da Plataforma de Nuvem | Obter uma competência ajuda você a: <ul> <li> diferenciar-se dos outros parceiros da Microsoft; </li> <li> demonstrar a competência técnica e o sucesso dos clientes no mercado. </li> </ul> A competência é um pré-requisito para muitos programas de parceiros importantes, como o Co-Sell. Veja [Competência de plataforma de nuvem](https://partner.microsoft.com/reach-customers/selling-with-microsoft) para obter mais informações. |
 | Torne-se Co-Sell Ready IP | Você pode estar qualificado para o programa IP Co-Sell Ready.  Esse programa permite que você: <ul> <li> Colabore diretamente com vendedores da Microsoft e outros parceiros em oportunidades de clientes-alvo e planejamento de contas. </li> <li> Torne sua solução visível para os vendedores da Microsoft no catálogo de soluções do vendedor. </li> <li> Os vendedores da Microsoft são recompensados por colaborar e ganhar com você. </li> </ul> Para obter mais informações, incluindo os requisitos de qualificação, visite [o programa Co-sell Ready e Promova seu negócio](https://partner.microsoft.com/reach-customers/selling-with-microsoft). |
 

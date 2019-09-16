@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 884ded67c25aca78225baef2d7e4c5de1cc94fd0
-ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
+ms.openlocfilehash: 48d2463eee2caeaae36118bf736d00eed84c897a
+ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68782281"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70186217"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Resolução de problemas com o Gerenciamento de Atualizações
 
@@ -22,6 +22,42 @@ Este artigo discute soluções para resolver problemas que você pode encontrar 
 Não há uma solução de problemas do agente para agente do Hybrid Worker determinar o problema subjacente. Para saber mais sobre a solução de problemas, consulte [solucionar problemas do agente de atualização](update-agent-issues.md). Para todos os outros problemas, consulte as informações detalhadas abaixo sobre possíveis problemas.
 
 ## <a name="general"></a>Geral
+
+### <a name="rp-register"></a>Cenário: Não é possível registrar o provedor de recursos de automação para assinaturas
+
+#### <a name="issue"></a>Problema
+
+Você pode receber o seguinte erro ao trabalhar com soluções em sua conta de automação.
+
+```error
+Error details: Unable to register Automation Resource Provider for subscriptions:
+```
+
+#### <a name="cause"></a>Causa
+
+O provedor de recursos de automação não está registrado na assinatura.
+
+#### <a name="resolution"></a>Resolução
+
+Você pode registrar os provedores de recursos de automação concluindo as seguintes etapas no portal do Azure:
+
+1. Clique em **Todos os serviços** na lista de serviços inferior do Azure e selecione **Assinaturas** no grupo de serviços _Geral_.
+2. Selecione sua assinatura.
+3. Clique em **provedores de recursos** em _configurações_.
+4. Na lista de provedores de recursos, verifique se o provedor de recursos **Microsoft. Automation** está registrado.
+5. Se o provedor não estiver listado, registre o provedor **Microsoft.Automation** com as etapas listadas em [](/azure/azure-resource-manager/resource-manager-register-provider-errors).
+
+### <a name="mw-exceeded"></a>Cenário: Falha no agendamento do gerenciamento de atualizações com o erro MaintenanceWindowExceeded
+
+#### <a name="issue"></a>Problema
+
+A janela de manutenção padrão para atualizações é de 120 minutos. Você pode aumentar a janela de manutenção para um máximo de seis (6) horas ou 360 minutos.
+
+#### <a name="resolution"></a>Resolução
+
+Edite todas as implantações de atualização agendadas com falha e aumente a janela de manutenção.
+
+Para obter mais informações sobre janelas de manutenção, consulte [instalar atualizações](../automation-update-management.md#install-updates).
 
 ### <a name="components-enabled-not-working"></a>Cenário: Os componentes da solução 'Gerenciamento de Atualizações' foram habilitados e agora esta máquina virtual está sendo configurada
 
@@ -44,7 +80,7 @@ Esse erro pode ser causado pelos seguintes motivos:
 
 1. Visite [Planejamento de rede](../automation-hybrid-runbook-worker.md#network-planning) para saber mais sobre quais endereços e portas devem ter permissão para que Gerenciamento de Atualizações funcione.
 2. Se estiver usando uma imagem clonada:
-   1. No espaço de trabalho log Analytics, remova a VM da pesquisa salva para a configuração `MicrosoftDefaultScopeConfig-Updates` de escopo se ela for mostrada. As pesquisas salvas podem ser encontradas em **Geral** no espaço de trabalho.
+   1. No espaço de trabalho log Analytics, remova a VM da pesquisa salva para a configuração `MicrosoftDefaultScopeConfig-Updates` de escopo se ela for mostrada. As pesquisas salvas podem ser encontradas em **Geral** no workspace.
    2. Execute `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`
    3. Execute `Restart-Service HealthService` para reiniciar o `HealthService`. Isso recriará a chave e gerará um novo UUID.
    4. Se isso não funcionar, execute o Sysprep na imagem primeiro e instale o agente MMA após o fato.
@@ -77,6 +113,24 @@ $s = New-AzureRmAutomationSchedule -ResourceGroupName mygroup -AutomationAccount
 
 New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -AutomationAccountName $aa -Schedule $s -Windows -AzureVMResourceId $azureVMIdsW -NonAzureComputer $nonAzurecomputers -Duration (New-TimeSpan -Hours 2) -IncludedUpdateClassification Security,UpdateRollup -ExcludedKbNumber KB01,KB02 -IncludedKbNumber KB100
 ```
+
+### <a name="updates-nodeployment"></a>Cenário: Instalação de atualizações sem uma implantação
+
+### <a name="issue"></a>Problema
+
+Quando você registra um computador Windows no Gerenciamento de Atualizações, você pode ver atualizações instalar sem uma implantação.
+
+### <a name="cause"></a>Causa
+
+No Windows, as atualizações são instaladas automaticamente assim que elas estão disponíveis. Isso pode causar confusão se você não agendou uma atualização para ser implantada no computador.
+
+### <a name="resolution"></a>Resolução
+
+A chave do registro do `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU` Windows, por padrão, é "4"- **baixar e instalar automaticamente**.
+
+Para clientes Gerenciamento de Atualizações, é recomendável definir essa chave como "3"- **download automático, mas não instalar automaticamente**.
+
+Para obter mais informações, consulte [Configurando atualizações automáticas](https://docs.microsoft.com/en-us/windows/deployment/update/waas-wu-settings#configure-automatic-updates).
 
 ### <a name="nologs"></a>Cenário: Os computadores não aparecem no portal em Gerenciamento de Atualizações
 
@@ -113,7 +167,7 @@ Você pode ter definido uma cota em seu espaço de trabalho que foi atingido e p
 
 * Se as etapas acima não resolverem o problema, siga as etapas em [implantar um Hybrid runbook Worker do Windows](../automation-windows-hrw-install.md) para reinstalar o Hybrid Worker para Windows ou [implantar um Hybrid runbook Worker do Linux](../automation-linux-hrw-install.md) para Linux.
 
-* Em seu espaço de trabalho, execute a consulta a seguir. Se você vir o resultado `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` , terá uma cota definida em seu espaço de trabalho que foi atingido e parou os dados de serem salvos. Em seu espaço de trabalho, navegue até **uso e custos** > estimados**Gerenciamento de volume de dados** e verifique sua cota ou remova a cota que você tem.
+* Em seu espaço de trabalho, execute a consulta a seguir. Se você vir o resultado `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` , terá uma cota definida em seu espaço de trabalho que foi atingido e parou os dados de serem salvos. Em seu espaço de trabalho, navegue até >  **uso e custos estimados** **Gerenciamento de volume de dados** e verifique sua cota ou remova a cota que você tem.
 
   ```loganalytics
   Operation
@@ -242,6 +296,7 @@ Clique duas vezes na exceção exibida em vermelho para ver a mensagem de exceç
 |`0x8024001E`| A operação de atualização não foi concluída porque o serviço ou o sistema estava sendo desligado.|
 |`0x8024002E`| Windows Update serviço está desabilitado.|
 |`0x8024402C`     | Se você estiver usando um servidor WSUS, verifique se os valores do registro para `WUServer` e `WUStatusServer` sob a chave do registro `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` têm o servidor WSUS correto.        |
+|`0x80072EE2`|Problema de conectividade de rede ou problema de comunicação com um servidor WSUS configurado. Verifique as configurações do WSUS e verifique se ele pode ser acessado do cliente.|
 |`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it. (Exception from HRESULT: 0x80070422)`     | Verifique se o serviço Windows Update (wuauserv) está em execução e não está desabilitado.        |
 |Qualquer outra exceção genérica     | Faça uma pesquisa na Internet para as soluções possíveis e trabalhe com o suporte de TI local.         |
 
@@ -298,7 +353,31 @@ Se você não conseguir resolver um problema de patch, faça uma cópia do segui
 /var/opt/microsoft/omsagent/run/automationworker/omsupdatemgmt.log
 ```
 
-### <a name="other"></a>Cenário: Meu problema não está listado acima
+## <a name="patches-are-not-installed"></a>Os patches não estão instalados
+
+### <a name="machines-do-not-install-updates"></a>Os computadores não instalam atualizações
+
+* Tente executar as atualizações diretamente no computador. Se não for possível atualizar o computador, confira a [lista de possíveis erros no guia de solução de problemas](https://docs.microsoft.com/azure/automation/troubleshoot/update-management#hresult).
+* Se as atualizações são executadas localmente, tente remover e reinstalar o agente no computador seguindo as instruções em ["Remover uma VM do Gerenciamento de Atualizações"](https://docs.microsoft.com/azure/automation/automation-update-management#remove-a-vm-from-update-management).
+
+### <a name="i-know-updates-are-available-but-they-dont-show-as-needed-on-my-machines"></a>Sei que as atualizações estão disponíveis, mas elas não são mostradas conforme necessário em meus computadores
+
+* Normalmente, isso acontece quando os computadores estão configurados para baixar atualizações do WSUS/SCCM, mas o WSUS/SCCM não aprovou as atualizações.
+* Você pode verificar se os computadores estão configurados para WSUS/SCCM [fazendo referência cruzada da chave do Registro "UseWUServer" com as chaves do Registro da seção "Configurar atualizações automáticas editando o registro" deste documento](https://support.microsoft.com/help/328010/how-to-configure-automatic-updates-by-using-group-policy-or-registry-s)
+
+### <a name="updates-show-as-installed-but-i-cant-find-them-on-my-machine"></a>**As atualizações aparecem como instaladas, mas não as encontro em meu computador**
+
+* Normalmente, as atualizações são substituídas por outras atualizações. Para obter mais informações, confira ["A atualização foi substituída” no guia Solução de Problemas do Windows Update](https://docs.microsoft.com/windows/deployment/update/windows-update-troubleshooting#the-update-is-not-applicable-to-your-computer)
+
+### <a name="installing-updates-by-classification-on-linux"></a>**Instalando atualizações por classificação no Linux**
+
+* Implantar atualizações no Linux por classificação (“Atualizações críticas e de segurança”) tem limitações importantes, especialmente no CentOS. Essas [limitações estão documentadas na página de visão geral do Gerenciamento de Atualizações](https://docs.microsoft.com/azure/automation/automation-update-management#linux-2)
+
+### <a name="kb2267602-is-consistently--missing"></a>**KB2267602 está consistentemente ausente**
+
+* KB2267602 é a [atualização de definição do Windows Defender](https://www.microsoft.com/wdsi/definitions). É atualizado diariamente.
+
+## <a name="other"></a>Cenário: Meu problema não está listado acima
 
 ### <a name="issue"></a>Problema
 

@@ -7,18 +7,18 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5194bdcd5b77b0527ccdefc1af85bf03bdac2cab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a99237ec52d302dbb7fc3914c6abfff5fecf4523
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938170"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962747"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Como obter destaque no AppSource e no Azure Marketplace
 
 O Azure Marketplace e AppSource têm seções de **aplicativos em destaque**, nas quais você pode colocar seu aplicativo nessa condição:
 
-* Primeiro, se tiver uma oferta de AVALIAÇÃO ou de TRANSAÇÃO, você poderá usar seu benefício de "promoção de categoria" por meio de benefícios do Go-to-Market.
+* Primeiro, se você tiver uma oferta de avaliação ou de transação, poderá usar o benefício de "promoção de categoria" por meio dos [benefícios do Marketplace comercial](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
 * Em segundo lugar, examine a lista de práticas recomendadas e os critérios abaixo para obter uma vaga.
 
 O algoritmo de seleção de aplicativos em destaque gera uma pontuação atribuída a um aplicativo pela Microsoft, assim como a pontuação de crédito de uma pessoa nos EUA.  A seleção semanal de aplicativos em destaque se baseará em um cálculo de desempenho do aplicativo e do serviço.
@@ -44,7 +44,7 @@ O suporte GTM também inclui uma biblioteca completa de modelos de autoajuda, co
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais sobre os serviços GTM do marketplace, acesse [serviços Go-to-market](https://partner.microsoft.com/reach-customers/gtm).
+Saiba mais sobre os [benefícios do seu Marketplace comercial](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
 
 Faça logon no [Portal do Cloud Partner](https://cloudpartner.azure.com) para criar e configurar a oferta.
 

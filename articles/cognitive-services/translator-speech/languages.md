@@ -3,20 +3,20 @@ title: Idiomas com suporte – API de Tradução de Fala
 titlesuffix: Azure Cognitive Services
 description: Exibir idiomas com suporte da API de Tradução de Fala.
 services: cognitive-services
-author: swmachan
+author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-speech
 ms.topic: conceptual
 ms.date: 3/5/2018
-ms.author: swmachan
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ed8f693e4dc0344a0117ae9d6992b925992ef0c4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2f5b48f2dbc2d109c03613676c6a119fd971603b
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446920"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965437"
 ---
 # <a name="languages-supported-by-the-translator-speech-api"></a>Idiomas com suporte da API de Tradução de Fala
 
@@ -27,7 +27,7 @@ Os idiomas a seguir são compatíveis com tradução de fala. Se ambos os idioma
 | Idioma de fala    |
 |:----------- |
 | Árabe (padrão moderno)      |
-| Português (Brasil)     |
+| Português do Brasil     |
 | Chinês (mandarim)      |
 | Inglês      |
 | Francês      |
@@ -43,13 +43,13 @@ A API de Tradução de Fala dá suporte aos seguintes idiomas como destino para 
 |:----------- |:-------------:|
 | Africâner      | `af`          |
 | Árabe       | `ar`          |
-| Bangla      | `bn`          |
+| Bengali      | `bn`          |
 | Bósnio (latim)      | `bs`          |
 | Búlgaro      | `bg`          |
 | Cantonês (tradicional)      | `yue`          |
 | Catalão      | `ca`          |
-| Chinês (simplificado)      | `zh-Hans`          |
-| Chinês (tradicional)      | `zh-Hant`          |
+| Chinês Simplificado      | `zh-Hans`          |
+| Chinês tradicional      | `zh-Hant`          |
 | Croata      | `hr`          |
 | Tcheco      | `cs`          |
 | Dinamarquês      | `da`          |
@@ -71,7 +71,7 @@ A API de Tradução de Fala dá suporte aos seguintes idiomas como destino para 
 | Indonésio      | `id`          |
 | Italiano      | `it`          |
 | Japonês      | `ja`          |
-| Suaíli      | `sw`          |
+| Quissuaíle      | `sw`          |
 | Klingon      | `tlh`          |
 | Klingon (plqaD)      | `tlh-Qaak`          |
 | Coreano      | `ko`          |
@@ -97,7 +97,7 @@ A API de Tradução de Fala dá suporte aos seguintes idiomas como destino para 
 | Taitiano      | `ty`          |
 | Tâmil      | `ta`          |
 | Tailandês      | `th`          |
-| Tongan      | `to`          |
+| Tonganês      | `to`          |
 | Turco      | `tr`          |
 | Ucraniano      | `uk`          |
 | Urdu      | `ur`          |

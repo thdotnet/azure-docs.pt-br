@@ -3,20 +3,20 @@ title: Introdução à API de reconhecimento de Fala do Bing usando REST | Micro
 titlesuffix: Azure Cognitive Services
 description: Use REST para acessar a API de reconhecimento de Fala nos Serviços Cognitivos da Microsoft para converter o áudio falado em texto.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: ead4026ecec4878c69bc21a9ebc989eaf3d69a13
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e962a12c6c27737f95e78e80036e51bac41147d5
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515144"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965780"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Início Rápido: Usar a API REST de reconhecimento de Fala do Bing
 
@@ -64,16 +64,16 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 
 Alguns exemplos de URIs de serviço estão listados na tabela a seguir.
 
-| Modo de reconhecimento  | Linguagem | Formato da saída | URI de serviço |
+| Modo de reconhecimento  | Idioma | Formato de saída | URI de serviço |
 |---|---|---|---|
-| `interactive` | pt-BR | Padrão | https:\//speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=pt-BR |
-| `conversation` | en-US | Detalhado | https:\//speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed |
+| `interactive` | pt-BR | Padrão | https:\//Speech.Platform.Bing.com/Speech/Recognition/Interactive/cognitiveservices/v1?language=pt-br |
+| `conversation` | en-US | Detalhado | https:\//Speech.Platform.Bing.com/Speech/Recognition/Conversation/cognitiveservices/v1?language=en-US&Format=detailed |
 | `dictation` | fr-FR | Simples | https:\//speech.platform.bing.com/speech/recognition/dictation/cognitiveservices/v1?language=fr-FR&format=simple |
 
 > [!NOTE]
 > O URI do serviço é necessário somente quando seu aplicativo usa APIs REST para chamar o serviço de reconhecimento de fala. Se você usar uma das [bibliotecas de cliente](GetStartedClientLibraries.md),  normalmente não precisa saber qual URI é usado. As bibliotecas de cliente podem usar outro serviço URIs, que são aplicáveis apenas para uma biblioteca de cliente específico. Para obter mais informações, consulte a biblioteca de cliente de sua escolha.
 
-### <a name="request-headers"></a>Cabeçalhos da solicitação
+### <a name="request-headers"></a>Cabeçalhos de solicitação
 
 Os campos a seguir devem ser definidos no cabeçalho da solicitação:
 

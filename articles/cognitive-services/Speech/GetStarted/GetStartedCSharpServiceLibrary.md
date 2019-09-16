@@ -3,20 +3,20 @@ title: Introdução à API de Reconhecimento de Fala da Microsoft usando a bibli
 titlesuffix: Azure Cognitive Services
 description: Use a biblioteca de serviço de reconhecimento de Fala do Bing para converter o idioma falado em texto.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 0f445d1fff48ee7a04c0b1c1d64c808f87d824b7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 71c3e471a8844eb6c6b70921e40c94338a084a8b
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515219"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965852"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-service-library-in-c35-for-net-windows"></a>Início Rápido: Usar a biblioteca de serviço de reconhecimento de Fala do Bing em C&#35; para o .NET no Windows
 
@@ -120,7 +120,7 @@ Após a conclusão terminar, a tarefa retornada por RecognizeAsync termina. O ú
 
 Esse evento é chamado sempre que o serviço de fala prevê o que você pode estar dizendo, mesmo antes de terminar de falar (se você usar `MicrophoneRecognitionClient`) ou terminou de enviar dados (se você usar `DataRecognitionClient`). Você pode assinar o evento usando `SpeechClient.SubscribeToPartialResult()`. Ou você pode usar o método de assinatura de eventos genéricos `SpeechClient.SubscribeTo<RecognitionPartialResult>()`.
 
-**Formato de retorno** | DESCRIÇÃO |
+**Formato de retorno** | Descrição |
 ------|------
 **LexicalForm** | Este formulário é ideal para uso por aplicativos que precisam de resultados de reconhecimento de fala bruto, não processados.
 **DisplayText** | A frase reconhecida com normalização de texto inverso, letras maiúsculas, pontuação e mascaramento de obscenidades aplicado. Obscenidades são mascaradas com asteriscos após o caractere inicial, por exemplo, "d\*\*\*." Este formulário é ideal para uso por aplicativos que exibem os resultados de reconhecimento de fala a um usuário.
@@ -131,7 +131,7 @@ Esse evento é chamado sempre que o serviço de fala prevê o que você pode est
 #### <a name="result-event"></a>Evento de resultado
 Quando você termina de falar (no `ShortPhrase` modo), este evento é chamado. Você receberá n melhores opções para o resultado. No `LongDictation` modo, o evento pode ser chamado várias vezes, com base em onde o servidor indica a pausa da sentença. Você pode assinar o evento usando `SpeechClient.SubscribeToRecognitionResult()`. Ou você pode usar o método de assinatura de eventos genéricos `SpeechClient.SubscribeTo<RecognitionResult>()`.
 
-**Formato de retorno** | DESCRIÇÃO |
+**Formato de retorno** | Descrição |
 ------|------|
 **RecognitionStatus** | O status em como o reconhecimento foi produzido. Por exemplo, foi gerado como resultado de reconhecimento bem-sucedido ou como resultado para cancelar a conexão, etc.
 **Frases** | O conjunto de frases reconhecidas n-melhor com confiança o reconhecimento.

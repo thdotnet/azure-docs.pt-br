@@ -3,20 +3,20 @@ title: Como escolher o modo de reconhecimento de Fala do Bing | Microsoft Docs
 titlesuffix: Azure Cognitive Services
 description: Como escolher o melhor modo de reconhecimento na Fala do Bing.
 services: cognitive-services
-author: zhouwangzw
-manager: wolfma
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: zhouwang
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 99e69691d9904285ecff356523813b426c98fca2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1860acb571c837a5eb4c75be69a96d1b22682118
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515013"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70965684"
 ---
 # <a name="bing-speech-recognition-modes"></a>Modos de reconhecimento da Fala do Bing
 
@@ -24,7 +24,7 @@ ms.locfileid: "60515013"
 
 As APIs de Conversão de Fala em Texto do Bing dão suporte a vários modos de reconhecimento de fala. Escolha o modo que produz os melhores resultados de reconhecimento para seu aplicativo.
 
-| Modo | DESCRIÇÃO |
+| Modo | Descrição |
 |---|---|
 | *interativo* | Reconhecimento de "comando e controle" para cenários de aplicativo do usuário interativo. Os usuários falam frases curtas planejadas como comandos para um aplicativo. |
 | *ditado* | Reconhecimento contínuo para cenários de ditado. Os usuários falam sentenças mais longas do que o exibido como texto. Os usuários adotam um estilo de fala mais formal. |

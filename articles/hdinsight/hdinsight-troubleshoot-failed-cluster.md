@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 4e589e694c728cfbd2237a138ad9a2f2bf2342dd
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 8ec081a758096298036efacfe1b0e6d62ed00cbd
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900166"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70961901"
 ---
 # <a name="troubleshoot-a-slow-or-failing-job-on-a-hdinsight-cluster"></a>Solucionar problemas de um trabalho lento ou com falha em um cluster HDInsight
 
@@ -80,7 +80,7 @@ Cada cluster HDInsight baseia-se em vários serviços do Azure e em softwares de
 
 O Apache Ambari fornece gerenciamento e monitoramento de um cluster HDInsight com uma interface do usuário da Web e uma API REST. O Ambari está incluído nos clusters HDInsight com base em Linux. Selecione o **Painel do Cluster** na página do HDInsight no Portal do Azure.  Selecione o **painel do cluster HDInsight** para abrir a interface de usuário do Ambari e insira as credenciais de logon do cluster.  
 
-![Interface do usuário do Ambari](./media/hdinsight-troubleshoot-failed-cluster/ambari-ui.png)
+![Interface do usuário do Ambari](./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-overview.png)
 
 Para abrir uma lista de modos de exibição do serviço, selecione **Modos de exibição do Ambari** na página do Portal do Azure.  Essa lista depende de quais bibliotecas estão instaladas. Por exemplo, você poderá ver o Gerenciador de Fila do YARN, o Modo de Exibição do Hive e o Modo de Exibição do Tez.  Selecione um link de serviço para ver informações de configuração e serviço.
 
@@ -127,7 +127,7 @@ curl -u admin:{HTTP PASSWD} https://{CLUSTERNAME}.azurehdinsight.net/templeton/v
 
 O Ambari exibe um alerta que mostra os hosts em que o serviço WebHCat está inativo. Você pode tentar fazer backup do serviço WebHCat reiniciando o serviço em seu host.
 
-![Reiniciar o Servidor WebHCat](./media/hdinsight-troubleshoot-failed-cluster/restart-webhcat.png)
+![Reiniciar o Servidor WebHCat](./media/hdinsight-troubleshoot-failed-cluster/restart-webhcat-server.png)
 
 Se um servidor WebHCat ainda não aparecer, verifique o log de operações de mensagens de falha. Para obter mais informações, verifique os arquivos `stderr` e `stdout` referenciados no nó.
 
@@ -176,7 +176,7 @@ No nível do YARN, há dois tipos de tempos limite:
 
     A imagem a seguir mostra a fila joblauncher com um uso excessivo de 714.4%. Isso é aceitável desde que ainda haja capacidade livre para ser emprestada na fila padrão. No entanto, quando o cluster é totalmente utilizado e a memória do YARN está na capacidade máxima de 100%, novos trabalhos devem aguardar, fazendo com os tempos limite expirem.
 
-    ![Fila de joblauncher](./media/hdinsight-troubleshoot-failed-cluster/joblauncher-queue.png)
+    ![Fila de joblauncher](./media/hdinsight-troubleshoot-failed-cluster/hdi-job-launcher-queue.png)
 
     Há duas maneiras de resolver esse problema: reduzindo a velocidade de envio de novos trabalhos ou aumentando a velocidade de consumo de trabalhos antigos, aumentando o cluster.
 
@@ -208,7 +208,7 @@ Para diagnosticar esses problemas:
 
 A página da **Pilha e Versão** da interface de usuário do Ambari fornece informações sobre configuração dos serviços de cluster e histórico de versão do serviço.  Versões incorretas da biblioteca de serviço do Hadoop podem ser uma causa de falha no cluster.  Na interface de usuário do Ambari, selecione o menu **Admin** e, em seguida, **Pilhas e Versões**.  Selecione a guia **Versões** na página para ver as informações de versão do serviço:
 
-![Pilha e Versões](./media/hdinsight-troubleshoot-failed-cluster/stack-versions.png)
+![Pilha e Versões](./media/hdinsight-troubleshoot-failed-cluster/ambari-stack-versions.png)
 
 ## <a name="step-5-examine-the-log-files"></a>Etapa 5: Examinar os arquivos de log
 
@@ -232,7 +232,7 @@ A interface do usuário do HDInsight Ambari inclui uma série de seções de **L
 
 Por exemplo, para logs HDFS:
 
-![Links rápidos do Ambari para Arquivos de log](./media/hdinsight-troubleshoot-failed-cluster/quick-links.png)
+![Links rápidos do Ambari para Arquivos de log](./media/hdinsight-troubleshoot-failed-cluster/apache-ambari-quick-links.png)
 
 ### <a name="view-hadoop-generated-log-files"></a>Exibir arquivos de log gerados no Hadoop
 

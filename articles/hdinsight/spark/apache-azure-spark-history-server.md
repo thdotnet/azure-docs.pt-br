@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 9ba03f6b1e658e08c3d07d7ccb5e2a99e96fe69c
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: fad2c83138f211e83e9462182d33f6169cbdb833
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736464"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968049"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Use o Apache Spark History Server estendido para depurar e diagnosticar aplicativos do Apache Spark
 
@@ -47,23 +47,23 @@ Selecione a ID do trabalho e clique em **dados** no menu de ferramenta para obte
 
 + Verifique as **entradas**, **saídas**, e **operações de tabela** selecionando as guias separadamente.
 
-    ![Guias de dados](./media/apache-azure-spark-history-server/sparkui-data-tabs.png)
+    ![Guias de dados](./media/apache-azure-spark-history-server/apache-spark-data-tabs.png)
 
 + Copiar todas as linhas clicando no botão **cópia**.
 
-    ![Cópia de dados](./media/apache-azure-spark-history-server/sparkui-data-copy.png)
+    ![Cópia de dados](./media/apache-azure-spark-history-server/apache-spark-data-copy.png)
 
 + Salvar todos os dados como arquivo CSV clicando no botão **csv**.
 
-    ![Salvar Dados](./media/apache-azure-spark-history-server/sparkui-data-save.png)
+    ![Salvar Dados](./media/apache-azure-spark-history-server/apache-spark-data-save.png)
 
 + Pesquisa digitando palavras-chave no campo **pesquisa**, o resultado da pesquisa será exibida imediatamente.
 
-    ![Pesquisa de dados](./media/apache-azure-spark-history-server/sparkui-data-search.png)
+    ![Pesquisa de dados](./media/apache-azure-spark-history-server/apache-spark-data-search.png)
 
 + Clique no cabeçalho de coluna para classificar a tabela, clique no sinal de adição para expandir uma linha para mostrar mais detalhes ou clique no sinal de menos para recolher uma linha.
 
-    ![Tabela de dados](./media/apache-azure-spark-history-server/sparkui-data-table.png)
+    ![Tabela de dados](./media/apache-azure-spark-history-server/apache-spark-data-table.png)
 
 + Baixar um único arquivo clicando no botão **Download parcial** que coloque à direita, em seguida, o arquivo selecionado será baixado para o local, se o arquivo não existir mais, ele abrirá uma nova guia para mostrar as mensagens de erro.
 
@@ -75,7 +75,7 @@ Selecione a ID do trabalho e clique em **dados** no menu de ferramenta para obte
 
 + Clique em navegar o número abaixo da tabela de páginas quando muito muitas linhas para exibir em uma única página. 
 
-    ![Página de dados](./media/apache-azure-spark-history-server/sparkui-data-page.png)
+    ![Página de dados](./media/apache-azure-spark-history-server/apache-spark-data-page.png)
 
 + Passe o mouse sobre o ponto de interrogação ao lado de dados para mostrar a dica de ferramenta, ou clique no ponto de interrogação para obter mais informações.
 
@@ -93,7 +93,7 @@ Selecione o ID do trabalho e clique em **dados** no menu de ferramenta para obte
 
 + Por padrão, ele mostrará todos os trabalhos, e ele pode ser filtrado por **ID do trabalho**.
 
-    ![ID do trabalho de gráfico](./media/apache-azure-spark-history-server/sparkui-graph-jobid.png)
+    ![ID do trabalho de gráfico](./media/apache-azure-spark-history-server/apache-spark-graph-jobid.png)
 
 + Por padrão, **Progresso** é selecionado, o usuário pode verificar o fluxo de dados selecionando **Leitura / Escrita** na lista suspensa de **Exibição**.
 
@@ -211,15 +211,15 @@ Para reverter para a versão de comunidade, execute as seguintes etapas:
 5. A propriedade define **falsos** agora.
 6. Clique em **Salvar** para salvar a configuração.
 
-    ![desativa o recurso](./media/apache-azure-spark-history-server/sparkui-turn-off.png)
+    ![desativa o recurso](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
 
 7. Clique em **Spark2** no painel à esquerda, em **resumo** , clique em **servidor de histórico de Spark2**.
 
-    ![reiniciar servidor1](./media/apache-azure-spark-history-server/sparkui-restart-1.png) 
+    ![reiniciar servidor1](./media/apache-azure-spark-history-server/apache-spark-restart1.png) 
 
 8. Reinicie o servidor de histórico clicando **reinicie** de **Spark2 History Server**.
 
-    ![reiniciar servidor2](./media/apache-azure-spark-history-server/sparkui-restart-2.png)  
+    ![reiniciar servidor2](./media/apache-azure-spark-history-server/apache-spark-restart2.png)  
 
 9. Atualizar a web de servidor de histórico do Spark da interface do usuário, ele será revertido para a versão da comunidade.
 
@@ -236,7 +236,7 @@ Se você encontrar erros de servidor de histórico, siga as etapas para fornecer
 
 3. Forneça o título e descrição do erro, arraste o arquivo zip para o campo de edição, e clique em **enviar novo problema**.
 
-    ![problema de arquivo](./media/apache-azure-spark-history-server/sparkui-file-issue.png)
+    ![problema de arquivo](./media/apache-azure-spark-history-server/apache-spark-file-issue.png)
 
 
 ### <a name="3-upgrade-jar-file-for-hotfix-scenario"></a>3. Atualizar o arquivo jar para o cenário de hotfix
@@ -314,7 +314,7 @@ Se você quiser atualizar com o hotfix, use o script a seguir, que atualizará e
    + Verificar **Cabeçalho** e **trabalho**.
    + **Parâmetros**: definir o parâmetros seguem o uso do bash.
 
-     ![carregar log ou atualização hotfix](./media/apache-azure-spark-history-server/sparkui-upload2.png)
+     ![carregar log ou atualização hotfix](./media/apache-azure-spark-history-server/apache-spark-upload1.png)
 
 
 ## <a name="known-issues"></a>Problemas conhecidos

@@ -9,12 +9,12 @@ ms.service: logic-apps
 ms.suite: integration
 ms.topic: article
 ms.date: 03/29/2019
-ms.openlocfilehash: bb1443afa14f2a23b807af52ab8fef6ac41ea200
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: HT
+ms.openlocfilehash: d6cf19a07829afea924d3d799b1309cfc5f6329f
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934028"
+ms.locfileid: "70959963"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Autenticar e acessar os recursos com identidades gerenciadas em Aplicativos Lógicos do Azure
 
@@ -23,7 +23,7 @@ Para acessar recursos em outros locatários do Azure AD (Azure Active Directory)
 > [!NOTE]
 > Seu aplicativo lógico pode usar identidades gerenciadas somente com conectores que dão suporte a identidades gerenciadas. Atualmente, somente o conector HTTP dá suporte a identidades gerenciadas.
 >
-> No momento, pode haver até 10 fluxos de trabalho de aplicativo lógico com identidades gerenciadas atribuídas pelo sistema em cada assinatura do Azure.
+> No momento, você pode ter até 100 fluxos de trabalho de aplicativo lógico com identidades gerenciadas atribuídas pelo sistema em cada assinatura do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -168,7 +168,7 @@ Depois de configurar o aplicativo lógico com uma identidade gerenciada atribuí
    > 
    > Na propriedade **Público-alvo**, o valor da ID do recurso deve corresponder exatamente ao que o Azure Active Directory espera, incluindo todas as barras à direita necessárias. 
    > Você pode encontrar esses valores de ID do recurso nesta [tabela que descreve os serviços do Azure que oferecem suporte ao Azure Active Directory](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). 
-   > Por exemplo, se você estiver usando a ID de recurso do Azure Resource Manager, o URI deverá ter uma barra à direita.
+   > Por exemplo, se você estiver usando a ID de recurso Azure Resource Manager, verifique se o URI tem uma barra à direita.
 
 1. Continue criando o aplicativo lógico da maneira desejada.
 

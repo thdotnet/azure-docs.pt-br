@@ -3,20 +3,20 @@ title: API de Conversão de Texto em Fala do Serviço de Fala da Microsoft | Mic
 titlesuffix: Azure Cognitive Services
 description: Use a API de conversão de texto em fala para proporcionar a conversão de texto em fala em tempo real em uma variedade de vozes e idiomas
 services: cognitive-services
-author: priyaravi20
-manager: yanbo
+author: nitinme
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: priyar
+ms.author: nitinme
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: a046bec5d81d828d88716d31c84e9cbcdcea1a08
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ee9b0b47fb88cba948bc06db6eb83fe9c076fe40
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60515432"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70966867"
 ---
 # <a name="bing-text-to-speech-api"></a>API de conversão de texto em fala do Bing
 
@@ -41,9 +41,9 @@ Content-Length: 0
 
 As informações de cabeçalho necessárias para o token de acesso são as seguintes.
 
-NOME| Formatar | DESCRIÇÃO
+Nome| Formatar | Descrição
 ----|----|----
-Ocp-Apim-Subscription-Key | ASCII | Sua chave de assinatura
+Ocp-Apim-Subscription-Key | ASCII | A chave de sua assinatura
 
 O serviço de token retorna o token de acesso do JWT como `text/plain`. Em seguida, o JWT é passado como `Base64 access_token` para o ponto de extremidade de fala como um cabeçalho de autorização prefixado com a cadeia de caracteres `Bearer`. Por exemplo:
 
@@ -60,7 +60,7 @@ Os clientes devem usar o ponto de extremidade a seguir para acessar o serviço d
 
 A tabela a seguir mostra os cabeçalhos HTTP que são usados para solicitações de síntese de voz.
 
-Cabeçalho |Value |Comentários
+Cabeçalho |Valor |Comentários
 ----|----|----
 Content-Type | application/ssml+xml | O tipo do conteúdo de entrada.
 X-Microsoft-OutputFormat | **1.** ssml-16khz-16bit-mono-tts <br> **2.** raw-16khz-16bit-mono-pcm <br>**3.** audio-16khz-16kbps-mono-siren <br> **4.** riff-16khz-16kbps-mono-siren <br> **5.** riff-16khz-16bit-mono-pcm <br> **6.** audio-16khz-128kbitrate-mono-mp3 <br> **7.** audio-16khz-64kbitrate-mono-mp3 <br> **8.** audio-16khz-32kbitrate-mono-mp3 | O formato de áudio de saída.
@@ -122,7 +122,7 @@ Content-Length: 0
 
 ### <a name="ErrorResponse"></a>Respostas de erro
 
-Erro | DESCRIÇÃO
+Erro | Descrição
 ----|----
 HTTP/400 Bad Request | Um parâmetro obrigatório está faltando, é vazio ou nulo, ou o valor passado como um parâmetro obrigatório ou opcional é inválido. Um motivo para obter a resposta “inválida” é passar um valor de cadeia de caracteres maior do que o comprimento permitido. Inclui uma breve descrição do parâmetro problemático.
 HTTP/401 Unauthorized | A solicitação não foi autorizada.

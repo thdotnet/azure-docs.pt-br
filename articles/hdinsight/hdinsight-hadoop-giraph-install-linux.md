@@ -1,18 +1,18 @@
 ---
-title: Instalar e usar o Giraph no HDInsight do Azure
-description: Saiba como instalar o Giraph em clusters HDInsight usando ações de script. Você pode usar o Giraph para fazer o gráfico de processamento no Apache Hadoop na nuvem do Azure.
+title: Instalar e usar o O giraph no Azure HDInsight
+description: Saiba como instalar o O giraph em clusters HDInsight usando ações de script. Você pode usar O giraph para fazer o processamento de grafo no Apache Hadoop na nuvem do Azure.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.openlocfilehash: aa13d8dfc65f020f3f27183423913933cd0b9404
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f1ca536ffa2166df4ef6cf51654b7b410e72ea66
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64697595"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962046"
 ---
 # <a name="install-apache-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Instalar o Apache Giraph nos clusters Hadoop do HDInsight e usar o Giraph para processar grafos em grande escala
 
@@ -111,7 +111,7 @@ Quando o cluster tiver sido criado, use as etapas a seguir para executar o exemp
 
     Desenhados e utilizando o valor (ou peso) como distância entre os objetos, os dados acima podem se parecer com o diagrama a seguir:
 
-    ![tiny_graph.txt Desenhado como círculos com linhas de distância variável entre](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph.png)
+    ![tiny_graph.txt Desenhado como círculos com linhas de distância variável entre](./media/hdinsight-hadoop-giraph-install-linux/hdinsight-giraph-graph.png)
 
 3. Para salvar o arquivo, use **Ctrl + X**, em seguida, **Y** e, finalmente, **Enter** para aceitar o nome de arquivo.
 
@@ -143,7 +143,7 @@ Quando o cluster tiver sido criado, use as etapas a seguir para executar o exemp
 
     Para obter mais informações sobre esses e outros parâmetros usados com exemplos do Giraph, consulte o [Guia de início rápido do Giraph](https://giraph.apache.org/quick_start.html).
 
-6. Depois que o trabalho foi concluído, os resultados são armazenados na **/example/out/shortestpaths** directory. Os nomes de arquivo saída começam com **part-m-** e terminam com um número indicando o primeiro, segundo etc. arquivo. Use o comando a seguir para exibir a saída:
+6. Depois que o trabalho for concluído, os resultados serão armazenados no diretório **/example/out/shortestpaths** . Os nomes de arquivo saída começam com **part-m-** e terminam com um número indicando o primeiro, segundo etc. arquivo. Use o comando a seguir para exibir a saída:
 
     ```bash
     hdfs dfs -text /example/output/shortestpaths/*
@@ -161,7 +161,7 @@ Quando o cluster tiver sido criado, use as etapas a seguir para executar o exemp
 
     Visualizando esses dados, você pode verificar os resultados percorrendo os caminhos mais curtos entre a ID 1 e todos os outros objetos. Observe que o caminho mais curto entre a ID 1 e a ID 4 é 5. Esse valor é a distância total entre <span style="color:orange">ID 1 e 3</span> e, em seguida, entre <span style="color:red">ID 3 e 4</span>.
 
-    ![Desenho dos objetos como círculos com os percursos mais curtos entre](./media/hdinsight-hadoop-giraph-install-linux/giraph-graph-out.png)
+    ![Desenho dos objetos como círculos com os percursos mais curtos entre](./media/hdinsight-hadoop-giraph-install-linux/hdinsight-giraph-graph-out.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

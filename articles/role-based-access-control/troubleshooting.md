@@ -15,12 +15,12 @@ ms.date: 08/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: c3ca873cb4dd49d77ba818b3d05c3aa41e89276f
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.openlocfilehash: eb7c2cb4a20c89f3a54f23e354d56e5dc3711ef0
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69982715"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967100"
 ---
 # <a name="troubleshoot-rbac-for-azure-resources"></a>Solução de problemas com o RBAC para recursos do Azure
 
@@ -175,13 +175,15 @@ Se você não conseguir acessar nenhum desses blocos, solicite ao administrador 
 
 ## <a name="azure-functions-and-write-access"></a>Azure Functions e acesso para gravação
 
-Alguns recursos do [Azure Functions](../azure-functions/functions-overview.md) exigem acesso de gravação. Por exemplo, se uma função de [leitor](built-in-roles.md#reader) for atribuída a um usuário, ela não poderá exibir as funções em um aplicativo de funções. O portal exibirá **(Sem acesso)**.
+Alguns recursos do [Azure Functions](../azure-functions/functions-overview.md) exigem acesso de gravação. Por exemplo, se uma função de [leitor](built-in-roles.md#reader) for atribuída a um usuário, ela não poderá exibir as funções em um aplicativo de funções. O portal exibirá **(Sem acesso)** .
 
 ![Aplicativos de funções sem acesso](./media/troubleshooting/functionapps-noaccess.png)
 
 Um leitor pode clicar na guia **Recursos da plataforma** e, em seguida, clicar em **Todas as configurações** para exibir algumas configurações relacionadas a um aplicativo de funções (semelhante a um aplicativo Web), mas não pode modificar essas configurações. Para acessar esses recursos, você precisará da função de [colaborador](built-in-roles.md#contributor) .
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Gerenciar o acesso aos recursos do Azure usando o RBAC e o portal do Azure](role-assignments-portal.md)
-* [Exibir logs de atividades para alterações de RBAC para recursos do Azure](change-history-report.md)
+
+- [Solucionar problemas de usuários convidados](role-assignments-external-users.md#troubleshoot)
+- [Gerenciar o acesso aos recursos do Azure usando o RBAC e o portal do Azure](role-assignments-portal.md)
+- [Exibir logs de atividades para alterações de RBAC para recursos do Azure](change-history-report.md)
 

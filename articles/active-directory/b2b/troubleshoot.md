@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4185d29ff1770ed9549b4b63a2e5da579bcf054f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f91ddee8668316df69c98ed14fbcabcb06b6da82
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65767167"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70983389"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Solução de problemas de colaboração B2B do Azure Active Directory
 
@@ -35,7 +35,7 @@ Esse recurso pode ser habilitado usando a configuração 'ShowPeoplePickerSugges
 
 ## <a name="invitations-have-been-disabled-for-directory"></a>Os convites foram desabilitados para o diretório
 
-Se você receber uma notificação indicando que você não tem permissões para convidar usuários, verifique se a sua conta de usuário tem autorização para convidar usuários externos em Configurações do Usuário:
+Se você for notificado de que não tem permissões para convidar usuários, verifique se sua conta de usuário está autorizada a convidar usuários externos em Azure Active Directory > configurações de usuário > usuários externos > Gerenciar configurações de colaboração externas:
 
 ![Captura de tela mostrando as configurações de usuários externos](media/troubleshoot/external-user-settings.png)
 
@@ -49,7 +49,7 @@ Os erros comuns incluem:
 
 Ao convidar usuários cuja organização está usando o Azure Active Directory onde a conta do usuário específico não existe (por exemplo, o usuário não existe no Azure AD contoso.com). O administrador de contoso.com pode ter uma política em vigor para impedir a criação de usuários. O usuário deve verificar com o administrador para determinar se os usuários externos são permitidos. A administração de usuário externo pode ter que permitir usuários verificados por email em seu domínio (consulte este [artigo](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) sobre como permitir Usuários de Email Verificados).
 
-![Usuários verificados de erro informando que o locatário não permite que o email](media/troubleshoot/allow-email-verified-users.png)
+![Erro informando que o locatário não permite usuários verificados por email](media/troubleshoot/allow-email-verified-users.png)
 
 ### <a name="external-user-does-not-exist-already-in-a-federated-domain"></a>O usuário externo ainda não existe em um domínio federado
 
@@ -78,15 +78,15 @@ Para cumprir as leis de privacidade, nossas APIs não incluem mensagens personal
 
 Se esse cenário for importante para você, suprima nosso email de convite de API e envie-o por meio de um mecanismo de email de sua escolha. Consulte o departamento jurídico de sua organização para verificar se todo email enviado dessa forma também está em conformidade com as leis de privacidade.
 
-## <a name="you-receive-an-aadsts65005-error-when-you-try-to-log-in-to-an-azure-resource"></a>Você receberá um erro de "AADSTS65005" ao tentar fazer logon um recurso do Azure
+## <a name="you-receive-an-aadsts65005-error-when-you-try-to-log-in-to-an-azure-resource"></a>Você recebe um erro "AADSTS65005" ao tentar fazer logon em um recurso do Azure
 
-Um usuário que tem uma conta de convidado não pode fazer logon e está recebendo a mensagem de erro a seguir:
+Um usuário que tem uma conta de convidado não pode fazer logon e está recebendo a seguinte mensagem de erro:
 
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
 
-O usuário tem uma conta de usuário do Azure e é um locatário viral que foi abandonado ou não gerenciado. Além disso, há não globais ou administradores no locatário da empresa.
+O usuário tem uma conta de usuário do Azure e é um locatário viral que foi abandonado ou não gerenciado. Além disso, não há administradores globais ou de empresa no locatário.
 
-Para resolver esse problema, você deve assumir o locatário abandonado. Consulte a [assumir um diretório não gerenciado como administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover). Você também deve acessar o DNS para a internet para o sufixo de domínio em questão para fornecer a evidência direta que você está no controle do namespace. Depois que o locatário é retornado para um estado gerenciado, discuta com o cliente se deixar os usuários e o nome de domínio verificado é a melhor opção para sua organização.
+Para resolver esse problema, você deve assumir o locatário abandonado. Consulte [assumir um diretório não gerenciado como administrador em Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover). Você também deve acessar o DNS voltado para a Internet para o sufixo de domínio em questão a fim de fornecer evidências diretas de que você está no controle do namespace. Depois que o locatário for retornado a um estado gerenciado, discuta com o cliente se deixar os usuários e o nome de domínio verificado é a melhor opção para sua organização.
 
 ## <a name="a-guest-user-with-a-just-in-time-or-viral-tenant-is-unable-to-reset-their-password"></a>Um usuário convidado com um locatário just-in-time ou "viral" não pode redefinir sua senha
 

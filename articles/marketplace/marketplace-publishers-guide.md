@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 58591302280c67dbd0f69ebe0bc47cf95c8bfc18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd6b09a1130e50fae7bd83579a0f176af0b5b9cd
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956753"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70962615"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Guia de publicação do Microsoft Azure Marketplace e AppSource
 
@@ -52,7 +52,7 @@ Comercialize as soluções com vendas adicionais e cruzadas para atender às nec
 
 Obtenha informações sobre o desempenho de suas listagens por meio de insights e análises disponíveis no Marketplace. Obtenha mais informações sobre o desempenho da campanha, pedidos e pagamentos e como maximizar as atividades da campanha para sua solução.
 
-### <a name="marketplace-go-to-market-benefits"></a>Benefícios de entrada no mercado do Marketplace 
+### <a name="commercial-marketplace-benefits"></a>Benefícios do Marketplace comercial 
 
 As novas listagens no Marketplace são qualificadas para um conjunto diversificado de benefícios gratuitos para ajudar os parceiros a expandir os negócios no Marketplace. Esses benefícios se enquadram nas seguintes categorias: 
 
@@ -62,9 +62,9 @@ As novas listagens no Marketplace são qualificadas para um conjunto diversifica
 
 *   Venda conjunta: Comece ou impulsione sua jornada para vender com a Microsoft no Marketplace. Acesse programas e suporte para gerar vendas conjuntas com as equipes da Microsoft.
 
-Após [enviar a solução](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) ao Marketplace, nossa equipe de integração entrará em contato com você para auxiliá-lo na experiência de publicação.  Ver [como criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
+Após [enviar a solução](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) ao Marketplace, nossa equipe de integração entrará em contato com você para auxiliá-lo na experiência de publicação.  Consulte [como criar uma conta do Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações.
 
-Para obter mais informações sobre os benefícios de entrada no mercado da Microsoft e formas de expandir seus negócios no Marketplace, consulte [Serviços de entrada no mercado da Microsoft](https://partner.microsoft.com/reach-customers/gtm).
+Saiba mais sobre os [benefícios do seu Marketplace comercial](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits).
 
 ## <a name="next-steps"></a>Próximas etapas
 

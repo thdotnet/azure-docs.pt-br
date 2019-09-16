@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: 3ff9cfbd312e672fb89afb4838ad9f8aa6574370
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: d31eb9ccb5df9137bebb877cce169cf657113d30
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900029"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967740"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Gerenciar cluster do ML Services no Microsoft Azure HDInsight
 
@@ -31,7 +31,7 @@ Neste artigo, você aprende a gerenciar um cluster existente dos serviços ML no
 
 Você pode habilitar vários usuários simultâneos ao cluster do ML Service no HDInsight adicionando mais usuários ao nó de borda em que a versão da comunidade RStudio é executada. Quando você cria um cluster HDInsight, deve fornecer dois usuários, um usuário HTTP e um usuário SSH:
 
-![Usuários simultâneos 1](./media/r-server-hdinsight-manage/concurrent-users-1.png)
+![Usuários simultâneos 1](./media/r-server-hdinsight-manage/hdi-concurrent-users1.png)
 
 - **Nome de usuário de logon de cluster**: um usuário HTTP para autenticação por meio do gateway de HDInsight que é usado para proteger os clusters HDInsight criados. Esse usuário HTTP é usado para acessar a UI do Apache Ambari, a UI do Apache Hadoop YARN, bem como outros componentes da UI.
 - **Nome de usuário SSH (Secure Shell)** : um usuário SSH para acessar o cluster por meio do secure shell. Esse é um usuário no sistema Linux para todos os nós de cabeçalho, nós de trabalho e nós de borda. Portanto, você pode usar o secure shell para acessar qualquer nó em um cluster remoto.
@@ -66,7 +66,7 @@ Para adicionar um usuário ao nó de borda, execute os comandos:
 
 A captura de tela a seguir mostra o resultado.
 
-![Usuários simultâneos 3](./media/r-server-hdinsight-manage/concurrent-users-2.png)
+![Usuários simultâneos 3](./media/r-server-hdinsight-manage/hdi-concurrent-users2.png)
 
 Quando a "Senha atual do Kerberos" for solicitada, basta pressionar **Enter** para ignorar a solicitação. A opção `-m` no comando `useradd` indica que o sistema criará uma pasta base para o usuário, obrigatória para a versão do RStudio Community.
 
