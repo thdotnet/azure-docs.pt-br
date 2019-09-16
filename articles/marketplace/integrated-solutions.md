@@ -7,38 +7,40 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 02/27/2019
 ms.author: ellacroi
-ms.openlocfilehash: 363cd9319db0477e9b5ba2d2dd03a7e995a26fef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6015ce2d52c140a966636b887d021e76e92990d
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515611"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993639"
 ---
 # <a name="integrated-solutions-in-azure-marketplace-and-appsource"></a>Soluções integradas no Azure Marketplace e AppSource
 
-Uma solução integrada reúne tecnologias de ponta de parceiros da Microsoft, além de consultoria, implantação e dá suporte a fornecida pelos sistemas de especialista integradores (SI).
+Uma solução integrada reúne as melhores tecnologias dos parceiros da Microsoft, juntamente com consultoria, implantação e suporte fornecidos pelos integradores de sistemas especialistas (SI).
 
-Essas soluções são criadas para endereço precisa de um cliente específico ou cenário, que começa com a compreensão dos pontos de desafio ou dificuldade de setor. As tecnologias de ponta de duas ou mais, em seguida, são integradas por um SI para criar uma experiência de implantação repetível e unificada para clientes, obtê-los para cima em funcionamento rapidamente. Os sistemas integrador também fornece um ponto único de contato de cliente, fornecendo personalização relevante e consultoria e dão suporte ao redor da solução.  O resultado é uma solução integrada, incluindo a tecnologia e serviços.
+Essas soluções são criadas para lidar com uma necessidade ou um cenário específico do cliente, que começa com uma compreensão do desafio ou dos pontos problemáticos do setor. Duas ou mais das melhores tecnologias são então integradas por um SI para criar uma experiência de implantação unificada e reproduzível para os clientes, para colocá-las em funcionamento rapidamente. O integrador de sistemas também fornece um único ponto de contato para o cliente, fornecendo personalização e consultoria relevantes e suporte em toda a solução.  O resultado é uma solução integrada, incluindo tecnologia e serviços.
 
 ## <a name="advantages"></a>Vantagens
 
-Vantagens de uma abordagem integrada são:
+As vantagens de uma abordagem integrada são:
 
-* *Experiência no setor*: Integradores de sistemas, fornecendo dados de conhecimento e soluções específicas do setor
-* *Tempo de implantação*: Abordagem de implantação integrados para ajudar você a perceber os benefícios imediatos
-* *Soluções de ponta*: Descobrir a facilidade de uma experiência integrada de compra e implementação
+* *Experiência do setor*: Integradores de sistemas que fornecem soluções e conhecimento específicos do setor
+* *Tempo de implantação*: Abordagem de implantação integrada para ajudá-lo a obter benefícios imediatos
+* *Melhores soluções*: Descubra a facilidade de uma experiência de compra e de implementação integrada
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você pode descobrir soluções integradas e conecte-se com esses parceiros valued visitando suas listagens aqui:
+Você pode descobrir soluções integradas e conectar-se com esses parceiros importantes visitando suas listagens aqui:
 
-* [Cliente 360 alimentado por Zero2Hero](https://azuremarketplace.microsoft.com/marketplace/consulting-services/bardess.customer-360-powered-by-zero2hero)
+* [Cliente 360 da plataforma Zero2Hero](https://azuremarketplace.microsoft.com/marketplace/consulting-services/bardess.customer-360-powered-by-zero2hero)
 * [Comércio rápido](https://azuremarketplace.microsoft.com/marketplace/consulting-services/publicis-sapient.rapid_commerce)
 * [Análise de crédito](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rcg-us.rcg-enable-credit-analytics)
-* [Pilha de segurança de nuvem de saúde](https://azuremarketplace.microsoft.com/marketplace/consulting-services/xentit.azure-xentit-trendmicro-qualys-hcss-12months)
-* [Mecanismo de aceleração do DevOps](https://azuremarketplace.microsoft.com/marketplace/consulting-services/sirrus7.sirrus7-devops-acceleration-engine?search=devops%20acceleration%20engine&page=1)
-* [End-do-suporte do Windows Server](https://azuremarketplace.microsoft.com/marketplace/consulting-services/new-signature.eos_appfactory)
+* [Pilha de segurança da nuvem de saúde](https://azuremarketplace.microsoft.com/marketplace/consulting-services/xentit.azure-xentit-trendmicro-qualys-hcss-12months)
+* [Mecanismo de aceleração DevOps](https://azuremarketplace.microsoft.com/marketplace/consulting-services/sirrus7.sirrus7-devops-acceleration-engine?search=devops%20acceleration%20engine&page=1)
+* [Fim do suporte do Windows Server](https://azuremarketplace.microsoft.com/marketplace/consulting-services/new-signature.eos_appfactory)
 
-e, também visitando a seção Serviços de consultoria [do Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/consulting-services).
+Além disso, visite a seção serviços de consultoria do [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/consulting-services).
+
+Consulte [publicando soluções integradas](https://docs.microsoft.com/azure/marketplace/integrated-solutions-for-publishers) para obter mais informações.
 
 ---
