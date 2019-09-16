@@ -306,12 +306,12 @@ Verifique se o certificado está instalado no repositório pessoal\'do computado
         |---|---|
         | Source | Any |
         | Source port ranges | * |
-        | Destino | Any |
+        | Destination | Any |
         | Destination port range | 636 |
         | Protocol | Any |
         | Action | Allow |
         | Priority | \<Número desejado\> |
-        | Nome | Port_LDAP_636 |
+        | Name | Port_LDAP_636 |
 
     ![Regra de segurança de entrada](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 
