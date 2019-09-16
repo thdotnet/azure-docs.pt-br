@@ -34,7 +34,7 @@ Siga estas etapas para criar um ambiente:
 
 1. Selecione a categoria **Internet das Coisas** e selecione **Time Series Insights**.
 
-   [Criar o ambiente de time Series insights) ![](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
+   [![Criar o ambiente de time Series insights](media/time-series-insights-get-started/1-new-tsi.png)](media/time-series-insights-get-started/1-new-tsi.png#lightbox)
 
 1. Na página **Time Series Insights**, selecione **Criar**.
 

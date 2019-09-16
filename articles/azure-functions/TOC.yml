@@ -98,6 +98,10 @@
       href: functions-premium-plan.md
     - name: Implantações
       href: functions-deployment-technologies.md
+    - name: Eventos e mensagens
+      items:
+        - name: Como criar para entrada idêntica
+          href: functions-idempotent.md
     - name: Gatilhos e associações
       items:
         - name: Sobre gatilhos e associações

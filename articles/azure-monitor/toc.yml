@@ -144,8 +144,6 @@
               href: platform/service-providers.md
             - name: Gerenciar acesso
               href: platform/manage-access.md
-            - name: Integrar com o Configuration Manager
-              href: platform/collect-sccm.md
         - name: Uso e custo
           items:
             - name: Uso e custos estimados
@@ -643,8 +641,6 @@
               href: insights/service-map.md
             - name: Grupos de computadores
               href: platform/computer-groups.md
-            - name: Gerenciador de Configurações
-              href: platform/collect-sccm.md
         - name: Recursos do Azure
           items:
             - name: Logs de diagnóstico
@@ -745,6 +741,8 @@
               href: platform/om-agents.md
             - name: Avaliar o Operations Manager
               href: insights/scom-assessment.md
+            - name: Conectar o Configuration Manager
+              href: platform/collect-sccm.md
         - name: Transmitir dados para os Hubs de Eventos
           href: platform/diagnostic-logs-stream-event-hubs.md
     - name: Analisar dados
@@ -764,6 +762,8 @@
             - name: Visão geral da consulta de log
               displayname: 'log query, log queries, query, queries'
               href: log-query/log-query-overview.md
+            - name: Experiência com logs simples
+              href: log-query/simple-logs.md
             - name: Tutoriais
               items:
                 - name: Tutorial do Log Analytics
@@ -785,9 +785,9 @@
                 - name: Diferenças da linguagem
                   href: log-query/data-explorer-difference.md
                 - name: Operadores úteis
-                  href: log-query/functions.md
-                - name: Funções
                   href: log-query/useful-operators.md
+                - name: Funções
+                  href: log-query/functions.md
                 - name: Fazer a transição da pesquisa de logs
                   href: log-query/log-search-transition.md
                 - name: Lições
