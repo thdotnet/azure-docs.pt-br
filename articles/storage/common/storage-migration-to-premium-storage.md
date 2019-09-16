@@ -256,7 +256,7 @@ Agora que você tem o VHD no diretório local, pode usar o AzCopy ou o AzurePowe
 Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
 ```
 
-Um URI \<de exemplo > pode **_ser https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd""_** . Um > \<de FileInfo de exemplo pode ser **_"C:\path\to\upload.vhd"_** .
+Um URI \<de exemplo > pode **_ser "https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd"_** . Um > \<de FileInfo de exemplo pode ser **_"C:\path\to\upload.vhd"_** .
 
 ##### <a name="option-2-using-azcopy-to-upload-the-vhd-file"></a>Opção 2: Usar o AzCopy para carregar o arquivo .vhd
 Usando o AzCopy, é possível carregar o VHD facilmente pela Internet. Dependendo do tamanho dos VHDs, isso pode levar tempo. Lembre-se de verificar os limites de entrada/saída da conta de armazenamento ao usar essa opção. Consulte [Metas de Desempenho e Escalabilidade do Armazenamento do Azure](storage-scalability-targets.md) para obter detalhes.
