@@ -25,7 +25,7 @@ O artigo de introdução descreve como usar a biblioteca do **serializer** para 
 
 Por fim, o artigo revê alguns tópicos abordados em artigos anteriores, como o tratamento de mensagens e de propriedades. Como veremos, esses recursos funcionam da mesma forma ao usar a biblioteca do **serializer** e a biblioteca **IoTHubClient**.
 
-Todo o conteúdo do artigo baseia-se nas amostras do SDK do **serializer** . Se você quiser acompanhar, confira os aplicativos **simplesample\_amqp** e **simplesample\_http** incluídos no SDK do dispositivo IoT do Azure para C.
+Todo o conteúdo do artigo baseia-se nas amostras do SDK do **serializador** . Se você quiser acompanhar, confira os aplicativos **simplesample\_amqp** e **simplesample\_http** incluídos no SDK do dispositivo IoT do Azure para C.
 
 Você pode encontrar o [**SDK do dispositivo IoT do Azure para C**](https://github.com/Azure/azure-iot-sdk-c) no repositório GitHub e exibir os detalhes da API [na referência da API do C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/).
 

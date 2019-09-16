@@ -8,16 +8,16 @@ ms.workload: web
 ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu
-ms.openlocfilehash: 15cb31a3157b034089b1518a4e70eeb93ecc449e
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 97c03ad294bba1f8a0285fff4595991ca0acc8b5
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617109"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018271"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Servir conteúdo do Armazenamento do Microsoft Azure no Serviço de Aplicativo no Linux
 
-Este guia mostra como exibir conteúdo estático no Serviço de Aplicativo no Linux usando [Armazenamento do Microsoft Azure](/azure/storage/common/storage-introduction). Os benefícios incluem conteúdo seguro, portabilidade de conteúdo, acesso a vários aplicativos e vários métodos de transferência.
+Este guia mostra como exibir conteúdo estático no Serviço de Aplicativo no Linux usando [Armazenamento do Microsoft Azure](/azure/storage/common/storage-introduction). Os benefícios incluem conteúdo protegido, portabilidade de conteúdo, armazenamento persistente, acesso a vários aplicativos e vários métodos de transferência.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,7 +29,7 @@ Este guia mostra como exibir conteúdo estático no Serviço de Aplicativo no Li
 > [!NOTE]
 > O Armazenamento do Microsoft Azure é um armazenamento não padrão e é cobrado separadamente, não incluído no aplicativo da web.
 >
-> Traga seu próprio armazenamento não dá suporte usando a configuração de Firewall de armazenamento devido a limitações da infra-estrutura.
+> Traga seu próprio armazenamento não dá suporte ao uso da configuração do firewall de armazenamento devido a limitações de infraestrutura.
 >
 
 Criar uma [conta de armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-cli).
@@ -64,7 +64,7 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 
 Você deve fazer isso para qualquer outro diretório que deseja vincular a uma conta de armazenamento.
 
-## <a name="verify"></a>Verificar
+## <a name="verify"></a>Verifique
 
 Depois que um contêiner de armazenamento estiver vinculado a um aplicativo da Web, você poderá verificar isso executando o seguinte comando:
 
@@ -74,9 +74,9 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 ## <a name="use-custom-storage-in-docker-compose"></a>Usar armazenamento personalizado no Docker Compose
 
-O armazenamento do Azure pode ser montado com aplicativos de vários contêineres usando a id personalizada. Para exibir o nome do id personalizada, execute [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+O armazenamento do Azure pode ser montado com aplicativos de vários contêineres usando a ID personalizada. Para exibir o nome de ID personalizado, execute [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-No seu *docker-Compose. yml* do arquivo, mapeie o `volumes` opção `custom-id`. Por exemplo:
+No arquivo *Docker-Compose. yml* , mapeie a `volumes` opção para `custom-id`. Por exemplo:
 
 ```yaml
 wordpress:

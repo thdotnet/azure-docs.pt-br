@@ -11,16 +11,16 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66b3e68ff2199c6a8bf4da9e02caaf93ee69342b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 21117e551642571d5b974e66d0769ed9906b9d50
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65812823"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018204"
 ---
 # <a name="add-azure-active-directory-b2b-collaboration-users-in-the-azure-portal"></a>Adicionar usuários de colaboração B2B do Azure Active Directory no Portal do Azure
 
-Como um usuário que é atribuído a qualquer uma das funções de diretório administrador limitado, você pode usar o portal do Azure para convidar usuários de colaboração B2B. É possível convidar usuários convidados para o diretório, um grupo ou um aplicativo. Depois de convidar um usuário por qualquer um desses métodos, a conta do usuário convidado é adicionada ao Azure Active Directory (Microsoft Azure AD), com um tipo de usuário *Convidado*. O usuário convidado deve, então, resgata o convite para acessar recursos.
+Como um usuário que é atribuído a qualquer uma das funções de diretório de administrador limitadas, você pode usar o portal do Azure para convidar usuários de colaboração B2B. É possível convidar usuários convidados para o diretório, um grupo ou um aplicativo. Depois de convidar um usuário por qualquer um desses métodos, a conta do usuário convidado é adicionada ao Azure Active Directory (Microsoft Azure AD), com um tipo de usuário *Convidado*. O usuário convidado deve, então, resgata o convite para acessar recursos. Um convite de um usuário não expira.
 
 Depois de adicionar um usuário convidado ao diretório, você poderá enviar ao usuário convidado um link direto para um aplicativo compartilhado, ou o usuário convidado poderá clicar na URL de resgate no email de convite. Para obter mais informações sobre o processo de resgate, consulte [Regaste de convite de colaboração B2B](redemption-experience.md).
 
@@ -29,13 +29,13 @@ Depois de adicionar um usuário convidado ao diretório, você poderá enviar ao
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Verifique se que as configurações de colaboração externa da sua organização estão configuradas, de modo que você tem permissão para convidar pessoas. Por padrão, todos os usuários e administradores podem convidar pessoas. Mas as políticas da organização colaboração externa podem ser configuradas para impedir determinados tipos de usuários ou administradores convidem convidados. Para saber como exibir e definir essas políticas, consulte [permitem a colaboração de B2B externa e gerenciar quem pode convidar pessoas](delegate-invitations.md).
+Verifique se as configurações de colaboração externa da sua organização estão configuradas de forma que você tenha permissão para convidar convidados. Por padrão, todos os usuários e administradores podem convidar convidados. Mas as políticas de colaboração externa de sua organização podem ser configuradas para impedir que determinados tipos de usuários ou administradores convidam convidados. Para saber como exibir e definir essas políticas, consulte [habilitar colaboração externa B2B e gerenciar quem pode convidar convidados](delegate-invitations.md).
 
 ## <a name="add-guest-users-to-the-directory"></a>Adicionar usuários convidados ao diretório
 
 Para adicionar usuários de colaboração B2B ao diretório, siga estas etapas:
 
-1. Entrar para o [portal do Azure](https://portal.azure.com) como um usuário que é atribuído a uma função de diretório de administrador limitado ou da função de emissor do convite.
+1. Entre no [portal do Azure](https://portal.azure.com) como um usuário que é atribuído a uma função de diretório de administrador limitada ou a função emissor de convite de convidado.
 2. No painel de navegação, selecione **Azure Active Directory**.
 3. Em **Gerenciar**, selecione **Usuários**.
 4. Selecione **Novo usuário convidado**.
@@ -67,7 +67,7 @@ Se você precisar adicionar manualmente usuários de colaboração B2B a um grup
 3. Em **Gerenciar**, selecione **Grupos**.
 4. Selecione um grupo (ou clique em **Novo grupo** para criar um novo). É recomendável incluir na descrição do grupo que o grupo contém usuários convidados B2B.
 5. Selecione **Membros**. 
-6. Faça uma das opções a seguir:
+6. Realize um dos seguintes procedimentos:
    - Se o usuário convidado já existir no diretório, procure o usuário B2B. Selecione o usuário e clique em **Selecionar** para adicioná-lo ao grupo.
    - Se o usuário convidado ainda não existir no diretório, convide-o para fazer parte do grupo digitando seu endereço de email na caixa de pesquisa, digitando uma mensagem pessoal opcional e, em seguida, clicando em **Selecionar**. O convite é enviado automaticamente para o usuário convidado.
      
@@ -89,7 +89,7 @@ Para adicionar usuários de colaboração B2B a um aplicativo, siga estas etapas
 
 6. Selecione **Adicionar usuário**.
 7. Em **Adicionar Atribuição**, selecione **Usuários e grupos**.
-8. Faça uma das opções a seguir:
+8. Realize um dos seguintes procedimentos:
    - Se o usuário convidado já existir no diretório, procure o usuário B2B. Selecione o usuário, clique em **Selecionar** e, em seguida, clique em **Atribuir** para adicionar o usuário ao aplicativo.
    - Se o usuário convidado ainda não existir no diretório, em **Selecionar membro ou convidar um usuário externo**, digite o endereço de e-mail do usuário. Na caixa de mensagem, digite uma mensagem pessoal opcional. Na caixa de mensagem, clique em **convidar**.
            
