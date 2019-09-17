@@ -11,12 +11,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: b145b341a4db503a00d517decf6406e26f23c3cd
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: cc12579a4932894b730b04cdc77acc0151168bdb
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802462"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010206"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Introdução à auditoria do banco de dados SQL
 
@@ -94,6 +94,9 @@ A seção a seguir descreve a configuração de auditoria usando o Portal do Azu
     ![opções de armazenamento](./media/sql-database-auditing-get-started/auditing-select-destination.png)
 
 6. Para configurar a gravação de logs de auditoria para uma conta de armazenamento, selecione **Armazenamento** e abra **Detalhes do armazenamento**. Selecione a conta de armazenamento do Azure na qual os logs serão salvos e, em seguida, selecione o período de retenção. Os logs antigos serão excluídos. Clique em **OK**.
+
+   > [!IMPORTANT]
+   > O valor padrão do período de retenção é 0 (retenção ilimitada). Você pode alterar esse valor movendo o controle deslizante de **retenção (dias)** em **configurações de armazenamento** ao configurar a conta de armazenamento para auditoria.
 
     ![Conta de Armazenamento](./media/sql-database-auditing-get-started/auditing_select_storage.png)
 

@@ -10,20 +10,20 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
-ms.date: 08/27/2019
-ms.openlocfilehash: 0dea447ed44a61b20faf9a0a1690b2bbdd674b30
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.date: 09/16/2019
+ms.openlocfilehash: 7f7faf11ed18fa2a85587c193376a3e4ce905fd2
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70930616"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010200"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Visão geral dos limites de recursos de instância gerenciada do banco de dados SQL
 
-Este artigo fornece uma visão geral dos limites de recursos para a instância gerenciada do banco de dados SQL do Azure e fornece informações sobre como solicitar um aumento para esses limites.
+Este artigo fornece uma visão geral das características técnicas e dos limites de recursos para a instância gerenciada do banco de dados SQL do Azure e fornece informações sobre como solicitar um aumento desses limites.
 
 > [!NOTE]
-> Para diferenças em recursos suportados e instruções T-SQL, consulte [Diferenças de recursos](sql-database-features.md) e [Suporte à instrução T-SQL](sql-database-managed-instance-transact-sql-information.md).
+> Para diferenças em recursos suportados e instruções T-SQL, consulte [Diferenças de recursos](sql-database-features.md) e [Suporte à instrução T-SQL](sql-database-managed-instance-transact-sql-information.md). Para obter a diferença geral entre as camadas de serviço em um único banco de dados e instância gerenciada, consulte [comparação da camada de serviço](sql-database-service-tiers-general-purpose-business-critical.md#service-tier-comparison).
 
 ## <a name="instance-level-resource-limits"></a>Limites de recursos no nível da instância
 
@@ -43,11 +43,11 @@ Instância gerenciada do banco de dados SQL do Azure pode ser implantada em duas
 
 > [!IMPORTANT]
 > - O hardware Gen4 está sendo desativado. É recomendável implantar novas instâncias gerenciadas em hardware Gen5.
-> - O hardware do Gen4 no momento está disponível nas seguintes regiões: Europa Setentrional, Europa Ocidental, leste dos EUA, Sul EUA Central, norte EUA Central, oeste dos EUA 2, EUA Central, Canadá central, sul da Índia, Sudeste Asiático e Coreia central.
+> - O hardware do Gen4 no momento ainda está disponível apenas nas seguintes regiões: Europa Setentrional, Europa Ocidental, leste dos EUA, Sul EUA Central, norte EUA Central, oeste dos EUA 2, EUA Central, Canadá central, sul da Índia, Sudeste Asiático e Coreia central.
 
 ### <a name="service-tier-characteristics"></a>Características de camada de serviço
 
-A instância gerenciada tem duas camadas de serviço: Uso Geral e Comercialmente Crítico. Essas camadas fornecem recursos diferentes, conforme descrito na tabela a seguir:
+A instância gerenciada tem duas camadas de serviço: [Uso geral](sql-database-service-tier-general-purpose.md) e [comercialmente crítico](sql-database-service-tier-business-critical.md). Essas camadas fornecem [recursos diferentes](sql-database-service-tiers-general-purpose-business-critical.md), conforme descrito na tabela a seguir:
 
 | **Recurso** | **Uso geral** | **Comercialmente Crítico** |
 | --- | --- | --- |
@@ -73,6 +73,9 @@ A instância gerenciada tem duas camadas de serviço: Uso Geral e Comercialmente
 > - A taxa de transferência e o IOPS também dependem do tamanho da página que não é explicitamente limitado pela instância gerenciada.
 > Você pode criar outra réplica legível em uma região do Azure diferente usando grupos de failover automático.
 
+> [!NOTE]
+> Encontre mais informações sobre os [limites de recursos em pools de instâncias gerenciadas neste artigo](sql-database-instance-pools.md#instance-pools-resource-limitations).
+
 ## <a name="supported-regions"></a>Regiões com suporte
 
 As instâncias gerenciadas podem ser criadas somente em [regiões com suporte](https://azure.microsoft.com/global-infrastructure/services/?products=sql-database&regions=all). Para criar uma instância gerenciada em uma região que não tem suporte no momento, você pode [Enviar uma solicitação de suporte por meio do portal do Azure](#obtaining-a-larger-quota-for-sql-managed-instance).
@@ -93,7 +96,7 @@ Atualmente, a instância gerenciada dá suporte à implantação somente nos seg
 Os tipos de assinatura suportados podem conter um número limitado de recursos por região. A instância gerenciada tem dois limites padrão por região do Azure, dependendo de um tipo de assinatura:
 
 - **Limite de sub-rede**: O número máximo de sub-redes nas quais as instâncias gerenciadas são implantadas em uma única região.
-- **limite de vCore**: O número máximo de vCores que podem ser implantadas em todas as instâncias em uma única região.
+- **limite de vCore**: O número máximo de vCores que podem ser implantadas em todas as instâncias em uma única região. O número total de instâncias não é limitado, desde que esteja dentro do limite vCore.
 
 > [!Note]
 > Esses limites são configurações padrão e não limitações técnicas. Os limites podem ser aumentados sob demanda criando uma solicitação especial [de suporte no portal do Azure](#obtaining-a-larger-quota-for-sql-managed-instance) se você precisar de mais instâncias gerenciadas na região atual. Como alternativa, você pode criar novas instâncias gerenciadas em outra região do Azure sem enviar solicitações de suporte.

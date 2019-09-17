@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: mlearned
-ms.openlocfilehash: e3050d189396a797dbc0980e06e11533b9de977e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 009da6c16d446f2b0d4d3f402c1c1ec63dde34d8
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098605"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018727"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Criar manualmente e usar um volume com o compartilhamento de Arquivos do Azure no AKS (Serviço de Kubernetes do Azure)
 
@@ -135,17 +135,7 @@ Volumes:
 
 ## <a name="mount-options"></a>Opções de montagem
 
-Os valores padrão *fileMode* e *dirMode* diferem entre as versões do Kubernetes, conforme descrito na tabela a seguir.
-
-| versão | value |
-| ---- | ---- |
-| v1.6.x, v1.7.x | 0777 |
-| v1.8.0-v1.8.5 | 0700 |
-| v.1.8.6 ou superior | 0755 |
-| v1.9.0 | 0700 |
-| v.1.9.1 ou superior | 0755 |
-
-Se estiver usando um cluster da versão 1.8.5 ou superior e criando estaticamente o objeto de volume persistente, as opções de montagem precisam ser especificadas no objeto *PersistentVolume*.
+O valor padrão de *fileMode* e *dirMode* é *0755* para kubernetes versão 1.9.1 e superior. Se estiver usando um cluster com Kuberetes versão 1.8.5 ou superior e criando estaticamente o objeto de volume persistente, as opções de montagem precisarão ser especificadas no objeto *PersistentVolume* . O exemplo a seguir define *0777*:
 
 ```yaml
 apiVersion: v1
@@ -157,6 +147,7 @@ spec:
     storage: 5Gi
   accessModes:
     - ReadWriteMany
+  storageClassName: azurefile
   azureFile:
     secretName: azure-secret
     shareName: aksshare
@@ -166,9 +157,79 @@ spec:
   - file_mode=0777
   - uid=1000
   - gid=1000
+  - mfsymlinks
+  - nobrl
 ```
 
 Se usar um cluster de versão 1.8.0 - 1.8.4, um contexto de segurança pode ser especificado com o *runAsUser* valor definido como *0*. Para obter mais informações sobre o contexto de segurança Pod, consulte [configurar um contexto de segurança][kubernetes-security-context].
+
+Para atualizar suas opções de montagem, crie um arquivo *azurefile-Mount-Options-PV. YAML* com um *PersistentVolume*. Por exemplo:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: azurefile
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azurefile
+  azureFile:
+    secretName: azure-secret
+    shareName: aksshare
+    readOnly: false
+  mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1000
+  - gid=1000
+  - mfsymlinks
+  - nobrl
+```
+
+Crie um arquivo *azurefile-Mount-Options-PVC. YAML* com um *PersistentVolumeClaim* que usa o *PersistentVolume*. Por exemplo:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: azurefile
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azurefile
+  resources:
+    requests:
+      storage: 5Gi
+```
+
+Use os `kubectl` comandos para criar o *PersistentVolume* e o *PersistentVolumeClaim*.
+
+```console
+kubectl apply -f azurefile-mount-options-pv.yaml
+kubectl apply -f azurefile-mount-options-pvc.yaml
+```
+
+Verifique se o *PersistentVolumeClaim* foi criado e associado ao *PersistentVolume*.
+
+```console
+$ kubectl get pvc azurefile
+
+NAME        STATUS   VOLUME      CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+azurefile   Bound    azurefile   5Gi        RWX            azurefile      5s
+```
+
+Atualize a especificação do contêiner para fazer referência ao seu *PersistentVolumeClaim* e atualize seu Pod. Por exemplo:
+
+```yaml
+...
+  volumes:
+  - name: azure
+    persistentVolumeClaim:
+      claimName: azurefile
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 

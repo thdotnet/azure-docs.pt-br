@@ -8,12 +8,12 @@ manager: rkarlin
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: 2617ae7bd1c761ae7977eac518c2e40ca55da00c
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: b39482f5c753fbfe6cc6663dda4f5381300c2c21
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883228"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71017245"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Pontos de extremidade de serviço de rede virtual para o Azure Key Vault
 
@@ -60,7 +60,7 @@ Para obter mais informações, consulte [Configurar redes virtuais e firewalls d
 
 Segue uma lista de serviços confiáveis que poderão acessar um cofre de chaves se a opção **Permitir serviços confiáveis** estiver habilitada.
 
-|Serviço confiável|Cenários de uso|
+|Serviço confiável|Cenários de uso com suporte|
 | --- | --- |
 |Serviço de implantação de Máquinas Virtuais do Azure|[Implanta certificados para VMs a partir do Key Vault gerenciado pelo cliente](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/).|
 |Serviço de implantação de modelo do Azure Resource Manager|[Transmite valores seguros durante a implantação](../azure-resource-manager/resource-manager-keyvault-parameter.md).|

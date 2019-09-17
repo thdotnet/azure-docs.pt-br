@@ -13,21 +13,21 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: malop
 ms.reviewer: kumud
-ms.openlocfilehash: 80d89914f33273fcb033ab47098a8864b11974c9
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: c345b31c218c4678e7811c36113c94e0c4d2ac03
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876156"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71019054"
 ---
 # <a name="virtual-network-integration-for-azure-services"></a>Integração de rede virtual para os serviços do Azure
 
 A integração dos serviços do Azure a uma rede virtual do Azure permite o acesso privado ao serviço de máquinas virtuais ou de recursos de computação na rede virtual.
 Você pode integrar serviços do Azure à sua rede virtual com as seguintes opções:
 - Implantando instâncias dedicadas do serviço em uma rede virtual. Os serviços podem ser acessados de maneira privada dentro da rede virtual e de redes locais.
-- Estendendo uma rede virtual ao serviço, por meio de pontos de extremidade de serviço. Pontos de extremidade de serviço permitem que os recursos de serviço individuais da rede virtual sejam protegidos.
+- Usando o [link privado](../private-link/private-link-overview.md) para acessar privadamente uma instância específica do serviço de sua rede virtual e de redes locais.
 
-Para integrar vários serviços do Azure à sua rede virtual, é possível combinar um ou mais dos padrões acima. Por exemplo, é possível implantar o HDInsight em sua rede virtual e proteger uma conta de armazenamento para a sub-rede do HDInsight por meio de pontos de extremidade de serviço.
+Você também pode acessar o serviço usando pontos de extremidade públicos estendendo uma rede virtual para o serviço, por meio de [pontos de extremidade de serviço](virtual-network-service-endpoints-overview.md). Os pontos de extremidade de serviço permitem que os recursos de serviço sejam protegidos para a rede virtual.
  
 ## <a name="deploy-azure-services-into-virtual-networks"></a>Implantar os serviços do Azure em redes virtuais
 
@@ -61,8 +61,3 @@ Implantar serviços em uma rede virtual fornece as seguintes funcionalidades:
 | | |
 
 ¹ ' Dedicated ' implica que apenas recursos específicos de serviço podem ser implantados nesta sub-rede e não podem ser combinados com VM/VMSSs do cliente <br/> ² recomendado, mas não um requisito obrigatório imposto pelo serviço.
-
-
-## <a name="service-endpoints-for-azure-services"></a>Pontos de extremidade de serviços do Azure
-
-Alguns serviços do Azure não podem ser implantados em redes virtuais. Você pode restringir o acesso a alguns dos recursos do serviço apenas para sub-redes de rede virtual específicas, se você escolher, habilitando um ponto de extremidade de serviço de rede virtual.  Saiba mais sobre [pontos de extremidade de serviços de rede virtual ](virtual-network-service-endpoints-overview.md) e os serviços para os quais os terminais podem ser ativados.

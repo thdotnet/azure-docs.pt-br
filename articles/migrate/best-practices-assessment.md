@@ -1,21 +1,21 @@
 ---
-title: Práticas recomendadas para a criação de avaliação com a avaliação do servidor de migrações para Azure | Microsoft Docs
+title: Práticas recomendadas para a criação de avaliação com a avaliação do servidor de migrações para Azure
 description: Fornece dicas para criar avaliações com a avaliação de servidor de migrações para Azure.
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 07/15/2019
+ms.date: 09/16/2019
 ms.author: raynew
-ms.openlocfilehash: 18b82b5553f7045c38c9de532199c2a0fd815ee1
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: a07e83c805fc422c861f6c644a59da0b42bb8072
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234310"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71007723"
 ---
 # <a name="best-practices-for-creating-assessments"></a>Práticas recomendadas para a criação de avaliações
 
-As migrações para [Azure](migrate-overview.md) fornecem um hub de ferramentas que ajudam a descobrir, avaliar e migrar aplicativos, infraestrutura e cargas de trabalho para Microsoft Azure. O Hub inclui ferramentas de migração do Azure e ofertas de fornecedores independentes de software (ISV) de terceiros.
+As [Migrações para Azure](migrate-overview.md) fornecem um hub de ferramentas que ajudam você a descobrir, avaliar e migrar aplicativos, a infraestrutura e cargas de trabalho para o Microsoft Azure. O hub inclui ferramentas das Migrações para Azure e ofertas de ISV (fornecedor independente de software) de terceiros.
 
 Este artigo resume as práticas recomendadas ao criar avaliações usando a ferramenta de avaliação do servidor de migrações para Azure.
 
@@ -25,7 +25,7 @@ As avaliações criadas com a avaliação do servidor de migrações para Azure 
 
 **Tipo de avaliação** | **Detalhes** | **Dados**
 --- | --- | ---
-**Baseado em desempenho** | Avaliações que fazem recomendações com base nos dados de desempenho coletados | A recomendação de tamanho da VM baseia-se nos dados de utilização de CPU e memória.<br/><br/> A recomendação de tipo de disco (HD padrão/SSD ou discos gerenciados Premium) baseia-se na IOPS e na taxa de transferência dos discos locais.
+**Com base no desempenho** | Avaliações que fazem recomendações com base nos dados de desempenho coletados | A recomendação de tamanho da VM baseia-se nos dados de utilização de CPU e memória.<br/><br/> A recomendação de tipo de disco (HD padrão/SSD ou discos gerenciados Premium) baseia-se na IOPS e na taxa de transferência dos discos locais.
 **No estado em que se encontra no local** | Avaliações que não usam dados de desempenho para fazer recomendações. | A recomendação de tamanho da VM é baseada no tamanho da VM local<br/><br> O tipo de disco recomendado é baseado no que você seleciona na configuração de tipo de armazenamento para a avaliação.
 
 ### <a name="example"></a>Exemplo
@@ -33,8 +33,8 @@ Por exemplo, se você tiver uma VM local com quatro núcleos a 20% de utilizaç�
 
 - **Avaliação baseada em desempenho**:
     - Identifica os núcleos e a memória efetivos com base na utilização do núcleo (4 x 0,20 = 0,8) e da memória (8 GB x 0,10 = 0,8).
-    - Aplica o fator de conforto especificado nas propriedades de avaliação (le'ts, por exemplo, 1,3 x) para obter os valores a serem usados para o dimensionamento. 
-    - Recomenda o tamanho da VM mais próximo no Azure que pode dar suporte à memória de ~ 1,4 núcleos (0,8 x 1,3) e ~ 1,4 GB (0,8 x 1,3).
+    - Aplica o fator de conforto especificado nas propriedades de avaliação (digamos, 1,3 x) para obter os valores a serem usados para o dimensionamento. 
+    - Recomenda o tamanho da VM mais próximo no Azure que pode dar suporte à memória de ~ 1, 4 núcleos (0,8 x 1,3) e ~ 1, 4 GB (0,8 x 1,3).
 
 - **Avaliação do as (como local)** :
     -  Recomenda uma VM com quatro núcleos; 8 GB de memória.
@@ -85,9 +85,9 @@ Uma avaliação pode não ter todos os pontos de dados por vários motivos:
 
 - Você não criou o perfil do ambiente pelo tempo para o qual está criando a avaliação. Por exemplo, se você estiver criando uma *avaliação baseada em desempenho* com duração de desempenho definida como uma semana, você precisará aguardar pelo menos uma semana depois de iniciar a descoberta para todos os pontos de dados a serem coletados. Você sempre pode clicar em **Recalcular** para ver a classificação de confiança mais recente aplicável. A classificação de confiança é aplicável somente quando você cria uma avaliação *baseada em desempenho* .
 
-- Algumas VMs foram desativadas durante o período para o qual a avaliação é calculada. Se algumas VMs foram desligadas por alguma duração, a avaliação do servidor não poderá coletar os dados de desempenho para esse período.
+- Algumas VMs foram desativadas durante o período para o qual a avaliação é calculada. Se algumas VMs foram desligadas por algum tempo, a Avaliação de Servidor não poderá coletar os dados de desempenho daquele período.
 
-- Algumas VMs foram criadas após o início da descoberta na avaliação do servidor. Por exemplo, se você estiver criando uma avaliação para o histórico de desempenho do último mês, mas algumas VMs foram criadas no ambiente somente há uma semana. Nesse caso, os dados de desempenho para as novas VMs não estarão disponíveis durante toda a duração e a classificação de confiança será baixa.
+- Algumas VMs foram criadas após o início da descoberta na Avaliação de Servidor. Por exemplo, se você estiver criando uma avaliação para o histórico de desempenho do último mês, mas algumas VMs foram criadas no ambiente somente há uma semana. Nesse caso, os dados de desempenho das novas VMs não estariam disponíveis durante todo o período e a classificação de confiança seria baixa.
 
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -5,14 +5,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 07/02/2019
+ms.date: 09/13/2019
 ms.author: dacurwin
-ms.openlocfilehash: 62f633b617abb52e1be4003f65cc537cc9ff2a25
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 1b7e3a8a937682559440086e90af18bfc85b8f75
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983784"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018679"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Matriz de suporte para backup de VM do Azure
 Você pode usar o [serviço de backup do Azure](backup-overview.md) para fazer backup de máquinas locais e cargas de trabalho e VMs (máquinas virtuais) do Azure. Este artigo resume as configurações de suporte e as limitações ao fazer backup de VMs do Azure com o backup do Azure.
@@ -158,13 +158,13 @@ VMs Gen2 | Suportado <br> O backup do Azure dá suporte ao backup e à restaura�
 
 **Componente** | **Suporte**
 --- | ---
-Discos de dados de VM do Azure | Faça o backup de uma VM com 16 discos de dados ou menos. <br/><br/> Suporte a tamanhos de disco de até 4 TB.<br/><br/>Para se inscrever em uma visualização pública limitada de suporte de disco grande do backup do Azure para discos com mais de 4 TB e até 30 TB de tamanho, consulte este [artigo](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
-Tamanho do disco de dados | O disco individual pode ter até 4.095 GB.<br/><br/>Para se inscrever para uma visualização pública limitada do suporte de disco grande do backup do Azure para discos com mais de 4 TB até 30TB de tamanho, consulte este [artigo](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
+Discos de dados de VM do Azure | Faça o backup de uma VM com 16 discos de dados ou menos. <br/><br/> Dá suporte ao backup de máquinas virtuais com cada tamanho de disco até 30TB e um máximo de 256TB combinados para todos os discos em uma VM.
+Tamanho do disco de dados | O disco individual pode ser de até 30TB.
 Tipo de armazenamento | HDD Standard, SSD Standard SSD Premium.
 Discos gerenciados | Com suporte.
 Discos criptografados | Com suporte.<br/><br/> As VMs do Azure habilitadas com Azure Disk Encryption podem ser submetidas a backup (com ou sem o aplicativo do Azure AD).<br/><br/> As VMs criptografadas não podem ser recuperadas no nível de arquivo/pasta. Você deve recuperar toda a VM.<br/><br/> Você pode habilitar a criptografia em VMs que já estão protegidos pelo Backup do Azure.
 Discos com o Acelerador de Gravação habilitado | Não compatível.<br/><br/> O backup do Azure exclui automaticamente os discos com Acelerador de Gravação habilitado durante o backup. Como não é feito backup, você não poderá restaurar esses discos de pontos de recuperação da VM.
-Fazer backup de discos com eliminação de duplicação | Não compatível.
+Fazer backup & restaurar VMs/discos com eliminação de duplicação | O backup do Azure não oferece suporte à eliminação de duplicação. Para obter mais informações, consulte este [artigo](https://docs.microsoft.com/azure/backup/backup-support-matrix#disk-deduplication-support) <br/> <br/>  -O backup do Azure não elimina a duplicação entre VMs no cofre dos serviços de recuperação <br/> <br/>  -Se houver VMs no estado de eliminação de duplicação durante a restauração, os arquivos não poderão ser restaurados, pois o cofre não entenderá o formato
 Adicionar o disco à VM protegida | Com suporte.
 Redimensionar o disco em uma VM protegida | Com suporte.
 Armazenamento compartilhado| O backup de VMs usando Volume Compartilhado Clusterizado (CSV) ou servidor de arquivos de escalabilidade horizontal não é recomendado. Os gravadores de CSV provavelmente falharão durante o backup. Na restauração, os discos que contêm volumes CSV podem não vir.

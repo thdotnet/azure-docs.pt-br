@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: a31f0618f7e9dc8fdb0e9b2988d3d3c32fefcf64
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 2d61963f85bc5d2ec6398c8b7439689e7125f9c6
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277663"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010659"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Copiar dados de uma fonte OData usando o Azure Data Factory
 
@@ -28,6 +28,11 @@ ms.locfileid: "70277663"
 Este artigo descreve como usar a Atividade de Cópia no Azure Data Factory para copiar dados de uma fonte OData. O artigo baseia-se em [Atividade de Cópia no Azure Data Factory](copy-activity-overview.md), que apresenta uma visão geral da Atividade de Cópia.
 
 ## <a name="supported-capabilities"></a>Funcionalidades com suporte
+
+Este conector OData tem suporte para as seguintes atividades:
+
+- [Atividade de cópia](copy-activity-overview.md) com [matriz de origem com suporte](copy-activity-overview.md)
+- [Atividade de pesquisa](control-flow-lookup-activity.md)
 
 Você pode copiar dados de uma origem OData para qualquer repositório de dados de coletor com suporte. Para obter uma lista de armazenamentos de dados que o Copy Activity suporta como fontes e coletores, consulte [Armazenamentos de dados e formatos compatíveis](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -299,6 +304,10 @@ Ao copiar dados do OData, os seguintes mapeamentos são usados entre os tipos de
 > [!NOTE]
 > Tipos de dados complexos do OData (como **Objeto**) não têm suporte.
 
+
+## <a name="lookup-activity-properties"></a>Propriedades da atividade de pesquisa
+
+Para obter detalhes sobre as propriedades, verifique a [atividade de pesquisa](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

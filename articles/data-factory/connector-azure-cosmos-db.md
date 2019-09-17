@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 3082c568b3ce3fa5199c7a7d0d082db36720d293
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 561f383327738c9a2ab29f2907f00ace1eec6def
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70233026"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010283"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Copiar dados de e para o Azure Cosmos DB (SQL API) usando o Azure Data Factory
 
@@ -31,6 +31,11 @@ Este artigo descreve como usar a atividade de cópia no Azure Data Factory para 
 >Esse suporte de conector somente suporta copiar dados para/da API SQL do Cosmos DB. Para a API do MongoDB, confira o [conector para API do Azure Cosmos DB para MongoDB](connector-azure-cosmos-db-mongodb-api.md). Não há suporte para outros tipos de API.
 
 ## <a name="supported-capabilities"></a>Funcionalidades com suporte
+
+Esse conector de Azure Cosmos DB (API do SQL) tem suporte para as seguintes atividades:
+
+- [Atividade de cópia](copy-activity-overview.md) com [matriz de coletor/origem com suporte](copy-activity-overview.md)
+- [Atividade de pesquisa](control-flow-lookup-activity.md)
 
 Você pode copiar dados do Azure Cosmos DB (API do SQL) para qualquer armazenamento de dados de coletor com suporte ou copiar dados de qualquer armazenamento de dados de origem com suporte para o Azure Cosmos DB (API do SQL). Para obter uma lista de armazenamentos de dados que o Copy Activity suporta como fontes e coletores, consulte [Armazenamentos de dados e formatos compatíveis](copy-activity-overview.md#supported-data-stores-and-formats).
 
@@ -251,6 +256,9 @@ As seguintes propriedades são suportadas na seção **source** da atividade de 
     }
 ]
 ```
+## <a name="lookup-activity-properties"></a>Propriedades da atividade de pesquisa
+
+Para obter detalhes sobre as propriedades, verifique a [atividade de pesquisa](control-flow-lookup-activity.md).
 
 ## <a name="import-or-export-json-documents"></a>Importar ou exportar documentos JSON
 

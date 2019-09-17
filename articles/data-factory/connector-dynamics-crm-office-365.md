@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 3f7bf3ce8c01e82fa69b3b041b573b4b31a719d2
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 18fdb14430eee97ff2780d963abf3e5ceafe1126
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514095"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71009387"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Copiar dados de e para Dynamics 365 (Common Data Service) ou Dynamics CRM usando o Azure Data Factory
 
@@ -25,15 +25,20 @@ Este artigo estrutura como usar atividade de cópia no Azure Data Factory para c
 
 ## <a name="supported-capabilities"></a>Funcionalidades com suporte
 
+Este conector tem suporte para as seguintes atividades:
+
+- [Atividade de cópia](copy-activity-overview.md) com [matriz de coletor/origem com suporte](copy-activity-overview.md)
+- [Atividade de pesquisa](control-flow-lookup-activity.md)
+
 Você pode copiar dados do Dynamics 365 (Common Data Service) ou Dynamics CRM para qualquer armazenamento de dados de coletor com suporte. Você também pode copiar dados de qualquer repositório de dados de fonte com suporte para Dynamics 365 (Common Data Service) ou Dynamics CRM. Para obter uma lista de repositórios de dados com suporte como fontes ou coletores da atividade de cópia, confira a tabela [Repositórios de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Este conector do Dynamics dá suporte à versão do Dynamics 7.x 9.x para ambos online ou local. Mais especificamente,
+Este conector do Dynamics dá suporte ao Dynamics versão 7. x a 9. x para online ou local. Mais especificamente,
 
-- Versão 7.x mapeia para o Dynamics CRM 2015
-- Versão 8.x mapeia para o Dynamics CRM 2016 e a versão inicial do Dynamics 365
-- Versão 9. x mapas para a versão mais recente do Dynamics 365
+- A versão 7. x é mapeada para o Dynamics CRM 2015
+- A versão 8. x é mapeada para o Dynamics CRM 2016 e para a versão anterior do Dynamics 365
+- A versão 9. x é mapeada para a versão mais recente do Dynamics 365
 
-Consulte a tabela a seguir nos tipos de autenticação com suporte e configurações para as respectivas versões/produtos do Dynamics. (IFD é abreviação de implantação para a Internet.)
+Consulte a tabela a seguir sobre os tipos de autenticação e configurações com suporte para as respectivas versões/produtos do Dynamics. (IFD é abreviação de implantação para a Internet.)
 
 | Versões do Dynamics | Tipos de autenticação | Exemplos de serviço vinculado |
 |:--- |:--- |:--- |
@@ -50,7 +55,7 @@ Para o Dynamics 365 especificamente, os seguintes tipos de aplicativos são comp
 
 Outros tipos de aplicação, por exemplo Finanças e Operações, Talentos, etc. não são suportados por este conector.
 
-Este conector do Dynamics baseia-se na parte superior da [as ferramentas do XRM Dynamics](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
+Esse conector do Dynamics é criado sobre as [Ferramentas do Dynamics xrm](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
 >[!TIP]
 >Para copiar dados de **Finanças e Operações do Dynamics 365**, você pode usar o [Conector do Dynamics AX](connector-dynamics-ax.md).
@@ -67,7 +72,7 @@ As propriedades a seguir têm suporte no serviço vinculado do Dynamics.
 
 ### <a name="dynamics-365-and-dynamics-crm-online"></a>Dynamics 365 e Dynamics CRM Online
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como **Dynamics**. | Sim |
 | deploymentType | O tipo de implantação da instância do Dynamics. Deve ser **"Online"** para o Dynamics online. | Sim |
@@ -110,7 +115,7 @@ As propriedades a seguir têm suporte no serviço vinculado do Dynamics.
 
 *Propriedades adicionais que comparam com o Dynamics online são "hostName" e "port".*
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como **Dynamics**. | Sim |
 | deploymentType | O tipo de implantação da instância do Dynamics. Deve ser **"OnPremisesWithIfd"** para o Dynamics local com IFD.| Sim |
@@ -156,15 +161,15 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados de e para Dynamics, defina o tipo da propriedade do conjunto de dados como **DynamicsEntity**. Há suporte para as seguintes propriedades.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como **DynamicsEntity**. |Sim |
 | entityName | O nome lógico da entidade a ser recuperada. | Não para fonte (se "query" na fonte da atividade for especificada), Sim para coletor |
 
 > [!IMPORTANT]
->- Quando você copia dados do Dynamics, a seção "estrutura" é opcional mas altamente recommanded no conjunto de dados Dynamics para garantir um resultado determinística de cópia. Ela define o tipo de dados e o nome de coluna para dados do Dynamics que você deseja copiar. Saiba mais em [Estrutura do conjunto de dados](concepts-datasets-linked-services.md#dataset-structure-or-schema) e [Mapeamento de tipo de dados para o Dynamics](#data-type-mapping-for-dynamics).
->- Durante a importação de esquema na criação da interface do usuário, o ADF infere o esquema fazendo a amostragem das primeiras linhas do resultado da consulta do Dynamics para inicializar a construção da estrutura, caso em que as colunas sem valores são omitidas. O mesmo comportamento se aplica para copiar as execuções se não houver nenhuma definição de estrutura explícita. Você poderá examinar o esquema/estrutura de conjunto de dados do Dynamics e adicionar mais colunas a ele conforme necessário, as quais serão respeitadas durante o tempo de execução de cópia.
->- Ao copiar dados para o Dynamics, a seção "estrutura" é opcional no conjunto de dados do Dynamics. Quais colunas copiar são determinadas pelo esquema de dados de origem. Se a fonte for um arquivo CSV sem cabeçalho, no conjunto de dados de entrada, especifique "structure" com o nome da coluna e tipo de dados. Eles são mapeados para os campos no arquivo CSV um por um em ordem.
+>- Quando você copia dados do Dynamics, a seção "estrutura" é opcional, mas altamente recomandoada no conjunto de dados do Dynamics para garantir um resultado de cópia determinística. Ela define o tipo de dados e o nome de coluna para dados do Dynamics que você deseja copiar. Saiba mais em [Estrutura do conjunto de dados](concepts-datasets-linked-services.md#dataset-structure-or-schema) e [Mapeamento de tipo de dados para o Dynamics](#data-type-mapping-for-dynamics).
+>- Durante a importação de esquema na criação da interface do usuário, o ADF infere o esquema fazendo a amostragem das primeiras linhas do resultado da consulta do Dynamics para inicializar a construção da estrutura, caso em que as colunas sem valores são omitidas. O mesmo comportamento se aplica a execuções de cópia se não houver nenhuma definição de estrutura explícita. Você poderá examinar o esquema/estrutura de conjunto de dados do Dynamics e adicionar mais colunas a ele conforme necessário, as quais serão respeitadas durante o tempo de execução de cópia.
+>- Ao copiar dados para o Dynamics, a seção "estrutura" é opcional no conjunto de dados do Dynamics. As colunas a serem copiadas são determinadas pelo esquema de dados de origem. Se a fonte for um arquivo CSV sem cabeçalho, no conjunto de dados de entrada, especifique "structure" com o nome da coluna e tipo de dados. Eles são mapeados para os campos no arquivo CSV um por um em ordem.
 
 **Exemplo:**
 
@@ -210,10 +215,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Dynamics, defina o tipo de fonte na atividade de cópia como **DynamicsSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | O tipo da propriedade da fonte da atividade de cópia deve ser definido como **DynamicsSource**. | Sim |
-| query | FetchXML é uma linguagem de consulta proprietária que é usada no Dynamics (online e local). Veja os exemplos a seguir. Para obter mais informações, consulte [criar consultas com FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | Não (se "entityName" no conjunto de dados for especificada) |
+| query | FetchXML é uma linguagem de consulta proprietária que é usada no Dynamics (online e local). Veja os exemplos a seguir. Para saber mais, consulte [criar consultas com FetchXML](https://msdn.microsoft.com/library/gg328332.aspx). | Não (se "entityName" no conjunto de dados for especificada) |
 
 >[!NOTE]
 >A coluna PK sempre será copiada, mesmo que ela não esteja contida na projeção da coluna que você configurar na consulta FetchXML.
@@ -274,7 +279,7 @@ Para copiar dados do Dynamics, defina o tipo de fonte na atividade de cópia com
 
 Para copiar dados do Dynamics, defina o tipo de coletor na atividade de cópia como **DynamicsSink**. As propriedades a seguir têm suporte na seção **sink** da atividade de cópia.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | O tipo de propriedade do coletor da atividade de cópia deve ser definida como **DynamicsSink**. | Sim |
 | writeBehavior | O comportamento da operação de gravação.<br/>O valor permitido é **"Upsert"** . | Sim |
@@ -330,27 +335,31 @@ Configure o tipo de dados do Data Factory correspondente em uma estrutura do con
 
 | Tipo de dados do Dynamics | Tipo de dados provisório do Data Factory | Tem suporte como origem | Tem suporte como coletor |
 |:--- |:--- |:--- |:--- |
-| AttributeTypeCode.BigInt | long | ✓ | ✓ |
+| AttributeTypeCode.BigInt | Long | ✓ | ✓ |
 | AttributeTypeCode.Boolean | Boolean | ✓ | ✓ |
 | AttributeType.Customer | Guid | ✓ | |
 | AttributeType.DateTime | DateTime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
-| AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | Cadeia de caracteres | ✓ | ✓ |
+| AttributeType.Double | Duplo | ✓ | ✓ |
+| AttributeType.EntityName | Cadeia | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
 | AttributeType.Lookup | Guid | ✓ | ✓ (com o único destino associado) |
 | AttributeType.ManagedProperty | Boolean | ✓ | |
-| AttributeType.Memo | Cadeia de caracteres | ✓ | ✓ |
+| AttributeType.Memo | Cadeia | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
 | AttributeType.Owner | Guid | ✓ | |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
 | AttributeType.Uniqueidentifier | Guid | ✓ | ✓ |
-| AttributeType.String | Cadeia de caracteres | ✓ | ✓ |
+| AttributeType.String | Cadeia | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
 > [!NOTE]
-> Não há suporte para os tipos de dados do Dynamics Calendarrules, AttributeType.MultiSelectPicklist e PartyList.
+> Não há suporte para os tipos de dados do Dynamics AttributeType. CalendarRules, AttributeType. MultiSelectPicklist e AttributeType. Partylist.
+
+## <a name="lookup-activity-properties"></a>Propriedades da atividade de pesquisa
+
+Para obter detalhes sobre as propriedades, verifique a [atividade de pesquisa](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter uma lista de armazenamentos de dados com suporte como origens e coletores pela atividade de cópia no Data Factory, consulte [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).

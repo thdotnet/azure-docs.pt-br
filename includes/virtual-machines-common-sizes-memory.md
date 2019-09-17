@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 08/08/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: c8ffa7b65e4f97fa537299bf542ba377da026064
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: dce7cc2cd8e97eef81023eb803cace3f6d011171
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
+ms.lasthandoff: 09/16/2019
 ms.locfileid: "70174581"
 ---
 Os tamanhos de VM otimizados para memória oferecem uma taxa de memória alta para CPU que são ideais para servidores de banco de dados relacionais, caches médio a grande e análises in-memory. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento e largura de banda de rede para cada tamanho neste agrupamento.
@@ -147,7 +147,7 @@ O recurso da VM da série Mv2 Intel® tecnologia Hyper-Threading
 
 <sup>1</sup> essas VMs grandes exigem um desses SOS convidados com suporte: Windows Server 2016, Windows Server 2019, SLES 12 SP4, SLES 15.
 
-<sup>2</sup> as VMs da série Mv2 são apenas de [geração 2](/azure/virtual-machines/linux/generation-2) . Se você estiver usando o Linux, consulte a seção a seguir para saber como localizar e selecionar uma imagem do SUSE Linux.
+<sup>2</sup> as VMs da série Mv2 são apenas de geração 2. Se você estiver usando o Linux, consulte a seção a seguir para saber como localizar e selecionar uma imagem do SUSE Linux.
 
 #### <a name="find-a-suse-image"></a>Localizar uma imagem SUSE
 
