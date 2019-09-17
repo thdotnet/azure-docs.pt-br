@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: f59455374299e25d0c5d6a06c7ec9efc1f220ecf
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: 0f29df02e8242872311df3d4cb660d46bbc2cee3
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70733483"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018776"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Configure os clusters no HDInsight com o Apache Hadoop, o Apache Spark, o Apache Kafka e muito mais
 
@@ -111,10 +111,21 @@ Você não precisa especificar o local do cluster explicitamente: O cluster est�
 
 ## <a name="storage-endpoints-for-clusters"></a>Pontos de extremidade de armazenamento para clusters
 
-Embora uma instalação local do Hadoop use o HDFS (Sistema de Arquivos Distribuído Hadoop) para armazenamento no cluster, na nuvem você usa pontos de extremidade de armazenamento conectados ao cluster. Os clusters HDInsight usam o [Azure Data Lake Storage](hdinsight-hadoop-use-data-lake-store.md) ou [blobs no Armazenamento do Azure](hdinsight-hadoop-use-blob-storage.md). Usar o Armazenamento do Azure ou o Data Lake Storage significa que você pode excluir com segurança os clusters HDInsight usados para cálculo enquanto ainda retém os dados. 
+Embora uma instalação local do Hadoop use o HDFS (Sistema de Arquivos Distribuído Hadoop) para armazenamento no cluster, na nuvem você usa pontos de extremidade de armazenamento conectados ao cluster. O uso do armazenamento em nuvem significa que você pode excluir com segurança os clusters HDInsight usados para computação e, ao mesmo tempo, manter seus dados. 
+
+Os clusters HDInsight podem usar as seguintes opções de armazenamento:
+
+* Azure Data Lake Storage Gen2
+* Azure Data Lake Storage Gen1
+* Armazenamento do Azure Uso Geral v2
+* Armazenamento do Azure Uso Geral v1
+* Blob de blocos de armazenamento do Azure (**com suporte apenas como armazenamento secundário**)
+
+Para obter mais informações sobre opções de armazenamento com o HDInsight, consulte [comparar as opções de armazenamento para uso com clusters do Azure HDInsight](hdinsight-hadoop-compare-storage-options.md).
 
 > [!WARNING]  
 > Não há suporte para usar uma conta de armazenamento adicional em um local diferente do cluster HDInsight.
+
 
 Durante a configuração, para o ponto de extremidade de armazenamento padrão, você especifica um contêiner de blob de uma conta de Armazenamento do Azure ou um Data Lake Storage. O armazenamento padrão contém os logs de aplicativo e de sistema. Opcionalmente, você pode especificar contas adicionais do Armazenamento do Azure e do Data Lake Storage vinculadas que o cluster possa acessar. O cluster HDInsight e as contas de armazenamento padrão dependentes devem estar na mesma localização do Azure.
 
