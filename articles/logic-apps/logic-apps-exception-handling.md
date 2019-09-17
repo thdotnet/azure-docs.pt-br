@@ -72,9 +72,9 @@ Ou você pode especificar manualmente a política de repetição na seção `inp
 
 | Valor | Tipo | Descrição |
 |-------|------|-------------|
-| <*retry-policy-type*> | Cadeia | O tipo de política de repetição que você deseja usar: `default`, `none`, `fixed`, ou `exponential` | 
-| <*retry-interval*> | Cadeia | O intervalo de repetição em que o valor deve usar [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O intervalo mínimo de padrão é `PT5S` e o intervalo máximo é `PT1D`. Ao usar a política de intervalo exponencial, você pode especificar valores mínimos e máximos diferentes. | 
-| <*retry-attempts*> | Inteiro | O número de tentativas de repetição, que deve estar entre 1 e 90 | 
+| <*retry-policy-type*> | String | O tipo de política de repetição que você deseja usar: `default`, `none`, `fixed`, ou `exponential` | 
+| <*retry-interval*> | String | O intervalo de repetição em que o valor deve usar [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O intervalo mínimo de padrão é `PT5S` e o intervalo máximo é `PT1D`. Ao usar a política de intervalo exponencial, você pode especificar valores mínimos e máximos diferentes. | 
+| <*retry-attempts*> | Integer | O número de tentativas de repetição, que deve estar entre 1 e 90 | 
 ||||
 
 *Opcional*
