@@ -75,7 +75,7 @@ Você pode usar esses esquemas de acompanhamento AS2 em sua conta de integraçã
 | incomingHeaders |Dicionário de JToken | Detalhes do cabeçalho da mensagem de entrada AS2. (Opcional) |
 | outgoingHeaders |Dicionário de JToken | Detalhes do cabeçalho da mensagem de saída AS2. (Opcional) |
 | isNrrEnabled | Boolean | Use o valor padrão se o valor não for conhecido. (Obrigatório) |
-| isMdnExpected | Booliano | Use o valor padrão se o valor não for conhecido. (Obrigatório) |
+| isMdnExpected | Boolean | Use o valor padrão se o valor não for conhecido. (Obrigatório) |
 | mdnType | Enum | Os valores permitidos são **NotConfigured**, **Sync** e **Async**. (Obrigatório) |
 ||||
 
