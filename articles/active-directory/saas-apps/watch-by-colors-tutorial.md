@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/20/2019
+ms.date: 09/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce0882be0419cbbbc7d94cb8d517e27bdb06a780
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: e7d0810c393cf9b6060f456c5ff01d03673b62a9
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013931"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861311"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-watch-by-colors"></a>Tutorial: Integração do SSO (logon único) do Azure Active Directory com o Watch by Colors
 
@@ -56,7 +56,6 @@ Para configurar a integração do Watch by Colors ao Azure AD, você precisará 
 1. Para adicionar um novo aplicativo, escolha **Novo aplicativo**.
 1. Na seção **Adicionar da galeria**, digite **Watch by Colors** na caixa de pesquisa.
 1. Selecione **Watch by Colors** no painel de resultados e adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
-
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-watch-by-colors"></a>Configurar e testar o logon único do Azure AD para o Watch by Colors
 
@@ -123,13 +122,21 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 
 ## <a name="configure-watch-by-colors-sso"></a>Configurar SSO do Watch by Colors
 
-1. Abra uma nova janela do navegador da Web, entre no site da empresa Watch by Colors como administrador e execute as seguintes etapas:
+1. Para automatizar a configuração no Watch by Colors, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, clicando em **Instalar a extensão**.
 
-1. No canto superior direito da página, clique em **perfil** > **Configurações da Conta** > **SSO (Logon Único)** .
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
+
+2. Após adicionar a extensão ao navegador, clicar em **Configurar o Watch by Colors** direcionará você ao aplicativo Watch by Colors. Nele, forneça as credenciais de administrador para entrar no Watch by Colors. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 5.
+
+    ![Configuração da instalação](common/setup-sso.png)
+
+3. Se quiser configurar o Watch by Colors manualmente, abra uma nova janela do navegador da Web, entre no site da empresa do Watch by Colors como administrador e execute as seguintes etapas:
+
+4. No canto superior direito da página, clique em **perfil** > **Configurações da Conta** > **SSO (Logon Único)** .
 
     ![Configuração do Watch by Colors](./media/watch-by-colors-tutorial/config01.png)
 
-1. Na página **SSO (Logon Único)** , siga estas etapas:
+5. Na página **SSO (Logon Único)** , siga estas etapas:
 
     ![Configuração do Watch by Colors](./media/watch-by-colors-tutorial/config02.png)
 
@@ -183,5 +190,5 @@ Ao clicar no bloco do Watch by Colors no Painel de Acesso, você deverá ser con
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Experimente o Slack com o Azure AD](https://aad.portal.azure.com/)
+- [Experimentar o Watch by Colors com o Azure AD](https://aad.portal.azure.com/)
 

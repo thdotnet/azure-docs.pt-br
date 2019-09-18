@@ -63,19 +63,6 @@ sections:
             html: '<p>Ajude a proteger seu banco de dados com a autenticação do Azure AD, redes virtuais, firewalls, conexões Always Encrypted. Identificar ameaças e vulnerabilidades com segurança interna.</p>'
             image:
               src: media/index/i_security.svg
-  - title: Novos recursos e versão prévia de recursos
-    items:
-      - type: paragraph
-        text: 'Estamos continuamente aprimorando o Banco de Dados SQL com novos recursos e gostaríamos de ouvir seus comentários sobre os seguintes novos recursos:'
-      - type: list
-        style: unordered
-        items:
-          - html: (Versão prévia) Camada de <a href="sql-database-service-tier-hyperscale">Hiperescala</a> que dá suporte a bancos de dados de até 100 TB e várias réplicas legíveis.
-          - html: '(Versão prévia) Novos recursos de <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">Processamento de consulta inteligente</a> do SQL Server 2019, como <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#table-variable-deferred-compilation">compilação adiada de variável de tabela</a>, <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#batch-mode-on-rowstore">modo em lotes em tabelas rowstore</a> e <a href="https://docs.microsoft.com/sql/relational-databases/user-defined-functions/scalar-udf-inlining?view=azuresqldb-current&toc=%2Fazure%2Fsql-database%2Ftoc.json">inlining de UDF escalar</a>.'
-          - html: '(Versão prévia) Novas funcionalidades da linguagem Transact-SQL, como <a href="https://docs.microsoft.com/sql/t-sql/functions/approx-count-distinct-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">agregação APPROX_COUNT_DISTINCT</a> e <a href="https://docs.microsoft.com/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">importação em massa do armazenamento de Blobs do Azure</a>.'
-          - html: '(Versão prévia) Novas operações de índice columnstore em cluster de <a href="https://docs.microsoft.com/sql/t-sql/statements/create-columnstore-index-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#online--on--off">build</a> e rebuild do SQL Server 2019 Online.'
-          - html: '(Versão prévia) Novos <a href="https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview">Serviços de Machine Learning do Banco de Dados SQL do Azure (com o R)</a>.'
-          - html: '(Visualização) Novos <a href="https://docs.microsoft.com/azure/sql-database/sql-database-serverless">camada de computação sem servidor</a> fornece dimensionamento automático de computação e cobra por segundo para computação usada.'
   - title: Inícios rápidos de cinco minutos
     items:
       - type: paragraph
@@ -131,7 +118,7 @@ sections:
           - html: <a href="/azure/sql-database/sql-database-security-tutorial">Proteja seu banco de dados SQL</a>.
           - html: Distribuir dados globalmente usando o <a href="/azure/sql-database/sql-database-implement-geo-distributed-database">banco de dados distribuído geograficamente</a>.
           - html: Encontre mais <a href="sql-database-howto-single-database.md">guias de instruções</a> que podem ajudá-lo a configurar seu banco de dados.
-  - title: Amostras
+  - title: Exemplos
     items:
       - type: paragraph
         text: Encontre scripts para gerenciar tarefas comuns.

@@ -1,6 +1,6 @@
 ---
 title: Uso de reserva do Azure para uma assinatura individual com taxas pagas conforme o uso
-description: Saiba como interpretar seu uso para entender como a reserva do Azure para sua assinatura individual com taxas pagas conforme o uso é aplicada.
+description: Saiba como ler seu uso para entender como a reserva do Azure para sua assinatura individual com taxas pagas conforme o uso é aplicada.
 author: bandersmsft
 manager: yashr
 tags: billing
@@ -12,13 +12,13 @@ ms.workload: na
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: 11f05c3de50f2f82173b6666d304887fbc2038cc
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490374"
 ---
-# <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Entender o uso de reserva do Azure para sua assinatura individual com assinatura paga conforme o uso de taxas
+# <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Entender o uso de reserva do Azure para sua assinatura individual com taxas pagas conforme o uso
 
 Use o ReservationId da [página Reservation](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) e o arquivo de uso do [portal Accounts do Azure](https://account.azure.com) para avaliar o uso de sua reserva.
 
@@ -59,7 +59,7 @@ Filtrar **informações adicionais** e digite sua **ID de reserva**. A captura d
 4. **ID do medidor** é a ID do medidor para a reserva. O custo deste medidor é $0. Esse ID do medidor aparece para qualquer VM que se qualifique para o desconto de reserva.
 5. Standard_DS1_v2 é uma VM vCPU, e a VM é implantada sem o Benefício Híbrido do Azure. Portanto, esse medidor cobre a carga extra do software Windows. Para encontrar o medidor correspondente à VM core da série D 1, consulte [Instâncias de VM de Reserva do Azure Custos do software do Windows](billing-reserved-instance-windows-software-costs.md). Se você tiver o benefício híbrido do Azure, esse custo extra não será aplicado.
 
-## <a name="usage-for-sql-database--cosmos-db-reservations"></a>Uso para reservas de banco de dados SQL e Cosmos DB
+## <a name="usage-for-sql-database--cosmos-db-reservations"></a>Uso de reservas do Banco de Dados SQL e Cosmos DB
 
 As seções a seguir usam o Banco de Dados SQL do Azure como exemplo para descrever o relatório de uso. Também é possível usar as mesmas etapas para obter o uso do Azure Cosmos DB.
 
@@ -100,7 +100,7 @@ Para saber mais sobre as Reservas do Azure, consulte os seguintes artigos:
 
 - [O que são Reservas do Azure?](billing-save-compute-costs-reservations.md)
 - [Pré-pagamento para máquinas virtuais com instâncias de VMs reservadas do Azure](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Azure SQL Database](../sql-database/sql-database-reserved-capacity.md)
+- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Banco de Dados SQL do Azure](../sql-database/sql-database-reserved-capacity.md)
 - [Gerenciar Reservas do Azure](billing-manage-reserved-vm-instance.md)
 - [Entender como o desconto de reserva é aplicado](billing-understand-vm-reservation-charges.md)
 - [Entender o uso de reserva para seu registro de empresa](billing-understand-reserved-instance-usage-ea.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Realizar operações de ETL (extração, transformação e carregamento) usando a Consulta Interativa no Azure HDInsight'
+title: 'Tutorial: Realizar operações de ETL usando a Consulta Interativa no Azure HDInsight'
 description: Tutorial - Saiba como extrair dados de um conjunto de dados CSV brutos, transformá-los usando a Consulta Interativa no HDInsight e, em seguida, carregar os dados transformados no banco de dados SQL do Azure usando o Apache Sqoop.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/02/2019
 ms.author: hrasheed
 ms.custom: hdinsightactive,mvc
-ms.openlocfilehash: fbab8502c088c2ae7a4b8e87285d7e4cac1de4c0
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 9ff215bb687ea2b6aa32ecb01dba7a61385b15a4
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807395"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70735843"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Tutorial: Extrair, transformar e carregar dados usando a Consulta Interativa no Azure HDInsight
 

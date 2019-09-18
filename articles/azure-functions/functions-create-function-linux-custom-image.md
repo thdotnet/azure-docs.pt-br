@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
 manager: gwallace
-ms.openlocfilehash: 80f7185b69a7953656235d3bd622b7f61611de1a
-ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
+ms.openlocfilehash: 1865b1b96b5b8794f1518d639825ccd2f1dcd090
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70210184"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70773146"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Crie uma função no Linux usando uma imagem personalizada
 
@@ -143,9 +143,8 @@ Com a imagem personalizada em execução em um contêiner local do Docker, verif
 
 ![Teste o aplicativo de funções localmente.](./media/functions-create-function-linux-custom-image/run-image-local-success.png)
 
-Opcionalmente, você pode testar a função novamente, desta vez no contêiner local, usando a seguinte URL:
-
-`http://localhost:8080/api/myhttptrigger?name=<yourname>`
+> [!NOTE]
+> Neste ponto, ao tentar chamar sua função HTTP específica, você obtém uma resposta de erro HTTP 401. Isso ocorre porque sua função é executada no contêiner local como ocorreria no Azure, o que significa que a chave de função é necessária. Como o contêiner ainda não foi publicado em um aplicativo de funções, não há nenhuma chave de função disponível. Você verá posteriormente que, quando usar as Core Tools para publicar seu contêiner, as teclas de função serão mostradas a você. Se quiser testar sua função em execução no contêiner local, você poderá alterar a [chave de autorização](functions-bindings-http-webhook.md#authorization-keys) para `anonymous`. 
 
 Depois de verificar o aplicativo de funções no contêiner, interrompa a execução. Agora, você pode enviar por push a imagem personalizada à sua conta do Hub do Docker.
 
@@ -159,7 +158,7 @@ Antes de enviar uma imagem por push, você deve entrar no Hub do Docker usando o
 docker login --username <docker-id>
 ```
 
-Uma mensagem “Logon com êxito” confirma que você está conectado. Depois de conectado, envie a imagem por push para o Hub do Docker usando o comando [docker push](https://docs.docker.com/engine/reference/commandline/push/).
+Uma mensagem “logon com êxito” confirma que você está conectado. Depois de conectado, envie a imagem por push para o Hub do Docker usando o comando [docker push](https://docs.docker.com/engine/reference/commandline/push/).
 
 ```bash
 docker push <docker-id>/mydockerimage:v1.0.0

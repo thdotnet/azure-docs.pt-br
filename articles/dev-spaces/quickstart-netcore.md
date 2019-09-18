@@ -1,5 +1,5 @@
 ---
-title: Desenvolver com o .NET Core no Kubernetes usando o Azure Dev Spaces (Visual Studio Code)
+title: Depurar e iterar com o Visual Studio Code e o .NET Core no Kubernetes usando o Azure Dev Spaces (Visual Studio Code)
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -10,14 +10,14 @@ ms.topic: quickstart
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: cc41e268678872910113c8e198bdaaac34232458
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 162a020351efb27fe25b566918ddda555fac35eb
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706318"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772610"
 ---
-# <a name="quickstart-develop-with-net-core-on-kubernetes-using-azure-dev-spaces-visual-studio-code"></a>Início Rápido: Desenvolver com o .NET Core no Kubernetes usando o Azure Dev Spaces (Visual Studio Code)
+# <a name="quickstart-debug-and-iterate-with-visual-studio-code-and-net-core-on-kubernetes-using-azure-dev-spaces-visual-studio-code"></a>Início Rápido: Depurar e iterar com o Visual Studio Code e o .NET Core no Kubernetes usando o Azure Dev Spaces (Visual Studio Code)
 
 Neste guia, você aprenderá a:
 
@@ -38,7 +38,7 @@ Você precisa criar um cluster do AKS em uma [região com suporte][supported-reg
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
-az aks create -g MyResourceGroup -n MyAKS --location eastus --node-vm-size Standard_DS2_v2 --node-count 1 --disable-rbac --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location eastus --disable-rbac --generate-ssh-keys
 ```
 
 ## <a name="enable-azure-dev-spaces-on-your-aks-cluster"></a>Habilitar o Azure Dev Spaces no cluster do AKS
@@ -77,7 +77,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Abra o Visual Studio Code, clique em *Arquivo*, *Abrir...* e, em seguida, navegue até o diretório *dev-spaces/samples/dotnetcore/getting-started/webfrontend* e clique em *Abrir*.
 
-Agora você tem o projeto *webfrontend* aberto no Visual Studio Code. Para executar o aplicativo em seu espaço de desenvolvimento, gere os ativos de gráfico do Helm e do Docker usando a extensão Azure Dev Spaces na paleta de comando.
+Agora você tem o projeto *webfrontend* aberto no Visual Studio Code. Para executar o aplicativo em seu espaço de desenvolvimento, gere os ativos de gráfico do Helm e do Docker usando a extensão Azure Dev Spaces na paleta de comandos.
 
 Para abrir a paleta de comandos no Visual Studio Code, clique em *Exibir* e, em seguida, *Paleta de Comandos*. Comece digitando `Azure Dev Spaces` e clique em `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
 
@@ -106,7 +106,7 @@ Clique em *Depurar* e, em seguida, *Parar Depuração* para parar o depurador.
 
 ## <a name="update-code"></a>Atualizar código
 
-Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar .NET Core (AZDS)* novamente. Por exemplo: 
+Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar .NET Core (AZDS)* novamente. Por exemplo:
 
 1. Se o aplicativo ainda estiver em execução, clique em *Depurar* e, em seguida, em *Parar Depuração* para interrompê-lo.
 1. Atualize a [linha 22 em `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L22) para:
@@ -123,7 +123,7 @@ Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no 
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Definir e usar pontos de interrupção para depuração
 
-Inicie o serviço no modo de depuração usando *Iniciar .NET Core (AZDS)*.
+Inicie o serviço no modo de depuração usando *Iniciar .NET Core (AZDS)* .
 
 Navegue de volta para a exibição *Explorer* clicando em *Exibir* e, em seguida, *Explorer*. Abra `Controllers/HomeController.cs` e clique em algum lugar da linha 22 para colocar o cursor nela. Para definir um ponto de interrupção, pressione *F9* ou clique em *Depurar* e, em seguida, *Ativar/Desativar Pontos de Interrupção*.
 
@@ -135,7 +135,7 @@ Remova o ponto de interrupção colocando o cursor na linha 22 em `Controllers/H
 
 ## <a name="update-code-from-visual-studio-code"></a>Atualizar o código no Visual Studio Code
 
-Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 22 em `Controllers/HomeController.cs`. Por exemplo: 
+Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 22 em `Controllers/HomeController.cs`. Por exemplo:
 
 ```csharp
 ViewData["Message"] = "Your application description page in Azure while debugging!";

@@ -7,18 +7,21 @@ ms.date: 06/24/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 8c19e2fbe929fcc7084399ec17298f04875ba45c
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 7b2b0686ae884ca2273730c2947091e525359daf
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231682"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918616"
 ---
 # <a name="control-mapping-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Mapeamento de controles da amostra de blueprint NIST SP 800-53 R4
 
 O artigo a seguir fornece detalhes sobre como a amostra de blueprint NIST SP 800-53 R4 do Azure Blueprints é mapeada para os controles do NIST SP 800-53 R4. Para obter mais informações sobre os controles, confira [NIST SP 800-53](https://nvd.nist.gov/800-53).
 
 Os seguintes mapeamentos referem-se aos controles do **NIST SP 800-53 (Rev. 4)** . Use a navegação no lado direito para ir diretamente para um mapeamento de controle específico. Muitos dos controles mapeados são implementados com uma iniciativa do [Azure Policy](../../../policy/overview.md). Para examinar a iniciativa completa, abra **Política** no portal do Azure e selecione a página **Definições**. Em seguida, localize e selecione a iniciativa de política interna **\[Versão prévia\]: Auditar controles NIST SP 800-53 R4 e implantar extensões de VM específicas para dar suporte a requisitos de auditoria**.
+
+> [!IMPORTANT]
+> Cada controle abaixo está associado com uma ou mais definições do [Azure Policy](../../../policy/overview.md). Essas políticas podem ajudar você a [avaliar a conformidade](../../../policy/how-to/get-compliance-data.md) com o controle. No entanto, geralmente não há uma correspondência 1:1 ou completa entre um controle e uma ou mais políticas. Dessa forma, **Conformidade** no Azure Policy refere-se somente às próprias políticas. Não garante que você está totalmente em conformidade com todos os requisitos de um controle. Além disso, o padrão de conformidade inclui controles que não são abordados por nenhuma definição do Azure Policy no momento. Portanto, a conformidade no Azure Policy é somente uma exibição parcial do status de conformidade geral. As associações entre controles e definições do Azure Policy desta amostra de blueprint de conformidade podem ser alteradas ao longo do tempo. Para exibir o histórico de alterações, confira o [Histórico de Confirmações do GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/nist-sp-800-53-rev4/control-mapping.md).
 
 ## <a name="ac-2-account-management"></a>AC-2 Gerenciamento de conta
 

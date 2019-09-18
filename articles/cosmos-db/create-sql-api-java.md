@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.custom: seo-java-august2019
-ms.openlocfilehash: 110c4a343909a81e092b147b79ed69d6bd5c2d9c
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: a34cb8e13d32cbeb6d289869dca3a8cb1391d68f
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981746"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70390845"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-sql-api-data"></a>Início Rápido: Criar um aplicativo Java para gerenciar os dados de API de SQL do Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "69981746"
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
 
-Este início rápido mostra como criar e gerenciar recursos de uma conta da [API de SQL](sql-api-introduction.md) do Azure Cosmos DB usando um aplicativo Java. Primeiro, crie uma conta da API de SQL do Azure Cosmos DB usando o portal do Azure; crie um aplicativo Java usando o [SDK do Java para SQL](sql-api-sdk-async-java.md) e adicione recursos à conta do Cosmos DB usando o aplicativo Java. Estas instruções podem ser seguidas em qualquer sistema operacional compatível com Java. Ao concluir este início rápido, você estará familiarizado com a criação e a modificação de contêineres e bancos de dados do Cosmos na interface do usuário ou de forma programática, o que preferir.
+Este início rápido mostra como usar um aplicativo Java para criar e gerenciar um banco de dados de documentos da conta da API de SQL do Azure Cosmos DB. Primeiro, crie uma conta da API de SQL do Azure Cosmos DB usando o portal do Azure, crie um aplicativo Java usando o SDK do Java para SQL e, em seguida, adicione recursos à conta do Cosmos DB usando o aplicativo Java. Estas instruções podem ser seguidas em qualquer sistema operacional compatível com Java. Ao concluir este início rápido, você estará familiarizado com a criação e a modificação de contêineres e bancos de dados do Cosmos DB na interface do usuário ou de forma programática, o que preferir.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

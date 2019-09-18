@@ -11,12 +11,12 @@ ms.date: 01/22/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: f273237431373aa69423ba244d4e7c509ffe7bfe
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.openlocfilehash: 7c7b2b75bdf8aa2be0ea9dd2b60453c2480fc1d2
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57577102"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70813424"
 ---
 # <a name="transform-data-in-the-cloud-by-using-spark-activity-in-azure-data-factory"></a>Transformar os dados na nuvem usando a atividade Spark no Azure Data Factory
 Neste tutorial, você pode usar o Azure PowerShell para criar um pipeline do Data Factory que transforma dados usando a Atividade Spark e um serviço vinculado HDInsight sob demanda. Neste tutorial, você realizará os seguintes procedimentos:
@@ -137,7 +137,7 @@ Atualize os valores para as propriedades a seguir na definição de serviço vin
 
 - **hostSubscriptionId**. Substitua &lt;subscriptionID&gt; pela ID da assinatura do Azure. O cluster HDInsight sob demanda é criado nessa assinatura. 
 - **locatário**. Substitua &lt;tenantID&gt; pela ID do locatário do Azure. 
-- **servicePrincipalId**, **servicePrincipalKey**. Substitua &lt;servicePrincipalID&gt; e &lt;servicePrincipalKey&gt; pela ID e a chave da entidade de serviço no Azure Active Directory. Essa entidade de serviço precisa ser um membro da função de Colaborador de assinatura ou o grupo de recursos em que o cluster é criado. Veja [criar o aplicativo do Azure Active Directory e a entidade de serviço](../active-directory/develop/howto-create-service-principal-portal.md) para obter detalhes. 
+- **servicePrincipalId**, **servicePrincipalKey**. Substitua &lt;servicePrincipalID&gt; e &lt;servicePrincipalKey&gt; pela ID e a chave da entidade de serviço no Azure Active Directory. Essa entidade de serviço precisa ser um membro da função de Colaborador de assinatura ou o grupo de recursos em que o cluster é criado. Veja [criar o aplicativo do Azure Active Directory e a entidade de serviço](../active-directory/develop/howto-create-service-principal-portal.md) para obter detalhes. A **ID da entidade de serviço** é equivalente à *ID do aplicativo* e uma **Chave de entidade de serviço** é equivalente ao valor de um *Segredo do cliente*.
 - **clusterResourceGroup**. Substitua &lt;resourceGroupOfHDICluster&gt; pelo nome do grupo de recursos no qual o cluster HDInsight precisa ser criado. 
 
 > [!NOTE]

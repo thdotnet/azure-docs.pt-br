@@ -1,20 +1,19 @@
 ---
 title: Fazer failback de VMs do Azure replicadas para uma região do Azure secundária para recuperação de desastre com o serviço do Azure Site Recovery.
 description: Saiba como fazer failback de VMs do Azure com o serviço Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: a3b67e9b0dc41eeb14000400912892fbf29acfe2
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: c8be547790452774992b9226ca8010532263aaff
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399491"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70814522"
 ---
 # <a name="fail-back-an-azure-vm-between-azure-regions"></a>Failback de uma VM do Azure entre regiões do Azure
 
@@ -45,25 +44,18 @@ Depois que as VMs forem protegidas novamente, você poderá fazer failback para 
 
     ![Failback para primária](./media/site-recovery-azure-to-azure-failback/azure-to-azure-failback.png)
 
-3. Selecione **Failover de teste** para executar um failover de teste de volta para a região primária.
-4. Selecione o ponto de recuperação e a rede virtual para o failover de teste e selecione **OK**. É possível examinar a VM de teste criada na região primária.
-5. Depois que o failover de teste for concluído com êxito, selecione **Limpar failover de teste** para limpar os recursos criados na região de origem para o failover de teste.
-6. Em **Itens replicados**, selecione a VM e, em seguida, selecione **Failover**.
-7. Em **Failover**, selecione um ponto de recuperação para executar o failover:
+2. Em **Itens replicados**, selecione a VM e, em seguida, selecione **Failover**.
+3. Em **Failover**, selecione um ponto de recuperação para executar o failover:
     - **Mais recente (padrão)** : processa todos os dados no serviço Site Recovery e fornece o menor RPO (Objetivo de ponto de recuperação).
     - **Mais recente processado**: Reverte a VM para o último ponto de recuperação que foi processado pelo Site Recovery.
     - **Personalizado**: Faz failover para um determinado ponto de recuperação. Essa opção é útil para fazer um failover de teste.
-
-8. Selecione **Desligar o computador antes do início do failover** se quiser que o Site Recovery tente realizar um desligamento das VMs de origem antes de disparar o failover. O failover continuará, mesmo se o desligamento falhar. Observe que o Site Recovery não limpa a origem após o failover.
-9. Acompanhe o progresso do failover na página **Trabalhos**.
-10. Após a conclusão do failover, valide a VM fazendo logon nela. É possível alterar o ponto de recuperação conforme necessário.
-11. Depois de verificar o failover, selecione **Fazer commit do failover**. Confirmar exclui todos os pontos de recuperação disponíveis. A opção Alterar ponto de recuperação não está mais disponível.
-12. A VM deve aparecer como o fazer failover realizado e failback realizado.
+4. Selecione **Desligar o computador antes do início do failover** se quiser que o Site Recovery tente realizar um desligamento das VMs da região de DR antes de disparar o failover. O failover continuará, mesmo se o desligamento falhar. 
+5. Acompanhe o progresso do failover na página **Trabalhos**.
+6. Após a conclusão do failover, valide a VM fazendo logon nela. É possível alterar o ponto de recuperação conforme necessário.
+7. Depois de verificar o failover, selecione **Fazer commit do failover**. Confirmar exclui todos os pontos de recuperação disponíveis. A opção Alterar ponto de recuperação não está mais disponível.
+8. A VM deve aparecer como o fazer failover realizado e failback realizado.
 
     ![VM nas regiões primária e secundária](./media/site-recovery-azure-to-azure-failback/azure-to-azure-failback-vm-view.png)
-
-> [!NOTE]
-> As VMs de recuperação de desastre permanecerão no estado desalocado/desligamento. Isso ocorre intencionalmente porque o Site Recovery salva as informações da VM, que podem ser úteis para o failover da região primária para a secundária posteriormente. Você não é cobrado pelas VMs desalocadas e, portanto, elas devem ser mantidas como elas estão.
 
 ## <a name="next-steps"></a>Próximas etapas
 

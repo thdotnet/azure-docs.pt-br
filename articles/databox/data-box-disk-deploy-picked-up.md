@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 09/11/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: b982e0bcd87a60e29b11c7123fbe5d675ab017b3
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 03ca6163b4f788d50f7f27a2fcaf2c9b6c02d84c
+ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390417"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70910111"
 ---
 ::: zone target="chromeless"
 
@@ -52,7 +52,7 @@ Antes de começar, verifique se você concluiu o [Tutorial: copiar dados para o 
 
 As próximas etapas são determinadas pelo local em você está devolvendo o dispositivo. As instruções são diferentes para EUA/Canadá, UE (União Europeia), Austrália ou países da Ásia.
 
-### <a name="pick-up-in-us-canada"></a>Retirada nos EUA, Canadá
+### <a name="in-us-or-canadatabin-us-or-canada"></a>[Nos EUA ou no Canadá](#tab/in-us-or-canada)
 
 Execute as seguintes etapas se estiver devolvendo o dispositivo nos EUA ou Canadá.
 
@@ -68,7 +68,7 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo nos EUA ou Canad
     - Se o número de controle não está entre aspas, o serviço de no-break exigirá que você pague um encargo adicional durante a retirada.
     - Em vez de agendar a retirada, você também pode descartar o Data Box Disk no local mais próximo de redistribuição.
 
-### <a name="pick-up-in-europe"></a>Retirada na Europa
+### <a name="in-europetabin-europe"></a>[Na Europa](#tab/in-europe)
 
 Execute as seguintes etapas se estiver devolvendo o dispositivo na Europa.
 
@@ -81,7 +81,7 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo na Europa.
 4. Acesse o site da DHL Express do país/região e escolha **Agendar a recolha pelo serviço de correio > Remessa de eReturn**.    
 3. Especifique o número da carta de porte e clique em **Agendar retirada** para organizar a retirada.
 
-### <a name="pick-up-in-australia"></a>Retirada na Austrália
+### <a name="in-australiatabin-australia"></a>[Na Austrália](#tab/in-australia)
 
 Datacenters do Azure na Austrália têm uma notificação de segurança adicional. Todas as remessas de entrada devem ter uma notificação avançada. Execute as seguintes etapas para retirada na Austrália.
 
@@ -89,9 +89,9 @@ Datacenters do Azure na Austrália têm uma notificação de segurança adiciona
 3. Afixe a etiqueta à caixa. 
 4. Agende online no link https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference uma retirada. 
 
-### <a name="pick-up-in-asia"></a>Retirada na Ásia
+### <a name="in-japan-koreatabin-japan-korea"></a>[No Japão, na Coreia do Sul](#tab/in-japan-korea)
 
-As instruções de retirada são diferentes para Japão, Coreia do Sul e Singapura.
+Veja aqui instruções de retirada para Japão e Coreia do Sul.
 
 #### <a name="pick-up-in-japan"></a>Retirada no Japão
 
@@ -134,7 +134,8 @@ Se necessário, você poderá contatar o Suporte da Quantium Solutions (em japon
     3. Se a transportadora não chegar para a coleta, ligue para a linha direta da *Quantium Solutions International* para providências alternativas. 
     4. Você recebe uma confirmação verbal se a solicitação for feita por telefone.
 
-#### <a name="pick-up-in-singapore"></a>Retirada em Singapura
+
+### <a name="in-singaporetabin-singapore"></a>[Em Singapura](#tab/in-singapore)
 
 1. Imprima a etiqueta de remessa e anexe à caixa. Se o rótulo estiver danificado ou tiver sido perdido:
     - Acesse **Visão Geral > Baixar etiqueta de remessa** e obtenha uma etiqueta de remessa de devolução.

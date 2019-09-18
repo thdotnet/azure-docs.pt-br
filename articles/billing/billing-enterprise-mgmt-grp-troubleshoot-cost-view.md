@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas de exibições de custo empresarial do Azure
+title: Solução de problemas de exibições de custo empresarial do Azure
 description: Saiba como resolver quaisquer problemas com modos de exibição de custo organizacional no Portal do Azure.
 author: bandersmsft
 manager: amberb
@@ -12,10 +12,10 @@ ms.date: 07/01/2019
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 83f7f424b265582a3830c02973cbbb9962ddfbfb
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67491269"
 ---
 # <a name="troubleshoot-enterprise-cost-views"></a>Solucionar problemas de exibições de custo empresarial
@@ -39,7 +39,7 @@ Isso pode acontecer devido a um dos seguintes motivos:
 
 ## <a name="asset-is-unavailable"></a>Ativo está indisponível
 
-Se você receber uma mensagem de erro informando **este ativo está indisponível** ao tentar acessar uma assinatura ou grupo de gerenciamento, em seguida, você não tiver a função correta para exibir este item.  
+Se você receber uma mensagem de erro **Este ativo não está disponível** ao tentar acessar uma assinatura ou um grupo de gerenciamento, isso significará que você não tem a função correta para exibir esse item.  
 
 ![Captura de tela que mostra a mensagem "O ativo está indisponível".](media/billing-enterprise-mgmt-groups/asset-not-found.png)
 

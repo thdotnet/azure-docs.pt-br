@@ -7,18 +7,21 @@ ms.date: 08/07/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 7b64c4cbb1253a12e82f56ea08587e091d5340a9
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 3157fd1e9790beb2230f8dee5b2d10afc4beff69
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231793"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918679"
 ---
 # <a name="control-mapping-of-the-irs-1075-blueprint-sample"></a>Mapeamento de controles da amostra de blueprint IRS 1075
 
 O artigo a seguir fornece detalhes sobre como a amostra de blueprint IRS 1075 do Azure Blueprints são mapeados para os controles IRS 1075. Para obter mais informações sobre os controles, confira [IRS 1075](https://www.irs.gov/pub/irs-pdf/p1075.pdf).
 
 Os seguintes mapeamentos referem-se aos controles **IRS 1075**. Use a navegação no lado direito para ir diretamente para um mapeamento de controle específico. Muitos dos controles mapeados são implementados com uma iniciativa do [Azure Policy](../../../policy/overview.md). Para examinar a iniciativa completa, abra **Política** no portal do Azure e selecione a página **Definições**. Em seguida, localize e selecione a iniciativa de política interna **\[Versão prévia\]: Auditar controles IRS 1075 e implantar extensões de VM específicas para dar suporte a requisitos de auditoria**.
+
+> [!IMPORTANT]
+> Cada controle abaixo está associado com uma ou mais definições do [Azure Policy](../../../policy/overview.md). Essas políticas podem ajudar você a [avaliar a conformidade](../../../policy/how-to/get-compliance-data.md) com o controle. No entanto, geralmente não há uma correspondência 1:1 ou completa entre um controle e uma ou mais políticas. Dessa forma, **Conformidade** no Azure Policy refere-se somente às próprias políticas. Não garante que você está totalmente em conformidade com todos os requisitos de um controle. Além disso, o padrão de conformidade inclui controles que não são abordados por nenhuma definição do Azure Policy no momento. Portanto, a conformidade no Azure Policy é somente uma exibição parcial do status de conformidade geral. As associações entre controles e definições do Azure Policy desta amostra de blueprint de conformidade podem ser alteradas ao longo do tempo. Para exibir o histórico de alterações, confira o [Histórico de Confirmações do GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/irs-1075/control-mapping.md).
 
 ## <a name="9321-ac-2-account-management"></a>9.3.2.1 Gerenciamento de conta AC-2
 

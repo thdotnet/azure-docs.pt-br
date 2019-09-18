@@ -1,18 +1,18 @@
 ---
-title: Tutorial - Configurar políticas do Apache HBase no HDInsight com o Enterprise Security Package - Azure
+title: Tutorial – Configurar o Apache HBase com o Enterprise Security Package – Azure
 description: Tutorial - Aprenda a configurar as políticas do Apache Ranger para HBase no Azure HDInsight com o Enterprise Security Package.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
-ms.date: 06/18/2019
-ms.openlocfilehash: 04592ba307cd696c20778d4a79f03be2eb0ac987
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.date: 09/04/2019
+ms.openlocfilehash: 72e268628560618fb6fa47843f5125d9126a9f3e
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274401"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885165"
 ---
 # <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Tutorial: Configurar políticas do Apache HBase no HDInsight com o Enterprise Security Package
 
@@ -100,7 +100,7 @@ Crie uma política do Ranger para **sales_user1** e **marketing_user1**.
 
 2. A tela **Lista de Políticas** exibirá todas as políticas do Ranger criadas para esse cluster. Uma política previamente configurada pode estar listada. Clique em **Adicionar Nova Política**.
 
-    ![Política de criação de UI do administrador do Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png)
+    ![Lista de políticas do Apache Ranger HBase](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policies-list.png)
 
 3. Na página **Criar Política**, insira os seguintes valores:
 
@@ -119,7 +119,7 @@ Crie uma política do Ranger para **sales_user1** e **marketing_user1**.
    * `*` indica zero ou mais ocorrências de caracteres.
    * `?` indica um caractere único.
 
-   ![Política de criação de UI do administrador do Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png)
+   ![Política de criação de vendas do Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-sales.png)
 
    >[!NOTE]
    >Aguarde alguns instantes para que o Ranger sincronize com o Azure AD se um usuário do domínio não for preenchido automaticamente para **Selecionar usuário**.
@@ -138,7 +138,7 @@ Crie uma política do Ranger para **sales_user1** e **marketing_user1**.
    |Selecionar usuário  | marketing_user1 |
    |Permissões  | Ler |
 
-   ![Política de criação de UI do administrador do Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
+   ![Política de criação de marketing do Apache Ranger](./media/apache-domain-joined-run-hbase/apache-ranger-hbase-policy-create-marketing.png)  
 
 6. Clique em **Adicionar** para salvar a política.
 
@@ -146,7 +146,7 @@ Crie uma política do Ranger para **sales_user1** e **marketing_user1**.
 
 Com base nas políticas do Ranger configuradas, **sales_user1** pode exibir todos os dados das colunas nas famílias de colunas `Name` e `Contact`. **marketing_user1** só pode exibir dados na família de colunas `Contact`.
 
-### <a name="access-data-as-salesuser1"></a>Acessar dados como sales_user1
+### <a name="access-data-as-sales_user1"></a>Acessar dados como sales_user1
 
 1. Abra uma nova conexão de SSH ao cluster. Use o seguinte comando para entrar no cluster:
 
@@ -188,7 +188,7 @@ Com base nas políticas do Ranger configuradas, **sales_user1** pode exibir todo
     2 row(s) in 0.1000 seconds
     ```
 
-### <a name="access-data-as-marketinguser1"></a>Acessar dados como marketing_user1
+### <a name="access-data-as-marketing_user1"></a>Acessar dados como marketing_user1
 
 1. Abra uma nova conexão de SSH ao cluster. Use o seguinte comando para entrar como **marketing_user1**:
 

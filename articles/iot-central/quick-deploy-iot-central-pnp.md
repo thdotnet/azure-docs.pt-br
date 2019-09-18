@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 0ae82f8980b995edab3419374e27a2cb905935d5
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9d242c48068e96498a811f52dbc599abd32bc936
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099495"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70382996"
 ---
 # <a name="create-an-azure-iot-central-application-preview-features"></a>Criar um aplicativo do Azure IoT Central (versão prévia dos recursos)
 
@@ -40,7 +40,7 @@ Para criar um aplicativo do Azure IoT Central que inclui a versão prévia dos r
    - Os aplicativos de **Pagamento Conforme o Uso** são cobrados por dispositivo, com os cinco primeiros dispositivos gratuitos. Se você criar um aplicativo de **Pagamento Conforme o Uso**, precisará escolher o *Directory*, a *Assinatura do Azure* e a *Região*:
       - *Directory* é o AD (Azure Active Directory) para criar o aplicativo. Ele contém identidades de usuário, credenciais e outras informações organizacionais. Se você não tiver um Azure AD, ele será gerado quando você criar uma assinatura do Azure.
       - Uma *Assinatura do Azure* permite que você crie instâncias de serviços do Azure. O IoT Central provisionará recursos em sua assinatura. Se você não tiver uma assinatura do Azure, poderá criar uma na [página de entrada do Azure](https://aka.ms/createazuresubscription). Após criar a assinatura do Azure, navegue de volta para a página **Criar Aplicativo**. A nova assinatura aparece na lista suspensa **Assinatura do Azure**.
-      - A *Região* é o local físico onde você deseja criar seu aplicativo. Normalmente, você escolhe a região fisicamente mais próxima de seus dispositivos para obter um desempenho ideal. É possível visualizar as regiões nas quais o Azure IoT Central está disponível, na página [Produtos disponíveis por região](https://azure.microsoft.com/regions/services/). Após escolher uma região, não será mais possível mover posteriormente o aplicativo para uma região diferente.
+      - A *Região* é o local físico onde você deseja criar seu aplicativo. Durante a versão prévia pública, as únicas regiões disponíveis para um **Aplicativo em versão prévia** são **Europa Setentrional** e **EUA Central**.
 
       Saiba mais sobre preços na [Página de preços da microsoft IoT Central](https://azure.microsoft.com/pricing/details/iot-central/).
 

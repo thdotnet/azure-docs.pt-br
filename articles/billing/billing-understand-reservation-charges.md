@@ -1,6 +1,6 @@
 ---
-title: Entender o desconto de reservas para bancos de dados SQL do Azure | Microsoft Docs
-description: Saiba como um desconto de reserva é aplicado à execução de bancos de dados SQL do Azure.
+title: Entender o desconto de reservas para Bancos de Dados SQL do Azure | Microsoft Docs
+description: Saiba como um desconto de reserva é aplicado aos Bancos de Dados SQL do Azure em execução.
 documentationcenter: ''
 author: yashesvi
 manager: yashar
@@ -13,13 +13,13 @@ ms.workload: na
 ms.date: 04/13/2019
 ms.author: banders
 ms.openlocfilehash: 4b4c6b390e9b3a0cf764f998523fe3c1cdc66026
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "60370280"
 ---
-# <a name="how-a-reservation-discount-is-applied-to-azure-sql-databases"></a>Como um desconto de reserva é aplicado a bancos de dados SQL do Azure
+# <a name="how-a-reservation-discount-is-applied-to-azure-sql-databases"></a>Como um desconto de reserva é aplicado aos Bancos de Dados SQL do Azure em execução
 
 Depois de comprar uma capacidade reservada do Banco de Dados SQL do Azure, o desconto de reserva é aplicado automaticamente aos Bancos de Dados SQL que correspondem aos atributos e à quantidade da reserva. Uma reserva abrange os custos de computação de banco de dados SQL. Você é cobrado por software, armazenamento e rede às taxas normais. Você pode cobrir os custos de licenciamento para bancos de dados SQL com [benefício híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-benefit/).
 
@@ -27,11 +27,11 @@ Para instâncias de máquina Virtual reservadas, consulte [entender instâncias 
 
 ## <a name="how-reservation-discount-is-applied"></a>Como o desconto de reserva é aplicado
 
-Um desconto de reserva é "*uso-it-ou-perder-it*". Dessa forma, se você não tiver recursos correspondentes para qualquer hora, em seguida, você perderá uma quantidade de reserva para essa hora. Você não pode transportar encaminhar horas reservadas não utilizadas.
+Um desconto de reserva é do tipo "*usar ou perder*". Portanto, se você não tiver recursos correspondentes para nenhuma hora, perderá uma quantidade de reserva para essa hora. Não é possível postergar horas reservadas não utilizadas.
 
-Quando você desligar um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso de correspondência é encontrado no escopo especificado, são as horas reservadas *perdido*.
+Quando você desliga um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso correspondente for encontrado no escopo especificado, as horas reservadas serão *perdidas*.
 
-## <a name="discount-applied-to-sql-databases"></a>Desconto aplicado a bancos de dados SQL
+## <a name="discount-applied-to-sql-databases"></a>Desconto aplicado aos Bancos de Dados SQL
 
  O desconto de capacidade reservada do Banco de Dados SQL é aplicado à execução de Bancos de Dados SQL a cada hora. A reserva que você compra é correspondida ao uso de computação emitido pelos Bancos de Dados SQL em execução. Para Bancos de Dados SQL que não são executados a hora inteira, a reserva é aplicada automaticamente a outros Bancos de Dados SQL que correspondem aos atributos de reserva. O desconto pode ser aplicado a bancos de dados SQL que estão sendo executados simultaneamente. Se você não tiver bancos de dados SQL que sejam executados durante a hora inteira que corresponda aos atributos de reserva, você não obterá o benefício total do desconto de reserva para essa hora.
 
@@ -49,7 +49,7 @@ Para entender e visualizar o aplicativo de suas reservas do Azure nos relatório
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Fale conosco
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -57,7 +57,7 @@ Para saber mais sobre as Reservas do Azure, consulte os seguintes artigos:
 
 - [O que são Reservas do Azure?](billing-save-compute-costs-reservations.md)
 - [Pré-pagamento para máquinas virtuais com instâncias de VMs reservadas do Azure](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Azure SQL Database](../sql-database/sql-database-reserved-capacity.md)
+- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Banco de Dados SQL do Azure](../sql-database/sql-database-reserved-capacity.md)
 - [Gerenciar Reservas do Azure](billing-manage-reserved-vm-instance.md)
 - [Entender o uso de reserva para a sua assinatura paga conforme o uso](billing-understand-reserved-instance-usage.md)
 - [Entenda o uso de reservas para o seu registro Enterprise](billing-understand-reserved-instance-usage-ea.md)

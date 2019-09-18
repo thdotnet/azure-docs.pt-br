@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 4cc21a4dbab7d5114eed8414c6530eab5f42bb00
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 2b68da881edd0406a85692d6e0586427a57b7806
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478852"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916433"
 ---
 # <a name="create-a-store-locator-by-using-azure-maps"></a>Criar um localizador de lojas usando o Azure Mapas
 
@@ -35,7 +35,7 @@ Vá diretamente para o [exemplo de localizador de lojas ativo](https://azuremaps
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para concluir as etapas neste tutorial, primeiro [crie sua conta do Azure Mapas](./tutorial-search-location.md#createaccount) e [obtenha a chave de assinatura da conta](./tutorial-search-location.md#getkey).
+Para concluir as etapas neste tutorial, primeiro [crie sua conta do Azure Mapas](./tutorial-search-location.md#createaccount) e siga as etapas em [Obter a chave primária](./tutorial-search-location.md#getkey) para obter a chave primária da assinatura da conta.
 
 ## <a name="design"></a>Design
 

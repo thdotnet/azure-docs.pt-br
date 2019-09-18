@@ -1,6 +1,6 @@
 ---
 title: Gerenciar reservas do Azure
-description: Saiba como você pode gerenciar as reservas do Azure.
+description: Saiba como é possível gerenciar as Reservas do Azure.
 ms.service: billing
 author: bandersmsft
 manager: yashesvi
@@ -11,36 +11,36 @@ ms.workload: na
 ms.date: 08/06/2019
 ms.author: banders
 ms.openlocfilehash: b161fc7cd4faa75dd87613c297c12f1edd862510
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68839999"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Gerenciar Reservas para recursos do Azure
 
-Depois de comprar uma reserva do Azure, talvez seja necessário aplicar a reserva a uma assinatura diferente, alterar quem pode gerenciar a reserva ou alterar o escopo da reserva. Também é possível dividir uma reserva em duas reservas para aplicar algumas das instâncias que você comprou para outra assinatura.
+Após comprar uma reserva do Azure, talvez seja necessário aplicar a reserva a uma assinatura diferente, alterar quem pode gerenciar a reserva ou alterar o escopo da reserva. Também é possível dividir uma reserva em duas reservas para aplicar algumas das instâncias que você comprou para outra assinatura.
 
-Se você comprou instâncias de máquinas virtuais reservadas do Azure, poderá alterar a configuração otimizar para a reserva. O desconto de reserva pode ser aplicado a VMs na mesma série ou você pode reservar a capacidade do data center para um tamanho de VM específico. E você deve tentar otimizar as reservas para que elas sejam totalmente usadas.
+Se você tiver comprado Instâncias de Máquinas Virtuais Reservadas do Azure, poderá alterar a configuração de otimização da reserva. O desconto de reserva pode ser aplicado a VMs na mesma série ou você pode reservar a capacidade do data center para um tamanho de VM específico. Além disso, você deve tentar otimizar reservas para que elas sejam totalmente usadas.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="reservation-order-and-reservation"></a>Ordem de reserva e reserva
+## <a name="reservation-order-and-reservation"></a>Pedido de Reserva e Reserva
 
-Quando você adquire uma reserva, dois objetos são criados: **Ordem de reserva** e **reserva**.
+Quando você compra uma reserva, dois objetos são criados: **Pedido de Reserva** e **Reserva**.
 
-No momento da compra, uma ordem de reserva tem uma reserva sob ela. Ações como dividir, mesclar, reembolsar parcial ou Exchange criam novas reservas sob a **ordem de reserva**.
+No momento da compra, um Pedido de Reserva tinha uma Reserva nele. Ações como dividir, mesclar, reembolsar parcialmente ou trocar criam novas reservas no **Pedido de Reserva**.
 
-Para exibir uma ordem de reserva, acesse **reservas** > selecione a reserva e, em seguida, clique na **ID da ordem de reserva**.
+Para exibir um Pedido de Reserva, acesse **Reservas** > selecione a reserva e, em seguida, clique na **ID do pedido de reserva**.
 
-![Exemplo de detalhes do pedido de reserva mostrando a ID do pedido de reserva ](./media/billing-manage-reserved-vm-instance/reservation-order-details.png)
+![Exemplo dos detalhes do pedido de reserva mostrando a ID do pedido de reserva ](./media/billing-manage-reserved-vm-instance/reservation-order-details.png)
 
-Uma reserva herda permissões de sua ordem de reserva.
+Uma reserva herda permissões de seu pedido de reserva.
 
-## <a name="change-the-reservation-scope"></a>Alterar o escopo de reserva
+## <a name="change-the-reservation-scope"></a>Alterar o escopo da reserva
 
- Seu desconto de reserva se aplica a máquinas virtuais, bancos de dados SQL, Azure Cosmos DB ou outros recursos que correspondam à sua reserva e executados no escopo de reserva. O contexto de cobrança depende da assinatura usada para comprar a reserva.
+ Seu desconto de reserva se aplica a máquinas virtuais, bancos de dados SQL, Azure Cosmos DB ou outros recursos que correspondem à sua reserva e são executados no escopo da reserva. O contexto de cobrança depende da assinatura usada para comprar a reserva.
 
 Para atualizar o escopo de uma reserva:
 
@@ -50,17 +50,17 @@ Para atualizar o escopo de uma reserva:
 4. Selecione **Configurações** > **Configuração**.
 5. Altere o escopo.
 
-Se você alterar de compartilhado para escopo único, só poderá selecionar assinaturas onde for o proprietário. Somente as assinaturas no mesmo contexto de cobrança que a reserva podem ser selecionadas.
+Se você alterar de escopo compartilhado para único, poderá selecionar apenas as assinaturas em que é o proprietário. Somente as assinaturas no mesmo contexto de cobrança que a reserva podem ser selecionadas.
 
-O escopo só se aplica a assinaturas individuais com tarifas pagas conforme o uso (oferece MS-AZR-0003P ou MS-AZR-0023P), a empresa oferece MS-AZR-0017P ou MS-AZR-0148P ou tipos de assinatura CSP.
+O escopo somente se aplica a assinaturas individuais com taxas pagas conforme o uso (ofertas MS-AZR-0003P ou MS-AZR-0023P), à oferta Enterprise MS-AZR-0017P ou MS-AZR-0148P ou a tipos de assinatura CSP.
 
 ## <a name="add-or-change-users-who-can-manage-a-reservation"></a>Adicionar ou alterar os usuários que podem gerenciar uma reserva
 
-Você pode delegar o gerenciamento de reserva adicionando pessoas a funções na ordem de reserva ou na reserva. Por padrão, a pessoa que coloca a ordem de reserva e o administrador da conta tem a função de proprietário na ordem de reserva e na reserva.
+Você pode delegar o gerenciamento de uma reserva adicionando pessoas às funções na reserva. Por padrão, a pessoa que fez a reserva e o administrador da conta têm a função de Proprietário de reserva.
 
-Você pode gerenciar o acesso a ordens de reservas e reservas independentemente das assinaturas que obtêm o desconto de reserva. Quando você concede a alguém permissões para gerenciar uma ordem de reserva ou a reserva, ele não concede permissão para gerenciar a assinatura. Da mesma forma, se você conceder a alguém permissões para gerenciar uma assinatura no escopo da reserva, ele não fornecerá direitos para gerenciar a ordem de reserva ou a reserva.
+É possível gerenciar o acesso a pedidos de reservas e reservas independentemente das assinaturas que obtêm o desconto de reserva. Ao conceder a alguém permissões para gerenciar um pedido de reserva ou a reserva, a pessoa não recebe permissão para gerenciar a assinatura. De maneira semelhante, se você conceder a alguém permissões para gerenciar uma assinatura no escopo da reserva, a pessoa não receberá direitos de gerenciar o pedido da reserva ou a reserva.
 
-Para executar uma troca ou reembolso, o usuário deve ter acesso à ordem de reserva. Ao conceder permissões a alguém, é melhor conceder permissões para a ordem de reserva, não para a reserva.
+Para realizar uma troca ou reembolso, o usuário deve ter acesso ao pedido de reserva. Ao conceder permissões a alguém, é melhor conceder permissões ao pedido de reserva, não à reserva.
 
 
 Para delegar o gerenciamento de acesso de uma reserva:
@@ -75,7 +75,7 @@ Para delegar o gerenciamento de acesso de uma reserva:
 
 ## <a name="split-a-single-reservation-into-two-reservations"></a>Dividir uma única reserva em duas reservas
 
- Depois de comprar mais de uma instância de recurso em uma reserva, é recomendável atribuir instâncias nessa reserva a assinaturas diferentes. Por padrão, todas as instâncias têm um escopo - assinatura única ou compartilhada. Por exemplo, você comprou 10 instâncias de reserva e especificou o escopo como assinatura A. Agora você pode querer alterar o escopo de sete reservas para a assinatura a e as três restantes para a assinatura B. a divisão de uma reserva permite que você distribua instâncias para o gerenciamento de escopo granular. Você pode simplificar a alocação para as assinaturas escolhendo o escopo compartilhado. Contudo, para fins de gerenciamento ou de orçamento, você pode alocar quantidades a assinaturas específicas.
+ Depois de comprar mais de uma instância de recurso em uma reserva, é recomendável atribuir instâncias nessa reserva a assinaturas diferentes. Por padrão, todas as instâncias têm um escopo - assinatura única ou compartilhada. Por exemplo, você comprou 10 instâncias de reserva e especificou o escopo para ser a assinatura A. Agora convém alterar o escopo de sete reservas para a assinatura A e as três restantes para a assinatura B. A divisão de uma reserva permite distribuir instâncias para gerenciamento de escopo granular. Você pode simplificar a alocação para as assinaturas escolhendo o escopo compartilhado. Contudo, para fins de gerenciamento ou de orçamento, você pode alocar quantidades a assinaturas específicas.
 
  Você pode dividir uma reserva em duas reservas por meio do PowerShell, CLI ou da API.
 
@@ -108,7 +108,7 @@ Para delegar o gerenciamento de acesso de uma reserva:
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Cancelar, trocar ou reembolsar reservas
 
-Você pode cancelar, trocar ou reembolsar reservas com determinadas limitações. Para obter mais informações, consulte [trocas e reembolsos de autoatendimento para reservas do Azure](billing-azure-reservations-self-service-exchange-and-refund.md).
+É possível cancelar, trocar ou reembolsar reservas com determinadas limitações. Para saber mais, confira [Trocas e reembolsos via autoatendimento para Reservas do Azure](billing-azure-reservations-self-service-exchange-and-refund.md).
 
 ## <a name="change-optimize-setting-for-reserved-vm-instances"></a>Alterar a configuração de otimização para Instâncias de VM Reservadas
 
@@ -126,40 +126,40 @@ Para atualizar a configuração de otimização da reserva:
 4. Selecione **Configurações** > **Configuração**.
 5. Altere a configuração **Otimizar para**.
 
-## <a name="optimize-reservation-use"></a>Otimizar o uso de reserva
+## <a name="optimize-reservation-use"></a>Otimizar o uso da reserva
 
-As economias de reserva do Azure resultam apenas do uso sustentado de recursos. Ao fazer uma compra de reserva, você paga um custo antecipado para o que é essencialmente 100% possível de uso de recursos em um prazo de um ou três anos. Tente maximizar sua reserva para obter o máximo de uso e economias possíveis. As seções a seguir explicam como monitorar uma reserva e otimizar seu uso.
+A economia da reserva do Azure são provenientes do uso do recurso sustentado. Quando você realiza uma compra de reserva, você paga um custo antecipado pelo que é um uso de recurso essencialmente 100% possível durante um prazo de um ou três anos. Tente maximizar sua reserva para ter o máximo de uso e de economia possível. As seguintes seções explicam como monitorar uma reserva e otimizar seu uso.
 
 ### <a name="view-reservation-use-in-the-azure-portal"></a>Exibir uso de reserva no portal do Azure
 
-Uma maneira de exibir o uso de reserva está na portal do Azure.
+Uma maneira de exibir o uso de reserva é no portal do Azure.
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Selecione **todas as** > [**reservas**](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) de serviços e observe a **utilização (%)** para uma reserva.  
+2. Selecione **Todos os serviços** > [**Reservas**](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) e observe a **Utilização (%)** de uma reserva.  
   ![Imagem mostrando a lista de reservas](./media/billing-manage-reserved-vm-instance/reservation-list.png)
 3. Selecione uma reserva.
-4. Examine a tendência de uso da reserva ao longo do tempo.  
-  ![Imagem mostrando uso de reserva ](./media/billing-manage-reserved-vm-instance/reservation-utilization-trend.png)
+4. Examine a tendência de uso da reserva com o tempo.  
+  ![Imagem mostrando o uso da reserva ](./media/billing-manage-reserved-vm-instance/reservation-utilization-trend.png)
 
-### <a name="view-reservation-use-with-api"></a>Exibir uso de reserva com a API
+### <a name="view-reservation-use-with-api"></a>Exibir uso da reserva com API
 
-Se você for um cliente Enterprise Agreement (EA), poderá exibir programaticamente como as reservas em sua organização estão sendo usadas. Você Obtém a reserva não utilizada por meio de dados de uso. Ao examinar os encargos de reserva, tenha em mente que os dados são divididos entre custo real e custos amortizados. O custo real fornece dados para reconciliar sua conta mensal. Ele também tem custo de compra de reserva e detalhes do aplicativo de reserva. O custo amortizado é como o custo real, exceto pelo fato de que o preço efetivo para uso de reserva é rateado. As horas de reserva não utilizadas são mostradas nos dados de custo amortizados. Para obter mais informações sobre os dados de uso para clientes do EA, consulte [obter Enterprise Agreement custos de reserva e uso](billing-understand-reserved-instance-usage-ea.md).
+Se você for um cliente EA (Contrato Enterprise), poderá exibir programaticamente como as reservas em sua organização estão sendo usadas. Você obtém a reserva não utilizada por meio de dados de uso. Quando você examina os encargos da reserva, tenha em mente que os dados são divididos entre custo real e custos amortizados. O custo real fornece dados para reconciliar sua fatura mensal. Ele também tem o custo de compra da reserva e os detalhes do aplicativo de reserva. O custo amortizado é como o custo real, exceto que o preço efetivo do uso da reserva é proporcional. As horas de reserva não utilizadas são mostradas em dados de custo amortizado. Para obter mais informações sobre dados de uso para clientes EA, confira [Obter uso e custos de reserva do Contrato Enterprise](billing-understand-reserved-instance-usage-ea.md).
 
-Para outros tipos de assinatura, use os [resumos de reservas de API-List por ordem de reserva e reserva](/rest/api/consumption/reservationssummaries/listbyreservationorderandreservation).
+Para outros tipos de assinatura, use a API [Resumos de Reservas – Listar por Pedido de Reserva e Reserva](/rest/api/consumption/reservationssummaries/listbyreservationorderandreservation).
 
-### <a name="optimize-your-reservation"></a>Otimizar sua reserva
+### <a name="optimize-your-reservation"></a>Otimize sua reserva
 
-Se você descobrir que as reservas da sua organização estão sendo subutilizadas:
+Se você achar que as reservas da sua organização estão sendo subutilizadas:
 
-- Verifique se as máquinas virtuais que sua organização cria correspondem ao tamanho da VM que é para a reserva.
+- Verifique se as máquinas virtuais que sua organização cria correspondem ao tamanho da VM que está na reserva.
 - Verifique se a flexibilidade de tamanho da instância está ligada. Para obter mais informações, confira [Gerenciar reservas – alterar configuração de otimização para Instâncias de VM Reservadas](#change-optimize-setting-for-reserved-vm-instances).
-- Altere o escopo da reserva para _compartilhado_ para que ele se aplique mais amplamente. Para obter mais informações, consulte [alterar o escopo de uma reserva](#change-the-reservation-scope).
-- Considere a possibilidade de trocar a quantidade não utilizada. Para obter mais informações, consulte cancelamentos [e trocas](#cancel-exchange-or-refund-reservations).
+- Altere o escopo da reserva para _compartilhado_ de modo que ele se aplique mais amplamente. Para obter mais informações, confira [Alterar o escopo de uma reserva](#change-the-reservation-scope).
+- Considere trocar a quantidade não utilizada. Para obter mais informações, confira [Cancelamentos e trocas](#cancel-exchange-or-refund-reservations).
 
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -173,12 +173,12 @@ Comprar um plano de serviço:
 - [Pagar antecipadamente por recursos do Azure Cosmos DB com capacidade reservada do Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
 
 Comprar um plano de software:
-- [Pagar antecipadamente por planos de software Red Hat de reservas do Azure](../virtual-machines/linux/prepay-rhel-software-charges.md)
+- [Pagar antecipadamente por planos de software Red Hat das reservas do Azure](../virtual-machines/linux/prepay-rhel-software-charges.md)
 - [Pré-pagamento para planos de software SUSE das reservas do Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
 
-Entender o desconto e o uso:
+Noções básicas sobre desconto e uso:
 - [Entender como o desconto de reserva de VM é aplicado](billing-understand-vm-reservation-charges.md)
-- [Entenda como o desconto do plano de software Red Hat Enterprise Linux é aplicado](../billing/billing-understand-rhel-reservation-charges.md)
+- [Noções básicas sobre como o desconto do plano de software do Red Hat Enterprise Linux é aplicado](../billing/billing-understand-rhel-reservation-charges.md)
 - [Entender como o desconto do plano de software do SUSE Linux Enterprise é aplicado](../billing/billing-understand-suse-reservation-charges.md)
 - [Entender como outros descontos de reserva são aplicados](billing-understand-reservation-charges.md)
 - [Entender o uso de reserva para a sua assinatura paga conforme o uso](billing-understand-reserved-instance-usage.md)

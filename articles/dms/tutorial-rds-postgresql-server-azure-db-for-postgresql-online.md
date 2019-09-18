@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 06/28/2019
-ms.openlocfilehash: 17fb83bc845de61f7ec0e674f09c0dc73537f2fd
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.date: 09/06/2019
+ms.openlocfilehash: 6cb10f09772bf6666e197a4b622792c5b62d3ace
+ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461594"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70734796"
 ---
 # <a name="tutorial-migrate-rds-postgresql-to-azure-database-for-postgresql-online-using-dms"></a>Tutorial: Migrar PostgreSQL de RDS para o Banco de Dados do Azure para PostgreSQL online usando DMS
 
@@ -49,10 +49,7 @@ Para concluir este tutorial, você precisará:
 
     Além disso, a versão do PostgreSQL de RDS deve corresponder à versão do Banco de Dados do Azure para PostgreSQL. Por exemplo, só é possível migrar o PostgreSQL 9.5.11.5 de RDS para o Banco de Dados do Azure para PostgreSQL 9.5.11, e não para a versão 9.6.7.
 
-    > [!NOTE]
-    > Para PostgreSQL versão 10, atualmente o DMS dá suporte apenas à versão de migração 10.3 do Banco de Dados do Azure para PostgreSQL.
-
-* Criar uma instância do [Banco de Dados do Azure para PostgreSQL](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal). Consulte esta [seção](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal#connect-to-the-postgresql-server-using-pgadmin) do documento para obter detalhes sobre como conectar o Servidor PostgreSQL usando pgAdmin.
+* Criar uma instância do [Banco de Dados do Azure para PostgreSQL](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal). Veja esta [seção](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal#connect-to-the-postgresql-server-using-pgadmin) do documento para obter detalhes sobre como conectar o Servidor PostgreSQL usando pgAdmin.
 * Criar uma VNET (Rede Virtual) do Azure para o Serviço de Migração de Banco de Dados do Azure usando o modelo de implantação do Azure Resource Manager, que fornece conectividade site a site aos servidores de origem locais usando o [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) ou a [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Para obter mais informações sobre como criar uma VNet, confira a [Documentação da Rede Virtual](https://docs.microsoft.com/azure/virtual-network/) e, especificamente, os artigos de Início Rápido com detalhes passo a passo.
 * Verifique se as regras do Grupo de Segurança de Rede da VNET não bloqueiam as seguintes portas de comunicação de entrada com o Serviço de Migração de Banco de Dados do Azure: 443, 53, 9354, 445 e 12000. Para obter mais detalhes sobre a filtragem de tráfego do NSG da VNET do Azure, confira o artigo [Filtrar o tráfego de rede com Grupos de Segurança de Rede](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Configurar o [Firewall do Windows para acesso ao mecanismo de banco de dados](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
@@ -66,7 +63,7 @@ Para concluir este tutorial, você precisará:
 2. Use o nome de usuário mestre para conectar a origem do Serviço de Migração de Banco de Dados do Azure. Se você usar uma conta diferente da conta de usuário mestre, a conta deverá ter a função rds_superuser e a função rds_replication. A função rds_replication concede permissões para gerenciar slots lógicos e para transmitir dados usando slots lógicos.
 3. Crie um novo grupo de parâmetros com a seguinte configuração: a. Defina o parâmetro rds.logical_replication no grupo de parâmetros do BD como 1.
     b. max_wal_senders = [número de tarefas simultâneas] - O parâmetro max_wal_senders define o número de tarefas simultâneas que podem ser executadas, o recomendável são 10 tarefas.
-    c. max_replication_slots - = [número de slots], é recomendável definir como 5 slots.
+    c. max_replication_slots = [número de slots]; é recomendável configurar como cinco slots.
 4. Associe o grupo de parâmetros que você criou à instância do PostgreSQL de RDS.
 
 ## <a name="migrate-the-schema"></a>Migrar o esquema

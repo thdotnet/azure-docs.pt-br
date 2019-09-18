@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: bb60fa216c10b11b6a47c029fbef3698c6f7bd6d
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: 1f5f2dc6babbca219f0efbb1d7013d4e6e3270e6
+ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663490"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70873314"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Migrar das VMs do AWS (Amazon Web Services) para o Azure
 
@@ -30,6 +30,10 @@ Este tutorial ensina como migrar VMs (máquinas virtuais) do AWS (Amazon Web Ser
 > * Executar um único failover para Azure
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) antes de começar.
+
+
+> [!NOTE]
+    > Agora, você pode usar o serviço de Migrações para Azure para migrar instâncias da AWS para o Azure. [Saiba mais](../migrate/tutorial-migrate-physical-virtual-machines.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 - Assegure-se de que as VMs que você quer migrar estejam executando uma versão do sistema operacional com suporte. Versões com suporte incluem: 
@@ -91,11 +95,11 @@ Quando as VMs do Azure são criadas após a migração (failover), elas são ing
 1. No [portal do Azure](https://portal.azure.com), selecione **Criar um recurso** > **Rede** >
    **Rede virtual**.
 3. Para **Nome**, insira **myMigrationNetwork**.
-4. Deixe o valor padrão para o **Espaço de endereço**.
+4. Deixe o valor padrão para o **Espaço de endereço** (é obrigatório inserir o valor).
 5. Para **Assinatura**, selecione a assinatura que você quer usar.
 6. Para **Grupo de recursos**, selecione **Usar existente** e, em seguida, selecione **migrationRG**.
 7. Em **Localização**, selecione **Europa Ocidental**.
-8. Em **Sub-rede**,deixe os valores padrão para **Nome** e **intervalo de IP**.
+8. Em **Sub-rede**, deixe os valores padrão para **Nome** e **intervalo de IP (é obrigatório inserir o valor)** .
 9. Adicione instruções para as configurações de proteção contra DDoS.
 10. Deixe a opção **Pontos de Extremidade de Serviço** desabilitada.
 11. Adicione instruções para as configurações do firewall.

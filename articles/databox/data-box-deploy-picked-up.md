@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 8/27/2019
+ms.date: 09/10/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 5b78dc8b815802502cda5baf2bf5e9646922d671
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 194b90ab27d02c1fa3eb05bb3ddd78395d351599
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70241423"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898170"
 ---
 ::: zone target="docs"
 
@@ -77,7 +77,7 @@ Verifique se a cópia de dados no dispositivo foi concluída e se a execução d
 
 ::: zone-end
 
-## <a name="ship-in-us-canada-europe"></a>Envio nos EUA, no Canadá e na Europa
+## <a name="in-us-canada-europetabin-us-canada-europe"></a>[Nos EUA, no Canadá e na Europa](#tab/in-us-canada-europe)
 
 Execute as etapas a seguir se estiver devolvendo o dispositivo nos EUA, no Canadá ou na Europa.
 
@@ -94,7 +94,7 @@ Execute as etapas a seguir se estiver devolvendo o dispositivo nos EUA, no Canad
 4. Após a coleta e registro do Data Box por sua operadora, o status do pedido no portal será atualizado para **Recolhido**. Uma ID de rastreamento também é exibida.
 
 
-## <a name="ship-in-australia"></a>Envio na Austrália
+## <a name="in-australiatabin-australia"></a>[Na Austrália](#tab/in-australia)
 
 Datacenters do Azure na Austrália têm uma notificação de segurança adicional. Todas as remessas de entrada devem ter uma notificação avançada. Execute as etapas a seguir para o envio na Austrália.
 
@@ -126,7 +126,7 @@ Caso tenha alguma pergunta sobre seu pedido por telefone:
 - Envie um email para retirada primeiro.
 - Forneça o nome do pedido no telefone.
 
-## <a name="ship-in-japan"></a>Envio no Japão 
+## <a name="in-japantabin-japan"></a>[No Japão](#tab/in-japan) 
 
 1. Mantenha a caixa original usada para enviar o dispositivo para a remessa de devolução.
 2. Desligue o dispositivo e remova os cabos.

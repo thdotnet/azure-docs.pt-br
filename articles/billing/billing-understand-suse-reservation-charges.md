@@ -1,5 +1,5 @@
 ---
-title: Desconto de plano de software - Azure | Microsoft Docs
+title: Desconto do plano de software – Azure | Microsoft Docs
 description: Saiba como os descontos de plano de software são aplicados ao software em máquinas virtuais.
 documentationcenter: ''
 author: yashesvi
@@ -13,43 +13,43 @@ ms.workload: na
 ms.date: 04/12/2019
 ms.author: banders
 ms.openlocfilehash: bcbf5ab48f3476a911fc4ade1eb0c395fb335d43
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "60370213"
 ---
-# <a name="azure-software-plan-discount"></a>Desconto de plano de software do Azure
+# <a name="azure-software-plan-discount"></a>Desconto do plano de software do Azure
 
-Planos de software do Azure para o SUSE e RedHat são reservas que se aplicam às VMs implantadas. O desconto de plano de software é aplicado para o uso de software de VMs implantadas que correspondem a reserva.
+Os planos de software do Azure para SUSE e Red Hat são reservas que se aplicam às VMs implantadas. O desconto do plano de software é aplicado ao uso de software das VMs implantadas que correspondem à reserva.
 
-Quando você desligar uma VM, o desconto é aplicado automaticamente a outra VM correspondente, se disponível. Um plano de software abrange o custo de executar o software em uma máquina virtual. Outros encargos, como computação, armazenamento e rede são cobrados separadamente.
+Quando você desliga uma VM, o desconto é aplicado automaticamente a outra VM correspondente, se disponível. Um plano de software cobre o custo da execução do software em uma VM. Outros encargos, como computação, armazenamento e rede, são cobrados separadamente.
 
-Para comprar o plano certo, você precisa entender o uso VM e o número de vCPUs nessas VMs. Use as seções a seguir para ajudar a identificar o que pretendem comprar, com base em seus dados de uso.
+Para comprar o plano certo, você precisa entender o uso da VM e o número de vCPUs nessas VMs. Use as seções a seguir para ajudar a identificar o plano a ser comprado, com base nos dados de uso.
 
 ## <a name="how-reservation-discount-is-applied"></a>Como o desconto de reserva é aplicado
 
-Um desconto de reserva é "*uso-it-ou-perder-it*". Dessa forma, se você não tiver recursos correspondentes para qualquer hora, em seguida, você perderá uma quantidade de reserva para essa hora. Você não pode transportar encaminhar horas reservadas não utilizadas.
+Um desconto de reserva é do tipo "*usar ou perder*". Portanto, se você não tiver recursos correspondentes para nenhuma hora, perderá uma quantidade de reserva para essa hora. Não é possível postergar horas reservadas não utilizadas.
 
-Quando você desligar um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso de correspondência é encontrado no escopo especificado, são as horas reservadas *perdido*.
+Quando você desliga um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso correspondente for encontrado no escopo especificado, as horas reservadas serão *perdidas*.
 
-## <a name="review-redhat-vm-usage-before-you-buy"></a>Revise o uso de VM RedHat antes de comprar
+## <a name="review-redhat-vm-usage-before-you-buy"></a>Examinar o uso da VM do Red Hat antes da compra
 
-Obtenha o nome do produto de seus dados de uso e comprar o plano RedHat com o mesmo tipo e tamanho.
+Obtenha o nome do produto de seus dados de uso e compre o plano do Red Hat com o mesmo tipo e tamanho.
 
-Por exemplo, se o seu uso tem o produto **Red Hat Enterprise Linux - 1 a 4 vCPU VM licença**, você deve adquirir **Red Hat Enterprise Linux** para **1 a 4 vCPU VM**.
+Por exemplo, se o seu uso tiver o produto **Red Hat Enterprise Linux – Licença de VM com 1 a 4 vCPU**, você deverá comprar o **Red Hat Enterprise Linux** para a **VM com 1 a 4 vCPU**.
 
 <!--ADD RHEL SCREENSHOT -->
 
-## <a name="review-suse-vm-usage-before-you-buy"></a>Revise o uso de VM SUSE antes de comprar
+## <a name="review-suse-vm-usage-before-you-buy"></a>Examinar o uso da VM do SUSE antes da compra
 
-Obtenha o nome do produto de seus dados de uso e comprar o plano do SUSE com o mesmo tipo e tamanho.
+Obtenha o nome do produto de seus dados de uso e compre o plano do SUSE com o mesmo tipo e tamanho.
 
-Por exemplo, se o seu uso é para o produto **prioridade do SUSE Linux Enterprise Server – 2 a 4 vCPU VM Support**, você deve adquirir **prioridade do SUSE Linux Enterprise Server** para **2 a 4 vCPU**.
+Por exemplo, se o seu uso for para o produto **SUSE Linux Enterprise Server Priority – Suporte de VM com 2 a 4 vCPU**, você deverá comprar o **SUSE Linux Enterprise Server Priority** para **2 a 4 vCPU**.
 
-![Exemplo de seleção para comprar o produto](./media/billing-understand-suse-reservation-charges/select-suse-linux-enterprise-server-priority-2-4-vcpu.png)
+![Exemplo de seleção do produto a ser comprado](./media/billing-understand-suse-reservation-charges/select-suse-linux-enterprise-server-priority-2-4-vcpu.png)
 
-## <a name="discount-applies-to-different-vm-sizes-for-suse-plans"></a>Desconto aplica-se aos diferentes tamanhos de VM para os planos do SUSE
+## <a name="discount-applies-to-different-vm-sizes-for-suse-plans"></a>O desconto se aplica a diferentes tamanhos de VM para planos do SUSE
 
 Como as instâncias de VMs reservadas, as compras do plano do SUSE oferecem flexibilidade no tamanho da instância. Isso significa que seu desconto se aplica mesmo quando você implanta uma VM com uma contagem diferente de vCPU. O desconto se aplica a diferentes tamanhos de VM dentro do plano de software.
 
@@ -145,7 +145,7 @@ Nomes do marketplace no portal do Azure:
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Fale conosco
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Próximas etapas
 

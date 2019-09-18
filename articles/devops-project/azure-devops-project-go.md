@@ -1,28 +1,27 @@
 ---
-title: 'Início Rápido: Criar um pipeline de CI/CD para a linguagem de programação Go usando Azure DevOps Projects'
+title: 'Início Rápido: Criar um pipeline de CI/CD para a linguagem de programação Go usando o Azure DevOps Projects'
 description: O DevOps Projects facilita o uso inicial do Azure. Ele ajuda a iniciar um aplicativo Web de linguagem de programação Go em um serviço do Azure em algumas etapas rápidas.
 ms.prod: devops
 ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: mlearned
-manager: douge
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: ca068b39c222a210e261234a132a0506f6b023bb
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: f7429a6de05a301b579354d722ad354b78ce6cbf
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52263737"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899665"
 ---
 # <a name="create-a-cicd-pipeline-for-go-by-using-azure-devops-projects"></a>Criar um pipeline de CI/CD para Go usando o Azure DevOps Projects
 
@@ -92,7 +91,7 @@ O DevOps Projects configura automaticamente um pipeline de CI/CD completo no Azu
 1. Na parte superior, selecione **Pipeline de build**.  
     Uma guia do navegador exibe o pipeline de build do seu novo projeto.
 
-1. Aponte para o campo **Status**, depois selecione as reticências (...).  
+1. Aponte para o campo **Status** e selecione as reticências (...).  
     Um menu exibe várias opções, como o enfileiramento de um novo build, pausando um build e editando o pipeline de build.
 
 1. Selecione **Editar**.
@@ -108,7 +107,7 @@ O DevOps Projects configura automaticamente um pipeline de CI/CD completo no Azu
     Esse painel exibe uma trilha de auditoria das alterações recentes do build. O Azure DevOps controla quaisquer alterações feitas no pipeline de build e permite que você compare versões.
 
 1. Selecione **Gatilhos**.  
-    O DevOps Projects criou automaticamente um gatilho de CI, e cada confirmação no repositório inicia um novo build. Como opção, é possível incluir ou excluir os branches do processo de CI.
+    O DevOps Projects cria automaticamente um gatilho de CI, e cada confirmação no repositório inicia um novo build. Como opção, é possível incluir ou excluir os branches do processo de CI.
 
 1. Selecione **Retenção**.  
     Dependendo do seu cenário, você pode especificar políticas para manter ou remover um determinado número de compilações.
@@ -116,7 +115,7 @@ O DevOps Projects configura automaticamente um pipeline de CI/CD completo no Azu
 1. Selecione **Build e lançamento**, depois selecione **Lançamentos**.  
     O DevOps Projects cria um pipeline de lançamento para gerenciar implantações no Azure.
 
-1. Selecione as reticências (...) ao lado do pipeline de lançamento, depois selecione **Editar**.  
+1. Selecione as reticências (...) ao lado do pipeline de lançamento e selecione **Editar**.  
     O pipeline de lançamento contém um *pipeline* que define o processo de lançamento.
 
 1. Em **Artefatos**, selecione **Soltar**.  
@@ -130,7 +129,7 @@ O DevOps Projects configura automaticamente um pipeline de CI/CD completo no Azu
 
 1. À direita, selecione **Exibir versões** para exibir um histórico de versões.
 
-1. Selecione as reticências (...) ao lado de uma versão, depois selecione **Abrir**.  
+1. Selecione as reticências (...) ao lado de uma versão e selecione **Abrir**.  
     É possível explorar vários menus, como um resumo da versão, itens de trabalho associados e testes.
 
 1. Selecione **Confirmações**.  

@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: gwallace
-ms.openlocfilehash: cb7f5a10169c8baaecae0fc1916a439d61bfbf7c
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 28169bfb8dead65c543a3752a709f33487854e60
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70170860"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70844736"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Criar uma função disparada por HTTP no Azure
 
@@ -38,7 +38,13 @@ Antes de começar, é necessário ter o seguinte:
 
 ## <a name="create-and-activate-a-virtual-environment-optional"></a>Criar e ativar um ambiente virtual (opcional)
 
-Para desenvolver e testar as funções do Python localmente, é recomendável usar um ambiente do Python 3.6. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`.
+Para desenvolver e testar as funções do Python localmente, é recomendável usar um ambiente do Python 3.6. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`. 
+
+> [!NOTE]
+> Se o Python não instalou o venv em sua distribuição do Linux, você pode instalá-lo usando o seguinte comando:
+> ```command
+> sudo apt-get install python3-venv
+>
 
 ### <a name="bash"></a>Bash:
 

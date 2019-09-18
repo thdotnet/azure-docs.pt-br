@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 08/31/2017
 ms.author: banders
 ms.openlocfilehash: 77c1a85136b2117af7396b8eec2d8b92b335d61d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "60369909"
 ---
 # <a name="understand-terms-on-your-microsoft-azure-invoice"></a>Compreenda os termos na sua fatura do Microsoft Azure
@@ -101,13 +101,13 @@ A tabela a seguir descreve os cabeçalhos de coluna de encargos de uso mostrados
 | --- | --- |
 | NOME |Identifica o serviço de nível superior para o uso |
 | Type |Define o tipo de serviço do Azure e pode afetar a tarifa |
-| Resource |Identifica a unidade de medida para o medidor sendo consumido |
+| Recurso |Identifica a unidade de medida para o medidor sendo consumido |
 | Região |Identifica o local do datacenter para determinados serviços que são cobrados com base no local do datacenter |
 | Consumido |O valor do medidor usado durante o período de cobrança |
 | Incluso |O valor do medidor que está incluído gratuitamente em seu período de cobrança atual |
 | Faturável |Mostra a diferença entre a Quantidade Consumida e a Quantidade Incluída. A cobrança é feita com base nessa quantidade. Para ofertas pré-pagas sem quantidade incluída na oferta, esse total será igual à Quantidade Consumida |
 | Tarifa |A tarifa cobrada por unidade faturável |
-| Value |Mostra o resultado da multiplicação da coluna Quantidade Excedente pela coluna Tarifa. Se a Quantidade Consumida não exceder a Quantidade Incluída, nenhum encargo será exibido nessa coluna. |
+| Valor |Mostra o resultado da multiplicação da coluna Quantidade Excedente pela coluna Tarifa. Se a Quantidade Consumida não exceder a Quantidade Incluída, nenhum encargo será exibido nessa coluna. |
 | Subtotal |A soma de todos os seus encargos antes do imposto para esse período de cobrança |
 | Grande Total |A soma de todos os seus encargos após o imposto para esse período de cobrança |
 
@@ -116,4 +116,4 @@ Se há um encargo na fatura sobre o qual você deseja obter mais detalhes, consu
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).

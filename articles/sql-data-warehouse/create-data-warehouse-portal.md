@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: sqlfreshmay19
-ms.openlocfilehash: b7b7d4cfe699ffdef3a8f736f5656d0b0067453a
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.openlocfilehash: 83475af3cfdd83e718243d80b84599d53716a5d5
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575182"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375833"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Início Rápido: Criar e consultar um SQL Data Warehouse do Azure no portal do Azure
 
@@ -98,7 +98,7 @@ O serviço do SQL Data Warehouse cria um firewall no nível do servidor. Esse fi
 > O SQL Data Warehouse comunica-se pela porta 1433. Se você estiver tentando conectar-se de dentro de uma rede corporativa, o tráfego de saída pela porta 1433 talvez não seja permitido pelo firewall de sua rede. Se isto acontecer, você não poderá conectar o servidor do Banco de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 
 1. Após a conclusão da implantação, selecione **Todos os serviços** no menu à esquerda. Selecione **Bancos de dados**, selecione a estrela ao lado de **SQL data warehouse** para adicionar os data warehouses do SQL aos seus favoritos.
-1. Selecione **SQL data warehouses** no menu à esquerda e clique em **mySampleDatabase** na página **SQL data warehouses**. A página de visão geral de seu banco de dados é aberta, mostrando o nome do servidor totalmente qualificado (como **meunovoservidor-20180430.database.windows.net**) e fornece opções para configurações adicionais.
+1. Selecione **SQL Data Warehouse** no menu à esquerda e, em seguida, clique em **mySampleDataWarehouse** na página **SQL Data Warehouse**. A página de visão geral de seu banco de dados é aberta, mostrando o nome do servidor totalmente qualificado (como **meunovoservidor-20180430.database.windows.net**) e fornece opções para configurações adicionais.
 1. Copie esse nome do servidor totalmente qualificado para se conectar ao servidor e a seus bancos de dados neste e nos próximos inícios rápidos. Para abrir as configurações do servidor, clique no nome do servidor.
 
    ![localizar o nome do servidor](media/load-data-from-azure-blob-storage-using-polybase/find-server-name.png)

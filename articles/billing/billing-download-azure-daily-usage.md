@@ -1,7 +1,7 @@
 ---
-title: Cobranças e uso do modo de exibição e baixar o Azure
-description: Descreve como baixar ou exibir seu uso diário do Azure e os encargos.
-keywords: uso de cobrança, os encargos de uso, uso baixar, uso do modo de exibição, o uso de fatura do azure, azure
+title: Exibir e baixar uso e encargos do Azure
+description: Descreve como baixar ou exibir usos e encargos diários do Azure.
+keywords: billing usage,usage charges, usage download, view usage, azure invoice,azure usage
 author: bandersmsft
 manager: jureid
 tags: billing
@@ -13,19 +13,19 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: 7d2d7be562eaaa7dd21e63735f5697ffe5a62f8a
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67491439"
 ---
-# <a name="view-and-download-your-azure-usage-and-charges"></a>Exibir e baixar seus encargos e o uso do Azure
+# <a name="view-and-download-your-azure-usage-and-charges"></a>Exibir e baixar uso e encargos do Azure
 
-Se você for um cliente EA ou têm uma [contrato de cliente do Microsoft](#check-your-access-to-a-microsoft-customer-agreement), você pode baixar o uso do Azure e encargos na [portal do Azure](https://portal.azure.com/). Para outras assinaturas, vá para o [Centro de contas do Azure](https://account.azure.com/Subscriptions) baixar o uso.
+Se você for um cliente EA ou tiver um [Contrato de Cliente da Microsoft](#check-your-access-to-a-microsoft-customer-agreement), poderá baixar o uso e os encargos do Azure no [portal do Azure](https://portal.azure.com/). Para outras assinaturas, acesse o [Centro de Contas do Azure](https://account.azure.com/Subscriptions) para baixar o uso.
 
-Somente certas funções têm permissão para obter informações de uso do Azure, como o administrador corporativo ou de administrador da conta. Para saber mais sobre como obter acesso a informações de cobrança, consulte [Gerenciar o acesso à cobrança do Azure usando funções](billing-manage-access.md).
+Apenas determinadas funções têm permissão para receber informações de uso do Azure, como o administrador da conta ou o administrador corporativo. Para saber mais sobre como obter acesso a informações de cobrança, consulte [Gerenciar o acesso à cobrança do Azure usando funções](billing-manage-access.md).
 
-Se você tiver um [contrato de cliente do Microsoft](#check-your-access-to-a-microsoft-customer-agreement), você deve ser um perfil de cobrança proprietário, colaborador, leitor, ou manager para exibir seu uso do Azure e os encargos de nota fiscal. Para saber mais sobre as funções de cobrança para contratos de clientes da Microsoft, consulte [perfil de funções e tarefas de cobrança](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
+Se você tiver um [Contrato de Cliente da Microsoft](#check-your-access-to-a-microsoft-customer-agreement), deverá ter um perfil de cobrança Proprietário, Colaborador, Leitor ou Gerenciador de faturas para exibir o uso e os encargos do Azure. Para obter mais informações sobre funções de cobrança de Contratos de Cliente da Microsoft, confira [Funções e tarefas do perfil de cobrança](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
 
 ## <a name="download-usage-from-the-account-center-csv"></a>Baixar uso do Centro de Contas (.csv)
 
@@ -57,48 +57,48 @@ Para saber mais sobre o uso diário, confira [Entenda sua fatura do Microsoft Az
 
 ## <a name="download-usage-for-ea-customers"></a>Faça o download uso para clientes do EA
 
-Para exibir e baixar dados de uso como um cliente EA, você deve ser um administrador corporativo, o proprietário da conta, ou o administrador de departamento com o modo de exibição de encargos política habilitada.
+Para exibir e baixar os dados de uso como cliente do EA, você deverá ser administrador corporativo, proprietário da conta ou administrador do departamento com a política de cobranças de exibição habilitada.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Pesquise *custo de gerenciamento + cobrança*.
+1. Pesquise *Gerenciamento de Custos + Cobrança*.
 
     ![Captura de tela que mostra a pesquisa do portal do Azure](./media/billing-download-azure-invoice-daily-usage-date/portal-cm-billing-search.png)
 
 1. Selecione **uso + encargos**.
 1. No mês que você deseja fazer o download, selecione **fazer o download**.
 
-## <a name="download-usage-for-your-microsoft-customer-agreement"></a>Baixar uso para o contrato de cliente da Microsoft
+## <a name="download-usage-for-your-microsoft-customer-agreement"></a>Baixar uso para seu Contrato de Cliente da Microsoft
 
-Se você tiver um contrato de cliente da Microsoft, você pode baixar o seu uso do Azure e os encargos para o perfil de cobrança. Você deve ser um perfil de cobrança proprietário, colaborador, leitor, ou fatura manager para baixar os encargos CSV e o uso do Azure.
+Se você tiver um Contrato de Cliente da Microsoft, poderá baixar o uso e os encargos do Azure para seu perfil de cobrança. É necessário ter um perfil de cobrança Proprietário, Colaborador, Leitor ou Gerenciador de faturas para baixar o CSV de uso e de encargos do Azure.
 
 ### <a name="download-usage-for-billed-charges"></a>Baixar uso para encargos cobrados
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Pesquise *custo de gerenciamento + cobrança*.
-3. Selecione um perfil de cobrança. Dependendo do seu acesso, você precisa selecionar uma conta de cobrança pela primeira vez.
+2. Pesquise *Gerenciamento de Custos + Cobrança*.
+3. Selecione um perfil de cobrança. Dependendo de seu acesso, talvez você precise selecionar uma conta de cobrança primeiro.
 4. Selecione **Faturas**.
-5. Na grade de nota fiscal, localize a linha da fatura correspondente para o uso que você deseja baixar.
-6. Clique no botão de reticências (`...`) no final da linha.
+5. Na grade da fatura, encontre a linha da fatura correspondente ao uso que você deseja baixar.
+6. Clique nas reticências (`...`) no final da linha.
 
-    ![Captura de tela que mostra as reticências no final da linha](./media/billing-download-azure-invoice/billingprofile-invoicegrid.png)
+    ![Captura de tela que mostra as reticências no fim da linha](./media/billing-download-azure-invoice/billingprofile-invoicegrid.png)
 
-7. No menu de contexto de download, selecione **uso do Azure e os encargos**.
+7. No menu de contexto do download, selecione **Uso e encargos do Azure**.
 
-     ![Captura de tela que mostra o uso do Azure e encargos selecionados](./media/billing-download-azure-usage/contextmenu-usage.png)
+     ![Captura de tela que mostra o uso e os encargos do Azure selecionados](./media/billing-download-azure-usage/contextmenu-usage.png)
 
-### <a name="download-usage-for-pending-charges"></a>Baixar uso para pendente encargos
+### <a name="download-usage-for-pending-charges"></a>Baixar uso para encargos pendentes
 
-Você também pode baixar uso month-to-date para o período de cobrança atual. Esses encargos de uso que ainda não foram faturados.
+Também é possível baixar o uso do mês atual para o período de cobrança atual. Esses encargos de uso que ainda não foram cobrados.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Pesquise *custo de gerenciamento + cobrança*.
-3. Selecione um perfil de cobrança. Dependendo do seu acesso, você precisa selecionar uma conta de cobrança pela primeira vez.
-4. No **visão geral** área, encontrar os links de download sob os encargos month-to-date.
-5. Selecione **uso do Azure e os encargos**.
+2. Pesquise *Gerenciamento de Custos + Cobrança*.
+3. Selecione um perfil de cobrança. Dependendo de seu acesso, talvez você precise selecionar uma conta de cobrança primeiro.
+4. Na área **Visão Geral**, encontre os links de download abaixo dos encargos do mês atual.
+5. Selecione **Uso e encargos do Azure**.
 
-    ![Captura de tela que mostra o download da visão geral](./media/billing-download-azure-usage/open-usage.png)
+    ![Captura de tela que mostra o download em Visão Geral](./media/billing-download-azure-usage/open-usage.png)
 
-## <a name="check-your-access-to-a-microsoft-customer-agreement"></a>Verifique o acesso a um contrato de cliente da Microsoft
+## <a name="check-your-access-to-a-microsoft-customer-agreement"></a>Verificar acesso ao Contrato de Cliente da Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
@@ -107,17 +107,17 @@ Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais sobre seus encargos de fatura e uso, consulte:
+Para saber mais sobre a fatura e os encargos, de uso, confira:
 
 - [Compreender os termos em uso detalhado do Microsoft Azure](billing-understand-your-usage.md)
 - [Entenda sua fatura do Microsoft Azure](billing-understand-your-bill.md)
-- [Exibir e baixar sua fatura do Microsoft Azure](billing-download-azure-invoice.md)
-- [Exibir e baixar os preços do Azure da sua organização](billing-ea-pricing.md)
+- [Exibir e baixar a fatura do Microsoft Azure](billing-download-azure-invoice.md)
+- [Exibir e baixar o preço do Azure de sua organização](billing-ea-pricing.md)
 
-Se você tiver um contrato de cliente da Microsoft, consulte:
+Se você tiver um Contrato de Cliente da Microsoft, confira:
 
-- [Compreender os termos no seu contrato de cliente do Microsoft Azure uso detalhado](billing-mca-understand-your-usage.md)
-- [Entender os encargos na sua fatura de contrato de cliente da Microsoft](billing-mca-understand-your-bill.md)
-- [Exibir e baixar sua fatura do Microsoft Azure](billing-download-azure-invoice.md)
-- [Exibir e baixar documentos de imposto para o contrato de cliente da Microsoft](billing-mca-download-tax-document.md)
-- [Exibir e baixar os preços do Azure da sua organização](billing-ea-pricing.md)
+- [Noções básicas sobre os termos no seu uso detalhado do Azure do Contrato de Cliente da Microsoft](billing-mca-understand-your-usage.md)
+- [Noções básicas sobre os encargos em sua fatura do Contrato de Cliente da Microsoft](billing-mca-understand-your-bill.md)
+- [Exibir e baixar a fatura do Microsoft Azure](billing-download-azure-invoice.md)
+- [Exibir e baixar documentos de imposto do seu Contrato de Cliente da Microsoft](billing-mca-download-tax-document.md)
+- [Exibir e baixar o preço do Azure de sua organização](billing-ea-pricing.md)

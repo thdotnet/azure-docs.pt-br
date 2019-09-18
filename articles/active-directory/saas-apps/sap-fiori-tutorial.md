@@ -1,10 +1,10 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao SAP Fiori | Microsoft Docs'
+title: 'Tutorial: Integração do SSO (logon único) do Azure Active Directory ao SAP Fiori | Microsoft Docs'
 description: Saiba como configurar o logon único entre o Azure Active Directory e o SAP Fiori.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 77ad13bf-e56b-4063-97d0-c82a19da9d56
 ms.service: active-directory
@@ -13,83 +13,69 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/11/2019
+ms.date: 09/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 897685eb967e03cfd30182eec6b237e27386496c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 50d1875ce2529222e8ff7472c48bf6d4dd878667
+ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092161"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772864"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-fiori"></a>Tutorial: Integração do Azure Active Directory ao SAP Fiori
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-fiori"></a>Tutorial: Integração do SSO (logon único) do Azure Active Directory ao SAP Fiori
 
-Neste tutorial, você aprenderá a integrar o SAP Fiori ao Azure AD (Azure Active Directory).
+Neste tutorial, você aprenderá a integrar o SAP Fiori ao Azure AD (Azure Active Directory). Com a integração do SAP Fiori ao Azure AD, você pode:
 
-A integração do SAP Fiori ao Azure AD oferece os seguintes benefícios:
+* Controlar no Azure AD que tem acesso ao SAP Fiori.
+* Permitir que os usuários sejam conectados automaticamente ao SAP Fiori usando suas contas do Azure AD.
+* Gerenciar suas contas em um local central: o portal do Azure.
 
-* Você pode usar o Azure AD para controlar quem tem acesso ao SAP Fiori.
-* Os usuários podem ser automaticamente conectados ao SAP Fiori com as contas do Azure AD (logon único).
-* Você pode gerenciar suas contas em um único local, o portal clássico do Azure.
-
-Para obter mais informações sobre a integração de aplicativos SaaS (software como serviço) ao Azure AD, confira [Logon único em aplicativos no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O que é o acesso de aplicativos e o logon único com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do Azure AD ao SAP Fiori, você precisará dos seguintes itens:
+Para começar, você precisará dos seguintes itens:
 
-* Uma assinatura do Azure AD. Caso você não tenha uma assinatura do Azure AD, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
-* Uma assinatura do SAP Fiori com logon único habilitado.
-* O SAP Fiori 7.20 ou posterior é obrigatório.
+* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma [conta gratuita](https://azure.microsoft.com/free/).
+* Assinatura do SAP Fiori habilitada para SSO (logon único).
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
-Neste tutorial, você configurará e testará o logon único do Azure AD em um ambiente de teste e integrará o SAP Fiori ao Azure AD.
+Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste.
 
-O SAP Fiori dá suporte aos seguintes recursos:
+* O SAP Fiori dá suporte ao SSO iniciado por **SP**
 
-* **Logon único iniciado por SP**
+> [!NOTE]
+> Para a Autenticação de iFrame iniciada pelo SAP Fiori, é recomendável usar o parâmetro **IsPassive** no AuthnRequest SAML para autenticação silenciosa. Para obter mais detalhes sobre o parâmetro **IsPassive**, confira as informações sobre o [Logon único de SAML do Azure AD](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-saml-protocol)
 
-## <a name="add-sap-fiori-in-the-azure-portal"></a>Adicionar o SAP Fiori no portal do Azure
+## <a name="adding-sap-fiori-from-the-gallery"></a>Como adicionar o SAP Fiori por meio da galeria
 
-Para integrar o SAP Fiori com o Azure AD, você deve adicionar SAP Fiori à sua lista de aplicativos SaaS gerenciados.
+Para configurar a integração do SAP Fiori ao Azure AD, você precisará adicionar o SAP Fiori por meio da galeria à lista de aplicativos SaaS gerenciados.
 
-1. Entre no [Portal do Azure](https://portal.azure.com).
+1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
+1. No painel de navegação esquerdo, escolha o serviço **Azure Active Directory**.
+1. Navegue até **Aplicativos Empresariais** e, em seguida, escolha **Todos os Aplicativos**.
+1. Para adicionar um novo aplicativo, escolha **Novo aplicativo**.
+1. Na seção **Adicionar da por meio da galeria**, digite **SAP Fiori** na caixa de pesquisa.
+1. Selecione **SAP Fiori** no painel de resultados e, em seguida, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
-1. No menu esquerdo, selecione **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-single-sign-on-for-sap-fiori"></a>Configurar e testar o logon único do Azure AD para o SAP Fiori
 
-    ![A opção Azure Active Directory](common/select-azuread.png)
+Configure e teste o SSO do Azure AD com o SAP Fiori com um usuário de teste chamado **B.Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do SAP Fiori.
 
-1. Selecione **Aplicativos empresariais** > **Todos os aplicativos**.
+Para configurar e testar o SSO do Azure AD com o SAP Fiori, conclua os seguintes blocos de construção:
 
-    ![O painel Aplicativos Empresariais](common/enterprise-applications.png)
+1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** – para permitir que os usuários usem esse recurso.
+    1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
+    1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
+1. **[Configurar o SSO do SAP Fiori](#configure-sap-fiori-sso)** – para definir as configurações de logon único no lado do aplicativo.
+    1. **[Criar um usuário de teste do SAP Fiori](#create-sap-fiori-test-user)** – para ter um equivalente de B. Fernandes no SAP Fiori que esteja vinculado à representação de usuário do Azure AD.
+1. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
 
-1. Para adicionar um aplicativo, selecione **Novo aplicativo**.
+## <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
-    ![A opção Novo aplicativo](common/add-new-app.png)
-
-1. Na caixa de pesquisa, insira **SAP Fiori**. Nos resultados da pesquisa, selecione **SAP Fiori** e **Adicionar**.
-
-    ![SAP Fiori na lista de resultados](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
-
-Nesta seção, você configurará e testará o logon único do Azure AD com o SAP Fiori, com base em um usuário de teste chamado **Brenda Fernandes**. Para que o logon único funcione, estabeleça uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do SAP Fiori.
-
-Para configurar e testar o logon único do Azure AD com o SAP Fiori, você precisará concluir os seguintes blocos de construção:
-
-| Tarefa | DESCRIÇÃO |
-| --- | --- |
-| **[Configurar o logon único do Azure AD](#configure-azure-ad-single-sign-on)** | Permite que os usuários usem esse recurso. |
-| **[Configurar o logon único do SAP Fiori](#configure-sap-fiori-single-sign-on)** | Define as configurações de logon único no aplicativo. |
-| **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** | Testa o logon único do Azure AD para um usuário chamado Brenda Fernandes. |
-| **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** | Habilita Brenda Fernandes a usar o logon único do Azure AD. |
-| **[Criar um usuário de teste do SAP Fiori](#create-an-sap-fiori-test-user)** | Cria um equivalente de Brenda Fernandes no SAP Fiori que é vinculado à representação do usuário no Azure AD. |
-| **[Testar o logon único](#test-single-sign-on)** | Verifica se a configuração funciona. |
-
-### <a name="configure-azure-ad-single-sign-on"></a>Configurar o logon único do Azure AD
-
-Nesta seção, você configurará o logon único do Azure AD com o SAP Fiori no portal do Azure.
+Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. Abra uma nova janela do navegador da Web e entre em seu site de empresa do SAP Fiori como administrador.
 
@@ -150,31 +136,23 @@ Nesta seção, você configurará o logon único do Azure AD com o SAP Fiori no 
 
     ![O link Baixar Metadados na caixa de diálogo de metadados do SAP SAML 2.0](./media/sapfiori-tutorial/tutorial-sapnetweaver-generatesp.png)
 
-1. No [portal do Azure](https://portal.azure.com/), no painel de integração de aplicativos do **SAP Fiori**, selecione **Logon único**.
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **SAP Fiori**, localize a seção **Gerenciar** e selecione **Logon único**.
+1. Na página **Selecionar um método de logon único**, escolha **SAML**.
+1. Na página **Configurar o logon único com o SAML**, clique no ícone de edição/caneta da **Configuração Básica do SAML** para editar as configurações.
 
-    ![A opção Logon único](common/select-sso.png)
+   ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-1. No painel **Selecionar um método de logon único**, selecione o modo **SAML** ou **SAML/WS-Fed** para habilitar o logon único.
+1. Na seção **Configuração básica do SAML**, se você tiver um **arquivo de metadados do provedor de serviços**, execute as seguintes etapas:
 
-    ![Modo de seleção de logon único](common/select-saml-option.png)
+    a. Clique em **Carregar arquivo de metadados**.
 
-1. No painel **Configurar logon único com SAML**, selecione **Editar** (o ícone de lápis) para abrir o painel **Configuração Básica de SAML**.
+    ![Carregar arquivo de metadados](common/upload-metadata.png)
 
-    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
+    b. Clique no **logotipo da pasta** para selecionar o arquivo de metadados e depois em **Carregar**.
 
-1. Na seção **Configuração Básica do SAML**, conclua as seguintes etapas:
+    ![Escolha o arquivo de metadados](common/browse-upload-metadata.png)
 
-    1. Selecione **Carregar o arquivo de metadados**.
-
-        ![A opção Carregar o arquivo de metadados](common/upload-metadata.png)
-
-   1. Para selecionar o arquivo de metadados, selecione o ícone de pasta e, em seguida, selecione **Carregar**.
-
-       ![Selecione o arquivo de metadados e, em seguida, o botão Carregar](common/browse-upload-metadata.png)
-
-1. Depois que o arquivo de metadados for carregado com êxito, os valores de **Identificador** e **URL de Resposta** serão populados automaticamente no painel **Configuração Básica do SAML**. Na caixa **URL de Logon**, insira uma URL que tenha o seguinte padrão: https:\//\<instância do SAP Fiori da sua empresa\>.
-
-    ![Informações de logon único de domínio e URLs do SAP Fiori](common/sp-identifier-reply.png)
+    c. Depois que o arquivo de metadados for carregado com êxito, os valores de **Identificador** e **URL de Resposta** serão populados automaticamente no painel **Configuração Básica do SAML**. Na caixa **URL de Entrada**, digite uma URL com o seguinte padrão: `https:\//\<your company instance of SAP Fiori\>`.
 
     > [!NOTE]
     > Alguns erros de relatório de clientes relacionados a valores de **URL de resposta** configurados incorretamente. Se vir esse erro, você poderá usar o seguinte script do PowerShell para definir a URL de Resposta correta para a instância:
@@ -202,21 +180,46 @@ Nesta seção, você configurará o logon único do Azure AD com o SAP Fiori no 
        ![O painel Gerenciar declarações de usuário](./media/sapfiori-tutorial/nameidattribute.png)
 
        ![A seção Transformação no painel Gerenciar declarações de usuário](./media/sapfiori-tutorial/nameidattribute1.png)
+    
+1. Na página **Configurar o logon único com o SAML**, na seção **Certificado de Autenticação SAML**, localize **XML de Metadados de Federação** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
 
+    ![O link de download do Certificado](common/metadataxml.png)
 
-1. No painel **Configurar logon único com SAML**, na seção **Certificado de Autenticação SAML**, selecione **Baixar** ao lado de **XML de Metadados de Federação**. Selecione uma opção de download com base em seus requisitos. Salve o certificado no computador.
-
-    ![A opção Download do certificado](common/metadataxml.png)
-
-1. Na seção **Configurar o SAP Fiori**, copie as seguintes URLs com base em seus requisitos:
-
-    * URL de logon
-    * Identificador do Azure AD
-    * URL de logoff
+1. Na seção **Configurar o SAP Fiori**, copie as URLs apropriadas de acordo com suas necessidades.
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-### <a name="configure-sap-fiori-single-sign-on"></a>Configurar o logon único do SAP Fiori
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
+
+Nesta seção, você criará um usuário de teste no portal do Azure chamado B.Fernandes.
+
+1. No painel esquerdo do portal do Azure, escolha **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
+1. Selecione **Novo usuário** na parte superior da tela.
+1. Nas propriedades do **Usuário**, siga estas etapas:
+   1. No campo **Nome**, insira `B.Simon`.  
+   1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `B.Simon@contoso.com`.
+   1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+   1. Clique em **Criar**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
+
+Nesta seção, você permitirá que B. Fernandes use o logon único do Azure concedendo a ela o acesso ao SAP Fiori.
+
+1. No portal do Azure, selecione **Aplicativos empresariais** e, em seguida, selecione **Todos os aplicativos**.
+1. Na lista de aplicativos, selecione **SAP Fiori**.
+1. Na página de visão geral do aplicativo, localize a seção **Gerenciar** e escolha **Usuários e grupos**.
+
+   ![O link “Usuários e grupos”](common/users-groups-blade.png)
+
+1. Escolha **Adicionar usuário** e, em seguida, **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
+
+    ![O link Adicionar Usuário](common/add-assign-user.png)
+
+1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário da lista e, em seguida, clique no botão **Escolher** na parte inferior da tela.
+1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
+
+## <a name="configure-sap-fiori-sso"></a>Configurar o SSO do SAP Fiori
 
 1. Entre no sistema SAP e acesse o código de transação **SAML2**. Uma nova janela do navegador é aberta com a página de configuração do SAML.
 
@@ -298,61 +301,11 @@ Nesta seção, você configurará o logon único do Azure AD com o SAP Fiori no 
 
     ![A opção OK na caixa de diálogo de configuração do SAML 2.0 no SAP](./media/sapfiori-tutorial/configuration2.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
-
-Nesta seção, você criará uma usuária de teste no portal do Azure chamada Brenda Fernandes.
-
-1. No portal do Azure, selecione **Azure Active Directory** > **Usuários** > **Todos os usuários**.
-
-    ![As opções Usuários e Todos os usuários](common/users.png)
-
-1. Selecione **Novo usuário**.
-
-    ![A opção Novo usuário](common/new-user.png)
-
-1. No painel **Usuário**, conclua as etapas a seguir:
-
-    1. Na caixa **Nome**, insira **BrendaFernandes**.
-  
-    1. Na caixa **Nome de usuário**, insira **brendafernandes\@\<domíniodaempresa>.\<extensão>** . Por exemplo, **brendafernandes\@contoso.com**.
-
-    1. Selecione a caixa de seleção **Mostrar Senha**. Anote o valor exibido na caixa **Senha**.
-
-    1. Selecione **Criar**.
-
-    ![O painel Usuário](common/user-properties.png)
-
-### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
-
-Nesta seção, você permitirá a Brenda Fernandes acesso ao SAP Fiori para que ela possa usar o logon único do Azure.
-
-1. No portal do Azure, selecione **Aplicativos empresariais** > **Todos os aplicativos** > **SAP Fiori**.
-
-    ![O painel Aplicativos Empresariais](common/enterprise-applications.png)
-
-1. Na lista de aplicativos, selecione **SAP Fiori**.
-
-    ![O SAP Fiori na lista de aplicativos](common/all-applications.png)
-
-1. No menu, selecione **Usuários e grupos**.
-
-    ![A opção Usuários e grupos](common/users-groups-blade.png)
-
-1. Selecione **Adicionar usuário**. Em seguida, no painel **Adicionar atribuição**, selecione **Usuários e grupos**.
-
-    ![O painel Adicionar atribuição](common/add-assign-user.png)
-
-1. No painel **Usuários e grupos**, selecione **Brenda Fernandes** na lista de usuários. Escolha **Selecionar**.
-
-1. Se você estiver esperando um valor de função na declaração SAML, no painel **Selecionar função**, selecione a função relevante ao usuário na lista. Escolha **Selecionar**.
-
-1. No painel **Adicionar atribuição**, selecione **Atribuir**.
-
-### <a name="create-an-sap-fiori-test-user"></a>Criar um usuário de teste do SAP Fiori
+### <a name="create-sap-fiori-test-user"></a>Criar um usuário de teste do SAP Fiori
 
 Nesta seção, você criará um usuário chamado Brenda Fernandes no SAP Fiori. Trabalhe com sua equipe interna de especialistas SAP ou com o parceiro SAP de sua organização para adicionar os usuários à plataforma SAP Fiori.
 
-### <a name="test-single-sign-on"></a>Testar logon único
+## <a name="test-sso"></a>Testar o SSO
 
 1. Depois de ativar o provedor de identidade do Azure AD no SAP Fiori, tente acessar uma das URLs a seguir para testar o logon único (não deve ser solicitado que você forneça um nome de usuário e senha):
 
@@ -368,10 +321,12 @@ Nesta seção, você criará um usuário chamado Brenda Fernandes no SAP Fiori. 
 
 1. Se for solicitado que você forneça um nome de usuário e senha, habilite o rastreamento para ajudar a diagnosticar o problema. Use a seguinte URL para o rastreamento: https:\//\<sapurl\>/sap/bc/webdynpro/sap/sec_diag_tool?sap-client=122&sap-language=EN#.
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="additional-resources"></a>Recursos adicionais
 
-Para saber mais, examine estes artigos:
+- [ Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Lista de tutoriais de integração de aplicativos SaaS ao Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
-- [Logon único em aplicativos no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso a aplicativos e logon único com o Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Experimentar o SAP Fiori com o Azure AD](https://aad.portal.azure.com/)

@@ -1,5 +1,5 @@
 ---
-title: Examinando enunciados de ponto de extremidade – LUIS
+title: 'Tutorial: Examinando enunciados de ponto de extremidade – LUIS'
 titleSuffix: Azure Cognitive Services
 description: Melhore as previsões de aplicativo verificando ou corrigindo os enunciados recebidos pelo ponto de extremidade HTTP do LUIS sobre os quais o LUIS não tem certeza. Alguns enunciados podem ser verificados quanto à intenção e outros quanto à entidade.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 07/16/2019
+ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: dd5c0012bad567623fdfc0a70760f692aafe0e3e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f81066ed21702dfe94ad7897adc3b82ed5a49f4d
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563323"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70387512"
 ---
 # <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Tutorial: Corrigir previsões incertas examinando os enunciados de ponto de extremidade
 Neste tutorial, melhore as previsões de aplicativo verificando ou corrigindo os enunciados recebidos pelo ponto de extremidade HTTP do LUIS sobre os quais o LUIS não tem certeza. Alguns enunciados podem precisar ser verificados quanto à intenção e outros quanto à entidade. Você deve analisar os enunciados de ponto de extremidade como uma parte regular da sua manutenção agendada do LUIS. 
@@ -85,15 +85,17 @@ Use as seguintes etapas:
     |:--|:--|:--|
     |`I'm looking for a job with Natural Language Processing`|GetJobInfo|Trabalho - “Processamento de linguagem natural”|
 
+    Para alterar `natural language processing` de uma entidade keyPhrase para uma entidade Job, selecione a frase e, em seguida, selecione **Job** na lista. Se quiser selecionar apenas parte do texto de keyPhrase para uma entidade diferente, você precisará remover keyPhrase como uma entidade, rotular com uma entidade diferente e, em seguida, reaplicar a entidade keyPhrase ao aplicativo. 
+
     Adicionar o enunciado move-o de **Examinar os enunciados de ponto de extremidade** para a intenção **GetJobInformation**. O enunciado de ponto de extremidade agora é um enunciado de exemplo para essa intenção. 
 
     Além de alinhar corretamente esse enunciado, mais enunciados devem ser adicionados à intenção **GetJobInformation**. Isso será deixado como um exercício para você concluir por conta própria. Cada intenção, exceto a intenção **None**, deve ter aproximadamente o mesmo número de enunciados de exemplo. A intenção **None** deve conter 10% do total de enunciados no aplicativo. 
 
-1. Examine o restante dos enunciados nessa intenção, rotulando os enunciados e corrigindo a **Intenção alinhada**, se estas estiverem incorretas.
+    Examine o restante dos enunciados nessa intenção, rotulando os enunciados e corrigindo a **Intenção alinhada**, se estas estiverem incorretas.
 
-1. A lista não deve ter mais esses enunciados. Se aparecerem mais enunciados, continue a trabalhar na lista, corrigindo as intenções e rotulando quaisquer entidades ausentes, até que ela fique vazia. 
+    A lista **Examinar enunciados de ponto de extremidade** não deve mais ter essas declarações. Se aparecerem mais enunciados, continue a trabalhar na lista, corrigindo as intenções e rotulando quaisquer entidades ausentes, até que ela fique vazia. 
 
-1. Selecione a intenção seguinte na lista de Filtros e continue a corrigir os enunciados e a rotular as entidades. Lembre-se que a última etapa de cada intenção é selecionar **Adicionar à intenção alinhada** na linha do enunciado ou marcar a caixa para cada enunciado e selecionar **Adicionar selecionada** acima da tabela.
+    Selecione a intenção seguinte na lista de Filtros e continue a corrigir os enunciados e a rotular as entidades. Lembre-se que a última etapa de cada intenção é selecionar **Adicionar à intenção alinhada** na linha do enunciado ou marcar a caixa para cada enunciado e selecionar **Adicionar selecionada** acima da tabela.
 
     Continue até que todas as intenções e entidades na lista de filtro tenham uma lista vazia. Esse é um aplicativo muito pequeno. O processo de revisão leva apenas alguns minutos. 
 

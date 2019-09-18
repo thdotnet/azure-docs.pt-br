@@ -5,15 +5,15 @@ services: notification-hubs
 author: spelluru
 ms.service: notification-hubs
 ms.topic: include
-ms.date: 02/05/2019
+ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: fef6122eceda213fb6353ada53033d0d1e27fd7e
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: ccb5e40738680181e7339b8652d029597c7d0bd4
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509119"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935163"
 ---
 1. Faça logon no [console do Firebase](https://firebase.google.com/console/). Crie um novo projeto do Firebase se você ainda não tiver um.
 2. Depois de criar seu projeto, selecione **Adicionar Firebase ao seu aplicativo Android**. 
@@ -33,10 +33,11 @@ ms.locfileid: "67509119"
         ```
         classpath 'com.google.gms:google-services:4.0.1'
         ```
-    2. No arquivo build.gradle no nível do aplicativo (&lt;project&gt;/&lt;app-module&gt;/build.gradle), adicione a seguinte instrução à seção de **dependências**. 
+    2. No arquivo build.gradle no nível do aplicativo (&lt;project&gt;/&lt;app-module&gt;/build.gradle), adicione as seguintes instruções à seção de **dependências**. 
 
         ```
-        implementation 'com.google.firebase:firebase-core:16.0.1'
+        implementation 'com.google.firebase:firebase-core:16.0.8'
+        implementation 'com.google.firebase:firebase-messaging:17.3.4'
         ```
 
     3. Adicione a seguinte linha ao final do arquivo build.gradle no nível do aplicativo após a seção de dependências. 
@@ -48,7 +49,7 @@ ms.locfileid: "67509119"
  
         ![Alterações na configuração de build.gradle](./media/notification-hubs-enable-firebase-cloud-messaging/build-gradle-configurations.png)
 6. Selecione **Avançar**. 
-7. Selecione **Ignore esta etapa**. 
+7. Selecione **Ignorar esta etapa**. 
 
     ![Ignorar a última etapa](./media/notification-hubs-enable-firebase-cloud-messaging/skip-this-step.png)
 8. No console do Firebase, selecione a engrenagem para seu projeto. Em seguida, selecione **Configurações do Projeto**.

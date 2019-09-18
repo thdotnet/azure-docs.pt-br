@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: af5b16448a39e0106dbc04724607ff603483484c
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.openlocfilehash: bfdad0d81599035e7d8c270ec4e8ee8d6a45125e
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69997753"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70858929"
 ---
 # <a name="what-is-azure-iot-central-preview-features"></a>O que é o Azure IoT Central (versão prévia dos recursos)?
 
@@ -62,7 +62,8 @@ Este artigo descreve os seguintes tópicos do Azure IoT Central:
 - Não há compatibilidade com tipos de esquema de matriz.
 - Não há compatibilidade com exportação de modelo de aplicativo nem com cópia de aplicativo.
 - Somente o SDK do dispositivo C e os SDKs do serviço e do dispositivo Node.js são compatíveis.
-- Ele só está disponível em regiões selecionadas.
+- Ele está disponível somente nas regiões Europa Setentrional e EUA Central.
+- Os modelos de funcionalidade do dispositivo precisam ter todas as interfaces definidas embutidas no mesmo arquivo.
 
 ## <a name="personas"></a>Personas
 

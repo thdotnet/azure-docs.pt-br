@@ -15,12 +15,12 @@ ms.workload: tbd
 ms.date: 05/11/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 70a8e4cd694a90e83bf78e00a7c725a8c887b2eb
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: fcb5d74305375c9883f2d601a2ab7d2d9a50b9cb
+ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324065"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70743943"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-python"></a>Início Rápido: Usar o Cache do Azure para Redis com Python
 
@@ -111,13 +111,13 @@ Caso contrário, se você não for mais usar o aplicativo de exemplo do início 
 > A exclusão de um grupo de recursos é irreversível, e o grupo de recursos e todos os recursos contidos nele são excluídos permanentemente. Não exclua acidentalmente o grupo de recursos ou os recursos incorretos. Se tiver criado os recursos para hospedar este exemplo dentro de um grupo de recursos existente que contém recursos que você quer manter, exclua cada recurso individualmente de suas respectivas folhas, em vez de excluir o grupo de recursos.
 >
 
-Entre no [portal do Azure](https://portal.azure.com) e clique em **Grupos de recursos**.
+Entre no [portal do Azure](https://portal.azure.com) e selecione **Grupos de recursos**.
 
-Na caixa de texto **Filtrar por nome...** , digite o nome do seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *TestResources*. Em seu grupo de recursos, na lista de resultados, clique em **...** , depois em **Excluir grupo de recursos**.
+Na caixa de texto **Filtrar por nome...** , digite o nome de seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *TestResources*. Em seu grupo de recursos, na lista de resultados, selecione **...** e então **Excluir grupo de recursos**.
 
 ![Excluir](./media/cache-web-app-howto/cache-delete-resource-group.png)
 
-Você receberá uma solicitação para confirmar a exclusão do grupo de recursos. Digite o nome do grupo de recursos para confirmar e clique em **Excluir**.
+Você receberá uma solicitação para confirmar a exclusão do grupo de recursos. Insira o nome do grupo de recursos para confirmar e selecione **Excluir**.
 
 Após alguns instantes, o grupo de recursos, e todos os recursos contidos nele, serão excluídos.
 

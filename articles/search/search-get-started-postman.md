@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido do REST: Criar, carregar e consultar índices usando o Postman – Azure Search'
+title: 'Início Rápido: Criar um índice de pesquisa no Postman usando APIs REST – Azure Search'
 description: Saiba como chamar as APIs REST do Azure Search usando o Postman e exemplos de dados e definições.
 author: HeidiSteen
 manager: nitinme
@@ -7,14 +7,14 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: quickstart
-ms.date: 07/11/2019
+ms.date: 09/10/2019
 ms.author: heidist
-ms.openlocfilehash: b1fcca0b135852660890f9f7591ee115d2ef2b47
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: 138fd3d50a5f462c6a0ad954043f107c3c250917
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656769"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881544"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-postman-using-rest-apis"></a>Início Rápido: Criar um índice do Azure Search no Postman usando as APIs REST
 > [!div class="op_single_selector"]

@@ -12,17 +12,17 @@ ms.devlang: java
 ms.date: 08/10/2018
 ms.author: routlaw
 ms.reviewer: glenga
-ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 5c5a0285a827a7990a11eb6ef6445e7d84189767
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 381298abcfa4fa707af6b382565b4bfb990e96e6
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70096867"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70899494"
 ---
 # <a name="quickstart-use-java-to-create-and-publish-a-function-to-azure-functions"></a>Início Rápido: Usar Java para criar e publicar uma função no Azure Functions
 
-Este artigo orienta você por meio pelo uso da ferramenta de linha de comando Maven para criar e publicar uma função Java para o Azure Functions. Quando terminar, seu código de função será executado nos [Plano de Consumo](functions-scale.md#consumption-plan) no Azure e poderá ser disparado usando uma solicitação HTTP.
+Este artigo informa a você como criar e publicar uma função Java nas funções do Azure com a ferramenta de linha de comando Maven. Quando terminar, seu código de função será executado nos [Plano de Consumo](functions-scale.md#consumption-plan) no Azure e poderá ser disparado usando uma solicitação HTTP.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 

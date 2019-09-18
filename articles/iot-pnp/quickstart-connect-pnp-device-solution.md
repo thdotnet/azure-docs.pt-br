@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 246d3eac8f9d8aff6d603ea8686e430ce0f772ea
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: a082e4b7896b317bf2b28971d3693bada95a3445
+ms.sourcegitcommit: b8578b14c8629c4e4dea4c2e90164e42393e8064
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881585"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70806548"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-preview-device-thats-connected-to-your-solution"></a>Início Rápido: Interagir com um dispositivo IoT Plug and Play Preview que está conectado à sua solução
 
@@ -27,7 +27,10 @@ Baixe e instale o Node.js em [nodejs.org](https://nodejs.org).
 
 ## <a name="prepare-an-iot-hub"></a>Preparar um hub IoT
 
-Você também precisará de um hub IoT do Azure em sua assinatura do Azure para concluir este início rápido. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+Você também precisará de um Hub IoT do Azure em sua assinatura do Azure para concluir este início rápido. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+
+> [!NOTE]
+> Durante a versão prévia pública, os recursos de IoT Plug and Play estão disponíveis apenas em hubs IoT criados nas regiões **Centro dos EUA**, **Europa Setentrional** e **Leste do Japão**.
 
 Adicione a Extensão IoT do Microsoft Azure para a CLI do Azure:
 

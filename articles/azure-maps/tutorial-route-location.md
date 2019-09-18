@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: fd75ca1fbad358e80a2c040b5ead8c50611489e2
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 52355a8896f4891e99d07e2b4106cede77a1f8df
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68478870"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916201"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Rotear para um ponto de interesse usando os Mapas do Azure
 
@@ -27,7 +27,7 @@ Este tutorial mostra como usar sua conta dos Mapas do Azure e o SDK do Serviço 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de prosseguir, siga as etapas no tutorial anterior para [criar sua conta dos Mapas do Azure](./tutorial-search-location.md#createaccount) e [obter a chave de assinatura da conta](./tutorial-search-location.md#getkey).
+Antes de prosseguir, siga as instruções em [Gerenciar conta](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) para criar uma assinatura de conta do Azure Mapas com tipo de preço S1 e siga as etapas em [Obter chave primária](./tutorial-search-location.md#getkey) para obter a chave primária da assinatura da conta.
 
 <a id="getcoordinates"></a>
 

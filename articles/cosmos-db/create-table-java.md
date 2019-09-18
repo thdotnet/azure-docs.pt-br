@@ -8,13 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.custom: seo-java-august2019
-ms.openlocfilehash: 8425710f19c789aa0912ccc813d85f154a0d28f5
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 4ede3d863ed47b16b12f516d8af778fdb2576d27
+ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981655"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70391048"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-table-api-data"></a>Início Rápido: Criar um aplicativo Java para gerenciar os dados de API de Tabela do Azure Cosmos DB
 
@@ -25,7 +25,7 @@ ms.locfileid: "69981655"
 > * [Python](create-table-python.md)
 > 
 
-Este guia de início rápido mostra como usar o Java e a [API de Tabela](table-introduction.md) do Azure Cosmos DB para compilar um aplicativo clonando um exemplo do GitHub. Este guia de início rápido também mostra como criar uma conta do Azure Cosmos DB e como usar o Data Explorer para criar tabelas e entidades no Portal do Azure baseado na Web.
+Este guia de início rápido mostra como usar o Java e a [API de Tabela](table-introduction.md) do Azure Cosmos DB para compilar um aplicativo clonando um exemplo do GitHub. Você aprenderá a criar uma conta do Azure Cosmos DB e a usar o Data Explorer para criar tabelas e entidades no Portal do Azure baseado na Web.
 
 O Azure Cosmos DB é o serviço de banco de dados multimodelo distribuído globalmente da Microsoft. É possível criar e consultar rapidamente documentos, chave/valor e bancos de dados do grafo. Todos se beneficiam de recursos de escala horizontal e distribuição global no núcleo do Azure Cosmos DB. 
 

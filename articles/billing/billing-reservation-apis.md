@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 08/02/2019
 ms.author: banders
 ms.openlocfilehash: 36bc403c4000e58541f22c2cb44f77a28e81cb72
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "68779899"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>APIs para a automação de reserva do Azure
@@ -30,9 +30,9 @@ Você também pode analisar o uso de recursos usando os Detalhes de Uso de API d
 
 ## <a name="buy-a-reservation"></a>Comprar uma reserva
 
-Você pode comprar reservas do Azure e planos de software programaticamente usando APIs REST. Para saber mais, consulte [ordem de reserva-API de compra](/rest/api/reserved-vm-instances/reservationorder/purchase).
+É possível comprar planos de software e reservas do Azure programaticamente usando APIs REST. Para obter mais informações, confira [Pedido de Reserva – API de Compra](/rest/api/reserved-vm-instances/reservationorder/purchase).
 
-Aqui está uma solicitação de exemplo para comprar usando a API REST:
+Veja um exemplo de solicitação para comprar usando a API REST:
 
 ```
 PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/<GUID>?api-version=2019-04-01
@@ -61,7 +61,7 @@ Corpo da solicitação:
 }
 ```
 
-Você também pode comprar uma reserva no portal do Azure. Para obter mais informações, confira os seguintes artigos:
+Também é possível comprar uma reserva no portal do Azure. Para obter mais informações, consulte os seguintes artigos:
 
 Planos de serviço:
 - [Máquina virtual](../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json)
@@ -84,7 +84,7 @@ Se você descobrir que as reservas de sua organização estiverem sendo subutili
 - Verifique se as máquinas virtuais que sua organização cria correspondem ao tamanho da VM que está na reserva.
 - Verifique se a flexibilidade de tamanho da instância está ligada. Para obter mais informações, confira [Gerenciar reservas – alterar configuração de otimização para Instâncias de VM Reservadas](billing-manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
 - Altere o escopo da reserva para compartilhado de modo que ele se aplique mais amplamente. Para obter mais informações, confira [Gerenciar reservas – altere o escopo para uma reserva](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
-- Trocar a quantidade não usada. Para obter mais informações, consulte [gerenciar reservas](billing-manage-reserved-vm-instance.md).
+- Trocar a quantidade não usada. Para obter mais informações, confira [Gerenciar reservas](billing-manage-reserved-vm-instance.md).
 
 ## <a name="give-access-to-reservations"></a>Dar acesso às reservas
 
@@ -104,7 +104,7 @@ Para mesclar duas reservas em uma reserva, use a API [Reserva – Mesclagem](/re
 
 ## <a name="change-scope-for-a-reservation"></a>Alterar o escopo de uma reserva
 
-O escopo de uma reserva pode ser assinatura única, grupo de recursos único ou todas as assinaturas em seu contexto de cobrança. Se você definir o escopo como assinatura única ou grupo de recursos único, a reserva será correspondida à execução de recursos na assinatura selecionada. Se você excluir ou mover a assinatura ou o grupo de recursos, a reserva não será utilizada.  Se você definir o escopo compartilhado, o Azure corresponderá a reserva de recursos que são executados em todas as assinaturas no contexto de cobrança. O contexto de cobrança depende da assinatura usada para comprar a reserva. Você pode selecionar o escopo na compra ou alterá-lo a qualquer momento após a compra. Para obter mais informações, confira [Gerenciar Reservas – Alterar o escopo](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
+O escopo de uma reserva pode ser a assinatura única, grupo de recursos único ou todas as assinaturas de seu contexto de cobrança. Se você definir o escopo como assinatura única ou grupo de recursos único, a reserva será correspondida aos recursos em execução na assinatura selecionada. Se você excluir ou mover a assinatura ou o grupo de recursos, a reserva não será utilizada.  Se você definir o escopo compartilhado, o Azure corresponderá a reserva de recursos que são executados em todas as assinaturas no contexto de cobrança. O contexto de cobrança depende da assinatura usada para comprar a reserva. É possível selecionar o escopo na compra ou alterá-lo a qualquer momento após a compra. Para obter mais informações, confira [Gerenciar Reservas – Alterar o escopo](billing-manage-reserved-vm-instance.md#change-the-reservation-scope).
 
 Para alterar o escopo de modo programático, use a API [Reserva – Atualização](/rest/api/reserved-vm-instances/reservation/update).
 

@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 02/28/2019
 ms.author: amberb
 ms.openlocfilehash: d163c88469ec767c8e0d18f5978ecb61f7997c8b
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490321"
 ---
-Verifique o tipo de contrato para determinar se você tem acesso a uma conta de cobrança para um contrato de cliente da Microsoft.
+Verifique o tipo de contrato para determinar se você tem acesso a uma conta de cobrança para um Contrato de Cliente da Microsoft.
  
 1. Entre no [Portal do Azure]( http://portal.azure.com).
  
@@ -19,11 +19,11 @@ Verifique o tipo de contrato para determinar se você tem acesso a uma conta de 
  
    ![Captura de tela que mostra a pesquisa do portal do Azure](./media/billing-check-mca/billing-search-cost-management-billing.png)
  
-3. Se você tiver acesso a apenas um escopo de cobrança, selecione **propriedades** do lado esquerdo. Você tem acesso a uma conta de cobrança para um contrato de cliente da Microsoft se é o tipo de conta de cobrança **contrato de cliente do Microsoft**.
+3. Caso você tenha acesso a apenas um escopo do orçamento, selecione **Propriedades** no lado esquerdo. Você tem acesso a uma conta de cobrança para um Contrato de Cliente da Microsoft se o tipo de conta de cobrança é **Contrato de Cliente da Microsoft**.
  
-    ![Captura de tela que mostra o contrato de cliente da microsoft na página de propriedades](./media/billing-check-mca/billing-mca-property.png)
+    ![Captura de tela que mostra o Contrato de Cliente da Microsoft na página de propriedades](./media/billing-check-mca/billing-mca-property.png)
  
-4. Se você tiver acesso ao escopo de cobrança vários, verifique o tipo da coluna de conta de cobrança. Você tem acesso a uma conta de cobrança para um contrato de cliente da Microsoft se é o tipo de conta de cobrança para qualquer um dos escopos **contrato de cliente do Microsoft**.
+4. Caso você tenha acesso a vários escopos do orçamento, verifique o tipo na coluna da conta de cobrança. Você tem acesso a uma conta de cobrança para um Contrato de Cliente da Microsoft se o tipo de conta de cobrança para um dos escopos é **Contrato de Cliente da Microsoft**.
  
-    ![Captura de tela que mostra o contrato de cliente da microsoft na página de lista de conta cobrança](./media/billing-check-mca/billing-mca-in-the-list.png)
+    ![Captura de tela que mostra o Contrato de Cliente da Microsoft na página de lista de contas de cobrança](./media/billing-check-mca/billing-mca-in-the-list.png)
  

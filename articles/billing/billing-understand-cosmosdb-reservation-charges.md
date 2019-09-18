@@ -10,10 +10,10 @@ ms.date: 04/13/2019
 ms.author: banders
 ms.reviewer: sngun
 ms.openlocfilehash: d5a13e4466234d73bafe8dbe76cae92955cf64bd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "60370740"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Entenda como o desconto de reserva é aplicado ao Azure Cosmos DB
@@ -22,9 +22,9 @@ Depois de adquirir uma capacidade reservada do Azure Cosmos DB, o desconto de re
 
 ## <a name="how-reservation-discount-is-applied"></a>Como o desconto de reserva é aplicado
 
-Um desconto de reserva é "*uso-it-ou-perder-it*". Dessa forma, se você não tiver recursos correspondentes para qualquer hora, em seguida, você perderá uma quantidade de reserva para essa hora. Você não pode transportar encaminhar horas reservadas não utilizadas.
+Um desconto de reserva é do tipo "*usar ou perder*". Portanto, se você não tiver recursos correspondentes para nenhuma hora, perderá uma quantidade de reserva para essa hora. Não é possível postergar horas reservadas não utilizadas.
 
-Quando você desligar um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso de correspondência é encontrado no escopo especificado, são as horas reservadas *perdido*.
+Quando você desliga um recurso, o desconto de reserva se aplica automaticamente a outro recurso correspondente no escopo especificado. Se nenhum recurso correspondente for encontrado no escopo especificado, as horas reservadas serão *perdidas*.
 
 ## <a name="reservation-discount-applied-to-azure-cosmos-db-accounts"></a>Desconto de reserva aplicado às contas do Azure Cosmos DB
 
@@ -89,8 +89,8 @@ O desconto coberto por uma reserva é calculado como: consumo de taxa de transfe
 
 |Descrição de medidor | Região |Consumo de taxa de transferência (RU/s) |Desconto de reserva aplicado a RU/s |
 |---------|---------|---------|---------|
-|Azure Cosmos DB – 100 RU/s/hora – Centro-Norte dos EUA  |   Centro-Norte dos EUA  | 50\.000  | 50\.000  |
-|Azure Cosmos DB – 100 RU/s/hora - Oeste dos EUA  |  Oeste dos EUA   |  50\.000  |  50\.000 |
+|Azure Cosmos DB – 100 RU/s/hora – Centro-Norte dos EUA  |   Centro-Norte dos EUA  | 50.000  | 50.000  |
+|Azure Cosmos DB – 100 RU/s/hora - Oeste dos EUA  |  Oeste dos EUA   |  50.000  |  50.000 |
 
 **Cenário 2**
 
@@ -98,8 +98,8 @@ Por exemplo, suponha que você precise de implantações do Azure Cosmos DB nas 
 
 |Descrição de medidor | Região |Consumo de taxa de transferência (RU/s) |Desconto de reserva aplicado a RU/s |
 |---------|---------|---------|---------|
-|Azure Cosmos DB – 100 RU/s/hora – Austrália Central 2  |  Austrália Central 2   |  50\.000  |  50\.000   |
-|Sul da França de - 100 RU/s/hora – Azure Cosmos DB  |  Sul da França   |  50\.000 |  15,384  |
+|Azure Cosmos DB – 100 RU/s/hora – Austrália Central 2  |  Austrália Central 2   |  50.000  |  50.000   |
+|Sul da França de - 100 RU/s/hora – Azure Cosmos DB  |  Sul da França   |  50.000 |  15,384  |
 
 Um uso de 50.000 unidades na região "Austrália Central 2" corresponde a 75.000 RU/s de uso faturável (ou uso normalizado). Esse valor é computado como: consumo de taxa de transferência * taxa_de_desconto_de_reserva_da_região. O cálculo é igual a 75.000 RU/s de uso faturável ou normalizado. Esse valor é computado como: 50.000 * 1,5 = 75.000 RU/s.
 
@@ -119,8 +119,8 @@ Para saber mais sobre as reservas do Azure, consulte os seguintes artigos:
 
 * [Quais são as reservas para o Azure](../billing/billing-save-compute-costs-reservations.md)  
 * [Pagar antecipadamente por recursos do Azure Cosmos DB com capacidade reservada do Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)  
-* [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Azure SQL Database](../sql-database/sql-database-reserved-capacity.md)  
-* [Gerenciar reservas para o Azure](../billing/billing-manage-reserved-vm-instance.md)  
+* [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Banco de Dados SQL do Azure](../sql-database/sql-database-reserved-capacity.md)  
+* [Gerenciar reservas do Azure](../billing/billing-manage-reserved-vm-instance.md)  
 * [Entender o uso de reserva para a sua assinatura paga conforme o uso](../billing/billing-understand-reserved-instance-usage.md)  
 * [Entenda o uso de reservas para o seu registro Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)
 * [Entender o uso de reserva para assinaturas de CSP](https://docs.microsoft.com/partner-center/azure-reservations)

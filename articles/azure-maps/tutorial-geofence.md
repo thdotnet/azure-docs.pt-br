@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 112d0bd4b6802179692d0d177775027e552d1170
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b4e9b72be5d03e0b3441983ca991a16688f5f4cd
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58085313"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70916454"
 ---
 # <a name="set-up-a-geofence-by-using-azure-maps"></a>Configurar um limite geográfico usando o Azure Mapas
 
@@ -36,7 +36,7 @@ Neste tutorial, você aprenderá a:
 
 ### <a name="create-an-azure-maps-account"></a>Criar uma conta dos Mapas do Azure 
 
-Para concluir as etapas neste tutorial, você primeiro precisa ver [Gerenciar conta e chaves](how-to-manage-account-keys.md) para criar e gerenciar sua assinatura da conta S1 com o tipo de preço.
+Para concluir as etapas deste tutorial, siga as instruções em [gerenciar conta](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account) para criar uma assinatura de conta do Azure Mapas com tipo de preço S1 e siga as etapas em [obter chave primária](./tutorial-search-location.md#getkey) para obter a chave primária de assinatura da conta.
 
 ## <a name="upload-geofences"></a>Carregar limites geográficos
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 description: Implantar um microsserviço no AKS com o Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 39fb7658140a2eda948cd0dc0e58d71b0b9a053b
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: b845a176497891f55990c560e719832c6eaebb73
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67710669"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70842531"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolver um aplicativo no Kubernetes usando o Azure Dev Spaces
 Neste guia, você aprenderá a:
@@ -34,7 +34,7 @@ Você precisa criar um cluster do AKS em uma [região com suporte][supported-reg
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
-az aks create -g MyResourceGroup -n MyAKS --location eastus --node-vm-size Standard_DS2_v2 --node-count 1 --disable-rbac --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location eastus --disable-rbac --generate-ssh-keys
 ```
 
 ## <a name="enable-azure-dev-spaces-on-your-aks-cluster"></a>Habilitar o Azure Dev Spaces no cluster do AKS
@@ -109,6 +109,9 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ```
 
 Veja o serviço em execução abrindo a URL pública que é exibida na saída do comando `azds up`. Neste exemplo, a URL pública é *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
+
+> [!NOTE]
+> Quando você navega até o serviço durante a execução de `azds up`, os rastreamentos de solicitação HTTP também são exibidos na saída do comando `azds up`. Esses rastreamentos podem ajudá-lo a solucionar problemas e a depurar seu serviço. É possível desabilitá-los usando `--disable-http-traces` durante a execução de `azds up`.
 
 Se você parar o comando `azds up` usando *Ctrl + c*, o serviço continuará a executar no AKS e a URL pública permanecerá disponível.
 

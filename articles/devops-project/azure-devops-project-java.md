@@ -6,27 +6,26 @@ ms.technology: devops-cicd
 services: vsts
 documentationcenter: vs-devops-build
 author: mlearned
-manager: douge
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
-ms.custom: mvc, seo-java-july2019, seo-java-august2019
+ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 monikerRange: vsts
-ms.openlocfilehash: 381af2989a7622501462e574d05b54eea8416518
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: d395855de6bb16841d54821c87a6af6d5d62c11c
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543449"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898065"
 ---
 # <a name="quickstart-set-up-a-cicd-pipeline-for-a-java-app-with-azure-devops-projects"></a>Início Rápido: Configurar um pipeline de CI/CD para um aplicativo Java com o Azure DevOps Projects
 
-O Azure DevOps Projects apresenta uma experiência simplificada que cria recursos do Azure e configura um pipeline de CI (integração contínua) e CD (entrega contínua) para seu aplicativo Java no Azure Pipelines.  
+Neste artigo de início rápido, você usa a experiência simplificada do Azure DevOps Projects para configurar um pipeline de CI (integração contínua) e CD (entrega contínua) para seu aplicativo Java no Azure Pipelines. Você também pode usar o Azure DevOps Projects para criar outros recursos do Azure.  
 
 Caso não tenha uma assinatura do Azure, você pode obter uma gratuitamente via [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/).
 

@@ -9,12 +9,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
-ms.openlocfilehash: e05dbc570836741a69ed229fc93eb32a7dfd01dd
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 523c722edd3e76a291ae753ec7c3482e19ca7e24
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503153"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845718"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Introdução ao Azure Dev Spaces com .NET Core
 
@@ -84,7 +84,7 @@ Insira o seguinte comando da CLI do Azure, usando o grupo de recursos que conté
 Recursos avançados como depuração do Kubernetes estão disponíveis para desenvolvedores .NET Core e Node.js usando VS Code.
 
 1. Caso não o tenha, instale o [VS Code](https://code.visualstudio.com/Download).
-1. Baixe e instale a [extensão Azure Dev Spaces do VS](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Clique em Instalar uma vez na página do Marketplace da extensão e novamente no VS Code. 
+1. Baixe e instale as extensões [Azure Dev Spaces do VS](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) e [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). Para cada extensão, clique em Instalar uma vez na página do Marketplace da extensão e, novamente, no VS Code.
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Criar um aplicativo Web em execução em um contêiner
 

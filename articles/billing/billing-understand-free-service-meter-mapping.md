@@ -1,5 +1,5 @@
 ---
-title: Serviço para mapeamento de medidor para a conta gratuita do Azure
+title: Mapeamento de serviço para medidor para uma conta gratuita do Azure
 description: Entenda o serviço para mapeamento de medidor dos serviços incluídos na conta gratuita.
 author: amberbhargava
 manager: amberb
@@ -12,17 +12,17 @@ ms.workload: na
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: 8022c065d73aafc53d3dcb77e79c3e6320e0ce39
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490399"
 ---
 # <a name="understand-free-service-to-meter-mapping"></a>Entender o serviço gratuito para mapeamento de medidor
 
-Cada serviço do Azure emite a utilização em relação a medidores, utilizados pelo sistema de cobrança do Azure para cobrar os usuários pelos serviços. Para compreender melhor uso do serviço gratuito, vamos dar uma olhada no serviço de mapeamento de medidor para os serviços. Para saber como criar serviços gratuitos, consulte [Criar serviços gratuitos com a conta gratuita do Azure](billing-create-free-services-included-free-account.md).
+Cada serviço do Azure emite a utilização em relação a medidores, utilizados pelo sistema de cobrança do Azure para cobrar os usuários pelos serviços. Para entender melhor o uso do serviço gratuito, vamos analisar o mapeamento de serviço para medidor desses serviços. Para saber como criar serviços gratuitos, consulte [Criar serviços gratuitos com a conta gratuita do Azure](billing-create-free-services-included-free-account.md).
 
-## <a name="service-to-meter-mapping-for-eligible-services"></a>Serviço de mapeamento de medidor para serviços qualificados
+## <a name="service-to-meter-mapping-for-eligible-services"></a>Mapeamento de serviço para medidor de serviços qualificados
 
 |    Serviço   | Nome do medidor no Portal do Azure | Nome do medidor no arquivo/API de uso | ID de medidor |
 | ------------ | -------------------------- | -------------------------| -------- |
@@ -44,15 +44,15 @@ Cada serviço do Azure emite a utilização em relação a medidores, utilizados
 | Disco gerenciado <sup>1</sup>  | Operações do Disco Gerenciado Standard (por 10 mil) | Operações do Disco Gerenciado Standard (por 10 mil) – Gratuito | 82cc6ea4-0abd-43ac-acc0-ec34edf0f14c
 | Disco gerenciado <sup>1</sup>  | Armazenamento Premium – Blob de páginas/P6 (unidades) – Com redundância local | Armazenamento Premium – Blob de páginas/P6 (unidades) – Gratuito | 2b98c168-27ca-4cc1-b509-e887dec87657
 | Banco de dados SQL | Dias de Banco de Dados Standard S0 – Banco de Dados SQL | Dias de Banco de Dados Standard S0 – Gratuito | dd6b69d3-9be0-4a91-abff-2c58bbcafd1d
-| Compartilhado – largura de banda <sup>2</sup> | Transferência de Dados de Saída (GB) | Transferência de Dados de Saída (GB) – Gratuito | 0fc067a1-65d2-46da-b24b-7a9cbe2c69bd
+| Compartilhado – Largura de banda <sup>2</sup> | Transferência de Dados de Saída (GB) | Transferência de Dados de Saída (GB) – Gratuito | 0fc067a1-65d2-46da-b24b-7a9cbe2c69bd
 
-<sup>1</sup> se você criar uma máquina virtual do Windows e escolha o disco gerenciado, consumirá o medidor de disco gerenciado como parte da máquina virtual.
+<sup>1</sup> Se você criar uma máquina virtual do Windows e escolher o disco gerenciado, consumirá o medidor de disco gerenciado como parte da máquina virtual.
 
-<sup>2</sup> medidores compartilhados podem ser consumidos por meio de vários serviços. Por exemplo, Máquinas virtuais e Armazenamento emitem uso em relação ao medidor Transferência de Dados de Saída (GB).
+<sup>2</sup> Os medidores compartilhados podem ser consumidos por meio de vários serviços. Por exemplo, Máquinas virtuais e Armazenamento emitem uso em relação ao medidor Transferência de Dados de Saída (GB).
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Próximas etapas
 - [Atualizar sua assinatura](billing-upgrade-azure-subscription.md)

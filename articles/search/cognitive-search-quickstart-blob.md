@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: criar um índice aprimorado por IA no portal do Azure – Azure Search'
+title: 'Início Rápido: aprender o aprimoramento de IA da pesquisa cognitiva no portal do Azure – Azure Search'
 description: Habilidades de extração de dados, idioma natural e de processamento de imagens em um portal de indexação do Azure Search, usando o portal do Azure e dados de exemplo.
 manager: nitinme
 author: HeidiSteen
@@ -7,16 +7,16 @@ services: search
 ms.service: search
 ms.subservice: cognitive-search
 ms.topic: quickstart
-ms.date: 07/09/2019
+ms.date: 09/10/2019
 ms.author: heidist
-ms.openlocfilehash: a4654e5895e9c7768b9fa6b975ef848294bcc8cc
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: ff32be5410876d1ba61b3bce2fd5f57868745e50
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648917"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70881095"
 ---
-# <a name="quickstart-create-an-ai-indexing-pipeline-using-cognitive-skills-in-azure-search"></a>Início Rápido: criar um pipeline de indexação de IA usando habilidades cognitivas no Azure Search
+# <a name="quickstart-create-an-ai-enrichment-pipeline-using-cognitive-skills-in-azure-search"></a>Início Rápido: criar um pipeline de aprimoramento de IA usando habilidades cognitivas no Azure Search
 
 O Azure Search é integrado aos [Serviços Cognitivos](https://azure.microsoft.com/services/cognitive-services/), adicionando habilidades de extração de conteúdo, NLP (processamento em idioma natural) e processamento de imagem a um pipeline de indexação do Azure Search, tornando o conteúdo não pesquisável ou não estruturado mais pesquisável. 
 
@@ -45,7 +45,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Os [Serviços Cognitivos](https://azure.microsoft.com/services/cognitive-services/) fornecem a IA. Este Início Rápido inclui etapas para adicionar esses recursos em linha, durante a especificação do pipeline. Não é necessário configurar contas com antecedência.
 
-Os serviços do Azure são necessários para fornecer as entradas para o pipeline de indexação. Use qualquer fonte de dados compatível com os [indexadores do Azure Search](search-indexer-overview.md), exceto o Armazenamento de Tabelas do Azure, que não é compatível com a indexação de IA. Este Início Rápido usa o [Armazenamento de Blobs do Azure](https://azure.microsoft.com/services/storage/blobs/) como um contêiner para arquivos de dados de origem. 
+Os serviços do Azure são necessários para fornecer as entradas para o pipeline de indexação. Você pode usar qualquer fonte de dados com suporte dos [indexadores do Azure Search](search-indexer-overview.md). Este Início Rápido usa o [Armazenamento de Blobs do Azure](https://azure.microsoft.com/services/storage/blobs/) como um contêiner para arquivos de dados de origem. 
 
 ### <a name="set-up-azure-blob-service-and-load-sample-data"></a>Configurar o serviço Blob do Azure e carregar dados de amostra
 

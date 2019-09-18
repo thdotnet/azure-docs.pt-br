@@ -1,5 +1,5 @@
 ---
-title: Enviar eventos personalizados para o ponto de extremidade da Web – Grade de Eventos, CLI do Azure | Microsoft Docs
+title: Enviar eventos personalizados com a Grade de Eventos e a CLI do Azure
 description: Use a Grade de Eventos do Azure e a CLI do Azure para publicar um tópico personalizado e assinar eventos para esse tópico. Os eventos são tratados por um aplicativo Web.
 services: event-grid
 keywords: ''
@@ -8,13 +8,13 @@ ms.author: spelluru
 ms.date: 12/07/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.custom: seodec18
-ms.openlocfilehash: fe821fbcea78719095e5353b0d4165f85916b67d
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.custom: seodec18, seo-javascript-september2019
+ms.openlocfilehash: a6888179d4d465808dc28f7784db8d1d915e3f80
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68958659"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70861093"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-azure-cli-and-event-grid"></a>Início Rápido: Encaminhar eventos personalizados para o ponto de extremidade da Web com a CLI do Azure e com a Grade de Eventos
 

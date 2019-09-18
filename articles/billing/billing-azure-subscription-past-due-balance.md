@@ -16,32 +16,32 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: banders
 ms.openlocfilehash: f58969b167b6c0f0a66d46731ad76c1f6e9acc41
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67491464"
 ---
 # <a name="resolve-past-due-balance-for-your-azure-subscription"></a>Resolver o saldo vencido de sua assinatura do Azure
 
-Se seu pagamento não seja recebido ou não foi possível processar o pagamento, você pode receber um email ou ver um alerta no portal do Azure ou do Centro de contas.
-Se você for o [administrador da conta](billing-subscription-transfer.md#whoisaa), você pode efetuar os encargos pendentes [portal do Azure](https://portal.azure.com). Se você estiver em um modo de pagamento de fatura, envie o pagamento para o local indicado na parte inferior da fatura.
+Caso seu pagamento não seja recebido ou caso não seja possível processar seu pagamento, você poderá receber um email ou ver um alerta no portal do Azure ou no Centro de Contas.
+Se você for o [Administrador da Conta](billing-subscription-transfer.md#whoisaa), poderá liquidar os encargos pendentes no [portal do Azure](https://portal.azure.com). Se você estiver em um modo de pagamento de fatura, envie o pagamento para o local indicado na parte inferior da fatura.
 
 > [!IMPORTANT]
-> * Se você tiver várias assinaturas usando o mesmo cartão de crédito e eles são todos vencido, você deve pagar o saldo pendente inteiro ao mesmo tempo.
-> * O instrumento de pagamento que você usa para efetuar os encargos pendentes se tornará o novo método de pagamento ativo para todas as assinaturas que estava usando o método de pagamento com falha.
+> * Se você tiver várias assinaturas que usam o mesmo cartão de crédito e todas estiverem vencidas, deverá pagar todo o saldo pendente de uma vez.
+> * O meio de pagamento que você usar para liquidar os encargos pendentes se tornará a nova forma de pagamento ativa para todas as assinaturas que estavam usando a forma de pagamento com falha.
 
-## <a name="resolve-past-due-balance-in-the-azure-portal"></a>Resolver vencido saldo no portal do Azure
+## <a name="resolve-past-due-balance-in-the-azure-portal"></a>Resolver saldo vencido no portal do Azure
 
-1. Entrar para o [portal do Azure](https://portal.azure.com) como o administrador da conta.
-1. Pesquise **custo de gerenciamento + cobrança**.
-1. Na página de visão geral, você verá uma lista de suas assinaturas. Se o status da sua assinatura está atrasado, clique o **liquidar Saldo** link.
-    ![Captura de tela que mostra liquidar o link de saldo](./media/billing-azure-subscription-past-due-balance/settle-balance-entry-point.png)
-1. O saldo pendente total reflete os encargos pendentes em todos os serviços da Microsoft usando o método de pagamento com falha.
-1. Selecione um método de pagamento para pagar o saldo. Este método de pagamento se tornará o método de pagamento ativo para todas as assinaturas no momento usando o método de pagamento com falha.
-    ![Captura de tela que mostra o link do método de pagamento de select](./media/billing-azure-subscription-past-due-balance/settle-balance-screen.png)
-1. Se o método de pagamento selecionado também tem encargos pendentes para serviços da Microsoft, isso será refletido no saldo total pendente. Você deve pagar os encargos pendentes, muito.
-1. Clique em **pagar**.
+1. Entre no [portal do Azure](https://portal.azure.com) como Administrador de Contas.
+1. Pesquise **Gerenciamento de Custos + Cobrança**.
+1. Na página Visão Geral, você verá uma lista das suas assinaturas. Se o status da assinatura for vencido, clique no link **Liquidar saldo**.
+    ![Captura de tela que mostra o link liquidar saldo](./media/billing-azure-subscription-past-due-balance/settle-balance-entry-point.png)
+1. O saldo pendente total reflete os encargos pendentes em todos os serviços da Microsoft que usam a forma de pagamento com falha.
+1. Selecione uma forma de pagamento para pagar o saldo. Essa forma de pagamento se tornará a forma ativa para todas as assinaturas que usam a forma de pagamento com falha no momento.
+    ![Captura de tela que mostra o link selecionar forma de pagamento](./media/billing-azure-subscription-past-due-balance/settle-balance-screen.png)
+1. Se a forma de pagamento selecionada também tiver encargos pendentes para serviços da Microsoft, isso se refletirá no saldo total pendente. Também é necessário pagar esses encargos pendentes.
+1. Clique em **Pagar**.
 
 ## <a name="not-getting-billing-email-notifications"></a>Não está recebendo notificações de email de cobrança?
 
@@ -55,4 +55,4 @@ Caso esteja ciente de que o pagamento foi processado, mas sua assinatura ainda e
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Caso tenha dúvidas ou precise de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).

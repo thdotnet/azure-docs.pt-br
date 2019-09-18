@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 07/03/2019
+ms.date: 09/06/2019
 ms.author: pafarley
-ms.openlocfilehash: 68cdd147977294954051735d70307305aa5dc0cb
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: da929744922f8653bc293b68dbbadb9347a447e9
+ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603323"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70859143"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-curl"></a>Início Rápido: Detectar rostos em uma imagem com a API REST de Detecção Facial e cURL
 
@@ -32,7 +32,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 Você usará um comando semelhante ao mostrado a seguir para chamar a API de Detecção Facial e obter dados de atributo de rosto de uma imagem. Primeiro, copie o código para um editor de texto&mdash;você precisará fazer alterações em determinadas partes do comando antes de você poder executá-lo.
 
 ```shell
-curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise" -H "Content-Type: application/json" --data-ascii "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}"
+curl -H "Ocp-Apim-Subscription-Key: <Subscription Key>" "https://<My Endpoint String>.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise" -H "Content-Type: application/json" --data-ascii "{\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg\"}"
 ```
 
 ### <a name="subscription-key"></a>Chave de assinatura
@@ -40,7 +40,9 @@ Substitua `<Subscription Key>` pela sua chave de assinatura de Detecção Facial
 
 ### <a name="face-endpoint-url"></a>URL de ponto de extremidade de detecção facial
 
-A URL `https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect` indica o ponto de extremidade da Detecção Facial do Azure para consulta. Talvez você precise alterar a primeira parte dessa URL para que ela corresponda à região referente à sua chave de assinatura. Confira a [documentação da API de Detecção Facial](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) para obter uma lista de todos os pontos de extremidade de região.
+A URL `https://<My Endpoint String>.com/face/v1.0/detect` indica o ponto de extremidade da Detecção Facial do Azure para consulta. Talvez você precise alterar a primeira parte dessa URL para que ela corresponda ao ponto de extremidade referente à sua chave de assinatura.
+
+[!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ### <a name="url-query-string"></a>Cadeia de consulta de URL
 

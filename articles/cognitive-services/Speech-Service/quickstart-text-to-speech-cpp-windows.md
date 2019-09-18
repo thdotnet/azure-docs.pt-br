@@ -8,22 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 08/24/2019
 ms.author: yinhew
-ms.openlocfilehash: fdc5e540dd7e84d47aa139768fbfc2614f38b376
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 686b21d3e02266af77687778c32f0d1ca6d55154
+ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68607719"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70383096"
 ---
 # <a name="quickstart-synthesize-speech-in-c-on-windows-by-using-the-speech-sdk"></a>Início Rápido: Sintetizar fala em C++ no Windows usando o SDK de Fala
 
-Guias de início rápido também estão disponíveis para [reconhecimento de fala](quickstart-cpp-windows.md) e [tradução de fala](quickstart-translate-speech-cpp-windows.md).
+Também há inícios rápidos disponíveis para [reconhecimento de fala](quickstart-cpp-windows.md) e [tradução de fala](quickstart-translate-speech-cpp-windows.md).
 
-Neste artigo, você criará um aplicativo de console C++ para o Windows. Você usa os serviços Cognitivos do [SDK de Fala](speech-sdk.md) para sintetizar fala do texto em tempo real e reproduzir a fala no alto-falante do seu PC. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 ou posterior (qualquer edição).
-
-O recurso descrito neste artigo está disponível no [SDK de Fala 1.5.0](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/1.5.0).
+Neste artigo, você criará um aplicativo de console C++ para o Windows. Você usa os serviços Cognitivos do [SDK de Fala](speech-sdk.md) para sintetizar fala do texto em tempo real e reproduzir a fala no alto-falante do seu PC. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2019 (qualquer edição).
 
 Para obter uma lista completa dos idiomas/vozes disponíveis para síntese de fala, confira [suporte ao idioma](language-support.md#text-to-speech).
 
@@ -37,7 +35,9 @@ Você precisa de uma chave de assinatura dos Serviços de Fala para concluir est
 
 ## <a name="add-sample-code"></a>Adicionar código de exemplo
 
-1. Abra o arquivo de origem *helloworld.cpp*. Substitua todo o código abaixo da instrução include inicial (`#include "stdafx.h"` ou `#include "pch.h"`) pelo seguinte:
+1. Abra o arquivo de origem **helloworld.cpp**.
+
+1. Substitua todo o código pelo seguinte snippet de código:
 
    [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/text-to-speech/cpp-windows/helloworld/helloworld.cpp#code)]
 
@@ -45,21 +45,17 @@ Você precisa de uma chave de assinatura dos Serviços de Fala para concluir est
 
 1. Substitua a cadeia de caracteres `YourServiceRegion` pela [região](regions.md) associada à assinatura (por exemplo, `westus` para a assinatura de avaliação gratuita).
 
-1. Salve as alterações no projeto.
+1. Na barra de menus, escolha **Arquivo** > **Salvar tudo**.
 
-## <a name="build-and-run-the-app"></a>Compilar e executar o aplicativo
+## <a name="build-and-run-the-application"></a>Compile e execute o aplicativo
 
-1. Construa o aplicativo. Na barra de menus, escolha **Compilar** > **Compilar Solução**. O código deve compilar sem erros.
+1. Na barra de menus, selecione **Compilar** > **Compilar solução** para compilar o aplicativo. Agora, o código deve compilar sem erros.
 
-   ![Captura de tela do aplicativo do Visual Studio, com a opção Compilar Solução realçada](media/sdk/qs-cpp-windows-06-build.png)
+1. Escolha **Depurar** > **Iniciar depuração** (ou pressione **F5**) para iniciar o aplicativo **Olá Mundo**.
 
-1. Inicie o aplicativo. Na barra de menus, escolha **Depurar**  > **Iniciar Depuração** ou pressione **F5**.
+1. Digite uma frase ou expressão em inglês. O aplicativo transmite o texto para os Serviços de Fala, que enviam a fala sintetizada para o aplicativo para reprodução em seu alto-falante.
 
-   ![Captura de tela do aplicativo do Visual Studio, com a opção Iniciar Depuração realçada](media/sdk/qs-cpp-windows-07-start-debugging.png)
-
-1. Uma janela do console aparece, solicitando que você digite algum texto. Digite uma frase ou algumas palavras. O texto que você digitou é transmitido para os Serviços de Fala e sintetizado em fala, que é reproduzido no alto-falante.
-
-   ![Captura de tela da saída do console após a síntese bem-sucedida](media/sdk/qs-tts-cpp-windows-console-output.png)
+   ![Saída do console após uma síntese de fala bem-sucedida](media/sdk/qs-tts-cpp-windows-console-output.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -70,5 +66,5 @@ Amostras adicionais, como salvar a fala de um arquivo de áudio, estão disponí
 
 ## <a name="see-also"></a>Consulte também
 
-- [Personalizar fontes de voz](how-to-customize-voice-font.md)
-- [Amostras de memorando de voz](record-custom-voice-samples.md)
+- [Criar uma Voz Personalizada](how-to-custom-voice-create-voice.md)
+- [Registrar amostras de voz personalizada](record-custom-voice-samples.md)

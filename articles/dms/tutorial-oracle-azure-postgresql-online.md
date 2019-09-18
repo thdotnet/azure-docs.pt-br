@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/24/2019
-ms.openlocfilehash: 0b3af3d29e6e938f0301d751a79170c7c1964b45
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 09/10/2019
+ms.openlocfilehash: 8944a5adbe1b9e129b4a95c64aaa7a75fb96ac82
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243796"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845559"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Tutorial: Migrar Oracle para Banco de Dados do Azure para PostgreSQL online usando o DMS (visualização)
 
@@ -166,27 +166,6 @@ Para concluir este tutorial, você precisará:
 
     Você receberá uma resposta `'YES'`.
 
-> [!IMPORTANT]
-> Para a versão de visualização pública desse cenário, o Serviço de Migração de Banco de Dados do Azure é compatível com a versão 10g ou 11g do Oracle. Os clientes que executam Oracle versão 12c ou posterior devem observar que o protocolo de autenticação mínimo permitido para o driver ODBC se conectar ao Oracle deve ser 8. Para uma fonte Oracle, que é a versão 12c ou posterior, configure o protocolo de autenticação da seguinte maneira:
->
-> * Atualize o SQLNET.ORA:
->
->    ```
->    SQLNET.ALLOWED_LOGON_VERSION_CLIENT = 8
->    SQLNET.ALLOWED_LOGON_VERSION_SERVER = 8
->    ```
->
-> * Reinicie o computador para que as novas configurações entrem em vigor.
-> * Altere a senha para usuários existentes:
->
->    ```
->    ALTER USER system IDENTIFIED BY {pswd}
->    ```
->
->   Para obter mais informações, confira o artigo [aqui](http://www.dba-oracle.com/t_allowed_login_version_server.htm).
->
-> Por fim, lembre-se de que alterar o protocolo de autenticação pode afetar a autenticação de cliente.
-
 ## <a name="assess-the-effort-for-an-oracle-to-azure-database-for-postgresql-migration"></a>Avalie o esforço para um Oracle para a migração do Banco de Dados do Azure para PostgreSQL
 
 É recomendável usar o ora2pg para avaliar o esforço necessário para migrar do Oracle para o Banco de Dados do Azure para PostgreSQL. Use a diretiva `ora2pg -t SHOW_REPORT` para criar um relatório listando todos os objetos do Oracle, o custo de migração estimado (em dias de desenvolvedor) e determinados objetos de banco de dados que podem exigir atenção especial como parte da conversão.
@@ -215,67 +194,60 @@ Para configurar e executar o ora2pg para conversão de esquema, consulte a seç�
 
 ## <a name="set-up-the-schema-in-azure-database-for-postgresql"></a>Configurar o esquema no Banco de Dados do Azure para PostgreSQL
 
-Por padrão, o Oracle mantém o schema.table.column em letras maiúsculas, enquanto o PostgreSQL mantém schema.table.column em letras minúsculas. Para o Serviço de Migração de Banco de Dados do Azure iniciar a movimentação de dados do Oracle para o Banco de Dados do Azure para PostgreSQL, o schema.table.column deve estar no mesmo formato que a origem do Oracle.
+Você pode optar por converter esquemas de tabela, procedimentos armazenados, pacotes e outros objetos de banco de dados do Oracle para torná-los compatíveis com Postgres usando ora2pg antes de iniciar um pipeline de migração no Serviço de Migração de Banco de Dados do Azure. Confira os links abaixo para saber como trabalhar com ora2pg:
 
-Por exemplo, se a origem do Oracle tiver um esquema de “RH”.“FUNCIONÁRIOS”.“ID_FUNCIONÁRIO”, o esquema do PostgreSQL deve usar o mesmo formato.
+* [Instalar o ora2pg no Windows](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows.pdf)
+* [Manual de migração do Oracle para o PostgreSQL do Azure](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf)
 
-Para garantir que o formato de letras do schema.tabel.column seja o mesmo para o Oracle e para o Banco de Dados do Azure para PostgreSQL, é recomendável que você usa as etapas a seguir.
+O Serviço de Migração de Banco de Dados do Azure também pode criar o esquema de tabela PostgreSQL. O serviço acessa o esquema de tabela na fonte do Oracle conectada e cria um esquema de tabela compatível no Banco de Dados do Azure para PostgreSQL. Certifique-se de validar e verificar o formato do esquema no Banco de Dados do Azure para PostgreSQL depois que o Serviço de Migração de Banco de Dados do Azure terminar de criar o esquema e mover os dados.
+
+> [!IMPORTANT]
+> O Serviço de Migração de Banco de Dados do Azure cria apenas o esquema de tabela; outros objetos de banco de dados, como procedimentos armazenados, pacotes, índices etc. não são criados.
+
+Não deixe de remover a chave estrangeira no banco de dados de destino para a carga total ser executada. Consulte a seção **Migrar o esquema de exemplo** do artigo [aqui](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) para um script que você pode usar para descartar a chave de referência. Use o Serviço de Migração de Banco de Dados do Azure para executar para carga plena e sincronizar.
+
+### <a name="when-the-postgresql-table-schema-already-exists"></a>Quando o esquema de tabela do PostgreSQL já existe
+
+Se você criar um esquema do PostgreSQL usando ferramentas como ora2pg antes de iniciar a movimentação de dados com o Serviço de Migração de Banco de Dados do Azure, mapeie as tabelas de origem para as tabelas de destino Serviço de Migração de Banco de Dados do Azure.
+
+1. Ao criar um novo projeto de migração do Oracle para o Banco de Dados do Azure para PostgreSQL, você será solicitado a selecionar o banco de dados de destino e o esquema de destino na etapa Selecionar esquemas. Preencha o banco de dados de destino e o esquema de destino.
+
+   ![Mostrar assinaturas do portal](media/tutorial-oracle-azure-postgresql-online/dms-map-to-target-databases.png)
+
+2. A tela **Configurações de migração** apresenta uma lista de tabelas na origem do Oracle. O Serviço de Migração de Banco de Dados do Azure tenta fazer a correspondência entre as tabelas de origem e de destino com base no nome da tabela. Se houver várias tabelas de destino correspondentes com diferenças de maiúsculas e minúsculas, você poderá selecionar a tabela de destino para a qual mapear.
+
+    ![Mostrar assinaturas do portal](media/tutorial-oracle-azure-postgresql-online/dms-migration-settings.png)
 
 > [!NOTE]
-> Você pode usar uma abordagem diferente para derivar o esquema de maiúsculas. Estamos trabalhando para melhorar e automatizar essa etapa.
+> Se precisar mapear os nomes de tabela de origem para tabelas com nomes diferentes, envie um email para [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) e poderemos fornecer um script para automatizar o processo.
 
-1. Exporte esquemas usando ora2pg com letras minúsculas. No script de sql de criação de tabela, crie um esquema com letras maiúsculas “ESQUEMA” manualmente.
-2. Importe o restante dos objetos do Oracle, como gatilhos, sequências, procedimentos, tipos e funções, para o Banco de Dados do Azure para PostgreSQL.
-3. Para transformar em letras maiúsculas TABELA e COLUNA, execute o comando a seguir:
+### <a name="when-the-postgresql-table-schema-doesnt-exist"></a>Quando o esquema de tabela do PostgreSQL não existe
 
-   ```
-   -- INPUT: schema name
-   set schema.var = “HR”;
+Se o banco de dados PostgreSQL de destino não contiver nenhuma informação de esquema de tabela, o Serviço de Migração de Banco de Dados do Azure converterá o esquema de origem e o recriará no banco de dados de destino. Lembre-se de que o Serviço de Migração de Banco de Dados do Azure cria apenas o esquema de tabela, e não outros objetos de banco de dados como procedimentos armazenados, pacotes e índices.
+Para que o Serviço de Migração de Banco de Dados do Azure crie o esquema para você, verifique se o ambiente de destino inclui um esquema sem tabelas existentes. Se o Serviço de Migração de Banco de Dados do Azure descobrir qualquer tabela, o serviço vai pressupor que o esquema foi criado por uma ferramenta externa, como ora2pg.
 
-   -- Generate statements to rename tables and columns
-   SELECT 1, 'SET search_path = "' ||current_setting('schema.var')||'";'
-   UNION ALL 
-   SELECT 2, 'alter table "'||c.relname||'" rename '||a.attname||' to "'||upper(a.attname)||'";'
-   FROM pg_class c
-   JOIN pg_attribute a ON a.attrelid = c.oid
-   JOIN pg_type t ON a.atttypid = t.oid
-   LEFT JOIN pg_catalog.pg_constraint r ON c.oid = r.conrelid
-    AND r.conname = a.attname
-   WHERE c.relnamespace = (select oid from pg_namespace where nspname=current_setting('schema.var')) AND a.attnum > 0 AND c.relkind ='r'
-   UNION ALL
-   SELECT 3, 'alter table '||c.relname||' rename to "'||upper(c.relname)||'";'
-   FROM pg_catalog.pg_class c
-    LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-   WHERE c.relkind ='r' AND n.nspname=current_setting('schema.var')
-   ORDER BY 1;
-   ```
+> [!IMPORTANT]
+> O Serviço de Migração de Banco de Dados do Azure exige que todas as tabelas sejam criadas da mesma maneira, usando o Serviço de Migração de Banco de Dados do Azure ou uma ferramenta como o ora2pg, mas não ambos.
 
-* Descarte a chave de referência no banco de dados de destino para a carga total executar. Consulte a seção **Migrar o esquema de exemplo** do artigo [aqui](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) para um script que você pode usar para descartar a chave de referência.
-* Use o Serviço de Migração de Banco de Dados do Azure para executar para carga plena e sincronizar.
-* Quando os dados na instância de destino do Banco de Dados do Azure para PostgreSQL forem capturados com a origem, execute o Serviço de Migração de Banco de Dados do Azure.
-* Para transformar em letras minúsculas ESQUEMA, TABELA e COLUNA (se o esquema para o Banco de Dados do Azure para PostgreSQL for desta forma para a consulta do aplicativo), execute o script a seguir:
+Introdução:
 
-  ```
-  -- INPUT: schema name
-  set schema.var = hr;
-  
-  -- Generate statements to rename tables and columns
-  SELECT 1, 'SET search_path = "' ||current_setting('schema.var')||'";'
-  UNION ALL
-  SELECT 2, 'alter table "'||c.relname||'" rename "'||a.attname||'" to '||lower(a.attname)||';'
-  FROM pg_class c
-  JOIN pg_attribute a ON a.attrelid = c.oid
-  JOIN pg_type t ON a.atttypid = t.oid
-  LEFT JOIN pg_catalog.pg_constraint r ON c.oid = r.conrelid
-     AND r.conname = a.attname
-  WHERE c.relnamespace = (select oid from pg_namespace where nspname=current_setting('schema.var')) AND a.attnum > 0 AND c.relkind ='r'
-  UNION ALL
-  SELECT 3, 'alter table "'||c.relname||'" rename to '||lower(c.relname)||';'
-  FROM pg_catalog.pg_class c
-     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-  WHERE c.relkind ='r' AND n.nspname=current_setting('schema.var')
-  ORDER BY 1;
-  ```
+1. Criar um esquema no banco de dados de destino com base nos requisitos do aplicativo. Por padrão, o esquema de tabela do PostgreSQL e os nomes das colunas ficam menos em minúsculas. As colunas e o esquema de tabela do Oracle, por outro lado, ficam em maiúsculas.
+2. Na etapa Selecionar esquemas, especifique o banco de dados de destino e o esquema de destino.
+3. Com base no esquema que criado no Banco de Dados do Azure para PostgreSQL, o Serviço de Migração de Banco de Dados do Azure usa as seguintes regras de transformação:
+
+    Se o nome do esquema na origem do Oracle corresponder ao que está no Banco de Dados do Azure para PostgreSQL, o Serviço de Migração de Banco de Dados do Azure *criará o esquema de tabela usando o mesmo padrão do destino*.
+
+    Por exemplo:
+
+    | Esquema de origem do Oracle | Esquema do Banco de Dados PostgreSQL de destino | schema.table.column criado pelo DMS |
+    | ------------- | ------------- | ------------- |
+    | HR | targetHR.public | public.countries.country_id |
+    | HR | targetHR.trgthr | trgthr.countries.country_id |
+    | HR | targetHR.TARGETHR | “TARGETHR”.”COUNTRIES”.”COUNTRY_ID” |
+    | HR | targetHR.HR | “HR”.”COUNTRIES”.”COUNTRY_ID” |
+    | HR | targetHR.Hr | *Não é possível mapear usos mistos de maiúsculas e minúsculas |
+
+    *Para criar um esquema misto de tabelas com uso de maiúsculas e minúsculas no PostgreSQL de destino, contate [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). Podemos fornecer um script para configurar um esquema misto de tabelas com uso de maiúsculas e minúsculas no Banco de dados PostgreSQL de destino.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Registrar o provedor de recursos Microsoft.DataMigration
 

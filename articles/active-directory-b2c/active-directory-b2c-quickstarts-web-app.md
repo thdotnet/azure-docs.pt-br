@@ -1,5 +1,5 @@
 ---
-title: Início Rápido – Configurar a entrada para um aplicativo ASP.NET usando o Azure Active Directory B2C | Microsoft Docs
+title: 'Início Rápido: configurar a entrada para um aplicativo ASP.NET usando o Azure Active Directory B2C'
 description: Execute um aplicativo Web ASP.NET de exemplo que usa o Azure Active Directory B2C para fornecer a entrada na conta.
 services: active-directory-b2c
 author: mmacy
@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 11/30/2018
+ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 647ea3bdeb914b97fe131d32078ddb610d4d163e
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 5f5cae82e23fed6a30d5f7ac63a5718c2a057a7d
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835469"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914312"
 ---
 # <a name="quickstart-set-up-sign-in-for-an-aspnet-application-using-azure-active-directory-b2c"></a>Início Rápido: Configurar a entrada para um aplicativo ASP.NET usando o Azure Active Directory B2C
 
@@ -26,14 +26,14 @@ O Azure Active Directory (Azure AD) B2C fornece gerenciamento de identidades de 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/) com a carga de trabalho de **desenvolvimento Web e do ASP.NET**.
-- Uma conta social do Facebook, Google, Microsoft ou Twitter.
+- Uma conta social do Facebook, do Google ou da Microsoft.
 - [Baixe um arquivo zip](https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi/archive/master.zip) ou clone o aplicativo Web de exemplo do GitHub.
 
     ```
     git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi.git
     ```
 
-    Estes dois projetos estão na solução de exemplo:
+    Há dois projetos na solução de exemplo:
 
     - **TaskWebApp**: um aplicativo Web que cria e edita uma lista de tarefas. O aplicativo Web usa o fluxo de usuário de **inscrição ou conexão** para inscrever ou conectar usuários.
     - **TaskService**: a API Web que dá suporte às funções criar, ler, atualizar e excluir para a lista de tarefas. A API Web é protegida pelo Azure AD B2C e chamada pelo aplicativo Web.
@@ -55,9 +55,9 @@ O Azure Active Directory (Azure AD) B2C fornece gerenciamento de identidades de 
 
     ![Aplicativo Web ASP.NET de exemplo no navegador com o link de inscrição/entrada realçado](media/active-directory-b2c-quickstarts-web-app/web-app-sign-in.png)
 
-    O exemplo dá suporte a várias opções de inscrição, incluindo o uso de um provedor de identidade social ou a criação de uma conta local usando um endereço de email. Para este guia de início rápido, use uma conta de provedor de identidade social do Facebook, do Google, da Microsoft ou do Twitter.
+    O exemplo dá suporte a várias opções de inscrição, incluindo o uso de um provedor de identidade social ou a criação de uma conta local usando um endereço de email. Para este guia de início rápido, use uma conta de provedor de identidade social do Facebook, do Google ou da Microsoft.
 
-2. O Azure AD B2C apresenta uma página de entrada personalizada para uma marca fictícia chamada Wingtip Toys para o aplicativo Web de exemplo. Para inscrever-se usando um provedor de identidade social, clique no botão do provedor de identidade que você deseja usar.
+2. O Azure AD B2C apresenta uma página de entrada para uma empresa fictícia chamada Fabrikam para o aplicativo Web de exemplo. Para inscrever-se usando um provedor de identidade social, clique no botão do provedor de identidade que você deseja usar.
 
     ![Página de entrada ou inscrição mostrando os botões do provedor de identidade](media/active-directory-b2c-quickstarts-web-app/sign-in-or-sign-up-web.png)
 

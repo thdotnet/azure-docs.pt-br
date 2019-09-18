@@ -1,30 +1,29 @@
 ---
-title: 'Tutorial: Criar um pipeline de CI/CD para o seu código existente usando o Azure DevOps Projects'
+title: 'Tutorial: Criar um pipeline de CI/CD para seu código existente usando o Azure DevOps Projects'
 description: O Azure DevOps Projects facilita o uso inicial do Azure. O DevOps Projects ajuda você a usar seu próprio código e o repositório do GitHub para iniciar um aplicativo em um serviço do Azure de sua escolha em algumas etapas rápidas.
 services: vsts
 documentationcenter: vs-devops-build
 ms.author: mlearned
-ms.manager: douge
+ms.manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.workload: web
 ms.prod: devops
 ms.technology: devops-cicd
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/09/2018
 author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 88ee15a3b5cc53542d9e098dee485b8a526bb9a6
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 2abe24ad65e1e8997b48a28b35ec0e65162022f2
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161745"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70898004"
 ---
-# <a name="tutorial-create-a-cicd-pipeline-for-your-existing-code-by-using-azure-devops-projects"></a>Tutorial: Criar um pipeline de CI/CD para o seu código existente usando o Azure DevOps Projects
+# <a name="tutorial-create-a-cicd-pipeline-for-your-existing-code-by-using-azure-devops-projects"></a>Tutorial: Criar um pipeline de CI/CD para seu código existente usando o Azure DevOps Projects
 
 O Azure DevOps Projects apresenta uma experiência simplificada na qual é possível trazer o seu código e repositório Git existentes ou escolher um aplicativo de exemplo para criar um pipeline de CI (integração contínua) e CD (entrega contínua) para o Azure.
 
@@ -52,7 +51,7 @@ O Azure DevOps Projects cria um pipeline de CI/CD no Azure Pipelines. É possív
 
 1. No painel esquerdo, selecione **Novo**.
 
-1. Na caixa de pesquisa, digite **DevOps Projects**, depois selecione **Criar**.
+1. Na caixa de pesquisa, digite **DevOps Projects** e selecione **Criar**.
 
     ![O painel do DevOps Projects](_img/azure-devops-project-github/fullbrowser.png)
 
@@ -74,7 +73,7 @@ O Azure DevOps Projects cria um pipeline de CI/CD no Azure Pipelines. É possív
 
 1. Crie uma nova organização do Azure DevOps ou selecione uma organização existente.
 
-     a. Insira um nome para seu projeto do Azure DevOps. 
+    a. Insira um nome para seu projeto do Azure DevOps. 
     
     b. Selecione a assinatura e o local do Azure, insira um nome para o aplicativo e selecione **Concluído**.
 
@@ -102,7 +101,7 @@ O Azure DevOps Projects configura automaticamente um pipeline de CI/CD no Azure 
 1. Na parte superior do painel do DevOps Projects, selecione **Pipelines de build**.  
     Uma guia do navegador exibe o pipeline de build do seu novo projeto.
 
-1. Aponte para o campo **Status**, depois selecione as reticências (...).  
+1. Aponte para o campo **Status** e selecione as reticências (...).  
     Um menu exibe várias opções, como o enfileiramento de um novo build, pausando um build e editando o pipeline de build.
 
 1. Selecione **Editar**.
@@ -160,10 +159,10 @@ Com o Azure Application Insights, você pode monitorar facilmente o aplicativo q
 
     ![O painel do Application Insights](_img/azure-devops-project-github/appinsights.png) 
 
-1. Selecione **Intervalo de tempo**, depois selecione **Última hora**. Para filtrar os resultados, selecione **Atualizar**.  
+1. Selecione **Intervalo de tempo** e selecione **Última hora**. Para filtrar os resultados, selecione **Atualizar**.  
     Agora você consegue exibir todas as atividades dos últimos 60 minutos. Para sair do intervalo de tempo, selecione **x**.
 
-1. Selecione **Alertas**, depois selecione **Adicionar alerta de métrica**. 
+1. Selecione **Alertas** e selecione **Adicionar alerta de métrica**. 
 
 1. Insira um nome para o alerta.
 
@@ -180,7 +179,7 @@ Com o Azure Application Insights, você pode monitorar facilmente o aplicativo q
     
 1. Saia da área de **Alertas** e volte até o painel do **Application Insights**.
 
-1. Selecione **Disponibilidade**, depois selecione **Adicionar teste**. 
+1. Selecione **Disponibilidade** e selecione **Adicionar teste**. 
 
 1. Insira um nome de teste, depois selecione **Criar**.  
     Um teste de ping simples é criado para verificar a disponibilidade do seu aplicativo. Depois de alguns minutos, os resultados de teste estão disponíveis e o painel do Application Insights exibe um status de disponibilidade.
@@ -205,4 +204,4 @@ Depois de ter configurado seu processo de CI/CD neste tutorial, um pipeline de b
 Para saber mais sobre o pipeline de CI/CD, consulte:
 
 > [!div class="nextstepaction"]
-> [Definir seu pipeline de implantação contínua (CD) de vários estágios](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)
+> [Definir seu pipeline de CD (implantação contínua) de vários estágios](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)

@@ -1,5 +1,5 @@
 ---
-title: Lote de teste-LUIS
+title: 'Tutorial: Teste de lote – LUIS'
 titleSuffix: Azure Cognitive Services
 description: Este tutorial demonstra como usar o teste em lotes para localizar problemas de previsão de enunciado em seu aplicativo e corrigi-los.
 services: cognitive-services
@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
-ms.date: 08/20/2019
+ms.topic: tutorial
+ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: 45520d39c822c734e3fc725bca3375e93983a118
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
-ms.translationtype: MT
+ms.openlocfilehash: a0aa4d334dc5a42da8a3a8f269f70c874c9ad54d
+ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69637450"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70375508"
 ---
 # <a name="tutorial-batch-test-data-sets"></a>Tutorial: testar conjuntos de dados em lote
 
@@ -28,7 +28,7 @@ Requisitos para o teste em lotes:
 
 * Máximo de 1000 enunciados por teste. 
 * Sem duplicatas. 
-* Tipos de entidade permitidos: somente entidades aprendidas por máquina de simples e compostas. Teste em lotes é útil apenas para intenções e entidades de aprendizado de máquina.
+* Tipos de entidades permitidas: apenas entidades de aprendizado de máquina simples e composta. Teste em lotes é útil apenas para intenções e entidades de aprendizado de máquina.
 
 Ao usar um aplicativo diferente deste tutorial, *não* use os enunciados de exemplo já adicionados a uma intenção. 
 
@@ -83,7 +83,7 @@ Use as seguintes etapas:
 
 5. Nomeie o conjunto de dados `intents only` e selecione **Concluído**.
 
-    ![Selecionar arquivo](./media/luis-tutorial-batch-testing/hr-import-new-dataset-ddl.png)
+    ![Escolher arquivo](./media/luis-tutorial-batch-testing/hr-import-new-dataset-ddl.png)
 
 6. Selecione o botão **Executar**. 
 
@@ -103,13 +103,13 @@ O gráfico está em quatro quadrantes, com duas das seções exibidas em vermelh
 
 ### <a name="getjobinformation-test-results"></a>Resultados do teste de GetJobInformation
 
-Os resultados do teste de **GetJobInformation** exibidos no filtro mostram que 2 das quatro previsões tiveram êxito. Selecione o nome **falso negativo** no quadrante inferior esquerdo para ver o declarações abaixo do gráfico. 
+Os resultados do teste de **GetJobInformation** exibidos no filtro mostram que 2 das quatro previsões tiveram êxito. Selecione o nome **Falso negativo** no quadrante inferior esquerdo para ver os enunciados abaixo do gráfico. 
 
-Use o teclado, CTRL + E, para alternar para o modo de exibição de rótulo para ver o texto exato do usuário expressão. 
+Use o teclado, CTRL+E, para alternar para o modo de exibição de rótulo e ver o texto exato do enunciado do usuário. 
 
-O expressão `Is there a database position open in Los Colinas?` é rotulado como _GetJobInformation_ , mas o modelo atual prevê o expressão como _ApplyForJob_. 
+O enunciado `Is there a database position open in Los Colinas?` é rotulado como _GetJobInformation_, mas o modelo atual previa o enunciado como _ApplyForJob_. 
 
-Há quase três vezes o número de exemplos para **ApplyForJob** do que **GetJobInformation**. Essa irregularidade do declarações pesa no favor da intenção de **ApplyForJob** , causando a previsão incorreta. 
+Há quase três vezes mais exemplos para **ApplyForJob** do que para **GetJobInformation**. Esse desnível de exemplos de enunciado pesa a favor da intenção do **ApplyForJob**, causando a previsão incorreta. 
 
 Observe que ambas as intenções possuem a mesma contagem de erros. Uma previsão incorreta em uma intenção também afeta a outra intenção. Ambos têm erros porque os enunciados foram incorretamente previstos para uma intenção e também incorretamente não previstos para outra intenção. 
 
@@ -119,11 +119,11 @@ Observe que ambas as intenções possuem a mesma contagem de erros. Uma previsã
 
 O objetivo desta seção é ter todos os enunciados corretamente previstos para **GetJobInformation**, corrigindo o aplicativo. 
 
-Uma correção aparentemente rápida seria adicionar esses enunciados de arquivos em lotes à intenção correta. Isso não é o que você deseja fazer. Você quer que o LUIS preveja corretamente esses enunciados sem adicioná-los como exemplos. 
+Uma correção aparentemente rápida seria adicionar esses enunciados de arquivos em lotes à intenção correta. Não é isso que você deseja fazer. Você quer que o LUIS preveja corretamente esses enunciados sem adicioná-los como exemplos. 
 
 Também há a possibilidade de pensar em remover enunciados da intenção **ApplyForJob** até que a quantidade de enunciados seja igual a da **GetJobInformation**. Isso corrigiria os resultados do teste, mas impediria o LUIS de prever essa intenção com precisão na próxima vez. 
 
-A correção é adicionar mais declarações ao **GetJobInformation**. Lembre-se de variar o comprimento do expressão, a opção de palavra e a organização e, ao mesmo tempo, direcionar a intenção de localizar informações sobre o trabalho, _não_ a aplicação do trabalho.
+A correção é adicionar mais enunciados ao **GetJobInformation**. Lembre-se de variar o comprimento do enunciado, bem como a escolha e a organização de palavras, ao mesmo tempo mirando na intenção de localizar informações de trabalho e _não_ se candidatar ao trabalho.
 
 ### <a name="add-more-utterances"></a>Adicionar mais enunciados
 
@@ -161,7 +161,7 @@ Para verificar se os enunciados no teste em lotes estão previstos corretamente,
 
 1. Selecione **Testar** na barra de navegação superior. Se os resultados do lote ainda estiverem abertos, selecione **Retornar à lista**.  
 
-1. Selecione o botão de reticências (***...***) à direita do nome do lote e selecione **executar**. Aguarde até que o teste de lote seja concluído. Observe que o botão **Consultar resultados** agora está verde. Isso significa que todo o lote foi executado com êxito.
+1. Selecione o botão de reticências (***...***), à direita do nome do lote e selecione **Executar**. Aguarde até que o teste de lote seja concluído. Observe que o botão **Consultar resultados** agora está verde. Isso significa que todo o lote foi executado com êxito.
 
 1. Selecione **Ver resultados**. Todas as tentativas devem ter ícones verdes à esquerda dos nomes da intenção. 
 
@@ -200,11 +200,11 @@ O valor de uma entidade **Trabalho**, fornecido nos enunciados de teste, geralme
 
 ## <a name="review-entity-batch-results"></a>Examinar os resultados do lote da entidade
 
-O gráfico é aberto com todas as intenções corretamente previstas. Role para baixo no filtro do lado direito para localizar as previsões de entidade com erros. 
+O gráfico é aberto com todas as intenções corretamente previstas. Role para baixo no filtro do lado direito para localizar as previsões da entidade com erro. 
 
 1. Selecione a entidade **Trabalho** no filtro.
 
-    ![Previsões de entidade de erro no filtro](./media/luis-tutorial-batch-testing/hr-entities-filter-errors.png)
+    ![Previsões de entidade com erro no filtro](./media/luis-tutorial-batch-testing/hr-entities-filter-errors.png)
 
     O gráfico é alterado para exibir as previsões de entidade. 
 

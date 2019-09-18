@@ -1,6 +1,6 @@
 ---
-title: Oferta de assinatura do Azure de alteração
-description: Saiba mais sobre como alterar sua assinatura do Azure e alternar para uma oferta diferente usando o Centro de contas do Azure.
+title: Alterar a oferta de assinatura do Azure
+description: Saiba como alterar sua assinatura do Azure e mudar para outra oferta usando o Centro de Contas do Azure.
 author: bandersmsft
 manager: amberb
 tags: billing,top-support-issue
@@ -12,21 +12,21 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: 8e87bcb9f7d05fd5041623693c96f8c737758c32
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "67490973"
 ---
-# <a name="change-your-azure-subscription-to-a-different-offer"></a>Alterar sua assinatura do Azure para uma oferta diferente
+# <a name="change-your-azure-subscription-to-a-different-offer"></a>Alterar sua assinatura do Azure para outra oferta
 
-Como um cliente com um [assinatura individual com tarifas pré-pagas](https://azure.microsoft.com/offers/ms-azr-0003p/), você pode alternar sua assinatura do Azure para outra oferta na [Centro de contas](https://account.windowsazure.com/Subscriptions). Por exemplo, você pode usar esse recurso para aproveitar os [créditos mensais para assinantes do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Por ser um cliente com uma [assinatura individual com taxas pagas conforme o uso](https://azure.microsoft.com/offers/ms-azr-0003p/), você pode mudar sua assinatura do Azure para outra oferta no [Centro de Contas](https://account.windowsazure.com/Subscriptions). Por exemplo, você pode usar esse recurso para aproveitar os [créditos mensais para assinantes do Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-**Deseja apenas atualizar da avaliação gratuita?** Ver [assinatura de atualização você](billing-upgrade-azure-subscription.md).
+**Deseja apenas atualizar da avaliação gratuita?** Confira [Atualizar sua assinatura](billing-upgrade-azure-subscription.md).
 
 ## <a name="whats-supported"></a>O que tem suporte:
 
-Você pode alternar de uma assinatura individual com tarifas pré-pagas para:
+Você pode alternar de uma assinatura individual com tarifas pagas conforme o uso para:
 
 - [Desenvolvimento/Teste pré-pago](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
@@ -47,8 +47,8 @@ Você pode alternar de uma assinatura individual com tarifas pré-pagas para:
 >
 
 1. Entre no [Centro de Contas do Azure](https://account.windowsazure.com/Subscriptions).
-1. Selecione sua assinatura individual com taxas pagas conforme o uso.
-1. Clique em **Alterar para outra oferta**. A opção só está disponível se você tiver uma assinatura individual com tarifas pré-pagas e concluiu seu primeiro período de cobrança.
+1. Selecione sua assinatura individual com tarifas pagas conforme o uso.
+1. Clique em **Alterar para outra oferta**. A opção só estará disponível se você tiver uma assinatura individual com tarifas pagas conforme o uso e tiver concluído seu primeiro período de cobrança.
 
    ![Observe o botão Alterar oferta do lado direito da página](./media/billing-how-to-switch-azure-offer/switchbutton.png)
 1. **Selecione a oferta desejada** da lista de ofertas para as quais sua assinatura pode ser alternada. Essa lista varia com base nas associações em que sua conta está associada. Se nada estiver disponível, verifique a [lista de ofertas disponíveis para as quais você pode alternar](#whats-supported) e confirme se você tem as associações corretas.
@@ -57,33 +57,33 @@ Você pode alternar de uma assinatura individual com tarifas pré-pagas para:
 1. Dependendo da oferta para qual esteja trocando, é provável que você veja uma observação sobre o impacto da troca. Examine a lista cuidadosamente e siga as instruções antes de prosseguir.
 
    ![Analise as notas](./media/billing-how-to-switch-azure-offer/thingstonote.png)
-1. Você pode renomear sua assinatura. Por padrão, ele é definido como o nome da nova oferta. Clique em **Alterar Oferta** para concluir o processo.
+1. Você pode renomear sua assinatura. Por padrão, podemos defini-la com o nome da nova oferta. Clique em **Alterar Oferta** para concluir o processo.
 
    ![Clique no botão verde](./media/billing-how-to-switch-azure-offer/confirmpage.png)
 1. Sucesso! Sua assinatura foi trocada pela nova oferta.
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
-As seções a seguir respondem perguntas frequentes.
+As seções a seguir respondem às perguntas mais frequentes.
 
 ### <a name="what-is-an-azure-offer"></a>O que é uma oferta do Azure?
 
-Uma oferta do Azure é o *tipo* de assinatura do Azure que você tem. Por exemplo, [uma assinatura com tarifas pré-pagas](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure via Open](https://azure.microsoft.com/offers/ms-azr-0111p/), e [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) são todas as ofertas do Azure. Cada oferta apresenta diferentes [termos](https://azure.microsoft.com/support/legal/offer-details/) e alguns têm vantagens especiais. A oferta da sua assinatura pode ser encontrada na página de assinatura do Centro de Contas. Clique no nome da oferta para obter mais detalhes.
+Uma oferta do Azure é o *tipo* de assinatura do Azure que você tem. Por exemplo, [uma assinatura com taxas pagas conforme o uso](https://azure.microsoft.com/offers/ms-azr-0003p/), o [Azure via Open](https://azure.microsoft.com/offers/ms-azr-0111p/) e o [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) são todas ofertas do Azure. Cada oferta apresenta diferentes [termos](https://azure.microsoft.com/support/legal/offer-details/) e alguns têm vantagens especiais. A oferta da sua assinatura pode ser encontrada na página de assinatura do Centro de Contas. Clique no nome da oferta para obter mais detalhes.
 
    ![Clique no link Oferta no Centro de Contas para obter mais detalhes](./media/billing-how-to-switch-azure-offer/offerlink.png)
 
 ### <a name="why-dont-i-see-the-button"></a>Por que não vejo o botão?
 
-Talvez você não veja o **alternar para outra oferta** opção se:
+Você pode não ver a opção **Alterar para outra oferta** se:
 
-* Você não tem um [assinatura com tarifas pré-pagas](https://azure.microsoft.com/offers/ms-azr-0003p/). Atualmente, apenas assinaturas com taxas pagas conforme o uso podem ser convertidas para outra oferta.
-  * Se você tiver um [avaliação gratuita](https://azure.microsoft.com/free/), saiba como [upgrade para pré-pago](billing-upgrade-azure-subscription.md).
+* Você não tem uma [assinatura com taxas pagas conforme o uso](https://azure.microsoft.com/offers/ms-azr-0003p/). No momento, apenas as assinaturas com taxas pagas conforme o uso podem ser convertidas para outra oferta.
+  * Se você tiver uma [avaliação gratuita](https://azure.microsoft.com/free/), saiba como [atualizar para o Pagamento Conforme o Uso](billing-upgrade-azure-subscription.md).
   * Para alternar a oferta de uma assinatura diferente, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
-* Você ainda está em seu primeiro período de cobrança; Você deve aguardar até que o primeiro período de cobrança seja concluído antes de você pode alternar as ofertas.
+* Você ainda está em seu primeiro período de cobrança. Você precisa aguardar até o término do primeiro período de cobrança para mudar ofertas.
 
 ### <a name="why-do-i-see-there-are-no-offers-available-in-your-region-or-country-at-this-time"></a>Por que vejo “Não há ofertas disponíveis em seu país ou região no momento”?
 
 * Você pode não estar qualificado para quaisquer alterações de oferta. Verifique a [lista de ofertas disponíveis para as quais você pode mudar](#whats-supported) e certifique-se de que você ativou os benefícios corretos com o Visual Studio ou o Bizspark.
-* Algumas ofertas podem não estar disponíveis em todos os países/regiões.
+* Algumas ofertas podem não estar disponíveis em todos os países/todas as regiões.
 
 ### <a name="what-does-switching-azure-offers-do-to-my-service-and-billing"></a>O que a troca das ofertas do Azure oferece ao meu serviço e à cobrança?
 
@@ -101,7 +101,7 @@ Quando você muda de oferta, qualquer [aumento de cota ou de limite acima do lim
 
 No dia da alteração, uma fatura é gerada para todos os encargos pendentes. Em seguida, sua assinatura é cobrada pelos termos de preços da nova oferta. O vencimento da cobrança da assinatura será alterado para a data da alteração da oferta. Os dados de uso e de cobrança anteriores à alteração da oferta não serão mantidos, portanto, recomendamos que você baixe uma cópia antes da troca.
 
-### <a name="can-i-migrate-from-a-subscription-with-pay-as-you-go-rates-to-cloud-solution-providerhttpspartnermicrosoftcomsolutionscloud-reseller-overview-csp-or-enterprise-agreementhttpsazuremicrosoftcompricingenterprise-agreement-ea"></a>Posso migrar de uma assinatura com as tarifas pré-pagas para [provedor de soluções de nuvem](https://partner.microsoft.com/Solutions/cloud-reseller-overview) (CSP) ou [Enterprise Agreement](https://azure.microsoft.com/pricing/enterprise-agreement/) (EA)?
+### <a name="can-i-migrate-from-a-subscription-with-pay-as-you-go-rates-to-cloud-solution-providerhttpspartnermicrosoftcomsolutionscloud-reseller-overview-csp-or-enterprise-agreementhttpsazuremicrosoftcompricingenterprise-agreement-ea"></a>Posso migrar de uma assinatura com taxas pagas conforme o uso para o [CSP](https://partner.microsoft.com/Solutions/cloud-reseller-overview) (Provedor de Soluções na Nuvem) ou o [EA](https://azure.microsoft.com/pricing/enterprise-agreement/) (Contrato Enterprise)?
 
 * Para migrar para o CSP, consulte [Migração de assinatura com Pagamento Conforme o Uso para CSP](https://docs.microsoft.com/azure/cloud-solution-provider/migration/migration-from-payg-to-csp).
 * Para migrar para o EA, peça ao Administrador de Registro para adicionar sua conta no EA. Siga as instruções no email de convite para que suas assinaturas sejam movidas para o registro de EA. Para saber mais, confira [Associar uma conta existente](https://ea.azure.com/helpdocs/associateExistingAccount) no portal do EA.

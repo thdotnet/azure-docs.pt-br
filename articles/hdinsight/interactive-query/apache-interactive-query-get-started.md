@@ -1,6 +1,6 @@
 ---
 title: O que é a Consulta Interativa no Azure HDInsight?
-description: Uma introdução à Consulta Interativa no Azure HDInsight
+description: Uma introdução à Consulta Interativa, também conhecida como Apache Hive LLAP, no Azure HDInsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 06/14/2019
-ms.openlocfilehash: ea17ddeab21c371f41cc57115df4dd91277c3c42
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 29b2a9378abaaa697d2d869145d5e912d6c06d6c
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151194"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70811587"
 ---
 # <a name="what-is-interactive-query-in-azure-hdinsight"></a>O que é a Consulta Interativa no HDInsight
 

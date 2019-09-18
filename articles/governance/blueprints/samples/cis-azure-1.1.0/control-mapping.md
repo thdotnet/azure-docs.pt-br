@@ -7,12 +7,12 @@ ms.date: 08/09/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: d02dca4438b55d51cccb5cc1b55679eb72b73991
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: f048262003a3567175c40ebf4ee744c41e11b5f9
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232810"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70918705"
 ---
 # <a name="recommendation-mapping-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Mapeamento de recomendação da amostra de blueprint do CIS Microsoft Azure Foundations Benchmark
 
@@ -21,8 +21,8 @@ O artigo a seguir fornece detalhes sobre como a amostra do blueprint do CIS Micr
 Os mapeamentos a seguir são para as recomendações do **CIS Microsoft Azure Foundations Benchmark v1.1.0**. Use a navegação no lado direito para ir diretamente para um mapeamento de recomendação específico.
 Muitas das recomendações mapeadas são implementadas com uma iniciativa do [Azure Policy](../../../policy/overview.md). Para examinar a iniciativa completa, abra **Política** no portal do Azure e selecione a página **Definições**. Em seguida, localize e selecione as recomendações da **\[Versão Prévia\] de Audit CIS Microsoft Azure Foundations Benchmark v1.1.0 e implante Extensões de VM específicas para dar suporte aos requisitos de auditoria** da iniciativa de política interna.
 
-> [!NOTE]
-> A amostra completa do blueprint estará disponível em breve. A iniciativa associada do Azure Policy está disponível agora.
+> [!IMPORTANT]
+> Cada controle abaixo está associado com uma ou mais definições do [Azure Policy](../../../policy/overview.md). Essas políticas podem ajudar você a [avaliar a conformidade](../../../policy/how-to/get-compliance-data.md) com o controle. No entanto, geralmente não há uma correspondência 1:1 ou completa entre um controle e uma ou mais políticas. Dessa forma, **Conformidade** no Azure Policy refere-se somente às próprias políticas. Não garante que você está totalmente em conformidade com todos os requisitos de um controle. Além disso, o padrão de conformidade inclui controles que não são abordados por nenhuma definição do Azure Policy no momento. Portanto, a conformidade no Azure Policy é somente uma exibição parcial do status de conformidade geral. As associações entre controles e definições do Azure Policy desta amostra de blueprint de conformidade podem ser alteradas ao longo do tempo. Para exibir o histórico de alterações, confira o [Histórico de Confirmações do GitHub](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/cis-azure-1.1.0/control-mapping.md).
 
 ## <a name="11-ensure-that-multi-factor-authentication-is-enabled-for-all-privileged-users"></a>1.1 Garantir que a autenticação multifator esteja habilitada para todos os usuários privilegiados
 

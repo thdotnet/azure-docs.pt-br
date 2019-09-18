@@ -1,18 +1,18 @@
 ---
-title: Tutorial - Configurar políticas do Apache Kafka no HDInsight com o Enterprise Security Package - Azure
+title: Tutorial – Apache Kafka com Enterprise Security Package no Azure HDInsight
 description: Tutorial - Aprenda a configurar as políticas do Apache Ranger para o Kafka no Azure HDInsight com o Enterprise Security Package.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: tutorial
-ms.date: 06/24/2019
-ms.openlocfilehash: ba16a975aa3b1e60393006ef49a7e422c572931e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 09/04/2019
+ms.openlocfilehash: 6cac4bd05f2acf5b11a8235a4bc1e0d09e0c4dc7
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441381"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70885942"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Tutorial: Configurar políticas do Apache Kafka no HDInsight com o Enterprise Security Package (Versão Prévia)
 
@@ -64,7 +64,7 @@ Crie uma política de Ranger para **sales_user** e **marketing_user**.
    * '*' Indica zero ou mais ocorrências de caracteres.
    * '?' Indica um caractere único.
 
-   ![Política de criação de UI do administrador do Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
+   ![Política de criação de interface do usuário do administrador do Apache Ranger1](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
 
    Aguarde alguns instantes para que o Ranger sincronize com o Azure AD se um usuário do domínio não for preenchido automaticamente para **Selecionar usuário**.
 
@@ -79,7 +79,7 @@ Crie uma política de Ranger para **sales_user** e **marketing_user**.
    |Selecionar usuário  |  marketing_user1 |
    |Permissões  | publicar, consumir, criar |
 
-   ![Política de criação de UI do administrador do Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png)  
+   ![Política de criação de interface do usuário do administrador do Apache Ranger2](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy-2.png)  
 
 6. Selecione **Adicionar** para salvar a política.
 

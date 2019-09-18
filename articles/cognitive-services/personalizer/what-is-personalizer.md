@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 09/03/2019
 ms.author: diberry
-ms.openlocfilehash: 8c21878fc23f3880f6c6e66b1e304c7dd2e9177c
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 3132d31e9e45718fa95c39a1b8160ea303ded25d
+ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306958"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70883671"
 ---
 # <a name="what-is-personalizer"></a>O que é o Personalizador?
 
@@ -29,7 +29,7 @@ O Personalizador do Azure é um serviço de API baseado em nuvem que permite que
 
 ## <a name="how-does-personalizer-work"></a>Como funciona o Personalizador?
 
-O Personalizador usa modelos de machine learning para descobrir qual ação deve ter a classificação mais alta em um contexto. Seu aplicativo cliente fornece uma lista de possíveis ações, com informações sobre elas, e informações sobre o contexto, que podem incluir informações sobre o usuário, o dispositivo etc. O Personalizador determina a ação a ser tomada. Depois que o aplicativo cliente usa a ação escolhida, ele fornece comentários ao Personalizador na forma de uma pontuação de recompensa. Após o recebimento dos comentários, o Personalizador atualiza automaticamente o próprio modelo usado para classificações futuras.
+O Personalizador usa modelos de machine learning para descobrir qual ação deve ter a classificação mais alta em um contexto. Seu aplicativo cliente fornece uma lista de possíveis ações, com informações sobre elas, e informações sobre o contexto, que podem incluir informações sobre o usuário, o dispositivo etc. O Personalizador determina a ação a ser tomada. Depois que o aplicativo cliente usa a ação escolhida, ele fornece comentários ao Personalizador na forma de uma pontuação de recompensa. Após o recebimento dos comentários, o Personalizador atualiza automaticamente o próprio modelo usado para classificações futuras. Com o passar do tempo, o Personalizador treinará um modelo que pode sugerir a melhor ação a ser escolhida em cada contexto com base em seus recursos.
 
 ## <a name="how-do-i-use-the-personalizer"></a>Como fazer para usar o Personalizador?
 
@@ -53,6 +53,8 @@ Por exemplo, seu aplicativo cliente pode adicionar o Personalizador para:
 * Escolher uma resposta do chatbot para esclarecer a intenção do usuário ou sugerir uma ação.
 * Priorizar as sugestões do que um usuário deve fazer como a próxima etapa em um processo empresarial.
 
+O Personalizador não é um serviço destinado a persistir e gerenciar informações de perfil do usuário nem para registrar as preferências ou o histórico de usuários individuais. O Personalizador aprende com os recursos de cada interação na ação um contexto de um único modelo que pode obter recompensas máximas quando ocorrem recursos semelhantes. 
+
 ## <a name="personalization-for-developers"></a>Personalização para desenvolvedores
 
 O serviço Personalizador tem duas APIs:
@@ -64,9 +66,9 @@ O serviço Personalizador tem duas APIs:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Início Rápido: Criar um loop de comentários em C#](csharp-quickstart-commandline-feedback-loop.md)
-* [Início Rápido: Criar um loop de comentários em Node.js](quickstart-command-line-feedback-loop-nodejs-sdk.md)
-* [Início Rápido: Criar um loop de comentários em Python](python-quickstart-commandline-feedback-loop.md)
+* [O que há de novo no Personalizador?](whats-new.md)
+* [Como o Personalizador funciona?](how-personalizer-works.md)
+* [O que é o Aprendizado de Reforço?](concepts-reinforcement-learning.md)
 * [Saiba mais sobre os recursos e as ações para a solicitação de Classificação](concepts-features.md)
 * [Saiba como determinar a pontuação da solicitação de Premiação](concept-rewards.md)
 * [Usar a demonstração interativa](https://personalizationdemo.azurewebsites.net/)

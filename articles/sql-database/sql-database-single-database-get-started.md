@@ -10,13 +10,13 @@ ms.topic: quickstart
 author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
-ms.date: 07/29/2019
-ms.openlocfilehash: f9c2ed77075affdfdf464dbf8a468629fc2e610d
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.date: 09/09/2019
+ms.openlocfilehash: 831ebbd3f85ffa9b78ac3e97a6ec68a8c41bceb5
+ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640055"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70845298"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Início Rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure, o PowerShell e a CLI do Azure
 
@@ -30,8 +30,8 @@ Para todas as etapas deste início rápido, entre no [portal do Azure](https://p
 
 Um banco de dados individual pode ser criado na camada de computação (versão prévia) provisionada ou sem servidor.
 
-- Um banco de dados individual na camada de computação provisionada tem uma quantidade definida de recursos de computação pré-alocados, além de um conjunto de recursos de memória e armazenamento usando um dos dois [modelos de compra](sql-database-purchase-models.md).
-- Um banco de dados individual na camada de computação sem servidor tem uma variedade de recursos de computação que são dimensionados automaticamente, além de uma quantidade especificada de memória por núcleo e uma quantidade especificada de recursos de armazenamento e está disponível apenas nos [modelos de compra baseado em vCore ](sql-database-service-tiers-vcore.md).
+- Um banco de dados individual na camada de computação provisionada tem uma quantidade pré-alocada de recursos de computação, incluindo a CPU e a memória, usando um de dois [modelos de compra](sql-database-purchase-models.md).
+- Um banco de dados individual na camada de computação sem servidor tem uma variedade de recursos de computação, incluindo CPU e memória, que são dimensionados automaticamente e está disponível apenas nos [modelos de compra baseado em vCore](sql-database-service-tiers-vcore.md).
 
 Quando você cria um banco de dados individual, você também define um [servidor do Banco de Dados SQL](sql-database-servers.md) para gerenciá-lo e colocá-lo no [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) em uma região especificada.
 

@@ -1,6 +1,6 @@
 ---
-title: Solucionar problemas de entrada de assinatura do Azure
-description: Ajuda a resolver os problemas nos quais você não pode entrar no portal do Azure ou no centro de contas do Azure.
+title: Solucionar problemas de credenciais da assinatura do Azure
+description: Ajuda a resolver os problemas em que você não consegue entrar no portal do Azure ou no Centro de Contas do Azure.
 author: v-miegge
 manager: na
 editor: na
@@ -13,25 +13,25 @@ ms.workload: na
 ms.date: 08/12/2019
 ms.author: v-miegge
 ms.openlocfilehash: ca641813e8b01a39d31a56e3730424b0fa1d6436
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: MT
+ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
+ms.lasthandoff: 09/11/2019
 ms.locfileid: "69657041"
 ---
-# <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Solucionar problemas de entrada de assinatura do Azure
+# <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Solucionar problemas de credenciais da assinatura do Azure
 
-Este guia ajuda a resolver os problemas nos quais você não pode entrar no portal do Azure ou no centro de contas do Azure. 
+Este guia ajuda a resolver os problemas em que você não consegue entrar no portal do Azure ou no Centro de Contas do Azure. 
 
 ## <a name="issues"></a>Problemas
 
 ### <a name="page-hangs-in-the-loading-status"></a>A página para de responder no status de carregamento
 
-Se a página do seu navegador da Internet parar, tente cada uma das etapas a seguir até que você possa chegar ao portal do Azure.
+Se a página do navegador da Internet parar, experimente cada uma das etapas a seguir até chegar ao portal do Azure.
 
 - Atualize a página.
 - Use um navegador de Internet diferente.
-- Use o modo de navegação privada do seu navegador. Para o Internet Explorer: Clique em **ferramentas** > **segurança** > InPrivate**navegação**e, em seguida, navegue e entre no [portal do Azure](https://portal.azure.com/) ou no [centro de contas do Azure](https://account.azure.com/Subscriptions).
+- Use o modo de navegação privada do seu navegador. Para Internet Explorer: Clique em **Ferramentas** > **Segurança** > **Navegação InPrivate** e, em seguida, navegue e entre no [portal do Azure](https://portal.azure.com/) ou no [Centro de Contas do Azure](https://account.azure.com/Subscriptions).
 
 ### <a name="you-are-automatically-signed-in-as-a-different-user"></a>Você está automaticamente conectado como um usuário diferente
 
@@ -39,11 +39,11 @@ Esse problema poderá ocorrer se você estiver usando mais de uma conta de usuá
 
 Para resolver o problema, tente usar um dos seguintes métodos:
 
-- Limpe o cache e exclua cookies da Internet. No Internet Explorer, clique em **ferramentas** > **Opções** > da Internet**excluir**. Verifique se as caixas de seleção dos arquivos temporários, dos cookies, das senha e do histórico de navegação estão marcadas e clique em Excluir.
-- Redefina as configurações do Internet Explorer para reverter todas as configurações pessoais que você tenha feito. Clique em **ferramentas** > **Opções** da Internet Avançado > selecione a caixa excluir configurações pessoais > Redefinir. > 
-- Use o modo de navegação privada do seu navegador. Para o Internet Explorer:  Clique em **ferramentas** > **segurança** > InPrivate**navegação**e, em seguida, navegue e entre no [portal do Azure](https://portal.azure.com/) ou no [centro de contas do Azure](https://account.azure.com/Subscriptions).
+- Limpe o cache e exclua cookies da Internet. No Internet Explorer, clique em **Ferramentas** > **Opções da Internet** > **Excluir**. Verifique se as caixas de seleção dos arquivos temporários, dos cookies, das senha e do histórico de navegação estão marcadas e clique em Excluir.
+- Redefina as configurações do Internet Explorer para reverter todas as configurações pessoais que você tenha feito. Clique em **Ferramentas** > **Opções da Internet** > **Avançado** > selecione a caixa **Excluir configurações pessoais** > **Redefinir**.
+- Use o modo de navegação privada do seu navegador. Para Internet Explorer:  Clique em **Ferramentas** > **Segurança** > **Navegação InPrivate** e, em seguida, navegue e entre no [portal do Azure](https://portal.azure.com/) ou no [Centro de Contas do Azure](https://account.azure.com/Subscriptions).
 
-### <a name="i-can-sign-in-but-i-see-no-subscriptions-found"></a>Eu posso entrar, mas *não vejo nenhuma assinatura encontrada*
+### <a name="i-can-sign-in-but-i-see-no-subscriptions-found"></a>Consigo entrar, mas não vejo *Nenhuma assinatura encontrada*
 
 Esse problema ocorrerá se tiver selecionado no diretório errado ou se sua conta não tiver permissões suficientes.
 
@@ -52,7 +52,7 @@ Esse problema ocorrerá se tiver selecionado no diretório errado ou se sua cont
 Para corrigir esse problema:
 
 - Verifique se o diretório correto do Azure está selecionado clicando em sua conta no canto superior direito.
-- Se o diretório do Azure correto estiver selecionado, mas você ainda receber a mensagem de erro, peça à sua conta [adicionada como proprietário](billing-add-change-azure-subscription-administrator.md).
+- Se o diretório correto do Azure estiver selecionado, mas você continuar recebendo a mensagem de erro, solicite que a sua conta seja [adicionada como Proprietário](billing-add-change-azure-subscription-administrator.md).
 
 **Cenário 2:** A mensagem de erro é recebida no [Centro de Contas do Azure](https://account.windowsazure.com/Subscriptions)
 
@@ -66,14 +66,14 @@ Verifique se a conta usada é o Administrador da Conta. Para verificar quem é o
 
 ## <a name="additional-help-resources"></a>Recursos adicionais de ajuda
 
-Outros artigos de solução de problemas para cobrança e assinaturas do Azure
+Outros artigos de solução de problemas para a Cobrança e as Assinaturas do Azure
 
 - [Cartão recusado](billing-troubleshoot-declined-card.md)
-- [Problemas de inscrição de assinatura](billing-troubleshoot-azure-sign-up.md)
+- [Problemas no cadastro da assinatura](billing-troubleshoot-azure-sign-up.md)
 - [Nenhuma assinatura encontrada](billing-no-subscriptions-found.md)
 - [Exibição do custo da empresa desabilitado](billing-enterprise-mgmt-grp-troubleshoot-cost-view.md)
 
-## <a name="contact-us-for-help"></a>Entre em contato conosco para obter ajuda
+## <a name="contact-us-for-help"></a>Entrar em contato conosco para obter ajuda
 
 Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

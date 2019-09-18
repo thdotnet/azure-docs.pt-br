@@ -1680,7 +1680,7 @@ Em geral, uma transformação baseada em contagem só pode ser aplicada a conjun
 |------------------------|  
 |O arquivo de definição de módulo contém erros.|  
 |O arquivo de definição{0}de módulo ' ' contém erros.|  
-|O arquivo de definição{0}de módulo ' ' contém erros. [https://login.microsoftonline.com/tfp/00000000-0000-0000-0000-000000000000/b2c_1a_tp_sign-up-or-sign-in/v2.0/]({1})|  
+|O arquivo de definição{0}de módulo ' ' contém erros. {1}|  
   
 
 ## <a name="error-0114"></a>Erro 0114  

@@ -11,12 +11,12 @@ ms.date: 01/10/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 34c8c49166ea13d67c1f3d51805671c63dbb352b
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: d13e0b95d57e3063292319961d5e1138f994076e
+ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312455"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70812267"
 ---
 # <a name="transform-data-in-the-cloud-by-using-a-spark-activity-in-azure-data-factory"></a>Transformar os dados na nuvem usando uma atividade Spark no Azure Data Factory
 Neste tutorial, você pode usar o Portal do Azure para criar um pipeline do Azure Data Factory. Este pipeline transforma os dados usando uma atividade Spark e um serviço vinculado do Azure HDInsight sob demanda. 
@@ -153,7 +153,7 @@ Você cria dois serviços vinculados nesta seção:
    
    e. Para **Id da entidade de serviço**, insira a ID da entidade de serviço que tem permissão para criar um cluster do HDInsight. 
    
-      Essa entidade de serviço precisa ser um membro da função de Colaborador de assinatura ou o grupo de recursos em que o cluster é criado. Para obter mais informações, consulte [Criar uma entidade de serviço e aplicativo do Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md).
+      Essa entidade de serviço precisa ser um membro da função de Colaborador de assinatura ou o grupo de recursos em que o cluster é criado. Para obter mais informações, consulte [Criar uma entidade de serviço e aplicativo do Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md). A **ID da entidade de serviço** é equivalente à *ID do aplicativo* e uma **Chave de entidade de serviço** é equivalente ao valor de um *Segredo do cliente*.
    
    f. Para **Chave da entidade de serviço**, insira a chave. 
    

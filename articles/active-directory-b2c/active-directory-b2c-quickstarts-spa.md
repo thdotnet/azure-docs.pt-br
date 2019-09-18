@@ -1,5 +1,5 @@
 ---
-title: Início Rápido - Configurar a entrada para um aplicativo de página única usando o Azure Active Directory B2C | Microsoft Docs
+title: 'Início Rápido: configurar a entrada em um aplicativo de página única usando o Azure Active Directory B2C'
 description: Execute um aplicativo de página única de exemplo que usa o Azure Active Directory B2C para fornecer a entrada na conta.
 services: active-directory-b2c
 author: mmacy
@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 10/24/2018
+ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 47df2cbdf0b083cf672353471d1ef51e03507475
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 353cbae59a26f6e1efd566b99a04318321740590
+ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835347"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70914414"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-single-page-app-using-azure-active-directory-b2c"></a>Início Rápido: configurar a entrada para um aplicativo de página única usando o Azure Active Directory B2C
 
@@ -27,7 +27,7 @@ O Azure Active Directory (Azure AD) B2C fornece gerenciamento de identidades de 
 
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/) com a carga de trabalho de **desenvolvimento Web e do ASP.NET**.
 - Instale o [Node.js](https://nodejs.org/en/download/)
-- Uma conta social do Facebook, Google, Microsoft ou Twitter.
+- Uma conta social do Facebook, do Google ou da Microsoft.
 - [Baixe um arquivo zip](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp/archive/master.zip) ou clone o aplicativo Web de exemplo do GitHub.
 
     ```
@@ -58,9 +58,9 @@ O Azure Active Directory (Azure AD) B2C fornece gerenciamento de identidades de 
 
     ![Exemplo de aplicativo de página única mostrado no navegador](media/active-directory-b2c-quickstarts-spa/sample-app-spa.png)
 
-    O exemplo dá suporte a várias opções de inscrição, incluindo o uso de um provedor de identidade social ou a criação de uma conta local usando um endereço de email. Para este guia de início rápido, use uma conta de provedor de identidade social do Facebook, do Google, da Microsoft ou do Twitter.
+    O exemplo dá suporte a várias opções de inscrição, incluindo o uso de um provedor de identidade social ou a criação de uma conta local usando um endereço de email. Para este guia de início rápido, use uma conta de provedor de identidade social do Facebook, do Google ou da Microsoft.
 
-2. O Azure AD B2C apresenta uma página de logon personalizada para uma marca fictícia chamada Wingtip Toys para o aplicativo Web de exemplo. Para inscrever-se usando um provedor de identidade social, clique no botão do provedor de identidade que você deseja usar.
+2. O Azure AD B2C apresenta uma página de entrada para uma empresa fictícia chamada Fabrikam para o aplicativo Web de exemplo. Para inscrever-se usando um provedor de identidade social, clique no botão do provedor de identidade que você deseja usar.
 
     ![Página de entrada ou inscrição mostrando os botões do provedor de identidade](media/active-directory-b2c-quickstarts-spa/sign-in-or-sign-up-spa.png)
 
