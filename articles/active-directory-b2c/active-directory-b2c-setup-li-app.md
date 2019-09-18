@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ddc42bc9315d50b8b8cdd40264de561d0edf5c7d
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: be347fe33e03b4c2a7ecc1015a407c5a58062326
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622379"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065141"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Configurar a inscrição e entrada com a conta do LinkedIn usando o Azure Active Directory B2C
 
 ## <a name="create-a-linkedin-application"></a>Criar um aplicativo do LinkedIn
 
-Para usar uma conta do LinkedIn como um [provedor de identidade](active-directory-b2c-reference-oauth-code.md) no Azure AD (Azure Active Directory) B2C, você precisará criar um aplicativo no locatário que o representa. Se você ainda não tiver uma conta do LinkedIn, poderá se inscrever [https://www.linkedin.com/](https://www.linkedin.com/)em.
+Para usar uma conta do LinkedIn como um [provedor de identidade](active-directory-b2c-reference-oauth-code.md) no Azure Active Directory B2C (Azure ad B2C), você precisa criar um aplicativo em seu locatário que o represente. Se você ainda não tiver uma conta do LinkedIn, poderá se inscrever [https://www.linkedin.com/](https://www.linkedin.com/)em.
 
 1. Entre no [site de Desenvolvedores do LinkedIn](https://www.developer.linkedin.com/) com suas credencias de conta do LinkedIn.
 1. Escolha **Meus Aplicativos** e clique em **Criar Aplicativo**.

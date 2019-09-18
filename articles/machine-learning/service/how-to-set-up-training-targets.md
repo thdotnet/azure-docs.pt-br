@@ -1,6 +1,6 @@
 ---
 title: Criar e usar destinos de computação para treinamento de modelo
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Configure os ambientes de treinamento (destinos de computação) para treinamento de modelo de machine learning. É possível alternar facilmente os ambientes de treinamento. Inicie o treinamento localmente. Se precisar expandir, passe para um destino de computação em nuvem.
 services: machine-learning
 author: heatherbshapiro
@@ -11,18 +11,18 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0a34ccf5201b81a2c74c2eccd0ec3f311a1158ab
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 7c3bae2fff9e20ed9427c72b5f5f632d975f9f94
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860546"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034424"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Configurar e usar destinos de computação para treinamento de modelo 
 
-Com o Serviço do Azure Machine Learning, você pode treinar seu modelo em uma variedade de recursos ou ambientes, coletivamente denominados [__destinos de computação__](concept-azure-machine-learning-architecture.md#compute-targets). Um destino de computação pode ser um computador local ou um recurso de nuvem, como Computação do Azure Machine Learning, Azure HDInsight ou uma máquina virtual remota.  Você também pode criar destinos de computação para a implantação de modelo conforme descrito em ["em que local e como implantar seus modelos"](how-to-deploy-and-where.md).
+Com o Azure Machine Learning, você pode treinar seu modelo em uma variedade de recursos ou ambientes, coletivamente chamados de [__destinos de computação__](concept-azure-machine-learning-architecture.md#compute-targets). Um destino de computação pode ser um computador local ou um recurso de nuvem, como Computação do Azure Machine Learning, Azure HDInsight ou uma máquina virtual remota.  Você também pode criar destinos de computação para a implantação de modelo conforme descrito em ["em que local e como implantar seus modelos"](how-to-deploy-and-where.md).
 
-Você pode criar e gerenciar um destino de computação usando o SDK do Azure Machine Learning, portal do Azure, sua página de aterrissagem do espaço de trabalho (versão prévia), CLI do Azure ou Azure Machine Learning VS Code extensão. Se você tiver destinos de computação criados por meio de outro serviço (por exemplo, um cluster HDInsight), poderá usá-los anexando-os ao workspace de serviço do Azure Machine Learning.
+Você pode criar e gerenciar um destino de computação usando o SDK do Azure Machine Learning, portal do Azure, sua página de aterrissagem do espaço de trabalho (versão prévia), CLI do Azure ou Azure Machine Learning VS Code extensão. Se você tiver destinos de computação criados por meio de outro serviço (por exemplo, um cluster HDInsight), poderá usá-los anexando-os ao seu espaço de trabalho do Azure Machine Learning.
  
 Neste artigo, você aprende a usar vários destinos de computação para treinamento do modelo.  As etapas para todos os destinos de computação seguem o mesmo fluxo de trabalho:
 1. Escolha __Criar__ um destino de computação se você ainda não tiver um.
@@ -35,7 +35,7 @@ Neste artigo, você aprende a usar vários destinos de computação para treinam
 
 ## <a name="compute-targets-for-training"></a>Destinos de computação para treinamento
 
-O Serviço do Azure Machine Learning tem suporte variado nos diferentes destinos de computação. Um ciclo de vida de desenvolvimento de modelo típico começa com experimentação/desenvolvimento em uma pequena quantidade de dados. Nessa fase, é recomendável usar um ambiente local. Por exemplo, o computador local ou uma VM baseada em nuvem. Na medida em que você aumenta o treinamento em conjuntos de dados maiores ou faz treinamento distribuído, é recomendável usar a Computação do Azure Machine Learning para criar um cluster de vários nós, ou de nó único, que dimensionará automaticamente sempre que você enviar uma execução. Também é possível anexar seu próprio recurso de computação, embora o suporte para vários cenários possa variar conforme detalhado abaixo:
+Azure Machine Learning tem suporte variado em diferentes destinos de computação. Um ciclo de vida de desenvolvimento de modelo típico começa com experimentação/desenvolvimento em uma pequena quantidade de dados. Nessa fase, é recomendável usar um ambiente local. Por exemplo, o computador local ou uma VM baseada em nuvem. Na medida em que você aumenta o treinamento em conjuntos de dados maiores ou faz treinamento distribuído, é recomendável usar a Computação do Azure Machine Learning para criar um cluster de vários nós, ou de nó único, que dimensionará automaticamente sempre que você enviar uma execução. Também é possível anexar seu próprio recurso de computação, embora o suporte para vários cenários possa variar conforme detalhado abaixo:
 
 [!INCLUDE [aml-compute-target-train](../../../includes/aml-compute-target-train.md)]
 
@@ -45,7 +45,7 @@ O Serviço do Azure Machine Learning tem suporte variado nos diferentes destinos
 
 ## <a name="whats-a-run-configuration"></a>O que é uma configuração de execução?
 
-Durante o treinamento, é comum iniciar em seu computador local e depois executar esse script de treinamento em um destino de computação diferentes. Com o Serviço do Azure Machine Learning, você pode executar seu script em vários destinos de computação sem precisar alterar seu script.
+Durante o treinamento, é comum iniciar em seu computador local e depois executar esse script de treinamento em um destino de computação diferentes. Com o Azure Machine Learning, você pode executar o script em vários destinos de computação sem precisar alterar o script.
 
 Tudo o que você precisa fazer é definir o ambiente para cada destino de computação em uma **configuração de execução**.  Em seguida, quando você quiser executar o teste de treinamento em um destino de computação diferente, especifique a configuração de execução para esse tipo de computação. Para obter detalhes de como especificar um ambiente e associá-lo para executar a configuração, consulte [criar e gerenciar ambientes para treinamento e implantação](how-to-use-environments.md).
 
@@ -106,7 +106,7 @@ A Computação do Machine Learning do Azure tem limites padrão como o número d
 É possível criar a Computação do Azure Machine Learning como um destino de computação em tempo de execução. A computação é criada automaticamente para a sua execução. A computação é excluída automaticamente depois de a execução ser concluída. 
 
 > [!NOTE]
-> Para especificar o número máximo de nós a serem usados, você normalmente definiria `node_count` como o número de nós. Atualmente, há (04/04/2019) um bug que impede que isso funcione. Como alternativa, use a `amlcompute._cluster_max_node_count` propriedade da configuração de execução. Por exemplo, `run_config.amlcompute._cluster_max_node_count = 5`.
+> Para especificar o número máximo de nós a serem usados, você normalmente definiria `node_count` como o número de nós. Atualmente, há (04/04/2019) um bug que impede que isso funcione. Como alternativa, use a `amlcompute._cluster_max_node_count` propriedade da configuração de execução. Por exemplo: `run_config.amlcompute._cluster_max_node_count = 5`.
 
 > [!IMPORTANT]
 > A criação baseada em execução da computação do Azure Machine Learning atualmente está em Versão Prévia. Não use a criação baseada em execução se você estiver usando o ajuste de hiperparâmetro ou o aprendizado de máquina automatizado. Para usar o ajuste de hiperparâmetro ou aprendizado de máquina automatizados, crie um destino de [computação persistente](#persistent) em vez disso.
@@ -143,7 +143,7 @@ Agora que você anexou um computador e configurou sua execução, a próxima eta
 
 ### <a id="vm"></a>Máquinas virtuais remotas
 
-O Azure Machine Learning também dá suporte para que você traga seu próprio recurso de computação e anexe-o ao workspace. Um desses tipos de recursos é uma VM remota arbitrária, desde que seja acessível pelo Serviço do Azure Machine Learning. O recurso pode ser uma VM do Azure ou um servidor remoto na organização ou no local. Especificamente, fornecido o endereço IP e as credenciais (nome de usuário e senha ou chave SSH), é possível usar qualquer VM acessível para execuções remotas.
+O Azure Machine Learning também dá suporte para que você traga seu próprio recurso de computação e anexe-o ao workspace. Um desses tipos de recurso é uma VM remota arbitrária, desde que seja acessível a partir de Azure Machine Learning. O recurso pode ser uma VM do Azure ou um servidor remoto na organização ou no local. Especificamente, fornecido o endereço IP e as credenciais (nome de usuário e senha ou chave SSH), é possível usar qualquer VM acessível para execuções remotas.
 
 Você pode usar um ambiente do Conda interno do sistema, um ambiente do Python já existente ou um contêiner do Docker. Para executar em um contêiner do Docker, você deve ter um mecanismo do Docker em execução na VM. Essa funcionalidade é especialmente útil quando você quer um ambiente de experimentação/desenvolvimento baseado em nuvem mais flexível que seu computador local.
 
@@ -327,7 +327,7 @@ Siga as etapas anteriores para exibir a lista de destinos de computação. Em se
 
 ### <a id="portal-reuse"></a>Anexar destinos de computação
 
-Para usar destinos de computação criados fora do workspace do Serviço do Azure Machine Learning, é necessário anexá-los. Anexar um destino de computação o disponibiliza para seu workspace.
+Para usar os destinos de computação criados fora do espaço de trabalho Azure Machine Learning, você deve anexá-los. Anexar um destino de computação o disponibiliza para seu workspace.
 
 Siga as etapas anteriores para exibir a lista de destinos de computação. Em seguida, use as etapas abaixo para anexar um destino de computação: 
 
@@ -356,7 +356,7 @@ Siga as etapas anteriores para exibir a lista de destinos de computação. Em se
 
 ## <a name="set-up-with-cli"></a>Configurar com a CLI
 
-Você pode acessar os destinos de computação associados ao seu workspace usando a [extensão da CLI](reference-azure-machine-learning-cli.md) para o Serviço do Azure Machine Learning.  Você pode usar a CLI para:
+Você pode acessar os destinos de computação associados ao seu espaço de trabalho usando a [extensão da CLI](reference-azure-machine-learning-cli.md) para Azure Machine Learning.  Você pode usar a CLI para:
 
 * Criar um destino de computação gerenciado
 * Atualizar um destino de computação gerenciado
@@ -366,7 +366,7 @@ Para obter mais informações, veja [Gerenciamento de recursos](reference-azure-
 
 ## <a name="set-up-with-vs-code"></a>Configurar com VS Code
 
-Você pode acessar, criar e gerenciar os destinos de computação associados ao seu espaço de trabalho usando a [extensão de vs Code](how-to-vscode-tools.md#create-and-manage-compute-targets) para Azure Machine Learning Service.
+Você pode acessar, criar e gerenciar os destinos de computação associados ao seu espaço de trabalho usando a [extensão vs Code](how-to-vscode-tools.md#create-and-manage-compute-targets) para Azure Machine Learning.
 
 ## <a id="submit"></a>Enviar execução de treinamento usando Azure Machine Learning SDK
 
@@ -515,4 +515,4 @@ Veja estes notebooks para obter exemplos de treinamento com vários destinos de 
 * Saiba como [ajustar os hiperparâmetros com eficiência](how-to-tune-hyperparameters.md) para criar modelos melhores.
 * Quando você tiver um modelo treinado, aprenda [como e em que local implantar modelos](how-to-deploy-and-where.md).
 * Exiba a referência do SKD da [classe RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
-* [Usar o Serviço do Azure Machine Learning com redes virtuais do Azure](how-to-enable-virtual-network.md)
+* [Usar Azure Machine Learning com redes virtuais do Azure](how-to-enable-virtual-network.md)

@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 08/30/2019
 ms.author: jingwang
-ms.openlocfilehash: fbf6ddc2db0312b2dfd34e79aa04c246ce2ac8d6
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: e7952192a0c3150e6c323370653544ea9ad97b62
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70174579"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71032698"
 ---
 | Categoria              | Repositório de dados                                                   | [Atividade de cópia](../articles/data-factory/copy-activity-overview.md)  (origem/coletor) | [Mapeando fluxo de dados](../articles/data-factory/concepts-data-flow-overview.md) | [Atividade de pesquisa](../articles/data-factory/control-flow-lookup-activity.md) | [Atividade de obtenção de metadados](../articles/data-factory/control-flow-get-metadata-activity.md) | [Excluir atividade](../articles/data-factory/delete-activity.md) |
 | :-------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ | :----------------------------------------------------------- |
@@ -21,7 +21,7 @@ ms.locfileid: "70174579"
 | &nbsp;                | [Azure Data Lake Storage Gen2](../articles/data-factory/connector-azure-data-lake-storage.md) | ✓/✓                                                          | ✓ <br> <small>Formatos com suporte: Texto delimitado, parquet</small>                  | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [Banco de Dados do Azure para MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [Banco de Dados do Azure para MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) | ✓/✓                                                          |                                                              | ✓                                                            |                                                              |                                                              |
-| &nbsp;                | [Banco de Dados do Azure para PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) | ✓/−                                                          |                                                              | ✓                                                            |                                                              |                                                              |
+| &nbsp;                | [Banco de Dados do Azure para PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) | ✓/✓                                                          |                                                              | ✓                                                            |                                                              |                                                              |
 | &nbsp;                | [Armazenamento de Arquivos do Azure](../articles/data-factory/connector-azure-file-storage.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            | ✓                                                            |
 | &nbsp;                | [Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database.md) | ✓/✓                                                           | ✓                                                            | ✓                                                            | ✓                                                            |                                                              |
 | &nbsp;                | [Instância Gerenciada do Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) | ✓/✓                                                          |                                                              | ✓                                                            | ✓                                                            |                                                              |

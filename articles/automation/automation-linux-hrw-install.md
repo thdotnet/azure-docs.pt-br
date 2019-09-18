@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 06/28/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 94d34c8a9a3480032a79d100af883a85868d327e
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 878e79097114f60aff084d60c835661196cec5ce
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478479"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076019"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Implantar o Hybrid Runbook Worker do Linux
 
@@ -51,7 +51,7 @@ Os requisitos mínimos para um Hybrid Runbook Worker do Linux são:
 |Glibc |Biblioteca GNU C| 2.5-12 |
 |Openssl| Bibliotecas OpenSSL | 1.0 (TLS 1.1 e TLS 1.2 são compatíveis|
 |Curl | cliente Web cURL | 7.15.5|
-|Python-ctypes | |
+|Python-ctypes | O Python 2. x é obrigatório |
 |PAM | Módulos de autenticação conectáveis|
 | **Pacotes opcionais** | **Descrição** | **Versão mínima**|
 | PowerShell Core | Para executar runbooks do PowerShell é necessário instalar o PowerShell, consulte [Instalar o PowerShell Core no Linux](/powershell/scripting/setup/installing-powershell-core-on-linux) para saber como instalá-lo.  | 6.0.0 |
@@ -62,7 +62,7 @@ Antes de prosseguir, observe o espaço de trabalho do Log Analytics ao qual sua 
 
 1. Habilite a solução **Hybrid Worker de Automação** no Azure usando um dos métodos a seguir:
 
-   * Adicionar o **Hybrid Worker de automação** solução para sua assinatura usando o procedimento na [adicionar Azure Monitor registra soluções em seu espaço de trabalho](../log-analytics/log-analytics-add-solutions.md).
+   * Adicione a solução **Hybrid Worker de automação** à sua assinatura usando o procedimento em [Adicionar soluções de logs de Azure monitor ao seu espaço de trabalho](../log-analytics/log-analytics-add-solutions.md).
    * Execute o cmdlet a seguir:
 
         ```azurepowershell-interactive
@@ -86,11 +86,11 @@ Antes de prosseguir, observe o espaço de trabalho do Log Analytics ao qual sua 
 1. Depois que o comando for concluído, a página **Grupos do Hybrid Worker** no portal do Azure mostrará o novo grupo e o número de membros. Se este for um grupo existente, o número de membros será incrementado. Você pode selecionar o grupo da lista na página **Grupos do Hybrid Worker** e no bloco **Hybrid Workers**. Na página **Hybrid Workers**, você verá cada membro do grupo listado.
 
 > [!NOTE]
-> Se você estiver usando a extensão de máquina virtual do Azure Monitor para Linux para uma VM do Azure, recomendamos a configuração `autoUpgradeMinorVersion` como falso como auto atualização de versões pode causar problemas de Hybrid Runbook Worker. Para saber como atualizar a extensão manualmente, consulte [implantação da CLI do Azure ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
+> Se você estiver usando a extensão de máquina virtual Azure monitor para Linux para uma VM do Azure, `autoUpgradeMinorVersion` é recomendável definir como false, pois as versões de atualização automática podem causar problemas na Hybrid runbook Worker. Para saber como atualizar a extensão manualmente, consulte [CLI do Azure implantação ](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
 ## <a name="turning-off-signature-validation"></a>Desativar a validação de assinatura
 
-Por padrão, o Linux Hybrid Runbook Workers exige validação de assinatura. Se você executar um runbook não assinado em um worker, verá um erro informando "Falha na validação de assinatura." Para desativar a validação de assinatura, execute o comando a seguir. Substitua o segundo parâmetro com sua ID de espaço de trabalho da análise de log.
+Por padrão, o Linux Hybrid Runbook Workers exige validação de assinatura. Se você executar um runbook não assinado em um worker, verá um erro informando "Falha na validação de assinatura." Para desativar a validação de assinatura, execute o comando a seguir. Substitua o segundo parâmetro pela ID do espaço de trabalho do log Analytics.
 
  ```bash
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>

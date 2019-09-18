@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ab7231c214060d17927e2509bee1687e2c9c87a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82a796a3252a4de6eacabcad45c61c864e963fe0
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66507569"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066164"
 ---
 # <a name="azure-active-directory-b2c-use-custom-attributes-in-a-custom-profile-edit-policy"></a>Azure Active Directory B2C: Usar atributos personalizados em uma política de edição de perfil personalizada
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Neste artigo, você pode criar um atributo personalizado em seu diretório do Azure Active Directory (Azure AD) B2C. Você usará esse novo atributo como uma declaração personalizada na jornada de usuário de edição do perfil.
+Neste artigo, você cria um atributo personalizado no diretório Azure Active Directory B2C (Azure AD B2C). Você usará esse novo atributo como uma declaração personalizada na jornada de usuário de edição do perfil.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -43,7 +43,7 @@ Se o aplicativo for excluído, tanto as propriedades de extensão quanto os dado
 As propriedades de extensão existem apenas no contexto de um aplicativo registrado no locatário. O id de objeto desse Aplicativo deve ser incluído no **TechnicalProfile** que o usa.
 
 >[!NOTE]
->O diretório do Azure Active Directory B2C geralmente inclui um aplicativo web chamado `b2c-extensions-app`. Este aplicativo é usado principalmente pelas políticas internas B2C para as declarações personalizadas criadas por meio do portal do Microsoft Azure. Recomenda-se que apenas usuários avançados usem registrem extensões para as políticas personalizadas B2C usando este aplicativo.  
+>O diretório do Azure Active Directory B2C geralmente inclui um aplicativo web chamado `b2c-extensions-app`. Este aplicativo é usado principalmente pelas políticas internas B2C para as declarações personalizadas criadas por meio do portal do Microsoft Azure. Recomenda-se que apenas usuários avançados usem registrem extensões para as políticas personalizadas B2C usando este aplicativo.
 As instruções para isso são incluídas na seção **Próximas etapas** neste artigo.
 
 ## <a name="create-a-new-application-to-store-the-extension-properties"></a>Criação de um aplicativo novo para armazenar as propriedades de extensão
@@ -69,7 +69,7 @@ As instruções para isso são incluídas na seção **Próximas etapas** neste 
 
 Depois de ter seguido as etapas de [Azure Active Directory B2C: Introdução às políticas personalizadas](active-directory-b2c-get-started-custom.md), você baixou e modificou [arquivos de exemplo](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip) com os nomes **TrustFrameworkBase.xml**, **TrustFrameworkExtensions.xml**, **SignUpOrSignin.xml**, **ProfileEdit.xml** e **PasswordReset.xml**. Nesta etapa, você fará mais modificações a esses arquivos.
 
-* Abra o arquivo **Trustframeworkbase** e adicione a seção `Metadata` conforme mostrado no exemplo a seguir. Insira a ID de objeto que você registrou anteriormente para o valor `ApplicationObjectId` e a ID do aplicativo que você registrou para o valor `ClientId`: 
+* Abra o arquivo **Trustframeworkbase** e adicione a seção `Metadata` conforme mostrado no exemplo a seguir. Insira a ID de objeto que você registrou anteriormente para o valor `ApplicationObjectId` e a ID do aplicativo que você registrou para o valor `ClientId`:
 
     ```xml
     <ClaimsProviders>
@@ -103,7 +103,7 @@ Depois de ter seguido as etapas de [Azure Active Directory B2C: Introdução às
 
 1. Abra o arquivo **Profileedit**.
 2. Adicione uma declaração personalizada `loyaltyId`. Ao incluir declaração personalizada no elemento `<RelyingParty>`, está incluído no token para o aplicativo.
-    
+
     ```xml
     <RelyingParty>
       <DefaultUserJourney ReferenceId="ProfileEdit" />
@@ -268,10 +268,10 @@ O token de id enviado novamente para o seu aplicativo inclui a propriedade de ex
 
 2. Use os mesmos atributos de extensão entre políticas internas e personalizadas. Quando você adiciona atributos de tensão ou personalizados, por meio da experiência do portal, esses atributos são registrados usando o **b2c-extensions-app** que existe em cada locatário B2C. Para realizar as etapas a seguir para usar os atributos de extensão em sua política personalizada:
 
-   a. Em seu locatário B2C no portal.azure.com, navegue até **Azure Active Directory** e selecione **Registros de aplicativo**.  
-   b. Localize seu **b2c-extensions-app** e selecione-o.  
-   c. Em **Essentials**, registre a **ID de Aplicativo** e a **ID de objeto**.  
-   d. Inclua-os em seus metadados de perfil técnico comuns do **AAD** dessa maneira:  
+   a. Em seu locatário B2C no portal.azure.com, navegue até **Azure Active Directory** e selecione **Registros de aplicativo**.
+   b. Localize seu **b2c-extensions-app** e selecione-o.
+   c. Em **Essentials**, registre a **ID de Aplicativo** e a **ID de objeto**.
+   d. Inclua-os em seus metadados de perfil técnico comuns do **AAD** dessa maneira:
 
    ```xml
       <ClaimsProviders>
@@ -299,6 +299,6 @@ O token de id enviado novamente para o seu aplicativo inclui a propriedade de ex
 Para obter mais informações sobre as propriedades de extensão, consulte o artigo [Extensões de esquema de diretório | Conceitos da API do Graph](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions).
 
 > [!NOTE]
-> * Um **TechnicalProfile** é um tipo de elemento, ou uma função, que define o nome de um ponto de extremidade, metadados e protocolo. O **TechnicalProfile** detalha a troca de declarações que executa o Identity Experience Framework. Quando essa função é chamada em uma etapa de orquestração ou de outro **TechnicalProfile**, o **InputClaims** e o **OutputClaims** são fornecidos como parâmetros pelo chamador.  
-> * Atributos de extensão na API do Graph são nomeados usando a convenção `extension_ApplicationObjectID_attributename`.  
+> * Um **TechnicalProfile** é um tipo de elemento, ou uma função, que define o nome de um ponto de extremidade, metadados e protocolo. O **TechnicalProfile** detalha a troca de declarações que executa o Identity Experience Framework. Quando essa função é chamada em uma etapa de orquestração ou de outro **TechnicalProfile**, o **InputClaims** e o **OutputClaims** são fornecidos como parâmetros pelo chamador.
+> * Atributos de extensão na API do Graph são nomeados usando a convenção `extension_ApplicationObjectID_attributename`.
 > * Políticas personalizadas se referem aos atributos de extensão como **extension_attributename**. Esta referência omite a **ApplicationObjectId** em XML.

@@ -13,22 +13,24 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: bwren
-ms.openlocfilehash: b03109ee5cdb76247bf3be6fda97e0cf6e434f17
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 6eb066e04cfa561a4fa443b8c8f9582e286a4d7b
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296083"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076751"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Introdução às consultas de log no Azure Monitor
 
 
 > [!NOTE]
-> Você deve concluir [Introdução ao Log Analytics do Azure Monitor](get-started-portal.md) antes de concluir este tutorial.
+> Você deve concluir a [introdução ao Azure Monitor log Analytics](get-started-portal.md) antes de concluir este tutorial.
 
-[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
+> [!NOTE]
+> Você pode trabalhar com este exercício em seu próprio ambiente se estiver coletando dados de pelo menos uma máquina virtual. Caso contrário, use nosso [ambiente de demonstração](https://portal.loganalytics.io/demo), que inclui muitos dados de exemplo.
 
-Neste tutorial, você aprenderá a criar consultas de log no Azure Monitor. Ele irá ensiná-lo como para:
+
+Neste tutorial, você aprenderá a escrever consultas de log em Azure Monitor. Ele irá ensiná-lo como para:
 
 - Entender a estrutura de consulta
 - Classificar os resultados de consulta
@@ -38,8 +40,8 @@ Neste tutorial, você aprenderá a criar consultas de log no Azure Monitor. Ele 
 - Definir e usar campos personalizados
 - Agregar e agrupar resultados
 
-Para obter um tutorial sobre como usar o Log Analytics no portal do Azure, consulte [Introdução ao Log Analytics do Azure Monitor](get-started-portal.md).<br>
-Para obter mais detalhes sobre consultas de log no Azure Monitor, consulte [visão geral do log de consultas no Azure Monitor](log-query-overview.md).
+Para obter um tutorial sobre como usar Log Analytics no portal do Azure, consulte Introdução [ao Azure Monitor log Analytics](get-started-portal.md).<br>
+Para obter mais detalhes sobre as consultas de log no Azure Monitor, consulte [visão geral das consultas de log no Azure monitor](log-query-overview.md).
 
 ## <a name="writing-a-new-query"></a>Escrevendo uma nova consulta
 As consultas podem começar com um nome de tabela ou com o comando *pesquisa*. Você deve começar com um nome de tabela, pois ele define um escopo claro para a consulta e melhora o desempenho da consulta e a relevância dos resultados.
@@ -74,7 +76,7 @@ search in (SecurityEvent) "Cryptographic"
 Essa consulta pesquisa a tabela *SecurityEvent* em busca de registros que contenham a frase "Criptografia". Desses registros, 10 registros serão retornados e exibidos. Se omitirmos a parte e `in (SecurityEvent)`apenas executarmos`search "Cryptographic"`, a pesquisa irá passar por *todas* as tabelas, o que levaria mais tempo e seria menos eficiente.
 
 > [!WARNING]
-> Consultas de pesquisa são geralmente mais lentas do que consultas baseadas em tabela porque eles têm que processar mais dados. 
+> As consultas de pesquisa são normalmente mais lentas do que as consultas baseadas em tabela, pois precisam processar mais dados. 
 
 ## <a name="sort-and-top"></a>Classificar e superior
 Embora **levar** é útil para obter alguns registros, os resultados são selecionados e exibidos em nenhuma ordem específica. Para obter uma exibição ordenada, você poderia **classificação** pela coluna preferencial:
@@ -110,7 +112,7 @@ SecurityEvent
 
 Ao escrever as condições de filtro, você pode usar as expressões a seguir:
 
-| Expression | DESCRIÇÃO | Exemplo |
+| Expressão | Descrição | Exemplo |
 |:---|:---|:---|
 | == | Verificação de igualdade<br>(diferencia maiusculas de minúsculas) | `Level == 8` |
 | =~ | Verificação de igualdade<br>(diferencia maiusculas de minúsculas) | `EventSourceName =~ "microsoft-windows-security-auditing"` |
@@ -140,7 +142,7 @@ SecurityEvent
 ### <a name="time-picker"></a>Seletor de tempo
 O seletor de hora está próximo ao botão Executar e indica que estamos consultando apenas registro das últimas 24 horas. Isso é o intervalo de tempo padrão aplicado a todas as consultas. Para obter apenas os registros da última hora, selecione _última hora_ e execute a consulta novamente.
 
-![Seletor de Tempo](media/get-started-queries/timepicker.png)
+![Seletor de tempo](media/get-started-queries/timepicker.png)
 
 
 ### <a name="time-filter-in-query"></a>Filtro de tempo na consulta
@@ -181,7 +183,7 @@ SecurityEvent
 | project Computer, TimeGenerated, EventDetails=Activity, EventCode=substring(Activity, 0, 4)
 ```
 
-**estender** mantém todas as colunas originais no conjunto de resultados e define outros adicionais. A seguinte consulta utiliza **estender** para adicionar o *EventCode* coluna. Observe que essa coluna pode não ser exibidos no final dos resultados da tabela nesse caso, você precisa expandir os detalhes de um registro para exibi-lo.
+**estender** mantém todas as colunas originais no conjunto de resultados e define outros adicionais. A consulta a seguir usa **Extend** para adicionar a coluna *EventCode* . Observe que essa coluna pode não ser exibida no final da tabela e, nesse caso, você precisaria expandir os detalhes de um registro para exibi-lo.
 
 ```Kusto
 SecurityEvent

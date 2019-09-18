@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/08/2018
+ms.date: 09/03/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: fb2c49d6436a14e9b6cbb0a92eb0dfba077c8e4d
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: d5bd2397c345a4f670bde343f751cd69f825ecb9
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68424254"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056074"
 ---
 # <a name="choosing-the-application-type-when-adding-an-application-in-azure-active-directory"></a>Escolhendo o tipo de aplicativo ao adicionar um aplicativo no Active Directory Domain Services do Azure
 
@@ -45,7 +45,7 @@ Os seguintes recursos são suportados por qualquer um dos quatro tipos de aplica
 
 - **Início rápido** – comece a usar um aplicativo rapidamente seguindo [as etapas de implantação simples](https://docs.microsoft.com/azure/active-directory/active-directory-integrating-applications-getting-started)
 
-- **Gerenciamento de propriedades gerais** – obtenha um [deeplink direto](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) para um aplicativo, [personalize a marca](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-change-app-logo-user-azure-portal) de um aplicativo ou [desabilite o aplicativo](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal) para todos os usuários.
+- **Gerenciamento de propriedades gerais** – obtenha um [link profundo direto](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) para um aplicativo, [Personalize a identidade visual](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-change-app-logo-user-azure-portal) de um aplicativo ou [desabilite o aplicativo](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal) para todos os usuários.
 
 - **Gerenciamento de usuário e grupo** – [atribua](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) ou [remova](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-remove-assignment-azure-portal) usuários e grupos de um aplicativo e, como opção, atribua as funções específicas de aplicativo as quais esses usuários e grupos têm acesso
 
@@ -124,9 +124,6 @@ Para definir o modo de logon único de um aplicativo, siga estas instruções:
 - **Provisionamento Manual** – Escolha o modo de provisionamento [Manual](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-provisioning#provisioning-modes) se você tiver contas ou se quiser gerenciar as contas desse aplicativo fora do Azure AD.
 
 - **Provisionamento Automático** – Escolha o **modo de provisionamento** [Automático](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-provisioning#configuring-automatic-user-account-provisioning) se você quiser habilitar o provisionamento automático baseado em API e/ou o desprovisionamento de contas de usuário para esse aplicativo 
-
-  >[!NOTE]
-  >Essa opção está disponível somente para aplicativos dentro da categoria **em destaque** da [Galeria de Aplicativos do Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-whats-new-azure-portal).
 
 - **Provisionamento Automático baseado em SCIM** – Use o [Provisionamento Automático baseado em SCIM](https://docs.microsoft.com/azure/active-directory/active-directory-scim-provisioning) se o seu aplicativo der suporte ao protocolo SCIM para detecção de alterações em usuários e grupos, que são emitidas automaticamente para alterações em qualquer aplicativo integrado ao Azure AD 
 

@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d01e8ce894bfb1ece3555eddc714d2d3a80e44b5
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 414dc4e69fda8ccd79b5a48b19bccee35bd11a45
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164848"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063702"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Configurar o fluxo de credenciais de senha de proprietário do recurso no Azure Active Directory B2C usando uma política personalizada
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-No Azure Active Directory (Microsoft Azure Active Directory) B2C, o fluxo de credenciais (ROPC) de senha de proprietário do recurso é um fluxo de autenticação padrão do OAuth. Nesse fluxo, um aplicativo, também conhecido como a terceira parte confiável, troca de credenciais válidas para tokens. As credenciais incluem um ID de usuário e senha. Os tokens retornados são um ID de token, um token de acesso e um token de atualização.
+No Azure Active Directory B2C (Azure AD B2C), o fluxo de credenciais de senha do proprietário do recurso (ROPC) é um fluxo de autenticação padrão do OAuth. Nesse fluxo, um aplicativo, também conhecido como a terceira parte confiável, troca de credenciais válidas para tokens. As credenciais incluem um ID de usuário e senha. Os tokens retornados são um ID de token, um token de acesso e um token de atualização.
 
 Há suporte para as seguintes opções no fluxo ROPC:
 
@@ -42,7 +42,7 @@ Conclua as etapas em [Introdução às políticas personalizadas no Azure Active
 ## <a name="register-an-application"></a>Registrar um aplicativo
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Selecione **Aplicativos** e, em seguida, selecione **Adicionar**.
 5. Insira um nome para o aplicativo, como *ROPC_Auth_app*.
@@ -88,7 +88,7 @@ Conclua as etapas em [Introdução às políticas personalizadas no Azure Active
           <OutputClaim ClaimTypeReferenceId="sub" TransformationClaimType="createdClaim" />
         </OutputClaims>
       </ClaimsTransformation>
-    
+
       <ClaimsTransformation Id="AssertRefreshTokenIssuedLaterThanValidFromDate" TransformationMethod="AssertDateTimeIsGreaterThan">
         <InputClaims>
           <InputClaim ClaimTypeReferenceId="refreshTokenIssuedOnDateTime" TransformationClaimType="leftOperand" />
@@ -140,7 +140,7 @@ Conclua as etapas em [Introdução às políticas personalizadas no Azure Active
     </TechnicalProfile>
     ```
 
-    Substitua os **DefaultValue** dos **client_id** com a ID do aplicativo do aplicativo ProxyIdentityExperienceFramework que você criou no tutorial de pré-requisito. Em seguida, substitua **DefaultValue** dos **resource_id** com a ID do aplicativo do aplicativo IdentityExperienceFramework que você também criou no tutorial de pré-requisito.  
+    Substitua o **DefaultValue** de **client_id** pela ID do aplicativo do ProxyIdentityExperienceFramework que você criou no tutorial de pré-requisito. Em seguida, substitua **DefaultValue** de **resource_id** pela ID do aplicativo IdentityExperienceFramework que você também criou no tutorial de pré-requisito.
 
 5. Adicionar os seguintes elementos **ClaimsProvider** com seus perfis técnicos para o elemento **ClaimsProviders**:
 
@@ -245,7 +245,7 @@ Em seguida, atualize o arquivo de terceira parte confiável que iniciará o perc
 2. Abra o novo arquivo e altere o valor do atributo **PolicyId** para **TrustFrameworkPolicy** com um valor exclusivo. O ID da política é o nome da sua política. Por exemplo, **B2C_1A_ROPC_Auth**.
 3. Altere o valor do atributo **ReferenceId** no **DefaultUserJourney** para `ResourceOwnerPasswordCredentials`.
 4. Altere o elemento **OutputClaims** para conter apenas as seguintes declarações:
-    
+
     ```XML
     <OutputClaim ClaimTypeReferenceId="sub" />
     <OutputClaim ClaimTypeReferenceId="objectId" />
@@ -255,7 +255,7 @@ Em seguida, atualize o arquivo de terceira parte confiável que iniciará o perc
     ```
 
 5. Na página **Políticas Personalizadas** em seu locatário do Azure AD B2C, selecione **Carregar Política**.
-6. Habilitar **substituir a política caso ela exista**e, em seguida, navegue até e selecione o *ROPC_Auth.xml* arquivo.
+6. Habilite **substituir a política se ela existir**e, em seguida, navegue até e selecione o arquivo *ROPC_Auth. xml* .
 7. Clique em **Carregar**.
 
 ## <a name="test-the-policy"></a>Testar a política
@@ -267,7 +267,7 @@ Use seu aplicativo favorito de desenvolvimento de API para gerar uma chamada de 
 - Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C.
 - Substitua `B2C_1A_ROPC_Auth` com o nome completo da política de credenciais de senha do proprietário do recurso.
 
-| Chave | Value |
+| Chave | Valor |
 | --- | ----- |
 | username | `user-account` |
 | password | `password1` |
@@ -312,7 +312,7 @@ Construa uma chamada POST como esta. Use as informações na tabela a seguir com
 - Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C.
 - Substitua `B2C_1A_ROPC_Auth` com o nome completo da política de credenciais de senha do proprietário do recurso.
 
-| Chave | Value |
+| Chave | Valor |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |

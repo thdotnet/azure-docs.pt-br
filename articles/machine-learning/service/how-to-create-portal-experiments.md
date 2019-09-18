@@ -1,6 +1,6 @@
 ---
 title: Usar a interface do ML automatizada do Azure para treinar & implantar modelos
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Crie, gerencie e implante experiências automatizadas de aprendizado de máquina na página de aterrissagem do espaço de trabalho Azure Machine Learning (versão prévia).
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 09/09/2019
-ms.openlocfilehash: 3ee15b5485f4fc0f81788107ce2378c65085e000
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 3a47977f2589227347582dc6fcaff25120e380d7
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910429"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034827"
 ---
 # <a name="create-explore-and-deploy-automated-machine-learning-experiments-with-azure-machine-learnings-workspace-landing-page-preview"></a>Criar, explorar e implantar experimentos automatizados de aprendizado de máquina com a página de aterrissagem do espaço de trabalho Azure Machine Learning (versão prévia)
 
@@ -26,9 +26,9 @@ ms.locfileid: "70910429"
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree) hoje.
 
-* Um workspace de serviço do Azure Machine Learning. Consulte [criar um Azure Machine Learning espaço de trabalho de serviço](how-to-manage-workspace.md).
+* Um Workspace do Azure Machine Learning. Consulte [criar um espaço de trabalho Azure Machine Learning](how-to-manage-workspace.md).
 
 ## <a name="get-started"></a>Introdução
 
@@ -75,7 +75,7 @@ Caso contrário, você verá o painel **automatizado do Machine Learning** com u
 
     1. Para criar um novo conjunto de um de um arquivo em sua computação local, selecione **procurar** e, em seguida, selecione o arquivo. 
 
-    1. Dê um nome exclusivo ao seu conjunto de dado e forneça uma descrição opcional. 
+    1. Dê um nome exclusivo ao conjunto de dados e forneça uma descrição opcional. 
 
     1. Selecione **Avançar** para carregá-lo no contêiner de armazenamento padrão criado automaticamente com seu espaço de trabalho ou escolha um contêiner de armazenamento que você deseja usar para o experimento. 
 

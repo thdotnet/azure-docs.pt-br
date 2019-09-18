@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 246e00418c784ee463170d78543e4a9aae3d7da8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5ae30b316133b7479b66a69a3467497a7151dbc8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509047"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065390"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Gerenciamento de sessão de logon único no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-O gerenciamento de sessão de SSO (logon único) no Azure AD (Azure Active Directory) B2C permite que um administrador controle interação com um usuário depois que o usuário já foi autenticado. Por exemplo, o administrador pode controlar se a seleção de provedores de identidade é exibida ou se os detalhes de conta local precisam ser inseridos novamente. Este artigo descreve como definir as configurações de SSO para o Azure AD B2C.
+O gerenciamento de sessão de SSO (logon único) no Azure Active Directory B2C (Azure AD B2C) permite que um administrador controle a interação com um usuário depois que o usuário já tiver se autenticado. Por exemplo, o administrador pode controlar se a seleção de provedores de identidade é exibida ou se os detalhes de conta local precisam ser inseridos novamente. Este artigo descreve como definir as configurações de SSO para o Azure AD B2C.
 
 O gerenciamento de sessão de SSO tem duas partes. A primeira lida com interações do usuário diretamente com o Azure AD B2C e a outra lida com interações do usuário com parceiros externos, como Facebook. O Azure AD B2C não substitui ou ignora as sessões de SSO que podem ser mantidas por parceiros externos. Em vez disso, a rota por meio do Azure AD B2C para chegar ao parceiro externo é “lembrada”, evitando a necessidade de solicitar novamente que o usuário selecione seu provedor de identidade social ou empresarial. A decisão de SSO final permanece com o parceiro externo.
 
@@ -63,7 +63,7 @@ Para adicionar declarações à sessão, use o elemento `<PersistedClaims>` do p
 
 ## <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
 
-Esse provedor é usado para suprimir a tela "escolher o provedor de identidade". Normalmente, ele é referenciado em um perfil técnico configurado para um provedor de identidade externo, como o Facebook. 
+Esse provedor é usado para suprimir a tela "escolher o provedor de identidade". Normalmente, ele é referenciado em um perfil técnico configurado para um provedor de identidade externo, como o Facebook.
 
 ```XML
 <TechnicalProfile Id="SM-SocialLogin">
@@ -89,7 +89,7 @@ Esse provedor é usado para gerenciar as sessões de SAML do Azure AD B2C entre 
 
 Há dois itens de metadados no perfil técnico:
 
-| item | Valor Padrão | Valores possíveis | DESCRIÇÃO
+| Item | Valor padrão | Valores possíveis | Descrição
 | --- | --- | --- | --- |
 | IncludeSessionIndex | true | true/false | Indica ao provedor que o índice de sessão deve ser armazenado. |
 | RegisterServiceProviders | true | true/false | Indica que o provedor deve registrar todos os provedores de serviço SAML que emitiram uma declaração. |

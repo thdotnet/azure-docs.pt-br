@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ae6d55180785c9407662776a95fcba31f8ba5275
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: e29e2e3e61594870cc9d704d64b1040a4211a520
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835198"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066220"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Adicionar declarações e personalizar a entrada do usuário usando políticas personalizadas no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Neste artigo, você adicionará a entrada fornecida de um novo usuário (uma declaração) ao percurso do usuário de inscrição no Azure AD (Active Directory) B2C.  Configurar a entrada como uma lista suspensa e definir se é obrigatório.
+Neste artigo, você adiciona uma nova entrada fornecida pelo usuário (uma declaração) à sua jornada do usuário de inscrição em Azure Active Directory B2C (Azure AD B2C).  Você configura a entrada como uma lista suspensa e define se ela é necessária.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -29,12 +29,12 @@ Conclua as etapas no artigo [Introdução às políticas personalizadas](active-
 
 ## <a name="add-claims"></a>Adicionar declarações
 
-A coleta de dados iniciais dos seus usuários é obtida usando o percurso do usuário de inscrição ou de entrada. Declarações adicionais podem ser coletadas posteriormente usando um percurso do usuário de edição de perfil. Sempre que o Azure AD B2C reúne informações diretamente do usuário interativamente, o Identity Experience Framework usa seu provedor autodeclarado.
+A coleta de dados iniciais dos seus usuários é obtida usando o percurso do usuário de inscrição ou de entrada. Declarações adicionais podem ser coletadas posteriormente usando um percurso do usuário de edição de perfil. A qualquer momento Azure AD B2C coleta informações diretamente do usuário de forma interativa, a estrutura de experiência de identidade usa seu provedor autodeclarado.
 
 
 ### <a name="define-the-claim"></a>Definir a declaração
 
-Vamos pedir ao usuário a cidade dele. Adicione o seguinte elemento ao elemento **ClaimsSchema** no arquivo de política TrustFrameworkBase:
+Vamos pedir ao usuário sua cidade. Adicione o seguinte elemento ao elemento **ClaimsSchema** no arquivo de política TrustFrameworkBase:
 
 ```xml
 <ClaimType Id="city">
@@ -79,7 +79,7 @@ Os elementos a seguir são usados para definir a declaração:
 
 #### <a name="dropdownsingleselect"></a>DropdownSingleSelect
 
-![Mostrando várias opções de controle de lista suspensa de seleção única](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
+![Controle suspenso de seleção única mostrando várias opções](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -96,7 +96,7 @@ Os elementos a seguir são usados para definir a declaração:
 
 #### <a name="checkboxmultiselect"></a>CheckboxMultiSelect
 
-![Mostrando várias opções de controle de caixa de seleção múltipla](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
+![Controle de caixa de seleção de seleção múltipla mostrando várias opções](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -261,7 +261,7 @@ Os elementos a seguir são usados para definir a declaração:
 ## <a name="test-the-custom-policy"></a>Teste a política personalizada
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se você está usando o diretório que contém seu locatário do Azure AD clicando nos **filtros de assinatura e diretório** no menu superior e escolhendo o diretório que contém o locatário do Azure AD.
+2. Verifique se você está usando o diretório que contém o locatário do Azure AD selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém seu locatário do Azure AD.
 3. Escolha **Todos os serviços** no canto superior esquerdo do portal do Azure e pesquise e selecione **Registros de aplicativo**.
 4. Selecione **Identity Experience Framework (versão prévia)** .
 5. Selecione **Carregar política personalizada** e carregue os dois arquivos de política alterados.

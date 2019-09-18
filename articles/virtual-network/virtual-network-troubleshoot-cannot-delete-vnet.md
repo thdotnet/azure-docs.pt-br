@@ -4,7 +4,7 @@ description: Saiba como solucionar um problema em que você não consegue exclui
 services: virtual-network
 documentationcenter: na
 author: chadmath
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-network
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 5d2e10a4c5cd5b5dc1a8fe19cef7bc47f68d3fbe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d427a8b40fcb537801ce76aae6bc32fcda3a307
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235004"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056935"
 ---
 # <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Solucionar problemas: Falha ao excluir uma rede virtual no Azure
 
@@ -36,7 +36,7 @@ Você poderá receber erros ao tentar excluir uma rede virtual no Microsoft Azur
 5. [Verifique se uma máquina virtual ainda está em execução na rede virtual](#check-whether-a-virtual-machine-is-still-running-in-the-virtual-network).
 6. [Verifique se a rede virtual está presa na migração](#check-whether-the-virtual-network-is-stuck-in-migration).
 
-## <a name="troubleshooting-steps"></a>Etapas para solucionar problemas
+## <a name="troubleshooting-steps"></a>Etapas de solução de problemas
 
 ### <a name="check-whether-a-virtual-network-gateway-is-running-in-the-virtual-network"></a>Verifique se um gateway de rede virtual está em execução na rede virtual
 

@@ -3,7 +3,7 @@ title: 'Referência da API do Azure Status Monitor v2: Habilitar monitoramento |
 description: Referência da API do Status Monitor v2. Enable-ApplicationInsightsMonitoring. Monitore o desempenho do site sem reimplantar o site. Funciona com aplicativos Web ASP.NET hospedados localmente, em VMs ou no Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: d3963889e3604fb67cb526b992e7ca27b1212b59
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 8742316697e6d6c8178bb02c8e7288499c655b6b
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326354"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033125"
 ---
 # <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring"></a>API Status Monitor v2: Habilitar-ApplicationInsightsMonitoring
 
 Este artigo descreve um cmdlet que é membro do [módulo AZ. ApplicationMonitor do PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
-## <a name="description"></a>DESCRIÇÃO
+## <a name="description"></a>Descrição
 
 Habilita o monitoramento de anexação de código de aplicativos IIS em um computador de destino.
 
@@ -70,7 +70,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 ```
 
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>Parâmetros
 
 ### <a name="-instrumentationkey"></a>-InstrumentationKey
 **Obrigatório.** Use esse parâmetro para fornecer uma chave de instrumentação única para uso por todos os aplicativos no computador de destino.

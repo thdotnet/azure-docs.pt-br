@@ -10,22 +10,22 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 42a38b47f9e49652b5fe80aa5bbd0047dc7d1e74
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0ef4bca3a2b08271b3623a346df6613b5ad16995
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511956"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063151"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Visão geral das contas de usuários no Azure Active Directory B2C
 
-No Azure AD (Azure Active Directory) B2C, é possível usar diferentes tipos de contas. O Azure Active Directory, o Azure Active Directory B2B e o Azure Active Directory B2C compartilham os tipos de contas de usuários que podem ser usados.
+Em Azure Active Directory B2C (Azure AD B2C), você pode usar diferentes tipos de contas. O Azure Active Directory, o Azure Active Directory B2B e o Azure Active Directory B2C compartilham os tipos de contas de usuários que podem ser usados.
 
 Os seguintes tipos de contas estão disponíveis:
 
 - **Conta corporativa** - Uma conta corporativa pode acessar recursos em um locatário e, com uma função de administrador, pode gerenciar locatários.
-- **Conta Convidado** - Uma conta convidado pode ser apenas uma conta Microsoft ou um usuário do Azure Active Directory que pode ser usado para acessar aplicativos ou gerenciar locatários. 
-- **Conta Consumidor** - Uma conta consumidor é criada por meio de um fluxo de usuário de inscrição em um aplicativo do Azure AD B2C, ou usando a API do Graph do Azure AD, e é usada por usuários dos aplicativos registrados no Azure AD B2C. 
+- **Conta Convidado** - Uma conta convidado pode ser apenas uma conta Microsoft ou um usuário do Azure Active Directory que pode ser usado para acessar aplicativos ou gerenciar locatários.
+- **Conta Consumidor** - Uma conta consumidor é criada por meio de um fluxo de usuário de inscrição em um aplicativo do Azure AD B2C, ou usando a API do Graph do Azure AD, e é usada por usuários dos aplicativos registrados no Azure AD B2C.
 
 ## <a name="work-account"></a>Conta corporativa
 
@@ -35,12 +35,12 @@ Ao adicionar uma nova conta corporativa, será necessário considerar as seguint
 
 - **Nome** e **Nome de usuário** - A propriedade **Nome** contém o nome e sobrenome do usuário. O **Nome de usuário** é o identificador que o usuário insere para entrar. O nome de usuário inclui o domínio completo. A parte do nome de domínio do nome de usuário deve ser o nome de domínio padrão inicial *seu-domínio.onmicrosoft.com* ou um nome de domínio personalizado [não federado verificado, ](../active-directory/fundamentals/add-custom-domain.md) como *contoso.com*.
 - **Perfil** - A conta é configurada com um perfil de dados do usuário. É possível inserir um nome, sobrenome, cargo e nome do departamento. É possível editar o perfil depois que a conta é criada.
-- **Grupos** - Use um grupo para executar tarefas de gerenciamento como atribuir licenças ou permissões a vários usuários ou dispositivos de uma só vez. Você pode colocar a nova conta em um [grupo](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) existente no locatário. 
+- **Grupos** - Use um grupo para executar tarefas de gerenciamento como atribuir licenças ou permissões a vários usuários ou dispositivos de uma só vez. Você pode colocar a nova conta em um [grupo](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) existente no locatário.
 - **Função do diretório** - É necessário especificar o nível de acesso que a conta de usuário tem aos recursos no locatário. Os níveis de permissão a seguir estão disponíveis:
 
     - **Usuário** - Os usuários podem acessar recursos atribuídos, mas não podem gerenciar a maioria dos recursos do locatário.
     - **Administrador global** - Os administradores globais têm controle total sobre todos os recursos do locatário.
-    - **Administrador limitado** - Selecione a função ou funções administrativas para o usuário. Para obter mais informações sobre as funções que podem ser selecionadas, consulte [Atribuindo funções de administrador no Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md). 
+    - **Administrador limitado** - Selecione a função ou funções administrativas para o usuário. Para obter mais informações sobre as funções que podem ser selecionadas, consulte [Atribuindo funções de administrador no Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 ### <a name="create-a-work-account"></a>Crie uma conta corporativa
 
@@ -58,12 +58,12 @@ Ao adicionar uma nova conta corporativa, será necessário considerar as seguint
 
 ### <a name="reset-a-password-for-a-user"></a>Redefinir uma senha para um usuário
 
-É possível usar as seguintes informações para redefinir a senha de um usuário: 
+É possível usar as seguintes informações para redefinir a senha de um usuário:
 
 - [Portal do Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
 - [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
 
-## <a name="guest-user"></a>Usuário Convidado
+## <a name="guest-user"></a>Usuário convidado
 
 É possível convidar usuários externos para o locatário como usuário convidado. Um cenário típico para convidar um usuário convidado para o locatário do Azure AD B2C é compartilhar responsabilidades de administração. Para um exemplo de uso de uma conta Convidado, consulte [Propriedades de um usuário de colaboração do Azure Active Directory B2C](../active-directory/b2b/user-properties.md).
 

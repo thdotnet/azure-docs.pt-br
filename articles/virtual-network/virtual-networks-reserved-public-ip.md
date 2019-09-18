@@ -4,7 +4,7 @@ description: Entender os endereços IP reservados (Clássico) e como gerenciá-l
 services: virtual-network
 documentationcenter: na
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: tysonn
 ms.assetid: 34652a55-3ab8-4c2d-8fb2-43684033b191
 ms.service: virtual-network
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: genli
-ms.openlocfilehash: 8afed4eb1add0ba3a7db474e54b2f78a0babab06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 675e7a7b557a3f19ea4d8d4960316c3859cbb9c1
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60789070"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058486"
 ---
 # <a name="reserved-ip-addresses-classic-deployment"></a>Endereços IP Reservados (implantação clássica)
 
@@ -37,9 +37,9 @@ Para saber mais sobre endereços IP no Azure, leia o artigo [Endereços IP](virt
 * **Você deseja que o IP permaneça com seu serviço de nuvem, mesmo nos estados parados ou desalocados (VMs)** . Se você quiser que seu serviço seja acessado usando um endereço IP que não seja alterado, mesmo quando VMs do serviço de nuvem estejam paradas ou desalocadas.
 * **Você deseja garantir que o tráfego de saída do Azure use um endereço IP previsível**. Você pode ter seu firewall local configurado para permitir apenas o tráfego de endereços IP específicos. Ao reservar um IP, você conhecerá o endereço IP de origem e não terá de atualizar suas regras de firewall devido a uma alteração de IP.
 
-## <a name="faqs"></a>Perguntas frequentes
+## <a name="faqs"></a>Perguntas Frequentes
 - Posso usar um IP reservado para todos os serviços do Azure?
-    Não. Os IPs reservados só podem ser usados para VMs e funções de instância de serviço de nuvem exposto através de um VIP.
+    Nº Os IPs reservados só podem ser usados para VMs e funções de instância de serviço de nuvem exposto através de um VIP.
 - Quantos IPs reservados eu posso ter?
     Para obter detalhes, consulte o artigo [Limites do Azure](../azure-subscription-service-limits.md#networking-limits).
 - Há uma cobrança para IPs reservados?
@@ -47,7 +47,7 @@ Para saber mais sobre endereços IP no Azure, leia o artigo [Endereços IP](virt
 - Como eu reservo um endereço IP?
     É possível usar o PowerShell, a [API REST de Gerenciamento do Azure](https://msdn.microsoft.com/library/azure/dn722420.aspx) ou o [Portal do Azure](https://portal.azure.com) para reservar um endereço IP em uma região do Azure. Um endereço IP reservado é associado à sua assinatura.
 - Posso usar um IP reservado com VNets baseadas em grupos de afinidades?
-    Não. Os IPs reservados têm suporte apenas em redes virtuais regionais. VNets associadas a grupos de afinidades não dão suporte a IPs reservados. Para obter mais informações sobre a associação de uma VNet a uma região ou a um grupo de afinidades, veja o artigo [Sobre VNets regionais e grupos de afinidades](virtual-networks-migrate-to-regional-vnet.md).
+    Nº Os IPs reservados têm suporte apenas em redes virtuais regionais. VNets associadas a grupos de afinidades não dão suporte a IPs reservados. Para obter mais informações sobre a associação de uma VNet a uma região ou a um grupo de afinidades, veja o artigo [Sobre VNets regionais e grupos de afinidades](virtual-networks-migrate-to-regional-vnet.md).
 
 ## <a name="manage-reserved-vips"></a>Gerenciar VIPs reservados
 

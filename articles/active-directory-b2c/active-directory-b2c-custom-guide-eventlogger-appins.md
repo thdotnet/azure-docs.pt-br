@@ -10,25 +10,25 @@ ms.workload: identity
 ms.date: 10/12/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e18157c95dac0de90c50b4b7e8591e32c5b76aaf
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: c02757fb4b48ebf1220a5826bc9699741faa5170
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227240"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066178"
 ---
 # <a name="track-user-behavior-in-azure-active-directory-b2c-using-application-insights"></a>Rastrear o comportamento do usuário no Azure Active Directory B2C usando o Application Insights
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Ao usar o B2C do Azure Active Directory (Azure AD) junto com o Azure Application Insights, você pode obter logs de eventos detalhados e personalizados para as jornadas do usuário. Neste artigo, você aprenderá a:
+Ao usar o Azure Active Directory B2C (Azure AD B2C) junto com o Aplicativo Azure insights, você pode obter logs de eventos detalhados e personalizados para os percursos do usuário. Neste artigo, você aprenderá a:
 
 * Obter insights sobre o comportamento do usuário.
 * Solucionar problemas de suas próprias políticas em desenvolvimento ou em produção.
 * Medir o desempenho.
 * Criar notificações do Application Insights.
 
-## <a name="how-it-works"></a>Como ele funciona
+## <a name="how-it-works"></a>Como funciona
 
 A estrutura de experiência de identidade no Azure AD B2C inclui o provedor `Handler="Web.TPEngine.Providers.AzureApplicationInsightsProvider, Web.TPEngine, Version=1.0.0.0`. Ele envia dados de eventos diretamente para o Application Insights usando a chave de instrumentação fornecida para o Azure Active Directory B2C.
 
@@ -45,7 +45,7 @@ Conclua as etapas em [Introdução às políticas personalizadas](active-directo
 Quando você estiver usando o Application Insights com o Azure AD B2C, tudo o que você precisa fazer é criar um recurso e obter a chave de instrumentação.
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Verifique se você está usando o diretório que contém sua assinatura do Azure clicando no **Diretório e no filtro de inscrição** no menu superior e escolhendo o diretório que contém sua assinatura. Esse locatário não é o seu locatário do Azure Active Directory B2C.
+2. Verifique se você está usando o diretório que contém sua assinatura do Azure selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém sua assinatura. Esse locatário não é o seu locatário do Azure Active Directory B2C.
 3. Escolher **criar um recurso** no canto superior esquerdo do portal do Azure e, em seguida, procure e selecione **Application Insights**.
 4. Clique em **Criar**.
 5. Insira um **nome** para o recurso.
@@ -111,10 +111,10 @@ Perfis técnicos podem ser considerados funções na Estrutura de Experiência d
 
 | Perfil técnico | Tarefa |
 | ----------------- | -----|
-| AzureInsights-Common | Cria um conjunto comum de parâmetros a serem incluídos em todos os perfis técnicos do AzureInsights. | 
-| AzureInsights-SignInRequest | Cria um evento SignIn com um conjunto de declarações quando uma solicitação de entrada foi recebida. | 
-| AzureInsights-UserSignup | Cria um evento SignIn com um conjunto de declarações quando uma solicitação de entrada foi recebida. | 
-| AzureInsights-SignInComplete | Registra a conclusão bem-sucedida de uma autenticação quando um token foi enviado ao aplicativo da terceira parte confiável. | 
+| AzureInsights-Common | Cria um conjunto comum de parâmetros a serem incluídos em todos os perfis técnicos do AzureInsights. |
+| AzureInsights-SignInRequest | Cria um evento SignIn com um conjunto de declarações quando uma solicitação de entrada foi recebida. |
+| AzureInsights-UserSignup | Cria um evento SignIn com um conjunto de declarações quando uma solicitação de entrada foi recebida. |
+| AzureInsights-SignInComplete | Registra a conclusão bem-sucedida de uma autenticação quando um token foi enviado ao aplicativo da terceira parte confiável. |
 
 Adicione os perfis para o *trustframeworkextensions. XML* arquivo do starter pack. Adicione esses elementos para o **ClaimsProviders** elemento:
 
@@ -230,11 +230,11 @@ Faça upload do arquivo *TrustFrameworkExtensions.xml* no seu locatário. Em seg
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Adicione tipos de declarações e eventos ao percurso do usuário para ajustar às suas necessidades. Você pode usar [resolvedores de declaração](claim-resolver-overview.md) ou qualquer tipo de declaração de sequência, adicionar as declarações adicionando um elemento **Entrada de declaração** ao evento Application Insights ou ao perfil técnico Comum do AzureInsights. 
+Adicione tipos de declarações e eventos ao percurso do usuário para ajustar às suas necessidades. Você pode usar [resolvedores de declaração](claim-resolver-overview.md) ou qualquer tipo de declaração de sequência, adicionar as declarações adicionando um elemento **Entrada de declaração** ao evento Application Insights ou ao perfil técnico Comum do AzureInsights.
 
 - **ClaimTypeReferenceId** é a referência a um tipo de declaração.
-- **PartnerClaimType** é o nome da propriedade que é exibido no Azure Insights. Use a sintaxe da `{property:NAME}`, onde `NAME` é a propriedade que está sendo adicionada ao evento. 
-- **DefaultValue** usa qualquer valor de cadeia ou o resolvedor de reclamações. 
+- **PartnerClaimType** é o nome da propriedade que é exibido no Azure Insights. Use a sintaxe da `{property:NAME}`, onde `NAME` é a propriedade que está sendo adicionada ao evento.
+- **DefaultValue** usa qualquer valor de cadeia ou o resolvedor de reclamações.
 
 ```XML
 <InputClaim ClaimTypeReferenceId="app_session" PartnerClaimType="{property:app_session}" DefaultValue="{OAUTH-KV:app_session}" />

@@ -3,16 +3,17 @@ title: Usar um PC com Windows com Hadoop no HDInsight - Azure
 description: Trabalhe em um PC com Windows no Hadoop no HDInsight. Gerencie e consulte clusters com as ferramentas do PowerShell, Visual Studio e Linux. Desenvolva soluções de Big Data com .NET.
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.topic: conceptual
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 04/24/2019
-ms.openlocfilehash: 5045c48a00c51a16d37dcf4b7f72f25633f23b3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 942ca2fe89441ab7497e98c6ffe1fffb9847da77
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926024"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076580"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Trabalhar no ecossistema Apache Hadoop no HDInsight por meio de um computador com Windows
 
@@ -33,7 +34,7 @@ Execute as etapas para [instalar e configurar o Azure Powershell](https://docs.m
 
 ## <a name="utilities-you-can-run-in-a-browser"></a>Utilitários que você pode executar em um navegador
 Os utilitários a seguir tem uma interface de usuário na Web que é executada em um navegador Web:
-* **[O Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)**  é um shell interativo e de linha de comando que é executado no navegador e de dentro do portal do Azure.
+* **[Azure cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview)** é um shell de linha de comando interativo que é executado no navegador e no portal do Azure.
 * **[Interface do usuário da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md)** é um utilitário de gerenciamento e monitoramento disponível no portal do Azure que pode ser usado para gerenciar tipos diferentes de trabalho, como:
     * [Usar o Apache Ambari com a API REST](hdinsight-hadoop-manage-ambari-rest-api.md)
     * [Exibição do Apache Hive no Apache Ambari](hadoop/apache-hadoop-use-hive-ambari-view.md)
@@ -78,13 +79,13 @@ Os clusters do Apache Spark no HDInsight incluem notebooks e kernels Zeppelin qu
 
 Se você encontrar uma situação na qual deve usar uma ferramenta ou tecnologia que só está disponível no Linux, considere as seguintes opções:
 
-* **Bash no Ubuntu no Windows 10** fornece um subsistema Linux no Windows. O Bash permite que você execute diretamente os utilitários Linux sem a necessidade de manter uma instalação dedicada do Linux. Ver [subsistema do Windows para Linux instalação guia para o Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) para etapas de instalação.  Outros [shells do Unix](https://www.gnu.org/software/bash/) funcionará bem.
+* O **bash no Ubuntu no Windows 10** fornece um subsistema Linux no Windows. O Bash permite que você execute diretamente os utilitários Linux sem a necessidade de manter uma instalação dedicada do Linux. Confira o [Guia de instalação do subsistema do Windows para Linux para o Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) para conhecer as etapas de instalação.  Outros [shells do Unix](https://www.gnu.org/software/bash/) também funcionarão.
 * **Docker para Windows** fornece acesso às muitas ferramentas baseadas em Linux e pode ser executado diretamente do Windows. Por exemplo, você pode usar o Docker para executar o cliente Beeline para diretamente do Windows. Você pode também usar o Docker para executar um notebook local do Jupyter e se conectar remotamente ao Spark no HDInsight. [Introdução ao Docker para Windows](https://docs.docker.com/docker-for-windows/)
 * **[MobaXTerm](https://mobaxterm.mobatek.net/)** permite que você navegue graficamente no sistema de arquivos de cluster em uma conexão SSH.
 
 ## <a name="cross-platform-tools"></a>Ferramentas de plataforma cruzada
 
-A CLI (interface de linha de comando) do Azure é a experiência da linha de comando de plataforma cruzada da Microsoft para gerenciar os recursos do Azure.  Para obter mais informações, consulte [Interface de linha de comando do Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+A CLI (interface de linha de comando) do Azure é a experiência da linha de comando de plataforma cruzada da Microsoft para gerenciar os recursos do Azure.  Para obter mais informações, consulte [interface de linha de comando (CLI) do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
 ## <a name="next-steps"></a>Próximas etapas
 Se você for um usuário novo com relação ao trabalho em clusters baseados em Linux, consulte os artigos a seguir:

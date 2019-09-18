@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2018
 ms.author: apimpm
-ms.openlocfilehash: f0f89275006498c0ff4883f259d7e76f723b922b
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 467d9cee74567fc0d19031773415675ae7c51818
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851334"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066763"
 ---
 # <a name="advanced-request-throttling-with-azure-api-management"></a>Limitação de solicitação avançada com o Gerenciamento de API do Azure
 Ser capaz de limitar as solicitações de entrada é fundamental para o Gerenciamento de API do Azure. Ao controlar a taxa de solicitações ou as solicitações/dados totais transferidos, o Gerenciamento de API permite que os provedores de API protejam suas APIs contra o abuso e criem valor para diferentes níveis de produto de API.
@@ -29,7 +29,8 @@ Até o momento, os recursos de limitação da taxa estavam restritos à assinatu
 
 ## <a name="custom-key-based-throttling"></a>Limitação baseada em chave personalizada
 
-> OBSERVAÇÃO: As `rate-limit-by-key` políticas `quota-by-key` e não estão disponíveis no nível de consumo do gerenciamento de API do Azure. 
+> [!NOTE]
+> As `rate-limit-by-key` políticas `quota-by-key` e não estão disponíveis no nível de consumo do gerenciamento de API do Azure. 
 
 As novas políticas [rate-limit-by-key](/azure/api-management/api-management-access-restriction-policies#LimitCallRateByKey) e [quota-by-key](/azure/api-management/api-management-access-restriction-policies#SetUsageQuotaByKey) fornecem uma solução mais flexível para o controle de tráfego. Essas novas políticas permitem que você defina expressões a fim de identificar as chaves que são usadas para acompanhar o tráfego. O modo como isso funciona será ilustrado com mais facilidade usando um exemplo. 
 
@@ -78,5 +79,5 @@ Isso permite que o aplicativo cliente do desenvolvedor escolha como quer criar a
 O Gerenciamento de API do Azure fornece limitação de taxa e de cota para proteger e agregar valor ao serviço de sua API. As novas políticas de limitação com regras de escopo personalizadas permitem um controle mais preciso sobre essas políticas para permitir que seus clientes criem aplicativos ainda melhores. Os exemplos deste artigo demonstram o uso dessas novas políticas criando chaves de limitação de taxa com endereços IP do cliente, identidade do usuário e valores gerados pelo cliente. No entanto, há muitas outras partes da mensagem que podem ser usadas como agente do usuário, fragmentos de caminho de URL, tamanho da mensagem.
 
 ## <a name="next-steps"></a>Próximas etapas
-Envie-nos seus comentários no thread de discussão deste tópico. Seria ótimo conhecer outros possíveis valores de chave que foram uma escolha lógica para os seus cenários.
+Envie-nos seus comentários como um problema do GitHub para este tópico. Seria ótimo conhecer outros possíveis valores de chave que foram uma escolha lógica para os seus cenários.
 

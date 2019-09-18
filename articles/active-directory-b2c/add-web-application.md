@@ -10,24 +10,24 @@ ms.custom: mvc
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: a1d098550c6fb733e088f8ad211d29f48f55d2d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50a4ead58cc70524ec464e52ce546b36f9685df5
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511711"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064544"
 ---
 # <a name="add-a-web-api-application-to-your-azure-active-directory-b2c-tenant"></a>Adicionar um aplicativo de API Web ao locatário do Azure Active Directory B2C
 
- Registre os recursos da API Web em seu locatário para que eles podem aceitar e responder às solicitações por aplicativos cliente que apresentam um token de acesso. Este artigo mostra como registrar o aplicativo no Azure Active Directory (Azure AD) B2C.
+ Registre recursos da API Web em seu locatário para que eles possam aceitar e responder a solicitações por aplicativos cliente que apresentem um token de acesso. Este artigo mostra como registrar o aplicativo no Azure Active Directory B2C (Azure AD B2C).
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C. Selecione o **diretório +** filtro de assinatura no menu superior e escolha o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Selecione **Aplicativos** e, em seguida, selecione **Adicionar**.
 5. Insira um nome para o aplicativo. Por exemplo, *webapi1*.
 6. Para **Incluir aplicativo da Web / API da Web** e **Permitir fluxo implícito**, selecione **Sim**.
-7. Para a **URL de resposta**, insira um ponto de extremidade em que o Azure AD B2C deve retornar os tokens solicitados pelo seu aplicativo. Em seu aplicativo de produção, você pode definir a URL de resposta para um valor como `https://localhost:44332`. Para fins de teste, defina a URL de resposta `https://jwt.ms`.
+7. Para a **URL de resposta**, insira um ponto de extremidade em que o Azure AD B2C deve retornar os tokens solicitados pelo seu aplicativo. Em seu aplicativo de produção, você pode definir a URL de resposta para um valor `https://localhost:44332`como. Para fins de teste, defina a URL de `https://jwt.ms`resposta como.
 8. Para o **ID do aplicativo URI**, insira o identificador usado para sua API da web. O URI do identificador completo, incluindo o domínio, é gerado para você. Por exemplo: `https://contosotenant.onmicrosoft.com/api`.
 9. Clique em **Criar**.
 10. Na página de propriedades, registre a ID do aplicativo que você usará ao configurar o aplicativo Web.

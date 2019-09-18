@@ -10,16 +10,16 @@ ms.topic: article
 ms.date: 06/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 130186af13b9207326cd52b46b880c1f13a16100
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 3633ffb09d71bd166cb7366f860662d9b91c7f07
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67848086"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063390"
 ---
 # <a name="tutorial-create-user-flows-in-azure-active-directory-b2c"></a>Tutorial: Criar fluxos dos usuários no Azure Active Directory B2C
 
-Em seus aplicativos, você pode ter [fluxos de usuário](active-directory-b2c-reference-policies.md) que permitem que os usuários se inscrevam, entrem ou gerenciem seu perfil. É possível criar vários fluxos dos usuários de diferentes tipos no locatário do Azure AD (Azure Active Directory) B2C e usá-los nos aplicativos, conforme necessário. Fluxos dos usuários podem ser reutilizados nos aplicativos.
+Em seus aplicativos, você pode ter [fluxos de usuário](active-directory-b2c-reference-policies.md) que permitem que os usuários se inscrevam, entrem ou gerenciem seu perfil. Você pode criar vários fluxos de usuário de diferentes tipos em seu locatário Azure Active Directory B2C (Azure AD B2C) e usá-los em seus aplicativos, conforme necessário. Fluxos dos usuários podem ser reutilizados nos aplicativos.
 
 Neste artigo, você aprenderá a:
 
@@ -41,7 +41,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 O fluxo do usuário de inscrição e credenciais controla as experiências de inscrição e credenciais do consumidor com uma única configuração. Os usuários do aplicativo são conduzidos pelo caminho certo, de acordo com o contexto.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+1. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém seu locatário.
 
     ![Filtro de diretório e assinatura com locatário B2C selecionado](./media/tutorial-create-user-flows/switch-directories.PNG)
 

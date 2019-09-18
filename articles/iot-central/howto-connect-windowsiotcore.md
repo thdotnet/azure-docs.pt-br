@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: b14d6f70f4c4163f16c8275f4e071da6a9e0bc78
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 3513dc0a1928168d6313e9d49a8f3d5d27aca781
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70019817"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066341"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Conectar um dispositivo Windows IoT Core ao aplicativo Azure IoT Central
 
@@ -27,7 +27,7 @@ Para concluir as etapas neste artigo, você precisa do seguinte:
 
 - Um aplicativo Azure IoT Central criado a partir do modelo de aplicativo de **Devkits de Exemplo**. Para obter mais informações, consulte o [Criar um início rápido de aplicativo](quick-deploy-iot-central.md).
 
-- Um dispositivo executando o sistema operacional Windows 10 IoT Core. Para obter mais informações, consulte Configurando [seu dispositivo Windows 10 IOT Core](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup).
+- Um dispositivo executando o sistema operacional Windows 10 IoT Core. Para obter mais informações, consulte [configurando seu dispositivo Windows 10 IOT Core](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup).
 
 - Um computador de desenvolvimento com o [node. js](https://nodejs.org/) versão 8.0.0 ou posterior instalado. É possível executar `node --version` na linha de comando para verificar a versão. O Node.js está disponível para uma ampla variedade de sistemas operacionais.
 
@@ -43,13 +43,27 @@ Para obter detalhes completos sobre a configuração do modelo de dispositivo, c
 
 ## <a name="add-a-real-device"></a>Adicionar um dispositivo real
 
-No aplicativo IoT Central do Azure, use a página **Device Explorer** para adicionar um dispositivo real do modelo de dispositivo do **Windows 10 IOT Core** . Anote os detalhes de conexão do dispositivo (**ID do escopo**, **ID do dispositivo**e **chave primária**). Para obter mais informações, consulte [obter informações de conexão](howto-generate-connection-string.md#get-connection-information).
+No aplicativo IoT Central do Azure, use a página **Device Explorer** para adicionar um dispositivo real do modelo de dispositivo do **Windows 10 IOT Core** . Anote os detalhes de conexão do dispositivo (**ID do escopo**, **ID do dispositivo**e **chave primária**).
 
 ## <a name="prepare-the-device"></a>Preparar o dispositivo
 
-Para que o dispositivo se conecte ao IoT Central, ele precisa de uma cadeia de conexão.
+Para que o dispositivo se conecte ao IoT Central, ele precisa de uma cadeia de conexão:
 
-[!INCLUDE [iot-central-howto-connection-string](../../includes/iot-central-howto-connection-string.md)]
+1. Use o utilitário de linha de comando `dps-keygen` para gerar uma cadeia de conexão:
+
+    Para instalar o [utilitário de gerador de chave](https://github.com/Azure/dps-keygen), execute o seguinte comando:
+
+    ```cmd/sh
+    npm i -g dps-keygen
+    ```
+
+1. Para gerar uma cadeia de conexão, execute o seguinte comando usando os detalhes de conexão anotados anteriormente:
+
+    ```cmd/sh
+    dps-keygen -di:<Device ID> -dk:<Primary or Secondary Key> -si:<Scope ID>
+    ```
+
+1. Copie a cadeia de conexão da saída `dps-keygen` para usar em seu código de dispositivo.
 
 Para que o código do dispositivo acesse a cadeia de conexão, salve-o em um arquivo chamado **Connection. String. iothub** na pasta `C:\Data\Users\DefaultAccount\Documents\` em seu dispositivo Windows 10 IOT Core.
 
@@ -104,7 +118,7 @@ Configurações numéricas
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Velocidade da ventoinha    | fanSpeed   | RPM   | 0              | 0       | 1000    | 0       |
 
-### <a name="properties"></a>Propriedades
+### <a name="properties"></a>Properties
 
 | Tipo            | Display name | Nome do campo | Tipo de dados |
 | --------------- | ------------ | ---------- | --------- |

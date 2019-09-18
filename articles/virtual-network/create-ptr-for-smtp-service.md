@@ -5,6 +5,7 @@ description: Descreve como configurar zonas de pesquisa inversa para uma verific
 services: virtual-network
 documentationcenter: virtual-network
 author: genlin
+manager: dcscontentpm
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
@@ -12,16 +13,16 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 203c3c5f371af7de891f0949a35378294bb50a0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 084fdb7f850f3819738a982127fa98efab114197
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60713632"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059031"
 ---
 # <a name="configure-reverse-lookup-zones-for-an-smtp-banner-check"></a>Configurar zonas de pesquisa inversa para uma verificação de banner de SMTP
 
-Este artigo descreve como usar uma zona inversa no DNS do Azure e criar um registro de DNS inverso (PTR) para verificação de Banner de SMTP.
+Este artigo descreve como usar uma zona inversa no DNS do Azure e criar um registro DNS (PTR) reverso para verificação de faixa de SMTP.
 
 ## <a name="symptom"></a>Sintoma
 

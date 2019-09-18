@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 07/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d153238c58d72874ddbf7979e68423e21ea7c020
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 8784a06306f59015b95293d90ff5509dcfcae045
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073154"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057928"
 ---
 # <a name="back-up-your-app-in-azure"></a>Fazer backup de seu aplicativo no Azure
 O recurso de Backup e Restauração no [Serviço de Aplicativo do Azure](overview.md) permite que você crie backups de aplicativos facilmente, de modo manual ou agendado.  Os backups podem ser configurados para serem retidos por um período indefinido de tempo. Você pode restaurar o aplicativo em um instantâneo de um estado anterior, substituindo o aplicativo existente ou restaurando em outro aplicativo.
@@ -39,7 +39,7 @@ As soluções de banco de dados a seguir são compatíveis com o recurso de back
    - [Banco de Dados SQL](https://azure.microsoft.com/services/sql-database/)
    - [Banco de Dados do Azure para MySQL](https://azure.microsoft.com/services/mysql)
    - [Banco de Dados do Azure para PostgreSQL](https://azure.microsoft.com/services/postgresql)
-   - [MySQL no aplicativo](https://blogs.msdn.microsoft.com/appserviceteam/2017/03/06/announcing-general-availability-for-mysql-in-app)
+   - [MySQL no aplicativo](https://azure.microsoft.com/en-us/blog/mysql-in-app-preview-app-service/)
  
 
 > [!NOTE]

@@ -1,6 +1,6 @@
 ---
-title: O daemon aplicativo chamar APIs da web (chamar APIs da web) - plataforma de identidade da Microsoft
-description: Saiba como criar um aplicativo daemon que chamadas de web APIs (chamar APIs da web)
+title: Aplicativo de daemon chamando APIs Web (chamando APIs Web)-plataforma de identidade da Microsoft
+description: Saiba como criar um aplicativo daemon que chama APIs da Web (chamando APIs Web)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -12,34 +12,65 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aff375f996126d9e8b64361fc0e5673c25d30c19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9eacb574f20abeb63a9d0ab8caf534eb7abb9784
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65076264"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056356"
 ---
-# <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Aplicativo daemon que chamadas de web APIs - chamar uma API da web do aplicativo
+# <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Aplicativo daemon que chama APIs Web – chama uma API Web do aplicativo
 
-Um aplicativo daemon pode chamar uma API da web de um aplicativo de daemon do .NET ou chamar várias APIs de web previamente aprovada.
+Um aplicativo de daemon pode chamar uma API da Web de um aplicativo de daemon do .NET ou chamar várias APIs Web previamente aprovadas.
 
-## <a name="calling-a-web-api-from-a-net-daemon-application"></a>Chamando uma API da web em um aplicativo de daemon do .NET
+## <a name="calling-a-web-api-from-a-net-daemon-application"></a>Chamando uma API Web de um aplicativo de daemon do .NET
+
+Veja como usar o token para chamar uma API
+
+# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 [!INCLUDE [Call web API in .NET](../../../includes/active-directory-develop-scenarios-call-apis-dotnet.md)]
 
-<!--
-More includes will come later for Python and Java
--->
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
-## <a name="calling-several-apis"></a>Chamar várias APIs
+```Python
+endpoint = "url to the API" 
+http_headers = {'Authorization': 'Bearer ' + result['access_token'],
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'}
+data = requests.get(endpoint, headers=http_headers, stream=False).json()
+```
 
-Para aplicativos de daemon, que você chamar APIs da web precisam ser aprovadas previamente. Não haverá qualquer consentimento incremental com aplicativos daemon (não há nenhuma interação do usuário). O administrador de locatário precisa previamente consentir o aplicativo e todas as permissões de API. Se você deseja chamar várias APIs, você precisará adquirir um token para cada recurso, cada chamada de tempo `AcquireTokenForClient`. MSAL usará o cache de token de aplicativo para evitar chamadas de serviço desnecessário.
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+```Java
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+// Set the appropriate header fields in the request header.
+conn.setRequestProperty("Authorization", "Bearer " + accessToken);
+conn.setRequestProperty("Accept", "application/json");
+
+String response = HttpClientHelper.getResponseStringFromConn(conn);
+
+int responseCode = conn.getResponseCode();
+if(responseCode != HttpURLConnection.HTTP_OK) {
+    throw new IOException(response);
+}
+
+JSONObject responseObject = HttpClientHelper.processResponse(responseCode, response);
+```
+
+---
+
+## <a name="calling-several-apis"></a>Chamando várias APIs
+
+Para aplicativos daemon, as APIs da Web que você chama precisam ser aprovadas previamente. Não haverá nenhum consentimento incremental com aplicativos de daemon (não há interação do usuário). O administrador de locatários precisa consentir previamente o aplicativo e todas as permissões de API. Se você quiser chamar várias APIs, precisará adquirir um token para cada recurso, sempre chamando `AcquireTokenForClient`. MSAL usará o cache de token de aplicativo para evitar chamadas de serviço desnecessárias.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Aplicativo daemon - mover para a produção](./scenario-daemon-production.md)
+> [Aplicativo de daemon – mover para produção](./scenario-daemon-production.md)

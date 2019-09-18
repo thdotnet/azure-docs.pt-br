@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: cephalin
-ms.openlocfilehash: 67b9c0ba2566206b0e70db51844b21e5d5d3c261
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: ddeb46a2c7bc7f24f55c22f446926529cee7b598
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172499"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059548"
 ---
 Depois que os registros do nome de domínio forem propagados, você deverá ser capaz de usar o navegador para verificar se o nome de domínio personalizado pode ser usado para acessar seu aplicativo Web no Serviço de Aplicativo do Azure.
 
@@ -30,7 +30,7 @@ Se ainda não tiver adicionado o aplicativo Web como um ponto de extremidade do 
    
     ![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 3. Na folha **Domínios personalizados**, clique em **Adicionar nome do host**.
-4. Use as caixas de texto **Nome do host** para inserir o nome de domínio do Gerenciador de Tráfego a associar a este aplicativo Web.
+4. Use as caixas de texto nome de **host** para inserir o nome de domínio personalizado a ser associado a este aplicativo Web.
    
     ![](./media/custom-dns-web-site/dncmntask-cname-8.png)
 5. Clique em **Validar** para salvar a configuração de nome de domínio.

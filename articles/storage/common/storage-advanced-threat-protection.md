@@ -1,46 +1,44 @@
 ---
-title: Proteção Avançada contra Ameaças do Armazenamento do Azure
-description: Configure a Proteção avançada contra ameaças do Armazenamento do Azure para detectar anomalias na atividade da conta e notificá-lo de eventuais tentativas prejudiciais de acessar sua conta.
+title: Proteção avançada contra ameaças para o armazenamento do Azure
+description: Configure a proteção avançada contra ameaças para o armazenamento do Azure para detectar anomalias na atividade de conta e ser notificado de tentativas potencialmente prejudiciais de acessar sua conta.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 09/16/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 2a88e778458da3c5faace401863998dda746ac75
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.openlocfilehash: 21204a7a2fb5a6907a8af9cb91fe8b018f7a4714
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051497"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076502"
 ---
-# <a name="advanced-threat-protection-for-azure-storage"></a>Proteção Avançada contra Ameaças do Armazenamento do Azure
+# <a name="advanced-threat-protection-for-azure-storage"></a>Proteção avançada contra ameaças para o armazenamento do Azure
 
-A Proteção Avançada contra Ameaças do Armazenamento do Azure oferece uma camada adicional de inteligência de segurança que detecta tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Essa camada de proteção permite que você resolva as ameaças sem precisar ser um especialista em segurança ou gerenciar sistemas de monitoramento de segurança. 
+A proteção avançada contra ameaças para o armazenamento do Azure fornece uma camada adicional de inteligência de segurança que detecta tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Essa camada de proteção permite que você resolva as ameaças sem ser um especialista em segurança ou gerenciar sistemas de monitoramento de segurança.
 
-Os alertas de segurança são disparados quando ocorrem anomalias na atividade.  Esses alertas de segurança são integrados à [central de segurança do Azure](https://azure.microsoft.com/services/security-center/)e também são enviados por email para administradores de assinatura, com detalhes de atividades suspeitas e recomendações sobre como investigar e corrigir ameaças.
+Os alertas de segurança são disparados quando ocorrem anomalias na atividade. Esses alertas de segurança são integrados à [central de segurança do Azure](https://azure.microsoft.com/services/security-center/)e também são enviados por email para administradores de assinatura, com detalhes de atividades suspeitas e recomendações sobre como investigar e corrigir ameaças.
 
 > [!NOTE]
-> * A proteção avançada contra ameaças para o armazenamento do Azure está disponível no momento apenas para o armazenamento de BLOBs.
-> * Para obter detalhes de preços, incluindo uma avaliação gratuita de 30 dias, consulte a [página de preços da central de segurança do Azure]( https://azure.microsoft.com/pricing/details/security-center/).
-> * O recurso ATP para armazenamento do Azure não está disponível atualmente nas regiões Azure governamental e soberanas Cloud.
+> A proteção avançada contra ameaças para o armazenamento do Azure está disponível no momento apenas para o armazenamento de BLOBs. Ele não está disponível nas regiões do Azure governamental e do soberanas Cloud. Para obter detalhes de preços, incluindo uma avaliação gratuita de 30 dias, consulte a [página de preços da central de segurança do Azure]( https://azure.microsoft.com/pricing/details/security-center/).
 
-A proteção avançada contra ameaças para o armazenamento do Azure ingere logs de diagnóstico de solicitações de leitura, gravação e exclusão para o armazenamento de BLOB para detecção de ameaças. Para investigar os alertas da proteção avançada contra ameaças, você pode exibir a atividade de armazenamento relacionada usando o log de Análise de Armazenamento. Para obter mais informações, consulte como [Configurar o log de análise de armazenamento](storage-monitor-storage-account.md#configure-logging).
+A proteção avançada contra ameaças para o armazenamento do Azure ingere logs de diagnóstico de solicitações de leitura, gravação e exclusão para o armazenamento de BLOB para detecção de ameaças. Para investigar os alertas da proteção avançada contra ameaças, você pode exibir a atividade de armazenamento relacionada usando o log de Análise de Armazenamento. Para obter mais informações, consulte **Configurar o log** em [monitorar uma conta de armazenamento no portal do Azure](storage-monitor-storage-account.md#configure-logging).
 
-## <a name="set-up-advanced-threat-protection"></a>Configurar a proteção avançada contra ameaças 
+## <a name="set-up-advanced-threat-protection"></a>Configurar a proteção avançada contra ameaças
 
-### <a name="using-the-portal"></a>Usando o portal
+A proteção avançada contra ameaças é habilitada para sua conta de armazenamento por padrão. Você pode configurar a proteção avançada contra ameaças de várias maneiras, descritas nas seções a seguir.
 
-1. Inicie o portal do Azure em [https://portal.azure.com](https://portal.azure.com/).
+### <a name="use-the-azure-portal"></a>Use o Portal do Azure
 
-2. Navegue até a página de configuração da conta de Armazenamento do Azure que você deseja proteger. Na página **Configurações**, selecione **Proteção avançada contra ameaças**.
+1. Inicie o [Portal do Azure](https://portal.azure.com/).
+1. Navegue até sua conta de armazenamento do Azure. Em **configurações**, selecione **segurança avançada**.
+1. Selecione o link **configurações** na página configuração de segurança avançada.
+1. Defina **segurança avançada** como **ativado**.
+1. Clique em **salvar** para salvar a política nova ou atualizada.
 
-3. Na folha de configuração **Proteção avançada contra ameaças**
-    * **ATIVAR** *Proteção avançada* contra ameaças
-    * Clique em **Salvar** para salvar a política de Proteção avançada contra ameaças nova ou atualizada. (Os preços na imagem são apenas para fins de exemplo.)
-
-![Ativar a proteção avançada contra ameaças do Armazenamento do Azure](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-turn-on.png)
+    ![Ativar a proteção avançada contra ameaças do Armazenamento do Azure](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-turn-on.png)
 
 ### <a name="using-azure-security-center"></a>Como usar a Central de Segurança do Azure
 
@@ -62,7 +60,7 @@ Quando você assina a camada Standard na central de segurança do Azure, a prote
 
 Use um modelo de Azure Resource Manager para implantar uma conta de armazenamento do Azure com a proteção avançada contra ameaças habilitada. Para obter mais informações, consulte [conta de armazenamento com proteção avançada contra ameaças](https://azure.microsoft.com/resources/templates/201-storage-advanced-threat-protection-create/).
 
-### <a name="using-azure-policy"></a>Usando Azure Policy
+### <a name="using-an-azure-policy"></a>Usando um Azure Policy
 
 Use um Azure Policy para habilitar a proteção avançada contra ameaças em contas de armazenamento em uma assinatura ou grupo de recursos específico.
 
@@ -71,7 +69,7 @@ Use um Azure Policy para habilitar a proteção avançada contra ameaças em con
 1. Procure a política **implantar proteção avançada contra ameaças em contas de armazenamento** .
 
      ![Política de pesquisa](./media/storage-advanced-threat-protection/storage-atp-policy-definitions.png)
-  
+
 1. Selecione uma assinatura do Azure ou um grupo de recursos.
 
     ![Selecionar assinatura ou grupo](./media/storage-advanced-threat-protection/storage-atp-policy2.png)
@@ -80,7 +78,8 @@ Use um Azure Policy para habilitar a proteção avançada contra ameaças em con
 
     ![Página Definições de política](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
-### <a name="using-rest-api"></a>Usando a API REST
+### <a name="using-the-rest-api"></a>Usando a API REST
+
 Use comandos da API REST para criar, atualizar ou obter a configuração de proteção avançada contra ameaças para uma conta de armazenamento específica.
 
 * [Proteção avançada contra ameaças – criar](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/create)
@@ -90,9 +89,9 @@ Use comandos da API REST para criar, atualizar ou obter a configuração de prot
 
 Use os seguintes cmdlets do PowerShell:
 
-  * [Habilitar a proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
-  * [Obtenha proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
-  * [Desabilitar a proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
+* [Habilitar a proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
+* [Obtenha proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
+* [Desabilitar a proteção avançada contra ameaças](https://docs.microsoft.com/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
 
 ## <a name="explore-security-anomalies"></a>Explorar anomalias de segurança
 
@@ -102,10 +101,9 @@ Quando ocorrerem anomalias na atividade de armazenamento, você receberá uma no
 * o nome da conta de armazenamento
 * A hora do evento
 * O tipo de armazenamento
-* As possíveis causas 
+* As possíveis causas
 * As etapas de investigação
 * As etapas de correção
-
 
 O email também inclui detalhes sobre possíveis causas e ações recomendadas para investigar e atenuar a ameaça potencial.
 
@@ -117,10 +115,9 @@ O email também inclui detalhes sobre possíveis causas e ações recomendadas p
 
 ## <a name="protection-alerts"></a>Alertas de proteção
 
-Os alertas são gerados por tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Para obter uma lista desses alertas, consulte alertas [do armazenamento do Azure](../../security-center/security-center-alerts-data-services.md#azure-storage)
+Os alertas são gerados por tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Para obter uma lista de alertas para o armazenamento do Azure, consulte a seção **armazenamento** em [detecção de ameaças para serviços de dados nos alertas da central de segurança do Azure](../../security-center/security-center-alerts-data-services.md#azure-storage)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * Saiba mais sobre [logs em contas de armazenamento do Azure](/rest/api/storageservices/About-Storage-Analytics-Logging)
-
 * Saiba mais sobre a [Central de Segurança do Azure](../../security-center/security-center-intro.md)

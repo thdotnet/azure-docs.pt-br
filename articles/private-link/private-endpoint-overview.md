@@ -7,12 +7,12 @@ ms.service: virtual-network
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 031055dce66361cc128ed42a4d0c942ccb5a3b82
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: c2f26c1f672644edd4993010c64062ee4108ca40
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71017965"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057816"
 ---
 # <a name="what-is-azure-private-endpoint"></a>O que é o ponto de extremidade privado do Azure?
 
@@ -55,8 +55,8 @@ Um recurso de link privado é o destino de destino de um determinado ponto de ex
 |**Serviço de vínculo privado** (Seu próprio serviço)   |  Microsoft. Network/privateLinkServices       | empty |
 |**Banco de Dados SQL do Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**SQL Data Warehouse do Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
-|**Armazenamento do Azure**  | (Microsoft. Storage/storageAccounts)    |  BLOB (BLOB, blob_secondary)<BR> Tabela (tabela, table_secondary)<BR> Fila (fila, queue_secondary)<BR> Arquivo (arquivo, file_secondary)<BR> Web (Web, web_secondary)        |
-|**Azure Data Lake Storage Gen2**  | (Microsoft. Storage/storageAccounts)    |  BLOB (BLOB, blob_secondary)       |
+|**Armazenamento do Azure**  | Microsoft.Storage/storageAccounts    |  BLOB (BLOB, blob_secondary)<BR> Tabela (tabela, table_secondary)<BR> Fila (fila, queue_secondary)<BR> Arquivo (arquivo, file_secondary)<BR> Web (Web, web_secondary)        |
+|**Azure Data Lake Storage Gen2**  | Microsoft.Storage/storageAccounts    |  BLOB (BLOB, blob_secondary)       |
  
  
 ## <a name="network-security-of-private-endpoints"></a>Segurança de rede de pontos de extremidade privados 

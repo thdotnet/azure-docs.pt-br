@@ -4,7 +4,7 @@ description: Explica por que os nomes de dispositivo de VM do Linux mudam e como
 services: virtual-machines-linux
 documentationcenter: ''
 author: genlin
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 0350b6bdc990ed6c2de60e3e98c3768b18d0d636
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7d8a7e7e88837214042fb8f1c109c0b93bfe771b
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710430"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058214"
 ---
 # <a name="troubleshoot-linux-vm-device-name-changes"></a>Solucionar problemas de mudança de nome do dispositivo de VM Linux no Azure
 
@@ -46,7 +46,7 @@ A maioria das distribuições fornece os parâmetros `fstab`**nofail** ou **nobo
 
 Quando o agente Linux do Azure é instalado em uma VM, ele usa regras Udev para construir um conjunto de links simbólicos no caminho /dev/disk/azure. Aplicativos e scripts usam regras Udev para identificar os discos anexados à VM, junto com o tipo de disco e LUNs de disco.
 
-Se você já tiver editado o /etc/fstab de tal forma que sua VM não está sendo inicializado e não for possível SSH à sua VM, você pode usar o [Console Serial da VM](./serial-console-linux.md) inserir [modo de usuário único](./serial-console-grub-single-user-mode.md) e modificar seu fstab.
+Se você já tiver editado o fstab de forma que sua VM não esteja inicializando e não seja possível usar o SSH para a VM, use o [console serial da VM](./serial-console-linux.md) para entrar no [modo de usuário único](./serial-console-grub-single-user-mode.md) e modificar seu fstab.
 
 ### <a name="identify-disk-luns"></a>Identificar LUNs de disco
 
@@ -152,8 +152,8 @@ Para obter as regras de Armazenamento do Azure mais recentes, execute os seguint
 
 Para obter mais informações, confira os seguintes artigos:
 
-- [Ubuntu: Usando o UUID](https://help.ubuntu.com/community/UsingUUID)
+- [Ubuntu Usando UUID](https://help.ubuntu.com/community/UsingUUID)
 - [Red Hat: Nomenclatura persistente](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
-- [Linux: O que UUIDs podem fazer por você](https://www.linux.com/news/what-uuids-can-do-you)
-- [UDev: Introdução ao gerenciamento de dispositivo no sistema Linux moderno](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system)
+- [Linux O que os UUIDs podem fazer por você](https://www.linux.com/news/what-uuids-can-do-you)
+- [Udev Introdução ao gerenciamento de dispositivos em um sistema Linux moderno](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system)
 

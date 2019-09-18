@@ -1,7 +1,7 @@
 ---
 title: Executar previsões de lote em dados grandes com pipelines
-titleSuffix: Azure Machine Learning service
-description: Saiba como fazer previsões em lote de forma assíncrona em grandes quantidades de dados usando o Serviço do Azure Machine Learning.
+titleSuffix: Azure Machine Learning
+description: Saiba como fazer previsões de lote de forma assíncrona em grandes quantidades de dados usando Azure Machine Learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,16 +10,16 @@ ms.reviewer: jmartens, garye
 ms.author: jordane
 author: jpe316
 ms.date: 07/12/2019
-ms.openlocfilehash: b0d8eef025efb6398f1d7c734ca558540b157fef
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 3997f327bd6512eeee2cb5e7a0af802f12d1727a
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128267"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034305"
 ---
 # <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-pipelines"></a>Executar previsões de lote em conjuntos de dados grandes com pipelines de Azure Machine Learning
 
-Neste artigo, você aprenderá a fazer previsões sobre grandes quantidades de dados de forma assíncrona usando os pipelines de ML com o serviço Azure Machine Learning.
+Neste artigo, você aprende a fazer previsões sobre grandes quantidades de dados de forma assíncrona usando os pipelines ML com Azure Machine Learning.
 
 A previsão em lote (ou pontuação do lote) fornece inferência econômica com taxa de transferência incomparável para aplicativos assíncronos. Os pipelines de previsão em lote podem ser dimensionados para realizar inferências em terabytes de dados de produção. A previsão em lote é otimizada para previsões tipo fire-and-forget de alta taxa de transferência para uma grande coleção de dados.
 
@@ -30,7 +30,7 @@ Nas etapas a seguir, você criará um [pipeline de Machine Learning](concept-ml-
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree).
+- Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree).
 
 - Configure seu ambiente de desenvolvimento para instalar o SDK do Azure Machine Learning. Para saber mais, consulte [Configurar um ambiente de desenvolvimento para o Azure Machine Learning](how-to-configure-environment.md).
 

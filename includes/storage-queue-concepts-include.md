@@ -4,23 +4,20 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: 8a596293a5c1572b30ea6101dad16328c8db2634
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 935a6201e24e97deaa0a1a65e499310f74a49e2d
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171822"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059063"
 ---
-## <a name="what-is-queue-storage"></a>O que é armazenamento de fila?
-O armazenamento de filas do Azure é um serviço para armazenamento de um grande número de mensagens que podem ser acessadas de qualquer lugar do mundo por meio de chamadas autenticadas usando HTTP ou HTTPS. Uma única mensagem de fila pode ter até 64 KB de tamanho e uma fila pode conter milhões de mensagens, até o limite de capacidade total de uma conta de armazenamento.
+## <a name="what-is-queue-storage"></a>O que é o armazenamento de filas?
 
-Usos comuns de Armazenamento de filas incluem:
+O armazenamento de filas do Azure é um serviço para armazenamento de um grande número de mensagens que podem ser acessadas de qualquer lugar do mundo por meio de chamadas autenticadas usando HTTP ou HTTPS. Uma única mensagem de fila pode ter até 64 KB de tamanho e uma fila pode conter milhões de mensagens, até o limite de capacidade total de uma conta de armazenamento. O armazenamento de filas é geralmente usado para criar uma pendência de trabalho para processar de forma assíncrona.
 
-* Criar uma lista de pendências de trabalho para processar de maneira assíncrona
-* Transmitir mensagens de uma função Web do Azure para uma função de Trabalho do Azure
+## <a name="queue-service-concepts"></a>Conceitos do serviço Fila
 
-## <a name="queue-service-concepts"></a>Conceitos do Serviço da Fila
-O serviço Fila contém os seguintes componentes:
+O serviço Fila do Azure contém os seguintes componentes:
 
 ![Fila1](./media/storage-queue-concepts-include/queue1.png)
 

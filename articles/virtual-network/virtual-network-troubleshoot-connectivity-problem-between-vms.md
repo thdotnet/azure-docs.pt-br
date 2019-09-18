@@ -4,7 +4,7 @@ description: Saiba como solucionar os problemas de conectividade entre VMs do Az
 services: virtual-network
 documentationcenter: na
 author: chadmath
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-network
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: fc3d6ab1d7fdf05963d9ecd350deccd940a95b87
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab3ae45081ecc481cb90af8961174e23c86e84b5
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61036208"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71056813"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Solucionar problemas de conectividade entre VMs do Azure
 
@@ -43,7 +43,7 @@ Uma VM do Azure não pode se conectar a outra VM do Azure.
 8. [Tente se conectar a um compartilhamento de rede de VM](#step-8-try-to-connect-to-a-vm-network-share)
 9. [Verifique a conectividade entre VNets](#step-9-check-inter-vnet-connectivity)
 
-## <a name="troubleshooting-steps"></a>Etapas para solucionar problemas
+## <a name="troubleshooting-steps"></a>Etapas de solução de problemas
 
 Execute estas etapas para solucionar o problema. Depois de concluir cada etapa, verifique se o problema foi resolvido. 
 

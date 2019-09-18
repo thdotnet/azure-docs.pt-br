@@ -22,6 +22,7 @@
     - name: Adicionar um aplicativo local por meio do Proxy de Aplicativo
       href: application-proxy-add-on-premises-application.md
 - name: Conceitos
+  expanded: true
   items:
     - name: Aplicativos de nuvem e logon único
       items:
@@ -240,6 +241,8 @@
           items:
             - name: Solucionar problemas de provisionamento do usuário
               href: application-provisioning-config-problem.md
+            - name: Provisionando logs
+              href: /azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/manage-apps/context/manage-apps-context
             - name: Sincronizar um atributo para mapeamento – aplicativo de galeria
               href: user-provisioning-sync-attributes-for-mapping.md
             - name: Demorando horas - aplicativo da galeria

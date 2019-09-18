@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: df47b4fc5b8048f76f94486e213285896dab9cb9
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 042c4fa18ce583f714bbe71f522b1f8f1af3dfdb
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874085"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066116"
 ---
 # <a name="request-an-access-token-in-azure-active-directory-b2c"></a>Solicitar um token de acesso no Azure Active Directory B2C
 
-Um *token de acesso* contém declarações que você pode usar no Azure Active Directory (Azure AD) B2C para identificar as permissões concedidas às suas APIs. Ao chamar um servidor de recursos, um token de acesso deve estar presente na solicitação HTTP. Um token de acesso é indicado como **access_token** nas respostas de Azure ad B2C.
+Um *token de acesso* contém declarações que você pode usar em Azure Active Directory B2C (Azure ad B2C) para identificar as permissões concedidas para suas APIs. Ao chamar um servidor de recursos, um token de acesso deve estar presente na solicitação HTTP. Um token de acesso é indicado como **access_token** nas respostas de Azure ad B2C.
 
 Este artigo mostra como solicitar um token de acesso para um aplicativo Web e uma API Web. Para obter mais informações sobre tokens no Azure AD B2C, consulte a [visão geral de tokens em Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).
 

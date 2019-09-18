@@ -4,7 +4,7 @@ description: Saiba como solucionar problemas de conexão de ponto a site.
 services: vpn-gateway
 documentationcenter: na
 author: chadmath
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: vpn-gateway
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/31/2019
 ms.author: genli
-ms.openlocfilehash: cab40284f36f21f9de72ee4dc1faf78153621d26
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 37c2cf5ffb5e6eaf8b8da6e7bc9259cfa101c796
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475966"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058814"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Solução de problemas: problemas de conexão ponto a site do Azure
 
@@ -45,7 +45,7 @@ Para resolver esse problema, siga estas etapas:
 
 2. Verifique se os certificados abaixo estão no local correto:
 
-    | Certificado | Local padrão |
+    | Certificado | Location |
     | ------------- | ------------- |
     | AzureClient.pfx  | Current User\Personal\Certificates |
     | Azuregateway-*GUID*.cloudapp.net  | Current User\Trusted Root Certification Authorities|
@@ -58,17 +58,17 @@ Para saber mais sobre como instalar o certificado do cliente, confira [Gerar e e
 > [!NOTE]
 > Quando você importar o certificado do cliente, não selecione a opção **Habilitar a proteção de chave privada forte**.
 
-## <a name="the-network-connection-between-your-computer-and-the-vpn-server-could-not-be-established-because-the-remote-server-is-not-responding"></a>Não foi possível estabelecer a conexão de rede entre o computador e o servidor VPN porque o servidor remoto não está respondendo
+## <a name="the-network-connection-between-your-computer-and-the-vpn-server-could-not-be-established-because-the-remote-server-is-not-responding"></a>A conexão de rede entre o computador e o servidor VPN não pôde ser estabelecida porque o servidor remoto não está respondendo
 
 ### <a name="symptom"></a>Sintoma
 
-Quando você tentar e se conectar a um gateway de rede virtual do Azure usando IKEv2 no Windows, você pode obter a mensagem de erro a seguir:
+Ao tentar e conectar-se a um gateway de rede virtual do Azure usando IKEv2 no Windows, você obtém a seguinte mensagem de erro:
 
-**Não foi possível estabelecer a conexão de rede entre o computador e o servidor VPN porque o servidor remoto não está respondendo**
+**A conexão de rede entre o computador e o servidor VPN não pôde ser estabelecida porque o servidor remoto não está respondendo**
 
 ### <a name="cause"></a>Causa
  
- O problema ocorre se a versão do Windows não tem suporte para fragmentação do IKE
+ O problema ocorre se a versão do Windows não tiver suporte para fragmentação de IKE
  
 ### <a name="solution"></a>Solução
 
@@ -78,14 +78,14 @@ Para preparar o Windows 10 ou Server 2016 para IKEv2:
 
 1. Instale a atualização.
 
-   | Versão do SO | Data | Número/Link |
+   | Versão do SO | Date | Número/Link |
    |---|---|---|---|
    | Windows Server 2016<br>Windows 10, versão 1607 | 17 de janeiro de 2018 | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10, versão 1703 | 17 de janeiro de 2018 | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
    | Windows 10 Versão 1709 | 22 de março de 2018 | [BDC4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
    |  |  |  |  |
 
-2. Defina o valor da chave do Registro. Crie ou defina a chave "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload" REG_DWORD do Registro como 1.
+2. Defina o valor da chave do Registro. Crie ou defina `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload` a chave REG_DWORD no registro como 1.
 
 ## <a name="vpn-client-error-the-message-received-was-unexpected-or-badly-formatted"></a>Erro de cliente VPN: a mensagem recebida era inesperada ou estava formatada incorretamente
 
@@ -122,7 +122,7 @@ Quando você tenta conectar-se à rede virtual do Azure usando o cliente VPN, re
 
 1. Verifique se os certificados abaixo estão no local correto:
 
-    | Certificado | Local padrão |
+    | Certificado | Location |
     | ------------- | ------------- |
     | AzureClient.pfx  | Current User\Personal\Certificates |
     | Azuregateway-*GUID*.cloudapp.net  | Current User\Trusted Root Certification Authorities|
@@ -246,7 +246,7 @@ Se o certificado passou de 50% de seu tempo de vida, o certificado é substituí
 
 ### <a name="solution"></a>Solução
 
-Para resolver esse problema, faça o download novamente e reimplantar o pacote ponto a Site em todos os clientes.
+Para resolver esse problema, Baixe novamente e reimplante o pacote ponto a site em todos os clientes.
 
 ## <a name="too-many-vpn-clients-connected-at-once"></a>Muitos clientes VPN conectados ao mesmo tempo
 
@@ -382,7 +382,7 @@ Isso é causado por um tipo de gateway incorreto configurado.
 
 O tipo de gateway de VPN do Azure deve ser VPN e o tipo de VPN deve ser **RouteBased**.
 
-## <a name="vpn-package-installer-doesnt-complete"></a>O instalador do pacote VPN não conclui
+## <a name="vpn-package-installer-doesnt-complete"></a>O instalador do pacote VPN não foi concluído
 
 ### <a name="cause"></a>Causa
 

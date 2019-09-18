@@ -3,16 +3,17 @@ title: Criar redes virtuais para clusters do Azure HDInsight
 description: Saiba como criar uma rede virtual do Azure para conectar o HDInsight a outros recursos de nuvem ou recursos em seu datacenter.
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 2fd4c20e5c1cd0a8e1ee6f7c36d4b4a8b99d37ea
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 6fd23e3d41dda15b1ec439c1e8b02073722b8871
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442013"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71073626"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Criar redes virtuais para clusters do Azure HDInsight
 
@@ -287,7 +288,7 @@ No servidor DNS personalizado da rede virtual:
     
     * Substitua o valor `192.168.0.1` pelo endereço IP do servidor DNS local. Essa entrada encaminha todas as outras solicitações DNS para o servidor DNS local.
 
-3. Para usar a configuração, reinicie o Bind. Por exemplo, `sudo service bind9 restart`.
+3. Para usar a configuração, reinicie o Bind. Por exemplo: `sudo service bind9 restart`.
 
 4. Adicione um encaminhador condicional ao servidor DNS local. Configure o encaminhador condicional para enviar solicitações para o sufixo DNS da etapa 1 para o servidor DNS personalizado.
 

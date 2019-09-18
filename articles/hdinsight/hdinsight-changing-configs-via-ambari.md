@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: d34cb7b8bfae14c25950cc4d77c6625c675e813b
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 7261aad8f42168449f2c892fe8aaaa6667964654
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70934528"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076951"
 ---
 # <a name="use-apache-ambari-to-optimize-hdinsight-cluster-configurations"></a>Use o Apache Ambari para otimizar as configurações de cluster do HDInsight
 
@@ -23,7 +23,7 @@ Para ver uma introdução ao uso da interface do usuário da Web do Ambari, cons
 
 Faça logon no Ambari em `https://CLUSTERNAME.azurehdidnsight.net` usando suas credenciais do cluster. A tela inicial exibe um painel de visão geral.
 
-![Painel do Ambari](./media/hdinsight-changing-configs-via-ambari/apache-ambari-dashboard.png)
+![Painel do usuário do Apache Ambari exibido](./media/hdinsight-changing-configs-via-ambari/apache-ambari-dashboard.png)
 
 A interface do usuário da Web do Ambari pode ser usada para gerenciar hosts, serviços, alertas, configurações e modos de exibição. O Ambari não pode ser usado para criar um cluster HDInsight, atualizar serviços, gerenciar pilhas e versões, descomissionar ou recomissionar hosts ou adicionar serviços ao cluster.
 
@@ -31,25 +31,25 @@ A interface do usuário da Web do Ambari pode ser usada para gerenciar hosts, se
 
 As configurações ajudam a ajustar a um serviço específico. Para modificar as definições de configuração de um serviço, selecione o serviço na barra lateral **Serviços** (à esquerda) e, em seguida, navegue até a guia **Configurações** na página de detalhes do serviço.
 
-![Barra lateral de serviços](./media/hdinsight-changing-configs-via-ambari/ambari-services-sidebar.png)
+![Barra lateral dos serviços Apache Ambari](./media/hdinsight-changing-configs-via-ambari/ambari-services-sidebar.png)
 
 ### <a name="modify-namenode-java-heap-size"></a>Modificar o tamanho do heap do NameNode Java
 
-O tamanho do heap do NameNode Java depende de muitos fatores, como a carga no cluster, o número de arquivos e os números de blocos. O tamanho padrão de 1 GB funciona bem com a maioria dos clusters, embora algumas cargas de trabalho possam exigir mais ou menos memória. 
+O tamanho do heap do NameNode Java depende de muitos fatores, como a carga no cluster, o número de arquivos e os números de blocos. O tamanho padrão de 1 GB funciona bem com a maioria dos clusters, embora algumas cargas de trabalho possam exigir mais ou menos memória.
 
 Para modificar o tamanho do heap do NameNode Java:
 
 1. Selecione **HDFS** na barra lateral Serviços e navegue até a guia **Configurações**.
 
-    ![Configuração do HDFS](./media/hdinsight-changing-configs-via-ambari/ambari-apache-hdfs-config.png)
+    ![Configuração do Ambari HDFS do Apache](./media/hdinsight-changing-configs-via-ambari/ambari-apache-hdfs-config.png)
 
 1. Localize a configuração **Tamanho do heap do NameNode Java**. Também é possível usar a caixa de texto **filtro** para digitar e localizar uma configuração específica. Selecione o ícone de **caneta** ao lado do nome da configuração.
 
-    ![Tamanho do heap do NameNode Java](./media/hdinsight-changing-configs-via-ambari/ambari-java-heap-size.png)
+    ![Tamanho do heap de Java do Apache Ambari NameNode](./media/hdinsight-changing-configs-via-ambari/ambari-java-heap-size.png)
 
 1. Digite o novo valor na caixa de texto e pressione **Enter** para salvar a alteração.
 
-    ![Editar NameNode Size1 heap de Java](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit1.png)
+    ![Ambari editar heap NameNode Java Size1](./media/hdinsight-changing-configs-via-ambari/java-heap-size-edit1.png)
 
 1. O tamanho do heap do Java NameNode é alterado para 1 GB de 2 GB.
 
@@ -57,7 +57,7 @@ Para modificar o tamanho do heap do NameNode Java:
 
 1. Salve as alterações clicando no botão verde **Salvar** na parte superior da tela de configuração.
 
-    ![Salvar as alterações](./media/hdinsight-changing-configs-via-ambari/ambari-save-changes1.png)
+    ![Ambari Ambari salvar configurações](./media/hdinsight-changing-configs-via-ambari/ambari-save-changes1.png)
 
 ## <a name="apache-hive-optimization"></a>Otimização do Apache Hive
 
@@ -72,11 +72,11 @@ O Hive fornece dois mecanismos de execução: [Apache Hadoop MapReduce](https://
 
 1. Na guia **Configurações** do Hive, digite **mecanismo de execução** na caixa de filtro.
 
-    ![Mecanismo de execução de pesquisa](./media/hdinsight-changing-configs-via-ambari/ambari-search-execution.png)
+    ![Mecanismo de execução de pesquisa do Apache Ambari](./media/hdinsight-changing-configs-via-ambari/ambari-search-execution.png)
 
 1. O valor padrão da propriedade **Otimização** é **Tez**.
 
-    ![Otimização – Tez](./media/hdinsight-changing-configs-via-ambari/optimization-apache-tez.png)
+    ![Otimização-mecanismo de Apache Tez](./media/hdinsight-changing-configs-via-ambari/optimization-apache-tez.png)
 
 ### <a name="tune-mappers"></a>Ajustar mapeadores
 
@@ -93,8 +93,8 @@ Por exemplo, para definir quatro tarefas de mapeador com o tamanho de dados de 1
 
 1. Defina os dois parâmetros como **33,554,432** bytes (32 MB).
 
-    ![Tamanhos de agrupamento do Tez](./media/hdinsight-changing-configs-via-ambari/apache-tez-grouping-size.png)
- 
+    ![Tamanhos de agrupamento do Apache Ambari tez](./media/hdinsight-changing-configs-via-ambari/apache-tez-grouping-size.png)
+
 Essas alterações afetam todos os trabalhos do Tez no servidor. Para obter o resultado ideal, escolha valores de parâmetro apropriados.
 
 ### <a name="tune-reducers"></a>Ajustar redutores
@@ -109,11 +109,11 @@ O parâmetro `hive.exec.reducers.bytes.per.reducer` especifica o número de byte
 
 1. Para modificá-lo, navegue até a guia **Configurações** do Hive e localize o parâmetro **Dados por Redutor** na página Configurações.
 
-    ![Dados por Redutor](./media/hdinsight-changing-configs-via-ambari/ambari-data-per-reducer.png)
- 
+    ![Dados do Apache Ambari por redutor](./media/hdinsight-changing-configs-via-ambari/ambari-data-per-reducer.png)
+
 1. Selecione **Editar** para modificar o valor para 128 MB (134.217.728 bytes) e, em seguida, pressione **Enter** para salvar.
 
-    ![Dados por Redutor – editado](./media/hdinsight-changing-configs-via-ambari/data-per-reducer-edited.png)
+    ![Dados de Ambari por redutor-editado](./media/hdinsight-changing-configs-via-ambari/data-per-reducer-edited.png)
   
     Dado um tamanho de entrada de 1.024 MB, com 128 MB de dados por redutor, há 8 redutores (1024/128).
 
@@ -123,22 +123,21 @@ O parâmetro `hive.exec.reducers.bytes.per.reducer` especifica o número de byte
 
 Uma consulta do Hive é executada em uma ou mais etapas. Se as etapas independentes puderem ser executadas em paralelo, o desempenho da consulta aumentará.
 
-1.  Para habilitar a execução de consultas em paralelo, navegue até a guia **Configurações** do Hive e pesquise pela propriedade `hive.exec.parallel`. O valor padrão é false. Altere o valor para true e pressione **Enter** para salvá-lo.
- 
-1.  Para limitar o número de trabalhos a serem executados em paralelo, modifique `hive.exec.parallel.thread.number` a propriedade. O valor padrão é 8.
+1. Para habilitar a execução de consultas em paralelo, navegue até a guia **Configurações** do Hive e pesquise pela propriedade `hive.exec.parallel`. O valor padrão é false. Altere o valor para true e pressione **Enter** para salvá-lo.
 
-    ![Execução do Hive em paralelo](./media/hdinsight-changing-configs-via-ambari/apache-hive-exec-parallel.png)
+1. Para limitar o número de trabalhos a serem executados em paralelo, modifique `hive.exec.parallel.thread.number` a propriedade. O valor padrão é 8.
 
+    ![Exibição paralela Apache Hive exec](./media/hdinsight-changing-configs-via-ambari/apache-hive-exec-parallel.png)
 
 ### <a name="enable-vectorization"></a>Habilitar vetorização
 
 O Hive processa dados linha por linha. A vetorização instrui o Hive a processar dados em blocos de 1.024 linhas em vez de uma linha por vez. A vetorização é aplicável somente ao formato de arquivo ORC.
 
 1. Para habilitar uma execução de consulta vetorizada, navegue até a guia **Configurações** do Hive e pesquise pelo parâmetro `hive.vectorized.execution.enabled`. O valor padrão é true para o Hive 0.13.0 ou posterior.
- 
+
 1. Para habilitar a execução vetorizada para o lado de redução da consulta, defina o parâmetro `hive.vectorized.execution.reduce.enabled` como true. O valor padrão é false.
 
-    ![Execução vetorizada no Hive](./media/hdinsight-changing-configs-via-ambari/hive-vectorized-execution.png)
+    ![Apache Hive execução vetorizada](./media/hdinsight-changing-configs-via-ambari/hive-vectorized-execution.png)
 
 ### <a name="enable-cost-based-optimization-cbo"></a>Habilitar CBO (otimização baseada em custo)
 
@@ -146,7 +145,7 @@ Por padrão, o Hive segue um conjunto de regras para encontrar um plano de execu
 
 Para habilitar a CBO, navegue até a guia **Configurações** do Hive, pesquise por `parameter hive.cbo.enable` e, em seguida, mude o botão de alternância para **Ativado**.
 
-![Configuração de CBO](./media/hdinsight-changing-configs-via-ambari/hdinsight-cbo-config.png)
+![Otimizador baseado em custo do HDInsight](./media/hdinsight-changing-configs-via-ambari/hdinsight-cbo-config.png)
 
 Os seguintes parâmetros de configuração adicionais aumentam o desempenho de consulta do Hive quando a CBO está habilitada:
 
@@ -154,13 +153,13 @@ Os seguintes parâmetros de configuração adicionais aumentam o desempenho de c
 
     Quando definido como true, o Hive usa estatísticas armazenadas em seu metastore para responder consultas simples como `count(*)`.
 
-    ![Estatísticas de CBO](./media/hdinsight-changing-configs-via-ambari/hive-compute-query-using-stats.png)
+    ![Apache Hive consulta de computação usando estatísticas](./media/hdinsight-changing-configs-via-ambari/hive-compute-query-using-stats.png)
 
 * `hive.stats.fetch.column.stats`
 
     Estatísticas de coluna são criadas quando a CBO está habilitada. O Hive usa estatísticas de coluna, que são armazenadas em um metastore, para otimizar consultas. Obter estatísticas de coluna para cada coluna leva mais tempo quando o número de colunas é alto. Quando definida como false, essa configuração desabilita a busca de estatísticas de coluna do metastore.
 
-    ![Estatísticas de coluna, conjunto de estatísticas do Hive](./media/hdinsight-changing-configs-via-ambari/hive-stats-fetch-column-stats.png)
+    ![Estatísticas de Apache Hive definir estatística de coluna](./media/hdinsight-changing-configs-via-ambari/hive-stats-fetch-column-stats.png)
 
 * `hive.stats.fetch.partition.stats`
 
@@ -206,7 +205,7 @@ Como regra geral, é importante que o método de compactação seja divisível. 
 
     e. Clique em **Adicionar** .
 
-    ![Propriedade personalizada do Hive](./media/hdinsight-changing-configs-via-ambari/hive-custom-property.png)
+    ![Adicionar Apache Hive propriedade personalizada](./media/hdinsight-changing-configs-via-ambari/hive-custom-property.png)
 
     Isso compactará o arquivo intermediário usando a compactação do Snappy. Após ser adicionada, a propriedade aparecerá no painel hive-site personalizado.
 
@@ -221,7 +220,7 @@ A saída final do Hive também pode ser compactada.
 
 1. Para escolher o codec de compactação de saída, adicione a propriedade personalizada `mapred.output.compression.codec` ao painel hive-site personalizado, conforme descrito na etapa 3 da seção anterior.
 
-    ![Propriedade personalizada do Hive](./media/hdinsight-changing-configs-via-ambari/hive-custom-property2.png)
+    ![Apache Hive propriedade personalizada ADD2](./media/hdinsight-changing-configs-via-ambari/hive-custom-property2.png)
 
 ### <a name="enable-speculative-execution"></a>Habilitar a execução especulativa
 
@@ -240,9 +239,9 @@ O Hive permite criar partições dinâmicas ao inserir registros em uma tabela s
 1. Para o Hive fazer partições dinâmicas, o valor do parâmetro `hive.exec.dynamic.partition` deve ser true (o padrão).
 
 1. Altere o modo de partição dinâmica para *estrito*. No modo estrito, pelo menos uma partição deve ser estática. Isso impede consultas sem o filtro de partição na cláusula WHERE, ou seja, *estrito* impede consultas que examinam todas as partições. Navegue até a guia **Configurações** do Hive e, em seguida, defina `hive.exec.dynamic.partition.mode` como **estrito**. O valor padrão é **não estrito**.
- 
+
 1. Para limitar o número de partições dinâmicas a serem criadas, modifique o parâmetro `hive.exec.max.dynamic.partitions`. O valor padrão é 5.000.
- 
+
 1. Para limitar o número total de partições dinâmicas por nó, modifique `hive.exec.max.dynamic.partitions.pernode`. O valor padrão é 2.000.
 
 ### <a name="enable-local-mode"></a>Habilitar modo local
@@ -251,7 +250,7 @@ O modo local permite que o Hive execute todas as tarefas de um trabalho em um ú
 
 Para habilitar o modo local, adicione o parâmetro `hive.exec.mode.local.auto` ao painel hive-site personalizado, conforme explicado na etapa 3 da seção [Habilitar compactação intermediária](#enable-intermediate-compression).
 
-![Modo de execução local automático do Hive](./media/hdinsight-changing-configs-via-ambari/hive-exec-mode-local-auto.png)
+![Modo Apache Hive exec local automático](./media/hdinsight-changing-configs-via-ambari/hive-exec-mode-local-auto.png)
 
 ### <a name="set-single-mapreduce-multigroup-by"></a>Definir MultiGROUP BY para MapReduce único
 
@@ -297,8 +296,8 @@ Propriedades de [Apache Pig](https://pig.apache.org/) podem ser modificadas da i
 
 1. Selecione **salvar** no lado superior direito da janela para salvar o novo valor. Algumas propriedades podem exigir uma reinicialização do serviço.
 
-    ![Propriedades avançadas de Pig](./media/hdinsight-changing-configs-via-ambari/advanced-pig-properties.png)
- 
+    ![Propriedades avançadas do Apache Pig](./media/hdinsight-changing-configs-via-ambari/advanced-pig-properties.png)
+
 > [!NOTE]  
 > As configurações de nível de sessão substituem os valores de propriedade no arquivo `pig.properties`.
 
@@ -310,7 +309,6 @@ Dois mecanismos de execução estão disponíveis para executar scripts de Pig: 
 
 1. O valor padrão é **MapReduce**. Altere-o para **Tez**.
 
-
 ### <a name="enable-local-mode"></a>Habilitar modo local
 
 De forma semelhante ao Hive, o modo local é usado para acelerar trabalhos com quantidades de dados relativamente menores.
@@ -318,7 +316,6 @@ De forma semelhante ao Hive, o modo local é usado para acelerar trabalhos com q
 1. Para habilitar o modo local, defina `pig.auto.local.enabled` como **true**. O valor padrão é false.
 
 1. Trabalhos com um tamanho de dados de entrada menor que o valor da propriedade `pig.auto.local.input.maxbytes` são considerados trabalhos pequenos. O valor padrão é 1 GB.
-
 
 ### <a name="copy-user-jar-cache"></a>Copiar o cache de jar do usuário
 
@@ -328,7 +325,6 @@ O Pig copia os arquivos JAR exigidos pelo UDFs para um cache distribuído para t
 
 1. Para definir o caminho base dos jars armazenado em cache, defina `pig.user.cache.location` como o caminho base. O padrão é `/tmp`.
 
-
 ### <a name="optimize-performance-with-memory-settings"></a>Otimizar o desempenho com as configurações de memória
 
 As seguintes configurações de memória podem ajudar a otimizar o desempenho de script do Pig.
@@ -336,7 +332,6 @@ As seguintes configurações de memória podem ajudar a otimizar o desempenho de
 * `pig.cachedbag.memusage`: A quantidade de memória alocada a um recipiente. Um recipiente é um conjunto de tuplas. Uma tupla é um conjunto ordenado de campos e um campo é uma parte dos dados. Se estiverem além da memória alocada, os dados em um recipiente serão despejados para o disco. O valor padrão é 0.2, que representa 20 por cento da memória disponível. Essa memória é compartilhada entre todos os recipientes em um aplicativo.
 
 * `pig.spill.size.threshold`: Recipientes maiores que esse limite de tamanho de despejo (em bytes) são despejados para o disco. O valor padrão é 5 MB.
-
 
 ### <a name="compress-temporary-files"></a>Compactar arquivos temporários
 
@@ -350,16 +345,13 @@ O Pig gera arquivos temporários durante a execução do trabalho. Compactar os 
 
 Quando habilitada, pequenos arquivos são combinados para que haja menos tarefas de mapeamento. Isso aumenta a eficiência de trabalhos com muitos arquivos pequenos. Para habilitar, defina `pig.noSplitCombination` como true. O valor padrão é false.
 
-
 ### <a name="tune-mappers"></a>Ajustar mapeadores
 
 O número de mapeadores é controlado modificando a propriedade `pig.maxCombinedSplitSize`. Isso especifica o tamanho dos dados a serem processados por uma única tarefa de mapeamento. O valor padrão é o tamanho do bloco padrão do sistema de arquivos. Aumentar esse valor resulta na redução do número de tarefas do mapeador.
 
-
 ### <a name="tune-reducers"></a>Ajustar redutores
 
 O número de redutores é calculado com base no parâmetro `pig.exec.reducers.bytes.per.reducer`. O parâmetro especifica o número de bytes processados por redutor e por padrão é 1 GB. Para limitar o número máximo de redutores, defina a propriedade `pig.exec.reducers.max`, que por padrão é 999.
-
 
 ## <a name="apache-hbase-optimization-with-the-ambari-web-ui"></a>Otimização do Apache HBase com a interface do usuário da Web do Ambari
 
@@ -373,8 +365,7 @@ O tamanho do heap do HBase especifica a quantidade máxima do heap a ser usada, 
 
 1. Altere o valor padrão para 5.000 MB.
 
-    ![HBASE_HEAPSIZE](./media/hdinsight-changing-configs-via-ambari/ambari-hbase-heapsize.png)
-
+    ![Memória heapsize do Apache Ambari HBase](./media/hdinsight-changing-configs-via-ambari/ambari-hbase-heapsize.png)
 
 ### <a name="optimize-read-heavy-workloads"></a>Otimizar cargas de trabalho com uso intenso de leitura
 
@@ -386,10 +377,9 @@ O cache do bloco é o cache de leitura. Seu tamanho é controlado pelo parâmetr
 
 1. Para modificar esse parâmetro, navegue até a guia **Configurações** na guia **Configurações** do HBase e, em seguida, localize **% do RegionServer Alocada para Buffers de Leitura**.
 
-    ![Tamanho do cache do bloco do HBase](./media/hdinsight-changing-configs-via-ambari/hbase-block-cache-size.png)
- 
-1. Para alterar o valor, selecione o ícone **Editar**.
+    ![Tamanho do cache do bloco de memória do Apache HBase](./media/hdinsight-changing-configs-via-ambari/hbase-block-cache-size.png)
 
+1. Para alterar o valor, selecione o ícone **Editar**.
 
 #### <a name="memstore-size"></a>Tamanho do Memstore
 
@@ -401,30 +391,26 @@ Todas as edições são armazenadas no buffer de memória, chamado de *Memstore*
 
 Para otimizar leituras aleatórias, você pode reduzir os limites superior e inferior do Memstore.
 
-
 #### <a name="number-of-rows-fetched-when-scanning-from-disk"></a>Número de linhas buscadas ao fazer a varredura do disco
 
 A configuração `hbase.client.scanner.caching` define o número de linhas lidas do disco quando o método `next` é chamado em um scanner.  O valor padrão é 100. Quanto maior o número, menos chamadas remotas serão feitas do cliente para o servidor de região, resultando em verificações mais rápidas. No entanto, isso também aumentará a pressão de memória no cliente.
 
-![Número de linhas buscadas no HBase](./media/hdinsight-changing-configs-via-ambari/hbase-num-rows-fetched.png)
+![Número de linhas do Apache HBase buscadas](./media/hdinsight-changing-configs-via-ambari/hbase-num-rows-fetched.png)
 
 > [!IMPORTANT]  
 > Não defina o valor de modo que o tempo entre a invocação do método seguinte em um scanner seja maior que o tempo limite do scanner. A duração do tempo limite do scanner é definida pela propriedade `hbase.regionserver.lease.period`.
-
 
 ### <a name="optimize-write-heavy-workloads"></a>Otimizar cargas de trabalho com uso intenso de gravação
 
 As configurações a seguir são importantes para melhorar o desempenho de cargas de trabalho com uso intenso de gravação.
 
-
 #### <a name="maximum-region-file-size"></a>Tamanho máximo do arquivo de região
 
 O HBase armazena dados em um formato de arquivo interno, chamado *HFile*. A propriedade `hbase.hregion.max.filesize` define o tamanho de um único HFile para uma região.  Uma região será dividida em duas regiões se a soma de todos os HFiles nela for maior do que essa configuração.
- 
-![Tamanho máximo de HRegion do HBase](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-max-filesize.png)
+
+![Tamanho máximo do Apache HBase HRegion](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-max-filesize.png)
 
 Quanto maior o tamanho do arquivo de região, menor o número de divisões. É possível aumentar o tamanho do arquivo para determinar um valor que resulta no desempenho máximo de gravação.
-
 
 #### <a name="avoid-update-blocking"></a>Evitar o bloqueio de atualização
 
@@ -436,20 +422,17 @@ Quanto maior o tamanho do arquivo de região, menor o número de divisões. É p
 
     Com os valores padrão de tamanho de liberação e multiplicador de bloco, as atualizações serão bloqueadas quando o Memstore tiver 128 * 4 = 512 MB. Para reduzir o número de blocos de atualização, aumente o valor de `hbase.hregion.memstore.block.multiplier`.
 
-![Multiplicador de bloco de região do HBase](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-memstore-block-multiplier.png)
-
+![Multiplicador de bloco de região do Apache HBase](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-memstore-block-multiplier.png)
 
 ### <a name="define-memstore-size"></a>Definir tamanho do Memstore
 
 O tamanho do Memstore é definido pelos parâmetros `hbase.regionserver.global.memstore.UpperLimit` e `hbase.regionserver.global.memstore.LowerLimit`. Definir esses valores como iguais uns aos outros reduz pausas durante as gravações (também causando liberações mais frequentes) e resulta em um melhor desempenho de gravação.
 
-
 ### <a name="set-memstore-local-allocation-buffer"></a>Definir o buffer de alocação local do Memstore
 
 O uso do buffer de alocação local do Memstore é determinado pela propriedade `hbase.hregion.memstore.mslab.enabled`. Quando habilitado (true), isso evita a fragmentação do heap durante a operação com uso intenso de gravação. O valor padrão é true.
- 
-![hbase.hregion.memstore.mslab.enabled](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-memstore-mslab-enabled.png)
 
+![hbase.hregion.memstore.mslab.enabled](./media/hdinsight-changing-configs-via-ambari/hbase-hregion-memstore-mslab-enabled.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

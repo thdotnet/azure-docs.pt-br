@@ -9,21 +9,21 @@ ms.custom: hdinsightactive,
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: hrasheed
-ms.openlocfilehash: 69353968f6b38f0d16b68c58b9b00c3e6d45850b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0e8f0e6ff6ba4b280d6174b6cec231ddca782912
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446865"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058591"
 ---
 # <a name="visualize-apache-hive-data-with-microsoft-power-bi-using-odbc-in-azure-hdinsight"></a>Visualize os dados do Apache Hive com o Microsoft Power BI usando o ODBC no Azure HDInsight
 
-Saiba como conectar o Microsoft Power BI Desktop para o HDInsight do Azure usando o ODBC e visualizar dados do Apache Hive.
+Saiba como conectar o Microsoft Power BI Desktop ao Azure HDInsight usando o ODBC e visualize Apache Hive dados.
 
 >[!IMPORTANT]
 > Você pode aproveitar o driver ODBC Hive a ser importado por meio do conector ODBC genérico no Power BI Desktop. No entanto, não é recomendável para cargas de trabalho de BI considerando a natureza não interativo do mecanismo de consulta do Hive. [Conector de consulta interativa HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) e [conector do HDInsight Spark](https://docs.microsoft.com/power-bi/spark-on-hdinsight-with-direct-connect) são as melhores opções para o desempenho.
 
-Neste artigo, você pode carregar os dados de um `hivesampletable` tabela Hive para o Power BI. A tabela de Hive contém alguns dados de uso de telefone celular. Em seguida, você cria gráficos com os dados de uso em um mapa mundial:
+Neste artigo, você carrega os dados de uma `hivesampletable` tabela do hive para Power bi. A tabela de Hive contém alguns dados de uso de telefone celular. Em seguida, você cria gráficos com os dados de uso em um mapa mundial:
 
 ![Relatório de mapa de Power BI do HDInsight](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-visualization.png)
 
@@ -45,19 +45,19 @@ Consulte [Criar uma fonte de dados ODBC do Hive](apache-hadoop-connect-excel-hiv
 
 A tabela de Hive hivesampletable acompanha todos os clusters HDInsight.
 
-1. Inicie o Power BI Desktop.
+1. Iniciar Power BI Desktop.
 
 2. No menu superior, navegue até **página inicial** > **obter dados** > **mais...** .
 
-    ![Abrir dados do Power BI do HDInsight](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-open-odbc.png)
+    ![HDInsight Excel Power BI abrir dados](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-open-odbc.png)
 
-3. Dos **obter dados** caixa de diálogo, selecione **outras** da esquerda, selecione **ODBC** à direita e, em seguida, selecione **Connect** na parte inferior.
+3. Na caixa de diálogo **obter dados** , selecione **outro** da esquerda, selecione **ODBC** à direita e, em seguida, selecione **conectar** na parte inferior.
 
-4. Dos **do ODBC** caixa de diálogo, selecione os dados de nome que você criou na última seção na lista suspensa de origem e, em seguida, selecione **Okey**.
+4. Na caixa **de diálogo do ODBC** , selecione o nome da fonte de dados que você criou na última seção na lista suspensa e, em seguida, selecione **OK**.
 
-5. Dos **Navigator** caixa de diálogo, expanda **ODBC > HIVE > padrão**, selecione **hivesampletable**e, em seguida, selecione **carga**.
+5. Na caixa de diálogo **navegador** , expanda **ODBC > Hive > padrão**, selecione **hivesampletable**e, em seguida, selecione **carregar**.
 
-6. Dos **ODBC driver** caixa de diálogo, selecione **padrão ou personalizada**, em seguida, selecione **Connect**.
+6. Na caixa de diálogo do **driver ODBC** , selecione **padrão ou personalizado**e, em seguida, selecione **conectar**.
 
 ## <a name="visualize-data"></a>Visualizar dados
 
@@ -66,7 +66,7 @@ Continue do último procedimento.
 1. No painel Visualizações, selecione **Mapa**.  Ele é um ícone de globo.
 
     ![O Power BI do HDInsight personaliza o relatório](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-customize.png)
-2. Dos **campos** painel, selecione **país** e **devicemake**. Você pode ver os dados no gráfico no mapa.
+2. No painel **campos** , selecione **país** e **devicemake**. Você pode ver os dados no gráfico no mapa.
 3. Expanda o mapa.
 
 ## <a name="next-steps"></a>Próximas etapas

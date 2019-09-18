@@ -4,7 +4,7 @@ description: Saiba como solucionar problemas de RDP causados pelo serviço de cl
 services: virtual-machines-windows
 documentationCenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 ms.service: virtual-machines-windows
 ms.topic: troubleshooting
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: d16c5b6304f598440fe4d70648dd652f0dcf06ec
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ef44931cc3b36bcab64a2de840d9264c1b8fdedb
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089929"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058014"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Não é possível RDP para máquinas virtuais do Azure porque o serviço de cliente DHCP está desativado
 
@@ -123,7 +123,7 @@ Para resolver esse problema, use o controle serial para ativar o DHCP ou [redefi
 
     1. [Anexar um disco de dados à VM](../windows/attach-managed-disk-portal.md
 ).
-    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo, `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado. Substitua a letra conforme apropriado pelo valor correto.
+    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo: `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado. Substitua a letra conforme apropriado pelo valor correto.
     3. Desanexe a unidade de dados e conecte-a à uma VM funcional que tenha o ubstakke do Process Monitor instalado.
 
 6. Abra **ProcMonTrace.PML** usando o Process Monitor na VM funcional. Em seguida, filtre por  **O resultado é ACCESS DENIED**, conforme mostrado na seguinte imagem:

@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a14c648e55c25c6244f1ba09d5b73bf31e5f7337
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0b872fcfbc2ead2cebdd32ff718b582c13af314e
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509308"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065573"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Ativar a autenticação de vários fatores no Azure Active Directory B2C
 
-O Active Directory do Azure (Microsoft Azure Active Directory) B2C integra-se diretamente à [Autenticação de Vários Fator do Azure](../active-directory/authentication/multi-factor-authentication.md) para que você possa adicionar uma segunda camada de segurança às experiências de inscrição e de login em seus aplicativos. Você habilita a autenticação de múltiplos fatores sem escrever uma única linha de código. Se você já criou fluxos de usuário de inscrição e de login, ainda poderá ativar a autenticação multi fator.
+O Azure Active Directory B2C (Azure AD B2C) integra-se diretamente com a [autenticação multifator do Azure](../active-directory/authentication/multi-factor-authentication.md) para que você possa adicionar uma segunda camada de segurança às experiências de inscrição e de entrada em seus aplicativos. Você habilita a autenticação de múltiplos fatores sem escrever uma única linha de código. Se você já criou fluxos de usuário de inscrição e de login, ainda poderá ativar a autenticação multi fator.
 
 Esse recurso ajuda os aplicativos a lidarem com cenários como os seguintes:
 
@@ -40,11 +40,11 @@ Uma conta de cliente é criada em seu locatário antes que a etapa de autentica�
 
 ## <a name="add-multi-factor-authentication"></a>Adicionar a autenticação multi fator
 
-É possível habilitar a autenticação multi fator em um fluxo de usuário que você criou anteriormente. 
+É possível habilitar a autenticação multi fator em um fluxo de usuário que você criou anteriormente.
 
 Para habilitar a autenticação multi fator:
 
-1. Abra o fluxo de usuário e, em seguida, selecione **Propriedades**. 
+1. Abra o fluxo de usuário e, em seguida, selecione **Propriedades**.
 2. Próximo a **Autenticação Multifator**, selecione **Habilitado**.
 3. Clique em **Salvar** na parte superior da página.
 

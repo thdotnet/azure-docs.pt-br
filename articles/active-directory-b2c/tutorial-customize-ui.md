@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: da7ec020b6f3f4a3b1890695a78fb6bdb363d233
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 69279da93197bcaaf1bf600bc9406287253d74bb
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849373"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063274"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Tutorial: Personalizar a interface das experiências do usuário no Azure Active Directory B2C
 
-Para experiências do usuário mais comuns, como inscrição, entrada e edição de perfil, você pode usar os [fluxos dos usuários](active-directory-b2c-reference-policies.md) no Azure AD (Azure Active Directory) B2C. As informações neste tutorial ajudam você a aprender a [personalizar a interface do usuário](customize-ui-overview.md) dessas experiências usando seus próprios arquivos HTML e CSS.
+Para experiências de usuário mais comuns, como inscrição, entrada e edição de perfil, você pode usar [fluxos de usuário](active-directory-b2c-reference-policies.md) no Azure Active Directory B2C (Azure ad B2C). As informações neste tutorial ajudam você a aprender a [personalizar a interface do usuário](customize-ui-overview.md) dessas experiências usando seus próprios arquivos HTML e CSS.
 
 Neste artigo, você aprenderá a:
 
@@ -43,7 +43,7 @@ Você cria um contêiner e uma conta de Armazenamento do Azure e coloca os arqui
 Embora você possa armazenar seus arquivos de várias maneiras, para este tutorial, vai armazená-los no [Armazenamento de Blobs do Azure](../storage/blobs/storage-blobs-introduction.md).
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se você está usando o diretório que contém sua assinatura do Azure. Selecione o **Filtro de diretório e assinatura** no menu superior e escolha o diretório que contém sua assinatura. Esse diretório é diferente daquele que contém o seu locatário B2C do Azure.
+2. Verifique se você está usando o diretório que contém sua assinatura do Azure. Selecione o **diretório +** filtro de assinatura no menu superior e escolha o diretório que contém sua assinatura. Esse diretório é diferente daquele que contém o seu locatário B2C do Azure.
 3. Escolha Todos os serviços no canto superior esquerdo do portal do Azure, então pesquise e selecione **Contas de armazenamento**.
 4. Selecione **Adicionar**.
 5. Em **Grupo de recursos**, selecione **Criar novo**, insira um nome para o novo grupo de recursos e, em seguida, clique em **OK**.
@@ -62,7 +62,7 @@ Embora você possa armazenar seus arquivos de várias maneiras, para este tutori
  O código do Azure AD B2C em um navegador usa uma abordagem moderna e padrão para carregar conteúdo personalizado de uma URL que você especifica em um fluxo de usuário. CORS (compartilhamento de recurso de origem cruzada) permite que recursos restritos em uma página da Web sejam solicitados em outros domínios.
 
 1. No menu, selecione **CORS**.
-2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo, `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
+2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo: `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
 3. Para **métodos permitidos**, selecione ambos `GET` e `OPTIONS`.
 4. Para **cabeçalhos permitidos**, digite um asterisco (*).
 5. Para **cabeçalhos expostos**, digite um asterisco (*).
@@ -74,9 +74,9 @@ Embora você possa armazenar seus arquivos de várias maneiras, para este tutori
 
 ### <a name="create-the-customization-files"></a>Criar os arquivos de personalização
 
-Para personalizar a interface do usuário da experiência de inscrição, você começa criando um arquivo HTML e CSS simples. Você pode configurar seu HTML como quiser, mas deve ter um elemento **div** com um identificador de `api`. Por exemplo, `<div id="api"></div>`. O Azure AD B2C injeta elementos no contêiner `api` quando a página é exibida.
+Para personalizar a interface do usuário da experiência de inscrição, você começa criando um arquivo HTML e CSS simples. Você pode configurar seu HTML como quiser, mas deve ter um elemento **div** com um identificador de `api`. Por exemplo: `<div id="api"></div>`. O Azure AD B2C injeta elementos no contêiner `api` quando a página é exibida.
 
-1. Em uma pasta local, crie o seguinte arquivo e altere `your-storage-account` para o nome da conta de armazenamento e `your-container` para o nome do contêiner que você criou. Por exemplo, `https://store1.blob.core.windows.net/b2c/style.css`.
+1. Em uma pasta local, crie o seguinte arquivo e altere `your-storage-account` para o nome da conta de armazenamento e `your-container` para o nome do contêiner que você criou. Por exemplo: `https://store1.blob.core.windows.net/b2c/style.css`.
 
     ```html
     <!DOCTYPE html>

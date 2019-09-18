@@ -1,6 +1,6 @@
 ---
 title: Criar o cliente para consumir o serviço Web implantado
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Saiba como consumir um serviço Web que foi gerado quando um modelo foi implantado com o modelo do Azure Machine Learning. O serviço web expõe uma API REST. Crie clientes para essa API usando a linguagem de programação de sua escolha.
 services: machine-learning
 ms.service: machine-learning
@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5f57be9a1fc5d260ce580b969c8f92c87aea17a8
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: e005cf0860faeaad7010ea4da3ca1c5227ade14b
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279121"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71034789"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Consumir um modelo de Azure Machine Learning implantado como um serviço web
 
@@ -43,7 +43,7 @@ A classe [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml
 * `auth_enabled`-Se a autenticação de chave estiver `True`habilitada, `False`caso contrário,.
 * `token_auth_enabled`-Se a autenticação de token estiver `True`habilitada, `False`caso contrário,.
 * `scoring_uri` -O endereço da API REST.
-* `swagger_uri`-O endereço da especificação OpenAPI. Esse URI estará disponível se você tiver habilitado a geração de esquema automática. Para obter mais informações, consulte [implantar modelos com o serviço de Azure Machine Learning](how-to-deploy-and-where.md#schema).
+* `swagger_uri`-O endereço da especificação OpenAPI. Esse URI estará disponível se você tiver habilitado a geração de esquema automática. Para obter mais informações, consulte [implantar modelos com Azure Machine Learning](how-to-deploy-and-where.md#schema).
 
 Existem três maneiras de recuperar essas informações para serviços da Web implementados:
 

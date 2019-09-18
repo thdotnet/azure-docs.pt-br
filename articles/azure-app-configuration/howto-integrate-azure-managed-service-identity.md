@@ -1,6 +1,6 @@
 ---
-title: Integrar com o Azure identidades gerenciadas | Microsoft Docs
-description: Saiba como usar o Azure managed identidades para autenticar com e obter acesso à configuração de aplicativo do Azure
+title: Integre com identidades gerenciadas do Azure | Microsoft Docs
+description: Saiba como usar identidades gerenciadas do Azure para autenticar com e obter acesso à configuração de Azure App
 services: azure-app-configuration
 documentationcenter: ''
 author: yegu-ms
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 3977991386dbcd07e92f21d1ac541f486b4f7f0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4318c4b4d8f1b1f0974d0fae0a2ae5bd6e94b593
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66393647"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076528"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>Integração às Identidades Gerenciadas do Azure
 
@@ -49,11 +49,13 @@ Para concluir este tutorial, você deve ter:
 
 Para configurar uma identidade gerenciada no portal, primeiro, crie um aplicativo como normal e, em seguida, habilite o recurso.
 
-1. Crie um aplicativo no [portal do Azure](https://portal.azure.com), como você faria normalmente. Vá até ele no portal.
+1. Crie uma instância dos serviços de aplicativos na [portal do Azure](https://portal.azure.com) normalmente. Vá até ele no portal.
 
 2. Role a página para baixo até o grupo **Configurações** no painel de navegação à esquerda e selecione **Identidade**.
 
 3. Na guia **Sistema atribuído**, alterne o **Status** para **Ativado** e selecione **Salvar**.
+
+4. Responda **Sim** quando solicitado a habilitar a identidade gerenciada atribuída ao sistema.
 
     ![Definir a identidade gerenciada no Serviço de Aplicativo](./media/set-managed-identity-app-service.png)
 
@@ -75,7 +77,9 @@ Para configurar uma identidade gerenciada no portal, primeiro, crie um aplicativ
 
 ## <a name="use-a-managed-identity"></a>Usar uma identidade gerenciada
 
-1. Abra *appsettings.json* e adicione o seguinte script. Substitua *\<service_endpoint>* , incluindo os colchetes, pela URL para seu repositório de configurações do aplicativo:
+1. Localize a URL para o repositório de configuração do aplicativo acessando sua tela de configuração na portal do Azure e, em seguida, clicando na guia **chaves de acesso** .
+
+2. Abra *appsettings.json* e adicione o seguinte script. *Substitua\<service_endpoint >* , incluindo os colchetes, pela URL para o repositório de configuração do aplicativo. 
 
     ```json
     "AppConfig": {
@@ -83,7 +87,7 @@ Para configurar uma identidade gerenciada no portal, primeiro, crie um aplicativ
     }
     ```
 
-2. Abra *Program.cs* e atualize o método `CreateWebHostBuilder` substituindo o método `config.AddAzureAppConfiguration()`.
+3. Abra *Program.cs* e atualize o método `CreateWebHostBuilder` substituindo o método `config.AddAzureAppConfiguration()`.
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -110,6 +114,13 @@ A maneira mais fácil de habilitar a implantação do Git local no seu aplicativ
 [!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user-no-h.md)]
 
 ### <a name="enable-local-git-with-kudu"></a>Habilitar Git local com Kudu
+Se você ainda não tiver um repositório git local para seu aplicativo, será necessário inicializar um executando os seguintes comandos no diretório do projeto do aplicativo:
+
+```cmd
+git init
+git add .
+git commit -m "Initial version"
+```
 
 Para habilitar a implantação do Git local no seu aplicativo com o servidor de build do Kudu, execute [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) no Cloud Shell.
 

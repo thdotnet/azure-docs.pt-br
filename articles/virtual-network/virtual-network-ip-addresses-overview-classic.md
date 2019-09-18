@@ -5,6 +5,7 @@ description: Saiba mais sobre endereços IP (clássicos) públicos e privados no
 services: virtual-network
 documentationcenter: na
 author: genlin
+manager: dcscontentpm
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: genli
-ms.openlocfilehash: 9e7a5772dd1e10abf43eddf0548833d625ecfb24
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 207e728d25df9192f8a600b13d86330af8311700
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60742103"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058917"
 ---
 # <a name="ip-address-types-and-allocation-methods-classic-in-azure"></a>Tipos de endereço IP e métodos de alocação (clássico) no Azure
 Você pode atribuir endereços IP aos recursos do Azure para se comunicar com outros recursos do Azure, sua rede local e a Internet. Há dois tipos de endereços IP que você pode usar no Azure: público e privado.
@@ -51,7 +52,7 @@ Quando precisa de um endereço IP público precisa ser atribuído a um recurso d
 ### <a name="dns-hostname-resolution"></a>Resolução de nome de host DNS
 Quando você cria um serviço de nuvem ou em uma VM de IaaS, precisa fornecer um nome DNS do serviço de nuvem que seja exclusivo entre todos os recursos no Azure. Isso cria um mapeamento nos servidores DNS gerenciados do Azure para *dnsname*. cloudapp.net para o endereço IP público do recurso. Por exemplo, ao criar um serviço de nuvem com um nome DNS do serviço de nuvem de **contoso**, o FQDN (nome de domínio totalmente qualificado) **contoso.cloudapp.net** será resolvido para um endereço VIP (IP público) do serviço de nuvem. Você pode usar o FQDN para criar um registro CNAME do domínio personalizado apontando para o endereço IP público no Azure.
 
-### <a name="cloud-services"></a>Serviços de Nuvem
+### <a name="cloud-services"></a>Serviços de nuvem
 Um serviço de nuvem sempre tem um endereço IP público, conhecido como VIP (endereço IP virtual). Você pode criar pontos de extremidade em um serviço de nuvem para associar portas diferentes no VIP para portas internas em VMs e instâncias de função no serviço de nuvem. 
 
 Um serviço de nuvem pode conter várias VMs de IaaS ou instâncias de função de PaaS, todos expostos por meio do mesmo VIP de serviço de nuvem. Você também pode atribuir [vários VIPs a um serviço de nuvem](../load-balancer/load-balancer-multivip.md), o que permite cenários multiVIP como um ambiente multilocatário com sites baseados em SSL.
@@ -78,7 +79,7 @@ Endereços IP públicos (reservados) estáticos são usados nos cenários em que
 > 
 > 
 
-### <a name="vpn-gateways"></a>Gateways VPN
+### <a name="vpn-gateways"></a>Gateways de VPN
 Um [gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md) pode ser usado para conectar uma VNet do Azure a outra VNet do Azure ou a redes locais. Um gateway de VPN recebe um endereço IP público *dinamicamente*, que permite a comunicação com a rede remota.
 
 ### <a name="application-gateways"></a>Application gateways
@@ -87,12 +88,12 @@ O [Application Gateway](../application-gateway/application-gateway-introduction.
 ### <a name="at-a-glance"></a>Visão rápida
 A tabela a seguir mostra cada tipo de recurso com os métodos de alocação possíveis (dinâmico/estático) e capacidade de atribuir vários endereços IP públicos.
 
-| Resource | Dinâmico | Estático | Vários endereços IP |
+| Recurso | Dinâmico | Estático | Vários endereços IP |
 | --- | --- | --- | --- |
-| serviço de nuvem |Sim |sim |Sim |
+| serviço de nuvem |Sim |Sim |Sim |
 | Instância de função de PaaS ou VM de IaaS |Sim |Não |Não |
 | gateway de VPN |Sim |Não |Não |
-| Gateway de Aplicativo |Sim |Não |Não |
+| Application gateway |Sim |Não |Não |
 
 ## <a name="private-ip-addresses"></a>Endereços IP privados
 Endereços IP privados permitem que os recursos do Azure comuniquem-se com outros recursos em um serviço de nuvem ou em uma VNet ( [rede virtual](virtual-networks-overview.md)), ou na rede local (por meio de um gateway de VPN ou circuito de ExpressRoute), sem usar um endereço IP acessível pela Internet.
@@ -101,7 +102,7 @@ No modelo de implantação clássico do Azure, um endereço IP privado pode ser 
 
 * VMs de IaaS e instâncias de função PaaS
 * Balanceador de carga interno
-* Gateway de Aplicativo
+* Application gateway
 
 ### <a name="iaas-vms-and-paas-role-instances"></a>VMs de IaaS e instâncias de função PaaS
 As VMs (máquinas virtuais) criadas com o modelo de implantação clássico sempre são colocadas em um serviço de nuvem, semelhante às instâncias de função de PaaS. O comportamento de endereços IP privados, portanto, é semelhante para esses recursos.
@@ -134,24 +135,24 @@ No caso de um serviço de nuvem *autônomo* , você será capaz de resolver nome
 ### <a name="internal-load-balancers-ilb--application-gateways"></a>Balanceadores de carga internos (ILB) e gateways de aplicativo
 Você pode atribuir um endereço IP privado para a configuração de **front end** de um [balanceador de carga interno do Azure](../load-balancer/load-balancer-internal-overview.md) (ILB) ou um [Gateway de Aplicativo do Azure](../application-gateway/application-gateway-introduction.md). Esse endereço IP privado serve como ponto de extremidade interno, acessível somente aos recursos dentro da sua rede virtual (VNet) e de redes remotas conectadas à VNet. Você pode atribuir a um endereço IP privado dinâmico ou estático à configuração de front-end. Você também pode atribuir vários endereços IP privados para habilitar cenários de multi-vip.
 
-### <a name="at-a-glance"></a>Visão rápida
+### <a name="at-a-glance"></a>Em um relance
 A tabela a seguir mostra cada tipo de recurso com os métodos de alocação possíveis (dinâmico/estático) e capacidade de atribuir vários endereços IP privados.
 
-| Resource | Dinâmico | Estático | Vários endereços IP |
+| Recurso | Dinâmico | Estático | Vários endereços IP |
 | --- | --- | --- | --- |
-| VM (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |sim |Sim |
+| VM (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |Sim |Sim |
 | Instância de função de PaaS (em uma VNet ou um serviço de nuvem *autônomo*) |Sim |Não |Não |
-| Front-end do balanceador de carga interno |Sim |sim |Sim |
-| Front-end do Application Gateway |Sim |sim |Sim |
+| Front-end do balanceador de carga interno |Sim |Sim |Sim |
+| Front-end do Application Gateway |Sim |Sim |Sim |
 
-## <a name="limits"></a>limites
+## <a name="limits"></a>Limites
 A tabela abaixo mostra os limites impostos ao endereçamento IP no Azure por assinatura. Você pode [entrar em contato com o suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para aumentar os limites padrão até os limites máximos com base nas necessidades de sua empresa.
 
 |  | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| Endereços IP públicos (dinâmicos) |5 |entrar em contato com o suporte |
+| Endereços IP públicos (dinâmicos) |5 |contatar suporte |
 | Endereços IP públicos reservados |20 |entrar em contato com o suporte |
-| VIP público por implantação (serviço de nuvem) |5 |entrar em contato com o suporte |
+| VIP público por implantação (serviço de nuvem) |5 |contatar suporte |
 | VIP privado (ILB) por implantação (serviço de nuvem) |1 |1 |
 
 Leia o conjunto completo de [limites de rede](../azure-subscription-service-limits.md#networking-limits) do Azure.
@@ -162,7 +163,7 @@ Na maioria dos casos, endereços IP públicos são gratuitos. Há um custo nomin
 ## <a name="differences-between-resource-manager-and-classic-deployments"></a>Diferenças entre as implantações do Gerenciador de recursos e clássica
 A seguir está uma comparação dos recursos de endereçamento IP no Gerenciador de Recursos com o modelo de implantação clássico.
 
-|  | Resource | Clássico | Gerenciador de Recursos |
+|  | Recurso | Clássico | Resource Manager |
 | --- | --- | --- | --- |
 | **Endereço IP público** |***VM*** |Conhecido como um ILPIP (somente dinâmico) |Conhecido como um IP público (dinâmico ou estático) |
 |  ||Atribuído a uma VM IaaS ou a uma instância de função de PaaS |Associado à NIC da VM |

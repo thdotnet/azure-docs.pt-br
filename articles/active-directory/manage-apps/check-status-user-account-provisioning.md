@@ -15,12 +15,12 @@ ms.date: 09/09/2018
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fda7654ca2d825ae4112dd06021c7e83ed6867cd
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 2e5ef4067f22d0e9e015e4d9a646f8b92309010a
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68381252"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033517"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Tutorial: Relatórios sobre o provisionamento automático de conta de usuário
 
@@ -44,72 +44,32 @@ Este artigo usa os seguintes termos, definidos a seguir:
 
 ## <a name="getting-provisioning-reports-from-the-azure-portal"></a>Obtendo relatórios de provisionamento do portal do Azure
 
-Para obter informações de relatório de provisionamento para um determinado aplicativo, comece iniciando o [portal do Azure](https://portal.azure.com) e navegando até o aplicativo empresarial para o qual o provisionamento está configurado. Por exemplo, se você estiver provisionando usuários para o LinkedIn Elevate, o caminho de navegação para os detalhes do aplicativo será:
+Para obter informações de relatório de provisionamento para um determinado aplicativo, comece iniciando o [portal do Azure](https://portal.azure.com) e **Azure Active Directory** &gt; os logs de provisionamento de **aplicativos** &gt; empresariais **(versão prévia)** noSeção de atividade. Você também pode navegar até o aplicativo empresarial para o qual o provisionamento está configurado. Por exemplo, se você estiver provisionando usuários para o LinkedIn Elevate, o caminho de navegação para os detalhes do aplicativo será:
 
 **Azure Active Directory > Aplicativos Empresariais > Todos os aplicativos > LinkedIn Elevate**
 
-Aqui, você pode acessar tanto o relatório de resumo de provisionamento quanto os logs de auditoria de provisionamento, ambos descritos abaixo.
+A partir daqui, você pode acessar a barra de progresso de provisionamento e os logs de provisionamento, descritos abaixo.
 
-## <a name="provisioning-summary-report"></a>Relatório de resumo de provisionamento
+## <a name="provisioning-progress-bar"></a>Barra de progresso de provisionamento
 
-O relatório de resumo de provisionamento fica visível na guia **Provisionamento** para determinado aplicativo. Ele está localizado na seção de **Detalhes de Sincronização** sob **Configurações**, e fornece as seguintes informações:
+A [barra de progresso de provisionamento](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar) fica visível na guia **provisionamento** para determinado aplicativo. Ele está localizado na seção **status atual** abaixo de **configurações**e mostra o status do ciclo inicial ou incremental atual. Esta seção também mostra:
 
 * O número total de usuários e grupos que foram sincronizados e estão atualmente no escopo para provisionamento entre o sistema de origem e o sistema de destino.
-* A última vez em que a sincronização foi executada. As sincronizações normalmente ocorrem a cada 20 a 40 minutos, após uma [sincronização inicial](user-provisioning.md#what-happens-during-provisioning) ser concluída.
-* Se uma [sincronização inicial](user-provisioning.md#what-happens-during-provisioning) foi ou não concluída.
+* A última vez em que a sincronização foi executada. As sincronizações normalmente ocorrem a cada 20-40 minutos, após a conclusão de um [ciclo inicial](user-provisioning.md#what-happens-during-provisioning) .
+* Se um [ciclo inicial](user-provisioning.md#what-happens-during-provisioning) foi concluído ou não.
 * Se o processo de provisionamento foi colocado em quarentena ou não e qual o motivo do status de quarentena (por exemplo, falha na comunicação com o sistema de destino devido a credenciais inválidas do administrador).
 
-O relatório de resumo de provisionamento deve ser o primeiro local em que os administradores procuram para verificar a integridade operacional do trabalho de provisionamento.
+O **status atual** deve ser o primeiro lugar em que os administradores procuram verificar a integridade operacional do trabalho de provisionamento.
 
- ![Relatório resumido](./media/check-status-user-account-provisioning/summary_report.PNG)
+ ![Relatório de resumo](./media/check-status-user-account-provisioning/provisioning-progress-bar-section.png)
 
-## <a name="provisioning-audit-logs"></a>Logs de auditoria de provisionamento
+## <a name="provisioning-logs-preview"></a>Provisionando logs (versão prévia)
 
-Todas as atividades realizadas pelo serviço de provisionamento são registradas nos logs de auditoria do Azure AD, que podem ser exibidos na guia **Logs de auditoria** na categoria **Provisionamento da Conta**. Alguns dos tipos de eventos de atividade incluídos no log são:
-
-* **Eventos de importação** – um evento de "importação" é registrado sempre que o serviço de provisionamento do Azure AD recupera informações sobre um usuário individual ou um grupo de um sistema de origem ou de destino. Durante a sincronização, os usuários são recuperados do sistema de origem primeiro, sendo os resultados registrados como eventos de "importação". As IDs correspondentes dos usuários recuperados então são consultadas em comparação ao sistema de destino para verificar se elas existem, sendo os resultados também registrados como eventos de "importação". Esses eventos registram todos os atributos de usuário mapeados e os valores que foram vistos pelo serviço de provisionamento do Azure AD no momento do evento.
-* **Eventos de regra de sincronização** – esses eventos relatam os resultados das regras de mapeamento de atributo e quaisquer filtros de escopo configurados depois de os dados de usuário terem sido importados e avaliados dos sistemas de origem e destino. Por exemplo, se um usuário em um sistema de origem for considerado no escopo para provisionamento e considerado como inexistente no sistema de destino, esse evento registrará que o usuário será provisionado no sistema de destino.
-* **Eventos de exportação** – um evento de "exportação" é registrado sempre que o serviço de provisionamento do Azure AD grava um objeto de grupo ou conta de usuário em um sistema de destino. Esses eventos registram todos os atributos de usuário e os valores que foram gravados pelo serviço de provisionamento do Azure AD no momento do evento. Se tiver ocorrido um erro ao gravar o objeto de grupo ou conta de usuário no sistema de destino, ele será exibido aqui.
-* **Eventos de processamento de caução** – cauções de processo ocorrerem quando o serviço de provisionamento encontra uma falha ao tentar uma operação e começa a tentar realizar a operação novamente em um intervalo de retirada. Um evento "caução" é registrado sempre que uma operação de provisionamento é repetida.
-
-Ao examinar eventos de provisionamento para um usuário individual, os eventos geralmente ocorrem nesta ordem:
-
-1. Evento de importação: o usuário é recuperado do sistema de origem.
-1. Evento de importação: o sistema de destino é consultado para verificar a existência do usuário recuperado.
-1. Evento de regra de sincronização: os dados do usuário de sistemas de origem e destino são avaliados com relação aos filtros de escopo e às regras de mapeamento do atributo configurado para determinar qual ação, caso haja, deve ser executada.
-1. Evento de exportação: se o evento de regra de sincronização tiver determinado que uma ação deve ser executada (Adicionar, Atualizar, Excluir), os resultados da ação serão registrados em um evento de exportação.
-
-   ![Exemplo: Página log de auditoria que mostra as atividades e o status](./media/check-status-user-account-provisioning/audit_logs.PNG)
-
-### <a name="looking-up-provisioning-events-for-a-specific-user"></a>Como pesquisar eventos de provisionamento para um usuário específico
-
-O caso de uso mais comum para os logs de auditoria de provisionamento é verificar o status de provisionamento de uma conta de usuário individual. Para pesquisar os últimos eventos de provisionamento para um usuário específico:
-
-1. Acesse a seção **Logs de auditoria**.
-1. No menu **Categoria**, selecione **Provisionamento de Conta**.
-1. No menu **Intervalo de Datas**, selecione o intervalo de datas que você deseja pesquisar.
-1. Na barra **Pesquisar**, insira a ID de usuário do usuário que você deseja pesquisar. O formato do valor de ID deve corresponder àquele que você selecionou como a ID primária correspondente na configuração de mapeamento de atributo (por exemplo, userPrincipalName ou número de ID do funcionário). O valor de ID necessário estará visível na coluna de Destinos.
-1. Pressione Enter para pesquisar. Os eventos de provisionamento mais recentes serão retornados primeiro.
-1. Se forem retornados eventos, observe os tipos de atividade e se foram bem-sucedidas ou falharam. Se nenhum resultado for retornado, isso significará o usuário não existe ou não ainda foi detectado pelo processo de provisionamento, caso uma sincronização completa ainda não tenha sido concluída.
-1. Clique em eventos individuais para exibir detalhes estendidos, incluindo todas as propriedades de usuário que foram recuperadas, avaliadas ou gravadas como parte do evento.
-
-Para obter mais informações sobre como usar os logs de auditoria, consulte o vídeo abaixo. Os logs de auditoria são apresentados em torno de 5:30 marcar:
-
-> [!VIDEO https://www.youtube.com/embed/pKzyts6kfrw]
-
-### <a name="tips-for-viewing-the-provisioning-audit-logs"></a>Dicas para exibir os logs de auditoria de provisionamento
-
-Para melhor legibilidade no portal do Azure, selecione o botão **Colunas** e escolha estas colunas:
-
-* **Data** – mostra a data em que o evento ocorreu.
-* **Destinos** – mostra a ID de usuário e o nome do aplicativo que são as entidades do evento.
-* **Atividade** – o tipo de atividade, como descrito anteriormente.
-* **Status** – se o evento foi bem-sucedido ou não.
-* **Motivo do status** – um resumo do que aconteceu no evento de provisionamento.
+Todas as atividades executadas pelo serviço de provisionamento são registradas nos [logs de provisionamento](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context)do Azure AD. Você pode acessar os logs de provisionamento no portal do Azure selecionando **Azure Active Directory** &gt; **aplicativos** &gt; empresariais **logs de provisionamento (versão prévia)** na seção **atividade** . Você pode pesquisar os dados de provisionamento com base no nome do usuário ou no identificador no sistema de origem ou no sistema de destino. Para obter detalhes, consulte [Provisionando logs (versão prévia)](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). Alguns dos tipos de eventos de atividade incluídos no log são:
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-O relatório de resumo de provisionamento e os logs de auditoria desempenham um papel importante ao ajudarem os administradores a solucionar vários problemas de provisionamento de conta de usuário.
+O relatório de Resumo de provisionamento e os logs de provisionamento desempenham uma função importante que ajuda os administradores a solucionar problemas de provisionamento de várias contas de usuário.
 
 Para obter diretrizes baseada em cenário sobre como solucionar problemas de provisionamento automático de usuário, consulte [Problemas ao configurar e provisionar usuários para um aplicativo](application-provisioning-config-problem.md).
 

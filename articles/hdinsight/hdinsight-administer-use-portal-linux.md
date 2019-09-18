@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/06/2019
 ms.author: hrasheed
-ms.openlocfilehash: 8bb6ca0483a7bc0a5af63a1fae7e5e5a5415abba
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: dfe531f8b298be1d90df45f57918f87744912949
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810319"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077056"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Gerenciar clusters do Apache Hadoop no HDInsight usando o portal do Azure
 
@@ -72,7 +72,7 @@ Selecione o nome do cluster na página [**clusters HDInsight**](#showClusters) .
     |Ações de script|Execute scripts Bash no cluster. Confira [Personalizar clusters HDInsight baseados em Linux usando a Ação de Script](hdinsight-hadoop-customize-cluster-linux.md).|
     |Metastores externos|Exiba os metastores [Apache Hive](https://hive.apache.org/) e [Apache Oozie](https://oozie.apache.org/). Os metastores só podem ser configurados durante o processo de criação do cluster.|
     |Parceiro HDInsight|Adiciona/remove o parceiro do HDInsight atual.|
-    |Propriedades|Exibe as [propriedades do cluster](#properties).|
+    |Properties|Exibe as [propriedades do cluster](#properties).|
     |Bloqueios|Adiciona um bloqueio para impedir que o cluster seja modificado ou excluído.|
     |Exportar modelo|Exibe e exporta o modelo do Azure Resource Manager para o cluster. No momento, você pode exportar apenas a conta de armazenamento do Azure dependente. Consulte [Criar clusters do Apache Hadoop baseados em Linux no HDInsight usando os modelos do Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).|
 
@@ -170,7 +170,7 @@ Na [home page do cluster](#homePage):
 
 1. Selecione **Painéis do cluster**.
 
-    ![Menu do cluster HDInsight Hadoop](./media/hdinsight-administer-use-portal-linux/hdinsight-azure-portal-cluster-menu2.png)
+    ![Menu de cluster do HDInsight Apache Hadoop](./media/hdinsight-administer-use-portal-linux/hdinsight-azure-portal-cluster-menu2.png)
 
 1. Selecione **Página inicial do Ambari** na página nova.
 1. Insira o nome de usuário do cluster e a senha.  O nome de usuário do cluster padrão é _admin_.

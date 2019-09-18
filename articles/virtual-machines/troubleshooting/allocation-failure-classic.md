@@ -4,7 +4,7 @@ description: Solução de problemas de falhas de alocação ao criar, reiniciar 
 services: azure-service-management
 documentationcenter: ''
 author: genlin
-manager: willchen
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue,azure-resource-manager,azure-service-management
 ms.assetid: bb939e23-77fc-4948-96f7-5037761c30e8
@@ -12,12 +12,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 7cd7897e3a0b940bbc636b2fbc3dbbc13b7cf540
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d43176e04337c2faf7be0bea682428056bc4ab46
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505523"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059189"
 ---
 # <a name="troubleshooting-steps-specific-to-allocation-failure-scenarios-in-the-classic-deployment-model"></a>As etapas de solução de problemas específicas de cenários de falha de alocação no modelo de implantação clássico
 
@@ -116,7 +116,7 @@ New_General* ou New_VMSizeNotSupported\*
 
 **Causa de fixação de cluster**
 
-Antes de as redes virtuais regionais serem introduzidas, era necessário associar uma rede virtual ao grupo de afinidades. Como resultado, computação colocados em um grupo de afinidade de recursos são vinculados pelas mesmas restrições, conforme descrito no "cenário de alocação: Grupo de afinidades (proximidade de serviço/VM) "seção acima. Os recursos de computação são vinculados a um cluster.
+Antes de as redes virtuais regionais serem introduzidas, era necessário associar uma rede virtual ao grupo de afinidades. Como resultado, os recursos de computação colocados em um grupo de afinidades são vinculados pelas mesmas restrições, conforme descrito no "cenário de alocação: Seção de grupo de afinidade (proximidade de serviço/VM) "acima. Os recursos de computação são vinculados a um cluster.
 
 **Solução alternativa**
 

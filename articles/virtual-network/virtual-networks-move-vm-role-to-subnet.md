@@ -4,7 +4,7 @@ description: Aprenda a mover VMs (Clássico) e instâncias de função de Servi�
 services: virtual-network
 documentationcenter: na
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: tysonn
 ms.assetid: de4135c7-dc5b-4ffa-84cc-1b8364b7b427
 ms.service: virtual-network
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 787a50a0cbf16089cd15f922b494cd12d680cb43
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 275d59a7bddd8b2b609169218afcd15e9a0ce913
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60640388"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058384"
 ---
 # <a name="move-a-vm-classic-or-cloud-services-role-instance-to-a-different-subnet-using-powershell"></a>Mover uma VM (Clássico) ou uma instância de função de Serviços de Nuvem para uma sub-rede diferente usando o PowerShell
 Você pode usar o PowerShell para mover suas VMs (Clássico) de uma sub-rede para outra na mesma rede virtual (VNet). As instâncias de função podem ser movidas editando o arquivo CSCFG em vez de usar o PowerShell.

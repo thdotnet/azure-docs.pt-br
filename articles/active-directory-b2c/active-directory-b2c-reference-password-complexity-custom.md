@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 04a37e6faf51787457d7ca4ab8434fd253deb2ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6454d380b0f34e940951e3de44d1dee0ff6b597f
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509152"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065516"
 ---
 # <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Configurar a complexidade da senha usando políticas personalizadas no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-No Azure AD (Azure Active Directory) B2C, é possível configurar os requisitos de complexidade para senhas fornecidas por um usuário durante a criação de uma conta. Por padrão, o Azure AD B2C usa senhas **Fortes**. Este artigo mostra como configurar a complexidade de senha em [políticas personalizadas](active-directory-b2c-overview-custom.md). Também é possível configurar a complexidade da senha em [fluxos de usuário](active-directory-b2c-reference-password-complexity.md).
+No Azure Active Directory B2C (Azure AD B2C), você pode configurar os requisitos de complexidade para senhas que são fornecidas por um usuário ao criar uma conta. Por padrão, o Azure AD B2C usa senhas **Fortes**. Este artigo mostra como configurar a complexidade de senha em [políticas personalizadas](active-directory-b2c-overview-custom.md). Também é possível configurar a complexidade da senha em [fluxos de usuário](active-directory-b2c-reference-password-complexity.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -112,7 +112,7 @@ Ao testar seus aplicativos no Azure AD B2C, pode ser útil ter o token do Azure 
 ### <a name="upload-the-files"></a>Carregar os arquivos
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Selecione **Estrutura de Experiência de Identidade**.
 5. Na página de políticas personalizadas, clique em **Carregar Política**.

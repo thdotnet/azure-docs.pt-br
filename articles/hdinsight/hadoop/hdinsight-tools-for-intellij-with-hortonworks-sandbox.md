@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5234835f5fbfd5617e6b0440ff38fa900051470a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 783d7fc8bc26ce2c715c774e63ecf60c5b75a439
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67450119"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076270"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Usar ferramentas de HDInsight para IntelliJ com a área restrita do Hortonworks
 
@@ -55,7 +55,7 @@ Nesta seção, você cria um projeto de exemplo do Scala usando o IntelliJ IDEA.
       * **Maven**: Para suporte ao assistente de criação de projetos do Scala.
       * **SBT**: Para gerenciar dependências e compilar para o projeto do Scala.
 
-   ![A caixa de diálogo Novo Projeto](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
+   ![IntelliJ criar novo projeto escalar](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
 
 2. Selecione **Avançar**.
 3. Na próxima caixa de diálogo **Novo Projeto**, siga as seguintes etapas:
@@ -142,7 +142,7 @@ Para enviar um projeto a um emulador:
 2. Conclua as seguintes etapas:
 
     1. Na lista suspensa **Cluster Spark (somente no Linux)** , selecione a Área Restrita do Hortonworks local.
-    2. Na caixa **Nome da classe principal**, escolha ou digite o nome da classe principal. Neste artigo, o nome é **GroupByTest**.
+    2. Na caixa **Nome da classe principal**, escolha ou digite o nome da classe principal. Para este artigo, o nome é **GroupByTest**.
 
 3. Selecione **Enviar**. Os logs de envio de trabalho são mostrados na janela da ferramenta de envio Spark.
 
