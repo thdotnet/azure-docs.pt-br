@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 09/04/2019
+ms.date: 09/17/2019
 ms.author: dalek
-ms.openlocfilehash: f0a3930cfb3ff403e0ce9d9be308370810e2065a
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 62f2ea36468e30b20ef08bde21bfde961faae8f9
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277002"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71067026"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gerenciar o uso e os custos do Application Insights
 
@@ -30,7 +30,7 @@ Se tiver dúvidas sobre como os preços são aplicados ao Application Insights, 
 
 ## <a name="pricing-model"></a>Modelo de preços
 
-O preço do [aplicativo Azure][start] insights é baseado no volume de dados ingerido. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
+O preço do [aplicativo Azure insights][start] é baseado no volume de dados ingerido. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
 
 ### <a name="data-volume-details"></a>Detalhes do volume de dados
 
@@ -53,7 +53,7 @@ O Application Insights facilita a compreensão de quais são seus custos com bas
 
 ![Escolher preços](./media/pricing/pricing-001.png)
 
-a. Examine o volume de dados do mês. Isso inclui todos os dados recebidos e mantidos (após qualquer [amostragem](../../azure-monitor/app/sampling.md)) de seu servidor e aplicativos cliente e dos testes de disponibilidade.  
+A. Examine o volume de dados do mês. Isso inclui todos os dados recebidos e mantidos (após qualquer [amostragem](../../azure-monitor/app/sampling.md)) de seu servidor e aplicativos cliente e dos testes de disponibilidade.  
 B. Uma cobrança separada é feita pelos [testes na Web de várias etapas](../../azure-monitor/app/availability-multistep.md). (Isso não inclui testes de disponibilidade simples, que são incluídos na cobrança de volume de dados).  
 C. Visualize as tendências do volume de dados do último mês.  
 D. Habilite a [amostragem](../../azure-monitor/app/sampling.md) de ingestão de dados.   
@@ -151,7 +151,7 @@ Em cada registro mantido, `itemCount` indica o número de registros originais qu
 ## <a name="change-the-data-retention-period"></a>Alterar o período de retenção de dados
 
 > [!NOTE]
-> Removemos temporariamente esse recurso enquanto resolvemos um possível problema.  Teremos isso de volta em meados de setembro de 2019.
+> Removemos temporariamente esse recurso enquanto resolvemos um possível problema.  Vamos tê-lo de volta na primeira semana em outubro de 2019.
 
 A retenção padrão para recursos de Application Insights é de 90 dias. Diferentes períodos de retenção podem ser selecionados para cada recurso de Application Insights. O conjunto completo de períodos de retenção disponíveis é 30, 60, 90, 120, 180, 270, 365, 550 ou 730 dias. 
 

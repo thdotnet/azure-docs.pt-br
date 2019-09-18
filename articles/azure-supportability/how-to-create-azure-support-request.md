@@ -14,27 +14,27 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2016
 ms.author: gangan
-ms.openlocfilehash: f6d9e683e1feff670c26b01a31ce977557295bff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 462a14d7845c6723a3482e50b01c50e3d913beee
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62129052"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71072076"
 ---
 # <a name="how-to-create-an-azure-support-request"></a>Como criar uma solicitação de suporte do Azure
 ## <a name="summary"></a>Resumo
 Os clientes do Azure podem criar e gerenciar solicitações de suporte no Portal do Azure, [https://portal.azure.com](https://portal.azure.com).
 
 > [!NOTE]
-> O Portal do Azure para Alemanha é [https://portal.microsoftazure.de](https://portal.microsoftazure.de)   
-> O Portal do Azure para o governo dos Estados Unidos é [https://portal.azure.us](https://portal.azure.us).
+> Portal do Azure para uso desaconselhável é [https://portal.azure.com](https://portal.azure.com) portal do Azure para a Alemanha é[https://portal.microsoftazure.de](https://portal.microsoftazure.de)   
+> portal do Azure para o Estados Unidos governamental é[https://portal.azure.us](https://portal.azure.us)
 
 
 Com base nos comentários dos clientes, atualizamos a experiência de solicitação de suporte com foco em três metas principais:
 
-* **Simplificada**: Reduza cliques e folhas para simplificar o processo de envio de uma solicitação de suporte.
-* **Integrado**: Quando você estiver solucionando um problema com um recurso do Azure, ele deve ser fácil abrir uma solicitação de suporte para esse recurso sem alternância de contexto.
-* **Eficiente**: Colete as informações de chave que seu engenheiro de suporte precisa para resolver eficazmente o problema.
+* **Simplificado**: Reduza cliques e lâminas para tornar o processo de envio de uma solicitação de suporte simples.
+* **Integrado**: Quando você está solucionando um problema com um recurso do Azure, deve ser fácil abrir uma solicitação de suporte para esse recurso sem alternar o contexto.
+* **Eficiente**: Reúna as principais informações que seu engenheiro de suporte precisa para resolver com eficiência seu problema.
 
 ## <a name="getting-started"></a>Introdução
 Você pode criar uma solicitação de suporte no menu de navegação superior ou diretamente na folha de um recurso.
@@ -45,16 +45,16 @@ Você pode criar uma solicitação de suporte no menu de navegação superior ou
 
 Na página Ajuda e Suporte, selecione “Nova solicitação de suporte”
 
-![Nova solicitação de suporte](./media/how-to-create-azure-support-request/NewSupportRequest.png)
+![Nova Solicitação de Suporte](./media/how-to-create-azure-support-request/NewSupportRequest.png)
 
 **Na folha de um recurso**
 
 ![No contexto](./media/how-to-create-azure-support-request/Incontext.png)
 
-## <a name="basics"></a>Noções básicas
+## <a name="basics"></a>Noções Básicas
 A primeira etapa do processo de solicitação de suporte coleta informações básicas sobre o problema e seu plano de suporte.
 
-Vejamos um exemplo: Você está enfrentando problemas técnicos com sua máquina virtual e suspeita de um problema de conectividade de rede.
+Vamos pegar um exemplo: Você está enfrentando dificuldades técnicas com sua máquina virtual e suspeita de um problema de conectividade de rede.
 A escolha do serviço ("Máquina Virtual executando o Windows") e o recurso (o nome da máquina virtual) na primeira etapa do assistente inicia o processo de obter ajuda para esse problema.
 
 ![Folha de Noções básicas](./media/how-to-create-azure-support-request/Basics.png)
@@ -86,10 +86,10 @@ Se as soluções recomendadas não ajudarem, você poderá continuar o processo 
 
 ![Folha do problema 3](./media/how-to-create-azure-support-request/Problem03.png)
 
-## <a name="contact-information"></a>Informações de contato
+## <a name="contact-information"></a>Informações de Contato
 A última etapa do assistente confirma suas informações e opções de contato para que saibamos como contatar você.
 
-![Informações de contato](./media/how-to-create-azure-support-request/ContactInformation.png)
+![Informações de Contato](./media/how-to-create-azure-support-request/ContactInformation.png)
 
 Dependendo da severidade do problema, poderá ser solicitado que você indique se deseja que entremos em contato durante o horário comercial ou se prefere uma resposta em qualquer hora do dia, todos os dias da semana.
 

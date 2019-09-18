@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 50264b1364f40ff5e68ae4a93783d62837c167b3
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: d881ffff81119167f54b5ef8f0c5e2c1ad1e4791
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69898825"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71075125"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Atualizar um cluster do Serviço de Kubernetes do Azure (AKS)
 
@@ -29,7 +29,7 @@ Este artigo requer que você esteja executando o CLI do Azure versão 2.0.65 ou 
 
 ## <a name="check-for-available-aks-cluster-upgrades"></a>Verificação de atualizações disponíveis do cluster do AKS
 
-Para verificar quais versões do kubernetes estão disponíveis para o cluster, use o comando [AZ AKs Get-][az-aks-get-upgrades] upgrades. O exemplo abaixo verifica atualizações disponíveis para o cluster nomeado *myAKSCluster* em um grupo de recursos nomeado *myResourceGroup*:
+Para verificar quais versões do kubernetes estão disponíveis para o cluster, use o comando [AZ AKs Get-upgrades][az-aks-get-upgrades] . O exemplo abaixo verifica atualizações disponíveis para o cluster nomeado *myAKSCluster* em um grupo de recursos nomeado *myResourceGroup*:
 
 ```azurecli-interactive
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
@@ -46,6 +46,10 @@ A saída de exemplo a seguir mostra que o cluster pode ser atualizado para as ve
 Name     ResourceGroup     MasterVersion    NodePoolVersion    Upgrades
 -------  ----------------  ---------------  -----------------  ---------------
 default  myResourceGroup   1.12.8           1.12.8             1.13.9, 1.13.10
+```
+Se nenhuma atualização estiver disponível, você receberá:
+```console
+ERROR: Table output unavailable. Use the --query option to specify an appropriate query. Use --debug for more info.
 ```
 
 ## <a name="upgrade-an-aks-cluster"></a>Atualizar um cluster AKS

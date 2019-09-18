@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 6adc5dfa740d440e78bf2f276447c4585503d7c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e407b26091ad559ab458f76d94e2460660ecd14f
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65606474"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71036605"
 ---
 # <a name="heading"></a>Processar dados na Máquina Virtual do SQL Server no Azure
 Este documento aborda como explorar dados e gerar recursos dados armazenados em uma VM do SQL Server no Azure. Isso pode ser feito por disputa de dados usando SQL ou usando uma linguagem de programação como Python.
@@ -87,7 +87,7 @@ Apresentamos aqui uma breve cartilha sobre dados de localização de latitude/lo
 * O sinal nos informa se estamos na parte norte ou sul, leste ou oeste do globo.
 * Um dígito em centenas diferente de zero informa que estamos usando longitude, não latitude!
 * O dígito de dezena indica uma posição de cerca de 1.000 quilômetros. Ele nos dá informações úteis sobre em qual continente ou oceano estamos.
-* O dígito e unidades (um grau decimal) oferece uma posição até 111 quilômetros (60 milhas náuticas, cerca de 69 milhas). Ele pode indicar aproximadamente em qual grande estado ou país/região, que estamos no.
+* O dígito e unidades (um grau decimal) oferece uma posição até 111 quilômetros (60 milhas náuticas, cerca de 69 milhas). Ele pode lhe dizer aproximadamente que estado, país ou região em que você está.
 * A primeira casa decimal representa até 11,1 km: ela pode distinguir a posição de uma cidade grande de uma cidade grande vizinha.
 * A segunda casa decimal representa 1,1 km: ela pode separar um vila da próxima.
 * A terceira casa decimal representa até 110 m: ela pode identificar um campo agrícola ou campus institucional grande.
@@ -116,7 +116,7 @@ Os recursos baseados em localização podem ser usados ainda para gerar recursos
 > 
 
 ### <a name="sql-aml"></a>Conectando ao Azure Machine Learning
-O recurso recém-gerado pode ser adicionado como uma coluna a uma tabela existente ou armazenado em uma nova tabela e unido com a tabela original para o aprendizado de máquina. Os recursos podem ser gerados ou acessados, se já foram criados, usando o módulo [Importar Dados][import-data] no Azure Machine Learning, conforme mostrado abaixo:
+O recurso recém-gerado pode ser adicionado como uma coluna a uma tabela existente ou armazenado em uma nova tabela e unido com a tabela original para o aprendizado de máquina. Os recursos podem ser gerados ou acessados se já tiverem sido criados, usando o módulo [importar dados][import-data] no Azure Machine Learning, conforme mostrado abaixo:
 
 ![leitores de azureml][1] 
 

@@ -8,24 +8,24 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
-ms.date: 07/01/2019
-ms.openlocfilehash: c6994127b504cba31df051c757295f3e575bc23f
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: MT
+ms.date: 09/01/2019
+ms.openlocfilehash: 3a197ab8d8c44229328c63330bcbc99fb2e64f01
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931214"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71077263"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Instalar o gateway de dados no local para os Aplicativos Lógicos do Azure
 
-Antes de poder [se conectar a fontes de dados locais de aplicativos lógicos do Azure](../logic-apps/logic-apps-gateway-connection.md), baixe e instale o gateway de dados local em um computador local. O gateway funciona como uma ponte que fornece transferência rápida de dados e criptografia entre fontes de dados locais e seus aplicativos lógicos. Você pode usar a mesma instalação de gateway com outros serviços de nuvem, como Power BI, Microsoft Flow, PowerApps e Azure Analysis Services. Para obter informações sobre como usar o gateway com esses serviços, consulte estes artigos:
+Antes de poder [se conectar a fontes de dados locais de aplicativos lógicos do Azure](../logic-apps/logic-apps-gateway-connection.md), baixe e instale o [Gateway de dados](https://aka.ms/on-premises-data-gateway-installer) local em um computador local. O gateway funciona como uma ponte que fornece transferência rápida de dados e criptografia entre fontes de dados locais e seus aplicativos lógicos. Você pode usar a mesma instalação de gateway com outros serviços de nuvem, como Power BI, Microsoft Flow, PowerApps e Azure Analysis Services. Para obter informações sobre como usar o gateway com esses serviços, consulte estes artigos:
 
 * [Gateway de dados local do Microsoft Power BI](https://powerbi.microsoft.com/documentation/powerbi-gateway-onprem/)
 * [Gateway de dados local do Microsoft PowerApps](https://powerapps.microsoft.com/tutorials/gateway-management/)
 * [Gateway de dados local do Microsoft Flow](https://flow.microsoft.com/documentation/gateway-manage/)
 * [Gateway de dados local do Azure Analysis Services](../analysis-services/analysis-services-gateway.md)
 
-Este artigo mostra como baixar, instalar e configurar seu gateway de dados local para que você possa acessar fontes de dados locais de aplicativos lógicos do Azure. Você também pode saber mais sobre [como o gateway de dados funciona](#gateway-cloud-service) mais adiante neste tópico.
+Este artigo mostra como baixar, instalar e configurar seu gateway de dados local para que você possa acessar fontes de dados locais de aplicativos lógicos do Azure. Você também pode saber mais sobre [como o gateway de dados funciona](#gateway-cloud-service) mais adiante neste tópico. Para obter mais informações sobre o gateway, consulte [o que é um gateway local](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem)?
 
 <a name="requirements"></a>
 
@@ -264,8 +264,8 @@ Aqui estão as maneiras pelas quais você pode corresponder às suas contas de A
 
 Para saber mais, consulte esses tópicos:
 
-* [Perguntas frequentes de gateway de dados no local](https://docs.microsoft.com/data-integration/service-gateway-onprem-faq)
-* [Solucionar problemas do gateway de dados local](https://docs.microsoft.com/data-integration/gateway-service-gateway-tshoot)
+* [Perguntas frequentes de gateway de dados no local](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)
+* [Solucionar problemas do gateway de dados local](https://docs.microsoft.com/data-integration/gateway/gateway-service-gateway-tshoot)
 * [Monitorar e otimizar o desempenho do gateway](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
 
 ## <a name="next-steps"></a>Próximas etapas

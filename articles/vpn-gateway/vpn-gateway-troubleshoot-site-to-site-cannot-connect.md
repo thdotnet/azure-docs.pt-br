@@ -4,7 +4,7 @@ description: Saiba como solucionar problemas de conexão VPN site a site que rep
 services: vpn-gateway
 documentationcenter: na
 author: chadmath
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: vpn-gateway
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/30/2018
+ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: 3919243569035be41293ddc97c76a9f964cda7cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e196c4b512de3fac97347e4c252b697ed6818227
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64688497"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058867"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Solucionar problemas: A conexão VPN Site a Site do Azure não pode se conectar e para de funcionar
 
@@ -27,7 +27,7 @@ Depois de configurar uma conexão VPN site a site entre uma rede local e uma red
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
-## <a name="troubleshooting-steps"></a>Etapas para solucionar problemas
+## <a name="troubleshooting-steps"></a>Etapas de solução de problemas
 
 Para resolver o problema, primeiro tente [redefinir o gateway de VPN do Azure](vpn-gateway-resetgw-classic.md) e redefinir o túnel do dispositivo VPN local. Se o problema persistir, siga essas etapas para identificar a causa do problema.
 

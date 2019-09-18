@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9eab92f044f62a1ca32062753f824ea76a2726a8
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: cf732ec97a57a5bc1d2bcaa39e5fd14a305504d0
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860287"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71075494"
 ---
 # <a name="configure-azure-multi-factor-authentication-settings"></a>Configurar a Autenticação Multifator do Azure
 
@@ -403,6 +403,8 @@ O recurso reduz o número de autenticações em aplicativos Web, que normalmente
 >O recurso **Lembrar a Autenticação Multifator** não é compatível com o recurso **Mantenha-me conectado** do AD FS, em que os usuários realizam a verificação em duas etapas no AD FS por meio do Servidor de Autenticação Multifator do Azure ou de uma solução de autenticação multifator de terceiros.
 >
 >Se os usuários selecionarem **Mantenha-me conectado** no AD FS e também marcarem seus dispositivos como confiáveis para a Autenticação Multifator, eles não serão verificados automaticamente após o fim do número de dias da **Lembrar a Autenticação Multifator**. O Azure AD solicitará uma nova verificação em duas etapas, mas o AD FS retornará um token com a declaração e a data originais da Autenticação Multifator em vez de realizar a verificação em duas etapas novamente. **Essa reação dá início a um loop de verificação entre o Microsoft Azure Active Directory e o AD FS.**
+>
+>O recurso **lembrar a autenticação multifator** não é compatível com usuários B2B e não será visível para usuários B2B ao entrar nos locatários convidados.
 >
 
 ### <a name="enable-remember-multi-factor-authentication"></a>Habilitar a opção Lembrar a Autenticação Multifator

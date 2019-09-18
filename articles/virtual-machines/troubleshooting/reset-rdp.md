@@ -4,7 +4,7 @@ description: Saiba como redefinir uma senha de conta ou Serviços de Área de Tr
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 45c69812-d3e4-48de-a98d-39a0f5675777
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: caa0066f8020c19cecccaa0421f90188260c644b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 580ec443dc087f270e30856c336a5699bbf1ae71
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710620"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71058454"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Redefinir os Serviços de Área de Trabalho Remota ou a senha de administrador em uma VM do Windows
 Se você não conseguir conectar-se a uma VM (máquina virtual) do Windows, poderá redefinir a senha de administrador local ou redefinir a configuração dos Serviços de Área de Trabalho Remota (sem suporte nos controladores de domínio do Windows). Para redefinir a senha, use o portal do Azure ou a extensão de acesso da VM no Azure PowerShell. Depois de entrar na VM, redefina a senha desse administrador local.  
@@ -45,7 +45,7 @@ Primeiro, entre no [Portal do Azure](https://portal.azure.com) e selecione **Má
 
 ### <a name="reset-the-remote-desktop-services-configuration"></a>**Redefinir a configuração dos Serviços de Área de Trabalho Remota**
 
-Esse processo será habilitar o serviço de área de trabalho remota na VM e criar uma regra de firewall para a porta do RDP padrão 3389.
+Esse processo habilitará Área de Trabalho Remota serviço na VM e criará uma regra de firewall para a porta RDP padrão 3389.
 
 1. Selecione a VM do Windows e, em seguida, selecione **Redefinir senha** em **Suporte + Solução de problemas**. A janela **Redefinir senha** é exibida. 
 
