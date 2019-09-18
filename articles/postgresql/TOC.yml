@@ -104,6 +104,8 @@
               href: concepts-monitoring.md
             - name: Logs do servidor
               href: concepts-server-logs.md
+            - name: Logs de auditoria
+              href: concepts-audit.md
             - name: Repositório de Consultas
               items:
                 - name: Repositório de Consultas
