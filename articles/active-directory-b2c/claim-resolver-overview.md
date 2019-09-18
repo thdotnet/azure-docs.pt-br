@@ -10,20 +10,20 @@ ms.topic: reference
 ms.date: 01/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a13d4b0b44c51f78a068b1619fe083a08756af6b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f08c85cee2378f4a879daf197af7a2adf0c20f45
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511600"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064408"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Sobre resolvedores de declaração em políticas personalizadas do Azure Active Directory B2C
 
-Resolvedores de declaração em [políticas personalizadas](active-directory-b2c-overview-custom.md) do Azure AD (Azure Active Directory) B2C fornecem informações de contexto sobre uma solicitação de autorização, como o nome da política, a ID da correlação da solicitação, o idioma da interface do usuário e muito mais.
+Os resolvedores de declaração em [políticas personalizadas](active-directory-b2c-overview-custom.md) de Azure Active Directory B2C (Azure ad B2C) fornecem informações de contexto sobre uma solicitação de autorização, como o nome da política, ID de correlação de solicitação, idioma da interface do usuário e muito mais.
 
-Para usar um resolvedor de declaração em uma declaração de entrada ou saída, você define uma cadeia de caracteres **ClaimType**, no elemento [ClaimsSchema](claimsschema.md) e, em seguida, define **DefaultValue** como o resolvedor de declaração no elemento de declaração de entrada ou saída. O Azure AD B2C lê o valor do resolvedor de declaração e usa o valor no perfil técnico. 
+Para usar um resolvedor de declaração em uma declaração de entrada ou saída, você define uma cadeia de caracteres **ClaimType**, no elemento [ClaimsSchema](claimsschema.md) e, em seguida, define **DefaultValue** como o resolvedor de declaração no elemento de declaração de entrada ou saída. O Azure AD B2C lê o valor do resolvedor de declaração e usa o valor no perfil técnico.
 
-No exemplo a seguir, um tipo de declaração denominado `correlationId` é definido com um **DataType** de `string`.  
+No exemplo a seguir, um tipo de declaração denominado `correlationId` é definido com um **DataType** de `string`.
 
 ```XML
 <ClaimType Id="correlationId">
@@ -45,16 +45,16 @@ As seções a seguir listam os resolvedores de declarações disponíveis.
 
 ### <a name="culture"></a>Cultura
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------- | --------|
-| {Culture:LanguageName} | As duas letras do código ISO para o idioma. | en |
-| {Culture:LCID}   | O LCID do código de idioma. | 1033 |
+| {Culture:LanguageName} | As duas letras do código ISO para o idioma. | pt-BR |
+| {Culture:LCID}   | O LCID do código de idioma. | 1046 |
 | {Culture:RegionName} | As duas letras do código ISO para a região. | EUA |
 | {Culture:RFC5646} | O código de idioma RFC5646. | en-US |
 
 ### <a name="policy"></a>Política
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | O nome da política de terceira parte confiável. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | A ID do locatário da política de terceira parte confiável. | your-tenant.onmicrosoft.com |
@@ -63,7 +63,7 @@ As seções a seguir listam os resolvedores de declarações disponíveis.
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------- | --------|
 | {OIDC:AuthenticationContextReferences} |O parâmetro de cadeia de caracteres da consulta `acr_values`. | N/D |
 | {OIDC:ClientId} |O parâmetro de cadeia de caracteres da consulta `client_id`. | 00000000-0000-0000-0000-000000000000 |
@@ -71,13 +71,13 @@ As seções a seguir listam os resolvedores de declarações disponíveis.
 | {OIDC:LoginHint} |  O parâmetro de cadeia de caracteres da consulta `login_hint`. | someone@contoso.com |
 | {OIDC:MaxAge} | O `max_age`. | N/D |
 | {OIDC:Nonce} |O parâmetro de cadeia de caracteres da consulta `Nonce`. | defaultNonce |
-| {OIDC:Prompt} | O parâmetro de cadeia de caracteres da consulta `prompt`. | logon |
+| {OIDC:Prompt} | O parâmetro de cadeia de caracteres da consulta `prompt`. | Logon |
 | {OIDC:Resource} |O parâmetro de cadeia de caracteres da consulta `resource`. | N/D |
 | {OIDC:scope} |O parâmetro de cadeia de caracteres da consulta `scope`. | openid |
 
 ### <a name="context"></a>Contexto
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | A versão do Identity Experience Framework (número de build).  | 1.0.507.0 |
 | {Context:CorrelationId} | ID de correlação.  | 00000000-0000-0000-0000-000000000000 |
@@ -90,7 +90,7 @@ As seções a seguir listam os resolvedores de declarações disponíveis.
 
 Qualquer nome de parâmetro incluído como parte de uma solicitação OIDC ou OAuth2 pode ser mapeado para uma declaração no percurso do usuário. Por exemplo, a solicitação do aplicativo pode incluir um parâmetro da cadeia de consulta com um nome de `app_session`, `loyalty_number` ou qualquer cadeia de consulta personalizada.
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Um parâmetro de cadeia de consulta. | havaí |
 | {OAUTH-KV:app_session} | Um parâmetro de cadeia de consulta. | A3C5R |
@@ -99,7 +99,7 @@ Qualquer nome de parâmetro incluído como parte de uma solicitação OIDC ou OA
 
 ### <a name="oauth2"></a>OAuth2
 
-| Declaração | DESCRIÇÃO | Exemplo |
+| Declaração | Descrição | Exemplo |
 | ----- | ----------------------- | --------|
 | {oauth2:access_token} | O token de acesso. | N/D |
 
@@ -107,7 +107,7 @@ Qualquer nome de parâmetro incluído como parte de uma solicitação OIDC ou OA
 
 ### <a name="restful-technical-profile"></a>Perfil técnico RESTful
 
-Em um perfil técnico [RESTful](restful-technical-profile.md), você talvez queira enviar o idioma do usuário, o nome da política, o escopo e a ID do cliente. Com base nessas declarações, a API REST poderá executar lógica de negócios personalizada e, se necessário, gerar uma mensagem de erro localizada. 
+Em um perfil técnico [RESTful](restful-technical-profile.md), você talvez queira enviar o idioma do usuário, o nome da política, o escopo e a ID do cliente. Com base nessas declarações, a API REST poderá executar lógica de negócios personalizada e, se necessário, gerar uma mensagem de erro localizada.
 
 O exemplo a seguir mostra um perfil técnico RESTful:
 

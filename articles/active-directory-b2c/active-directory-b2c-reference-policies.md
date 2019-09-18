@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 54677dc0771f65b7636b4d1cac77f53f9c04a09d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08da04a8bf167c99ef2384a9714034ae1865bec1
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508934"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065365"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Fluxos dos usuários no Azure Active Directory B2C
 
-A estrutura de política extensível do Azure AD (Azure Active Directory) B2C é o principal ponto forte do serviço. As políticas descrevem em detalhe experiências de identidade, tais como inscrição, entrada ou edição de perfil. Para ajudá-lo a configurar as tarefas de identidade mais comuns, o portal do Azure AD B2C inclui políticas predefinidas e configuráveis chamadas **fluxos dos usuários**. 
+A estrutura de política extensível da Azure Active Directory B2C (Azure AD B2C) é a força principal do serviço. As políticas descrevem em detalhe experiências de identidade, tais como inscrição, entrada ou edição de perfil. Para ajudá-lo a configurar as tarefas de identidade mais comuns, o portal do Azure AD B2C inclui políticas predefinidas e configuráveis chamadas **fluxos dos usuários**.
 
 ## <a name="what-are-user-flows"></a>O que são fluxos dos usuários?
 
@@ -29,9 +29,9 @@ Um fluxo de usuário de inscrição permite controlar comportamentos em aplicati
 - Atributos a serem coletados do consumidor, tais como nome, código postal e tamanho do calçado
 - Autenticação Multifator do Azure
 - Personalização da interface do usuário
-- Informações de que o aplicativo recebe como declarações em um token 
+- Informações de que o aplicativo recebe como declarações em um token
 
-É possível criar muitos fluxos dos usuários de diferentes tipos no locatário e usá-los nos aplicativos, conforme necessário. Fluxos dos usuários podem ser reutilizados nos aplicativos. Essa flexibilidade permite definir e modificar experiências de identidade com pouca ou nenhuma alteração no seu código. O aplicativo dispara um fluxo de usuário usando uma solicitação de autenticação HTTP padrão que inclui um parâmetro de fluxo de usuário. Um [token](active-directory-b2c-reference-tokens.md) personalizado é recebido como uma resposta. 
+É possível criar muitos fluxos dos usuários de diferentes tipos no locatário e usá-los nos aplicativos, conforme necessário. Fluxos dos usuários podem ser reutilizados nos aplicativos. Essa flexibilidade permite definir e modificar experiências de identidade com pouca ou nenhuma alteração no seu código. O aplicativo dispara um fluxo de usuário usando uma solicitação de autenticação HTTP padrão que inclui um parâmetro de fluxo de usuário. Um [token](active-directory-b2c-reference-tokens.md) personalizado é recebido como uma resposta.
 
 Os exemplos a seguir mostram o parâmetro de cadeia de caracteres de consulta "p" que especifica o fluxo de usuário a ser usado:
 
@@ -71,16 +71,16 @@ Atualmente, os seguintes fluxos dos usuários são recomendados:
 
 ## <a name="linking-user-flows"></a>Vinculação de fluxos dos usuários
 
-Um fluxo de usuário de **inscrição ou de entrada** com contas locais inclui um link **Esqueceu a senha?** na primeira página da experiência. Clicar nesse link não dispara automaticamente um fluxo de usuário de redefinição de senha. 
+Um fluxo de usuário de **inscrição ou de entrada** com contas locais inclui um link **Esqueceu a senha?** na primeira página da experiência. Clicar nesse link não dispara automaticamente um fluxo de usuário de redefinição de senha.
 
 Em vez disso, o código de erro `AADB2C90118` é retornado para seu aplicativo. Seu aplicativo precisa lidar com esse código de erro, executando um fluxo de usuário específico que redefine a senha. Para ver um exemplo, dê uma olhada em um [exemplo simples de ASP.NET](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-DotNet-SUSI) que demonstra a vinculação de fluxos dos usuários.
 
 ## <a name="email-address-storage"></a>Armazenamento de endereços de email
 
 Um endereço de email pode ser exigido como parte de um fluxo de usuário. Se o usuário é autenticado com um provedor de identidade social, o endereço de email é armazenado na propriedade **otherMails**. Se uma conta local for baseada em um nome de usuário, o endereço de email será armazenado em uma propriedade de detalhe de autenticação forte. Se uma conta local for baseada em um endereço de email, ele será armazenado na propriedade **signInNames**.
- 
+
 Não há garantia de que o endereço de email seja verificado em nenhum desses casos. Um administrador de locatários pode desabilitar a verificação de email nas políticas básicas para contas locais. Mesmo se a verificação de endereço de email estiver habilitada, endereços não serão verificados se eles vierem de um provedor de identidade social e não tiverem sido alterados.
- 
+
 Somente as propriedades **otherMails** e **signInNames** são expostas por meio da API do Graph do Active Directory. O endereço de email na propriedade de detalhe de autenticação forte não está disponível.
 
 ## <a name="next-steps"></a>Próximas etapas

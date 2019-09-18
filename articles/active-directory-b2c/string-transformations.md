@@ -10,24 +10,24 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a06447aaa6579052285e7e2cd93bf40183ed173f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 83379cc194f23ebff977babc7124a7bc90f4bc60
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66512598"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063450"
 ---
 # <a name="string-claims-transformations"></a>Transformações de declarações de cadeias de caracteres
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Este artigo fornece exemplos para usar as transformações de declarações de cadeias de caracteres do esquema da Estrutura de Experiência de Identidade no Azure AD (Azure Active Directory) B2C. Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
+Este artigo fornece exemplos de como usar as transformações de declarações de cadeia de caracteres do esquema de estrutura de experiência de identidade em Azure Active Directory B2C (Azure AD B2C). Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
 
-## <a name="assertstringclaimsareequal"></a>AssertStringClaimsAreEqual 
+## <a name="assertstringclaimsareequal"></a>AssertStringClaimsAreEqual
 
 Compare duas declarações e lance uma exceção se não forem iguais de acordo com a comparação especificada inputClaim1, inputClaim2 e stringComparison.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | Tipo da primeira declaração, que será comparado. |
 | inputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
@@ -37,7 +37,7 @@ A transformação de declarações **AssertStringClaimsAreEqual** é sempre exec
 
 ![Execução de AssertStringClaimsAreEqual](./media/string-transformations/assert-execution.png)
 
-Você pode usar essa transformação de declarações para certificar-se de declarações. Dois ClaimTypes têm o mesmo valor. Caso contrário, uma mensagem de erro será gerada. O exemplo a seguir verifica se o ClaimType **strongAuthenticationEmailAddress** é igual ao ClaimType **email**. Caso contrário, uma mensagem de erro será gerada. 
+Você pode usar essa transformação de declarações para certificar-se de declarações. Dois ClaimTypes têm o mesmo valor. Caso contrário, uma mensagem de erro será gerada. O exemplo a seguir verifica se o ClaimType **strongAuthenticationEmailAddress** é igual ao ClaimType **email**. Caso contrário, uma mensagem de erro será gerada.
 
 ```XML
 <ClaimsTransformation Id="AssertEmailAndStrongAuthenticationEmailAddressAreEqual" TransformationMethod="AssertStringClaimsAreEqual">
@@ -84,17 +84,17 @@ O perfil técnico autodeclarado chama o perfil técnico **login-NonInteractive**
   - **stringComparison**: ordinalIgnoreCase
 - Resultado: Erro gerado
 
-## <a name="changecase"></a>ChangeCase 
+## <a name="changecase"></a>ChangeCase
 
 Altera a declaração fornecida para letra maiúscula ou minúscula, dependendo do operador.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | O ClaimType que será alterado. |
 | InputParameter | toCase | cadeia de caracteres | Um dos seguintes valores: `LOWER` ou `UPPER`. |
 | OutputClaim | outputClaim | cadeia de caracteres | O ClaimType que é produzido depois de invocar esta transformação de declarações. |
 
-Use essa transformação de declaração para alterar qualquer ClaimType de cadeia de caracteres para letra maiúscula ou minúscula.  
+Use essa transformação de declaração para alterar qualquer ClaimType de cadeia de caracteres para letra maiúscula ou minúscula.
 
 ```XML
 <ClaimsTransformation Id="ChangeToLower" TransformationMethod="ChangeCase">
@@ -119,11 +119,11 @@ Use essa transformação de declaração para alterar qualquer ClaimType de cade
 - Declarações de saída:
   - **email**: someone@contoso.com
 
-## <a name="createstringclaim"></a>CreateStringClaim 
+## <a name="createstringclaim"></a>CreateStringClaim
 
 Cria uma declaração de cadeia de caracteres do parâmetro de entrada fornecido na política.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 |----- | ----------------------- | --------- | ----- |
 | InputParameter | value | cadeia de caracteres | A cadeia de caracteres a ser definida |
 | OutputClaim | createdClaim | cadeia de caracteres | O ClaimType que é produzido depois de invocar esta transformação de declaração, com o valor especificado no parâmetro de entrada. |
@@ -152,7 +152,7 @@ Use essa transformação de declarações para definir um valor de ClaimType de 
 
 Determine se uma declaração de cadeia de caracteres é igual à outra. O resultado é um novo ClaimType booliano com um valor de `true` ou `false`.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | Tipo da primeira declaração, que será comparado. |
 | inputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
@@ -193,7 +193,7 @@ Use essa transformação de declaração para verificar se uma declaração for 
 
 Determina se um valor de declaração é igual ao valor do parâmetro de entrada.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | Tipo da declaração, que será comparado. |
 | InputParameter | operator | cadeia de caracteres | Valores possíveis: `EQUAL` ou `NOT EQUAL`. |
@@ -224,7 +224,7 @@ Determina se um valor de declaração é igual ao valor do parâmetro de entrada
     - **inputClaim1**: v1
 - Parâmetros de entrada:
     - **compareTo**: V1
-    - **operator**: EQUAL 
+    - **operator**: EQUAL
     - **ignoreCase**: true
 - Declarações de saída:
     - **outputClaim**: true
@@ -233,7 +233,7 @@ Determina se um valor de declaração é igual ao valor do parâmetro de entrada
 
 Cria uma cadeia de caracteres aleatória usando o gerador de número aleatório. Se o gerador de número aleatório é do tipo `integer`, opcionalmente, um parâmetro de semente e um número máximo podem ser fornecidos. Um parâmetro de formato de cadeia de caracteres opcional permite que a saída seja formatada usando-o, e um parâmetro de base64 opcional especifica se a saída é randomGeneratorType [guid, inteiro] outputClaim (cadeia de caracteres) codificada em base64.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputParameter | randomGeneratorType | cadeia de caracteres | Especifica o valor aleatório a ser gerado, `GUID` (ID global exclusivo) ou `INTEGER` (um número). |
 | InputParameter | stringFormat | cadeia de caracteres | [Opcional] Formate o valor aleatório. |
@@ -258,7 +258,7 @@ O exemplo a seguir gera uma ID exclusiva global. Essa transformação de declara
 
 - Parâmetros de entrada:
     - **randomGeneratorType**: GUID
-- Declarações de saída: 
+- Declarações de saída:
     - **outputClaim**: bc8bedd2-aaa3-411e-bdee-2f1810b73dfc
 
 O exemplo a seguir gera um valor de inteiro aleatório entre 0 e 1.000. O valor é formatado para OTP_{valor aleatório}.
@@ -284,7 +284,7 @@ O exemplo a seguir gera um valor de inteiro aleatório entre 0 e 1.000. O valor 
     - **maximumNumber**: 1000
     - **stringFormat**: OTP_{0}
     - **base64**: false
-- Declarações de saída: 
+- Declarações de saída:
     - **outputClaim**: OTP_853
 
 
@@ -292,13 +292,13 @@ O exemplo a seguir gera um valor de inteiro aleatório entre 0 e 1.000. O valor 
 
 Formate uma declaração de acordo com a cadeia de caracteres de formato fornecida. Essa transformação usa o método C# `String.Format`.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |cadeia de caracteres |O ClaimType que atua como o parâmetro {0} do formato da cadeia de caracteres. |
 | InputParameter | stringFormat | cadeia de caracteres | O formato da cadeia de caracteres, incluindo o parâmetro {0}. |
 | OutputClaim | outputClaim | cadeia de caracteres | O ClaimType que é produzido depois de invocar esta transformação de declarações. |
 
-Use essa transformação de declarações para formatar qualquer cadeia de caracteres com um parâmetro {0}. O exemplo a seguir cria um **userPrincipalName**. Todos os perfis técnicos do provedor de identidade social, como `Facebook-OAUTH` chama **CreateUserPrincipalName** para gerar um **userPrincipalName**.   
+Use essa transformação de declarações para formatar qualquer cadeia de caracteres com um parâmetro {0}. O exemplo a seguir cria um **userPrincipalName**. Todos os perfis técnicos do provedor de identidade social, como `Facebook-OAUTH` chama **CreateUserPrincipalName** para gerar um **userPrincipalName**.
 
 ```XML
 <ClaimsTransformation Id="CreateUserPrincipalName" TransformationMethod="FormatStringClaim">
@@ -327,7 +327,7 @@ Use essa transformação de declarações para formatar qualquer cadeia de carac
 
 Formate duas declarações de acordo com a cadeia de caracteres de formato fornecida. Essa transformação usa o método **String.Format** em C#.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |cadeia de caracteres | O ClaimType que atua como o parâmetro {0} do formato da cadeia de caracteres. |
 | InputClaim | InputClaim | cadeia de caracteres | O ClaimType que atua como o parâmetro {1} do formato da cadeia de caracteres. |
@@ -365,7 +365,7 @@ Use essa transformação de declarações para formatar qualquer cadeia de carac
 
 Procurando um item de uma coleção de **Restrição** da declaração.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | mapFromClaim | cadeia de caracteres | A declaração que contém o texto a ser pesquisado nas declarações **restrictionValueClaim** com a coleção **Restrição**.  |
 | OutputClaim | restrictionValueClaim | cadeia de caracteres | A declaração que contém a coleção **Restrição**. Depois que a transformação de declarações for invocada, o valor dessa declaração conterá o valor do item selecionado. |
@@ -392,7 +392,7 @@ A transformação de declarações procura o texto do item e retorna seu valor. 
     <InputClaim ClaimTypeReferenceId="responseCode" TransformationClaimType="mapFromClaim" />
   </InputClaims>
   <OutputClaims>
-    <OutputClaim ClaimTypeReferenceId="responseMsg" TransformationClaimType="restrictionValueClaim" />         
+    <OutputClaim ClaimTypeReferenceId="responseMsg" TransformationClaimType="restrictionValueClaim" />        
   </OutputClaims>
 </ClaimsTransformation>
 ```
@@ -408,7 +408,7 @@ A transformação de declarações procura o texto do item e retorna seu valor. 
 
 Procure um valor de declaração de uma lista de valores com base no valor de outra declaração.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputParameterId | cadeia de caracteres | A declaração que contém o valor de pesquisa |
 | InputParameter | |cadeia de caracteres | Coleção de inputParameters. |
@@ -431,7 +431,7 @@ O exemplo a seguir procura o nome de domínio em uma das coleções inputParamet
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="domainAppId" TransformationClaimType="outputClaim" />
   </OutputClaims>
-</ClaimsTransformation> 
+</ClaimsTransformation>
 ```
 
 ### <a name="example"></a>Exemplo
@@ -450,7 +450,7 @@ O exemplo a seguir procura o nome de domínio em uma das coleções inputParamet
 
 Limpe o valor de uma determinada declaração.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | OutputClaim | claim_to_null | cadeia de caracteres | A declaração de seu valor como NULL. |
 
@@ -467,13 +467,13 @@ Use essa transformação de declaração para remover dados desnecessários do r
 - Declarações de entrada:
     - **outputClaim**: Bem-vindo ao Aplicativo da Contoso. Se você continuar a navegar e usar esse site, você estará concordando em seguir e estará vinculado aos seguintes termos e condições...
 - Declarações de saída:
-    - **outputClaim**: NULO
+    - **outputClaim**: NULL
 
 ## <a name="parsedomain"></a>ParseDomain
 
 Obtém a parte do domínio de um endereço de email.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | emailAddress | cadeia de caracteres | O ClaimType que contém o endereço de email. |
 | OutputClaim | domínio | cadeia de caracteres | O ClaimType que é produzido depois de invocar esta transformação de declarações – o domínio. |
@@ -502,7 +502,7 @@ Use essa transformação de declarações para analisar o nome de domínio depoi
 
 Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `matchTo` são iguais, e define as declarações de saída com o valor presente nos parâmetros de entrada `stringMatchMsg` e `stringMatchMsgCode`, juntamente com a declaração de saída do resultado de comparação, que deve ser definida como `true` ou `false` com base no resultado da comparação.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | cadeia de caracteres | Tipo da declaração, que será comparado. |
 | InputParameter | matchTo | cadeia de caracteres | A cadeia de caracteres a ser comparada com `inputClaim`. |
@@ -513,7 +513,7 @@ Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `
 | OutputClaim | outputClaim2 | cadeia de caracteres | Se as cadeias de caracteres forem iguais, essa declaração de saída conterá o valor do parâmetro de entrada `stringMatchMsgCode`. |
 | OutputClaim | stringCompareResultClaim | boolean | O tipo de declaração de saída do resultado de comparação, que deve ser definido como `true` ou `false` com base no resultado da comparação. |
 
-É possível usar essa transformação de declarações para verificar se uma declaração é igual ao valor especificado. Por exemplo, a seguinte transformação de declarações verifica se o valor da declaração **termsOfUseConsentVersion** é igual a `v1`. Se sim, altere o resultado para `v2`. 
+É possível usar essa transformação de declarações para verificar se uma declaração é igual ao valor especificado. Por exemplo, a seguinte transformação de declarações verifica se o valor da declaração **termsOfUseConsentVersion** é igual a `v1`. Se sim, altere o resultado para `v2`.
 
 ```XML
 <ClaimsTransformation Id="CheckTheTOS" TransformationMethod="SetClaimsIfStringsAreEqual">
@@ -539,7 +539,7 @@ Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `
     - **inputClaim**: v1
 - Parâmetros de entrada:
     - **matchTo**: V1
-    - **stringComparison**: ordinalIgnoreCase 
+    - **stringComparison**: ordinalIgnoreCase
     - **stringMatchMsg**:  B2C_V1_90005
     - **stringMatchMsgCode**:  O TOS é atualizado para v2
 - Declarações de saída:
@@ -551,7 +551,7 @@ Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `
 
 Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `matchTo` são iguais, e define as declarações de saída com o valor presente no parâmetro de entrada `outputClaimIfMatched`, juntamente com a declaração de saída do resultado de comparação, que deve ser definida como `true` ou `false` com base no resultado da comparação.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | claimToMatch | cadeia de caracteres | Tipo da declaração, que será comparado. |
 | InputParameter | matchTo | cadeia de caracteres | A cadeia de caracteres a ser comparada com inputClaim. |
@@ -560,7 +560,7 @@ Verifica se uma declaração de cadeia de caracteres e o parâmetro de entrada `
 | OutputClaim | outputClaim | cadeia de caracteres | Se as cadeias de caracteres forem iguais, essa declaração de saída conterá o valor do parâmetro de entrada `outputClaimIfMatched`. Ou nulo se as cadeias de caracteres não corresponderem. |
 | OutputClaim | stringCompareResultClaim | boolean | O tipo de declaração de saída do resultado de comparação, que deve ser definido como `true` ou `false` com base no resultado da comparação. |
 
-Por exemplo, a seguinte transformação de declarações verifica se o valor da declaração **ageGroup** é igual a `Minor`. Em caso afirmativo, retorne o valor para `B2C_V1_90001`. 
+Por exemplo, a seguinte transformação de declarações verifica se o valor da declaração **ageGroup** é igual a `Minor`. Em caso afirmativo, retorne o valor para `B2C_V1_90001`.
 
 ```XML
 <ClaimsTransformation Id="SetIsMinor" TransformationMethod="SetClaimsIfStringsMatch">
@@ -585,7 +585,7 @@ Por exemplo, a seguinte transformação de declarações verifica se o valor da 
     - **claimToMatch**: Secundária
 - Parâmetros de entrada:
     - **matchTo**: Secundária
-    - **stringComparison**: ordinalIgnoreCase 
+    - **stringComparison**: ordinalIgnoreCase
     - **outputClaimIfMatched**:  B2C_V1_90001
 - Declarações de saída:
     - **isMinorResponseCode**: B2C_V1_90001

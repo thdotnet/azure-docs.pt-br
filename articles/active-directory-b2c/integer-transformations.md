@@ -10,24 +10,24 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 976cf55dd8f1c11d1ea605b25086fa644afec980
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d82f7fecfb35c63d586993fed73a83209782a890
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510811"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064206"
 ---
 # <a name="integer-claims-transformations"></a>Transformações de declarações de inteiros
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Este artigo fornece exemplos para usar as transformações de declarações de inteiros do esquema da Estrutura de Experiência de Identidade no Azure AD (Azure Active Directory) B2C. Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
+Este artigo fornece exemplos de como usar as transformações de declarações de inteiro do esquema de estrutura de experiência de identidade em Azure Active Directory B2C (Azure AD B2C). Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
 
-## <a name="convertnumbertostringclaim"></a>ConvertNumberToStringClaim 
+## <a name="convertnumbertostringclaim"></a>ConvertNumberToStringClaim
 
 Converte um tipo de dados Long em um tipo de dados String.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | long | O ClaimType para converter em uma cadeia de caracteres. |
 | OutputClaim | outputClaim | cadeia de caracteres | O ClaimType produzido depois de invocar esta ClaimsTransformation. |
@@ -49,6 +49,6 @@ Neste exemplo, a declaração `numericUserId` com um tipo de valor Long é conve
 
 - Declarações de entrada:
     - **inputClaim**: 12334 (long)
-- Declarações de saída: 
+- Declarações de saída:
     - **outputClaim**: "12334" (string)
 

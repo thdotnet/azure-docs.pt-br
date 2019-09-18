@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: b840f1ce42c9d7e4af8854a2c6bd7fd26f5b88e9
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: f5810a813b6c54f190d95061e79914457f51d19c
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307424"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71067608"
 ---
 # <a name="prebuilt-domain-reference-for-your-luis-app"></a>Referência de domínio predefinida para seu aplicativo LUIS
 Esta referência contém informações sobre o [domínios pré-compilada](luis-how-to-use-prebuilt-domains.md), que são conjuntos predefinidos de entidades que oferece LUÍS e tentativas.
@@ -27,7 +27,7 @@ Esta referência contém informações sobre o [domínios pré-compilada](luis-h
 
 A tabela a seguir resume os domínios com suporte no momento. O suporte para inglês geralmente é mais completo do que outros. 
 
-| Tipo de entidade       | EN-US      | ZH-CN   | DE    | FR     | ES    | it      | PT-BR |  JP  |      KO |        NL |    TR |
+| Tipo de entidade       | EN-US      | ZH-CN   | DE    | FR     | ES    | IT      | PT-BR |  JP  |      KO |        NL |    TR |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:| :-------:| :-------:| :-------:| :-------:|  :-------:| 
 | [Calendar](#calendar)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
 | [Comunicação](#communication)   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
@@ -54,10 +54,10 @@ O calendário é algo sobre reuniões pessoais e compromissos, não com evento p
 Nome da intenção | Descrição | Exemplos
 ---------|----------|---------------
  AcceptEventEntry | Aceite um (n) compromisso/reunião/evento no calendário. | Aceitar um compromisso. <br> Aceitar o evento <br> aceite a reunião de hoje.
- Cancelar | Cancele a ação em andamento pelo assistente virtual, como cancelar o processo de criação de uma reunião. <br> ***Aviso**: Essa tentativa inclui principalmente a ação "Cancelar" no cenário de calendário. Se você precisar de uma expressão geral em "Cancelar", aproveite a intenção de "Cancelar" no domínio de **utilitários** . * | Tudo bem, basta cancelar o evento. <br> Não, eu apenas cancelo o compromisso.
+ Cancelar | Cancele a ação em andamento pelo assistente virtual, como cancelar o processo de criação de uma reunião. <br> _**Aviso**: Essa tentativa inclui principalmente a ação "Cancelar" no cenário de calendário. Se você precisar de uma expressão geral em "Cancelar", aproveite a intenção de "Cancelar" no domínio de **utilitários** ._ | Tudo bem, basta cancelar o evento. <br> Não, eu apenas cancelo o compromisso.
  ChangeCalendarEntry | Alterar ou reagendar a entrada do calendário. | Reagendar minhas 6h compromisso amanhã a 2 p.m. <br> Reagendar compromisso do doutor por 5 PM <br> Reagendar almoço com Maria Olson para sexta-feira. <br> Alterar a hora do evento.
  CheckAvailability | Localize a disponibilidade de um compromisso ou reunião no calendário do usuário ou outra pessoa. | Quando é Jim disponível para atender a? <br> Mostrar quando Carol estiver disponível amanhã. <br> Carlos é gratuito no sábado?
- Confirmar | Confirme se uma operação/ação deve ser executada com base na intenção anterior. <br> ***Aviso**: Essa tentativa inclui principalmente a ação "confirmar" para o cenário de calendário. Se você precisar de mais expressões gerais em "Confirm", aproveite a intenção de "confirmar" no domínio de **utilitários** . *| Isso está correto, crie a reunião <br> Sim, obrigado, conecte-se à reunião.
+ Confirmar | Confirme se uma operação/ação deve ser executada com base na intenção anterior. <br> _**Aviso**: Essa tentativa inclui principalmente a ação "confirmar" para o cenário de calendário. Se você precisar de mais expressões gerais em "Confirm", aproveite a intenção de "confirmar" no domínio de **utilitários** ._| Isso está correto, crie a reunião <br> Sim, obrigado, conecte-se à reunião.
  ConnectToMeeting | Conecte-se a uma reunião. | Conecte-me a 11:00 chamada de conferência com Andy. <br> Aceite a chamada de reunião de orçamento.
  ContactMeetingAttendees | Entre em contato com os participantes da reunião. | Informe a reunião que estou executando em relação à reunião de 3:00. <br> Notifique os colegas para a reunião de 8h que precisa iniciar às 8:30.
  CreateCalendarEntry | Adicione um novo item de uso único para o calendário. | Crie uma reunião sobre como discutir problemas. <br> criar uma reunião comabc@microsoft.com
@@ -69,32 +69,32 @@ Nome da intenção | Descrição | Exemplos
  FindCalendarDetail | Verifique e mostre os detalhes da agenda. | Preciso que você forneça os detalhes da reunião agendada com meu colega de colegas.
  FindDuration | Verifique a duração. | Quanto tempo terá para pegar os mercados? <br> Quanto tempo tenho para almoçar?
  FindMeetingRoom | Encontre as salas de reunião disponíveis. | Quais salas de encontro eu tenho? <br> Um novo local de reunião, encontre um.
- GoBack | Voltar para a última etapa ou item.  <br> ***Aviso**: Consulte o domínio de **utilitários** para obter mais declarações geral do GoBack. * | Anterior <br> Voltar ao último email.
- Rejeitar | O usuário rejeita o assistente virtual proposto. <br> ***Aviso**: Consulte o domínio de **utilitários** para mais rejeitar declarações gerais. * | Não é necessário definir o evento. <br> Tenho outras coisas a fazer nesse momento.
-ShowNext | Verifique o próximo evento. <br> ***Aviso**: Consulte o domínio de **utilitários** para obter mais da próxima declarações geral. * | Dê-me meu próximo evento. <br> O que vem a seguir no calendário?
- ShowPrevious | Verifique o evento anterior. <br> ***Aviso**: Consulte o domínio de **utilitários** para obter mais informações gerais anteriores declarações. * | Qual é o agendamento antes disso?
+ GoBack | Voltar para a última etapa ou item.  <br> _**Aviso**: Consulte o domínio de **utilitários** para obter mais declarações geral do GoBack._ | Anterior <br> Voltar ao último email.
+ Rejeitar | O usuário rejeita o assistente virtual proposto. <br> _**Aviso**: Consulte o domínio de **utilitários** de Sumário para mais rejeitar declarações gerais._ | Não é necessário definir o evento. <br> Tenho outras coisas a fazer nesse momento.
+ShowNext | Verifique o próximo evento. <br> _**Aviso**: Consulte o domínio de **utilitários** para obter mais informações sobre a próxima declarações geral._ | Dê-me meu próximo evento. <br> O que vem a seguir no calendário?
+ ShowPrevious | Verifique o evento anterior. <br> _**Aviso**: Consulte o domínio de **utilitários** para obter mais informações gerais anteriores declarações._ | Qual é o agendamento antes disso?
  TimeRemaining | Verifique o tempo restante até o próximo evento. | Exibir quanto tempo eu tenho antes das minhas reuniões. <br> Exibir a quantidade de tempo que tenho antes da minha próxima reunião começar.
  
 ### <a name="entities"></a>**Contabilidade**
 Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
 -------|-----------------------|-------------|---------|--------
 ContactName | personName | O nome de um participante de contato ou de reunião. | Conheça com **Betsy**. <br>  Conheça com **Aubrey** em 3 de julho às 19h | Betsy <br> Aubrey <br> Amy 
-DestinationCalendar | único | O nome do calendário de destino. | almoço com o MOM Tuesday 12 **pessoal** <br> Usar meu **Google** agenda como meu calendário padrão. <br> Atualizar a classe Yoga para Mon qua às 15:00 lista no calendário **pessoal** . | Google <br> pessoais <br> negócios <br> principal
+DestinationCalendar | Único | O nome do calendário de destino. | almoço com o MOM Tuesday 12 **pessoal** <br> Usar meu **Google** agenda como meu calendário padrão. <br> Atualizar a classe Yoga para Mon qua às 15:00 lista no calendário **pessoal** . | Google <br> Pessoais <br> negócios <br> Principal
 Duração | datetime | Duração de uma reunião, compromisso ou tempo restante. | Adicione à reunião de calendário de trabalho com Carlos para discutir detalhes de Scholarship amanhã às 11 horas por **20 minutos**. <br> Adicionar ao calendário um evento em metrô na sexta-feira, vou comer com Thomas por **uma hora** às 9 p.m. | uma hora <br> 2 dias <br> 20 minutos 
 EndDate | datetime | Data de término de uma reunião ou um compromisso. | Calendário adicionar concerto a baixo da prefeitura Mary 3ª a **Mary quinta** | Mary quinta  
 EndTime | datetime | Hora de término de uma reunião ou um compromisso. | Você pode torná-lo 2 30 para **três** | três 
-Location | único | Local do item de calendário, reunião ou compromisso.  Endereços, cidades e regiões são bons exemplos de locais. | colocar uma reunião em **Fremont** para colocar o Tablet em Birmânia <br> reunião pro bono no **Edina** | Academia 209 Nashville <br> 897 casa de panqueca <br> Garagem 
-MeetingRoom | único | Espaço para uma reunião ou um compromisso. | Adicionar à reunião de calendário de trabalho com Jake às 14h em seu **escritório** nesta sexta-feira | seu escritório <br> sala de conferência <br> Sala 2
+Location | Único | Local do item de calendário, reunião ou compromisso.  Endereços, cidades e regiões são bons exemplos de locais. | colocar uma reunião em **Fremont** para colocar o Tablet em Birmânia <br> reunião pro bono no **Edina** | Academia 209 Nashville <br> 897 casa de panqueca <br> Garagem 
+MeetingRoom | Único | Espaço para uma reunião ou um compromisso. | Adicionar à reunião de calendário de trabalho com Jake às 14h em seu **escritório** nesta sexta-feira | seu escritório <br> sala de conferência <br> Sala 2
 MoveEarlierTimeSpan | datetime | A hora em que o usuário deseja mover uma reunião ou um compromisso anteriormente. | Mover minha data de almoço para frente em **30 minutos**. | 30 minutos <br> duas horas 
 MoveLaterTimeSpan |  datetime | A hora em que o usuário deseja mover uma reunião ou um compromisso mais tarde. | Envie por push minha reunião com o orquídea-box de volta **4 horas**. | 4 horas <br> 15 minutos 
-OrderReference | único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual é o meu próximo compromisso para o amanhã? | próximo
+OrderReference | Único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual é o meu próximo compromisso para o amanhã? | próximo
 OriginalEndDate | datetime | Data de término original de uma reunião ou um compromisso. | Alterar minhas férias de terminando na **sexta-feira** até segunda-feira | Sexta-feira 
 OriginalEndTime | datetime | Hora de término original de uma reunião ou um compromisso. | Faça o que termina em **3** ir até 4 | 3
 OriginalStartDate | datetime | Data de início original de uma reunião ou um compromisso. | Alterar o compromisso de **amanhã**de 10 horas para quarta-feira às 9h  | amanhã 
 OriginalStartTime | datetime | Hora de início original de uma reunião ou um compromisso. | Alterar o compromisso de amanhã de **10 horas** para quarta-feira às 9h | às 10 horas
 PositionReference | ordinal | A posição absoluta em uma lista, identificando um item a ser recuperado. | O **segundo** | segundo <br> Nº 3 <br> número 5
 RelationshipName | lista | O nome da relação de um contato. | Adicionar almoço às 1:00 com minha **esposa** | Wife <br> marido <br> filial 
-Slotattribute | único | O usuário de atributo deseja consultar ou editar. | alterar **local** do evento <br> Altere o **tempo** para sete horas | localização <br> time 
+Slotattribute | Único | O usuário de atributo deseja consultar ou editar. | alterar **local** do evento <br> Altere o **tempo** para sete horas | localização <br> time 
 StartDate | datetime | Data de início de uma reunião ou um compromisso. | Criar uma reunião na **quarta-feira** às 4 horas | Quarta-feira 
 StartTime | datetime | Hora de início de uma reunião ou um compromisso. | criar uma reunião na quarta-feira às **4 horas** | 4 p.m.
 Subject | simples, padrão. Outro | Assunto, como título de uma reunião ou um compromisso. | Qual é a hora da reunião de **preparação de terceiros** ? | Do dentista <br> Almoçar com Julia 
@@ -149,26 +149,26 @@ TurnSpeakerOn | Ativar o viva-voz. | Modo de viva-voz. <br>   Coloque viva-voz e
 ### <a name="entities"></a>**Contabilidade**
 Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
 ------|-------|----------|--------------|---------------
-Attachment | único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
-AudioDeviceType | único | Tipo de dispositivo de áudio (palestrante, headset, microfone, etc.). | Responda usando as **mãos gratuitas**. <br> Disque novamente no **telefone do viva-voz**. | locutor <br> sem intervenção <br> tecnologia
-Categoria | único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
-ContactAttribute | único | Um atributo do contato sobre as consultas do usuário.| Algum **aniversário** no mês que eu devo saber? | aniversário <br> endereço <br> número de telefone
+Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
+AudioDeviceType | Único | Tipo de dispositivo de áudio (palestrante, headset, microfone, etc.). | Responda usando as **mãos gratuitas**. <br> Disque novamente no **telefone do viva-voz**. | locutor <br> Sem intervenção <br> Tecnologia
+Categoria | Único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
+ContactAttribute | Único | Um atributo do contato sobre as consultas do usuário.| Algum **aniversário** no mês que eu devo saber? | aniversário <br> endereço <br> Número de telefone
 ContactName | personName  | O nome de um destinatário de mensagem ou contato. | Enviar o email para **Stevens** | Stevens
 Date/Time | datetime | DateTime de um email recebido. | Leia os emails de **hoje** <br> Quem me e-Mailu **hoje**? <br> Quem telefone às **19h**? | hoje <br> amanhã
-DestinationPhone | único | O usuário de destino deseja chamar ou enviar um texto para. | Faça uma chamada para a **casa** <br> Enviar uma mensagem de texto para **página inicial** | internamente <br> início
+DestinationPhone | Único | O usuário de destino deseja chamar ou enviar um texto para. | Faça uma chamada para a **casa** <br> Enviar uma mensagem de texto para **página inicial** | internamente <br> início
 EmailAddress | email | O usuário de endereço de email deseja enviar ou consultar. | Enviar email paraMegan.Flynn@MKF.com<br> abc@outlook.com 
 EmailSubject | simples, padrão. Outro | O texto usado como a linha de assunto de um email. | Redigir o email para David com o assunto **Ei**  | RE: história interessante
-Chave | único | O usuário principal deseja pressionar. | Pressione a tecla de **espaço** . <br> Pressione **9** | agrava <br> asterisco <br> 8
-Linha | único | O usuário de linha deseja usar para enviar um email ou um texto do. | Leia meu último email do **hotmail** . <br> Ligue para Peter por **celular**. <br> Chame o Dad usando minha linha de **trabalho** .| hotmail <br> Skype <br> Célula Britânica
+Chave | Único | O usuário principal deseja pressionar. | Pressione a tecla de **espaço** . <br> Pressione **9** | agrava <br> asterisco <br> 8
+Linha | Único | O usuário de linha deseja usar para enviar um email ou um texto do. | Leia meu último email do **hotmail** . <br> Ligue para Peter por **celular**. <br> Chame o Dad usando minha linha de **trabalho** .| hotmail <br> Skype <br> Célula Britânica
 SenderName | personName | O nome do remetente. | Leia o email de **David** <br> Emails de Chanda | Davi <br> Chanda
-FromRelationshipName | único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
+FromRelationshipName | Único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
 Mensagem | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
-OrderReference | único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> versões <br> mais recente
+OrderReference | Único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> Versões <br> mais recente
 PositionReference | simples, ordinal | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado.| Qual foi a **primeira** mensagem que enviei? <br> O **terceiro** .| First <br> testa
 phoneNumber | phoneNumber | O usuário do número de telefone deseja chamar ou enviar um texto para. | enviar um texto para **4 1 5 6 8 4 5 2 8 4** | 3525214446
-RelationshipName | único | O nome da relação de um contato ou destinatário da mensagem. | Email para minha **esposa** | Wife
+RelationshipName | Único | O nome da relação de um contato ou destinatário da mensagem. | Email para minha **esposa** | Wife
 SearchTexts | simples, padrão. any | Os textos usados para filtrar emails ou mensagens | Pesquisar todos os emails que contenham "**Surface pro**" | Surface pro
-Disca | único | A velocidade de discagem. | Chame **3 4 5**. <br> Defina a discagem **rápida.** | 345 <br> 5
+Disca | Único | A velocidade de discagem. | Chame **3 4 5**. <br> Defina a discagem **rápida.** | 345 <br> 5
 
 ## <a name="email"></a>**Email**
 O email é um subdomínio do domínio de *comunicação* . Ele contém principalmente solicitações para enviar e receber mensagens por emails.
@@ -194,26 +194,26 @@ QueryLastText | Consulte o último email. | Quem enviou email para mim? <br> Que
 ### <a name="entities"></a>**Contabilidade**
 Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
 ------|-------|----------|--------------|---------------
-Attachment | único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
+Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
 ContactName | personName  | O nome de um destinatário de mensagem ou contato. | Enviar o email para **Stevens** | Stevens
 Date | datetime | Data de um email recebido. | Leia os emails de **hoje** <br> Quem me e-Mailu **hoje**? | hoje
 EmailAddress | email | O usuário de endereço de email deseja enviar ou consultar. | Enviar email paraMegan.Flynn@MKF.com<br> abc@outlook.com 
 EmailSubject | simples, padrão. Outro | O texto usado como a linha de assunto de um email. | Redigir o email para David com o assunto **Ei**  | RE: história interessante
 SenderName | personName | O nome do remetente. | Leia o email de **David** <br> Emails de Chanda | Davi <br> Chanda
-FromRelationshipName | único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
+FromRelationshipName | Único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
 Mensagem | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
-Categoria | único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
-OrderReference | único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> versões <br> mais recente
+Categoria | Único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
+OrderReference | Único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> Versões <br> mais recente
 PositionReference | simples, ordinal | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado.| Qual foi a **primeira** mensagem que enviei? <br> O **terceiro** .| First <br> testa
-RelationshipName | único | O nome da relação de um contato ou destinatário da mensagem. | Email para minha **esposa** | Wife
+RelationshipName | Único | O nome da relação de um contato ou destinatário da mensagem. | Email para minha **esposa** | Wife
 Time | datetime | Time | Enviar email **hoje**. | noite
 SearchTexts | simples, padrão. any | Os textos usados para filtrar emails ou mensagens | Pesquisar todos os emails que contenham "**Surface pro**" | Surface pro 
-Linha | único | O usuário de linha deseja usar para enviar um email do. | Leia meu último email do **hotmail** . <br> Envie um email da minha **conta corporativa**.| hotmail <br> conta corporativa 
+Linha | Único | O usuário de linha deseja usar para enviar um email do. | Leia meu último email do **hotmail** . <br> Envie um email da minha **conta corporativa**.| hotmail <br> Conta corporativa 
 
 ## <a name="homeautomation"></a>**HomeAutomation**
 O domínio HomeAutomation fornece intenções e entidades relacionadas ao controle de dispositivos do Smart Home. Basicamente, damos suporte ao comando Control relacionado a luzes e ar-condicionado. Mas tem algumas capacidades gerais de generalização em outros dispositivos elétricos.
 ### <a name="supported-devices-and-properties"></a>**Dispositivos e propriedades com suporte**
-Dispositivos | Propriedades
+Dispositivos | Properties
 -------|---------
 Sensor de temperatura | Temperatura
 Luz, lâmpada | Ligado, brilho, cor
@@ -236,8 +236,8 @@ Nome da Entidade | Tipo de entidade | Descrição | Exemplos
 -------|----------|--------------|---------------
 DeviceName | Lista | Texto definido pelo usuário para seus dispositivos. | Azul<br> Natal <br> Escritório
 DeviceType | Lista | Dispositivos com suporte. | Noturna <br> Condicionador de ar <br> nightlight
-Location | único | Local ou sala no qual o dispositivo está. | Estrelas<br> Cybercafé <br> Quartos
-NumericalChange | único | Quantidade pela qual uma configuração é aumentada ou diminuída. <br> <br> _O slot aparece apenas com as intenções turn_up e turn_down._ | 3<br> 50%<br>
+Location | Único | Local ou sala no qual o dispositivo está. | Estrelas<br> Cybercafé <br> Quartos
+NumericalChange | Único | Quantidade pela qual uma configuração é aumentada ou diminuída. <br> <br> _O slot aparece apenas com as intenções turn_up e turn_down._ | 3<br> 50%<br>
 OrderReference | ordinal | A finalidade desse slot é capturar a seleção dos itens. Indica a posição do item em uma lista. | First<br> Segundo
 Quantificador | Lista | Quantificador indica quantas instâncias de uma determinada entidade são referenciadas. Por exemplo, "todos", "a cada", etc. | Todas<br> Cada<br> Tudo
 Configuração | Simples | A configuração para o qual o usuário deseja definir seu dispositivo, que inclui cena, nível, intensidade, cor, modo, temperatura, estado do dispositivo. | Azul<br> 72 <br> Mapa 
@@ -268,7 +268,7 @@ Nome da Entidade | Tipo de entidade | Descrição | Exemplos
 Texto | simples, padrão. Outro | O texto de uma nota ou lembrete. | esticar antes de caminhar <br> longo prazo amanhã
 Título | simples, padrão. Outro | Título de uma nota. | mantimentos <br> pessoas para ligar <br> tarefas pendentes
 CreationDate | datetimeV2 | Este slot é para quando o usuário solicita anotações criadas em uma determinada janela de data/hora. | 
-Quantificador | Lista | Quando um usuário pede para executar uma ação nos itens ' all', ' a cada ' ou ' qualquer ' ou todo o texto em uma nota. | tudo <br> qualquer <br> cada
+Quantificador | Lista | Quando um usuário pede para executar uma ação nos itens ' all', ' a cada ' ou ' qualquer ' ou todo o texto em uma nota. | tudo <br> qualquer <br> Cada
 OrderReference | ordinal | O usuário deseja fazer ações com os itens ' primeiro ', ' último ', ' Avançar ', etc. | first <br> last
 
 
@@ -293,19 +293,19 @@ AddFavoritePlace | O usuário deseja adicionar um local à sua lista de favorito
 ### <a name="entities"></a>**Contabilidade**
 Entidades LUIS | Tipo de entidade | Descrição | Exemplos | Exemplos de expressão
 --------------|-------------|-------------|----------|-------------------
-AbsoluteLocation | único | A localização ou endereço de um local. | Palo Alto <br> 300 112th Ave SE <br> Seattle | **1020 Middlefield Rd.** no **Palo Alto** <br> lojas de semente de pássaro em **Seattle** <br> Obtenha a distância daqui a **300 112Th ave se**.
-Facilidades | único | As características e os benefícios do objetivo de um local público. | beira <br> estacionamento grátis | Kirkland **orla marítima** frutos do mar. <br> Há algum **estacionamento livre** perto de mim?
-Cozinha | único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês <br> Italiano <br> Sushi <br> Noodle <br> | Ajude-me a encontrar um restaurante **chinês** . <br> Quais são as horas de abertura do restaurante **sushi** ? <br> Onde está a casa **Steak** mais próxima?
+AbsoluteLocation | Único | A localização ou endereço de um local. | Palo Alto <br> 300 112th Ave SE <br> Seattle | **1020 Middlefield Rd.** no **Palo Alto** <br> lojas de semente de pássaro em **Seattle** <br> Obtenha a distância daqui a **300 112Th ave se**.
+Facilidades | Único | As características e os benefícios do objetivo de um local público. | beira <br> estacionamento grátis | Kirkland **orla marítima** frutos do mar. <br> Há algum **estacionamento livre** perto de mim?
+Cozinha | Único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês <br> Italiano <br> Sushi <br> Noodle <br> | Ajude-me a encontrar um restaurante **chinês** . <br> Quais são as horas de abertura do restaurante **sushi** ? <br> Onde está a casa **Steak** mais próxima?
 Date | datetime | DateTime ou Duration para a data do local de destino. | amanhã <br> hoje <br> 18:00 | Que tempo aquário fechar **amanhã**? <br> a oficina de bicicletas mais próxima que é aberta após **6 p.m.**
 Distância | dimensão | A distância para um local público da posição currenct do usuário. | 15 milhas <br> 10 milhas | uma loja de roupas dentro de **15 milhas** <br> Um restaurante de crianças com apenas **10 milhas** de distância
 Tipo de Refeição | Lista | Tipo de refeição como da manhã ou almoçar. | Café da manhã <br> Refeição | Pesquisar **café da manhã** Greenwood Seattle <br> Encontre-me um lugar para fazer meu **almoço**.
 Vizinha | Lista | Descreva um local próximo sem localização ou endereço absoluto. | mais próximo <br> nesta área <br> em nosso lugar | Encontre o restaurante indiano **mais próximo** . <br> Onde está meu Wetherspoon **local** ? <br> Um bom restaurantes **em nosso lugar**?
 OpenStatus | Lista | Indica se um local é aberto ou fechado. | abrir <br> fechada | Que tempo o yogurt Land **fechou** hoje? <br> Quais são as horas de **abertura** para Costco?
-Colocar nome | único | O nome de um destino que é uma empresa, um restaurante, uma atração pública ou uma instituição. O nome do local pode conter um LocalType se for usado em comum. | Central Park <br> Safeway <br> Walmart| Que tempo o **Safeway** farmácia abre? <br> O **Walmart** está aberto?
-PlaceType | único | O tipo de destino que é uma empresa local, um restaurante, uma atração pública ou uma instituição. | restaurante <br> ópera <br> cinema | **cinemas** em Cambridge <br> Há um **restaurante** ao meu redor?
-PriceRange | único | A faixa de preço dos produtos ou serviço do local. | baratos <br> econômico <br> caro | Encontrar reparo de dispositivo **acessível** <br> O que é um lugar de pizza **barato** que está aberto agora?
-Produto | único | O produto oferecido por um lugar. | roupas <br> televisões | Onde está o melhor lugar para obter **comida**? <br> Encontre-me Kilbride leste procurando **televisões**.
-Classificação | único | A classificação de um lugar. | 5 estrelas <br> top <br> recomendá | Há **bons** lugares para sair e comer amanhã <br> **melhor** Restaurantes de Amsterdã <br> Liste as três **principais** lojas de pizza.
+Colocar nome | Único | O nome de um destino que é uma empresa, um restaurante, uma atração pública ou uma instituição. O nome do local pode conter um LocalType se for usado em comum. | Central Park <br> Safeway <br> Walmart| Que tempo o **Safeway** farmácia abre? <br> O **Walmart** está aberto?
+PlaceType | Único | O tipo de destino que é uma empresa local, um restaurante, uma atração pública ou uma instituição. | restaurante <br> ópera <br> cinema | **cinemas** em Cambridge <br> Há um **restaurante** ao meu redor?
+PriceRange | Único | A faixa de preço dos produtos ou serviço do local. | baratos <br> econômico <br> caro | Encontrar reparo de dispositivo **acessível** <br> O que é um lugar de pizza **barato** que está aberto agora?
+Produto | Único | O produto oferecido por um lugar. | roupas <br> televisões | Onde está o melhor lugar para obter **comida**? <br> Encontre-me Kilbride leste procurando **televisões**.
+Classificação | Único | A classificação de um lugar. | 5 estrelas <br> top <br> recomendá | Há **bons** lugares para sair e comer amanhã <br> **melhor** Restaurantes de Amsterdã <br> Liste as três **principais** lojas de pizza.
 
 
 ## <a name="restaurantreservation"></a>**RestaurantReservation**
@@ -325,13 +325,13 @@ Rejeitar | O usuário rejeita o assistente virtual proposto no gerenciamento de 
 ### <a name="entities"></a>**Contabilidade**
 Entidade LUIS | Tipo de entidade | Descrição | Exemplos
 -------|------|---------|-------------------
-Endereço | único | Um local de evento ou endereço para uma reserva. | Palo Alto<br>300 112th Ave SE<br>Seattle
+Endereço | Único | Um local de evento ou endereço para uma reserva. | Palo Alto<br>300 112th Ave SE<br>Seattle
 Atmosfera | Lista | Uma descrição da atmosfera de um restaurante. | romântico<br>casual<br>bom para grupos<br>Bom
-Cozinha | único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês<br>Italiano<br>Mexicana<br>Sushi<br>Noodle<br>steak
+Cozinha | Único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês<br>Italiano<br>Mexicana<br>Sushi<br>Noodle<br>steak
 Tipo de Refeição | Lista | Um tipo de refeição associado a uma reserva. | Café da manhã<br>Refeição<br>Almoçar<br>Supper
-Colocar nome | único | O nome de um restaurante | Zucca<br>Fábrica de cheesecake<br>Lobster vermelho
-Classificação | único | A classificação de um lugar ou restaurante. | 5 estrelas<br>3 estrelas<br>4-estrelas
-NumberPeople | único | Número de pessoas para reserva | 3<br>seis
+Colocar nome | Único | O nome de um restaurante | Zucca<br>Fábrica de cheesecake<br>Lobster vermelho
+Classificação | Único | A classificação de um lugar ou restaurante. | 5 estrelas<br>3 estrelas<br>4-estrelas
+NumberPeople | Único | Número de pessoas para reserva | 3<br>seis
 Time | datetime| O tempo para reserva de restaurantes | amanhã<br>noite<br>7:00 p.m.<br>Véspera de Natal
 
 
@@ -352,9 +352,9 @@ Tarefas pendentes | Mostrar todos os itens na lista de tarefas pendentes. | Most
 ### <a name="entities"></a>**Contabilidade**
 Entidade LUIS | Tipo de entidade | Descrição | Exemplos
 -------|------|---------|-------------------
-ContainsAll | único | Representar todos ou todos os itens na lista de tarefas | Você pode ajudar a remover **todas as** tarefas. <br> Conclua **tudo**.
+ContainsAll | Único | Representar todos ou todos os itens na lista de tarefas | Você pode ajudar a remover **todas as** tarefas. <br> Conclua **tudo**.
 ordinal | ordinal | Uma referência ordinal ou numérica a um item. | Marque a **terceira** como concluída. <br> Excluir a **primeira** tarefa.
-ListType | único | Tipo de lista de tarefas.  | Adicionar sapatos à minha lista de **compras** .
+ListType | Único | Tipo de lista de tarefas.  | Adicionar sapatos à minha lista de **compras** .
 FoodOfGrocery | Lista | Detectar uma lista de itens de alimentos | Lembre-me de comprar o **leite**. <br> Adicione **reforçar** à minha lista de compras.
 TaskContent | simples, padrão. any | Detectar o conteúdo de uma tarefa. | Lembre-me de **telefonar para minha mãe** . <br> Adicione o **aniversário de comemoração de João** à minha lista de tarefas pendentes
 
@@ -386,7 +386,7 @@ Entidade LUIS | Tipo de entidade | Descrição | Exemplos
 ------------|-------------|-------------|---------
 ordinal | ordinal | Uma referência ordinal ou numérica a um item. | O **segundo** . <br> **Próximo** .
 número | número | Quantidade de itens que o usuário deseja | Os próximos **3** itens
-DirectionalReference | único | Um ponto de referência para o local na tela em que um item está localizado. | O correto <br> upper
+DirectionalReference | Único | Um ponto de referência para o local na tela em que um item está localizado. | O correto <br> upper
 
 ## <a name="weather"></a>**MSNBC**
 O clima de domínio concentra-se em verificar a condição e os avisos meteorológicos com localização e hora ou tempo de verificação por condições de clima.
@@ -405,12 +405,12 @@ Entidade LUIS | Tipo de entidade | Descrição | Exemplos
 Location | geografia | O local absoluto ou implícito para uma solicitação do clima. | Palo Alto<br>Xangai<br>Seattle<br>Delvina<br>
 Date/Time   | datetime | DateTime ou Duration para consultar o clima. | Novembro<br>por hora<br>manhã<br>Este fim de semana<br>10 dias<br>
 AdditionalWeatherCondition | lista | Palavra de descrição adicional para meteorologia, como a velocidade ou direção do vento. | direção<br>Rápido<br>velocidade
-Histórico | único | Palavras de descrição da condição de clima histórica, incluindo média de casos arestados de, no período de tempo anterior. | atrasado<br>histórico/história<br>sazonais<br>melhor tempo<br>já registrado
+Histórico | Único | Palavras de descrição da condição de clima histórica, incluindo média de casos arestados de, no período de tempo anterior. | atrasado<br>histórico/história<br>sazonais<br>melhor tempo<br>já registrado
 PrecipitationUnit | dimensão | O precipitação de neve ou chuva. | 5 polegadas<br>6 cm
-SuitableFor | único | A descrição de uma atividade humana sob uma condição de clima, que é comum quando os usuários consultam conselhos de atividade que dependem da condição do clima. | saco<br>termo<br>Swimming
+SuitableFor | Único | A descrição de uma atividade humana sob uma condição de clima, que é comum quando os usuários consultam conselhos de atividade que dependem da condição do clima. | saco<br>termo<br>Swimming
 TemperatureUnit |temperatura | temperatura | 18 Celsius<br>7 Kelvin graus
-WeatherRange | único | A condição específica de temperatura, vento e outras condições de clima entre um período de tempo | máximo<br>alto<br>baixo<br>média alta<br>Mais alto
-WeatherCondition | único | Descrição da condição de clima | ensolarado<br>Redundant<br>reinamento<br>temperatura<br>neve<br>calor
+WeatherRange | Único | A condição específica de temperatura, vento e outras condições de clima entre um período de tempo | máximo<br>alto<br>baixo<br>média alta<br>Mais alto
+WeatherCondition | Único | Descrição da condição de clima | ensolarado<br>Redundant<br>reinamento<br>temperatura<br>neve<br>calor
 WindDirectionUnit | lista | As palavras de direção do vento | norte<br>Sul<br>Ásia<br>noroeste<br>Nordeste
 
 

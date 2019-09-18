@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: 6df78a46e6bc8055f8cce89e199d01ad631e178e
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 896e1fb3e93fc0a542f0dca75cc1d87b3a2c237c
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306200"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057906"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Integridade de back-end e logs de diagnóstico para o gateway de aplicativo
 
@@ -309,6 +309,8 @@ O log de firewall é gerado apenas se você o habilitou em cada gateway de aplic
 |details.data     | Dados específicos encontrados na solicitação que corresponderam à regra.         |
 |details.file     | Arquivo de configuração que continha a regra.        |
 |details.line     | Número de linha no arquivo de configuração que disparou o evento.       |
+|nome do host   | Nome do host ou endereço IP do gateway de aplicativo.    |
+|transactionId  | ID exclusiva para uma determinada transação que ajuda a agrupar várias violações de regra que ocorreram na mesma solicitação.   |
 
 ```json
 {
@@ -333,6 +335,8 @@ O log de firewall é gerado apenas se você o habilitou em cada gateway de aplic
       "file": "rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf",
       "line": "865"
     }
+    "hostname": "40.90.218.100", 
+    "transactionId": "AYAcUqAcAcAcAcAcASAcAcAc"
   }
 } 
 

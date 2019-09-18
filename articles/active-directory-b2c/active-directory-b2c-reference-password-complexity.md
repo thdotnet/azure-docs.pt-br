@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 37f8305d8ed212cf2c6678b35220d823611b9d7a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 642621e2e04d3e96dc6886b1bdb28c161560b28e
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509027"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065451"
 ---
 # <a name="configure-complexity-requirements-for-passwords-in-azure-active-directory-b2c"></a>Configurar os requisitos de complexidade de senhas fornecidas no Azure Active Directory B2C
 
-O Azure Active Directory (Azure AD) B2C oferece suporte à alteração de requisitos de complexidade para senhas fornecidas por um usuário final ao criar uma conta. Por padrão, o Azure AD B2C usa senhas `Strong`. O Azure AD B2C também oferece suporte a opções de configuração para controlar a complexidade de senhas que os clientes podem usar.
+O Azure Active Directory B2C (Azure AD B2C) oferece suporte à alteração de requisitos de complexidade para senhas fornecidas por um usuário final ao criar uma conta. Por padrão, o Azure AD B2C usa senhas `Strong`. O Azure AD B2C também oferece suporte a opções de configuração para controlar a complexidade de senhas que os clientes podem usar.
 
 ## <a name="password-rule-enforcement"></a>Imposição de regras de senha
 
-Durante a inscrição ou redefinição de senha, um usuário final deve fornecer uma senha que atenda às regras de complexidade. Regras de complexidade de senha são impostas pelo fluxo de usuários. É possível ter um fluxo de usuário exigir um pin de quatro dígitos e o outro fluxo de usuário requer uma cadeia de caracteres de oito caracteres durante a inscrição. Por exemplo, você pode usar um fluxo de usuários com diferente complexidade de senha para adultos e crianças.
+Durante a inscrição ou redefinição de senha, um usuário final deve fornecer uma senha que atenda às regras de complexidade. Regras de complexidade de senha são impostas pelo fluxo de usuários. É possível ter um fluxo de usuário que exija um PIN de quatro dígitos durante a inscrição, enquanto outro fluxo de usuário requer uma cadeia de oito caracteres durante a inscrição. Por exemplo, você pode usar um fluxo de usuários com diferente complexidade de senha para adultos e crianças.
 
 A complexidade de senha nunca é aplicada durante a inscrição. Nunca será solicitado que os usuários mudem sua senha ao entrar por ela não atender aos requisitos de complexidade atual.
 
@@ -37,7 +37,7 @@ Se estiver usando políticas personalizadas, você poderá ([configurar a comple
 ## <a name="configure-password-complexity"></a>Configurar a complexidade de senha
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C selecionando o **diretório +** filtro de assinatura no menu superior e escolhendo o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Escolha **Fluxos de usuário**.
 2. Selecione um fluxo de usuário e clique em **Propriedades**.
@@ -45,10 +45,10 @@ Se estiver usando políticas personalizadas, você poderá ([configurar a comple
 
 ### <a name="comparison-chart"></a>Gráfico de comparação
 
-| Complexidade | DESCRIÇÃO |
+| Complexidade | Descrição |
 | --- | --- |
 | Simples | Uma senha que tenha 8 a 64 caracteres. |
-| Strong | Uma senha que tenha 8 a 64 caracteres. São necessários de 3 a 4 caracteres minúsculos, maiúsculos, números ou símbolos. |
+| Forte | Uma senha que tenha 8 a 64 caracteres. São necessários de 3 a 4 caracteres minúsculos, maiúsculos, números ou símbolos. |
 | Personalizado | Essa opção fornece mais controle sobre as regras de complexidade de senha.  Ela permite configurar um tamanho personalizado.  E permite aceitar somente senhas numéricas (pins). |
 
 ## <a name="custom-options"></a>Opções personalizadas

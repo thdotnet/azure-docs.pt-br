@@ -10,17 +10,17 @@ ms.workload: identity
 ms.date: 01/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5cc6c8b4947f8c5ebeb27be2dc82f323f84a6902
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 892f47b6acf22c62ce2290e2ede9d0bcd21eefc8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835431"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065906"
 ---
 # <a name="link-an-azure-subscription-to-an-azure-active-directory-b2c-tenant"></a>Vincular uma assinatura do Azure a um locatário do Azure Active Directory B2C
 
 > [!IMPORTANT]
-> Para obter as últimas informações sobre a cobrança de uso e os preços do Azure AD (Azure Active Directory) B2C, confira [Preços do Azure AD B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+> Para obter as informações mais recentes sobre cobrança de uso e preços para Azure Active Directory B2C (Azure AD B2C), consulte [preços de Azure ad B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
 
 Os encargos de uso para o Azure AD B2C são cobrados de uma assinatura do Azure. Quando um locatário do Azure AD B2C é criado, o administrador de inquilinos precisa vincular explicitamente o locatário do Azure AD B2C a uma assinatura do Azure. Este artigo mostra como fazer isso.
 
@@ -45,9 +45,9 @@ Navegue até o locatário do Azure AD que mostra a sua assinatura do Azure. Abra
 
 ## <a name="find-azure-ad-b2c-in-the-azure-marketplace"></a>Localizar Azure AD B2C no Azure Marketplace
 
-Clique no botão **Criar um recurso**. No **pesquisar no Marketplace** , insira `Active Directory B2C`.
+Clique no botão **Criar um recurso**. No campo **Pesquisar no Marketplace** , digite `Active Directory B2C`.
 
-![Captura de tela portal com 'B2C do Active Directory' na pesquisa de mercado](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
+![Captura de tela do portal com ' Active Directory B2C ' na pesquisa do Marketplace](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
 
 Na lista de resultados, selecione **Azure AD B2C**.
 
@@ -67,7 +67,7 @@ Em Assinatura, selecione uma assinatura ativa do Azure que você administra.
 
 Selecione um Grupo de Recursos e o local do Grupo de Recursos. Aqui, a seleção não tem impacto sobre o local, desempenho ou status de cobrança do locatário do Azure AD B2C.
 
-![A página de criação de recursos do Azure AD B2C no portal do Azure](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
+![A página de criação de recursos de Azure AD B2C no portal do Azure](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
 
 ## <a name="manage-your-azure-ad-b2c-tenant-resources"></a>Gerenciar seus recursos de locatário do Azure AD B2C
 
@@ -82,13 +82,13 @@ Você pode usar esse recurso para:
 
 ![Página de configurações de recursos do B2C no portal do Azure](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.PNG)
 
-## <a name="change-the-azure-ad-b2c-tenant-billing-subscription"></a>Alterar o locatário do Azure AD B2C assinatura de cobrança
+## <a name="change-the-azure-ad-b2c-tenant-billing-subscription"></a>Alterar a assinatura de cobrança de locatário Azure AD B2C
 
-Os locatários do Azure AD B2C podem ser movidos para outra assinatura, se as assinaturas de origem e de destino existir no mesmo locatário do Active Directory do Azure.
+Azure AD B2C locatários podem ser movidos para outra assinatura se as assinaturas de origem e de destino existirem dentro do mesmo locatário Azure Active Directory.
 
-Para saber como mover recursos do Azure como seu locatário do Azure AD B2C para outra assinatura, consulte [mover recursos para um novo grupo de recursos ou assinatura](../azure-resource-manager/resource-group-move-resources.md).
+Para saber como mover os recursos do Azure como seu locatário de Azure AD B2C para outra assinatura, consulte [mover recursos para um novo grupo de recursos ou assinatura](../azure-resource-manager/resource-group-move-resources.md).
 
-Antes de iniciar a movimentação, certifique-se de ler o artigo inteiro para compreender totalmente as limitações e requisitos para uma movimentação desse tipo. Além de instruções para mover os recursos, ele inclui informações críticas, como uma lista de verificação de pré-mover e como validar a operação de movimentação.
+Antes de iniciar a movimentação, lembre-se de ler todo o artigo para entender totalmente as limitações e os requisitos para tal movimentação. Além de instruções para mover recursos, ele inclui informações críticas, como uma lista de verificação de pré-movimentação e como validar a operação de movimentação.
 
 ## <a name="known-issues"></a>Problemas Conhecidos
 

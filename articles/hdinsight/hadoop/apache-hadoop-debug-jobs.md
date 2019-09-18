@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 751d5b47006f5c99a747503ad4f052b3e03a043c
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 8ad2bdd0f12abad08515f0314b9c03cc971127cb
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70882437"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059211"
 ---
 # <a name="analyze-apache-hadoop-logs-in-azure-hdinsight"></a>Analisar logs de Apache Hadoop no Azure HDInsight
 
@@ -110,7 +110,7 @@ Para saber mais sobre os logs de aplicativos, confira [Simplifying user-logs man
 ### <a name="access-the-ambari-ui"></a>Acessar a interface do usuário do Ambari
 No portal do Azure, clique em um nome de cluster HDInsight para abrir o painel do cluster. No painel do cluster, clique em **Painel**.
 
-![Iniciar painel do cluster](./media/apache-hadoop-debug-jobs/hdi-debug-launch-dashboard.png)
+![Painel de cluster de inicialização do HDInsight](./media/apache-hadoop-debug-jobs/hdi-debug-launch-dashboard.png)
 
 
 ### <a name="access-the-yarn-ui"></a>Acessar a interface do usuário do Yarn
@@ -120,7 +120,7 @@ Você pode usar a interface do usuário do YARN para fazer o seguinte:
 
 * **Obter o status do cluster**. No painel esquerdo, expanda **Cluster** e clique em **Sobre**. Isso apresenta detalhes de status do cluster como memória alocada total, núcleos usados, o estado do gerenciador de recursos de cluster, versão do cluster, e assim por adiante.
   
-    ![Iniciar o painel do cluster yarn](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png "Iniciar o painel do cluster yarn")
+    ![Painel de cluster de inicialização do HDInsight yarn](./media/apache-hadoop-debug-jobs/hdi-debug-yarn-cluster-state.png "Painel de cluster de inicialização do HDInsight yarn")
 * **Obtenha o status do nó**. No painel esquerdo, expanda **Cluster** e clique em **Nós**. Isso lista todos os nós no cluster, o endereço HTTP de cada nó, os recursos alocados para cada nó, etc.
 * **Monitore o status do trabalho**. No painel esquerdo, expanda **Cluster**, em seguida, clique em **Aplicativos** para listar todos os trabalhos no cluster. Se você quiser examinar os trabalhos em um estado específico (como novo, enviado, em execução, etc.), clique no link apropriado em **Aplicativos**. Você pode seguir clicando no nome do trabalho para saber mais detalhes sobre ele, como saída, logs, etc.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 4c13c0b7601257c120c46ec341156a8e8bba332f
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: da9ab6eef98a602635e5e92dca3bd5628846ce62
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967783"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71036342"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -95,7 +95,7 @@ Se você quiser saber como criar um compartilhamento de arquivos premium, consul
 No momento, não é possível converter diretamente entre um compartilhamento de arquivos padrão e um compartilhamento de arquivos premium. Se desejar alternar para qualquer camada, você deverá criar um novo compartilhamento de arquivos nessa camada e copiar manualmente os dados do compartilhamento original para o novo compartilhamento que você criou. Você pode fazer isso usando qualquer uma das ferramentas de cópia com suporte do Azure files, como Robocopy ou AzCopy.
 
 > [!IMPORTANT]
-> Os compartilhamentos de arquivos Premium só estão disponíveis com LRS e estão disponíveis na maioria das regiões que oferecem contas de armazenamento. Para descobrir se os compartilhamentos de arquivos premium estão disponíveis atualmente em sua região, confira a página [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=storage) para o Azure.
+> Os compartilhamentos de arquivos premium estão disponíveis com o LRS na maioria das regiões que oferecem contas de armazenamento e com o ZRS em um subconjunto menor de regiões. Para descobrir se os compartilhamentos de arquivos premium estão disponíveis atualmente em sua região, confira a página [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=storage) para o Azure. Para descobrir quais regiões dão suporte a ZRS, consulte [cobertura de suporte e disponibilidade regional](../common/storage-redundancy-zrs.md#support-coverage-and-regional-availability).
 
 #### <a name="provisioned-shares"></a>Compartilhamentos provisionados
 
@@ -157,7 +157,7 @@ Novos compartilhamentos de arquivos começam com o número total de créditos em
 
 Compartilhamentos padrão do Azure files oferece suporte a quatro opções de redundância de dados: LRS (armazenamento com redundância local), ZRS (armazenamento com redundância de zona), GRS (armazenamento com redundância geográfica) e GZRS (armazenamento com redundância de zona geográfica) (versão prévia).
 
-Os compartilhamentos Premium dos arquivos do Azure oferecem suporte apenas ao LRS (armazenamento com redundância local).
+Os compartilhamentos Premium dos arquivos do Azure dão suporte a LRS e ZRS, o ZRS está disponível atualmente em um subconjunto menor de regiões.
 
 As seções a seguir descrevem as diferenças entre as opções de redundância diferentes:
 
