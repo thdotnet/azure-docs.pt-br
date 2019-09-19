@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 92d8c6fb1bfa1689475774bbc4f62cd9ab38268f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: d06cf74b2a29af3fea2c24facac2899d09a0a84f
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321844"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090778"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Tutorial: Executar uma carga de trabalho paralela com o Lote do Azure usando a API do Python
 
@@ -123,7 +123,7 @@ As seções a seguir separa o aplicativo de exemplo nas etapas executadas para p
 
 ### <a name="authenticate-blob-and-batch-clients"></a>Autenticar clientes de Blob e do Lote
 
-Para interagir com uma conta de armazenamento, o aplicativo usa o pacote [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) para criar um objeto [BlockBlobService](/python/api/azure.storage.blob.blockblobservice.blockblobservice).
+Para interagir com uma conta de armazenamento, o aplicativo usa o pacote [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) para criar um objeto [BlockBlobService](/python/api/azure-storage-blob/azure.storage.blob.blockblobservice.blockblobservice).
 
 ```python
 blob_client = azureblob.BlockBlobService(
@@ -144,7 +144,7 @@ batch_client = batch.BatchServiceClient(
 
 ### <a name="upload-input-files"></a>Carregar arquivos de entrada
 
-O aplicativo usa a referência `blob_client` para criar um contêiner de armazenamento de arquivos MP4 de entrada e um contêiner para a saída da tarefa. Em seguida, ele chama a função `upload_file_to_container` para carregar arquivos MP4 no diretório `InputFiles` local para o contêiner. Os arquivos no armazenamento são definidos como objetos [ResourceFile](/python/api/azure.batch.models.resourcefile) do Lote que ele pode baixar mais tarde para os nós de computação.
+O aplicativo usa a referência `blob_client` para criar um contêiner de armazenamento de arquivos MP4 de entrada e um contêiner para a saída da tarefa. Em seguida, ele chama a função `upload_file_to_container` para carregar arquivos MP4 no diretório `InputFiles` local para o contêiner. Os arquivos no armazenamento são definidos como objetos [ResourceFile](/python/api/azure-batch/azure.batch.models.resourcefile) do Lote que ele pode baixar mais tarde para os nós de computação.
 
 ```python
 blob_client.create_container(input_container_name, fail_on_exist=False)
@@ -165,13 +165,13 @@ input_files = [
 
 ### <a name="create-a-pool-of-compute-nodes"></a>Criar um pool de nós de computação
 
-Em seguida, o exemplo cria um pool de nós de computação na conta do Lote com uma chamada para `create_pool`. Essa função definida usa a classe [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) do Lote para definir o número de nós, o tamanho da VM e uma configuração de pool. Aqui, um objeto [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) especifica uma [ImageReference](/python/api/azure.batch.models.imagereference) para uma imagem do Ubuntu Server 18.04 LTS publicada no Azure Marketplace. O Lote dá suporte a uma ampla gama de imagens de VM no Azure Marketplace, bem como imagens de VM personalizadas.
+Em seguida, o exemplo cria um pool de nós de computação na conta do Lote com uma chamada para `create_pool`. Essa função definida usa a classe [PoolAddParameter](/python/api/azure-batch/azure.batch.models.pooladdparameter) do Lote para definir o número de nós, o tamanho da VM e uma configuração de pool. Aqui, um objeto [VirtualMachineConfiguration](/python/api/azure-batch/azure.batch.models.virtualmachineconfiguration) especifica uma [ImageReference](/python/api/azure-batch/azure.batch.models.imagereference) para uma imagem do Ubuntu Server 18.04 LTS publicada no Azure Marketplace. O Lote dá suporte a uma ampla gama de imagens de VM no Azure Marketplace, bem como imagens de VM personalizadas.
 
 O número de nós e o tamanho da VM são definidos usando constantes definidas. O Lote dá suporte a nós dedicados e a [nós de baixa prioridade](batch-low-pri-vms.md), e você pode usar um ou ambos em seus pools. Nós dedicados são reservados para o pool. Nós de baixa prioridade são oferecidos a um preço menor do excedente de capacidade da VM no Azure. Nós de baixa prioridade ficam indisponíveis quando o Azure não tem capacidade suficiente. O exemplo, por padrão, cria um pool que contém apenas cinco nós de baixa prioridade em tamanho *Standard_A1_v2*. 
 
-Além das propriedades do nó físico, essa configuração de pool inclui um objeto [StartTask](/python/api/azure.batch.models.starttask). StartTask é executado em cada nó quando o nó ingressa no pool e sempre que um nó é reiniciado. Neste exemplo, o StartTask executa comandos do shell Bash para instalar o pacote de ffmpeg e as dependências nos nós.
+Além das propriedades do nó físico, essa configuração de pool inclui um objeto [StartTask](/python/api/azure-batch/azure.batch.models.starttask). StartTask é executado em cada nó quando o nó ingressa no pool e sempre que um nó é reiniciado. Neste exemplo, o StartTask executa comandos do shell Bash para instalar o pacote de ffmpeg e as dependências nos nós.
 
-O método [pool.add](/python/api/azure.batch.operations.pooloperations) envia o pool para o serviço do Lote.
+O método [pool.add](/python/api/azure-batch/azure.batch.operations.pooloperations) envia o pool para o serviço do Lote.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -201,7 +201,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-job"></a>Criar um trabalho
 
-Um trabalho do Lote especifica um pool onde executar tarefas, e configurações opcionais, como uma prioridade e uma agenda para o trabalho. O exemplo cria um trabalho com uma chamada para `create_job`. Essa função definida usa a classe [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure.batch.operations.joboperations) envia o pool ao serviço do Lote. Inicialmente, o trabalho não tem nenhuma tarefa.
+Um trabalho do Lote especifica um pool onde executar tarefas, e configurações opcionais, como uma prioridade e uma agenda para o trabalho. O exemplo cria um trabalho com uma chamada para `create_job`. Essa função definida usa a classe [JobAddParameter](/python/api/azure-batch/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure-batch/azure.batch.operations.joboperations) envia o pool ao serviço do Lote. Inicialmente, o trabalho não tem nenhuma tarefa.
 
 ```python
 job = batch.models.JobAddParameter(
@@ -213,11 +213,11 @@ batch_service_client.job.add(job)
 
 ### <a name="create-tasks"></a>Criar tarefas
 
-O aplicativo cria tarefas no trabalho com uma chamada para `add_tasks`. Essa função definida cria uma lista de objetos de tarefa usando a classe [TaskAddParameter](/python/api/azure.batch.models.taskaddparameter). Cada tarefa executa ffmpeg para processar um objeto `resource_files` de entrada usando um parâmetro `command_line`. O ffmpeg anteriormente foi instalado em cada nó quando o pool foi criado. Aqui, a linha de comando executa ffmpeg para converter cada arquivo MP4 (vídeo) de entrada em um arquivo MP3 (áudio).
+O aplicativo cria tarefas no trabalho com uma chamada para `add_tasks`. Essa função definida cria uma lista de objetos de tarefa usando a classe [TaskAddParameter](/python/api/azure-batch/azure.batch.models.taskaddparameter). Cada tarefa executa ffmpeg para processar um objeto `resource_files` de entrada usando um parâmetro `command_line`. O ffmpeg anteriormente foi instalado em cada nó quando o pool foi criado. Aqui, a linha de comando executa ffmpeg para converter cada arquivo MP4 (vídeo) de entrada em um arquivo MP3 (áudio).
 
-O exemplo cria um objeto [OutputFile](/python/api/azure.batch.models.outputfile) para o arquivo MP3 depois de executar a linha de comando. Os arquivos de saída de cada tarefa (um, neste caso) são carregados em um contêiner na conta de armazenamento vinculada, usando a propriedade `output_files` da tarefa.
+O exemplo cria um objeto [OutputFile](/python/api/azure-batch/azure.batch.models.outputfile) para o arquivo MP3 depois de executar a linha de comando. Os arquivos de saída de cada tarefa (um, neste caso) são carregados em um contêiner na conta de armazenamento vinculada, usando a propriedade `output_files` da tarefa.
 
-Depois, o aplicativo adiciona tarefas ao trabalho com o método [task.add_collection](/python/api/azure.batch.operations.taskoperations), que as enfileira para execução em nós de computação. 
+Depois, o aplicativo adiciona tarefas ao trabalho com o método [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations), que as enfileira para execução em nós de computação. 
 
 ```python
 tasks = list()
@@ -247,7 +247,7 @@ batch_service_client.task.add_collection(job_id, tasks)
 
 Quando as tarefas são adicionadas a um trabalho, o Lote as enfileira e agenda para execução em nós de computação no pool associado. Com base nas configurações especificadas, o Lote manipula o enfileiramento, o agendamento, a repetição de todas as tarefas e outras obrigações de administração de tarefas. 
 
-Há muitas abordagens para o monitoramento da execução da tarefa. A função `wait_for_tasks_to_complete` neste exemplo usa o objeto [TaskState](/python/api/azure.batch.models.taskstate) para monitorar as tarefas em determinado estado, neste caso, o estado concluído, dentro de um limite de tempo.
+Há muitas abordagens para o monitoramento da execução da tarefa. A função `wait_for_tasks_to_complete` neste exemplo usa o objeto [TaskState](/python/api/azure-batch/azure.batch.models.taskstate) para monitorar as tarefas em determinado estado, neste caso, o estado concluído, dentro de um limite de tempo.
 
 ```python
 while datetime.datetime.now() < timeout_expiration:
@@ -267,7 +267,7 @@ while datetime.datetime.now() < timeout_expiration:
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Depois que ele executa as tarefas, o aplicativo exclui automaticamente o contêiner de armazenamento de entrada criado e oferece a opção de excluir o pool do Lote e o trabalho. As classes [JobOperations](/python/api/azure.batch.operations.joboperations) e [PoolOperations](/python/api/azure.batch.operations.pooloperations) do BatchServiceClient têm métodos de exclusão, chamados se você confirmar a exclusão. Embora você não seja cobrado pelos trabalhos e pelas tarefas, será cobrado pelos nós de computação. Portanto, recomendamos que você aloque os pools conforme a necessidade. Quando você excluir o pool, todas as saídas de tarefa nos nós são excluídas. No entanto, os arquivos de entrada e saída permanecerão na conta de armazenamento.
+Depois que ele executa as tarefas, o aplicativo exclui automaticamente o contêiner de armazenamento de entrada criado e oferece a opção de excluir o pool do Lote e o trabalho. As classes [JobOperations](/python/api/azure-batch/azure.batch.operations.joboperations) e [PoolOperations](/python/api/azure-batch/azure.batch.operations.pooloperations) do BatchServiceClient têm métodos de exclusão, chamados se você confirmar a exclusão. Embora você não seja cobrado pelos trabalhos e pelas tarefas, será cobrado pelos nós de computação. Portanto, recomendamos que você aloque os pools conforme a necessidade. Quando você excluir o pool, todas as saídas de tarefa nos nós são excluídas. No entanto, os arquivos de entrada e saída permanecerão na conta de armazenamento.
 
 Quando não forem mais necessário, exclua o grupo de recursos, a conta do Lote e a conta de armazenamento. Para fazer isso no Portal do Azure, selecione o grupo de recursos para a conta do Lote e clique em **Excluir grupo de recursos**.
 

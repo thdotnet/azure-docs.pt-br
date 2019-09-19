@@ -1,20 +1,20 @@
 ---
 title: Alta disponibilidade para Hadoop – Azure HDInsight
 description: Saiba como clusters HDInsight melhoram a confiabilidade e a disponibilidade usando um nó principal adicional. Saiba como isso afeta os serviços do Hadoop, como o Ambari e o Hive, e também como se conectar individualmente com cada nó principal usando SSH.
-ms.reviewer: jasonh
 author: hrasheed-msft
+ms.author: hrasheed
+ms.reviewer: jasonh
 keywords: alta disponibilidade hadoop
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/24/2019
-ms.author: hrasheed
-ms.openlocfilehash: 1bfc17d343f6e788d22cd158fcb849c5895b019f
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 615b1e4c5684084b6c5f88d26293b993c1efbf1f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879714"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104419"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Disponibilidade e confiabilidade dos clusters Apache Hadoop em HDInsight
 
@@ -106,7 +106,7 @@ A interface do usuário da Ambari Web é visível em `https://CLUSTERNAME.azureh
 
 Ao chegar na página Ambari, os serviços instalados serão listados à esquerda da página.
 
-![Serviços instalados](./media/hdinsight-high-availability-linux/hdinsight-installed-services.png)
+![Serviços instalados do Apache Ambari](./media/hdinsight-high-availability-linux/hdinsight-installed-services.png)
 
 Há uma série de ícones que podem aparecer ao lado de um serviço para indicar o status. Todos os alertas relacionados a um serviço podem ser visualizados usando o link **Alertas** na parte superior da página.  O Ambari oferece vários alertas predefinidos.
 
@@ -155,11 +155,11 @@ Você pode selecionar cada serviço para exibir mais informações sobre ele.
 
 A página de serviço fornece informações sobre o status e a configuração de cada serviço, mas não fornece informações sobre o nó de cabeçalho no qual o serviço está em execução. Para exibir essas informações, use o link **Hosts** na parte superior da página. Isso exibe os hosts do cluster, incluindo os nós de cabeçalho.
 
-![lista de hosts](./media/hdinsight-high-availability-linux/hdinsight-hosts-list.png)
+![Lista de hosts do Apache Ambari cabeçalho](./media/hdinsight-high-availability-linux/hdinsight-hosts-list.png)
 
 Selecionar o link para um dos nós de cabeçalho exibirá os serviços e componentes em execução nesse nó.
 
-![Status do componente](./media/hdinsight-high-availability-linux/hdinsight-node-services.png)
+![Status do componente Apache Ambari](./media/hdinsight-high-availability-linux/hdinsight-node-services.png)
 
 Para saber mais sobre como usar o Ambari, confira [Monitorar e gerenciar o HDInsight usando a interface de usuário da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md).
 

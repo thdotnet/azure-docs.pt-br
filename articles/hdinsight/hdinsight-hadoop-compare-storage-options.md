@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: ced2c888a412a72643bb0c12fceb7e83d39936cf
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
-ms.translationtype: HT
+ms.openlocfilehash: d036e56a4ccf826ccd19fb7424b7b76568839b23
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098740"
+ms.locfileid: "71104528"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Comparar opções de armazenamento para uso com clusters do Azure HDInsight
 
@@ -34,7 +34,7 @@ A tabela a seguir resume os serviços de armazenamento do Azure que têm suporte
 |Armazenamento do Azure| Armazenamento de BLOBs * * | Object | Bloquear Blob | Standard | Quente, frio e arquivo morto | Todas | Todas |
 |Azure Data Lake Storage Gen1| N/D | Hierárquico (Filesystem) | N/D | N/D | N/D | apenas 3,6 | Todos, exceto HBase |
 
-\* * Para clusters HDInsight, somente contas de armazenamento secundárias podem ser do tipo BlobStorage.
+\* * Para clusters HDInsight, somente contas de armazenamento secundárias podem ser do tipo BlobStorage e o blob de página não é uma opção de armazenamento com suporte.
 
 Para obter mais informações sobre os tipos de conta de armazenamento do Azure, consulte [visão geral da conta de armazenamento do Azure](../storage/common/storage-account-overview.md)
 

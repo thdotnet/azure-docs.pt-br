@@ -2,18 +2,18 @@
 title: Monitorar o desempenho do cluster – Azure HDInsight
 description: Como monitorar a integridade e o desempenho de clusters de Apache Hadoop no Azure HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.author: hrasheed
-ms.openlocfilehash: 936307399b658b75962e6969820215f9808d053f
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 7a7544ef9fe5724d1f6c11918411a76461d908e5
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70961127"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104392"
 ---
 # <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Monitorar o desempenho do cluster no Azure HDInsight
 
@@ -36,11 +36,11 @@ Para obter uma visão de alto nível de nós do cluster e os respectivos carrega
 
 Você também verá colunas mostrando o número de núcleos e a quantidade de RAM para cada host, bem como o uso do disco e a carga média.
 
-![Guia Hosts](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-hosts-tab.png)
+![Visão geral da guia hosts Apache Ambari](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-hosts-tab.png)
 
 Selecione qualquer um dos nomes de host para ter uma visão detalhada dos componentes em execução nesse host, bem como suas métricas. As métricas são mostradas como uma linha do tempo selecionável de uso de CPU, carga, uso do disco, uso de memória, uso de rede e números de processos.
 
-![Detalhes do host](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-host-details.png)
+![Visão geral dos detalhes do host Apache Ambari](./media/hdinsight-key-scenarios-to-monitor/apache-ambari-host-details.png)
 
 Consulte [Gerenciar clusters HDInsight usando a interface do usuário da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md) para obter detalhes sobre a configuração de alertas e exibição de métricas.
 
@@ -56,7 +56,7 @@ Quando vários locatários compartilham um grande cluster, ocorre uma competiç�
 
 O YARN nos permite alocar recursos para essas filas e mostra se todos os recursos disponíveis estão atribuídos. Para visualizar informações sobre suas filas, entre na interface do usuário do Ambari Web e selecione **YARN Queue Manager** no menu superior.
 
-![Gerenciador de Filas do YARN](./media/hdinsight-key-scenarios-to-monitor/apache-yarn-queue-manager.png)
+![Gerenciador de filas do Apache Ambari YARN](./media/hdinsight-key-scenarios-to-monitor/apache-yarn-queue-manager.png)
 
 A página do Gerenciador de Filas do YARN mostra uma lista de suas filas à esquerda, junto com o percentual da capacidade atribuída a cada uma.
 
@@ -64,11 +64,11 @@ A página do Gerenciador de Filas do YARN mostra uma lista de suas filas à esqu
 
 Para obter informações mais detalhada sobre seu filas, no painel do Ambari, selecione o serviço **YARN** na lista à esquerda. Em seguida, no menu suspenso **Links rápidos**, selecione **Interface do usuário do Gerenciador de Recursos** abaixo do nó ativo.
 
-![Link do menu Gerenciador de Recursos de UI](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu-link.png)
+![Links de menu da interface do usuário do Resource Manager](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu-link.png)
 
 Na interface do usuário do Gerenciador de Recursos, selecione **Agendador** no menu à esquerda. Você vê uma lista com as suas filas em *Filas de Aplicativo*. Aqui você pode ver a capacidade usada para cada uma das suas filas, como os trabalhos estão distribuídos entre elas e se algum trabalho está com limitação de recursos.
 
-![Menu da interface do usuário do Resource Manager](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu.png)
+![Menu da IU do Gerenciador de recursos do Apache HAdoop](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu.png)
 
 ## <a name="storage-throttling"></a>Limitação de armazenamento
 

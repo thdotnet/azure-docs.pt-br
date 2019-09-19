@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/11/2018
-ms.openlocfilehash: dec3cdd63f3e3ff303bfd60ca1ae77a4c4641190
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 122840614aede3ee112f8fd68cf6dabfa91fa225
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70961281"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105523"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Operacionalize um pipeline de análise de dados
 
@@ -33,7 +33,7 @@ O pipeline de exemplo aguarda a chegada de novos dados de voo, depois, armazena 
 
 O diagrama a seguir ilustra o pipeline de exemplo.
 
-![Pipeline de dados de voo](./media/hdinsight-operationalize-data-pipeline/flight-pipeline-overview.png)
+![Visão geral do pipeline de dados de exemplo de vôo HDI](./media/hdinsight-operationalize-data-pipeline/flight-pipeline-overview.png)
 
 ## <a name="apache-oozie-solution-overview"></a>Visão geral da solução Apache Oozie
 
@@ -43,7 +43,7 @@ O Oozie descreve seus pipelines em termos de *ações*, *fluxos de trabalho* e *
 
 O diagrama a seguir mostra o design de alto nível desse exemplo de pipeline do Oozie.
 
-![Pipeline de dados de voo do Oozie](./media/hdinsight-operationalize-data-pipeline/pipeline-overview-oozie.png)
+![Pipeline de dados de exemplo de vôo Oozie](./media/hdinsight-operationalize-data-pipeline/pipeline-overview-oozie.png)
 
 ### <a name="provision-azure-resources"></a>Provisionar recursos do Azure
 
@@ -55,23 +55,23 @@ Esse pipeline exige um Banco de Dados SQL do Azure e um cluster Hadoop do HDInsi
 2. Dentro do grupo de recursos `oozie`, provisione um Servidor e Banco de Dados SQL do Azure. Você não precisa de um banco de dados maior do que o tipo de preço S1 Standard.
 3. No portal do Azure, navegue até o painel de seu Banco de Dados SQL implantado recentemente e selecione **Ferramentas**.
 
-    ![Botão Ferramentas](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-tools-button.png)
+    ![Ícone de botão de ferramentas de BD SQL do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-tools-button.png)
 
 4. Selecione **Editor de Consultas**.
 
-    ![Botão Editor de Consultas](./media/hdinsight-operationalize-data-pipeline/sql-db-query-editor1.png)
+    ![Visualização do editor de consultas do BD SQL](./media/hdinsight-operationalize-data-pipeline/sql-db-query-editor1.png)
 
 5. No painel **Editor de Consultas**, selecione **Logon**.
 
-    ![Botão Logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window1.png)
+    ![Janela de logon do BD SQL do editor de consultas](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window1.png)
 
 6. Insira suas credenciais do Banco de Dados SQL e selecione **OK**.
 
-   ![Formulário de logon](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window2.png)
+   ![Parâmetros de logon do BD SQL do editor de consultas](./media/hdinsight-operationalize-data-pipeline/sql-db-login-window2.png)
 
 7. Na área de texto do Editor de Consultas, insira as seguintes instruções SQL para criar a tabela `dailyflights` que armazenará os dados resumidos de cada execução do pipeline.
 
-    ```
+    ```sql
     CREATE TABLE dailyflights
     (
         YEAR INT,
@@ -90,7 +90,7 @@ Esse pipeline exige um Banco de Dados SQL do Azure e um cluster Hadoop do HDInsi
 
 8. Selecione **Executar** para executar as instruções SQL.
 
-    ![Botão Executar](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-run-button.png)
+    ![Botão Executar do BD SQL do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-sql-db-run-button.png)
 
 Seu Banco de dados SQL do Azure está pronto.
 
@@ -104,12 +104,12 @@ Seu Banco de dados SQL do Azure está pronto.
 
 4. No painel **Tipo de cluster**, selecione o tipo de cluster **Hadoop**, sistema operacional **Linux** e a versão mais recente do cluster HDInsight. Deixe o **Tipo de cluster** como **Standard**.
 
-    ![Tipo de cluster HDInsight](./media/hdinsight-operationalize-data-pipeline/hdinsight-cluster-type.png)
+    ![Tipo de configuração de cluster portal do Azure](./media/hdinsight-operationalize-data-pipeline/hdinsight-cluster-type.png)
 
 5. Escolha **Selecionar** para aplicar a seleção do tipo de cluster.
 6. Complete o painel **Informações Básicas** fornecendo uma senha de logon e selecionando seu grupo de recursos `oozie` na lista, depois, selecione **Avançar**.
 
-    ![Painel Informações Básicas do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdinsight-basics-pane.png)
+    ![Painel criar noções básicas do cluster portal do Azure](./media/hdinsight-operationalize-data-pipeline/hdinsight-basics-pane.png)
 
 7. No painel **Armazenamento**, deixe o tipo de armazenamento primário definido como **Armazenamento do Azure**, selecione **Criar novo** e forneça um nome para a nova conta.
 
@@ -123,13 +123,13 @@ Seu Banco de dados SQL do Azure está pronto.
 
     ![Autenticação de metastore do Hive do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-authenticate-sql.png)
 
-10. Insira o nome de usuário e a senha de seu Banco de Dados SQL e escolha **Selecionar**. 
+10. Insira o nome de usuário e a senha de seu Banco de Dados SQL e escolha **Selecionar**.
 
        ![Logon na autenticação de metastore do Hive do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-authenticate-sql-login.png)
 
-11. Novamente no painel **Configurações de Metastore**, selecione seu banco de dados para o armazenamento de metadados Oozie e autentique como você fazia antes. 
+11. Novamente no painel **Configurações de Metastore**, selecione seu banco de dados para o armazenamento de metadados Oozie e autentique como você fazia antes.
 
-       ![Configurações de metastore do HDInsight](./media/hdinsight-operationalize-data-pipeline/hdi-metastore-settings.png)
+       ![Configurações de metastore portal do Azure](./media/hdinsight-operationalize-data-pipeline/hdi-metastore-settings.png)
 
 12. Selecione **Avançar**.
 13. No painel **Resumo**, selecione **Criar** para implantar o cluster.
@@ -176,17 +176,18 @@ Copie o arquivo usando o SCP em sua sessão de shell `bash`.
 Os dados de exemplo agora disponíveis. No entanto, o pipeline exige duas tabelas do Hive para o processamento, uma para os dados de entrada (`rawFlights`) e outra para os dados resumidos (`flights`). Crie essas tabelas no Ambari da seguinte maneira.
 
 1. Faça logon no Ambari navegando para http:\//headnodehost: 8080.
+
 2. Na lista de serviços, selecione **Hive**.
 
-    ![Seleção de Hive no Ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png)
+    ![Lista de serviços Apache Ambari selecionando o hive](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive.png)
 
 3. Selecione **Ir para Exibição** ao lado do rótulo Exibição do Hive 2.0.
 
-    ![Seleção da Exibição de Hive no Ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-summary.png)
+    ![Lista de Resumo de Apache Hive do Apache Ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-summary.png)
 
-4. Na área de texto de consulta, cole as instruções a seguir para criar a tabela `rawFlights`. A tabela `rawFlights` fornece um esquema durante a leitura dos arquivos CSV dentro da pasta `/example/data/flights` no Armazenamento do Azure. 
+4. Na área de texto de consulta, cole as instruções a seguir para criar a tabela `rawFlights`. A tabela `rawFlights` fornece um esquema durante a leitura dos arquivos CSV dentro da pasta `/example/data/flights` no Armazenamento do Azure.
 
-    ```
+    ```sql
     CREATE EXTERNAL TABLE IF NOT EXISTS rawflights (
         YEAR INT,
         MONTH INT,
@@ -211,7 +212,7 @@ Os dados de exemplo agora disponíveis. No entanto, o pipeline exige duas tabela
 
 5. Selecione **Executar** para criar a tabela.
 
-    ![Consulta do Hive no Ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-query.png)
+    ![consulta de hive de serviços HDI ambari](./media/hdinsight-operationalize-data-pipeline/hdi-ambari-services-hive-query.png)
 
 6. Para criar a tabela `flights`, substitua o texto na área de texto de consulta pelas instruções a seguir. A tabela `flights` é uma tabela gerenciada pelo Hive que particiona os dados carregados nela em ano, mês e dia do mês. Essa tabela conterá todos os dados históricos de voo, com a granularidade mais baixa presente nos dados de origem de uma linha por voo.
 
@@ -425,7 +426,7 @@ A tabela a seguir resume cada uma das propriedades e indica onde você pode enco
 | hiveDataFolder | O caminho no Armazenamento do Azure até os dados contidos na tabela de preparo. |
 | sqlDatabaseConnectionString | A cadeia de conexão da sintaxe JDBC para o seu Banco de Dados SQL do Azure. |
 | sqlDatabaseTableName | O nome da tabela no Banco de Dados SQL do Azure na qual os resumos de linha são inseridos. Deixe como `dailyflights`. |
-| ano | O componente ano do dia para o qual os resumos de voo são computados. Deixe como está. |
+| year | O componente ano do dia para o qual os resumos de voo são computados. Deixe como está. |
 | month | O componente mês do dia para o qual os resumos de voo são computados. Deixe como está. |
 | dia | O componente dia do mês do dia para o qual os resumos de voo são computados. Deixe como está. |
 
@@ -463,7 +464,7 @@ Use o SCP da sessão bash para implantar seu fluxo de trabalho do Oozie (`workfl
 
 7. Observe o status usando o Console da Web do Oozie. No Ambari, selecione **Oozie**, **Links Rápidos** e, em seguida, **Console da Web do Oozie**. Na guia **Trabalhos de Fluxo de Trabalho**, selecione **Todos os Trabalhos**.
 
-    ![Fluxos de trabalho do Console da Web do Oozie](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-workflows.png)
+    ![fluxos de trabalho do console Web do HDI oozie](./media/hdinsight-operationalize-data-pipeline/hdi-oozie-web-console-workflows.png)
 
 8. Quando o status for BEM-SUCEDIDO, veja a tabela do Banco de Dados SQL para ver as linhas inseridas. No portal do Azure, navegue até o painel de seu Banco de Dados SQL, selecione **Ferramentas** e abra o **Editor de Consulta**.
 
@@ -475,7 +476,7 @@ Agora que o fluxo de trabalho está em execução para o dia de teste único, vo
 
 Para agendar a execução diária desse fluxo de trabalho (ou a execução durante os dias de um intervalo de datas), use um coordenador. Um coordenador é definido por um arquivo XML, por exemplo `coordinator.xml`:
 
-```
+```xml
 <coordinator-app name="daily_export" start="2017-01-01T00:00Z" end="2017-01-05T00:00Z" frequency="${coord:days(1)}" timezone="UTC" xmlns="uri:oozie:coordinator:0.4">
     <datasets>
         <dataset name="ds_input1" frequency="${coord:days(1)}" initial-instance="2016-12-31T00:00Z" timezone="UTC">
@@ -554,7 +555,7 @@ Como você pode ver, grande parte do coordenador está apenas passando informaç
 
 * Ponto 2: Dentro do intervalo de datas do fluxo de trabalho, o elemento `dataset` especifica onde procurar no HDFS os dados de um determinado intervalo de datas, e configura como o Oozie determina se os dados ainda estão disponíveis para processamento.
 
-    ```
+    ```xml
     <dataset name="ds_input1" frequency="${coord:days(1)}" initial-instance="2016-12-31T00:00Z" timezone="UTC">
         <uri-template>${sourceDataFolder}${YEAR}-${MONTH}-FlightData.csv</uri-template>
         <done-flag></done-flag>
@@ -567,7 +568,7 @@ Como você pode ver, grande parte do coordenador está apenas passando informaç
 
 * Ponto 3: O elemento `data-in` especifica o carimbo de hora específico a ser usado como o tempo nominal ao substituir os valores em `uri-template` para o conjunto de dados associado.
 
-    ```
+    ```xml
     <data-in name="event_input1" dataset="ds_input1">
         <instance>${coord:current(0)}</instance>
     </data-in>

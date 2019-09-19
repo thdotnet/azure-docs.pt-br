@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1341f0def306a1167e1e4876365c70901cf89cd2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fc1f6434bea8f75c7bcc7859c6f90d7abdd031b
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086998"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091029"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workable"></a>Tutorial: Integração do Azure Active Directory ao Workable
 
@@ -142,7 +142,7 @@ Para habilitar o SSO no Workable, contate seu gerente de conta dedicado do Worka
 
 3. URL de logoff
 
-Depois que o Logon Único for habilitado, seu gerente de conta do Workable informará você a respeito e você poderá usar a [página de SSO do Workable](https://id.workable.com/sso/signin) para entrar usando o subdomínio de conta do Workable.
+Depois que o Logon Único for habilitado, seu gerente de conta do Workable informará você a respeito e você poderá usar a [página de SSO do Workable](https://help.workable.com/hc/en-us/articles/360000067753-Single-Sign-on-SSO-Overview-Pro) para entrar usando o subdomínio de conta do Workable.
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -210,4 +210,4 @@ Ao clicar no bloco do Workable no Painel de Acesso, você deverá ser conectado 
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

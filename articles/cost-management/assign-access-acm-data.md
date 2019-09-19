@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 06/04/2019
+ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: 946a9bd7595692dddd157d01945fd15bdf1ab965
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 332ec3930a7654fd5aecf1fc71ccb55c16df127f
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66493766"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105131"
 ---
 # <a name="assign-access-to-cost-management-data"></a>Atribuir acesso a dados do Gerenciamento de Custos
 
@@ -23,7 +23,7 @@ Para usuários com contratos Azure Enterprise, uma combinação de permissões c
 
 O escopo que um usuário seleciona é usado em todo o Gerenciamento de Custos para fornecer a consolidação de dados e para controlar o acesso a informações de custo. Ao usar escopos, os usuários não selecionam vários deles. Em vez disso, eles selecionam um escopo mais amplo que em que os escopos filho se acumulam, para depois filtrarem o que desejam exibir. A consolidação de dados é importante para entender porque algumas pessoas não devem ter acesso a um escopo pai acumulado por escopos filho.
 
-Assista a [como atribuir acesso com o gerenciamento de custos do Azure](https://www.youtube.com/watch?v=J997ckmwTa8) vídeo para saber mais sobre como atribuir acesso para exibir os custos e os encargos com controle de acesso baseado em função do Azure.
+Assista ao vídeo [como atribuir acesso com o gerenciamento de custos do Azure](https://www.youtube.com/watch?v=J997ckmwTa8) para saber mais sobre a atribuição de acesso para exibir custos e encargos com o controle de acesso baseado em função do Azure.
 
 >[!VIDEO https://www.youtube.com/embed/J997ckmwTa8]
 
@@ -37,8 +37,8 @@ Para exibir dados de custo de assinaturas do Azure EA, um usuário precisará te
 
 | **Escopo** | **Definido em** | **Acesso necessário para exibir dados** | **Configuração de pré-requisito de EA** | **Consolida os dados para** |
 | --- | --- | --- | --- | --- |
-| Conta de cobrança<sup>1</sup> | [https://ea.azure.com](https://ea.azure.com/) | Administrador Corporativo | Nenhum | Todas as assinaturas do contrato empresarial |
-| department | [https://ea.azure.com](https://ea.azure.com/) | Administrador de departamento | **Encargos de exibição do administrador de departamento** habilitados | Todas as assinaturas que pertencem a uma conta de registro que esteja vinculada ao departamento |
+| Conta de cobrança<sup>1</sup> | [https://ea.azure.com](https://ea.azure.com/) | Admin Corporativo | Nenhum | Todas as assinaturas do contrato empresarial |
+| Departamento | [https://ea.azure.com](https://ea.azure.com/) | Administrador de departamento | **Encargos de exibição do administrador de departamento** habilitados | Todas as assinaturas que pertencem a uma conta de registro que esteja vinculada ao departamento |
 | Conta de registro<sup>2</sup> | [https://ea.azure.com](https://ea.azure.com/) | Proprietário da conta | **Encargos de exibição do proprietário da conta** habilitados | Todas as assinaturas da conta de registro |
 | Grupo de gerenciamento | [https://portal.azure.com](https://portal.azure.com/) | Leitor do Gerenciamento de Custos (ou Leitor) | **Encargos de exibição do proprietário da conta** habilitados | Todas as assinaturas abaixo do grupo de gerenciamento |
 | Assinatura | [https://portal.azure.com](https://portal.azure.com/) | Leitor do Gerenciamento de Custos (ou Leitor) | **Encargos de exibição do proprietário da conta** habilitados | Todos os recursos/grupos de recursos na assinatura |
@@ -129,14 +129,14 @@ Depois de concluir as etapas acima, a conta de usuário se torna uma conta de in
 
 ## <a name="assign-management-group-scope-access"></a>Atribuir acesso ao escopo do grupo de gerenciamento
 
-O acesso a um escopo de grupo de gerenciamento requer pelo menos a permissão do Leitor de Gerenciamento de Custos (ou Leitor). Você pode configurar permissões para um grupo de gerenciamento no portal do Azure. Você deve ter pelo menos a permissão Administrador de Acesso do Usuário (ou Proprietário) para o grupo de gerenciamento para permitir o acesso de outras pessoas. E, para contas do Azure EA, você também deve habilitar a configuração **Encargos de exibição de AO** no portal do EA.
+O acesso para exibir o escopo do grupo de gerenciamento requer pelo menos a permissão leitor de gerenciamento de custos (ou leitor). Você pode configurar permissões para um grupo de gerenciamento no portal do Azure. Você deve ter pelo menos a permissão Administrador de Acesso do Usuário (ou Proprietário) para o grupo de gerenciamento para permitir o acesso de outras pessoas. E, para contas do Azure EA, você também deve habilitar a configuração **Encargos de exibição de AO** no portal do EA.
 
 1. Entre no Portal do Azure em [https://portal.azure.com](https://portal.azure.com).
 2. Na barra lateral, selecione **Todos os serviços**, pesquise _Grupos de gerenciamento_ e, em seguida, selecione **Grupos de gerenciamento**.
 3. Selecione o grupo de gerenciamento na hierarquia.
 4. Ao lado do nome do grupo de gerenciamento, clique em **Detalhes**.
 5. Selecione **Controle de Acesso (IAM)** no painel esquerdo.
-6. Clique em **Adicionar**.
+6. Clique em **Adicionar** .
 7. Em **Função**, selecione **Leitor do Gerenciamento de Custos**.
 8. Em **Atribuir acesso a**, selecione **Usuário, grupo ou aplicativo do Azure AD**.
 9. Para atribuir acesso, pesquise pelo usuário e selecione-o.
@@ -151,7 +151,7 @@ O acesso a uma assinatura requer pelo menos a permissão do Leitor de Gerenciame
 2. Na barra lateral, selecione **Todos os serviços**, pesquise _assinaturas_ e, em seguida, selecione **Assinaturas**.
 3. Selecione sua assinatura.
 4. Selecione **Controle de Acesso (IAM)** no painel esquerdo.
-5. Clique em **Adicionar**.
+5. Clique em **Adicionar** .
 6. Em **Função**, selecione **Leitor do Gerenciamento de Custos**.
 7. Em **Atribuir acesso a**, selecione **Usuário, grupo ou aplicativo do Azure AD**.
 8. Para atribuir acesso, pesquise pelo usuário e selecione-o.
@@ -165,7 +165,7 @@ O acesso a um grupo de recursos requer pelo menos a permissão do Leitor de Gere
 2. Na barra lateral, selecione **Todos os serviços**, pesquise _Grupos de recursos_ e, em seguida, selecione **Grupos de recursos**.
 3. Selecione o grupo de recursos.
 4. Selecione **Controle de Acesso (IAM)** no painel esquerdo.
-5. Clique em **Adicionar**.
+5. Clique em **Adicionar** .
 6. Em **Função**, selecione **Leitor do Gerenciamento de Custos**.
 7. Em **Atribuir acesso a**, selecione **Usuário, grupo ou aplicativo do Azure AD**.
 8. Para atribuir acesso, pesquise pelo usuário e selecione-o.
@@ -173,9 +173,9 @@ O acesso a um grupo de recursos requer pelo menos a permissão do Leitor de Gere
 
 ## <a name="cross-tenant-authentication-issues"></a>Problemas de autenticação entre locatários
 
-Atualmente, o gerenciamento de custos do Azure tem suporte limitado para autenticação entre locatários. Em algumas circunstâncias ao tentar autenticar entre locatários, você poderá receber um **acesso negado** erro na análise de custo. Esse problema pode ocorrer se você configurar o controle de acesso baseado em função (RBAC) para outra assinatura de locatário e, em seguida, tente exibir dados de custo.
+Atualmente, o gerenciamento de custos do Azure tem suporte limitado para autenticação entre locatários. Em algumas circunstâncias, quando você tenta autenticar entre locatários, você pode receber um erro de **acesso negado** na análise de custo. Esse problema pode ocorrer se você configurar o controle de acesso baseado em função (RBAC) para a assinatura de outro locatário e, em seguida, tentar exibir dados de custo.
 
-*Para contornar esse problema*: Depois de configurar o RBAC entre locatários, aguarde uma hora. Em seguida, tente exibir os custos em análise de custo ou conceder acesso de gerenciamento de custos para os usuários em ambos os locatários.  
+*Para contornar o problema*: Depois de configurar o RBAC entre locatários, aguarde uma hora. Em seguida, tente exibir os custos na análise de custos ou conceder acesso de gerenciamento de custos aos usuários em ambos os locatários.  
 
 
 ## <a name="next-steps"></a>Próximas etapas

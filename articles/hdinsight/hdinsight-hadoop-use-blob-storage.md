@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 5d287165e77597943d298178689c216497361570
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: e9ecc34566e6e534b7489c934c0d5fa3b34e219b
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70879648"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104491"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Usar o Armazenamento do Azure com clusters HDInsight
 
@@ -45,7 +45,7 @@ Se você optar por proteger sua conta de armazenamento com as restrições de **
 ## <a name="hdinsight-storage-architecture"></a>Arquitetura de armazenamento do HDInsight
 O diagrama a seguir fornece uma exibição abstrata da arquitetura de armazenamento do HDInsight de uso do Armazenamento do Azure:
 
-![Clusters Hadoop usam a API HDFS para acessar e armazenar dados estruturados e não estruturados no armazenamento de blobs.](./media/hdinsight-hadoop-use-blob-storage/storage-architecture.png "Arquitetura de Armazenamento do HDInsight")
+![Os clusters do Hadoop usam a API do HDFS para acessar e armazenar dados no armazenamento de BLOBs](./media/hdinsight-hadoop-use-blob-storage/storage-architecture.png "Arquitetura de armazenamento do HDInsight")
 
 O HDInsight fornece acesso ao sistema de arquivos distribuídos que está anexado localmente aos nós de computação. Esse sistema de arquivos pode ser acessado usando o URI totalmente qualificado, por exemplo:
 
@@ -73,6 +73,7 @@ Vários trabalhos do WebHCat, incluindo o Apache Hive, MapReduce, streaming do A
 Os blobs podem ser usados para dados estruturados e não estruturados. Os contêineres de blob armazenam dados como pares de chave/valor, e não há nenhuma hierarquia de diretório. No entanto, o caractere "/" pode ser usado dentro do nome de chave para parecer que um arquivo está armazenado em uma estrutura de diretório. Por exemplo, a chave de um blob pode ser *input/log1.txt*. Não existe nenhum diretório de *entrada* real, mas, devido à presença do caractere "/" no nome da chave, ele parece um caminho de arquivo.
 
 ## <a id="benefits"></a>Benefícios do Armazenamento do Azure
+
 O custo de desempenho implícito de não colocar clusters de computação e recursos de armazenamento é mitigado pela maneira como os clusters de computação são criados próximos aos recursos da conta de armazenamento na região do Azure, em que a rede de alta velocidade torna a ti eficiente para o nós de computação para acessar os dados dentro do armazenamento do Azure.
 
 Há vários benefícios associados ao armazenamento de dados no Armazenamento do Azure em vez de no HDFS:
@@ -93,6 +94,7 @@ Determinados trabalhos e pacotes do MapReduce podem criar resultados intermediá
 > A maioria dos comandos HDFS (por exemplo, `ls`, `copyFromLocal` e `mkdir`) ainda funciona conforme o esperado. Apenas os comandos específicos à implementação nativa do HDFS (que é conhecida como DFS), como `fschk` e `dfsadmin` mostram um comportamento diferente no Armazenamento do Azure.
 
 ## <a name="address-files-in-azure-storage"></a>Arquivos de endereços no armazenamento do Azure
+
 O esquema de URI para acessar arquivos no Armazenamento do Azure pelo HDInsight é:
 
 ```config
@@ -125,6 +127,7 @@ example/jars/hadoop-mapreduce-examples.jar
 > Ao trabalhar com blobs fora do HDInsight, a maioria dos utilitários não reconhecem o formato WASB e, em vez disso, esperam um formato de caminho básico, como `example/jars/hadoop-mapreduce-examples.jar`.
 
 ##  <a name="blob-containers"></a>Contêineres de blob
+
 Para usar BLOBs, você primeiro cria uma [conta de armazenamento do Azure](../storage/common/storage-create-storage-account.md). Como parte desse processo, especifique uma região do Azure na qual a conta de armazenamento será criada. O cluster e a conta de armazenamento devem ser hospedados na mesma região. O banco de dados SQL Server do metastore do Hive e o banco de dados SQL Server do metastore do Oozie do Apache também devem estar localizados na mesma região.
 
 Independentemente de onde estiverem, cada blob que você criar pertencerá a um contêiner na sua conta de armazenamento do Azure. Esse contêiner pode ser um contêiner de armazenamento de blob existente criado fora do HDInsight, ou pode ser um contêiner criado para um cluster HDInsight.

@@ -7,12 +7,12 @@ ms.date: 07/30/2019
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 0fe893ae95b31b1b676a982a60166041a0ad964d
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: cc827f52d227ee36620bd215dfcba96b433804d3
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69015897"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103049"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Perguntas frequentes sobre o Azure Files
 [ Os arquivos do Azure](storage-files-introduction.md) oferecem compartilhamentos de arquivos totalmente gerenciados na nuvem que são acessíveis por meio do {SM} protocolo [de padrão do setor](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Você pode montar compartilhamentos de arquivos do Azure simultaneamente em implantações locais ou na nuvem do Windows, do Linux e do macOS. Também é possível armazenar em cache os compartilhamentos de arquivos do Azure em computadores Windows Server usando a Sincronização de Arquivos do Azure para acesso rápido próximo ao local em que os dados são usados.
@@ -72,7 +72,7 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 
 * <a id="tier-options"></a>
   **Atualmente, quais camadas de armazenamento têm suporte no serviço Arquivos do Azure?**  
-    Os arquivos do Azure dão suporte a duas camadas de armazenamento: Premium e Standard. Os compartilhamentos de arquivos padrão são criados em contas de armazenamento de uso geral (GPv1 ou GPv2) e os compartilhamentos de arquivos Premium são criados em contas de armazenamento de armazenamento de arquivo. Saiba mais sobre como criar compartilhamentos de [arquivos padrão](storage-how-to-create-file-share.md) e compartilhamentos de [arquivos Premium](storage-how-to-create-premium-fileshare.md). 
+    Os arquivos do Azure dão suporte a duas camadas de armazenamento: Premium e Standard. Os compartilhamentos de arquivos padrão são criados em contas de armazenamento de uso geral (GPv1 ou GPv2) e os compartilhamentos de arquivos Premium são criados em contas de armazenamento de armazenamento de arquivo. Saiba mais sobre como criar [compartilhamentos de arquivos padrão](storage-how-to-create-file-share.md) e [compartilhamentos de arquivos Premium](storage-how-to-create-premium-fileshare.md). 
     
     > [!NOTE]
     > Você não pode criar compartilhamentos de arquivos do Azure de contas de armazenamento de BLOBs ou contas de armazenamento *Premium* de uso geral (GPv1 ou GPv2). Os compartilhamentos de arquivos padrão do Azure devem ser criados somente em contas de uso geral *padrão* e compartilhamentos de arquivos premium do Azure devem ser criados somente em contas de armazenamento de armazenamento. As contas de armazenamento de uso geral *Premium* (GPv1 e GPv2) são apenas para BLOBs de páginas Premium. 
@@ -100,7 +100,7 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
    
     \<FileNameWithoutExtension\>-\<MachineName\>\[-#\].\<ext\>  
 
-    Por exemplo, o primeiro conflito de CompanyReport.docx se tornaria CompanyReport-CentralServer.docx se CentralServer fosse o local em que a gravação mais antiga ocorreu. O segundo conflito seria nomeado CompanyReport-CentralServer-1.docx.
+    Por exemplo, o primeiro conflito de CompanyReport.docx se tornaria CompanyReport-CentralServer.docx se CentralServer fosse o local em que a gravação mais antiga ocorreu. O segundo conflito seria nomeado CompanyReport-CentralServer-1.docx. O Sincronização de Arquivos do Azure dá suporte a arquivos de conflito 100 por arquivo. Depois que o número máximo de arquivos de conflito for atingido, o arquivo não será sincronizado até que o número de arquivos de conflito seja menor que 100.
 
 * <a id="afs-storage-redundancy"></a>
   **Há suporte para armazenamento com redundância geográfica na Sincronização de arquivos do Azure?**  
@@ -178,7 +178,7 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 
     - A Sincronização de Arquivos do Azure preserva e replica todas as ACLs discricionárias ou DACLs (sejam elas baseadas no Active Directory ou locais) para todos os pontos de extremidade do servidor aos quais ela é sincronizada. Já que o Windows Server já pode se autenticar com o Active Directory, a Sincronização de Arquivos do Azure pode ser uma medida preventiva eficaz até que o suporte completo para autenticação baseada em Active Directory e o suporte a ACL fiquem disponíveis.
     
-    Você pode consultar autorizar o [acesso ao armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-auth?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) para uma representação abrangente de todos os protocolos com suporte nos serviços de armazenamento do Azure. 
+    Você pode consultar [autorizar o acesso ao armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-auth?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) para uma representação abrangente de todos os protocolos com suporte nos serviços de armazenamento do Azure. 
 
 * <a id="ad-support-devices"></a>
 **O Azure files AD DS autenticação do Azure dá suporte ao acesso SMB usando as credenciais do Azure AD de dispositivos ingressados ou registrados com o Azure AD?**

@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 21f80a2be09302e47817ccfd4223207bdcdd0413
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 232f8b13174aed19477ee0b139c83fba439049ac
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066804"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101544"
 ---
 # <a name="sql-database-release-notes"></a>Notas de versão do banco de dados SQL
 
@@ -26,7 +26,7 @@ Este artigo lista os recursos do banco de dados SQL que estão atualmente em vis
 
 | Recurso | Detalhes |
 | ---| --- |
-| [Link privado do Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| O link privado simplifica a arquitetura de rede e protege a conexão entre os pontos de extremidade no Azure mantendo os dados na rede do Azure, eliminando assim a exposição à Internet. O link privado também permite que você crie e processe seus próprios serviços no Azure. |
+| [Link privado do Azure](https://azure.microsoft.com/updates/private-link-now-available-in-preview/)| O Link Privado simplifica a arquitetura de rede e protege a conexão entre pontos de extremidade no Azure mantendo os dados na rede Azure, o que elimina a exposição à Internet. O Link Privado também habilita a criação e a renderização de seus próprios serviços no Azure. |
 | Recuperação de banco de dados acelerada com bancos de dados individuais e pools elásticos | Para obter informações, consulte [recuperação de banco de dados acelerada](sql-database-accelerated-database-recovery.md).|
 |Contagem aproximada distinta|Para obter informações, veja [contagem aproximada distinta](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing).|
 |Modo de lote no repositório de armazenamento (no nível de compatibilidade 150)|Para obter informações, consulte [modo de lote no repositório de armazenamento](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
@@ -48,7 +48,6 @@ Este artigo lista os recursos do banco de dados SQL que estão atualmente em vis
 | ---| --- |
 | <a href="/azure/sql-database/sql-database-instance-pools">Pools de instância</a> | Uma maneira conveniente e econômica de migrar instâncias SQL menores para a nuvem. |
 | <a href="https://aka.ms/managed-instance-tde-byok">TDE (Transparent Data Encryption) com Bring Your Own Key (BYOK)</a> |Para obter informações, [consulte Azure SQL Transparent Data Encryption com chaves gerenciadas pelo cliente no Azure Key Vault: Suporte](transparent-data-encryption-byok-azure-sql.md)a Bring your own Key.|
-| <a href="https://aka.ms/managed-instance-failover-groups">Grupos de failover distribuídos geograficamente</a> | Mantenha uma cópia da instância em outra região e verifique se seus dados estarão disponíveis mesmo no cenário de desastre regional. |
 | <a href="https://aka.ms/managed-instance-aadlogins">Entidades de segurança de nível de instância do Azure AD Server (logons)</a> | Crie logons no nível de servidor usando a instrução <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">Create login from external Provider</a> . |
 | [Replicação Transacional](sql-database-managed-instance-transactional-replication.md) | Replique as alterações de suas tabelas em outros bancos de dados colocados em instâncias gerenciadas, bancos de dados individuais ou instâncias de SQL Server, ou atualize suas tabelas quando algumas linhas forem alteradas em outras instâncias gerenciadas ou SQL Server instância. Para obter informações, consulte [Configurar replicação em um banco de dados de instância gerenciada do banco de dados SQL do Azure](replication-with-sql-database-managed-instance.md). |
 | Detecção de ameaças |Para obter informações, consulte [Configurar a detecção de ameaças na instância gerenciada do banco de dados SQL do Azure](sql-database-managed-instance-threat-detection.md).|

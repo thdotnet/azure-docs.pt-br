@@ -1,45 +1,23 @@
 ---
-title: Como preencher o formulário de configuração da oferta | O Azure Marketplace
-description: Explica os vários campos que exigem valores no formulário de Configurações de Oferta para um novo aplicativo do Dynamics 365 Business Central.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+title: Como preencher o formulário de configurações da oferta | Azure Marketplace
+description: Artigo preterido com links para artigos sobre o PC; was "explica os vários campos que exigem valores no formulário de configurações da oferta para um novo aplicativo Dynamics 365 Business central."
+services: Azure, Marketplace, Cloud Partner Portal
+author: ChJenk
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 09/17/2018
+ms.date: 09/18/2019
 ms.author: pabutler
-ms.openlocfilehash: d29b17e1a109b37a51a0e6bd2af2a7bb02b977a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 84932d693c9c74c74095eb78e750f8d3b1452068
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64934916"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105543"
 ---
-<a name="how-to-fill-out-the-offer-settings-form"></a>Como preencher o formulário de Configuração da oferta
-=======================================
+# <a name="how-to-fill-out-the-offer-settings-form"></a>Como preencher o formulário de Configuração da oferta
 
-O formulário de configurações da oferta é um formulário básico para especificar as configurações da oferta.
-Os campos obrigatórios estão descritos abaixo.
+O [portal do Cloud Partner](https://cloudpartner.azure.com/) não dá mais suporte à criação e ao gerenciamento das ofertas do Dynamics 365 Business central. Em vez disso, essa funcionalidade foi movida para o [portal do Microsoft Partner Center](https://partner.microsoft.com/). Para obter mais informações, consulte [criar uma nova oferta do Dynamics 365 Business central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer).
 
-### <a name="offer-id"></a>ID da oferta
+## <a name="next-steps"></a>Próximas etapas
 
-`OfferId` é um identificador exclusivo para a oferta em um perfil de editor.
-Essa ID estará visível em URLs do produto. Ele só pode ser composto de caracteres alfanuméricos minúsculos ou traços (-). A ID não pode terminar com um traço e pode ter um máximo de 50 caracteres. Esse campo é bloqueado quando uma oferta é ativada.
-
-Se, por exemplo, o parceiro "Contoso" criar uma ID de oferta chamada "sample-Web App", ela será exibida no AppSource como:
-
-&emsp; `https://appsource.microsoft.com/marketplace/apps/contoso.sample-Web App?tab=Overview`
-
-
-### <a name="publisher-id"></a>ID do fornecedor
-
-Este menu suspenso permite que você escolha o perfil de fornecedor em que deseja publicar essa oferta. Esse campo é bloqueado quando uma oferta é ativada.
-
-
-### <a name="name"></a>NOME
-
-Este é o nome de exibição para seu aplicativo/oferta, que será exibido no Microsoft [AppSource](https://appsource.microsoft.com/). Ele pode ter um máximo de 50 caracteres.
-
-> [!NOTE]
-> O nome curto deve ser o mesmo que o nome do editor especificado no manifesto do aplicativo.
-
-Clique em **Salvar** para salvar o progresso. A próxima etapa seria adicionar informações técnicas à oferta.
+Antes de criar uma nova oferta do Dynamics 365 Business central, você deve ler [criar uma conta do Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) e, em seguida, abrir o [painel do Marketplace comercial](https://partner.microsoft.com/dashboard/directory) com a página **visão geral** selecionada. Siga as instruções em [criar uma nova oferta do Dynamics 365 Business central](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-business-central-offer) para criar sua oferta.
