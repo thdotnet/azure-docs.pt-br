@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7a4ce0419e3a5615cc5a6d57fe2f1cfecad2f09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26d434069870fbfa52687a3abc7913fd121687a1
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66228567"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000070"
 ---
 # <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Tutorial: Usar uma identidade gerenciada atribuída pelo sistema da VM do Linux para acessar o Azure Key Vault 
 
@@ -110,7 +110,7 @@ Depois de recuperar o segredo do Key Vault, você pode usá-lo para autenticar u
 Neste tutorial, você aprendeu a usar uma identidade gerenciada atribuída pelo sistema da VM do Linux para acessar o Azure Key Vault.  Para saber mais sobre o Azure Key Vault, confira:
 
 > [!div class="nextstepaction"]
->[Cofre da Chave do Azure](/azure/key-vault/key-vault-whatis)
+>[Cofre da Chave do Azure](/azure/key-vault/key-vault-overview)
 
 
 

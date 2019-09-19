@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c07a978004ee8d2e25772f0d393529cbb509380a
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: d0ac86dcdb698c554c40325d6a20d6d27de908f8
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967217"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71104380"
 ---
 # <a name="tutorial-integrate-apptio-with-azure-active-directory"></a>Tutorial: Integrar o Apptio ao Azure Active Directory
 
@@ -85,7 +85,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     Na caixa de texto **Identificador**, digite o valor: `urn:federation:apptio`
 
-5. Seu aplicativo Apptio espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+5. Seu aplicativo Apptio espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
     ![image](common/edit-attribute.png)
 
@@ -156,7 +156,7 @@ Para configurar o logon único no lado do **Apptio**, é necessário enviar o **
 
 ### <a name="create-apptio-test-user"></a>Criar um usuário de teste do Apptio
 
-Nesta seção, você criará um usuário chamado B.Fernandes no Apptio. Trabalhe com a  [equipe de suporte do Apptio](https://www.apptio.com/about/contact) para adicionar os usuários à plataforma Apptio. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado B.Fernandes no Apptio. Trabalhe com a [equipe de suporte do Apptio](https://www.apptio.com/about/contact) para adicionar os usuários à plataforma Apptio. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ## <a name="test-sso"></a>Testar o SSO 
 

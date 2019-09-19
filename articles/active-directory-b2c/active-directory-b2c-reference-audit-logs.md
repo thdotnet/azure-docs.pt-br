@@ -11,12 +11,12 @@ ms.date: 09/14/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: cbb748e9856b6de9004d57e4393e205ddfcfffb4
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c216512aef117a332d3aabfc83ec5615b70b202c
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998839"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033825"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Acessando os logs de auditoria do Microsoft Azure Active Directory B2C
 
@@ -92,12 +92,13 @@ Para permitir o acesso baseado em script ou aplicativo à API de relatórios do 
 * Microsoft Graph
   * Aplicativo Ler todos os dados de log de auditoria
 
-Você pode habilitar essas permissões em um registro de aplicativo existente em seu locatário B2C ou criar um novo especificamente para uso com a automação do log de auditoria.
+Você pode habilitar essas permissões em um registro de aplicativo Azure Active Directory existente em seu locatário B2C ou criar um novo especificamente para uso com a automação do log de auditoria.
 
 Para criar um novo aplicativo, atribua as permissões de API necessárias e crie um segredo do cliente, execute as seguintes etapas:
 
-1. Registrar aplicativo
-    1. Entre no [portal do Azure](https://portal.azure.com), alterne para o diretório que contém o locatário Azure ad B2C e, em seguida, navegue até **Azure ad B2C**.
+1. Registrar aplicativo no Azure Active Directory
+    1. Entre no [portal do Azure](https://portal.azure.com) e alterne para o diretório que contém o locatário Azure ad B2C.
+    1. Selecione **Azure Active Directory** (*não* Azure ad B2C) no menu à esquerda. Ou então, selecione **todos os serviços**e, em seguida, procure e selecione **Azure Active Directory**.
     1. Em **gerenciar** no menu à esquerda, selecione **registros de aplicativo (Herdado)** .
     1. Selecione **novo registro de aplicativo**
     1. Insira um nome para o aplicativo. Por exemplo, *aplicativo de log de auditoria*.

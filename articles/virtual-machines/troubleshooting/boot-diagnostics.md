@@ -3,19 +3,19 @@ title: Diagnósticos de inicialização para VMs no Azure | Microsoft Docs
 description: Visão geral dos dois recursos de depuração para máquinas virtuais no Azure
 services: virtual-machines
 author: Deland-Han
-manager: gwallace
+manager: dcscontentpm
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: 7796d24b88ccc531b8042bfadf9d87f0072a2994
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: d34182e09bf453dbec1e9592f131cb9b3b78a086
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709855"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086483"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Como usar o diagnóstico de inicialização para solucionar problemas das máquinas virtuais no Azure
 
@@ -25,7 +25,7 @@ Para Máquinas Virtuais do Linux, exiba a saída do log de console no portal. Pa
 
 Você pode selecionar a opção **Diagnósticos de inicialização** para exibir o log e a captura de tela.
 
-![Gerenciador de Recursos](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
+![Resource Manager](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
 
 ## <a name="common-boot-errors"></a>Erros comuns de inicialização
 

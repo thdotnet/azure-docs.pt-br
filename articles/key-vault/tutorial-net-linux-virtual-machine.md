@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 8c142b4c1663a7ccd462836e9aac4ee80accaae4
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 65c59ba299490ee2bbef849b6f7354abc05ad885
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874827"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003346"
 ---
 # <a name="tutorial-use-a-linux-vm-and-a-net-app-to-store-secrets-in-azure-key-vault"></a>Tutorial: Usar uma VM do Linux e um aplicativo .NET para armazenar segredos no Azure Key Vault
 
@@ -30,7 +30,7 @@ Neste tutorial, você configurará um aplicativo de console .NET para ler inform
 > * Conceder as permissões necessárias para o aplicativo de console ler dados do Key Vault
 > * Recuperar um segredo do Key Vault
 
-Antes de continuarmos, leia sobre [os conceitos básicos do Key Vault](key-vault-whatis.md#basic-concepts).
+Antes de continuarmos, leia sobre [os conceitos básicos do Key Vault](basic-concepts.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

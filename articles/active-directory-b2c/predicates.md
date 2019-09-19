@@ -10,22 +10,22 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 6163f1cbf878f4d4678b2b66829522b0dd16ae22
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: ecec18945b53711094307162c4aeab2e0580bd5e
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835625"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71063865"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Predicados e PredicateValidations
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Os elementos **Predicados** e **PredicateValidations** permitem que você execute um processo de validação para garantir que apenas os dados corretamente formados sejam inseridos no locatário do Azure AD (Azure Active Directory) B2C.
+Os elementos **predicados** e **PredicateValidations** permitem que você execute um processo de validação para garantir que apenas dados formados corretamente sejam inseridos em seu locatário de Azure Active Directory B2C (Azure ad B2C).
 
 O diagrama a seguir mostra a relação entre os elementos:
 
-![Diagrama que mostra a relação entre os predicados e validações de predicado](./media/predicates/predicates.png)
+![Diagrama mostrando os predicados e a relação de validações de predicados](./media/predicates/predicates.png)
 
 ## <a name="predicates"></a>Predicados
 
@@ -33,33 +33,33 @@ O elemento **Predicado** define uma validação básica para verificar o valor d
 
 O elemento **Predicados** contém o seguinte elemento:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | Predicado | 1:n | Uma lista de predicados. |
 
 O elemento **Predicado** contém os seguintes atributos:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
 | Id | Sim | Um identificador usado para o predicado. Outros elementos podem usar esse identificador na política. |
 | Método | Sim | O tipo de método a ser usado para validação. Valores possíveis: **IsLengthRange**, **MatchesRegex**, **IncludesCharacters** ou **IsDateRange**. O valor **IsLengthRange** verifica se o comprimento de um valor de declaração de cadeia de caracteres está dentro do intervalo de parâmetros mínimos e máximos especificados. O valor **MatchesRegex** verifica se um valor de declaração de cadeia de caracteres corresponde a uma expressão regular. O valor **IncludesCharacters** verifica se um valor de declaração de cadeia de caracteres contém um conjunto de caracteres. O valor **IsDateRange** verifica se um valor de declaração de data está dentro do intervalo de parâmetros mínimos e máximos especificados. |
 
 O elemento **Predicado** contém os seguintes elementos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | UserHelpText | 1:1 | Uma mensagem de erro para os usuários se a verificação falhar. Essa cadeia de caracteres pode ser localizada usando a [personalização de idioma](localization.md) |
-| parâmetros | 1:1 | Os parâmetros para o tipo de método de validação de cadeia de caracteres. |
+| Parâmetros | 1:1 | Os parâmetros para o tipo de método de validação de cadeia de caracteres. |
 
 O elemento **Parâmetros** contém os seguintes elementos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | Parâmetro | 1:n | Os parâmetros para o tipo de método de validação de cadeia de caracteres. |
 
 O elemento **Parâmetro** contém os seguintes atributos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | Id | 1:1 | O identificador do parâmetro. |
 
@@ -132,56 +132,56 @@ Embora os predicados definam a validação para verificar um tipo de declaraçã
 
 O elemento **PredicateValidations** contém o seguinte elemento:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | PredicateValidation | 1:n | Uma lista de validação de predicado. |
 
 O elemento **PredicateValidation** contém o seguinte atributo:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
 | Id | Sim | Um identificador usado para a validação do predicado. O elemento **ClaimType** pode usar esse identificador na política. |
 
 O elemento **PredicateValidation** contém o seguinte elemento:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | PredicateGroups | 1:n | Uma lista de grupos de predicado. |
 
 O elemento **PredicateGroups** contém o seguinte elemento:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | PredicateGroup | 1:n | Uma lista de predicados. |
 
 O elemento **PredicateGroup** contém o seguinte atributo:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
 | Id | Sim | Um identificador usado para o grupo de predicados.  |
 
 O elemento **PredicateGroup** contém os seguintes elementos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | UserHelpText | 1:1 |  Uma descrição do predicado que pode ser útil para os usuários saberem o valor que devem digitar. |
 | PredicateReferences | 1:n | Uma lista de referências de predicado. |
 
 O elemento **PredicateReferences** contém os seguintes atributos:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
 | MatchAtLeast | Não | Especifica que o valor deve corresponder a pelo menos à quantidade de definições de predicado para a entrada ser aceita. |
 
 O elemento **PredicateReferences** contém os seguintes elementos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | ----------- |
 | PredicateReference | 1:n | Uma referência a um predicado. |
 
 O elemento **PredicateReference** contém os seguintes atributos:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 | --------- | -------- | ----------- |
 | Id | Sim | Um identificador usado para a validação do predicado.  |
 
@@ -348,7 +348,7 @@ No seu tipo de declaração, adicione o elemento **PredicateValidationReference*
 
 O exemplo a seguir mostra como os elementos são organizados quando o Azure AD B2C exibe a mensagem de erro:
 
-![Diagrama de predicado e PredicateGroup exemplo de complexidade de senha](./media/predicates/predicates-pass.png)
+![Diagrama de exemplo de predicado e complexidade de senha de subdicado](./media/predicates/predicates-pass.png)
 
 ## <a name="configure-a-date-range"></a>Configurar um intervalo de datas
 

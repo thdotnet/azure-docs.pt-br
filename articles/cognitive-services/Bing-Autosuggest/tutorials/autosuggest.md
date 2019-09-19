@@ -3,19 +3,19 @@ title: 'Tutorial: Obter resultados de Sugestão Automática usando a API de Suge
 titleSuffix: Azure Cognitive Services
 description: Mostra como usar a Sugestão Automática do Bing.
 services: cognitive-services
-author: v-jaswel
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: tutorial
-ms.date: 02/20/2019
-ms.author: nitinme
-ms.openlocfilehash: 9c5d86c6af5e8dc26dbe6877e8b34baa3cd577c2
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.date: 09/13/2019
+ms.author: aahi
+ms.openlocfilehash: d208187b7ba61fc0d217cef05a1bda559ca0c42b
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405240"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70996801"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Tutorial: Obtenha sugestões de pesquisa em uma página da Web
 

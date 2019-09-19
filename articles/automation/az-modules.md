@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 02/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c722dc6af2b98adb60045d530bb38de7762027d5
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 2f81c0affb78d5944b8ba910cccfa0be655f1a6f
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477904"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097946"
 ---
 # <a name="az-module-support-in-azure-automation"></a>Suporte ao módulo Az na Automação do Azure
 
@@ -22,7 +22,7 @@ A automação do Azure oferece suporte à capacidade de usar o [módulo AZ do Az
 
 ## <a name="considerations"></a>Considerações
 
-Há muitos pontos a considerar ao usar o módulo Az na Automação do Azure. Runbooks e módulos podem ser usados pelas soluções de nível superior na sua Conta de Automação. A edição de runbooks ou a atualização de módulos podem potencialmente causar problemas com os runbooks. É preciso testar todos os runbooks e soluções cuidadosamente em uma Conta de Automação separada antes de importar os novos módulos `Az`. Todas as alterações aos módulos podem afetar negativamente soluções de nível superior, como o Gerenciamento de Atualizações e o Início/Interrupção de VMs durante as horas de folga. É recomendável não alterar módulos e runbooks em Contas de Automação que contêm qualquer solução. Esse comportamento não é específico dos módulos Az. Esse comportamento deve considerado ao introduzir as alterações em sua Conta de Automação.
+Há muitos pontos a considerar ao usar o módulo Az na Automação do Azure. Runbooks e módulos podem ser usados pelas soluções de nível superior na sua Conta de Automação. A edição de runbooks ou a atualização de módulos podem potencialmente causar problemas com os runbooks. É preciso testar todos os runbooks e soluções cuidadosamente em uma Conta de Automação separada antes de importar os novos módulos `Az`. Qualquer modificação nos módulos pode negativamente a solução [iniciar/parar](automation-solution-vm-management.md) . É recomendável não alterar módulos e runbooks em Contas de Automação que contêm qualquer solução. Esse comportamento não é específico dos módulos Az. Esse comportamento deve considerado ao introduzir as alterações em sua Conta de Automação.
 
 Importar um módulo `Az` em sua Conta de Automação não importa automaticamente o módulo na sessão do PowerShell usada pelos runbooks. Os módulos são importados na sessão do PowerShell nas seguintes situações:
 
@@ -69,7 +69,7 @@ Uma maneira de testar os runbooks antes de modificar o seu runbook para usar os 
 
 ## <a name="after-migration-details"></a>Detalhes pós-migração
 
-Depois que a migração é concluída, não inicie mais runbooks usando módulos `AzureRM` na conta. Também é recomendável não importar nem atualizar módulos `AzureRM` nessa conta. A partir de agora, considere essa conta migrada para `Az` e opere-a apenas com módulos `Az`. Quando uma nova Conta de Automação for criada, os módulos `AzureRM` existentes continuarão sendo instalados e os runbooks de tutorial continuarão sendo criados com cmdlets `AzureRM`. Esses runbooks não deve ser executados.
+Depois que a migração é concluída, não inicie mais runbooks usando módulos `AzureRM` na conta. Também é recomendável não importar nem atualizar módulos `AzureRM` nessa conta. A partir de agora, considere essa conta migrada para `Az` e opere-a apenas com módulos `Az`. Quando uma nova Conta de Automação for criada, os módulos `AzureRM` existentes continuarão sendo instalados e os runbooks de tutorial continuarão sendo criados com cmdlets `AzureRM`. Esses runbooks não devem ser executados.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/16/2019
-ms.openlocfilehash: 319668ac81b390f9a8bf70da36dd3cf1508f5c37
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: bb803861fa64beb0b4afe2202230209493f42a1d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70885182"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003679"
 ---
 # <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Tutorial: Analisar dados do Apache Spark usando o Power BI no HDInsight
 
@@ -46,7 +46,7 @@ O [Jupyter Notebook](https://jupyter.org/) que você criou no [tutorial anterior
 
     A saída se parece com isso:
 
-    ![Mostrar tabelas no Spark](./media/apache-spark-use-bi-tools/show-tables.png)
+    ![Mostrar tabelas no Spark](./media/apache-spark-use-bi-tools/apache-spark-show-tables.png)
 
     Se você fechou o bloco de anotações antes de iniciar este tutorial, `hvactemptable` é limpo e, portanto, não é incluído na saída.  Somente as tabelas do Hive que são armazenadas no metastore (indicado por **False** na coluna **isTemporary**) podem ser acessadas por meio das ferramentas de BI. Neste tutorial, você se conecta à tabela **hvac** que você criou.
 
@@ -59,7 +59,7 @@ O [Jupyter Notebook](https://jupyter.org/) que você criou no [tutorial anterior
 
     A saída se parece com isso:
 
-    ![Mostrar linhas da tabela hvac no Spark](./media/apache-spark-use-bi-tools/select-limit.png)
+    ![Mostrar linhas da tabela hvac no Spark](./media/apache-spark-use-bi-tools/apache-spark-select-limit.png)
 
 3. No menu **Arquivo** do notebook, selecione **Fechar e Interromper**. Feche o bloco de anotações para liberar os recursos.
 
@@ -127,31 +127,32 @@ As primeiras etapas ao trabalhar com Spark são conectar-se ao cluster no Power 
 O serviço do Power BI permite que você compartilhe os relatórios e painéis pela sua organização. Nesta seção, primeiro você publica o conjunto de dados e o relatório. Em seguida, você pode fixar o relatório em um painel. Painéis são normalmente usados para se concentrar em um subconjunto de dados em um relatório; você tem apenas uma visualização em seu relatório, mas ainda é útil percorrer as etapas.
 
 1. Abra o Power BI Desktop.
-2. A partir da guia **Início**, clique em **Publicar**.
+
+1. A partir da guia **Início**, clique em **Publicar**.
 
     ![Publicar do Power BI Desktop](./media/apache-spark-use-bi-tools/apache-spark-bi-publish.png "Publicar do Power BI Desktop")
 
-2. Selecione um workspace para o qual publicar seu conjunto de dados e para o qual fazer relatórios e, em seguida, clique em **Selecionar**. Na imagem a seguir, o **Meu Workspace** padrão está selecionado.
+1. Selecione um workspace para o qual publicar seu conjunto de dados e para o qual fazer relatórios e, em seguida, clique em **Selecionar**. Na imagem a seguir, o **Meu Workspace** padrão está selecionado.
 
     ![Selecione o workspace para o qual publicar seu conjunto de dados e para o qual fazer relatórios](./media/apache-spark-use-bi-tools/apache-spark-bi-select-workspace.png "Selecione o workspace para o qual publicar seu conjunto de dados e para o qual fazer relatórios") 
 
-3. Depois que a publicação for bem-sucedida, clique em **Abrir 'BuildingTemperature.pbix' no Power BI**.
+1. Depois que a publicação for bem-sucedida, clique em **Abrir 'BuildingTemperature.pbix' no Power BI**.
 
     ![Publicação realizada com êxito, clique para inserir credenciais](./media/apache-spark-use-bi-tools/apache-spark-bi-publish-success.png "Publicação realizada com êxito, clique para inserir credenciais") 
 
-4. No serviço do Power BI, clique em **Inserir credenciais**.
+1. No serviço do Power BI, clique em **Inserir credenciais**.
 
     ![Inserir as credenciais no serviço do Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-enter-credentials.png "Inserir as credenciais no serviço do Power BI")
 
-5. Clique em **Editar credenciais**.
+1. Clique em **Editar credenciais**.
 
     ![Editar as credenciais no serviço do Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-edit-credentials.png "Editar as credenciais no serviço do Power BI")
 
-6. Insira as informações de conta de logon do HDInsight e, em seguida, clique em **Entrar**. O nome da conta padrão é *admin*.
+1. Insira as informações de conta de logon do HDInsight e, em seguida, clique em **Entrar**. O nome da conta padrão é *admin*.
 
     ![Entrar no cluster Spark](./media/apache-spark-use-bi-tools/apache-spark-bi-sign-in.png "Entrar no cluster Spark")
 
-7. No painel esquerdo, acesse **Workspaces** > **Meu workspace** > **RELATÓRIOS** e, em seguida, clique em **BuildingTemperature**.
+1. No painel esquerdo, acesse **Workspaces** > **Meu workspace** > **RELATÓRIOS** e, em seguida, clique em **BuildingTemperature**.
 
     ![Relatório listado em relatórios no painel esquerdo](./media/apache-spark-use-bi-tools/apache-spark-bi-service-left-pane.png "Relatório listado em relatórios no painel esquerdo")
 
@@ -159,15 +160,15 @@ O serviço do Power BI permite que você compartilhe os relatórios e painéis p
 
     O visual criado no Power BI Desktop agora está disponível no serviço do Power BI. 
 
-8. Focalize o cursor sobre a visualização e, em seguida, clique no ícone de fixação no canto superior direito.
+1. Focalize o cursor sobre a visualização e, em seguida, clique no ícone de fixação no canto superior direito.
 
     ![Relatório no serviço do Power BI](./media/apache-spark-use-bi-tools/apache-spark-bi-service-report.png "Relatório no serviço do Power BI")
 
-9. Selecione "Novo painel", digite o nome `Building temperature` e, em seguida, clique em **Fixar**.
+1. Selecione "Novo painel", digite o nome `Building temperature` e, em seguida, clique em **Fixar**.
 
     ![Fixar no novo painel](./media/apache-spark-use-bi-tools/apache-spark-bi-pin-dashboard.png "Fixar no novo painel")
 
-10. No relatório, clique em **Ir para o painel**. 
+1. No relatório, clique em **Ir para o painel**.
 
 O visual é fixado no painel – você pode adicionar outros elementos visuais no relatório e fixá-los no mesmo painel. Para saber mais sobre relatórios e painéis, confira [Relatórios no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-reports/) e [Painéis no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-dashboards/).
 

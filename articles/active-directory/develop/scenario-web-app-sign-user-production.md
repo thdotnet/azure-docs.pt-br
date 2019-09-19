@@ -1,6 +1,6 @@
 ---
-title: Aplicativo de Web que se conecta os usuários (mover para a produção) – plataforma de identidade da Microsoft
-description: Saiba como criar um aplicativo web que conecta os usuários (mover para a produção)
+title: Aplicativo Web que faz logon de usuários (mover para produção)-plataforma de identidade da Microsoft
+description: Saiba como criar um aplicativo Web que faz logon de usuários (mover para produção)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,38 +11,42 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d41ad2518f885bbaa02dda3b01f0c02e9fc1d217
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bd6717c132d32d54c16e7678695a09e35181a057
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074704"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086541"
 ---
-# <a name="web-app-that-signs-in-users---move-to-production"></a>Aplicativo Web que assina usuários - passar para a produção
+# <a name="web-app-that-signs-in-users---move-to-production"></a>Aplicativo Web que entra em usuários – mover para produção
 
-Agora que você sabe como adquirir um token para chamar APIs da web, saiba como movê-lo para produção.
+Agora que você sabe como adquirir um token para chamar APIs da Web, saiba como movê-la para produção.
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 
-### <a name="calling-web-apis-scenario"></a>Cenário APIs da web chamada
+### <a name="calling-web-apis-scenario"></a>Chamando cenário de APIs Web
 
-Uma vez web entrar usuários de seu aplicativo, ele pode chamar APIs da web em nome dos usuários conectados. Chamar APIs da web do aplicativo web é o objeto do cenário a seguir:
+Depois que o aplicativo Web entrar em usuários, ele poderá chamar APIs da Web em nome dos usuários conectados. Chamar APIs da Web do aplicativo Web é o objeto do seguinte cenário:
 
 > [!div class="nextstepaction"]
 > [Aplicativo Web que chama as APIs Web](scenario-web-app-call-api-overview.md)
 
-### <a name="deep-dive---web-app-tutorial"></a>Mergulho profundo – tutorial do aplicativo web
+### <a name="deep-dive---aspnet-core-web-app-tutorial"></a>Aprofundamento – tutorial do aplicativo Web ASP.NET Core
 
-Saiba mais sobre outras maneiras de entrar usuários com o tutorial do ASP.NET Core: [ms-identity-aspnetcore-webapp-tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial). Este é um tutorial progressivo com código de produção pronto para um aplicativo de web, incluindo como adicionar a entrada.
+Saiba mais sobre outras maneiras de usuários de entrada com o tutorial de ASP.NET Core: [MS-Identity-aspnetcore-webapp-tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial). Este exemplo é um tutorial progressivo com código pronto para produção para um aplicativo Web, incluindo como adicionar entrada com contas no:
 
-<!--- Removed the diagram as it's already shown in the above link to GitHub
+- sua organização,
+- várias organizações,
+- contas corporativas ou de estudante ou conta Microsoft pessoais,
+- com [Azure ad B2C](https://aka.ms/aadb2c),
+- ou em nuvens nacionais.
 
-![Tutorial overview](media/scenarios/aspnetcore-webapp-tutorial.svg)
+### <a name="sample-code---java-web-app"></a>Código de exemplo – aplicativo Web Java
 
---->
+Saiba mais sobre o aplicativo Web Java do exemplo no GitHub: [Um aplicativo Web Java que conecta usuários com a plataforma de identidade da Microsoft e chama Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp)
