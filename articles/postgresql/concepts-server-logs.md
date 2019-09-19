@@ -1,19 +1,19 @@
 ---
-title: Logs de servidor no banco de dados do Azure para PostgreSQL – servidor único
-description: Este artigo descreve o banco de dados como o Azure para PostgreSQL - servidor único gera consultas e logs de erros e como retenção de log está configurada.
+title: Logs de servidor no banco de dados do Azure para PostgreSQL-servidor único
+description: Este artigo descreve como o banco de dados do Azure para PostgreSQL-um único servidor gera logs de consulta e de erro e como a retenção de log é configurada.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: 4d1cf2c59e324cedd9b747b1ac65d6edcb9deb45
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/18/2019
+ms.openlocfilehash: b295ab442e70772a86d6699e1063c7a1c728f1a7
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067404"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091130"
 ---
-# <a name="server-logs-in-azure-database-for-postgresql---single-server"></a>Logs de servidor no banco de dados do Azure para PostgreSQL – servidor único
+# <a name="server-logs-in-azure-database-for-postgresql---single-server"></a>Logs de servidor no banco de dados do Azure para PostgreSQL-servidor único
 Banco de Dados do Azure para PostgreSQL gera logs de consulta e de erro. Os logs de erro e consulta podem ser usados para identificar, solucionar problemas e reparar erros de configuração e desempenho abaixo do ideal. (O acesso aos logs de transação não está incluído). 
 
 ## <a name="configure-logging"></a>Configurar o registro em log 
@@ -28,10 +28,19 @@ Se você habilitou os logs, poderá acessá-los do armazenamento de logs do Banc
 
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
-O Banco de Dados do Azure para PostgreSQL é integrado aos Logs de Diagnóstico do Azure Monitor. Depois de habilitar os logs no seu servidor PostgreSQL, você pode optar por fazer com que eles são emitidos para [registra em log do Azure Monitor](../azure-monitor/log-query/log-query-overview.md), Hubs de eventos ou armazenamento do Azure. Para saber mais sobre como habilitar logs de diagnóstico, consulte a seção de instruções da [documentação logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md). 
+O Banco de Dados do Azure para PostgreSQL é integrado aos Logs de Diagnóstico do Azure Monitor. Depois de habilitar os logs no servidor PostgreSQL, você pode optar por que eles sejam emitidos para [Azure monitor logs](../azure-monitor/log-query/log-query-overview.md), hubs de eventos ou armazenamento do Azure. 
 
 > [!IMPORTANT]
-> Esse recurso de diagnóstico para logs do servidor só está disponível no uso geral e otimizado para memória [tipos de preço](concepts-pricing-tiers.md).
+> Esse recurso de diagnóstico para logs de servidor só está disponível nos [tipos de preço](concepts-pricing-tiers.md)uso geral e com otimização de memória.
+
+Para habilitar os logs de diagnóstico usando o portal do Azure:
+
+   1. No portal, vá para *configurações de diagnóstico* no menu de navegação do seu servidor do Postgres.
+   2. Selecione *Adicionar configuração de diagnóstico*.
+   3. Nomeie essa configuração. 
+   4. Selecione seu local de downstream preferido (conta de armazenamento, Hub de eventos, log Analytics). 
+   5. Selecione os tipos de dados desejados.
+   6. Salve sua configuração.
 
 A tabela a seguir descreve o que está em cada log. Dependendo do ponto de extremidade de saída escolhido, os campos incluídos e a ordem em que aparecem podem variar. 
 
@@ -40,24 +49,27 @@ A tabela a seguir descreve o que está em cada log. Dependendo do ponto de extre
 | TenantId | Sua ID de locatário |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Carimbo de data/hora quando o log foi gravado, em UTC |
-| Type | Tipo do log. Sempre `AzureDiagnostics` |
+| Tipo | Tipo do log. Sempre `AzureDiagnostics` |
 | SubscriptionId | GUID para a assinatura a que o servidor pertence |
-| ResourceGroup | Nome do grupo de recursos ao qual o servidor pertence |
+| GrupoRecuso | Nome do grupo de recursos ao qual o servidor pertence |
 | ResourceProvider | Nome do provedor de recursos. Sempre `MICROSOFT.DBFORPOSTGRESQL` |
 | ResourceType | `Servers` |
-| ResourceId | URI de recurso |
-| Resource | Nome do servidor |
+| resourceId | URI de recurso |
+| Recurso | Nome do servidor |
 | Categoria | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
 | errorLevel | Nível de log, exemplo: LOG, ERROR, NOTICE |
-| Message | Mensagem de log primária | 
+| Mensagem | Mensagem de log primária | 
 | Domínio | Versão do servidor, o exemplo: postgres-10 |
-| Detalhes | Mensagem de log secundária (se aplicável) |
+| Detalhe | Mensagem de log secundária (se aplicável) |
 | ColumnName | Nome da coluna (se aplicável) |
 | SchemaName | Nome do esquema (se aplicável) |
 | DatatypeName | Nome do tipo de dados (se aplicável) |
 | LogicalServerName | Nome do servidor | 
 | _ResourceId | URI de recurso |
+| Prefixo | Prefixo da linha de log |
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre como acessar logs no [portal do Azure](howto-configure-server-logs-in-portal.md) ou na [CLI do Azure](howto-configure-server-logs-using-cli.md).

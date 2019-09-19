@@ -8,28 +8,31 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/07/2019
 ms.author: rajanaki
-ms.openlocfilehash: 907a698a675a039dfdc852210adecb94c7bfab25
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 1905d6afb023b1bed15f1359fed8477d815acb45
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886891"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087698"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Personalizar as configurações de rede da VM do Azure de destino
 
 Este artigo fornece orientação sobre como personalizar as configurações de rede na VM do Azure de destino quando você está replicando e recuperando VMs do Azure de uma região para outra, usando [Azure site Recovery](site-recovery-overview.md).
 
-## <a name="before-you-start"></a>Antes de iniciar
+## <a name="before-you-start"></a>Antes de começar
 
 Saiba como o Site Recovery fornece recuperação de desastre para [esse cenário](azure-to-azure-architecture.md).
 
-## <a name="support-networking-resources"></a>Suporte a recursos de rede
+## <a name="supported-networking-resources"></a>Recursos de rede com suporte
 
 As seguintes configurações de recursos principais podem ser fornecidas para a VM de failover durante a replicação de VMs do Azure.
 
 - [Balanceador de Carga Interno](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview#what-is-standard-load-balancer)
 - [IP público](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses)
 - [Grupo de segurança de rede](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) para a sub-rede e para a NIC
+
+ > [!IMPORTANT]
+  > Essas configurações têm suporte apenas na operação de failover no momento e não no failover de teste.
 
 ## <a name="pre-requisites"></a>Pré-requisitos
 

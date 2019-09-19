@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: willchen
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: a8856bd46f516aa3c64965648d4f23b9ba665b1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ae8620b803fa9a911f44840a5fff5d190a316a1
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505445"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086525"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Desativar o firewall do sistema operacional convidado na VM do Azure
 
@@ -33,7 +33,7 @@ O processo descrito neste artigo se destina a ser usado como uma solução alter
 
 Se a VM estiver on-line e puder ser acessada em outra VM na mesma rede virtual, você poderá fazer as mitigações a seguir usando a outra VM.
 
-#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Mitigação 1: Recurso de extensão de Script ou executar comando personalizado
+#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Mitigação 1: Extensão de script personalizado ou recurso de executar comando
 
 Se você tiver um agente do Azure em funcionamento, você pode usar a [Extensão de Script Personalizado](../extensions/custom-script-windows.md) ou o recurso [Executar Comandos](../windows/run-command.md) (somente VMs do Resource Manager) para executar remotamente os scripts a seguir.
 
@@ -70,7 +70,7 @@ Se você tiver um agente do Azure em funcionamento, você pode usar a [Extensão
     ```
 
 > [!Note]
-> Se o firewall é definido por meio de um objeto de diretiva de grupo, esse método pode não funcionar porque esse comando altera somente as entradas do Registro local. Se uma política estiver em vigor, ela substituirá essa alteração. 
+> Se o firewall for definido por meio de um objeto Política de Grupo, esse método poderá não funcionar porque esse comando altera apenas as entradas do Registro local. Se uma política estiver em vigor, ela substituirá essa alteração. 
 
 #### <a name="mitigation-3-pstools-commands"></a>Mitigação 3: Comandos do PSTools
 

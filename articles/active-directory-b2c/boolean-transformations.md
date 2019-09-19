@@ -10,24 +10,24 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0a08849340d19055a03f85ca401757a81cd2c95d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: da4fc4704ee72210e180ef95fe6a821c8d116fa2
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511732"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064570"
 ---
 # <a name="boolean-claims-transformations"></a>Transformações de declarações boolianas
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Este artigo fornece exemplos para usar as transformações de declarações boolianas do esquema do Identity Experience Framework no Azure AD (Azure Active Directory) B2C. Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
+Este artigo fornece exemplos de como usar as transformações de declarações booleanas do esquema de estrutura de experiência de identidade em Azure Active Directory B2C (Azure AD B2C). Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
 
 ## <a name="andclaims"></a>AndClaims
 
 Executa uma operação And de dois inputClaims boolianos e define o outputClaim com o resultado da operação.
 
-| item  | TransformationClaimType  | Tipo de Dados  | Observações |
+| Item  | TransformationClaimType  | Tipo de dados  | Observações |
 |-------| ------------------------ | ---------- | ----- |
 | InputClaim | inputClaim1 | boolean | O primeiro ClaimType a ser avaliado. |
 | InputClaim | inputClaim2  | boolean | O segundo ClaimType a ser avaliado. |
@@ -40,7 +40,7 @@ A transformação de declarações a seguir demonstra como executar And em dois 
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="isEmailNotExist" TransformationClaimType="inputClaim1" />
     <InputClaim ClaimTypeReferenceId="isSocialAccount" TransformationClaimType="inputClaim2" />
-  </InputClaims>                    
+  </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="presentEmailSelfAsserted" TransformationClaimType="outputClaim" />
   </OutputClaims>
@@ -60,7 +60,7 @@ A transformação de declarações a seguir demonstra como executar And em dois 
 
 Verifica se os valores boolianos de duas declarações são iguais e gera uma exceção se eles não são.
 
-| item | TransformationClaimType  | Tipo de Dados  | Observações |
+| Item | TransformationClaimType  | Tipo de dados  | Observações |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | boolean | O ClaimType a ser declarado. |
 | InputParameter |valueToCompareTo | boolean | O valor a ser comparado (true ou false). |
@@ -117,7 +117,7 @@ O perfil técnico autodeclarado chama o perfil técnico **login-NonInteractive**
 
 Executa uma operação Not do inputClaim booliano e define o outputClaim com o resultado da operação.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | boolean | A declaração a ser operada. |
 | OutputClaim | outputClaim | boolean | Os ClaimTypes que são produzidos após a invocação desse ClaimsTransformation (true ou false). |
@@ -141,11 +141,11 @@ Use essa transformação de declaração para realizar a negação lógica em um
 - Declarações de saída:
     - **outputClaim**: true
 
-## <a name="orclaims"></a>OrClaims 
+## <a name="orclaims"></a>OrClaims
 
 Calcula um Or entre dois inputClaims boolianos e define o outputClaim com o resultado da operação.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | boolean | O primeiro ClaimType a ser avaliado. |
 | InputClaim | inputClaim2 | boolean | O segundo ClaimType a ser avaliado. |
@@ -158,7 +158,7 @@ A transformação de declarações a seguir demonstra como executar `Or` em dois
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="isLastTOSAcceptedNotExists" TransformationClaimType="inputClaim1" />
     <InputClaim ClaimTypeReferenceId="isLastTOSAcceptedGreaterThanNow" TransformationClaimType="inputClaim2" />
-  </InputClaims>                    
+  </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="presentTOSSelfAsserted" TransformationClaimType="outputClaim" />
   </OutputClaims>

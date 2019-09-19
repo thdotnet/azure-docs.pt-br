@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 390c961eaa692e6ca5bf26e2954c0764207fc210
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 216316249197071bdd7a175dfc5339caeddee50a
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853668"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71086837"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Referência de configurações de acesso condicional Azure Active Directory
 
@@ -110,7 +110,7 @@ Na política de acesso condicional, você pode configurar a condição de [aplic
 
 ### <a name="supported-browsers"></a>Navegadores com suporte
 
-Em sua política de acesso condicional, você pode selecionar navegadores como aplicativo cliente.
+Em sua política de acesso condicional, você pode selecionar **navegadores** como aplicativo cliente.
 
 ![Controlar acesso para navegadores com suporte](./media/technical-reference/05.png)
 
@@ -125,7 +125,7 @@ Essa configuração funciona com todos os navegadores. No entanto, para satisfaz
 | Android                | Microsoft Edge, Intune Managed Browsers, Chrome  |
 | Windows Phone          | Microsoft Edge, Internet Explorer               |
 | Windows Server 2019    | Microsoft Edge, Internet Explorer, Chrome       |
-| Windows Server 2016    | Microsoft Edge, Internet Explorer               |
+| Windows Server 2016    | Internet Explorer |
 | Windows Server 2012 R2 | Internet Explorer                       |
 | Windows Server 2008 R2 | Internet Explorer                       |
 | macOS                  | Chrome, Safari                                  |

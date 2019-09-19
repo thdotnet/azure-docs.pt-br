@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 09/17/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 1545e2e7eba23b0bedbfe297c292fc94e1659ae3
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 6185540340bba4299eb9307432480c91d531779a
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68775275"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088912"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Conectar uma rede virtual a um circuito ExpressRoute usando o portal
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ Este artigo ajuda você a criar uma conexão para vincular uma rede virtual a um
 
 * Você deve ter um circuito do ExpressRoute ativo.
   * Siga as instruções para [criar um circuito do ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md) e para que o circuito seja habilitado pelo provedor de conectividade.
-  * Verifique se o emparelhamento privado do Azure está configurado para seu circuito. Veja o artigo [Configurar roteamento](expressroute-howto-routing-portal-resource-manager.md) para obter instruções sobre roteamento.
+  * Verifique se o emparelhamento privado do Azure está configurado para seu circuito. Consulte o artigo [criar e modificar o emparelhamento para um circuito do ExpressRoute](expressroute-howto-routing-portal-resource-manager.md) para obter instruções de emparelhamento e roteamento.
   * Verifique se o emparelhamento privado do Azure está configurado e se o emparelhamento BGP entre sua rede e a Microsoft está ativo para que você possa habilitar a conectividade de ponta a ponta.
   * Verifique se tem uma rede virtual e um gateway de rede virtual criados e totalmente provisionados. Siga as instruções para [criar um gateway de rede virtual para ExpressRoute](expressroute-howto-add-gateway-resource-manager.md). Um gateway de rede virtual para ExpressRoute usa o GatewayType “ExpressRoute”, não VPN.
 
@@ -52,15 +52,16 @@ Este artigo ajuda você a criar uma conexão para vincular uma rede virtual a um
 
 ### <a name="to-create-a-connection"></a>Para criar uma conexão
 
-1. Certifique-se de que o circuito de ExpressRoute e emparelhamento privado do Azure foram configurados com êxito. Siga as instruções nos artigos [Criar um circuito do ExpressRoute](expressroute-howto-circuit-arm.md) e [Configurar o roteamento](expressroute-howto-routing-arm.md). O circuito do ExpressRoute deve se parecer com a imagem a seguir:
+1. Certifique-se de que o circuito de ExpressRoute e emparelhamento privado do Azure foram configurados com êxito. Siga as instruções em [criar um circuito do expressroute](expressroute-howto-circuit-arm.md) e [criar e modificar o emparelhamento para um circuito do expressroute](expressroute-howto-routing-arm.md). O circuito do ExpressRoute deve se parecer com a imagem a seguir:
 
-   ![Captura de tela de circuito do ExpressRoute](./media/expressroute-howto-linkvnet-portal-resource-manager/routing1.png)
+   [![Captura de tela do circuito do ExpressRoute](./media/expressroute-howto-linkvnet-portal-resource-manager/routing1.png "Exibir circuito")](./media/expressroute-howto-linkvnet-portal-resource-manager/routing1-exp.png#lightbox)
 2. Agora, você pode começar a provisionar uma conexão para vincular seu gateway de rede virtual ao circuito de ExpressRoute. Clique em **Conexão** > **Adicionar** para abrir o painel **Adicionar conexão** e, em seguida, configure os valores.
 
-   ![Adicionar a captura de tela de conexão](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub1.png)
+   [![Adicionar captura de tela de conexão](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub1.png "Adicionar captura de tela de conexão")](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub1-exp.png#lightbox)
 3. Depois que sua conexão foi configurada com êxito, seu objeto de conexão mostrará as informações para a conexão.
 
    ![Captura de tela de objeto de conexão](./media/expressroute-howto-linkvnet-portal-resource-manager/samesub2.png)
+
 
 ## <a name="connect-a-vnet-to-a-circuit---different-subscription"></a>Conectar uma VNet a um circuito - assinatura diferente
 

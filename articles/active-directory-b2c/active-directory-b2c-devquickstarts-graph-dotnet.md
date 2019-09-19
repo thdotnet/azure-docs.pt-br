@@ -10,19 +10,19 @@ ms.topic: conceptual
 ms.date: 08/07/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 11a9fc521a7b17ae0ff2f579f173f4d43383bdd5
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: c7fcbbbfcc2192160ca852538c015a365518e448
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70880096"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065953"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure Active Directory B2C: Usar a API do Graph do Azure AD
 
 >[!NOTE]
 > Você deve usar a [API do Azure AD Graph](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-operations-overview) para gerenciar usuários em um diretório do Azure AD B2C. Ela é diferente da API do Microsoft Graph. Saiba mais [aqui](https://blogs.msdn.microsoft.com/aadgraphteam/2016/07/08/microsoft-graph-or-azure-ad-graph/).
 
-Os locatários do Azure Active Directory (Azure AD) B2C tendem a ser muito grandes. Isso significa que muitas tarefas comuns de gerenciamento de locatário devem ser executadas programaticamente. O principal exemplo é o gerenciamento de usuário. Talvez seja necessário migrar o repositório de usuário existente para um locatário B2C. Talvez seja melhor hospedar o registro de usuário em sua própria página e criar contas de usuário no seu diretório do Azure AD B2C nos bastidores. Esses tipos de tarefas exigem a capacidade de criar, ler, atualizar e excluir contas de usuário. Você pode realizar essas tarefas usando a API do Graph do Azure AD.
+Os locatários de Azure Active Directory B2C (Azure AD B2C) tendem a ser muito grandes. Isso significa que muitas tarefas comuns de gerenciamento de locatário devem ser executadas programaticamente. O principal exemplo é o gerenciamento de usuário. Talvez seja necessário migrar o repositório de usuário existente para um locatário B2C. Talvez seja melhor hospedar o registro de usuário em sua própria página e criar contas de usuário no seu diretório do Azure AD B2C nos bastidores. Esses tipos de tarefas exigem a capacidade de criar, ler, atualizar e excluir contas de usuário. Você pode realizar essas tarefas usando a API do Graph do Azure AD.
 
 Para locatários B2C, existem basicamente dois modos de se comunicar com a API do Graph.
 
@@ -43,10 +43,10 @@ Quando você tiver um locatário B2C, será necessário registrar seu aplicativo
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Escolha seu locatário do Azure AD B2C selecionando sua conta no canto superior direito da página.
 3. No painel de navegação à esquerda, escolha **todos os serviços**, clique em **registros de aplicativo**e clique em **novo registro**.
-4. Siga os avisos e crie um novo aplicativo. 
+4. Siga os avisos e crie um novo aplicativo.
     1. Adicionar um nome apropriado
     2. Selecionar **contas somente neste diretório organizacional**
-    3. Selecione **Web** como o tipo de aplicativo e forneça **qualquer URL de logon** `https://B2CGraphAPI`(por exemplo,), pois ele não é relevante para este exemplo.  
+    3. Selecione **Web** como o tipo de aplicativo e forneça **qualquer URL de logon** `https://B2CGraphAPI`(por exemplo,), pois ele não é relevante para este exemplo.
     4. Clique em registrar.
 5. Agora, o aplicativo aparecerá na lista de aplicativos. Clique nele para obter a **ID do Aplicativo** (também conhecida como ID do Cliente). Copie-a, pois precisará dela em uma seção posterior.
 6. No menu configurações, clique em **certificados & segredos**.
@@ -65,8 +65,8 @@ Agora, você tem um aplicativo que tem permissão para criar, ler e atualizar us
 
 > [!NOTE]
 > O processo completo da concessão de permissões pode demorar alguns minutos.
-> 
-> 
+>
+>
 
 ## <a name="configure-delete-or-update-password-permissions-for-your-application"></a>Configurar permissões de exclusão ou atualização de senha para seu aplicativo
 Atualmente, a permissão *Leitura e gravação de dados do diretório* faz **NÃO** incluir a capacidade de excluir usuários ou atualizar senhas de usuários. Se você quiser dar ao seu aplicativo a capacidade de excluir usuários ou atualizar senhas, precisará executar essas etapas extras que envolvem o PowerShell. Caso contrário, você pode pular para a próxima seção.
@@ -132,8 +132,8 @@ Qualquer solicitação para a API do Graph requer um token de acesso para autent
 
 > [!NOTE]
 > Este exemplo de código usa o ADAL v2 para se comunicar com a API do Graph.  Você deve usar o ADAL v2 ou v3 para obter tokens de acesso que podem ser usados com a API do Graph do Azure AD.
-> 
-> 
+>
+>
 
 Quando `B2CGraphClient` é executado, o código cria uma instância da classe `B2CGraphClient`. O construtor para essa classe configura a estrutura de autenticação da ADAL:
 
@@ -260,8 +260,8 @@ Você pode ver como a solicitação POST é construída em `B2CGraphClient.SendG
 
 > [!NOTE]
 > Se as contas que deseja migrar de um repositório do usuário existente tiverem um nível de segurança de senha menor do que o [nível de segurança de senha forte imposto pelo Azure AD B2C](/previous-versions/azure/jj943764(v=azure.100)), você poderá desabilitar o requisito de senha forte usando o valor `DisableStrongPassword` na propriedade `passwordPolicies`. Por exemplo, você pode modificar a solicitação de criação de usuário fornecida acima da seguinte maneira: `"passwordPolicies": "DisablePasswordExpiration, DisableStrongPassword"`.
-> 
-> 
+>
+>
 
 ### <a name="update-consumer-user-accounts"></a>Atualizar contas de usuário consumidor
 Quando você atualiza os objetos de usuário, o processo é semelhante àquele usado para criar objetos de usuário. Mas esse processo usa o método HTTP `PATCH` :

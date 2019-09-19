@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 91467f99e7932ce7ffcd5b3300f8544fb848ccfa
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: d966ff3bc00d5190ebc163d4f4bfa35ba73d21ab
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019069"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71087668"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Acompanhar operações personalizadas com o SDK do .NET do Application Insights
 
@@ -354,7 +354,7 @@ Ao instrumentar a exclusão de mensagem, verifique se você definiu os identific
 
 ### <a name="dependency-types"></a>Tipos de dependência
 
-Application Insights usa o tipo de dependência para experiências de interface do usuário do Personalizar. Para filas, ele reconhece os seguintes tipos `DependencyTelemetry` de que melhoram a [experiência de diagnóstico de transação](/azure-monitor/app/transaction-diagnostics):
+Application Insights usa o tipo de dependência para experiências de interface do usuário do Personalizar. Para filas, ele reconhece os seguintes tipos `DependencyTelemetry` de que melhoram a [experiência de diagnóstico de transação](/azure/azure-monitor/app/transaction-diagnostics):
 - `Azure queue`para filas do armazenamento do Azure
 - `Azure Event Hubs`para hubs de eventos do Azure
 - `Azure Service Bus`para o barramento de serviço do Azure

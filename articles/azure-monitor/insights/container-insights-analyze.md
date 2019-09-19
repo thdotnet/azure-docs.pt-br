@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/06/2019
+ms.date: 09/17/2019
 ms.author: magoedte
-ms.openlocfilehash: c63feb02712447d2427061cbfabc525622107043
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: 945dc6c35eacab99db28172703e1aebed10bd58a
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744584"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71067080"
 ---
 # <a name="understand-aks-cluster-performance-with-azure-monitor-for-containers"></a>Compreender o desempenho de cluster do AKS com o Azure Monitor para contêineres
 Com Azure Monitor para contêineres, você pode usar os gráficos de desempenho e o status de integridade para monitorar a carga de trabalho de seus clusters do AKS (serviço kubernetes do Azure) de duas perspectivas. Você pode monitorar diretamente de um cluster AKS ou pode monitorar todos os clusters do AKS em uma assinatura do Azure Monitor. A exibição de instâncias de contêiner do Azure também é possível quando você monitora um cluster AKS específico.
@@ -170,9 +170,13 @@ Em um nó expandido, você pode fazer drill-down do Pod ou contêiner que é exe
 
 Selecione controladores ou contêineres na parte superior da página para examinar o status e a utilização de recursos para esses objetos. Para examinar a utilização de memória, na lista suspensa **métrica** , selecione **conjunto de trabalho** **memória RSS** ou memória. **RSS de Memória** só tem suporte para a versão do Kubernetes 1.8 e posteriores. Caso contrário, você exibirá valores para **Mín.&nbsp;%** como *NaN&nbsp;%* , que é um valor de tipo de dados numérico que representa um valor indefinido ou não representável.
 
-**Conjunto de trabalho de memória** mostra a memória residente e a memória virtual (cache) incluídas e é um total do que o aplicativo está usando. O **RSS de memória** mostra somente a memória principal (que não é nada, exceto a memória residente em outras palavras). Essa métrica mostra a capacidade real da memória disponível.
-
 ![Exibição do desempenho de nós do contêiner](./media/container-insights-analyze/containers-node-metric-dropdown.png)
+
+**Conjunto de trabalho de memória** mostra a memória residente e a memória virtual (cache) incluídas e é um total do que o aplicativo está usando. O **RSS de memória** mostra somente a memória principal (que não é nada, exceto a memória residente em outras palavras). Essa métrica mostra a capacidade real da memória disponível. Qual é a diferença entre a memória residente e a memória virtual?
+
+- Memória residente ou memória principal, é a quantidade real de memória do computador disponível para os nós do cluster.
+
+- A memória virtual é um espaço reservado no disco rígido (cache) usado pelo sistema operacional para trocar dados da memória em disco quando sob pressão de memória e, em seguida, busque-os de volta para a memória quando necessário.
 
 Por padrão, os dados de desempenho são baseados nas últimas seis horas, mas você pode alterar a janela usando a opção **intervalo** de tempo no canto superior esquerdo. Você também pode filtrar os resultados dentro do intervalo de tempo selecionando **min**, **AVG**, **50 º**, **90 º**, **95 º**e **Max** no seletor de percentil. 
 
@@ -278,7 +282,7 @@ Os ícones no campo status indicam os status online de pods, conforme descrito n
 | ![Ícone de status encerrado](./media/container-insights-analyze/containers-terminated-icon.png) | Parou com sucesso ou houve falha ao parar|  
 | ![Ícone de status com falha](./media/container-insights-analyze/containers-failed-icon.png) | Estado com falha |  
 
-## <a name="workbooks"></a>Pastas de Trabalho
+## <a name="workbooks"></a>Pastas de trabalho
 
 As pastas de trabalho combinam texto, [consultas de log](../log-query/query-language.md), [métricas](../platform/data-platform-metrics.md)e parâmetros em relatórios interativos sofisticados. As Pastas de Trabalho são editáveis por qualquer membro da equipe com acesso aos mesmos recursos do Azure.
 

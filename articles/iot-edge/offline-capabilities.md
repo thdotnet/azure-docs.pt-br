@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 5d618f12b2a83b0aee145470aff900e26241b705
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 80a38767121f5c54afe51a7d4d788716fe9547e2
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147275"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091355"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Entender os recursos offline estendidos para dispositivos IoT Edge, módulos e dispositivos filho
 
@@ -110,7 +110,7 @@ Uma maneira de criar essa relação de confiança é descrita detalhadamente nos
 
 ## <a name="specify-dns-servers"></a>Especificar servidores de DNS 
 
-Para melhorar a robustez, é altamente recomendável especificar os endereços do servidor DNS usados em seu ambiente. Consulte duas opções para [definir o servidor DNS no artigo de solução de problemas](troubleshoot.md#resolution-7).
+Para melhorar a robustez, é altamente recomendável especificar os endereços do servidor DNS usados em seu ambiente. Para definir o servidor DNS para IoT Edge, consulte o módulo Resolution for [Edge Agent relata continuamente ' arquivo de configuração vazio ' e nenhum módulo inicia no dispositivo](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) no artigo de solução de problemas.
 
 ## <a name="optional-offline-settings"></a>Configurações offline opcionais
 
@@ -200,7 +200,7 @@ sudo chown 1000 <HostStoragePath>
 sudo chmod 700 <HostStoragePath>
 ```
 
-Você pode encontrar mais detalhes sobre como criar opções de [documentos](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate)do Docker.
+Você pode encontrar mais detalhes sobre como criar opções de [documentos do Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate).
 
 ## <a name="next-steps"></a>Próximas etapas
 

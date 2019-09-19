@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 91ac76d85422f5f323a833a99b5cc02d9a07889b
-ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
+ms.openlocfilehash: 1531f2530af9c2fbc90d1bf25f04962fb4148a8d
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71009455"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090479"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Copiar dados do Cassandra usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -30,7 +30,7 @@ Este artigo descreve como usar a atividade de cópia no Azure Data Factory para 
 
 Este conector do Cassandra tem suporte para as seguintes atividades:
 
-- [Atividade de cópia](copy-activity-overview.md) com [matriz de origem com suporte](copy-activity-overview.md)
+- [Atividade de cópia](copy-activity-overview.md) com [matriz de coletor/origem com suporte](copy-activity-overview.md)
 - [Atividade de pesquisa](control-flow-lookup-activity.md)
 
 Você pode copiar dados de um banco de dados Cassandra para qualquer armazenamento de dados de coletor com suporte. Para obter uma lista de armazenamentos de dados com suporte como origens/coletores da atividade de cópia, confira a tabela [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -252,7 +252,7 @@ As tabelas a seguir mostram as tabelas virtuais que normalizam novamente os dado
 
 | pk_int | Map_key | Map_value |
 | --- | --- | --- |
-| 1 |S1 |A |
+| 1 |S1 |O |
 | 1 |S2 |b |
 | 3 |S1 |t |
 
@@ -260,10 +260,10 @@ As tabelas a seguir mostram as tabelas virtuais que normalizam novamente os dado
 
 | pk_int | StringSet_value |
 | --- | --- |
-| 1 |A |
+| 1 |O |
 | 1 |b |
 | 1 |C |
-| 3 |A |
+| 3 |O |
 | 3 |E |
 
 ## <a name="lookup-activity-properties"></a>Propriedades da atividade de pesquisa

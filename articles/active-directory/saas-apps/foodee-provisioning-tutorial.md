@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
-ms.openlocfilehash: e444d6254b575ead4b5d436a4b92f960c61b1d1c
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: 171a1141670e55814474390c59ae8d514491edbd
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70802869"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088100"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Tutorial: Configurar o alimento para provisionamento automático de usuário
 
@@ -36,7 +36,7 @@ O objetivo deste tutorial é demonstrar as etapas a serem executadas no alimento
 O cenário descrito neste tutorial pressupõe que você já tem os seguintes pré-requisitos:
 
 * Um locatário do Azure AD.
-* [Um locatário do alimento](https://Foodee.com/pricing/)
+* [Um locatário do alimento](https://www.food.ee/about/)
 * Uma conta de usuário no alimento com permissões de administrador.
 
 ## <a name="assigning-users-to-foodee"></a>Atribuindo usuários ao alimento 

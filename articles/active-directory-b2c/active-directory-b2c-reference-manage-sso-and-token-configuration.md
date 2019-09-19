@@ -10,22 +10,22 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f3621b176e4bbfdfbd171339d6d01a1f91ed0ae7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 966386bfed5f94556f145afab1c665eb3c90546a
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509293"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065552"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Gerenciar a personalização de SSO e de token usando políticas personalizadas no Azure Active Directory B2C
 
-Este artigo fornece informações de como gerenciar as configurações de token, sessão e SSO (logon único) usando [políticas personalizadas](active-directory-b2c-overview-custom.md) no Azure AD (Azure Active Directory) B2C.
+Este artigo fornece informações sobre como você pode gerenciar suas configurações de token, sessão e logon único (SSO) usando [políticas personalizadas](active-directory-b2c-overview-custom.md) no Azure Active Directory B2C (Azure ad B2C).
 
 ## <a name="token-lifetimes-and-claims-configuration"></a>Configuração de declarações e de tempos de vida de token
 
-Para alterar as configurações nos tempos de vida de token, você adiciona um elemento [ClaimsProviders](claimsproviders.md) ao arquivo de terceira parte confiável da política que você deseja afetar.  O elemento **ClaimsProviders** é um filho do elemento [TrustFrameworkPolicy](trustframeworkpolicy.md). 
+Para alterar as configurações nos tempos de vida de token, você adiciona um elemento [ClaimsProviders](claimsproviders.md) ao arquivo de terceira parte confiável da política que você deseja afetar.  O elemento **ClaimsProviders** é um filho do elemento [TrustFrameworkPolicy](trustframeworkpolicy.md).
 
-Inserir o elemento ClaimsProviders entre o elemento BasePolicy e o elemento de RelyingParty do arquivo de terceira parte confiável.
+Insira o elemento ClaimsProviders entre o elemento BasePolicy e o elemento RelyingParty do arquivo de terceira parte confiável.
 
 Nele, você precisará colocar as informações que afetam os tempos de vida de token. O XML se parece com este exemplo:
 
@@ -56,33 +56,33 @@ Os seguintes valores são definidos no exemplo anterior:
 - **Tempo de vida do token de atualização** – o valor do tempo de vida do token de atualização é definido com o item de metadados **refresh_token_lifetime_secs**. O valor padrão é de 1209600 segundos (14 dias).
 - **Tempo de vida do token de atualização de janela deslizante** – se quiser definir um tempo de vida de janela deslizante para o token de atualização, defina o valor do item de metadados **rolling_refresh_token_lifetime_secs**. O valor padrão é 7776000 (90 dias). Se não quiser impor um tempo de vida de janela deslizante, substitua o item por `<Item Key="allow_infinite_rolling_refresh_token">True</Item>`.
 - **Declaração iss (Issuer)** – a declaração iss (Issuer) é definida com o item de metadados **IssuanceClaimPattern**. Os valores aplicáveis são `AuthorityAndTenantGuid` e `AuthorityWithTfp`.
-- **Configuração de declaração que representa a ID de política** – as opções para definir esse valor são `TFP` (política de confiança da estrutura) e `ACR` (referência do contexto de autenticação). `TFP` é o valor recomendado. Defina **AuthenticationContextReferenceClaimPattern** com o valor de `None`. 
+- **Configuração de declaração que representa a ID de política** – as opções para definir esse valor são `TFP` (política de confiança da estrutura) e `ACR` (referência do contexto de autenticação). `TFP` é o valor recomendado. Defina **AuthenticationContextReferenceClaimPattern** com o valor de `None`.
 
-    No elemento **ClaimsSchema**, adicione esse elemento: 
-    
+    No elemento **ClaimsSchema**, adicione esse elemento:
+
     ```XML
     <ClaimType Id="trustFrameworkPolicy">
       <DisplayName>Trust framework policy name</DisplayName>
       <DataType>string</DataType>
     </ClaimType>
     ```
-    
+
     No elemento **OutputClaims**, adicione este elemento:
-    
+
     ```XML
     <OutputClaim ClaimTypeReferenceId="trustFrameworkPolicy" Required="true" DefaultValue="{policy}" />
     ```
 
     Para o ACR, remova o item **AuthenticationContextReferenceClaimPattern**.
 
-- **Declaração sub (Subject)** – essa opção é padronizada para a ObjectID. Se você quer mudar essa configuração para `Not Supported`, substitua esta linha: 
+- **Declaração sub (Subject)** – essa opção é padronizada para a ObjectID. Se você quer mudar essa configuração para `Not Supported`, substitua esta linha:
 
     ```XML
     <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub" />
     ```
-    
+
     com esta linha:
-    
+
     ```XML
     <OutputClaim ClaimTypeReferenceId="sub" />
     ```
@@ -101,6 +101,6 @@ Para alterar o comportamento da sessão e as configurações de SSO, você adici
 
 Os seguintes valores são configurados no exemplo anterior:
 
-- **(SSO) logon único** – o logon único é configurado com o **SingleSignOn**. Os valores aplicáveis são `Tenant`, `Application`, `Policy` e `Suppressed`. 
+- **(SSO) logon único** – o logon único é configurado com o **SingleSignOn**. Os valores aplicáveis são `Tenant`, `Application`, `Policy` e `Suppressed`.
 - **Tempo de vida de sessão de aplicativo Web (minutos)** – o tempo de vida de sessão do aplicativo Web é definido com o elemento **SessionExpiryInSeconds**. O valor padrão é de 86400 segundos (1440 minutos).
 - **Tempo limite de sessão do aplicativo Web** – o tempo limite de sessão do aplicativo Web é definido com o elemento **SessionExpiryType**. Os valores aplicáveis são `Absolute` e `Rolling`.

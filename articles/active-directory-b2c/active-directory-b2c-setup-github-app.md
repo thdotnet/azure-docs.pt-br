@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 056570db89fbe1a3db55c138b46e5b73acc282f8
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 74c663d8847c2829a5d9466f8e601dd44593a6f8
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622434"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065194"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Configurar a inscrição e entrada com a conta do GitHub usando o Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "69622434"
 
 ## <a name="create-a-github-oauth-application"></a>Crie um aplicativo GitHub OAuth
 
-Para usar uma conta do GitHub como um [provedor de identidade](active-directory-b2c-reference-oauth-code.md) no Azure AD (Azure Active Directory) B2C, você precisará criar um aplicativo no locatário que o representa. Se você ainda não tiver uma conta do GitHub, poderá se inscrever [https://www.github.com/](https://www.github.com/)em.
+Para usar uma conta do GitHub como um [provedor de identidade](active-directory-b2c-reference-oauth-code.md) no Azure Active Directory B2C (Azure ad B2C), você precisa criar um aplicativo em seu locatário que o represente. Se você ainda não tiver uma conta do GitHub, poderá se inscrever [https://www.github.com/](https://www.github.com/)em.
 
 1. Entrar no site de [Desenvolvedor do GitHub](https://github.com/settings/developers) com suas credenciais do GitHub.
 1. Selecione **Aplicativos do OAuth** e, em seguida, selecione **Novo Aplicativo do OAuth**.
