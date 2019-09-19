@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 9543e67d0f98836f760ac840fa12ec5718da037e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 39c40f29f4548f2e7379472427a2c97f1a0b762c
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086037"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932966"
 ---
 # <a name="what-are-microsoft-flow-logic-apps-functions-and-webjobs"></a>O que são o Microsoft Flow, os Aplicativos Lógicos, o Functions e o WebJobs?
 
@@ -52,7 +52,7 @@ A seguinte tabela ajuda você a determinar a melhor opção para uma integraçã
 
 O Functions e os Aplicativos Lógicos são os serviços do Azure que permitem as cargas de trabalho sem servidor. O Azure Functions é um serviço de computação sem servidor, enquanto os Aplicativos Lógicos do Azure fornecem fluxos de trabalho sem servidor. Ambos podem criar *orquestrações* complexas. Uma orquestração é uma coleção de funções ou etapas, chamadas *ações* nos Aplicativos Lógicos, que são executadas para realizar uma tarefa complexa. Por exemplo, para processar um lote de pedidos, você pode executar várias instâncias de uma função em paralelo, aguardar a conclusão de todas as instâncias e, em seguida, executar uma função que calcula um resultado na agregação.
 
-Para o Azure Functions, você desenvolve orquestrações escrevendo o código e usando a [extensão Durable Functions](durable/durable-functions-concepts.md). Para os Aplicativos Lógicos, você pode criar orquestrações usando uma GUI ou editando arquivos de configuração.
+Para o Azure Functions, você desenvolve orquestrações escrevendo o código e usando a [extensão Durable Functions](durable/durable-functions-overview.md). Para os Aplicativos Lógicos, você pode criar orquestrações usando uma GUI ou editando arquivos de configuração.
 
 Você pode misturar e fazer a correspondência de serviços quando você compila uma orquestração, chamando funções de aplicativos lógicos e chamando aplicativos lógicos de funções. Escolha como criar cada orquestração com base em recursos dos serviços ou de sua preferência pessoal. A tabela a seguir lista algumas das principais diferenças entre esses serviços:
  

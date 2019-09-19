@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 05/07/2019
-ms.openlocfilehash: cacd67e26b13df8ef456ac8f1391e4396f5bdd96
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 0344fc834cb1ef29c91bc52239d1df2706d1ca81
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69873887"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71101687"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Início Rápido: Criar uma instância gerenciada do Banco de Dados SQL do Azure
 
@@ -60,7 +60,7 @@ As etapas a seguir mostram como criar uma instância gerenciada.
 
    ![Formulário da instância gerenciada](./media/sql-database-managed-instance-get-started/managed-instance-create-form.png)
 
-5. Para usar a instância gerenciada como um grupo de failover de instância secundário, selecione o check-out e especifique a instância gerenciada do DnsAzurePartner. Esse recurso está em versão prévia e não é mostrado na captura de tela a seguir.
+5. Para usar a instância gerenciada como um grupo de failover de instância secundário, selecione o check-out e especifique a instância gerenciada do DnsAzurePartner. 
 6. Selecione **Tipo de preço** para dimensionar os recursos de computação e armazenamento e examinar as opções de tipo de preço. O tipo de preço de Uso Geral com 32 GB de memória e 16 vCores é o valor padrão.
 7. Use os controles deslizantes ou as caixas de texto para especificar a quantidade de armazenamento e o número de núcleos virtuais.
 8. Quando terminar, selecione **Aplicar** para salvar a seleção. 

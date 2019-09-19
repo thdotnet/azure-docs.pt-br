@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: kumud
-ms.openlocfilehash: 8a8feb0f12fbf5eadcddf239ff2e13c058a566fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4af8c6dbbcbb877351018eb881f4d3b0b447bbce
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64693312"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098972"
 ---
 # <a name="add-change-or-delete-a-virtual-network-subnet"></a>Adicionar, alterar ou excluir uma sub-rede da rede virtual
 
@@ -72,7 +72,7 @@ A conta em que você realizou o logon, ou se conectou ao Azure, deve estar atrib
     - **Usuários**: É possível controlar o acesso à sub-rede utilizando funções internas ou suas próprias funções personalizadas. Para saber mais sobre como atribuir funções e usuários para acessar a sub-rede, consulte [Utilizar atribuição de função para gerenciar o acesso aos recursos do Azure](../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-role-assignment).
     - **Grupo de segurança de rede** e **Tabela de rotas**: Consulte a etapa 5 de [Adicionar uma sub-rede](#add-a-subnet).
     - **Pontos de extremidade de serviço**: Consulte os pontos de extremidade de serviço na etapa 5 de [Adicionar uma sub-rede](#add-a-subnet). Ao habilitar um ponto de extremidade de serviço para uma sub-rede existente, certifique-se de que nenhuma tarefa crítica está executando qualquer recurso na sub-rede. Os pontos de extremidade de serviço alternam rotas em cada interface de rede na sub-rede do uso da rota padrão com o prefixo de endereço *0.0.0.0/0* e o tipo de próximo salto de *Internet*, usando uma nova rota com o endereço prefixos do serviço e um tipo de próximo salto de *VirtualNetworkServiceEndpoint*. Durante a troca, todas as conexões TCP abertas podem ser finalizadas. O ponto de extremidade de serviço não estará habilitado até que os fluxos de tráfego para o serviço para todas as interfaces de rede sejam atualizadas com a nova rota. Para saber mais sobre roteamento, consulte [Visão geral de roteamento](virtual-networks-udr-overview.md).
-    - **Delegação de sub-rede:** Consulte os pontos de extremidade de serviço na etapa 5 de [Adicionar uma sub-rede](#add-a-subnet). A delegação de sub-rede pode ser modificada para ter nenhuma ou várias delegações habilitadas para ela. Se um recurso para um serviço já estiver implantado na sub-rede, a delegação de sub-rede não poderá ser removida até todos os recursos para o serviço serem removidos. Para delegar para um serviço diferente, selecione o serviço que você deseja delegar na lista **Serviços**.
+    - **Delegação de sub-rede:** Consulte os pontos de extremidade de serviço na etapa 5 de [Adicionar uma sub-rede](#add-a-subnet). A delegação de sub-rede pode ser modificada para ter nenhuma ou várias delegações habilitadas para ela. Se um recurso para um serviço já estiver implantado na sub-rede, a delegação de sub-rede não poderá ser adicionada ou removida até que todos os recursos do serviço sejam removidos. Para delegar para um serviço diferente, selecione o serviço que você deseja delegar na lista **Serviços**.
 5. Clique em **Salvar**.
 
 **Comandos**
@@ -99,7 +99,7 @@ Uma sub-rede somente pode ser excluída se não houver recursos na sub-rede. Se 
 
 Para executar tarefas em sub-redes, sua conta deve ser atribuída à função de [colaborador da rede](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) ou a uma função [personalizada](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) à qual são atribuídas as ações apropriadas listadas na tabela a seguir:
 
-|Ação                                                                   |   NOME                                       |
+|Ação                                                                   |   Nome                                       |
 |-----------------------------------------------------------------------  |   -----------------------------------------  |
 |Microsoft.Network/virtualNetworks/subnets/read                           |   Ler uma sub-rede de rede virtual              |
 |Microsoft.Network/virtualNetworks/subnets/write                          |   Criar ou atualizar uma sub-rede da rede virtual  |

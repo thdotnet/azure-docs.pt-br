@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 8b35d2441db654278f9d66f3cbb4e7a79d70e835
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: 77ccfc1a67fabca7fde47edac9094c6a68191f0f
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70128043"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71090758"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Início Rápido: Executar seu primeiro trabalho em Lotes com a API do Python
 
@@ -116,7 +116,7 @@ Confira o arquivo `python_quickstart_client.py` e as seções a seguir para obte
 
 ### <a name="preliminaries"></a>Etapas preliminares
 
-Para interagir com uma conta de armazenamento, o aplicativo usa o pacote [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) para criar um objeto [BlockBlobService](/python/api/azure.storage.blob.blockblobservice.blockblobservice).
+Para interagir com uma conta de armazenamento, o aplicativo usa o pacote [azure-storage-blob](https://pypi.python.org/pypi/azure-storage-blob) para criar um objeto [BlockBlobService](/python/api/azure-storage-blob/azure.storage.blob.blockblobservice.blockblobservice).
 
 ```python
 blob_client = azureblob.BlockBlobService(
@@ -124,7 +124,7 @@ blob_client = azureblob.BlockBlobService(
     account_key=config._STORAGE_ACCOUNT_KEY)
 ```
 
-O aplicativo usa a referência `blob_client` para criar um contêiner na conta de armazenamento e carregar os arquivos de dados no contêiner. Os arquivos no armazenamento são definidos como objetos [ResourceFile](/python/api/azure.batch.models.resourcefile) do Lote que ele pode baixar mais tarde para os nós de computação.
+O aplicativo usa a referência `blob_client` para criar um contêiner na conta de armazenamento e carregar os arquivos de dados no contêiner. Os arquivos no armazenamento são definidos como objetos [ResourceFile](/python/api/azure-batch/azure.batch.models.resourcefile) do Lote que ele pode baixar mais tarde para os nós de computação.
 
 ```python
 input_file_paths = [os.path.join(sys.path[0], 'taskdata0.txt'),
@@ -149,11 +149,11 @@ batch_client = batch.BatchServiceClient(
 
 ### <a name="create-a-pool-of-compute-nodes"></a>Criar um pool de nós de computação
 
-Para criar um pool do Lote, o aplicativo usa a classe [PoolAddParameter](/python/api/azure.batch.models.pooladdparameter) para definir o número de nós, o tamanho da VM e uma configuração de pool. Aqui, um objeto [VirtualMachineConfiguration](/python/api/azure.batch.models.virtualmachineconfiguration) especifica uma [ImageReference](/python/api/azure.batch.models.imagereference) para uma imagem do Ubuntu Server 18.04 LTS publicada no Azure Marketplace. O Lote dá suporte a uma ampla gama de imagens do Linux e do Windows Server no Azure Marketplace, bem como imagens de VM personalizadas.
+Para criar um pool do Lote, o aplicativo usa a classe [PoolAddParameter](/python/api/azure-batch/azure.batch.models.pooladdparameter) para definir o número de nós, o tamanho da VM e uma configuração de pool. Aqui, um objeto [VirtualMachineConfiguration](/python/api/azure-batch/azure.batch.models.virtualmachineconfiguration) especifica uma [ImageReference](/python/api/azure-batch/azure.batch.models.imagereference) para uma imagem do Ubuntu Server 18.04 LTS publicada no Azure Marketplace. O Lote dá suporte a uma ampla gama de imagens do Linux e do Windows Server no Azure Marketplace, bem como imagens de VM personalizadas.
 
 O número de nós (`_POOL_NODE_COUNT`) e o tamanho da VM (`_POOL_VM_SIZE`) são constantes definidas. O exemplo cria por padrão um pool com dois nós de tamanho *Standard_A1_v2*. O tamanho sugerido oferece um bom equilíbrio entre desempenho e custo para este exemplo rápido.
 
-O método [pool.add](/python/api/azure.batch.operations.pooloperations) envia o pool para o serviço do Lote.
+O método [pool.add](/python/api/azure-batch/azure.batch.operations.pooloperations) envia o pool para o serviço do Lote.
 
 ```python
 new_pool = batch.models.PoolAddParameter(
@@ -174,7 +174,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-batch-job"></a>Criar um trabalho do Lote
 
-Um trabalho do Lote é um agrupamento lógico de uma ou mais tarefas. Um trabalho inclui configurações comuns às tarefas, como prioridade e o pool onde elas devem ser executadas. O aplicativo usa a classe [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure.batch.operations.joboperations) adiciona um trabalho à conta do Lote especificada. Inicialmente, o trabalho não tem nenhuma tarefa.
+Um trabalho do Lote é um agrupamento lógico de uma ou mais tarefas. Um trabalho inclui configurações comuns às tarefas, como prioridade e o pool onde elas devem ser executadas. O aplicativo usa a classe [JobAddParameter](/python/api/azure-batch/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure-batch/azure.batch.operations.joboperations) adiciona um trabalho à conta do Lote especificada. Inicialmente, o trabalho não tem nenhuma tarefa.
 
 ```python
 job = batch.models.JobAddParameter(
@@ -185,9 +185,9 @@ batch_service_client.job.add(job)
 
 ### <a name="create-tasks"></a>Criar tarefas
 
-O aplicativo cria uma lista de objetos de tarefa usando a classe [TaskAddParameter](/python/api/azure.batch.models.taskaddparameter). Cada tarefa processa um objeto `resource_files` de entrada usando um parâmetro `command_line`. No exemplo, a linha de comando executa o comando do shell Bash `cat` para exibir o arquivo de texto. Esse comando é um exemplo simples para fins de demonstração. Quando você usa o Lote, a linha de comando é onde você especifica seu aplicativo ou script. O Lote fornece várias maneiras para implantar aplicativos e scripts em nós de computação.
+O aplicativo cria uma lista de objetos de tarefa usando a classe [TaskAddParameter](/python/api/azure-batch/azure.batch.models.taskaddparameter). Cada tarefa processa um objeto `resource_files` de entrada usando um parâmetro `command_line`. No exemplo, a linha de comando executa o comando do shell Bash `cat` para exibir o arquivo de texto. Esse comando é um exemplo simples para fins de demonstração. Quando você usa o Lote, a linha de comando é onde você especifica seu aplicativo ou script. O Lote fornece várias maneiras para implantar aplicativos e scripts em nós de computação.
 
-Depois, o aplicativo adiciona tarefas ao trabalho com o método [task.add_collection](/python/api/azure.batch.operations.taskoperations), que as enfileira para execução em nós de computação. 
+Depois, o aplicativo adiciona tarefas ao trabalho com o método [task.add_collection](/python/api/azure-batch/azure.batch.operations.taskoperations), que as enfileira para execução em nós de computação. 
 
 ```python
 tasks = list()

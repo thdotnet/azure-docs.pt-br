@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 09/18/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1e4496e2b5d2b21fd878ef68665b8e5b06fa6cc5
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 325de36f3aa480847bc647827260f7f65765b5d7
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70012532"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103761"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Transferir a propriedade de cobrança de uma assinatura do Azure para outra conta
 
@@ -38,7 +38,7 @@ Se você for um cliente do EA (Contrato Enterprise), seus administradores corpor
 
 1. Selecione **Assinaturas** no painel à esquerda. Dependendo do seu nível de acesso, você pode precisar selecionar um escopo do orçamento e, em seguida, **Assinaturas** ou **assinaturas do Azure**.
 
-1. Selecione **Transferir a propriedade de cobrança** para a assinatura que deseja transferir. 
+1. Selecione **Transferir a propriedade de cobrança** para a assinatura que deseja transferir.
 
    ![Selecione a assinatura a transferir](./media/billing-subscription-transfer/billing-select-subscription-to-transfer.png)
 
@@ -49,7 +49,7 @@ Se você for um cliente do EA (Contrato Enterprise), seus administradores corpor
     > [!IMPORTANT]
     >
     > Se você optar por migrar a assinatura para o locatário do Azure AD da nova conta, todas as atribuições de [RBAC (controle de acesso baseado em função)](../role-based-access-control/overview.md) para gerenciar recursos na assinatura serão permanentemente removidas. Somente o usuário da nova conta que aceitar sua solicitação de transferência terá acesso para gerenciar os recursos da assinatura. Para obter mais informações, confira [Como transferir uma assinatura a um usuário em outro locatário do Azure AD](../active-directory/managed-identities-azure-resources/known-issues.md). Como alternativa, você pode desmarcar a caixa do locatário do Azure AD da assinatura para transferir a propriedade de cobrança sem mover a assinatura para o locatário da nova conta. Se você fizer isso, as permissões RBAC existentes para gerenciar os recursos do Azure serão mantidas.
-  
+
     ![Enviar página de transferência](./media/billing-subscription-transfer/billing-send-transfer-request.PNG)
 
 1. Selecione **Enviar solicitação de transferência**.
@@ -58,7 +58,7 @@ Se você for um cliente do EA (Contrato Enterprise), seus administradores corpor
 
    ![Email de transferência de assinatura enviado para o destinatário](./media/billing-subscription-transfer/billing-receiver-email.png)
 
-1. Para aprovar a solicitação de transferência, o usuário seleciona o link no email e segue as instruções. O usuário precisa selecionar uma forma de pagamento que será usada para pagar a assinatura. Além disso, se o usuário não tiver uma conta do Azure, ele precisará se inscrever para uma nova conta. 
+1. Para aprovar a solicitação de transferência, o usuário seleciona o link no email e segue as instruções. O usuário precisa selecionar uma forma de pagamento que será usada para pagar a assinatura. Além disso, se o usuário não tiver uma conta do Azure, ele precisará se inscrever para uma nova conta.
 
    ![Primeira página da Web de transferência de assinatura](./media/billing-subscription-transfer/billing-accept-ownership-step1.png)
 
@@ -79,7 +79,7 @@ Quando você transfere a propriedade de cobrança da sua assinatura para uma con
 
 ## <a name="transferring-visual-studio-mpn-and-pay-as-you-go-devtest-subscriptions"></a>Transferência de assinaturas do Visual Studio, MPN e de Desenvolvimento/Teste pago conforme o uso
 
-As assinaturas do Visual Studio e do Microsoft Partner Network têm crédito Azure mensal recorrente associado a elas. Quando você transfere essas assinaturas, o crédito não fica disponível na conta de cobrança de destino. A assinatura usará o crédito existente na conta de cobrança de destino. Por exemplo, suponha que Bob tenha transferido uma assinatura do Visual Studio Enterprise para a conta de Jane no dia 9 de setembro e ela tenha aceitado a transferência. Após a conclusão da transferência, a assinatura passa a usar o crédito da conta de Jane. O crédito será redefinido mensalmente, todo dia 9. 
+As assinaturas do Visual Studio e do Microsoft Partner Network têm crédito Azure mensal recorrente associado a elas. Quando você transfere essas assinaturas, o crédito não fica disponível na conta de cobrança de destino. A assinatura usará o crédito existente na conta de cobrança de destino. Por exemplo, suponha que Bob tenha transferido uma assinatura do Visual Studio Enterprise para a conta de Jane no dia 9 de setembro e ela tenha aceitado a transferência. Após a conclusão da transferência, a assinatura passa a usar o crédito da conta de Jane. O crédito será redefinido mensalmente, todo dia 9.
 
 
 <a id="EA"></a>
@@ -107,9 +107,9 @@ A transferência de assinatura no portal do Azure está disponível para os tipo
 
 - [EA (Contrato Enterprise)](https://azure.microsoft.com/pricing/enterprise-agreement/)\*
 - [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p/)  
-- [Assinantes do Visual Studio Enterprise (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p/) 
+- [Assinantes do Visual Studio Enterprise (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p/)
 - [Plataformas MSDN](https://azure.microsoft.com/offers/ms-azr-0062p/)  
-- [Pré-paga](https://azure.microsoft.com/offers/ms-azr-0003p/) 
+- [Pré-paga](https://azure.microsoft.com/offers/ms-azr-0003p/)
 - [Desenvolvimento/Teste pré-pago](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/)
 - [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p/)
@@ -119,7 +119,7 @@ A transferência de assinatura no portal do Azure está disponível para os tipo
 
 \* [Via Portal do EA](#EA).
 
-\*\* Só há suporte para contas criadas durante a inscrição no site do Azure. 
+\*\* Só há suporte para contas criadas durante a inscrição no site do Azure.
 
 <a id="faq"></a>
 
@@ -134,8 +134,14 @@ O administrador de cobrança é uma pessoa que tem permissão para gerenciar a c
 Para identificar em quais contas você é um administrador de cobrança, use as seguintes etapas:
 
 1. Acesse a [página de Gerenciamento de custos + Cobrança no portal do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview).
-1. Selecione **Todos os escopos de cobrança** no painel esquerdo. 
+1. Selecione **Todos os escopos de cobrança** no painel esquerdo.
 1. A página de assinaturas lista todas as assinaturas para as quais você é um administrador de cobrança.
+
+Se você não tiver certeza de quem é o administrador da conta de uma assinatura, use as etapas a seguir para descobrir.
+
+1. Acesse a [página Assinaturas no Portal do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
+1. Selecione a assinatura que você deseja verificar e olhe as **Configurações**.
+1. Selecione **Propriedades**. O administrador da conta da assinatura será exibido na caixa **Administrador da Conta** .
 
 ### <a name="does-everything-transfer-including-resource-groups-vms-disks-and-other-running-services"></a>Tudo é transferido? Incluindo grupos de recursos, VMs, discos e outros serviços em execução?
 
@@ -201,13 +207,13 @@ Sim. Ao aceitar a solicitação de transferência, você pode selecionar uma for
 
 ### <a id="no-button"></a> Por que não vejo o botão “Transferir Assinatura”?
 
-A transferência de assinatura via autoatendimento não está disponível para sua conta de cobrança. Atualmente, não damos suporte para a transferência da propriedade de cobrança de assinaturas em contas do EA (Contrato Enterprise) no portal do Azure. Além disso, as contas de contrato de cliente da Microsoft criadas enquanto trabalham com um representante da Microsoft não dão suporte à transferência de propriedade de cobrança. 
+A transferência de assinatura via autoatendimento não está disponível para sua conta de cobrança. Atualmente, não damos suporte para a transferência da propriedade de cobrança de assinaturas em contas do EA (Contrato Enterprise) no portal do Azure. Além disso, as contas de contrato de cliente da Microsoft criadas enquanto trabalham com um representante da Microsoft não dão suporte à transferência de propriedade de cobrança.
 
-### <a id="no-button"></a> Por que o meu tipo de assinatura não é compatível com a transferência? 
+### <a id="no-button"></a> Por que o meu tipo de assinatura não é compatível com a transferência?
 
 Nem todos os tipos de assinatura são compatíveis com a transferência de propriedade de cobrança. Para exibir uma lista de tipos de assinatura que são compatíveis com transferências, confira [Tipos de assinatura compatíveis](#supported-subscription-types)
 
-### <a id="no-button"></a> Por que estou recebendo um erro de acesso negado ao tentar transferir a propriedade de cobrança de uma assinatura? 
+### <a id="no-button"></a> Por que estou recebendo um erro de acesso negado ao tentar transferir a propriedade de cobrança de uma assinatura?
 
 Você verá esse erro se estiver tentando transferir uma assinatura do Plano do Microsoft Azure e não tiver as permissões necessárias. Para transferir uma assinatura do plano do Microsoft Azure, você precisará ser um proprietário ou um colaborador na seção da fatura em que a assinatura é cobrada. Para obter mais informações, confira [Gerenciar assinaturas para a seção de fatura](billing-understand-mca-roles.md#manage-subscriptions-for-invoice-section).
 

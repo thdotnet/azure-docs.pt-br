@@ -15,12 +15,12 @@ ms.date: 02/22/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: be37768a5cef38ae0dc49e12f1d83ba8005ab961
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: e9ce71f12d50aa414579e5fc7c2961156965a337
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194183"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037517"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Funções de administrador da assinatura clássica, funções do Azure RBAC e funções de administrador do Azure AD
 
@@ -112,7 +112,7 @@ De maneira geral, as funções do Azure RBAC controlam permissões para gerencia
 | Funções do Azure RBAC | Funções de administrador do Azure AD |
 | --- | --- |
 | Gerenciar o acesso com recursos do Azure | Gerenciar o acesso a recursos do Azure Active Directory |
-| Dá suporte a funções personalizadas | Não é possível criar suas próprias funções |
+| Dá suporte a funções personalizadas | Dá suporte a funções personalizadas |
 | O escopo pode ser especificado em vários níveis (grupo de gerenciamento, assinatura, grupo de recursos e recursos) | O escopo está no nível do locatário |
 | As informações de função podem ser acessadas no portal do Azure, na CLI do Azure, no Azure PowerShell, nos modelos do Azure Resource Manager, na API REST | As informações de função podem ser acessadas no portal de administração do Azure, no portal do administrador do Microsoft 365, no Microsoft Graph, no AzureAD PowerShell |
 

@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/21/2019
-ms.openlocfilehash: fe0c16962eef38ac26490eb7928d1705ef63a217
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 6a3be3733c5041576d5db49256056ac4f0c03a7f
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68355032"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003009"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Início Rápido: Controlar um dispositivo conectado a um hub IoT (Python)
 
@@ -34,22 +34,6 @@ O início rápido usa dois aplicativos previamente escritos em Python:
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-
-Os dois exemplos de aplicativo executados neste início rápido são escritos usando Python. Atualmente, os SDKs do IoT do Microsoft Azure para Python só são compatíveis com versões específicas do Python para cada plataforma. Para obter mais informações, consulte o [Leia-me do SDK de Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
-
-Este tutorial presume que você esteja usando uma máquina de desenvolvimento do Windows. Para sistemas Windows, apenas o [Python 3.6.x](https://www.python.org/downloads/release/python-368/) é compatível. O instalador do Python que você escolher deve ser baseado na arquitetura do sistema com a qual você está trabalhando. Se a arquitetura da CPU do sistema é de 32 bits, baixe o instalador de download x86; para a arquitetura de 64 bits, baixe o instalador de x86-64. Além disso, certifique-se de que os [Pacotes Redistribuíveis do Microsoft Visual C++ para Visual Studio 2015, 2017 e 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) estão instalados para sua arquitetura (x86 ou x64).
-
-Você pode baixar o Python para outras plataformas do [Python.org](https://www.python.org/downloads/).
-
-Você pode verificar a versão atual do Python no computador de desenvolvimento usando um dos seguintes comandos:
-
-```python
-python - -version
-```
-
-```python
-python3 - -version
-```
 
 Execute o comando a seguir para adicionar a Extensão do Microsoft Azure IoT para a CLI do Azure à instância do Cloud Shell. A Extensão de IoT adiciona comandos específicos do Hub IoT, do IoT Edge e do DPS (Serviço de Provisionamento de Dispositivos) no IoT à CLI do Azure.
 
@@ -140,7 +124,7 @@ O aplicativo de dispositivo simulado se conecta a um ponto de extremidade espec�
 
 ## <a name="call-the-direct-method"></a>Chamar o método direto
 
-O aplicativo de back-end se conecta a um ponto de extremidade do lado do serviço em seu Hub IoT. O aplicativo faz chamadas de método direto para um dispositivo por meio de seu hub IoT e espera confirmações. Um aplicativo de back-end do Hub IoT normalmente é executado na nuvem.
+O aplicativo de back-end se conecta a um ponto de extremidade do lado do serviço em seu Hub IoT. O aplicativo faz chamadas de método direto para um dispositivo por meio do hub IoT e escuta as confirmações. Um aplicativo de back-end do Hub IoT normalmente é executado na nuvem.
 
 1. Em outra janela de terminal local, navegue até a pasta raiz do projeto Python de exemplo. Em seguida, navegue até a pasta **iot-hub\Quickstarts\back-end-application**.
 
@@ -160,7 +144,7 @@ O aplicativo de back-end se conecta a um ponto de extremidade do lado do serviç
     python BackEndApplication.py
     ```
 
-    A captura de tela a seguir mostra a saída à medida que o aplicativo faz uma chamada de método direto para o dispositivo e recebe uma confirmação:
+    A seguinte captura de tela mostra a saída enquanto o aplicativo faz uma chamada de método direto ao dispositivo e recebe uma confirmação:
 
     ![Executar o aplicativo de back-end](./media/quickstart-control-device-python/BackEndApplication.png)
 

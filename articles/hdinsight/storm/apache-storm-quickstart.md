@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 06/14/2019
 ms.author: hrasheed
 ms.custom: mvc
-ms.openlocfilehash: 12001aef970d3b465a7f5c8e0c7af072b8f4ec80
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 9e48cb53b55cdc4200498a54dba31ae93ca8b31a
+ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67428453"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71018554"
 ---
 # <a name="quickstart-create-and-monitor-an-apache-storm-topology-in-azure-hdinsight"></a>Início Rápido: Criar e monitorar uma topologia do Apache Storm no Azure HDInsight
 
@@ -51,7 +51,7 @@ Use as etapas a seguir para monitorar a topologia usando a interface do usuário
 
 2. Em **Resumo da Topologia**, selecione a entrada **wordcount** na coluna **Nome**. São exibidas informações sobre a topologia.
 
-    ![Painel do Storm com informações da topologia do storm-starter WordCount.](./media/apache-storm-quickstart/topology-summary.png)
+    ![Painel do Storm com informações da topologia do storm-starter WordCount.](./media/apache-storm-quickstart/hdi-topology-summary.png)
 
     A página nova fornece as seguintes informações:
 
@@ -68,7 +68,7 @@ Use as etapas a seguir para monitorar a topologia usando a interface do usuário
 
 3. Nessa página, selecione uma entrada da seção **Spouts** ou **Bolts**. São exibidas informações sobre o componente selecionado.
 
-    ![Painel do Storm com informações sobre os componentes selecionados.](./media/apache-storm-quickstart/component-summary.png)
+    ![Painel do Storm com informações sobre os componentes selecionados.](./media/apache-storm-quickstart/hdi-component-summary.png)
 
     A página nova exibe as seguintes informações:
 

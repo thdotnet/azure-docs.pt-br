@@ -4,15 +4,16 @@ description: Neste início rápido, você aprenderá a criar um cluster Apache K
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/12/2019
-ms.openlocfilehash: 9fa6ad3c52e9b01fe9a62a2de52f62b1b1a95aa8
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: e0a2eecaa4b2f03fa12353854e75b9fda097675d
+ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68779519"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70960311"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-azure-portal"></a>Início Rápido: Criar cluster do Apache Kafka no Azure HDInsight usando o portal do Azure
 
@@ -38,7 +39,7 @@ Para criar um Apache Kafka no cluster do HDInsight, use as seguintes etapas:
 
 2. No menu esquerdo, navegue até **+ Criar um recurso** > **Análise** > **HDInsight**.
    
-    ![Criar um cluster HDInsight](./media/apache-kafka-get-started/create-hdinsight.png)
+    ![Criar um cluster HDInsight](./media/apache-kafka-get-started/create-hdinsight-cluster.png)
 
 3. Em **Básico**, insira ou selecione as seguintes informações:
 
@@ -49,7 +50,7 @@ Para criar um Apache Kafka no cluster do HDInsight, use as seguintes etapas:
     
    Selecione __Tipo de Cluster__ para exibir a **Configuração de Cluster**.
    
-   ![Cluster Apache Kafka na configuração básica do HDInsight](./media/apache-kafka-get-started/custom-basics-kafka.png)
+   ![Cluster Apache Kafka na configuração básica do HDInsight](./media/apache-kafka-get-started/custom-basics-kafka1.png)
 
 4. Em __Configuração do cluster__, selecione os seguintes valores:
 
@@ -60,7 +61,7 @@ Para criar um Apache Kafka no cluster do HDInsight, use as seguintes etapas:
 
     Selecione **Selecionar** para salvar as configurações do tipo de cluster e retornar para __Básico__.
 
-    ![Selecione o tipo de cluster](./media/apache-kafka-get-started/kafka-cluster-type.png)
+    ![Selecione o tipo de cluster](./media/apache-kafka-get-started/apache-kafka-cluster-type.png)
 
 5. Em __Básico__, insira ou selecione as seguintes informações:
 
@@ -98,7 +99,7 @@ Para criar um Apache Kafka no cluster do HDInsight, use as seguintes etapas:
 
     A entrada **discos por nó de trabalho** configura a escalabilidade do Apache Kafka no HDInsight. O Apache Kafka no HDInsight usa o disco local das máquinas virtuais no cluster para armazenar dados. Como o Apache Kafka tem E/S bastante pesadas, os [Azure Managed Disks](../../virtual-machines/windows/managed-disks-overview.md) são usados para fornecer alta taxa de transferência e mais armazenamento por nó. O tipo de disco gerenciado pode ser __Standard__ (HDD) ou __Premium__ (SSD). O tipo de disco depende do tamanho da VM usado pelos nós de trabalho (agentes do Apache Kafka). Os discos Premium são usados automaticamente com VMs das séries DS e GS. Todos os outros tipos VM usam o padrão.
 
-   ![Definir o tamanho do cluster Apache Kafka](./media/apache-kafka-get-started/kafka-cluster-size.png)
+   ![Definir o tamanho do cluster Apache Kafka](./media/apache-kafka-get-started/apace-kafka-cluster-size.png)
 
 10. Em __Configurações avançadas__, selecione __Avançar__ para continuar com as configurações padrão.
 

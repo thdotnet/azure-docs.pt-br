@@ -4,16 +4,17 @@ description: Uma introdução ao HDInsight e aos componentes e a pilha de tecnol
 keywords: hadoop do azure, azure hadoop, introdução ao hadoop, pilha de tecnologia do hadoop, introdução hadoop, hadoop e introdução, o que é um cluster hadoop, o que é o cluster hadoop, para que serve o hadoop
 author: hrasheed-msft
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: overview
 ms.date: 08/15/2019
-ms.openlocfilehash: 16845e5891117cc01bef5fae28cf4b36c0508651
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 193b8f59a805de4303bfc38d397a821cc068dcc0
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899553"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71088193"
 ---
 # <a name="what-is-apache-hadoop-in-azure-hdinsight"></a>O que é o Apache Hadoop no Azure HDInsight?
 
@@ -30,6 +31,10 @@ O MapReduce do Apache Hadoop é uma estrutura de software para gravar trabalhos 
 * **Mapeador**: Consome dados de entrada, analisa-os (normalmente com operações de classificação e filtro) e emite tuplas (pares chave-valor)
 
 * **Redutor**: Consome tuplas emitidas pelo Mapeador e executa uma operação de resumo que cria um resultado menor e combinado dos dados do Mapeador
+
+Um exemplo básico de trabalho de contagem de palavras do MapReduce está ilustrado no diagrama abaixo:   
+
+ ![HDI.WordCountDiagram](./media/apache-hadoop-introduction/hdi-word-count-diagram.gif)
 
 A saída deste trabalho é uma contagem de quantas vezes cada palavra ocorreu no texto.
 
@@ -55,5 +60,3 @@ Para ver exemplos do uso de streaming do Hadoop com o HDInsight, confira os segu
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Criar cluster do Apache Hadoop no HDInsight](apache-hadoop-linux-create-cluster-get-started-portal.md)
-
-[image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif

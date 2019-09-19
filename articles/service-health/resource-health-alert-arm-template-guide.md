@@ -6,12 +6,12 @@ ms.author: stbaron
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 9/4/2018
-ms.openlocfilehash: e552b90a4c98eff7b04cbeaef26aa10749ce672c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ccd84042d11b586d524d4eb76eba03111e0b3c5
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66493409"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71099004"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Configurar alertas de integridade de recursos do Azure usando modelos do Resource Manager
 
@@ -20,7 +20,7 @@ Este artigo mostrará como criar, programaticamente, Alertas de Log de Atividade
 O Azure Resource Health mantém você informado sobre o status de integridade atual e histórico de seus recursos do Azure. Os alertas do Azure Resource Health podem notificar você quase em tempo real quando esses recursos tiverem uma alteração no seu status de integridade. Criar alertas do Resource Health por meio de programação permite que usuários criem e personalizem alertas em massa.
 
 > [!NOTE]
-> Alertas de integridade do recurso estão atualmente em visualização.
+> Resource Health alertas estão atualmente em versão prévia.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -28,7 +28,7 @@ O Azure Resource Health mantém você informado sobre o status de integridade at
 
 Para seguir as instruções nesta página, você precisará configurar algumas coisas antecipadamente:
 
-1. Você precisa instalar o [módulo PowerShell do Azure](https://docs.microsoft.com/powershell/azure/install-Az-ps)
+1. Você precisa instalar o [módulo Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. Você precisará [criar ou reutilizar um Grupo de Ações](../azure-monitor/platform/action-groups.md) configurado para notificar você
 
 ## <a name="instructions"></a>Instruções
@@ -76,7 +76,7 @@ Para seguir as instruções nesta página, você precisará configurar algumas c
 
 Observe que, se estiver planejando automatizar totalmente esse processo, você simplesmente precisará editar o modelo do Resource Manager para não solicitar os valores na etapa 5.
 
-## <a name="resource-manager-template-options-for-resource-health-alerts"></a>Opções de modelo do Resource Manager para alertas de integridade do recurso
+## <a name="resource-manager-template-options-for-resource-health-alerts"></a>Opções de modelo do Resource Manager para alertas de Resource Health
 
 Você pode usar esse modelo de base como ponto de partida para a criação de alertas do Resource Health. Esse modelo funcionará como escrito e se você se inscreverá para receber alertas para todos os eventos de integridade de recursos recentemente ativados em todos os recursos em uma assinatura.
 
@@ -286,11 +286,11 @@ No entanto, quando um recurso relata "Desconhecido", é provável que o status d
 
 Neste exemplo, estamos apenas notificando os eventos em que o status de integridade atual e anterior não tem "Desconhecido". Essa alteração poderá ser uma adição útil se os alertas forem enviados diretamente ao seu celular ou email. 
 
-Observe que é possível que as propriedades currentHealthStatus e previousHealthStatus para ser nulo em alguns eventos. Por exemplo, quando um evento Updated ocorre é provável que o status de integridade do recurso não foi alterado desde o último relatório, só essas informações adicionais do evento estão disponíveis (por exemplo, causar). Portanto, usando a cláusula acima pode resultar em alguns alertas que não seja disparadas, porque os valores de properties.currentHealthStatus e properties.previousHealthStatus serão definidos como null.
+Observe que é possível que as propriedades currentHealthStatus e previousHealthStatus sejam nulas em alguns eventos. Por exemplo, quando um evento atualizado ocorre, é provável que o status de integridade do recurso não tenha sido alterado desde o último relatório, apenas que informações adicionais do evento estejam disponíveis (por exemplo, causa). Portanto, usar a cláusula acima pode resultar em alguns alertas não sendo disparados, pois os valores de Properties. currentHealthStatus e Properties. previousHealthStatus serão definidos como NULL.
 
 ### <a name="adjusting-the-alert-to-avoid-user-initiated-events"></a>Ajustar o alerta para evitar eventos iniciados pelo usuário
 
-Os eventos do Resource Health podem ser disparados pela plataforma iniciada e eventos iniciados pelo usuário. Pode fazer sentido enviar apenas uma notificação quando o evento de integridade for causado pela plataforma do Azure.
+Resource Health eventos podem ser disparados por eventos iniciados pela plataforma e pelo usuário. Pode fazer sentido enviar apenas uma notificação quando o evento de integridade for causado pela plataforma do Azure.
 
 É fácil configurar o alerta para filtrar apenas esses tipos de eventos:
 
@@ -306,11 +306,11 @@ Os eventos do Resource Health podem ser disparados pela plataforma iniciada e ev
     ]
 }
 ```
-Observe que é possível que o campo causa seja nula em alguns eventos. Ou seja, uma transição de integridade ocorre (por exemplo, está disponível como indisponível) e o evento é registrado imediatamente evitar a notificação atrasa. Portanto, usando a cláusula acima pode resultar em um alerta não está sendo disparado, porque o valor da propriedade properties.clause será definido como null.
+Observe que é possível que o campo de causa seja nulo em alguns eventos. Ou seja, ocorre uma transição de integridade (por exemplo, disponível para indisponível) e o evento é registrado imediatamente para evitar atrasos de notificação. Portanto, o uso da cláusula acima pode resultar em um alerta não ser disparado, pois o valor da Propriedade Properties. cláusula será definido como NULL.
 
-## <a name="complete-resource-health-alert-template"></a>Modelo de alerta de integridade de recurso completo
+## <a name="complete-resource-health-alert-template"></a>Concluir Resource Health modelo de alerta
 
-Usando os ajustes diferentes descritos na seção anterior, eis uma amostra de modelo que está configurada para maximizar o sinal para a taxa de ruído. Tenha em mente as advertências observadas acima no qual o currentHealthStatus, previousHealthStatus e valores de propriedade causa podem ser nulos em alguns eventos.
+Usando os diferentes ajustes descritos na seção anterior, aqui está um modelo de exemplo que é configurado para maximizar o sinal para a taxa de ruído. Tenha em mente as advertências indicadas acima em que os valores de propriedade currentHealthStatus, previousHealthStatus e causa podem ser nulos em alguns eventos.
 
 ```json
 {
@@ -445,4 +445,4 @@ Saiba mais sobre o Resource Health:
 
 Criar alertas de Integridade do Serviço:
 -  [Configurar alertas para a Integridade do Serviço](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 
--  [Esquema de evento do Log de atividades do Azure](../azure-monitor/platform/activity-log-schema.md)
+-  [Esquema de evento do log de atividades do Azure](../azure-monitor/platform/activity-log-schema.md)

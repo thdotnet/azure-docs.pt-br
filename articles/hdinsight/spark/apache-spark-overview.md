@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,mvc
 ms.topic: overview
 ms.date: 05/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: 284c9bb1b9032d2f9caf0ce62c45ffa7cd8bf9d4
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: e325618ed1cdec6149ac31771c8bd67ecea7d559
+ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476845"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70993832"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>O que é o Apache Spark no Azure HDInsight
 
@@ -25,7 +25,7 @@ O Apache Spark é uma estrutura de processamento paralelo que dá suporte ao pro
 
 O Spark oferece primitivos para computação de cluster na memória. Um trabalho do Spark pode carregar e armazenar dados em cache na memória e consultá-los várias vezes. A computação na memória é muito mais rápida do que aplicativos baseados em disco, como o Hadoop, que compartilha dados por meio do HDFS (Sistema de Arquivos Distribuído do Hadoop). O Spark também se integra à linguagem de programação Scala para permitir a manipulação de conjuntos de dados distribuídos como coleções locais. Não é necessário para estruturar tudo como operações de mapeamento e redução.
 
-![MapReduce tradicional X Spark](./media/apache-spark-overview/mapreduce-vs-spark.png)
+![MapReduce tradicional X Spark](./media/apache-spark-overview/map-reduce-vs-spark1.png)
 
 Os clusters Spark no HDInsight oferecem um serviço Spark totalmente gerenciado. Os benefícios da criação de um cluster Spark no HDInsight estão relacionados aqui.
 
@@ -57,7 +57,7 @@ Os clusters Spark no HDInsight também fornecem um [driver ODBC](https://go.micr
 
 ## <a name="spark-cluster-architecture"></a>Arquitetura do cluster Spark
 
-![A arquitetura do HDInsight Spark](./media/apache-spark-overview/spark-architecture.png)
+![A arquitetura do HDInsight Spark](./media/apache-spark-overview/hdi-spark-architecture.png)
 
 É fácil de entender os componentes do Spark entendendo como o Spark funciona nos clusters HDInsight.
 
