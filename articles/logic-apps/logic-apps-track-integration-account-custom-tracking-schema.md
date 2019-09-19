@@ -60,14 +60,14 @@ Este artigo fornece código personalizado que você pode usar nas camadas fora d
 | --- | --- | --- | --- |
 | sourceType | Sim |   | O tipo da fonte de execução. Os valores permitidos são **Microsoft.Logic/workflows** e **personalizado**. |
 | source | Sim |   | Se o tipo de fonte for **Microsoft.Logic/workflows**, as informações de origem precisarão seguir este esquema. Se o tipo de origem for **personalizado**, o esquema será um JToken. |
-| systemId | Sim | Cadeia de caracteres | ID do sistema de aplicativo lógico. |
-| runId | Sim | Cadeia de caracteres | ID de execução do aplicativo lógico. |
-| operationName | Sim | Cadeia de caracteres | O nome da operação (por exemplo, ação ou gatilho). |
-| repeatItemScopeName | Sim | Cadeia de caracteres | Repita o nome do item se a ação estiver dentro de um loop `foreach`/`until`. |
-| repeatItemIndex | Sim | Número inteiro | Se a ação está ou não dentro de um loop `foreach`/`until`. Indica o índice de itens repetidos. |
-| trackingId | Não | Cadeia de caracteres | A ID de acompanhamento para correlacionar as mensagens. |
-| correlationId | Não | Cadeia de caracteres | A ID de correlação para correlacionar as mensagens. |
-| clientRequestId | Não | Cadeia de caracteres | O cliente pode populá-la para correlacionar mensagens. |
+| systemId | Sim | String | ID do sistema de aplicativo lógico. |
+| runId | Sim | String | ID de execução do aplicativo lógico. |
+| operationName | Sim | String | O nome da operação (por exemplo, ação ou gatilho). |
+| repeatItemScopeName | Sim | String | Repita o nome do item se a ação estiver dentro de um loop `foreach`/`until`. |
+| repeatItemIndex | Sim | Integer | Se a ação está ou não dentro de um loop `foreach`/`until`. Indica o índice de itens repetidos. |
+| trackingId | Não | String | A ID de acompanhamento para correlacionar as mensagens. |
+| correlationId | Não | String | A ID de correlação para correlacionar as mensagens. |
+| clientRequestId | Não | String | O cliente pode populá-la para correlacionar mensagens. |
 | eventLevel | Sim |   | Nível do evento. |
 | eventTime | Sim |   | A hora do evento no formato UTC AAAA-MM-DDTHH:MM:SS.00000Z. |
 | recordType | Sim |   | Tipo do registro de acompanhamento. O valor permitido é **personalizado**. |
