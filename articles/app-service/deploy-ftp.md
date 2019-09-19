@@ -11,16 +11,16 @@ ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/30/2018
+ms.date: 09/18/2019
 ms.author: cephalin
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: f239fb4464d2e7f67b91a2d18c21b089ffd52b27
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 6e8a6820b3cf3031f11ab04d9baf4a7888491c81
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70070494"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098045"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Implantar seu aplicativo no Serviço de Aplicativo do Azure usando FTP/S
 
@@ -72,9 +72,9 @@ No painel FTP, clique em **Copiar** para copiar o ponto de extremidade de FTPS e
 
 Para maior segurança, você deve permitir somente FTP por SSL. Você também pode desabilitar FTP e FTPS se não usa a implantação de FTP.
 
-Na página de recursos do seu aplicativo no [Portal do Azure](https://portal.azure.com), selecione **Configurações do aplicativo** no painel de navegação à esquerda.
+Na página de recursos do aplicativo no [portal do Azure](https://portal.azure.com), selecione**configurações gerais** de **configuração** > no painel de navegação esquerdo.
 
-Para desabilitar o FTP não criptografado, selecione **Somente FTPS**. Para desabilitar completamente o FTP e o FTPS, selecione **Desabilitar**. Ao terminar, clique em **Salvar**. Se usando **apenas FTPS** você deve impor o TLS 1.2 ou superior, navegando até a folha **Configurações de SSL** do seu aplicativo web. Não há suporte para TLS 1.0 e 1.1 com **FTPS Apenas**.
+Para desabilitar o FTP não criptografado, selecione **FTPS somente** no **estado do FTP**. Para desabilitar totalmente o FTP e a FTPS, selecione **desabilitado**. Ao terminar, clique em **Salvar**. Se estiver usando **apenas FTPS**, você deve impor o TLS 1,2 ou superior navegando até a folha **configurações de TLS/SSL** do seu aplicativo Web. Não há suporte para TLS 1.0 e 1.1 com **FTPS Apenas**.
 
 ![Desabilitar FTP/S](./media/app-service-deploy-ftp/disable-ftp.png)
 

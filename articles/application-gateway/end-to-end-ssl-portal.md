@@ -1,6 +1,6 @@
 ---
-title: Guia de início rápido - configurar a criptografia de SSL de ponta a ponta no Gateway de aplicativo do Azure - portal do Azure | Microsoft Docs
-description: Saiba como usar o portal do Azure para criar um Gateway de aplicativo do Azure com criptografia SSL de ponta a ponta.
+title: Início rápido-configurar a criptografia SSL de ponta a ponta com Aplicativo Azure gateway-portal do Azure | Microsoft Docs
+description: Saiba como usar o portal do Azure para criar um gateway de Aplicativo Azure com criptografia SSL de ponta a ponta.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -8,100 +8,112 @@ ms.topic: article
 ms.date: 4/30/2019
 ms.author: absha
 ms.custom: mvc
-ms.openlocfilehash: bd165f81b45e3ae0c121fb8876ed88e68d493195
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a37b313bd808ee0441d84ac92050b087eba7ac9d
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64946790"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097152"
 ---
-# <a name="configure-end-to-end-ssl-by-using-application-gateway-with-the-portal"></a>Configurar o SSL de ponta a ponta usando o Gateway de aplicativo com o portal
+# <a name="configure-end-to-end-ssl-by-using-application-gateway-with-the-portal"></a>Configurar o SSL de ponta a ponta usando o gateway de aplicativo com o portal
 
-Este artigo mostra como usar o portal do Azure para configurar a criptografia de SSL de ponta a ponta com um gateway de aplicativo v1 SKU.  
+Este artigo mostra como usar o portal do Azure para configurar a criptografia SSL de ponta a ponta com um SKU do gateway de aplicativo v1.  
 
 > [!NOTE]
-> SKU do Gateway de aplicativo v2 requer certificados raiz confiáveis para habilitar configuração de ponta a ponta. Suporte do portal para adicionar certificados raiz confiáveis ainda não está disponível. Portanto, no caso de v2 SKU vê [configurar o SSL de ponta a ponta usando o PowerShell](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell).
+> O SKU do gateway de aplicativo v2 requer certificados raiz confiáveis para habilitar a configuração de ponta a ponta.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Para configurar o SSL de ponta a ponta com um gateway de aplicativo, um certificado é necessário para o gateway e são necessários certificados para os servidores de back-end. O certificado de gateway é usado para derivar uma chave simétrica conforme a especificação do protocolo SSL. A chave simétrica, em seguida, é usada para criptografar e descriptografar o tráfego enviado para o gateway. Para criptografia SSL de ponta a ponta, o back-end deve estar na lista de permissões do gateway de aplicativo. Para fazer isso, carregue o certificado público dos servidores back-end, também conhecidos como certificados de autenticação, para o gateway de aplicativo. Adicionar o certificado garante que o gateway de aplicativo se comunique somente com instâncias de back-end conhecidas. Isso protege ainda mais a comunicação de ponta a ponta.
+Para configurar o SSL de ponta a ponta com um gateway de aplicativo, um certificado é necessário para o gateway e os certificados são necessários para os servidores back-end. O certificado de gateway é usado para derivar uma chave simétrica conforme a especificação do protocolo SSL. A chave simétrica é usada para criptografar e descriptografar o tráfego enviado para o gateway. Para a criptografia SSL de ponta a ponta, os servidores back-end corretos devem ser permitidos no gateway de aplicativo. Para fazer isso, carregue o certificado público dos servidores back-end, também conhecidos como certificados de autenticação (v1) ou certificados raiz confiáveis (v2), para o gateway de aplicativo. A adição do certificado garante que o gateway de aplicativo se comunique somente com instâncias de back-end conhecidas. Isso protege ainda mais a comunicação de ponta a ponta.
 
-Para obter mais informações, consulte [SSL o SSL de ponta a ponta e de término](https://docs.microsoft.com/azure/application-gateway/ssl-overview).
+Para saber mais, confira [terminação SSL e SSL de ponta a ponta](https://docs.microsoft.com/azure/application-gateway/ssl-overview).
 
-## <a name="create-a-new-application-gateway-with-end-to-end-ssl"></a>Criar um novo gateway de aplicativo com SSL de ponta a ponta
+## <a name="create-a-new-application-gateway-with-end-to-end-ssl"></a>Criar um novo gateway de aplicativo com o SSL de ponta a ponta
 
-Para criar um novo gateway de aplicativo com a criptografia SSL de ponta a ponta, você precisará primeiro habilitar terminação SSL ao criar um novo gateway de aplicativo. Isso habilitará a criptografia SSL para a comunicação entre o gateway de aplicativo do cliente. Em seguida, você precisará lista branca certificados para servidores de back-end nas configurações de HTTP para habilitar a criptografia SSL para a comunicação entre os gateway e o back-end de servidores de aplicativos, realizar a criptografia SSL de ponta a ponta.
+Para criar um novo gateway de aplicativo com criptografia SSL de ponta a ponta, primeiro você precisará habilitar o encerramento de SSL ao criar um novo gateway de aplicativo. Isso habilitará a criptografia SSL para a comunicação entre o cliente e o gateway de aplicativo. Em seguida, você precisará colocar os certificados na lista de permissões para servidores de back-end nas configurações de HTTP para habilitar a criptografia SSL para a comunicação entre o gateway de aplicativo e os servidores de back-end, realizando a criptografia SSL de ponta a ponta.
 
-### <a name="enable-ssl-termination-while-creating-a-new-application-gateway"></a>Habilite a terminação SSL ao criar um novo gateway de aplicativo
+### <a name="enable-ssl-termination-while-creating-a-new-application-gateway"></a>Habilitar terminação SSL ao criar um novo gateway de aplicativo
 
-Consulte este artigo para entender como [habilitar terminação SSL ao criar um novo gateway de aplicativo](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal).
+Consulte este artigo para entender como habilitar o [encerramento de SSL ao criar um novo gateway de aplicativo](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal).
 
-### <a name="whitelist-certificates-for-backend-servers"></a>Lista branca certificados para servidores de back-end
+### <a name="add-authenticationroot-certificate-of-back-end-servers"></a>Adicionar certificado de autenticação/raiz de servidores back-end
 
 1. Selecione **Todos os recursos** e, em seguida, **myAppGateway**.
 
-2. Selecione **configurações de HTTP** no menu à esquerda. Azure criou automaticamente uma configuração de HTTP padrão, **appGatewayBackendHttpSettings**, quando você criou o gateway de aplicativo. 
+2. Selecione **configurações de http** no menu à esquerda. O Azure criou automaticamente uma configuração HTTP padrão, **appgatewaybackendhttp**, quando você criou o gateway de aplicativo. 
 
-3. Selecione **appGatewayBackendHttpSettings**.
+3. Selecione **appgatewaybackendhttp**.
 
-4. Sob **protocolo**, selecione **HTTPS**. Um painel para **certificados de autenticação de back-end** será exibida. 
+4. Em **protocolo**, selecione **https**. Um painel para **certificados de autenticação de back-end ou certificados raiz confiáveis** será exibido. 
 
-5. Sob **certificados de autenticação de back-end**, escolha **criar novo**.
+5. Escolha **criar novo**.
 
-6. Insira adequado **nome**.
+6. Insira um **nome**adequado.
 
-7. Carregue o certificado usando o **certificado CER carregue** caixa.![ addcert](./media/end-to-end-ssl-portal/addcert.png)
+7. Selecione o arquivo de certificado usando a caixa **carregar certificado cer** .
 
-   > [!NOTE]
-   > O certificado fornecido nesta etapa deve ser a chave pública do certificado .pfx presente no back-end. Exporte o certificado (não o certificado raiz) instalado no servidor de back-end no formato CER (Claim, Evidence and Reasoning) e use-o nesta etapa. Esta etapa coloca o back-end na lista de permissões do gateway de aplicativo.
+   Para gateways de aplicativo Standard e WAF (v1), você deve carregar a chave pública do seu certificado de servidor de back-end no formato. cer.
+
+   ![addcert](./media/end-to-end-ssl-portal/addcert.png)
+
+   Para gateways de aplicativo Standard_v2 e WAF_v2, você deve carregar o **certificado raiz** do certificado do servidor de back-end no formato. cer. Se o certificado de back-end for emitido por uma autoridade de certificação conhecida, você poderá marcar a caixa "usar certificado de autoridade de certificação conhecido" e não será necessário carregar um certificado.
+
+   ![addtrustedrootcert](./media/end-to-end-ssl-portal/trustedrootcert-portal.png)
+
+   ![rootcert](./media/end-to-end-ssl-portal/trustedrootcert.png)
 
 8. Clique em **Salvar**.
 
 ## <a name="enable-end-to-end-ssl-for-existing-application-gateway"></a>Habilitar o SSL de ponta a ponta para o gateway de aplicativo existente
 
-Para configurar um gateway de aplicativo existente com a criptografia SSL de ponta a ponta, você precisará primeiro terminação de SSL habilitar no ouvinte. Isso habilitará a criptografia SSL para a comunicação entre o gateway de aplicativo do cliente. Em seguida, você precisará lista branca certificados para servidores de back-end nas configurações de HTTP para habilitar a criptografia SSL para a comunicação entre os gateway e o back-end de servidores de aplicativos, realizar a criptografia SSL de ponta a ponta.
+Para configurar um gateway de aplicativo existente com a criptografia SSL de ponta a ponta, você precisará primeiro habilitar a terminação SSL no ouvinte. Isso habilitará a criptografia SSL para a comunicação entre o cliente e o gateway de aplicativo. Em seguida, você precisará colocar os certificados na lista de permissões para servidores de back-end nas configurações de HTTP para habilitar a criptografia SSL para a comunicação entre o gateway de aplicativo e os servidores de back-end, realizando a criptografia SSL de ponta a ponta.
 
-Você precisará usar um ouvinte com o protocolo HTTPS e certificado para habilitar a terminação SSL. Você não pode alterar o protocolo de um ouvinte existente. Portanto, você pode optar por usar um ouvinte existente com o certificado e o protocolo HTTPS, ou crie um novo ouvinte. Caso escolha a primeira opção, você pode ignorar o mencionadas abaixo as etapas para **terminação de habilitar o SSL no gateway de aplicativo existente** e passar diretamente para **lista branca certificados para servidores de back-end** seção. Se você escolher a última opção, use estas etapas.
+Você precisará usar um ouvinte com protocolo HTTPS e certificado para habilitar a terminação SSL. Portanto, você pode optar por usar um ouvinte existente com o protocolo HTTPS e o certificado, ou criar um novo ouvinte. No caso de escolher o primeiro, você pode ignorar as etapas mencionadas abaixo para **habilitar o encerramento de SSL no gateway de aplicativo existente** e mover diretamente para a seção **Adicionar autenticação/certificados raiz confiáveis para servidores de back-end** . Se você escolher o último, use estas etapas.
 
-### <a name="enable-ssl-termination-in-existing-application-gateway"></a>Habilite a terminação SSL no gateway de aplicativo existente
+### <a name="enable-ssl-termination-in-existing-application-gateway"></a>Habilitar terminação SSL no gateway de aplicativo existente
 
 1. Selecione **Todos os recursos** e, em seguida, **myAppGateway**.
 
 2. Selecione **ouvintes** no menu à esquerda.
 
-3. Escolher entre **básicas** e **multissite** ouvinte de acordo com suas necessidades.
+3. Escolha entre o ouvinte **básico** e **multissite** de acordo com seu requisito.
 
-4. Sob **protocolo**, selecione **HTTPS**. Um painel para **certificado** será exibida.
+4. Em **protocolo**, selecione **https**. Um painel para o **certificado** será exibido.
 
-5. Carregue o certificado PFX que você pretende usar para a terminação SSL entre o gateway de aplicativo do cliente.
+5. Carregue o certificado PFX que você pretende usar para terminação SSL entre o cliente e o gateway de aplicativo.
 
    > [!NOTE]
-   > Para fins de teste, você pode usar um certificado autoassinado. Você não deve usar um certificado autoassinado para cargas de trabalho de produção. Saiba como [criar um certificado autoassinado](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal#create-a-self-signed-certificate).
+   > Para fins de teste, você pode usar um certificado autoassinado. Mas não é recomendável para cargas de trabalho de produção, pois elas são mais difíceis de gerenciar e não são totalmente seguras. Saiba como [criar um certificado autoassinado](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal#create-a-self-signed-certificate).
 
-6. Adicionar outras configurações necessárias para o **ouvinte** , de acordo com suas necessidades.
+6. Adicione outras configurações necessárias para o **ouvinte** de acordo com seu requisito.
 
 7. Selecione **OK** para salvar.
 
-### <a name="whitelist-certificates-for-backend-servers"></a>Lista branca certificados para servidores de back-end
+### <a name="add-authenticationtrusted-root-certificates-of-back-end-servers"></a>Adicionar autenticação/certificados raiz confiáveis de servidores back-end
 
 1. Selecione **Todos os recursos** e, em seguida, **myAppGateway**.
 
-2. Selecione **configurações de HTTP** no menu à esquerda. Você pode colocar certificados em um HTTP de back-end existente definindo ou criar uma nova configuração de HTTP. No abaixo da etapa, faremos um certificado da lista de permissões para a configuração de HTTP padrão, **appGatewayBackendHttpSettings**.
+2. Selecione **configurações de http** no menu à esquerda. Você pode criar certificados de lista de permissões em uma configuração de HTTP de back-end existente ou uma nova configuração de HTTP. Na etapa abaixo, vamos colocar o certificado na lista de permissões para a configuração HTTP padrão, **appgatewaybackendhttp**.
 
-3. Selecione **appGatewayBackendHttpSettings**.
+3. Selecione **appgatewaybackendhttp**.
 
-4. Sob **protocolo**, selecione **HTTPS**. Um painel para **certificados de autenticação de back-end** será exibida. 
+4. Em **protocolo**, selecione **https**. Um painel para **certificados de autenticação de back-end ou certificados raiz confiáveis** será exibido. 
 
-5. Sob **certificados de autenticação de back-end**, escolha **criar novo**.
+5. Escolha **criar novo**.
 
-6. Insira adequado **nome**.
+6. Insira um **nome**adequado.
 
-7. Carregue o certificado usando o **certificado CER carregue** caixa.![ addcert](./media/end-to-end-ssl-portal/addcert.png)
+7. Selecione o arquivo de certificado usando a caixa **carregar certificado cer** .
 
-   > [!NOTE]
-   > O certificado fornecido nesta etapa deve ser a chave pública do certificado .pfx presente no back-end. Exporte o certificado (não o certificado raiz) instalado no servidor de back-end no formato CER (Claim, Evidence and Reasoning) e use-o nesta etapa. Esta etapa coloca o back-end na lista de permissões do gateway de aplicativo.
+   Para gateways de aplicativo Standard e WAF (v1), você deve carregar a chave pública do seu certificado de servidor de back-end no formato. cer.
+
+   ![addcert](./media/end-to-end-ssl-portal/addcert.png)
+
+   Para gateways de aplicativo Standard_v2 e WAF_v2, você deve carregar o **certificado raiz** do certificado do servidor de back-end no formato. cer. Se o certificado de back-end for emitido por uma autoridade de certificação conhecida, você poderá marcar a caixa "usar certificado de autoridade de certificação conhecido" e não será necessário carregar um certificado.
+
+   ![addtrustedrootcert](./media/end-to-end-ssl-portal/trustedrootcert-portal.png)
 
 8. Clique em **Salvar**.
 

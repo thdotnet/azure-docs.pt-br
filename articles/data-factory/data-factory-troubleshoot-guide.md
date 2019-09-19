@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 45aa1354f6009d5eccd48f85f993bae8949139e3
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
-ms.translationtype: HT
+ms.openlocfilehash: ed466b072a771c3aa288a96fa4a0037c31b875f9
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058968"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091987"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Solucionar problemas Azure Data Factory
 
@@ -289,10 +289,102 @@ A tabela a seguir se aplica ao U-SQL.
 
 - **Mensagem**:`Azure function activity missing LinkedService definition in JSON.`
 
-- **Causa**: A definição de atividade da função do Azure não está completa.
+- **Causa**: A definição de atividade da função do Azure pode não estar concluída.
 
 - **Recomendação**: Verifique se a definição de JSON da atividade AzureFunction de entrada tem detalhes do serviço vinculado.
 
+
+## <a name="azure-machine-learning"></a>Azure Machine Learning
+
+
+### <a name="error-code--4101"></a>Código de erro:  4101
+
+- **Mensagem**:`AzureMLExecutePipeline activity '%activityName;' has invalid value for property '%propertyName;'.`
+
+- **Causa**: Formato inadequado ou definição ausente de uma propriedade.
+
+- **Recomendação**:  Verifique se a atividade está definida com os dados corretos.
+
+
+### <a name="error-code--4110"></a>Código de erro:  4110
+
+- **Mensagem**: A atividade AzureMLExecutePipeline não tem a definição de LinkedService em JSON.
+
+- **Causa**: A definição da atividade AzureMLExecutePipeline não está completa.
+
+- **Recomendação**:  Verifique se a definição de JSON da atividade AzureMLExecutePipeline de entrada tem detalhes do serviço vinculado.
+
+
+### <a name="error-code--4111"></a>Código de erro:  4111
+
+- **Mensagem**:`AzureMLExecutePipeline activity has wrong LinkedService type in JSON. Expected LinkedService type: '%expectedLinkedServiceType;', current LinkedService type: Expected LinkedService type: '%currentLinkedServiceType;'.`
+
+- **Causa**: Definição de atividade incorreta.
+
+- **Recomendação**:  Verifique se a definição de JSON de atividade AzureMLExecutePipeline de entrada tem detalhes de serviço vinculado corretos.
+
+
+### <a name="error-code--4112"></a>Código de erro:  4112
+
+- **Mensagem**:`AzureMLService linked service has invalid value for property '%propertyName;'.`
+
+- **Causa**: Formato inadequado ou definição ausente de uma propriedade.
+
+- **Recomendação**:  Verifique se a definição de serviço vinculado tem dados corretos.
+
+
+### <a name="error-code--4121"></a>Código de erro:  4121
+
+- **Mensagem**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Causa**: A credencial usada para acessar o serviço do Azure ML expirou.
+
+- **Recomendação**:  Verifique se a credencial é válida e tente novamente
+
+
+### <a name="error-code--4122"></a>Código de erro:  4122
+
+- **Mensagem**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Causa**: A credencial fornecida no serviço vinculado do serviço AzureML é inválida ou não tem permissão para a operação.
+
+- **Recomendação**:  Verifique se a credencial no serviço vinculado é válida e tem permissão para acessar o serviço do AzureML.
+
+
+### <a name="error-code--4123"></a>Código de erro:  4123
+
+- **Mensagem**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Causa**:`Properties of the activity such as pipelineParamters are invalid for the Azure ML pipeline.`
+
+- **Recomendação**:  Verifique o valor das propriedades da atividade para corresponder à carga esperada do pipeline do Azure ML publicado especificado no serviço vinculado.
+
+
+### <a name="error-code--4124"></a>Código de erro:  4124
+
+- **Mensagem**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Causa**: O ponto de extremidade de pipeline do Azure ML publicado não existe.
+
+- **Recomendação**:  Verifique se o ponto de extremidade do pipeline do Azure ML publicado especificado no serviço vinculado existe no serviço do Azure ML.
+
+
+### <a name="error-code--4125"></a>Código de erro:  4125
+
+- **Mensagem**:`Request sent to AzureML Service for operation '%operation;' failed with http status code '%statusCode;'. Error message from AzureML Service: '%externalMessage;'.`
+
+- **Causa**: Erro de servidor no serviço do Azure ML.
+
+- **Recomendação**:  Tente novamente mais tarde. Contate a equipe de serviço do Azure ML para obter ajuda se o problema permanecer.
+
+
+### <a name="error-code--4126"></a>Código de erro:  4126
+
+- **Mensagem**:`AzureML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in AzureMLService for more error loggings.`
+
+- **Causa**: Falha na execução do pipeline do AzureML.
+
+- **Recomendação**:  Verifique o AzureMLService para obter mais registros de erros e corrija o pipeline ML
 
 
 ## <a name="custom"></a>Personalizado
@@ -316,6 +408,15 @@ A tabela a seguir se aplica ao lote do Azure.
 - **Causa**: Chave de acesso do lote ou nome do pool incorreto.
 
 - **Recomendação**: Verifique o nome do pool e a chave de acesso do lote no serviço vinculado.
+
+
+### <a name="error-code--2502"></a>Código de erro:  2502
+
+- **Mensagem**:`Cannot access user storage account; please check storage account settings.`
+
+- **Causa**: Nome da conta de armazenamento ou chave de acesso incorreto.
+
+- **Recomendação**: Verifique o nome da conta de armazenamento e a chave de acesso no serviço vinculado.
 
 
 ### <a name="error-code--2504"></a>Código de erro:  2504
@@ -472,7 +573,7 @@ A tabela a seguir aplica-se ao Spark, Hive, MapReduce, Pig e streaming do Hadoop
 
 ## <a name="web-activity"></a>Atividade da Web
 
-### <a name="error-code--2310"></a>Código de erro:  2310
+### <a name="error-code--2108"></a>Código de erro:  2108
 
 - **Mensagem**:`Invalid HttpMethod: '...'.`
 
@@ -559,6 +660,25 @@ A tabela a seguir aplica-se ao Spark, Hive, MapReduce, Pig e streaming do Hadoop
 - **Causa**: O corpo da atividade da Web está incorreto.
 
 - **Recomendação**:  Use o Fiddler ou o postmaster para verificar o ponto de extremidade.
+
+
+### <a name="error-code--2208"></a>Código de erro:  2208
+
+- **Mensagem**:`Invoking Web Activity failed with HttpStatusCode - {0}.`
+
+- **Causa**: O serviço de destino retornou o status de falha.
+
+- **Recomendação**:  Use Fiddler/postmaster para validar a solicitação.
+
+
+### <a name="error-code--2308"></a>Código de erro:  2308
+
+- **Mensagem**:`No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
+
+- **Causa**: Pode haver várias razões para esse erro, como conectividade de rede, falha de DNS, validação de certificado do servidor ou tempo limite.
+
+- **Recomendação**:  Use Fiddler/postmaster para validar a solicitação.
+
 
 Para usar o Fiddler para criar uma sessão HTTP do aplicativo Web monitorado:
 

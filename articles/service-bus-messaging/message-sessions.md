@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 67f3fd8f3166abac987e8fefbbf4a020f165c8bf
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 7264b8e5a536c90d106b3bf4a5e26093744327d6
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951882"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091824"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Sessões de mensagem: PEPS (primeiro a entrar, primeiro a sair) 
 
@@ -40,6 +40,9 @@ O recurso de sessão no Barramento de Serviço habilita uma operação de recebi
 No portal, defina o sinalizador com a caixa de seleção a seguir:
 
 ![][2]
+
+> [!NOTE]
+> Quando as sessões são habilitadas em uma fila ou em uma assinatura, os aplicativos cliente ***não podem mais*** enviar/receber mensagens regulares. Todas as mensagens devem ser enviadas como parte de uma sessão (definindo a ID de sessão) e recebidas recebendo a sessão.
 
 As APIs para sessões existem em clientes de fila e assinatura. Há um modelo imperativo que controla quando as sessões e mensagens são recebidas e um modelo baseado no manipulador, semelhante ao *OnMessage*, que oculta a complexidade do gerenciamento do loop de recebimento.
 

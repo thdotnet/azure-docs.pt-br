@@ -15,12 +15,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 195a2dd88f443120f337ba441358389f0dc290f8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d277786fd08e1448b3d5ccf4fd45055fe069e4c0
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62119500"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71097770"
 ---
 # <a name="work-with-the-net-backend-server-sdk-for-azure-mobile-apps"></a>Trabalhar com o servidor .NET back-end do SDK para Aplicativos Móveis do Azure
 [!INCLUDE [app-service-mobile-selector-server-sdk](../../includes/app-service-mobile-selector-server-sdk.md)]
@@ -28,12 +28,12 @@ ms.locfileid: "62119500"
 Este tópico mostra como usar o SDK do servidor de back-end do .NET nos principais cenários dos Aplicativos Móveis do Serviço de Aplicativo do Azure. Os Aplicativos Móveis SDK do Azure ajuda você a trabalhar com clientes móveis de seu aplicativo ASP.NET.
 
 > [!TIP]
-> O [SDK do .NET Server para Aplicativos Móveis do Azure][2] tem código aberto no GitHub. O repositório contém todo o código-fonte, incluindo o conjunto de testes de unidade do SDK para todo o servidor e alguns projetos de exemplo.
+> O [SDK do servidor .net para aplicativos móveis do Azure][2] é código-fonte aberto no github. O repositório contém todo o código-fonte, incluindo o conjunto de testes de unidade do SDK para todo o servidor e alguns projetos de exemplo.
 >
 >
 
 ## <a name="reference-documentation"></a>Documentação de referência
-A documentação de referência para SDK do servidor está localizada aqui: [Referência do .NET dos Aplicativos Móveis do Azure][1].
+A documentação de referência para SDK do servidor está localizada aqui: [Referência do .net de aplicativos móveis do Azure][1].
 
 ## <a name="create-app"></a>Como: Criar um back-end do aplicativo móvel do .NET
 Se você estiver começando um novo projeto, será possível criar um aplicativo do Serviço de Aplicativo usando o [portal do Azure] ou o Visual Studio. Você pode executar o aplicativo do Serviço de Aplicativo localmente ou publicar o projeto em seu aplicativo móvel do Serviço de Aplicativo baseado em nuvem.
@@ -41,7 +41,7 @@ Se você estiver começando um novo projeto, será possível criar um aplicativo
 Se você estiver adicionando recursos móveis a um projeto existente, veja a seção [Baixar e inicializar o SDK](#install-sdk) .
 
 ### <a name="create-a-net-backend-using-the-azure-portal"></a>Criar um back-end do .NET usando o Portal do Azure
-Para criar um back-end móvel do Serviço de Aplicativo, siga o [Tutorial de início rápido][3] ou execute estas etapas:
+Para criar um back-end móvel do serviço de aplicativo, siga o [tutorial de início rápido][3] ou siga estas etapas:
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service-classic](../../includes/app-service-mobile-dotnet-backend-create-new-service-classic.md)]
 
@@ -54,7 +54,7 @@ Instale a carga de trabalho do Azure por meio do Instalador do Visual Studio par
 1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...** ).
 2. Expanda **Visual C#** e selecione **Web**.
 3. Selecione **Aplicativo Web ASP .NET (.NET Framework)** .
-4. Preencha o nome do projeto. Em seguida, clique em **OK**.
+4. Preencha o nome do projeto. Clique em **OK**.
 5. Selecione **Aplicativo Móvel do Azure** da lista de modelos.
 6. Clique em **OK** para criar a solução.
 7. Clique com o botão direito do mouse no projeto no **Gerenciador de Soluções** e escolha **Publicar...** e, em seguida, escolha **Serviço de Aplicativo** como o destino de publicação.
@@ -62,12 +62,12 @@ Instale a carga de trabalho do Azure por meio do Instalador do Visual Studio par
 
 ### <a name="create-a-net-backend-using-visual-studio-2015"></a>Criar um back-end do .NET usando o Visual Studio 2015
 
-Instale o [SDK do Azure para .NET][4] (versão 2.9.0 ou posterior) para criar um projeto dos Aplicativos Móveis no Visual Studio. Depois de instalar o SDK, crie um aplicativo ASP.NET usando as seguintes etapas:
+Instale o [SDK do Azure para .net][4] (versão 2.9.0 ou posterior) para criar um projeto de aplicativos móveis do Azure no Visual Studio. Depois de instalar o SDK, crie um aplicativo ASP.NET usando as seguintes etapas:
 
 1. Abra a caixa de diálogo **Novo Projeto** (de **Arquivo** > **Novo** > **Projeto...** ).
 2. Expanda **Modelos** > **Visual C#** e selecione **Web**.
 3. Selecione **Aplicativo Web do ASP.NET**.
-4. Preencha o nome do projeto. Em seguida, clique em **OK**.
+4. Preencha o nome do projeto. Clique em **OK**.
 5. Em *Modelos do ASP.NET 4.5.2*, selecione **Aplicativo Móvel do Azure**. Marque **Host na nuvem** para criar um novo back-end móvel na nuvem no qual você possa publicar esse projeto.
 6. Clique em **OK**.
 
@@ -203,7 +203,7 @@ Se você tiver o SDK do Azure instalado, poderá criar um controlador de tabela 
    * Na lista suspensa **Classe modelo** , selecione o novo DTO.
    * Na lista suspensa **DbContext** , selecione a classe DbContext do serviço móvel.
    * O nome do controlador é criado para você.
-4. Clique em **Adicionar**.
+4. Clique em **Adicionar** .
 
 O projeto de início rápido do servidor contém um exemplo de um simples **TodoItemController**.
 
@@ -410,7 +410,7 @@ A ID de instalação pode ser acessada na propriedade **installationId** do **Mo
 
 As marcações fornecidas pelo cliente durante o registro de notificação por push são ignoradas pelo back-end ao criar a instalação. Para habilitar um cliente a adicionar marcas à instalação, você deverá criar uma API personalizada que adiciona marcas usando o padrão anterior.
 
-Confira [Marcações de notificação por push adicionadas pelo cliente][5] no exemplo de início rápido concluído dos Aplicativos Móveis do Serviço de Aplicativo para obter um exemplo.
+Confira as [marcas de notificação por push adicionadas pelo cliente][5] na amostra de início rápido de aplicativos móveis do serviço de aplicativo para obter um exemplo.
 
 ## <a name="push-user"></a>Como: Enviar notificações por push a um usuário autenticado
 Quando um usuário autenticado se registra para notificações por push, uma marca de ID de usuário é adicionada automaticamente ao registro. Usando essa marca, você pode enviar notificações por push para todos os dispositivos registrados por aquela pessoa. O código abaixo obtém o SID do usuário que fez a solicitação e envia um modelo de notificação por push para cada registro de dispositivo daquela pessoa:
@@ -426,7 +426,7 @@ Quando um usuário autenticado se registra para notificações por push, uma mar
     // Send a template notification to the user ID.
     await hub.SendTemplateNotificationAsync(notification, userTag);
 
-Ao se registrar para notificações por push de um cliente autenticado, verifique se a autenticação foi concluída antes de tentar o registro. Para saber mais, confira [Enviar por push para usuários][6] no exemplo de início rápido dos Aplicativos Móveis do Serviço de Aplicativo para back-end do .NET.
+Ao se registrar para notificações por push de um cliente autenticado, verifique se a autenticação foi concluída antes de tentar o registro. Para obter mais informações, consulte [enviar por push para os usuários][6] no serviço de aplicativo aplicativos móveis exemplo de início rápido para o back-end do .net.
 
 ## <a name="how-to-debug-and-troubleshoot-the-net-server-sdk"></a>Como: Depurar e solucionar problemas do SDK do .NET Server
 O Serviço de Aplicativo do Azure fornece várias técnicas de depuração e de solução de problemas para aplicativos ASP.NET.
@@ -440,7 +440,7 @@ O Serviço de Aplicativo do Azure fornece várias técnicas de depuração e de 
 
 Para habilitar o diagnóstico e gravar logs:
 
-1. Siga as etapas em [Como habilitar o diagnóstico](../app-service/troubleshoot-diagnostic-logs.md#enablediag).
+1. Siga as etapas em [habilitar o log de aplicativo (Windows)](../app-service/troubleshoot-diagnostic-logs.md#enable-application-logging-windows).
 2. Adicione a seguinte instrução de uso em seu arquivo de código:
 
         using System.Web.Http.Tracing;
@@ -449,7 +449,7 @@ Para habilitar o diagnóstico e gravar logs:
         ITraceWriter traceWriter = this.Configuration.Services.GetTraceWriter();
         traceWriter.Info("Hello, World");
 4. Republique seu projeto de servidor e acesse o back-end do aplicativo móvel para executar o caminho de código com o registro em log.
-5. Baixe e avalie os logs, conforme descrito em [Como: Baixar logs](../app-service/troubleshoot-diagnostic-logs.md#download).
+5. Baixe e avalie os logs, conforme descrito em [acessar arquivos de log](../app-service/troubleshoot-diagnostic-logs.md#access-log-files).
 
 ### <a name="local-debug"></a>Depuração local com autenticação
 Você pode executar seu aplicativo localmente a fim de testar as alterações antes de publicá-lo na nuvem. Para a maioria dos back-ends dos Aplicativos Móveis do Azure, pressione *F5* enquanto estiver no Visual Studio. No entanto, há algumas considerações adicionais ao usar a autenticação.
