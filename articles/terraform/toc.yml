@@ -7,11 +7,11 @@
 - name: Guia de início rápido
   expanded: true
   items:
-    - name: Criar um aplicativo de vários serviços
-      href: terrafom-quickstart.md
     - name: Instalar e configurar o Terraform
       href: /azure/virtual-machines/linux/terraform-install-configure
       maintainContext: true
+    - name: Criar um aplicativo de vários serviços
+      href: terrafom-quickstart.md
     - name: Criar uma VM do Linux
       href: /azure/virtual-machines/linux/terraform-create-complete-vm
       maintainContext: true
@@ -67,10 +67,6 @@
   items:
     - name: Modelos de configuração
       href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
-- name: Conceitos
-  items:
-    - name: Integração do Azure Cloud Shell
-      href: terraform-cloud-shell.md
 - name: Guias de instruções
   items:
     - name: Estado do armazenamento do Armazenamento do Azure
@@ -79,7 +75,7 @@
   items:
     - name: Registro do módulo do Azure
       href: 'https://registry.terraform.io/modules/Azure'
-    - name: Referência do Terraform
+    - name: Provedor do Terraform do Azure
       href: 'https://aka.ms/terraform'
 - name: Recursos
   items:

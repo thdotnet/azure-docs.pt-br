@@ -73,7 +73,7 @@ sections:
       - type: list
         style: cards
         className: cardsM
-        columns: 3
+        columns: 2
         items:
           - href: /azure/sql-database/sql-database-single-index
             html: <p>Use um banco de dados individual gerenciado por um servidor do Banco de Dados SQL para seus aplicativos SaaS e microsserviços que precisam de um banco de dados individual com desempenhos previsíveis.</p>
@@ -90,6 +90,11 @@ sections:
             image:
               src: media/index/i_mi.svg
             title: Instância gerenciada
+          - href: /azure/sql-database/sql-database-instance-pools
+            html: <p>Use pools de instâncias gerenciadas como uma solução simples e econômica para implantar múltiplas instâncias gerenciadas que compartilham recursos e escalam rapidamente.</p>
+            image:
+              src: media/index/i_instancepool.png
+            title: Pool de instâncias
   - title: Guia de início rápido de 5 minutos
     items:
       - type: paragraph
@@ -128,6 +133,12 @@ sections:
               - href: 'https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44'
               - href: /azure/sql-database/scripts/sql-database-create-configure-managed-instance-powershell
               - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet'
+          - title: Criar pool de instâncias
+            values:
+              - href: null
+              - href: null
+              - href: '/azure/sql-database/sql-database-instance-pools-how-to#create-an-instance-pool'
+              - href: null
   - title: Siga os tutoriais passo a passo e materiais de aprendizado
     items:
       - type: paragraph

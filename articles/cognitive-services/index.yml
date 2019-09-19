@@ -10,13 +10,13 @@ metadata:
   author: nitinme
   ms.author: nitinme
   manager: nitinme
-  ms.date: 09/12/2019
-  ms.openlocfilehash: 2bb26de076096ff47d38ddb12b1bc17f4aeafb34
-  ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+  ms.date: 09/16/2019
+  ms.openlocfilehash: f762586bf04ceab8cd0c81880a86df7d43507038
+  ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 09/13/2019
-  ms.locfileid: "70965455"
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71087547"
 highlightedContent:
   items:
   - title: O que são Serviços Cognitivos?
@@ -53,7 +53,7 @@ conceptualContent:
       text: Face
     - url: ./form-recognizer/index.yml
       itemType: overview
-      text: Reconhecimento de Formulário (versão prévia)
+      text: Reconhecimento de Formulários (versão prévia)
     - url: ./ink-recognizer/index.yml
       itemType: overview
       text: Reconhecimento de Tinta Digital (versão prévia)
@@ -93,7 +93,7 @@ conceptualContent:
     - url: ./translator-speech/overview.md
       itemType: overview
       text: Tradução de Fala (desativação)
-  - title: Serviços de Decisão
+  - title: Decisão
     summary: Crie aplicativos que apresentam recomendações para tomada de decisão eficiente e informada.
     links:
     - url: ./anomaly-detector/index.yml
@@ -138,12 +138,12 @@ conceptualContent:
     - url: ./bing-web-search/index.yml
       itemType: overview
       text: Pesquisa na Web
-  - title: Contêineres
+  - title: Contêineres de Serviço Cognitivo
     summary: O suporte a contêiner nos Serviços Cognitivos do Azure permite que os desenvolvedores usem as mesmas APIs avançadas disponíveis no Azure e habilita a flexibilidade de onde implantar e hospedar os serviços que vêm com os contêineres do Docker.
     links:
     - url: ./cognitive-services-container-support.md
       itemType: overview
-      text: Contêineres para Serviços Cognitivos
+      text: Contêineres de Serviço Cognitivo
     - url: ./containers/container-reuse-recipe.md
       itemType: overview
       text: Criar contêineres para reutilização
