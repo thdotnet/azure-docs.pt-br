@@ -3,22 +3,20 @@ title: Usar análise com o Azure Application Insights | Microsoft Docs
 description: Compreenda seus usuários e o que eles fazem com o seu aplicativo.
 services: application-insights
 documentationcenter: ''
-author: NumberByColors
+author: mrbullwinkle
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/10/2017
-ms.pm_owner: daviste;NumberByColors
-ms.reviewer: mbullwin
-ms.author: daviste
-ms.openlocfilehash: ba29688958ee11aa9906a820f7a3d2bf41223743
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.date: 09/19/2019
+ms.author: mbullwin
+ms.openlocfilehash: 77aa39ae68800128409beb17ce3eb636ddcf28d1
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798175"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128955"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Análise de uso com o Application Insights
 
@@ -33,19 +31,18 @@ A melhor experiência é obtida, instalando o Application Insights tanto no cód
     * *Não quer instalar o código do servidor? Apenas [crie um recurso do Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
 
 2. **URL da página na web:** Adicione o seguinte script à página da Web antes do fechamento ``</head>``. Substitua a chave de instrumentação pelo valor apropriado para seu recurso do Application Insights:
-
-   ```javascript
-      <script type="text/javascript">
-        var appInsights=window.appInsights||function(a){
-            function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
-        }({
-            instrumentationKey: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
-        });
-        
-        window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+    
+    ```html
+    <script type="text/javascript">
+    var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
+    {
+      instrumentationKey:"INSTRUMENTATION_KEY"
+    }
+    );window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
     </script>
     ```
-    Para saber sobre configurações mais avançadas para o monitoramento de sites, confira a [referência da API do SDK de JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md).
+
+    Para saber mais sobre configurações avançadas para o monitoramento de sites, confira o [artigo de referência do SDK do JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
 3. **Código do aplicativo móvel:** Use o SDK do App Center para coletar eventos do seu aplicativo e, em seguida, envie cópias desses eventos ao Application Insights para análise [seguindo este guia](../../azure-monitor/learn/mobile-center-quickstart.md).
 
@@ -159,12 +156,12 @@ No inicializador do aplicativo Web, como Global.asax.cs:
     }
 ```
 
-**Aplicativos ASP.NET Core**
+**ASP.NET Core aplicativos**
 
 > [!NOTE]
-> Usando o inicializador de adição `ApplicationInsights.config` ou usando `TelemetryConfiguration.Active` não é válido para aplicativos ASP.NET Core. 
+> Adicionar inicializador `ApplicationInsights.config` usando ou `TelemetryConfiguration.Active` usando não é válido para aplicativos ASP.NET Core. 
 
-Para [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) aplicativos, adicionando um novo `TelemetryInitializer` é feito adicionando-o para o contêiner de injeção de dependência, conforme mostrado abaixo. Isso é feito no `ConfigureServices` método de sua `Startup.cs` classe.
+Para aplicativos [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) , adicionar um novo `TelemetryInitializer` é feito adicionando-o ao contêiner de injeção de dependência, conforme mostrado abaixo. Isso é feito no `ConfigureServices` método da sua `Startup.cs` classe.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;

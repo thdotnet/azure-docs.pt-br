@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 09/18/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: f16f797afca6d60029c1f39fea7235ce84e4f954
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 4ef1a768356078c160b798c1a96412adda0330f6
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442206"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123289"
 ---
 # <a name="expressroute-prerequisites--checklist"></a>Pré-requisitos e lista de verificação do ExpressRoute
 Para se conectar aos serviços de nuvem da Microsoft usando o ExpressRoute, você precisa verificar se os requisitos listados nas seções a seguir foram atendidos.
@@ -21,7 +21,7 @@ Para se conectar aos serviços de nuvem da Microsoft usando o ExpressRoute, voc�
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
 ## <a name="azure-account"></a>Conta do Azure
-* Uma conta válida e ativa do Microsoft Azure. Esta conta é necessária para configurar o circuito do ExpressRoute. Os circuitos do ExpressRoute são recursos das assinaturas do Azure. Uma assinatura do Azure será um requisito mesmo se a conectividade estiver limitada a serviços de nuvem da Microsoft que não sejam do Azure, como os serviços do Office 365 e o Dynamics 365.
+* Uma conta válida e ativa do Microsoft Azure. Esta conta é necessária para configurar o circuito do ExpressRoute. Os circuitos do ExpressRoute são recursos das assinaturas do Azure. Uma assinatura do Azure é um requisito, mesmo se a conectividade estiver limitada a serviços de nuvem da Microsoft não Azure, como o Office 365.
 * Uma assinatura ativa do Office 365 (se estiver usando os serviços do Office 365). Para mais informações, confira a seção Requisitos específicos do Office 365 deste artigo.
 
 ## <a name="connectivity-provider"></a>Provedor de conectividade
@@ -48,9 +48,6 @@ Se você planeja habilitar o Office 365 no ExpressRoute, consulte os documentos 
 * [Ferramentas e calculadoras da largura de banda da rede](https://support.office.com/article/Network-and-migration-planning-for-Office-365-f5ee6c33-bcd7-4b0b-b0f8-dc1d9fb8d132)
 * [Integração do Office 365 com ambientes locais](https://support.office.com/article/Office-365-integration-with-on-premises-environments-263faf8d-aa21-428b-aed3-2021837a4b65)
 * [Vídeos de treinamento avançados do ExpressRoute no Office 365](https://channel9.msdn.com/series/aer/)
-
-## <a name="dynamics-365"></a>Dynamics 365
-Se você planeja habilitar o Dynamics 365 no ExpressRoute, examine as [URLs do dynamics 365](https://support.microsoft.com/kb/2655102) e os [intervalos de endereços IP](https://support.microsoft.com/kb/2728473).
 
 ## <a name="next-steps"></a>Próximas etapas
 * Para obter mais informações sobre o ExpressRoute, consulte [Perguntas Frequentes sobre ExpressRoute](expressroute-faqs.md).

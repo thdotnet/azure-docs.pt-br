@@ -5,15 +5,15 @@ services: expressroute
 author: mialdrid
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 04/24/2019
+ms.date: 09/18/2019
 ms.author: mialdrid
 ms.custom: seodec18
-ms.openlocfilehash: c4290473a7c1edce02d74a4a787c62ccf0d9c052
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 864b834fcc6810b52f067d8e67b4a48febd0f787
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64924304"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123487"
 ---
 # <a name="expressroute-circuits-and-peering"></a>Circuitos e emparelhamento do ExpressRoute
 
@@ -22,7 +22,7 @@ Os circuitos do ExpressRoute conectam sua infraestrutura local à Microsoft por 
 ![](./media/expressroute-circuit-peerings/expressroute-basic.png)
 
 > [!IMPORTANT]
-> Emparelhamento público do Azure foi preterido e não está disponível para novos circuitos do ExpressRoute. Suportam a novos circuitos do emparelhamento da Microsoft e emparelhamento privado.  
+> O emparelhamento público do Azure foi preterido e não está disponível para novos circuitos do ExpressRoute. Novos circuitos dão suporte ao emparelhamento da Microsoft e ao emparelhamento privado.  
 >
 
 ## <a name="circuits"></a> Circuitos do ExpressRoute
@@ -55,14 +55,14 @@ Você pode conectar mais de uma rede virtual ao domínio de emparelhamento priva
 
 [!INCLUDE [expressroute-office365-include](../../includes/expressroute-office365-include.md)]
 
-A conectividade com os serviços online da Microsoft (serviços do Office 365, do Dynamics 365 e de PaaS do Azure) ocorre por meio do emparelhamento da Microsoft. Habilitamos a conectividade bidirecional entre sua WAN e os serviços de nuvem da Microsoft por meio do domínio de roteamento de emparelhamento da Microsoft. Você deve se conectar aos serviços de nuvem da Microsoft somente por endereços IP públicos que pertençam a você ou ao seu provedor de conectividade e deve seguir todas as regras definidas. Para saber mais, veja a página [pré-requisitos do ExpressRoute](expressroute-prerequisites.md).
+A conectividade com o Microsoft serviços online (Office 365 e serviços de PaaS do Azure) ocorre por meio do emparelhamento da Microsoft. Habilitamos a conectividade bidirecional entre sua WAN e os serviços de nuvem da Microsoft por meio do domínio de roteamento de emparelhamento da Microsoft. Você deve se conectar aos serviços de nuvem da Microsoft somente por endereços IP públicos que pertençam a você ou ao seu provedor de conectividade e deve seguir todas as regras definidas. Para saber mais, veja a página [pré-requisitos do ExpressRoute](expressroute-prerequisites.md).
 
 Consulte a [página de perguntas frequentes](expressroute-faqs.md) para obter mais informações sobre serviços com suporte, custos e detalhes de configuração. Consulte a página [Locais do ExpressRoute](expressroute-locations.md) para saber mais sobre a lista de provedores de conectividade que dão suporte ao emparelhamento da Microsoft.
 
 ### <a name="publicpeering"></a> Pareamento público do Azure (preterido para novos circuitos)
 
 > [!Note]
-> Emparelhamento público do Azure tem 1 endereço IP de NAT associado a cada sessão BGP. Para mais de 2 endereços IP de NAT, mova para o emparelhamento da Microsoft. Emparelhamento da Microsoft permite que você configurar seus próprio alocações de NAT, bem como usar filtros de rota para anúncios de prefixo seletivo. Para obter mais informações, consulte [mover para o emparelhamento da Microsoft](https://docs.microsoft.com/azure/expressroute/how-to-move-peering).
+> O emparelhamento público do Azure tem 1 endereço IP NAT associado a cada sessão BGP. Para mais de 2 endereços IP NAT, mude para o emparelhamento da Microsoft. O emparelhamento da Microsoft permite que você configure suas próprias alocações NAT, bem como Use filtros de rota para anúncios de prefixo seletivo. Para obter mais informações, consulte [mover para o emparelhamento da Microsoft](https://docs.microsoft.com/azure/expressroute/how-to-move-peering).
 >
 
 Serviços como o Armazenamento do Azure, Sites e Bancos de dados SQL são oferecidos em endereços IP públicos. Você pode se conectar de modo privado a serviços hospedados em endereços IP públicos (incluindo VIPs de seus serviços de nuvem) por meio do domínio de roteamento de emparelhamento público. É possível conectar o domínio de emparelhamento público à sua DMZ e a todos os serviços do Azure em seus endereços IP públicos de sua WAN sem precisar se conectar pela Internet.
@@ -84,7 +84,7 @@ A tabela a seguir compara os três emparelhamentos:
 | **Requisitos do número do AS** |Números públicos e privados do AS. Você deve possuir número público do AS, se você optar por usar um. |Números públicos e privados do AS. No entanto, você deve comprovar a propriedade de endereços IP públicos. |Números públicos e privados do AS. No entanto, você deve comprovar a propriedade de endereços IP públicos. |
 | **Protocolos IP com suporte**| IPv4 |  IPv4, IPv6 | IPv4 |
 | **Roteando endereços IP de interface** |RFC1918 e endereços IP públicos |Endereços IP públicos registrados para você em registros de roteamento. |Endereços IP públicos registrados para você em registros de roteamento. |
-| **Suporte a Hash MD5** |Sim |sim |Sim |
+| **Suporte a Hash MD5** |Sim |Sim |Sim |
 
 Você pode habilitar um ou mais domínios de roteamento como parte do seu circuito ExpressRoute. Também é possível optar por ter todos os domínios de roteamento na mesma VPN se você desejar combiná-los em um único domínio de roteamento. Você também pode colocá-los em diferentes domínios de roteamento, da mesma forma que no diagrama. A configuração recomendada é conectar o emparelhamento privado diretamente à rede principal, enquanto os vínculos de emparelhamento público e da Microsoft são conectados à sua DMZ.
 

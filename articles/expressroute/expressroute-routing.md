@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 09/19/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 9d4822d07a95fcdec32c0c4146562884302fa4f8
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 9bc0d1b31ebeaecce8b4be8699cf87811047b6f9
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70308327"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123254"
 ---
 # <a name="expressroute-routing-requirements"></a>Requisitos de roteamento da Rota Expressa
 Para se conectar aos serviços de nuvem da Microsoft usando a Rota Expressa, você precisará configurar e gerenciar o roteamento. Alguns provedores de conectividade oferecem a configuração e o gerenciamento de roteamento como um serviço gerenciado. Verifique se o seu provedor de conectividade oferece esse serviço. Se não oferecer, você deverá atender aos requisitos a seguir:
@@ -84,7 +84,7 @@ Você deve usar endereços IP públicos que possui para configurar as sessões B
 Você pode optar por usar os endereços IPv4 públicos ou privados para o emparelhamento privado. Podemos fornecer um isolamento de ponta a ponta do tráfego para que a sobreposição dos endereços com outros clientes não seja possível no caso do emparelhamento privado. Esses endereços não são divulgados na Internet. 
 
 ### <a name="microsoft-peering"></a>Emparelhamento Microsoft
-O caminho de emparelhamento da Microsoft permite conectar os serviços em nuvem da Microsoft. A lista de serviços inclui serviços do Office 365, como o Exchange Online, o SharePoint Online, o Skype for Business, o Microsoft Teams e o Dynamics 365. A Microsoft dá suporte à conectividade bidirecional no emparelhamento da Microsoft. O tráfego destinado aos serviços de nuvem da Microsoft deve usar os endereços IPv4 públicos válidos antes de entrar na rede da Microsoft.
+O caminho de emparelhamento da Microsoft permite conectar os serviços em nuvem da Microsoft. A lista de serviços inclui serviços do Office 365, como o Exchange Online, o SharePoint Online, o Skype for Business e o Microsoft Teams. A Microsoft dá suporte à conectividade bidirecional no emparelhamento da Microsoft. O tráfego destinado aos serviços de nuvem da Microsoft deve usar os endereços IPv4 públicos válidos antes de entrar na rede da Microsoft.
 
 Verifique se o endereço IP e o número de AS estão registrados em um dos registros abaixo:
 
@@ -218,7 +218,6 @@ Além disso, a Microsoft também marcará prefixos com base no serviço ao qual 
 | Exchange Online | 12076:5010 |
 | SharePoint Online | 12076:5020 |
 | Skype for Business Online | 12076:5030 |
-| Dynamics 365 | 12076:5040 |
 | Serviços Globais do Azure* | 12076:5050 |
 | Outros serviços Online do Office 365 | 12076:5100 |
 
@@ -249,7 +248,6 @@ Além disso, a Microsoft também marcará prefixos com base no serviço ao qual 
 | Exchange Online |12076:5110 |
 | SharePoint Online |12076:5120 |
 | Skype for Business Online |12076:5130 |
-| Dynamics 365 |12076:5140 |
 | Outros serviços Online do Office 365 |12076:5200 |
 
 ## <a name="next-steps"></a>Próximas etapas

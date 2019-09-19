@@ -1,30 +1,31 @@
 ---
 title: Atualizar o cluster HDInsight para uma versão mais recente - Azure
 description: Aprenda as diretrizes para atualizar seu cluster do Azure HDInsight para uma versão mais recente.
-ms.service: hdinsight
 author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: a62da0d27d21589f7b75a89cc184ce9f456f1fed
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 808e592a01bca2066b7d3d37a5fdfa697d739d4b
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960691"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122443"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Atualizar o cluster HDInsight para uma versão mais recente
+
 Para aproveitar os novos recursos do HDInsight, é recomendável que os clusters HDInsight sejam atualizados para a versão mais recente. Siga as diretrizes apresentadas abaixo para atualizar as versões do cluster HDInsight.
 
 > [!NOTE]  
 > Para obter mais informações sobre versões com suporte do HDInsight, consulte [Versões de componente do HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
 ## <a name="upgrade-tasks"></a>Tarefas de atualização
-O fluxo de trabalho para atualizar o cluster HDInsight serão apresentadas a seguir.
 
-![Diagrama de fluxo de trabalho de atualização](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
+O fluxo de trabalho para atualizar o cluster HDInsight serão apresentadas a seguir.
+![Diagrama de fluxo de trabalho de atualização do HDInsight](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
 
 1. Leia cada seção deste documento para entender as alterações que podem ser necessárias ao atualizar o cluster HDInsight.
 2. Crie um cluster como um ambiente de teste/garantia de qualidade. Para saber mais sobre como criar um cluster, consulte [Saiba como criar clusters HDInsight baseados em Linux](hdinsight-hadoop-provision-linux-clusters.md)
@@ -40,7 +41,7 @@ Depois de verificar se tudo está funcionando conforme o esperado, agende o temp
 5.  Inicie os trabalhos/continue processando usando o novo cluster.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 * [Saiba como criar clusters HDInsight baseados em Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Conectar-se ao HDInsight usando o SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 * [Gerenciar um cluster baseado em Linux usando o Apache Ambari](hdinsight-hadoop-manage-ambari.md)
-

@@ -1,19 +1,19 @@
 ---
 title: Usar o Serviço de Kubernetes do Azure com Kafka no HDInsight
 description: Saiba como usar o Kafka no HDInsight a partir de imagens de contêiner hospedadas no AKS (Serviço de Kubernetes do Azure).
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: e87ac268ab5448f38470f46bd6b0c7f2cdd204ce
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: 31eefbad8e8d7cb626d87d53690388d09b85257e
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960551"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122656"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Usar o Serviço de Kubernetes do Azure com Apache Kafka no HDInsight
 
@@ -43,10 +43,9 @@ Este documento também considera que você percorreu o tutorial dos [Serviços d
 
 Ambos HDInsight e AKS usam uma Rede Virtual do Azure como um contêiner para recursos de computação. Para habilitar a comunicação entre o HDInsight e o AKS, é necessário habilitar a comunicação entre suas redes. As etapas neste documento usam Emparelhamento de Rede Virtual para as redes. Outras conexões, como a VPN, também devem funcionar. Para obter mais informações sobre emparelhamento, consulte o documento [Emparelhamento de Rede Virtual](../../virtual-network/virtual-network-peering-overview.md).
 
-
 O diagrama a seguir ilustra a topologia de rede usada neste documento:
 
-![HDInsight em uma rede virtual, AKS em outra, e as redes conectadas usando emparelhamento](./media/apache-kafka-azure-container-services/kafka-aks-architecture.png)
+![HDInsight em uma rede virtual, AKS em outra, usando o emparelhamento](./media/apache-kafka-azure-container-services/kafka-aks-architecture.png)
 
 > [!IMPORTANT]  
 > A resolução de nomes não está habilitada entre as redes emparelhadas, portanto, o endereçamento IP é usado. Por padrão, o Kafka no HDInsight é configurado para retornar nomes de host em vez de endereços IP quando os clientes se conectam. As etapas neste documento modificam o Kafka para usar Anúncio IP.
@@ -113,7 +112,7 @@ Use as etapas a seguir para configurar o Kafka para anunciar endereços IP em ve
 
 3. Para exibir a configuração do Kafka, selecione __Configurações__ na parte central superior.
 
-    ![Links de Configurações para Kafka](./media/apache-kafka-azure-container-services/select-kafka-config1.png)
+    ![Configuração de serviços Apache Ambari](./media/apache-kafka-azure-container-services/select-kafka-config1.png)
 
 4. Para localizar a configuração __kafka-env__, digite `kafka-env` no campo __Filtro__ na parte superior direita.
 
@@ -135,7 +134,7 @@ Use as etapas a seguir para configurar o Kafka para anunciar endereços IP em ve
 
 8. Para salvar as alterações de configuração, use o botão __Salvar__. Digite uma mensagem de texto que descreva as alterações. Selecione __OK__ assim que as alterações tiverem sido salvas.
 
-    ![Botão Salvar configuração](./media/apache-kafka-azure-container-services/save-configuration-button.png)
+    ![Salvar configuração do Apache Ambari](./media/apache-kafka-azure-container-services/save-configuration-button.png)
 
 9. Para evitar erros ao reiniciar o Kafka, use o botão __Ações de Serviço__ e selecione __Ativar o Modo de Manutenção__. Selecione OK para concluir essa operação.
 
@@ -192,6 +191,7 @@ Neste ponto, o Kafka e o Serviço de Kubernetes do Azure estão em comunicação
     ```bash
     docker push <acrLoginServer>/kafka-aks-test:v1
     ```
+
     Essa operação leva vários minutos para ser concluída.
 
 8. Edite o arquivo de manifesto Kubernetes (`kafka-aks-test.yaml`) e substitua `microsoft` pelo nome loginServer do ACR recuperado na etapa 4.
@@ -212,7 +212,7 @@ Neste ponto, o Kafka e o Serviço de Kubernetes do Azure estão em comunicação
 
 11. Abra um navegador da Web e digite o endereço IP externo para o serviço. Uma página semelhante à imagem a seguir será aberta:
 
-    ![Imagem da página da web](./media/apache-kafka-azure-container-services/test-web-page-image1.png)
+    ![Imagem da página da Web do Apache Kafka Test](./media/apache-kafka-azure-container-services/test-web-page-image1.png)
 
 12. Digite o texto no campo e selecione o botão __Enviar__. Os dados são enviados para o Kafka. Em seguida, o consumidor do Kafka no aplicativo lê a mensagem e adiciona-a à seção __Mensagens do Kafka__.
 

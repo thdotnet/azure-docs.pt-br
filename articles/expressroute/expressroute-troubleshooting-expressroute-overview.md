@@ -8,24 +8,24 @@ ms.topic: article
 ms.date: 09/26/2017
 ms.author: rambala
 ms.custom: seodec18
-ms.openlocfilehash: 888f4dedf2fda0f54297d42a5f813abf73ded748
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 026900e3dcbf7c20750bb8e17e44ba64897c9a30
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66117833"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123452"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Verificando a conectividade do ExpressRoute
 Este artigo ajuda você a verificar e solucionar problemas de conectividade do ExpressRoute. O ExpressRoute, que estende uma rede local para a Microsoft Cloud por uma conexão privada que é facilitada por um provedor de conectividade, envolve as três seguintes zonas da rede distintas:
 
--   Rede do Cliente
+-   Rede de Clientes
 -   Rede do Provedor
 -   Microsoft Datacenter
 
-A finalidade deste documento é ajudar os usuários a identificar onde (ou mesmo se) existe um problema de conectividade e em qual zona, para assim buscar ajuda da equipe apropriada para resolver o problema. Se o suporte da Microsoft for necessário para resolver um problema, abra um tíquete de suporte com [Suporte da Microsoft][Support].
+A finalidade deste documento é ajudar os usuários a identificar onde (ou mesmo se) existe um problema de conectividade e em qual zona, para assim buscar ajuda da equipe apropriada para resolver o problema. Se o suporte da Microsoft for necessário para resolver um problema, abra um tíquete de suporte com [suporte da Microsoft][Support].
 
 > [!IMPORTANT]
-> Este documento tem como intenção ajudar você a diagnosticar e corrigir problemas simples. Ela não deve ser usado como uma substituição ao suporte da Microsoft. Abra um tíquete de suporte com o [Suporte da Microsoft][Support] se não conseguir resolver o problema usando as diretrizes fornecidas.
+> Este documento tem como intenção ajudar você a diagnosticar e corrigir problemas simples. Ela não deve ser usado como uma substituição ao suporte da Microsoft. Abra um tíquete de suporte com [suporte da Microsoft][Support] se não for possível resolver o problema usando as diretrizes fornecidas.
 >
 >
 
@@ -66,7 +66,7 @@ Para validar um circuito ExpressRoute, as etapas a seguir são abordadas (com o 
 Mais verificações e validações serão adicionadas no futuro, retorne e verifique mensalmente!
 
 ## <a name="validate-circuit-provisioning-and-state"></a>Validar o estado e o provisionamento do circuito
-Independentemente do modelo de conectividade, um circuito do ExpressRoute deve ser criado e, portanto, uma chave de serviço gerada para o provisionamento do circuito. O provisionamento de um circuito do ExpressRoute estabelece uma conexão de Camada 2 redundante entre PE-MSEEs (4) e MSEEs (5). Para obter mais informações sobre como criar, modificar, provisionar e verificar um circuito do ExpressRoute, consulte o artigo [Create and modify an ExpressRoute circuit][CreateCircuit] (Criar e modificar um circuito do ExpressRoute).
+Independentemente do modelo de conectividade, um circuito do ExpressRoute deve ser criado e, portanto, uma chave de serviço gerada para o provisionamento do circuito. O provisionamento de um circuito do ExpressRoute estabelece uma conexão de Camada 2 redundante entre PE-MSEEs (4) e MSEEs (5). Para obter mais informações sobre como criar, modificar, provisionar e verificar um circuito do ExpressRoute, consulte o artigo [criar e modificar um circuito do expressroute][CreateCircuit].
 
 >[!TIP]
 >Uma chave de serviço identifica exclusivamente um circuito do ExpressRoute. Essa chave é necessária para a maioria dos comandos do PowerShell mencionadas neste documento. Além disso, caso você necessite de assistência da Microsoft ou de um parceiro do ExpressRoute para solucionar um problema do ExpressRoute, forneça a chave de serviço para identificar prontamente o circuito.
@@ -74,7 +74,7 @@ Independentemente do modelo de conectividade, um circuito do ExpressRoute deve s
 >
 
 ### <a name="verification-via-the-azure-portal"></a>Verificação por meio do Portal do Azure
-No Portal do Azure, o status de um circuito do ExpressRoute pode ser verificado selecionando ![2][2] na barra de menu do lado esquerdo e selecionando o circuito do ExpressRoute. Selecionar um circuito do ExpressRoute listado em "Todos os recursos" abrirá a folha do circuito do ExpressRoute. No ![3][3] seção da folha, o ExpressRoute essentials é listado conforme mostrado na seguinte captura de tela:
+No Portal do Azure, o status de um circuito do ExpressRoute pode ser verificado selecionando ![2][2] na barra de menu do lado esquerdo e selecionando o circuito do ExpressRoute. Selecionar um circuito do ExpressRoute listado em "Todos os recursos" abrirá a folha do circuito do ExpressRoute. Na seção ![3][3] da folha, o ExpressRoute Essentials é listado conforme mostrado na seguinte captura de tela:
 
 ![4][4]    
 
@@ -83,7 +83,7 @@ Nas Informações Gerais do ExpressRoute, o *Status do circuito* indica o status
 Para que um circuito do ExpressRoute esteja operacional, o *Status do circuito* deve ser *Habilitado* e o *Status do provedor* deve ser *Provisionado*.
 
 > [!NOTE]
-> Se o *Status do circuito* não for habilitado, entre em contato com o [Suporte da Microsoft][Support]. Se o *Status do provedor* não for provisionado, entre em contato com seu provedor de serviços.
+> Se o *status do circuito* não estiver habilitado, entre em contato com [suporte da Microsoft][Support]. Se o *Status do provedor* não for provisionado, entre em contato com seu provedor de serviços.
 >
 >
 
@@ -132,7 +132,7 @@ Para confirmar se um circuito do ExpressRoute está funcionando, preste atençã
     ServiceProviderProvisioningState : Provisioned
 
 > [!NOTE]
-> Se o *CircuitProvisioningState* não for habilitado, entre em contato com o [Suporte da Microsoft][Support]. Se o *ServiceProviderProvisioningState* não for provisionado, entre em contato com seu provedor de serviços.
+> Se o *CircuitProvisioningState* não estiver habilitado, entre em contato com [suporte da Microsoft][Support]. Se o *ServiceProviderProvisioningState* não for provisionado, entre em contato com seu provedor de serviços.
 >
 >
 
@@ -160,12 +160,12 @@ Uma resposta de exemplo é:
 Para confirmar se um circuito do ExpressRoute está funcionando, preste atenção especial aos seguintes campos: ServiceProviderProvisioningState: Status Provisionado: Enabled
 
 > [!NOTE]
-> Se o *Status* não for habilitado, entre em contato com o [Suporte da Microsoft][Support]. Se o *ServiceProviderProvisioningState* não for provisionado, entre em contato com seu provedor de serviços.
+> Se o *status* não estiver habilitado, entre em contato com [suporte da Microsoft][Support]. Se o *ServiceProviderProvisioningState* não for provisionado, entre em contato com seu provedor de serviços.
 >
 >
 
 ## <a name="validate-peering-configuration"></a>Validar Configuração de Emparelhamento
-Depois que o provedor de serviços concluir o provisionamento do circuito do ExpressRoute, uma configuração de roteamento poderá ser criada no circuito do ExpressRoute entre MSEE-PRs (4) e MSEEs (5). Cada circuito do ExpressRoute pode ter um, dois ou três contextos de roteamentos habilitados: Emparelhamento privado do Azure (tráfego para redes virtuais privadas no Azure), emparelhamento público do Azure (tráfego para endereços IP públicos no Azure) e emparelhamento da Microsoft (tráfego para Office 365 e Dynamics 365). Para obter mais informações sobre como criar e modificar a configuração de roteamento, consulte o artigo [Create and modify routing for an ExpressRoute circuit][CreatePeering] (Criar e modificar o roteamento para um circuito do ExpressRoute).
+Depois que o provedor de serviços concluir o provisionamento do circuito do ExpressRoute, uma configuração de roteamento poderá ser criada no circuito do ExpressRoute entre MSEE-PRs (4) e MSEEs (5). Cada circuito do ExpressRoute pode ter um, dois ou três contextos de roteamentos habilitados: Emparelhamento privado do Azure (tráfego para redes virtuais privadas no Azure), emparelhamento público do Azure (tráfego para endereços IP públicos no Azure) e emparelhamento da Microsoft (tráfego para o Office 365). Para obter mais informações sobre como criar e modificar a configuração de roteamento, consulte o artigo [criar e modificar o roteamento de um circuito do ExpressRoute][CreatePeering].
 
 ### <a name="verification-via-the-azure-portal"></a>Verificação por meio do Portal do Azure
 
@@ -174,14 +174,14 @@ Depois que o provedor de serviços concluir o provisionamento do circuito do Exp
 >
 >
 
-No Portal do Azure, o status de um circuito do ExpressRoute pode ser verificado selecionando ![2][2] na barra de menu do lado esquerdo e selecionando o circuito do ExpressRoute. Selecionar um circuito do ExpressRoute listado em "Todos os recursos" abriria a folha do circuito do ExpressRoute. No ![3][3] seção da folha, o ExpressRoute essentials seriam listado conforme mostrado na seguinte captura de tela:
+No Portal do Azure, o status de um circuito do ExpressRoute pode ser verificado selecionando ![2][2] na barra de menu do lado esquerdo e selecionando o circuito do ExpressRoute. Selecionar um circuito do ExpressRoute listado em "Todos os recursos" abriria a folha do circuito do ExpressRoute. Na seção ![3][3] da folha, o ExpressRoute Essentials seria listado conforme mostrado na seguinte captura de tela:
 
 ![5][5]
 
 No exemplo anterior, conforme observado, o contexto de roteamento de emparelhamento privado do Azure está habilitado, enquanto os contextos de roteamento de emparelhamento público do Azure e da Microsoft não estão habilitados. Um contexto de emparelhamento habilitado com êxito também teria as sub-redes primárias e secundárias ponto a ponto (necessário para BGP) listadas. As sub-redes /30 são usadas para o endereço IP da interface dos MSEEs e PE-MSEEs. 
 
 > [!NOTE]
-> Se um emparelhamento não estiver habilitado, verifique se as sub-redes primárias e secundárias atribuídas corresponderão à configuração nos PE-MSEEs. Caso contrário, para alterar a configuração em roteadores MSEE, consulte [Create and modify routing for an ExpressRoute circuit (Criar e modificar o roteamento para um circuito do ExpressRoute)][CreatePeering]
+> Se um emparelhamento não estiver habilitado, verifique se as sub-redes primárias e secundárias atribuídas corresponderão à configuração nos PE-MSEEs. Caso contrário, para alterar a configuração em roteadores MSEE, consulte [criar e modificar o roteamento para um circuito de ExpressRoute][CreatePeering]
 >
 >
 
@@ -231,7 +231,7 @@ Se um emparelhamento não for configurado, haverá uma mensagem de erro. Uma res
 
 
 > [!NOTE]
-> Se um emparelhamento não estiver habilitado, verifique se as sub-redes primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureASN* e *PeerASN* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Se o hash MD5 é escolhido, a chave compartilhada deve ser igual em um par MSEE e PE-MSEE. Para alterar a configuração nos roteadores MSEE, consulte [Create and modify routing for an ExpressRoute circuit (Criar e modificar o roteamento para um circuito do ExpressRoute)][CreatePeering].  
+> Se um emparelhamento não estiver habilitado, verifique se as sub-redes primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureASN* e *PeerASN* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Se o hash MD5 é escolhido, a chave compartilhada deve ser igual em um par MSEE e PE-MSEE. Para alterar a configuração nos roteadores MSEE, consulte [criar e modificar o roteamento para um circuito do ExpressRoute][CreatePeering].  
 >
 >
 
@@ -271,12 +271,12 @@ Para obter os detalhes de configuração de emparelhamento da Microsoft, use os 
 >
 
 > [!NOTE]
-> Se um emparelhamento não estiver habilitado, verifique se as sub-redes emparelhadas primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureAsn* e *PeerAsn* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Para alterar a configuração nos roteadores MSEE, consulte [Create and modify routing for an ExpressRoute circuit (Criar e modificar o roteamento para um circuito do ExpressRoute)][CreatePeering].
+> Se um emparelhamento não estiver habilitado, verifique se as sub-redes emparelhadas primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureAsn* e *PeerAsn* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Para alterar a configuração nos roteadores MSEE, consulte [criar e modificar o roteamento para um circuito do ExpressRoute][CreatePeering].
 >
 >
 
 ## <a name="validate-arp-between-microsoft-and-the-service-provider"></a>Validar ARP entre a Microsoft e o provedor de serviços
-Esta seção usa comandos do PowerShell (Clássico). Se você estiver usando comandos do Azure Resource Manager do PowerShell, verifique se você tem acesso de administrador/coadministrador à assinatura. Para solucionar o problema usando comandos do Azure Resource Manager, consulte o documento [Obtenção de tabelas ARP no modelo de implantação do Resource Manager][ARP].
+Esta seção usa comandos do PowerShell (Clássico). Se você estiver usando comandos do Azure Resource Manager do PowerShell, verifique se você tem acesso de administrador/coadministrador à assinatura. Para solucionar problemas usando comandos Azure Resource Manager, consulte o documento [obtendo tabelas ARP no modelo de implantação do Gerenciador de recursos][ARP] .
 
 > [!NOTE]
 >Para obter o ARP, o Portal do Azure e os comandos do PowerShell do Azure Resource Manager podem ser usados. Se forem encontrados erros com os comandos do PowerShell do Azure Resource Manager os comandos clássicos do PowerShell deverão funcionar, do mesmo modo que comandos clássicos do PowerShell também funcionam com circuitos do ExpressRoute do Azure Resource Manager.
@@ -330,7 +330,7 @@ Uma resposta de exemplo é:
 Conforme mostrado no exemplo anterior, o comando é útil para determinar por quanto tempo o contexto de roteamento foi estabelecido. Ele também indica o número de prefixos de rota anunciados pelo roteador de emparelhamento.
 
 > [!NOTE]
-> Se o estado no momento for Ativo ou Ocioso, verifique se as sub-redes emparelhadas primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureAsn* e *PeerAsn* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Se o hash MD5 é escolhido, a chave compartilhada deve ser igual em um par MSEE e PE-MSEE. Para alterar a configuração nos roteadores MSEE, consulte [Create and modify routing for an ExpressRoute circuit (Criar e modificar o roteamento para um circuito do ExpressRoute)][CreatePeering].
+> Se o estado no momento for Ativo ou Ocioso, verifique se as sub-redes emparelhadas primárias e secundárias atribuídas correspondem à configuração no PE-MSEE vinculado. Verifique também se os *VlanId*, *AzureAsn* e *PeerAsn* corretos estão sendo usados nos MSEEs e se esses valores são mapeados para aqueles usados no PE-MSEE vinculado. Se o hash MD5 é escolhido, a chave compartilhada deve ser igual em um par MSEE e PE-MSEE. Para alterar a configuração nos roteadores MSEE, consulte [criar e modificar o roteamento para um circuito do ExpressRoute][CreatePeering].
 >
 >
 

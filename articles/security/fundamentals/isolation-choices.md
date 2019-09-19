@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 9ab09c7215827369b3e1fc449af68be307881f51
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: a3e4a598446c0b59cd678e186906abc61d3d727d
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68928005"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123065"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolamento na nuvem pública do Azure
 ##  <a name="introduction"></a>Introdução
@@ -128,19 +128,8 @@ Se uma unidade de disco usada para armazenamento sofrer uma falha de hardware, e
 O Microsoft Azure fornece vários serviços de computação baseados em nuvem que incluem uma ampla seleção de instâncias e serviços de computação, os quais podem ser escalados verticalmente de forma automática para atender às necessidades de seu aplicativo ou empresa. Essas instâncias e serviços de computação oferecem isolamento em vários níveis a fim de proteger os dados sem sacrificar a flexibilidade de configuração exigida pelos clientes.
 
 ### <a name="isolated-virtual-machine-sizes"></a>Tamanhos de máquinas virtuais isoladas
-A Computação do Azure oferece tamanhos de máquina virtual Isolada, para um tipo de hardware específico e dedicada a um único cliente.  Esses tamanhos de máquina virtual são mais adequados para cargas de trabalho que exigem um alto grau de isolamento de outros clientes, para cargas de trabalho que envolvem elementos como requisitos normativos e de conformidade.  Os clientes também podem optar por subdividir ainda mais os recursos dessas máquinas virtuais Isoladas usando [o Suporte do Azure para máquinas virtuais aninhadas](https://azure.microsoft.com/blog/nested-virtualization-in-azure/).
 
-Utilizar um tamanho isolado garante que sua máquina virtual será apenas sendo executada na instância de servidor específico.  As ofertas atuais da máquina virtual isolada incluem:
-* Standard_E64is_v3
-* Standard_E64i_v3
-* Standard_M128ms
-* Standard_GS5
-* Standard_G5
-* Standard_DS15_v2
-* Standard_D15_v2
-* Standard_F72s_v2
-
-Você pode aprender mais sobre cada tamanho isolado disponível [aqui](../../virtual-machines/windows/sizes-memory.md).
+[!INCLUDE [virtual-machines-common-isolation](../../../includes/virtual-machines-common-isolation.md)]
 
 ### <a name="hyper-v--root-os-isolation-between-root-vm--guest-vms"></a>Isolamento de sistema operacional raiz e Hyper-V entre a VM raiz e as VMs convidadas
 A plataforma de computação do Azure tem base na virtualização da máquina — ou seja, todo o código do cliente é executado em uma máquina virtual Hyper-V. Em cada nó do Azure (ou ponto de extremidade de rede), há um Hipervisor executado diretamente sobre o hardware e divide um nó em um número variável de VMs (máquinas virtuais) convidadas.
@@ -352,7 +341,7 @@ A implantação do Azure têm vários níveis de isolamento de rede. O diagrama 
 
 - [Opções de isolamento de rede para computadores em redes virtuais do Windows Azure](https://azure.microsoft.com/blog/network-isolation-options-for-machines-in-windows-azure-virtual-networks/)
 
-Isso inclui o cenário clássico de front-end e back-end no qual as máquinas em uma rede, ou sub-rede, de back-end específica podem permitir que apenas determinados clientes ou outros computadores se conectem a um determinado ponto de extremidade com base em uma lista de permissão de endereços IP.
+Isso inclui o cenário de front-end e back-end clássico em que as máquinas em uma rede de back-end específica ou sub-rede podem permitir que apenas determinados clientes ou outros computadores se conectem a um ponto de extremidade específico com base em uma lista de permissões de endereços IP.
 
 - [Isolamento de computação](https://msenterprise.global.ssl.fastly.net/vnext/PDFs/A01_AzureSecurityWhitepaper20160415c.pdf)
 

@@ -5,18 +5,18 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 09/18/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 28cfbc7183628b00c463f1c3a8a954ba4074409b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e522c7ea306667f675af4bbe7486e25fb7f4ec9f
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65415972"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122797"
 ---
-# <a name="expressroute-global-reach"></a>Alcance Global de ExpressRoute
-O ExpressRoute é uma maneira particular e resiliente de conectar suas redes locais ao Microsoft Cloud. Você pode acessar muitos serviços em nuvem da Microsoft, como o Azure, o Office 365 e o Dynamics 365, de seu datacenter ou rede corporativa particular. Por exemplo, é possível ter uma filial em São Francisco com um circuito ExpressRoute no Vale do Silício e outra filial em Londres com um circuito ExpressRoute na mesma cidade. Ambas as filiais podem ter conectividade de alta velocidade aos recursos do Azure no Oeste dos EUA e no Sul do Reino Unido. No entanto, as filiais não podem trocar dados diretamente entre si. Em outras palavras, 10.0.1.0/24 pode enviar dados para 10.0.3.0/24 e 10.0.4.0/24, mas NÃO para 10.0.2.0/24.
+# <a name="expressroute-global-reach"></a>Alcance Global do ExpressRoute
+O ExpressRoute é uma maneira particular e resiliente de conectar suas redes locais ao Microsoft Cloud. Você pode acessar muitos serviços de nuvem da Microsoft, como o Azure, e o Office 365 de seu data center particular ou sua rede corporativa. Por exemplo, é possível ter uma filial em São Francisco com um circuito ExpressRoute no Vale do Silício e outra filial em Londres com um circuito ExpressRoute na mesma cidade. Ambas as filiais podem ter conectividade de alta velocidade aos recursos do Azure no Oeste dos EUA e no Sul do Reino Unido. No entanto, as filiais não podem trocar dados diretamente entre si. Em outras palavras, 10.0.1.0/24 pode enviar dados para 10.0.3.0/24 e 10.0.4.0/24, mas NÃO para 10.0.2.0/24.
 
 ![sem][1]
 
@@ -36,12 +36,12 @@ Atualmente, o Alcance Global do ExpressRoute tem suporte nos seguintes locais.
 * Canadá
 * França
 * Alemanha
-* RAE de Hong Kong
+* Região Administrativa Especial de Hong Kong
 * Irlanda
 * Japão
 * Coreia do Sul
 * Países Baixos
-* Singapura
+* Cingapura
 * Suíça
 * Reino Unido
 * Estados Unidos

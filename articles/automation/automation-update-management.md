@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 20d8106f06b708527fc60e025a19c6b07656acb3
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: f4816ea2dc67df717e46df61c955d6d156b14d7e
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71102643"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129674"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -83,7 +83,7 @@ A tabela a seguir mostra uma lista de sistemas operacionais com suporte:
 
 > [!NOTE]
 > Os conjuntos de dimensionamento de máquinas virtuais do Azure podem ser gerenciados com Gerenciamento de Atualizações. Gerenciamento de Atualizações funciona nas próprias instâncias e não na imagem base. Você precisará agendar as atualizações de forma incremental, como não atualizar todas as instâncias de VM ao mesmo tempo.
-> Nós VMSS podem ser adicionados seguindo as etapas em [onbaord uma máquina não Azure](automation-tutorial-installed-software.md#onboard-a-non-azure-machine).
+> Nós VMSS podem ser adicionados seguindo as etapas em [carregar um computador não Azure](automation-tutorial-installed-software.md#onboard-a-non-azure-machine).
 
 ### <a name="unsupported-client-types"></a>Tipos de clientes sem suporte
 
@@ -608,7 +608,7 @@ Esses grupos são definidos por uma consulta, quando uma implantação de atuali
 * Assinatura
 * Grupos de recursos
 * Localizações
-* Marcas
+* tags
 
 ![Selecionar grupos](./media/automation-update-management/select-groups.png)
 

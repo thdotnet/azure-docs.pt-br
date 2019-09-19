@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/01/2019
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 55b5207e4c05712b4d96d4272f9ae193cc4c1720
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: c49b1fa1e2e8421146f5d5012de983c14934c23c
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508596"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122933"
 ---
 # <a name="configure-route-filters-for-microsoft-peering-azure-portal"></a>Configurar os filtros de rota para o emparelhamento da Microsoft: Portal do Azure
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "67508596"
 
 Filtros de rota são uma maneira de consumir um subconjunto de serviços com suporte por meio do emparelhamento da Microsoft. As etapas neste artigo lhe ajudam a configurar e gerenciar filtros de rota para circuitos de ExpressRoute.
 
-Os serviços do Dynamics 365 e os serviços do Office 365, tais como o Exchange Online, o SharePoint Online e o Skype for Business, bem como os serviços do Azure como o armazenamento e o BD SQL estão acessíveis por meio do emparelhamento da Microsoft. Quando emparelhamento da Microsoft é configurado em um circuito de ExpressRoute, todos os prefixos relacionados a esses serviços são publicados por meio das sessões de BGP que são estabelecidas. Um valor de comunidade BGP é anexado a cada prefixo, pelo qual se pode identificar o serviço que é oferecido. Para obter uma lista dos valores de comunidade BGP e os serviços para os quais eles são mapeados, consulte [comunidades BGP](expressroute-routing.md#bgp).
+Os serviços do Office 365, como o Exchange Online, o SharePoint Online e o Skype for Business, e os serviços do Azure, como o armazenamento e o SQL DB, podem ser acessados por meio do emparelhamento da Microsoft. Quando emparelhamento da Microsoft é configurado em um circuito de ExpressRoute, todos os prefixos relacionados a esses serviços são publicados por meio das sessões de BGP que são estabelecidas. Um valor de comunidade BGP é anexado a cada prefixo, pelo qual se pode identificar o serviço que é oferecido. Para obter uma lista dos valores de comunidade BGP e os serviços para os quais eles são mapeados, consulte [comunidades BGP](expressroute-routing.md#bgp).
 
 Se você precisa de conectividade para todos os serviços, um grande número de prefixos é anunciado através do BGP. Isso aumenta consideravelmente o tamanho das tabelas de rotas mantidas por roteadores em sua rede. Se você planeja consumir apenas um subconjunto de serviços oferecidos pelo emparelhamento da Microsoft, você pode reduzir o tamanho de suas tabelas de rotas de duas maneiras. Você pode:
 
@@ -36,12 +36,12 @@ Se você precisa de conectividade para todos os serviços, um grande número de 
 
 Quando o emparelhamento da Microsoft é configurado no seu circuito de ExpressRoute, os roteadores de borda da Microsoft estabelecem um par de sessões de BGP com os roteadores de borda (seus ou de seu provedor de conectividade). Nenhuma rota é anunciada para sua rede. Para habilitar os anúncios de rota para sua rede, você deve associar um filtro de rota.
 
-Um filtro de rota permite identificar os serviços que você deseja consumir por meio de emparelhamento da Microsoft do seu circuito de ExpressRoute. Ele é essencialmente uma lista de todos os valores de comunidade BGP que você deseja permitir. Depois que um recurso de filtro de rota é definido e anexado a um circuito de ExpressRoute, todos os prefixos que são mapeados para os valores de comunidade do BGP são anunciados para sua rede.
+Um filtro de rota permite identificar os serviços que você deseja consumir por meio de emparelhamento da Microsoft do seu circuito de ExpressRoute. É essencialmente uma lista de todos os valores de comunidade BGP que você deseja permitir. Depois que um recurso de filtro de rota é definido e anexado a um circuito de ExpressRoute, todos os prefixos que são mapeados para os valores de comunidade do BGP são anunciados para sua rede.
 
-Para que seja possível anexar filtros de rota que incluam serviços do Office 365, você deve ter autorização para consumir serviços do Office 365 por meio do ExpressRoute. Se você não está autorizado a consumir serviços do Office 365 por meio do ExpressRoute, a operação de anexação de filtros de rota falhará. Para obter mais informações sobre o processo de autorização, consulte [Azure ExpressRoute para Office 365](https://support.office.com/article/Azure-ExpressRoute-for-Office-365-6d2534a2-c19c-4a99-be5e-33a0cee5d3bd). Conectividade com serviços Dynamics 365 NÃO exigem nenhuma autorização anterior.
+Para que seja possível anexar filtros de rota que incluam serviços do Office 365, você deve ter autorização para consumir serviços do Office 365 por meio do ExpressRoute. Se você não está autorizado a consumir serviços do Office 365 por meio do ExpressRoute, a operação de anexação de filtros de rota falhará. Para obter mais informações sobre o processo de autorização, consulte [Azure ExpressRoute para Office 365](https://support.office.com/article/Azure-ExpressRoute-for-Office-365-6d2534a2-c19c-4a99-be5e-33a0cee5d3bd).
 
 > [!IMPORTANT]
-> O emparelhamento da Microsoft de circuitos de ExpressRoute configurados antes de 1º de agosto de 2017 terá todos os prefixos de serviço anunciados através do emparelhamento da Microsoft, mesmo que os filtros de roteamento não estejam definidos. O emparelhamento da Microsoft de circuitos de ExpressRoute configurados em ou após 1º de agosto de 2017 não terá nenhum prefixo anunciado até que um filtro de rota seja anexado ao circuito.
+> O emparelhamento da Microsoft de circuitos de ExpressRoute configurados antes de 1º de agosto de 2017 terá todos os prefixos de serviço anunciados através do emparelhamento da Microsoft, mesmo que os filtros de rota não estejam definidos. O emparelhamento da Microsoft de circuitos de ExpressRoute configurados em ou após 1º de agosto de 2017 não terá nenhum prefixo anunciado até que um filtro de rota seja anexado ao circuito.
 > 
 > 
 
@@ -79,7 +79,7 @@ Os valores de comunidade BGP associados aos serviços acessíveis por meio de em
 
 ### <a name="2-make-a-list-of-the-values-that-you-want-to-use"></a>2. Faça uma lista dos valores que você deseja usar
 
-Faça uma lista dos [valores de comunidade BGP](expressroute-routing.md#bgp) você deseja usar no filtro de rota. 
+Faça uma lista de [valores de comunidade BGP](expressroute-routing.md#bgp) que você deseja usar no filtro de rota. 
 
 ## <a name="filter"></a>Etapa 2: Criar um filtro de rota e uma regra de filtro
 
@@ -101,7 +101,7 @@ Você pode adicionar e atualizar regras selecionando a guia de regra de gerencia
 ![Criar um filtro de rota](./media/how-to-routefilter-portal/ManageRouteFilter.png)
 
 
-Você pode selecionar os serviços que você deseja se conectar a na lista suspensa e salvar a regra quando terminar.
+Você pode selecionar os serviços aos quais deseja se conectar na lista suspensa e salvar a regra quando terminar.
 
 ![Criar um filtro de rota](./media/how-to-routefilter-portal/AddRouteFilterRule.png)
 
@@ -137,7 +137,7 @@ Você pode atualizar a lista de valores de comunidade BGP anexada a um circuito 
 
 ### <a name="detach"></a>Para desanexar um filtro de rota de um circuito de ExpressRoute
 
-Para desanexar um circuito do filtro de rota, clique com botão direito no circuito e clique em "desassociar".
+Para desanexar um circuito do filtro de rota, clique com o botão direito do mouse no circuito e clique em "desassociar".
 
 ![Criar um filtro de rota](./media/how-to-routefilter-portal/DetachRouteFilter.png) 
 

@@ -93,7 +93,7 @@ sections:
           - href: /azure/sql-database/sql-database-instance-pools
             html: <p>Use pools de instâncias gerenciadas como uma solução simples e econômica para implantar múltiplas instâncias gerenciadas que compartilham recursos e escalam rapidamente.</p>
             image:
-              src: media/index/i_instancepool.png
+              src: media/index/i-instancepools.svg
             title: Pool de instâncias
   - title: Guia de início rápido de 5 minutos
     items:

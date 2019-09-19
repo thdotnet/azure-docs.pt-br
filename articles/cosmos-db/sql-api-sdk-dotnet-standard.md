@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 07/12/2019
 ms.author: dech
-ms.openlocfilehash: 0368e99135dd6e377dd2820b3e673c55182319b9
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: b907ad3206f26ee73a41bf98f349107e0431c802
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663802"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129477"
 ---
 # <a name="azure-cosmos-db-net-standard-sdk-for-sql-api-download-and-release-notes"></a>SDK do .NET Standard do Azure Cosmos DB para a API do SQL: Downloads e notas sobre a versão
 > [!div class="op_single_selector"]
@@ -40,59 +40,10 @@ ms.locfileid: "68663802"
 |**Tutorial do aplicativo Web**|[Desenvolvimento de aplicativos Web com o Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Framework atualmente com suporte**|[Microsoft .NET Standard 2.0](/dotnet/standard/net-standard)|
 
-## <a name="release-notes"></a>Notas de versão
-### <a name="a-name310310"></a><a name="3.1.0"/>3.1.0
-#### <a name="added"></a>Added
-- [#541](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/541) Nível de consistência adicionado às opções de cliente e consulta
-- [#544](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/544) Adicionado suporte de token de continuação para LINQ
-- [#557](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/557) Adicionadas opções de gatilho às opções de solicitação de item
-- [#571](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/571) Adição de um serializador JSON.net padrão com configurações opcionais
-- [#572](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/572) Validação da chave de partição adicionada em CreateContainerIfNotExistsAsync
-- [#581](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/581) Adicionando a API do LINQ to QueryDefinition
-- [#592](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/592) Adicionado CreateIfNotExistsAsync ao construtor de contêineres
-- [#597](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/597) Propriedade de token de continuação adicionada para ResponseMessage
-- [#604](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/604) Método de extensão LINQ ToStreamIterator adicionado
-
-#### <a name="fixed"></a>Fixo
-- [#548](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/548) Mensagem de tipo incorreta fixa em CosmosException. ToString ();
-- [#558](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/558) Correção de contenção de bloqueio de LocationCache ConcurrentDict
-- [#561](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/561) GetItemLinqQueryable agora funciona com consulta nula
-- [#567](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/567) A consulta lida corretamente com diferentes culturas de idioma
-- [#574](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/574) Correção de mensagem de erro vazia se a análise de consulta falhar de uma exceção inesperada
-- [#576](https://github.com/Azure/azure-cosmos-dotnet-v3/pull/576) A consulta serializa corretamente a entrada em um fluxo
-
-### <a name="a-name300300"></a><a name="3.0.0"/>3.0.0 
-* Disponibilidade geral da [versão 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) do SDK do .net
-* Destinos .NET Standard 2,0, que oferece suporte ao .NET Framework 4.6.1 + e ao .NET Core 2.0 +
-* Novo modelo de objeto, com CosmosClient de nível superior e métodos divididos em classes de contêiner e banco de dados relevantes
-* Novas APIs de fluxo de alto desempenho
-* Suporte interno para APIs do processador do feed de alterações
-* APIs do Fluent Builder para CosmosClient, contêiner e processador do feed de alterações
-* APIs de gerenciamento de taxa de transferência idiomática
-* Requestoptions e ResponseTypes granulares para solicitações de banco de dados, contêiner, item, consulta e taxa de transferência
-* Capacidade de dimensionar contêineres não particionados 
-* Serializador extensível e personalizável
-* Pipeline de solicitação extensível com suporte para manipuladores personalizados
-
-
-## <a name="release--retirement-dates"></a>Datas de lançamento e desativação
-A Microsoft notifica pelo menos **12 meses** antes de desativar um SDK, a fim de realizar uma transição tranquila para uma versão mais recente/com suporte.
-
-Os novos recursos, funcionalidades e otimizações são adicionados apenas ao SDK atual. Portanto, recomendamos que você atualize sempre que possível para a versão do SDK mais recente. 
-
-Qualquer solicitação feita ao BD Cosmos do Azure usando um SDK obsoleto é rejeitada pelo serviço.
-
-<br/>
-
-| Versão | Data do lançamento | Data de desativação |
-| --- | --- | --- |
-| [3.1.0](#3.1.0) |29 de julho de 2019 |--- |
-| [3.0.0](#3.0.0) |15 de julho de 2019 |--- |
-
+[!INCLUDE[Release notes](~/samples-cosmosdb-dotnet-v3/changelog.md)]
 
 ## <a name="faq"></a>Perguntas Frequentes
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>Consulte também
 Para saber mais sobre o Cosmos DB, consulte a página de serviço do [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
-

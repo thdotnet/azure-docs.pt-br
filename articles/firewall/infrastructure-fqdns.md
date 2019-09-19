@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 9/24/2018
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: 34201a0eb4139de64261f77f285096a2aa2dd3aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5b134058e1924bae030338411226a9a6aff46557
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61066312"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130197"
 ---
 # <a name="infrastructure-fqdns"></a>FQDNs de infraestrutura
 
@@ -23,7 +23,6 @@ Os serviços a seguir estão inclusos na coleção de regras internas:
 - Acesso de computação ao PIR (Repositório de Imagem da Plataforma)
 - Acesso ao armazenamento de status de discos gerenciados
 - MDS (Diagnóstico do Microsoft Azure e Registro em Log)
-- Azure Active Directory
 
 ## <a name="overriding"></a>Substituição 
 

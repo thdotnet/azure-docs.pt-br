@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: a294c444f10719f69716b25b97cd137874a3e0be
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 916175401cd993392094b2bb16f8fc8746a4d2a8
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954144"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123394"
 ---
 # <a name="about-expressroute-direct"></a>Sobre o ExpressRoute Direct
 
@@ -45,7 +45,7 @@ Antes de usar o ExpressRoute Direct, você deve primeiro registrar sua assinatur
 
 ## <a name="expressroute-direct-circuits"></a>Circuitos do ExpressRoute Direct
 
-O Microsoft Azure ExpressRoute permite que você estenda suas redes locais até a nuvem da Microsoft por meio de uma conexão privada, facilitada por um provedor de conectividade. Com o ExpressRoute, você pode estabelecer conexões com os serviços de nuvem da Microsoft, como o Microsoft Azure, o Office 365 e o Dynamic 365.  
+O Microsoft Azure ExpressRoute permite que você estenda suas redes locais até a nuvem da Microsoft por meio de uma conexão privada, facilitada por um provedor de conectividade. Com o ExpressRoute, você pode estabelecer conexões com os serviços de nuvem da Microsoft, como Microsoft Azure e Office 365.
 
 Cada localização de emparelhamento tem acesso à rede global da Microsoft e pode acessar qualquer região em uma zona geopolítica por padrão e todas as regiões globais com um circuito Premium.  
 
@@ -84,7 +84,7 @@ O ExpressRoute Direct dá suporte à marcação de VLAN QinQ e Dot1Q.
 
 * **Marcação de VLAN Dot1Q** permite a marcação de uma única VLAN com base no par de portas do ExpressRoute Direct. Uma marca C usada em um emparelhamento precisa ser exclusiva em todos os circuitos e emparelhamentos do par de portas do ExpressRoute Direct.
 
-## <a name="workflow"></a>Fluxo de trabalho
+## <a name="workflow"></a>Fluxo de Trabalho
 
 [![modelo](./media/expressroute-erdirect-about/workflow1.png)](./media/expressroute-erdirect-about/workflow1.png#lightbox)
 

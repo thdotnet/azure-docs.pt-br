@@ -4,7 +4,7 @@ description: Saiba como solucionar problemas de um gateway de aplicativo usando 
 services: vpn-gateway
 documentationCenter: na
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: vpn-gateway
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2018
 ms.author: genli
-ms.openlocfilehash: baed2b23a321c53a614303d3085fbb3a4bf6ad0b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9c3216af283ebd9d84a5469d4d50d18c19f67534
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60831088"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71121943"
 ---
 # <a name="back-end-server-certificate-is-not-whitelisted-for-an-application-gateway-using-an-internal-load-balancer-with-an-app-service-environment"></a>O certificado de servidor back-end não está na lista de permissões para um gateway de aplicativo usando um Balanceador de Carga Interno com um ambiente de serviço de aplicativo
 
@@ -70,6 +70,6 @@ Quando você usar um FQDN (nome de domínio totalmente qualificado) para acessar
 
 Para reduzir a sobrecarga, você poderá carregar o certificado ILB nas configurações de HTTP para fazer com que o caminho da investigação funcione. (Esta etapa é apenas para lista de permissões. Não será usada para comunicação SSL.) É possível recuperar o certificado ILB, acessando o ILB com o endereço IP do seu navegador em HTTPS, em seguida, exportando o certificado SSL em um formato de CER codificado com Base 64 e carregando o certificado nas respectivas configurações de HTTP.
 
-## <a name="need-help-contact-support"></a>Precisa de ajuda? Contate o suporte
+## <a name="need-help-contact-support"></a>Precisa de ajuda? Contatar o suporte
 
 Se ainda tiver dúvidas, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver seu problema rapidamente.

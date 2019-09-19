@@ -2,24 +2,18 @@
 title: 'Provedores de conectividade e locais: Azure ExpressRoute | Microsoft Docs'
 description: Este artigo fornece uma visão geral detalhada dos locais onde os serviços são oferecidos e de como se conectar a regiões do Azure. Classificado por provedor de conectividade.
 services: expressroute
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-ms.assetid: c878513a-d594-42ad-8b0e-403efd0c4b25
 ms.service: expressroute
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: cherylmc
-ms.openlocfilehash: 997d6b29ef41c84766348c8b0ff74c5bc5c877d0
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 63358923dae22a2547d7946cd10ca2a3f02e33a5
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033937"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122824"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -80,7 +74,7 @@ A tabela a seguir mostra locais pelo provedor de serviços. Se você quiser exib
 
 ### <a name="production-azure"></a>Produção do Azure
 
-| **Provedor de serviços** | **Microsoft Azure** | **Para o Office 365 e o Dynamics 365** | **Locais** |
+| **Provedor de serviços** | **Microsoft Azure** | **Office 365**  | **Locais** |
 | --- | --- | --- | --- |
 | **[AARNet](https://www.aarnet.edu.au/network-and-services/connectivity-services/azure-expressroute)** |Suportado |Suportado |Melbourne, Sydney |
 | **[Airtel](https://www.airtel.in/business/#/)** | Suportado | Suportado | Chennai2, Mumbai2 |
@@ -181,8 +175,8 @@ A tabela a seguir mostra locais pelo provedor de serviços. Se você quiser exib
 
 | **Provedor de serviços** | **Microsoft Azure** | **Office 365** | **Locais** |
 | --- | --- | --- | --- |
-| **China Telecom** |Suportado |Sem suporte |Pequim, Beijing2, Xangai, Shanghai2 |
-| **[GDS](http://en.gds-services.com/news_detail/newsId=21.html)** |Suportado |Sem suporte |Beijing2, Shanghai2 |
+| **China Telecom** |Suportado |Sem Suporte |Pequim, Beijing2, Xangai, Shanghai2 |
+| **[GDS](http://en.gds-services.com/news_detail/newsId=21.html)** |Suportado |Sem Suporte |Beijing2, Shanghai2 |
 
 Para saber mais, confira [ExpressRoute na China](http://www.windowsazure.cn/home/features/expressroute/).
 
@@ -190,12 +184,12 @@ Para saber mais, confira [ExpressRoute na China](http://www.windowsazure.cn/home
 
 | **Provedor de serviços** | **Microsoft Azure** | **Office 365** | **Locais** |
 | --- | --- | --- | --- |
-| **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Suportado |Sem suporte |Frankfurt |
-| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Suportado |Sem suporte |Frankfurt |
-| **[e-shelter](https://www.e-shelter.de/en/microsoft-expressroutetm)** |Suportado |Sem suporte |Berlim |
-| **Interxion** |Suportado |Sem suporte |Frankfurt |
-| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Suportado  | Sem suporte | Berlim |
-| **T-Systems** |Suportado |Sem suporte |Berlim |
+| **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Suportado |Sem Suporte |Frankfurt |
+| **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Suportado |Sem Suporte |Frankfurt |
+| **[e-shelter](https://www.e-shelter.de/en/microsoft-expressroutetm)** |Suportado |Sem Suporte |Berlim |
+| **Interxion** |Suportado |Sem Suporte |Frankfurt |
+| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Suportado  | Sem Suporte | Berlim |
+| **T-Systems** |Suportado |Sem Suporte |Berlim |
 
 ## <a name="connectivity-through-exchange-providers"></a>Conectividade por meio de provedores do Exchange
 

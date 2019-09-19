@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/15/2019
-ms.openlocfilehash: 65daf1468d27825d9904a14e42e43796d3985321
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: f560887a48ce4754b26a54ef0e18093c5577af34
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70996517"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128815"
 ---
 # <a name="what-is-the-visual-interface-for-azure-machine-learning"></a>O que é a interface visual para Azure Machine Learning? 
 
@@ -32,7 +32,7 @@ A interface visual usa seu [espaço de trabalho](concept-workspace.md) Azure Mac
 
 ![Visão geral da interface visual](media/ui-concept-visual-interface/overview.png)
 
-## <a name="workflow"></a>Fluxo de trabalho
+## <a name="workflow"></a>Fluxo de Trabalho
 
 A interface visual oferece uma tela Visual interativa para criar, testar e iterar rapidamente em um modelo. 
 
@@ -95,8 +95,8 @@ Para saber como implantar seu modelo, consulte [tutorial: Implante um modelo de 
 
 * Aprenda as noções básicas de análise preditiva e aprendizado de máquina [com o tutorial: Prever o preço de automóveis com a interface visual](ui-tutorial-automobile-price-train-score.md)
 * Use um dos exemplos e modifique para a suíte de suas necessidades:
-    * [Amostra 1-regressão: Preço de previsão](ui-sample-regression-predict-automobile-price-basic.md)
-    * [Exemplo 2-regressão: Prever o preço e comparar algoritmos](ui-sample-regression-predict-automobile-price-compare-algorithms.md)
-    * [Exemplo 3-classificação: Prever risco de crédito](ui-sample-classification-predict-credit-risk-basic.md)
-    * [Amostra 4-classificação: Prever o risco de crédito (sensível ao custo)](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
-    * [Exemplo 5-classificação: Prever a rotatividade, a desejo e a venda vertical](ui-sample-classification-predict-churn.md)
+    * [Amostra 1-regressão: Preço de previsão](how-to-ui-sample-regression-predict-automobile-price-basic.md)
+    * [Exemplo 2-regressão: Prever o preço e comparar algoritmos](how-to-ui-sample-regression-predict-automobile-price-compare-algorithms.md)
+    * [Exemplo 3-classificação: Prever risco de crédito](how-to-ui-sample-classification-predict-credit-risk-basic.md)
+    * [Amostra 4-classificação: Prever o risco de crédito (sensível ao custo)](how-to-ui-sample-classification-predict-credit-risk-cost-sensitive.md)
+    * [Exemplo 5-classificação: Prever a rotatividade, a desejo e a venda vertical](how-to-ui-sample-classification-predict-churn.md)

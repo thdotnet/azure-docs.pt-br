@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 09/13/2019
-ms.openlocfilehash: 59cce0b56a4e54208a454c9f71d9a4c8576b0a8b
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 3b3fbce40c93389037435a7cdb1271e773163de3
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034349"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123278"
 ---
 # <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service-aks"></a>Detectar descompasso de dados (versão prévia) em modelos implantados no serviço kubernetes do Azure (AKS)
 
@@ -23,7 +23,7 @@ Neste artigo, você aprenderá a monitorar a descompasso de dados entre o conjun
 
 ## <a name="what-is-data-drift"></a>O que é descompasso de dados?
 
-A descompasso de dados ocorre quando os dados servidos para um modelo na produção são diferentes dos dados usados para treinar o modelo. É um dos principais motivos em que a precisão do modelo degrada ao longo do tempo, o que monitora a descompasso de dados ajuda a detectar problemas de desempenho do modelo. 
+No contexto do Machine Learning, a descompasso de dados é a alteração nos dados de entrada do modelo que leva à degradação do desempenho do modelo. É um dos principais motivos em que a precisão do modelo degrada ao longo do tempo, o que monitora a descompasso de dados ajuda a detectar problemas de desempenho do modelo. 
 
 ## <a name="what-can-i-monitor"></a>O que posso monitorar?
 

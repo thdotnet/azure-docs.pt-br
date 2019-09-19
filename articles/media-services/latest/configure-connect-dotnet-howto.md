@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/04/2019
+ms.date: 09/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3ddf5a1ab37ac0af25379394b4513627139fcbd5
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: b2cfe8014e6ffbd7a6d5449192acde9780a2d303
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307944"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122878"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Conectar-se à API dos serviços de mídia v3-.NET
 
@@ -43,7 +43,7 @@ O aplicativo de exemplo neste tópico, targets `netcoreapp2.0`. O código usa ' 
 ## <a name="add-required-nuget-packages"></a>Adicionar pacotes NuGet necessários
 
 1. No Visual Studio, selecione **ferramentas** > **Gerenciador** > de pacotes NuGet**console do Gerenciador do NuGet**.
-2. Na janela do **console do Gerenciador** de pacotes `Install-Package` , use o comando para adicionar os seguintes pacotes NuGet. Por exemplo, `Install-Package Microsoft.Azure.Management.Media`.
+2. Na janela do **console do Gerenciador** de pacotes `Install-Package` , use o comando para adicionar os seguintes pacotes NuGet. Por exemplo: `Install-Package Microsoft.Azure.Management.Media`.
 
 |Pacote|Descrição|
 |---|---|
@@ -69,7 +69,7 @@ Execute o `az ams account sp create` comando conforme descrito em [APIs de acess
 
 Para sua conveniência, adicione um arquivo de configuração que seja responsável por ler valores de "appSettings. JSON".
 
-1. Adicione uma nova classe. cs ao seu projeto. Nomeie-o como `ConfigWrapper`. 
+1. Adicione uma nova classe. cs ao seu projeto. Nomeie-o `ConfigWrapper`. 
 1. Cole o código a seguir neste arquivo (Este exemplo pressupõe que você tem o namespace `ConsoleApp1`).
 
 ```csharp
@@ -242,4 +242,5 @@ namespace ConsoleApp1
 
 ## <a name="see-also"></a>Consulte também
 
-[Referência do .NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
+* [Referência do .NET](https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet)
+* Para obter mais exemplos de código, consulte o repositório de [exemplos do SDK do .net](https://github.com/Azure-Samples/media-services-v3-dotnet) .

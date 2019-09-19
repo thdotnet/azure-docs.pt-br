@@ -17,12 +17,12 @@ ms.date: 06/07/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54a0a5b5306414eb50a1928ec8a1854f56055681
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 9e50f2b92318ada729ad8e3405af8403f31d7b6e
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68987892"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129280"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Solução de erros do pacote de conteúdo dos Logs de atividades do Azure Active Directory 
 
@@ -47,7 +47,7 @@ Este artigo fornece informações sobre as possíveis causas e como corrigir ess
 | Causa | Como corrigir |
 | ---   | ---        |
 | Erros de falha na atualização podem ser causados quando as credenciais dos usuários que se conectam ao pacote de conteúdo foram redefinidas, mas não atualizadas nas configurações de conexão do pacote de conteúdo. | No Power BI, localize o conjunto de dados correspondente ao painel de logs de atividades do Azure AD (**Logs de atividades do Azure Active Directory**), escolha programar atualização e insira as credenciais do Azure AD. |
-| Uma atualização pode falhar devido a grandes conjuntos de altos. | Atualmente, o pacote de conteúdo do Azure AD com o Power BI pode dar suporte apenas a pequenos conjuntos de dados (menos de 500, 00 linhas) devido a algumas limitações em relação aos tempos limite no serviço Power BI. Se você encontrar erros de limitação ou se a atualização falhar devido a problemas de tempo limite, isso pode ocorrer porque você está tentando buscar um grande conjunto de grandes. Reduza o período de tempo na consulta e tente novamente.|
+| Uma atualização pode falhar devido a grandes conjuntos de altos. | Atualmente, o pacote de conteúdo do Azure AD com o Power BI pode dar suporte apenas a pequenos conjuntos de dados (menos de 500.000 linhas) devido a algumas limitações em relação aos tempos limite no serviço Power BI. Se você encontrar erros de limitação ou se a atualização falhar devido a problemas de tempo limite, isso pode ocorrer porque você está tentando buscar um grande conjunto de grandes. Reduza o período de tempo na consulta e tente novamente.|
  
  
 ## <a name="failed-to-update-data-source-credentials"></a>Falha ao atualizar as credenciais de fonte de dados 

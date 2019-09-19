@@ -9,12 +9,12 @@ ms.date: 09/17/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 3640d2d88fc679b78395472c667fcde39979728a
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 6a598ad3f68c613a745fd56f3b368e309afeb8b6
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71074345"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122969"
 ---
 # <a name="azure-storage-redundancy"></a>Redundância do Armazenamento do Azure
 
@@ -28,20 +28,15 @@ O armazenamento do Azure verifica regularmente a integridade dos dados armazenad
 
 Ao criar uma conta de armazenamento, você deve selecionar uma das seguintes opções de redundância:
 
-- [Armazenamento com redundância local (LRS)](storage-redundancy-lrs.md)
-- [Armazenamento com redundância de zona (ZRS)](storage-redundancy-zrs.md)
-- [Armazenamento com redundância geográfica (GRS)](storage-redundancy-grs.md)
-- [Armazenamento com redundância geográfica com acesso de leitura (RA-GRS)](storage-redundancy-grs.md#read-access-geo-redundant-storage)
-- [Armazenamento com redundância de zona geográfica (GZRS)](storage-redundancy-gzrs.md)
-- [Armazenamento com redundância de zona geográfica com acesso de leitura (RA-GZRS)](storage-redundancy-gzrs.md)
+[!INCLUDE [azure-storage-redundancy](../../../includes/azure-storage-redundancy.md)]
 
 A tabela a seguir fornece uma visão geral rápida do escopo de durabilidade e disponibilidade que cada estratégia de replicação fornecerá a você para um determinado tipo de evento (ou evento de impacto semelhante).
 
 | Cenário                                                                                                 | LRS                             | ZRS                              | GRS/RA-GRS                                  | GZRS/RA-GZRS (visualização)                              |
 | :------------------------------------------------------------------------------------------------------- | :------------------------------ | :------------------------------- | :----------------------------------- | :----------------------------------- |
 | Indisponibilidade de nó dentro de um datacenter                                                                 | Sim                             | Sim                              | Sim                                  | Sim                                  |
-| Um data center inteiro (zonal ou não zonal) fica indisponível                                           | Não                              | Sim                              | Sim                                  | Sim                                  |
-| Uma interrupção em toda a região                                                                                     | Não                              | Não                               | Sim                                  | Sim                                  |
+| Um data center inteiro (zonal ou não zonal) fica indisponível                                           | Não                              | sim                              | Sim                                  | Sim                                  |
+| Uma interrupção em toda a região                                                                                     | Não                              | Não                               | sim                                  | Sim                                  |
 | Acesso de leitura aos dados (em uma região remota e replicada geograficamente) no caso de indisponibilidade em toda a região | Não                              | Não                               | Sim (com RA-GRS)                                   | Sim (com RA-GZRS)                                 |
 | Projetado para fornecer \_\_ durabilidade de objetos em um determinado ano                                          | no mínimo 99,999999999% (11 9's) | no mínimo 99,9999999999% (12 9's) | no mínimo 99,99999999999999% (16 9's) | no mínimo 99,99999999999999% (16 9's) |
 | Tipos de conta de armazenamento suportados                                                                   | GPv2, GPv1, Blob                | GPv2                             | GPv2, GPv1, Blob                     | GPv2                     |
@@ -55,7 +50,7 @@ Para obter informações sobre cada opção de redundância de preços, consulte
 Para obter informações sobre o armazenamento do Azure garante para durabilidade e disponibilidade, consulte o [SLA do armazenamento do Azure](https://azure.microsoft.com/support/legal/sla/storage/).
 
 > [!NOTE]
-> O armazenamento Premium do Azure dá suporte apenas ao LRS (armazenamento com redundância local).
+> Atualmente, o armazenamento Premium do Azure dá suporte apenas ao LRS (armazenamento com redundância local).
 
 ## <a name="changing-replication-strategy"></a>Alterar estratégia de replicação
 

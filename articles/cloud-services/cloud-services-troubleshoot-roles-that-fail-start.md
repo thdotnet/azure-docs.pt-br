@@ -4,7 +4,7 @@ description: Veja algumas razões comuns pelas quais uma função do Serviço de
 services: cloud-services
 documentationcenter: ''
 author: simonxjx
-manager: felixwu
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue
 ms.assetid: 674b2faf-26d7-4f54-99ea-a9e02ef0eb2f
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 9e1ae9ca6106a6a55e0cfc933ad47a5944ed5abb
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 869453d92f536a62aacc2be52598223158566ae0
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945403"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122741"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Solução de problemas de funções do serviço de nuvem com falha de inicialização
 Veja alguns problemas comuns e soluções relacionadas às funções do serviço de nuvem do Azure com falha na inicialização.
@@ -75,7 +75,7 @@ Navegar até o site agora retornará mensagens de erro mais explícitas:
 
 * Erro de servidor no aplicativo '/'.
 * Descrição: Ocorreu uma exceção sem tratamento durante a execução da solicitação da Web atual. Examine o rastreamento de pilha para obter mais informações sobre o erro e em que ponto ele ocorreu no código.
-* Detalhes da exceção: System.IO.FIleNotFoundException: Não foi possível carregar o arquivo ou assembly ' Microsoft. WindowsAzure. StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35 ' ou uma de suas dependências. O sistema não encontrou o arquivo especificado.
+* Detalhes da exceção: System.IO.FIleNotFoundException: Não foi possível carregar o arquivo ou assembly ' Microsoft. WindowsAzure. StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35 ' ou uma de suas dependências. O sistema não pode encontrar o arquivo especificado.
 
 Por exemplo:
 

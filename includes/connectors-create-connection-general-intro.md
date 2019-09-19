@@ -2,17 +2,17 @@
 title: Arquivo de inclusão
 description: Arquivo de inclusão
 services: logic-apps
-author: ecfan
 ms.service: logic-apps
-ms.topic: include
-ms.date: 05/14/2018
+author: ecfan
 ms.author: estfan
+ms.topic: include
+ms.date: 09/18/2019
 ms.custom: include file
-ms.openlocfilehash: 6594031aeccae4b9f0ea843e2d72cb01a67d492d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 1fbf8a8d83871fa4cbed3fa79d3c19d66406329d
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171678"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71121099"
 ---
-Antes de seu aplicativo lógico poder acessar qualquer serviço, você precisará criar uma *conexão* entre o aplicativo lógico e o serviço. Se você não criou essa conexão anteriormente, será solicitado a fornecer informações de conexão ao adicionar um gatilho ou uma ação relativa a esse serviço ao aplicativo lógico. O Designer do Aplicativo Lógico fornece uma maneira fácil para você criar essa conexão diretamente no aplicativo lógico.
+Quando você usa um gatilho ou uma ação que acessa um serviço pela primeira vez, o designer de aplicativos lógicos solicita que você crie uma *conexão* com esse serviço. Em seguida, você pode fornecer as informações de conexão necessárias diretamente do seu aplicativo lógico dentro do designer.
