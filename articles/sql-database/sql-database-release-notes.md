@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: 232f8b13174aed19477ee0b139c83fba439049ac
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 90482fc859c4dcdd04a70e91da2fd6adb079a795
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101544"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162267"
 ---
 # <a name="sql-database-release-notes"></a>Notas de versão do banco de dados SQL
 
@@ -60,6 +60,7 @@ Este artigo lista os recursos do banco de dados SQL que estão atualmente em vis
 
 ### <a name="managed-instance-h2-2019-updates"></a>Atualizações 2019 de instância gerenciada H2
 
+- Os [grupos de failover automático](https://azure.microsoft.com/updates/azure-sql-database-auto-failover-groups-feature-now-available-in-all-regions/) permitem replicar todos os bancos de dados da instância primária para uma instância secundária em outra região.
 - Configure o comportamento da instância gerenciada com [sinalizadores de rastreamento globais](https://azure.microsoft.com/updates/global-trace-flags-are-now-available-in-azure-sql-database-managed-instance/).
 
 ### <a name="managed-instance-h1-2019-updates"></a>Instâncias gerenciadas H1 2019 atualizações

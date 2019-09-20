@@ -4,12 +4,12 @@ ms.author: robinsh
 ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
-ms.openlocfilehash: 104849557a8580e16fa1860b7919d1c0252debe9
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 689322614e2cea4e59a5a573b72bfeb2aafda847
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "67172317"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71148361"
 ---
 A tabela a seguir lista os limites associados às diferentes camadas de serviço S1, S2, S3 e F1. Para obter informações sobre o custo de cada *unidade* em cada camada, consulte [preços do Hub IOT do Azure](https://azure.microsoft.com/pricing/details/iot-hub/).
 
@@ -38,6 +38,7 @@ A tabela a seguir lista os limites que se aplicam aos recursos do Hub IoT.
 | Tamanho máximo da mensagem da nuvem para o dispositivo |64 KB |
 | TTL máximo para mensagens da nuvem para o dispositivo |2 dias |
 | Contagem máxima de entrega para mensagens <br/> mensagens |100 |
+| Profundidade máxima da fila da nuvem para o dispositivo por dispositivo |50 |
 | Contagem máxima de entrega de mensagens de comentários <br/> em resposta a uma mensagem da nuvem para o dispositivo |100 |
 | TTL máximo de mensagens de comentários <br/> em resposta a uma mensagem da nuvem para o dispositivo |2 dias |
 | [Tamanho máximo do dispositivo n º](../articles/iot-hub/iot-hub-devguide-device-twins.md#device-twin-size) <br/> (marcas, propriedades relatadas e propriedades desejadas) | 8 KB |

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: e18fc040249954ce7ea6a8a686e121a4b56fb54a
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 9bcbfe1bdb501cac6ff31156db5382d1174eb8ad
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312131"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146830"
 ---
 # <a name="use-tags-to-organize-your-azure-resources"></a>Usar marcações para organizar seus recursos do Azure
 
@@ -23,7 +23,7 @@ Para aplicar marcas a recursos, o usuário deve ter acesso de gravação a esse 
 
 ## <a name="policies"></a>Políticas
 
-Você pode usar o [Azure Policy](../governance/policy/overview.md) para impor a marcação de regras e convenções. Ao criar uma política, você deve evitar o cenário de recursos implantados em sua assinatura que não são compatíveis com as marcas esperadas para a sua organização. Em vez de aplicar as marcas ou procurar os recursos que não são compatíveis manualmente, você pode criar uma política que aplica automaticamente as marcas necessárias durante a implantação. A seção a seguir mostra as políticas de exemplo para marcas.
+Você pode usar o [Azure Policy](../governance/policy/overview.md) para impor a marcação de regras e convenções. Ao criar uma política, você deve evitar o cenário de recursos implantados em sua assinatura que não são compatíveis com as marcas esperadas para a sua organização. Em vez de aplicar as marcas ou procurar os recursos que não são compatíveis manualmente, você pode criar uma política que aplica automaticamente as marcas necessárias durante a implantação. Agora, as marcas também podem ser aplicadas a recursos existentes com o novo efeito [Modificar](../governance/policy/concepts/effects.md#modify) e uma [tarefa de correção](../governance/policy/how-to/remediate-resources.md). A seção a seguir mostra as políticas de exemplo para marcas.
 
 [!INCLUDE [Tag policies](../../includes/azure-policy-samples-general-tags.md)]
 

@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 09/05/2019
+ms.date: 09/20/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2eff9c0edf6797c08d0ef9732c903a81a6c764a
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 27c38b23849eef535b17657f48c1c50cc998f72f
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "70861167"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155017"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Permissões da função de administrador no Azure Active Directory
 
@@ -78,6 +78,12 @@ A função Administrador de autenticação está atualmente em visualização p�
 * Proprietários de Grupos de Segurança e de Grupos do Office 365, que podem gerenciar a associação de grupo. Esses grupos podem conceder acesso a informações confidenciais ou privadas ou configurações críticas no Azure AD e em outros lugares.
 * Administradores em outros serviços fora do Azure AD, como o Exchange Online, a Segurança do Office e o Centro de Conformidade e sistemas de recursos humanos.
 * Não administradores, como executivos, o departamento jurídico e os funcionários de recursos humanos, que podem ter acesso a informações confidenciais ou privadas.
+
+### <a name="azure-devops-administratorazure-devops-administrator-permissions"></a>[Administrador de DevOps do Azure](#azure-devops-administrator-permissions)
+
+Os usuários com essa função podem gerenciar a política de DevOps do Azure para restringir a criação da nova organização do Azure DevOps a um conjunto de usuários ou grupos configuráveis. Os usuários nessa função podem gerenciar essa política por meio de qualquer organização do Azure DevOps que tenha sido apoiada na organização do Azure AD da empresa.
+
+Todas as políticas do Enterprise DevOps do Azure podem ser gerenciadas por usuários nesta função.
 
 ### <a name="azure-information-protection-administratorazure-information-protection-administrator-permissions"></a>[Administrador da proteção de informações do Azure](#azure-information-protection-administrator-permissions)
 
@@ -309,7 +315,7 @@ Os usuários com essa função têm permissões para gerenciar recursos relacion
 No | O que ele pode fazer
 --- | ---
 [Central de segurança do Microsoft 365](https://protection.office.com) | Monitorar políticas relacionadas a segurança em todos os serviços do Microsoft 365<br>Gerenciar alertas e ameaças de segurança<br>Exibir relatórios
-Central do Identity Protection | Todas as permissões da função Leitor de Segurança<br>Além disso, a habilidade de executar todas as operações do Centro de Proteção de Identidade, exceto redefinir senhas
+Identity Protection Center | Todas as permissões da função Leitor de Segurança<br>Além disso, a habilidade de executar todas as operações do Centro de Proteção de Identidade, exceto redefinir senhas
 [Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Todas as permissões da função Leitor de Segurança<br>**Não é possível** gerenciar as atribuições ou configurações de função do Azure AD
 [Centro de Conformidade e Segurança do Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Gerenciar políticas de segurança<br>Exibir, investigar e responder a ameaças de segurança<br>Exibir relatórios
 Proteção avançada contra ameaças do Azure | Monitorar e responder a atividades suspeitas de segurança
@@ -326,7 +332,7 @@ Os usuários com essa função podem gerenciar alertas e ter acesso somente leit
 No | O que ele pode fazer
 --- | ---
 [Central de segurança do Microsoft 365](https://protection.office.com) | Todas as permissões da função Leitor de Segurança<br>Exibir, investigar e responder a alertas de ameaças de segurança
-Central do Identity Protection | Todas as permissões da função Leitor de Segurança<br>Além disso, a habilidade de executar todas as operações do Centro de Proteção de Identidade, exceto redefinir senhas
+Identity Protection Center | Todas as permissões da função Leitor de Segurança<br>Além disso, a habilidade de executar todas as operações do Centro de Proteção de Identidade, exceto redefinir senhas
 [Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Todas as permissões da função Leitor de Segurança
 [Centro de Conformidade e Segurança do Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Todas as permissões da função Leitor de Segurança<br>Exibir, investigar e responder a alertas de segurança
 Windows Defender ATP e EDR | Todas as permissões da função Leitor de Segurança<br>Exibir, investigar e responder a alertas de segurança
@@ -341,7 +347,7 @@ Usuários com essa função têm acesso somente leitura global em recurso relaci
 No | O que ele pode fazer
 --- | ---
 [Central de segurança do Microsoft 365](https://protection.office.com) | Exibir políticas relacionadas à segurança em todos os serviços do Microsoft 365<br>Exibir alertas e ameaças de segurança<br>Exibir relatórios
-Central do Identity Protection | Ler todos os relatórios de segurança e informações de configurações para recursos de segurança<br><ul><li>Anti-spam<li>Criptografia<li>Prevenção de perda de dados<li>Antimalware<li>Proteção avançada contra ameaças<li>Antiphishing<li>Regras de fluxo de mensagens
+Identity Protection Center | Ler todos os relatórios de segurança e informações de configurações para recursos de segurança<br><ul><li>Anti-spam<li>Criptografia<li>Prevenção de perda de dados<li>Antimalware<li>Proteção avançada contra ameaças<li>Antiphishing<li>Regras de fluxo de mensagens
 [Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) | Tem acesso somente leitura a todas as informações na superfície Azure AD Privileged Identity Management: Políticas e relatórios para atribuições de função e revisões de segurança do Azure AD.<br>**Não é possível** se inscrever para Azure ad Privileged Identity Management ou fazer alterações nele. No portal de Privileged Identity Management ou por meio do PowerShell, alguém nessa função pode ativar funções adicionais (por exemplo, administrador global ou administradores de função com privilégios), se o usuário estiver qualificado para eles.
 [Centro de Conformidade e Segurança do Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Exibir políticas de segurança<br>Exibir e investigar ameaças de segurança<br>Exibir relatórios
 Windows Defender ATP e EDR | Exibir e investigar alertas. Quando você ativa o controle de acesso baseado em função no Windows Defender ATP, os usuários com permissões somente leitura, como a função leitor de segurança do Azure AD, perdem o acesso até que sejam atribuídos a uma função do Windows Defender ATP.
@@ -491,6 +497,19 @@ Permitido para exibir, definir e redefinir as informações de método de autent
 | microsoft.office365.serviceHealth/allEntities/allTasks | Ler e configurar a Integridade de Serviço do Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Criar e gerenciar tíquetes de suporte do Office 365. |
 | Microsoft. Directory/Users/password/Update | Atualize as senhas de todos os usuários na organização do Office 365. Consulte a documentação online para obter mais detalhes. |
+
+### <a name="azure-devops-administrator-permissions"></a>Permissões do administrador de DevOps do Azure
+
+Pode gerenciar a política e as configurações da organização do Azure DevOps.
+
+> [!NOTE]
+> Essa função tem permissões adicionais fora do Azure Active Directory. Para obter mais informações, consulte a [Descrição da função](#azure-devops-administrator) acima.
+>
+>
+
+| **Ações** | **Descrição** |
+| --- | --- |
+| Microsoft. Azure. devOps/myentities/tarefas | Ler e configurar o Azure DevOps. |
 
 ### <a name="azure-information-protection-administrator-permissions"></a>Permissões de administrador da proteção de informações do Azure
 
@@ -1496,17 +1515,17 @@ DisplayName de grafo | portal do Azure nome de exibição | directoryRoleTemplat
 Administrador de Aplicativos | Administrador de aplicativos | 9B895D92-2CD3-44C7-9D02-A6AC2D5EA5C3
 Desenvolvedor de Aplicativos | Desenvolvedor de aplicativos | CF1C38E5-3621-4004-A7CB-879624DCED7C
 Administrador de Autenticação | Administrador de autenticação | c4e39bd9-1100-46d3-8c65-fb160da0071f
-Administrador da proteção de informações do Azure | Administrador da proteção de informações do Azure | 7495fdc4-34c4-4d15-a289-98788ce399fd
+Administrador da proteção de informações do Azure | Administrador da Proteção de Informações do Azure | 7495fdc4-34c4-4d15-a289-98788ce399fd
 Administrador de fluxo de usuário B2C | Administrador de fluxo de usuário B2C | 6e591065-9bad-43ed-90f3-e9424366d2f0
 Administrador de Atributo de Fluxo do Usuário B2C | Administrador de Atributo de Fluxo do Usuário B2C | 0f971eea-41eb-4569-a71e-57bb8a3eff1e
-Administrador de Conjunto de Chaves IEF B2C | Administrador de Conjunto de Chaves IEF B2C | aaf43236-0c0d-4d5f-883a-6955382ac081
-Administrador de Política IEF B2C | Administrador de Política IEF B2C | 3edaf663-341e-4475-9f94-5c398ef6c070
+Administrador de Conjunto de Chaves do IEF B2C | Administrador de Conjunto de Chaves do IEF B2C | aaf43236-0c0d-4d5f-883a-6955382ac081
+Administrador de Política do IEF B2C | Administrador de Política do IEF B2C | 3edaf663-341e-4475-9f94-5c398ef6c070
 Administrador de Cobrança | Administrador de cobrança | b0f54661-2d74-4c50-afa3-1ec803f12efe
 Administrador de Aplicativos de Nuvem | Administrador de aplicativos de nuvem | 158c047a-c907-4556-b7ef-446551a6b5f7
 Administrador de Dispositivo de Nuvem | Administrador de dispositivo de nuvem | 7698a772-787b-4ac8-901f-60d6b08affd2
 Administradores de Empresa | Administrador global | 62e90394-69f5-4237-9190-012177145e10
 Administrador de Conformidade | Administrador de conformidade | 17315797-102d-40b4-93e0-432062caca18
-Administrador de dados de conformidade | Administrador de dados de conformidade | e6d1a23a-da11-4be4-9570-befc86d067a7
+Administrador de Dados de Conformidade | Administrador de dados de conformidade | e6d1a23a-da11-4be4-9570-befc86d067a7
 Administrador de Acesso Condicional | Administrador de Acesso Condicional | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9
 Administrador de Serviços de CRM | Administrador do Dynamics 365 | 44367163-eba1-44c3-98af-f5787879f96a
 Aprovador de Acesso do Sistema de Proteção de Dados do Cliente | Aprovador de acesso do Sistema de Proteção de Dados do Cliente | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91
@@ -1518,43 +1537,43 @@ Usuários de Dispositivo | Usuários do dispositivo | d405c6df-0af8-4e3b-95e4-4d
 Leitores de Diretório | Leitores de diretório | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b
 Contas de sincronização de diretório | Contas de sincronização de diretório | d29b2b05-8046-44ba-8758-1e26182fcf32
 Gravadores de Diretório | Gravadores de diretório | 9360feb5-f418-4baa-8175-e2a00bac4301
-Administrador de Serviços do Exchange | Administrador do Exchange | 29232cdf-9323-42fd-ade2-1d097af3e4de
-Administrador do provedor de identidade externo | Administrador do provedor de identidade externo | be2f45a1-457d-42af-a067-6ec1fa63bc45
+Administrador de serviços do Exchange | Administrador do Exchange | 29232cdf-9323-42fd-ade2-1d097af3e4de
+Administrador de Provedor de Identidade Externo | Administrador de Provedor de Identidade Externo | be2f45a1-457d-42af-a067-6ec1fa63bc45
 Emissor de Convites Independente | Emissor de convites independente | 95e79109-95c0-4d8e-aee3-d01accf2d47b
 Administrador de Assistência Técnica | Administrador de senhas | 729827e3-9c14-49f7-bb1b-9608f156bbb8
 Administrador de Serviços do Intune | Administrador do Intune | 3a2c62db-5318-420d-8d74-23affee5d9d5
 Administrador do Kaizala | Administrador do Kaizala | 74ef975b-6605-40af-a5d2-b9539d836353
 Administrador de Licenças | Administrador de licenças | 4d6ac14f-3453-41d0-bef9-a3e0c569773a
-Administrador do Serviço Lync | Administrador do Skype for Business | 75941009-915a-4869-abe7-691bff18279e
-Leitor de privacidade do centro de mensagens | Leitor de privacidade do centro de mensagens | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
+Administrador de serviços do Lync | Administrador do Skype for Business | 75941009-915a-4869-abe7-691bff18279e
+Leitor de Privacidade do Centro de Mensagens | Leitor de privacidade do centro de mensagens | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
 Leitor do Centro de Mensagens | Leitor do centro de mensagens | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b
 Suporte de Camada1 a Parceiros | Suporte de camada1 a parceiros | 4ba39ca4-527c-499a-b93d-d9b492c50246
 Suporte de Camada2 a Parceiros | Suporte de camada2 a parceiros | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8
 Administrador de Senhas | Administrador de senhas | 966707d0-3269-4727-9be2-8c3a10f19b9d
 Administrador de Serviços do Power BI | Administrador do Power BI | a9ea8996-122f-4c74-9520-8edcd192826c
 Administrador de Autenticação Privilegiada | Administrador de autenticação privilegiada | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13
-Administrador da Função com Privilégios | Administrador de funções com privilégios | e8611ab8-c189-46e8-94e1-60213ab1f814
+Administrador de Funções com Privilégios | Administrador de funções com privilégios | e8611ab8-c189-46e8-94e1-60213ab1f814
 Leitor de relatórios | Leitor de relatórios | 4a5d8f65-41da-4de4-8968-e035b65339cf
-Administrador de pesquisa | Administrador de pesquisa | 0964bb5e-9bdb-4d7b-ac29-58e794862a40
-Editor de pesquisa | Editor de pesquisa | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9
+Administrador de Pesquisas | Administrador de pesquisas | 0964bb5e-9bdb-4d7b-ac29-58e794862a40
+Editor de Pesquisas | Editor de pesquisas | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9
 Administrador de Segurança | Administrador de segurança | 194ae4cb-b126-40b2-bd5b-6091b380977d
-Operador de segurança | Operador de segurança | 5f2222b1-57c3-48ba-8ad5-d4759f1fde6f
+Operador de Segurança | Operador de segurança | 5f2222b1-57c3-48ba-8ad5-d4759f1fde6f
 Leitor de Segurança | Leitor de segurança | 5d6b6bb7-de71-4623-b4af-96380a352509
-Administrador de Serviço de Suporte | Administrador do serviço | f023fd81-a637-4b56-95fd-791ac0226033
-Administrador do Serviço SharePoint | Administrador do SharePoint | f28a1f50-f6e7-4571-818b-6a12f2af6b6c
-Administrador de Comunicações de Equipes | Administrador de Comunicações de Equipes | baf37b3a-610e-45da-9e62-d9d1e5e8914b
-Engenheiro de Suporte de Comunicações de Equipes | Engenheiro de Suporte de Comunicações de Equipes | f70938a0-fc10-4177-9e90-2178f8765737
-Especialista de Suporte de Comunicações de Equipes | Especialista de Suporte de Comunicações de Equipes | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
-Administrador de Serviços de Equipes | Administrador de Serviços de Equipes | 69091246-20e8-4a56-aa4d-066075b2a7a8
+Administrador de suporte a serviço | Administrador de serviços | f023fd81-a637-4b56-95fd-791ac0226033
+Administrador de Serviços do SharePoint | Administrador do SharePoint | f28a1f50-f6e7-4571-818b-6a12f2af6b6c
+Administrador de Comunicações do Teams | Administrador de Comunicações do Teams | baf37b3a-610e-45da-9e62-d9d1e5e8914b
+Engenheiro de Suporte Técnico de Comunicações do Teams | Engenheiro de Suporte Técnico de Comunicações do Teams | f70938a0-fc10-4177-9e90-2178f8765737
+Especialista de Suporte Técnico de Comunicações do Teams | Especialista de Suporte Técnico de Comunicações do Teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
+Administrador de Serviços do Teams | Administrador de Serviços do Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
 User | User | a0b1b346-4d3e-4e8b-98f8-753987be4970
-Administrador de Conta de Usuário | Administrador de usuários | fe930be7-5e62-47db-91af-98c3a49a38b1
+Administrador da conta de usuário | Administrador de usuários | fe930be7-5e62-47db-91af-98c3a49a38b1
 Adição de Dispositivo de Local de Trabalho | Ingresso no dispositivo do local de trabalho | c34f683f-4d5a-4403-affd-6615e00e3a7f
 
 ## <a name="deprecated-roles"></a>Funções preteridas
 
 As seguintes funções não devem ser usadas. Eles foram preteridos e serão removidos do AD do Azure no futuro.
 
-* Administrador de Licenças AdHoc
+* Administrador de Licenças Ad Hoc
 * Ingresso de Dispositivo
 * Gerenciadores de Dispositivo
 * Usuários de Dispositivo

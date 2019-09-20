@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: 4c783c70217a84bbe5ccf15accc4a2bec0b7cca8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 166648402eec7f8033c090a3f7862a902bae4be6
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485311"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154203"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>Solucionar problemas de conexão de RDP da VM do Azure por ID do Evento 
 
@@ -45,7 +45,7 @@ Para se conectar à VM remotamente, use um dos métodos em [Como usar ferramenta
 
 ## <a name="scenario-1"></a>Cenário 1
 
-### <a name="event-logs"></a>Logs de eventos
+### <a name="event-logs"></a>Logs de evento
 
 Em uma instância CMD, execute os seguintes comandos para verificar se o evento 1058 ou o evento 1057 foi registrado no log do sistema nas últimas 24 horas:
 
@@ -58,7 +58,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Fonte:**        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Data:**          *hora* <br />
 **ID de evento:**      1058 <br />
-**Categoria da Tarefa:** Nenhum <br />
+**Categoria da Tarefa:** Nenhuma <br />
 **Nível:**         Erro <br />
 **Palavras-chave:**      Clássico <br />
 **Usuário:**          N/D <br />
@@ -69,7 +69,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Fonte:**        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Data:**          *hora* <br />
 **ID de evento:**      1058 <br />
-**Categoria da Tarefa:** Nenhum <br />
+**Categoria da Tarefa:** Nenhuma <br />
 **Nível:**         Erro <br />
 **Palavras-chave:**      Clássico <br />
 **Usuário:**          N/D <br />
@@ -80,7 +80,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Microsoft-Windo
 **Fonte:**        Microsoft-Windows-TerminalServices-RemoteConnectionManager <br />
 **Data:**          *hora* <br />
 **ID de evento:**      1057 <br />
-**Categoria da Tarefa:** Nenhum <br />
+**Categoria da Tarefa:** Nenhuma <br />
 **Nível:**         Erro <br />
 **Palavras-chave:**      Clássico <br />
 **Usuário:**          N/D <br />
@@ -98,7 +98,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 **Fonte:**        SChannel <br />
 **Data:**          — <br />
 **ID de evento:**      36870 <br />
-**Categoria da Tarefa:** Nenhum <br />
+**Categoria da Tarefa:** Nenhuma <br />
 **Nível:**         Erro <br />
 **Palavras-chave:**       <br />
 **Usuário:**          SYSTEM <br />
@@ -220,7 +220,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 **Fonte:**        SChannel <br />
 **Data:**          — <br />
 **ID de evento:**      36871 <br />
-**Categoria da Tarefa:** Nenhum <br />
+**Categoria da Tarefa:** Nenhuma <br />
 **Nível:**         Erro <br />
 **Palavras-chave:**       <br />
 **Usuário:**          SYSTEM <br />
@@ -258,8 +258,8 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name=' Microsoft-Wind
 **Descrição:** A descrição para o Evento de ID 2056 do Microsoft-Windows-TerminalServices-SessionBroker de origem não pode ser localizada. O componente que gera esse evento não está instalado no computador local ou a instalação está corrompida. Você pode instalar ou reparar o componente no computador local. <br />
 Se o evento tiver sido originado em outro computador, as informações de exibição precisarão ser salvas com o evento. <br />
 As informações a seguir foram incluídas com o evento: <br />
-NULO <br />
-NULO <br />
+NULL <br />
+NULL <br />
 Falha no logon no banco de dados.
 
 **Nome do log:**      Microsoft-Windows-TerminalServices-SessionBroker-Client/Operational <br />

@@ -4,7 +4,7 @@ description: Uma função de serviço de nuvem que é reciclada repentinamente p
 services: cloud-services
 documentationcenter: ''
 author: simonxjx
-manager: felixwu
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue
 ms.assetid: 533930d1-8035-4402-b16a-cf887b2c4f85
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 37abdae07c1b0ecc11d39c57b550b1c7f60c73cd
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 554508b1bf784e306cd12a4a601f908e06320933
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945410"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154968"
 ---
 # <a name="common-issues-that-cause-roles-to-recycle"></a>Problemas comuns que causam a reciclagem de funções
 Este artigo discute algumas das causas comuns dos problemas de implantação e fornece dicas de solução de problemas para ajudá-lo a resolvê-los. Uma indicação de que existe um problema com um aplicativo é quando há uma falha na inicialização da instância de função ou se ela alterna entre os estados inicializando, ocupado e parando.

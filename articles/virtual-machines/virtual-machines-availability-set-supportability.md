@@ -4,7 +4,7 @@ description: Capacidade de suporte de adição de VMs do Azure a um conjunto de 
 services: virtual-machines-linux
 documentationcenter: ''
 author: Deland-Han
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 7a5e97b66fec040b4ec32caa8d58cf9b50169a33
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3954df389516aa7199022d713dc63d62dda961ae
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60443697"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155451"
 ---
 # <a name="supportability-of-adding-azure-vms-to-an-existing-availability-set"></a>Capacidade de suporte de adição de VMs do Azure a um conjunto de disponibilidade existente
 
@@ -38,4 +38,4 @@ Série e conjunto de disponibilidade|Segunda VM|O|Av2|D|Dv2|Dv3|
 
 Todas as outras séries não podem estar no mesmo conjunto de disponibilidade porque exigem um hardware específico.
 
-Tamanho de VM a8/A9 não pode ser combinado devido ao requisito na rede de back-end RDMA dedicada.
+O tamanho da VM A8/A9 não pode ser misturado devido ao requisito na rede de back-end RDMA dedicada.

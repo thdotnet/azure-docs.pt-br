@@ -15,20 +15,22 @@ ms.topic: article
 ms.date: 08/22/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: bc8e8219c8f8de75b01c584a2a5ce13cc1429fec
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: f677d6b8edfe60646c6368acce9d47b23a35237d
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991770"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146883"
 ---
-# <a name="retrieve-the-current-verizon-pop-ip-list-for-azure-cdn"></a>Recuperar a lista de IPS POP do Verizon atual para a CDN do Azure
+# <a name="retrieve-the-current-pop-ip-list-for-azure-cdn"></a>Recuperar a lista de IP POP atual para a CDN do Azure
+
+## <a name="retrieve-the-current-verizon-pop-ip-list-for-azure-cdn"></a>Recuperar a lista de IPS POP do Verizon atual para a CDN do Azure
 
 Você pode usar a API REST para recuperar o conjunto de IPs para o ponto da Verizon dos servidores de presença (POP). Esses servidores POP fazem solicitações para servidores de origem que estão associados com os pontos de extremidade do Azure Content Delivery Network (CDN) em um perfil Verizon (**Azure CDN padrão da Verizon** ou **Premium do Azure CDN da Verizon**). Observe que esse conjunto de IPs é diferente dos IPs que um cliente veria ao fazer solicitações aos POPs. 
 
 Para obter a sintaxe da operação da API REST para recuperar a lista POP, consulte [Nós de Borda - Lista](https://docs.microsoft.com/rest/api/cdn/edgenodes/list).
 
-# <a name="retrieve-the-current-microsoft-pop-ip-list-for-azure-cdn"></a>Recuperar a lista de IP POP atual da Microsoft para a CDN do Azure
+## <a name="retrieve-the-current-microsoft-pop-ip-list-for-azure-cdn"></a>Recuperar a lista de IP POP atual da Microsoft para a CDN do Azure
 
 Para bloquear seu aplicativo para aceitar o tráfego somente da CDN do Azure da Microsoft, você precisará configurar ACLs de IP para seu back-end. Você também pode restringir o conjunto de valores aceitos para o cabeçalho ' X-Forwarded-host ' enviado pela CDN do Azure da Microsoft. Essas etapas são detalhadas como a seguir:
 

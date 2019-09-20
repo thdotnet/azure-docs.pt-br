@@ -7,12 +7,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 2b36e7c333521e9438e76bfbe53a26dce23c2e8a
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: a0faaeee369a2227f6018141e5aa5d18c9037e9d
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194687"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161990"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Determinar as causas de não conformidade
 
@@ -20,7 +20,7 @@ Quando um recurso do Azure é determinado como não compatível com uma regra de
 
 > [!div class="checklist"]
 > - [Detalhes de conformidade](#compliance-details)
-> - [Histórico de alterações (versão prévia)](#change-history-preview)
+> - [Histórico de alterações (versão prévia)](#change-history)
 
 ## <a name="compliance-details"></a>Detalhes de conformidade
 
@@ -79,7 +79,7 @@ Para exibir os detalhes de conformidade, siga estas etapas:
 > [!NOTE]
 > Para proteger os dados, quando um valor de propriedade é um _segredo_ , o valor atual exibe asteriscos.
 
-Esses detalhes explicam por que um recurso não está em conformidade no momento, mas não mostram quando a alteração foi feita no recurso que fez com que ele se torne incompatível. Para obter essas informações, consulte [histórico de alterações (versão prévia)](#change-history-preview) abaixo.
+Esses detalhes explicam por que um recurso não está em conformidade no momento, mas não mostram quando a alteração foi feita no recurso que fez com que ele se torne incompatível. Para obter essas informações, consulte [histórico de alterações (versão prévia)](#change-history) abaixo.
 
 ### <a name="compliance-reasons"></a>Motivos de conformidade
 
@@ -176,7 +176,7 @@ PolicyDisplayName                                                         Compli
 <truncated>
 ```
 
-Para simplificar essa exibição, use o parâmetro showchanged. A saída desse comando inclui apenas os relatórios que seguiram uma alteração no status de conformidade.
+Para simplificar essa exibição, use o parâmetro **showchanged** . A saída desse comando inclui apenas os relatórios que seguiram uma alteração no status de conformidade.
 
 ```azurepowershell-interactive
 $guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname> -ShowChanged

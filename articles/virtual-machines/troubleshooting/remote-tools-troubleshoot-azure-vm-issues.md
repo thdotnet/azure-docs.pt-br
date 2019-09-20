@@ -4,7 +4,7 @@ description: ''
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: ''
 ms.service: virtual-machines
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 01/11/2018
 ms.author: delhan
-ms.openlocfilehash: 513ce98703e67053ab0bcac3e6fc7a3e959f6870
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 70d777fe2e939c1871bc318eed439214fd3e3f60
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64717277"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155742"
 ---
 # <a name="use-remote-tools-to-troubleshoot-azure-vm-issues"></a>Use ferramentas remotas para solucionar problemas do VM do Azure
 
@@ -39,7 +39,7 @@ psexec \\<computer>-u user -s cmd
 
 >[!Note]
 >* O comando deve ser executado em um computador que esteja na mesma VNET.
->* Nome de host ou DIP pode ser usado para substituir \<computador >.
+>* O DIP ou o nome do host pode \<ser usado para substituir > do computador.
 >* O parâmetro -s garante que o comando seja chamado usando a conta do sistema (permissão de administrador).
 >* PsExec usa portas TCP 135 e 445. Portanto, as duas portas devem estar abertas no Firewall.
 

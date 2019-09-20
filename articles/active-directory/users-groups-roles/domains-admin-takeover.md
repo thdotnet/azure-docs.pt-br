@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c05e1dc720f49eb190ccdbe1826a1a347fba7fa1
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 00753ee8d7d128222e9fb773f00a23720813a237
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70914769"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146456"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Controlar um diretório não gerenciado como administrador no Azure Active Directory
 
@@ -88,14 +88,11 @@ Quando você verificar a propriedade do nome de domínio, o Azure AD remove o no
 ### <a name="support-for-external-admin-takeover"></a>Suporte para controle de administrador externo
 O controle de administrador externo tem suporte nos seguintes serviços online:
 
-- Power BI
 - Azure Rights Management
 - Exchange Online
 
 Os planos de serviço com suporte incluem:
 
-- Power BI Gratuito
-- Power BI Pro
 - PowerApps Gratuito
 - PowerFlow Gratuito
 - RMS para pessoas
@@ -113,10 +110,6 @@ Para [RMS para pessoas](/azure/information-protection/rms-for-individuals), quan
 A chave e os modelos não são movidos quando o locatário não gerenciado está em uma região diferente. Por exemplo, se o locatário não gerenciado estiver na Europa e a organização que você possui estiver em América do Norte.
 
 Embora o RMS para pessoas seja projetado para oferecer suporte à autenticação do Microsoft Azure Active Directory para abrir o conteúdo protegido, ele não impede que os usuários também protejam o conteúdo. Se os usuários tiverem protegido o conteúdo com a assinatura do RMS para pessoas físicas e a chave e os modelos não tiverem sido movidos, esse conteúdo não poderá ser acessado após o tomada de domínio.
-
-#### <a name="more-information-about-power-bi"></a>Mais informações sobre Power BI
-
-Ao executar uma tomada de controle externa, o conteúdo do Power BI que foi criado antes da tomada de controle é colocado em um [Workspace Arquivado do Power BI](/power-bi/service-admin-power-bi-archived-workspace). Você deve migrar manualmente qualquer conteúdo que desejar usar no novo locatário.
 
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Cmdlets do Azure AD PowerShell para a opção ForceTakeover
 Você pode ver esses cmdlets usados no [exemplo do PowerShell](#powershell-example).

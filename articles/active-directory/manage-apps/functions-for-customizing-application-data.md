@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec23d3f08fb22f73618c27443bcd8b72c43a9862
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: cd7abdeef7c13c272a0e4bbf2075c6eda8f73a07
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70113556"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162386"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Escrevendo expressões para mapeamentos de atributo no Active Directory do Azure
 Quando você configura o provisionamento de um aplicativo SaaS, um dos tipos de mapeamentos de atributos que você pode especificar é o mapeamento de expressão. Nesses casos, você deve escrever uma expressão semelhante a script que permite transformar os dados de usuários em formatos que são mais aceitáveis para o aplicativo SaaS.
@@ -104,7 +104,7 @@ Se um dos valores de source for um atributo com vários valores, todos os valore
 
 **Parâmetros:**<br> 
 
-| Nome | Obrigatório/repetição | Tipo | Observações |
+| Nome | Obrigatório/repetição | type | Observações |
 | --- | --- | --- | --- |
 | **fonte** |Necessário |Cadeia | Geralmente um atributo de nome ou sobrenome. |
 
@@ -129,16 +129,16 @@ substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira di
 
 * Quando **oldValue** e **replacementValue** são fornecidos:
   
-  * Substitui todas as ocorrências de **OldValue** na **fonte** por replacevalue
+  * Substitui todas as ocorrências de **OldValue** na **fonte** por **replacevalue**
 * Quando **oldValue** e **template** são fornecidos:
   
   * Substitui todas as ocorrências de **oldValue** em **template** com o valor de **source**
-* Quando **regexPattern** e replacevalue são fornecidos:
+* Quando **regexPattern** e **replacevalue** são fornecidos:
 
-  * A função aplica o **regexPattern** à cadeia de caracteres de **origem** e você pode usar os nomes de grupo Regex para construir a cadeia de caracteres para replacevalue
+  * A função aplica o **regexPattern** à cadeia de caracteres de **origem** e você pode usar os nomes de grupo Regex para construir a cadeia de caracteres para **replacevalue**
 * Quando **regexPattern**, **regexGroupName** e **replacementValue** são fornecidos:
   
-  * A função aplica o **regexPattern** à cadeia de caracteres de **origem** e substitui todos os valores correspondentes a **regexGroupName** com replacevalue
+  * A função aplica o **regexPattern** à cadeia de caracteres de **origem** e substitui todos os valores correspondentes a **regexGroupName** com **replacevalue**
 * Quando **regexPattern**, **regexGroupName**, **replacementAttributeName** são fornecidos:
   
   * Se **source** não tiver um valor, **source** será retornado
@@ -151,7 +151,7 @@ substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira di
 | **fonte** |Necessário |Cadeia |Normalmente o nome do atributo do objeto de **origem** . |
 | **oldValue** |Opcional |Cadeia |Valor a ser substituído em **source** ou **template**. |
 | **regexPattern** |Opcional |Cadeia |Padrão de Regex para o valor a ser substituído em **source**. Ou, quando **replacementPropertyName** é usado, Pattern para extrair o valor de **replacementPropertyName**. |
-| **regexGroupName** |Opcional |Cadeia |Nome do grupo dentro de **regexPattern**. Somente quando **replacementPropertyName** for usado, Extraíremos o valor desse grupo como replacevalue de **replacementPropertyName**. |
+| **regexGroupName** |Opcional |Cadeia |Nome do grupo dentro de **regexPattern**. Somente quando **replacementPropertyName** for usado, Extraíremos o valor desse grupo como **replacevalue** de **replacementPropertyName**. |
 | **replacementValue** |Opcional |Cadeia |Novo valor com o qual substituir um antigo. |
 | **replacementAttributeName** |Opcional |Cadeia |Nome do atributo a ser usado para o valor de substituição |
 | **template** |Opcional |Cadeia |Quando o valor do **modelo** for fornecido, procuraremos **OldValue** dentro do modelo e o substituíremos pelo valor de **origem** . |
@@ -163,14 +163,15 @@ substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira di
 **Descrição:**<br> Requer um mínimo de dois argumentos, que são definidas usando expressões de regras de geração de valor exclusivo. A função avalia cada regra e, em seguida, verifica o valor gerado para exclusividade no aplicativo/diretório de destino. O primeiro valor exclusivo encontrado será retornado o um. Se todos os valores já existem no destino, a entrada será obter mantida em garantia e o motivo pelo qual obtém registrado nos logs de auditoria. Não há nenhum limite superior para o número de argumentos que podem ser fornecidos.
 
 > [!NOTE]
->1. Essa é uma função de nível superior, ele não pode ser aninhado.
->2. Esta função não pode ser aplicada a atributos que têm uma precedência correspondente.  
->3. Essa função destina-se somente a ser usado para criações de entrada. Ao usá-lo com um atributo, defina a **Aplicar mapeamento** propriedade **somente durante a criação do objeto**.
+> - Essa é uma função de nível superior, ele não pode ser aninhado.
+> - Esta função não pode ser aplicada a atributos que têm uma precedência correspondente.  
+> - Essa função destina-se somente a ser usado para criações de entrada. Ao usá-lo com um atributo, defina a **Aplicar mapeamento** propriedade **somente durante a criação do objeto**.
+> - Atualmente, essa função só tem suporte para "WORKDAY para Active Directory provisionamento de usuário". Ele não pode ser usado com outros aplicativos de provisionamento. 
 
 
 **Parâmetros:**<br> 
 
-| Nome | Obrigatório/repetição | Tipo | Observações |
+| Nome | Obrigatório/repetição | type | Observações |
 | --- | --- | --- | --- |
 | **uniqueValueRule1  … uniqueValueRuleN** |Pelo menos 2 são necessários, sem limite superior |Cadeia | Lista de regras de geração de valor exclusivo para avaliar. |
 
@@ -191,7 +192,7 @@ substitui valores dentro de uma cadeia de caracteres. Ela funciona de maneira di
 ### <a name="split"></a>Dividir
 **Função:**<br> Split(source, delimiter)
 
-**Descrição:**<br> Divide uma cadeia de caracteres em uma matriz com vários valores, usando o caractere delimitador especificado.
+**Descrição:**<br> Divide uma cadeia de caracteres em uma matriz de valores múltiplos, usando o caractere delimitador especificado.
 
 **Parâmetros:**<br> 
 

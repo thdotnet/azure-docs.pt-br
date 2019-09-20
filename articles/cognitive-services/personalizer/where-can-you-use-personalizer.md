@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 09/19/2019
 ms.author: diberry
-ms.openlocfilehash: 87065709b16a5a0c7076584e8fc33c3830319e4f
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 246e76a0ab94624945723b500ef136e038ab40ec
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70999639"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155222"
 ---
 # <a name="where-can-you-use-personalizer"></a>Em que situações o Personalizador pode ser usado?
 
@@ -33,7 +33,7 @@ Você pode aplicar o Personalizador em situações em que:
 * A melhor opção pode e deve ser aprendida com o comportamento coletivo dos usuários e a pontuação total das recompensas.
 * O uso do aprendizado de máquina para personalização segue [diretrizes de uso responsável](ethics-responsible-use.md) e as opções escolhidas por você.
 * A decisão contextual pode ser expressa como a classificação da melhor opção (ação) de um conjunto limitado de opções.
-* Saber se a opção classificada funcionou bem para seu aplicativo pode ser determinado com a avaliação de alguns aspectos do comportamento do usuário e a expressão disso em uma _pontuação de recompensa_. Esse é um número entre -1 e 1.
+* O quão bem a escolha classificada para seu aplicativo pode ser determinada medindo algum aspecto do comportamento do usuário e expressando-o em uma _[Pontuação de recompensa](concept-rewards.md)_ .
 * A pontuação de recompensa não traz muitos fatores de confusão ou externos. A duração do teste é curta o suficiente para que a pontuação de recompensa possa ser computada enquanto ela ainda é relevante.
 * Você pode expressar o contexto da classificação como uma lista de, pelo menos, 5 [recursos](concepts-features.md) que achar que ajudariam a fazer a escolha certa e que não incluam informações de identificação pessoal. (PII).
 * Você tem informações sobre cada opção de conteúdo, _ação_, como uma lista de, pelo menos, 5 [recursos](concepts-features.md) que achar que ajudarão o Personalizador a fazer a escolha certa.

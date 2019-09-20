@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: kirpas
 ms.subservice: disks
-ms.openlocfilehash: b22507796a9e614da780d25795bb7edf7094e935
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 692046070ffc04942a5d8a73825f6cb59e462f8b
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103194"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71147202"
 ---
 # <a name="how-to-expand-the-os-drive-of-a-virtual-machine"></a>Como expandir a unidade do sistema operacional de uma máquina virtual
 
@@ -31,7 +31,7 @@ Quando você cria uma nova VM (máquina virtual) em um Grupo de Recursos implant
 
 
 > [!IMPORTANT]
-> O redimensionamento do Disco de SO de uma Máquina Virtual do Azure causará a reinicialização do sistema.
+> O redimensionamento do disco do sistema operacional de uma máquina virtual do Azure requer que a máquina virtual seja desalocada.
 >
 > Depois de expandir os discos, você precisará [expandir o volume no sistema operacional](#expand-the-volume-within-the-os) para aproveitar o disco maior.
 > 

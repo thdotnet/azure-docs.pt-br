@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 216316249197071bdd7a175dfc5339caeddee50a
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 2d56b1f800c71a5bbef7ffb1155d05e096113e2c
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086837"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162428"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Referência de configurações de acesso condicional Azure Active Directory
 
@@ -145,7 +145,7 @@ Para implantar automaticamente essa extensão para os navegadores Chrome, crie a
 | --- | --- |
 | Path | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
 | Name | 1 |
-| Tipo | REG_SZ (String) |
+| type | REG_SZ (String) |
 | Dados | ppnbnpeolgkicgegkbkbjmhlideopiji; https\://clients2.google.com/Service/Update2/CRX |
 
 Para obter suporte ao Chrome no **Windows 8.1 e 7**, crie a seguinte chave do registro:
@@ -154,7 +154,7 @@ Para obter suporte ao Chrome no **Windows 8.1 e 7**, crie a seguinte chave do re
 | --- | --- |
 | Path | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
 | Name | 1 |
-| Tipo | REG_SZ (String) |
+| type | REG_SZ (String) |
 | Data | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
 Esses navegadores dão suporte à autenticação de dispositivo, permitindo que o dispositivo seja identificado e validado em relação a uma política. A verificação de dispositivo falha caso o navegador esteja sendo executado em modo privado.
@@ -246,7 +246,6 @@ Em sua política de acesso condicional, você pode exigir que uma política de p
 Essa configuração se aplica aos seguintes aplicativos cliente:
 
 - Microsoft Cortana
-- Microsoft Edge
 - Microsoft OneDrive
 - Microsoft Outlook
 - Microsoft Planner

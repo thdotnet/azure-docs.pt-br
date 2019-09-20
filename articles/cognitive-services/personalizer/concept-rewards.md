@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 06/07/2019
+ms.date: 09/19/2019
 ms.author: diberry
-ms.openlocfilehash: 72c425a1ec9fb83cc2e9dd1bae2c4f521109f162
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: bb9a9c1d67e52c21d2cb039832d27547a023da9f
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663386"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154677"
 ---
 # <a name="reward-scores-indicate-success-of-personalization"></a>Pontuações de recompensa indicam o sucesso da personalização
 
@@ -25,7 +25,7 @@ O personalizador treina seus modelos de machine learning avaliando as recompensa
 
 ## <a name="use-reward-api-to-send-reward-score-to-personalizer"></a>Usar a API de Recompensa para enviar pontuação de recompensa ao Personalizador
 
-As recompensas são enviadas ao Personalizador pela [API de Recompensa](https://docs.microsoft.com/rest/api/cognitiveservices/personalizer/events/reward). Uma recompensa é um número de -1 a 1. O Personalizador treina o modelo para obter a soma mais alta possível de recompensas ao longo do tempo.
+As recompensas são enviadas ao Personalizador pela [API de Recompensa](https://docs.microsoft.com/rest/api/cognitiveservices/personalizer/events/reward). Normalmente, um prêmio é um número de 0 e 1. Um prêmio negativo, com o valor de-1, é possível em determinados cenários e só deve ser usado se você tiver experiência com o reforço Learning (RL). O Personalizador treina o modelo para obter a soma mais alta possível de recompensas ao longo do tempo.
 
 As recompensas são enviadas depois que o comportamento do usuário ocorre, o que pode ser dias mais tarde. O tempo máximo que o Personalizador aguardará até que um evento seja considerado para receber nenhuma recompensa ou uma recompensa padrão está configurado no [Tempo de espera de recompensa](#reward-wait-time) no portal do Azure.
 
@@ -56,7 +56,7 @@ Se nenhuma recompensa for recebida dentro do [Tempo de espera de recompensa](#re
 
 ## <a name="building-up-rewards-with-multiple-factors"></a>Como criar remunerações com vários fatores  
 
-Para uma personalização efetiva, é possível criar a pontuação de recompensa (qualquer número de -1 a 1) com base em vários fatores. 
+Para uma personalização efetiva, você pode criar a pontuação de recompensa com base em vários fatores. 
 
 Por exemplo, você pode aplicar estas regras para personalizar uma lista de conteúdo de vídeo:
 
@@ -80,7 +80,7 @@ Configurações de agregação:
 
 Todas as recompensas para um evento recebidas após o **Tempo de espera de recompensa** são descartadas e não afetam o treinamento de modelos.
 
-Com a soma das pontuações de recompensa, a recompensa final pode ser maior que 1 ou menor que -1. Isso não causa falha no serviço.
+Ao adicionar pontuações de recompensa, sua recompensa final pode estar fora do intervalo de Pontuação esperado. Isso não causa falha no serviço.
 
 <!--
 @edjez - is the number ignored if it is outside the acceptable range?
@@ -100,7 +100,7 @@ Com a soma das pontuações de recompensa, a recompensa final pode ser maior que
     * Se você estiver exibindo uma lista de filmes e o usuário passar o mouse sobre o primeiro por um tempo para ver mais informações, você poderá determinar que ocorreu algum envolvimento do usuário. O comportamento pode contar com uma pontuação de recompensa de 0,1. 
     * Se o usuário abriu a página e, em seguida, saiu, a pontuação de recompensa pode ser 0,2. 
 
-## <a name="reward-wait-time"></a>Tempo de espera de recompensa
+## <a name="reward-wait-time"></a>Tempo de espera de premiação
 
 O Personalizador correlacionará as informações de uma chamada de classificação com as recompensas enviadas em chamadas de recompensa para treinar o modelo. Elas podem ocorrer em diferentes momentos. O Personalizador aguarda um período limitado, a partir de quando ocorreu a chamada de classificação, mesmo se essa chamada tiver sido feita como um evento inativo e ativada mais tarde.
 

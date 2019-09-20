@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 ms.date: 09/16/2019
-ms.openlocfilehash: d0356ff61ec8073e7fe69c3b09cbbdd8845fb787
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
-ms.translationtype: HT
+ms.openlocfilehash: 85ab8a61e0aebadf212217bc88e07e0066eca02b
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128906"
+ms.locfileid: "71146801"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Visão geral dos limites de recursos de instância gerenciada do banco de dados SQL
 
@@ -55,11 +55,11 @@ A instância gerenciada tem duas camadas de serviço: [Uso geral](sql-database-s
 | Memória máxima | Gen4: 56 GB-168 GB (7 GB/vCore)<br/>Gen5: 20,4 GB-408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. | Gen4: 56 GB-168 GB (7 GB/vCore)<br/>Gen5: 20,4 GB-408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. |
 | Tamanho máximo de armazenamento de instância (reservado) | -2 TB para 4 vCores (somente Gen5)<br/>-8 TB para outros tamanhos | Gen4: 1 TB <br/> Gen5: <br/>-1 TB para 4, 8, 16 vCores<br/>- 2 TB para 24 vCores<br/>- 4 TB para 32, 40, 64, 80 vCores |
 | Tamanho máximo do banco de dados | Até o tamanho da instância disponível no momento (máximo de 2 TB-8 TB, dependendo do número de vCores). | Até o tamanho da instância disponível no momento (máximo de 1 TB-4 TB, dependendo do número de vCores). |
-| Tamanho máximo de TempDB | Limitado a 24 GB/vCore (96-1.920 GB) e ao tamanho da instância disponível no momento.<br/>Adicione mais vCores para obter mais espaço de TempDB. | Até o tamanho da instância disponível no momento. O tamanho do arquivo de log de TempDB está limitado atualmente a 24 GB/vCore. |
+| Tamanho máximo de TempDB | Limitado a 24 GB/vCore (96-1.920 GB) e ao tamanho do armazenamento de instância disponível no momento.<br/>Adicione mais vCores para obter mais espaço de TempDB. | Até o tamanho do armazenamento de instância disponível no momento. O tamanho do arquivo de log de TempDB está limitado atualmente a 24 GB/vCore. |
 | Número máximo de bancos de dados por instância | 100, a menos que o limite de tamanho do armazenamento de instância tenha sido atingido. | 100, a menos que o limite de tamanho do armazenamento de instância tenha sido atingido. |
 | Número máximo de arquivos de banco de dados por instância | Até 280, a menos que o limite de tamanho do armazenamento de instância ou [do espaço de alocação do armazenamento em disco Premium do Azure](sql-database-managed-instance-transact-sql-information.md#exceeding-storage-space-with-small-database-files) tenha sido atingido. | 32.767 arquivos por banco de dados, a menos que o limite de tamanho do armazenamento de instância tenha sido atingido. |
-| Tamanho máximo do arquivo | Limitado a 8 TB, tamanho de instância disponível no momento (máx. 2 TB-8 TB) e [espaço de alocação de armazenamento em disco Premium do Azure](sql-database-managed-instance-transact-sql-information.md#exceeding-storage-space-with-small-database-files). | Limitado a 4 TB e tamanho de instância atualmente disponível (até 1 TB-4 TB). |
-| Tamanho máximo do arquivo de log | Limitado a 2 TB, tamanho de instância disponível no momento e [espaço de alocação de armazenamento em disco Premium do Azure](sql-database-managed-instance-transact-sql-information.md#exceeding-storage-space-with-small-database-files). | Limitado a 2 TB e tamanho de instância disponível no momento. |
+| Tamanho máximo do arquivo de dados | Limitado ao tamanho de armazenamento da instância disponível no momento (máx. 2 TB-8 TB) e ao [espaço de alocação do armazenamento em disco Premium do Azure](sql-database-managed-instance-transact-sql-information.md#exceeding-storage-space-with-small-database-files). | Limitado ao tamanho de armazenamento de instância disponível no momento (até 1 TB-4 TB). |
+| Tamanho máximo do arquivo de log | Limitado a 2 TB e tamanho de armazenamento de instância disponível no momento. | Limitado a 2 TB e tamanho de armazenamento de instância disponível no momento. |
 | Dados/Log IOPS (aproximado) | 500 – 7.500 por arquivo<br/>\*[Aumentar o tamanho do arquivo para obter mais IOPS](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 5,5 k-110 K (1375/vCore)<br/>Adicione mais vCores para obter melhor desempenho de e/s. |
 | Limite de taxa de transferência de gravação de log (por instância) | 3 MB/s por vCore<br/>Máximo de 22 MB/s | 4 MB/s por vCore<br/>Máx. de 48 MB/s |
 | Taxa de transferência de dados (aproximada) | 100 – 250 MB/s por arquivo<br/>\*[Aumente o tamanho do arquivo para obter melhor desempenho de e/s](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | Não limitado. |
@@ -69,6 +69,7 @@ A instância gerenciada tem duas camadas de serviço: [Uso geral](sql-database-s
 | [Réplicas somente leitura](sql-database-read-scale-out.md) | 0 | 1 (incluído no preço) |
 
 > [!NOTE]
+> - O **tamanho do armazenamento de instância disponível no momento** é a diferença entre o tamanho da instância reservada e o espaço de armazenamento usado.
 > - O tamanho do arquivo de log e de dados nos bancos de dados de sistema e de usuário são incluídos no tamanho de armazenamento de instância que é comparado ao limite de tamanho de armazenamento máximo. Usar a exibição do sistema <a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql">sys. master_files</a> para determinar o total o espaço usado pelos bancos de dados. Logs de erros não são persistentes e não são incluídos no tamanho. Backups não são incluídos no tamanho de armazenamento.
 > - A taxa de transferência e o IOPS também dependem do tamanho da página que não é explicitamente limitado pela instância gerenciada.
 > Você pode criar outra réplica legível em uma região do Azure diferente usando grupos de failover automático.

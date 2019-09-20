@@ -5,7 +5,7 @@ description: Solucionar problemas conhecidos com o Azure Load Balancer
 services: load-balancer
 documentationcenter: na
 author: chadmath
-manager: cshepard
+manager: dcscontentpm
 ms.custom: seodoc18
 ms.service: load-balancer
 ms.devlang: na
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: genli
-ms.openlocfilehash: c5f92d564a93823fd9c0f932fa95f20d4e827761
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e0e3cf6067467947bcb799a915a93d1bb342ea1
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60734466"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154918"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Solucionar problemas do Azure Load Balancer
 
@@ -77,7 +77,7 @@ Se todas as causas anteriores, aparentemente, tiverem sido validadas e resolvida
     - Execute um rastreamento Netsh simultâneo na VM do pool de back-end de destino e na outra VM de teste da mesma VNet. Agora, execute um teste PsPing por algum tempo, colete alguns rastreamentos de rede e interrompa o teste. 
     - Analise a captura de rede e verifique se há pacotes de entrada e saída relacionados à consulta de ping. 
         - Se não forem observados pacotes de entrada na VM do pool de back-end, possivelmente, há uma configuração incorreta de UDR ou grupos de segurança de rede bloqueando o tráfego. 
-        - Se não há pacotes de saída é observado na VM do pool de back-end, a VM precisa ser verificada para problemas não relacionados (por exemplo, bloqueando a porta de investigação do aplicativo). 
+        - Se nenhum pacote de saída for observado na VM do pool de back-end, a VM precisará ser verificada em busca de problemas não relacionados (por exemplo, aplicativo que bloqueia a porta de investigação). 
     - Verifique se os pacotes de investigação estão sendo forçados para outro destino (possivelmente por meio de configurações UDR) antes de chegarem ao Load Balancer. Isso pode fazer com que o tráfego nunca chegue à VM de back-end. 
 * Altere o tipo de investigação (por exemplo, HTTP para TCP) e configure a porta correspondente nas ACLs dos grupos de segurança de rede e no firewall a fim de verificar se o problema é com a configuração da resposta de investigação. Para saber mais sobre a configuração da investigação de integridade, confira [Endpoint Load Balancing health probe configuration](https://blogs.msdn.microsoft.com/mast/2016/01/26/endpoint-load-balancing-heath-probe-configuration-details/) (Configuração da investigação de integridade no balanceamento de carga do ponto de extremidade).
 

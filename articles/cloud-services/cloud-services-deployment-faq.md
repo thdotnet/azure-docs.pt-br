@@ -4,7 +4,7 @@ description: Este artigo lista as perguntas frequentes sobre a implantação par
 services: cloud-services
 documentationcenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 tags: top-support-issue
 ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: fff70cc0c80d26d5454e54e43a6ef6c0b39b5cac
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 2ffa6d7b1cf0550c97a60614f3f00ddc4b955218
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68941718"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154811"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Problemas de implantação para os serviços de nuvem do Azure: Perguntas frequentes (FAQs)
 
@@ -32,22 +32,22 @@ Se um serviço de nuvem tiver uma implantação em cada slot, todo o serviço de
 
 Falhas de alocação de ocorrerem quando o cluster em que se encontra o serviço de nuvem não tem recursos físicos de computação suficientes para atender à sua solicitação de implantação.
 
-Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de alocação [, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-scaling-up-or-scaling-out-a-cloud-service-deployment-sometimes-result-in-allocation-failure"></a>Por que escalar vertical ou horizontalmente uma implantação do serviço de nuvem às vezes resulta em falha de alocação?
 Quando um serviço de nuvem é implantado, ele geralmente é fixado a um cluster específico. Isso significa que escalar vertical/horizontalmente um serviço de nuvem existente deve alocar novas instâncias no mesmo cluster. Se o cluster estiver se aproximando da capacidade ou se o tamanho/tipo de VM desejado não estiver disponível, a solicitação poderá falhar.
 
-Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de alocação [, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-deploying-a-cloud-service-into-an-affinity-group-sometimes-result-in-allocation-failure"></a>Por que implantar um serviço de nuvem em um grupo de afinidades às vezes resulta em falha de alocação?
 Uma nova implantação para um serviço de nuvem vazio pode ser alocada pela malha em qualquer cluster nessa região, a menos que o serviço de nuvem esteja fixado em um grupo de afinidades. As implantações no mesmo grupo de afinidade serão tentadas no mesmo cluster. Se o cluster estiver se aproximando da capacidade, a solicitação poderá falhar.
 
-Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de alocação [, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-changing-vm-size-or-adding-a-new-vm-to-an-existing-cloud-service-sometimes-result-in-allocation-failure"></a>Por que alterar o tamanho da VM ou adicionar uma nova VM a um serviço de nuvem existente às vezes resulta em falha de alocação?
-Os clusters em um datacenter podem ter configurações diferentes de tipos de computador (por exemplo, série A, série Av2, série D, série Dv2, série G, série H etc.). Porém, nem todos os clusters necessariamente terão todos os tipos de VMs. Por exemplo, se você tentar adicionar uma VM da série D a um serviço de nuvem que já esteja implantado em um cluster somente da série A, ocorrerá uma falha de alocação. Isso também ocorrerá se você tentar alterar os tamanhos de SKU da VM (por exemplo, trocar da série A para a série D).
+Os clusters em um datacenter podem ter configurações diferentes de tipos de computador (por exemplo, uma série, série Av2, série D, série Dv2, série G, série H, etc.). Porém, nem todos os clusters necessariamente terão todos os tipos de VMs. Por exemplo, se você tentar adicionar uma VM da série D a um serviço de nuvem que já esteja implantado em um cluster somente da série A, ocorrerá uma falha de alocação. Isso também ocorrerá se você tentar alterar os tamanhos de SKU da VM (por exemplo, trocar da série A para a série D).
 
-Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de alocação [, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 Para verificar os tamanhos disponíveis em sua região, consulte [Microsoft Azure: Produtos disponíveis por região](https://azure.microsoft.com/regions/services).
 
@@ -65,7 +65,7 @@ Para obter mais informações, consulte [Como atualizar um serviço de nuvem](cl
 
 ## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Por que eu não consigo implantar os Serviços de Nuvem por meio das APIs de Gerenciamento de Serviços ou PowerShell ao usar a conta de armazenamento do Azure Resource Manager? 
 
-Como o Serviço de Nuvem é um recurso clássico que não é diretamente compatível com o modelo do Azure Resource Manager, não é possível associá-lo com as contas de armazenamento do Azure Resource Manager. Veja algumas opções: 
+Como o serviço de nuvem é um recurso clássico que não é compatível diretamente com o modelo de Azure Resource Manager, você não pode associá-lo com as contas de armazenamento de Azure Resource Manager. Veja algumas opções: 
  
 - Implantar por meio da API REST.
 
@@ -73,7 +73,7 @@ Como o Serviço de Nuvem é um recurso clássico que não é diretamente compat�
   
 - Implantar por meio do [Portal do Azure](https://portal.azure.com).
 
-    Isso funcionará no [Portal do Azure](https://portal.azure.com), uma vez que a chamada passa por um proxy/shim que permite a comunicação entre os recursos clássicos e do Azure Resource Manager. 
+    Isso funcionará na [portal do Azure](https://portal.azure.com) à medida que a chamada passa por um proxy/Shim que permite a comunicação entre Azure Resource Manager e recursos clássicos. 
  
 ## <a name="why-does-azure-portal-require-me-to-provide-a-storage-account-for-deployment"></a>Por que o portal do Azure exige que eu forneça uma conta de armazenamento para a implantação? 
 

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f22cb620bf8cf56110bec60a4dd809066393a8ff
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3becf5ef579acdc52a51f9ad618e37460491c2ec
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067652"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146756"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Automatizar relatórios personalizados com dados do Azure Application Insights
 
@@ -95,7 +95,9 @@ availabilityResults
 5. Selecionar **_Modelo de resumo agendado de Application Insights_** .
 
      > [!NOTE]
-     > Por padrão, os aplicativos de funções são criados com a versão de tempo de execução 2.x. Você deve [versão de tempo de execução de funções do Azure de destino](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) 1.x para usar o Application Insights agendada modelo digest.
+     > Por padrão, os aplicativos de funções são criados com a versão de tempo de execução 2. x. Você deve [direcionar Azure Functions tempo de execução versão](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) **1. x** para usar o modelo de resumo Application insights agendado.  ![captura de tela de Runtime](./../../../includes/media/functions-view-update-version-portal/function-app-view-version.png)
+
+
 
    ![Nova Função screenshot de Modelo do Application Insights](./media/automate-custom-reports/function-app-04.png)
 

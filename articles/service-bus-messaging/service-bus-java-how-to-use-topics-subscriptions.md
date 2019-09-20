@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 7cd7bcd4bd10152ecd2fa60e4e8418f17db16b61
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: affd62bd7cae0103b7d2510022fc12a66d26c865
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967842"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155608"
 ---
 # <a name="use-service-bus-topics-and-subscriptions-with-java"></a>Usar tópicos e assinaturas do barramento de serviço com Java
 
@@ -41,7 +41,7 @@ Neste guia de início rápido, você escreve o código Java para enviar mensagen
 ## <a name="configure-your-application-to-use-service-bus"></a>Configurar seu aplicativo para usar o Barramento de serviço
 Verifique se você instalou o [SDK do Azure para Java][Azure SDK for Java] antes de compilar este exemplo. Se você estiver usando o Eclipse, instale o [Kit de ferramentas do Azure para Eclipse][Azure Toolkit for Eclipse], que inclui o SDK do Azure para Java. Você pode adicionar as **Bibliotecas do Microsoft Azure para Java** ao seu projeto:
 
-![Bibliotecas no caminho de compilação do Eclipse](media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
+![Adicionar bibliotecas de Microsoft Azure para Java ao seu projeto Eclipse](media/service-bus-java-how-to-use-topics-subscriptions/eclipse-azure-libraries-java.png)
 
 Você também precisa adicionar os seguintes JARs ao Caminho de Construção Java:
 

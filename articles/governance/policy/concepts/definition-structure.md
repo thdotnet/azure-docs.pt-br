@@ -3,16 +3,16 @@ title: Detalhes da estrutura de definição de política
 description: Descreve como a definição de diretiva de recurso é usada pela Política do Azure para estabelecer convenções para recursos em sua organização, descrevendo quando a diretiva é aplicada e qual efeito tomar.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 03/13/2019
+ms.date: 09/09/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 1999a47d18fd3ce6388d6177be85c7debd3c1e97
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: d7e264bda62753693cdd2333625313cf213f142a
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70239179"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71145577"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
 
@@ -367,7 +367,7 @@ O uso de _funções de modelo_ em **valor** permite muitas funções aninhadas c
 }
 ```
 
-A regra de política de exemplo acima usa [substring ()](../../../azure-resource-manager/resource-group-template-functions-string.md#substring) para comparar os três primeiros caracteres de **nome** para **ABC**. Se **Name** for menor que três caracteres, a `substring()` função resultará em um erro. Esse erro faz com que a política se torne um efeito de negação.
+A regra de política de exemplo acima usa [substring ()](../../../azure-resource-manager/resource-group-template-functions-string.md#substring) para comparar os três primeiros caracteres de **nome** para **ABC**. Se **Name** for menor que três caracteres, a `substring()` função resultará em um erro. Esse erro faz com que a política se torne um efeito de **negação** .
 
 Em vez disso, use a função [If ()](../../../azure-resource-manager/resource-group-template-functions-logical.md#if) para verificar se os três primeiros caracteres de **nome** são iguais a **ABC** sem permitir que um **nome** com menos de três caracteres cause um erro:
 
@@ -398,6 +398,7 @@ O Azure Policy dá suporte aos seguintes tipos de efeito:
 - **DeployIfNotExists**: implanta um recurso caso ele ainda não exista
 - **Desabilitado**: não avalia os recursos de conformidade para a regra de política
 - **EnforceRegoPolicy**: configura o controlador de admissão do agente de política aberto no serviço kubernetes do Azure (versão prévia)
+- **Modificar**: adiciona, atualiza ou remove as marcas definidas de um recurso
 
 Para **acrescentar**, você precisa fornecer os detalhes abaixo:
 
@@ -424,6 +425,8 @@ O efeito **DeployIfNotExists** requer a propriedade **roleDefinitionId** na part
     ]
 }
 ```
+
+Da mesma forma, **Modify** requer a propriedade **roleDefinitionId** na parte de **detalhes** da regra de política para a [tarefa de correção](../how-to/remediate-resources.md). **Modify** também requer uma matriz de **operações** para definir as ações a serem executadas nas marcas de recursos.
 
 Para obter detalhes completos sobre cada efeito, ordem de avaliação, propriedades e exemplos, consulte [noções básicas sobre efeitos de Azure Policy](effects.md).
 

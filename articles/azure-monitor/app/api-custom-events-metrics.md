@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: cdc16c2ea01d14edc236d0d6a0897e0dd9578924
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 776f20d04bb79fa42c78dba8482e8ba866c93b31
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70909809"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162505"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API do Application Insights para métricas e eventos personalizados
 
@@ -30,7 +30,7 @@ Insira algumas linhas de código em seu aplicativo para descobrir o que os usuá
 
 A API principal é uniforme em todas as plataformas, além de algumas variações como `GetMetric` (somente .NET).
 
-| Método | Utilizado para |
+| Método | Usado para |
 | --- | --- |
 | [`TrackPageView`](#page-views) |Páginas, telas, folhas ou formulários. |
 | [`TrackEvent`](#trackevent) |Ações de usuário e outros eventos. Usado para acompanhar o comportamento do usuário ou para monitorar o desempenho. |
@@ -342,7 +342,7 @@ Por padrão, os tempos relatados como **Tempo de carregamento da exibição de p
 
 Em vez disso, é possível:
 
-* Defina uma duração explícita na chamada [trackPageView](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#trackpageview): `appInsights.trackPageView("tab1", null, null, null, durationInMilliseconds);`.
+* Defina uma duração explícita na chamada [trackPageView](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/legacy/API.md#trackpageview): `appInsights.trackPageView("tab1", null, null, null, durationInMilliseconds);`.
 * Usar as chamadas de definição de tempo da exibição de página `startTrackPage` e `stopTrackPage`.
 
 *JavaScript*
@@ -1184,21 +1184,20 @@ Para determinar por quanto tempo os dados são mantidos, confira [Retenção e p
 
 ## <a name="reference-docs"></a>Documentos de Referência
 
-* [Referência do ASP.NET](https://msdn.microsoft.com/library/dn817570.aspx)
-* [Referência do Java](http://dl.windowsazure.com/applicationinsights/javadoc/)
+* [Referência do ASP.NET](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/insights?view=azure-dotnet)
+* [Referência do Java](https://docs.microsoft.com/en-us/java/api/overview/azure/appinsights?view=azure-java-stable/)
 * [Referência do JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
-* [SDK do Android](https://github.com/Microsoft/ApplicationInsights-Android)
-* [SDK do iOS](https://github.com/Microsoft/ApplicationInsights-iOS)
+
 
 ## <a name="sdk-code"></a>Código do SDK
 
 * [SDK de Núcleo do ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnetcore)
-* [ASP.NET 5](https://github.com/Microsoft/ApplicationInsights-dotnet)
+* [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [Pacotes do Windows Server](https://github.com/Microsoft/applicationInsights-dotnet-server)
 * [Java SDK](https://github.com/Microsoft/ApplicationInsights-Java)
 * [SDK do Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [SDK do JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
-* [Todas as plataformas](https://github.com/Microsoft?utf8=%E2%9C%93&query=applicationInsights)
+
 
 ## <a name="questions"></a>Perguntas
 

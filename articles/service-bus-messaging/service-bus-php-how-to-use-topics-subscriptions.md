@@ -14,18 +14,18 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 18aeaccef724ba94a9c18240fb77ea33897e8d26
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eba2c0aeb37f2bc2283e7afb108bb4578981120e
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063866"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71147229"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-php"></a>Como usar tópicos e assinaturas do Barramento de Serviço com PHP
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-Este artigo mostra como usar os tópicos e as assinaturas do Barramento de Serviço. As amostras são escritas em PHP e usam o [SDK do Azure para PHP](../php-download-sdk.md). Os cenários abordados incluem:
+Este artigo mostra como usar os tópicos e as assinaturas do Barramento de Serviço. As amostras são escritas em PHP e usam o [SDK do Azure para PHP](https://github.com/Azure/azure-sdk-for-php). Os cenários abordados incluem:
 
 - Criar tópicos e assinaturas 
 - Criar filtros de assinatura 
@@ -34,14 +34,14 @@ Este artigo mostra como usar os tópicos e as assinaturas do Barramento de Servi
 - Excluir tópicos e assinaturas
 
 ## <a name="prerequisites"></a>Pré-requisitos
-1. Uma assinatura do Azure. Para concluir este tutorial, você precisa de uma conta do Azure. Você pode ativar sua [benefícios de assinante do MSDN ou Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) ou se inscrever para uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Siga as etapas no [guia de início rápido: Use o portal do Azure para criar um tópico do barramento de serviço e assinaturas do tópico](service-bus-quickstart-topics-subscriptions-portal.md) para criar um barramento de serviço **namespace** e obtenha o **cadeia de caracteres de conexão**.
+1. Uma assinatura do Azure. Para concluir este tutorial, você precisa de uma conta do Azure. Você pode ativar os [benefícios do assinante do Visual Studio ou do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) ou inscrever-se para uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Siga as etapas no [início rápido: Use o portal do Azure para criar um tópico e assinaturas do barramento de serviço para o tópico](service-bus-quickstart-topics-subscriptions-portal.md) para criar um **namespace** do barramento de serviço e obter a **cadeia de conexão**.
 
     > [!NOTE]
-    > Você aprenderá a criar uma **tópico** e uma **assinatura** para o tópico usando **PHP** neste início rápido. 
+    > Você criará um **tópico** e uma **assinatura** para o tópico usando **php** neste guia de início rápido. 
 
 ## <a name="create-a-php-application"></a>Criar um aplicativo PHP
-O único requisito para a criação de um aplicativo PHP que acessa o serviço Blob do Azure é a referência de classes no [SDK do Azure para PHP](../php-download-sdk.md) em seu código. Você pode usar quaisquer ferramentas de desenvolvimento para criar seu aplicativo, ou o Bloco de Notas.
+O único requisito para a criação de um aplicativo PHP que acessa o serviço Blob do Azure é a referência de classes no [SDK do Azure para PHP](https://github.com/Azure/azure-sdk-for-php) em seu código. Você pode usar quaisquer ferramentas de desenvolvimento para criar seu aplicativo, ou o Bloco de Notas.
 
 > [!NOTE]
 > A instalação do PHP também deve ter a [extensão OpenSSL](https://php.net/openssl) instalada e habilitada.
@@ -62,7 +62,7 @@ Este artigo descreve como usar os recursos de serviços que podem ser chamados e
       }
     }
     ```
-2. Baixe **[Phar] [composer-phar]** na raiz do projeto.
+2. Baixe **[Composer. Phar] [Composer-Phar]** na raiz do projeto.
 3. Abra um prompt de comando e execute o seguinte comando na raiz do projeto
    
     ```
@@ -72,7 +72,7 @@ Este artigo descreve como usar os recursos de serviços que podem ser chamados e
 ## <a name="configure-your-application-to-use-service-bus"></a>Configurar seu aplicativo para usar o Barramento de serviço
 Para usar as APIs do barramento de serviço:
 
-1. Faça referência ao arquivo do carregador automático usando a instrução [require_once][require-once].
+1. Referencie o arquivo de carregador automático usando a instrução [require_once][require-once] .
 2. Fazer referência a qualquer classe que você possa usar.
 
 O exemplo a seguir mostra como incluir o arquivo de carregador automático e fazer referência à classe **ServicesBuilder**.
@@ -184,7 +184,7 @@ catch(ServiceException $e){
 ```
 
 ### <a name="create-subscriptions-with-filters"></a>Criar assinaturas com os filtros
-Você também pode configurar filtros que permitem especificar quais mensagens enviadas a um tópico devem aparecer dentro de uma assinatura específica do tópico. O tipo de filtro mais flexível compatível com as assinaturas é o [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter), que implementa um subconjunto do SQL92. Os filtros SQL operam nas propriedades das mensagens que são publicadas no tópico. Para saber mais sobre SqlFilters, consulte [Propriedade SqlFilter.SqlExpression][sqlfilter].
+Você também pode configurar filtros que permitem especificar quais mensagens enviadas a um tópico devem aparecer dentro de uma assinatura específica do tópico. O tipo de filtro mais flexível compatível com as assinaturas é o [SqlFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter), que implementa um subconjunto do SQL92. Os filtros SQL operam nas propriedades das mensagens que são publicadas no tópico. Para obter mais informações sobre hiperfiltros, consulte [Propriedade sqlfilter. Sqlexpression][sqlfilter].
 
 > [!NOTE]
 > Cada regra uma assinatura processa as mensagens de entrada independentemente, adicionando suas mensagens de resultado à assinatura. Além disso, cada nova assinatura tem um objeto **Regra** padrão com um filtro que adiciona todas as mensagens do tópico à assinatura. Para receber apenas as mensagens correspondentes ao filtro, você deve remover a regra padrão. Você pode remover a regra padrão usando o método `ServiceBusRestProxy->deleteRule`.
@@ -252,7 +252,7 @@ catch(ServiceException $e){
 }
 ```
 
-As mensagens enviadas aos tópicos do Barramento de Serviço são instâncias da classe [BrokeredMessage][BrokeredMessage]. Os objetos [BrokeredMessage][BrokeredMessage] têm um conjunto de propriedades e métodos padrão, além de propriedades que podem ser usadas para manter as propriedades personalizadas específicas do aplicativo. O exemplo a seguir mostra como enviar cinco mensagens de teste para o tópico `mytopic` criado anteriormente. O método `setProperty` é usado para adicionar uma propriedade personalizada (`MessageNumber`) a cada mensagem. O valor da propriedade `MessageNumber` varia em cada mensagem (ele pode ser usado para determinar quais assinaturas o receberão, conforme mostrado na seção [Criar uma assinatura](#create-a-subscription)):
+As mensagens enviadas aos tópicos de Barramento de Serviço são instâncias da classe [BrokeredMessage][BrokeredMessage]. Os objetos [BrokeredMessage][BrokeredMessage] têm um conjunto de propriedades e métodos padrão, bem como propriedades que podem ser usadas para manter Propriedades personalizadas específicas do aplicativo. O exemplo a seguir mostra como enviar cinco mensagens de teste para o tópico `mytopic` criado anteriormente. O método `setProperty` é usado para adicionar uma propriedade personalizada (`MessageNumber`) a cada mensagem. O valor da propriedade `MessageNumber` varia em cada mensagem (ele pode ser usado para determinar quais assinaturas o receberão, conforme mostrado na seção [Criar uma assinatura](#create-a-subscription)):
 
 ```php
 for($i = 0; $i < 5; $i++){
@@ -364,7 +364,7 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 > É possível gerenciar os recursos do Barramento de Serviço com o [Gerenciador de Barramento de Serviço](https://github.com/paolosalvatori/ServiceBusExplorer/). O Gerenciador de Barramento de Serviço permite que usuários se conectem a um namespace de serviço do Barramento de Serviço e administrem entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópicos, filas, assinaturas, serviços de retransmissão, hubs de notificação e hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
-Para obter mais informações, confira [Filas, tópicos e assinaturas][Queues, topics, and subscriptions].
+Para obter mais informações, consulte [filas, tópicos e assinaturas][Queues, topics, and subscriptions].
 
 [BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage
 [Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md

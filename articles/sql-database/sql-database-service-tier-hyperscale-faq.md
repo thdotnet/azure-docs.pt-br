@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/06/2019
-ms.openlocfilehash: 3f64bce34a1bdb11bdbebb99fe28cdf3ff16dfb8
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 8c35877c7de2fa89a8fe7a94c11787814183df9e
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71128703"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162247"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Perguntas frequentes sobre bancos de dados SQL do Azure da Hiperescala
 
@@ -43,7 +43,7 @@ As camadas de serviço baseadas em vCore são basicamente diferenciadas com base
 - A camada de serviço da Hiperescala é otimizada para cargas de trabalho de banco de dados muito grandes.
 - A camada de serviço Business Critical é apropriada para cargas de trabalho de negócios em que a latência de I/O é uma prioridade.
 
-| | Tipo de recurso | Uso Geral |  Hiperescala | Essencial Para os Negócios |
+| | Tipo de recurso | Objetivo Geral |  Hiperescala | Essencial Para os Negócios |
 |:---:|:---:|:---:|:---:|:---:|
 | **Mais adequado para** |Todas|  A maioria das cargas de trabalho comerciais. Oferece opções equilibradas de computação e armazenamento orientadas ao orçamento. | Aplicativos de dados com grandes requisitos de capacidade de dados e a capacidade de dimensionar e armazenar em escala automática os recursos de computação. | Aplicativos OLTP com alta taxa de transação e menor I/O de latência. Oferece maior resiliência a falhas usando várias réplicas isoladas.|
 |  **Tipo de recurso** ||Banco de dados único / Elástico pool / instância gerenciada | Banco de dados individual | Banco de dados único / Elástico pool / instância gerenciada |
@@ -361,6 +361,11 @@ Criamos 2 réplicas para bancos de dados de hiperescala por padrão. Se você qu
 ### <a name="how-do-i-connect-to-these-secondary-compute-nodes"></a>Como eu me conecto a esses nós de computação secundários?
 
 Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `readonly`. Todas as conexões marcadas com `readonly` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.  
+
+### <a name="how-do-i-validate-if-i-have-successfully-connected-to-secondary-compute-node-using-ssms--other-client-tools"></a>Como fazer validar se eu tiver me conectado com êxito ao nó de computação secundário usando o SSMS/outras ferramentas de cliente?
+
+Você pode executar a seguinte consulta T-SQL usando o SSMS/outras ferramentas de `SELECT DATABASEPROPERTYEX ( '<database_name>' , 'updateability' )`cliente:.
+O resultado será `READ_ONLY` se sua conexão estiver apontando para o nó secundário somente leitura ou `READ_WRITE` se a conexão estiver apontando para o nó primário.
 
 ### <a name="can-i-create-a-dedicated-endpoint-for-the-read-scale-replica"></a>Posso criar um endpoint dedicado para a réplica em escala de leitura
 

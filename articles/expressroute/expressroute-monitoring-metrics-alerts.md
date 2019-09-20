@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 92ec03e20fb6e681a0afd14048449ad004ebca0c
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: dbe03ef29bd28d465fa671abc915d63d4b038cb2
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991455"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154779"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Monitoramento, alertas e métricas do ExpressRoute
 
@@ -23,57 +23,50 @@ Este artigo ajuda você a entender o monitoramento do ExpressRoute, métricas e 
 >Usar **Métricas Clássicas** não é recomendado.
 >
 
-## <a name="circuit-metrics"></a>Métricas de circuito
+## <a name="expressroute-metrics"></a>Métricas de ExpressRoute
 
-Para navegar até **Métricas**, clique na página do ExpressRoute para o circuito que você deseja monitorar. Em **Monitoramento**, você pode exibir as **Métricas**. Selecione uma das métricas listadas abaixo. A agregação padrão será aplicada. Opcionalmente, você pode aplicar a divisão, que mostrará as métricas com dimensões diferentes.
+Para exibir as **métricas**, navegue até a página *Azure monitor* e clique em *métricas*. Para exibir as métricas de **expressroute** , Filer por tipo de recurso, *circuitos de expressroute*. Para exibir **alcance global** métricas, filtre por tipo de recurso *circuitos do expressroute* e selecione um recurso de circuito do expressroute que tenha alcance global habilitado. Para exibir as métricas **diretas do expressroute** , filtre tipo de recurso por *portas do expressroute*. 
 
-### <a name="metrics-available"></a>Métricas disponíveis: 
-* **Disponibilidade** 
-    * Disponibilidade do ARP
-      * Dimensões disponíveis:
-        * Par (roteador de ExpressRoute primário/secundário)
-        * Tipo de emparelhamento (privado/público/Microsoft)
-    * Disponibilidade de BGP
-      * Dimensões disponíveis:
-        * Par (roteador de ExpressRoute primário/secundário)
-        * Tipo de emparelhamento (privado/público/Microsoft)
-* **Tráfico**
-    * BitsInPerSecond
-      * Dimensões disponíveis:
-        * Tipo de emparelhamento (privado/público/Microsoft)
-    * BitsOutPerSecond
-      * Dimensões disponíveis:
-        * Tipo de emparelhamento (privado/público/Microsoft)
-    * GlobalReachBitsInPerSecond
-      * Dimensões disponíveis:
-        * Circuito emparelhado skey (chave de serviço)
-    * GlobalReachBitsOutPerSecond
-      * Dimensões disponíveis:
-        * Circuito emparelhado skey (chave de serviço)
+Depois que uma métrica for selecionada, a agregação padrão será aplicada. Opcionalmente, você pode aplicar a divisão, que mostrará a métrica com dimensões diferentes.
 
+### <a name="available-metrics"></a>Métricas disponíveis
+|**Métrica**|**Categoria**|**Dimensão (ões)**|**Recurso (s)**|
+| --- | --- | --- | --- |
+|Disponibilidade do ARP|Disponibilidade|<ui><li>Par (roteador de ExpressRoute primário/secundário)</ui></li><ui><li> Tipo de emparelhamento (privado/público/Microsoft)</ui></li>|ExpressRoute|
+|Disponibilidade de BGP|Disponibilidade|<ui><li> Par (roteador de ExpressRoute primário/secundário)</ui></li><ui><li> Tipo de emparelhamento</ui></li>|ExpressRoute|
+|BitsInPerSecond|Tráfego|<ui><li> Tipo de emparelhamento (ExpressRoute)</ui></li><ui><li>Link (ExpressRoute direto)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direto|
+|BitsOutPerSecond|Tráfego| <ui><li>Tipo de emparelhamento (ExpressRoute)</ui></li><ui><li> Link (ExpressRoute direto) | <ui><li>ExpressRoute<ui><li>ExpressRoute direto</ui></li> |
+|GlobalReachBitsInPerSecond|Tráfego|<ui><li>Circuito emparelhado skey (chave de serviço)</ui></li>|Alcance Global|
+|GlobalReachBitsOutPerSecond|Tráfego|<ui><li>Circuito emparelhado skey (chave de serviço)</ui></li>|Alcance Global|
+|Adminstate|Conectividade física|Link|ExpressRoute Direto|
+|LineProtocol|Conectividade física|Link|ExpressRoute Direto|
+|RxLightLevel|Conectividade física|<ui><li>Criar</ui></li><ui><li>Estreita</ui></li>|ExpressRoute Direto|
+|TxLightLevel|Conectividade física|<ui><li>Criar</ui></li><ui><li>Estreita</ui></li>|ExpressRoute Direto|
 >[!NOTE]
 >Usar *GlobalGlobalReachBitsInPerSecond* e *GlobalGlobalReachBitsOutPerSecond* só será visível se pelo menos uma conexão alcance global for estabelecida.
 >
 
-## <a name="bits-in-and-out---metrics-across-all-peerings"></a>Bits de entrada e saída-métricas em todos os emparelhamentos
+## <a name="circuits-metrics"></a>Métricas de circuitos
+
+### <a name="bits-in-and-out---metrics-across-all-peerings"></a>Bits de entrada e saída-métricas em todos os emparelhamentos
 
 Você pode exibir as métricas em todos os emparelhamentos em um determinado circuito do ExpressRoute.
 
 ![métricas de circuito](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
 
-## <a name="bits-in-and-out---metrics-per-peering"></a>Métricas de entrada e saída de bits por emparelhamento
+### <a name="bits-in-and-out---metrics-per-peering"></a>Métricas de entrada e saída de bits por emparelhamento
 
 Você pode exibir métricas para emparelhamento privado, público e da Microsoft em bits por segundo.
 
 ![métricas por emparelhamento](./media/expressroute-monitoring-metrics-alerts/erpeeringmetrics.jpg) 
 
-## <a name="bgp-availability---split-by-peer"></a>Disponibilidade de BGP-divisão por par  
+### <a name="bgp-availability---split-by-peer"></a>Disponibilidade de BGP-divisão por par  
 
 Você pode exibir quase a disponibilidade em tempo real do BGP entre emparelhamentos e pares (roteadores de ExpressRoute primários e secundários). Esse painel mostra a sessão BGP primária para emparelhamento privado e a segunda sessão BGP para emparelhamento privado. 
 
 ![Disponibilidade de BGP por ponto](./media/expressroute-monitoring-metrics-alerts/erBgpAvailabilityMetrics.jpg) 
 
-## <a name="arp-availability---split-by-peering"></a>Disponibilidade ARP-divisão por emparelhamento  
+### <a name="arp-availability---split-by-peering"></a>Disponibilidade ARP-divisão por emparelhamento  
 
 Você pode exibir quase a disponibilidade em tempo real do [ARP](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-arp-resource-manager) entre emparelhamentos e pares (roteadores de ExpressRoute primários e secundários). Este painel mostra a sessão ARP de emparelhamento privado em ambos os pares, mas é concluída para o emparelhamento da Microsoft entre emparelhamentos. A agregação padrão (média) foi utilizada em ambos os pares.  
 

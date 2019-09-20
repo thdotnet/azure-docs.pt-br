@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: dc113417be3df97b9ab9509c30a1f23e1eeaf35b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: a0d12639ce074c3ed105513a3d90e323e30d1087
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70086273"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155083"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Associações do SendGrid no Azure Functions
 
@@ -31,6 +31,9 @@ As associações SendGrid são fornecidas no Pacote NuGet [Microsoft.Azure.WebJo
 ## <a name="packages---functions-2x"></a>Pacotes - Functions 2. x
 
 As associações SendGrid são fornecidas no Pacote NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid), versão 3.x. O código-fonte do pacote está no repositório GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/).
+
+> [!NOTE]
+> A versão 2. x não cria o tópico ou a assinatura configurada na `ServiceBusTrigger` instância. A versão 2. x é baseada em [Microsoft. Azure. ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) e não lida com o gerenciamento de filas.
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
@@ -287,7 +290,7 @@ Esta seção descreve as definições de configuração globais disponíveis par
 
 |Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
-|from|N/D|Endereço de email do remetente em todas as funções.| 
+|from|n/d|Endereço de email do remetente em todas as funções.| 
 
 
 ## <a name="next-steps"></a>Próximas etapas

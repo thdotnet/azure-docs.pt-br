@@ -1,6 +1,6 @@
 ---
-title: Diretrizes de tratamento de erros de funções do Azure Functions | Microsoft Docs
-description: Fornece diretrizes gerais para tratamento de erros que ocorrem quando as funções são executadas e links para tópicos de erros específicos da associação.
+title: Diretrizes de tratamento de erro Azure Functions
+description: Saiba como tratar erros no Azure Functions com links para erros de associação específicos.
 services: functions
 cloud: ''
 documentationcenter: ''
@@ -9,26 +9,28 @@ manager: gwallace
 ms.assetid: ''
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 02/01/2018
+ms.date: 09/11/2019
 ms.author: cshoe
-ms.openlocfilehash: fdfee3442986322f242da730bb9ceccbc9f9e250
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d301940998175adb6469e46cff2de918b5cae9df
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70097495"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155275"
 ---
 # <a name="azure-functions-error-handling"></a>Tratamento de erros do Azure Functions
 
-Este tópico fornece diretrizes gerais para tratamento de erros que ocorrem quando as funções são executadas. Ele também fornece links para tópicos que descrevem os erros específicos da associação que podem ocorrer. 
+O tratamento de erros no Azure Functions é importante para evitar perda de dados, eventos perdidos e para monitorar a integridade do aplicativo.
 
-## <a name="handling-errors-in-functions"></a>Tratamento de erros em funções
+Este artigo descreve estratégias gerais para tratamento de erros junto com links para erros específicos de associação.
+
+## <a name="handling-errors"></a>Tratamento de erros
+
 [!INCLUDE [bindings errors intro](../../includes/functions-bindings-errors-intro.md)]
 
- 
 ## <a name="binding-error-codes"></a>Códigos de erro de associação
 
-Ao se integrar com os serviços do Azure, você pode ter erros gerados com origem nas APIs dos serviços subjacentes. Links para a documentação do código de erro para esses serviços podem ser encontrados na seção **Exceções e códigos de retorno** dos seguintes tópicos de gatilho e referência da associação:
+Ao integrar com os serviços do Azure, os erros podem se originar das APIs dos serviços subjacentes. Informações relacionadas a erros específicos de associação estão disponíveis na seção **exceções e códigos de retorno** dos seguintes artigos:
 
 + [Azure Cosmos DB](functions-bindings-cosmosdb.md#exceptions-and-return-codes)
 

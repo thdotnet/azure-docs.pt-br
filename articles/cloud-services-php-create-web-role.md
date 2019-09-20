@@ -13,12 +13,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: 83834104dd73e4381947903196ad35c3497b64a1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 82bb5f153a2c70d3b26f295925f8e48693bc49b9
+ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60337554"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71146862"
 ---
 # <a name="create-php-web-and-worker-roles"></a>Criar funções de trabalho e funções Web de PHP
 
@@ -26,13 +26,13 @@ ms.locfileid: "60337554"
 
 Este guia mostrará como criar funções Web ou de trabalho do PHP em um ambiente de desenvolvimento Windows, como escolher uma versão específica do PHP nas versões "internas" disponíveis, como alterar a configuração do PHP, habilitar extensões e, finalmente, como implantar no Azure. Também descreve como configurar uma função Web ou de trabalho para usar um tempo de execução do PHP (com configuração e extensões personalizadas) que você fornece.
 
-O Azure fornece três modelos de computação para a execução de aplicativos: O serviço de aplicativo do Azure, máquinas virtuais do Azure e serviços de nuvem do Azure. Todos os três modelos oferecem suporte ao PHP. Os Serviços de Nuvem, que incluem as funções Web e de trabalho, fornecem a *PaaS (plataforma como serviço)* . Dentro de um serviço de nuvem, uma função web fornece um servidor Web de IIS (Serviços de Informações da Internet) dedicado, usado para hospedar aplicativos Web de front-end. Uma função de trabalho pode executar tarefas assíncronas, de execução longa ou perpétuas, independentemente da interação do usuário ou da entrada.
+O Azure fornece três modelos de computação para a execução de aplicativos: Azure App serviço, máquinas virtuais do Azure e serviços de nuvem do Azure. Todos os três modelos oferecem suporte ao PHP. Os Serviços de Nuvem, que incluem as funções Web e de trabalho, fornecem a *PaaS (plataforma como serviço)* . Dentro de um serviço de nuvem, uma função web fornece um servidor Web de IIS (Serviços de Informações da Internet) dedicado, usado para hospedar aplicativos Web de front-end. Uma função de trabalho pode executar tarefas assíncronas, de execução longa ou perpétuas, independentemente da interação do usuário ou da entrada.
 
 Para obter mais informações sobre essas opções, consulte [Opções de hospedagem de computação fornecidas pelo Azure](cloud-services/cloud-services-choose-me.md).
 
 ## <a name="download-the-azure-sdk-for-php"></a>Baixar o SDK do Azure para PHP
 
-O [SDK do Azure para PHP](php-download-sdk.md) consiste em vários componentes. Este artigo usará dois deles: O Azure PowerShell e os emuladores do Azure. Esses dois componentes podem ser instalados pelo Microsoft Web Platform Installer. Para obter mais informações, confira [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview).
+O [SDK do Azure para PHP](https://github.com/Azure/azure-sdk-for-php) consiste em vários componentes. Este artigo usará dois deles: Azure PowerShell e os emuladores do Azure. Esses dois componentes podem ser instalados pelo Microsoft Web Platform Installer. Para obter mais informações, confira [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview).
 
 ## <a name="create-a-cloud-services-project"></a>Criar um projeto de Serviço de Nuvem
 
@@ -116,10 +116,10 @@ Para configurar uma função web para usar um tempo de execução do PHP forneci
 
 1. Crie um projeto de Serviço do Azure e adicione uma função Web do PHP conforme descrito anteriormente neste tópico.
 2. Crie uma pasta `php` na pasta `bin` que está no diretório raiz de sua função web e adicione o tempo de execução do PHP (todos os binários, arquivos de configuração, subpastas etc.) à pasta `php`.
-3. (OPCIONAL) Se o tempo de execução do PHP usar os [Drivers da Microsoft para PHP para SQL Server][sqlsrv drivers], você precisará configurar a função Web para instalar o [SQL Server Native Client 2012][sql native client] quando ela for provisionada. Para fazer isso, adicione o [instalador sqlncli.msi x64] à pasta `bin` no diretório-raiz de sua função Web. O script de inicialização descrito na próxima etapa executará o instalador silenciosamente quando a função for provisionada. Se o tempo de execução do PHP não usar os Drivers Microsoft para PHP para SQL Server, você poderá remover a seguinte linha do script mostrado na próxima etapa:
+3. ADICIONAL Se o tempo de execução do PHP usar os [drivers da Microsoft para PHP para SQL Server][sqlsrv drivers], você precisará configurar sua função Web para instalar o [SQL Server Native Client 2012][sql native client] quando ele for provisionado. Para fazer isso, adicione o [instalador sqlncli.msi x64] à pasta `bin` no diretório-raiz de sua função Web. O script de inicialização descrito na próxima etapa executará o instalador silenciosamente quando a função for provisionada. Se o tempo de execução do PHP não usar os Drivers Microsoft para PHP para SQL Server, você poderá remover a seguinte linha do script mostrado na próxima etapa:
 
         msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
-4. Defina uma tarefa de inicialização que configura os [Serviços de Informações da Internet (IIS)][iis.net] para usar o tempo de execução do PHP para manipular solicitações de páginas `.php`. Para fazer isso, abra o arquivo `setup_web.cmd` (no arquivo `bin` do diretório raiz da função web) em um editor de texto e substitua seu conteúdo pelo script a seguir:
+4. Defina uma tarefa de inicialização que configure [serviços de informações da Internet (IIS)][iis.net] para usar o tempo de execução do PHP para lidar `.php` com solicitações de páginas. Para fazer isso, abra o arquivo `setup_web.cmd` (no arquivo `bin` do diretório raiz da função web) em um editor de texto e substitua seu conteúdo pelo script a seguir:
 
     ```cmd
     @ECHO ON
@@ -152,7 +152,7 @@ Para configurar uma função de trabalho para usar um tempo de execução do PHP
 
 1. Crie um projeto de Serviço do Azure e adicione uma função de trabalho do PHP conforme descrito anteriormente neste tópico.
 2. Crie uma pasta `php` no diretório raiz de sua função de trabalho e adicione o tempo de execução do PHP (todos os binários, arquivos de configuração, subpastas etc.) para a pasta `php`.
-3. (OPCIONAL) Se o tempo de execução do PHP usar [Drivers da Microsoft para PHP para SQL Server][sqlsrv drivers], você precisará configurar a função de trabalho para instalar o [SQL Server Native Client 2012][sql native client] quando ela for provisionada. Para fazer isso, adicione o [instalador sqlncli.msi x64] ao diretório raiz da função de trabalho. O script de inicialização descrito na próxima etapa executará o instalador silenciosamente quando a função for provisionada. Se o tempo de execução do PHP não usar os Drivers Microsoft para PHP para SQL Server, você poderá remover a seguinte linha do script mostrado na próxima etapa:
+3. ADICIONAL Se o tempo de execução do PHP usar [drivers da Microsoft para PHP para SQL Server][sqlsrv drivers], será necessário configurar sua função de trabalho para instalar o [SQL Server Native Client 2012][sql native client] quando ele for provisionado. Para fazer isso, adicione o [instalador sqlncli.msi x64] ao diretório raiz da função de trabalho. O script de inicialização descrito na próxima etapa executará o instalador silenciosamente quando a função for provisionada. Se o tempo de execução do PHP não usar os Drivers Microsoft para PHP para SQL Server, você poderá remover a seguinte linha do script mostrado na próxima etapa:
 
         msiexec /i sqlncli.msi /qn IACCEPTSQLNCLILICENSETERMS=YES
 4. Defina uma tarefa de inicialização que adiciona o executável `php.exe` à variável de ambiente PATH da função de trabalho quando a função é configurada. Para fazer isso, abra o arquivo `setup_worker.cmd` (no diretório raiz da função de trabalho) em um editor de texto e substitua seu conteúdo pelo script a seguir:
