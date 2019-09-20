@@ -6,12 +6,12 @@ ms.author: arramac
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: d3d09d466e05c97de215542c66987aa6b723afce
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 9b78c18547ef61b388a56a1272b5621cada43806
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827993"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71120485"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Azure Cosmos DB cotas de serviço
 
@@ -24,12 +24,13 @@ Depois de criar uma conta do Azure Cosmos em sua assinatura, você pode gerencia
 | Recurso | Limite padrão |
 | --- | --- |
 | RUs máxima por contêiner ([modo de taxa de transferência dedicada](databases-containers-items.md#azure-cosmos-containers)) | 1 milhão por padrão. Você pode aumentá-lo ao [arquivar um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) |
-| RUs máxima por banco de dados (modo provisionado de[taxa de transferência compartilhada](databases-containers-items.md#azure-cosmos-containers)) | 1 milhão por padrão. Você pode aumentá-lo ao [arquivar um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) |
+| RUs máxima por banco de dados ([modo provisionado de taxa de transferência compartilhada](databases-containers-items.md#azure-cosmos-containers)) | 1 milhão por padrão. Você pode aumentá-lo ao [arquivar um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) |
 | RUs máxima por chave de partição (lógica) | 10.000 |
 | Armazenamento máximo em todos os itens por chave de partição (lógica)| 10 GB |
 | Número máximo de chaves de partição (lógica) distintas | Ilimitado |
 | Armazenamento máximo por contêiner | Ilimitado |
 | Armazenamento máximo por banco de dados | Ilimitado |
+| Tamanho máximo de anexo por conta (o recurso de anexo está sendo depreciado) | 2 GB | 
 
 > [!NOTE]
 > Para obter as práticas recomendadas para gerenciar cargas de trabalho com chaves de partição que precisam de limites mais altos para armazenamento ou taxa de transferência, consulte [criando chaves de partição ativa](synthetic-partition-keys.md)
@@ -40,7 +41,7 @@ Um contêiner Cosmos (ou banco de dados de produtividade compartilhado) deve ter
 * A taxa de transferência mínima que você pode definir em um contêiner depende da taxa de transferência máxima já provisionada no contêiner. O serviço oferece suporte à redução da taxa de transferência de um contêiner para 10% do máximo provisionado. Por exemplo, se a taxa de transferência foi aumentada para 10000 RUs, a menor taxa de transferência possível provisionada seria 1000 RUs
 * A taxa de transferência mínima em um banco de dados de produtividade compartilhada também depende do número total de contêineres que você já criou em um banco de dados de produtividade compartilhado, medido em 100 RUs por contêiner. Por exemplo, se você tiver criado cinco contêineres em um banco de dados de produtividade compartilhado, a taxa de transferência deverá ser pelo menos 500 RUs
 
-A taxa de transferência atual e mínima de um contêiner ou de um banco de dados pode ser recuperada do portal do Azure ou dos SDKs. Para obter mais informações, consulte provisionar [taxa de transferência em contêineres e bancos de dados](set-throughput.md). 
+A taxa de transferência atual e mínima de um contêiner ou de um banco de dados pode ser recuperada do portal do Azure ou dos SDKs. Para obter mais informações, consulte [provisionar taxa de transferência em contêineres e bancos de dados](set-throughput.md). 
 
 > [!NOTE]
 > Em alguns casos, talvez seja possível reduzir a taxa de transferência para menos de 10%. Use a API para obter o máximo de RUs exato por contêiner.
@@ -51,7 +52,7 @@ Em resumo, aqui estão os limites mínimos de RU provisionados.
 | Recurso | Limite padrão |
 | --- | --- |
 | RUs mínima por contêiner ([modo de taxa de transferência dedicada](databases-containers-items.md#azure-cosmos-containers)) | 400 |
-| RUs mínima por banco de dados (modo provisionado de[taxa de transferência compartilhada](databases-containers-items.md#azure-cosmos-containers)) | 400 |
+| RUs mínima por banco de dados ([modo provisionado de taxa de transferência compartilhada](databases-containers-items.md#azure-cosmos-containers)) | 400 |
 | RUs mínima por contêiner em um banco de dados de produtividade compartilhado | 100 |
 
 O Cosmos DB dá suporte ao ajuste elástico de taxa de transferência (RUs) por contêiner ou banco de dados por meio de SDKs ou Portal. Cada contêiner pode ser dimensionado de forma síncrona e imediatamente dentro de um intervalo de escala de 10 a 100 vezes, entre os valores mínimo e máximo. Se o valor de taxa de transferência solicitado estiver fora do intervalo, o dimensionamento será executado de forma assíncrona. O dimensionamento assíncrono pode levar de minutos a horas para ser concluído, dependendo da taxa de transferência e do tamanho de armazenamento de dados solicitados no contêiner.  
@@ -80,7 +81,7 @@ Cosmos DB automaticamente faz backups de seus dados em intervalos regulares. Par
 
 ## <a name="per-container-limits"></a>Limites por contêiner
 
-Dependendo de qual API você usa, um contêiner Cosmos do Azure pode representar uma coleção, uma tabela ou um grafo. Os contêineres dão suporte a configurações para [restrições de chave exclusiva](unique-keys.md), [procedimentos armazenados, gatilhos e UDFs](stored-procedures-triggers-udfs.md)e [política](how-to-manage-indexing-policy.md)de indexação. A tabela a seguir lista os limites específicos para as configurações dentro de um contêiner. 
+Dependendo de qual API você usa, um contêiner Cosmos do Azure pode representar uma coleção, uma tabela ou um grafo. Os contêineres dão suporte a configurações para [restrições de chave exclusiva](unique-keys.md), [procedimentos armazenados, gatilhos e UDFs](stored-procedures-triggers-udfs.md)e [política de indexação](how-to-manage-indexing-policy.md). A tabela a seguir lista os limites específicos para as configurações dentro de um contêiner. 
 
 | Recurso | Limite padrão |
 | --- | --- |
@@ -123,7 +124,7 @@ O Cosmos DB dá suporte a [operações CRUD e de consulta](https://docs.microsof
 
 Quando uma operação como consulta atinge o tempo limite de execução ou o limite de tamanho de resposta, ela retorna uma página de resultados e um token de continuação para o cliente para retomar a execução. Não há nenhum limite prático na duração de uma única consulta pode ser executada em páginas/continuações.
 
-Cosmos DB usa HMAC para autorização. Você pode usar uma chave mestra ou tokens de [recurso](secure-access-to-data.md) para controle de acesso refinado a recursos como contêineres, chaves de partição ou itens. A tabela a seguir lista os limites para tokens de autorização no Cosmos DB.
+Cosmos DB usa HMAC para autorização. Você pode usar uma chave mestra ou [tokens de recurso](secure-access-to-data.md) para controle de acesso refinado a recursos como contêineres, chaves de partição ou itens. A tabela a seguir lista os limites para tokens de autorização no Cosmos DB.
 
 | Recurso | Limite padrão |
 | --- | --- |
@@ -178,7 +179,7 @@ Tente Cosmos DB dá suporte à distribuição global somente nas regiões EUA Ce
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Leia mais sobre os conceitos principais do Cosmos DB a [distribuição global](distribute-data-globally.md) e o [particionamento](partitioning-overview.md) e a [taxa de transferência](request-units.md)provisionada.
+Leia mais sobre os conceitos principais do Cosmos DB a [distribuição global](distribute-data-globally.md) e o [particionamento](partitioning-overview.md) e a [taxa de transferência provisionada](request-units.md).
 
 Comece no Azure Cosmos DB com um dos nossos guias de início rápido:
 

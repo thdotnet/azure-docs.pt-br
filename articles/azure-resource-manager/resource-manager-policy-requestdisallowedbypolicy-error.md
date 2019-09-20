@@ -4,7 +4,7 @@ description: Descreve a causa do erro RequestDisallowedByPolicy.
 services: azure-resource-manager
 documentationcenter: ''
 author: genlin
-manager: cshepard
+manager: dcscontentpm
 editor: ''
 ms.service: azure-resource-manager
 ms.workload: multiple
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: c160fe39b02d8adf6c12e3736307cf7f9688b0c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e862637c688fd473b112fdfc0ee197da0444d02f
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66128445"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71121244"
 ---
 # <a name="requestdisallowedbypolicy-error-with-azure-resource-policy"></a>Erro RequestDisallowedByPolicy com a política de recurso do Azure
 
@@ -37,7 +37,7 @@ Durante a implantação, você pode receber um erro **RequestDisallowedByPolicy*
 }
 ```
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Para recuperar detalhes sobre a política que bloqueou a implantação, use um dos seguintes métodos:
 
@@ -64,7 +64,7 @@ az policy definition show --name regionPolicyAssignment
 Para segurança ou conformidade, os administradores de sua assinatura podem atribuir políticas que limitam como os recursos são implantados. Por exemplo, sua assinatura pode ter uma política que impede a criação de endereços IP Públicos, Grupos de Segurança de Rede, Rodas Definidas pelo Usuário ou tabelas de rota. A mensagem de erro na seção **Sintomas** mostra o nome da política.
 Para resolver esse problema, examine as políticas de recursos e determine como implantar recursos que estão em conformidade com essas políticas.
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
 - [O que é o Azure Policy?](../governance/policy/overview.md)
 - [Criar e gerenciar políticas para impor a conformidade](../governance/policy/tutorials/create-and-manage.md)

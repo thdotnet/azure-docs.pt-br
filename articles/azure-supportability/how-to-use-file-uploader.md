@@ -4,7 +4,7 @@ description: Descreve as diretrizes ao usar o utilitário Carregamento de Arquiv
 services: ''
 documentationcenter: ''
 author: genlin
-manager: ''
+manager: dcscontentpm
 editor: ''
 tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 949d6b00b4e04921ea745dd4efa1b8a58c49f534
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 088835f6983814bbe47afeeec210ac41964e7863
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60995600"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71121173"
 ---
 # <a name="microsoft-azure-new-support-request-file-upload-utility-guidelines"></a>Diretrizes do utilitário Carregamento de Arquivo para solicitar um novo suporte do Microsoft Azure
 Quando você [criar uma solicitação de suporte](https://portal.azure.com/#create/Microsoft.Support), o utilitário Carregar Arquivo poderá ajudá-lo a carregar facilmente os arquivos de diagnóstico ou quaisquer outros arquivos que considere relevantes para o incidente.  
