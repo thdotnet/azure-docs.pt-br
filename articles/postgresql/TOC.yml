@@ -232,7 +232,7 @@
       items:
         - name: Gerenciar réplicas de leitura no portal do Azure
           href: howto-read-replicas-portal.md
-        - name: Gerenciar réplicas de leitura na CLI do Azure
+        - name: 'Gerenciar réplicas de leitura da CLI do Azure, API REST'
           href: howto-read-replicas-cli.md
 - name: Referência
   items:

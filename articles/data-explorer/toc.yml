@@ -128,12 +128,18 @@
           href: dealing-with-duplicates.md
     - name: Monitoramento
       items:
-        - name: Usando métricas para monitorar a integridade do cluster
+        - name: Usar logs de diagnóstico para monitorar a ingestão
+          href: using-diagnostic-logs.md
+        - name: Usar métricas para monitorar a integridade do cluster
           href: using-metrics.md
     - name: Integrar com outras ferramentas
       items:
-        - name: Copiar dados em massa usando o modelo do Azure Data Factory
-          href: data-factory-template.md
+        - name: Fábrica de dados do Azure
+          items:
+            - name: Copiar dados em massa usando o modelo do Azure Data Factory
+              href: data-factory-template.md
+            - name: Executar comandos de controle usando o Azure Data Factory
+              href: data-factory-command-activity.md
         - name: Conector do Apache Spark
           href: spark-connector.md
         - name: Conectar-se do Databricks usando o Python

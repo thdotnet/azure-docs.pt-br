@@ -1,64 +1,103 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Jenkins no Azure
+### YamlMime:Landing
+title: Documentação do Jenkins no Azure
+summary: Saiba como usar o Jenkins para automatizar a integração contínua e a entrega contínua no Azure.
 metadata:
-  title: 'Jenkins na Documentação do Azure - Tutoriais, exemplos, referência e recursos'
-  description: Implantar e integrar o Jenkins com o Azure
+  title: Documentação do Jenkins no Azure
+  description: Saiba como usar o Jenkins para automatizar a integração contínua e a entrega contínua no Azure.
+  services: azure
   ms.service: jenkins
-  keywords: 'jenkins, azure, devops, tutoriais, exemplos e referência'
-  author: tomarchermsft
-  manager: jeconnoc
-  ms.author: tarcher
   ms.topic: landing-page
-  ms.date: 08/27/2018
-  ms.custom: seo-java-july2019
-abstract:
-  description: 'Use o servidor Jenkins de software livre para compilar seus aplicativos na nuvem e implantá-los no Azure. Saiba como instalar, configurar e dimensionar o Jenkins no Azure e configurar a integração contínua (CI) para seus aplicativos com nossos guias de início rápido, tutoriais e pipelines de exemplo.'
-  aside:
-    image:
-      alt: Logotipo do Jenkins
-      height: 133
-      width: 110
-      src: media/Jenkins.png
-    title: null
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: Criar um sistema Jenkins no Azure e compilar um aplicativo.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/portal.svg'
-            text: Portal do Azure
-            href: 'https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template'
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: 'Configure a integração contínua para seus aplicativos, execute os agentes na nuvem e use os serviços do Azure em seus trabalhos.'
-      - type: list
-        style: ordered
-        items:
-          - html: 'Configure a CI para o <a href="/azure/jenkins/java-deploy-webapp-tutorial">Serviço de Aplicativo do Azure</a>, <a href="/azure/container-service/kubernetes/container-service-kubernetes-jenkins">Kubernetes</a> ou <a href="/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd">VM Linux</a>.'
-          - html: <a href="/azure/jenkins/execute-cli-jenkins-pipeline">Provisionar recursos em um trabalho de pipeline</a>.
-          - html: <a href="/azure/jenkins/jenkins-azure-vm-agents">Dimensionar com os agentes de VM do Azure</a>.
-  - title: Exemplos
-    items:
-      - type: paragraph
-        text: Scripts de exemplo e estágios para seus pipelines.
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: '<a href="https://github.com/Azure/azure-devops-utils/tree/master/jenkins">Snippets de código e estágios do arquivo Jenkins</a>'
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Plug-ins
-            html: '<p><a href="https://plugins.jenkins.io/azure-vm-agents">Agentes de VM do Azure</a><p><a href="https://plugins.jenkins.io/azure-app-service">Serviço de Aplicativo do Azure</a></p><p><a href="https://plugins.jenkins.io/windows-azure-storage">Armazenamento do Azure</a></p><p><a href="https://plugins.jenkins.io/azure-container-agents">Agentes de Contêiner do Azure</a><p><a href="https://plugins.jenkins.io/azure-function">Plug-in da Função do Azure</a><p><a href="https://plugins.jenkins.io/azure-acs">Plug-in do Serviço de Contêiner do Azure</a>'
-  - type: paragraph
-    text: '<h4>Jenkins® é marca registrada da Software na Public Interest, Inc. O [logotipo Jenkins®](https://wiki.jenkins.io/display/JENKINS/Logo) está licenciado sob [CC BY SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) do [projeto Jenkins](https://jenkins.io).</h4>'
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/17/2019
+  ms.openlocfilehash: 3d0a74df70b2007812acf22a40e8bd210948fae2
+  ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71104279"
+landingContent:
+- title: Sobre o Jenkins no Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Sobre o Jenkins no Azure
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Plug-ins Jenkins para Azure
+      url: jenkins-plugins.md
+  - linkListType: architecture
+    links:
+    - text: Arquitetura do Jenkins
+      url: /azure/architecture/reference-architectures/jenkins/
+- title: Instalar e configurar o Jenkins
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Criar um servidor Jenkins
+      url: install-jenkins-solution-template.md
+  - linkListType: download
+    links:
+    - text: Trabalhos de exemplo e scripts
+      url: https://github.com/azure/jenkins
+- title: Dimensionar usando o Jenkins e o Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Dimensionar com Instâncias de Contêiner do Azure
+      url: /azure/container-instances/container-instances-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+    - text: Dimensionar com agentes de VM do Azure
+      url: jenkins-azure-vm-agents.md
+- title: CI/CD para o Azure Functions
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implantar no Azure Functions
+      url: jenkins-azure-functions-deploy.md
+- title: CI/CD para o AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implantar do GitHub no AKS
+      url: /azure/aks/jenkins-continuous-deployment?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+    - text: Implantar no AKS usando o padrão azul/verde
+      url: jenkins-aks-blue-green-deployment.md
+    - text: Implantar usando o plug-in do Azure Dev Spaces
+      url: tutorial-jenkins-dev-spaces.md
+- title: CI/CD para o Serviço de Aplicativo
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Criar recursos do Azure em um trabalho de pipeline
+      url: execute-cli-jenkins-pipeline.md
+    - text: Implantar do GitHub para o Serviço de Aplicativo
+      url: tutorial-jenkins-deploy-web-app-azure-app-service.md
+  - linkListType: how-to-guide
+    links:
+    - text: Implantar usando o plug-in do Serviço de Aplicativo
+      url: deploy-jenkins-app-service-plugin.md
+- title: CI/CD para o Azure DevOps
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implantar em uma VM do Linux usando o Azure DevOps Services
+      url: /azure/virtual-machines/linux/tutorial-build-deploy-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: CI/CD para o Armazenamento do Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Uso do Armazenamento do Azure com uma solução Jenkins C/I
+      url: /azure/storage/storage-java-jenkins-continuous-integration-solution?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: CI/CD para VMs Linux
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Criar uma infraestrutura de desenvolvimento em uma VM do Linux
+      url: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json
+- title: CI/CD para Service Fabric
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Criar e implantar um aplicativo do Azure Service Fabric
+      url: /azure/service-fabric/service-fabric-cicd-your-linux-applications-with-jenkins?toc=/azure/jenkinstoc.json&bc=/azure/bread/toc.json

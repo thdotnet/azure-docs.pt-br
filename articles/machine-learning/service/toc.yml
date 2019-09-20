@@ -31,7 +31,7 @@
             - name: Autotreinar um modelo de AM
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
-        - name: Pontuação do lote com pipelines (avançado)
+        - name: Pipelines de Machine Learning (avançado)
           items:
             - name: Pontuar o lote de um modelo de classificação
               displayName: pipelines

@@ -187,3 +187,9 @@
   href: understand-vm-reboot.md
 - name: Ferramentas de solução de problemas remotas
   href: remote-tools-troubleshoot-azure-vm-issues.md
+- name: Reparo de máquina virtual
+  items:
+    - name: Reparar uma VM do Windows usando os comandos de reparo da Máquina Virtual do Azure
+      href: repair-windows-vm-using-azure-virtual-machine-repair-commands.md
+    - name: Reparar uma VM do Linux usando os comandos de reparo da Máquina Virtual do Azure
+      href: repair-linux-vm-using-azure-virtual-machine-repair-commands.md
