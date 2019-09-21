@@ -11,7 +11,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 07/29/2019
 ms.locfileid: "68592776"
 ---
-Em um projeto de biblioteca de classe C#, as associações são definidas como atributos de associação no método de função. O arquivo *function.json* é gerado automaticamente com base nesses atributos.
+Em um projeto de biblioteca de classes C#, as associações são definidas como atributos de associação no método de função. O arquivo *function.json* é gerado automaticamente com base nesses atributos.
 
 Abra o arquivo de projeto *HttpTrigger.cs* e adicione a seguinte instrução `using`:
 

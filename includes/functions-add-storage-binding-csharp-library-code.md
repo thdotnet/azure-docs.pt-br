@@ -11,7 +11,7 @@ ms.contentlocale: pt-BR
 ms.lasthandoff: 07/29/2019
 ms.locfileid: "68592800"
 ---
-Adicionar código que usa a associação de saída no objeto `msg` para criar uma mensagem da fila. Adicione este código antes do método retornar.
+Adicione um código que usa o objeto de associação de saída de `msg` para criar uma mensagem da fila. Adicione esse código antes do método retornar.
 
 ```cs
 if (!string.IsNullOrEmpty(name))

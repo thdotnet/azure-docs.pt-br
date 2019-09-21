@@ -1,6 +1,6 @@
 ---
 title: Conectar funções ao Armazenamento do Azure usando o Visual Studio Code
-description: Saiba como associar dados de saída para conectar suas funções a uma fila do Armazenamento do Azure usando o Visual Studio Code.
+description: Descubra como adicionar uma associação de saída para conectar suas funções a uma fila do Armazenamento do Azure usando o Visual Studio Code.
 author: ggailey777
 ms.author: glenga
 ms.date: 06/25/2019
@@ -30,7 +30,7 @@ Antes de iniciar este artigo, você deve atender aos seguintes requisitos:
 * Instale a [extensão de Armazenamento do Azure para o Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage).
 * Instale o [Gerenciador de Armazenamento do Azure](https://storageexplorer.com/). O Gerenciador de Armazenamento é uma ferramenta que você usará para examinar as mensagens da fila geradas pela associação de saída. O Gerenciador de Armazenamento tem suporte em sistemas operacionais baseados em macOS, Windows e Linux.
 * Instale [ferramentas de CLI do .NET Core](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x) (somente projetos C#).
-* Conclua as etapas na [parte 1 do início rápido do Visual Studio Code](functions-create-first-function-vs-code.md). 
+* Conclua as etapas descritas na [parte 1 do início rápido do Visual Studio Code](functions-create-first-function-vs-code.md). 
 
 Este artigo pressupõe que você já esteja conectado à sua assinatura do Azure do Visual Studio Code. Você pode entrar executando `Azure: Sign In` na paleta de comandos. 
 
@@ -43,7 +43,7 @@ No [artigo de início rápido anterior](functions-create-first-function-vs-code.
 1. Escolha o aplicativo de função que você criou no artigo anterior. Selecione **Sim para todos** para substituir as configurações locais existentes. 
 
     > [!IMPORTANT]  
-    > Como ela contém segredos, o arquivo local.settings.json nunca é publicado e é excluído do controle do código-fonte.
+    > Como ele contém segredos, o arquivo local.settings.json nunca é publicado e sempre é excluído do controle do código-fonte.
 
 1. Copie o valor `AzureWebJobsStorage`, que é a chave do valor da cadeia de conexão da Conta de armazenamento. Use esta conexão para verificar se a associação de saída funciona conforme o esperado.
 
@@ -67,7 +67,7 @@ Agora, você pode adicionar a associação de saída do armazenamento ao seu pro
 
 ## <a name="add-an-output-binding"></a>Adicionar uma associação de saída
 
-No Functions, cada tipo de associação requer que um `direction`, `type` e um `name` exclusivo seja definido no arquivo functions.json. A maneira como você define esses atributos depende do idioma do seu aplicativo de função.
+No Functions, cada tipo de associação requer que um `direction`, `type` e um `name` exclusivo seja definido no arquivo functions.json. A maneira como você define esses atributos depende do idioma do seu aplicativo de funções.
 
 ### <a name="javascript"></a>JavaScript
 
@@ -126,7 +126,7 @@ Depois que a associação é definida, você pode usar o `name` da associação 
 
 ### <a name="javascript"></a>JavaScript
 
-Adicione código que usa a associação de saída `msg` no objeto `context.bindings` para criar uma mensagem da fila. Adicione esse código antes da instrução `context.res`.
+Adicione um código que usa o objeto de associação de saída `msg` em `context.bindings` para criar uma mensagem da fila. Adicione esse código antes da instrução `context.res`.
 
 ```javascript
 // Add a message to the Storage queue.
@@ -170,7 +170,7 @@ Uma nova fila denominada **outqueue** é criada na sua conta de armazenamento pe
 
 Ignore esta seção se você já instalou o Gerenciador de Armazenamento do Azure e o conectou à sua conta do Azure.
 
-1. Execute a ferramenta [Gerenciador de Armazenamento do Azure], selecione o ícone de conexão à esquerda e selecione **Adicionar uma conta**.
+1. Execute a ferramenta [Gerenciador de Armazenamento do Azure], clique no ícone de conexão à esquerda e selecione **Adicionar uma conta**.
 
     ![Adicionar uma conta do Azure ao Gerenciador de Armazenamento do Microsoft Azure](./media/functions-add-output-binding-storage-queue-vs-code/storage-explorer-add-account.png)
 
