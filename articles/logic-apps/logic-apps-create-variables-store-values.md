@@ -1,25 +1,25 @@
 ---
-title: Criar variáveis para salvar valores - Aplicativos Lógicos do Azure | Microsoft Docs
-description: Como salvar e gerenciar valores criando variáveis em Aplicativos Lógicos do Azure
+title: Criar e gerenciar variáveis para armazenar valores – aplicativos lógicos do Azure
+description: Como armazenar e gerenciar valores usando variáveis em aplicativos lógicos do Azure
 services: logic-apps
-author: ecfan
-manager: jeconnoc
-ms.author: estfan
-ms.topic: article
-ms.date: 05/30/2018
 ms.service: logic-apps
-ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: e525e5584e4835b0f2b73203c818c3f799b77cf5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+author: ecfan
+ms.author: estfan
+manager: carmonm
+ms.reviewer: klam, LADocs
+ms.topic: conceptual
+ms.date: 09/20/2019
+ms.openlocfilehash: 016ab15b2ca4b2e6278752b166c746f6f5aef72d
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61004383"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71171360"
 ---
-# <a name="create-variables-for-saving-and-managing-values-in-azure-logic-apps"></a>Criar variáveis para salvar e gerenciar valores nos Aplicativos Lógicos do Azure
+# <a name="store-and-manage-values-by-using-variables-in-azure-logic-apps"></a>Armazenar e gerenciar valores usando variáveis em aplicativos lógicos do Azure
 
-Este artigo mostra como você pode armazenar e trabalhar com valores em seu aplicativo lógico criando variáveis. Por exemplo, as variáveis podem ajudar você a contar o número de vezes que um loop é executado. Ao iterar em uma matriz ou verificar uma matriz em busca de um item específico, você pode usar uma variável para fazer referência ao número de índice de cada item da matriz. 
+Este artigo mostra como criar e trabalhar com variáveis que você usa para armazenar valores em seu aplicativo lógico. Por exemplo, as variáveis podem ajudá-lo a acompanhar o número de vezes que um loop é executado. Para iterar em uma matriz ou verificar uma matriz de um item específico, você pode usar uma variável para fazer referência ao número de índice de cada item da matriz.
 
 Você pode criar variáveis para tipos de dados, como inteiro, float, booliano, cadeia de caracteres, matriz e objeto. Depois de criar uma variável, você pode executar outras tarefas, por exemplo:
 
@@ -28,22 +28,20 @@ Você pode criar variáveis para tipos de dados, como inteiro, float, booliano, 
 * Atribuir um valor diferente para a variável.
 * Inserir ou *acrescentar* o valor da variável como a última vez em uma cadeia de caracteres ou matriz.
 
-As variáveis existem e são globais apenas dentro da instância de aplicativo lógico que as cria. Além disso, elas persistem em quaisquer iterações de loop dentro de uma instância de aplicativo lógico. Ao fazer referência a uma variável, use o nome da variável como o token, não como o nome da ação, que é a maneira comum de fazer referência as saídas de uma ação. 
+As variáveis existem e são globais apenas dentro da instância de aplicativo lógico que as cria. Além disso, elas persistem em quaisquer iterações de loop dentro de uma instância de aplicativo lógico. Quando você faz referência a uma variável, use o nome da variável como o token, não o nome da ação, que é a maneira usual de fazer referência a saídas de uma ação.
 
 > [!IMPORTANT]
-> Por padrão, os ciclos em um loop "Foreach" são executados em paralelo. Quando você usa variáveis em loops, execute o loop [sequencialmente](../logic-apps/logic-apps-control-flow-loops.md#sequential-foreach-loop) para que as variáveis retornem resultados previsíveis. 
-
-Caso você ainda não tenha uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+> Por padrão, os ciclos em um loop "for each" são executados em paralelo. Ao usar variáveis em loops, execute o loop [sequencialmente](../logic-apps/logic-apps-control-flow-loops.md#sequential-foreach-loop) para que as variáveis retornem resultados previsíveis.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para seguir este artigo, estes são os itens que você precisa:
+* Uma assinatura do Azure. Se você não tiver uma assinatura, [Inscreva-se para obter uma conta gratuita do Azure](https://azure.microsoft.com/free/).
 
-* O aplicativo lógico onde você deseja criar uma variável 
+* O aplicativo lógico no qual você deseja criar a variável
 
-  Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+  Se você for novo em aplicativos lógicos, examine [o que é o aplicativo lógico do Azure?](../logic-apps/logic-apps-overview.md) e [o início rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* Um [gatilho](../logic-apps/logic-apps-overview.md#logic-app-concepts) como a primeira etapa no seu aplicativo lógico 
+* Um [gatilho](../logic-apps/logic-apps-overview.md#logic-app-concepts) como a primeira etapa no seu aplicativo lógico
 
   Antes de adicionar ações para criar e trabalhar com variáveis, seu aplicativo lógico deve começar com um gatilho.
 
@@ -51,39 +49,40 @@ Para seguir este artigo, estes são os itens que você precisa:
 
 ## <a name="initialize-variable"></a>Inicializar variável
 
-Você pode criar uma variável e declarar seu tipo de dados e o valor inicial, tudo dentro de uma ação em seu aplicativo lógico. Você só pode declarar variáveis no nível global, não em escopos, condições e loops. 
+Você pode criar uma variável e declarar seu tipo de dados e o valor inicial, tudo dentro de uma ação em seu aplicativo lógico. Você só pode declarar variáveis no nível global, não em escopos, condições e loops.
 
-1. No <a href="https://portal.azure.com" target="_blank">Portal do Azure</a> ou no Visual Studio, abra seu aplicativo lógico no Designer do Aplicativo Lógico. 
+1. No [portal do Azure](https://portal.azure.com) ou no Visual Studio, abra seu aplicativo lógico no designer de aplicativo lógico.
 
    Este exemplo usa o Portal do Azure e um aplicativo lógico com um gatilho existente.
 
-2. Em seu aplicativo lógico, na etapa em que você deseja adicionar uma variável, execute uma destas etapas: 
+1. Em seu aplicativo lógico, na etapa em que você deseja adicionar uma variável, execute uma destas etapas: 
 
-   * Para adicionar uma ação na última etapa, escolha **Nova etapa** > **Adicionar uma ação**.
+   * Para adicionar uma ação na última etapa, selecione **nova etapa**.
 
      ![Adicionar ação](./media/logic-apps-create-variables-store-values/add-action.png)
 
-   * Para adicionar uma ação entre etapas, mova o mouse sobre a seta de conexão para que o sinal de adição (+) apareça. 
-   Escolha o sinal de adição e depois **Adicionar uma ação**.
+   * Para adicionar uma ação entre etapas, mova o mouse sobre a seta de conexão para que o sinal de **+** adição () seja exibido. Selecione o sinal de adição e, em seguida, selecione **Adicionar uma ação**.
 
-3. Na caixa de pesquisa, insira "variáveis" como filtro. Na lista de ações, selecione **Variáveis - Inicializar variável**.
+1. Em **escolher uma ação**, na caixa de pesquisa, insira `variables` como seu filtro. Na lista ações, selecione **inicializar variável**.
 
    ![Ação selecionar](./media/logic-apps-create-variables-store-values/select-initialize-variable-action.png)
 
-4. Forneça essas informações para sua variável:
+1. Forneça essas informações sobre sua variável, conforme descrito abaixo:
 
-   | Propriedade | Necessário | Value |  DESCRIÇÃO |
+   | Propriedade | Necessário | Value |  Descrição |
    |----------|----------|-------|--------------|
-   | Name | Sim | <*variable-name*> | O nome da variável para incrementar | 
-   | Type | Sim | <*variable-type*> | O tipo de dados para a variável | 
-   | Value | Não | <*start-value*> | O valor inicial da variável <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor inicial da variável. | 
-   ||||| 
+   | **Name** | Sim | <*variable-name*> | O nome da variável para incrementar |
+   | **Tipo** | Sim | <*variable-type*> | O tipo de dados para a variável |
+   | **Valor** | Não | <*start-value*> | O valor inicial da variável <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor inicial da variável. |
+   |||||
+
+   Por exemplo:
 
    ![Inicializar variável](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
-5. Agora, continue adicionando as ações que você quer. Quando terminar, selecione **Salvar** na barra de ferramentas do designer.
+1. Agora, continue adicionando as ações que você quer. Quando terminar, na barra de ferramentas do designer, selecione **salvar**.
 
-Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Inicializar variável** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON (JavaScript Object Notation):
+Se você alternar do designer para o editor de modo de exibição de código, aqui está a maneira como a ação **inicializar variável** aparece em sua definição de aplicativo lógico, que está no formato JavaScript Object Notation (JSON):
 
 ```json
 "actions": {
@@ -179,10 +178,9 @@ Confira exemplos de outros tipos de variáveis:
 
 ## <a name="get-the-variables-value"></a>Obter o valor da variável
 
-Para recuperar ou fazer referência ao conteúdo de uma variável, também é possível usar a função [variables()](../logic-apps/workflow-definition-language-functions-reference.md#variables) no Designer de Aplicativo Lógico e no editor do modo de exibição de código.
-Ao fazer referência a uma variável, use o nome da variável como o token, não como o nome da ação, que é a maneira comum de fazer referência as saídas de uma ação. 
+Para recuperar ou fazer referência ao conteúdo de uma variável, também é possível usar a função [variables()](../logic-apps/workflow-definition-language-functions-reference.md#variables) no Designer de Aplicativo Lógico e no editor do modo de exibição de código. Ao fazer referência a uma variável, use o nome da variável como o token, não como o nome da ação, que é a maneira comum de fazer referência as saídas de uma ação.
 
-Por exemplo, essa expressão obtém os itens a partir da variável de matriz [criada anteriormente neste artigo](#append-value) usando a função **variables()** . A função **string()** retorna o conteúdo da variável no formato de cadeia de caracteres: `"1, 2, 3, red"`
+Por exemplo, essa expressão Obtém os itens da variável de matriz [criada anteriormente neste artigo](#append-value) usando a `variables()` função. A `string()` função retorna o conteúdo da variável no formato de cadeia de caracteres:`"1, 2, 3, red"`
 
 ```json
 @{string(variables('myArrayVariable'))}
@@ -192,35 +190,35 @@ Por exemplo, essa expressão obtém os itens a partir da variável de matriz [cr
 
 ## <a name="increment-variable"></a>Incrementar variável 
 
-Para aumentar ou *incrementar* uma variável com um valor constante, adicione a ação **Variáveis - Incrementar variável** para o seu aplicativo lógico. Essa ação só funciona com variáveis de inteiro e float.
+Para aumentar ou *incrementar* uma variável por um valor constante, adicione a ação de **variável de incremento** ao seu aplicativo lógico. Essa ação só funciona com variáveis de inteiro e float.
 
-1. No Designer de Aplicativo Lógico, na etapa em que você deseja aumentar uma variável existente, escolha **Nova etapa** > **Adicionar uma ação**. 
+1. No designer de aplicativo lógico, na etapa em que você deseja aumentar uma variável existente, selecione **nova etapa**. 
 
    Por exemplo, este aplicativo lógico já tem um gatilho e uma ação que criou uma variável. Portanto, adicione uma nova ação sob estas etapas:
 
    ![Adicionar ação](./media/logic-apps-create-variables-store-values/add-increment-variable-action.png)
 
-   Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão para que o sinal de adição (+) apareça. Escolha o sinal de adição e depois **Adicionar uma ação**.
+   Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão para que o sinal de adição (+) apareça. Selecione o sinal de adição e, em seguida, selecione **Adicionar uma ação**.
 
-2. Na caixa de pesquisa, insira "integração" como filtro. Na lista de ações, selecione **Variáveis - Incrementar variável**.
+1. Na caixa de pesquisa, insira "integração" como filtro. Na lista de ações, selecione **Variáveis - Incrementar variável**.
 
    ![Selecione a ação "Incrementar variable"](./media/logic-apps-create-variables-store-values/select-increment-variable-action.png)
 
-3. Forneça essas informações para incrementar sua variável:
+1. Forneça essas informações para incrementar sua variável:
 
-   | Propriedade | Necessário | Value |  DESCRIÇÃO |
+   | Propriedade | Necessário | Value |  Descrição |
    |----------|----------|-------|--------------|
-   | Name | Sim | <*variable-name*> | O nome da variável para incrementar | 
-   | Value | Não | <*increment-value*> | O valor usado para incrementar a variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor específico para incrementar sua variável. | 
-   |||| 
+   | **Name** | Sim | <*variable-name*> | O nome da variável para incrementar |
+   | **Valor** | Não | <*increment-value*> | O valor usado para incrementar a variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para que você sempre saiba o valor específico para incrementar sua variável. |
+   ||||
 
-   Por exemplo: 
-   
+   Por exemplo:
+
    ![Exemplo de valor de incremento](./media/logic-apps-create-variables-store-values/increment-variable-action-information.png)
 
-4. Quando terminar, selecione **Salvar** na barra de ferramentas do designer. 
+1. Quando terminar, na barra de ferramentas do designer, selecione **salvar**.
 
-Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Incrementar variável** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON:
+Se você alternar do designer para o editor de modo de exibição de código, aqui está a maneira como a ação de **variável de incremento** aparece dentro de sua definição de aplicativo lógico, que está no formato JSON:
 
 ```json
 "actions": {
@@ -239,64 +237,65 @@ Se você alternar do editor do modo de exibição de designer para código, veja
 
 As variáveis são usadas normalmente para contar o número de vezes que um loop é executado. Este exemplo mostra como criar e usar variáveis para essa tarefa criando um loop que conta os anexos em um email.
 
-1. No Portal do Azure, crie um aplicativo lógico em branco. Adicione um gatilho que verifica se há novos emails e anexos. 
+1. No Portal do Azure, crie um aplicativo lógico em branco. Adicione um gatilho que verifica se há novos emails e anexos.
 
-   Este exemplo usa o gatilho do Outlook do Office 365 para **Quando um novo email é recebido**. 
-   Você pode configurar esse gatilho para ser acionado somente quando o email tiver anexos.
-   No entanto, você pode usar qualquer conector que verifica a existência de novos emails com anexos, como o conector do Outlook.com.
+   Este exemplo usa o gatilho do Outlook do Office 365 para **Quando um novo email é recebido**. Você pode configurar esse gatilho para ser acionado somente quando o email tiver anexos. No entanto, você pode usar qualquer conector que verifica a existência de novos emails com anexos, como o conector do Outlook.com.
 
-2. No gatilho, escolha **Mostrar opções avançadas**. Para o gatilho verificar se há anexos, e passar esses anexos para o fluxo de trabalho do aplicativo lógico, selecione **Sim** para essas propriedades:
-   
-   * **Tem Anexo** 
-   * **Incluir Anexos** 
+1. No gatilho, para verificar se há anexos e passá-los para o fluxo de trabalho do aplicativo lógico, selecione **Sim** para essas propriedades:
+
+   * **Tem Anexo**
+   * **Incluir Anexos**
 
    ![Procurar e incluir anexos](./media/logic-apps-create-variables-store-values/check-include-attachments.png)
 
-3. Adicione a [ação **Inicializar variável**](#create-variable). Crie uma variável de inteiro chamada **Contagem** com um valor inicial de zero.
+1. Adicione a [ação **Inicializar variável**](#create-variable). Crie uma variável de inteiro `Count` chamada que tenha um valor de início zero.
 
    ![Adicione a ação para "Inicializar variável"](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
-4. Para percorrer os anexos, adicione um loop *for each* escolhendo **Nova etapa** > **Mais** > **Adicionar um for each**.
+1. Para percorrer cada anexo, adicione um loop *for each* .
 
-   ![Adicionar um loop "for each"](./media/logic-apps-create-variables-store-values/add-loop.png)
+   1. Na ação **inicializar variável** , selecione **nova etapa**.
 
-5. No loop, clique na caixa **Selecionar uma saída de etapas anteriores**. Quando a lista de conteúdo dinâmico for exibida, selecione **Anexos**. 
+   1. Em **escolher uma ação**, selecione **interno**. Na caixa de pesquisa, insira `for each` como seu filtro de pesquisa e selecione **para cada um**.
+
+      ![Adicionar um loop "for each"](./media/logic-apps-create-variables-store-values/add-loop.png)
+
+1. No loop, clique na caixa **Selecionar uma saída de etapas anteriores**. Quando a lista de conteúdo dinâmico for exibida, selecione **Anexos**.
 
    ![Selecionar "Anexos"](./media/logic-apps-create-variables-store-values/select-attachments.png)
 
-   O campo **Anexos** passa uma matriz com os anexos de email da saída do gatilho para o seu loop.
+   A propriedade **Attachments** passa uma matriz, que tem os anexos de email da saída do gatilho em seu loop.
 
-6. No loop "for each", selecione **Adicionar uma ação**. 
+1. No loop **for each** , selecione **Adicionar uma ação**.
 
    ![Selecione "Adicionar uma ação"](./media/logic-apps-create-variables-store-values/add-action-2.png)
 
-7. Na caixa de pesquisa, insira "integração" como filtro. Na lista de ações, selecione **Variáveis - Incrementar variável**.
+1. Na caixa de pesquisa, insira "integração" como filtro. Na lista ações, selecione **variável de incremento**.
 
    > [!NOTE]
-   > Verifique se a ação **Incrementar variável** aparece dentro do loop. Se a ação aparecer fora do loop, arraste a ação para o loop.
+   > Verifique se a ação **variável de incremento** aparece dentro do loop. Se a ação aparecer fora do loop, arraste a ação para o loop.
 
-8. Na ação **Incrementar variável**, na lista **Nome**, selecione a variável **Count**. 
+1. Na ação **Incrementar variável**, na lista **Nome**, selecione a variável **Count**.
 
    ![Selecione a variável "Count"](./media/logic-apps-create-variables-store-values/add-increment-variable-example.png)
 
-9. No loop, adicione qualquer ação que envia a você o número de anexos. Em sua ação, inclua o valor da variável **Count**, por exemplo: 
+1. No loop, adicione qualquer ação que envia a você o número de anexos. Em sua ação, inclua o valor da variável **Count**, por exemplo:
 
    ![Adicionar uma ação que envia os resultados](./media/logic-apps-create-variables-store-values/send-email-results.png)
 
-10. Salve seu aplicativo lógico. Clique em **Salvar** na barra de ferramentas do designer. 
+1. Salve seu aplicativo lógico. Selecione **Salvar** na barra de ferramentas do designer.
 
 ### <a name="test-your-logic-app"></a>Como testar o seu aplicativo lógico
 
-1. Se seu aplicativo lógico não estiver habilitado, no menu do aplicativo lógico, escolha **Visão geral**. Na barra de ferramentas, escolha **Habilitar**. 
+1. Se seu aplicativo lógico não estiver habilitado, no menu do aplicativo lógico, selecione **visão geral**. Na barra de ferramentas, selecione **habilitar**.
 
-2. Na barra de ferramentas do Designer do Aplicativo Lógico, escolha **Executar**. Essa etapa inicia manualmente o aplicativo lógico.
+1. Na barra de ferramentas do designer do aplicativo lógico, selecione **executar**. Essa etapa inicia manualmente o aplicativo lógico.
 
-3. Envie um email com um ou mais anexos para a conta de email usada neste exemplo.
+1. Envie um email com um ou mais anexos para a conta de email usada neste exemplo.
 
-   Esta etapa aciona o gatilho do aplicativo lógico, que cria e executa uma instância do fluxo de trabalho de seu aplicativo lógico.
-   Como resultado, o aplicativo lógico envia uma mensagem ou email mostrando o número de anexos no email enviado por você.
+   Esta etapa aciona o gatilho do aplicativo lógico, que cria e executa uma instância do fluxo de trabalho de seu aplicativo lógico. Como resultado, o aplicativo lógico envia uma mensagem ou email mostrando o número de anexos no email enviado por você.
 
-Se você alternar do editor do modo de exibição de designer para código, é assim que o loop "for each" aparecerá com a ação **Incrementar variável** dentro da sua definição de aplicativo lógico, que está no formato JSON.
+Se você alternar do designer para o editor de modo de exibição de código, aqui está a maneira como o loop **for each** aparece junto com a ação **variável de incremento** dentro de sua definição de aplicativo lógico, que está no formato JSON.
 
 ```json
 "actions": {
@@ -324,17 +323,17 @@ Se você alternar do editor do modo de exibição de designer para código, é a
 
 ## <a name="decrement-variable"></a>Diminuir variável
 
-Para reduzir ou *diminuir* uma variável com um valor constante, execute as etapas para [aumentar uma variável](#increment-value), exceto pelo fato de localizar e selecionar a ação **Variáveis - Diminuir variável** em vez disso. Essa ação só funciona com variáveis de inteiro e float.
+Para diminuir ou *decrementar* uma variável por um valor constante, siga as etapas para [aumentar uma variável](#increment-value) , exceto que você encontrar e selecionar a ação **diminuir variável** em vez disso. Essa ação só funciona com variáveis de inteiro e float.
 
 Estas são as propriedades para a ação **Diminuir variável**:
 
-| Propriedade | Necessário | Value |  DESCRIÇÃO |
+| Propriedade | Necessário | Value |  Descrição |
 |----------|----------|-------|--------------|
-| Name | Sim | <*variable-name*> | O nome da variável para diminuir | 
-| Value | Não | <*increment-value*> | O valor para diminuição da variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para sempre conhecer o valor específico para diminuir a variável. | 
+| **Name** | Sim | <*variable-name*> | O nome da variável para diminuir | 
+| **Valor** | Não | <*increment-value*> | O valor para diminuição da variável. O valor padrão é um. <p><p>**Dica**: embora seja opcional, defina esse valor como uma prática recomendada para sempre conhecer o valor específico para diminuir a variável. |
 ||||| 
 
-Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Diminuir variável** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON.
+Se você alternar do designer para o editor de exibição de código, aqui está a maneira como a ação de **variável decremento** aparece dentro de sua definição de aplicativo lógico, que está no formato JSON.
 
 ```json
 "actions": {
@@ -349,36 +348,34 @@ Se você alternar do editor do modo de exibição de designer para código, veja
 },
 ```
 
-
 <a name="assign-value"></a>
 
 ## <a name="set-variable"></a>Definir variável
 
-Para atribuir um valor diferente a uma variável existente, execute as etapas para [aumentar uma variável](#increment-value), exceto pelo fato de: 
+Para atribuir um valor diferente a uma variável existente, execute as etapas para [aumentar uma variável](#increment-value), exceto pelo fato de:
 
-1. Localizar e selecionar a ação **Variáveis - Definir variável** em vez disso. 
+1. Localize e selecione a ação **definir variável** em vez disso.
 
-2. Fornecer o nome da variável e o valor que você deseja atribuir. O novo valor e a variável devem ter o mesmo tipo de dados.
-O valor é necessário porque essa ação não tem um valor padrão. 
+1. Fornecer o nome da variável e o valor que você deseja atribuir. O novo valor e a variável devem ter o mesmo tipo de dados. O valor é necessário porque essa ação não tem um valor padrão.
 
 Estas são as propriedades para a ação **Definir variável**:
 
-| Propriedade | Necessário | Value |  DESCRIÇÃO | 
-|----------|----------|-------|--------------| 
-| Name | Sim | <*variable-name*> | O nome da variável para alterar | 
-| Value | Sim | <*new-value*> | O valor que você quer atribuir à variável. Ambos devem ter o mesmo tipo de dados. | 
+| Propriedade | Necessário | Value |  Descrição |
+|----------|----------|-------|--------------|
+| **Name** | Sim | <*variable-name*> | O nome da variável para alterar |
+| **Valor** | Sim | <*new-value*> | O valor que você quer atribuir à variável. Ambos devem ter o mesmo tipo de dados. |
 ||||| 
 
 > [!NOTE]
 > A menos que você esteja aumentando ou diminuindo variáveis, a alteração de variáveis dentro de loops *pode* criar resultados inesperados, pois os loops são executados em paralelo, ou simultaneamente, por padrão. Para esses casos, tente definir o loop para executar em sequência. Por exemplo, quando você quiser consultar o valor da variável dentro do loop, e espera o mesmo valor no início e no término dessa instância de loop, execute estas etapas para alterar como o loop é executado: 
 >
-> 1. No canto superior direito do loop, escolha o botão de reticências (... ) e, depois, escolha **Configurações**.
+> 1. No canto superior direito do loop, selecione o botão de reticências ( **...** ) e, em seguida, selecione **configurações**.
 > 
 > 2. Em **Controle de Simultaneidade**, altere a configuração **Substituir Padrão** para **Ativado**.
 >
 > 3. Arraste o controle deslizante de **Grau de Paralelismo** para **1**.
 
-Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Definir variável** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON. Este exemplo altera o valor atual da variável "Count" para outro valor. 
+Se você alternar do designer para o editor de modo de exibição de código, aqui está a maneira como a ação **definir variável** aparece dentro de sua definição de aplicativo lógico, que está no formato JSON. Este exemplo altera o `Count` valor atual da variável para outro valor.
 
 ```json
 "actions": {
@@ -414,22 +411,20 @@ Para variáveis que armazenam cadeias de caracteres ou matrizes, você pode inse
 
 1. Localize e selecionar uma dessas ações com base em se a variável é uma cadeia de caracteres ou uma matriz: 
 
-   * **Variáveis - Acrescentar à variável de cadeia de caracteres**
-   * **Variáveis - Acrescentar à variável de matriz** 
+   * **Acrescentar à variável de cadeia de caracteres**
+   * **Acrescentar à variável de matriz** 
 
-2. Forneça o valor para acrescentar como o último item na cadeia de caracteres ou matriz. 
-   Esse valor é obrigatório. 
+1. Forneça o valor para acrescentar como o último item na cadeia de caracteres ou matriz. Esse valor é obrigatório.
 
 Estas são as propriedades para as ações **Acrescentar a...** :
 
-| Propriedade | Necessário | Value |  DESCRIÇÃO | 
-|----------|----------|-------|--------------| 
-| Name | Sim | <*variable-name*> | O nome da variável para alterar | 
-| Value | Sim | <*append-value*> | O valor que você deseja acrescentar, que pode ser de qualquer tipo | 
-|||||  
+| Propriedade | Necessário | Value |  Descrição |
+|----------|----------|-------|--------------|
+| **Name** | Sim | <*variable-name*> | O nome da variável para alterar |
+| **Valor** | Sim | <*append-value*> | O valor que você deseja acrescentar, que pode ser de qualquer tipo |
+|||||
 
-Se você alternar do editor do modo de exibição de designer para código, veja como a ação **Anexar à variável de matriz** aparece dentro da sua definição de aplicativo lógico, que está no formato JSON.
-Este exemplo cria uma variável de matriz e adiciona outro valor como o último item na matriz. O resultado é uma variável atualizada que contém essa matriz: `[1,2,3,"red"]` 
+Se você alternar do designer para o editor de modo de exibição de código, aqui está a maneira como a ação **acrescentar à variável de matriz** aparece dentro de sua definição de aplicativo lógico, que está no formato JSON. Este exemplo cria uma variável de matriz e adiciona outro valor como o último item na matriz. O resultado é uma variável atualizada que contém essa matriz: `[1,2,3,"red"]`
 
 ```json
 "actions": {
@@ -456,11 +451,6 @@ Este exemplo cria uma variável de matriz e adiciona outro valor como o último 
    }
 },
 ```
-
-## <a name="get-support"></a>Obter suporte
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Próximas etapas
 

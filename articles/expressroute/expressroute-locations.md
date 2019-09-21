@@ -6,14 +6,14 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 09/16/2019
+ms.date: 09/20/2019
 ms.author: cherylmc
-ms.openlocfilehash: 63358923dae22a2547d7946cd10ca2a3f02e33a5
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: dc80638bfafbd0ade17fe355c5dcbac58d4ff24e
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122824"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172516"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -40,19 +40,19 @@ Você terá acesso aos serviços do Azure em todas as regiões dentro de uma reg
 ## <a name="locations"></a>Regiões do Azure para locais de ExpressRoute em uma região geopolítica.
 A tabela a seguir fornece um mapa das regiões do Azure para locais de ExpressRoute em uma região geopolítica.
 
-| **Região Geopolítica** | **Zona** | **Regiões do Azure** | **Locais de ExpressRoute** |
-| --- | --- | --- | --- |
-| **Governo da Austrália** | 1 | Austrália Central, Austrália Central 2 |Canberra, Canberra2 |
-| **Europa** | 1 |França Central, Sul da França, Norte da Europa, Europa Ocidental, Oeste do Reino Unido, Sul do Reino Unido |Amsterdã, Amsterdam2, Copenhague, Dublin, Frankfurt, Londres, London2, Marselha, Newport (Gales), Paris, Estocolmo, Zurique |
-| **América do Norte** | 1 |Leste dos EUA, Oeste dos EUA, Leste dos EUA 2, Oeste dos EUA 2, Centro dos EUA, Centro-Sul dos EUA, Centro-Norte dos EUA, Centro-Oeste dos EUA, Centro do Canadá, Leste do Canadá |Atlanta, Chicago, Dallas, Denver, Las Vegas, Los Angeles, Miami, Nova York, San Antonio, Seattle, vale do silício, silício Valley2, Washington DC, Washington DC2, Montreal, cidade de Quebec, Toronto |
-| **Ásia** | 2 |Ásia Oriental, Sudeste Asiático |Rae de Hong Kong, Kuala Lumpur, Cingapura, Cingapura2, Taipé |
-| **Índia** | 2 |Oeste da Índia, Índia Central, Sul da Índia |Chennai, Chennai2, Mumbai, Mumbai2 |
-| **Japão** | 2 |Oeste do Japão, Leste do Japão |Osaka, Tóquio |
-| **Oceânia** | 2 |Sudeste da Austrália, Leste da Austrália |Auckland, Melbourne, Perth, Sydney |
-| **Coreia do Sul** | 2 |Coreia Central, Sul da Coreia |Busan, Seul|
-| **DOS EAU** | 3 | EAU Central, Norte dos EAU | Dubai, Dubai2 |
-| **África do Sul** | 3 |Oeste da África do Sul, norte da África do Sul |Cidade do Cabo, Joanesburgo |
-| **América do Sul** | 3 |Sul do Brasil |São Paulo |
+| **Região Geopolítica** | **Regiões do Azure** | **Locais de ExpressRoute** |
+| --- | --- | --- |
+| **Governo da Austrália** |Austrália Central, Austrália Central 2 |Canberra, Canberra2 |
+| **Europa** | França Central, Sul da França, Norte da Europa, Europa Ocidental, Oeste do Reino Unido, Sul do Reino Unido |Amsterdã, Amsterdam2, Copenhague, Dublin, Frankfurt, Londres, London2, Marselha, Newport (Gales), Paris, Estocolmo, Zurique |
+| **América do Norte** |Leste dos EUA, Oeste dos EUA, Leste dos EUA 2, Oeste dos EUA 2, Centro dos EUA, Centro-Sul dos EUA, Centro-Norte dos EUA, Centro-Oeste dos EUA, Centro do Canadá, Leste do Canadá |Atlanta, Chicago, Dallas, Denver, Las Vegas, Los Angeles, Miami, Nova York, San Antonio, Seattle, vale do silício, silício Valley2, Washington DC, Washington DC2, Montreal, cidade de Quebec, Toronto |
+| **Ásia** | Ásia Oriental, Sudeste Asiático |Rae de Hong Kong, Kuala Lumpur, Cingapura, Cingapura2, Taipé |
+| **Índia** | Oeste da Índia, Índia Central, Sul da Índia |Chennai, Chennai2, Mumbai, Mumbai2 |
+| **Japão** | Oeste do Japão, Leste do Japão |Osaka, Tóquio |
+| **Oceânia** | Sudeste da Austrália, Leste da Austrália |Auckland, Melbourne, Perth, Sydney |
+| **Coreia do Sul** | Coreia Central, Sul da Coreia |Busan, Seul|
+| **DOS EAU** | EAU Central, Norte dos EAU | Dubai, Dubai2 |
+| **África do Sul** | Oeste da África do Sul, norte da África do Sul |Cidade do Cabo, Joanesburgo |
+| **América do Sul** | Sul do Brasil |São Paulo |
 
 
 ## <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Regiões e limites geopolíticos para nuvens nacionais

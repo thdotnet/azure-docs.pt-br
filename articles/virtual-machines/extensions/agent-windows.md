@@ -3,7 +3,7 @@ title: Visão Geral dos Agente de Máquina Virtual do Azure | Microsoft Docs
 description: Visão Geral do Agente de Máquina Virtual do Azure
 services: virtual-machines-windows
 documentationcenter: virtual-machines
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
@@ -13,20 +13,20 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/20/2019
-ms.author: roiyz
-ms.openlocfilehash: 6a845cad298e2aedbe68a11cd170120d1d229043
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.author: akjosh
+ms.openlocfilehash: 7c163dd48e53a3116d58cb94988f2822ddede5e5
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70382833"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169130"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Visão geral do Agente de Máquina Virtual do Azure
 O Agente de VM (Máquina Virtual) do Microsoft Azure é um processo seguro e leve que gerencia a interação da máquina virtual (VM) com o Controlador de Malha do Azure. O Agente de VM tem uma função fundamental na habilitação e execução de extensões de máquina virtual do Azure. Extensões de VM habilitam a configuração de VM pós-implantação, como instalação e configuração de software. Extensões de VM também habilitam os recursos de recuperação como redefinir a senha administrativa de uma VM. Sem o Agente de VM do Azure, não é possível executar extensões da VM.
 
 Este artigo fornece detalhes sobre a instalação, detecção e remoção do Agente de Máquina Virtual do Azure.
 
-## <a name="install-the-vm-agent"></a>Instalar o Agente de VM
+## <a name="install-the-vm-agent"></a>Instalar o Agente VM
 
 ### <a name="azure-marketplace-image"></a>Imagem do Azure Marketplace
 

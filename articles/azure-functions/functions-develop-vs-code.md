@@ -7,12 +7,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: glenga
-ms.openlocfilehash: 3fa68cf3996efa047b7573306749acb56b4c9411
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 77805b15d0061d0ab4b6ef2185c2f7f1c3459f0c
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "70744095"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172070"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Desenvolva Azure Functions usando Visual Studio Code
 
@@ -90,7 +90,7 @@ O modelo de projeto cria um projeto no idioma escolhido e instala as dependênci
     >[!IMPORTANT]
     >Como o arquivo local. Settings. JSON pode conter segredos, você precisa excluí-lo do seu controle de origem do projeto.
 
-Neste ponto, você pode adicionar associações de entrada e saída à sua função [modificando o arquivo function. JSON](#javascript-2) ou [adicionando um parâmetro a uma C# função de biblioteca de classes](#c-class-library-2).
+Neste ponto, você pode adicionar associações de entrada e saída à sua função [modificando o arquivo function. JSON](#add-a-function-to-your-project) ou [adicionando um parâmetro a uma C# função de biblioteca de classes](#add-a-function-to-your-project).
 
 Você também pode [Adicionar uma nova função ao seu projeto](#add-a-function-to-your-project).
 
@@ -98,11 +98,11 @@ Você também pode [Adicionar uma nova função ao seu projeto](#add-a-function-
 
 Exceto para gatilhos HTTP e de temporizador, as associações são implementadas em pacotes de extensão. Você deve instalar os pacotes de extensão para os gatilhos e as associações que precisam deles. O processo de instalação de extensões de associação depende do idioma do seu projeto.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 
-### <a name="c-class-library"></a>Biblioteca de classes C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 Execute o comando [dotnet adicionar pacote](/dotnet/core/tools/dotnet-add-package) na janela do terminal para instalar os pacotes de extensão de que você precisa em seu projeto. O comando a seguir instala a extensão de armazenamento do Azure, que implementa associações para armazenamento de BLOBs, filas e tabelas.
 
@@ -110,19 +110,23 @@ Execute o comando [dotnet adicionar pacote](/dotnet/core/tools/dotnet-add-packag
 dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 3.0.4
 ```
 
+---
+
 ## <a name="add-a-function-to-your-project"></a>Adicionar uma função ao projeto
 
 Você pode adicionar uma nova função a um projeto existente usando um dos modelos de gatilho de funções predefinidos. Para adicionar um novo gatilho de função, selecione F1 para abrir a paleta de comandos e, em seguida, pesquise e **execute o comando Azure Functions: Criar função**. Siga os prompts para escolher o tipo de disparador e definir os atributos necessários do gatilho. Se o gatilho exigir uma chave de acesso ou uma cadeia de conexão para se conectar a um serviço, prepare-o antes de criar o gatilho de função.
 
 Os resultados dessa ação dependem do idioma do seu projeto:
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 Uma nova pasta é criada no projeto. A pasta contém um novo arquivo function. JSON e o novo arquivo de código JavaScript.
 
-### <a name="c-class-library"></a>Biblioteca de classes C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 Um novo C# arquivo de biblioteca de classes (. cs) é adicionado ao seu projeto.
+
+---
 
 ## <a name="add-input-and-output-bindings"></a>Adicionar associações de entrada e saída
 
@@ -130,7 +134,7 @@ Você pode expandir sua função adicionando associações de entrada e saída. 
 
 Os exemplos a seguir se conectam a uma `outqueue`fila de armazenamento chamada, em que a cadeia de conexão para a `MyStorageConnection` conta de armazenamento é definida na configuração do aplicativo em local. Settings. JSON.
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
 
 Visual Studio Code permite que você adicione associações ao seu arquivo function. JSON seguindo um conjunto conveniente de prompts. Para criar uma associação, clique com o botão direito do mouse (Ctrl + clique em macOS) o arquivo **Function. JSON** em sua pasta de funções e selecione **Adicionar Associação**:
 
@@ -168,7 +172,7 @@ context.bindings.msg = "Name passed to the function: " req.query.name;
 
 Para saber mais, consulte a referência de [Associação de saída de armazenamento de filas](functions-bindings-storage-queue.md#output---javascript-example) .
 
-### <a name="c-class-library"></a>Biblioteca de classes C\#
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
 
 Atualize o método de função para adicionar o seguinte parâmetro à `Run` definição do método:
 
@@ -181,6 +185,8 @@ Esse código exige que você adicione a seguinte `using` instrução:
 ```cs
 using Microsoft.Azure.WebJobs.Extensions.Storage;
 ```
+
+---
 
 O parâmetro `msg` é um tipo `ICollector<T>`, que representa uma coleção de mensagens que são gravadas em uma associação de saída quando a função é concluída. Você adiciona uma ou mais mensagens à coleção. Essas mensagens são enviadas para a fila quando a função é concluída.
 

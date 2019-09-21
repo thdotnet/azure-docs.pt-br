@@ -3,7 +3,7 @@ title: Comandos da CLI do Azure no modo do Resource Manager | Microsoft Docs
 description: Comandos da CLI (interface de linha de comando) do Azure para gerenciar recursos no modelo de implantação do Gerenciador de Recursos
 services: virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services
 documentationcenter: ''
-author: dlepow
+author: cynthn
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: command-line-interface
 ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
-ms.author: danlep
-ms.openlocfilehash: 4a155159759a4b817842087bff7d4167ed8ed0c5
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: cynthn
+ms.openlocfilehash: 1ec1856508588d07e55e60e251a1369ecc3fa985
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722837"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174057"
 ---
 # <a name="azure-cli-commands-in-resource-manager-mode"></a>Comandos da CLI do Azure no modo do Gerenciador de Recursos
 Este artigo fornece a sintaxe e as opções de comandos da CLI (interface de linha de comando) do Azure que normalmente seriam usadas para criar e gerenciar recursos do Azure no modelo de implantação do Azure Resource Manager. É possível acessar esses comandos executando a CLI no modo ARM (Resource Manager). Essa não é uma referência completa, e sua versão da CLI poderá mostrar comandos ou parâmetros um pouco diferentes. Para obter uma visão geral dos recursos e dos grupos de recursos do Azure, confira [Visão geral do Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).  
@@ -48,7 +48,7 @@ Use o comando a seguir para habilitar os comandos do modo de Gerenciador de Recu
 > 
 > 
 
-## <a name="azure-account-manage-your-account-information"></a>conta do Azure: Gerenciar suas informações de conta
+## <a name="azure-account-manage-your-account-information"></a>conta do Azure: Gerenciar as informações da sua conta
 As informações da assinatura do Azure são utilizadas pela ferramenta para se conectar à sua conta.
 
 **Lista as assinaturas importadas**
@@ -75,7 +75,7 @@ As informações da assinatura do Azure são utilizadas pela ferramenta para se 
     account env set [options] [environment]
     account env delete [options] [environment]
 
-## <a name="azure-ad-commands-to-display-active-directory-objects"></a>ad do Azure: Comandos para exibir objetos do Active Directory
+## <a name="azure-ad-commands-to-display-active-directory-objects"></a>Azure AD: Comandos para exibir Active Directory objetos
 **Comandos para exibir aplicativos do active directory**
 
     ad app create [options]
@@ -150,7 +150,7 @@ As informações da assinatura do Azure são utilizadas pela ferramenta para se 
 
     feature register [options] <providerName> <featureName>
 
-## <a name="azure-group-commands-to-manage-your-resource-groups"></a>grupo do Azure: Comandos para gerenciar os grupos de recursos
+## <a name="azure-group-commands-to-manage-your-resource-groups"></a>Grupo do Azure: Comandos para gerenciar seus grupos de recursos
 **Crie um grupos de recursos**
 
     group create [options] <name> <location>
@@ -189,7 +189,7 @@ As informações da assinatura do Azure são utilizadas pela ferramenta para se 
     group template download [options] [name] [file]
     group template validate [options] <resource-group>
 
-## <a name="azure-hdinsight-commands-to-manage-your-hdinsight-clusters"></a>azure hdinsight: Comandos para gerenciar os clusters do HDInsight
+## <a name="azure-hdinsight-commands-to-manage-your-hdinsight-clusters"></a>Azure hdinsight: Comandos para gerenciar seus clusters HDInsight
 **Comandos para criar ou adicionar a um arquivo de configuração de cluster**
 
     hdinsight config create [options] <configFilePath> <overwrite>
@@ -307,12 +307,12 @@ Opções de parâmetro:
 
     hdinsight cluster disable-rdp-access [options] <clusterName>
 
-## <a name="azure-insights-commands-related-to-monitoring-insights-events-alert-rules-autoscale-settings-metrics"></a>o Azure insights: Comandos relacionados ao monitoramento Insights (eventos, regras de alerta, configurações de dimensionamento automático, métricas)
+## <a name="azure-insights-commands-related-to-monitoring-insights-events-alert-rules-autoscale-settings-metrics"></a>Azure insights: Comandos relacionados a informações de monitoramento (eventos, regras de alerta, configurações de autoescala, métricas)
 **Recupera os logs de operação para uma assinatura, uma correlationId, um grupo de recursos, o recurso ou o provedor de recursos**
 
     insights logs list [options]
 
-## <a name="azure-location-commands-to-get-the-available-locations-for-all-resource-types"></a>local do Azure: Comandos para obter os locais disponíveis para todos os tipos de recursos
+## <a name="azure-location-commands-to-get-the-available-locations-for-all-resource-types"></a>local do Azure: Comandos para obter os locais disponíveis para todos os tipos de recurso
 **Lista os locais disponíveis**
 
     location list [options]
@@ -1336,7 +1336,7 @@ Opções de parâmetro:
 <br>
 
     network public-ip list [options] <resource-group>
-Lista todos os recursos IP público dentro de um grupo de recursos.
+Lista todos os recursos de IP público dentro de um grupo de recursos.
 
     azure network public-ip list -g myresourcegroup
 
@@ -1509,7 +1509,7 @@ Opções de parâmetro:
 
     network gateway list [options] <resource-group>
 
-## <a name="azure-provider-commands-to-manage-resource-provider-registrations"></a>provedor do Azure: Comandos para gerenciar registros de provedor de recursos
+## <a name="azure-provider-commands-to-manage-resource-provider-registrations"></a>provedor do Azure: Comandos para gerenciar os registros do provedor de recursos
 **Liste os provedores registrados atualmente no Resource Manager**
 
     provider list [options]
@@ -1526,7 +1526,7 @@ Opções de parâmetro:
 
     provider unregister [options] <namespace>
 
-## <a name="azure-resource-commands-to-manage-your-resources"></a>recursos do Azure: Comandos para gerenciar seus recursos
+## <a name="azure-resource-commands-to-manage-your-resources"></a>recurso do Azure: Comandos para gerenciar seus recursos
 **Cria um recurso em um grupo de recursos**
 
     resource create [options] <resource-group> <name> <resource-type> <location> <api-version>
@@ -1547,7 +1547,7 @@ Opções de parâmetro:
 
     resource delete [options] <resource-group> <name> <resource-type> <api-version>
 
-## <a name="azure-role-commands-to-manage-your-azure-roles"></a>Função do Azure: Comandos para gerenciar as funções do Azure
+## <a name="azure-role-commands-to-manage-your-azure-roles"></a>Função do Azure: Comandos para gerenciar suas funções do Azure
 **Obtenha todas as definições de função disponíveis**
 
     role list [options]
@@ -1685,7 +1685,7 @@ Opções de parâmetro:
     storage table policy set [options] [table] [name]
     storage table policy delete [options] [table] [name]
 
-## <a name="azure-tag-commands-to-manage-your-resource-manager-tag"></a>azure tag: Comandos para gerenciar sua marca do Gerenciador de recursos
+## <a name="azure-tag-commands-to-manage-your-resource-manager-tag"></a>marca do Azure: Comandos para gerenciar sua marca do Resource Manager
 **Adicione uma marca**
 
     tag create [options] <name> <value>
@@ -1702,7 +1702,7 @@ Opções de parâmetro:
 
     tag show [options] [name]
 
-## <a name="azure-vm-commands-to-manage-your-azure-virtual-machines"></a>azure vm: Comandos para gerenciar as máquinas virtuais do Azure
+## <a name="azure-vm-commands-to-manage-your-azure-virtual-machines"></a>azure vm: Comandos para gerenciar suas máquinas virtuais do Azure
 **Cria uma máquina virtual**
 
     vm create [options] <resource-group> <name> <location> <os-type>

@@ -3,7 +3,7 @@ title: Azure Monitor extensão da máquina virtual para Windows | Microsoft Docs
 description: Implante o agente do Log Analytics na máquina virtual do Windows usando uma extensão da máquina virtual.
 services: virtual-machines-windows
 documentationcenter: ''
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/12/2019
-ms.author: roiyz
-ms.openlocfilehash: 393b01d7815d94e4ad623c552f4110421c9d98bd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: fe8bafcb63c1a27b905bdc339c07d30c9f0a5982
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092248"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71168919"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Extensão de máquina virtual Azure Monitor para Windows
 
@@ -36,14 +36,14 @@ Para obter detalhes sobre os sistemas operacionais Windows com suporte, consulte
 ### <a name="agent-and-vm-extension-version"></a>Versão do Agente e da Extensão de VM
 A tabela a seguir fornece um mapeamento da versão da extensão de VM do Windows Azure Monitor e do pacote de Log Analytics agente para cada versão. 
 
-| Log Analytics versão do pacote do agente do Windows | Azure Monitor versão da extensão de VM do Windows | Data do Lançamento | Notas de versão |
+| Log Analytics versão do pacote do agente do Windows | Azure Monitor versão da extensão de VM do Windows | Data de Lançamento | Notas de versão |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
 | 10.20.18011 | 1.0.18011 | Julho de 2019 | <ul><li> Correções de bugs e melhorias de estabilização secundárias </li><li> Aumento de MaxExpressionDepth para 10000 </li></ul> |
 | 10.20.18001 | 1.0.18001 | Junho de 2019 | <ul><li> Correções de bugs e melhorias de estabilização secundárias </li><li> Capacidade adicional de desabilitar as credenciais padrão ao fazer a conexão proxy (suporte para WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH) </li></ul>|
 | 10.19.13515 | 1.0.13515 | Março de 2019 | <ul><li>Correções secundárias de estabilização </li></ul> |
-| 10.19.10006 | N/D | Dec 2018 | <ul><li> Correções secundárias de estabilização </li></ul> | 
-| 8.0.11136 | N/D | 2018 de setembro |  <ul><li> Suporte adicionado para detectar a alteração da ID de recurso na movimentação da VM </li><li> Adicionado suporte para relatar a ID de recurso ao usar a instalação sem extensão </li></ul>| 
-| 8.0.11103 | N/D |  Abril de 2018 | |
+| 10.19.10006 | n/d | Dec 2018 | <ul><li> Correções secundárias de estabilização </li></ul> | 
+| 8.0.11136 | n/d | 2018 de setembro |  <ul><li> Suporte adicionado para detectar a alteração da ID de recurso na movimentação da VM </li><li> Adicionado suporte para relatar a ID de recurso ao usar a instalação sem extensão </li></ul>| 
+| 8.0.11103 | n/d |  Abril de 2018 | |
 | 8.0.11081 | 1.0.11081 | 2017 de novembro | | 
 | 8.0.11072 | 1.0.11072 | 2017 de setembro | |
 | 8.0.11049 | 1.0.11049 | Fevereiro de 2017 | |
@@ -178,7 +178,7 @@ Set-AzVMExtension -ExtensionName "MicrosoftMonitoringAgent" `
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o módulo do Azure PowerShell. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir usando o módulo do Azure PowerShell.
 

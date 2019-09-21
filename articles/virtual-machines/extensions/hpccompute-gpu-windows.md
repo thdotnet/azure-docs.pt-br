@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
-ms.author: roiyz
-ms.openlocfilehash: c44722403967f3563472692f97cb2a114e6294cd
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 4526456b608f0920c73ae28446a822661995acab
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084454"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173995"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Extensão de Driver NVIDIA GPU para Windows
 
@@ -35,7 +35,7 @@ Uma extensão também está disponível para instalar drivers NVIDIA GPU em [VMs
 
 A Extensão suporta os seguintes OS:
 
-| Distribuição | Version |
+| Distribuição | Versão |
 |---|---|
 | Windows 10 | Core |
 | Windows Server 2016 | Core |
@@ -69,7 +69,7 @@ O JSON a seguir mostra o esquema para a extensão.
 }
 ```
 
-### <a name="properties"></a>Propriedades
+### <a name="properties"></a>Properties
 
 | Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
@@ -139,7 +139,7 @@ az vm extension set `
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o Azure PowerShell e a CLI do Azure. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir.
 
@@ -157,11 +157,11 @@ A saída de execução da extensão é registrada no seguinte local:
 C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 ```
 
-### <a name="error-codes"></a>Códigos de erro
+### <a name="error-codes"></a>Códigos do Erro
 
 | Código de Erro | Significado | Ação possível |
 | :---: | --- | --- |
-| 0 | Operação com êxito |
+| 0 | Operação concluída com êxito |
 | 1 | Operação concluída com êxito. É necessário reiniciar. |
 | 100 | Operação sem suporte ou não pôde ser concluída. | Possíveis causas: Não há suporte para a versão do PowerShell, o tamanho da VM não é uma VM da série N, falha ao baixar dados. Verifique os arquivos de log para determinar a causa do erro. |
 | 240, 840 | Tempo limite da operação. | Operação de teste. |

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 09/18/2019
+ms.date: 09/20/2019
 ms.author: yushwang
-ms.openlocfilehash: c7d7fcc16fe10c1d4cd4b0dfb6d60575b98212b1
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 1d80c30e3573d76aabcf854b2d97ea849197577c
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105596"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173044"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>Sobre dispositivos VPN e os parâmetros IPsec/IKE para conexões do Gateway de VPN site a site
 
@@ -39,14 +39,14 @@ Para ajudar a configurar seu dispositivo VPN, consulte os links que correspondem
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |Não compatível  |[Guia de Configuração](https://www.a10networks.com/wp-content/uploads/A10-DG-16161-EN.pdf)|
 | Allied Telesis     |Série AR de roteadores VPN |Série AR 5.4.7 e superior               | [Guia de Configuração](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router) |[Guia de Configuração](https://www.alliedtelesis.com/documents/how-to/configure/site-to-site-vpn-between-azure-and-ar-series-router)|
-| Barracuda Networks, Inc. |Barracuda NextGen Firewall F-series |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Guia de Configuração](https://techlib.barracuda.com/NGF/AzurePolicyBasedVPNGW) |[Guia de Configuração](https://techlib.barracuda.com/NGF/AzureRouteBasedVPNGW) |
-| Barracuda Networks, Inc. |Barracuda NextGen Firewall X-series |Barracuda Firewall 6.5 |[Guia de Configuração](https://techlib.barracuda.com/BFW/ConfigAzureVPNGateway) |Não compatível |
-| Ponto de Verificação |Gateway de segurança |R80.10 |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
+| Barracuda Networks, Inc. |Firewall CloudGen Barracuda |PolicyBased: 5.4.3<br>RouteBased: 6.2.0 |[Guia de Configuração](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462887/how-to-configure-an-ikev1-ipsec-site-to-site-vpn-to-the-static-microsoft-azure-vpn-gateway/) |[Guia de Configuração](https://campus.barracuda.com/product/cloudgenfirewall/doc/79462889/how-to-configure-bgp-over-ikev2-ipsec-site-to-site-vpn-to-an-azure-vpn-gateway/) |
+| Check Point |Gateway de segurança |R80.10 |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Guia de Configuração](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
 | Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Suportado |[Guia de configuração*](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
 | Cisco |ASR |PolicyBased: IOS 15.1<br>RouteBased: IOS 15.2 |Suportado |Suportado |
 | Cisco | CSR | RouteBased: IOS-XE 16.10 | (não testado) | [Script de configuração](vpn-gateway-download-vpndevicescript.md) |
 | Cisco |ISR |PolicyBased: IOS 15.0<br>RouteBased*: IOS 15.1 |Suportado |Suportado |
 | Cisco |Meraki |N/D |Não compatível |Não compatível |
+| Cisco | vEdge (so Viptela) | 18.4.0 (modo ativo/passivo)<br><br>19,2 (modo ativo/ativo) | Não compatível |  [Configuração manual (ativa/passiva)](https://community.cisco.com/t5/networking-documents/how-to-configure-ipsec-vpn-connection-between-cisco-vedge-and/ta-p/3841454)<br><br>[Configuração de onrampa na nuvem (ativa/ativa)](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/Network-Optimization-and-High-Availability/Network-Optimization-High-Availability-book/b_Network-Optimization-and-HA_chapter_00.html) |
 | Citrix |NetScaler MPX, SDX, VPX |10.1 e acima |[Guia de Configuração](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Não compatível |
 | F5 |Série BIG-IP |12.0 |[Guia de Configuração](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Guia de Configuração](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
 | Fortinet |FortiGate |FortiOS 5.6 | (não testado) |[Guia de Configuração](https://docs.fortinet.com/document/fortigate/5.6.0/cookbook/255100/ipsec-vpn-to-azure) |
@@ -67,7 +67,7 @@ Para ajudar a configurar seu dispositivo VPN, consulte os links que correspondem
 | Synology | MR2200ac <br>RT2600ac <br>RT1900ac | SRM1.1.5/VpnPlusServer-1.2.0 | (não testado) | [Guia de Configuração](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
 | Ubiquiti | EdgeRouter | EdgeOS v1.10 | (não testado) | [BGP em IKEv2/IPsec](https://help.ubnt.com/hc/en-us/articles/115012374708)<br><br>[VTI em IKEv2/IPsec](https://help.ubnt.com/hc/en-us/articles/115012305347)
 | WatchGuard |Todas |Fireware XTM<br> PolicyBased: v11.11.x<br>RouteBased: v11.12.x |[Guia de Configuração](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Guia de Configuração](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
-| Zyxel |Série ZyWALL USG<br>Série ZyWALL ATP<br>Série de VPN ZyWALL | ZLD v 4.32 + | (não testado) | [VTI em IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2648/)<br>[BGP em IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2650/)|
+| Zyxel |Série ZyWALL USG<br>Série ZyWALL ATP<br>Série de VPN ZyWALL | ZLD v 4.32 + | (não testado) | [VTI em IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2648/)<br><br>[BGP em IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2650/)|
 
 > [!NOTE]
 >
@@ -126,7 +126,7 @@ Nas tabelas a seguir:
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Parâmetros da Fase 1 de IKE (Modo Principal)
 
-| **Property**          |**PolicyBased**    | **RouteBased**    |
+| **Propriedade**          |**PolicyBased**    | **RouteBased**    |
 | ---                   | ---               | ---               |
 | Versão IKE           |IKEv1              |IKEv2              |
 | Grupo Diffie-Hellman  |Grupo 2 (1024 bits) |Grupo 2 (1024 bits) |
@@ -136,7 +136,7 @@ Nas tabelas a seguir:
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Parâmetros da Fase 2 de IKE (Modo Rápido)
 
-| **Property**                  |**PolicyBased**| **RouteBased**                              |
+| **Propriedade**                  |**PolicyBased**| **RouteBased**                              |
 | ---                           | ---           | ---                                         |
 | Versão IKE                   |IKEv1          |IKEv2                                        |
 | Criptografia e algoritmos de hash |1. AES256, SHA256<br>2. AES256, SHA1<br>3. AES128, SHA1<br>4. 3DES, SHA1 |[Ofertas QM SA RouteBased](#RouteBasedOffers) |
@@ -154,24 +154,24 @@ A tabela a seguir lista as ofertas de SA do IPsec (IKE Modo Rápido). Ofertas es
 
 |-  |**Criptografia**|**Autenticação**|**Grupo PFS**|
 |---| ---          |---               |---          |
-| 1 |GCM AES256    |GCM (AES256)      |Nenhum         |
-| 2 |AES256        |SHA1              |Nenhum         |
-| 3 |3DES          |SHA1              |Nenhum         |
-| 4 |AES256        |SHA256            |Nenhum         |
-| 5 |AES128        |SHA1              |Nenhum         |
-| 6 |3DES          |SHA256            |Nenhum         |
+| 1 |GCM AES256    |GCM (AES256)      |Nenhuma         |
+| 2 |AES256        |SHA1              |Nenhuma         |
+| 3 |3DES          |SHA1              |Nenhuma         |
+| 4 |AES256        |SHA256            |Nenhuma         |
+| 5 |AES128        |SHA1              |Nenhuma         |
+| 6 |3DES          |SHA256            |Nenhuma         |
 
 #### <a name="azure-gateway-as-responder"></a>Gateway do Azure como respondente
 
 |-  |**Criptografia**|**Autenticação**|**Grupo PFS**|
 |---| ---          | ---              |---          |
-| 1 |GCM AES256    |GCM (AES256)      |Nenhum         |
-| 2 |AES256        |SHA1              |Nenhum         |
-| 3 |3DES          |SHA1              |Nenhum         |
-| 4 |AES256        |SHA256            |Nenhum         |
-| 5 |AES128        |SHA1              |Nenhum         |
-| 6 |3DES          |SHA256            |Nenhum         |
-| 7 |DES           |SHA1              |Nenhum         |
+| 1 |GCM AES256    |GCM (AES256)      |Nenhuma         |
+| 2 |AES256        |SHA1              |Nenhuma         |
+| 3 |3DES          |SHA1              |Nenhuma         |
+| 4 |AES256        |SHA256            |Nenhuma         |
+| 5 |AES128        |SHA1              |Nenhuma         |
+| 6 |3DES          |SHA256            |Nenhuma         |
+| 7 |DES           |SHA1              |Nenhuma         |
 | 8 |AES256        |SHA1              |1            |
 | 9 |AES256        |SHA1              |2            |
 | 10|AES256        |SHA1              |14           |
@@ -186,7 +186,7 @@ A tabela a seguir lista as ofertas de SA do IPsec (IKE Modo Rápido). Ofertas es
 | 19|AES256        |SHA256            |14           |
 | 20|AES256        |SHA1              |24           |
 | 21|AES256        |SHA256            |24           |
-| 22|AES128        |SHA256            |Nenhum         |
+| 22|AES128        |SHA256            |Nenhuma         |
 | 23|AES128        |SHA256            |1            |
 | 24|AES128        |SHA256            |2            |
 | 25|AES128        |SHA256            |14           |

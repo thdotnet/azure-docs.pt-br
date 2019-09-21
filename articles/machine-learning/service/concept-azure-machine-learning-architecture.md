@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 91c747b8b4ca58e7714dc101777bad51f9f0286f
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 85ca03bee728ec075383566be14d2484dd7431af
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035591"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71170442"
 ---
 # <a name="how-azure-machine-learning-works-architecture-and-concepts"></a>Como Azure Machine Learning funciona: Arquitetura e conceitos
 
@@ -23,7 +23,7 @@ Saiba mais sobre a arquitetura, os conceitos e o fluxo de trabalho para Azure Ma
 
 ![Arquitetura e fluxo de trabalho de Azure Machine Learning](./media/concept-azure-machine-learning-architecture/workflow.png)
 
-## <a name="workflow"></a>Fluxo de trabalho
+## <a name="workflow"></a>Fluxo de Trabalho
 
 O fluxo de trabalho do modelo de aprendizado de máquina geralmente segue esta sequência:
 
@@ -63,10 +63,10 @@ Use estas ferramentas para Azure Machine Learning:
 + <a href="#compute-targets">Destinos de computação</a>
 + <a href="#training-scripts">Script de treinamento</a>
 + <a href="#runs">Run</a>
++ <a href="#environments">Sistemas</a>
 + <a href="#github-tracking-and-integration">Rastreamento de git</a>
 + <a href="#snapshots">Instantâneo</a>
 + <a href="#activities">Atividade</a>
-+ <a href="#images">Image</a>
 + <a href="#deployment">Implantação</a>
 + <a href="#web-service-deployments">Serviços Web</a>
 + <a href="#iot-module-deployments">Módulos IoT</a>
@@ -180,28 +180,15 @@ Uma atividade representa uma operação de execução demorada. As operações a
 
 As atividades podem fornecer notificações por meio do SDK ou da IU da Web, portanto, você pode facilmente monitorar o progresso dessas operações.
 
-### <a name="images"></a>Imagens
+### <a name="environments"></a>Ambientes
 
-As imagens fornecem uma maneira confiável de implantar um modelo, juntamente com todos os componentes necessários para usar o modelo. Uma imagem contém os seguintes itens:
+Os ambientes do Azure ML são usados para especificar a configuração (Docker/Python/Spark/etc.) usada para criar um ambiente reproduzível para preparação de dados, treinamento de modelo e serviço de modelo. Eles são entidades gerenciadas e com controle de versão em seu espaço de trabalho de Azure Machine Learning que permitem fluxos de trabalho de aprendizado de máquina reproduzíveis, auditáveis e portáteis entre diferentes destinos de computação.
 
-* Um modelo.
-* Um script ou aplicativo de pontuação. Esse script é usado para passar a entrada para o modelo e retornar a saída do modelo.
-* As dependências exigidas pelo modelo ou o script/aplicativo de pontuação. Por exemplo, você pode incluir um arquivo de ambiente do Conda que lista as dependências de pacote do Python.
+Você pode usar um objeto de ambiente em sua computação local para desenvolver seu script de treinamento, reutilizar o mesmo ambiente em Azure Machine Learning computação para treinamento de modelo em escala e até mesmo implantar seu modelo com o mesmo ambiente. 
 
-O Azure Machine Learning pode criar dois tipos de imagens:
+Saiba [como criar e gerenciar um ambiente de ml reutilizável](how-to-use-environments.md) para treinamento e inferência.
 
-* **Imagem FPGA**: Usada ao implantar em uma matriz de portas programáveis em campo na nuvem do Azure.
-* **Imagem do docker**: Usado ao implantar nos destinos de computação que não sejam FPGA. Os exemplos estão nas Instâncias de Contêiner do Azure e no Serviço de Kubernetes do Azure.
 
-Azure Machine Learning fornece uma imagem base, que é usada por padrão. Você também pode fornecer suas próprias imagens personalizadas.
-
-### <a name="image-registry"></a>Registro de imagem
-
-As imagens são catalogadas no **registro de imagem** em seu espaço de trabalho. Você pode fornecer marcas de metadados adicionais ao criar a imagem, para que você possa consultá-las para localizar a imagem mais tarde.
-
-Para obter um exemplo de criação de uma imagem, consulte [Implantar um modelo de classificação de imagem nas Instâncias de Contêiner do Azure](tutorial-deploy-models-with-aml.md).
-
-Para obter um exemplo de implantação de um modelo usando uma imagem personalizada, consulte [como implantar um modelo usando uma imagem personalizada](how-to-deploy-custom-docker-image.md)do Docker.
 
 ### <a name="deployment"></a>Implantação
 

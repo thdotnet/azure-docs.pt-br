@@ -6,14 +6,14 @@ author: vermagit
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 05/29/2018
-ms.author: azcspmt;jonbeck;cynthn;danlep;amverma
+ms.author: azcspmt;jonbeck;cynthn;amverma
 ms.custom: include file
-ms.openlocfilehash: 88d9491bae1fcc6acb7ab631514aa4f6244f593d
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 0930fa371500125c15cd969b9e9f4b7a2853612e
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538023"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174926"
 ---
 ## <a name="deployment-considerations"></a>Considerações de implantação
 * **Assinatura do Azure** – Para implantar um número maior de instâncias de computação intensiva, considere uma assinatura pré-paga ou outras opções de compra. Se estiver usando uma [conta gratuita do Azure](https://azure.microsoft.com/free/), você poderá usar apenas um número limitado de núcleos de computação do Azure.
@@ -29,11 +29,11 @@ ms.locfileid: "67538023"
 * **Redimensionamento** – devido ao hardware especializado, você só pode redimensionar instâncias de computação intensiva dentro da mesma família de tamanho (série H ou série A de computação intensiva). Por exemplo, somente é possível redimensionar uma VM da série H de um tamanho da série H para outro. Além disso, não há suporte para o redimensionamento de um tamanho sem computação intensiva para um tamanho de computação intensiva.  
 
 ## <a name="rdma-capable-instances"></a>Instâncias compatíveis com RDMA
-Um subconjunto das instâncias com computação intensiva (A8, A9, H16r, H16mr, HB e HC) apresenta uma interface de rede para conectividade de acesso (RDMA) de memória direta remota. Selecionados tamanhos da série N designados com 'r', como as configurações de NC24rs (NC24rs_v2 e NC24rs_v3) também são compatíveis com RDMA. Essa interface é além do adaptador de rede do Azure padrão disponível para outros tamanhos de VM. 
+Um subconjunto das instâncias de computação intensiva (A8, A9, H16r, H16mr, HB e HC) apresentam um adaptador de rede para conectividade RDMA (acesso remoto direto à memória). Os tamanhos de série N selecionados designados com ' r ', como as configurações de NC24rs (NC24rs_v2 e NC24rs_v3) também são compatíveis com RDMA. Essa interface é além do adaptador de rede do Azure padrão disponível para outros tamanhos de VM. 
   
-Essa interface permite que as instâncias compatíveis com RDMA se comuniquem em uma rede InfiniBand (IB), operando em taxas EDR HB, HC, FDR taxas para máquinas virtuais H16r, H16mr e série N compatíveis com RDMA e taxas QDR para máquinas virtuais A8 e A9. Esses recursos RDMA podem melhorar a escalabilidade e o desempenho de determinados aplicativos MPI (Interface de Transmissão de Mensagens). Para obter mais informações sobre a velocidade, consulte os detalhes nas tabelas nesta página.
+Essa interface permite que as instâncias compatíveis com RDMA se comuniquem por meio de uma rede InfiniBand (IB), operando em taxas de EDR para HB, HC, FDR taxas para máquinas virtuais da série N com capacidade para H16r, H16mr e RDMA e taxas de QDR para máquinas virtuais A8 e A9. Esses recursos RDMA podem melhorar a escalabilidade e o desempenho de determinados aplicativos MPI (Interface de Transmissão de Mensagens). Para obter mais informações sobre velocidade, consulte os detalhes nas tabelas desta página.
 
 > [!NOTE]
-> No Azure, IP sobre IB é suportada apenas em VMs (SR-IOV para InfiniBand, atualmente HB e HC) habilitadas para a SR-IOV. RDMA sobre IB é compatível com todas as instâncias compatíveis com RDMA.
+> No Azure, o IP sobre IB tem suporte apenas nas VMs habilitadas para SR-IOV (SR-IOV para InfiniBand, atualmente HB e HC). O RDMA sobre IB tem suporte para todas as instâncias compatíveis com RDMA.
 >
 

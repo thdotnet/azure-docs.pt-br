@@ -3,7 +3,7 @@ title: Exportar Grupos de Recursos do Azure que contêm extensões de VM | Micro
 description: Exporte modelos do Resource Manager que incluem as extensões da máquina virtual.
 services: virtual-machines-windows
 documentationcenter: ''
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
-ms.author: roiyz
-ms.openlocfilehash: 6ac3a19d12b99c61dd0607b07b4659114f52400e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 652ed732a7fe8f08e48aba6fc4bd1b52164d1fa0
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084612"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169052"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Exportar Grupos de Recursos que contêm extensões de VM
 
@@ -41,7 +41,7 @@ As extensões a seguir podem ser exportadas com o recurso de script de automaç�
 | BMC CTM Agent Linux | Dynatrace Linux | Site 24x7 Linux Server |
 | BMC CTM Agent Windows | Dynatrace Windows | Site 24x7 Windows Server |
 | Chef Client | HPE Security Application Defender | Trend Micro DSA |
-| Script Personalizado | IaaS Antimalware | Trend Micro DSA Linux |
+| Custom Script | IaaS Antimalware | Trend Micro DSA Linux |
 | Extensão de script personalizado | Diagnóstico do IaaS | Acesso de VM para Linux |
 | Script Personalizado para Linux | Linux Chef Client | Acesso de VM para Linux |
 | Datadog Linux Agent | Diagnóstico do Linux | VM Snapshot |

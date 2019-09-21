@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
-ms.author: roiyz
-ms.openlocfilehash: 167780971ec59efd1ca197958798564d1ef2d596
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 83646c0b11bf558f667b29271a27d31e5489c157
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092329"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71174009"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Extensão de Driver NVIDIA GPU para Linux
 
@@ -36,7 +36,7 @@ Uma extensão também está disponível para instalar drivers NVIDIA GPU em [VMs
 
 Esta extensão é compartível com as seguintes distribuições do sistema operacional, dependendo do suporte do driver para uma versão específica do sistema operacional.
 
-| Distribuição | Version |
+| Distribuição | Versão |
 |---|---|
 | Linux: Ubuntu | 16.04 LTS, 18.04 LTS |
 | Linux: Red Hat Enterprise Linux | 7.3, 7.4, 7.5, 7.6 |
@@ -70,7 +70,7 @@ O JSON a seguir mostra o esquema para a extensão.
 }
 ```
 
-### <a name="properties"></a>Propriedades
+### <a name="properties"></a>Properties
 
 | Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
@@ -155,7 +155,7 @@ az vm extension set `
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o Azure PowerShell e a CLI do Azure. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir.
 
@@ -177,7 +177,7 @@ A saída de execução da extensão é registrada no seguinte arquivo:
 
 | Código de Saída | Significado | Ação possível |
 | :---: | --- | --- |
-| 0 | Operação com êxito |
+| 0 | Operação concluída com êxito |
 | 1 | Uso incorreto de extensão | Verifique o log de saída de execução |
 | 10 | Serviços de integração do Linux para Hyper-V e o Azure não disponível ou instalado | Verificação de saída de Ispci |
 | 11 | GPU NVIDIA não encontrado nesse tamanho de VM | Use um [tamanho da VM e sistema operacional com suporte](../linux/n-series-driver-setup.md) |

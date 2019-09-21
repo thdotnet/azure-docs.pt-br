@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: 87dca4cf06bd8c5982e5f83a2498496c4bec69fd
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 386dc737bb45eec031aaa1a0c55f4478b8302c54
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984869"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173590"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Entender as saídas do Azure Stream Analytics
 
@@ -210,6 +210,7 @@ A tabela a seguir lista os nomes de propriedade e suas descrições para a cria�
 | Delimitador |Aplicável somente para serialização de CSV. O Stream Analytics é compatível com vários delimitadores comuns para serialização de dados no formato CSV. Os valores com suporte são vírgula, ponto e vírgula, espaço, tab e barra vertical. |
 | Formatar |Aplicável somente para o tipo JSON. **Linha separada** especifica que a saída é formatada por ter cada objeto JSON separado por uma nova linha. **Matriz** especifica que a saída é formatada como uma matriz de objetos JSON. |
 | Colunas da propriedade | Opcional. Colunas separadas por vírgula que precisam ser anexadas como propriedades de usuário da mensagem de saída em vez da carga. Mais informações sobre esse recurso estão na seção [Propriedades de metadados personalizados para saída](#custom-metadata-properties-for-output). |
+| Colunas de Propriedades do Sistema | Opcional. Pares chave-valor de propriedades do sistema e nomes de coluna correspondentes que precisam ser anexados à mensagem de saída em vez da carga. Mais informações sobre esse recurso estão na seção [Propriedades do sistema para saídas de fila e de tópico do barramento de serviço](#system-properties-for-service-bus-queue-and-topic-outputs)  |
 
 O número de partições baseia-se [no tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). Chave de partição é um valor inteiro exclusivo para cada partição.
 
@@ -229,6 +230,7 @@ A tabela a seguir lista os nomes de propriedade e suas descrições para a cria�
 | Codificando |Se você estiver usando o formato CSV ou JSON, uma codificação deverá ser especificada. UTF-8 é o único formato de codificação com suporte no momento. |
 | Delimitador |Aplicável somente para serialização de CSV. O Stream Analytics é compatível com vários delimitadores comuns para serialização de dados no formato CSV. Os valores com suporte são vírgula, ponto e vírgula, espaço, tab e barra vertical. |
 | Colunas da propriedade | Opcional. Colunas separadas por vírgula que precisam ser anexadas como propriedades de usuário da mensagem de saída em vez da carga. Mais informações sobre esse recurso estão na seção [Propriedades de metadados personalizados para saída](#custom-metadata-properties-for-output). |
+| Colunas de Propriedades do Sistema | Opcional. Pares chave-valor de propriedades do sistema e nomes de coluna correspondentes que precisam ser anexados à mensagem de saída em vez da carga. Mais informações sobre esse recurso estão na seção [Propriedades do sistema para saídas de fila e de tópico do barramento de serviço](#system-properties-for-service-bus-queue-and-topic-outputs) |
 
 O número de partições baseia-se [no tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.
 
@@ -263,7 +265,7 @@ O Azure Stream Analytics chama o Azure Functions por meio de gatilhos de HTTP. O
 
 | Nome da propriedade | Descrição |
 | --- | --- |
-| Aplicativo de função |O nome do seu aplicativo Azure Functions. |
+| Aplicativo de funções |O nome do seu aplicativo Azure Functions. |
 | Função |O nome da função em seu aplicativo Azure Functions. |
 | Chave |Se você quiser usar uma função do Azure de outra assinatura, poderá fazer isso fornecendo a chave para acessar sua função. |
 | Tamanho de lote máximo |Uma propriedade que permite que você defina o tamanho máximo para cada lote de saída que é enviado para sua função do Azure. A unidade de entrada é em bytes. Por padrão, esse valor é 262.144 bytes (256 KB). |
@@ -295,6 +297,25 @@ A captura de tela a seguir mostra as propriedades da mensagem de saída inspecio
 
 ![Propriedades personalizadas do evento](./media/stream-analytics-define-outputs/09-stream-analytics-custom-properties.png)
 
+## <a name="system-properties-for-service-bus-queue-and-topic-outputs"></a>Propriedades do sistema para saídas de fila e tópico do barramento de serviço 
+Você pode anexar colunas de consulta como [Propriedades do sistema](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties) às mensagens da fila ou do tópico do barramento de serviço de saída. Essas colunas não vão para a carga, em vez disso, a [Propriedade do sistema](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azure-dotnet#properties) BrokeredMessage correspondente é populada com os valores da coluna de consulta.
+Essas propriedades do sistema são suportadas- `MessageId, ContentType, Label, PartitionKey, ReplyTo, SessionId, CorrelationId, To, ForcePersistence, TimeToLive, ScheduledEnqueueTimeUtc`.
+Os valores de cadeia de caracteres dessas colunas são analisados como tipo de valor de Propriedade do sistema correspondente e quaisquer falhas de análise são tratadas como erros de dados.
+Esse campo é fornecido como um formato de objeto JSON. Os detalhes sobre esse formato são os seguintes:
+* Entre chaves {}.
+* Gravados em pares chave/valor.
+* Chaves e valores devem ser cadeias de caracteres.
+* Chave é o nome da Propriedade do sistema e o valor é o nome da coluna de consulta.
+* Chaves e valores são separados por dois-pontos.
+* Cada par chave/valor é separado por uma vírgula.
+
+Isso mostra como usar essa propriedade –
+
+* Consulta: `select *, column1, column2 INTO queueOutput FROM iotHubInput`
+* Colunas de propriedades do sistema:`{ "MessageId": "column1", "PartitionKey": "column2"}`
+
+Isso define as `MessageId` mensagens de fila no barramento de `column1`serviço com valores de e PartitionKey é `column2`definido com valores de.
+
 ## <a name="partitioning"></a>Particionamento
 
 A tabela a seguir resume o suporte de partição e o número de gravadores de saída para cada tipo de saída:
@@ -302,10 +323,10 @@ A tabela a seguir resume o suporte de partição e o número de gravadores de sa
 | Tipo de saída | Suporte ao particionamento | Chave de partição  | Número de gravadores de saída |
 | --- | --- | --- | --- |
 | Azure Data Lake Store | Sim | Use tokens {Date} e {time} no padrão de prefixo de caminho. Escolha o formato de data, como aaaa/MM/DD, DD/MM/aaaa ou MM-DD-AAAA. HH é usado para o formato de hora. | Segue o particionamento de entrada para [consultas totalmente paralelizáveis](stream-analytics-scale-jobs.md). |
-| Banco de Dados SQL do Azure | Sim, precisa ser habilitado. | Com base na cláusula PARTITION BY na consulta. | Quando a opção herdar particionamento estiver habilitada, o seguirá o particionamento de entrada para [consultas totalmente paralelizáveiss](stream-analytics-scale-jobs.md). Para saber mais sobre como obter um melhor desempenho de taxa de transferência de gravação quando você estiver carregando dados no Azure SQL Database, consulte [Azure Stream Analytics saída para o banco de dados SQL do Azure](stream-analytics-sql-output-perf.md). |
-| Armazenamento de Blob do Azure | Sim | Use os tokens {Date} e {time} de seus campos de evento no padrão de caminho. Escolha o formato de data, como aaaa/MM/DD, DD/MM/aaaa ou MM-DD-AAAA. HH é usado para o formato de hora. A saída de blob pode ser particionada por um atributo de evento personalizado único {fieldname} ou {datetime:\<specifier>}. | Segue o particionamento de entrada para [consultas totalmente paralelizáveis](stream-analytics-scale-jobs.md). |
+| Banco de dados SQL do Azure | Sim, precisa ser habilitado. | Com base na cláusula PARTITION BY na consulta. | Quando a opção herdar particionamento estiver habilitada, o seguirá o particionamento de entrada para [consultas totalmente paralelizáveiss](stream-analytics-scale-jobs.md). Para saber mais sobre como obter um melhor desempenho de taxa de transferência de gravação quando você estiver carregando dados no Azure SQL Database, consulte [Azure Stream Analytics saída para o banco de dados SQL do Azure](stream-analytics-sql-output-perf.md). |
+| Armazenamento de Blobs do Azure | Sim | Use os tokens {Date} e {time} de seus campos de evento no padrão de caminho. Escolha o formato de data, como aaaa/MM/DD, DD/MM/aaaa ou MM-DD-AAAA. HH é usado para o formato de hora. A saída de blob pode ser particionada por um atributo de evento personalizado único {fieldname} ou {datetime:\<specifier>}. | Segue o particionamento de entrada para [consultas totalmente paralelizáveis](stream-analytics-scale-jobs.md). |
 | Hubs de Eventos do Azure | Sim | Sim | Varia dependendo do alinhamento da partição.<br /> Quando a chave de partição para saída do hub de eventos é alinhada igualmente com a etapa de consulta upstream (anterior), o número de gravadores é igual ao número de partições na saída do hub de eventos. Cada gravador usa a [classe EventHubSender](/dotnet/api/microsoft.servicebus.messaging.eventhubsender?view=azure-dotnet) para enviar eventos para a partição específica. <br /> Quando a chave de partição para saída do hub de eventos não está alinhada com a etapa de consulta upstream (anterior), o número de gravadores é o mesmo que o número de partições na etapa anterior. Cada gravador usa a [classe SendBatchAsync](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.sendasync?view=azure-dotnet) em **EventHubClient** para enviar eventos para todas as partições de saída. |
-| Power BI | Não | Nenhum | Não aplicável. |
+| Power BI | Não | Nenhuma | Não aplicável. |
 | Armazenamento da tabela do Azure | Sim | Qualquer coluna de saída.  | Segue o particionamento de entrada para as [consultas totalmente paralelizadas](stream-analytics-scale-jobs.md). |
 | Tópico do Barramento de Serviço do Azure | Sim | Escolhido automaticamente. O número de partições baseia-se no [tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.| Mesmo que o número de partições no tópico de saída.  |
 | Fila do Barramento de Serviço do Azure | Sim | Escolhido automaticamente. O número de partições baseia-se no [tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.| Mesmo que o número de partições na fila de saída. |
@@ -322,8 +343,8 @@ A tabela a seguir explica algumas das considerações sobre o envio em lote de s
 | Tipo de saída | Tamanho máximo de mensagem | Otimização de tamanho de lote |
 | :--- | :--- | :--- |
 | Azure Data Lake Store | Consulte [limites de data Lake Storage](../azure-subscription-service-limits.md#data-lake-store-limits). | Use até 4 MB por operação de gravação. |
-| Banco de Dados SQL do Azure | Configurável usando a contagem máxima de lotes. máximo de 10.000 e 100 mínimos de linhas por única inserção em massa por padrão.<br />Consulte [limites do SQL do Azure](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente inserido em massa com a contagem máxima de lotes. O lote é dividido na metade (até a contagem de lote mínima) com base em erros com nova tentativa do SQL. |
-| Armazenamento de Blob do Azure | Consulte [limites de armazenamento do Azure](../azure-subscription-service-limits.md#storage-limits). | O tamanho máximo do bloco de BLOBs é 4 MB.<br />A contagem máxima de Bock de blob é 50.000. |
+| Banco de dados SQL do Azure | Configurável usando a contagem máxima de lotes. máximo de 10.000 e 100 mínimos de linhas por única inserção em massa por padrão.<br />Consulte [limites do SQL do Azure](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente inserido em massa com a contagem máxima de lotes. O lote é dividido na metade (até a contagem de lote mínima) com base em erros com nova tentativa do SQL. |
+| Armazenamento de Blobs do Azure | Consulte [limites de armazenamento do Azure](../azure-subscription-service-limits.md#storage-limits). | O tamanho máximo do bloco de BLOBs é 4 MB.<br />A contagem máxima de Bock de blob é 50.000. |
 | Hubs de Eventos do Azure  | 256 KB ou 1 MB por mensagem. <br />Consulte [limites de hubs de eventos](../event-hubs/event-hubs-quotas.md). |  Quando o particionamento de entrada/saída não está alinhado, cada evento é `EventData` empacotado individualmente no e enviado em um lote de até o tamanho máximo da mensagem. Isso também ocorrerá se [as propriedades de metadados personalizados](#custom-metadata-properties-for-output) forem usadas. <br /><br />  Quando o particionamento de entrada/saída está alinhado, vários eventos são empacotados `EventData` em uma única instância, até o tamanho máximo da mensagem e enviados. |
 | Power BI | Confira [Power bi limites da API REST](https://msdn.microsoft.com/library/dn950053.aspx). |
 | Armazenamento da tabela do Azure | Consulte [limites de armazenamento do Azure](../azure-subscription-service-limits.md#storage-limits). | O padrão é 100 entidades por transação única. Você pode configurá-lo para um valor menor, conforme necessário. |

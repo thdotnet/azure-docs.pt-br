@@ -5,14 +5,14 @@ services: terraform
 author: tomarchermsft
 ms.service: azure
 ms.topic: article
-ms.date: 09/13/2018
+ms.date: 09/20/2019
 ms.author: tarcher
-ms.openlocfilehash: a88ad25e335026d5172c7997f62629d5ada46f6e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e9b447f4f4dc9d0ee090da9729e483cc17ac7c15
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693302"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169937"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Armazene o estado Terraform no armazenamento do Azure
 
@@ -28,7 +28,7 @@ Terraform inclui o conceito de um backend de estado, que é o armazenamento remo
 
 Antes de usar o Armazenamento do Azure como back-end, uma conta de armazenamento deve ser criada. A conta de armazenamento pode ser criada com o portal do Azure, o PowerShell, o CLI do Azure ou o próprio Terraform. Use a amostra a seguir para configurar a conta de armazenamento com a CLI do Azure.
 
-```azurecli-interactive
+```azurecli
 #!/bin/bash
 
 RESOURCE_GROUP_NAME=tstate
@@ -67,21 +67,21 @@ Cada um desses valores pode ser especificado no arquivo de configuração do Ter
 
 Crie uma variável de ambiente denominada `ARM_ACCESS_KEY` com o valor da chave de acesso do Armazenamento do Azure.
 
-```console
+```bash
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Para proteger ainda mais a chave de acesso da conta do Armazenamento do Azure, armazene-a no Cofre de Chaves do Azure. A variável de ambiente pode então ser definida usando um comando semelhante ao seguinte. Para obter mais informações sobre o Cofre de Chaves do Azure, consulte a [documentação do Azure Key Vault][azure-key-vault].
+Para proteger ainda mais a chave de acesso da conta do Armazenamento do Azure, armazene-a no Cofre de Chaves do Azure. A variável de ambiente pode então ser definida usando um comando semelhante ao seguinte. Para obter mais informações sobre Azure Key Vault, consulte a [documentação do Azure Key Vault][azure-key-vault].
 
-```console
+```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
 ```
 
 Para configurar o Terraform para usar o back-end, inclua uma *back-end* com um tipo de configuração do *azurerm* dentro da configuração de Terraform. Adicione os valores *storage_account_name*, *container_name* e *chave* ao bloco de configuração.
 
-O exemplo a seguir configura um back-end do Terraform e cria um grupo de recursos do Azure. Substitua os valores por valores do seu ambiente.
+O exemplo a seguir configura um back-end Terraform e cria um grupo de recursos do Azure. Substitua os valores por valores do seu ambiente.
 
-```json
+```hcl
 terraform {
   backend "azurerm" {
     storage_account_name  = "tstate09762"
@@ -100,7 +100,7 @@ Agora, inicialize a configuração com *Terraform init* e depois execute a confi
 
 ## <a name="state-locking"></a>Estado de bloqueio
 
-Ao usar um Blob de Armazenamento do Azure para armazenamento de estado, o blob é bloqueado automaticamente antes de qualquer operação que grave o estado. Essa configuração impede várias operações de estado simultâneas, o que pode causar danos. Para obter mais informações, consulte [State Locking][terraform-state-lock] na documentação do Terraform.
+Ao usar um Blob de Armazenamento do Azure para armazenamento de estado, o blob é bloqueado automaticamente antes de qualquer operação que grave o estado. Essa configuração impede várias operações de estado simultâneas, o que pode causar danos. Para obter mais informações, consulte [bloqueio de estado][terraform-state-lock] na documentação do Terraform.
 
 O bloqueio pode ser visto ao examinar o blob por meio do portal do Azure ou outras ferramentas de gerenciamento do Azure.
 

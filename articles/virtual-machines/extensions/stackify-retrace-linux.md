@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/12/2018
-ms.author: roiyz
-ms.openlocfilehash: 6db152394a8e57689b34436b48dbcb4ecdc58b5a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: akjosh
+ms.openlocfilehash: 2278f1bef3a72408b097f9a2d676931fd07369f4
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084304"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173968"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Extensão do Agente Linux de Stackify Retrace
 
@@ -43,7 +43,7 @@ Esta extensão fornece um caminho de instalação para o agente Linux para Retra
 
 O agente do Retrace pode ser executada com essas distribuições Linux
 
-| Distribuição | Version |
+| Distribuição | Versão |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS, 16.10 e 17.04 |
 | Debian | 7.9+ e 8.2+, 9 |
@@ -181,7 +181,7 @@ az vm extension set --publisher 'Stackify.LinuxAgent.Extension' --version 1.0 --
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="error-codes"></a>Códigos de erro
+### <a name="error-codes"></a>Códigos do Erro
 
 | Código de erro | Significado | Ação possível |
 | :---: | --- | --- |
@@ -191,7 +191,7 @@ az vm extension set --publisher 'Stackify.LinuxAgent.Extension' --version 1.0 --
 | 40 | Erro de instalação | activationKey é obrigatório |
 | 51 | Erro de instalação | Distribuição de sistema operacional não compatível |
 | 60 | Erro de instalação | ambiente é obrigatório |
-| 70 | Erro de instalação | Unknown |
+| 70 | Erro de instalação | Desconhecido |
 | 80 | Ero de habilitação | Falha na configuração de serviço |
 | 90 | Ero de habilitação | Falha na configuração de serviço |
 | 100 | Desabilitar o erro | Falha na interrupção do serviço |

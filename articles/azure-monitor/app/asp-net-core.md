@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: a48c2fdcce5126747f00cd3b901839864d438346
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 9e14a9f3f2f27112a591f14e9a93580f66aadef7
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058268"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169559"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights para aplicativos ASP.NET Core
 
@@ -29,14 +29,14 @@ O exemplo que usaremos aqui é um [aplicativo MVC](https://docs.microsoft.com/as
 
 O [SDK do Application insights para ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) pode monitorar seus aplicativos, independentemente de onde ou como eles são executados. Se seu aplicativo estiver em execução e tiver conectividade de rede com o Azure, a telemetria poderá ser coletada. Há suporte para o monitoramento de Application Insights em todos os lugares do .NET Core. O suporte abrange:
 * **Sistema operacional**: Windows, Linux ou Mac.
-* **Método de hospedagem**: Em andamento ou fora do processo. 
+* **Método de hospedagem**: Em andamento ou fora do processo.
 * **Método de implantação**: Dependente da estrutura ou independente.
-* **Servidor Web**: IIS (Internet Information Server) ou Kestrel. 
+* **Servidor Web**: IIS (Internet Information Server) ou Kestrel.
 * **Plataforma de hospedagem**: O recurso de aplicativos Web do serviço de Azure App, VM do Azure, Docker, serviço kubernetes do Azure (AKS) e assim por diante.
 * **IDE**: Visual Studio, VS Code ou linha de comando.
 
 > [!NOTE]
-> Se você estiver usando ASP.NET Core 3,0-Preview junto com Application Insights, use a versão [2.8.0-beta2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0-beta2) ou superior. Essa é a única versão conhecida para funcionar bem com o ASP.NET Core 3,0. Além disso, a integração baseada no Visual Studio ainda não tem suporte para aplicativos ASP.NET Core 3,0.
+> Se você estiver usando ASP.NET Core 3,0-Preview junto com Application Insights, use a versão [2.8.0-Beta3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0-beta3) ou superior. Essa é a única versão conhecida para funcionar bem com o ASP.NET Core 3,0. Além disso, a integração baseada no Visual Studio ainda não tem suporte para aplicativos ASP.NET Core 3,0.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -122,7 +122,7 @@ O [SDK do Application insights para ASP.NET Core](https://nuget.org/packages/Mic
     > [!NOTE]
     > Uma chave de instrumentação especificada no código vence sobre a variável `APPINSIGHTS_INSTRUMENTATIONKEY`de ambiente, que vence em outras opções.
 
-## <a name="run-your-application"></a>Executar o aplicativo
+## <a name="run-your-application"></a>Execute seu aplicativo.
 
 Execute seu aplicativo e faça solicitações a ele. A telemetria agora deve fluir para Application Insights. O SDK do Application Insights coleta automaticamente a telemetria a seguir.
 
@@ -241,9 +241,9 @@ Lista completa de configurações em`ApplicationInsightsServiceOptions`
 |AddAutoCollectedMetricExtractor | Habilitar/desabilitar o extrator AutoCollectedMetrics, que é um TelemetryProcessor que envia métricas previamente agregadas sobre solicitações/dependências antes que a amostragem ocorra. | true
 |RequestCollectionOptions.TrackExceptions | Habilitar/desabilitar o relatório de acompanhamento de exceção sem tratamento pelo módulo coleção de solicitações. | false no netstandard 2.0 (como as exceções são rastreadas com ApplicationInsightsLoggerProvider), caso contrário, true.
 
-Consulte as [configurações configuráveis `ApplicationInsightsServiceOptions` no](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs) para obter a lista mais atualizada.
+Consulte as [configurações configuráveis `ApplicationInsightsServiceOptions` no](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) para obter a lista mais atualizada.
 
-### <a name="sampling"></a>amostragem
+### <a name="sampling"></a>Amostragem
 
 O SDK do Application Insights para ASP.NET Core dá suporte à amostragem de taxa fixa e adaptável. A amostragem adaptável é habilitada por padrão. 
 

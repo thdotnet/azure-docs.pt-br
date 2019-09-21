@@ -3,7 +3,7 @@ title: Redefinir o acesso a uma VM do Linux do Azure | Microsoft Docs
 description: Como gerenciar usuários administrativos e redefinir o acesso em VMs Linux usando a extensão VMAccess e a CLI do Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: roiyz-msft
+author: axayjo
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
-ms.author: roiyz
-ms.openlocfilehash: 2841aedc1a4fe69e2604d3c6b95cc12dab4c7716
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.author: akjosh
+ms.openlocfilehash: 447c10037503c627092bb23e23b4fe1ee88ca45d
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706612"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173958"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Gerenciar usuários administrativos, SSH e verificar ou reparar discos em VMs Linux do usando a extensão VMAccess com a CLI do Azure
 ## <a name="overview"></a>Visão geral
@@ -68,7 +68,7 @@ az vm user update \
 
 > **OBSERVAÇÃO:** O comando `az vm user update` acrescenta o novo texto de chave pública ao arquivo `~/.ssh/authorized_keys` para o usuário administrador na VM. Isso não substitui ou remove quaisquer chaves SSH existentes. Isso não removerá as chaves anteriores definidas no momento da implantação ou atualizações subsequentes através da extensão VMAccess.
 
-## <a name="reset-password"></a>Redefinir senha
+## <a name="reset-password"></a>Redefinir Senha
 O exemplo a seguir redefine a senha para o usuário `azureuser` na VM denominada `myVM`:
 
 ```azurecli-interactive
@@ -247,7 +247,7 @@ az vm extension set \
 ```
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Dados sobre o estado das implantações de extensão podem ser recuperados do Portal do Azure usando a CLI do Azure. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir usando a CLI do Azure.
 

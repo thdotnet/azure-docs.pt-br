@@ -13,17 +13,22 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.reviewer: lmolkova
 ms.author: mbullwin
-ms.openlocfilehash: 0c2a28462633d47ad1d3f247793e3fcf6f4d40c0
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: b6ecf1e9cece51635afc0bf0f8025b6e117438ee
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67795456"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169446"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights para aplicativos do console .NET
+
 O [Application Insights](../../azure-monitor/app/app-insights-overview.md) permite que você monitore seu aplicativo Web quanto à disponibilidade, desempenho e uso.
 
 Você precisa de uma assinatura do [Microsoft Azure](https://azure.com). Entre com uma conta da Microsoft, que você pode ter para o Windows, Xbox Live ou outros serviços de nuvem da Microsoft. Sua equipe pode ter uma assinatura organizacional do Azure: peça ao proprietário que adicione você a ela usando sua conta da Microsoft.
+
+> [!NOTE]
+> Há um novo SDK de Application Insights beta chamado [Microsoft. ApplicationInsights. WorkerService](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , que pode ser usado para habilitar Application insights para qualquer aplicativo de console. É recomendável usar este pacote e as instruções associadas [aqui](../../azure-monitor/app/worker-service.md). Esse pacote é [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard)direcionado e, portanto, pode ser usado no .NET Core 2,0 ou superior e .NET Framework 4.7.2 ou superior.
+Este documento será preterido quando uma versão estável desse novo pacote for lançada.
 
 ## <a name="getting-started"></a>Introdução
 
@@ -96,7 +101,7 @@ Você pode obter um exemplo completo do arquivo de configuração ao instalar a 
 
 ### <a name="configuring-telemetry-collection-from-code"></a>Configurando a coleta de telemetria do código
 > [!NOTE]
-> Não há suporte para ler o arquivo de configuração no .NET Core. Você pode considerar o uso [SDK do Application Insights para ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
+> Não há suporte para a leitura do arquivo de configuração no .NET Core. Você pode considerar o uso [do SDK do Application insights para ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 
 * Durante a inicialização do aplicativo, crie e configure a instância `DependencyTrackingTelemetryModule` - ela deve ser singleton e deve ser preservada durante o tempo de vida do aplicativo.
 
@@ -125,13 +130,13 @@ module.Initialize(configuration);
 configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 ```
 
-Se você criou a configuração de texto sem formatação com `TelemetryConfiguration()` construtor, você precisa habilitar o suporte a correlação Além disso. **Não é necessário** se você ler a configuração de arquivo, usado `TelemetryConfiguration.CreateDefault()` ou `TelemetryConfiguration.Active`.
+Se você criou a configuração com `TelemetryConfiguration()` o Construtor simples, também precisará habilitar o suporte de correlação. **Ele não será necessário** se você ler a configuração do arquivo, `TelemetryConfiguration.CreateDefault()` usado `TelemetryConfiguration.Active`ou.
 
 ```csharp
 configuration.TelemetryInitializers.Add(new OperationCorrelationTelemetryInitializer());
 ```
 
-* Você talvez queira instalar e inicializar o módulo de coletor do contador de desempenho conforme descrito [aqui](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/)
+* Talvez você também queira instalar e inicializar o módulo coletor de contador de desempenho conforme descrito [aqui](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/)
 
 
 #### <a name="full-example"></a>Exemplo completo
