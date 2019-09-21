@@ -49,13 +49,13 @@ A tabela a seguir descreve o que está em cada log. Dependendo do ponto de extre
 | TenantId | Sua ID de locatário |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Carimbo de data/hora quando o log foi gravado, em UTC |
-| Tipo | Tipo do log. Sempre `AzureDiagnostics` |
+| Type | Tipo do log. Sempre `AzureDiagnostics` |
 | SubscriptionId | GUID para a assinatura a que o servidor pertence |
-| GrupoRecuso | Nome do grupo de recursos ao qual o servidor pertence |
+| ResourceGroup | Nome do grupo de recursos ao qual o servidor pertence |
 | ResourceProvider | Nome do provedor de recursos. Sempre `MICROSOFT.DBFORPOSTGRESQL` |
 | ResourceType | `Servers` |
-| resourceId | URI de recurso |
-| Recurso | Nome do servidor |
+| ResourceId | URI de recurso |
+| Resource | Nome do servidor |
 | Categoria | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
 | errorLevel | Nível de log, exemplo: LOG, ERROR, NOTICE |
