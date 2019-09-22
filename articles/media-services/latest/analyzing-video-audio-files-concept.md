@@ -9,18 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 09/21/2019
 ms.author: juliako
-ms.openlocfilehash: 477733dcb76647b2c03f79dea4f55c3102d262b8
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: bc4be8eaafe805e5d9a985b005efe80bc4af1d21
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376195"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71177989"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Analisando os arquivos de áudio e vídeos
 
-O Azure Media Services v3 permite que você extraia insights de seus arquivos de vídeo e áudio com o Video Indexer por meio das predefinições do analisador do AMS v3 (descritas neste artigo). Se você quiser informações mais detalhadas, use o Video Indexer diretamente. Para entender quando você desejaria usar o Video Indexer vs. as predefinições de análise dos Serviços de Mídia, confira o [documento de comparação](../video-indexer/compare-video-indexer-with-media-services-presets.md).
+Os serviços de mídia do Azure v3 permitem que você extraia informações de seus arquivos de vídeo e áudio com Video Indexer por meio de predefinições do analisador do Media Services V3 (descritas neste artigo). Se você quiser informações mais detalhadas, use o Video Indexer diretamente. Para entender quando você desejaria usar o Video Indexer vs. as predefinições de análise dos Serviços de Mídia, confira o [documento de comparação](../video-indexer/compare-video-indexer-with-media-services-presets.md).
 
 Para analisar o conteúdo usando predefinições do Serviços de Mídia v3, você cria uma **Transformação** e envia um **Trabalho** que usa uma destas predefinições: [VideoAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#videoanalyzerpreset) ou **AudioAnalyzerPreset**. O artigo a seguir demonstra como usar **VideoAnalyzerPreset**: [Tutorial: Analisar vídeos com os Serviços de Mídia do Azure](analyze-videos-tutorial-with-api.md).
 
@@ -155,7 +155,7 @@ Exemplo:
 |referenceType|No momento, apenas Bing.|
 |title|Se é uma celebridade, seu título (por exemplo, "CEO da Microsoft").|
 |imageUrl|Se é uma celebridade, o seu URL de imagem.|
-|Instâncias|Essas são as ocorrências do aparecimento da face no intervalo de tempo determinado. Cada ocorrência também tem uma thumbnailsId. |
+|instâncias|Essas são as ocorrências do aparecimento da face no intervalo de tempo determinado. Cada ocorrência também tem uma thumbnailsId. |
 
 ```json
 "faces": [{
@@ -192,7 +192,7 @@ Exemplo:
 |---|---|
 |id|A ID da captura.|
 |keyFrames|Uma lista com os quadros-chave dentro da captura (cada um tem uma ID e uma lista de intervalos de tempo de instâncias). As instâncias de frames principais têm um campo thumbnailId com o ID de miniatura da keyFrame.|
-|Instâncias|Uma lista com os intervalos de tempo desta captura (as capturas têm apenas 1 instância).|
+|instâncias|Uma lista com os intervalos de tempo desta captura (as capturas têm apenas 1 instância).|
 
 ```json
 "Shots": [
@@ -408,7 +408,7 @@ Os vídeos que contêm conteúdo adulto ou atraente podem estar disponíveis ape
 |id|A ID de moderação de conteúdo visual.|
 |adultScore|A pontuação de conteúdo adulta (do moderador de conteúdo).|
 |racyScore|A pontuação racista (de moderação de conteúdo).|
-|Instâncias|Uma lista de intervalos de tempo em que apareceu esse visual moderação de conteúdo.|
+|instâncias|Uma lista de intervalos de tempo em que apareceu esse visual moderação de conteúdo.|
 
 ```json
 "VisualContentModeration": [

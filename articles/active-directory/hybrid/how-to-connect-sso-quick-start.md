@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87764ed30182dc548fc3a260582174f121e27e24
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 29f94d6ff8045b7cae64957eeae00d2460ca3e37
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965225"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71176827"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Logon Único Contínuo do Azure Active Directory: Início Rápido
 
@@ -221,7 +221,7 @@ Na etapa 2, o Azure AD Connect cria contas de computador (representando o Azure 
 >[!IMPORTANT]
 >A chave de descriptografia do Kerberos em uma conta de computador, se vazada, poderá ser usada para gerar tíquetes Kerberos para qualquer usuário em sua floresta do AD. Indivíduos mal-intencionados então poderão representar logons do Azure AD para usuários comprometidos. É altamente recomendável renovar periodicamente essas chaves de descriptografia do Kerberos – pelo menos uma vez a cada 30 dias.
 
-Para obter instruções sobre como implantar as chaves, veja [Logon Único Contínuo do Azure Active Directory: Perguntas frequentes](how-to-connect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account). Estamos trabalhando em uma funcionalidade para introduzir renovação automatizada das chaves.
+Para obter instruções sobre como implantar as chaves, veja [Logon Único Contínuo do Azure Active Directory: Perguntas frequentes](how-to-connect-sso-faq.md). Estamos trabalhando em uma funcionalidade para introduzir renovação automatizada das chaves.
 
 >[!IMPORTANT]
 >Você não precisa executar essa etapa _imediatamente_ depois de habilitar o recurso. Sobrepor as chaves de descriptografia Kerberos pelo menos uma vez a cada 30 dias.

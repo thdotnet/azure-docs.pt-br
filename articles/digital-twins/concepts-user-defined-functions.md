@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: alinast
-ms.openlocfilehash: f4aa7e6660e3febdca6e0e5b1ad9f11bebaa48ea
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 07facf06702a63df8ea93d43b9896b72322b209f
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638467"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178259"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Processamento de dados e funções definidas pelo usuário
 
@@ -23,7 +23,7 @@ O recurso Gêmeos Digitais do Azure oferece funcionalidades de computação avan
 
 Depois que os dispositivos enviam dados de telemetria para o Azure Digital Twins, os desenvolvedores podem processar dados em quatro fases: *validar*, *corresponder*, *computar*, e *despachar*.
 
-![Fluxo de processamento de dados gêmeos Digital do Azure][1]
+[![Fluxo de processamento de dados do Azure digital gêmeos](media/concepts/digital-twins-data-processing-flow.png)](media/concepts/digital-twins-data-processing-flow.png#lightbox)
 
 1. A fase de validação transforma a mensagem de telemetria recebida em um formato de objeto de transferência de dados [comumente entendido](https://docs.microsoft.com/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-5). Essa fase também executa validação de dispositivo e sensor.
 1. A fase corresponder localiza as funções definidas pelo usuário a serem executadas. Os correspondentes predefinidos descobrirão as funções definidas pelo usuário com base em informações de dispositivo, sensor e espaço da mensagem de telemetria de entrada.
@@ -34,9 +34,7 @@ Depois que os dispositivos enviam dados de telemetria para o Azure Digital Twins
 
 O processamento de dados no Gêmeos Digitais do Azure consiste na definição de três objetos: *correspondentes*, *funções definidas pelo usuário* e *atribuições de funções*.
 
-![Objetos de processamento de dados dos Gêmeos Digitais do Azure][2]
-
-<div id="matcher"></div>
+[![Objetos de processamento de dados do gêmeos digital do Azure](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
 
 ### <a name="matchers"></a>Correspondências
 
@@ -92,7 +90,7 @@ Correspondentes definem um conjunto de condições que avaliam quais ações oco
 
 ### <a name="user-defined-functions"></a>Funções definidas pelo usuário
 
-Uma função definida pelo usuário é uma função personalizada executada em um ambiente isolado nos Gêmeos Digitais do Azure. As funções definidas pelo usuário têm acesso à mensagem de telemetria do sensor bruto à medida que foi recebida. As funções definidas pelo usuário também têm acesso ao serviço de gráfico espacial e despachante. Depois que a função definida pelo usuário é registrada no gráfico, um correspondente (detalhado [acima](#matcher)) deve ser criado para especificar quando executar a função. Por exemplo, quando os Gêmeos Digitais do Azure recebem nova telemetria de um determinado sensor, a função definida pelo usuário correspondente pode calcular uma média móvel das últimas poucas leituras do sensor.
+Uma função definida pelo usuário é uma função personalizada executada em um ambiente isolado nos Gêmeos Digitais do Azure. As funções definidas pelo usuário têm acesso à mensagem de telemetria do sensor bruto à medida que foi recebida. As funções definidas pelo usuário também têm acesso ao serviço de gráfico espacial e despachante. Depois que a função definida pelo usuário é registrada no gráfico, um correspondente (detalhado [acima](#matchers)) deve ser criado para especificar quando executar a função. Por exemplo, quando os Gêmeos Digitais do Azure recebem nova telemetria de um determinado sensor, a função definida pelo usuário correspondente pode calcular uma média móvel das últimas poucas leituras do sensor.
 
 As funções definidas pelo usuário podem ser gravadas no JavaScript. Os métodos auxiliares interagem com o gráfico no ambiente de execução definido pelo usuário. Os desenvolvedores podem executar snippets personalizados de código contra mensagens de telemetria do sensor. Os exemplos incluem:
 
@@ -103,14 +101,11 @@ As funções definidas pelo usuário podem ser gravadas no JavaScript. Os métod
 
 Para obter mais informações, consulte [Como usar funções definidas pelo usuário](./how-to-user-defined-functions.md).
 
-
 #### <a name="examples"></a>Exemplos
 
 O [repositório GitHub para a amostra C# dos Gêmeos Digitais](https://github.com/Azure-Samples/digital-twins-samples-csharp/) contém alguns exemplos das funções definidas pelo usuário:
 - [Essa função](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/availabilityForTutorial.js) procura os valores de dióxido de carbono, de movimento e de temperatura para determinar se uma sala está disponível com esses valores no intervalo. Os [tutoriais dos Gêmeos Digitais](tutorial-facilities-udf.md) exploram essa função mais detalhadamente. 
 - [Essa função](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/multiplemotionsensors.js) procura os dados de vários sensores de movimento e determina que o espaço está disponível se nenhum deles detecta qualquer movimento. Você pode substituir com facilidade a função definida pelo usuário usada no [início rápido](quickstart-view-occupancy-dotnet.md), ou nos [tutoriais](tutorial-facilities-setup.md), fazendo as alterações mencionadas na seção de comentários do arquivo. 
-
-
 
 ### <a name="role-assignment"></a>Atribuição de função
 
@@ -125,7 +120,3 @@ As ações de uma função definida pelo usuário estão sujeitas a controle de 
 - Para saber mais sobre como criar correspondentes, funções definidas pelo usuário e atribuições de função, leia o [Guia para usar funções definidas pelo usuário](./how-to-user-defined-functions.md).
 
 - Revise a documentação de [referência da biblioteca de clientes de função definida pelo usuário](./reference-user-defined-functions-client-library.md).
-
-<!-- Images -->
-[1]: media/concepts/digital-twins-data-processing-flow.png
-[2]: media/concepts/digital-twins-user-defined-functions.png

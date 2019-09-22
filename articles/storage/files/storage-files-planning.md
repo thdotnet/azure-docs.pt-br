@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: da9ab6eef98a602635e5e92dca3bd5628846ce62
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 3140aff93c9afcf9a911fe1f381859ff93efef14
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036342"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178364"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -211,10 +211,11 @@ Os compartilhamentos de arquivos padrão estão disponíveis em todas as regiõe
 |Leste da Austrália |LRS     |Não    |Sim|
 |Sudeste da Austrália|LRS     |Não    |Ainda não|
 |Índia Central  |LRS     |Não    |Ainda não|
-|Ásia Oriental      |LRS     |Não    |Ainda não|
+|Leste da Ásia      |LRS     |Não    |Ainda não|
 |East US        |LRS     |Não    |Ainda não|
 |Centro da França |LRS, ZRS|Não    |LRS-Sim, ZRS-ainda não|
 |Sul da França   |LRS     |Não    |Sim|
+|Europa Setentrional   |LRS     |Não    |Sim|
 |Sul da Índia    |LRS     |Não    |Ainda não|
 |Sudeste da Ásia |LRS, ZRS|Não    |Sim|
 |Centro-oeste dos EUA|LRS     |Não    |Ainda não|

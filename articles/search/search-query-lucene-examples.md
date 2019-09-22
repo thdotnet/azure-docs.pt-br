@@ -1,5 +1,5 @@
 ---
-title: Exemplos de consulta do Lucene – Azure Search
+title: Usar sintaxe de consulta Lucene completa-Azure Search
 description: Sintaxe de consulta Lucene para pesquisa difusa, pesquisa por proximidade, aumento de termos, pesquisa com expressão regular e pesquisas com curinga em um serviço do Azure Search.
 author: HeidiSteen
 manager: nitinme
@@ -7,17 +7,17 @@ tags: Lucene query analyzer syntax
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 09/20/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3f6a39129db9e8c43a5e2de68d919ba1037c3f5c
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+ms.openlocfilehash: fcfc668022d0d8fc74258657bb93642aec49bd08
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69648231"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178162"
 ---
-# <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Exemplos de consulta usando a sintaxe de pesquisa "completa" do Lucene (consultas avançadas no Azure Search)
+# <a name="use-the-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Use a sintaxe de pesquisa "completa" do Lucene (consultas avançadas no Azure Search)
 
 Ao construir consultas para o Azure Search, você pode substituir o padrão [analisador de consulta simples](query-simple-syntax.md) com mais expansiva [Lucene Query Parser no Azure Search](query-lucene-syntax.md) para formular a consulta especializada e avançada definições. 
 

@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: alinast
-ms.openlocfilehash: 0bb7309ae452b2885be279d1ab38b8467397f2f8
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 37f2afbd9bae4ca6bccc5062515f166687d8913c
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638502"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71177060"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Noções básicas sobre modelos de objeto e grafos de inteligência espacial dos Gêmeos Digitais
 
@@ -23,9 +23,7 @@ Os modelos de objeto de Gêmeos Digitais descrevem conceitos, categorias e propr
 
 Com os modelos de objeto de Gêmeos Digitais e uma ontologia implantada, é possível preencher um _grafo espacial_. Gráficos espaciais são representações virtuais das muitas relações entre espaços, dispositivos e pessoas que são relevantes para uma solução de IoT. Este diagrama mostra um exemplo de um gráfico espacial que usa a ontologia de construção inteligente.
 
-![Construção de grafo espacial de Gêmeos Digitais][1]
-
-<a id="model"></a>
+[![Criação de grafo espacial digital gêmeos](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
 
 O grafo espacial reúne usuários, dispositivos, sensores e espaços. Cada um está interligado de forma que modela o mundo real. Nesse exemplo, o local 43 tem quatro andares, cada um com muitas áreas diferentes. Os usuários estão associados às estações de trabalho e recebem acesso a partes do grafo. Um administrador tem os direitos para fazer alterações no grafo espacial, enquanto um visitante tem direitos para exibir apenas determinados dados de construção.
 
@@ -55,8 +53,6 @@ Outras categorias de objetos são:
   - Enviar notificações quando condições predefinidas forem atendidas. Atualmente, as UDFs podem ser escritas em JavaScript.
 - **Correspondentes** são objetos que determinam quais UDFs são executadas para uma determinada mensagem de telemetria.
 - **Pontos de extremidade** são os locais onde as mensagens de telemetria e os eventos de Gêmeos Digitais podem ser roteados, por exemplo, `Event Hub`, `Service Bus` e `Event Grid`.
-
-<a id="graph"></a>
 
 ## <a name="spatial-intelligence-graph"></a>Grafo de inteligência espacial
 
@@ -89,7 +85,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
  O formato completo da URL aparece nesta imagem.
 
-![API de Gerenciamento do portal de Gêmeos Digitais][2]
+(![API de Gerenciamento do portal de Gêmeos Digitais](media/concepts/digital-twins-spatial-graph-management-api-url.png)] (Media/Concepts/digital-Twins-Spatial-Graph-Management-API-URL. png # Lightbox)
 
 Para obter mais detalhes sobre como usar grafos de inteligência espacial, visite a versão prévia das APIs de Gerenciamento de Gêmeos Digitais do Azure.
 
@@ -106,7 +102,3 @@ Todas as chamadas à API devem ser autenticadas usando [OAuth](https://docs.micr
 - Para saber mais sobre conectividade do dispositivo e como enviar mensagens de telemetria para Gêmeos Digitais, leia [Entrada de telemetria e conectividade do dispositivo de Gêmeos Digitais do Azure](concepts-device-ingress.md).
 
 - Para saber mais sobre restrições e limitações da API de Gerenciamento, leia [Limitações e gerenciamento de API de Gêmeos Digitais do Azure](concepts-service-limits.md).
-
-<!-- Images -->
-[1]: media/concepts/digital-twins-spatial-graph-building.png
-[2]: media/concepts/digital-twins-spatial-graph-management-api-url.png
