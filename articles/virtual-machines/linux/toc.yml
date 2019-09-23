@@ -137,8 +137,10 @@
       href: ../../virtual-machine-scale-sets/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
     - name: Automação de infraestrutura
       href: infrastructure-automation.md
-    - name: Segurança e política
-      href: security-policy.md
+    - name: Segurança
+      items:
+        - name: Segurança e política
+          href: security-policy.md
     - name: Estados e ciclo de vida
       href: states-lifecycle.md
     - name: Monitoramento
@@ -170,6 +172,8 @@
               href: dedicated-hosts-portal.md
     - name: Como proteger VMs
       items:
+        - name: Recomendações
+          href: security-recommendations.md
         - name: Acesso Just-In-Time
           href: ../../security-center/security-center-just-in-time.md
         - name: Criptografar
@@ -264,6 +268,14 @@
           href: instance-metadata-service.md
         - name: Obter métricas de uso com o REST
           href: metrics-vm-usage-rest.md
+    - name: Monitorar VMs
+      items:
+        - name: Azure Monitor para VMs
+          href: ../../azure-monitor/insights/vminsights-overview.md
+        - name: Criar alertas de métricas
+          href: ../../azure-monitor/platform/alerts-metric.md
+        - name: Criar alertas de log
+          href: ../../azure-monitor/platform/alerts-log.md
     - name: Gerenciar os custos
       items:
         - name: Pagar antecipadamente por VMs - reservas do Azure

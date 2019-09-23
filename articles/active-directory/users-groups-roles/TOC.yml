@@ -36,27 +36,25 @@
   items:
     - name: Gerenciar usuários
       items:
-        - name: Adicionar novos usuários ao Azure AD
+        - name: Criar usuários
           href: /azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Criação de usuários em massa (versão prévia)
+          href: users-bulk-add.md
         - name: Gerenciar perfis de usuário
           href: /azure/active-directory/fundamentals/active-directory-users-profile-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: Operações em massa (versão prévia)
-          items:
-            - name: Baixar usuários (versão prévia)
-              href: users-bulk-download.md
-            - name: Importação de usuários em massa (versão prévia)
-              href: users-bulk-add.md
-            - name: Exclusão de usuários em massa (versão prévia)
-              href: users-bulk-delete.md
-            - name: Restauração de usuários em massa (versão prévia)
-              href: users-bulk-restore.md
+        - name: Baixar informações do usuário (versão prévia)
+          href: users-bulk-download.md
         - name: Compartilhar contas de usuário
           href: users-sharing-accounts.md
         - name: Atribuir usuários a funções de administrador
           href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Exclusão de usuários em massa (versão prévia)
+          href: users-bulk-delete.md
         - name: Restaurar um usuário excluído
           href: /azure/active-directory/fundamentals/active-directory-users-restore?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: Fechar sua conta em um diretório não gerenciado
+        - name: Restauração de usuários em massa (versão prévia)
+          href: users-bulk-restore.md
+        - name: Fechar uma conta em um diretório não gerenciado
           href: users-close-account.md
         - name: Adicionar usuários B2B
           href: /azure/active-directory/b2b/what-is-b2b?context=azure/active-directory/users-groups-roles/context/ugr-context
@@ -86,28 +84,26 @@
           href: /azure/active-directory/fundamentals/active-directory-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Pesquisar listas de membros e grupos (versão prévia)
           href: groups-members-owners-search.md
+        - name: Criar um grupo (portal do Azure)
+          href: /azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Gerenciar grupos PowerShell para Graph (v2)
           href: groups-settings-v2-cmdlets.md
         - name: Gerenciar grupos PowerShell MSOnline
           href: groups-settings-cmdlets.md
-        - name: Gerenciar membros do grupo
+        - name: Adicionar ou remover membros do grupo
           href: /azure/active-directory/fundamentals/active-directory-groups-members-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+        - name: Adição de membros em massa (versão prévia)
+          href: groups-bulk-import-members.md
+        - name: Remoção de membros em massa (versão prévia)
+          href: groups-bulk-remove-members.md
+        - name: Download de lista de membros em massa (versão prévia)
+          href: groups-bulk-download-members.md
         - name: Gerenciar proprietários do grupo
           href: /azure/active-directory/fundamentals/active-directory-accessmanagement-managing-group-owners?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: Operações em massa (versão prévia)
-          items:
-            - name: Importação de membros em massa (versão prévia)
-              href: groups-bulk-import-members.md
-            - name: Download de membros em massa (versão prévia)
-              href: groups-bulk-download-members.md
-            - name: Remoção de membros em massa (versão prévia)
-              href: groups-bulk-remove-members.md
-            - name: Baixar em massa uma lista de grupos (versão prévia)
-              href: groups-bulk-download.md
+        - name: Download de lista de grupos em massa (versão prévia)
+          href: groups-bulk-download.md
         - name: Gerenciar grupos em grupos
           href: /azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: Criar um grupo (portal do Azure)
-          href: /azure/active-directory/fundamentals/active-directory-groups-create-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Adicionar acesso de grupos a aplicativos SaaS
           href: groups-saasapps.md
         - name: Referência de nomenclatura de grupos

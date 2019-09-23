@@ -192,6 +192,8 @@
           href: functions-deployment-slots.md
         - name: Criar e implantar usando o Azure Pipelines
           href: functions-how-to-azure-devops.md
+        - name: Criar e implantar usando Ações do GitHub
+          href: functions-how-to-github-actions.md
         - name: implantação do Zip
           href: deployment-zip-push.md
         - name: Execução a partir do pacote
