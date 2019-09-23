@@ -66,17 +66,17 @@ O JSON a seguir mostra o esquema para a extensão para VM do Application Health.
 | Nome | Valor/Exemplo | Tipo de dados
 | ---- | ---- | ---- 
 | apiVersion | `2018-10-01` | date |
-| publisher | `Microsoft.ManagedServices` | cadeia de caracteres |
-| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | cadeia de caracteres |
+| publisher | `Microsoft.ManagedServices` | string |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Configurações
 
 | Nome | Valor/Exemplo | Tipo de dados
 | ---- | ---- | ----
-| protocolo | `http` ou `tcp` | cadeia de caracteres |
+| protocol | `http` ou `tcp` | string |
 | port | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | int |
-| requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | cadeia de caracteres |
+| requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Implantar a Extensão de Integridade do Aplicativo
 Há várias maneiras de implantar a integridade da extensão do Application Health para o dimensionamento conforme detalhado nos exemplos a seguir.
