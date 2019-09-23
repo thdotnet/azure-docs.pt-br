@@ -77,19 +77,19 @@ A seguir estão as descrições de propriedade:
 
 | **Name** | **Valores permitidos** | ** --- ** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
-| name | cadeia de caracteres | --- | nome exclusivo para a extensão |
+| name | string | --- | nome exclusivo para a extensão |
 | type | "ServiceFabricLinuxNode" ou "ServiceFabricWindowsNode | --- | Identifica o sistema operacional Service Fabric está carregando para |
 | autoUpgradeMinorVersion | true ou false | --- | Habilitar a atualização automática de versões secundárias do Runtime da it |
 | publisher | Microsoft.Azure.ServiceFabric | --- | nome do editor de extensão de Service Fabric |
-| clusterEndpont | cadeia de caracteres | --- | URI: porta para ponto de extremidade de gerenciamento |
-| nodeTypeRef | cadeia de caracteres | --- | nome do nodeType |
-| durabilityLevel | bronze, prata, ouro, platina | --- | tempo permitido para pausar a infraestrutura imutável do Azure |
+| clusterEndpont | string | --- | URI: porta para ponto de extremidade de gerenciamento |
+| nodeTypeRef | string | --- | nome do nodeType |
+| durabilityLevel | bronze, silver, gold, platinum | --- | tempo permitido para pausar a infraestrutura imutável do Azure |
 | enableParallelJobs | true ou false | --- | Habilitar computação ParallelJobs como remover VM e reinicializar VM no mesmo conjunto de dimensionamento em paralelo |
-| nicPrefixOverride | cadeia de caracteres | --- | Prefixo de sub-rede como "10.0.0.0/24" |
+| nicPrefixOverride | string | --- | Prefixo de sub-rede como "10.0.0.0/24" |
 | commonNames | string[] | --- | Nomes comuns de certificados de cluster instalados |
-| x509StoreName | cadeia de caracteres | --- | Nome do repositório onde o certificado de cluster instalado está localizado |
+| x509StoreName | string | --- | Nome do repositório onde o certificado de cluster instalado está localizado |
 | typeHandlerVersion | 1.1 | --- | Versão da extensão. 1,0 a versão clássica da extensão é recomendada para atualizar para o 1,1 |
-| Caminho | cadeia de caracteres | --- | Caminho para a unidade usada para salvar o estado de Service Fabric serviços do sistema e dados de aplicativo. 
+| Caminho | string | --- | Caminho para a unidade usada para salvar o estado de Service Fabric serviços do sistema e dados de aplicativo. 
 
 ## <a name="next-steps"></a>Próximas etapas
 * Consulte [visão geral do recurso "Implantar em qualquer lugar" e comparação com clusters gerenciados do Azure](service-fabric-deploy-anywhere.md).
