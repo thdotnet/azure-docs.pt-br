@@ -10,12 +10,12 @@ manager: carmonm
 ms.reviewer: klam, LADocs
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 016ab15b2ca4b2e6278752b166c746f6f5aef72d
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: 0f7947e4a96a49e3a7a3b0059a1b20b21ac8cbd1
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71171360"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180793"
 ---
 # <a name="store-and-manage-values-by-using-variables-in-azure-logic-apps"></a>Armazenar e gerenciar valores usando variáveis em aplicativos lógicos do Azure
 
@@ -99,6 +99,9 @@ Se você alternar do designer para o editor de modo de exibição de código, aq
    }
 },
 ```
+
+> [!NOTE]
+> Embora a ação **inicializar variável** tenha uma `variables` seção estruturada como uma matriz, a ação pode criar apenas uma variável por vez. Cada nova variável requer uma ação de **variável de inicialização** individual.
 
 Confira exemplos de outros tipos de variáveis:
 
@@ -200,7 +203,7 @@ Para aumentar ou *incrementar* uma variável por um valor constante, adicione a 
 
    Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão para que o sinal de adição (+) apareça. Selecione o sinal de adição e, em seguida, selecione **Adicionar uma ação**.
 
-1. Na caixa de pesquisa, insira "integração" como filtro. Na lista de ações, selecione **Variáveis - Incrementar variável**.
+1. Na caixa de pesquisa, insira "integração" como filtro. Na lista ações, selecione **variável de incremento**.
 
    ![Selecione a ação "Incrementar variable"](./media/logic-apps-create-variables-store-values/select-increment-variable-action.png)
 
