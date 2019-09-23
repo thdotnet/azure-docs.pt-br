@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/04/2019
-ms.openlocfilehash: 6801f2b3bca1fbfa221ec2eba07f51b76712b4ff
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 26634e2fe23e0a23540638c4559af6e11eccbe72
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813979"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180736"
 ---
 # <a name="use-apache-zeppelin-notebooks-with-apache-spark-cluster-on-azure-hdinsight"></a>Use os cadernos Apache Zeppelin com o cluster do Apache Spark no HDInsight do Azure
 
@@ -23,7 +23,7 @@ Os clusters do HDInsight Spark incluem os [blocos de anotações do Apache Zeppe
 
 * Uma assinatura do Azure. Consulte [Obter a avaliação gratuita do Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * Um cluster do Apache Spark no HDInsight. Para obter instruções, consulte o artigo sobre como [Criar clusters do Apache Spark no Azure HDInsight](apache-spark-jupyter-spark-sql.md).
-* O esquema de URI para o armazenamento primário de clusters. Isso seria `wasb://` para o armazenamento de BLOBs `abfs://` do Azure, `adl://` por Azure data Lake Storage Gen2 ou para Azure data Lake Storage Gen1. Se a transferência segura estiver habilitada para o armazenamento de BLOBs ou data Lake Storage Gen2 `wasbs://` , `abfss://`o URI será ou, respectivamente.  Consulte também [exigir transferência segura no armazenamento do Azure](../../storage/common/storage-require-secure-transfer.md) para obter mais informações.
+* O esquema de URI para o armazenamento primário de clusters. Isso seria `wasb://` para o armazenamento de BLOBs `abfs://` do Azure, `adl://` por Azure data Lake Storage Gen2 ou para Azure data Lake Storage Gen1. Se a transferência segura estiver habilitada para o armazenamento de BLOB, `wasbs://`o URI será.  Consulte também [exigir transferência segura no armazenamento do Azure](../../storage/common/storage-require-secure-transfer.md) para obter mais informações.
 
 ## <a name="launch-an-apache-zeppelin-notebook"></a>Inicie um notebook do Apache Zeppelin
 
@@ -101,7 +101,7 @@ Os clusters do HDInsight Spark incluem os [blocos de anotações do Apache Zeppe
     select buildingID, date, targettemp, (targettemp - actualtemp) as temp_diff from hvac where targettemp > "${Temp = 65,65|75|85}"
     ```
 
-    Cole esse snippet em um novo parágrafo e pressione **SHIFT+ENTER**. Em seguida, selecione **65** no menu suspenso de **Temp** . 
+    Cole esse snippet em um novo parágrafo e pressione **SHIFT+ENTER**. Em seguida, selecione **65** na lista suspensa **Temp** . 
 
 8. Selecione o ícone de **gráfico de barras** para alterar a exibição.  Em seguida, selecione **configurações** e faça as seguintes alterações:
 
@@ -118,7 +118,7 @@ Os clusters do HDInsight Spark incluem os [blocos de anotações do Apache Zeppe
 
 10. Role até **Livy**e selecione **reiniciar**.  Selecione **OK** no prompt.
 
-    ![Reiniciar o intérprete do Livy](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-restart-interpreter.png "Reiniciar o intérprete do Zeppelin")
+    ![Reiniciar o intérprete Livy](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-restart-interpreter.png "Reiniciar o intérprete Zeppelin")
 
 ## <a name="how-do-i-use-external-packages-with-the-notebook"></a>Como usar pacotes externos com o notebook?
 Você pode configurar o notebook Zeppelin no cluster Apache Spark no HDInsight para usar pacotes externos, contribuídos pela Comunidade, que não estão incluídos prontos para uso no cluster. Você pode pesquisar o [Repositório do Maven](https://search.maven.org/) para obter uma lista de pacotes que estão disponíveis. Você também pode obter uma lista de pacotes disponíveis de outras fontes. Por exemplo, uma lista completa dos pacotes enviados pela comunidade está disponível em [Pacotes do Spark](https://spark-packages.org/).
@@ -169,7 +169,7 @@ Nesse caso, você deverá executar as etapas a seguir antes de iniciar a execuç
 
 2. Role até **Livy**e selecione **reiniciar**.
 
-    ![Reiniciar o intérprete do Livy](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-restart-interpreter.png "Reiniciar o intérprete do Zeppelin")
+    ![Reiniciar o intérprete Livy](./media/apache-spark-zeppelin-notebook/hdinsight-zeppelin-restart-interpreter.png "Reiniciar o intérprete Zeppelin")
 
 3. Execute uma célula de código de um notebook Zeppelin existente. Isso cria uma nova sessão do Livy no cluster HDInsight.
 

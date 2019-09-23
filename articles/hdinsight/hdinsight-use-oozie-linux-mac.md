@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: c24370c91c7164786503cdd8e3c44de60abc8370
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: b0cb5f9fa0a0bc64b38225fba03568cf31021572
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71122489"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181101"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Usar o Apache Oozie com o Apache Hadoop para definir e executar um fluxo de trabalho no Azure HDInsight baseado no Linux
 
@@ -37,7 +37,7 @@ Você também pode usar o Oozie para agendar trabalhos específicos para um sist
 
 * **Um banco de dados SQL do Azure**.  Consulte [criar um banco de dados SQL do Azure no portal do Azure](../sql-database/sql-database-get-started.md).  Este artigo usa um banco de `oozietest`dados denominado.
 
-* O [esquema de URI](./hdinsight-hadoop-linux-information.md#URI-and-scheme) do seu armazenamento primário de clusters. Isso seria `wasb://` para o Armazenamento do Azure, `abfs://` para o Azure Data Lake Storage Gen2 ou `adl://` para o Azure Data Lake Storage Gen1. Se a transferência segura estiver habilitada para o Armazenamento do Azure ou para o Data Lake Storage Gen2, o URI será `wasbs://` ou `abfss://`, respectivamente. Confira também [transferência segura](../storage/common/storage-require-secure-transfer.md).
+* O [esquema de URI](./hdinsight-hadoop-linux-information.md#URI-and-scheme) do seu armazenamento primário de clusters. Isso seria `wasb://` para o Armazenamento do Azure, `abfs://` para o Azure Data Lake Storage Gen2 ou `adl://` para o Azure Data Lake Storage Gen1. Se a transferência segura estiver habilitada para o armazenamento do Azure, `wasbs://`o URI será. Consulte também a [transferência segura](../storage/common/storage-require-secure-transfer.md).
 
 ## <a name="example-workflow"></a>Fluxo de trabalho de exemplo
 

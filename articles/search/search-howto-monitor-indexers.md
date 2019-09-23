@@ -49,7 +49,7 @@ Os indexadores que processam grandes volumes de dados podem levar muito tempo pa
 
 Você pode ver o status atual de todos os seus indexadores na lista de indexadores na página de visão geral do serviço de pesquisa.
 
-   ![Lista] de indexadores (media/search-monitor-indexers/indexers-list.png "Lista") de indexadores
+   ![Lista de indexadores](media/search-monitor-indexers/indexers-list.png "Lista de indexadores")
 
 Quando um indexador está em execução, o status na lista mostra **em andamento**e o valor **documentos com êxito** mostra o número de documentos processados até o momento. Pode levar alguns minutos para que o portal atualize os valores de status e contagens de documentos do indexador.
 
@@ -67,7 +67,7 @@ A lista **detalhes da execução** mostra até 50 dos resultados de execução m
 
 Clique em um resultado de execução na lista para ver as informações específicas sobre essa execução. Isso inclui os horários de início e término e quaisquer erros e avisos ocorridos.
 
-   ![Detalhes de execução] do indexador (media/search-monitor-indexers/indexer-execution.png "Detalhes de execução") do indexador
+   ![Detalhes de execução do indexador](media/search-monitor-indexers/indexer-execution.png "Detalhes de execução do indexador")
 
 Se houver problemas específicos ao documento durante a execução, eles serão listados nos campos erros e avisos.
 

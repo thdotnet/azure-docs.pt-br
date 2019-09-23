@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 673c83c861e1f044a521786a903dd7b21db8c170
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 64dfd26e02526664a4edb204521f7a47a4463a12
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995547"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71181068"
 ---
 # <a name="optimize-apache-spark-jobs-in-hdinsight"></a>Otimizar Apache Spark trabalhos no HDInsight
 
@@ -57,10 +57,10 @@ O melhor formato para desempenho é parquet com *compactação snappy*, que é o
 
 Ao criar um novo cluster Spark, você terá a opção de selecionar Armazenamento de Blobs do Azure ou Azure Data Lake Storage como o armazenamento padrão do seu cluster. Ambas as opções oferecem o benefício do armazenamento em longo prazo para clusters transitórios para que seus dados não sejam excluídos automaticamente quando você excluir o cluster. É possível recriar um cluster transitório e ainda acessar seus dados.
 
-| Tipo de Armazenamento | Sistema de arquivos | Velocidade | Transitório | Casos de uso |
+| Tipo de Armazenamento | Sistema de Arquivos | Velocidade | Transitório | Casos de uso |
 | --- | --- | --- | --- | --- |
 | Armazenamento de Blob do Azure | **wasb:** //url/ | **Standard** | Sim | Cluster transitório |
-| Azure Data Lake Storage Gen 2| **abfs[s]:** //url/ | **Mais rápido** | Sim | Cluster transitório |
+| Azure Data Lake Storage Gen 2| **abfs:** //URL/ | **Mais rápido** | Sim | Cluster transitório |
 | Azure Data Lake Store Gen 1| **adl:** //url/ | **Mais rápido** | Sim | Cluster transitório |
 | HDFS local | **hdfs:** //url/ | **Mais rápida** | Não | Cluster interativo 24/7 |
 

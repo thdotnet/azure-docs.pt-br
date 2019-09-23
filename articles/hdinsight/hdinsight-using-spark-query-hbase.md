@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/06/2019
-ms.openlocfilehash: e747f39ca84bb859b37550efef51e01cffd96876
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e6b3fc4f9badeedbed55f89702933b41a952977b
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056743"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180808"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Usar o Apache Spark para ler e gravar dados do Apache HBase
 
@@ -21,11 +21,11 @@ Apache HBase costuma ser consultada com sua API de nível inferior (verificaçõ
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Dois separados clusters HDInsight implantados na mesma rede virtual. Um HBase e um Spark pelo menos Spark 2.1 (HDInsight 3.6) instalado. Para obter mais informações, consulte [Criar clusters baseados em Linux no HDInsight usando o portal do Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
+* Dois clusters HDInsight separados implantados na mesma rede virtual. Um HBase e um Spark com pelo menos o Spark 2,1 (HDInsight 3,6) instalado. Para obter mais informações, consulte [Criar clusters baseados em Linux no HDInsight usando o portal do Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
 * Um cliente SSH. Para saber mais, confira [Conectar-se ao HDInsight (Apache Hadoop) usando SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* O [esquema de URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) para seu armazenamento primário de clusters. Isso seria wasb: / / para o armazenamento de BLOBs do Azure, abfs: / / para o armazenamento do Azure Data Lake Gen2 ou adl: / / para o Azure Data Lake armazenamento Gen1. Se a transferência segura é habilitada para o armazenamento de BLOBs ou Data Lake armazenamento Gen2, o URI seria wasbs: / / ou abfss: / /, respectivamente, consulte também [transferência segura](../storage/common/storage-require-secure-transfer.md).
+* O [esquema de URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) do seu armazenamento primário de clusters. Isso seria wasb://para o armazenamento de BLOBs do Azure, abfs://para Azure Data Lake Storage Gen2 ou adl://para Azure Data Lake Storage Gen1. Se a transferência segura estiver habilitada para o armazenamento de BLOB, `wasbs://`o URI será.  Consulte também a [transferência segura](../storage/common/storage-require-secure-transfer.md).
 
 ## <a name="overall-process"></a>Processo geral
 
@@ -40,9 +40,9 @@ O processo de alto nível para habilitar seu cluster Spark para consultar seu cl
 
 ## <a name="prepare-sample-data-in-apache-hbase"></a>Preparar os dados de exemplo no Apache HBase
 
-Nesta etapa, você pode cria e popular uma tabela no HBase, Apache, você pode consultar usando o Spark.
+Nesta etapa, você cria e preenche uma tabela no Apache HBase que você pode consultar usando o Spark.
 
-1. Use o `ssh` comando para se conectar ao seu cluster HBase. Edite o comando abaixo substituindo `HBASECLUSTER` com o nome de seu HBase do cluster e, em seguida, digite o comando:
+1. Use o `ssh` comando para se conectar ao cluster HBase. Edite o comando a seguir `HBASECLUSTER` substituindo pelo nome do cluster HBase e, em seguida, digite o comando:
 
     ```cmd
     ssh sshuser@HBASECLUSTER-ssh.azurehdinsight.net
@@ -79,27 +79,27 @@ Nesta etapa, você pode cria e popular uma tabela no HBase, Apache, você pode c
     exit
     ```
 
-## <a name="copy-hbase-sitexml-to-spark-cluster"></a>Copie o hbase-site. XML para o cluster Spark
+## <a name="copy-hbase-sitexml-to-spark-cluster"></a>Copiar HBase-site. xml para o cluster Spark
 
-Copie o hbase-site. XML do armazenamento local para a raiz de armazenamento padrão do seu cluster Spark.  Edite o comando a seguir para refletir a configuração.  Em seguida, em sua sessão SSH aberta para o cluster HBase, digite o comando:
+Copie o HBase-site. XML do armazenamento local para a raiz do armazenamento padrão do seu cluster Spark.  Edite o comando a seguir para refletir sua configuração.  Em seguida, na sessão SSH aberta para o cluster HBase, digite o comando:
 
-| Valor de sintaxe | Novo valor|
+| Valor da sintaxe | Novo valor|
 |---|---|
-|[Esquema de URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Modificar para refletir seu armazenamento.  A sintaxe abaixo é para o armazenamento de BLOBs com transferência segura habilitada.|
-|`SPARK_STORAGE_CONTAINER`|Substitua o nome do contêiner de armazenamento padrão usado para o cluster Spark.|
-|`SPARK_STORAGE_ACCOUNT`|Substitua pelo nome da conta de armazenamento padrão usado para o cluster Spark.|
+|[Esquema de URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Modifique para refletir seu armazenamento.  A sintaxe abaixo é para o armazenamento de BLOBs com a transferência segura habilitada.|
+|`SPARK_STORAGE_CONTAINER`|Substitua pelo nome do contêiner de armazenamento padrão usado para o cluster Spark.|
+|`SPARK_STORAGE_ACCOUNT`|Substitua pelo nome da conta de armazenamento padrão usada para o cluster Spark.|
 
 ```bash
 hdfs dfs -copyFromLocal /etc/hbase/conf/hbase-site.xml wasbs://SPARK_STORAGE_CONTAINER@SPARK_STORAGE_ACCOUNT.blob.core.windows.net/
 ```
 
-Saia do seu ssh conexão ao seu cluster HBase.
+Em seguida, saia da conexão SSH para o cluster HBase.
 
 ## <a name="put-hbase-sitexml-on-your-spark-cluster"></a>Colocar hbase-site.XML em seu cluster Spark
 
 1. Conecte-se ao nó principal do cluster Spark usando o SSH.
 
-2. Insira o comando a seguir para copiar `hbase-site.xml` do armazenamento de padrão do seu cluster Spark para a pasta de configuração Spark 2 no armazenamento local do cluster:
+2. Insira o comando a seguir para `hbase-site.xml` copiar do armazenamento padrão do seu cluster Spark para a pasta de configuração do Spark 2 no armazenamento local do cluster:
 
     ```bash
     sudo hdfs dfs -copyToLocal /hbase-site.xml /etc/spark2/conf
@@ -107,7 +107,7 @@ Saia do seu ssh conexão ao seu cluster HBase.
 
 ## <a name="run-spark-shell-referencing-the-spark-hbase-connector"></a>Execute o Shell de Spark referenciando o conector HBase Spark
 
-1. Em sua sessão SSH aberta para o cluster Spark, digite o comando a seguir para iniciar um spark shell:
+1. Na sessão SSH aberta para o cluster Spark, digite o comando a seguir para iniciar um shell do Spark:
 
     ```bash
     spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/
@@ -119,7 +119,7 @@ Saia do seu ssh conexão ao seu cluster HBase.
 
 Nesta etapa, você deve definir um catálogo que mapeia o esquema do Apache Spark para Apache HBase.  
 
-1. Em seu Shell Spark aberto, digite o seguinte `import` instruções:
+1. No Shell do Spark aberto, insira as seguintes `import` instruções:
 
     ```scala
     import org.apache.spark.sql.{SQLContext, _}
@@ -128,7 +128,7 @@ Nesta etapa, você deve definir um catálogo que mapeia o esquema do Apache Spar
     import spark.sqlContext.implicits._
     ```  
 
-2. Insira o comando a seguir para definir um catálogo para a tabela contatos criados no HBase:
+2. Digite o comando a seguir para definir um catálogo para a tabela de contatos que você criou no HBase:
 
     ```scala
     def catalog = s"""{
@@ -150,7 +150,7 @@ Nesta etapa, você deve definir um catálogo que mapeia o esquema do Apache Spar
      b. Identificar a rowkey como `key` e mapear os nomes de coluna usados no Spark para a família de coluna, o nome da coluna e o tipo de coluna como usado no HBase.  
      c. A rowkey também deve ser definida em detalhes como uma coluna nomeada (`rowkey`), que tem uma família de coluna específico `cf` de `rowkey`.  
 
-3. Insira o comando a seguir para definir um método que fornece um DataFrame em torno de seu `Contacts` tabela no HBase:
+3. Insira o comando a seguir para definir um método que fornece um dataframe em `Contacts` toda a tabela no HBase:
 
     ```scala
     def withCatalog(cat: String): DataFrame = {
@@ -254,7 +254,7 @@ Nesta etapa, você deve definir um catálogo que mapeia o esquema do Apache Spar
     +------+--------------------+--------------+------------+--------------+
     ```
 
-6. Feche o shell do spark, digitando o seguinte comando:
+6. Feche o Shell do Spark digitando o seguinte comando:
 
     ```scala
     :q

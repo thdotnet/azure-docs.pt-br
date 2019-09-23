@@ -74,7 +74,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Application Health.
 
 | Nome | Valor/Exemplo | Tipo de dados
 | ---- | ---- | ----
-| protocol | `http` ou `tcp` | string |
+| protocolo | `http` ou `tcp` | string |
 | port | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | int |
 | requestPath | Obrigatório quando o protocolo for `http`, não é permitido quando o protocolo for `tcp` | string |
 

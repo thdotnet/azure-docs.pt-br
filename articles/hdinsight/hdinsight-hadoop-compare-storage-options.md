@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: d036e56a4ccf826ccd19fb7424b7b76568839b23
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: b73810b37020bf01c1088f194bd426e93fd95d2c
+ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104528"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71180776"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Comparar opções de armazenamento para uso com clusters do Azure HDInsight
 
@@ -42,17 +42,17 @@ Para obter mais informações sobre as camadas de acesso de armazenamento [do Az
 
 Você pode criar um cluster usando diferentes combinações de serviços para armazenamento secundário primário e opcional. A tabela a seguir resume as configurações de armazenamento de cluster que atualmente têm suporte no HDInsight:
 
-| Versão do HDInsight | Armazenamento Primário | Armazenamento secundário | Suportado |
+| Versão do HDInsight | Armazenamento primário | Armazenamento secundário | Suportado |
 |---|---|---|---|
 | 3,6 & 4,0 | Uso Geral v1, Uso Geral v2 | Uso Geral v1, Uso Geral v2, BlobStorage (BLOBs de blocos) | Sim |
-| 3,6 & 4,0 | Uso Geral v1, Uso Geral v2 | Armazenamento do Data Lake Gen2 | Não |
+| 3,6 & 4,0 | Uso Geral v1, Uso Geral v2 | Data Lake Storage Gen2 | Não |
 | 3,6 & 4,0 | Uso Geral v1, Uso Geral v2 | Data Lake Storage Gen1 | Sim |
-| 3,6 & 4,0 | Data Lake Storage Gen2 * | Armazenamento do Data Lake Gen2 | Sim |
+| 3,6 & 4,0 | Data Lake Storage Gen2 * | Data Lake Storage Gen2 | Sim |
 | 3,6 & 4,0 | Data Lake Storage Gen2 * | Uso Geral v1, Uso Geral v2, BlobStorage (BLOBs de blocos) | Sim |
-| 3,6 & 4,0 | Armazenamento do Data Lake Gen2 | Data Lake Storage Gen1 | Não |
+| 3,6 & 4,0 | Data Lake Storage Gen2 | Data Lake Storage Gen1 | Não |
 | 3.6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Sim |
 | 3.6 | Data Lake Storage Gen1 | Uso Geral v1, Uso Geral v2, BlobStorage (BLOBs de blocos) | Sim |
-| 3.6 | Data Lake Storage Gen1 | Armazenamento do Data Lake Gen2 | Não |
+| 3.6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | Não |
 | 4,0 | Data Lake Storage Gen1 | Any | Não |
 
 \* = Isso pode ser uma ou várias contas de Data Lake Storage Gen2, desde que todas as configurações usem a mesma identidade gerenciada para acesso ao cluster.
@@ -95,9 +95,9 @@ Para obter mais informações, consulte [O driver ABFS (sistema de arquivos de B
 
 O Azure Data Lake Storage Gen2 usa um novo esquema de URI para acessar arquivos no Armazenamento do Azure a partir do HDInsight:
 
-`abfs[s]://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>`
+`abfs://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>`
 
-O esquema de URI fornece acesso criptografado SSL (prefixo `abfss://`) e acesso não criptografado (prefixo `abfs://`). Use o `abfss` sempre que possível, mesmo ao acessar dados que residam na mesma região do Azure.
+O esquema de URI fornece acesso criptografado por SSL.
 
 `<FILE_SYSTEM_NAME>` identifica o caminho do sistema de arquivos Data Lake Storage Gen2.
 
@@ -108,8 +108,8 @@ O `<PATH>` é o nome do caminho de HDFS do arquivo ou diretório.
 Se os valores para `<FILE_SYSTEM_NAME>` e `<ACCOUNT_NAME>` não forem especificados, será usado o sistema de arquivos padrão. Para os arquivos no sistema de arquivos padrão, use um caminho absoluto ou um caminho relativo. Por exemplo, o arquivo `hadoop-mapreduce-examples.jar` que vem com clusters HDInsight pode ser referido usando um dos caminhos a seguir:
 
 ```
-abfss://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
-abfss:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduce-examples.jar
+abfs://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapreduce-examples.jar
+abfs:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduce-examples.jar
 ```
 
 > [!Note]
