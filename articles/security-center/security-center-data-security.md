@@ -3,9 +3,8 @@ title: Segurança de Dados da Central de Segurança do Azure | Microsoft Docs
 description: Este documento explica como os dados são gerenciados e protegidos na Central de Segurança do Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 33f2c9f4-21aa-4f0c-9e5e-4cd1223e39d7
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: cd91b83bc808d811fc50293fbf1726d609ad5b46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 30f4358bea2670cfa8d825bf1ef75feeba7ea851
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65234075"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202348"
 ---
 # <a name="azure-security-center-data-security"></a>Segurança dos Dados da Central de Segurança do Azure
 Para ajudar os clientes a evitarem, detectarem e responderem às ameaças, a Central de Segurança do Azure coleta e processa dados relacionados à segurança, incluindo informações da configuração, metadados, logs de eventos, arquivos de despejo corrompidos e mais. A Microsoft obedece às diretrizes rígidas de conformidade e segurança — da codificação à operação de um serviço.
@@ -50,10 +49,10 @@ A Central de Segurança do Azure analisa os dados das seguintes fontes para forn
 |-------------------------------------|---------------|
 | Estados Unidos, Brasil, África do Sul | Estados Unidos |
 | Canadá                              | Canadá        |
-| Europa (exceto no Reino Unido)   | Europa        |
+| Europa (excluindo o Reino Unido)   | Europa        |
 | Reino Unido                      | Reino Unido |
-| Asiático (exceto Índia, Japão, Coreia, China)   | Pacífico Asiático  |
-| Coreia do Sul                              | Pacífico Asiático  |
+| Ásia (exceto Índia, Japão, Coreia, China)   | Pacífico Asiático  |
+| Coreia                              | Pacífico Asiático  |
 | Índia                               | Índia         |
 | Japão                               | Japão         |
 | China                               | China         |
@@ -82,7 +81,7 @@ Se você estiver usando a Central de Segurança do Azure Gratuita, também poder
 Os clientes podem consumir dados relacionados à Central de Segurança de diferentes fluxos de dados, conforme mostrado abaixo:
 
 * **Atividade do Azure**: todos os alertas de segurança, as solicitações [just in time](https://docs.microsoft.com/azure/security-center/security-center-just-in-time) aprovadas da Central de Segurança e todos os alertas gerados por [controles de aplicativo adaptável](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application).
-* **Os logs do Azure Monitor**: todos os alertas de segurança.
+* **Logs de Azure monitor**: todos os alertas de segurança.
 
 
 > [!NOTE]

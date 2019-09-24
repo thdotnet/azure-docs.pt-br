@@ -3,9 +3,8 @@ title: Trabalhar com políticas de segurança | Microsoft Docs
 description: Este artigo descreve como trabalhar com políticas de segurança na central de segurança do Azure.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 2d248817-ae97-4c10-8f5d-5c207a8019ea
 ms.service: security-center
 ms.devlang: na
@@ -13,14 +12,14 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 7/18/2019
-ms.author: v-mohabe
-ms.openlocfilehash: 1820c31053c13a0f3039812b31df415bc9fa4fdc
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.date: 07/18/2019
+ms.author: memildin
+ms.openlocfilehash: 11e1c837e416a5d2105f494c43823298edfd4355
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910366"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200502"
 ---
 # <a name="working-with-security-policies"></a>Trabalhando com políticas de segurança
 
@@ -223,7 +222,7 @@ Este exemplo mostra como remover uma atribuição:
 
 |Nome da política na Central de Segurança|Nome da política exibido no Azure Policy |Nome do parâmetro de efeito da política|
 |----|----|----|
-|Criptografia SQL |Monitorar o banco de dados SQL não criptografado na Central de Segurança do Azure |sqlEncryptionMonitoringEffect| 
+|Criptografia do SQL |Monitorar o banco de dados SQL não criptografado na Central de Segurança do Azure |sqlEncryptionMonitoringEffect| 
 |Auditoria do SQL |Monitorar o banco de dados SQL não auditado na Central de Segurança do Azure |sqlAuditingMonitoringEffect|
 |Atualizações do sistema |Monitorar atualizações de sistemas ausentes na Central de Segurança do Azure |systemUpdatesMonitoringEffect|
 |Criptografia do armazenamento |Auditar a criptografia de blob ausente para contas de armazenamento |storageEncryptionMonitoringEffect|
@@ -234,8 +233,8 @@ Este exemplo mostra como remover uma atribuição:
 |Endpoint Protection |Monitorar o Endpoint Protection ausente na Central de Segurança do Azure |endpointProtectionMonitoringEffect |
 |Criptografia de disco |Monitorar discos da VM não criptografados na Central de Segurança do Azure |diskEncryptionMonitoringEffect|
 |Avaliação de vulnerabilidade |monitora vulnerabilidades de máquinas virtuais na Central de Segurança do Azure |vulnerabilityAssessmentMonitoringEffect|
-|Firewall de Aplicativo Web |Monitorar o aplicativo Web desprotegido na Central de Segurança do Azure |webApplicationFirewallMonitoringEffect |
-|Firewall de próxima geração |Monitorar pontos de extremidade de rede desprotegidos na Central de Segurança do Azure| |
+|Firewall do aplicativo Web |Monitorar o aplicativo Web desprotegido na Central de Segurança do Azure |webApplicationFirewallMonitoringEffect |
+|Firewall da próxima geração |Monitorar pontos de extremidade de rede desprotegidos na Central de Segurança do Azure| |
 
 
 ### <a name="who-can-edit-security-policies"></a>Quem pode editar as políticas de segurança?

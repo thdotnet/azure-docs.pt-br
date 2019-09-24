@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: hamusa
-ms.openlocfilehash: c48323bb4c8798a0f36d3fda99a4c659187e0e81
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 8e793891ea646ae8c91077ead36be9b84c1b08c8
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69906381"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200210"
 ---
 # <a name="set-up-dependency-visualization-for-assessment"></a>Configurar a visualização de dependência para avaliação
 
@@ -61,7 +61,7 @@ Anexe um espaço de trabalho da seguinte maneira:
 
     ![Adicionar workspace](./media/how-to-create-group-machine-dependencies/workspace.png)
 
-    - Depois de especificar um nome para um novo espaço de trabalho, ele é criado na mesma geografia que o projeto de migrações para Azure.
+    - Depois de especificar um nome para um novo espaço de trabalho, você pode escolher a [região](https://azure.microsoft.com/global-infrastructure/regions/) na qual o espaço de trabalho será criado.
     - Ao anexar um workspace, você pode escolher entre todos os workspaces disponíveis na mesma assinatura que o projeto de migração.
     - Você precisa de acesso de leitor ao espaço de trabalho para poder anexá-lo.
     - Você não pode modificar o espaço de trabalho associado a um projeto depois que ele é anexado.
@@ -146,7 +146,7 @@ Execute uma consulta para dados de dependência da seguinte maneira:
 3. Na página Log Analytics espaço de trabalho > **geral**, clique em **logs**.
 4. Escreva sua consulta e clique em **executar**.
 
-### <a name="sample-queries"></a>Consultas de exemplo
+### <a name="sample-queries"></a>Consultas de amostra
 
 Fornecemos um número de consultas de exemplo que você pode usar para extrair dados de dependência.
 
@@ -154,7 +154,7 @@ Fornecemos um número de consultas de exemplo que você pode usar para extrair d
 - [Examine](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#log-analytics-records) uma lista completa de registros de dados de dependência.
 - [Examine](https://docs.microsoft.com/azure/azure-monitor/insights/service-map#sample-log-searches) as consultas de exemplo adicionais.
 
-#### <a name="sample-review-inbound-connections"></a>Amostra: Revisar conexões de entrada
+#### <a name="sample-review-inbound-connections"></a>Exemplo: Revisar conexões de entrada
 
 Examine as conexões de entrada para um conjunto de VMs.
 
@@ -176,7 +176,7 @@ VMConnection
 | summarize sum(LinksEstablished) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-#### <a name="sample-summarize-sent-and-received-data"></a>Amostra: Resumir dados enviados e recebidos
+#### <a name="sample-summarize-sent-and-received-data"></a>Exemplo: Resumir dados enviados e recebidos
 
 Este exemplo resume o volume de dados enviados e recebidos em conexões de entrada entre um conjunto de computadores.
 

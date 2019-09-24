@@ -1,5 +1,5 @@
 ---
-title: 'Referência: CentOS DSVM'
+title: 'Referência: DSVM do CentOS'
 description: Detalhes sobre as ferramentas incluídas no Máquina Virtual de Ciência de Dados CentOS
 author: gvashishtha
 ms.service: machine-learning
@@ -7,12 +7,12 @@ ms.subservice: data-science-vm
 ms.author: gopalv
 ms.date: 09/11/2019
 ms.topic: reference
-ms.openlocfilehash: 9366eb1bde05d80b8882ee28aa9eb03a75f75964
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: d50bb18d15bcad72eed3a97088b61c623e6208fe
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71174715"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71199981"
 ---
 # <a name="reference-centos-linux-data-science-virtual-machine"></a>Referência: Máquina Virtual de Ciência de Dados CentOS (Linux)
 
@@ -341,3 +341,7 @@ rattle()
 1. Selecione o botão **Exportar** para salvar o arquivo de script do R chamado *weather_script.R* na pasta base.
 
 Você pode sair do Rattle e do R. Agora, você pode modificar o script de R gerado. Ou você pode usá-lo no estado em que se encontra e executá-lo em qualquer momento, para repetir tudo o que foi feito na interface do usuário do Rattle. Essa é uma maneira, especialmente para iniciantes em R, de fazer análise e aprendizado de máquina rapidamente em uma interface gráfica e, ao mesmo tempo, gerar código em R automaticamente para modificar ou aprender.
+
+## <a name="next-steps"></a>Próximas etapas
+
+Tem mais dúvidas? Considere criar um [tíquete de suporte](https://azure.microsoft.com/support/create-ticket/).

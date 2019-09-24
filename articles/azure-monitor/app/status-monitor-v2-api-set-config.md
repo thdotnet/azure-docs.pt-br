@@ -3,7 +3,7 @@ title: 'Referência da API do Azure Status Monitor v2: Definir configuração | 
 description: Referência da API do Status Monitor v2. Set-ApplicationInsightsMonitoringConfig. Monitore o desempenho do site sem reimplantar o site. Funciona com aplicativos Web ASP.NET hospedados localmente, em VMs ou no Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: f3a55caba13b3b96884d446e0750d9fb67a343df
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 6d93be5b01be63a75041b939f6b8deb9106c4262
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326287"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200438"
 ---
 # <a name="status-monitor-v2-api-set-applicationinsightsmonitoringconfig"></a>API Status Monitor v2: Set-ApplicationInsightsMonitoringConfig
 
 Este documento descreve um cmdlet que é membro do [módulo AZ. ApplicationMonitor do PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
-## <a name="description"></a>DESCRIÇÃO
+## <a name="description"></a>Descrição
 
 Define o arquivo de configuração sem fazer uma reinstalação completa.
 Reinicie o IIS para que suas alterações entrem em vigor.
@@ -60,7 +60,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 ```
 
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>Parâmetros
 
 ### <a name="-instrumentationkey"></a>-InstrumentationKey
 **Obrigatório.** Use esse parâmetro para fornecer uma chave de instrumentação única para uso por todos os aplicativos no computador de destino.

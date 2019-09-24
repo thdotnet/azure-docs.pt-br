@@ -2,18 +2,18 @@
 title: 'Kit de Ferramentas do para Eclipse: Criar aplicativos Scala para HDInsight Spark '
 description: Usar as Ferramentas do HDInsight no Kit de Ferramentas do Azure para Eclipse para desenvolver aplicativos do Spark escritos em Scala e enviá-los para um cluster do HDInsight Spark, diretamente do IDE Eclipse.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
-ms.author: hrasheed
-ms.openlocfilehash: b027ef911b65931f7c96ad45fae66656b3586730
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: 1ebea83d87cd169f61c91a93f092fa277f5017a7
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70994455"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203811"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Use o Azure Toolkit for Eclipse para criar aplicativos do Apache Spark para um cluster do HDInsight
 
@@ -50,11 +50,12 @@ O usuário pode [entrar a assinatura do Azure](#sign-in-to-your-azure-subscripti
 
 1. Inicie o IDE Eclipse e abra o Azure Explorer. No menu **Janela**, selecione **Mostrar Exibição** e selecione **Outros**. Na caixa de diálogo que é aberta, expanda **Azure**, selecione **Azure Explorer** e selecione **OK**.
 
-   ![Caixa de Diálogo Mostrar Modo de Exibição](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+   ![Exibição de Apache Spark eclispse](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+
 1. Clique com o botão direito do mouse no nó **Azure** e selecione **Entrar**.
 1. Na caixa de diálogo **Entrada do Azure**, escolha o modo de autenticação, selecione **Entrar** e insira suas credenciais do Azure.
 
-   ![Caixa de diálogo Entrar no Azure](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
+   ![Apache Spark o logon do Azure eclispse](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
 
 1. Após a entrada, a caixa de diálogo **Selecionar Assinaturas** listará todas as assinaturas do Azure associadas às credenciais. Clique em **Selecionar** para fechar a caixa de diálogo.
 
@@ -183,7 +184,7 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 
    * Passe o mouse sobre o grafo de trabalho. Ele exibe informações básicas sobre o trabalho em execução. Selecione o grafo de trabalho e você poderá ver os estágios e as informações que cada trabalho gera.
 
-     ![Detalhes do estágio do trabalho](./media/apache-spark-eclipse-tool-plugin/Job-graph-stage-info.png)
+     ![Informações de estágio do grafo de trabalho Apache Spark](./media/apache-spark-eclipse-tool-plugin/Job-graph-stage-info.png)
 
    * Selecione a guia **Log** para exibir logs usados frequentemente, como **Stderr do Driver**, **Stdout do Driver** e **Informações do diretório**.
 
@@ -213,7 +214,7 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 
 1. Quando solicitado, insira as credenciais de administrador para o cluster. Elas foram especificadas no provisionamento do cluster.
 
-### <a name="manage-azure-subscriptions"></a>Gerenciar assinaturas do Azure
+### <a name="manage-azure-subscriptions"></a>Gerenciar as assinaturas do Azure
 
 Por padrão, a Ferramenta do HDInsight no Kit de Ferramentas do Azure para Eclipse lista os clusters Spark de todas as assinaturas do Azure. Se for necessário, você poderá especificar as assinaturas para as quais deseja acessar o cluster.
 
@@ -238,7 +239,7 @@ Para resolver esse erro, você deve [baixar o executável](https://public-repo-1
    * No painel esquerdo, escolha **HDInsight**.
    * No painel direito, selecione **Exemplo de Execução Local do Spark no HDInsight (Scala)** .
 
-   ![Caixa de diálogo Novo Projeto](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
+   ![Novo projeto selecione uma caixa de diálogo do assistente](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
 
 1. Para fornecer os detalhes do projeto, siga as etapas 3 a 6 da seção anterior [Configurar um projeto de Spark Scala para um cluster HDInsight Spark](#set-up-a-spark-scala-project-for-an-hdinsight-spark-cluster).
 

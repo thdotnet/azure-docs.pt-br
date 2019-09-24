@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: sutalasi
-ms.openlocfilehash: bc1d52a1062d1848daaaeef7977f96cd270567c8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 1779a33e4ac021c1807ce10dc224e0b8c8c53ebb
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203461"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200526"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Configurar a recuperação de desastres para o Azure para máquinas virtuais do Hyper-V usando o PowerShell e o Azure Resource Manager
 
@@ -38,7 +38,7 @@ Não é preciso ser um especialista no PowerShell para usar este artigo, mas é 
 Verifique se estes pré-requisitos estão em vigor:
 
 * Uma conta do [Microsoft Azure](https://azure.microsoft.com/) . Você pode começar com uma [avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/). Além disso, você pode ler sobre [preços do Azure Site Recovery Manager](https://azure.microsoft.com/pricing/details/site-recovery/).
-* PowerShell do Azure. Para obter informações sobre essa versão e como instalá-lo, consulte [instalar o Azure PowerShell](/powershell/azure/install-az-ps).
+* PowerShell do Azure. Para obter informações sobre esta versão e como instalá-la, consulte [install Azure PowerShell](/powershell/azure/install-az-ps).
 
 Além disso, o exemplo específico descrito neste artigo tem os seguintes pré-requisitos:
 
@@ -49,7 +49,7 @@ Além disso, o exemplo específico descrito neste artigo tem os seguintes pré-r
 
 1. Abra um console do PowerShell e execute este comando para entrar em sua conta do Azure. Esse cmdlet abre uma página da Web que solicita suas credenciais de conta: **Connect-AzAccount**.
     - Como alternativa, é possível incluir as credenciais de conta como um parâmetro no cmdlet **Connect-AzAccount**, usando o parâmetro **-Credential**.
-    - Se você é um parceiro CSP trabalhando em nome de um locatário, especifique o cliente como um locatário usando sua tenantID ou o nome de domínio primário do locatário. Por exemplo:  **Connect-AzAccount -Tenant "fabrikam.com"**
+    - Se você é um parceiro CSP trabalhando em nome de um locatário, especifique o cliente como um locatário usando sua tenantID ou o nome de domínio primário do locatário. Por exemplo: **Connect-AzAccount -Tenant "fabrikam.com"**
 2. Associe a assinatura que deseja usar com a conta, uma vez que uma conta pode ter várias assinaturas:
 
     `Select-AzSubscription -SubscriptionName $SubscriptionName`
@@ -72,12 +72,12 @@ Além disso, o exemplo específico descrito neste artigo tem os seguintes pré-r
 
     `New-AzResourceGroup -Name $ResourceGroupName -Location $Geo`
 
-2. Para obter uma lista de grupos de recursos em sua assinatura, execute as **Get-AzResourceGroup** cmdlet.
+2. Para obter uma lista de grupos de recursos em sua assinatura, execute o cmdlet **Get-AzResourceGroup** .
 2. Crie um novo cofre dos Serviços de Recuperação do Azure da seguinte maneira:
 
         $vault = New-AzRecoveryServicesVault -Name <string> -ResourceGroupName <string> -Location <string>
 
-    Você pode recuperar uma lista de cofres existentes com o **Get-AzRecoveryServicesVault** cmdlet.
+    Você pode recuperar uma lista de cofres existentes com o cmdlet **Get-AzRecoveryServicesVault** .
 
 
 ## <a name="step-3-set-the-recovery-services-vault-context"></a>Etapa 3: Configurar o contexto do Cofre dos Serviços de Recuperação
@@ -107,7 +107,7 @@ Defina o contexto do cofre da seguinte maneira:
 ## <a name="step-5-install-the-provider-and-agent"></a>Etapa 5: Instalar o Provedor e o agente
 
 1. Baixe o instalador para obter a versão mais recente do provedor na [Microsoft](https://aka.ms/downloaddra).
-2. Execute o instalador no host Hyper-V.
+2. Execute o instalador no host do Hyper-V.
 3. No final da instalação, vá para a etapa de registro.
 4. Quando solicitado, forneça a chave baixada e conclua o registro do host Hyper-V.
 5. Verifique se o host Hyper-V foi registrado no site da seguinte maneira:
@@ -115,8 +115,8 @@ Defina o contexto do cofre da seguinte maneira:
         $server =  Get-AsrFabric -Name $siteName | Get-AsrServicesProvider -FriendlyName $server-friendlyname
 
 Se você estiver executando um servidor de núcleo do Hyper-V, baixe o arquivo de instalação e siga estas etapas:
-1. Extraia os arquivos do AzureSiteRecoveryProvider.exe para um diretório local executando este comando: ```AzureSiteRecoveryProvider.exe /x:. /q```
-2. Executar ```.\setupdr.exe /i``` resultados são registrados em % Programdata%\ASRLogs\DRASetupWizard.log.
+1. Extraia os arquivos de AzureSiteRecoveryProvider. exe para um diretório local executando este comando:```AzureSiteRecoveryProvider.exe /x:. /q```
+2. Os ```.\setupdr.exe /i``` resultados da execução são registrados em%ProgramData%\ASRLogs\DRASetupWizard.log.
 
 3. Registre o servidor executando este comando:
 
@@ -143,9 +143,13 @@ Antes de iniciar, observe que a conta de armazenamento especificada deve estar n
         $protectionContainer = Get-AsrProtectionContainer
 3. Associe o contêiner de proteção à política de replicação da seguinte maneira:
 
-     $Policy = get-AsrPolicy - FriendlyName $PolicyName $associationJob = New-AsrProtectionContainerMapping-nome $mappingName-política $Policy - PrimaryProtectionContainer $protectionContainer [0]
-
+        $Policy = Get-AsrPolicy -FriendlyName $PolicyName
+        $associationJob  = New-AsrProtectionContainerMapping -Name $mappingName -Policy $Policy -PrimaryProtectionContainer $protectionContainer[0]
 4. Aguarde o conclusão bem-sucedida do trabalho de associação.
+
+5. Recupere o mapeamento de contêiner de proteção.
+
+        $ProtectionContainerMapping = Get-ASRProtectionContainerMapping -ProtectionContainer $protectionContainer
 
 ## <a name="step-7-enable-vm-protection"></a>Etapa 7: Habilitar a proteção de VM
 
@@ -155,8 +159,8 @@ Antes de iniciar, observe que a conta de armazenamento especificada deve estar n
         $ProtectableItem = Get-AsrProtectableItem -ProtectionContainer $protectionContainer -FriendlyName $VMFriendlyName
 2. Proteja a VM. Se a VM que você estiver protegendo tiver mais de um disco anexado, será necessário especificar o disco do sistema operacional usando o parâmetro *OSDiskName* .
 
-        $Ostype = "Windows"                                 # "Windows" or "Linux"
-        $DRjob = New-AsrReplicationProtectedItem -ProtectableItem $VM -Name $VM.Name -ProtectionContainerMapping $ProtectionContainerMapping -RecoveryAzureStorageAccountId $StorageAccountID -OSDiskName $OSDiskNameList[$i] -OS Windows -RecoveryResourceGroupId
+        $OSType = "Windows"                                 # "Windows" or "Linux"
+        $DRjob = New-AsrReplicationProtectedItem -ProtectableItem $VM -Name $VM.Name -ProtectionContainerMapping $ProtectionContainerMapping -RecoveryAzureStorageAccountId $StorageAccountID -OSDiskName $OSDiskNameList[$i] -OS $OSType -RecoveryResourceGroupId $ResourceGroupID
 
 3. Aguarde até que as máquinas virtuais atinjam um estado protegido após a replicação inicial. Isso pode demorar um pouco, dependendo de fatores como a quantidade de dados a serem replicados e a largura de banda upstream disponível no Azure. Quando um estado protegido estiver implantado, o State e StateDescription do trabalho são atualizados da seguinte maneira:
 

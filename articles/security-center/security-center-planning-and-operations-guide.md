@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: b731c5fe6b6c7055b7397386b1e9fd4bed47db8a
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 62387fe7ddbde75e79724c77dd7eeedd5cae64c3
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910586"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201861"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Guia de planejamento e operações da Central de Segurança do Azure
 Este guia é para profissionais de ti (tecnologia da informação), arquitetos de ti, analistas de segurança de informações e administradores de nuvem para usar a central de segurança do Azure.
@@ -182,13 +182,13 @@ A seção **Detecção** é mais reativa, pois são alertas sobre os problemas q
 Planeje acessar a opção [Inteligência contra ameaças](https://docs.microsoft.com/azure/security-center/security-center-threat-intel) como parte de suas operações diárias de segurança. Lá, você pode identificar ameaças à segurança do ambiente, como identificar se determinado computador faz parte de um botnet.
 
 ### <a name="monitoring-for-new-or-changed-resources"></a>Monitoramento de recursos novos ou alterados
-A maioria dos ambientes do Azure são dinâmicos, com novos recursos gerados e excluídos regularmente, com configurações ou alterações etc. A Central de Segurança ajuda a garantir que você tenha visibilidade sobre o estado de segurança desses novos recursos.
+A maioria dos ambientes do Azure é dinâmica, com recursos sendo criados regularmente, girados ou reduzidos, reconfigurados e alterados. A Central de Segurança ajuda a garantir que você tenha visibilidade sobre o estado de segurança desses novos recursos.
 
 Quando você adiciona novos recursos (VMs, Bancos de Dados SQL) ao seu Ambiente do Azure, a Central de Segurança descobre automaticamente esses recursos e começa a monitorar a segurança. Isso também inclui as funções Web do PaaS e as funções de trabalho. Se a Coleta de Dados estiver habilitada na [Política de Segurança](tutorial-security-policy.md), os recursos de monitoramento adicionais serão habilitados automaticamente para as máquinas virtuais.
 
 ![Principais áreas](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig3-newUI.png)
 
-1. Nas máquinas virtuais, clique em **Computação**, na seção **Prevenção**. Os possíveis problemas com a habilitação dos dados ou recomendações relacionadas ocorrerão na guia **Visão geral** e na seção **Recomendações de monitoramento**.
+1. Para máquinas virtuais, clique em **computação & aplicativos**, na seção **higiene de segurança de recursos** . Os possíveis problemas com a habilitação dos dados ou recomendações relacionadas ocorrerão na guia **Visão geral** e na seção **Recomendações de monitoramento**.
 2. Veja as **Recomendações** para ver quais riscos de segurança, se houver, foram identificados para o novo recurso.
 3. É muito comum que, quando novas VMs são adicionadas ao seu ambiente, apenas o sistema operacional seja instalado inicialmente. Talvez o proprietário do recurso precise de algum tempo para implantar outros aplicativos que serão usados por essas VMs.  É ideal que você saiba o objetivo final dessa carga de trabalho. Ele será um Servidor de Aplicativos? Com base no que essa nova carga de trabalho será, você pode habilitar a **Política de Segurança**apropriada, que é a terceira etapa neste fluxo de trabalho.
 4. À medida que novos recursos são adicionados ao seu ambiente do Azure, novos alertas podem aparecer no bloco **alertas de segurança** . Procure novos alertas neste bloco e siga as recomendações.

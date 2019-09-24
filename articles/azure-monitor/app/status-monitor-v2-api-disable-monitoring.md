@@ -3,7 +3,7 @@ title: 'Referência da API do Azure Status Monitor v2: Desabilitar monitoramento
 description: Referência da API do Status Monitor v2. Disable-ApplicationInsightsMonitoring. Monitore o desempenho do site sem reimplantar o site. Funciona com aplicativos Web ASP.NET hospedados localmente, em VMs ou no Azure.
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: alexklim
 ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 368365251ec61464869c6120ded2ec2237acffea
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: af105a6a819ced475f490d3c99fc1e63d8eee5c8
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326409"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203439"
 ---
 # <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring"></a>API Status Monitor v2: Desabilitar-ApplicationInsightsMonitoring
 
 Este artigo descreve um cmdlet que é membro do [módulo AZ. ApplicationMonitor do PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
-## <a name="description"></a>DESCRIÇÃO
+## <a name="description"></a>Descrição
 
 Desabilita o monitoramento no computador de destino.
 Esse cmdlet removerá edições para o applicationHost. config do IIS e removerá as chaves do registro.
@@ -37,7 +37,7 @@ Esse cmdlet removerá edições para o applicationHost. config do IIS e remover�
 PS C:\> Disable-ApplicationInsightsMonitoring
 ```
 
-## <a name="parameters"></a>parâmetros 
+## <a name="parameters"></a>Parâmetros 
 
 ### <a name="-verbose"></a>-Verbose
 **Parâmetro comum.** Use essa opção para exibir logs detalhados.

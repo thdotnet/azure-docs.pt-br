@@ -3,9 +3,8 @@ title: Integração à Central de Segurança do Azure Standard para uma seguran�
 description: " Saiba como para integrar-se à Central de Segurança do Azure Standard para uma segurança aprimorada. "
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/19/2019
-ms.author: v-mohabe
-ms.openlocfilehash: e5d93d2f1f1c082610cb14a5ea621e0919a41866
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.author: memildin
+ms.openlocfilehash: 7448516e464a379e27abd45834b31760fca3fedd
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67589009"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201855"
 ---
 # <a name="onboarding-to-azure-security-center-standard-for-enhanced-security"></a>Integração à Central de Segurança do Azure Standard para uma segurança aprimorada
 Atualize para a Central de Segurança Standard para aproveitar o gerenciamento de segurança aprimorado e a proteção contra ameaças para suas cargas de trabalho de nuvem híbrida.  Você pode experimentar o Standard gratuitamente. Para saber mais, confira a [página de preços](https://azure.microsoft.com/pricing/details/security-center/) da Central de Segurança.
@@ -33,7 +32,7 @@ A Central de Segurança Standard inclui:
 ## <a name="detecting-unprotected-resources"></a>Detectando recursos desprotegidos     
 A Central de Segurança detecta automaticamente as assinaturas ou workspaces do Azure não habilitados para a Central de Segurança Standard. Isso inclui assinaturas do Azure usando a Central de Segurança Gratuita e workspaces que não têm a solução da Segurança habilitada.
 
-Você pode atualizar uma assinatura inteira do Azure para a camada Standard, que é herdada por todos os recursos com suporte dentro da assinatura. Aplicando o padrão de camada a um espaço de trabalho se aplica a todos os recursos de emissão de relatórios no espaço de trabalho.
+Você pode atualizar uma assinatura inteira do Azure para a camada Standard, que é herdada por todos os recursos com suporte na assinatura. A aplicação da camada Standard a um espaço de trabalho se aplica a todos os recursos que se reportam ao espaço de trabalho.
 
 > [!NOTE]
 > Talvez você queira gerenciar os custos e limitar a quantidade de dados coletados de uma solução limitando-a a determinado conjunto de agentes. O [direcionamento de solução](../operations-management-suite/operations-management-suite-solution-targeting.md) permite que você aplique um escopo à solução e direcione a um subconjunto de computadores no workspace.  Se você estiver usando o direcionamento de solução, a Central de Segurança listará o workspace como não tendo uma solução.
@@ -53,7 +52,7 @@ Para atualizar uma assinatura ou um workspace para Standard:
 
 
    > [!NOTE]
-   > Recursos gratuitos da Central de segurança são aplicados apenas para VMs do Azure e VMSS. Os recursos Gratuitos não serão aplicados aos computadores não Azure. Se você selecionar Standard, os recursos padrão serão aplicados a todas as VMs do Azure, conjuntos de dimensionamento de VMs e computadores não Azure relatando para o espaço de trabalho. É recomendável que você aplique a Standard para proporcionar segurança avançada tanto para seus recursos do Azure quanto para os não Azure.
+   > Os recursos gratuitos da central de segurança são aplicados somente às VMs do Azure e VMSS. Os recursos Gratuitos não serão aplicados aos computadores não Azure. Se você selecionar Standard, os recursos padrão serão aplicados a todas as VMs do Azure, conjuntos de dimensionamento de VM e computadores não Azure que relatam para o espaço de trabalho. É recomendável que você aplique a Standard para proporcionar segurança avançada tanto para seus recursos do Azure quanto para os não Azure.
    >
    >
 

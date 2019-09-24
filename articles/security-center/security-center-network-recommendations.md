@@ -3,9 +3,8 @@ title: Protegendo seus recursos de rede na Central de Segurança do Azure | Micr
 description: Este documento aborda recomendações na Central de Segurança do Azure que ajudam a proteger os recursos de rede do Azure e a ficar em conformidade com as políticas de segurança.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 96c55a02-afd6-478b-9c1f-039528f3dea0
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
-ms.author: v-mohabe
-ms.openlocfilehash: 536e2e3732a0b196801e37c51dfb6c746e070441
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.author: memildin
+ms.openlocfilehash: bf33fe29b18b09bf903e1fc331f1c378eacb3e17
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910453"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201722"
 ---
 # <a name="protect-your-network-resources-in-azure-security-center"></a>Proteja seus recursos de rede na Central de Segurança do Azure
 A Central de Segurança do Azure analisa continuamente o estado de segurança de seus recursos do Azure para as práticas recomendadas de segurança de rede. Quando o Security Center identifica possíveis vulnerabilidades de segurança, ele cria recomendações que guiam você pelo processo de configuração dos controles necessários para proteger e proteger seus recursos.
@@ -134,7 +133,7 @@ O terceiro nível exibe máquinas virtuais, que é semelhante ao descrito anteri
 
 ## <a name="network-recommendations"></a>Recomendações de rede
 
-|Nome da recomendação|Descrição|Severidade|Classificação de segurança|Tipo de recurso|
+|Nome da recomendação|Descrição|severity|Classificação de segurança|Tipo de recurso|
 |----|----|----|----|----|----|
 |Os grupos de segurança de rede no nível de sub-rede devem ser habilitados|Habilite grupos de segurança de rede para controlar o acesso à rede de recursos implantados em suas sub-redes.|Alta/média|30|Subnet|
 |As máquinas virtuais devem ser associadas a um grupo de segurança de rede|Habilite os grupos de segurança de rede para controlar o acesso à rede de suas máquinas virtuais.|Alta/média|30|Máquina virtual|
@@ -146,7 +145,7 @@ A Proteção contra DDoS Standard deve ser habilitada|Proteja redes virtuais que
 |O encaminhamento IP em sua máquina virtual deve ser desabilitado|Desabilite o encaminhamento de IP. Quando o encaminhamento de IP está habilitado na NIC de uma máquina virtual, o computador pode receber o tráfego endereçado a outros destinos. O encaminhamento de IP raramente é necessário (por exemplo, ao usar a VM como uma solução de virtualização de rede) e, portanto, isso deve ser revisado pela equipe de segurança de rede.|Média|10|Máquina virtual|
 |Aplicativo Web deve ser acessível somente por HTTPS|Habilite o acesso "somente HTTPS" para aplicativos Web. O uso de HTTPS garante a autenticação do servidor/serviço e protege os dados em trânsito de ataques de interceptação de camada de rede.|Média|20|Aplicativo Web|
 |O controle de acesso à rede just-in-time deve ser aplicado em máquinas virtuais|Aplique o controle de acesso de máquina virtual (JIT) just-in-time para bloquear permanentemente o acesso às portas selecionadas e habilite os usuários autorizados a abri-los, por meio do JIT, apenas por uma quantidade limitada de tempo.|Alto|20|Máquina virtual|
-|Os aplicativos de funções só devem ser acessíveis via HTTPS|Habilite o acesso "somente HTTPS" para aplicativos de funções. O uso de HTTPS garante a autenticação do servidor/serviço e protege os dados em trânsito de ataques de interceptação de camada de rede.|Média|20|Aplicativo de função|
+|Os aplicativos de funções só devem ser acessíveis via HTTPS|Habilite o acesso "somente HTTPS" para aplicativos de funções. O uso de HTTPS garante a autenticação do servidor/serviço e protege os dados em trânsito de ataques de interceptação de camada de rede.|Média|20|Aplicativo de funções|
 |A transferência segura para contas de armazenamento deve ser habilitada|Habilite a transferência segura para contas de armazenamento. A transferência segura é uma opção que força a sua conta de armazenamento a aceitar somente solicitações de conexões seguras (HTTPS). O uso de HTTPS garante a autenticação entre o servidor e o serviço e protege os dados em trânsito de ataques de camada de rede, como Man-in-the-Middle, espionagem e seqüestro de sessão.|Alto|20|Conta de armazenamento|
 
 ## <a name="see-also"></a>Consulte também

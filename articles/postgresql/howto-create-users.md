@@ -1,20 +1,22 @@
 ---
-title: Criar usuários no banco de dados do Azure para PostgreSQL – servidor único
-description: Este artigo descreve como você pode criar novas contas de usuário para interagir com um banco de dados do Azure para PostgreSQL – servidor único.
+title: Criar usuários no banco de dados do Azure para PostgreSQL-servidor único
+description: Este artigo descreve como você pode criar novas contas de usuário para interagir com um banco de dados do Azure para PostgreSQL-servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: ce6188732720bc43c5849fa492237c7ab98487c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/22/2019
+ms.openlocfilehash: 91ba485347aeb19ce9b173bd4cec944a655a56dc
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067493"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203506"
 ---
-# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Criar usuários no banco de dados do Azure para PostgreSQL – servidor único
-Este artigo descreve como você pode criar usuários em um servidor de Banco de Dados do Azure para PostgreSQL.
+# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Criar usuários no banco de dados do Azure para PostgreSQL-servidor único
+Este artigo descreve como você pode criar usuários em um servidor de banco de dados do Azure para PostgreSQL. 
+
+Se você quiser saber mais sobre como criar e gerenciar usuários de assinatura do Azure e seus privilégios, você pode visitar o [artigo RBAC (controle de acesso baseado em função) do Azure](../role-based-access-control/built-in-roles.md) ou examinar [como personalizar funções](../role-based-access-control/custom-roles.md).
 
 ## <a name="the-server-admin-account"></a>A conta do administrador do servidor
 Quando foi criado o Banco de Dados do Azure para PostgreSQL, você forneceu um nome de usuário de administrador de servidor e uma senha. Para saber mais, você pode seguir o [Início Rápido](quickstart-create-server-database-portal.md) para ver a abordagem passo a passo. Como o nome de usuário administrador do servidor é um nome personalizado, você pode localizar o nome de usuário administrador do servidor escolhido no portal do Azure.

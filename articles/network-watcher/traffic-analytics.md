@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: kumud
-ms.reviewer: yagup
-ms.openlocfilehash: dbc0829adc29848c9047368295a2ade589834e8b
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.reviewer: vinigam
+ms.openlocfilehash: 6c11f415fc1ea3a578893f6d14a60dfc1c4fddb0
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031867"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203000"
 ---
 # <a name="traffic-analytics"></a>Análise de Tráfego
 
@@ -30,6 +30,8 @@ Análise de Tráfego é uma solução baseada em nuvem, que oferece visibilidade
 - Compreender os padrões de fluxo de tráfego entre regiões do Azure e a internet para otimizar a implantação de rede para desempenho e capacidade.
 - Identificar problemas de configuração de rede originando conexões com falha em sua rede.
 
+> [!NOTE]
+> Análise de Tráfego agora dá suporte à coleta de dados de logs de fluxo NSG em uma frequência mais alta de 10 minutos
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -76,7 +78,7 @@ Você pode usar a análise de tráfego para NSGs em qualquer uma das seguintes r
 * Sul do Reino Unido
 * Leste da Austrália
 * Sudeste da Austrália
-* Ásia Oriental
+* Leste da Ásia
 * Sudeste da Ásia
 * Coreia Central
 * Índia Central
@@ -85,7 +87,7 @@ Você pode usar a análise de tráfego para NSGs em qualquer uma das seguintes r
 * Oeste do Japão
 * US Gov - Virgínia
 
-## <a name="supported-regions-log-analytics-workspaces"></a>Regiões com suporte: Espaços de trabalho do Log Analytics
+## <a name="supported-regions-log-analytics-workspaces"></a>Regiões com suporte: Workspaces do Log Analytics
 
 O espaço de trabalho do Log Analytics deve existir nas seguintes regiões:
 * Canadá Central
@@ -102,7 +104,7 @@ O espaço de trabalho do Log Analytics deve existir nas seguintes regiões:
 * Sul do Reino Unido
 * Leste da Austrália
 * Sudeste da Austrália
-* Ásia Oriental
+* Leste da Ásia
 * Sudeste da Ásia
 * Coreia Central
 * Índia Central
@@ -181,7 +183,7 @@ Selecione as opções a seguir, conforme mostrado na imagem:
 > [!IMPORTANT]
 > Atualmente, há um problema em que os [logs de fluxo do NSG (grupo de segurança de rede)](network-watcher-nsg-flow-logging-overview.md) para o Observador de Rede não são automaticamente excluídos do Armazenamento de Blobs com base nas configurações da política de retenção. Se você tiver uma política de retenção diferente de zero, recomendamos que você exclua periodicamente os blobs de armazenamento que ultrapassaram os respectivos períodos de retenção para evitar incorrer em alguma cobrança. Para obter mais informações sobre como excluir o blob de armazenamento de log de fluxo do NSG, confira [Excluir blobs de armazenamento de log de fluxo do NSG](network-watcher-delete-nsg-flow-log-blobs.md).
 5. Selecione *Ativado* para **Status de Análise de Tráfego**.
-6. Selecione o intervalo de processamento. Com base em sua escolha, os logs de fluxo serão coletados da conta de armazenamento e processados pelo Análise de Tráfego. Você pode escolher o intervalo de processamento de cada uma hora ou a cada 10 minutos.
+6. Selecione o intervalo de processamento. Com base em sua escolha, os logs de fluxo serão coletados da conta de armazenamento e processados pelo Análise de Tráfego. Você pode escolher o intervalo de processamento de cada uma hora ou a cada 10 minutos. 
 7. Selecione um workspace do Log Analytics (OMS) existente ou selecione **Criar novo workspace** para criar um novo. Um espaço de trabalho do Log Analytics é usado pela Análise de Tráfego para armazenar os dados agregados e indexados que são usados para gerar a análise. Se você selecionar um workspace existente, ele deve existir em uma das [regiões com suporte](#supported-regions-log-analytics-workspaces) e ter sido atualizado para a nova linguagem de consulta. Se você não desejar atualizar um workspace existente ou não tem um workspace em uma região com suporte, crie um novo. Para obter mais informações sobre linguagens de consulta, consulte [Atualização do Azure Log Analytics para a nova pesquisa de logs ](../log-analytics/log-analytics-log-search-upgrade.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 
     O espaço de trabalho do Log Analytics que hospeda a solução de Análise de Tráfego e os NSGs não precisa estar na mesma região. Por exemplo, você pode ter Análise de Tráfego em um workspace na região Europa Ocidental e ter os NSGs no Leste dos EUA e Oeste dos EUA. Podem ser configurados vários NSGs no mesmo workspace.

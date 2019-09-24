@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: 58b6531a394db8f9d29dcc0fe9b4b40d1725e70a
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: c0c160d9fc2fcfb8da004d02baae1dd410620cbb
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774575"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71204190"
 ---
 # <a name="custom-script-extension-for-windows"></a>Extensão de script personalizado para o Windows
 
@@ -69,7 +69,7 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 {
     "apiVersion": "2018-06-01",
     "type": "Microsoft.Compute/virtualMachines/extensions",
-    "name": "config-app",
+    "name": "virtualMachineName/config-app",
     "location": "[resourceGroup().location]",
     "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]",
@@ -100,6 +100,9 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 
 > [!NOTE]
 > Somente uma versão de uma extensão pode ser instalada em uma VM em um ponto no tempo, especificar o script personalizado duas vezes no mesmo modelo do Resource Manager para a mesma VM falhará.
+
+> [!NOTE]
+> Podemos usar esse esquema dentro do recurso VirtualMachine ou como um recurso autônomo. O nome do recurso deve estar nesse formato "virtualMachineName/ExtensionName", se essa extensão for usada como um recurso autônomo no modelo ARM. 
 
 ### <a name="property-values"></a>Valores de propriedade
 
@@ -250,7 +253,7 @@ $vm | Update-AzureVM
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o módulo do Azure PowerShell. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir:
 

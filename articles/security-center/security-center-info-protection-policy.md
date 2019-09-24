@@ -3,9 +3,8 @@ title: Personalizando a política de proteção de informações SQL na Central 
 description: Aprenda a personalizar as políticas de proteção de informações na Central de Segurança do Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 2ebf2bc7-232a-45c4-a06a-b3d32aaf2500
 ms.service: security-center
 ms.devlang: na
@@ -13,19 +12,19 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/29/2019
-ms.author: rkarlin
-ms.openlocfilehash: e2bcd92ffc8799b2edf04251b6ce160e96c7609c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: edd415c330656d4cecc42a39d27598a88a1a8d2c
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64875601"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202083"
 ---
 # <a name="customize-the-sql-information-protection-policy-in-azure-security-center-preview"></a>Personalizar a política de proteção de informações do SQL na Central de Segurança do Azure (Visualizar)
  
 Uma política de proteção de informações do SQL pode ser definida e personalizada para todo o seu locatário do Azure, na Central de Segurança do Azure.
 
-A proteção de informações é um recurso de segurança avançado para descobrir, classificar, rotular e proteger dados confidenciais em seus recursos de dados do Azure. Descobrir e classificar seus dados mais confidenciais (negócios/financeiros, serviços de saúde, informações de identificação pessoal etc.) pode desempenhar uma função essencial na estatura de proteção das informações organizacionais. Pode servir como infraestrutura para:
+A proteção de informações é um recurso de segurança avançado para descobrir, classificar, rotular e proteger dados confidenciais em seus recursos de dados do Azure. Descobrir e classificar seus dados mais confidenciais (negócios, financeiros, de saúde, dados pessoais etc.) pode desempenhar uma função dinâmica em sua estatura de proteção de informações organizacionais. Pode servir como infraestrutura para:
 - Ajudando a atender aos padrões de privacidade de dados e requisitos de conformidade regulamentar
 - Vários cenários de segurança, como monitoramento (auditoria) e alerta sobre acesso anômalo a dados confidenciais
 - Controlando o acesso e fortalecendo a segurança dos armazenamentos de dados que contêm dados altamente confidenciais
@@ -41,11 +40,11 @@ A Proteção de Informações vem com um conjunto integrado de rótulos e tipos 
 ## <a name="customize-the-information-protection-policy"></a>Personalizar a política de proteção de informações
 Para personalizar a política de proteção de informações do seu locatário do Azure, você precisa ter [privilégios administrativos no grupo de gerenciamento de raiz do locatário](security-center-management-groups.md). 
  
-1. Na segurança Center menu principal, em **higiene de troca de segurança de recursos** acesse **dados e armazenamento** e clique no **proteção de informações do SQL** botão.
+1. No menu principal da central de segurança, em **higiene de segurança de recursos** , acesse **dados & armazenamento** e clique no botão proteção de informações do **SQL** .
 
    ![Configurar a política de proteção de informações](./media/security-center-info-protection-policy/security-policy.png) 
  
-2. No **proteção de informações do SQL** página, você pode exibir o conjunto atual de rótulos. Estes são os principais atributos de classificação usados para categorizar o nível de sensibilidade de seus dados. A partir daqui, você pode configurar os **rótulos de proteção de informações** e **tipos de informações** para o locatário. 
+2. Na página **proteção de informações do SQL** , você pode exibir seu conjunto atual de rótulos. Estes são os principais atributos de classificação usados para categorizar o nível de sensibilidade de seus dados. A partir daqui, você pode configurar os **rótulos de proteção de informações** e **tipos de informações** para o locatário. 
  
 ### <a name="customizing-labels"></a>Personalizando rótulos
  
@@ -53,7 +52,7 @@ Para personalizar a política de proteção de informações do seu locatário d
 2. No **rótulo de confidencialidade configurar** tela, você pode criar ou alterar o nome do rótulo e a descrição. Você também pode definir se o rótulo está ativo ou desabilitado ativando/desativando o **Ativado** ativar ou desativar. Por fim, você pode adicionar ou remover tipos de informações associadas ao marcador. Quaisquer dados descobertos que correspondam a esse tipo de informação incluirão automaticamente o rótulo de sensibilidade associado nas recomendações de classificação.
 3. Clique em **OK**.
  
-   ![Configurar rótulo de sensibilidade](./media/security-center-info-protection-policy/config-sensitivity-label.png)
+   ![Configurar o rótulo de confidencialidade](./media/security-center-info-protection-policy/config-sensitivity-label.png)
  
 4. As etiquetas são listadas por ordem crescente de sensibilidade. Para alterar a classificação entre marcadores, arraste os rótulos para reordená-los na tabela ou use os botões **Mover para cima** e **Mover para baixo** para alterar a ordem. 
  

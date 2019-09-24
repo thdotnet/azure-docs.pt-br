@@ -3,9 +3,8 @@ title: Obtenha visibilidade de todo o locatário para o Centro de Segurança do 
 description: Saiba mais sobre como ganhar visibilidade para todo o locatário na Central de Segurança do Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: b85c0e93-9982-48ad-b23f-53b367f22b10
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
-ms.author: rkarlin
-ms.openlocfilehash: 7e26dc37c5c4f85e3db634bd961bf9308e418a03
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 730ccd7c64ac9ca87fb6da5add130feb3b6ce502
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66148101"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201962"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Obtenha visibilidade de todo o locatário para o Centro de Segurança do Azure
 Este artigo ajuda você a começar fazendo várias ações que maximizam os benefícios que o Centro de Segurança do Azure oferece. A execução dessas ações permite que você obtenha visibilidade de todas as assinaturas do Azure vinculadas ao locatário do Azure Active Directory e gerencie com eficiência a postura de segurança da organização em escala, aplicando políticas de segurança em várias assinaturas de maneira agregada.
@@ -145,16 +144,16 @@ Após elevar o acesso, abra ou atualize a Central de Segurança do Azure para ve
 1. Entre no [Portal do Azure](https://portal.azure.com). 
 2. Certifique-se de selecionar todas as assinaturas no seletor de assinatura que você gostaria de exibir na Central de Segurança.
 
-    ![Captura de tela de seletor de assinatura](./media/security-center-management-groups/subscription-selector.png)
+    ![Captura de tela do seletor de assinatura](./media/security-center-management-groups/subscription-selector.png)
 
 1. Selecione **Todos serviços** sob o menu principal do Azure e então selecione **Centro de Segurança**.
 2. Na **Visão geral**, há um gráfico de cobertura de assinatura.
 
-    ![Captura de tela de gráfico de cobertura assinatura](./media/security-center-management-groups/security-center-subscription-coverage.png)
+    ![Captura de tela do gráfico de cobertura da assinatura](./media/security-center-management-groups/security-center-subscription-coverage.png)
 
 3. Clique em **Cobertura** para ver a lista de assinaturas cobertas. 
 
-    ![Captura de tela de lista de cobertura assinatura](./media/security-center-management-groups/security-center-coverage.png)
+    ![Captura de tela da lista de cobertura de assinatura](./media/security-center-management-groups/security-center-coverage.png)
 
 ### <a name="remove-elevated-access"></a>Remover acesso elevado 
 Uma vez que as funções RBAC tenham sido designadas aos usuários, o administrador locatário deve se remover da função de administrador de acesso de usuário.

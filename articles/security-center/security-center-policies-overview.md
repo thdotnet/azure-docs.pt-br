@@ -3,23 +3,22 @@ title: Configurações da Central de Segurança do Azure | Microsoft Docs
 description: Definir as configurações na Central de Segurança do Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: f24b1e4a-cc36-4542-b21e-041453cdfcd8
 ms.service: security-center
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/3/2018
-ms.author: rkarlin
-ms.openlocfilehash: ec674641991a1b5a1e0ca92c133be235dd91dfae
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 09/03/2018
+ms.author: memildin
+ms.openlocfilehash: 4a7254d4ac67ee7d1bf203baf5741638dbc8f3dd
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703516"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201616"
 ---
 # <a name="security-center-settings"></a>Configurações da Central de Segurança
 Este artigo apresenta uma visão geral das configurações na Central de Segurança.
@@ -37,7 +36,7 @@ As configurações a seguir podem ser acessadas em Política de segurança:
 
 
 ## <a name="who-can-edit-security-policies"></a>Quem pode editar as políticas de segurança?
-A Central de Segurança usa o RBAC (Controle de Acesso Baseado em Função) que fornece funções internas que podem ser atribuídas a usuários, grupos e serviços no Azure. Quando os usuários abrem a Central de Segurança, eles veem somente informações relacionadas aos recursos aos quais eles têm acesso. Que significa que os usuários recebem a função de *proprietário*, *Colaborador*, ou *leitor* à assinatura do recurso pertence. Além dessas funções, há duas funções específicas da Central de Segurança:
+A Central de Segurança usa o RBAC (Controle de Acesso Baseado em Função) que fornece funções internas que podem ser atribuídas a usuários, grupos e serviços no Azure. Quando os usuários abrem a Central de Segurança, eles veem somente informações relacionadas aos recursos aos quais eles têm acesso. Isso significa que os usuários recebem a função de *proprietário*, *colaborador*ou *leitor* à assinatura à qual o recurso pertence. Além dessas funções, há duas funções específicas da Central de Segurança:
 
 - **Leitor de segurança**: Tem direitos de exibição na Central de Segurança, incluindo recomendações, alertas, política e integridade, mas não pode fazer alterações.
 - **Administrador de segurança**: Tem os mesmos direitos de exibição que o *leitor de segurança* e também pode atualizar a política de segurança e ignorar recomendações e alertas.

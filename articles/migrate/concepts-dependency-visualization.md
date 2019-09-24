@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: hamusa
-ms.openlocfilehash: e7b69e57d4e01c292a2c6d032ba995d1936b88dc
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 33594e09778b9a629645e12357e6bafe561ad35e
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142897"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202905"
 ---
 # <a name="dependency-visualization"></a>Visualização de dependência
 
@@ -44,11 +44,14 @@ As migrações para Azure usam a solução [mapa do serviço](../operations-mana
     ![Adicionar workspace](./media/how-to-create-group-machine-dependencies/workspace.png)
 
 - Durante a associação de um workspace, haverá a opção de criar um workspace ou anexar um existente:
-  - Ao criar um workspace, você precisará especificar um nome para ele. O workspace será criado em uma região na mesma [Geografia do Azure](https://azure.microsoft.com/global-infrastructure/geographies/) que o projeto de migração.
+  - Ao criar um workspace, você precisará especificar um nome para ele. Você pode escolher a [região](https://azure.microsoft.com/global-infrastructure/regions/) na qual o espaço de trabalho será criado.
   - Ao anexar um workspace, você pode escolher entre todos os workspaces disponíveis na mesma assinatura que o projeto de migração. Observe que são listados somente os workspaces que foram criados em uma região [com suporte para o Mapa do Serviço](../azure-monitor/insights/vminsights-enable-overview.md#prerequisites). É necessário ser capaz de anexar a um workspace, verifique se você tem acesso de 'Leitura' no workspace.
 
   > [!NOTE]
   > Depois de anexar um workspace a um projeto, você não poderá mais alterá-lo.
+
+  > [!NOTE]
+  > Atualmente, as migrações para Azure dão suporte à criação do espaço de trabalho do OMS nas regiões leste dos EUA, Sudeste Asiático e Europa Ocidental. Se o espaço de trabalho for criado fora da migração do Azure em qualquer outra região, ele não poderá ser associado a um projeto de migrações para Azure no momento. 
 
 - O workspace associado é marcado com a chave **Projeto de Migração** e o valor **Nome do projeto**, que pode ser usado para pesquisar no portal do Azure.
 - Para navegar até o workspace associado ao projeto, acesse a seção **Essentials** na página **Visão geral** do projeto e acesse o workspace

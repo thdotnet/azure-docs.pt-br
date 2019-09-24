@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/23/2018
 ms.author: chackdan
-ms.openlocfilehash: f33b25112b5c4ee77f1f7d2a419ffb8e926a27d9
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: f929ca1cd0fe6f2a94864ae3eb4df28e7b1927db
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501355"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200465"
 ---
 # <a name="azure-service-fabric-node-types-and-virtual-machine-scale-sets"></a>Tipos de nó do Service Fabric e os conjuntos de dimensionamento da máquina virtual
 [Conjuntos de dimensionamento de máquinas virtuais](/azure/virtual-machine-scale-sets) são um recurso de computação do Azure. Você pode usar os conjuntos de dimensionamento para implantar e gerenciar uma coleção de máquinas virtuais como um conjunto. Cada tipo de nó que você define em um cluster do Azure Service Fabric configura uma escala separada.  O tempo de execução do Service Fabric instalado em cada máquina virtual no conjunto de dimensionamento pela extensão da máquina virtual Microsoft. Azure. perfabric. Cada tipo de nó pode ser escalado vertical ou horizontalmente de forma independente, ter a SKU de sistema operacional em execução em cada nó de cluster, ter conjuntos diferentes de portas abertas e usar métricas de capacidade diferentes.
@@ -78,7 +78,7 @@ A seguir estão as descrições de propriedade:
 | **Name** | **Valores permitidos** | ** --- ** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
 | name | string | --- | nome exclusivo para a extensão |
-| type | "ServiceFabricLinuxNode" ou "ServiceFabricWindowsNode | --- | Identifica o sistema operacional Service Fabric está carregando para |
+| type | "ServiceFabricLinuxNode" ou "ServiceFabricWindowsNode" | --- | Identifica o sistema operacional Service Fabric está carregando para |
 | autoUpgradeMinorVersion | true ou false | --- | Habilitar a atualização automática de versões secundárias do Runtime da it |
 | publisher | Microsoft.Azure.ServiceFabric | --- | nome do editor de extensão de Service Fabric |
 | clusterEndpont | string | --- | URI: porta para ponto de extremidade de gerenciamento |
@@ -88,7 +88,7 @@ A seguir estão as descrições de propriedade:
 | nicPrefixOverride | string | --- | Prefixo de sub-rede como "10.0.0.0/24" |
 | commonNames | string[] | --- | Nomes comuns de certificados de cluster instalados |
 | x509StoreName | string | --- | Nome do repositório onde o certificado de cluster instalado está localizado |
-| typeHandlerVersion | 1.1 | --- | Versão da extensão. 1,0 a versão clássica da extensão é recomendada para atualizar para o 1,1 |
+| typeHandlerVersion | 1,1 | --- | Versão da extensão. 1,0 a versão clássica da extensão é recomendada para atualizar para o 1,1 |
 | Caminho | string | --- | Caminho para a unidade usada para salvar o estado de Service Fabric serviços do sistema e dados de aplicativo. 
 
 ## <a name="next-steps"></a>Próximas etapas

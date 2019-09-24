@@ -3,9 +3,8 @@ title: Guia estratégico de segurança na Central de Segurança do Azure | Micro
 description: Este documento ajuda você a usar guias estratégicos de segurança na Central de Segurança do Azure para automatizar a resposta a incidentes de segurança.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: a8c45ddf-5c4c-4393-b6e9-46ed1f91bf5f
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: ec16e6daec099adbede625c5ec6fe6909059143b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: faf297ef4b07b76f98bb7773c636cd8f6228bbc0
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60906887"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201733"
 ---
 # <a name="security-playbook-in-azure-security-center-preview"></a>Guia estratégico de segurança na Central de Segurança do Azure (versão prévia)
 Este documento ensina a usar guias estratégicos de segurança na Central de Segurança do Azure para responder a problemas de segurança.
@@ -52,7 +51,7 @@ Siga estas etapas para criar um novo guia estratégico de segurança na Central 
 
 6. No campo **Pesquisar todos os gatilhos e conectores**, digite *Central de Segurança do Azure*e selecione **Quando uma resposta a um alerta da Central de Segurança do Azure é disparada**.
 
-    ![Gatilho](./media/security-center-playbooks/security-center-playbooks-fig12.png)
+    ![Disparador](./media/security-center-playbooks/security-center-playbooks-fig12.png)
 
 7. Agora você pode definir o que acontece ao adicionar o manual. Você pode adicionar uma ação, uma condição lógica, condições de caso de alternância ou loops.
 
@@ -74,7 +73,7 @@ Você pode executar um guia estratégico de segurança na Central de Segurança 
 
 5. Na página Guias estratégicos, selecione o guia estratégico que você deseja executar e clique no botão **Executar**. Se quiser ver o guia estratégico antes de dispará-lo, você pode clicar nele para abrir o designer.
 
-    ![Guias estratégicos](./media/security-center-playbooks/security-center-playbooks-fig13.png)
+    ![Guias Estratégicos](./media/security-center-playbooks/security-center-playbooks-fig13.png)
 
 ### <a name="history"></a>Histórico
 

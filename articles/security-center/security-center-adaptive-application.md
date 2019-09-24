@@ -3,9 +3,8 @@ title: Controles de aplicativo adaptáveis na Central de Segurança do Azure | M
 description: Este documento ajuda a usar controles de aplicativo adaptáveis na Central de Segurança do Azure para colocar aplicativos em execução em VMs do Azure na lista de permissões.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 9268b8dd-a327-4e36-918e-0c0b711e99d2
 ms.service: security-center
 ms.devlang: na
@@ -13,19 +12,19 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/02/2019
-ms.author: v-mohabe
-ms.openlocfilehash: 4a8a241df38c258dc1747f04c6079d29ee25b3ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 46ab2fc5c796d960de8b1c5e3391a6356563b50a
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65968848"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202805"
 ---
 # <a name="adaptive-application-controls-in-azure-security-center"></a>Controles de aplicativo adaptáveis na Central de Segurança do Azure
 Saiba como configurar o controle de aplicativo na Central de Segurança do Azure usando este passo a passo.
 
 ## <a name="what-are-adaptive-application-controls-in-security-center"></a>O que são controles de aplicativo adaptáveis na Central de Segurança?
-Os controles de aplicativos adaptáveis são uma solução inteligente, automatizada e completa de adição de aplicativos à lista de permissões da Central de Segurança do Azure. Ele ajuda a você controle quais aplicativos podem ser executados no seu Azure e não - VMs do Azure (Windows e Linux), que, entre outros benefícios, ajuda a proteger suas VMs contra malware. A Central de Segurança usa o aprendizado de máquina para analisar os aplicativos em execução nas suas VMs e ajuda você a aplicar as regras específicas de lista de desbloqueio usando essa inteligência. Esse recurso simplifica bastante o processo de configuração e manutenção de políticas de lista branca de aplicativos, permitindo:
+O controle de aplicativo adaptável é uma solução inteligente, automatizada e de ponta a ponta da central de segurança do Azure, que ajuda você a controlar quais aplicativos podem ser executados em suas VMs do Azure e não Azure (Windows e Linux). Entre outros benefícios, isso ajuda a proteger suas VMs contra malware. A central de segurança usa o aprendizado de máquina para analisar os aplicativos em execução em suas VMs e cria uma lista de permissões dessa inteligência. Esse recurso simplifica muito o processo de configuração e manutenção de políticas de lista de permissões de aplicativo, permitindo que você:
 
 - Bloquear ou alertar sobre tentativas de executar aplicativos mal-intencionados, incluindo aqueles que, de outra forma, poderiam ser perdidos por soluções antimalware.
 - Cumpra a política de segurança da sua organização que impõe o uso somente de software licenciado.
@@ -35,10 +34,10 @@ Os controles de aplicativos adaptáveis são uma solução inteligente, automati
 - Habilite a TI a controlar o acesso a dados confidenciais pelo uso do aplicativo.
 
 > [!NOTE]
-> Para VMs do Linux e não Azure, controles de aplicativo adaptáveis têm suporte no modo de auditoria apenas.
+> Para VMs não Azure e Linux, os controles de aplicativo adaptáveis têm suporte somente no modo de auditoria.
 
 ## <a name="how-to-enable-adaptive-application-controls"></a>Como habilitar os controles de aplicativo adaptáveis?
-Os controles de aplicativos adaptativos ajudam você a definir um conjunto de aplicativos que podem ser executados em grupos configurados de VMs. Esse recurso está disponível para o Azure e não - Azure Windows (todas as versões, clássica ou Azure Resource Manager) e VMs do Linux e servidores. As etapas a seguir podem ser usadas para configurar a lista de permissões de aplicativos na Central de Segurança:
+Os controles de aplicativos adaptativos ajudam você a definir um conjunto de aplicativos que podem ser executados em grupos configurados de VMs. Esse recurso está disponível para as janelas do Azure e não Azure (todas as versões, clássicas ou Azure Resource Manager) e servidores e VMs Linux. Use as etapas a seguir para configurar suas listas de permissões de aplicativo:
 
 1. Abra o painel **Central de Segurança**.
 2. No painel esquerdo, selecione **Controles de aplicativo adaptáveis** localizado em **Proteção de nuvem avançada**.
@@ -67,10 +66,10 @@ A seção **Grupos de VMs** contém três guias:
 
    A lista inclui:
 
-   - **Nome do grupo**: O nome da assinatura e grupo
+   - **Nome do grupo**: O nome da assinatura e do grupo
    - **VMs e computadores**: O número de máquinas virtuais no grupo
    - **Estado**: o estado das recomendações
-   - **Severidade**: o nível de gravidade das recomendações
+   - **Severidade**: o nível de severidade das recomendações
 
 2. Clique em um grupo para abrir o **criar regras de controle de aplicativo** opção.
 
@@ -85,11 +84,11 @@ A seção **Grupos de VMs** contém três guias:
 
    - **NOME**: as informações do certificado ou o caminho completo de um aplicativo
    - **TIPOS DE ARQUIVOS**: o tipo de arquivo de aplicativo. Isso pode ser EXE, Script, MSI ou qualquer permutação desses tipos.
-   - **EXPLOITABLE**: um ícone de aviso indica se um aplicativo específico pode ser usado por um invasor para ignorar uma solução de lista branca de aplicativo. É recomendável examinar esses aplicativos antes da aprovação.
+   - **Explorável**: um ícone de aviso indica se um aplicativo específico pode ser usado por um invasor para ignorar uma lista de permissões de aplicativo. É recomendável examinar esses aplicativos antes da aprovação.
    - **USUÁRIOS**: os usuários devem ter permissão para executar um aplicativo
 
 5. Após concluir suas seleções, selecione **Criar**. <br>
-   Depois de selecionar Criar, o Azure Security Center cria automaticamente as regras apropriadas sobre a solução de lista branca de aplicativos integrada disponível nos servidores Windows (AppLocker).
+   Depois de selecionar criar, a central de segurança do Azure cria automaticamente as regras apropriadas sobre a solução de lista de permissões de aplicativo interna disponível em Windows Servers (AppLocker).
 
 > [!NOTE]
 > - A Central de Segurança conta com um mínimo de duas semanas de dados para criar uma linha de base e preencher as recomendações exclusivas por grupo de VMs. Os novos clientes da camada standard da Central de Segurança devem esperar que seus grupos de máquinas virtuais sejam exibidos primeiro na guia *sem recomendações*.
@@ -99,15 +98,15 @@ A seção **Grupos de VMs** contém três guias:
 
 ### <a name="editing-and-monitoring-a-group-configured-with-application-control"></a>Editando e monitorado um grupo configurado com controle de aplicativo
 
-1. Para editar e monitorar um grupo configurado com uma política de lista de permissões de aplicativo, retorne para o **controles de aplicativo adaptáveis** página e selecione **configurado** sob **gruposdeVMs**:
+1. Para editar e monitorar um grupo configurado com uma política de lista de permissões de aplicativo, retorne à página de **controles de aplicativo adaptáveis** e selecione **configurado** em **grupos de VMs**:
 
    ![Grupos](./media/security-center-adaptive-application/security-center-adaptive-application-fig5.png)
 
    A lista inclui:
 
-   - **Nome do grupo**: o nome da assinatura e grupo
+   - **Nome do grupo**: o nome da assinatura e do grupo
    - **VMs e computadores**: o número de máquinas virtuais no grupo
-   - **Modo**: O modo de auditoria registrará as tentativas de executar aplicativos não permitidos. Aplicar não permitirá a execução de aplicativos não permitidos
+   - **Modo**: O modo de auditoria registrará tentativas de execução de aplicativos que não estão na lista de permissões; Impor não permitirá que os aplicativos sejam executados, a menos que estejam na lista de permissões
    - **Alertas**: as violações atuais existentes
 
 2. Clicar em um grupo para fazer alterações na **Editar política de controle de aplicativo** página.
@@ -124,7 +123,7 @@ A seção **Grupos de VMs** contém três guias:
    > - Como mencionado anteriormente, por padrão, uma nova política de controle de aplicativo sempre é configurada no modo *Auditoria*. 
    >
 
-4. Em **Extensão de política**, adicione qualquer caminho de aplicativo que deseja permitir. Após você adicionar esses caminhos, a Central de Segurança atualiza a política de lista de permissões do aplicativo nas VMs dentro do grupo selecionado de VMs e cria as regras apropriadas para esses aplicativos, além das regras que já estão em vigor.
+4. Em **Extensão de política**, adicione qualquer caminho de aplicativo que deseja permitir. Depois de adicionar esses caminhos, a central de segurança atualiza a política de lista de permissões de aplicativo nas VMs dentro do grupo selecionado de VMS e cria as regras apropriadas para esses aplicativos, além das regras que já estão em vigor.
 
 5. Examinar as violações atuais existentes listados na **alertas recentes** seção. Clique em cada linha para ser redirecionado para a página **Alertas** na Central de Segurança do Azure e exibir todos os alertas que foram detectados pela Central de Segurança do Azure nas VMs associadas.
    - **Alertas**: quaisquer violações registradas.
@@ -146,33 +145,33 @@ A seção **Grupos de VMs** contém três guias:
 
 O Security Center recomenda apenas políticas de lista branca de aplicativos para máquinas virtuais que executam um conjunto estável de aplicativos. As recomendações não serão criadas se os aplicativos nas VMs associadas sofrerem mudança.
 
-![Recomendações](./media/security-center-adaptive-application/security-center-adaptive-application-fig11.png)
+![Recomendação](./media/security-center-adaptive-application/security-center-adaptive-application-fig11.png)
 
 A lista contém:
-- **Nome do grupo**: o nome da assinatura e grupo
+- **Nome do grupo**: o nome da assinatura e do grupo
 - **VMs e computadores**: o número de máquinas virtuais no grupo
 
 A Central de Segurança do Azure permite definir uma política de lista branca de aplicativos em grupos de VMs não recomendados também. Siga os mesmos princípios descritos anteriormente para configurar também uma política de lista de permissões de aplicativos nesses grupos.
 
 ## <a name="move-a-vm-from-one-group-to-another"></a>Mover uma VM de um grupo para outro
 
- Quando você move uma VM de um grupo para outro, a política de controle de aplicativo aplicada a ele as alterações nas configurações do grupo que você o removeu. Você também pode mover uma VM de um grupo configurado a um grupo não configurado, o que resulta na remoção de qualquer política de controle de aplicativo que foi anteriormente aplicada à VM.
+ Quando você move uma VM de um grupo para outro, a política de controle de aplicativo aplicada a ela muda para as configurações do grupo para o qual você o moveu. Você também pode mover uma VM de um grupo configurado para um grupo não configurado, o que resulta na remoção de qualquer política de controle de aplicativo aplicada anteriormente à VM.
 
- 1. Dos **controles de aplicativo adaptáveis** página, da **configurado** guia, clique no grupo ao qual pertence a VM seja movida no momento.
-1. Clique em **configurado de VMs e computadores**.
-1. Clique nos três pontos na linha da VM para mover e clique em **mover**. O **Move o computador para outro grupo** janela é aberta.
+ 1. Na página **controles de aplicativo adaptáveis** , na guia **configurada** , clique no grupo ao qual a VM que será movida pertence atualmente.
+1. Clique em **VMs e computadores configurados**.
+1. Clique nos três pontos na linha da VM para mover e clique em **mover**. A janela **mover computador para um grupo diferente** é aberta.
 
     ![Proteção](./media/security-center-adaptive-application/adaptive-application-move-group.png)
 
- 1. Selecione o grupo para mover a VM e, em seguida, clique em **mover computador**e clique em **salvar**.
+ 1. Selecione o grupo para o qual mover a VM e clique em **mover computador**e clique em **salvar**.
 
     ![Proteção](./media/security-center-adaptive-application/adaptive-application-move-group2.png)
 
  > [!NOTE]
-> Clique em **salve** depois de clicar em **mover computador**. Se você não clicar **salvar**, em seguida, o computador não será movido.
+> Certifique-se de clicar em **salvar** depois de clicar em **mover computador**. Se você não clicar em **salvar**, o computador não será movido.
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste documento, você aprendeu a usar o controle de aplicativo adaptáveis na Central de segurança do Azure para colocar aplicativos em execução no Azure e não - máquinas virtuais do Azure. Para saber mais sobre a Central de Segurança do Azure, veja o seguinte:
+Neste documento, você aprendeu a usar o controle de aplicativo adaptável na central de segurança do Azure para aplicativos de lista de permissões em execução no Azure e em VMs não Azure. Para saber mais sobre a Central de Segurança do Azure, veja o seguinte:
 
 * [Gerenciando e respondendo aos alertas de segurança na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Saiba como gerenciar alertas e responder a incidentes de segurança na Central de Segurança.
 * [Monitoramento da integridade de segurança na Central de Segurança do Azure](security-center-monitoring.md). Saiba como monitorar a integridade dos recursos do Azure.

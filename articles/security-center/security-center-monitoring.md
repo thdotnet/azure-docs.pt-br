@@ -3,9 +3,8 @@ title: Fortaleça sua postura de segurança com a Central de Segurança do Azure
 description: Este artigo ajuda a fortalecer sua postura de segurança monitorando seus recursos na Central de Segurança do Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 3bd5b122-1695-495f-ad9a-7c2a4cd1c808
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: 28b4667a9ceb4b3534d85ba28668f06c750e22c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: b7bb67ec052244689b2775c280ff39a2121da3fa
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703806"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201686"
 ---
 # <a name="strengthen-your-security-posture-with-azure-security-center"></a>Fortaleça sua postura de segurança com a Central de Segurança do Azure
 Este artigo ajuda você a fortalecer sua postura de segurança. Use os recursos de monitoramento da Central de Segurança do Azure para garantir que a segurança do recurso seja a mais justa possível e monitorar a conformidade com as políticas.

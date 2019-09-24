@@ -3,9 +3,8 @@ title: Gerenciar dados de usuário encontrados em uma investigação da Central 
 description: " Saiba como gerenciar dados de usuário encontrados no recurso de investigação da Central de Segurança do Azure. "
 services: operations-management-suite
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
 ms.service: security-center
 ms.devlang: na
@@ -13,16 +12,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/20/2018
-ms.author: rkarlin
-ms.openlocfilehash: 1fd979be117104186b2dfce47cc79947a092eb9e
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.author: memildin
+ms.openlocfilehash: 8b6bde69f233fee9fe20b260e392966298f13a9a
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672338"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202041"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Gerenciar dados de usuário encontrados em uma investigação da Central de Segurança do Azure
-Este artigo fornece informações sobre como gerenciar dados de usuário encontrados no recurso de investigação da Central de Segurança do Azure. Investigação de dados é armazenada em [registra em log do Azure Monitor](../log-analytics/log-analytics-overview.md) e exposto na Central de segurança. O gerenciamento de dados de usuário inclui a capacidade de excluir dados ou exportar dados.
+Este artigo fornece informações sobre como gerenciar dados de usuário encontrados no recurso de investigação da Central de Segurança do Azure. Os dados de investigação são armazenados em [logs de Azure monitor](../log-analytics/log-analytics-overview.md) e expostos na central de segurança. O gerenciamento de dados de usuário inclui a capacidade de excluir dados ou exportar dados.
 
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
@@ -58,4 +57,4 @@ Um usuário da Central de Segurança com a função Proprietário, Colaborador o
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter mais informações sobre o gerenciamento de dados de usuário, confira [Gerenciar dados de usuário localizados na Central de Segurança do Azure](security-center-privacy.md).
-Para saber mais sobre como excluir dados privados nos logs do Azure Monitor, consulte [como exportar e excluir dados particulares](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data).
+Para saber mais sobre como excluir dados privados em logs de Azure Monitor, consulte [como exportar e excluir dados privados](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data).

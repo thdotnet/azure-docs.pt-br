@@ -3,9 +3,8 @@ title: Corrigir recomendações na central de segurança do Azure | Microsoft Do
 description: Este documento explica como corrigir recomendações na central de segurança do Azure para ajudá-lo a proteger seus recursos do Azure e manter a conformidade com as políticas de segurança.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 8be947cc-cc86-421d-87a6-b1e23077fd50
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2019
-ms.author: v-mohabe
-ms.openlocfilehash: a32e344ffe33f411bae85763ae3b919040c1109b
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
+ms.author: memildin
+ms.openlocfilehash: 9bd1586193d2e36c370217e37b77409298821a67
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575580"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201006"
 ---
 # <a name="remediate-recommendations-in-azure-security-center"></a>Corrigir recomendações na central de segurança do Azure
 
@@ -46,7 +45,7 @@ Para implementar a correção de um clique:
 
    ![Selecione a correção com um clique](./media/security-center-remediate-recommendations/security-center-one-click-fix-select.png)
 
-2. Na guia **recursos** não íntegros, selecione os recursos em que você deseja implementar a recomendação e clique em **corrigir**. 
+2. Na guia **recursos não íntegros** , selecione os recursos em que você deseja implementar a recomendação e clique em **corrigir**. 
 
     > [!NOTE]
     > Alguns dos recursos listados podem estar desabilitados, pois você não tem as permissões apropriadas para modificá-los.
@@ -75,7 +74,7 @@ A operação de correção usa uma implantação de modelo ou chamada à API de 
 |Recomendação|Implicação|
 |---|---|
 |A auditoria em servidores SQL deve ser habilitada|Esta ação habilitará a auditoria do SQL nesses servidores e em seus bancos de dados. <br>**Observação**: <ul><li>Para cada região dos SQL Servers selecionados, uma conta de armazenamento para salvar os logs de auditoria será criada e compartilhada por todos os servidores nessa região.</li><li>Para garantir a auditoria adequada, não exclua nem renomeie o grupo de recursos nem as contas de armazenamento.</li></ul>|
-|A segurança de dados avançada deve ser habilitada em suas instâncias gerenciadas do SQL|Esta ação habilitará o ADS (segurança de dados avançada) do SQL nas instâncias gerenciadas do SQL selecionadas. <br>**Observação**: <ul><li>Para cada região e grupo de recursos das instâncias gerenciadas do SQL selecionadas, uma conta de armazenamento para salvar os resultados da verificação será criada e compartilhada por todas as instâncias nessa região.</li><li> Os anúncios são cobrados a $15 por instância gerenciada do SQL.</li></ul>|
+|A Segurança de Dados Avançada deve ser habilitada nas instâncias gerenciadas do SQL|Esta ação habilitará o ADS (segurança de dados avançada) do SQL nas instâncias gerenciadas do SQL selecionadas. <br>**Observação**: <ul><li>Para cada região e grupo de recursos das instâncias gerenciadas do SQL selecionadas, uma conta de armazenamento para salvar os resultados da verificação será criada e compartilhada por todas as instâncias nessa região.</li><li> Os anúncios são cobrados a $15 por instância gerenciada do SQL.</li></ul>|
 |A avaliação de vulnerabilidade deve ser habilitada em suas instâncias gerenciadas do SQL|Esta ação habilitará a avaliação de vulnerabilidade do SQL nas instâncias gerenciadas do SQL selecionadas. <br>**Observação**:<ul><li>A avaliação de vulnerabilidade do SQL faz parte do pacote do SQL Advanced Data Security (ADS). Se o ADS não estiver habilitado, ele será habilitado automaticamente na instância gerenciada.</li><li>Para cada região e grupo de recursos das instâncias gerenciadas do SQL selecionadas, uma conta de armazenamento para armazenar os resultados da verificação será criada e compartilhada por todas as instâncias nessa região.</li><li>Os anúncios são cobrados a $15 por SQL Server.</li></ul>||
 |A segurança de dados avançada deve ser habilitada em seus servidores SQL|Esta ação habilitará o ADS (segurança de dados avançada) nesses servidores selecionados e seus bancos de dado. <br>**Observação**:<ul><li>Para cada região e grupo de recursos dos SQL Servers selecionados, uma conta de armazenamento para armazenar os resultados da verificação será criada e compartilhada por todos os servidores nessa região. <</li><li>Os anúncios são cobrados a $15 por SQL Server.</li></ul>||
 |A avaliação de vulnerabilidade deve ser habilitada em seus servidores SQL|Esta ação habilitará a avaliação de vulnerabilidade do SQL nesses servidores selecionados e seus bancos de dados. <br>**Observação**:<ul><li>A avaliação de vulnerabilidade do SQL faz parte do pacote do SQL Advanced Data Security (ADS). Se o ADS ainda não estiver habilitado, ele será habilitado automaticamente no SQL Server.</li><li>Para cada região e grupo de recursos dos SQL Servers selecionados, uma conta de armazenamento para armazenar os resultados da verificação será criada e compartilhada por todas as instâncias nessa região.</li><li>Os anúncios são cobrados a $15 por SQL Server.</li></ul>||
@@ -91,7 +90,7 @@ A operação de correção usa uma implantação de modelo ou chamada à API de 
 |O CORS não deve permitir o acesso a todos os recursos ao seu aplicativo de funções|Essa ação impede que outros domínios acessem seu aplicativo de funções. Para permitir domínios específicos, insira-os no campo origens permitidas (separadas por vírgulas). <br>**Observação**: Deixar o campo vazio bloqueará todas as chamadas entre origens. ' título do campo de parâmetro: ' Origens permitidas '|
 |O CORS não deve permitir que todos os recursos acessem seu aplicativo de API|Essa ação impede que outros domínios acessem seu aplicativo de API. Para permitir domínios específicos, insira-os no campo origens permitidas (separadas por vírgulas). <br>**Observação**: Deixar o campo vazio bloqueará todas as chamadas entre origens. ' título do campo de parâmetro: ' Origens permitidas '|
 |O agente de monitoramento deve ser habilitado em suas máquinas virtuais|Esta ação instala um agente de monitoramento nas máquinas virtuais selecionadas. Selecione um espaço de trabalho para o qual o agente se reportará.<ul><li>Se a política de atualização for definida como automática, ela será implantada em novas instâncias existentes.</li><li>Se a política de atualização estiver definida como manual e você quiser instalar o agente em instâncias existentes, selecione a opção caixa de seleção.  [Saiba mais](../virtual-machine-scale-sets/virtual-machine-scale-sets-faq.md#how-do-i-add-an-extension-to-all-vms-in-my-virtual-machine-scale-set)</li></ul>|
-|Os logs de diagnóstico no Key Vault devem ser habilitados|Esta ação habilita os logs de diagnóstico em cofres de chaves. Os logs de diagnóstico e as métricas são salvos no espaço de trabalho selecionado.|
+|Os logs de diagnóstico no Key Vault deve estar habilitados|Esta ação habilita os logs de diagnóstico em cofres de chaves. Os logs de diagnóstico e as métricas são salvos no espaço de trabalho selecionado.|
 |Os logs de diagnóstico no barramento de serviço devem ser habilitados|Essa ação habilita os logs de diagnóstico no barramento de serviço. Os logs de diagnóstico e as métricas são salvos no espaço de trabalho selecionado.|
 
 ## <a name="next-steps"></a>Próximas etapas

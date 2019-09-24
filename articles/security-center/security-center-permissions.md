@@ -4,8 +4,8 @@ description: Este artigo explica como a Central de Segurança do Azure usa o con
 services: security-center
 cloud: na
 documentationcenter: na
-author: rkarlin
-manager: barbkess
+author: memildin
+manager: rkarlin
 ms.assetid: ''
 ms.service: security-center
 ms.workload: na
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: aa6c154e14fbf5291e2493f4f27b9d4501ba18f4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: f52d518d2ed1dfb62eed72cf9c0b839a37b7f856
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60905612"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71201648"
 ---
 # <a name="permissions-in-azure-security-center"></a>Permissões na Central de Segurança do Azure
 
@@ -41,15 +41,15 @@ Além dessas funções, há duas funções específicas da Central de Segurança
 
 A tabela a seguir exibe as funções e as ações permitidas na Central de Segurança. Um X indica que a ação é permitida para essa função.
 
-| Função | Editar política de segurança | Aplicar as recomendações de segurança a um recurso | Ignorar alertas e recomendações | Exibir alertas e recomendações |
+| Role | Editar política de segurança | Aplicar as recomendações de segurança a um recurso | Ignorar alertas e recomendações | Exibir alertas e recomendações |
 |:--- |:---:|:---:|:---:|:---:|
 | Proprietário da assinatura | X | X | X | X |
 | Colaborador da assinatura | -- | X | X | X |
 | Proprietário do Grupo de Recursos | -- | X | -- | X |
 | Colaborador do Grupo de Recursos | -- | X | -- | X |
 | Leitor | -- | -- | -- | X |
-| Administrador de segurança | X | -- | X | X |
-| Leitor de segurança | -- | -- | -- | X |
+| Administrador de Segurança | X | -- | X | X |
+| Leitor de Segurança | -- | -- | -- | X |
 
 > [!NOTE]
 > Recomendamos que você atribua a função menos permissiva necessária para os usuários realizarem suas tarefas. Por exemplo, atribua a função Leitor aos usuários que precisam apenas exibir informações sobre a integridade da segurança de um recurso, mas que não precisam executar nenhuma ação, como aplicar recomendações ou editar políticas.

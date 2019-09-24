@@ -3,9 +3,8 @@ title: Investigar os incidentes e alertas na Central de Segurança do Azure | Mi
 description: Este documento ajuda você a usar o recurso de investigação na Central de Segurança do Azure para investigar alertas e incidentes de segurança.
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: a8e894a9-8781-4749-ae8f-8c8e01658566
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
-ms.author: rkarlin
-ms.openlocfilehash: 476bdd50a56b953585a8a4e9cea05975c9922e0f
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.author: memildin
+ms.openlocfilehash: 32cc4b01d68ee7a15ae7cfa2259d234cbcd143c4
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662947"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202056"
 ---
 # <a name="investigate-incidents-and-alerts-in-azure-security-center-retired"></a>Investigar incidentes e alertas na central de segurança do Azure (desativado)
 Este documento ajuda você a usar o recurso de investigação (versão prévia) na central de segurança do Azure para investigar incidentes de segurança e alertas.
@@ -65,11 +64,11 @@ A guia **Entidades** mostra todas as entidades relacionadas agrupadas por tipo. 
 
 ![Entidades](./media/security-center-investigation/security-center-investigation-fig4.png)
 
-### <a name="search"></a>Pesquisar
+### <a name="search"></a>Pesquisa
 
 A guia **Pesquisa** apresenta todos os tipos de log que estão disponíveis para a entidade. Para cada tipo de log, você pode ver quantos registros estão disponíveis. Clicar em cada tipo de log leva você para a tela de pesquisa. Na tela de pesquisa, você pode refinar a pesquisa e usar os diversos recursos de pesquisa, como definição de alertas. Na versão atual, a guia de pesquisa está disponível somente para entidades usuários e computadores.
 
-![Pesquisar](./media/security-center-investigation/security-center-investigation-fig5.png)
+![Pesquisa](./media/security-center-investigation/security-center-investigation-fig5.png)
 
 ### <a name="exploration"></a>Exploração
 

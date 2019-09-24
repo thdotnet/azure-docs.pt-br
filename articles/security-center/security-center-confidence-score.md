@@ -3,9 +3,8 @@ title: Pontuação de confiança na Central de Segurança do Azure | Microsoft D
 description: " Saiba como trabalhar com a pontuação de confiança da Central de Segurança do Azure. "
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: e88198f8-2e16-409d-a0b0-a62e68c2f999
 ms.service: security-center
 ms.devlang: na
@@ -13,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/23/2018
-ms.author: rkarlin
-ms.openlocfilehash: 64bab5c1b99720eecb189834d7a11802cf919ca3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: memildin
+ms.openlocfilehash: 0f0380ca4a285d9cb4a8472a40c77130a8f63035
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60916556"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71202383"
 ---
 # <a name="alert-confidence-score"></a>Pontuação de confiança de alerta 
 
