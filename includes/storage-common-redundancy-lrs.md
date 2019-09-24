@@ -5,21 +5,23 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 06/28/2019
+ms.date: 09/23/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: b4b050befe160d69fbc44b7f0a2ebbbbad3d705a
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: 8908ded31b96aac50db1fc25e92c2c0a8e960453
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69015934"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219020"
 ---
-O armazenamento localmente redundante (LRS) fornece pelo menos 99,999999999% (11 noves) de durabilidade dos objetos em um determinado ano. O LRS fornece a durabilidade deste objeto, replicando seus dados para uma unidade de escala de armazenamento. Um datacenter, localizado na região onde você criou sua conta de armazenamento, hospeda a unidade de escala de armazenamento. Uma solicitação de gravação para uma conta de armazenamento LRS é retornada com êxito somente depois que os dados são gravados em todas as réplicas. Cada réplica reside em domínios de falha separados e atualiza domínios dentro de uma unidade de escala de armazenamento.
+O LRS (armazenamento com redundância local) Replica seus dados três vezes em um único data center. O LRS fornece pelo menos 99,999999999% (11 noves) de durabilidade de objetos em um determinado ano. O LRS é a opção de replicação de menor custo e oferece a menor durabilidade em comparação com outras opções.
 
-Uma unidade de escala de armazenamento é uma coleção de racks de nós de armazenamento. Um domínio de falha (FD) é um grupo de nós que representa uma unidade física de falha. Pense em um domínio de falha como nós pertencentes ao mesmo rack físico. Um domínio de atualização (UD) é um grupo de nós atualizados em conjunto durante o processo de atualização de um serviço (distribuição). As réplicas estão difundidas entre UDs e FDs em uma unidade de escala de armazenamento. Essa arquitetura garante que seus dados estejam disponíveis se uma falha de hardware afetar um único rack ou quando os nós forem atualizados durante um upgrade de serviço.
+Se ocorrer um desastre no nível de datacenter (por exemplo, incêndio ou inundação), todas as réplicas em uma conta de armazenamento usando LRS poderão ser perdidas ou irrecuperáveis. Para atenuar esse risco, a Microsoft recomenda o uso de armazenamento com redundância de zona (ZRS), armazenamento com redundância geográfica (GRS) ou armazenamento com redundância de zona geográfica (GZRS).
 
-O LRS é a opção de replicação de menor custo e oferece a menor durabilidade em comparação com outras opções. Em caso de desastre no nível de datacenter (por exemplo, incêndio, inundação etc.), as réplicas podem ser perdidas ou ficar irrecuperáveis. Para atenuar esse risco, a Microsoft recomenda o uso de armazenamento com redundância de zona (ZRS), armazenamento com redundância geográfica (GRS) ou armazenamento com redundância de zona geográfica (GZRS).
+Uma solicitação de gravação para uma conta de armazenamento LRS retorna com êxito somente depois que os dados são gravados em todas as três réplicas.
+
+Talvez você queira usar o LRS nos seguintes cenários:
 
 * Se seu aplicativo armazenar dados que possam ser facilmente reconstruídos, você pode optar por LRS.
 * Alguns aplicativos são restritos à replicação de dados somente em um país/região devido a requisitos de governança de dados. Em alguns casos, as regiões emparelhadas em que os dados são replicados para contas GRS podem estar em outro país/região. Para obter mais informações sobre pares de regiões, consulte [Regiões do Azure](https://azure.microsoft.com/regions/).

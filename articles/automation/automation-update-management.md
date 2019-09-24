@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f4816ea2dc67df717e46df61c955d6d156b14d7e
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: 253e01b6bfa6609b4ec41d69a3c4b1bbe405ba5a
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71129674"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240280"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -71,11 +71,11 @@ Não há suporte para um computador registrado para Gerenciamento de Atualizaç�
 
 ### <a name="supported-client-types"></a>Tipos de clientes com suporte
 
-A tabela a seguir mostra uma lista de sistemas operacionais com suporte:
+A tabela a seguir mostra uma lista de sistemas operacionais com suporte para avaliações de atualização. A aplicação de patch requer um Hybrid Runbook Worker. Para obter informações sobre requisitos de Hybrid Runbook Worker, consulte os guias de instalação do [Windows HRW](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker) e [Linux HRW](automation-linux-hrw-install.md#installing-a-linux-hybrid-runbook-worker).
 
 |Sistema operacional  |Observações  |
 |---------|---------|
-|Windows Server 2019 (datacenter/Data Center Core/Standard)<br><br>Windows Server 2016 (datacenter/Data Center Core/Standard)<br><br>Windows Server 2012 R2 (datacenter/padrão)<br><br>Windows Server 2012<br><br>Windows Server 2008 R2 (RTM e SP1 Standard)|**Avaliações de atualização**: Suportado<br><br>**Aplicação de patch**: Requer Hybrid Runbook Worker. Consulte [os requisitos de Hybrid runbook Worker](automation-windows-hrw-install.md#installing-the-windows-hybrid-runbook-worker)|
+|Windows Server 2019 (datacenter/Data Center Core/Standard)<br><br>Windows Server 2016 (datacenter/Data Center Core/Standard)<br><br>Windows Server 2012 R2 (datacenter/padrão)<br><br>Windows Server 2012<br><br>Windows Server 2008 R2 (RTM e SP1 Standard)||
 |CentOS 6 (x86/x64) e 7 (x64)      | Os agentes do Linux devem ter acesso a um repositório de atualização. O patch baseado em classificação requer que o yum retorne dados de segurança que o CentOS não possui. Para obter mais informações sobre aplicação de patch com base em classificação no CentOS, consulte [Atualizar classificações no Linux](#linux-2)          |
 |Red Hat Enterprise 6 (x86/x64) e 7 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
 |SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
@@ -250,6 +250,9 @@ Para criar uma nova implantação de atualização, selecione **Agendar implanta
 
 As implantações de atualização também podem ser criadas programaticamente. Para aprender a criar uma Implantação de atualização com a API REST, consulte [Configurações de atualização de software - Criar](/rest/api/automation/softwareupdateconfigurations/create). Também é um exemplo de runbook que pode ser usado para criar uma implantação de atualização semanal. Para saber mais sobre este runbook, consulte [Criar uma implantação de atualização semanal para uma ou mais VMs em um grupo de recursos](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1).
 
+> [!NOTE]
+> As chaves do registro listadas em [chaves do registro usadas para gerenciar](/windows/deployment/update/waas-restart#registry-keys-used-to-manage-restart) a reinicialização podem causar um evento de reinicialização se o **controle de reinicialização** for definido como **nunca**
+
 ### <a name="maintenance-windows"></a>Janelas de manutenção
 
 As janelas de manutenção controlam a quantidade de tempo permitida para a instalação das atualizações. Considere os detalhes a seguir ao especificar uma janela de manutenção.
@@ -387,7 +390,7 @@ Além dos detalhes fornecidos no portal do Azure, você pode fazer as pesquisas 
 Você também pode aprender a personalizar as consultas ou usá-las de clientes diferentes e mais visitando:  [Documentação da API de pesquisa do Log Analytics](
 https://dev.loganalytics.io/).
 
-### <a name="sample-queries"></a>Consultas de exemplo
+### <a name="sample-queries"></a>Consultas de amostra
 
 As seções a seguir fornecem consultas de log de exemplo para registros de atualizações que são coletados por essa solução:
 
@@ -610,7 +613,7 @@ Esses grupos são definidos por uma consulta, quando uma implantação de atuali
 * Localizações
 * tags
 
-![Selecionar grupos](./media/automation-update-management/select-groups.png)
+![Selecione grupos](./media/automation-update-management/select-groups.png)
 
 Para visualizar os resultados de um grupo dinâmico, clique no botão **Visualizar**. Esta pré-visualização mostra a associação ao grupo nesse momento, neste exemplo, estamos pesquisando máquinas com a tag **A função** é igual a **BackendServer**. Se mais computadores tiverem essa marca adicionada, eles serão adicionados a quaisquer implantações futuras em relação a esse grupo.
 
@@ -620,7 +623,7 @@ Para visualizar os resultados de um grupo dinâmico, clique no botão **Visualiz
 
 Para computadores não Azure, as pesquisas salvas também conhecidas como grupos de computadores são usadas para criar o grupo dinâmico. Para saber como criar uma pesquisa salva, consulte [criando um grupo de computadores](../azure-monitor/platform/computer-groups.md#creating-a-computer-group). Depois que o grupo for criado, você poderá selecioná-lo na lista de pesquisas salvas. Clique em **Visualizar** para visualizar os computadores na pesquisa salva naquele momento.
 
-![Selecionar grupos](./media/automation-update-management/select-groups-2.png)
+![Selecione grupos](./media/automation-update-management/select-groups-2.png)
 
 ## <a name="integrate-with-system-center-configuration-manager"></a>Integração com o System Center Configuration Manager
 

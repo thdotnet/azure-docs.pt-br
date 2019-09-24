@@ -1,6 +1,6 @@
 ---
-title: Conectar-se dados Symantec ICDx para versão prévia do Azure Sentinel | Microsoft Docs
-description: Saiba como se conectar a dados Symantec ICDx a Sentinela do Azure.
+title: Conectar dados do Symantec ICDx ao Azure Sentinel | Microsoft Docs
+description: Saiba como conectar dados do Symantec ICDx ao Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -13,71 +13,69 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/04/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 74169b4bd2654fb0ff7ec4cdb2f2b02c0f4cc6e8
-ms.sourcegitcommit: 80aaf27e3ad2cc4a6599a3b6af0196c6239e6918
+ms.openlocfilehash: 0250780c85041c07fabf7d5ed268d1f3cdb63e18
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67673745"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240643"
 ---
-# <a name="connect-your-symantec-icdx-appliance"></a>Conectar seu dispositivo Symantec ICDx 
+# <a name="connect-your-symantec-icdx-appliance"></a>Conecte seu dispositivo Symantec ICDx 
 
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Symantec ICDx conector permite que você se conecte facilmente todos os seus logs de solução de segurança Symantec com seu Sentinel do Azure, para exibir painéis, criar alertas personalizados e melhorará a investigação. Isso fornece mais informações sobre a rede da sua organização e aprimora sua capacidade de operação de segurança. Integração entre Symantec ICDx e o Azure Sentinel faz uso da API REST.
+
+O conector do Symantec ICDx permite que você conecte facilmente todos os seus logs de solução de segurança da Symantec com sua Sentinela do Azure, exiba painéis, crie alertas personalizados e melhore a investigação. Isso lhe dá mais informações sobre a rede da sua organização e aprimora seus recursos de operação de segurança. A integração entre o Symantec ICDx e o Azure Sentinel usa a API REST.
 
 
 > [!NOTE]
-> Os dados serão armazenados na localização geográfica do espaço de trabalho no qual você está executando Sentinel do Azure.
+> Os dados serão armazenados na localização geográfica do espaço de trabalho no qual você está executando o Azure Sentinel.
 
-## <a name="configure-and-connect-symantec-icdx"></a>Configurar e conectar Symantec ICDx 
+## <a name="configure-and-connect-symantec-icdx"></a>Configurar e conectar o Symantec ICDx 
 
-Symantec ICDx pode integrar e exportar logs diretamente para o Azure Sentinel.
+O Symantec ICDx pode integrar e exportar logs diretamente para o Azure Sentinel.
 
-1. Abra o Console de gerenciamento ICDx para adicionar encaminhadores do Microsoft Azure Sentinel (Log Analytics).
-2. Na barra de navegação ICDx, clique em **configuração**. 
-3. Na parte superior a **Configuration** tela, clique em **encaminhadores**.
-4. Sob **encaminhadores**, ao lado do Microsoft Azure Sentinel (Log Analytics), clique em **Add**. 
-4. No **Microsoft Azure Sentinel (Log Analytics)** janela, clique em **Mostrar avançado**. 
-5. Na parte superior da expandidos para janela do Microsoft Azure Sentinel (Log Analytics), faça o seguinte:
-    -   **Nome**: Digite um nome para o encaminhador que tem não mais do que 30 caracteres. Escolha um nome exclusivo e significativo. Esse nome aparece na lista de encaminhadores na **Configuration** tela e nos painéis na **painel** tela. Por exemplo: Microsoft Azure Log Analytics East. Esse campo é obrigatório.
-    -   **Descrição**: Digite uma descrição para o encaminhador. Essa descrição também aparece na lista de encaminhadores na **configuração** tela. Incluem detalhes como o tipo de evento que está sendo encaminhado e o grupo que precisa para inspecionar os dados.
-    -   **Tipo de inicialização**: Selecione o método de inicialização para a configuração do encaminhador. As opções são manuais e automáticas.<br>O padrão é automático. 
-6. Sob **eventos**, faça o seguinte: 
-    - **Fonte**: Selecione um ou mais arquivos dos quais encaminhar eventos. Você pode selecionar o Active Directory coletor arquivos mortos (incluindo o arquivamento comum), órfãos arquivos mortos do coletor (ou seja, arquivos mortos para os coletores que foram excluídos), arquivos mortos do receptor ICDx ou o arquivo do sistema. <br>O padrão é comum de arquivamento.
+1. Abra o console de gerenciamento do ICDx para adicionar encaminhadores Microsoft Azure Sentinel (Log Analytics).
+2. Na barra de navegação do ICDx, clique em **configuração**. 
+3. Na parte superior da tela de **configuração** , clique em **encaminhadores**.
+4. Em **encaminhadores**, ao lado de Microsoft Azure sentinela (log Analytics), clique em **Adicionar**. 
+4. Na janela **Microsoft Azure sentinela (log Analytics)** , clique em **Mostrar avançado**. 
+5. Na parte superior da janela expandida para Microsoft Azure sentinela (Log Analytics), faça o seguinte:
+    -   **Nome**: Digite um nome para o encaminhador que não tenha mais de 30 caracteres. Escolha um nome exclusivo e significativo. Esse nome aparece na lista de encaminhadores na tela de **configuração** e nos painéis na tela do **painel** . Por exemplo: Microsoft Azure Log Analytics leste. Esse campo é obrigatório.
+    -   **Descrição**: Digite uma descrição para o encaminhador. Essa descrição também aparece na lista de encaminhadores na tela de **configuração** . Inclua detalhes como o tipo de evento que está sendo encaminhado e o grupo que precisa inspecionar os dados.
+    -   **Tipo de inicialização**: Selecione o método de inicialização para a configuração do encaminhador. Suas opções são manual e automática.<br>O padrão é automático. 
+6. Em **eventos**, faça o seguinte: 
+    - **Fonte**: Selecione um ou mais arquivos dos quais deseja encaminhar eventos. Você pode selecionar arquivos de coletor ativos (incluindo o arquivo comum), arquivos de coletor órfãos (ou seja, arquivos para os coletores que você excluiu), arquivos de receptor de ICDx ou o arquivo morto do sistema. <br>O padrão é arquivo comum.
       > [!NOTE]
-      > Arquivos mortos do receptor ICDx são listados separadamente, por nome. 
+      > Os arquivos mortos do receptor ICDx são listados separadamente, por nome. 
  
-    - **Filtro**: Adicione um filtro que especifica o subconjunto de eventos para encaminhar. Realize um dos seguintes procedimentos:
+    - **Filtro**: Adicione um filtro que especifica o subconjunto de eventos a serem encaminhadas. Faça uma das opções a seguir:
         - Para selecionar uma condição de filtro, clique em um tipo, atributo, operador e valor. 
-        - No campo de filtro, revise sua condição de filtro. Você pode editá-lo diretamente no campo ou excluí-lo conforme necessário.
-        - Clique e ou ou para adicionar a condição de filtro.
+        - No campo filtro, examine sua condição de filtro. Você pode editá-lo diretamente no campo ou excluí-lo conforme necessário.
+        - Clique em e ou ou em para adicionar à condição de filtro.
         - Você também pode clicar em consultas salvas para aplicar uma consulta salva.
-    - **Incluído atributos**: Digite a lista delimitada por vírgulas de atributos a serem incluídos nos dados encaminhados. Os atributos incluídos têm precedência sobre atributos excluídos.
+    - **Atributos incluídos**: Digite a lista delimitada por vírgulas de atributos a serem incluídos nos dados encaminhados. Os atributos incluídos têm precedência sobre atributos excluídos.
     - **Atributos excluídos**: Digite a lista delimitada por vírgulas de atributos a serem excluídos dos dados encaminhados.
-    - **Tamanho do lote**: Selecione o número de eventos a serem enviados por lote. As opções são 10, 50, 100, 500 e 1000.<br>O padrão é 100. 
-    - **Limite de taxa**: Selecione a taxa na qual os eventos serão encaminhados, expresso como eventos por segundo. Suas opções são ilimitado, 500, 1000, 5000, 10000. <br> O padrão é 5000. 
-7. Sob **destino do Azure**, faça o seguinte: 
+    - **Tamanho do lote**: Selecione o número de eventos a serem enviados por lote. Suas opções são 10, 50, 100, 500 e 1000.<br>O padrão é 100. 
+    - **Limite de taxa**: Selecione a taxa na qual os eventos são encaminhados, expressos como eventos por segundo. Suas opções são ilimitadas, 500, 1000, 5000, 10000. <br> O padrão é 5000. 
+7. Em **destino do Azure**, faça o seguinte: 
     - **ID do espaço de trabalho**: Cole a ID do espaço de trabalho abaixo. Esse campo é obrigatório.
     - **Chave primária**: Cole a chave primária abaixo. Esse campo é obrigatório.
-    - **Nome de Log personalizado**: Digite o nome de log personalizado no Microsoft Azure portal do Log Analytics espaço de trabalho ao qual você pretende encaminhar eventos. O padrão é SymantecICDx. Esse campo é obrigatório.
+    - **Nome do log personalizado**: Digite o nome do log personalizado no espaço de trabalho portal do Microsoft Azure Log Analytics para o qual você vai encaminhar eventos. O padrão é SymantecICDx. Esse campo é obrigatório.
 8. Clique em *salvar* para concluir a configuração do encaminhador. 
-9. Para iniciar o encaminhador, sob **opções**, clique em **mais** e, em seguida, **iniciar**.
-10. Para usar o esquema relevante no Log Analytics para os eventos Symantec ICDx, pesquise **SymantecICDx_CL**.
+9. Para iniciar o encaminhador, em **Opções**, clique em **mais** e em **Iniciar**.
+10. Para usar o esquema relevante em Log Analytics para os eventos do Symantec ICDx, pesquise **SymantecICDx_CL**.
 
 
 ## <a name="validate-connectivity"></a>Validar a conectividade
 
-Pode levar mais de 20 minutos até que seus logs comecem a aparecer no Log Analytics. 
+Pode levar até 20 minutos até que os logs comecem a aparecer na Log Analytics. 
 
 
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste documento, você aprendeu como se conectar a Symantec ICDx a Sentinela do Azure. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
-- Saiba como [Obtenha visibilidade sobre seus dados e possíveis ameaças](quickstart-get-visibility.md).
-- Introdução ao [detecção de ameaças com o Azure Sentinel](tutorial-detect-threats.md).
+Neste documento, você aprendeu a conectar o Symantec ICDx ao Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
+- Saiba como [obter visibilidade de seus dados e ameaças potenciais](quickstart-get-visibility.md).
+- Comece [a detectar ameaças com o Azure Sentinel](tutorial-detect-threats-built-in.md).
 

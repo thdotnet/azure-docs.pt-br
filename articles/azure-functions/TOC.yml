@@ -54,7 +54,7 @@
     - name: Functions com Aplicativos Lógicos
       href: functions-twitter-email.md
     - name: Desenvolver funções Python com o VS Code
-      href: tutorial-vs-code-serverless-python.md
+      href: /azure/python/tutorial-vs-code-serverless-python-01
     - name: Definição de OpenAPI para APIs sem servidor
       href: functions-openapi-definition.md
     - name: Conectar-se a uma rede virtual

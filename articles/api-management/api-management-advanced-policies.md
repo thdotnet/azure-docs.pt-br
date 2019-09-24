@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: apimpm
-ms.openlocfilehash: efc439d56ee864d940942369b3d226ed2a94a383
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 166ff5f8866fca955cbe99c5896eb509f52261f6
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072626"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219555"
 ---
 # <a name="api-management-advanced-policies"></a>Políticas avançadas de Gerenciamento de API
 
@@ -38,7 +38,7 @@ Este tópico fornece uma referência para as políticas de Gerenciamento de API 
 -   [Definir método de solicitação](#SetRequestMethod) - Permite alterar o método HTTP de uma solicitação.
 -   [Definir código de status](#SetStatus) – altera o código de status de HTTP para o valor especificado.
 -   [Definir variável](api-management-advanced-policies.md#set-variable) – persiste um valor em uma variável de [contexto](api-management-policy-expressions.md#ContextVariables) nomeada para acesso posterior.
--   [Rastreamento](#Trace) - adiciona uma cadeia de caracteres para a saída do [Inspetor de API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/).
+-   [Trace](#Trace) – adiciona rastreamentos personalizados na saída do [Inspetor de API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) , Application insights telemetrias e logs de diagnóstico.
 -   [Aguardar](#Wait) – aguarda a conclusão das políticas [Enviar solicitação](api-management-advanced-policies.md#SendRequest), [Obter valor do cache](api-management-caching-policies.md#GetFromCacheByKey) ou [Controlar fluxo](api-management-advanced-policies.md#choose) antes de continuar.
 
 ## <a name="choose"></a> Controlar fluxo
@@ -252,7 +252,7 @@ Essa política de nível de operação não encaminha solicitações para o serv
 
 | Atributo                               | Descrição                                                                                                      | Necessário | Padrão     |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| timeout="integer"                       | A quantidade de tempo em segundos a aguardar que os cabeçalhos de resposta HTTP sejam retornados pelo serviço de back-end antes que um erro de tempo limite seja gerado. O valor mínimo é 0 segundos. Valores maiores que 240 segundos podem não ser respeitados, pois a infraestrutura de rede subjacente pode descartar conexões ociosas após esse tempo. | Não       | Nenhum |
+| timeout="integer"                       | A quantidade de tempo em segundos a aguardar que os cabeçalhos de resposta HTTP sejam retornados pelo serviço de back-end antes que um erro de tempo limite seja gerado. O valor mínimo é 0 segundos. Valores maiores que 240 segundos podem não ser respeitados, pois a infraestrutura de rede subjacente pode descartar conexões ociosas após esse tempo. | Não       | Nenhuma |
 | follow-redirects="true &#124; false"    | Especifica se os redirecionamentos do serviço de back-end são seguidos pelo gateway ou retornados ao chamador.      | Não       | false       |
 | buffer-request-body="true &#124; false" | Quando definido como "true", a solicitação é armazenada em buffer e será reutilizada na [nova tentativa](api-management-advanced-policies.md#Retry). | Não       | false       |
 
@@ -402,7 +402,7 @@ status code and media type. If no example or schema found, the content is empty.
 | Atributo    | Descrição                                                                                           | Necessário | Padrão |
 | ------------ | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
 | status-code  | Especifica o código de status da resposta e é usado para selecionar o exemplo ou o esquema correspondente.                 | Não       | 200     |
-| content-type | Especifica o valor de cabeçalho da resposta `Content-Type` e é usado para selecionar o exemplo ou o esquema correspondente. | Não       | Nenhum    |
+| content-type | Especifica o valor de cabeçalho da resposta `Content-Type` e é usado para selecionar o exemplo ou o esquema correspondente. | Não       | Nenhuma    |
 
 ### <a name="usage"></a>Uso
 
@@ -913,16 +913,31 @@ As expressões usadas na política `set-variable` devem retornar um dos seguinte
 
 ## <a name="Trace"></a> Rastreamento
 
-A `trace` política adiciona uma cadeia de caracteres à saída do [Inspetor de API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) . A política será executada somente quando o rastreamento for disparado, ou seja, o cabeçalho de solicitação `Ocp-Apim-Trace` está presente e definido como `true` e o cabeçalho de solicitação `Ocp-Apim-Subscription-Key` está presente e contém uma chave válida associada à conta do administrador.
+A `trace` política adiciona um rastreamento personalizado à saída do Inspetor de API, Application insights telemetrias e/ou logs de diagnóstico. 
+
+* A política adiciona um rastreamento personalizado à saída do [Inspetor de API](https://azure.microsoft.com/documentation/articles/api-management-howto-api-inspector/) quando o rastreamento é disparado, ou seja `Ocp-Apim-Trace` , o cabeçalho da solicitação está presente e definido como true e `Ocp-Apim-Subscription-Key` o cabeçalho da solicitação está presente e contém uma chave válida que permite o rastreamento. 
+* A política cria uma telemetria de [rastreamento](https://docs.microsoft.com/azure/azure-monitor/app/data-model-trace-telemetry) no Application insights, quando [Application insights integração](https://docs.microsoft.com/azure/api-management/api-management-howto-app-insights) está habilitada e o `severity` nível especificado na política `verbosity` é em ou superior ao nível especificado no diagnóstico configuração. 
+* A política adiciona uma propriedade na entrada de log quando [os logs de diagnóstico](https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-azure-monitor#diagnostic-logs) estão habilitados e o nível de severidade especificado na política é ou superior ao nível de detalhes especificado na configuração de diagnóstico.  
+
 
 ### <a name="policy-statement"></a>Declaração de política
 
 ```xml
 
-<trace source="arbitrary string literal">
-    <!-- string expression or literal -->
+<trace source="arbitrary string literal" severity="verbose|information|error">
+    <message>String literal or expressions</message>
+    <metadata name="string literal or expressions" value="string literal or expressions"/>
 </trace>
 
+```
+
+### <a name="traceExample"></a> Exemplo
+
+```xml
+<trace source="PetStore API" severity="verbose">
+    <message>@((string)context.Variables["clientConnectionID"])</message>
+    <metadata name="Operation Name" value="New-Order"/>
+</trace>
 ```
 
 ### <a name="elements"></a>Elementos
@@ -930,12 +945,17 @@ A `trace` política adiciona uma cadeia de caracteres à saída do [Inspetor de 
 | Elemento | Descrição   | Necessário |
 | ------- | ------------- | -------- |
 | trace   | Elemento raiz. | Sim      |
+| mensagem | Uma cadeia de caracteres ou expressão a ser registrada. | Sim |
+| metadata | Adiciona uma propriedade personalizada à telemetria de [rastreamento](https://docs.microsoft.com/en-us/azure/azure-monitor/app/data-model-trace-telemetry) de Application insights. | Não |
 
 ### <a name="attributes"></a>Atributos
 
 | Atributo | Descrição                                                                             | Necessário | Padrão |
 | --------- | --------------------------------------------------------------------------------------- | -------- | ------- |
 | fonte    | Literal de cadeia de caracteres significativo para o visualizador de rastreamento e especificando a fonte da mensagem. | Sim      | N/D     |
+| severidade    | Especifica o nível de severidade do rastreamento. Os valores permitidos `verbose`são `information`, `error` , (do mais baixo ao mais alto). | Não      | Detalhado     |
+| name    | Nome da propriedade. | Sim      | N/D     |
+| value    | Valor da propriedade. | Sim      | N/D     |
 
 ### <a name="usage"></a>Uso
 

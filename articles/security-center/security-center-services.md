@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/29/2019
+ms.date: 09/24/2019
 ms.author: memildin
-ms.openlocfilehash: 97708fa3211aa203aab56253b1c7720d04329014
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: ad662cdeb0a87e57eb9e3e7480d120be1c6c729e
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71200821"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218266"
 ---
 # <a name="supported-features-available-in-azure-security-center"></a>Recursos com suporte disponíveis na central de segurança do Azure
 
@@ -41,7 +41,7 @@ As seções a seguir mostram os recursos da central de segurança que estão dis
 ||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**||**Máquina Virtual**|**Conjunto de Dimensionamento de Máquinas Virtuais**|
 |Alertas de detecção de ameaças VMBA|✔|✔|✔|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|Recomendações (gratuito) detecção de ameaças (padrão)|
 |Alertas de detecção de ameaças baseadas em rede|✔|✔|X|✔|✔|X|Standard|
-|Integração com o Windows Defender ATP|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|X|X|X|Standard|
+|Integração do Microsoft defender ATP|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|X|X|X|Standard|
 |Patches ausentes|✔|✔|✔|✔|✔|✔|Gratuito|
 |Configurações de segurança|✔|✔|✔|✔|✔|✔|Gratuito|
 |Avaliação do Endpoint Protection|✔|✔|✔|X|X|X|Gratuito|

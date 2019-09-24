@@ -1,5 +1,5 @@
 ---
-title: Recursos úteis ao trabalhar com a visualização do Azure Sentinel | Microsoft Docs
+title: Recursos úteis ao trabalhar com o Azure Sentinel | Microsoft Docs
 description: Este documento fornece uma lista de recursos úteis ao trabalhar com o Azure Sentinel.
 services: sentinel
 documentationcenter: na
@@ -13,27 +13,29 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 8/14/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 138efd7cba80e288c4f8831b45272f4e46c8ee3f
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 6634920b1efa3cd24267aca8bcf53587754caa66
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036231"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71239974"
 ---
-# <a name="useful-resources-for-working-with-azure-sentinel-preview"></a>Recursos úteis para trabalhar com a visualização do Azure Sentinel
+# <a name="useful-resources-for-working-with-azure-sentinel"></a>Recursos úteis para trabalhar com o Azure Sentinel
 
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Este artigo lista os recursos que podem ajudá-lo a obter mais informações sobre como trabalhar com o Azure Sentinel.
 
 Conectores de aplicativos lógicos do Azure:<https://docs.microsoft.com/connectors/>
 
-## <a name="vendor-documentation"></a>Documentação do fornecedor
 
+## <a name="auditing-and-reporting"></a>Auditoria e relatórios
+Os logs de auditoria do Azure Sentinel são mantidos nos [logs de atividades do Azure](../azure-monitor/platform/activity-logs-overview.md).
+
+
+## <a name="vendor-documentation"></a>Documentação do fornecedor
 
 | **Fornecedor**  | **Usar o incidente no Azure Sentinel** | **Link**|
 |----|----|----|

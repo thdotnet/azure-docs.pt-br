@@ -8,26 +8,26 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: heidist
-ms.openlocfilehash: 44a8136c4e02d4eceb5b11231bbbfed010159e75
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: e3240ca40b9dcf866c5e4a5cf570b5575b7586d8
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71172850"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240349"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-search"></a>Como indexar grandes conjuntos de dados no Azure Search
 
-À medida que os volumes de dados crescem ou as necessidades de processamento mudam, você pode descobrir que estratégias de indexação simples ou padrão não são mais produtivas. Para o Azure Search, há várias abordagens para acomodar os conjuntos de dados maiores, variando de como uma solicitação de upload de dados é estruturada, usando um indexador específico de fonte para cargas de trabalho agendadas e distribuídas.
+À medida que os volumes de dados crescem ou as necessidades de processamento mudam, você pode descobrir que as estratégias de indexação simples ou padrão não são mais práticas. Para o Azure Search, há várias abordagens para acomodar os conjuntos de dados maiores, variando de como uma solicitação de upload de dados é estruturada, usando um indexador específico de fonte para cargas de trabalho agendadas e distribuídas.
 
-As mesmas técnicas para dados grandes também se aplicam aos processos de longa execução. Em particular, as etapas descritas em [indexação paralela](#parallel-indexing) são úteis para indexação de computação intensa, como análise de imagem ou o processamento em linguagem natural em [pipelines de pesquisa cognitiva](cognitive-search-concept-intro.md).
+As mesmas técnicas também se aplicam a processos de execução longa. Em particular, as etapas descritas em [indexação paralela](#parallel-indexing) são úteis para indexação de computação intensa, como análise de imagem ou o processamento em linguagem natural em [pipelines de pesquisa cognitiva](cognitive-search-concept-intro.md).
 
 As seções a seguir exploram três técnicas para indexar grandes quantidades de dados.
 
 ## <a name="option-1-pass-multiple-documents"></a>Opção 1: Passar vários documentos
 
-Um dos mecanismos mais simples para indexação de um conjunto de dados maior é enviar vários documentos ou registros em uma única solicitação. Como a carga inteira é menor que 16 MB, uma solicitação pode manipular até 1000 documentos em uma operação de upload em massa. Esses limites se aplicam se você estiver usando a [API REST](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) ou [IndexBatch](https://docs.microsoft.com/otnet/api/microsoft.azure.search.models.indexbatch?view=azure-dotnet) no SDK do .net. Para qualquer uma das APIs, você deve empacotar 1000 documentos no corpo de cada solicitação.
+Um dos mecanismos mais simples para indexação de um conjunto de dados maior é enviar vários documentos ou registros em uma única solicitação. Como a carga inteira é menor que 16 MB, uma solicitação pode manipular até 1000 documentos em uma operação de upload em massa. Esses limites se aplicam se você estiver usando a classe [Add Documents (REST)](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) ou [index](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) no SDK do .net. Para qualquer uma das APIs, você deve empacotar 1000 documentos no corpo de cada solicitação.
 
-A indexação de lotes é implementada em solicitações individuais usando REST, .NET ou por meio de indexadores. Alguns indexadores operam sob limites diferentes. Especificamente, a indexação de BLOb do Azure define o tamanho do lote em 10 documentos ao reconhecer o maior tamanho médio do documento. Para indexadores com base em [Criar o indexador do API REST](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer ), pode-se definir o `BatchSize` argumento para personalizar essa configuração para corresponder melhor as características de seus dados. 
+A indexação de lotes é implementada em solicitações individuais usando REST, .NET ou por meio de indexadores. Alguns indexadores operam sob limites diferentes. Especificamente, a indexação de BLOb do Azure define o tamanho do lote em 10 documentos ao reconhecer o maior tamanho médio do documento. Para indexadores com base no [REST (criar indexador)](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer ), você pode definir o `BatchSize` argumento para personalizar essa configuração para corresponder melhor às características de seus dados. 
 
 > [!NOTE]
 > Para manter o tamanho do documento inativo, evite adicionar dados não consultáveis a um índice. Imagens e outros dados binários não podem ser diretamente consultados e não devem ser armazenados no índice. Para integrar dados que não podem ser consultados aos resultados da pesquisa, defina um campo não pesquisável que armazene uma referência uma URL para o recurso.
@@ -40,11 +40,11 @@ O aumento de réplicas e partições são eventos faturáveis que aumentam seu c
 
 ## <a name="option-3-use-indexers"></a>Opção 3: Uso de Indexadores
 
-Os [indexadores](search-indexer-overview.md) são usados para rastrear fontes de dados externas em plataformas de dados do Azure com suporte para conteúdo pesquisável. Enquanto não são especificamente destinados a indexação em larga escala, vários recursos do indexador são particularmente úteis para acomodar grandes conjuntos de dados:
+[Indexadores](search-indexer-overview.md) são usados para rastrear fontes de dados do Azure com suporte para conteúdo pesquisável. Enquanto não são especificamente destinados a indexação em larga escala, vários recursos do indexador são particularmente úteis para acomodar grandes conjuntos de dados:
 
 + Agendadores permitem dividir a indexação em intervalos regulares para que se possa distribuí-la ao longo do tempo.
 + A indexação agendada pode retomar no último ponto de interrupção conhecido. Se uma fonte de dados não é rastreada totalmente dentro de uma janela de 24 horas, o indexador retomará a indexação no dia dois e em onde ela parou.
-+ A partição de dados em fontes de dados individuais menores habilita o processamento paralelo. Você pode dividir um conjunto de dados grande em conjuntos de dados menores e, em seguida, criar várias definições de fonte de dados do indexador que podem ser indexadas em paralelo.
++ A partição de dados em fontes de dados individuais menores habilita o processamento paralelo. Você pode dividir um conjunto de dados grande em conjuntos de dados menores em sua plataforma de dados de origem (como o armazenamento de BLOBs do Azure ou o Azure SQL Database) e, em seguida, criar vários [objetos de fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source) em Azure Search que podem ser indexados em paralelo.
 
 > [!NOTE]
 > Os indexadores são fontes-de-dados-específicos, portanto, usar uma abordagem do indexador só é viável para fontes de dados selecionadas no Azure: [Banco de Dados SQL do Microsoft Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md), [armazenamento de BLOB](search-howto-indexing-azure-blob-storage.md), [armazenamento de tabelas](search-howto-indexing-azure-tables.md), [Cosmos DB](search-howto-index-cosmosdb.md).

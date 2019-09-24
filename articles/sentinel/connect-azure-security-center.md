@@ -1,6 +1,6 @@
 ---
-title: Conectar-se a dados da Central de segurança do Azure para visualização do Azure Sentinel | Microsoft Docs
-description: Saiba como se conectar a dados da Central de segurança do Azure para Azure Sentinel.
+title: Conectando dados da central de segurança do Azure ao Azure Sentinel | Microsoft Docs
+description: Saiba como conectar dados da central de segurança do Azure ao Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -13,44 +13,45 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/07/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 697983000f84f9e4efe7e2c8ef9dbb2f636e0735
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: a9c210531f2c4cab1c3c023eab795023c3ad9f0c
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620569"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240215"
 ---
-# <a name="connect-data-from-azure-security-center"></a>Conecte dados da Central de segurança do Azure
-
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="connect-data-from-azure-security-center"></a>Conectar dados da central de segurança do Azure
 
 
 
-Sentinela Azure lhe permite conectar os alertas do [Central de segurança do Azure](../security-center/security-center-intro.md) e transmiti-los para o Azure Sentinel. 
+
+
+O Azure Sentinel permite que você conecte alertas da [central de segurança do Azure](../security-center/security-center-intro.md) e transmita-os para o Azure Sentinel. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Se você quiser exportar alertas da Central de segurança do Azure, você deve ser um colaborador na assinatura cujos logs você transmitir.
+- Se você deseja exportar alertas da central de segurança do Azure, você deve ser um colaborador na assinatura cujos logs são transmitidos.
 
-- Você deve ter o [camada Standard de Central de segurança do Azure](../security-center/security-center-pricing.md) em execução na assinatura. Caso contrário, [atualizar sua assinatura para o padrão](https://azure.microsoft.com/pricing/details/security-center/).
+- Você deve ter a [camada Standard da central de segurança do Azure](../security-center/security-center-pricing.md) em execução na assinatura. Caso contrário, [Atualize sua assinatura para Standard](https://azure.microsoft.com/pricing/details/security-center/).
 
-- Você deve fazer logon com um usuário que tenha permissões de administrador de segurança ou de administrador global em cada assinatura que você deseja se conectar.
+- Você deve fazer logon com um usuário que tenha permissões de administrador global ou de administrador de segurança em cada assinatura que deseja conectar.
 
 
-## <a name="connect-to-azure-security-center"></a>Conectar-se à Central de segurança do Azure
+## <a name="connect-to-azure-security-center"></a>Conectar-se à central de segurança do Azure
 
-1. No Azure Sentinel, selecione **conectores de dados** e, em seguida, clique no **Central de segurança do Azure** lado a lado.
-1. No canto direito, clique em **Connect** ao lado de cada assinatura cujos alertas você deseja transmitir para o Azure Sentinel. Certifique-se de atualizar cada assinatura para a camada Standard de Central de segurança do Azure para alertas de fluxo para o Azure Sentinel.
+1. No Azure Sentinel, selecione **conectores de dados** e clique no bloco da **central de segurança do Azure** .
+
+1. À direita, clique em **conectar** ao lado de cada assinatura cujos alertas você deseja transmitir para o Azure Sentinel. Certifique-se de atualizar cada assinatura para a camada Standard da central de segurança do Azure para transmitir alertas para o Azure Sentinel.
+
+1. Você pode selecionar se deseja que os alertas da central de segurança do Azure gerem automaticamente incidentes no Azure Sentinel automaticamente. Em **criar incidentes** , selecione **habilitar** para habilitar a regra analítica padrão que cria incidentes automaticamente a partir de alertas gerados no serviço de segurança conectado. Você pode editar essa regra em **análise** e em **regras ativas**.
 
 3. Clique em **Conectar**.
 
-4. Para usar o esquema relevante no Log Analytics para os alertas da Central de segurança do Azure, pesquise **SecurityEvent**.
+4. Para usar o esquema relevante no Log Analytics para os alertas da central de segurança do Azure, procure **SecurityAlert**.
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste documento, você aprendeu como conectar-se a Central de segurança do Azure para Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
-- Saiba como [Obtenha visibilidade sobre seus dados e possíveis ameaças](quickstart-get-visibility.md).
-- Introdução ao [detecção de ameaças com o Azure Sentinel](tutorial-detect-threats.md).
+Neste documento, você aprendeu a conectar a central de segurança do Azure ao Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
+- Saiba como [obter visibilidade de seus dados e ameaças potenciais](quickstart-get-visibility.md).
+- Comece [a detectar ameaças com o Azure Sentinel](tutorial-detect-threats-built-in.md).

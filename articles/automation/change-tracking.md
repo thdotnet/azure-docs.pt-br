@@ -10,12 +10,12 @@ ms.date: 04/29/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a681daa60503ff08320b25155e201ca0e7a4a001
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 2d6976e872223cbb66682b9a02ce343487bec35d
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952990"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240271"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Controlar alterações no ambiente com a solução Controle de Alterações
 
@@ -123,7 +123,7 @@ Use as etapas a seguir para configurar o acompanhamento de arquivos em computado
 |Enabled     | Determina se a configuração é aplicada.        |
 |Nome do Item     | Nome amigável do arquivo a ser rastreado.        |
 |Grupo     | Um nome de grupo para o agrupamento lógico de arquivos.        |
-|Inserir Caminho     | O caminho para verificar em busca do arquivo. Por exemplo: "c:\temp\\\*.txt"<br>Você também pode usar variáveis de ambiente, tais como "%winDir%\System32\\\*.*"       |
+|Inserir o Caminho     | O caminho para verificar em busca do arquivo. Por exemplo: "c:\temp\\\*.txt"<br>Você também pode usar variáveis de ambiente, tais como "%winDir%\System32\\\*.*"       |
 |Recursão     | Determina se a recursão é usada ao procurar o item a ser rastreado.        |
 |Carregar o conteúdo do arquivo para todas as configurações| Habilita ou desabilita o upload de conteúdo do arquivo em alterações controladas. Opções disponíveis: **True** ou **False**.|
 
@@ -155,7 +155,7 @@ Use as etapas a seguir para configurar as chaves do registro para acompanhamento
 |Enabled     | Determina se a configuração é aplicada.        |
 |Nome do Item     | Nome amigável da chave de registro a ser rastreada.        |
 |Grupo     | Um nome de grupo para agrupar chaves de registro logicamente.        |
-|Chave do Registro do Windows   | O caminho para verificar a chave de registro. Por exemplo:  "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup"      |
+|Chave de Registro do Windows   | O caminho para verificar a chave de registro. Por exemplo: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup"      |
 
 ## <a name="limitations"></a>Limitações
 
@@ -171,7 +171,7 @@ Outras limitações:
 * Quando o tráfego da rede é alto, os registros de alteração podem demorar até seis horas para serem exibidos.
 * Se você modificar a configuração enquanto um computador for desligado, o computador poderá lançar as alterações que pertenciam à configuração anterior.
 
-## <a name="known-issues"></a>Problemas Conhecidos
+## <a name="known-issues"></a>Problemas conhecidos
 
 Atualmente, a solução Controle de Alterações está enfrentando os seguintes problemas:
 
@@ -198,7 +198,7 @@ A tabela a seguir mostra os limites de item controlados por máquina para Contro
 |---|---|---|
 |Arquivo|500||
 |Registro|250||
-|Software do Windows|250|Não inclui as atualizações de software|
+|Software do Windows|250|Não inclui hotfixes de software|
 |Pacotes do Linux|1250||
 |Serviços|250||
 |Daemon|250||
@@ -273,7 +273,7 @@ Os seguintes endereços são necessários especificamente para o controle de alt
 
 Depois que a solução estiver habilitada, você poderá exibir o resumo das alterações de seus computadores monitorados, selecionando **Controle de Alterações** em **GERENCIAMENTO DE CONFIGURACÃO** na sua conta de Automação.
 
-É possível exibir as alterações nos computadores e, em seguida, analisar detalhadamente cada evento. Os menus suspensos estão disponíveis na parte superior do gráfico para limitar o gráfico e as informações detalhadas com base no tipo de alteração e intervalos de tempo. Você também pode clicar e arrastrar no gráfico para selecionar um intervalo de tempo personalizado. **O tipo de alteração** será um dos seguintes **eventos**de valores, **daemons**, **arquivos**, registro, **software**e serviços **do** **Windows**. Categoria mostra o tipo de alteração e pode ser **adicionada**, **modificada**ou removida.
+É possível exibir as alterações nos computadores e, em seguida, analisar detalhadamente cada evento. Os menus suspensos estão disponíveis na parte superior do gráfico para limitar o gráfico e as informações detalhadas com base no tipo de alteração e intervalos de tempo. Você também pode clicar e arrastrar no gráfico para selecionar um intervalo de tempo personalizado. **O tipo de alteração** será um dos seguintes **eventos**de valores, **daemons**, **arquivos**, **registro**, **software**e serviços do **Windows**. Categoria mostra o tipo de alteração e pode ser **adicionada**, **modificada**ou **removida**.
 
 ![imagem do painel Controle de Alterações](./media/change-tracking/change-tracking-dash01.png)
 
@@ -285,7 +285,7 @@ Ao clicar em uma alteração ou evento, as informações detalhadas sobre essa a
 
 Além dos detalhes fornecidos no portal, é possível fazer as pesquisas nos logs. Com a página **controle de alterações** aberta, clique em **log Analytics**, isso abrirá a página **logs** .
 
-### <a name="sample-queries"></a>Consultas de exemplo
+### <a name="sample-queries"></a>Consultas de amostra
 
 A tabela a seguir fornece pesquisas de logs de exemplo para os registros de alterações coletados por essa solução:
 

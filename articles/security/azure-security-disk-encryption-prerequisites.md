@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2f7ad49fc56fc82955f79155838c69ff714aba2f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: bd51e70122a5457c8dcf1bd8f2061fe25943e87f
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845868"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "71224502"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Pré-requisitos de criptografia de disco do Azure
 
@@ -28,11 +28,11 @@ Antes de habilitar o Azure Disk Encryption em VMs IaaS do Azure para os cenário
 
 ## <a name="supported-vm-sizes"></a>Tamanhos de VM com suporte
 
-O Azure Disk Encryption não está disponível nas [VMs da série A básica](/pricing/details/virtual-machines/series/). Azure Disk Encryption está disponível em outras máquinas virtuais que atendem a esses requisitos mínimos de memória:
+O Azure Disk Encryption não está disponível nas [VMs da série A básica](https://azure.microsoft.com/pricing/details/virtual-machines/series/). Azure Disk Encryption está disponível em outras máquinas virtuais que atendem a esses requisitos mínimos de memória:
 
 | Máquina Virtual | Requisito mínimo de memória |
 |--|--|
-| VMs do Windows | 2 GB |
+| VMs Windows | 2 GB |
 | VMs do Linux ao criptografar apenas os volumes de dados| 2 GB |
 | VMs do Linux ao criptografar volumes de dados e de so e onde o uso do sistema de arquivos raiz (/) é de 4 GB ou menos | 8 GB |
 | VMs do Linux ao criptografar volumes de dados e de so e onde o uso do sistema de arquivos raiz (/) é maior que 4 GB | O uso do sistema de arquivos raiz * 2. Por exemplo, os 16 GB de uso do sistema de arquivos raiz exigem pelo menos 32 GB de RAM |
@@ -40,7 +40,7 @@ O Azure Disk Encryption não está disponível nas [VMs da série A básica](/pr
 Depois que o processo de criptografia de disco do sistema operacional for concluído em máquinas virtuais Linux, a VM poderá ser configurada para ser executada com menos memória. 
 
 > [!NOTE]
-> A criptografia de disco do SO Linux não está disponível para conjuntos de dimensionamento de [máquinas virtuais](../virtual-machine-scale-sets/index.yml).
+> A criptografia de disco do SO Linux não está disponível para [conjuntos de dimensionamento de máquinas virtuais](../virtual-machine-scale-sets/index.yml).
 
 Azure Disk Encryption também está disponível para VMs com armazenamento Premium. 
 
@@ -71,14 +71,14 @@ As distribuições do servidor Linux que não são endossadas pelo Azure não d�
 | Ubuntu | 16.04| SO e disco de dados |
 | Ubuntu | 14.04.5</br>[com kernel ajustado para Azure atualizado para 4.15 ou posterior](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | SO e disco de dados |
 | RHEL | 7.6 | Sistema operacional e disco de dados (veja a observação abaixo) |
-| RHEL | 7.5 | Sistema operacional e disco de dados (veja a observação abaixo) |
+| RHEL | 7,5 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7.4 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7.3 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7,2 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 6,8 | Disco de dados (veja a observação abaixo) |
 | RHEL | 6.7 | Disco de dados (veja a observação abaixo) |
 | CentOS | 7.6 | SO e disco de dados |
-| CentOS | 7.5 | SO e disco de dados |
+| CentOS | 7,5 | SO e disco de dados |
 | CentOS | 7.4 | SO e disco de dados |
 | CentOS | 7.3 | SO e disco de dados |
 | CentOS | 7.2n | SO e disco de dados |

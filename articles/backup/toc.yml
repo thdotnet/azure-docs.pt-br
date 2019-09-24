@@ -50,6 +50,16 @@
           href: backup-support-matrix-mabs-dpm.md
         - name: Matriz de suporte do agente do MARS
           href: backup-support-matrix-mars-agent.md
+    - name: Segurança
+      items:
+        - name: Controle de Acesso Baseado em Função
+          href: backup-rbac-rs-vault.md
+        - name: Segurança para cargas de trabalho na nuvem
+          href: backup-azure-security-feature-cloud.md
+        - name: Segurança para backups híbridos
+          href: backup-azure-security-feature.md
+        - name: Controles de segurança interna
+          href: backup-security-controls.md
     - name: Perguntas frequentes (FAQ)
       items:
         - name: Perguntas frequentes – cofres dos Serviços de Recuperação
@@ -68,20 +78,12 @@
           href: backup-azure-monitor-alert-faq.md
     - name: Arquitetura de backup
       href: backup-architecture.md
-    - name: Controle de Acesso Baseado em Função
-      href: backup-rbac-rs-vault.md
-    - name: Segurança para cargas de trabalho na nuvem
-      href: backup-azure-security-feature-cloud.md
-    - name: Segurança para backups híbridos
-      href: backup-azure-security-feature.md
     - name: Configurar o backup offline
       href: backup-azure-backup-import-export.md
     - name: Backup offline do DPM e do Servidor de Backup do Azure
       href: backup-azure-backup-server-import-export-.md
     - name: Substitua sua biblioteca de fitas
       href: backup-azure-backup-cloud-as-tape.md
-    - name: Controles de segurança interna
-      href: backup-security-controls.md
 - name: Como
   items:
     - name: Servidor de Backup do Azure

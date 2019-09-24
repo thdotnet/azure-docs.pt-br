@@ -1,6 +1,6 @@
 ---
-title: Manter o controle de dados durante a procura de sentinela versão prévia do Azure usando os indicadores de procura | Microsoft Docs
-description: Este artigo descreve como usar os indicadores de procura Sentinel do Azure para manter o controle de dados.
+title: Manter o controle dos dados ao buscar no Azure Sentinel usando indicadores de busca | Microsoft Docs
+description: Este artigo descreve como usar os indicadores de busca do Azure Sentinel para manter o controle dos dados.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -14,90 +14,141 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 09/24/2019
 ms.author: rkarlin
-ms.openlocfilehash: aec04c4b9fd56b79a92c2774a48fd55f2f6a9d7a
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: aa414e37470cc11b7dc83e7416590aa2babf6818
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620221"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240246"
 ---
-# <a name="keep-track-of-data-during-hunting"></a>Manter o controle de dados durante a procura
+# <a name="keep-track-of-data-during-hunting-with-azure-sentinel"></a>Manter o controle dos dados durante a busca com o Azure Sentinel
 
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
- 
-Procura de ameaças normalmente requer a revisão Montanhas de dados de log procurando evidências de comportamentos mal-intencionados. Durante esse processo, investigadores encontrar eventos que eles desejam se lembrar, revisitar e analisar como parte da validação de hipóteses possíveis e Noções básicas sobre a história completa de um comprometimento.
-Indicadores de procura ajudarão-lo a fazer isso, preservando as consultas executadas no Log Analytics, juntamente com os resultados da consulta que você julgar relevantes. Também pode registrar suas observações contextuais e fazer referência a suas descobertas com a adição de notas e marcas. Dados indicadores são visíveis para você e seus colegas de equipe para fácil colaboração.   
+A busca de ameaças normalmente requer a revisão de montanhas de dados de log, procurando evidências de comportamento mal-intencionado. Durante esse processo, os investigadores localizam eventos que desejam lembrar, revisitar e analisar como parte da validação de possíveis ameaças e de entender toda a história de um comprometimento.
 
-Você pode rever seus dados com indicadores a qualquer momento na **indicador** guia da **procura** página. Você pode usar a filtragem e opções para localizar rapidamente dados específicos para a sua investigação atual de pesquisa. Como alternativa, você pode exibir os dados com indicador diretamente na **HuntingBookmark** tabela no Log Analytics. Isso permite que você filtrar, resumir e unir dados marcados com outras fontes de dados, tornando mais fácil procurar corroborating evidência.
+Os indicadores de busca no Azure Sentinel o ajudam a fazer isso, preservando as consultas executadas em Log Analytics, juntamente com os resultados da consulta que você considera relevantes. Você também pode registrar suas observações contextuais e fazer referência às suas descobertas Adicionando anotações e marcas. Os dados marcados são visíveis para você e seus colegas de equipe para facilitar a colaboração.
 
-Você também pode visualizar os dados com indicador, clicando em **investigar**. Isso inicia a experiência de investigação no qual você pode exibir, investigar e comunicar visualmente os resultados usando um diagrama gráfico interativo de entidade e a linha do tempo.
+Você pode revisitar seus dados marcados a qualquer momento na guia **indicador** do painel de **busca** . Você pode usar as opções de filtragem e pesquisa para localizar rapidamente dados específicos para sua investigação atual. Como alternativa, você pode exibir seus dados marcados diretamente na tabela **HuntingBookmark** em Azure monitor. Isso permite filtrar, resumir e unir dados marcados com outras fontes de dados, facilitando a procura de evidências corroboratings.
 
+Atualmente em visualização, se você encontrar algo que precisa ser resolvido com urgência durante a busca em seus logs, em alguns cliques, você pode criar um indicador e promovê-lo para um incidente ou adicionar o indicador a um incidente existente. Para obter mais informações sobre incidentes, [consulte Tutorial: Investigue incidentes com o Azure](tutorial-investigate-cases.md)Sentinel. 
 
-## <a name="run-a-log-analytics-query-from-azure-sentinel"></a>Executar uma consulta do Log Analytics do Azure Sentinel
-
-1. No portal do Azure Sentinel, clique em **procura** para executar consultas para o comportamento suspeito e anormal.
-
-1. Para executar uma campanha de procura, selecione uma das consultas de procura e sobre a revisão à esquerda, os resultados. 
-
-1. Clique em **exibir resultados da consulta** na consulta procura **detalhes** página para exibir a consulta resulta no Log Analytics. Aqui está um exemplo do que você vê se você executou uma consulta personalizada de ataque de bruteforce SSH.
-  
-   ![Mostrar resultados](./media/bookmarks/ssh-bruteforce-example.png)
+Também na visualização, você pode visualizar seus dados marcados, clicando em **investigar** nos detalhes do indicador. Isso inicia a experiência de investigação na qual você pode exibir, investigar e comunicar visualmente suas descobertas usando um diagrama de entidade-grafo e uma linha do tempo interativos.
 
 ## <a name="add-a-bookmark"></a>Adicionar um indicador
 
-1. Na lista de resultados de consulta do Log Analytics, expanda a linha que contém as informações que você achar interessantes.
+1. No portal do Azure, navegue até **sentinela** > **Threat Management** > **busca** para executar consultas para comportamento suspeito e anormal.
 
-4. Selecione as reticências (...) no final da linha e, em seguida, selecione **adicionar indicadores procura**.
-5. À direita, na **detalhes** página, atualize o nome e adicionar marcas e anotações para ajudá-lo a identificar o que era interessante sobre o item.
-6. Clique em **salvar** para confirmar as alterações. Todos os dados com indicador é compartilhado com outros investigadores e é uma primeira etapa para uma experiência de investigação de colaboração.
+2. Selecione uma das consultas de busca e, à direita, nos detalhes da consulta de busca, selecione **Executar consulta**. 
 
-   ![Mostrar resultados](./media/bookmarks/add-bookmark-la.png)
+3. Selecione **exibir resultados da consulta**. Por exemplo:
+    
+    > [!div class="mx-imgBorder"]
+    > ![exibir resultados da consulta da busca do Azure Sentinel](./media/bookmarks/new-processes-observed-example.png)
+    
+    Essa ação abre os resultados da consulta no painel **logs** .
+
+4. Na lista de resultados da consulta de log, expanda a linha que contém as informações que você acha interessante.
+
+5. Selecione as reticências (...) à esquerda e, em seguida, selecione **Adicionar indicador de busca**:
+    
+    > [!div class="mx-imgBorder"]
+    > ![Adicionar o indicador de busca à consulta](./media/bookmarks/add-hunting-bookmark.png)
+
+6. À direita, no painel **Adicionar indicador de busca** , como opção, atualize o nome do indicador, adicione marcas e notas para ajudá-lo a identificar o que era interessante sobre o item.
+
+7. Na seção **informações da consulta** , use as caixas suspensas para extrair informações dos resultados da consulta para os tipos de entidade **conta**, **host**e **endereço IP** . Essa ação mapeia o tipo de entidade selecionado para uma coluna específica do resultado da consulta. Por exemplo:
+    
+    > [!div class="mx-imgBorder"]
+    > ![Mapear tipos de entidade para o indicador de busca](./media/bookmarks/map-entity-types-bookmark.png)
+    
+    Para exibir o indicador no grafo de investigação (atualmente em visualização), você deve mapear pelo menos um tipo de entidade que seja **conta**, **host**ou **endereço IP**. 
+
+5. Clique em **Adicionar** para confirmar suas alterações e adicionar o indicador. Todos os dados marcados são compartilhados com outros investigadores e é uma primeira etapa para uma experiência de investigação colaborativa.
 
  
 > [!NOTE]
-> Você também pode usar indicadores com consultas do Log Analytics arbitrárias, iniciadas a partir da página de Logs de análise de Log Sentinel do Azure ou consultas criadas em tempo real da página do Log Analytics e aberto na página de procura de. Você não poderá adicionar um indicador de se iniciar o Log Analytics de fora do Azure Sentinel. 
+> Os resultados da consulta de log dão suporte a indicadores sempre que esse painel é aberto do Azure Sentinel. Por exemplo, você seleciona**logs** **gerais** > na barra de navegação, seleciona links de eventos no grafo de investigações ou seleciona uma ID de alerta a partir dos detalhes completos de um incidente (atualmente em visualização). Não é possível criar indicadores quando o painel **logs** é aberto de outros locais, como diretamente do Azure monitor.
 
 ## <a name="view-and-update-bookmarks"></a>Exibir e atualizar indicadores 
 
-1. No portal do Azure Sentinel, clique em **procura**. 
-2. Clique o **indicadores** guia no meio da página para exibir a lista de indicadores.
-3. Use as opções de filtro ou de caixa de pesquisa para localizar um indicador específico.
-4. Selecione indicadores individuais na grade abaixo para exibir os detalhes de indicador no painel de detalhes à direita.
-5. Para atualizar as marcas e anotações, clique nas caixas de texto editável e clique em **salvar** para preservar suas alterações.
+1. No portal do Azure, navegue até **sentinela** > **Threat Management** > **busca**. 
 
-   ![Mostrar resultados](./media/bookmarks/view-update-bookmarks.png)
+2. Selecione a guia **indicadores** para exibir a lista de indicadores.
 
-## <a name="view-bookmarked-data-in-log-analytics"></a>Um indicador de exibir dados no Log Analytics 
+3. Para ajudá-lo a encontrar um indicador específico, use a caixa de pesquisa ou as opções de filtro.
 
-Há várias opções para exibir seus dados indicadores no Log Analytics. 
+4. Selecione indicadores individuais e exiba os detalhes do indicador no painel de detalhes à direita.
 
-A maneira mais fácil para exibir consultas com indicador, resultados ou histórico está selecionando o indicador desejado na **indicadores** de tabela e use os links fornecidos no painel de detalhes. As opções incluem: 
-- Clique em **consulta de exibição** para exibir a consulta de origem no Log Analytics.  
-- Clique em **exibir o histórico de indicador** para ver todos os indicadores de metadados, incluindo: quem fez a atualização, os valores atualizados e a hora em que ocorreu a atualização. 
+5. Faça as alterações conforme necessário, que são salvas automaticamente.
 
-- Você também pode exibir os dados brutos de indicador para todos os indicadores clicando em **logs de indicador** acima da grade de indicador. Essa exibição mostrará todos os seus indicadores na tabela de indicador de procura com metadados associados. Você pode usar consultas KQL para filtrar até a versão mais recente do indicador específico que você está procurando.  
+## <a name="exploring-bookmarks-in-the-investigation-graph"></a>Explorando indicadores no grafo de investigação
 
+> [!IMPORTANT]
+> A exploração de indicadores no grafo de investigação e o próprio gráfico de investigação estão atualmente em visualização pública.
+> Esses recursos são fornecidos sem um contrato de nível de serviço e não são recomendados para cargas de trabalho de produção.
+> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+1. Na portal do Azure, navegue até a guia **sentinela** > de**Gerenciamento** > de ameaças**procurando** > **indicadores** e selecione o indicador ou indicadores que você deseja investigar.
+
+2. Nos detalhes do indicador, verifique se pelo menos uma entidade está mapeada. Por exemplo, para **entidades**, você vê entradas para **IP**, **máquina**ou **conta**.
+
+3. Clique em **investigar** para exibir o indicador no grafo de investigação.
+
+Para obter instruções sobre como usar o grafo de investigação, consulte [usar o grafo de investigação para aprofundar-se](tutorial-investigate-cases.md#use-the-investigation-graph-to-deep-dive).
+
+## <a name="add-bookmarks-to-a-new-or-existing-incident"></a>Adicionar indicadores a um incidente novo ou existente
+
+> [!IMPORTANT]
+> A adição de indicadores a um incidente novo ou existente está atualmente em visualização pública.
+> Esse recurso é fornecido sem um contrato de nível de serviço e não é recomendado para cargas de trabalho de produção.
+> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+1. Na portal do Azure, navegue até a guia **sentinela** > de**Gerenciamento** > de ameaças**procurando** > **indicadores** e selecione o indicador ou indicadores que você deseja adicionar a um incidente.
+
+2. Selecione **ações de incidente (versão prévia)** na barra de comandos:
+    
+    > [!div class="mx-imgBorder"]
+    > ![Adicionar indicadores ao incidente](./media/bookmarks/incident-actions.png)
+
+3. Selecione **criar novo incidente** ou **Adicionar ao incidente existente**, conforme necessário. Em seguida:
+    
+    - Para um novo incidente: Opcionalmente, atualize os detalhes para o incidente e, em seguida, selecione **criar**.
+    - Para adicionar um indicador a um incidente existente: Selecione um incidente e, em seguida, selecione **Adicionar**. 
+
+Para exibir o indicador dentro do incidente: Navegue até **sentinela** > **incidentes** de**Gerenciamento** > de ameaças e selecione o incidente com seu indicador. Selecione **Exibir detalhes completos**e, em seguida, selecione a guia **indicadores** .
+
+## <a name="view-bookmarked-data-in-logs"></a>Exibir dados marcados em logs
+
+Para exibir consultas com indicadores, resultados ou seu histórico, selecione o indicador na guia**indicadores** de **busca** > e use os links fornecidos no painel de detalhes: 
+
+- **Exiba a consulta de origem** para exibir a consulta de origem no painel **logs** .
+
+- **Exiba os logs de indicadores** para ver todos os metadados de indicador, que incluem quem fez a atualização, os valores atualizados e a hora em que a atualização ocorreu.
+
+Você também pode exibir os dados brutos do indicador para todos os indicadores selecionando **logs de indicadores** na barra de comandos na guia**indicadores** de **busca** > :
+
+> [!div class="mx-imgBorder"]
+> ![Logs de indicadores](./media/bookmarks/bookmark-logs.png)
+
+Esta exibição mostra todos os indicadores com metadados associados. Você pode usar consultas KQL ( [palavra-chave Query Language](https://docs.microsoft.com/sharepoint/dev/general-development/keyword-query-language-kql-syntax-reference) ) para filtrar a versão mais recente do indicador específico que você está procurando.
 
 > [!NOTE]
-> Pode haver um atraso significativo (medido em minutos) entre a criação de um indicador e quando ele é exibido na **HuntingBookmark** tabela. É recomendável criar seus indicadores pela primeira vez, em seguida, analisá-los depois que os dados são ingeridos. 
+> Pode haver um atraso significativo (medido em minutos) entre o momento em que você cria um indicador e quando ele é exibido na guia **indicadores** .
 
 ## <a name="delete-a-bookmark"></a>Excluir um indicador
-Se você quiser excluir um indicador de fazer o seguinte: 
-1.  Abra th **indicador procura** guia. 
-2.  Selecione o indicador de destino.
-3.  Selecione as reticências (...) no final da linha e selecione **indicador Delete**.
+ 
+1.  Na portal do Azure, navegue até a guia **sentinela** > de**Gerenciamento** > de ameaças**procurando** > **indicadores** e selecione o indicador ou indicadores que você deseja excluir. 
+
+2. Selecione as reticências (...) no final da linha e selecione **Excluir indicador**.
     
-Excluir o indicador remove o indicador na lista de **indicador** guia.  O Log Analytics "HuntingBookmark" tabela continuará conter as entradas anteriores do indicador, mas a entrada mais recente será alterado de **SoftDelete** valor como true, tornando mais fácil de filtrar os indicadores antigos.  Excluir um indicador não remove quaisquer entidades com a experiência de investigação que estão associados a outros indicadores ou alertas. 
+A exclusão do indicador remove o indicador da lista na guia **indicador** . A tabela Log Analytics **HuntingBookmark** continuará a conter entradas de indicador anteriores, mas a entrada mais recente alterará o valor de **SoftDelete** para true, facilitando o filtro de indicadores antigos. A exclusão de um indicador não remove nenhuma entidade da experiência de investigação associada a outros indicadores ou alertas. 
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você aprendeu a executar uma investigação de procura usando indicadores no Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
+Neste artigo, você aprendeu a executar uma investigação de busca usando indicadores no Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
 
 
-- [Proativamente de busca de ameaças](hunting.md)
-- [Usar notebooks para executar campanhas de procura automatizado](notebooks.md)
+- [Busca de ameaças de forma proativa](hunting.md)
+- [Use blocos de anotações para executar campanhas de busca automatizadas](notebooks.md)

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 97d900146b3485df5cdf226f07aaa3aee116fc92
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 100740e87c13887a3e7ac85aa5fce3d67c838ea0
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186762"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240319"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Executar runbooks em um Hybrid Runbook Worker
 
@@ -41,8 +41,7 @@ Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" �
 
 ## <a name="runbook-permissions"></a>Permissões de runbook
 
-Os runbooks em execução em um Hybrid Runbook Worker não podem usar o mesmo método normalmente usado para autenticação de runbooks nos recursos do Azure, já que eles acessam recursos fora do Azure. O runbook pode fornecer sua própria autenticação aos recursos locais, ou pode configurar a autenticação usando [entidades gerenciadas para os recursos do Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager
-). Você também pode especificar uma conta RunAs para fornecer um contexto de usuário a todos os runbooks.
+Os runbooks em execução em um Hybrid Runbook Worker não podem usar o mesmo método normalmente usado para autenticação de runbooks nos recursos do Azure, já que eles acessam recursos fora do Azure. O runbook pode fornecer sua própria autenticação aos recursos locais, ou pode configurar a autenticação usando [entidades gerenciadas para os recursos do Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager). Você também pode especificar uma conta RunAs para fornecer um contexto de usuário a todos os runbooks.
 
 ### <a name="runbook-authentication"></a>Autenticação de runbook
 
@@ -61,7 +60,7 @@ Você também pode usar o [InlineScript](automation-powershell-workflow.md#inlin
 
 ### <a name="runas-account"></a>Conta RunAs
 
-Por padrão o Hybrid Runbook Worker usa Sistema Local para Windows e uma conta de usuário especial `nxautomation` para Linux para executar runbooks. Em vez de os runbooks fornecerem sua própria autenticação aos recursos locais, você pode especificar uma conta **RunAs** para um grupo Hybrid Worker. Você especifica um [ativo](automation-credentials.md) de credencial que tem acesso a recursos locais, incluindo repositórios de certificados e todos os runbooks executados sob essas credenciais quando executados em um Hybrid runbook Worker no grupo.
+Por padrão o Hybrid Runbook Worker usa Sistema Local para Windows e uma conta de usuário especial `nxautomation` para Linux para executar runbooks. Em vez de os runbooks fornecerem sua própria autenticação aos recursos locais, você pode especificar uma conta **RunAs** para um grupo Hybrid Worker. Você especifica um [ativo de credencial](automation-credentials.md) que tem acesso a recursos locais, incluindo repositórios de certificados e todos os runbooks executados sob essas credenciais quando executados em um Hybrid runbook Worker no grupo.
 
 O nome de usuário da credencial deve estar em um dos seguintes formatos:
 

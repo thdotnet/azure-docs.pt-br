@@ -7,39 +7,39 @@ ms.service: application-gateway
 ms.date: 4/11/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: e56301e98ca773369631e2f7ae137c63d0b9ddef
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 9f90f373bd6f1cfd34de1605783bf3a7f0185f4c
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67613308"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240333"
 ---
-# <a name="web-application-firewall-crs-rule-groups-and-rules"></a>Regras e grupos de regras CRS do firewall de aplicativo web
+# <a name="web-application-firewall-crs-rule-groups-and-rules"></a>Regras e grupos de regras CRS do firewall do aplicativo Web
 
-O WAF (Firewall do aplicativo Web) do Gateway de Aplicativo protege os aplicativos Web de vulnerabilidades e explorações. Isso é feito por meio de regras que são definidas com base nos conjuntos de regra do núcleo OWASP 3.0 ou 2.2.9. Essas regras podem ser desabilitadas com base em cada regra. Este artigo contém as regras e os conjuntos de regras oferecidos atualmente.
+O WAF (Firewall do aplicativo Web) do Gateway de Aplicativo protege os aplicativos Web de vulnerabilidades e explorações. Isso é feito por meio de regras que são definidas com base nos conjuntos de regras do OWASP Core 3,0 ou 2.2.9. Essas regras podem ser desabilitadas com base em cada regra. Este artigo contém as regras e os conjuntos de regras oferecidos atualmente.
 
-Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de aplicativo com o firewall do aplicativo web.
+As regras e os grupos de regras a seguir estão disponíveis ao usar o gateway de aplicativo com o Firewall do aplicativo Web.
 
 # <a name="owasp-30tabowasp3"></a>[OWASP 3.0](#tab/owasp3)
 
-## <a name="owasp30"></a> Conjuntos de regras
+## <a name="owasp30"></a>Conjuntos de regras
 
 ### <a name="General"></a> <p x-ms-format-detection="none">Geral</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |200004|Limite possivelmente incomparável de várias partes.|
 
 ### <a name="crs911"></a> <p x-ms-format-detection="none">REQUEST-911-METHOD-ENFORCEMENT</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |911100|O método não é permitido pela política|
 
 
 ### <a name="crs913"></a> <p x-ms-format-detection="none">SOLICITAÇÃO-913-DETECÇÃO DE SCANNER</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |913100|Encontrado Agente-Usuário associado ao verificador de segurança|
 |913110|Encontrado cabeçalho de solicitação associado ao verificador de segurança|
@@ -49,7 +49,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs920"></a> <p x-ms-format-detection="none">REQUEST-920-PROTOCOL-ENFORCEMENT</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |920100|Linha de solicitação de HTTP inválida|
 |920130|Falha ao analisar o corpo da solicitação.|
@@ -95,7 +95,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs921"></a> <p x-ms-format-detection="none">REQUEST-921-PROTOCOL-ATTACK</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |921100|Ataque de solicitação HTTP indesejada.|
 |921110|Ataque de solicitação HTTP indesejada|
@@ -110,7 +110,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs930"></a> <p x-ms-format-detection="none">REQUEST-930-APPLICATION-ATTACK-LFI</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |930100|Ataques de percurso de caminho (/../)|
 |930110|Ataques de percurso de caminho (/../)|
@@ -119,7 +119,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs931"></a> <p x-ms-format-detection="none">REQUEST-931-APPLICATION-ATTACK-RFI</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |931100|Possível ataque de RFI (inclusão de arquivo remoto) = parâmetro de URL usando endereço IP|
 |931110|Possível ataque de RFI (inclusão de arquivo remoto) = nome de parâmetro vulnerável RFI comum usado com carga de URL|
@@ -128,7 +128,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs932"></a> <p x-ms-format-detection="none">REQUEST-932-APPLICATION-ATTACK-RCE</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |932120|Execução de comando remoto = encontrado comando do Windows PowerShell|
 |932130|Execução de comando remoto = encontrada expressão de Shell do Unix|
@@ -139,7 +139,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs933"></a> <p x-ms-format-detection="none">REQUEST-933-APPLICATION-ATTACK-PHP</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |933100|Ataque de injeção de PHP = marcação de abertura/fechamento encontrada|
 |933110|Ataque de injeção de PHP = carregamento de arquivo de Script PHP encontrado|
@@ -155,7 +155,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs941"></a> <p x-ms-format-detection="none">REQUEST-941-APPLICATION-ATTACK-XSS</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |941100|Ataque de XSS detectado via libinjection|
 |941110|Filtro XSS - Categoria 1 = vetor de marca de script|
@@ -163,17 +163,17 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 |941140|Filtro XSS - Categoria 4 = Vector de URI de Javascript|
 |941150|Filtro XSS - Categoria 5 = atributos HTML não permitidos|
 |941180|Palavras-chave da lista negra do validador de nós|
-|941190|Usando folhas de estilo XSS|
+|941190|XSS usando folhas de estilo|
 |941200|XSS usando quadros VML|
-|941210|XSS usando Javascript ofuscado|
-|941220|XSS usando ofuscada Script VB|
-|941230|Marca XSS usando 'Inserir'|
-|941240|XSS, usando o atributo 'import' ou 'implementação'|
-|941260|XSS usando a marca 'meta'|
-|941270|XSS usando href 'link'|
-|941280|XSS usando a marca 'base'|
-|941290|XSS usando a marca 'applet'|
-|941300|XSS usando a marca 'object'|
+|941210|XSS usando JavaScript ofuscado|
+|941220|XSS usando script VB ofuscado|
+|941230|XSS usando a marca ' embed '|
+|941240|XSS usando o atributo ' import ' ou ' Implementation '|
+|941260|XSS usando a marca ' meta '|
+|941270|XSS usando href ' link '|
+|941280|XSS usando a marca ' base '|
+|941290|XSS usando a marca ' applet '|
+|941300|XSS usando a marca ' Object '|
 |941310|Filtro XSS de codificação mal feita US-ASCII - ataque detectado.|
 |941330|Filtros XSS do IE - ataque detectado.|
 |941340|Filtros XSS do IE - ataque detectado.|
@@ -182,7 +182,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs942"></a> <p x-ms-format-detection="none">REQUEST-942-APPLICATION-ATTACK-SQLI</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |942100|Ataque de injeção de SQL detectado via libinjection|
 |942110|Ataques de injeção de SQL: Teste de injeção comum detectado|
@@ -197,6 +197,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 |942270|Procurando injeção de sql básica. Cadeia de caracteres de ataque comum para mysql oracle e outros.|
 |942290|Localiza tentativas de injeção de SQL MongoDB básica|
 |942300|Detecta comentários, condições e injeções ch(a)r do MySQL|
+|942310|Detecta tentativas de injeção de SQL encadeadas 2/2|
 |942320|Detecta injeções de função/procedimento armazenado em MySQL e PostgreSQL|
 |942330|Detecta investigações de injeção de SQL clássicas 1/2|
 |942340|Detecta tentativas básicas de bypass de autenticação SQL 3/3|
@@ -213,7 +214,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs943"></a> <p x-ms-format-detection="none">REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION</p>
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |943100|Possível ataque de fixação da sessão = definindo valores de cookie em HTML|
 |943110|Possível ataque de fixação da sessão = nome do parâmetro de SessionID com referenciador fora do domínio|
@@ -221,11 +222,11 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 # <a name="owasp-229tabowasp2"></a>[OWASP 2.2.9](#tab/owasp2)
 
-## <a name="owasp229"></a> Conjuntos de regras
+## <a name="owasp229"></a>Conjuntos de regras
 
 ### <a name="crs20"></a> crs_20_protocol_violations
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |960911|Linha de solicitação de HTTP inválida|
 |981227|Erro do Apache = URI inválido na solicitação.|
@@ -251,7 +252,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs21"></a> crs_21_protocol_anomalies
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |960008|Solicitação com cabeçalho de host ausente|
 |960007|Cabeçalho de host vazio|
@@ -264,7 +265,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs23"></a> crs_23_request_limits
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |960209|Nome do argumento muito longo|
 |960208|Valor do argumento muito longo|
@@ -275,7 +276,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs30"></a> crs_30_http_policy
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |960032|O método não é permitido pela política|
 |960010|O tipo de conteúdo da solicitação não é permitido pela política|
@@ -285,7 +286,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs35"></a> crs_35_bad_robots
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |990002|A solicitação indica que um verificador de segurança verificou o site|
 |990901|A solicitação indica que um verificador de segurança verificou o site|
@@ -294,7 +295,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs40"></a> crs_40_generic_attacks
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |960024|Alerta de detecção de anomalias de metacaracteres - caracteres repetitivos que não são palavras|
 |950008|Injeção de marcações ColdFusion não documentadas|
@@ -323,7 +324,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs41sql"></a> crs_41_sql_injection_attacks
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |981231|Sequência de comentário SQL detectada.|
 |981260|Codificação hexadecimal de SQL identificada|
@@ -360,7 +361,7 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs41xss"></a> crs_41_xss_attacks
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |973336|Filtro XSS - Categoria 1 = vetor de marca de script|
 |973338|Filtro XSS - Categoria 3 = Vector de URI de Javascript|
@@ -465,13 +466,13 @@ Os seguintes grupos de regras e regras estão disponíveis ao usar o Gateway de 
 
 ### <a name="crs42"></a> crs_42_tight_security
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |950103|Ataques de percurso de caminho|
 
 ### <a name="crs45"></a> crs_45_trojans
 
-|RuleId|DESCRIÇÃO|
+|RuleId|Descrição|
 |---|---|
 |950110|Acesso ao backdoor|
 |950921|Acesso ao backdoor|

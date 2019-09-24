@@ -3,23 +3,25 @@ title: Gerenciamento de registros
 description: Este tópico explica como registrar dispositivos em hubs de notificação para receber notificações por push.
 services: notification-hubs
 documentationcenter: .net
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: fd0ee230-132c-4143-b4f9-65cef7f463a1
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: dotnet
 ms.topic: article
-ms.author: jowargo
 ms.date: 04/08/2019
-ms.openlocfilehash: fffa6784702f239e0af0e9e88a4b9937d20b86ed
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 04/08/2019
+ms.openlocfilehash: 0725b4fc80fc3a41491bdb9ed084d33b36b490b8
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67488641"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71213095"
 ---
 # <a name="registration-management"></a>Gerenciamento de registros
 
@@ -36,7 +38,7 @@ O registro de dispositivos com um Hub de Notificação é realizado usando um **
 Um registro associa o identificador PNS (Serviço de Notificação de Plataforma) de um dispositivo com marcas e, possivelmente, um modelo. O identificador PNS pode ser um ChannelURI, um token do dispositivo ou uma ID de registro de FCM. As marcas são usadas para direcionar notificações para o conjunto correto de identificadores de dispositivos. Para saber mais, veja [Expressões de marca e de roteamento](notification-hubs-tags-segment-push-message.md). Os modelos são usados para implementar transformações por registro. Para saber mais, veja [Modelos](notification-hubs-templates-cross-platform-push-messages.md).
 
 > [!NOTE]
-> Os Hubs de notificação do Azure dá suporte a um máximo de 60 marcas por dispositivo.
+> Os hubs de notificação do Azure dão suporte a um máximo de 60 marcas por dispositivo.
 
 ### <a name="installations"></a>Instalações
 
@@ -45,7 +47,7 @@ Uma instalação é um registro aprimorado que inclui um conjunto de propriedade
 A seguir, algumas vantagens importantes do uso de instalações:
 
 - A criação ou atualização de uma instalação é totalmente idempotente. Portanto, você pode repetir sem as preocupações com registros duplicados.
-- O modelo de instalação dá suporte a um formato de marca especial (`$InstallationId:{INSTALLATION_ID}`) que permite enviar uma notificação diretamente para o dispositivo específico. Por exemplo, se o código do aplicativo define uma ID de instalação do `joe93developer` para esse dispositivo em particular, um desenvolvedor pode direcionar a este dispositivo ao enviar uma notificação para o `$InstallationId:{joe93developer}` marca. Isso permite que você direcione um dispositivo específico sem precisar fazer nenhuma codificação adicional.
+- O modelo de instalação do oferece suporte a um`$InstallationId:{INSTALLATION_ID}`formato de marca especial () que permite enviar uma notificação diretamente para o dispositivo específico. Por exemplo, se o código do aplicativo definir uma ID de `joe93developer` instalação para esse dispositivo específico, um desenvolvedor poderá direcionar esse dispositivo ao enviar uma notificação para a `$InstallationId:{joe93developer}` marca. Isso permite que você direcione um dispositivo específico sem precisar fazer nenhuma codificação adicional.
 - O uso de instalações também permite que você faça atualizações parciais no registro. A atualização parcial de uma instalação é solicitada com um método PATCH usando o [padrão JSON-Patch](https://tools.ietf.org/html/rfc6902). Isso é útil quando você deseja atualizar marcas no registro. Não é necessário obter todo o registro e reenviar todas as marcas anteriores novamente.
 
 Uma instalação pode conter as seguintes propriedades. Para obter uma listagem completa das propriedades da instalação, consulte [Criar ou substituir uma instalação com API REST](https://docs.microsoft.com/rest/api/notificationhubs/create-overwrite-installation) ou [Propriedades da Instalação](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation).
@@ -92,7 +94,7 @@ Uma instalação pode conter as seguintes propriedades. Para obter uma listagem 
 Os registros e instalações devem conter um identificador PNS válido para cada dispositivo/canal. Como os identificadores PNS só podem ser obtidos em um aplicativo cliente no dispositivo, um padrão é registrar diretamente no dispositivo com o aplicativo cliente. Por outro lado, as considerações de segurança e a lógica de negócios relacionadas às marcas podem exigir o gerenciamento do registro do dispositivo no back-end do aplicativo.
 
 > [!NOTE]
-> A API de instalações não oferece suporte ao serviço do Baidu (embora a API de registros faz). 
+> A API de instalações não oferece suporte ao serviço Baidu (embora a API de registros faça isso). 
 
 ### <a name="templates"></a>Modelos
 

@@ -17,7 +17,7 @@
   items:
     - name: SDK do Python
       displayName: api open datasets reference sdk
-      href: 'https://aka.ms/open-datasets-api'
+      href: /python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py
     - name: Notebooks Jupyter
       displayName: python notebooks
       href: 'https://github.com/Azure/OpenDatasetsNotebooks'

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 20ca823f60ced4260c2e61ca15ae04e158b7d952
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: f50f1b3e2ee7f98d14d29f1e2205a97d76eaacc8
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69615679"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219897"
 ---
 # <a name="change-feed-in-azure-cosmos-db---overview"></a>Feed de alterações no Azure Cosmos DB – visão geral
 
@@ -42,7 +42,7 @@ No momento, o recurso é compatível com os seguintes SDKs do cliente e APIs do 
 
 ## <a name="change-feed-and-different-operations"></a>Feed de alterações e operações diferentes
 
-Hoje você pode ver todas as operações no feed de alterações. A funcionalidade em que é possível controlar o feed de alterações, para operações específicas como apenas atualizações e não inserções ainda não está disponível. É possível adicionar um "marcador suave" no item para atualizações e filtrar com base no nisso ao processar itens no feed de alterações. No momento, o feed de alterações não registra exclusões. Semelhante ao exemplo anterior, é possível adicionar um marcador suave nos itens que estão sendo excluídos, por exemplo, é possível adicionar um atributo no item chamado "excluído" e defini-lo como "true" e definir uma TTL no item para que ele possa ser excluído automaticamente. É possível ler itens de histórico no feed de alterações, por exemplo, itens que foram adicionados há cinco anos. Se o item não for excluído, será possível ler o feed de alterações no que diz respeito à origem do seu contêiner.
+Hoje você pode ver todas as operações no feed de alterações. A funcionalidade em que é possível controlar o feed de alterações, para operações específicas como apenas atualizações e não inserções ainda não está disponível. É possível adicionar um "marcador suave" no item para atualizações e filtrar com base no nisso ao processar itens no feed de alterações. No momento, o feed de alterações não registra exclusões. Semelhante ao exemplo anterior, é possível adicionar um marcador suave nos itens que estão sendo excluídos, por exemplo, é possível adicionar um atributo no item chamado "excluído" e defini-lo como "true" e definir uma TTL no item para que ele possa ser excluído automaticamente. Você pode ler o feed de alterações para itens históricos (a alteração mais recente correspondente ao item, não inclui as alterações intermediárias), por exemplo, itens que foram adicionados cinco anos atrás. Se o item não for excluído, será possível ler o feed de alterações no que diz respeito à origem do seu contêiner.
 
 ### <a name="sort-order-of-items-in-change-feed"></a>Ordem de classificação de itens no feed de alterações
 
@@ -126,4 +126,4 @@ Agora, você pode prosseguir para saber mais sobre o feed de alterações nos se
 
 * [Opções de ler o feed de alterações](read-change-feed.md)
 * [Usando feed de alterações com o Azure Functions](change-feed-functions.md)
-* [Usando o processador do feed de alterações](change-feed-processor.md)
+* [Usando o processador de feed de alterações](change-feed-processor.md)

@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 08/2/2019
 ms.custom: seodec18
-ms.openlocfilehash: eaed6e7b0ea044ba39a1055ad14de13d5deb9b05
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: ecd1212385473e33d05f38f67db5708bff060daa
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71035305"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218249"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Acessar dados nos serviços de armazenamento do Azure
 
@@ -132,7 +132,7 @@ O `target_path` parâmetro especifica o local no compartilhamento de arquivos (o
 
 Ou carregue uma lista de arquivos individuais no repositório de armazenamento por meio `upload_files()` do método.
 
-### <a name="download"></a>Baixar
+### <a name="download"></a>Download
 
 Da mesma forma, faça o download dos dados de um armazenamento de dados para o sistema de arquivos local.
 
@@ -147,14 +147,15 @@ O `target_path` parâmetro é o local do diretório local para o qual baixar os 
 <a name="train"></a>
 ## <a name="access-your-data-during-training"></a>Acesse seus dados durante o treinamento
 
-Para acessar dados durante o treinamento, você pode baixar ou montar seus dados de seus serviços de armazenamento do Azure para o destino de computação por meio de armazenamentos.
+> [!IMPORTANT]
+> Usar [Azure Machine Learning conjuntos de dados (versão prévia)](how-to-create-register-datasets.md) é a nova maneira recomendada de acessar os seus dados no treinamento. Os conjuntos de dados fornecem funções que carregam dados tabulares em pandas ou Spark dataframe e a capacidade de baixar ou montar arquivos de qualquer formato do blob do Azure, arquivo do Azure, Azure Data Lake Gen 1, Azure Data Lake Gen 2, Azure SQL, PostgreSQL do Azure. Saiba mais sobre [como treinar com conjuntos de](how-to-train-with-datasets.md)os.
 
 A tabela a seguir lista os métodos que dizem ao destino de computação como usar os repositórios de armazenamento durante as execuções. 
 
 Aparência|Método|Descrição|
 ----|-----|--------
 Montagem| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-mount--)| Use para montar o repositório de armazenamento no destino de computação.
-Baixar|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-download-path-on-compute-none-)|Use para baixar o conteúdo do seu repositório de armazenamento para o local especificado `path_on_compute`por. <br> Esse download ocorre antes da execução.
+Download|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-download-path-on-compute-none-)|Use para baixar o conteúdo do seu repositório de armazenamento para o local especificado `path_on_compute`por. <br> Esse download ocorre antes da execução.
 Upload|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-upload-path-on-compute-none-)| Use para carregar um arquivo do local especificado pelo `path_on_compute` para seu repositório de armazenamento. <br> Esse carregamento ocorre após a execução.
 
 Para fazer referência a uma pasta ou arquivo específico em seu repositório de armazenamento e disponibilizá-lo no destino de computação, [`path()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#path-path-none--data-reference-name-none-) use o método de armazenamento de Datastore.
