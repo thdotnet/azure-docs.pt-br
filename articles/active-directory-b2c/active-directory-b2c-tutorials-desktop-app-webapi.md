@@ -10,16 +10,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: b4b70ddfe6ea2baf42227cc83ed0cc14969b3e92
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 75469d4522cea2914e0f69d5aa1850e468cb0d50
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66508109"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71064846"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Tutorial: Permitir acesso a uma API Web do Node.js de um aplicativo da área de trabalho usando o Azure Active Directory B2C
 
-Este tutorial mostra como chamar um recurso da API Web Node.js protegida pelo Azure Active Directory (Azure AD) B2C de um aplicativo de desktop do Windows Presentation Foundation (WPF).
+Este tutorial mostra como chamar um recurso da API Web do Node.js protegido pelo Azure AD B2C (Azure Active Directory B2C) em um aplicativo da área de trabalho do WPF (Windows Presentation Foundation).
 
 Neste tutorial, você aprenderá como:
 
@@ -37,10 +37,10 @@ Conclua as etapas e os pré-requisitos no [Tutorial: Permitir autenticação de 
 
 ## <a name="add-a-web-api-application"></a>Adicionar um aplicativo API Web
 
-Os recursos da API Web precisam ser registrados no seu locatário antes de poderem aceitar e responder a solicitações de recurso protegido de aplicativos clientes que apresentem um token de acesso. 
+Os recursos da API Web precisam ser registrados no seu locatário antes de poderem aceitar e responder a solicitações de recurso protegido de aplicativos clientes que apresentem um token de acesso.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+2. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C selecionando o filtro **Diretório + assinatura** no menu superior e escolhendo o diretório que contém o locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Selecione **Aplicativos** e, em seguida, selecione **Adicionar**.
 5. Insira um nome para o aplicativo. Por exemplo, *webapi1*.
@@ -76,14 +76,14 @@ Um usuário autentica-se com o Azure AD B2C para usar o aplicativo da área de t
 
 ## <a name="configure-the-sample"></a>Configurar o exemplo
 
-Agora que a API Web está registrada e você tem escopos definidos, configure o código da API Web para usar o locatário do Azure AD B2C. Neste tutorial, configure um aplicativo Web Node.js de exemplo que pode ser baixado do GitHub. 
+Agora que a API Web está registrada e você tem escopos definidos, configure o código da API Web para usar o locatário do Azure AD B2C. Neste tutorial, configure um aplicativo Web Node.js de exemplo que pode ser baixado do GitHub.
 
 [Baixe um arquivo zip](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi/archive/master.zip) ou clone o aplicativo Web de exemplo do GitHub.
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi.git
 ```
-O exemplo de API Web Node.js usa a biblioteca de Passport.js para habilitar o Azure AD B2C a proteger chamadas à API. 
+O exemplo de API Web Node.js usa a biblioteca de Passport.js para habilitar o Azure AD B2C a proteger chamadas à API.
 
 1. Abra o arquivo `index.js` .
 2. Configure o exemplo com as informações de registro do locatário do Azure AD B2C. Alterar as seguintes linhas de código:
@@ -111,7 +111,7 @@ O exemplo de API Web Node.js usa a biblioteca de Passport.js para habilitar o Az
 1. Abra a solução **active-directory-b2c-wpf** no Visual Studio.
 2. Pressione **F5** para executar o aplicativo de desktop.
 3. Entre usando o endereço de email e a senha usada no [tutorial Autenticar usuários com o Azure Active Directory B2C em um aplicativo de desktop](active-directory-b2c-tutorials-desktop-app.md).
-4. Clique no botão **Chamar API**. 
+4. Clique no botão **Chamar API**.
 
 O aplicativo da área de trabalho faz uma solicitação para a API Web e obtém uma resposta com o nome de exibição do usuário conectado. Seu aplicativo da área de trabalho protegido está chamando a API Web protegida no seu locatário do Azure AD B2C.
 

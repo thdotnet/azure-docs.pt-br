@@ -1,7 +1,7 @@
 ---
-title: 'Exemplo: Chamar a API Analisar imagem – Pesquisa Visual Computacional'
+title: Chamar a API da Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
-description: Saiba como chamar a API da Pesquisa Visual Computacional usando o REST nos Serviços Cognitivos do Azure.
+description: Saiba como chamar a API da Pesquisa Visual Computacional usando a API REST nos Serviços Cognitivos do Azure.
 services: cognitive-services
 author: KellyDF
 manager: nitinme
@@ -11,53 +11,61 @@ ms.topic: sample
 ms.date: 09/09/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 386503a7089c910b52a87cca8d9f2f2203ae0cad
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 417ff7ac345b9a83b3d3f4c50e9fd141d74bc99c
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70859060"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71103556"
 ---
-# <a name="example-how-to-call-the-computer-vision-api"></a>Exemplo: Como chamar a API da Pesquisa Visual Computacional
+# <a name="call-the-computer-vision-api"></a>Chamar a API da Pesquisa Visual Computacional
 
-Este guia demonstra como chamar a API da Pesquisa Visual Computacional usando o REST. Os exemplos são escritos em C# usando a biblioteca de clientes da API da Pesquisa Visual Computacional e como chamadas HTTP POST/GET. Nosso foco será:
+Este artigo demonstra como chamar a API da Pesquisa Visual Computacional usando a API REST. Os exemplos são escritos em C# usando a biblioteca de clientes da API da Pesquisa Visual Computacional e como chamadas HTTP POST ou GET. O artigo se concentra em:
 
-- Como obter "Tags", "Descrição" e "Categorias".
-- Como obter informações "específicas a um domínio" (celebridades).
+- Como obter marcas, uma descrição e categorias
+- Como obter informações específicas do domínio ou "celebridades"
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- URL da imagem ou do caminho para a imagem armazenada localmente.
-- Suporte para métodos de entrada: Binário da imagem bruta na forma de um aplicativo/fluxo de octeto ou uma URL da imagem
-- Formatos de imagem com suporte: JPEG, PNG, GIF, BMP
-- Tamanho do arquivo de imagem: Menos de 4 MB
-- Dimensões da imagem: Mais de 50 x 50 pixels
+- Uma URL de imagem ou um caminho para uma imagem armazenada localmente
+- Métodos de entrada compatíveis: binário da imagem bruta na forma de um aplicativo/fluxo de octeto ou uma URL da imagem
+- Formatos de arquivo de imagem compatíveis: JPEG, PNG, GIF e BMP
+- Tamanho do arquivo de imagem: 4 MB ou menos
+- Dimensões da imagem: 50 &times; 50 pixels ou mais
   
-Nos exemplos abaixo, os seguintes recursos são demonstrados:
+Os exemplos neste artigo demonstram os seguintes recursos:
 
-1. Análise de uma imagem e obtenção de uma matriz de tags e um descrição retornada.
-2. Análise de uma imagem com um modelo específico a um domínio (especificamente, modelo de "celebridades") e obtenção do resultado correspondente no reajuste do JSON.
+* Analisando uma imagem para retornar uma matriz de marcas e uma descrição
+* Análise de uma imagem com um modelo específico a um domínio (especificamente, modelo "celebridades") para retornar o resultado correspondente no JSON
 
-Os recursos são divididos em:
+Os recursos oferecem as seguintes opções:
 
-- **Opção um:** Análise de Escopo – analisar apenas um dado modelo
-- **Opção dois:** Análise Avançada – analisar para fornecer mais detalhes com a [taxonomia de 86 categorias](../Category-Taxonomy.md)
+- **Opção 1**: Análise de Escopo – analisar apenas um modelo especificado
+- **Opção 2**: Análise Avançada – analisar para fornecer mais detalhes usando a [taxonomia de 86 categorias](../Category-Taxonomy.md)
   
 ## <a name="authorize-the-api-call"></a>Autorizar a chamada à API
 
-Toda chamada à API da Pesquisa Visual Computacional requer uma chave de assinatura. Essa chave precisa ser passada por um parâmetro de cadeia de caracteres de consulta ou especificada no cabeçalho da solicitação.
+Toda chamada à API da Pesquisa Visual Computacional requer uma chave de assinatura. Essa chave deve ser passada por um parâmetro de cadeia de caracteres de consulta ou especificada no cabeçalho da solicitação.
 
-É possível obter uma chave de avaliação gratuita em [Experimente os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). Ou siga as instruções em [Criar uma conta dos Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar a Pesquisa Visual Computacional e obter sua chave.
+Para obter uma chave de avaliação gratuita, siga um destes procedimentos:
+* Vá até a página [Experimentar os Serviços Cognitivos](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision). 
+* Vá para a página [Criar uma conta de Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) para assinar Pesquisa Visual Computacional.
 
-1. Passando a chave de assinatura por meio de uma cadeia de consulta, veja abaixo como um exemplo da API da Pesquisa Visual Computacional:
+Você pode passar a chave de assinatura seguindo qualquer um destes procedimentos:
 
-    ```https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>```
+* Passe-a por uma cadeia de consulta, como neste exemplo de API da Pesquisa Visual Computacional:
 
-1. A passagem da chave de assinatura também pode ser especificada no cabeçalho da solicitação HTTP:
+  ```
+  https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
+  ```
 
-    ```ocp-apim-subscription-key: <Your subscription key>```
+* Especifique-a no cabeçalho de solicitação HTTP:
 
-1. Ao usar a biblioteca de clientes, a chave de assinatura é passada por meio do construtor de ComputerVisionClient e a região é especificada em uma propriedade do cliente:
+  ```
+  ocp-apim-subscription-key: <Your subscription key>
+  ```
+
+* Quando você usa a biblioteca de cliente, passe a chave usando o construtor de ComputerVisionClient e especifique a região em uma propriedade do cliente:
 
     ```
     var visionClient = new ComputerVisionClient(new ApiKeyServiceClientCredentials("Your subscriptionKey"))
@@ -66,13 +74,13 @@ Toda chamada à API da Pesquisa Visual Computacional requer uma chave de assinat
     }
     ```
 
-## <a name="upload-an-image-to-the-computer-vision-api-service-and-get-back-tags-descriptions-and-celebrities"></a>Carregar uma imagem para o serviço API da Pesquisa Visual Computacional e retornar as marcas, descrições e celebridades
+## <a name="upload-an-image-to-the-computer-vision-api-service"></a>Fazer upload de uma imagem no serviço de API da Pesquisa Visual Computacional
 
-A maneira básica de realizar a chamada à API da Pesquisa Visual Computacional é carregar uma imagem diretamente. Isso é feito enviando uma solicitação "POST" com o tipo de conteúdo application/octet-stream junto com os dados lidos da imagem. Para "Tags" e "Descrição", este método de upload será o mesmo para todas as chamadas à API da Pesquisa Visual Computacional. A única diferença será os parâmetros de consulta especificados pelo usuário. 
+A maneira básica de executar a chamada à API da Pesquisa Visual Computacional é fazer upload de uma imagem diretamente para retornar tags, uma descrição e celebridades. Você faz isso enviando uma solicitação "POST" com a imagem binária no corpo HTTP junto com os dados lidos da imagem. O método de upload é o mesmo para todas as chamadas à API da Pesquisa Visual Computacional. A única diferença são os parâmetros de consulta que você especifica. 
 
-Veja como obter "Tags" e "Descrição" para uma determinada imagem:
+Para uma imagem especificada, obtenha marcas e uma descrição usando uma das seguintes opções:
 
-**Opção um:** Obter a lista de "Marcas" e uma "Descrição"
+### <a name="option-1-get-a-list-of-tags-and-a-description"></a>Opção 1: obter uma lista de marcas e uma descrição
 
 ```
 POST https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags&subscription-key=<Your subscription key>
@@ -92,16 +100,16 @@ using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
 }
 ```
 
-**Opção dois:** obter apenas a lista de "Tags" ou apenas a lista de "Descrição":
+### <a name="option-2-get-a-list-of-tags-only-or-a-description-only"></a>Opção 2: obter somente uma lista de marcas ou somente uma descrição
 
-###### <a name="tags-only"></a>Somente marcas:
+Para somente marcas, execute:
 
 ```
 POST https://westus.api.cognitive.microsoft.com/vision/v2.0/tag?subscription-key=<Your subscription key>
 var tagResults = await visionClient.TagImageAsync("http://contoso.com/example.jpg");
 ```
 
-###### <a name="description-only"></a>Somente descrição:
+Pra somente descrição, execute:
 
 ```
 POST https://westus.api.cognitive.microsoft.com/vision/v2.0/describe?subscription-key=<Your subscription key>
@@ -111,9 +119,9 @@ using (var fs = new FileStream(@"C:\Vision\Sample.jpg", FileMode.Open))
 }
 ```
 
-### <a name="get-domain-specific-analysis-celebrities"></a>Obter análise específica de domínio (celebridades)
+## <a name="get-domain-specific-analysis-celebrities"></a>Obter análise específica de domínio (celebridades)
 
-**Opção um:** Análise de Escopo – analisar apenas um dado modelo
+### <a name="option-1-scoped-analysis---analyze-only-a-specified-model"></a>Opção 1: Análise de escopo – analisar apenas um modelo especificado
 ```
 POST https://westus.api.cognitive.microsoft.com/vision/v2.0/models/celebrities/analyze
 var celebritiesResult = await visionClient.AnalyzeImageInDomainAsync(url, "celebrities");
@@ -126,17 +134,17 @@ GET https://westus.api.cognitive.microsoft.com/vision/v2.0/models
 var models = await visionClient.ListModelsAsync();
 ```
 
-**Opção dois:** Análise Avançada – analisar para fornecer mais detalhes com a [taxonomia de 86 categorias](../Category-Taxonomy.md)
+### <a name="option-2-enhanced-analysis---analyze-to-provide-additional-details-by-using-86-categories-taxonomy"></a>Opção 2: Análise avançada – analisar para fornecer mais detalhes usando a taxonomia de 86 categorias
 
-Para aplicativos nos quais você deseja obter análise de imagem genérica, além de detalhes de um ou mais modelos específicos a um domínio, expandimos a API v1 com o parâmetro de consulta de modelos.
+Para aplicativos nos quais você deseja obter análise de imagem genérica, além de detalhes de um ou mais modelos específicos a um domínio, expandimos a API v1 usando o parâmetro de consulta de modelos.
 
 ```
 POST https://westus.api.cognitive.microsoft.com/vision/v2.0/analyze?details=celebrities
 ```
 
-Quando esse método é invocado, chamaremos o classificador de 86 categorias primeiro. Se qualquer uma das categorias corresponder àquelas de um modelo conhecido/correspondente, uma segunda passagem de invocações do classificador ocorrerá. Por exemplo, se "details=all" ou "details" incluir "celebridades", chamaremos o modelo de celebridades após o classificador de 86 categorias ser chamado, e o resultado incluirá a pessoa da categoria. Isso aumentará a latência dos usuários interessados em celebridades, em comparação com a Opção um.
+Ao invocar esse método, primeiro você chama o classificador de [86 categorias](../Category-Taxonomy.md). Se qualquer uma das categorias corresponde àquelas de um modelo conhecido/correspondente, uma segunda passagem de invocações do classificador ocorre. Por exemplo, se "details=all" ou "details" inclui "celebrities", você chama o modelo celebridades depois de chamar o classificador de 86 categorias. O resultado inclui a categoria pessoa. Em contraste com a Opção 1, esse método aumenta a latência para usuários interessados em celebridades.
 
-Todos os parâmetros de consulta v1 se comportarão da mesma maneira nesse caso.  Se visualFeatures=categories não for especificado, será habilitado implicitamente.
+Neste caso, todos os parâmetros de consulta v1 comportam-se da mesma maneira. Se você não especificar visualFeatures=categories, ele será habilitado implicitamente.
 
 ## <a name="retrieve-and-understand-the-json-output-for-analysis"></a>Recuperar e entender a saída JSON para análise
 
@@ -171,19 +179,19 @@ Aqui está um exemplo:
 
 Campo | Type | Conteúdo
 ------|------|------|
-Marcas  | `object` | Objeto de nível superior para matriz de tags
-tags[].Name | `string`  | Palavra-chave do classificador de tags
-tags[].Score    | `number`  | Pontuação de confiança, entre 0 e 1.
+Marcas  | `object` | O objeto de nível superior para uma matriz de marcas.
+tags[].Name | `string`  | A palavra-chave do classificador de marcas.
+tags[].Score    | `number`  | A pontuação de confiança, entre 0 e 1.
 Descrição  | `object` | Objeto de nível superior de uma descrição.
-description.tags[] |    `string`    | Lista de tags.  Se houver confiança insuficiente na capacidade de produzir uma legenda, talvez as tags sejam as únicas informações disponíveis para o chamador.
+description.tags[] |    `string`    | Lista de marcas.  Se houver confiança insuficiente na capacidade de produzir uma legenda, talvez as marcas sejam as únicas informações disponíveis para o chamador.
 description.captions[].text | `string`  | Uma frase que descreve a imagem.
-description.captions[].confidence   | `number`  | Confiança da frase.
+description.captions[].confidence   | `number`  | A pontuação de confiança para a frase.
 
 ## <a name="retrieve-and-understand-the-json-output-of-domain-specific-models"></a>Recuperar e compreender a saída JSON de modelos específicos de domínio
 
-**Opção um:** Análise de Escopo – analisar apenas um dado modelo
+### <a name="option-1-scoped-analysis---analyze-only-a-specified-model"></a>Opção 1: Análise de escopo – analisar apenas um modelo especificado
 
-A saída será uma matriz de tags, como este exemplo:
+A saída é uma matriz de marcas, conforme mostrado no exemplo a seguir:
 
 ```json
 {  
@@ -200,9 +208,9 @@ A saída será uma matriz de tags, como este exemplo:
 }
 ```
 
-**Opção dois:** Análise Avançada – analisar para fornecer mais detalhes com a taxonomia de 86 categorias
+### <a name="option-2-enhanced-analysis---analyze-to-provide-additional-details-by-using-the-86-categories-taxonomy"></a>Opção 2: Análise avançada – analisar para fornecer mais detalhes usando a taxonomia de 86 categorias
 
-Para modelos específicos a um domínio que usam a Opção dois (análise avançada), o tipo de retorno das categorias é ampliado. Há um exemplo a seguir:
+Para modelos específicos de domínio usando a opção 2 (análise avançada), o tipo de retorno de categorias é estendido, conforme mostrado no exemplo a seguir:
 
 ```json
 {  
@@ -229,20 +237,20 @@ Para modelos específicos a um domínio que usam a Opção dois (análise avanç
 }
 ```
 
-O campo de categorias é uma lista de uma ou mais das [86 categorias](../Category-Taxonomy.md) na taxonomia original. Observe também que as categorias que terminam com um sublinhado corresponderão à categoria e seus filhos (por exemplo, people_ assim como people_group, para o modelo de celebridades).
+O campo de categorias é uma lista de uma ou mais das [86 categorias](../Category-Taxonomy.md) na taxonomia original. As categorias que terminam em um sublinhado correspondem a essa categoria e seus filhos (por exemplo, people_" ou people_group, para o modelo celebridades).
 
 Campo   | Type  | Conteúdo
 ------|------|------|
-Categorias | `object`   | Objeto de nível superior
-categories[].name    | `string` | Nome da taxonomia de 86 categorias
-categories[].score  | `number`  | Pontuação de confiança, entre 0 e 1
-categories[].detail  | `object?`      | Objeto de detalhes opcional
+Categorias | `object`   | Objeto de nível superior.
+categories[].name    | `string` | O nome da lista de taxonomia de 86 categorias.
+categories[].score  | `number`  | A pontuação de confiança, entre 0 e 1.
+categories[].detail  | `object?`      | (Opcional) O objeto de detalhe.
 
-Observe que, se várias categorias forem correspondentes (por exemplo, o classificador de 86 categorias retorna uma pontuação para people_ e people_young se model=celebrities), os detalhes serão anexados à correspondência de nível mais geral (people_, nesse exemplo).
+Se várias categorias forem correspondentes (por exemplo, o classificador de 86 categorias retorna uma pontuação para people_ e people_young se model=celebrities), os detalhes serão anexados à correspondência de nível mais geral ("people_", neste exemplo).
 
-## <a name="errors-responses"></a>Respostas de erros
+## <a name="error-responses"></a>Respostas de erro
 
-Essas são idênticas a vision.analyze, com o erro adicional do erro NotSupportedModel (HTTP 400), que pode ser retornado nos cenários Opção um e Opção dois. Para a Opção dois (Análise avançada), se qualquer um dos modelos especificados nos detalhes não for reconhecido, a API retornará um NotSupportedModel, mesmo se um ou mais deles forem válidos.  Os usuários podem chamar listModels para descobrir para quais modelos há suporte.
+Esses erros são idênticos aos de vision.analyze, com o erro adicional NotSupportedModel (HTTP 400), que pode ser retornado nos cenários da Opção 1 e da Opção 2. Para a Opção 2 (análise avançada), se qualquer um dos modelos especificados nos detalhes não for reconhecido, a API retornará um NotSupportedModel, mesmo que um ou mais deles seja válido. Para descobrir que modelos são compatíveis, chame listModels.
 
 ## <a name="next-steps"></a>Próximas etapas
 

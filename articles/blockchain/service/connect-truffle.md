@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.service: azure-blockchain
 ms.reviewer: jackyhsu
 manager: femila
-ms.openlocfilehash: 822402f548fe0fc866051a9c77adef6e37c3fa75
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: ea64e3fe4789ac0558463ded81c8179db83469d5
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70240910"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70932591"
 ---
 # <a name="quickstart-use-truffle-to-connect-to-a-transaction-node"></a>Início Rápido: Usar o Truffle para se conectar a um nó de transação
 
@@ -25,7 +25,7 @@ O Truffle é um ambiente de desenvolvimento de blockchain que pode ser usado par
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* [Criar um membro do Azure Blockchain](create-member.md)
+* Concluir [Início Rápido: Criar um membro do blockchain usando o portal do Azure](create-member.md) ou [Início Rápido: Criar um membro do blockchain do Azure Blockchain Service usando a CLI do Azure](create-member-cli.md)
 * Instale o [Truffle](https://github.com/trufflesuite/truffle). O Truffle exige a instalação de várias ferramentas, incluindo [Node.js](https://nodejs.org) e [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 * Instale o [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). O Python é necessário para o Web3.
 
@@ -124,7 +124,7 @@ Usaremos o *Web3* para se conectar ao nó de transação.
 
 Neste Início Rápido, você criou um projeto do Truffle para se conectar ao nó de transação padrão do serviço Azure Blockchain.
 
-Experimente o tutorial a seguir para usar o Azure Blockchain Development Kit for Ethereum e o Truffle para executar uma função de contrato inteligente por meio de uma transação em uma rede de blockchain de consórcio.
+Experimente o próximo tutorial para usar o Azure Blockchain Development Kit para Ethereum e Truffle para criar, implantar e executar uma função de contrato inteligente por uma transação.
 
 > [!div class="nextstepaction"]
-> [Usar contratos inteligentes no Azure Blockchain Service](send-transaction.md)
+> [Use o Visual Studio Code para criar e implantar contratos inteligentes](send-transaction.md)

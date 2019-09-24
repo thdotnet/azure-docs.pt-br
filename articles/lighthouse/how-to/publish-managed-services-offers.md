@@ -4,15 +4,15 @@ description: Saiba como publicar uma oferta de serviço gerenciado que integre o
 author: JnHs
 ms.author: jenhayes
 ms.service: lighthouse
-ms.date: 08/29/2019
+ms.date: 09/19/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: c0c2ccf03292434b3f23b26857ec0d2b3fc3ceed
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 4a1adf1be8798f4bb21b89ff0654287a2958146e
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70165261"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105255"
 ---
 # <a name="publish-a-managed-services-offer-to-azure-marketplace"></a>Publicar uma oferta de serviços gerenciados no Azure Marketplace
 
@@ -71,7 +71,7 @@ Por fim, preencha a seção **Detalhes do Manifesto**. Isso criará um manifesto
   - **ID do Objeto do Azure AD**: o identificador Azure AD de um usuário, grupo de usuários ou aplicativo que receberá determinadas permissões (conforme descrito pela definição de função) relativas aos recursos dos clientes.
   - **Nome de exibição do objeto do Azure AD**: um nome amigável para ajudar o cliente a entender a finalidade da autorização. O cliente verá esse nome ao delegar recursos.
   - **Definição de Função**: Selecione uma das funções internas do Azure AD disponíveis na lista. Essa função determinará as permissões que o usuário no campo **ID do Objeto do Azure AD** terá nos recursos dos clientes. Para saber mais sobre essas funções, confira [Funções internas](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
-  - **Funções atribuíveis**: se você selecionou Administrador de Acesso de Usuário na **Definição de Função** para essa autorização, poderá adicionar uma ou mais funções atribuíveis aqui. O usuário no campo **ID de Objeto do Azure AD** poderá atribuir essas **Funções Atribuíveis** a [identidades gerenciadas](https://docs.microsoft.com/azure/managed-applications/publish-managed-identity). Observe que nenhuma outra permissão normalmente associada à função Administrador de Acesso de Usuário será aplicada a esse usuário. (Se você não selecionou Administrador de Acesso do Usuário para a Definição de Função desse usuário, o campo não terá efeito.)
+  - **Funções atribuíveis**: Isso será necessário apenas se você tiver selecionado Administrador de Acesso do Usuário na **Definição de Função** para essa autorização. Nesse caso, você deve adicionar uma ou mais funções atribuíveis aqui. O usuário no campo **ID de Objeto do Azure AD** poderá atribuir essas **Funções Atribuíveis** a [identidades gerenciadas](https://docs.microsoft.com/azure/managed-applications/publish-managed-identity). Observe que nenhuma outra permissão normalmente associada à função Administrador de Acesso de Usuário será aplicada a esse usuário. Se você não selecionar uma ou mais funções aqui, seu envio não será aprovado na certificação. (Se você não selecionou Administrador de Acesso do Usuário para a Definição de Função desse usuário, o campo não terá efeito.)
 
 > [!TIP]
 > Na maioria dos casos, é melhor atribuir permissões a um grupo de usuários ou entidade de serviço do Azure AD, em vez de a uma série de contas de usuário individuais. Assim você pode adicionar ou remover o acesso de usuários individuais sem precisar atualizar e publicar o plano novamente quando os requisitos de acesso forem alterados.

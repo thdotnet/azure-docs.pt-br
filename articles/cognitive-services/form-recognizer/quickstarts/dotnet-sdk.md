@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/12/2019
 ms.author: pafarley
-ms.openlocfilehash: ada570196c916a8101e8e968d284a3b280199cf3
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: ce1cdadcdc69fb5539394aa9bf402aa9463311e9
+ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142813"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71057671"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Início Rápido: Biblioteca de clientes do Reconhecimento de Formulários para .NET
 
@@ -22,9 +22,11 @@ Introdução à biblioteca de clientes do Reconhecimento de Formulários para .N
 
 Use a biblioteca de clientes do Reconhecimento de Formulários para .NET para:
 
-* Treinar um modelo personalizado do Reconhecimento de Formulários
-* Analisar formulários com um modelo personalizado
-* Obter uma lista de modelos personalizados
+* [Treinar um modelo personalizado do Reconhecimento de Formulários](#train-a-custom-model)
+* [Obter uma lista de chaves extraídas](#get-a-list-of-extracted-keys)
+* [Analisar formulários com um modelo personalizado](#analyze-forms-with-a-custom-model)
+* [Obter uma lista de modelos personalizados](#get-a-list-of-custom-models)
+* [Excluir um modelo personalizado](#delete-a-custom-model)
 
 [Documentação de referência](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/formrecognizer?view=azure-dotnet-preview) | [Código-fonte da biblioteca](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.FormRecognizer) | [Pacote (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.FormRecognizer/)
 
@@ -68,14 +70,7 @@ Build succeeded.
 
 No diretório do projeto, abra o arquivo _Program.cs_ no IDE ou no editor de sua preferência. Adicione as seguintes declarações de `using` :
 
-```csharp
-using Microsoft.Azure.CognitiveServices.FormRecognizer;
-using Microsoft.Azure.CognitiveServices.FormRecognizer.Models;
-
-using System;
-using System.IO;
-using System.Threading.Tasks;
-```
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_using)]
 
 Em seguida, adicione o código a seguir ao método **Main** do aplicativo. Você definirá essa tarefa assíncrona posteriormente.
 
@@ -115,10 +110,12 @@ Estes snippets de códigos mostram como realizar as seguintes tarefas com a bibl
 
 * [Autenticar o cliente](#authenticate-the-client)
 * [Treinar um modelo personalizado do Reconhecimento de Formulários](#train-a-custom-model)
+* [Obter uma lista de chaves extraídas](#get-a-list-of-extracted-keys)
 * [Analisar formulários com um modelo personalizado](#analyze-forms-with-a-custom-model)
 * [Obter uma lista de modelos personalizados](#get-a-list-of-custom-models)
+* [Excluir um modelo personalizado](#delete-a-custom-model)
 
-### <a name="define-variables"></a>Definir variáveis
+## <a name="define-variables"></a>Definir variáveis
 
 Antes de definir algum método, adicione as definições de variável a seguir à parte superior da classe **Program**. Você precisará preencher algumas das variáveis por conta própria. 
 
@@ -127,13 +124,13 @@ Antes de definir algum método, adicione as definições de variável a seguir �
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_variables)]
 
-### <a name="authenticate-the-client"></a>Autenticar o cliente
+## <a name="authenticate-the-client"></a>Autenticar o cliente
 
 Abaixo do método `Main`, defina a tarefa que é referenciada em `Main`. Aqui, você autenticará o objeto cliente usando as variáveis de assinatura que definiu acima. Você definirá os outros métodos posteriormente.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_maintask)]
 
-### <a name="train-a-custom-model"></a>Treinar um modelo personalizado
+## <a name="train-a-custom-model"></a>Treinar um modelo personalizado
 
 O método a seguir usa o objeto cliente do Reconhecimento de Formulários para treinar um novo modelo de reconhecimento nos documentos armazenados no contêiner de blobs do Azure. Ele usa um método auxiliar para exibir informações sobre o modelo treinado recentemente (representado por um objeto [ModelResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.modelresult?view=azure-dotnet-preview)) e retorna a ID do modelo.
 
@@ -143,9 +140,18 @@ O método auxiliar a seguir exibe informações sobre um modelo de Reconheciment
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_displaymodel)]
 
-### <a name="analyze-forms-with-a-custom-model"></a>Analisar formulários com um modelo personalizado
+## <a name="get-a-list-of-extracted-keys"></a>Obter uma lista de chaves extraídas
+
+Quando o treinamento for concluído, o modelo personalizado manterá uma lista de chaves extraídas dos documentos de treinamento. Ele espera que os documentos de formulário futuros contenham essas chaves e extrairá seus valores correspondentes na operação de Análise. Use o método a seguir para recuperar a lista de chaves extraídas e imprimi-la no console. Essa é uma boa maneira de verificar se o processo de treinamento foi eficaz.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_getkeys)]
+
+## <a name="analyze-forms-with-a-custom-model"></a>Analisar formulários com um modelo personalizado
 
 Esse método usa o cliente do Reconhecimento de Formulários e uma ID de modelo para analisar um documento de formulário PDF e extrair dados de chave/valor. Ele usa um método auxiliar para exibir os resultados (representado por um objeto [AnalyzeResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.analyzeresult?view=azure-dotnet-preview)).
+
+> [!NOTE]
+> O método a seguir analisa um formulário em PDF. Para os métodos semelhantes que analisam formulários JPEG e PNG, confira o código de exemplo completo no [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/dotnet/FormRecognizer).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_analyzepdf)]
 
@@ -153,11 +159,17 @@ O método auxiliar a seguir exibe informações sobre um modelo de operação de
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_displayanalyze)]
 
-### <a name="get-a-list-of-custom-models"></a>Obter uma lista de modelos personalizados
+## <a name="get-a-list-of-custom-models"></a>Obter uma lista de modelos personalizados
 
 Você pode retornar uma lista de todos os modelos treinados que pertencem à conta e pode recuperar informações sobre quando eles foram criados. A lista de modelos é representada por um objeto [ModelsResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.modelsresult?view=azure-dotnet-preview).
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_getmodellist)]
+
+## <a name="delete-a-custom-model"></a>Excluir um modelo personalizado
+
+Caso deseje excluir o modelo personalizado de sua conta, use o seguinte método:
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_deletemodel)]
 
 ## <a name="run-the-application"></a>Executar o aplicativo
 
@@ -174,9 +186,7 @@ Se quiser limpar e remover uma assinatura dos Serviços Cognitivos, você poder�
 * [Portal](../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [CLI do Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-Além disso, se você tiver treinado um modelo personalizado que deseja excluir da sua conta, use o seguinte método:
-
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_deletemodel)]
+Além disso, se você treinou um modelo personalizado que deseja excluir de sua conta, execute o método em [Excluir um modelo personalizado](#delete-a-custom-model).
 
 ## <a name="next-steps"></a>Próximas etapas
 

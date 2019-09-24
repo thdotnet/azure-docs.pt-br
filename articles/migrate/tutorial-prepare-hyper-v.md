@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/24/2019
+ms.date: 09/16/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 87df37cc6baa863bb0b068bdfeb9cde873e38836
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 2f45f70f1c131e1690997cda18a8d612d3af9dee
+ms.sourcegitcommit: a819209a7c293078ff5377dee266fa76fd20902c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952075"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71010315"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Preparar para a avaliação e a migração de VMs do Hyper-V para o Azure
 
@@ -99,7 +99,7 @@ Para preparar para a avaliação do Hyper-V, faça o seguinte:
 1. Verifique as configurações do host Hyper-V.
 2. Configure a comunicação remota do PowerShell em cada host para que o dispositivo de Migrações para Azure possa executar comandos do PowerShell no host, em uma conexão do WinRM.
 3. Se os discos da VM estiverem localizados no armazenamento SMB remoto, a delegação de credenciais será necessária. 
-    - Habilite a delegação de CredSSP para que o dispositivo de Migrações para Azure possa atuar como o cliente, delegando credenciais a um host. T
+    - Habilite a delegação de CredSSP para que o dispositivo de Migrações para Azure possa atuar como o cliente, delegando credenciais a um host.
     - Você permite que cada host atue como um delegado para o dispositivo, conforme descrito abaixo.
     - Posteriormente, ao configurar o dispositivo, você habilitará a delegação no dispositivo.
 4. Examine os requisitos do dispositivo e o acesso à URL/porta necessário para o dispositivo.
@@ -113,7 +113,7 @@ Você pode definir essas configurações manualmente usando os procedimentos a s
 
 O script valida os hosts do Hyper-V e define as configurações necessárias para descobrir e avaliar as VMs do Hyper-V. Aqui está o que ele faz:
 
-- Verifica se você está executando no script em uma versão do PowerShell compatível.
+- Verifica se você está executando o script em uma versão do PowerShell compatível.
 - Verifica se você (o usuário que está executando o script) tem privilégios administrativos no host Hyper-V.
 - Permite que você crie uma conta de usuário local (não administrador) usada para o serviço de Migrações para Azure se comunicar com o host Hyper-V. Essa conta de usuário é adicionada a esses grupos no host:
     - Usuários do gerenciamento remoto
@@ -129,7 +129,7 @@ Crie o script da seguinte maneira:
 
 1. Verifique se você tem o PowerShell versão 4.0 ou posterior instalado no host Hyper-V.
 2. Baixe o script do [Centro de Download da Microsoft](https://aka.ms/migrate/script/hyperv). O script é assinado criptograficamente pela Microsoft.
-3. Valide a integridade do script usando arquivos de hash MD5 ou SHA256. Execute o seguinte comando para gerar o hash para o script:
+3. Valide a integridade do script usando arquivos de hash MD5 ou SHA256. Os valores de hashtag são indicados abaixo. Execute o seguinte comando para gerar o hash para o script:
     ```
     C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]
     ```
@@ -138,19 +138,20 @@ Crie o script da seguinte maneira:
     C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1
     SHA256
     ```
-    
-    Os valores de hash são:
-    Hash | Valor
-    --- | ---
-    **MD5** | 0ef418f31915d01f896ac42a80dc414e
-    **SHA256** | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2
-
 
 4.  Depois de validar a integridade do script, execute o script em cada host Hyper-V com este comando do PowerShell:
     ```
     PS C:\Users\Administrators\Desktop> MicrosoftAzureMigrate-Hyper-V.ps1
     ```
 
+#### <a name="hashtag-values"></a>Valores de hashtag
+
+Os valores de hash são:
+
+| **Hash** | **Valor** |
+| --- | --- |
+| **MD5** | 0ef418f31915d01f896ac42a80dc414e |
+| **SHA256** | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2 |
 
 ### <a name="verify-hyper-v-host-settings"></a>Verificar as configurações do host Hyper-V
 

@@ -7,14 +7,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 07/03/2019
+ms.date: 09/17/2019
 ms.author: alkohli
-ms.openlocfilehash: cd2a776988ba27add54c69b0feccbc3fce8337aa
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: a3e27cf427de3a33f71d6f4a0af9b1590abeb573
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551518"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71066995"
 ---
 # <a name="what-is-azure-data-box"></a>O que é o Azure Data Box?
 
@@ -111,14 +111,7 @@ Ao longo desse processo, você receberá uma notificação por email sobre todas
 
 O Data Box pode transferir dados de acordo com a região na qual o serviço foi implantado, o país ou a região aos quais o dispositivo é enviado e a conta de armazenamento do Azure de destino usada para a transferência dos dados. 
 
-- **Disponibilidade do serviço** – para esta versão, o serviço Data Box está disponível nas seguintes regiões:
-    - Todas as regiões nos Estados Unidos – Centro-oeste dos EUA, Oeste dos EUA 2, Oeste dos EUA, Centro-Sul dos EUA, Centro dos EUA, Centro-Norte dos EUA, Leste dos EUA e Leste dos EUA 2.
-    - União Europeia – Europa Ocidental e Europa Setentrional.
-    - Reino Unido – Sul do Reino Unido e Oeste do Reino Unido.
-    - França – França Central e Sul da França.
-    - Japão - Leste do Japão e Oeste do Japão.
-    - Austrália - Leste da Austrália e Sudeste da Austrália.
-    - Canadá - Leste do Canadá e Canadá Central.
+- **Disponibilidade de serviço** – para obter mais informações sobre a disponibilidade da região, acesse [Produtos do Azure disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). O Data Box também pode ser implantado na Nuvem do Azure Governamental. Para obter mais informações, confira [O que é o Azure Governamental?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
 
 - **Contas de Armazenamento de Destino** – as contas de armazenamento que armazenam os dados estão disponíveis em todas as regiões do Azure nas quais o serviço está disponível.  
 

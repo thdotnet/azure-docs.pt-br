@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Criar seu primeiro experimento de ML: Configuração'
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Nesta série de tutoriais, você concluirá as etapas de ponta a ponta para começar a usar o SDK de Python do Azure Machine Learning em execução em notebooks Jupyter.  A parte um abrange a criação de um ambiente de servidor de notebook de nuvem, bem como a criação de um workspace para gerenciar seus experimentos e modelos de machine learning.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 08/28/2019
-ms.openlocfilehash: d968d6e799b75940d1fb73aa31c22eb84068df7d
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 9bc5b9688a8cd568b47fe2dad88d6d007ceca0c4
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70860415"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004062"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Tutorial: Introdução à criação de seu primeiro experimento de ML com o SDK de Python
 
@@ -27,11 +27,11 @@ Neste tutorial, você irá:
 > * Criar um [Workspace do Azure Machine Learning](concept-workspace.md) para usar no próximo tutorial.
 > * Criar uma VM de Jupyter Notebook baseada em nuvem com o SDK do Python do Azure Machine Learning instalado e pré-configurado.
 
-Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
+Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente hoje mesmo a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree).
 
 ## <a name="create-a-workspace"></a>Criar um workspace
 
-Um Workspace do Azure Machine Learning é o recurso fundamental na nuvem que você usa para experimentar, treinar e implantar modelos de machine learning. Ele vincula sua assinatura do Azure e o grupo de recursos a um objeto facilmente consumido no SDK. Se você já tiver um workspace do Serviço do Azure Machine Learning, passe para a [próxima seção](#azure). Caso contrário, crie um agora.
+Um Workspace do Azure Machine Learning é o recurso fundamental na nuvem que você usa para experimentar, treinar e implantar modelos de machine learning. Ele vincula sua assinatura do Azure e o grupo de recursos a um objeto facilmente consumido no SDK. Caso você já tenha um Workspace do Azure Machine Learning, passe para a [próxima seção](#azure). Caso contrário, crie um agora.
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
@@ -39,7 +39,7 @@ Um Workspace do Azure Machine Learning é o recurso fundamental na nuvem que voc
 
 Este exemplo usa o servidor de notebook em nuvem em seu workspace para uma experiência pré-configurada e sem instalação. Use [seu próprio ambiente](how-to-configure-environment.md#local) se preferir ter controle sobre seu ambiente, pacotes e dependências.
 
-Em seu workspace, você cria um recurso de nuvem para começar a usar notebooks Jupyter. Esse recurso é uma máquina virtual do Linux baseada em nuvem pré-configurada com tudo de que você precisa para executar o Serviço do Azure Machine Learning.
+Em seu workspace, você cria um recurso de nuvem para começar a usar notebooks Jupyter. Esse recurso é uma máquina virtual do Linux baseada em nuvem pré-configurada com tudo o que você precisa para executar o Azure Machine Learning.
 
 1. Abra seu workspace na [portal do Azure](https://portal.azure.com/).  Se você não souber como localizar seu workspace no portal, veja como [localizar seu workspace](how-to-manage-workspace.md#view).
 
@@ -69,7 +69,7 @@ Em seu workspace, você cria um recurso de nuvem para começar a usar notebooks 
 
 Neste tutorial, você concluiu estas tarefas:
 
-* Criou um workspace do Serviço do Azure Machine Learning.
+* Criou um Workspace do Azure Machine Learning.
 * Criou e configurou um servidor de notebook em nuvem no seu workspace.
 
 Na **parte dois** do tutorial, você executa o código em `tutorial-1st-experiment-sdk-train.ipynb` para treinar um modelo de machine learning. 

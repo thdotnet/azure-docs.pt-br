@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.service: azure-blockchain
 ms.reviewer: jackyhsu
 manager: femila
-ms.openlocfilehash: 0716a9326a54ae31d4f355fe5f4c88488339b390
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: a26899e291c4f44d3c9d91032b2ee191ba03133a
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65029974"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931767"
 ---
 # <a name="quickstart-use-geth-to-connect-to-a-transaction-node"></a>Início Rápido: Usar o Geth para se conectar a um nó de transação
 
@@ -26,7 +26,7 @@ O Geth é um cliente do Go Ethereum que pode ser usado para anexação a uma ins
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * Instalar o [Geth](https://github.com/ethereum/go-ethereum/wiki/geth)
-* [Criar um membro do Azure Blockchain](create-member.md)
+* Concluir [Início Rápido: Criar um membro do blockchain usando o portal do Azure](create-member.md) ou [Início Rápido: Criar um membro do blockchain do Azure Blockchain Service usando a CLI do Azure](create-member-cli.md)
 
 ## <a name="get-the-geth-connection-string"></a>Obter a cadeia de conexão do Geth
 
@@ -38,7 +38,7 @@ Encontre a cadeia de conexão do Geth no portal do Azure.
     ![Selecionar o nó de transação padrão](./media/connect-geth/transaction-nodes.png)
 
 1. Selecione **Cadeias de conexão**.
-1. Copie a cadeia de conexão de **HTTPS (Chave de acesso 1)**. Você precisará do comando para a próxima seção.
+1. Copie a cadeia de conexão de **HTTPS (Chave de acesso 1)** . Você precisará do comando para a próxima seção.
 
     ![Cadeia de conexão](./media/connect-geth/connection-string.png)
 
@@ -67,7 +67,7 @@ Encontre a cadeia de conexão do Geth no portal do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste Início Rápido, você usou o cliente Geth para se anexar a uma instância do Geth em um nó de transação do serviço Azure Blockchain. Experimente o próximo tutorial para implantar e enviar uma transação usando o Truffle.
+Neste Início Rápido, você usou o cliente Geth para se anexar a uma instância do Geth em um nó de transação do serviço Azure Blockchain. Experimente o próximo tutorial para usar o Azure Blockchain Development Kit para Ethereum e Truffle para criar, implantar e executar uma função de contrato inteligente por uma transação.
 
 > [!div class="nextstepaction"]
-> [Enviar uma transação](send-transaction.md)
+> [Use o Visual Studio Code para criar e implantar contratos inteligentes](send-transaction.md)

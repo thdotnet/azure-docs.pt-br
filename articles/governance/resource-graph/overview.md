@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 7091e2bd1ee24843299721d3c21a8546197fac6f
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 6721769b0ab6df4165281d9b5b75c0e1332ed1dc
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70207582"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71001645"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Visão geral do serviço Azure Resource Graph
 
@@ -49,7 +49,7 @@ O Resource Graph então atualiza o banco de dados. O Resource Graph também exec
 
 ## <a name="the-query-language"></a>A linguagem da consulta
 
-Agora que você tem uma compreensão melhor do que é o Azure Resource Graph, nos aprofundaremos em como construir consultas.
+Agora que você tem uma compreensão melhor do que é o Azure Resource Graph, vamos nos aprofundar em como construir consultas.
 
 É importante entender que a linguagem da consulta do Azure Resource Graph se baseia na [linguagem de consulta do Kusto](../../data-explorer/data-explorer-overview.md) usada pelo Azure Data Explorer.
 

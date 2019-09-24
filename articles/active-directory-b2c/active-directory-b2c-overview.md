@@ -10,16 +10,16 @@ ms.topic: overview
 ms.date: 02/20/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ca9d8a8373bd73d527862864d436319eb45b5f48
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: ca636079439f811a887d16b627473e7d73930799
+ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227159"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71065701"
 ---
 # <a name="what-is-azure-active-directory-b2c"></a>O que é o Azure Active Directory B2C?
 
-O Azure AD (Azure Active Directory) B2C é um serviço de gerenciamento de identidades entre empresa e consumidor. Esse serviço permite que você personalize e controle como os usuários interagem de maneira segura com aplicativos Web, da área de trabalho, móveis ou de página única. Usando o Azure AD B2C, os usuários podem se inscrever, entrar, redefinir senhas e editar perfis. O Azure AD B2C implementa um formulário dos protocolos OpenID Connect e OAuth 2.0. O aspecto importante na implementação desses protocolos são os tokens de segurança e suas declarações, que permitem fornecer acesso seguro aos recursos.
+O Azure AD B2C (Azure Active Directory B2C) é um serviço de gerenciamento de identidades business-to-consumer. Esse serviço permite que você personalize e controle como os usuários interagem de maneira segura com aplicativos Web, da área de trabalho, móveis ou de página única. Usando o Azure AD B2C, os usuários podem se inscrever, entrar, redefinir senhas e editar perfis. O Azure AD B2C implementa um formulário dos protocolos OpenID Connect e OAuth 2.0. O aspecto importante na implementação desses protocolos são os tokens de segurança e suas declarações, que permitem fornecer acesso seguro aos recursos.
 
 Um *percurso do usuário* é uma solicitação que especifica uma política, que controla o comportamento de como o usuário e o aplicativo interagem com o Azure AD B2C. Dois caminhos estão disponíveis para você definir os percursos do usuário no Azure AD B2C.
 

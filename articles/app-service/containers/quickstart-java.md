@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 0c1599e61bbc92f6f81cfb17e35ffd0bf04721f9
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 2d486a5e181e9131ef7a1e91f52018fb2be82dc1
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883514"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105232"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-linux"></a>Início Rápido: Criar um aplicativo Java no Serviço de Aplicativo do Azure no Linux
 
@@ -31,7 +31,7 @@ O [Serviço de Aplicativo no Linux](app-service-linux-intro.md) fornece um servi
 >
 > A mesma coisa também pode ser feita usando IDEs populares, como o IntelliJ e Eclipse. Confira nossos documentos semelhantes em [Início Rápido: Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app) ou [Início Rápido: Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app).
 >
-![Aplicativo de exemplo em execução no Azure](media/quickstart-java/java-hello-world-in-browser.png)
+![Aplicativo de exemplo em execução no Serviço de Aplicativo do Azure](media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -137,7 +137,7 @@ mvn package azure-webapp:deploy
 
 Após a conclusão da implantação, navegue até o aplicativo implantado usando a URL a seguir no navegador da Web, por exemplo, `http://<webapp>.azurewebsites.net`. 
 
-![Aplicativo de exemplo em execução no Azure](media/quickstart-java/java-hello-world-in-browser.png)
+![Aplicativo de exemplo em execução no Serviço de Aplicativo do Azure](media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
 
 **Parabéns!** Você implantou seu primeiro aplicativo Java no Serviço de Aplicativo no Linux.
 

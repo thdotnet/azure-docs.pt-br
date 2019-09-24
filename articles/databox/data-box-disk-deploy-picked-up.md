@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 09/11/2019
+ms.date: 09/19/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 03ca6163b4f788d50f7f27a2fcaf2c9b6c02d84c
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 9f0bdbf69336f792479c0089be351e468d3babe2
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910111"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71128697"
 ---
 ::: zone target="chromeless"
 
@@ -89,11 +89,7 @@ Datacenters do Azure na Austrália têm uma notificação de segurança adiciona
 3. Afixe a etiqueta à caixa. 
 4. Agende online no link https://mydhl.express.dhl/au/en/schedule-pickup.html#/schedule-pickup#label-reference uma retirada. 
 
-### <a name="in-japan-koreatabin-japan-korea"></a>[No Japão, na Coreia do Sul](#tab/in-japan-korea)
-
-Veja aqui instruções de retirada para Japão e Coreia do Sul.
-
-#### <a name="pick-up-in-japan"></a>Retirada no Japão
+### <a name="in-japantabin-japan"></a>[No Japão](#tab/in-japan)
 
 1. Escreva as informações de nome e endereço da sua empresa na nota de consignação como suas informações de remetente.
 2. Envie um email para a Quantium Solutions usando o modelo de email a seguir.
@@ -118,9 +114,9 @@ Veja aqui instruções de retirada para Japão e Coreia do Sul.
 Se necessário, você poderá contatar o Suporte da Quantium Solutions (em japonês) com as seguintes informações: 
 
 - Email：Customerservice.JP@quantiumsolutions.com 
-- Telefone: 03-5755-0150 
+- Telefone：03-5755-0150 
 
-#### <a name="pick-up-in-korea"></a>Retirada na Coreia do Sul
+### <a name="in-koreatabin-korea"></a>[Na Coreia do Sul](#tab/in-korea)
 
 1. Inclua a nota de consignação de devolução.
 2. Para solicitar a retirada quando houver nota de consignação:

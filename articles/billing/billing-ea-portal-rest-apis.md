@@ -4,16 +4,16 @@ description: Este artigo descreve as APIs REST a serem usadas com o Registro Ent
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/09/2019
+ms.date: 09/18/2019
 ms.topic: conceptual
 ms.service: billing
 manager: boalcsva
-ms.openlocfilehash: 4b56ef09525473920c5f5925485aae9c793ecc04
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: a8cf0d2eb87a823ee4b1d27484e7ea8d89c1abfc
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70900855"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105448"
 ---
 # <a name="azure-enterprise-rest-apis"></a>APIs REST do Azure Enterprise
 
@@ -31,7 +31,7 @@ Os clientes do Microsoft Azure Enterprise podem obter informações de uso e cob
 
 **Encargo de Armazenamento do Marketplace**: a [API Encargo de Armazenamento do Marketplace](billing-enterprise-api-marketplace-storecharge.md) retorna o detalhamento dos encargos do Marketplace com base no uso por dia para as datas de início e término ou o período de cobrança especificados. Para obter mais informações, confira [APIs de Relatórios para clientes Enterprise – Custos de Armazenamento do Marketplace](/rest/api/billing/enterprise/billing-enterprise-api-marketplace-storecharge).
 
-**Tabela de preços –** a [API Tabela de Preços](/billing-enterprise-api-pricesheet.md) fornece a taxa aplicável de cada medidor para um registro e um período de cobrança específicos. Para obter mais informações, confira [APIs de Relatórios para clientes Enterprise – Tabela de Preços](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet).
+**Tabela de preços –** a [API Tabela de Preços](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet) fornece a taxa aplicável de cada medidor para um registro e um período de cobrança específicos. Para obter mais informações, confira [APIs de Relatórios para clientes Enterprise – Tabela de Preços](/rest/api/billing/enterprise/billing-enterprise-api-pricesheet).
 
 **Períodos de Cobrança –** a [API Períodos de Cobrança](billing-enterprise-api-billing-periods.md) retorna uma lista de períodos de cobrança que têm dados de consumo para um determinado registro em ordem cronológica inversa. Cada período contém uma propriedade que aponta para a rota da API dos quatro conjuntos de dados: BalanceSummary, UsageDetails, Encargos do Marketplace e PriceSheet. Para obter mais informações, confira [APIs de Relatórios para clientes Enterprise – períodos de cobrança](/rest/api/billing/enterprise/billing-enterprise-api-billing-periods).
 
@@ -109,7 +109,7 @@ As informações a seguir descrevem as propriedades de relatórios de API.
 
 O formato JSON é gerado do relatório CSV. Como resultado, o formato é o mesmo que o formato CSV de resumo. O nome da coluna é usado, de modo que você deve desserializá-lo em uma tabela de dados ao consumir os dados de resumo JSON.
 
-| Nome da coluna CSV | Nome da coluna JSON | Nova coluna JSON | Comentário |
+| Nome da coluna CSV | Nome da coluna JSON | Coluna nova JSON | Comentário |
 | --- | --- | --- | --- |
 | AccountOwnerId | AccountOwnerLiveId | AccountOwnerLiveId |   |
 | Nome da conta | AccountName | AccountName |   |
@@ -145,7 +145,7 @@ O formato JSON é gerado do relatório CSV. Como resultado, o formato é o mesmo
 
 #### <a name="azure-marketplace-report"></a>Relatório do Azure Marketplace
 
-| Nome da coluna CSV | Nome da coluna JSON | Nova coluna JSON |
+| Nome da coluna CSV | Nome da coluna JSON | Coluna nova JSON |
 | --- | --- | --- |
 | AccountOwnerId | AccountOwnerId | AccountOwnerId |
 | Nome da conta | AccountName | AccountName |

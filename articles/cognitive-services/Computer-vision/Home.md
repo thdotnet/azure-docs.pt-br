@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 4f823b62237e8018f092d7a94fb479f7fbdd38da
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 915388b850b1b046dae91a20540881480694a944
+ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565763"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70967054"
 ---
 # <a name="what-is-computer-vision"></a>O que é a Pesquisa Visual Computacional?
 
@@ -75,6 +75,6 @@ Assim como ocorre com todos os Serviços Cognitivos, os desenvolvedores que usam
 
 Introdução à Pesquisa Visual Computacional seguindo o guia de início rápido:
 
-- [Início Rápido: Analisar uma imagem](quickstarts-sdk/csharp-analyze-sdk.md)
-- [Início Rápido: Extrair texto escrito à mão](quickstarts-sdk/csharp-hand-text-sdk.md)
-- [Início Rápido: Gerar uma miniatura](quickstarts-sdk/csharp-thumb-sdk.md)
+- [Início Rápido: SDK do .NET da Pesquisa Visual Computacional](quickstarts-sdk/csharp-sdk.md)
+- [Início Rápido: SDK do Python da Pesquisa Visual Computacional](quickstarts-sdk/python-sdk.md)
+- [Início Rápido: SDK do Java da Pesquisa Visual Computacional](quickstarts-sdk/java-sdk.md)

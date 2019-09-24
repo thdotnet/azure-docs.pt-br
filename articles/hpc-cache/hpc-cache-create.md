@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: tutorial
 ms.date: 09/06/2019
 ms.author: v-erkell
-ms.openlocfilehash: 479adf9419cdd6b04e50fa479d47b56762b2bdc6
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: e1b69f17d964647944f23f4d16a0a1a5f112b60d
+ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70774619"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037015"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Criar um Azure HPC Cache
 
@@ -21,7 +21,7 @@ Use o portal do Azure para criar seu cache.
 
 ## <a name="define-basic-details"></a>Definir os detalhes básicos
 
-![captura de tela da página de detalhes do projeto no portal do Azure](media/create-1.png)
+![captura de tela da página de detalhes do projeto no portal do Azure](media/hpc-cache-create-basics.png)
 
 Em **Detalhes do Projeto**, selecione a assinatura e o grupo de recursos que hospedarão o Azure HPC Cache. Verifique se a assinatura está na lista de [acesso de visualização](hpc-cache-prereqs.md#azure-subscription).
 
@@ -47,7 +47,7 @@ Tenha em mente que a taxa de transferência de dados real depende da carga de tr
 
 Para o armazenamento em cache, o Azure HPC Cache gerencia quais arquivos são armazenados em cache e pré-carregados para maximizar as tarifas de acesso ao cache. O conteúdo do cache é avaliado continuamente e os arquivos são movidos para o armazenamento de longo prazo quando são acessados com menos frequência. Escolha um tamanho de armazenamento de cache que possa manter confortavelmente o conjunto ativo de arquivos de trabalho com espaço adicional para metadados e outras sobrecargas.
 
-![captura de tela da página de dimensionamento do cache](media/create-cache-iops.png)
+![captura de tela da página de dimensionamento do cache](media/hpc-cache-create-iops.png)
 
 ## <a name="add-storage-targets"></a>Adicionar destinos de armazenamento
 
@@ -55,19 +55,21 @@ Os destinos de armazenamento são o armazenamento de longo prazo e de back-end p
 
 Você pode definir destinos de armazenamento ao criar o cache, mas também pode adicioná-los posteriormente com o link na seção **Configurar** da página do seu cache no Portal.
 
-![captura de tela da página de destino de armazenamento](media/create-targets.png)
+![captura de tela da página de destino de armazenamento](media/hpc-cache-storage-targets-pop.png)
 
 Clique no link **Adicionar destino de armazenamento** para definir seus sistemas de armazenamento de back-end. O armazenamento pode ser feito em contêineres de Blob do Azure ou em sistemas NFS locais.
 
 Você pode definir até dez destinos de armazenamento diferentes.
 
-Para obter instruções detalhadas de como adicionar um destino de armazenamento, leia [Adicionar armazenamento](hpc-cache-add-storage.md). O procedimento é diferente para Armazenamento de Blobs e para exportações de NFS.
+Instruções passo a passo de como adicionar um destino de armazenamento estão incluídas em [Adicionar armazenamento](hpc-cache-add-storage.md). O procedimento é diferente para Armazenamento de Blobs e para exportações de NFS.
 
-Para os dois tipos de armazenamento, você precisa especificar como encontrar o sistema de armazenamento de back-end (um endereço NFS ou um nome de contêiner de Blob) e o caminho do namespace voltado para o cliente.
+Aqui estão algumas dicas: 
 
-Ao criar um destino de Armazenamento de Blobs, verifique se o cache tem permissões de acesso à conta de armazenamento, conforme descrito em [Adicionar funções de controle de acesso](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account). Se não tiver certeza de que a configuração de função será bem-sucedida, crie o cache primeiro e, em seguida, adicione o Armazenamento de Blobs.
+* Para os dois tipos de armazenamento, você precisa especificar como encontrar o sistema de armazenamento de back-end (um endereço NFS ou um nome de contêiner de Blob) e o caminho do namespace voltado para o cliente.
 
-Ao criar um destino de armazenamento de NFS, especifique um [modelo de uso](hpc-cache-add-storage.md#choose-a-usage-model). A configuração do modelo de uso ajuda o cache a otimizar seu fluxo de trabalho.
+* Ao criar um destino de Armazenamento de Blobs, verifique se o cache tem permissões de acesso à conta de armazenamento, conforme descrito em [Adicionar funções de controle de acesso](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account). Se não tiver certeza de que a configuração de função será bem-sucedida, crie o cache primeiro e, em seguida, adicione o Armazenamento de Blobs.
+
+* Ao criar um destino de armazenamento de NFS, especifique um [modelo de uso](hpc-cache-add-storage.md#choose-a-usage-model). A configuração do modelo de uso ajuda o cache a otimizar seu fluxo de trabalho.
 
 ## <a name="add-resource-tags-optional"></a>Adicionar marcas de recurso (opcional)
 
@@ -77,11 +79,13 @@ A página **Marcas** permite que você adicione [marcas de recurso](https://go.m
 
 Depois de configurar o novo cache, clique na guia **Examinar + criar**. O portal valida suas seleções e permite que você examine suas escolhas. Se tudo estiver correto, clique em **Criar**. 
 
-A criação do cache leva cerca de 10 minutos. Você pode acompanhar o progresso no painel de notificações do portal do Azure. Após a conclusão, uma notificação será exibida com um link para a nova instância do Azure HPC Cache. 
+A criação do cache leva cerca de 10 minutos. Você pode acompanhar o progresso no painel de notificações do portal do Azure. 
 
-O cache também fica visível na lista **Recursos** da sua assinatura. 
+![captura de tela das páginas "implantação em andamento" e "notificações" da criação de cache no portal](media/hpc-cache-deploy-status.png)
 
-![captura de tela da instância do Azure HPC Cache no portal do Azure](media/finished-hpc-cache.png)
+Quando a criação for concluída, uma notificação será exibida com um link para a nova instância do Azure HPC Cache e o cache será exibido na lista **Recursos** de sua assinatura. 
+
+![captura de tela da instância do Azure HPC Cache no portal do Azure](media/hpc-cache-new-overview.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial de classificação de imagens: Implantar modelos'
-titleSuffix: Azure Machine Learning service
-description: Este tutorial mostra como usar os serviços do Azure Machine Learning para implantar um modelo de classificação de imagem com scikit-learn em um Python Jupyter Notebook. Este tutorial é a segunda de uma série de duas partes.
+titleSuffix: Azure Machine Learning
+description: Este tutorial mostra como usar o Azure Machine Learning para implantar um modelo de classificação de imagem com o Scikit-learn em um Python Jupyter Notebook. Este tutorial é a segunda de uma série de duas partes.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 08/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 57d34bb170c0ff86f3d3c42a25184d8af71c0270
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 6e5ab17a04c994f09bccc0f51f11749ee8590b1d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036215"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003062"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Tutorial: Implantar um modelo de classificação de imagem em Instâncias de Contêiner do Azure
 
@@ -23,7 +23,7 @@ Este tutorial é **parte dois de uma série de tutoriais de duas partes**. No [t
 
 Agora, você está pronto para implantar o modelo como um serviço Web na [Instâncias de Contêiner do Azure](https://docs.microsoft.com/azure/container-instances/). Um serviço Web é uma imagem, neste caso, uma imagem do Docker. Ele encapsula a lógica de pontuação e o próprio modelo. 
 
-Nesta parte do tutorial, você deve usar o Serviço do Azure Machine Learning para as seguintes tarefas:
+Nesta parte do tutorial, você usará o Azure Machine Learning para as seguintes tarefas:
 
 > [!div class="checklist"]
 > * Configurar seu ambiente de teste.
@@ -378,7 +378,7 @@ service.delete()
 
 ## <a name="next-steps"></a>Próximas etapas
 
-+ Saiba mais sobre todas as [opções de implantação para o Serviço do Azure Machine Learning](how-to-deploy-and-where.md).
++ Saiba mais sobre todas as [opções de implantação do Azure Machine Learning](how-to-deploy-and-where.md).
 + Saiba como [criar clientes para o serviço Web](how-to-consume-web-service.md).
 +  [Fazer previsões sobre grandes quantidades de dados](how-to-run-batch-predictions.md) assincronamente.
 + [Monitorar seus modelos do Azure Machine Learning com o Application Insights](how-to-enable-app-insights.md).

@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
-ms.date: 06/14/2019
-ms.openlocfilehash: 29b2a9378abaaa697d2d869145d5e912d6c06d6c
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.date: 09/17/2019
+ms.openlocfilehash: 3e0fddc03ad880d36876276827198b0ac180a00d
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70811587"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076370"
 ---
 # <a name="what-is-interactive-query-in-azure-hdinsight"></a>O que é a Consulta Interativa no HDInsight
 
@@ -28,6 +28,9 @@ Um cluster de Consulta Interativa é diferente de um cluster Apache Hadoop. Ele 
 ## <a name="create-an-interactive-query-cluster"></a>Criar um cluster de Consulta Interativa
 
 Para obter mais informações sobre a criação de um cluster HDInsight, veja [Criar clusters Apache Hadoop no HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Escolha o tipo de cluster Consulta Interativa.
+
+> [!IMPORTANT]
+> O tamanho mínimo do nó de cabeçalho para clusters de Consulta Interativa é Standard_D13_v2. Confira o [Gráfico de dimensionamento da VM do Azure](../../cloud-services/cloud-services-sizes-specs.md#dv2-series) para obter mais informações.
 
 ## <a name="execute-apache-hive-queries-from-interactive-query"></a>Executar consultas de Apache Hive da Consulta Interativa
 

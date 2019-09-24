@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93b59a108d5d87479c12174e97713d4c12d84f2e
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 1429841ca1376d67c7372f36bd35694afd4cd7ce
+ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58200048"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71102637"
 ---
 # <a name="tutorial-add-or-remove-group-members-automatically"></a>Tutorial: Adicionar ou remover membros do grupo automaticamente
 
@@ -49,14 +49,26 @@ Primeiro, você criará um grupo para os usuários convidados que são de uma ú
    ![selecione o comando para iniciar um novo grupo](./media/groups-dynamic-tutorial/new-group.png)
 3. Na folha **Grupo**:
   
-   * Selecione **Segurança** como o tipo de grupo
-   * Digite `Guest users Contoso` como o nome e a descrição para o grupo
-   * Altere o **Tipo de associação** para **Usuário dinâmico**
-   * Selecione **Adicionar consulta dinâmica**
-  
-4. Selecione **Regra avançada** e na caixa **Regra avançada**, digite: `(user.userType -eq "Guest") -and (user.companyName -eq "Contoso")`
-5. Selecione **Adicionar consulta** para fechar a folha.
-6. Na folha **Grupo**, selecione **Criar** para criar o grupo.
+   * Selecione **Segurança** como o tipo de grupo.
+   * Digite `Guest users Contoso` como o nome e a descrição para o grupo.
+   * Altere o **Tipo de associação** para **Usuário dinâmico**.
+   
+4. Selecione **Proprietários** e, na folha **Adicionar Proprietários**, pesquise quaisquer proprietários desejados. Clique nos proprietários desejados para adicionar à seleção.
+5. Clique em **Selecionar** para fechar a folha **Adicionar Proprietários**.  
+6. Selecione **Editar consulta dinâmica** na caixa **Membros dinâmicos do usuário**.
+7. Na folha **Regras de associação dinâmica**:
+
+   * No campo **Propriedade**, clique no valor existente e selecione **userType**. 
+   * Verifique se o campo **Operador** tem **Igual** a selecionado.  
+   * Selecione o campo **Valor** e insira **Convidado**. 
+   * Clique no hiperlink **Adicionar Expressão** para adicionar outra linha.
+   * No campo **E/Ou**, selecione **E**.
+   * No campo **Propriedade**, selecione **companyName**.
+   * Verifique se o campo **Operador** tem **Igual** a selecionado.
+   * No campo **valor**, insira **Contoso**.
+   * Clique em **Salvar** para fechar a folha **Regras de associação dinâmica**.
+   
+8. Na folha **Grupo**, selecione **Criar** para criar o grupo.
 
 ## <a name="assign-licenses"></a>Atribuir licenças
 

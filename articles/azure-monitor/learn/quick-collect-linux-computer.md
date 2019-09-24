@@ -1,5 +1,5 @@
 ---
-title: Coletar dados de um Computador Linux híbrido com o Azure Monitor | Microsoft Docs
+title: 'Início Rápido: Coletar dados de um Computador Linux híbrido com o Azure Monitor'
 description: Neste início rápido, você aprenderá a implantar o agente do Log Analytics para computadores Linux em execução fora do Azure e habilitará a coleta de dados com Logs do Azure Monitor.
 services: azure-monitor
 documentationcenter: azure-monitor
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: magoedte
-ms.custom: mvc
-ms.openlocfilehash: 6fa26adab64a91ac2910607e4a828f9362490d08
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.custom: mvc, seo-javascript-september2019
+ms.openlocfilehash: cdaca0fd3e314ecb5c0b68438eaaf87fbfb699b0
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991762"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933040"
 ---
 # <a name="collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Coletar dados de um computador Linux em um ambiente híbrido com o Azure Monitor
 

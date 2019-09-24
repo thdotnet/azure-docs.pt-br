@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 41947de18ae27b41d046fd4358f0039a1b56374d
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 6f9094a52ff3558fa8d1f2fee1d80ed8eb09a416
+ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347918"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71076336"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Início Rápido: Adicionar sinalizadores de recurso a um aplicativo ASP.NET Core
 
@@ -36,7 +36,7 @@ As bibliotecas do Gerenciamento de Recursos do .NET Core estendem a estrutura co
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Escolha **Gerenciador de Recursos** >  **+ Criar** para adicionar os seguintes sinalizadores de recursos:
+6. Selecione **Gerenciador de Recursos** >  **+Adicionar** para adicionar os seguintes sinalizadores de recursos:
 
     | Chave | Estado |
     |---|---|
@@ -81,10 +81,11 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 
 ## <a name="connect-to-an-app-configuration-store"></a>Conectar um repositório de Configuração de Aplicativos
 
-1. Adicione uma referência ao pacote NuGet `Microsoft.Azure.AppConfiguration.AspNetCore` executando o seguinte comando:
+1. Adicione uma referência aos pacotes NuGet `Microsoft.Azure.AppConfiguration.AspNetCore` e `Microsoft.FeatureManagement.AspNetCore` executando os seguintes comandos:
 
     ```
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009200001-7
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009470001-12
+    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-009000001-1251
     ```
 
 1. Execute o seguinte comando para restaurar pacotes do projeto:
@@ -266,6 +267,8 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
     |---|---|
     | Beta | Por |
 
+1. Reinicie o aplicativo alternando novamente para o prompt de comando e pressionando `Ctrl-C` para cancelar o processo `dotnet` em execução e, em seguida, executando novamente `dotnet run`.
+
 1. Atualize a página do navegador para ver as novas definições de configuração.
 
     ![Inicialização local do aplicativo do Início Rápido](./media/quickstarts/aspnet-core-feature-flag-local-after.png)
@@ -281,3 +284,4 @@ Neste início rápido, você criou um novo repositório de Configuração de Apl
 - Saiba mais sobre o [gerenciamento de recursos](./concept-feature-management.md).
 - [Gerenciar sinalizadores de recursos](./manage-feature-flags.md).
 - [Usar sinalizadores de recursos em um aplicativo ASP.NET Core](./use-feature-flags-dotnet-core.md).
+- [Usar a configuração dinâmica em um aplicativo ASP.NET Core](./enable-dynamic-configuration-aspnet-core.md)

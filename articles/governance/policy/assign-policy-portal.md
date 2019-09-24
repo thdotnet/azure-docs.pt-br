@@ -7,12 +7,12 @@ ms.date: 12/06/2018
 ms.topic: quickstart
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 805f9178cb77241b8332fb78687a8409206e5c05
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 6db0879152dfcfd37719c8d22f836da6db7ed79d
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231582"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71000904"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources"></a>Início Rápido: Criar uma atribuição de política para identificar recursos sem conformidade
 
@@ -64,7 +64,7 @@ Neste guia de início rápido, crie uma atribuição de política e atribua a de
 
 1. Clique em **Atribuir**.
 
-Agora, você está pronto para identificar recursos sem conformidade para compreender o estado de conformidade de seu ambiente.
+Agora você está pronto para identificar recursos fora de conformidade para entender o estado de conformidade do ambiente.
 
 ## <a name="identify-non-compliant-resources"></a>Identificar recursos sem conformidade
 

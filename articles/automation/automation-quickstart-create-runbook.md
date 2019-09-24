@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 3dece2d2bffc7bd2b9e0a3c2931b2038ebc3c77e
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2cbb37b4e93468a42335f40a19baf4c742cb6dbb
+ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68850638"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71098615"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Criar um runbook de Automação do Azure
 
@@ -34,7 +34,7 @@ Primeiro, crie um runbook. O runbook de exemplo criado neste guia de início rá
 
 1. Clique em **Runbooks** em **AUTOMAÇÃO DE PROCESSO**. A lista de runbooks é exibida.
 
-1. Clique np botão **Adicionar um runbook** encontrado na parte superior da lista. Na página **Adicionar Runbook**, selecione **Criação Rápida**.
+1. Clique no botão **Criar um runbook** encontrado na parte superior da lista
 
 1. Insira "Hello-World" como **Name** do runbook e selecione **PowerShell** para **Tipo de Runbook**. Clique em **Criar**.
 

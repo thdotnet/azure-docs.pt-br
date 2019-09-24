@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b88d355ec1784b3b613369e90cd5fac99d3d69a6
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 618931c3a45fcb25b2a9221ea3f6069e9ff11de5
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70916399"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70933198"
 ---
 # <a name="implement-iot-spatial-analytics-using-azure-maps"></a>Implementar análise espacial de IoT usando o Azure Mapas
 
@@ -167,7 +167,7 @@ Abra o aplicativo Postman e siga as etapas abaixo para carregar a cerca geográf
     
     O parâmetro "geojson" no parâmetro `dataFormat` no caminho da URL representa o formato dos dados sendo carregados.
 
-3. Clique em **Parâmetros** e insira os seguintes pares de chave/valor a serem usados para a URL da solicitação POST. Substitua o valor de subscription-key pela sua chave de assinatura do Azure Mapas.
+3. Clique em **Parâmetros** e insira os seguintes pares de chave/valor a serem usados para a URL da solicitação POST. Substitua o valor subscription-key pela chave de assinatura primária do Azure Mapas.
    
     ![Postman de parâmetros de chave-valor](./media/tutorial-iot-hub-maps/postman-key-vals.png)
 
@@ -224,7 +224,7 @@ O Azure Functions é um serviço de computação sem servidor que permite execut
 6. Copie o [código c#](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing/blob/master/src/Azure%20Function/run.csx) para sua função e clique em **Salvar**.
  
 7. No script C#, substitua os seguintes parâmetros:
-    * Substitua **SUBSCRIPTION_KEY** pela chave de assinatura da conta do Azure Mapas.
+    * Substitua **SUBSCRIPTION_KEY** pela chave primária de assinatura da conta do Azure Mapas.
     * Substitua **UDID** pelo udId da cerca geográfica que você carregou. 
     * A função **CreateBlobAsync** no script cria um blob por evento na conta de armazenamento de dados. Substitua **ACCESS_KEY**, **ACCOUNT_NAME** e **STORAGE_CONTAINER_NAME** pela chave de acesso da conta de armazenamento e o contêiner de armazenamento de dados e nome da conta.
 

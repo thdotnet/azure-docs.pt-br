@@ -7,12 +7,12 @@ ms.date: 06/24/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 7b2b0686ae884ca2273730c2947091e525359daf
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: 6d0b9202cdece44378964ee98d63a126162849fd
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70918616"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71003050"
 ---
 # <a name="control-mapping-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Mapeamento de controles da amostra de blueprint NIST SP 800-53 R4
 
@@ -25,7 +25,7 @@ Os seguintes mapeamentos referem-se aos controles do **NIST SP 800-53 (Rev. 4)**
 
 ## <a name="ac-2-account-management"></a>AC-2 Gerenciamento de conta
 
-Este blueprint ajuda a analisar contas que podem não estar em conformidade com os requisitos de gerenciamento de conta de sua organização. Este blueprint atribui definições do [Azure Policy](../../../policy/overview.md) que auditam contas externas com permissões de leitura, gravação e proprietário em contas de assinatura e preteridas. Revisando as contas auditadas por essas políticas, você pode adotar as medidas adequadas a fim de garantir que os requisitos de gerenciamento de conta sejam atendidos.
+Este blueprint ajuda você a examinar as contas que possam não estar em conformidade com os requisitos de gerenciamento de conta de sua organização. Este blueprint atribui definições do [Azure Policy](../../../policy/overview.md) que auditam contas externas com permissões de leitura, gravação e proprietário em contas de assinatura e preteridas. Revisando as contas auditadas por essas políticas, você pode adotar as medidas adequadas a fim de garantir que os requisitos de gerenciamento de conta sejam atendidos.
 
 - As contas preteridas devem ser removidas de sua assinatura
 - As contas preteridas com permissões de proprietário devem ser removidas de sua assinatura
@@ -186,7 +186,7 @@ Esse blueprint ajuda a restringir e controlar o acesso atribuindo uma definiçã
 
 ## <a name="ia-5-authenticator-management"></a>IA-5 Gerenciamento de Autenticador
 
-Este blueprint atribui definições do [Azure Policy](../../../policy/overview.md) que auditam as máquinas virtuais do Linux que permitem conexões remotas em contas sem senhas e/ou que têm permissões incorretas definidas no arquivo de senha. Este blueprint também atribui definições de política que auditam a configuração do tipo de criptografia de senha para máquinas virtuais do Windows. Monitorar esses indicadores ajuda você a garantir que os autenticadores do sistema estejam em conformidade com a política de identificação e autenticação de sua organização.
+Este blueprint atribui definições do [Azure Policy](../../../policy/overview.md) que auditam as máquinas virtuais do Linux que permitem conexões remotas em contas sem senhas e/ou que têm permissões incorretas definidas no arquivo de senha. Este blueprint também atribui definições de política que auditam a configuração do tipo de criptografia de senha para máquinas virtuais do Windows. O monitoramento desses indicadores ajuda você a garantir que os autenticadores do sistema estejam em conformidade com a política de identificação e autenticação de sua organização.
 
 - \[Versão Prévia\]: Auditar as VMs do Linux que não têm as permissões de arquivo de senha definidas como 0644
 - \[Versão Prévia\]: Auditar as VMs do Linux que têm contas sem senhas
@@ -226,7 +226,7 @@ Este blueprint ajuda você a gerenciar as vulnerabilidades do sistema de informa
 
 ## <a name="sc-5-denial-of-service-protection"></a>SC-5 Proteção Contra Negação de Serviço
 
-O nível padrão da proteção contra DDoS (ataque de negação de serviço distribuído) do Azure fornece recursos adicionais e recursos de mitigação com relação à camada de serviço básica. Esses recursos adicionais incluem a integração do Azure Monitor e a capacidade de examinar relatórios de mitigação pós-ataque. Esse blueprint atribui uma definição do [Azure Policy](../../../policy/overview.md) que audita se o nível padrão da proteção contra DDoS está habilitada. Compreender a diferença de funcionalidade entre as camadas de serviço pode ajudar você a selecionar a melhor solução para tratar das proteções contra negação de serviço para seu ambiente do Azure.
+O nível Standard da proteção contra DDoS (ataque de negação de serviço distribuído) do Azure fornece recursos adicionais e funcionalidades de mitigação com relação à camada de serviço básica. Esses recursos adicionais incluem a integração do Azure Monitor e a capacidade de examinar relatórios de mitigação pós-ataque. Esse blueprint atribui uma definição do [Azure Policy](../../../policy/overview.md) que audita se o nível padrão da proteção contra DDoS está habilitada. Compreender a diferença de funcionalidade entre as camadas de serviço pode ajudar você a selecionar a melhor solução para tratar das proteções contra negação de serviço para seu ambiente do Azure.
 
 - A Proteção contra DDoS Standard deve ser habilitada
 
@@ -254,7 +254,7 @@ O acesso JIT (Just-In-Time) à máquina virtual bloqueia o tráfego de entrada �
 
 ## <a name="sc-8-1-transmission-confidentiality-and-integrity--cryptographic-or-alternate-physical-protection"></a>SC-8 (1) Confidencialidade e integridade de transmissão | Proteção física criptográfica ou alternativa
 
-Este blueprint ajuda você a proteger a confidencialidade e a integridade das informações transmitidas por meio da atribuição de definições do [Azure Policy](../../../policy/overview.md) que ajudam a monitorar o mecanismo criptográfico implementado para protocolos de comunicação. A garantia de que a comunicação seja criptografada corretamente pode ajudá-lo a atender aos requisitos de sua organização ou proteger as informações contra divulgação e modificação não autorizadas.
+Este blueprint ajuda você a proteger a confidencialidade e a integridade das informações transmitidas por meio da atribuição de definições do [Azure Policy](../../../policy/overview.md) que ajudam a monitorar o mecanismo criptográfico implementado para protocolos de comunicação. A garantia de que a comunicação é criptografada corretamente pode ajudar você a atender aos requisitos de sua organização ou proteger as informações contra divulgação e modificação não autorizadas.
 
 - O aplicativo de API só deve estar acessível via HTTPS
 - Auditar os servidores Web do Windows que não estão usando protocolos de comunicação segura

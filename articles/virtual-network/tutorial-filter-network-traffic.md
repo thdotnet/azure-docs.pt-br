@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
-ms.openlocfilehash: 4097d4fc46aac88cd44d21a4cdcf0d7d5093feea
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 2d0519abdf25a6fc8373f9d1a3a7232a9783d316
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242731"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984898"
 ---
 # <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Tutorial: Filtrar o tráfego de rede com um Grupo de Segurança de Rede usando o portal do Azure
 
@@ -51,7 +51,7 @@ Entre no Portal do Azure em https://portal.azure.com.
     | Espaço de endereço           | 10.0.0.0/16                                        |
     | Assinatura            | Selecione sua assinatura.                          |
     | Grupo de recursos          | Selecione **Criar novo** e insira *myResourceGroup*. |
-    | Local padrão                | Selecione **Leste dos EUA**.                                |
+    | Location                | Selecione **Leste dos EUA**.                                |
     | Sub-rede – Nome            | mySubnet                                           |
     | Sub-rede – Intervalo de endereços  | 10.0.0.0/24                                        |
 
@@ -66,18 +66,18 @@ Um grupo de segurança de aplicativos permite agrupar servidores com funções s
     | Configuração        | Valor                                                         |
     | ---            | ---                                                           |
     | NOME           | myAsgWebServers                                               |
-    | Assinatura   | Selecione sua assinatura.                                     |
-    | Grupo de recursos | Selecione **Usar existente** e depois **myResourceGroup**. |
-    | Local padrão       | Leste dos EUA                                                       |
+    | Subscription   | Selecione sua assinatura.                                     |
+    | Resource group | Selecione **Usar existente** e depois **myResourceGroup**. |
+    | Location       | Leste dos EUA                                                       |
 
 4. Conclua a etapa 3 novamente, especificando os seguintes valores:
 
     | Configuração        | Valor                                                         |
     | ---            | ---                                                           |
     | NOME           | myAsgMgmtServers                                              |
-    | Assinatura   | Selecione sua assinatura.                                     |
-    | Grupo de recursos | Selecione **Usar existente** e depois **myResourceGroup**. |
-    | Local padrão       | Leste dos EUA                                                       |
+    | Subscription   | Selecione sua assinatura.                                     |
+    | Resource group | Selecione **Usar existente** e depois **myResourceGroup**. |
+    | Location       | Leste dos EUA                                                       |
 
 ## <a name="create-a-network-security-group"></a>Criar um grupo de segurança de rede
 
@@ -88,9 +88,9 @@ Um grupo de segurança de aplicativos permite agrupar servidores com funções s
     |Configuração|Valor|
     |---|---|
     |NOME|myNsg|
-    |Assinatura| Selecione sua assinatura.|
+    |Subscription| Selecione sua assinatura.|
     |Grupo de recursos | Clique em **Usar existente** e selecione *myResourceGroup*.|
-    |Local padrão|Leste dos EUA|
+    |Location|Leste dos EUA|
 
 ## <a name="associate-network-security-group-to-subnet"></a>Associar o grupo de segurança de rede à sub-rede
 
@@ -140,27 +140,29 @@ Crie duas VMs na rede virtual.
 
 1. Selecione **+ Criar um recurso** localizado no canto superior esquerdo do Portal do Azure.
 2. Selecione **Computação** e, em seguida, selecione **Windows Server 2016 Datacenter**.
-3. Insira, ou selecione, as informações a seguir, aceite os padrões para as configurações restantes e, em seguida, selecione **OK**:
+3. Insira ou selecione as seguintes informações e aceite os padrões para as configurações restantes:
 
     |Configuração|Valor|
     |---|---|
+    |Subscription| Selecione sua assinatura.|
+    |Resource group| Selecione **Usar existente** e, em seguida, **myResourceGroup**.|
     |NOME|myVmWeb|
+    |Location| Selecione **Leste dos EUA**.|
     |Nome de usuário| Insira um nome de usuário de sua escolha.|
     |Senha| Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |Assinatura| Selecione sua assinatura.|
-    |Grupo de recursos| Selecione **Usar existente** e, em seguida, **myResourceGroup**.|
-    |Local padrão| Selecione **Leste dos EUA**|
+
+   
 
 4. Selecione um tamanho para a VM e selecione **Selecionar**.
-5. Em **Configurações**, selecione os valores a seguir, aceite os padrões restantes e, em seguida, selecione **OK**:
+5. Em **Rede**, selecione os seguintes valores e aceite os padrões restantes:
 
     |Configuração|Valor|
     |---|---|
-    |Rede virtual |Selecione **myVirtualNetwork**|
-    |Grupo de Segurança de Rede | Selecione **Avançado**.|
-    |Grupo de segurança de rede (firewall)| Selecione **(novo) myVmWeb-nsg** e, em **Escolher grupo de segurança de rede**, selecione **Nenhum**. |
+    |Rede virtual |Selecione **myVirtualNetwork**.|
+    |Grupo de segurança de rede da NIC |Selecione **Avançado**.|
+    |Portas de entrada públicas|Selecione **Nenhum**. |
 
-6. Em **Criar** do **Resumo**, selecione **Criar** para iniciar a implantação da VM.
+6. Selecione **Examinar + Criar** no canto inferior esquerdo e selecione **Criar** para iniciar a implantação da VM.
 
 ### <a name="create-the-second-vm"></a>Criar a segunda VM
 

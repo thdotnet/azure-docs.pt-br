@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Treinar seu primeiro modelo de ML'
-titleSuffix: Azure Machine Learning service
-description: Neste tutorial, você aprende os padrões de design básicos no Serviço do Azure Machine Learning e treina um modelo scikit-learn com base no conjunto de dados de diabetes.
+titleSuffix: Azure Machine Learning
+description: Neste tutorial, você conhecerá os padrões de design básicos do Azure Machine Learning e treinará um modelo simples do Scikit-learn baseado no conjunto de dados de diabetes.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,16 +10,16 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 09/03/2019
-ms.openlocfilehash: 989775916454b6710aef6c2c5be6792920622dab
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: b5d3a687adc8ecefcf581f7eda3b9e13d1973c62
+ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241286"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "71004031"
 ---
 # <a name="tutorial-train-your-first-ml-model"></a>Tutorial: Treinar seu primeiro modelo de ML
 
-Este tutorial é **parte dois de uma série de tutoriais de duas partes**. No tutorial anterior, você [criou um workspace e escolheu um ambiente de desenvolvimento](tutorial-1st-experiment-sdk-setup.md). Neste tutorial, você aprende os padrões de design básicos no Serviço do Azure Machine Learning e treina um modelo scikit-learn com base no conjunto de dados de diabetes. Depois de concluir este tutorial, você terá o conhecimento prático do SDK para escalar verticalmente para o desenvolvimento de experimentos e fluxos de trabalho mais complexos.
+Este tutorial é **parte dois de uma série de tutoriais de duas partes**. No tutorial anterior, você [criou um workspace e escolheu um ambiente de desenvolvimento](tutorial-1st-experiment-sdk-setup.md). Neste tutorial, você conhecerá os padrões de design básicos do Azure Machine Learning e treinará um modelo simples do Scikit-learn baseado no conjunto de dados de diabetes. Depois de concluir este tutorial, você terá o conhecimento prático do SDK para escalar verticalmente para o desenvolvimento de experimentos e fluxos de trabalho mais complexos.
 
 Neste tutorial, você aprende as seguintes tarefas:
 
@@ -197,7 +197,7 @@ best_run.download_file(name="model_alpha_0.1.pkl")
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Não conclua esta seção se você planeja executar outros tutoriais do Serviço do Azure Machine Learning.
+Não conclua esta seção se você planeja executar outros tutoriais do Azure Machine Learning.
 
 ### <a name="stop-the-notebook-vm"></a>Interromper a VM de notebook
 

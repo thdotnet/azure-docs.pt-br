@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1f5f2dc6babbca219f0efbb1d7013d4e6e3270e6
-ms.sourcegitcommit: 23389df08a9f4cab1f3bb0f474c0e5ba31923f12
+ms.openlocfilehash: 1533ceebcda15c45a71c04580c35432de4125ccd
+ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70873314"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70984993"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Migrar das VMs do AWS (Amazon Web Services) para o Azure
 
@@ -117,6 +117,7 @@ Na página **Meta de Proteção**, selecione os valores a seguir:
 |---------|-----------|
 | Onde seus computadores estão localizados? |Selecione **Local**.|
 | Para qual local deseja replicar as máquinas? |Selecione **Para Azure**.|
+| Você está realizando uma migração? | Selecione **Sim** e, em seguida, marque a caixa ao lado de **Entendo, mas desejo continuar com o Azure Site Recovery.**
 | Seus computadores são virtualizados? |Selecione **Não virtualizado/Outro**.|
 
 Quando terminar, selecione **OK** para ir à próxima seção.

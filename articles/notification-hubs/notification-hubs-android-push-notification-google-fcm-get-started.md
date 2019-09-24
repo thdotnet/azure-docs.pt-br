@@ -14,14 +14,14 @@ ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 07/15/2019
+ms.date: 09/11/2019
 ms.author: jowargo
-ms.openlocfilehash: a01a71190f6de4bd08ee306f0175b01fee3db3d5
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: f1a6980efd7614ce245c45852b6ce08eb71d1cfd
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227873"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70935165"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Tutorial: Enviar notificações por push para dispositivos Android usando Hubs de Notificação do Azure e Google Firebase Cloud Messaging
 
@@ -190,7 +190,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
      > [!IMPORTANT]
      > Insira o **nome** e a **DefaultListenSharedAccessSignature** de seu hub antes de prosseguir. 
 
-3. Adicione outra classe nova ao projeto denominada `RegistrationIntentService`. Essa classe implementa a interface `IntentService`. Ela também processa a [atualização do token do FCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) e o [registro no hub de notificação](notification-hubs-push-notification-registration-management.md).
+2. Adicione outra classe nova ao projeto denominada `RegistrationIntentService`. Essa classe implementa a interface `IntentService`. Ela também processa a [atualização do token do FCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) e o [registro no hub de notificação](notification-hubs-push-notification-registration-management.md).
 
     Use o código a seguir para essa classe.
 
@@ -292,7 +292,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-4. Na classe `MainActivity`, adicione as seguintes instruções `import` acima da declaração da classe.
+3. Na classe `MainActivity`, adicione as seguintes instruções `import` acima da declaração da classe.
 
     ```java
     import com.google.android.gms.common.ConnectionResult;
@@ -303,7 +303,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     import android.widget.Toast;
     ```
 
-5. Adicione os membros a seguir à parte superior da classe. Use esses campos para [verificar a disponibilidade do Google Play Services, conforme recomendado pelo Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
+4. Adicione os membros a seguir à parte superior da classe. Use esses campos para [verificar a disponibilidade do Google Play Services, conforme recomendado pelo Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
 
     ```java
     public static MainActivity mainActivity;
@@ -312,7 +312,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     ```
 
-6. Na classe `MainActivity`, adicione o método a seguir para verificar a disponibilidade do Google Play Services.
+5. Na classe `MainActivity`, adicione o método a seguir para verificar a disponibilidade do Google Play Services.
 
     ```java
     /**
@@ -339,7 +339,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-7. Na classe `MainActivity`, adicione o seguinte código que verifica o Google Play Services antes de chamar o `IntentService` para obter seu token de registro do FCM e registrá-lo com o seu hub:
+6. Na classe `MainActivity`, adicione o seguinte código que verifica o Google Play Services antes de chamar o `IntentService` para obter seu token de registro do FCM e registrá-lo com o seu hub:
 
     ```java
     public void registerWithNotificationHubs()
@@ -352,7 +352,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-8. No método `OnCreate` da classe `MainActivity`, adicione o código a seguir para começar o processo de registro quando a atividade for criada:
+7. No método `OnCreate` da classe `MainActivity`, adicione o código a seguir para começar o processo de registro quando a atividade for criada:
 
     ```java
     @Override
@@ -366,7 +366,7 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-9. Para verificar o estado do aplicativo e informar o status em seu aplicativo, inclua estes métodos adicionais a `MainActivity`:
+8. Para verificar o estado do aplicativo e informar o status em seu aplicativo, inclua estes métodos adicionais a `MainActivity`:
 
     ```java
     @Override
@@ -405,15 +405,17 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-10. O método `ToastNotify` usa o controle *"Hello World"* `TextView` para informar de forma persistente o status e as notificações no aplicativo. No layout **res** > **layout** > **activity_main.xml**, adicione a ID a seguir a esse controle.
+9. O método `ToastNotify` usa o controle *"Hello World"* `TextView` para informar de forma persistente o status e as notificações no aplicativo. No layout **res** > **layout** > **activity_main.xml**, adicione a ID a seguir a esse controle.
 
     ```java
     android:id="@+id/text_hello"
     ```
 
-11. Em seguida, adicione a subclasse no receptor que você definiu no AndroidManifest.xml. Adicione outra classe nova ao projeto denominada `FirebaseService`.
+    ![Hubs de notificação do Azure - Testar Enviar](./media/notification-hubs-android-push-notification-google-fcm-get-started/activity-main-xml.png)
 
-12. Adicione as seguintes instruções de importação na parte superior de `FirebaseService.java`:
+10. Em seguida, adicione a subclasse no receptor que você definiu no AndroidManifest.xml. Adicione outra classe nova ao projeto denominada `FirebaseService`.
+
+11. Adicione as seguintes instruções de importação na parte superior de `FirebaseService.java`:
 
     ```java
     import com.google.firebase.messaging.FirebaseMessagingService;
@@ -428,10 +430,10 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     import android.net.Uri;
     import android.os.Build;
     import android.os.Bundle;
-    import android.support.v4.app.NotificationCompat;
+    import androidx.core.app.NotificationCompat;
     ```
 
-13. Adicione o código a seguir à classe `FirebaseService`, tornando-a uma subclasse de `FirebaseMessagingService`.
+12. Adicione o código a seguir à classe `FirebaseService`, tornando-a uma subclasse de `FirebaseMessagingService`.
 
     Esse código substitui o método `onMessageReceived` e relata as notificações recebidas. Ele também envia a notificação por push ao gerenciador de notificações do Android usando o método `sendNotification()`. Chame o método `sendNotification()` quando o aplicativo não estiver em execução e uma notificação for recebida.
 
@@ -518,12 +520,16 @@ O serviço agora está configurado para trabalhar com o Firebase Cloud Messaging
     }
     ```
 
-14. No Android Studio, na barra de menus, selecione **Compilar** > **Recompilar Projeto** para garantir que não haja erros no código. Se você receber um erro sobre o ícone `ic_launcher`, remova a instrução a seguir do arquivo AndroidManifest.xml: 
+13. No Android Studio, na barra de menus, selecione **Compilar** > **Recompilar Projeto** para garantir que não haja erros no código. Se você receber um erro sobre o ícone `ic_launcher`, remova a instrução a seguir do arquivo AndroidManifest.xml: 
 
     ```
         android:icon="@mipmap/ic_launcher"
     ```
-15. Execute o aplicativo no dispositivo e verifique se ele é registrado com êxito no hub.
+14. Verifique se você tem um dispositivo virtual para executar o aplicativo. Se não tiver um, adicione da seguinte maneira:
+    1. ![Abra o Gerenciador de Dispositivos](./media/notification-hubs-android-push-notification-google-fcm-get-started/open-device-manager.png)
+    2. ![Crie um dispositivo virtual](./media/notification-hubs-android-push-notification-google-fcm-get-started/your-virtual-devices.PNG)
+
+15. Execute o aplicativo no dispositivo selecionado e verifique se ele é registrado com êxito no hub.
 
     > [!NOTE]
     > O registro poderá falhar na primeira inicialização até que o método `onTokenRefresh()` do serviço de ID da instância seja chamado. A atualização deve iniciar um registro bem-sucedido com o hub de notificação.

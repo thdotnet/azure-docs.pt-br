@@ -1,6 +1,6 @@
 ---
 title: Criar seu primeiro experimento automatizado de aprendizado de máquina
-titleSuffix: Azure Machine Learning service
+titleSuffix: Azure Machine Learning
 description: Aprenda a treinar e implantar um modelo de classificação com aprendizado de máquina automatizado na página de aterrissagem do workspace do Azure Machine Learning (versão prévia).
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,12 @@ ms.author: tzvikei
 author: tsikiksr
 ms.reviewer: nibaccam
 ms.date: 09/09/2019
-ms.openlocfilehash: 0dd4447736469644875dff914c6284b087be87d0
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 2422a4525c94f3997dd0a9a0859135e9acf59ffa
+ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910216"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71091999"
 ---
 # <a name="tutorial-create-your-first-classification-model-with-automated-machine-learning"></a>Tutorial: Crie seu primeiro modelo de classificação com o aprendizado de máquina automatizado
 
@@ -26,7 +26,7 @@ Com o aprendizado de máquina automatizado, você pode automatizar tarefas inten
 Neste tutorial, você aprenderá a fazer as seguintes tarefas:
 
 > [!div class="checklist"]
-> * Criar um workspace do Serviço do Azure Machine Learning.
+> * Criar um Workspace de Azure Machine Learning.
 > * Executar um experimento de aprendizado de máquina automatizado.
 > * Exibir detalhes do experimento.
 > * Implantar o modelo.
@@ -67,7 +67,7 @@ Você verá a tela **Introdução**, pois este é seu primeiro experimento com o
 
 1. Insira **my-1st-automl-experiment** como o nome do experimento.
 
-1. Selecione **Criar uma nova computação**. 
+1. Selecione **Criar uma nova computação**. Uma computação é um ambiente de recursos local ou baseado em nuvem usado para executar o script de treinamento ou hospedar sua implantação de serviço. Para este experimento, usamos uma computação baseada em nuvem. 
 
     1. Configure o contexto de computação do experimento.
         
@@ -99,7 +99,8 @@ Você verá a tela **Introdução**, pois este é seu primeiro experimento com o
         Formato de arquivo| Delimitado
         Delimitador| Vírgula
         Codificação| UTF-8
-        Cabeçalhos da coluna| Todos os arquivos têm os mesmos cabeçalhos            Ignorar linhas | Nenhum
+        Cabeçalhos da coluna| Todos os arquivos têm os mesmos cabeçalhos
+        Ignorar linhas | Nenhum
 
         >[!NOTE]
         > Se alguma das configurações deste formulário for atualizada, a versão prévia também será atualizada.
@@ -146,9 +147,9 @@ O processo de preparação do experimento leva alguns minutos. Quando o processo
 
 ## <a name="deploy-the-model"></a>Implantar o modelo
 
-Ao usar o aprendizado de máquina automatizado na página de aterrissagem do workspace, você pode implantar o melhor modelo como um serviço Web para prever novos dados e identificar possíveis áreas de oportunidade. Para este experimento, a implantação significa que a instituição financeira agora tem uma solução iterativa e escalonável para identificar clientes potenciais para depósito a prazo fixo.
+Ao usar machine learning automatizado na página de aterrissagem do workspace, você pode implantar o melhor modelo como um serviço Web em algumas etapas. A implantação é a integração do modelo para que ele possa prever novos dados e identificar possíveis áreas de oportunidade. Para este experimento, a implantação em um serviço Web significa que a instituição financeira agora tem uma solução Web iterativa e escalonável para identificar clientes potenciais para depósito a prazo fixo. 
 
-Nesse contexto de experimento, **VotingEnsemble** é considerado o melhor modelo, com base na métrica **AUC_weighted**.  Implantamos esse modelo, mas saiba que a implantação demora cerca de 20 minutos para ser concluída.
+Nesse contexto de experimento, **VotingEnsemble** é considerado o melhor modelo, com base na métrica **AUC_weighted**.  Implantamos esse modelo, mas saiba que a implantação demora cerca de 20 minutos para ser concluída. O processo de implantação envolve várias etapas, incluindo o registro do modelo, a geração de recursos e a configuração deles para o serviço Web.
 
 1. Na página **Detalhes da Execução**, clique no botão **Implantar o Melhor Modelo** no canto superior direito.
 
@@ -161,7 +162,7 @@ Nesse contexto de experimento, **VotingEnsemble** é considerado o melhor modelo
     Script de pontuação| Gerar automaticamente
     Script do ambiente| Gerar automaticamente
     
-1. Selecione **Implantar**.
+1. Selecione **Implantar**.  
 
     Uma mensagem de conclusão da implantação é exibida quando a implantação é concluída com êxito.
     

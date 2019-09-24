@@ -12,15 +12,15 @@ ms.service: virtual-machines-linux
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/30/2018
+ms.date: 09/12/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 7215a8f169a878b10663347cf9560d822c6aa7e1
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 9f053cc7646a2a4f41c57010f7e43a3fe3255b7e
+ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70081775"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70931785"
 ---
 # <a name="tutorial---how-to-use-cloud-init-to-customize-a-linux-virtual-machine-in-azure-on-first-boot"></a>Tutorial – Como usar a inicialização de nuvem para personalizar uma máquina virtual do Linux no Azure na primeira inicialização
 
@@ -33,8 +33,6 @@ Em um tutorial anterior, você aprendeu como SSH em uma máquina virtual (VM) e 
 > * Usar o Key Vault para armazenar certificados com segurança
 > * Automatizar implantações seguras de NGINX com cloud-init
 
-[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
 Se você optar por instalar e usar a CLI localmente, este tutorial exigirá que você execute a CLI do Azure versão 2.0.30 ou posterior. Execute `az --version` para encontrar a versão. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure]( /cli/azure/install-azure-cli).
 
 ## <a name="cloud-init-overview"></a>Visão geral da inicialização de nuvem
@@ -44,21 +42,23 @@ A inicialização de nuvem também funciona em distribuições. Por exemplo, voc
 
 Estamos trabalhando com parceiros para incluir a inicialização de nuvem e trabalhar nas imagens que eles fornecem para o Azure. A tabela a seguir descreve a disponibilidade de inicialização de nuvem atual nas imagens da plataforma Azure:
 
-| Alias | Publicador | Oferta | SKU | Versão |
+| Publicador | Oferta | SKU | Versão | Cloud-init pronto |
 |:--- |:--- |:--- |:--- |:--- |
-| UbuntuLTS |Canônico |UbuntuServer |16.04-LTS |mais recente |
-| UbuntuLTS |Canônico |UbuntuServer |14.04.5-LTS |mais recente |
-| CoreOS |CoreOS |CoreOS |Estável |mais recente |
-| | OpenLogic | CentOS | 7-CI | mais recente |
-| | RedHat | RHEL | 7-RAW-CI | mais recente |
+|Canônico |UbuntuServer |18.04-LTS |mais recente |Sim | 
+|Canônico |UbuntuServer |16.04-LTS |mais recente |Sim | 
+|Canônico |UbuntuServer |14.04.5-LTS |mais recente |Sim |
+|CoreOS |CoreOS |Estável |mais recente |Sim |
+|OpenLogic 7.6 |CentOS |7-CI |mais recente |preview |
+|RedHat 7.6 |RHEL |7-RAW-CI |7.6.2019072418 |Sim |
+|RedHat 7.7 |RHEL |7-RAW-CI |7.7.2019081601 |preview |
 
 
 ## <a name="create-cloud-init-config-file"></a>Criar arquivo de configuração cloud-init
 Para ver a inicialização de nuvem em ação, crie uma VM que instala o NGINX e execute um simples "Hello World" do aplicativo do Node. js. A seguinte configuração de inicialização de nuvem instala os pacotes necessários, cria um aplicativo do Node. js, em seguida, inicializa e inicia o aplicativo.
 
-No shell atual, crie um arquivo chamado *cloud-init.txt* e cole a configuração a seguir. Por exemplo, crie o arquivo no Cloud Shell e não em seu computador local. Você pode usar qualquer editor que queira. Insira `sensible-editor cloud-init.txt` para criar o arquivo e ver uma lista de editores disponíveis. Certifique-se de que o arquivo de inicialização de nuvem inteiro seja copiado corretamente, especialmente a primeira linha:
+No seu prompt do Bash ou no Cloud Shell, crie um arquivo chamado *cloud-init.txt* e cole a configuração a seguir. Por exemplo, digite `sensible-editor cloud-init.txt` para criar o arquivo e ver uma lista de editores disponíveis. Certifique-se de que o arquivo de inicialização de nuvem inteiro seja copiado corretamente, especialmente a primeira linha:
 
-```yaml
+```azurecli-interactive
 #cloud-config
 package_upgrade: true
 packages:
@@ -114,7 +114,7 @@ Agora, crie uma VM com [az vm create](/cli/azure/vm#az-vm-create). Utiçize o `-
 ```azurecli-interactive
 az vm create \
     --resource-group myResourceGroupAutomate \
-    --name myVM \
+    --name myAutomatedVM \
     --image UbuntuLTS \
     --admin-username azureuser \
     --generate-ssh-keys \
@@ -184,7 +184,7 @@ vm_secret=$(az vm secret format --secret "$secret")
 ### <a name="create-cloud-init-config-to-secure-nginx"></a>Criar a configuração de inicialização de nuvem para proteger o NGINX
 Quando você cria uma VM, certificados e chaves são armazenados no diretório protegido */var/lib/waagent/* . Para automatizar adicionando o certificado para a máquina virtual e configurando o NGINX, você pode usar uma configuração de inicialização de nuvem atualizada do exemplo anterior.
 
-Crie um arquivo chamado *cloud-init-secured.txt* e cole a configuração a seguir. Novamente, se você usar o Cloud Shell, crie o arquivo de configuração de nuvem init lá e não em seu computador local. Use `sensible-editor cloud-init-secured.txt` para criar o arquivo e ver uma lista de editores disponíveis. Certifique-se de que o arquivo de inicialização de nuvem inteiro seja copiado corretamente, especialmente a primeira linha:
+Crie um arquivo chamado *cloud-init-secured.txt* e cole a configuração a seguir. Se você usar o Cloud Shell, crie o arquivo de configuração de nuvem init lá e não em seu computador local. Por exemplo, digite `sensible-editor cloud-init-secured.txt` para criar o arquivo e ver uma lista de editores disponíveis. Certifique-se de que o arquivo de inicialização de nuvem inteiro seja copiado corretamente, especialmente a primeira linha:
 
 ```yaml
 #cloud-config
@@ -241,7 +241,7 @@ Agora, crie uma VM com [az vm create](/cli/azure/vm#az-vm-create). Os dados do c
 ```azurecli-interactive
 az vm create \
     --resource-group myResourceGroupAutomate \
-    --name myVMSecured \
+    --name myVMWithCerts \
     --image UbuntuLTS \
     --admin-username azureuser \
     --generate-ssh-keys \
