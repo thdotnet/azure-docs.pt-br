@@ -56,7 +56,7 @@ Os gatilhos têm esses elementos de nível superior, embora alguns sejam opciona
 | <*tipo de gatilho*> | String | O tipo de gatilho como "Http" ou "ApiConnection" | 
 | <*trigger-inputs*> | Objeto JSON | As entradas que definem o comportamento do gatilho | 
 | <*time-unit*> | String | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
-| <*number-of-time-units*> | Inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
+| <*number-of-time-units*> | Integer | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
 |||| 
 
 *Opcional*
@@ -137,7 +137,7 @@ Esse acionador verifica ou *pesquisa* um terminal usando [APIs gerenciadas pela 
 | <*tipo de método*> | String | O método HTTP para comunicação com a API gerenciada: "GET", "PUT", "POST", "PATCH", "DELETE" | 
 | <*operação de API*> | String | A operação de API para chamar | 
 | <*time-unit*> | String | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
-| <*number-of-time-units*> | Inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
+| <*number-of-time-units*> | Integer | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
 |||| 
 
 *Opcional*
@@ -308,7 +308,7 @@ Esse acionador verifica ou pesquisa o terminal especificado com base no agendame
 | <*tipo de método*> | String | O método HTTP a ser usado para sondar o ponto de extremidade especificado: "GET", "PUT", "POST", "PATCH", "DELETE" | 
 | <*endpoint-URL*> | String | A URL HTTP ou HTTPS para o ponto de extremidade para sondar <p>Tamanho máximo da cadeia de caracteres: 2 KB | 
 | <*time-unit*> | String | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
-| <*number-of-time-units*> | Inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
+| <*number-of-time-units*> | Integer | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
 |||| 
 
 *Opcional*
@@ -497,7 +497,7 @@ Esse acionador é executado com base no agendamento de recorrência especificado
 | Valor | Tipo | Descrição | 
 |-------|------|-------------| 
 | <*time-unit*> | String | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
-| <*number-of-time-units*> | Inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
+| <*number-of-time-units*> | Integer | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
 |||| 
 
 *Opcional*
