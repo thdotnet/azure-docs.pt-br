@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a2749ca35e6137d42a09b79da9315c8f7b242c31
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 1ebf4feb0687d9580bba29cd8213030e542a06da
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71000806"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268840"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Guia do desenvolvedor do Cofre da Chave do Azure
 
@@ -29,26 +29,6 @@ Para obter mais informações gerais sobre o Cofre de Chaves do Azure, confira [
 ## <a name="public-previews"></a>Visualizações públicas
 
 Periodicamente, lançamos uma visualização pública de um novo recurso do Key Vault. Experimente isso e diga-nos o que você acha via azurekeyvault@microsoft.com, nosso endereço de email para comentários.
-
-### <a name="storage-account-keys---july-10-2017"></a>Chaves da Conta de Armazenamento – 10 de julho de 2017
-
->[!NOTE]
->Para esta atualização do Azure Key Vault, apenas o recurso **Chaves da Conta de Armazenamento** está em versão prévia.
-
-Essa versão prévia inclui nosso novo recurso de Chaves de Conta de Armazenamento, disponível por meio destas interfaces: [.NET/C#](/dotnet/api/microsoft.azure.keyvault/), [REST](/rest/api/keyvault/) e [PowerShell](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault). 
-
-Para obter mais informações sobre o novo recurso de Chaves de Conta de Armazenamento, consulte [Visão geral de chaves de conta de armazenamento Azure Key Vault](key-vault-ovw-storage-keys.md).
-
-## <a name="videos"></a>Vídeos
-
-Este vídeo mostra como criar seu próprio cofre de chaves e como usá-lo por meio do aplicativo de exemplo “Hello Key Vault”.
-
-- [Desenvolvedor do Key Vault – guia de início rápido](https://channel9.msdn.com/Blogs/Azure/Azure-Key-Vault-Developer-Quick-Start/player)
-
-Recursos mencionados no vídeo acima:
-
-- [PowerShell do Azure](https://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409)
-- [Código de exemplo do Cofre de Chaves do Azure](https://go.microsoft.com/fwlink/?LinkId=521527&clcid=0x409)
 
 ## <a name="creating-and-managing-key-vaults"></a>Criando e gerenciando Cofres da Chave
 
@@ -148,7 +128,7 @@ Estes artigos abordam outros cenários e serviços que usam ou se integram ao Ke
 - [Visão geral de chaves de conta de armazenamento do Key Vault](key-vault-ovw-storage-keys.md) descreve as chaves de Contas de Armazenamento do Azure de integração do Key Vault.
 - [Mundos de segurança do Key Vault](key-vault-ovw-security-worlds.md) descreve as relações entre regiões e áreas de segurança.
 
-## <a name="social"></a>Social
+## <a name="social"></a>Redes sociais
 
 - [Blog do Cofre de Chaves](https://aka.ms/kvblog)
 - [Fórum do Cofre de Chaves](https://aka.ms/kvforum)

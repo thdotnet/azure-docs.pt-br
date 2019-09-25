@@ -13,18 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/30/2018
 ms.author: memildin
-ms.openlocfilehash: d035dc4e8f77bb64a9e845a9dae0668365a6aacb
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 8b069bedd3c36f27828e54a1110443ae6dfcdf3f
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202285"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268855"
 ---
 # <a name="monitor-identity-and-access-in-azure-security-center-preview"></a>Monitore a identidade e o acesso na Central de Segurança do Azure (Visualizar)
 Este artigo ajuda você a usar a Central de Segurança do Azure para monitorar a identidade e a atividade de acesso do usuário.
-
-> [!NOTE]
-> O link "exibir acesso à identidade *clássica* &" será desativado em 31 de julho de 2019. Clique [aqui](security-center-features-retirement-july2019.md#menu_classicidentity) para saber mais sobre serviços alternativos.
 
 > [!NOTE]
 > O monitoramento de identidade e acesso está em pré-visualização e disponível apenas na camada Padrão da Central de Segurança. Confira os [Preços](security-center-pricing.md) para saber mais sobre os tipos de preço da Central de Segurança.
@@ -67,7 +64,7 @@ Em **Identidade e acesso**, há duas guias:
 ### <a name="overview-section"></a>Seção de visão geral
 Sob **visão geral**, há uma lista de recomendações. A primeira coluna lista a recomendação. A segunda coluna mostra o número total de assinaturas afetadas por essa recomendação. A terceira coluna mostra a gravidade do problema.
 
-1. Selecione uma recomendação. A janela da recomendação é aberta e exibe:
+1. Selecione uma recomendação. A janela recomendações é aberta e exibe:
 
    - Descrição da recomendação
    - Lista de assinaturas insalubres e saudáveis
@@ -80,7 +77,7 @@ Sob **visão geral**, há uma lista de recomendações. A primeira coluna lista 
 ### <a name="subscriptions-section"></a>Seção de assinaturas
 Em **Assinaturas**, há uma lista de assinaturas. A primeira coluna lista as assinaturas. A segunda coluna mostra o número total de recomendações para cada assinatura. A terceira coluna mostra a severidade dos problemas.
 
-![Guia da assinatura][4]
+![Guia assinaturas][4]
 
 1. Selecione uma assinatura. Abre uma exibição de resumo com três guias:
 
@@ -107,7 +104,7 @@ Em **Assinaturas**, há uma lista de assinaturas. A primeira coluna lista as ass
 ## <a name="recommendations"></a>Recomendações
 Use a tabela abaixo como referência para ajudá-lo a entender as recomendações de identidade e acesso disponíveis e o que cada uma delas se você aplicá-lo.
 
-|Tipo de recurso|Classificação de segurança|Recomendação|Descrição|
+|Tipo de recurso|Classificação de segurança|Recomendações|DESCRIÇÃO|
 |----|----|----|----|
 |Assinatura|50|O MFA deve ser habilitado em contas com permissões de proprietário em sua assinatura|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de administrador para evitar uma violação de conta ou recursos.|
 |Assinatura|40|A MFA deve ser habilitada em suas contas de assinatura com permissões de gravação|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de gravação para evitar uma violação de conta ou recursos.|
@@ -125,13 +122,13 @@ Use a tabela abaixo como referência para ajudá-lo a entender as recomendaçõe
 > Se você criou uma política de acesso condicional que exige MFA, mas tem exclusões definidas, a avaliação de recomendação do MFA da central de segurança considera a política como não compatível, pois permite que alguns usuários entrem no Azure sem MFA.
 
 ## <a name="next-steps"></a>Próximas etapas
-Para saber mais sobre as recomendações que se aplicam aos outros tipos de recursos do Azure, consulte o seguinte:
+Para saber mais sobre as recomendações que se aplicam a outros tipos de recursos do Azure, consulte os seguintes artigos:
 
 - [Protegendo suas máquinas e aplicativos na Central de segurança do Azure](security-center-virtual-machine-protection.md)
 - [Protegendo sua rede na Central de Segurança do Azure](security-center-network-recommendations.md)
 - [Proteger seus dados na Central de segurança do Azure e o serviço do SQL Azure](security-center-sql-service-recommendations.md)
 
-Para saber mais sobre a Central de Segurança, confira o seguinte:
+Para saber mais sobre a Central de Segurança, confira estes artigos:
 * [Gerencie e responda a alertas de segurança na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Saiba como gerenciar alertas e responder a incidentes de segurança na Central de Segurança.
 * [Noções básicas de alertas de segurança na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Saiba mais sobre os diferentes tipos de alertas de segurança.
 * [Perguntas Frequentes sobre a Central de Segurança do Azure](security-center-faq.md). Encontre respostas para perguntas frequentes sobre como usar a Central de Segurança.

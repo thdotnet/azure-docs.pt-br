@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 87d0f08d67dbbe6a0fa1725aba850c8d9b6c5619
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: c67d2cd4e90b2fa61a4d95e89a68c888a6e1fe3f
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104698"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273642"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Criar um serviço de vínculo privado usando CLI do Azure
 Este artigo mostra como criar um serviço de vínculo privado no Azure usando CLI do Azure.
@@ -29,13 +29,13 @@ Antes de poder criar uma rede virtual, você deverá criar um grupo de recursos 
 az group create --name myResourceGroup --location westcentralus
 ```
 ### <a name="create-a-virtual-network"></a>Criar uma rede virtual
-Crie a rede virtual com [az network vnet create](/cli/azure/network/az-network-vnet-create). Este exemplo cria uma rede virtual padrão chamada *myVirtualNetwork* com uma sub-rede chamada *mysubnet*:
+Crie a rede virtual com [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). Este exemplo cria uma rede virtual padrão chamada *myVirtualNetwork* com uma sub-rede chamada *mysubnet*:
 
 ```azurecli-interactive
 az network vnet create --resource-group myResourceGroup --name myVirtualNetwork --address-prefix 10.0.0.0/16  
 ```
 ### <a name="create-a-subnet"></a>Criar uma sub-rede
-Crie uma sub-rede para a rede virtual com [AZ Network vnet subnet Create](/cli/azure/network/az-network-vnet-subnet-create). Este exemplo cria uma sub-rede chamada *mysubnet* na rede virtual *myVirtualNetwork* :
+Crie uma sub-rede para a rede virtual com [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). Este exemplo cria uma sub-rede chamada *mysubnet* na rede virtual *myVirtualNetwork* :
 
 ```azurecli-interactive
 az network vnet subnet create --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --address-prefixes 10.0.0.0/24    
@@ -82,7 +82,7 @@ Neste exemplo, não abordamos a criação da máquina virtual. Você pode seguir
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Desabilitar políticas de rede do serviço de vínculo privado na sub-rede 
-O serviço de vínculo privado requer um IP de qualquer sub-rede de sua escolha em uma rede virtual. No momento, não há suporte para políticas de rede nesses IPs.  Portanto, precisamos desabilitar as políticas de rede na sub-rede. Atualize a sub-rede para desabilitar as políticas de rede do serviço de vínculo privado com [AZ Network vnet subnet Update](/cli/azure/network/az-network-vnet-subnet-update).
+O serviço de vínculo privado requer um IP de qualquer sub-rede de sua escolha em uma rede virtual. No momento, não há suporte para políticas de rede nesses IPs.  Portanto, precisamos desabilitar as políticas de rede na sub-rede. Atualize a sub-rede para desabilitar as políticas de rede do serviço de vínculo privado com [AZ Network vnet subnet Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
@@ -90,7 +90,7 @@ az network vnet subnet update --resource-group myResourceGroup --vnet-name myVir
  
 ## <a name="create-a-private-link-service"></a>Criar um serviço de Link Privado  
  
-Crie um serviço de vínculo privado usando Standard Load Balancer configuração de IP de front-end com [AZ Network Private-link-Service Create](/cli/azure/network/az-network-private-link-service-create). Este exemplo cria um serviço de vínculo privado chamado *myPLS* usando Standard Load Balancer chamado *myLoadBalancer* no grupo de recursos chamado *MyResource*Group. 
+Crie um serviço de vínculo privado usando Standard Load Balancer configuração de IP de front-end com [AZ Network Private-link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). Este exemplo cria um serviço de vínculo privado chamado *myPLS* usando Standard Load Balancer chamado *myLoadBalancer* no grupo de recursos chamado *MyResource*Group. 
  
 ```azurecli-interactive
 az network private-link-service create \
@@ -111,7 +111,7 @@ Em seguida, demonstraremos como mapear esse serviço para um ponto de extremidad
 ## <a name="private-endpoints"></a>Pontos de extremidade privados
 
 ### <a name="create-the-virtual-network"></a>Criar a rede virtual 
-Crie uma rede virtual com [AZ Network vnet Create](/cli/azure/network/az-network-vnet-create). Este exemplo cria uma rede virtual chamada *myPEVNet* no grupo de recursos chamado *MyResource*Group: 
+Crie uma rede virtual com [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). Este exemplo cria uma rede virtual chamada *myPEVNet* no grupo de recursos chamado *MyResource*Group: 
 ```azurecli-interactive
 az network vnet create \
 --resource-group myResourceGroup \
@@ -119,7 +119,7 @@ az network vnet create \
 --address-prefix 10.0.0.0/16  
 ```
 ### <a name="create-the-subnet"></a>Criar a sub-rede 
-Crie uma sub-rede na rede virtual com [AZ Network vnet subnet Create](/cli/azure/network/az-network-vnet-subnet-create). Este exemplo cria uma sub-rede chamada *mysubnet* na rede virtual chamada *myPEVnet* no grupo de recursos chamado *MyResource*Group: 
+Crie uma sub-rede na rede virtual com [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). Este exemplo cria uma sub-rede chamada *mysubnet* na rede virtual chamada *myPEVnet* no grupo de recursos chamado *MyResource*Group: 
 
 ```azurecli-interactive 
 az network vnet subnet create \
@@ -129,7 +129,7 @@ az network vnet subnet create \
 --address-prefixes 10.0.0.0/24 
 ```   
 ## <a name="disable-private-endpoint-network-policies-on-subnet"></a>Desabilitar políticas de rede de ponto de extremidade privado na sub-rede 
-O ponto de extremidade privado pode ser criado em qualquer sub-rede de sua escolha em uma rede virtual. No momento, não há suporte para políticas de rede em pontos de extremidade privados.  Portanto, precisamos desabilitar as políticas de rede na sub-rede. Atualize a sub-rede para desabilitar as políticas de rede de ponto de extremidade privado com [AZ Network vnet subnet Update](/cli/azure/network/az-network-vnet-subnet-update). 
+O ponto de extremidade privado pode ser criado em qualquer sub-rede de sua escolha em uma rede virtual. No momento, não há suporte para políticas de rede em pontos de extremidade privados.  Portanto, precisamos desabilitar as políticas de rede na sub-rede. Atualize a sub-rede para desabilitar as políticas de rede de ponto de extremidade privado com [AZ Network vnet subnet Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update). 
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -156,7 +156,7 @@ Você pode obter o *Private-Connection-Resource-ID* com `az network private-link
  
 ## <a name="show-private-link-service-connections"></a>Mostrar conexões do serviço de vínculo privado 
  
-Consulte solicitações de conexão em seu serviço de vínculo privado usando [AZ Network Private-link-Service show](/cli/azure/network/az-network-private-link-service-show).    
+Consulte solicitações de conexão em seu serviço de vínculo privado usando [AZ Network Private-link-Service show](/cli/azure/network/private-link-service#az-network-private-link-service-show).    
 ```azurecli-interactive 
 az network private-link-service show --resource-group myResourceGroup --name myPLS 
 ```

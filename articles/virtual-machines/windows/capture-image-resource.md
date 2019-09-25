@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 33f3b03ba76a0c3fd33e057d0f15b2ab7a0f44e4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: c133431bb2b84525a8ea875dea94cec8595733bb
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70089495"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273874"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Criar uma imagem gerenciada de uma VM generalizada no Azure
 
@@ -205,9 +205,9 @@ Você pode criar uma imagem gerenciada usando um instantâneo de uma VM generali
     ``` 
 
 
-## <a name="create-an-image-from-a-vhd-in-a-storage-account"></a>Criar uma imagem de um VHD em uma conta de armazenamento
+## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Criar uma imagem de uma VM que usa uma conta de armazenamento
 
-Criar uma imagem gerenciada com base em uma imagem de VHD do sistema operacional generalizada em uma conta de armazenamento. É necessário o URI do VHD na conta de armazenamento, que está no seguinte formato: https://*mystorageaccount*.blob.core.windows.net/*vhdcontainer*/*vhdfilename.vhd*. Neste exemplo, o VHD está em *mystorageaccount*, em um contêiner denominado *vhdcontainer*, e o nome do arquivo do VHD é *vhdfilename.vhd*.
+Para criar uma imagem gerenciada de uma VM que não usa discos gerenciados, você precisa do URI do VHD do sistema operacional na conta de armazenamento, no seguinte formato: https://*mystorageaccount*. blob.Core.Windows.NET/*vhdcontainer* /  *vhdfilename. vhd*. Neste exemplo, o VHD está em *mystorageaccount*, em um contêiner denominado *vhdcontainer*, e o nome do arquivo do VHD é *vhdfilename.vhd*.
 
 
 1.  Defina algumas variáveis.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: apimpm
-ms.openlocfilehash: cfb4bda597b2b7ab4658244c46253f5118723402
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 3201edd3b90d6db1393286db688b24065ea8dc6b
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073814"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273536"
 ---
 # <a name="api-management-access-restriction-policies"></a>Políticas de restrição de acesso do Gerenciamento de API
 
@@ -60,14 +60,14 @@ Use a política `check-header` para impor que uma solicitação tem um cabeçalh
 
 ### <a name="elements"></a>Elementos
 
-| Nome         | Descrição                                                                                                                                   | Necessário |
+| NOME         | DESCRIÇÃO                                                                                                                                   | Obrigatório |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | check-header | Elemento raiz.                                                                                                                                 | Sim      |
 | value        | Valor do cabeçalho HTTP permitido. Quando vários elementos de valor são especificados, a verificação é considerada um sucesso se qualquer um dos valores é uma correspondência. | Não       |
 
 ### <a name="attributes"></a>Atributos
 
-| Nome                       | Descrição                                                                                                                                                            | Necessário | Padrão |
+| NOME                       | DESCRIÇÃO                                                                                                                                                            | Obrigatório | Padrão |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | failed-check-error-message | A mensagem de erro para retornar no corpo da resposta HTTP se o cabeçalho não existe ou tem um valor inválido. Esta mensagem deve conter quaisquer caracteres especiais adequadamente seguidos por caracteres de escape. | Sim      | N/D     |
 | failed-check-httpcode      | O código de status HTTP para retornar se o cabeçalho não existir ou tiver um valor inválido.                                                                                        | Sim      | N/D     |
@@ -120,15 +120,15 @@ A política `rate-limit` impede picos de uso da API para cada assinatura, limita
 
 ### <a name="elements"></a>Elementos
 
-| Nome      | Descrição                                                                                                                                                                                                                                                                                              | Necessário |
+| NOME      | DESCRIÇÃO                                                                                                                                                                                                                                                                                              | Obrigatório |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| set-limit | Elemento raiz.                                                                                                                                                                                                                                                                                            | Sim      |
+| rate-limit | Elemento raiz.                                                                                                                                                                                                                                                                                            | Sim      |
 | api       | Adicione um ou mais desses elementos para impor um limite de taxa de chamada em APIs dentro do produto. Limites de taxa de chamadas à API e ao produto são aplicados de forma independente. A API pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado.                    | Não       |
-| operação | Adicione um ou mais desses elementos para impor um limite de taxa de chamada em operações em uma API. Limites de taxa de chamadas à API, operação e produto são aplicados de forma independente. A operação pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado. | Não       |
+| operation | Adicione um ou mais desses elementos para impor um limite de taxa de chamada em operações em uma API. Limites de taxa de chamadas à API, operação e produto são aplicados de forma independente. A operação pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado. | Não       |
 
 ### <a name="attributes"></a>Atributos
 
-| Nome           | Descrição                                                                                           | Necessário | Padrão |
+| NOME           | DESCRIÇÃO                                                                                           | Obrigatório | Padrão |
 | -------------- | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
 | name           | O nome da API para a qual aplicar o limite de taxa.                                                | Sim      | N/D     |
 | chamadas          | O número total máximo de chamadas permitidas durante o intervalo de tempo especificado no `renewal-period`. | Sim      | N/D     |
@@ -140,7 +140,7 @@ Essa política pode ser usada nas [seções](https://azure.microsoft.com/documen
 
 -   **Seções de política:** de entrada
 
--   Escopos de **política:** produto, API, operação
+-   **Escopos de política:** produto, API, operação
 
 ## <a name="LimitCallRateByKey"></a> Limitar a taxa de chamadas por chave
 
@@ -185,13 +185,13 @@ No exemplo a seguir, o limite de taxa é codificado pelo endereço IP do chamado
 
 ### <a name="elements"></a>Elementos
 
-| Nome      | Descrição   | Necessário |
-| --------- | ------------- | -------- |
-| set-limit | Elemento raiz. | Sim      |
+| NOME              | DESCRIÇÃO   | Obrigatório |
+| ----------------- | ------------- | -------- |
+| taxa-limite por chave | Elemento raiz. | Sim      |
 
 ### <a name="attributes"></a>Atributos
 
-| Nome                | Descrição                                                                                           | Necessário | Padrão |
+| NOME                | DESCRIÇÃO                                                                                           | Obrigatório | Padrão |
 | ------------------- | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
 | chamadas               | O número total máximo de chamadas permitidas durante o intervalo de tempo especificado no `renewal-period`. | Sim      | N/D     |
 | counter-key         | A chave a ser usada para a política de limite de taxa.                                                             | Sim      | N/D     |
@@ -232,7 +232,7 @@ No exemplo a seguir, a política só permite solicitações provenientes do ende
 
 ### <a name="elements"></a>Elementos
 
-| Nome                                      | Descrição                                         | Necessário                                                       |
+| NOME                                      | DESCRIÇÃO                                         | Obrigatório                                                       |
 | ----------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------- |
 | ip-filter                                 | Elemento raiz.                                       | Sim                                                            |
 | endereço                                   | Especifica um único endereço IP no qual filtrar.   | Pelo menos um elemento `address` ou `address-range` é necessário. |
@@ -240,7 +240,7 @@ No exemplo a seguir, a política só permite solicitações provenientes do ende
 
 ### <a name="attributes"></a>Atributos
 
-| Nome                                      | Descrição                                                                                 | Necessário                                           | Padrão |
+| NOME                                      | DESCRIÇÃO                                                                                 | Obrigatório                                           | Padrão |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------- | ------- |
 | address-range from="address" to="address" | Um intervalo de endereços IP aos quais o acesso será permitido ou negado.                                        | Necessário quando o elemento `address-range` é usado. | N/D     |
 | ip-filter action="allow &#124; forbid"    | Especifica se chamadas para os endereços IP e intervalos de endereços IP especificados devem ou não ser permitidas. | Sim                                                | N/D     |
@@ -287,15 +287,15 @@ A política `quota` impõe uma cota renovável ou de tempo de vida de volume de 
 
 ### <a name="elements"></a>Elementos
 
-| Nome      | Descrição                                                                                                                                                                                                                                                                                  | Necessário |
+| NOME      | DESCRIÇÃO                                                                                                                                                                                                                                                                                  | Obrigatório |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | quota     | Elemento raiz.                                                                                                                                                                                                                                                                                | Sim      |
 | api       | Adicione um ou mais desses elementos para impor a cota de chamada em APIs dentro do produto. Cotas de API e produto são aplicadas de forma independente. A API pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado.                    | Não       |
-| operação | Adicione um ou mais desses elementos para impor a cota de chamada em operações em uma API. Cotas de operações, APIs e produtos são aplicadas de forma independente. A operação pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado. | Não       |
+| operation | Adicione um ou mais desses elementos para impor a cota de chamada em operações em uma API. Cotas de operações, APIs e produtos são aplicadas de forma independente. A operação pode ser referenciada através de `name` ou `id`. Se ambos os atributos são fornecidos, `id` será usado e `name` será ignorado. | Não       |
 
 ### <a name="attributes"></a>Atributos
 
-| Nome           | Descrição                                                                                               | Necessário                                                         | Padrão |
+| NOME           | DESCRIÇÃO                                                                                               | Obrigatório                                                         | Padrão |
 | -------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------- |
 | name           | O nome da API ou operação à qual a cota se aplica.                                             | Sim                                                              | N/D     |
 | largura de banda      | O número total máximo de kilobytes permitidos durante o intervalo de tempo especificado no `renewal-period`. | `calls` ou `bandwidth` ou ainda ambos juntos devem ser especificados. | N/D     |
@@ -349,13 +349,13 @@ No exemplo a seguir, a cota é codificada pelo endereço IP do chamador.
 
 ### <a name="elements"></a>Elementos
 
-| Nome  | Descrição   | Necessário |
+| NOME  | DESCRIÇÃO   | Obrigatório |
 | ----- | ------------- | -------- |
 | quota | Elemento raiz. | Sim      |
 
 ### <a name="attributes"></a>Atributos
 
-| Nome                | Descrição                                                                                               | Necessário                                                         | Padrão |
+| NOME                | DESCRIÇÃO                                                                                               | Obrigatório                                                         | Padrão |
 | ------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------- |
 | largura de banda           | O número total máximo de kilobytes permitidos durante o intervalo de tempo especificado no `renewal-period`. | `calls` ou `bandwidth` ou ainda ambos juntos devem ser especificados. | N/D     |
 | chamadas               | O número total máximo de chamadas permitidas durante o intervalo de tempo especificado no `renewal-period`.     | `calls` ou `bandwidth` ou ainda ambos juntos devem ser especificados. | N/D     |
@@ -520,7 +520,7 @@ Este exemplo mostra como usar a política [validar JWT](api-management-access-re
 
 ### <a name="elements"></a>Elementos
 
-| Elemento             | Descrição                                                                                                                                                                                                                                                                                                                                           | Necessário |
+| Elemento             | DESCRIÇÃO                                                                                                                                                                                                                                                                                                                                           | Obrigatório |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | validate-jwt        | Elemento raiz.                                                                                                                                                                                                                                                                                                                                         | Sim      |
 | públicos-alvo           | Contém uma lista de declarações de público-alvo aceitáveis que podem estar presentes no token. Se vários valores de público-alvo estiverem presentes, cada valor será tentado até que todos sejam esgotados (nesse caso, a validação falhará) ou até obter êxito. Pelo menos um público-alvo deve ser especificado.                                                                     | Não       |
@@ -533,7 +533,7 @@ Este exemplo mostra como usar a política [validar JWT](api-management-access-re
 
 ### <a name="attributes"></a>Atributos
 
-| Nome                            | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                            | Necessário                                                                         | Padrão                                                                           |
+| NOME                            | DESCRIÇÃO                                                                                                                                                                                                                                                                                                                                                                                                                                            | Obrigatório                                                                         | Padrão                                                                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | clock-skew                      | Período de tempo. Use para especificar a diferença de tempo máxima esperada entre os relógios do sistema do emissor do token e a instância do Gerenciamento de API.                                                                                                                                                                                                                                                                                                               | Não                                                                               | 0 segundos                                                                         |
 | failed-validation-error-message | Mensagem de erro para retornar no corpo da resposta HTTP se o JWT não passar na validação. Esta mensagem deve conter quaisquer caracteres especiais adequadamente seguidos por caracteres de escape.                                                                                                                                                                                                                                                                                                 | Não                                                                               | A mensagem de erro padrão depende do problema de validação, por exemplo, "O JWT não está presente." |

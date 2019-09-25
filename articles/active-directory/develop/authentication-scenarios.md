@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/05/2019
+ms.date: 09/23/2019
 ms.author: ryanwi
 ms.reviewer: saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79f462b8903033784f186032c715cc966dfae7b4
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 76c5214fc26d299c6abb72ed6cd448728903e78f
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622699"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71272535"
 ---
 # <a name="what-is-authentication"></a>O que é a autenticação?
 
@@ -59,6 +59,25 @@ No cenário de exemplo acima, você pode classificar os aplicativos de acordo co
 
 * Aplicativos que precisam acessar os recursos com segurança
 * Aplicativos que desempenham a função do recurso em si
+
+### <a name="how-each-flow-emits-tokens-and-codes"></a>Como cada fluxo emite tokens e códigos
+
+Dependendo de como o cliente é criado, ele pode usar um (ou vários) dos fluxos de autenticação com suporte na plataforma de identidade da Microsoft.  Esses fluxos podem produzir uma variedade de tokens (id_tokens, tokens de atualização, tokens de acesso), bem como códigos de autorização, e exigem tokens diferentes para fazê-los funcionar. Este gráfico tem uma visão geral:
+
+|Flow | Requisitos | id_token | o token de acesso | token de atualização | código de autorização | 
+|-----|----------|----------|--------------|---------------|--------------------|
+|[Fluxo de código de autorização](v2-oauth2-auth-code-flow.md) | | x | x | x | x|  
+|[Fluxo implícito](v2-oauth2-implicit-grant-flow.md) | | x        | x    |      |                    |
+|[Fluxo de OIDC híbrido](v2-protocols-oidc.md#get-access-tokens)| | x  | |          |            x   |
+|[Resgate de token de atualização](v2-oauth2-auth-code-flow.md#refresh-the-access-token) | token de atualização | x | x | x| |
+|[Fluxo em-nome-de](v2-oauth2-on-behalf-of-flow.md) | o token de acesso| x| x| x| |
+|[Fluxo de código do dispositivo](v2-oauth2-device-code.md) | | x| x| x| |
+|[Credenciais do cliente](v2-oauth2-client-creds-grant-flow.md) | | | x (somente de aplicativo)| | |
+
+**Observações**:
+
+Tokens emitidos por meio do modo implícito têm uma limitação de comprimento devido a ser passado de volta para o navegador `response_mode` por `query` meio `fragment`da URL (onde é ou).  Alguns navegadores têm um limite no tamanho da URL que pode ser colocado na barra do navegador e falham quando é muito longo.  Portanto, esses tokens não têm `groups` declarações `wids` ou. 
+
 
 Agora que você tem uma visão geral dos conceitos básicos, continue lendo para entender a API e o modelo de aplicativo de identidade, como funciona o provisionamento na plataforma de identidade da Microsoft e obter links para informações detalhadas sobre os cenários comuns aos quais a plataforma de identidade da Microsoft dá suporte.
 
@@ -106,20 +125,20 @@ As declarações presentes em qualquer token de segurança variam de acordo com 
 
 Uma breve descrição de cada tipo de declaração emitida pela plataforma de identidade da Microsoft é fornecida na tabela abaixo. Para obter informações mais detalhadas, confira os [tokens de acesso](access-tokens.md) e os [tokens de ID](id-tokens.md) emitidos pela plataforma de identidade da Microsoft.
 
-| Declaração | Descrição |
+| Declaração | DESCRIÇÃO |
 | --- | --- |
 | ID do Aplicativo | Identifica o aplicativo que está usando o token. |
-| Audiência | Identifica o recurso de destinatário ao qual o token é destinado. |
+| Público-alvo | Identifica o recurso de destinatário ao qual o token é destinado. |
 | Referência de classe de contexto de autenticação de aplicativo | Indica como o cliente foi autenticado (cliente público versus cliente confidencial). |
 | Instante da autenticação | Registra a data e o horário em que ocorreu a autenticação. |
-| Método de Autenticação | Indica como a entidade do token foi autenticada (senha, certificado, etc.). |
+| Método de autenticação | Indica como a entidade do token foi autenticada (senha, certificado, etc.). |
 | Nome | Apresenta o nome fornecido do usuário conforme definido no Azure AD. |
 | Grupos | Contém as IDs de objeto dos grupos do Azure AD em que o usuário é membro. |
-| Provedor de Identidade | Registra o provedor de identidade que autenticou a entidade do token. |
+| Provedor de identidade | Registra o provedor de identidade que autenticou a entidade do token. |
 | Emitido em | Registra o horário em que o token foi emitido, geralmente usado para atualização de token. |
 | Emissor | Identifica o STS que emitiu o token, bem como o locatário do Azure AD. |
 | Sobrenome | Apresenta o sobrenome fornecido do usuário conforme definido no Azure AD. |
-| Nome | Fornece um valor legível que identifica a entidade do token. |
+| NOME | Fornece um valor legível que identifica a entidade do token. |
 | ID de objeto | Contém um identificador exclusivo e imutável da entidade no Azure AD. |
 | Funções | Contém os nomes amigáveis de funções de aplicativo do Azure AD que o usuário recebeu. |
 | Escopo | Indica as permissões concedidas ao aplicativo cliente. |
@@ -127,7 +146,7 @@ Uma breve descrição de cada tipo de declaração emitida pela plataforma de id
 | ID do locatário | Contém um identificador exclusivo e imutável do locatário do diretório que emitiu o token. |
 | Vida útil do token | Define o intervalo de tempo no qual um token é válido. |
 | Nome principal do usuário | Contém o nome principal de usuário da entidade. |
-| Version | Contém o número de versão do token. |
+| Versão | Contém o número de versão do token. |
 
 ## <a name="next-steps"></a>Próximas etapas
 

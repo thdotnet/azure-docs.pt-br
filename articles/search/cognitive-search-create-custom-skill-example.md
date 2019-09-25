@@ -5,16 +5,15 @@ manager: nitinme
 author: luiscabrer
 services: search
 ms.service: search
-ms.subservice: cognitive-search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: d77b4e3a002757bcf6c91b6611876e732273fcf9
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: d76a250cc3554b086501899376cb411346a4251c
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183529"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266343"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Exemplo: Criar uma habilidade personalizada usando o API de Pesquisa de Entidade do Bing
 
@@ -326,7 +325,7 @@ Pressione **F5** para executar os comportamentos do programa e da função de te
 POST https://localhost:7071/api/EntitySearch
 ```
 
-### <a name="request-body"></a>Solicitar corpo
+### <a name="request-body"></a>Corpo da solicitação
 ```json
 {
     "values": [
@@ -348,7 +347,7 @@ POST https://localhost:7071/api/EntitySearch
 }
 ```
 
-### <a name="response"></a>Resposta
+### <a name="response"></a>Response
 Você deverá ver uma resposta semelhante ao exemplo a seguir:
 
 ```json
@@ -394,7 +393,7 @@ Agora que você tem a chave de host padrão, teste sua função, da seguinte man
 POST https://[your-entity-search-app-name].azurewebsites.net/api/EntitySearch?code=[enter default host key here]
 ```
 
-### <a name="request-body"></a>Corpo de Solicitação
+### <a name="request-body"></a>Corpo da solicitação
 ```json
 {
     "values": [

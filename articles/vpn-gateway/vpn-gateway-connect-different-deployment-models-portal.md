@@ -5,15 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.workload: infrastructure-services
-ms.date: 10/17/2018
+ms.date: 09/24/2019
 ms.author: cherylmc
-ms.openlocfilehash: bf7d80bbbe63204cda47719a7d7c019013ad800b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 722907328fe17c4116f4f8d948e081f9582ca712
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123980"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266571"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Conectar redes virtuais de diferentes modelos de implantação usando o portal
 
@@ -79,7 +78,7 @@ A seguinte tabela mostra um exemplo de como as VNets e os sites locais de exempl
 | Rede Virtual | Espaço de endereço | Região | Conecta ao site de rede local |
 |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |Oeste dos EUA | RMVNetLocal (192.168.0.0/16) |
-| RMVNet | (192.168.0.0/16) |Leste dos EUA |ClassicVNetLocal (10.0.0.0/24) |
+| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="classicvnet"></a>Seção 1 – Definir as configurações da VNet clássica
 
@@ -144,20 +143,13 @@ Nesta seção, você cria o gateway de rede virtual e o gateway de rede local pa
 * Nome da sub-rede = Subnet-1 <br>
 * Intervalo de endereços = 192.168.1.0/24 <br>
 
-
 Caso você não tenha uma VNET do Resource Manager e esteja executando estas etapas como um exercício, crie uma rede virtual com as etapas descritas em [Criar uma rede virtual](../virtual-network/quick-create-portal.md), usando os valores de exemplo.
 
-### <a name="2-create-a-gateway-subnet"></a>2. Criar uma sub-rede de gateway
+### <a name="creategw"></a>2. Criar um gateway de rede virtual
 
-**Valor de exemplo:** GatewaySubnet = 192.168.0.0/26
+Nesta etapa, você cria o gateway de rede virtual para sua rede virtual. Criar um gateway pode levar 45 minutos ou mais, dependendo do SKU de gateway selecionado.
 
-Antes de criar um gateway de rede virtual, você precisa primeiro criar a sub-rede de gateway. Criar uma sub-rede de gateway com a contagem CIDR de /28 ou maior (/ 27, / 26 etc.). Se você estiver criando isso como parte de um exercício, poderá usar os Valores de exemplo.
-
-[!INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
-
-[!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
-
-### <a name="creategw"></a>3. Criar um gateway de rede virtual
+[!INCLUDE [About gateway subnets](../../includes/vpn-gateway-about-gwsubnet-portal-include.md)]
 
 **Valores de exemplo:**
 
@@ -167,18 +159,21 @@ Antes de criar um gateway de rede virtual, você precisa primeiro criar a sub-re
 * SKU = VpnGw1 <br>
 * Local = Leste dos EUA <br>
 * Rede virtual = RMVNet <br>
+* GatewaySubnet = 192.168.0.0/26 <br>
 * Configuração do primeiro IP = rmgwpip <br>
 
 [!INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
-### <a name="createlng"></a>4. Criar um gateway de rede local
+[!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
+
+### <a name="createlng"></a>3. Criar um gateway de rede local
 
 **Valores de exemplo:** Gateway de rede local = ClassicVNetLocal
 
 | Rede Virtual | Espaço de endereço | Região | Conecta ao site de rede local |Endereço IP público do gateway|
 |:--- |:--- |:--- |:--- |:--- |
 | ClassicVNet |(10.0.0.0/24) |Oeste dos EUA | RMVNetLocal (192.168.0.0/16) |O endereço IP público que é atribuído ao gateway ClassicVNet|
-| RMVNet | (192.168.0.0/16) |Leste dos EUA |ClassicVNetLocal (10.0.0.0/24) |O endereço IP público que é atribuído ao gateway RMVNet.|
+| RMVNet | (192.168.0.0/16) |East US |ClassicVNetLocal (10.0.0.0/24) |O endereço IP público que é atribuído ao gateway RMVNet.|
 
 O gateway de rede local especifica o intervalo de endereços e o endereço IP público associado à VNet clássica e seu gateway de rede virtual. Se estiver seguindo estas etapas como um exercício, consulte os Valores de exemplo.
 

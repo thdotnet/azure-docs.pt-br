@@ -11,12 +11,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 ms.date: 02/22/2019
-ms.openlocfilehash: 4b627b13fb79cd5105a95d9161d9239f28f2e062
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 167e243b1fe4ea5ba9403ac3ca1fcea42f02f59a
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567511"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273550"
 ---
 # <a name="determine-vnet-subnet-size-for-azure-sql-database-managed-instance"></a>Determinar o tamanho da sub-rede da VNet para o banco de dados da Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -29,7 +29,7 @@ Quando você cria uma Instância Gerenciada, o Azure aloca uma série de máquin
 Por design, uma Instância Gerenciada precisa de um mínimo de 16 endereços IP em uma sub-rede e pode usar até 256 endereços IP. Como resultado, você pode usar uma máscara de sub-rede entre/28 e/24 ao definir seus intervalos de IP de sub-rede. Um bit de máscara de rede de/28 (14 hosts por rede) é um bom tamanho para uma única finalidade geral ou implantação crítica para os negócios. Um bit de máscara de/27 (30 hosts por rede) é ideal para várias implantações de Instância Gerenciada dentro da mesma VNet. As configurações de bits de máscara de/26 (62 hosts) e/24 (hosts 254) permitem a expansão adicional da VNet para dar suporte a instâncias gerenciadas adicionais.
 
 > [!IMPORTANT]
-> Um tamanho de sub-rede com 16 endereços IP é o mínimo simples com potencial limitado para o maior Instância Gerenciada escalar horizontalmente. É altamente recomendável escolher uma sub-rede com o prefixo /27 ou abaixo.
+> Um tamanho de sub-rede com 16 endereços IP é o mínimo, com potencial limitado, em que uma operação de dimensionamento como alteração de tamanho vCore não é suportada. É altamente recomendável escolher a sub-rede com o prefixo/27 ou o prefixo mais longo.
 
 ## <a name="determine-subnet-size"></a>Determinar o tamanho da sub-rede
 

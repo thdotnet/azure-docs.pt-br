@@ -1,5 +1,5 @@
 ---
-title: Registro em log em aplicativos da MSAL | Azure
+title: Fazendo logon em aplicativos MSAL | Plataforma de identidade da Microsoft
 description: Saiba como fazer registro em log em aplicativos da MSAL (Biblioteca de Autenticação da Microsoft).
 services: active-directory
 documentationcenter: dev-center-name
@@ -12,43 +12,45 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/22/2019
+ms.date: 08/28/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02c093375ba2dc5c851a2deb35bdea28338ee982
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 4dad8a276cd40b1ff04bbced833b5d70cec4fc87
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135776"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71268593"
 ---
-# <a name="logging"></a>Registrando em log
-Os aplicativos da MSAL (Biblioteca de Autenticação da Microsoft) geram mensagens de log que podem ajudar a diagnosticar problemas e fornecer detalhes. Um aplicativo pode configurar o registro em log com algumas linhas de código, ter um controle personalizado sobre o nível de detalhes e determinar se dados pessoais e organizacionais serão registrados. É recomendável que você defina um retorno de chamada de registro em log da MSAL e forneça uma maneira para os usuários enviarem logs quando estiverem com problemas de autenticação.
+# <a name="logging-in-msal-applications"></a>Registrando em log em aplicativos MSAL
+
+Os aplicativos MSAL (biblioteca de autenticação da Microsoft) geram mensagens de log que podem ajudar a diagnosticar problemas. Um aplicativo pode configurar o registro em log com algumas linhas de código, ter um controle personalizado sobre o nível de detalhes e determinar se dados pessoais e organizacionais serão registrados. Recomendamos que você crie um retorno de chamada de log MSAL e forneça uma maneira para os usuários enviarem logs quando tiverem problemas de autenticação.
 
 ## <a name="logging-levels"></a>Níveis de registro de log
 
-Agente da MSAL permite que vários níveis de detalhes sejam capturados:
+O MSAL fornece vários níveis de detalhes de log:
 
 - Erro: indica que algo deu errado e um erro foi gerado. Use para depuração e identificação de problemas.
-- Aviso: eventos de pergunta, e o aplicativo precisa de mais informações sobre eles. É destinado a diagnosticar e identificar problemas, mesmo que não tenha havido necessariamente um erro ou falha.
+- Aviso: Não há, necessariamente, um erro ou uma falha, mas destina-se a problemas de diagnóstico e de identificação.
 - Informações: a MSAL registrará os eventos destinados a fins informativos, não necessariamente voltados a depuração.
-- Detalhado: Padrão. A MSAL registrará uma grande quantidade de informações e fornecerá detalhes completos sobre o comportamento da biblioteca.
+- Detalhado: Padrão. O MSAL registra em log os detalhes completos do comportamento da biblioteca.
 
 ## <a name="personal-and-organizational-data"></a>Dados pessoais e organizacionais
-Por padrão, o agente da MSAL não captura dados pessoais ou organizacionais altamente confidenciais. A biblioteca oferece a opção para habilitar o registro em log de dados pessoais e organizacionais, se você optar por fazer isso.
+
+Por padrão, o agente de log do MSAL não captura dados pessoais ou organizacionais altamente confidenciais. A biblioteca fornece a opção de habilitar o registro em log de dados pessoais e organizacionais se você decidir fazer isso.
 
 ## <a name="logging-in-msalnet"></a>Registro em log no MSAL.NET
 
  > [!NOTE]
- > Para obter mais informações sobre MSAL.NET, confira o [wiki do MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki). Obtenha exemplos de registro em log do MSAL.NET e muito mais. 
+ > Para obter mais informações sobre MSAL.NET, confira o [wiki do MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki). Obtenha exemplos de registro em log do MSAL.NET e muito mais.
  
 Na MSAL 3.x, o registro em log é definido por aplicativo na criação do aplicativo usando o modificador de construtor `.WithLogging`. Esse método usa parâmetros opcionais:
 
 - *Level* permite que você decida qual nível de registro em log deseja. Configurá-lo como Erros só registrará erros
-- *PiiLoggingEnabled* permite registrar dados pessoais e organizacionais, se definido como true. Por padrão, ele fica definido como false, para que seu aplicativo não registre dados pessoais.
-- *LogCallback* é definido como um delegado que faz o registro em log. Se *PiiLoggingEnabled* for true, esse método receberá as mensagens duas vezes: uma vez com o parâmetro *containsPii* igual a false e a mensagem sem dados pessoais e uma segunda vez com o parâmetro *containsPii* igual a true e a mensagem podendo conter dados pessoais. Em alguns casos (quando a mensagem não contém dados pessoais), a mensagem será a mesma.
+- *PiiLoggingEnabled* permite registrar dados pessoais e organizacionais, se definido como true. Por padrão, isso é definido como false, para que seu aplicativo não Registre dados pessoais.
+- *LogCallback* é definido como um delegado que faz o registro em log. Se *PiiLoggingEnabled* for true, esse método receberá as mensagens duas vezes: uma vez com o parâmetro *containsPii* igual a false e a mensagem sem dados pessoais e uma segunda vez com o parâmetro *containsPii* igual a true e a mensagem podendo conter dados pessoais. Em alguns casos (quando a mensagem não contiver dados pessoais), a mensagem será a mesma.
 - *DefaultLoggingEnabled* permite que o registro em log padrão na plataforma. Por padrão, é false. Se você defini-lo como true, ele usará o rastreamento de eventos em aplicativos de área de trabalho/UWP, NSLog no iOS e logcat no Android.
 
 ```csharp
@@ -82,16 +84,15 @@ class Program
 
  Você pode habilitar o registro em log em MSAL.js passando um objeto logger durante a configuração para criar uma instância `UserAgentApplication`. O objeto logger tem as seguintes propriedades:
 
-- *localCallback*: uma instância de retorno de chamada que pode ser fornecida pelo desenvolvedor para consumir e publicar os logs de uma maneira personalizada. Implemente o método localCallback, dependendo de como você deseja redirecionar os logs.
+- `localCallback`: uma instância de retorno de chamada que pode ser fornecida pelo desenvolvedor para consumir e publicar logs de maneira personalizada. Implemente o método localCallback, dependendo de como você deseja redirecionar os logs.
 
-- *level* (opcional): o nível de log configurável. Os níveis de log compatíveis são: Erro, Aviso, Informações, Detalhado. O valor padrão é Informações.
+- `level`(opcional): o nível de log configurável. Os níveis de log compatíveis são: Erro, Aviso, Informações, Detalhado. O valor padrão é Informações.
 
-- *piiLoggingEnabled* (opcional): habilita o registro de dados pessoais e organizacionais, se definido como true. Por padrão, ele fica definido como false para que seu aplicativo não registre dados pessoais. Logs de dados pessoais nunca são gravados em saídas padrão como Console, Logcat ou NSLog. O padrão é definido como false.
+- `piiLoggingEnabled`(opcional): permite que você registre dados pessoais e organizacionais se definido como true. Por padrão, isso é definido como false para que seu aplicativo não Registre dados pessoais. Logs de dados pessoais nunca são gravados em saídas padrão como Console, Logcat ou NSLog. O padrão é definido como false.
 
-- *correlationId* (opcional): um identificador exclusivo, usado para mapear a solicitação com a resposta para fins de depuração. O padrão é guid RFC4122 versão 4 (128 bits).
+- `correlationId`(opcional): um identificador exclusivo, usado para mapear a solicitação com a resposta para fins de depuração. O padrão é guid RFC4122 versão 4 (128 bits).
 
 ```javascript
-
 function loggerCallback(logLevel, message, containsPii) {
    console.log(message);
 }
@@ -113,3 +114,111 @@ var msalConfig = {
 
 var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);
 ```
+
+## <a name="logging-in-msal-for-ios-and-macos"></a>Fazendo logon no MSAL para iOS e macOS
+
+Defina um retorno de chamada para capturar o registro em log do MSAL e incorporá-lo no log do seu próprio aplicativo. A assinatura do retorno de chamada tem esta aparência:
+
+```objc
+/*!
+    The LogCallback block for the MSAL logger
+ 
+    @param  level           The level of the log message
+    @param  message         The message being logged
+    @param  containsPII     If the message might contain Personally Identifiable Information (PII)
+                            this will be true. Log messages possibly containing PII will not be
+                            sent to the callback unless PIllLoggingEnabled is set to YES on the
+                            logger.
+
+ */
+typedef void (^MSALLogCallback)(MSALLogLevel level, NSString *message, BOOL containsPII);
+```
+
+Por exemplo:
+
+Objective-C
+```objc
+[MSALGlobalConfig.loggerConfig setLogCallback:^(MSALLogLevel level, NSString *message, BOOL containsPII)
+    {
+        if (!containsPII)
+        {
+#if DEBUG
+            // IMPORTANT: MSAL logs may contain sensitive information. Never output MSAL logs with NSLog, or print, directly unless you're running your application in debug mode. If you're writing MSAL logs to file, you must store the file securely.
+            NSLog(@"MSAL log: %@", message);
+#endif
+        }
+    }];
+```
+
+Swift
+```swift
+MSALGlobalConfig.loggerConfig.setLogCallback { (level, message, containsPII) in
+    if let message = message, !containsPII
+    {
+#if DEBUG
+    // IMPORTANT: MSAL logs may contain sensitive information. Never output MSAL logs with NSLog, or print, directly unless you're running your application in debug mode. If you're writing MSAL logs to file, you must store the file securely.
+    print("MSAL log: \(message)")
+#endif
+    }
+}
+```
+
+### <a name="personal-identifiable-information-pii"></a>Informações de identificação pessoal (PII)
+
+Por padrão, o MSAL não captura nem registra nenhuma PII. A biblioteca permite que os desenvolvedores de aplicativos ativem isso por meio de uma propriedade na classe MSALLogger. Ao ativar a PII, o aplicativo assume a responsabilidade por lidar com segurança de dados altamente confidenciais e seguindo os requisitos regulatórios.
+
+Objective-C
+```objc
+// By default, the `MSALLogger` doesn't capture any PII
+
+// PII will be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = YES;
+
+// PII will NOT be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = NO;
+```
+
+Swift
+```swift
+// By default, the `MSALLogger` doesn't capture any PII
+
+// PII will be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = true
+
+// PII will NOT be logged
+MSALGlobalConfig.loggerConfig.piiEnabled = false
+```
+
+### <a name="logging-levels"></a>Níveis de registro de log
+
+Para definir o nível de log ao fazer logon usando o MSAL para iOS e macOS, use um dos seguintes valores:
+
+|Nível  |DESCRIÇÃO |
+|---------|---------|
+| `MSALLogLevelNothing`| Desabilitar todo o log |
+| `MSALLogLevelError` | Nível padrão, imprime informações somente quando ocorrem erros |
+| `MSALLogLevelWarning` | Avisos |
+| `MSALLogLevelInfo` |  Pontos de entrada de biblioteca, com parâmetros e várias operações de conjunto de chaves |
+|`MSALLogLevelVerbose`     |  Rastreamento de API       |
+
+Por exemplo:
+
+Objective-C
+```objc
+MSALGlobalConfig.loggerConfig.logLevel = MSALLogLevelVerbose;
+ ```
+ 
+ Swift
+```swift
+MSALGlobalConfig.loggerConfig.logLevel = .verbose
+ ```
+
+### <a name="log-message-format"></a>Formato de mensagem de log
+
+A parte da mensagem das mensagens de log MSAL está no formato de`TID = <thread_id> MSAL <sdk_ver> <OS> <OS_ver> [timestamp - correlation_id] message`
+
+Por exemplo:
+
+`TID = 551563 MSAL 0.2.0 iOS Sim 12.0 [2018-09-24 00:36:38 - 36764181-EF53-4E4E-B3E5-16FE362CFC44] acquireToken returning with error: (MSALErrorDomain, -42400) User cancelled the authorization session.`
+
+Fornecer IDs de correlação e carimbos de data/hora é útil para rastrear problemas. As informações de carimbo de data e hora e ID de correlação estão disponíveis na mensagem de log. O único local confiável para recuperá-los é de mensagens de registro em log do MSAL.

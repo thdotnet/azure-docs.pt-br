@@ -2,25 +2,17 @@
 title: Configurar uma conexão de gateway de VPN a VNet usando o portal do Azure | Microsoft Docs
 description: Crie uma conexão de gateway de VPN entre redes virtuais usando o Resource Manager e o portal do Azure.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: a7015cfc-764b-46a1-bfac-043d30a275df
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 12/03/2018
+ms.date: 09/24/2019
 ms.author: cherylmc
-ms.openlocfilehash: 94b32595cf2c884ccfd1362f6c8d03f542aabfc5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ad83327d5b85784f523a5931f277cd00009e0ed
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128374"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266456"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-by-using-the-azure-portal"></a>Configurar uma conexão de gateway de VPN de VNet para VNet usando o portal do Azure
 
@@ -39,7 +31,6 @@ As etapas neste artigo se aplicam ao modelo de implantação do Azure Resource M
 > * [Conectar modelos de implantação diferentes - PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
 >
 >
-
 
 ## <a name="about-connecting-vnets"></a>Sobre a conexão de VNets
 
@@ -94,7 +85,6 @@ Este artigo mostra como conectar VNets usando o tipo de conexão VNet a VNet. Ao
     - **Gateway de sub-rede**:
         - **Nome**: *GatewaySubnet* é preenchido automaticamente.
         - **Intervalo de endereços**: Insira *10.11.255.0/27*.
-    - **Servidor DNS**: Selecione **Personalizado** e insira o endereço IP do seu servidor DNS.
 
 - **Configurações de gateway de rede virtual** 
     - **Nome**: Insira *TestVNet1GW*.
@@ -120,7 +110,6 @@ Este artigo mostra como conectar VNets usando o tipo de conexão VNet a VNet. Ao
    - **GatewaySubnet** 
       - **Nome**: *GatewaySubnet* é preenchido automaticamente.
       - **Intervalo de endereços**: Insira *10.41.255.0/27*.
-   - **Servidor DNS**: Selecione **Personalizado** e insira o endereço IP do seu servidor DNS.
 
 - **Configurações de gateway de rede virtual** 
     - **Nome**: Insira *TestVNet4GW*.
@@ -133,7 +122,7 @@ Este artigo mostra como conectar VNets usando o tipo de conexão VNet a VNet. Ao
        - **Chave compartilhada**: Insira *abc123*. Você pode criar a chave compartilhada por conta própria. Quando você cria a conexão entre as redes virtuais, os valores devem corresponder.
 
 ## <a name="create-and-configure-testvnet1"></a>Criar e configurar a TestVNet1
-Se você já tiver uma rede virtual, verifique se as configurações são compatíveis com seu design de gateway de VPN. Preste atenção especial em todas as sub-redes que possam se sobrepor a outras redes. Sua conexão não funcionará corretamente se você tiver uma sobreposição de sub-redes. Depois que a VNet for definida com as configurações corretas, você poderá começar as etapas na seção Especificar um servidor DNS.
+Se você já tiver uma rede virtual, verifique se as configurações são compatíveis com seu design de gateway de VPN. Preste atenção especial em todas as sub-redes que possam se sobrepor a outras redes. Sua conexão não funcionará corretamente se você tiver uma sobreposição de sub-redes.
 
 ### <a name="to-create-a-virtual-network"></a>Para criar uma rede virtual
 [!INCLUDE [vpn-gateway-basic-vnet-rm-portal](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
@@ -143,26 +132,15 @@ Você pode adicionar outro espaço de endereço e criar sub-redes após a criaç
 
 [!INCLUDE [vpn-gateway-additional-address-space](../../includes/vpn-gateway-additional-address-space-include.md)]
 
-## <a name="create-a-gateway-subnet"></a>Criar uma sub-rede de gateway
-Antes de criar um gateway de rede virtual para sua rede virtual, você precisa criar a sub-rede de gateway. A sub-rede de gateway contém os endereços IP usados pelo gateway de rede virtual. Se possível, é melhor criar uma sub-rede de gateway usando um bloco CIDR de /28 ou /27 para fornecer endereços IP suficientes para acomodar requisitos futuros de configuração.
-
-Se a criação dessa configuração fizer parte de um exercício, veja estas [Configurações de exemplo](#example-settings) ao criar sua sub-rede de gateway.
-
-[!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
-
-### <a name="to-create-a-gateway-subnet"></a>Para criar uma sub-rede de gateway
-[!INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
-
-## <a name="specify-a-dns-server-optional"></a>Especificar um servidor DNS (opcional)
-O DNS não é necessário para as conexões VNet a VNet. No entanto, se você quiser ter a resolução de nomes dos recursos que são implantados em sua rede virtual, especifique um servidor DNS. Essa configuração permite que você especifique o servidor DNS que deseja usar para a resolução de nomes dessa rede virtual. Ele não cria um servidor DNS.
-
-[!INCLUDE [vpn-gateway-add-dns-rm-portal](../../includes/vpn-gateway-add-dns-rm-portal-include.md)]
-
 ## <a name="create-a-virtual-network-gateway"></a>Criar um gateway de rede virtual
 Nesta etapa, você cria o gateway de rede virtual para sua rede virtual. Criar um gateway pode levar 45 minutos ou mais, dependendo do SKU de gateway selecionado. Se você estiver criando esta configuração como um exercício, confira [Configurações de exemplo](#example-settings).
 
+[!INCLUDE [About gateway subnets](../../includes/vpn-gateway-about-gwsubnet-portal-include.md)]
+
 ### <a name="to-create-a-virtual-network-gateway"></a>Para criar um gateway da rede virtual
 [!INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
+
+[!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
 ## <a name="create-and-configure-testvnet4"></a>Criar e configurar TestVNet4
 Depois de ter configurado TestVNet1, crie TestVNet4 repetindo as etapas anteriores e substituindo os valores por aqueles de TestVNet4. Você não precisa esperar até que o gateway de rede virtual para TestVNet1 tenha terminado a criação antes de configurar TestVNet4. Se você estiver usando seus próprios valores, verifique se os espaços de endereço não se sobrepõem a nenhuma das redes virtuais às quais você deseja se conectar.

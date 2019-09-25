@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: 933ae5b70d8e0485360a94ede1fff99c02f75a4c
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 0bd4b1d969de0b54a1836048b5cb5910470f1ffa
+ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034867"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71269232"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Configurar um ambiente de desenvolvimento para Azure Machine Learning
 
@@ -36,7 +36,7 @@ Este artigo também fornece dicas de uso adicionais para as seguintes ferramenta
 
 * [Jupyter Notebooks](#jupyter): Se você já estiver usando o Jupyter Notebook, o SDK terá alguns adicionais que deverão ser instalados.
 
-* [Visual Studio Code](#vscode): Se você usar o Visual Studio Code, ele terá algumas extensões úteis que você poderá instalar.
+* [Visual Studio Code](#vscode): Se você usar Visual Studio Code, a [extensão de Azure Machine Learning](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) incluirá amplo suporte a idiomas para Python, bem como recursos para tornar o trabalho com o serviço de Azure Machine Learning muito mais conveniente e produtivo.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -76,7 +76,7 @@ A VM do notebook é:
 
 + **Personalizável**. Enquanto uma oferta de VM gerenciada e segura, você mantém o acesso completo aos recursos de hardware e o personaliza para o desejo do coração. Por exemplo, crie rapidamente a VM mais recente NVidia V100 para executar a depuração passo a passo da arquitetura de rede neural de romance.
 
-Para parar de incorrer em encargos [de VM do bloco de notas, pare a VM do notebook](tutorial-1st-experiment-sdk-train.md#clean-up-resources). 
+Para parar de incorrer em encargos [de VM do bloco de notas, pare a VM do notebook](tutorial-1st-experiment-sdk-train.md#clean-up-resources).
 
 ## <a id="dsvm"></a>Máquina Virtual de Ciência de Dados
 
@@ -90,7 +90,7 @@ A DSVM é uma imagem de VM (máquina virtual) personalizada. Ela foi projetada p
 
 O SDK do Azure Machine Learning funciona na versão da DSVM para Ubuntu ou Windows. Porém, se você também planeja usar a DSVM como um destino de computação, somente o Ubuntu tem suporte.
 
-Para usar a DSVM como um ambiente de desenvolvimento, faça o seguinte:
+Para usar o DSVM como um ambiente de desenvolvimento:
 
 1. Crie uma DSVM em um dos seguintes ambientes:
 
@@ -151,7 +151,7 @@ Para obter mais informações, consulte [Máquinas Virtuais de Ciência de Dados
 
 ## <a id="local"></a>Computador local
 
-Quando você estiver usando um computador local (que também pode ser uma máquina virtual remota), crie um ambiente Anaconda e instale o SDK fazendo o seguinte:
+Quando você estiver usando um computador local (que também pode ser uma máquina virtual remota), crie um ambiente Anaconda e instale o SDK. Veja um exemplo:
 
 1. Baixe e instale o [Anaconda](https://www.anaconda.com/distribution/#download-section) (Python 3,7 versão) se você ainda não o tiver.
 
@@ -185,10 +185,10 @@ Quando você estiver usando um computador local (que também pode ser uma máqui
 
 1. Use os seguintes comandos para instalar pacotes do:
 
-    Esse comando instala o SDK de Azure Machine Learning base com os extras do bloco de anotações e do automl. O `automl` extra é uma instalação grande e pode ser removido dos colchetes se você não pretende executar experimentos de aprendizado de máquina automatizados. O `automl` extra também inclui o Azure Machine Learning SDK de preparação de dados por padrão como uma dependência.
+    Esse comando instala o SDK de Azure Machine Learning base com blocos `automl` de anotações e extras. O `automl` extra é uma instalação grande e pode ser removido dos colchetes se você não pretende executar experimentos de aprendizado de máquina automatizados. O `automl` extra também inclui o Azure Machine Learning SDK de preparação de dados por padrão como uma dependência.
 
     ```shell
-    pip install azureml-sdk[notebooks,automl]
+    pip install azureml-sdk[notebooks, automl]
     ```
 
    > [!NOTE]
@@ -221,14 +221,16 @@ Quando você estiver usando um computador local (que também pode ser uma máqui
 
 Jupyter Notebooks fazem parte do [Projeto Jupyter](https://jupyter.org/). Eles fornecem uma experiência interativa de codificação, em que você pode criar documentos que combinam código ao vivo com elementos gráficos e texto. O Jupyter Notebook também é uma ótima maneira de compartilhar seus resultados com outras pessoas, já que é possível salvar a saída das seções de código no documento. Você pode instalar os Jupyter Notebooks em uma variedade de plataformas.
 
-O procedimento na seção [computador local](#local) instala os componentes necessários para executar blocos de anotações do Jupyter em um ambiente Anaconda. Para habilitar esses componentes no ambiente do Jupyter Notebook, faça o seguinte:
+O procedimento na seção [computador local](#local) instala os componentes necessários para executar blocos de anotações do Jupyter em um ambiente Anaconda.
+
+Para habilitar esses componentes em seu ambiente de Jupyter Notebook:
 
 1. Abra um prompt do Anaconda e ative seu ambiente.
 
     ```shell
     conda activate myenv
     ```
-    
+
 1. Clone [o repositório do GitHub](https://aka.ms/aml-notebooks) para um conjunto de blocos de anotações de exemplo.
 
     ```CLI
@@ -254,34 +256,35 @@ O procedimento na seção [computador local](#local) instala os componentes nece
     import sys
     sys.path
     ```
-    
+
 1. Para configurar o Jupyter Notebook para usar seu espaço de trabalho do Azure Machine Learning, vá para a seção [criar um arquivo de configuração do espaço de trabalho](#workspace) .
 
 
 ### <a id="vscode"></a>Visual Studio Code
 
-O Visual Studio Code é um editor de código multiplataforma. Ele se baseia em uma instalação local do Python 3 e do Conda para suporte de Python, mas fornece ferramentas adicionais para trabalhar com Inteligência Artificial. Ele também dá suporte para selecionar o ambiente do Conda de dentro do editor de código.
+Visual Studio Code é um editor de código de plataforma cruzada muito popular que dá suporte a um amplo conjunto de linguagens de programação e ferramentas por meio de extensões disponíveis no [Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode). A [extensão Azure Machine Learning](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai) instala a [extensão do Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) para codificação em todos os tipos de ambientes do Python (virtual, Anaconda, etc.). Além disso, ele fornece recursos de conveniência para trabalhar com Azure Machine Learning recursos e executar Azure Machine Learning experimentos sem sair Visual Studio Code.
 
-Para usar o Visual Studio Code para desenvolvimento, faça o seguinte:
+Para usar Visual Studio Code para desenvolvimento:
 
-1. Para aprender a usar o Visual Studio Code para desenvolvimento em Python, consulte [Introdução ao Python no VSCode](https://code.visualstudio.com/docs/python/python-tutorial).
-
-1. Para selecionar o ambiente Conda, abra o VS Code e, em seguida, selecione Ctrl+Shift+P (Linux e Windows) ou Command+Shift+P (Mac).
-    A __Paleta de Comandos__ abre.
-
-1. Insira __Python: Selecione Interpretador__e, em seguida, selecione o ambiente Conda.
-
-1. Para validar que é possível usar o SDK, crie e execute um novo arquivo Python (.py) contendo o seguinte código:
-
-    ```python
-    import azureml.core
-    azureml.core.VERSION
-    ```
-
-1. Para instalar a extensão do Azure Machine Learning para Visual Studio Code, consulte [Ferramentas para IA](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai).
+1. Instale a extensão de Azure Machine Learning para Visual Studio Code, consulte [Azure Machine Learning](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-ai).
 
     Para obter mais informações, consulte [Usar o Azure Machine Learning para Visual Studio Code](how-to-vscode-tools.md).
 
+1. Saiba como usar Visual Studio Code para qualquer tipo de desenvolvimento em Python, consulte Introdução [ao Python no VSCode](https://code.visualstudio.com/docs/python/python-tutorial).
+
+    - Para selecionar o ambiente Python do SDK que contém o SDK, abra VS Code e, em seguida, selecione CTRL + SHIFT + P (Linux e Windows) ou Command + Shift + P (Mac).
+        - A __paleta de comandos__ é aberta.
+
+    - Insira __Python: Selecione intérprete__e, em seguida, selecione o ambiente apropriado
+
+1. Para validar que você pode usar o SDK, crie um novo arquivo Python (. py) que contenha o seguinte código:
+
+    ```python
+    #%%
+    import azureml.core
+    azureml.core.VERSION
+    ```
+    Execute esse código clicando no CodeLens "executar célula" ou simplesmente pressione Shift-Enter.
 <a name="aml-databricks"></a>
 
 ## <a name="azure-databricks"></a>Azure Databricks
@@ -302,7 +305,7 @@ Use estas configurações:
 | Configuração |Aplica-se a| Valor |
 |----|---|---|
 | Nome do cluster |sempre| nomedoseucluster |
-| Databricks Runtime |sempre| Qualquer tempo de execução não ML (não ML 4.x, 5.x) |
+| Databricks Runtime |sempre| Qualquer tempo de execução não ML (não ML 4. x, 5. x) |
 | Versão do Python |sempre| 3 |
 | Trabalhos |sempre| 2 ou superior |
 | Tipos de VM do nó de trabalho <br>(determina o número máximo de iterações simultâneas) |ML automatizado<br>somente| Uma VM otimizada para memória é preferível |
@@ -326,7 +329,7 @@ Depois que o cluster estiver em execução, [crie uma biblioteca](https://docs.d
    * Não selecione **anexar automaticamente a todos os clusters**.
    * Selecione **anexar** ao lado do nome do cluster.
 
-1. Monitorar erros até que o status seja alterado para **anexado**, o que pode levar vários minutos.  Se essa etapa falhar, verifique o seguinte:
+1. Monitorar erros até que o status seja alterado para **anexado**, o que pode levar vários minutos.  Se esta etapa falhar:
 
    Tente reiniciar o cluster da:
    1. No painel esquerdo, selecione **Clusters**.
