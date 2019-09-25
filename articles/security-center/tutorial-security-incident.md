@@ -3,9 +3,8 @@ title: Tutorial da Central de Segurança do Azure - Responder a incidentes de se
 description: Tutorial da Central de Segurança do Azure - responder a incidentes de segurança
 services: security-center
 documentationcenter: na
-author: rkarlin
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 181e3695-cbb8-4b4e-96e9-c4396754862f
 ms.service: security-center
 ms.devlang: na
@@ -14,13 +13,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/30/2018
-ms.author: rkarlin
-ms.openlocfilehash: 12ea21a3f61404c2e031909adda28f8e1e768cd0
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.author: memildin
+ms.openlocfilehash: 11c2543de2b5456d253e7e905065eea14810877a
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992083"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200616"
 ---
 # <a name="tutorial-respond-to-security-incidents"></a>Tutorial: Responder a incidentes de segurança
 A Central de Segurança analisa continuamente as cargas de trabalho de nuvem híbrida usando a análise avançada e a inteligência contra ameaças para lhe avisar a existência de atividades mal-intencionadas. Além disso, você pode integrar à Central de Segurança alertas de outros produtos e serviços de segurança, bem como criar alertas personalizados com base em indicadores próprios ou fontes de inteligência. Após a geração de um alerta, é necessária uma ação rápida para investigação e correção da questão. Neste tutorial, você aprenderá a:

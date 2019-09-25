@@ -3,9 +3,9 @@ title: Notificações por push para dispositivos específicos Android usando Hub
 description: Saiba como usar Hubs de Notificação para enviar notificações por push para dispositivos específicos Android usando Hubs de Notificação do Azure e Google Cloud Messaging.
 services: notification-hubs
 documentationcenter: android
-author: jwargo
-manager: patniko
-editor: spelluru'
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: 3c23cb80-9d35-4dde-b26d-a7bfd4cb8f81
 ms.service: notification-hubs
 ms.workload: mobile
@@ -14,18 +14,20 @@ ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
-ms.author: jowargo
-ms.openlocfilehash: af08d3ca6eaa95663b0bb669f6dc82a13df5ab39
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 01/04/2019
+ms.openlocfilehash: 4a369b72d5c19a63c65f8d693d131b2c10ff2023
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233102"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212810"
 ---
 # <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Tutorial: Enviar notificações por push para dispositivos Android específicos usando os Hubs de Notificação do Azure e o Google Cloud Messaging (preterido)
 
 > [!WARNING]
-> Em 10 de abril de 2018, o Google preteriu o GCM (Google Cloud Messaging). As APIs de cliente e servidor do GCM foram preteridas e serão removidas até 29 de maio de 2019. Para obter mais informações, confira [Perguntas frequentes sobre o GCM e o FCM](https://developers.google.com/cloud-messaging/faq).
+> Em 10 de abril de 2018, o Google preteriu o GCM (Google Cloud Messaging). As APIs de cliente e servidor do GCM foram preteridas e serão removidas até 29 de maio de 2019. Para saber mais, confira [Perguntas frequentes sobre o GCM e o FCM](https://developers.google.com/cloud-messaging/faq).
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 

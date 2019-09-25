@@ -8,13 +8,13 @@ author: VaijanathB
 manager: jeconnoc
 ms.author: vaangadi
 ms.topic: tutorial
-ms.date: 03/01/2019
-ms.openlocfilehash: 648369d89bd2b5b08171e1f6f5482c81bfba3c66
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 09/20/2019
+ms.openlocfilehash: 5c2a61dd9da6d233a4b1410042f2125a1c300758
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58010347"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173445"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-with-terraform-in-azure"></a>Tutorial: Criar uma topologia de rede híbrida de hub e spoke com o Terraform no Azure
 
@@ -117,7 +117,7 @@ Crie o arquivo de configuração Terraform que declara o provedor do Azure.
 
 1. Cole o código a seguir no editor:
 
-    ```JSON
+    ```hcl
     provider "azurerm" {
         version = "~>1.22"
     }
@@ -137,7 +137,7 @@ Crie o arquivo de configuração do Terraform para variáveis comuns que são us
 
 1. Cole o código a seguir no editor:
 
-    ```JSON
+    ```hcl
     variable "location" {
       description = "Location of the network"
       default     = "centralus"

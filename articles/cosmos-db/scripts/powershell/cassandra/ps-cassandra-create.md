@@ -3,15 +3,16 @@ title: Script do Azure PowerShell – Criar um keyspace e uma tabela do Azure Co
 description: Script do Azure PowerShell – Criar um keyspace e uma tabela do Azure Cosmos DB para a API do Cassandra
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 1427640519936bab907c7159b4e88e723bac57fd
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 52b65b6d9be4220b5d7078fc28e78ae4d764a988
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602569"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179047"
 ---
 # <a name="create-a-keyspace-and-table-for-azure-cosmos-db---cassandra-api"></a>Criar um keyspace e uma tabela do Azure Cosmos DB – API do Cassandra
 

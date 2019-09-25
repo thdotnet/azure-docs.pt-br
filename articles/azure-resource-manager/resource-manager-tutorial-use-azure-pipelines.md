@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 06/12/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 85dc0476da12bea64610b6910b0682fef00f4b5a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 462d9cd6d2a911e660221621ebde5829e928cf00
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064730"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122217"
 ---
 # <a name="tutorial-continuous-integration-of-azure-resource-manager-templates-with-azure-pipelines"></a>Tutorial: Integração contínua dos modelos do Azure Resource Manager com o Azure Pipelines
 
@@ -264,4 +264,4 @@ Também convém excluir o repositório GitHub e o projeto do Azure DevOps.
 Neste tutorial, você criará um pipeline do Azure DevOps para implantar um modelo do Azure Resource Manager. Para saber como implantar recursos do Azure em várias regiões e como usar práticas de implantação seguras, consulte
 
 > [!div class="nextstepaction"]
-> [Usar o Gerenciador de Implantação do Azure](./resource-manager-tutorial-deploy-vm-extensions.md)
+> [Usar práticas de implantação segura](./deployment-manager-tutorial.md)

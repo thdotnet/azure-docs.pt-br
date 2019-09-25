@@ -6,14 +6,14 @@ author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 08/16/2019
+ms.date: 09/17/2019
 ms.author: alinast
-ms.openlocfilehash: a107f7dba7f28b41303727ad37b7c50f2e215c4f
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 1ab3f30f035f8099ab50f827e559e56b31d7f1f6
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622936"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219748"
 ---
 # <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Tutorial: Implantar a Versão prévia dos Gêmeos Digitais do Azure e configurar um grafo espacial
 
@@ -43,15 +43,11 @@ Estes tutoriais usam e modificam os mesmos exemplos que o [início rápido para 
 
 - Use o [Visual Studio Code](https://code.visualstudio.com/) para explorar o código de exemplo. 
 
-<a id="deploy"></a>
-
 ## <a name="deploy-digital-twins"></a>Implantar Gêmeos Digitais
 
 Use as etapas nesta seção para criar uma nova instância do serviço Gêmeos Digitais do Azure. Apenas uma instância pode ser criada por assinatura. Vá para a próxima seção se você já tiver uma em execução. 
 
 [!INCLUDE [create-digital-twins-portal](../../includes/digital-twins-create-portal.md)]
-
-<a id="permissions"></a>
 
 ## <a name="grant-permissions-to-your-app"></a>Conceder permissões ao aplicativo
 
@@ -76,7 +72,7 @@ Se você já tem os exemplos baixados do [início rápido para encontrar salas d
 
 Na pasta de exemplo extraída, abra o arquivo **digital-twins-samples-csharp\digital-twins-samples.code-workspace** no Visual Studio Code. Ele contém dois projetos:
 
-* Você pode usar o exemplo de provisionamento **occupancy-quickstart** para configurar e provisionar um [grafo de inteligência espacial](concepts-objectmodel-spatialgraph.md#graph). Esse grafo é a imagem digitalizada de seus espaços físicos e os recursos presentes neles. Ele usa um [modelo de objeto](concepts-objectmodel-spatialgraph.md#model) que define objetos de um prédio inteligente. Para obter uma lista completa das APIs REST e dos objetos dos Gêmeos Digitais, confira [esta documentação da API REST](https://docs.westcentralus.azuresmartspaces.net/management/swagger) ou a URL da API de Gerenciamento que foi criada para [sua instância](#deploy).
+* Você pode usar o exemplo de provisionamento **occupancy-quickstart** para configurar e provisionar um [grafo de inteligência espacial](concepts-objectmodel-spatialgraph.md#digital-twins-object-models). Esse grafo é a imagem digitalizada de seus espaços físicos e os recursos presentes neles. Ele usa um [modelo de objeto](concepts-objectmodel-spatialgraph.md#digital-twins-object-models) que define objetos de um prédio inteligente. Para obter uma lista completa das APIs REST e dos objetos dos Gêmeos Digitais, confira [esta documentação da API REST](https://docs.westcentralus.azuresmartspaces.net/management/swagger) ou a URL da API de Gerenciamento que foi criada para [sua instância](#deploy-digital-twins).
 
    Para explorar o exemplo e ver como ele se comunica com sua instância dos Gêmeos Digitais, você pode começar pela pasta **src\actions**. Os arquivos na pasta implementam os comandos que você usará nestes tutoriais:
     - O arquivo **provisionSample.cs** mostra como provisionar o grafo espacial.
@@ -84,7 +80,7 @@ Na pasta de exemplo extraída, abra o arquivo **digital-twins-samples-csharp\dig
     - O arquivo **getAvailableAndFreshSpaces.cs** obtém os resultados de uma função personalizada chamada de função definida pelo usuário.
     - O arquivo **createEndpoints.cs** cria pontos de extremidade para interagir com outros serviços.
 
-* O exemplo de simulação **device-connectivity** simula dados de sensor e o envia para o hub IoT que está provisionado para a instância dos Gêmeos Digitais. Você usará essa amostra no [próximo tutorial depois de provisionar o grafo espacial](tutorial-facilities-udf.md#simulate). Os identificadores de sensores e dispositivos que você usou para configurar este exemplo devem ser os mesmos que serão usados para provisionar o grafo.
+* O exemplo de simulação **device-connectivity** simula dados de sensor e o envia para o hub IoT que está provisionado para a instância dos Gêmeos Digitais. Você usará essa amostra no [próximo tutorial depois de provisionar o grafo espacial](tutorial-facilities-udf.md#simulate-sensor-data). Os identificadores de sensores e dispositivos que você usou para configurar este exemplo devem ser os mesmos que serão usados para provisionar o grafo.
 
 ### <a name="configure-the-provisioning-sample"></a>Configurar o exemplo de provisionamento
 
@@ -101,17 +97,15 @@ Na pasta de exemplo extraída, abra o arquivo **digital-twins-samples-csharp\dig
     ```
 
 1. No Visual Studio Code, abra o arquivo [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json) no projeto **occupancy-quickstart**. Atualize os seguintes valores:
-   * **ClientId**: insira a ID de aplicativo do registro de seu aplicativo do Azure AD. Você anotou essa ID na seção onde [definiu permissões de aplicativo](#permissions).
-   * **Tenant**: insira a ID de diretório de seu [locatário do Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). Você também anotou essa ID na seção onde [definiu permissões de aplicativo](#permissions).
-   * **BaseUrl**: insira a URL da instância dos Gêmeos Digitais. Para obter essa URL, substitua os espaços reservados nessa URL pelos valores da instância: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Você também pode obter essa URL modificando a URL da API de Gerenciamento na [seção de implantação](#deploy). Substitua **swagger/** por **api/v1.0/** .
+   * **ClientId**: insira a ID de aplicativo do registro de seu aplicativo do Azure AD. Você anotou essa ID na seção onde [definiu permissões de aplicativo](#grant-permissions-to-your-app).
+   * **Tenant**: insira a ID de diretório de seu [locatário do Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). Você também anotou essa ID na seção onde [definiu permissões de aplicativo](#grant-permissions-to-your-app).
+   * **BaseUrl**: insira a URL da instância dos Gêmeos Digitais. Para obter essa URL, substitua os espaços reservados nessa URL pelos valores da instância: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Você também pode obter essa URL modificando a URL da API de Gerenciamento na [seção de implantação](#deploy-digital-twins). Substitua **swagger/** por **api/v1.0/** .
 
 1. Confira uma lista de recursos dos Gêmeos Digitais que você pode explorar usando o exemplo. Execute o comando a seguir:
 
     ```cmd/sh
     dotnet run
     ```
-
-<a id="provision-spaces"></a>
 
 ## <a name="understand-the-provisioning-process"></a>Entender o processo de provisionamento
 

@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/09/2019
-ms.openlocfilehash: c4d2e70d0f200f3a31948cfaa43def8e1b699878
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.date: 09/22/2019
+ms.openlocfilehash: 7e5b4a3cb04215504c4fd4fd1ebfcbcbe8c3f9f8
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706877"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179112"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Tutorial: Migrar o SQL Server para um banco de dados individual ou em pool no Banco de Dados SQL do Azure offline usando o DMS
 
@@ -106,6 +106,7 @@ Depois que você estiver familiarizado com a avaliação e satisfeito de que o b
 
 > [!NOTE]
 > Antes de criar um projeto de migração no Assistente de migração de dados, certifique-se de que você já possua um banco de dados SQL do Azure conforme mencionado nos pré-requisitos. Para fins deste tutorial, o nome do Banco de Dados SQL do Azure é considerado **AdventureWorksAzure**, mas você poderá renomeá-lo como desejar.
+
 > [!IMPORTANT]
 > Se você usa o SSIS, o AMD não dá suporte no momento à migração do SSISDB de origem, mas você pode reimplantar seus projetos/pacotes SSIS no SSISDB de destino hospedado pelo Banco de Dados SQL do Azure. Para saber mais sobre como migrar pacotes SSIS, confira o artigo [Migrar pacotes do SQL Server Integration Services para o Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
 
@@ -197,7 +198,7 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
     ![Crie uma instância do Serviço de Migração de Banco de Dados do Azure](media/tutorial-sql-server-to-azure-sql/dms-instance-search.png)
 
 3. Selecione + **Novo Projeto de Migração**.
-4. Na tela **Novo projeto de migração**, especifique um nome para o projeto, na caixa de texto **Tipo de servidor de origem**, selecione **SQL Server**; na caixa de texto **Tipo de servidor de destino**, selecione **Banco de Dados SQL do Azure** e, em **Escolher tipo de atividade**, selecione **Migração de dados offline**. 
+4. Na tela **Novo projeto de migração**, especifique um nome para o projeto, na caixa de texto **Tipo de servidor de origem**, selecione **SQL Server**; na caixa de texto **Tipo de servidor de destino**, selecione **Banco de Dados SQL do Azure** e, em **Escolher tipo de atividade**, selecione **Migração de dados offline**.
 
     ![Criar o Serviço de migração de banco de dados do Azure](media/tutorial-sql-server-to-azure-sql/dms-create-project2.png)
 

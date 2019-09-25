@@ -4,9 +4,9 @@ description: Neste tutorial, você aprenderá a usar os Hubs de Notificação do
 services: notification-hubs
 documentationcenter: ios
 keywords: notificação por push, notificações por push, notificações por push do ios
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: b7fcd916-8db8-41a6-ae88-fc02d57cb914
 ms.service: notification-hubs
 ms.workload: mobile
@@ -15,13 +15,15 @@ ms.devlang: objective-c
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 05/21/2019
-ms.author: jowargo
-ms.openlocfilehash: c5793d2388ddd7bb59d68f8f7fd7af773179ed41
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 05/21/2019
+ms.openlocfilehash: 0335f5c71f99e6c7a90ce920c25e6bb7e9b4a08f
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65988196"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211933"
 ---
 # <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Tutorial: Enviar notificações por push para aplicativos iOS usando Hubs de Notificação do Microsoft Azure
 
@@ -51,7 +53,7 @@ O código completo deste tutorial pode ser encontrado [no GitHub](https://github
 * [Estrutura de Mensagens do Microsoft Azure]
 * Versão mais recente do [Xcode]
 * Um dispositivo compatível com o iOS 10 (ou versão posterior)
-* [Programa de Desenvolvedores de iOS](https://developer.apple.com/programs/) 
+* [Programa de Desenvolvedores de iOS](https://developer.apple.com/programs/)
   
   > [!NOTE]
   > Devido aos requisitos de configuração das notificações por push, você deve implantá-las e testá-las em um dispositivo iOS físico (iPhone ou iPad), em vez de usar o Simulador de iOS.

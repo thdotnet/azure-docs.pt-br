@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed6c28491162a729f0e110e953f89dd72fe12ea
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 4fd6c18e3a3af763a2f4404e6b9c808e1bd8a4a5
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68002874"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129933"
 ---
 # <a name="tutorial-integrate-ascentis-with-azure-active-directory"></a>Tutorial: Integrar o Ascentis com o Azure Active Directory
 
@@ -29,7 +29,6 @@ Neste tutorial, você aprenderá a integrar o Ascentis com o Azure AD (Azure Act
 
 * Controlar no Azure AD quem tem acesso ao Ascentis.
 * Permitir que os usuários sejam conectados automaticamente ao Ascentis com as respectivas contas do Azure AD.
-* Gerenciar suas contas em um local central: o portal do Azure.
 
 Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O que é o acesso de aplicativos e o logon único com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 

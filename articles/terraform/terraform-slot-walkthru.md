@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 4/05/2018
-ms.openlocfilehash: 08e90a69791b0555a6497166f6008e8619f40704
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 09/20/2019
+ms.openlocfilehash: ec2ed1da46df2793a241c9c89d168a6c5d462b9d
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57992236"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71169816"
 ---
 # <a name="use-terraform-to-provision-infrastructure-with-azure-deployment-slots"></a>Usar o Terraform para provisionar a infraestrutura com slots de implantação do Azure
 
@@ -74,7 +74,7 @@ Este artigo ilustra um exemplo de uso de slots de implantação ao guiá-lo pela
 
 1. Cole o código a seguir no editor:
 
-    ```JSON
+    ```hcl
     # Configure the Azure provider
     provider "azurerm" { }
 
@@ -266,7 +266,7 @@ Para testar a troca dos dois slots de implantação, execute as seguintes etapas
 
 1. Cole o código a seguir no editor:
 
-    ```JSON
+    ```hcl
     # Configure the Azure provider
     provider "azurerm" { }
 

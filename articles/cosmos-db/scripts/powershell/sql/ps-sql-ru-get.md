@@ -3,15 +3,16 @@ title: Script do Azure PowerShell – Obter a taxa de transferência provisionad
 description: Script do Azure PowerShell – Obter a taxa de transferência provisionada (RU/s) do Azure Cosmos DB para a API do SQL (Core)
 author: markjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 75a8ebbb04fd3cbad9f0a1a3f302b40439adbbcc
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c7d7f295589d4e3b152016c2b55cfe07355d1cb0
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602128"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178766"
 ---
 # <a name="get-the-provisioned-throughput-rus-for-a-database-or-container-for-azure-cosmos-db---sql-core-api"></a>Obter a taxa de transferência provisionada (RU/s) de um banco de dados ou um contêiner do Azure Cosmos DB – API do SQL (Core)
 

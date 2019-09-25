@@ -3,9 +3,8 @@ title: Tutorial da Central de segurança do Azure - Proteger seus recursos com a
 description: Este tutorial mostra como configurar uma política de acesso just in time de VM e uma política de controle de aplicativo.
 services: security-center
 documentationcenter: na
-author: monhaber
-manager: barbkess
-editor: ''
+author: memildin
+manager: rkarlin
 ms.assetid: 61e95a87-39c5-48f5-aee6-6f90ddcd336e
 ms.service: security-center
 ms.devlang: na
@@ -13,14 +12,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/3/2018
-ms.author: v-mohabe
-ms.openlocfilehash: 7533a8636697db92a69cfec99d0e89138164d7b7
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.date: 12/03/2018
+ms.author: memildin
+ms.openlocfilehash: 28da3933cf1f1970758fcaec1358c9c16558af03
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147895"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71200667"
 ---
 # <a name="tutorial-protect-your-resources-with-azure-security-center"></a>Tutorial: Proteger seus recursos com a Central de Segurança do Azure
 A Central de Segurança limita a exposição a ameaças por meio de controles de acesso e de aplicativo a fim de bloquear atividades mal-intencionadas. O acesso da VM (máquina virtual) JIT (just-in-time) reduz a exposição a ataques permitindo que você negue o acesso persistente às VMs. Em vez disso, você fornece acesso controlado e auditado às VMs somente quando for necessário. Controles de aplicativo adaptáveis ajudam a proteger VMs contra malware, controlando quais aplicativos podem ser executados em suas VMs. A Central de Segurança usa o aprendizado de máquina para analisar os processos em execução na VM e ajuda a aplicar regras de lista de permissões usando essa inteligência.
