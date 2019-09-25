@@ -142,10 +142,10 @@ Usando `AADClientCertificate`:
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
 | type | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0,1, 1,1 | int |
-| (esquema 0,1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
-| (esquema 0,1) AADClientSecret | password | string |
-| (esquema 0,1) AADClientCertificate | thumbprint | string |
+| typeHandlerVersion | 0.1, 1.1 | int |
+| (esquema 0.1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
+| (esquema 0.1) AADClientSecret | password | string |
+| (esquema 0.1) AADClientCertificate | thumbprint | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Dicionário JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
@@ -153,7 +153,7 @@ Usando `AADClientCertificate`:
 | adicional KeyVaultURL | url | cadeia de caracteres |
 | Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |
-| VolumeType | Sistema operacional, Dados, Tudo | string |
+| VolumeType | OS, Data, All | string |
 
 ## <a name="template-deployment"></a>Implantação de modelo
 
