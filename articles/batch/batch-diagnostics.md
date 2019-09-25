@@ -14,17 +14,17 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 5f5e023d8014a780fa21e2c3ba18050c4e1a5771
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: aa86d6cf22562fa1fac7d45de20b28aa0eec33aa
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095242"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261668"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Logs, alertas e métricas do Lote para avaliação e monitoramento de diagnóstico
 
  
-Este artigo explica como monitorar uma conta do Lote usando os recursos do [Azure Monitor](../azure-monitor/overview.md). O Azure Monitor coleta [métricas](../azure-monitor/platform/data-platform-metrics.md) e [logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md) para recursos na conta do Lote. Colete e consuma esses dados de várias maneiras para monitorar a conta do Lote e diagnosticar problemas. Também é possível configurar [alertas de métrica](../azure-monitor/platform/alerts-overview.md) para receber notificações quando uma métrica alcançar um valor especificado. 
+Este artigo explica como monitorar uma conta do Lote usando os recursos do [Azure Monitor](../azure-monitor/overview.md). O Azure Monitor coleta [métricas](../azure-monitor/platform/data-platform-metrics.md) e [logs de diagnóstico](../azure-monitor/platform/resource-logs-overview.md) para recursos na conta do Lote. Colete e consuma esses dados de várias maneiras para monitorar a conta do Lote e diagnosticar problemas. Também é possível configurar [alertas de métrica](../azure-monitor/platform/alerts-overview.md) para receber notificações quando uma métrica alcançar um valor especificado. 
 
 ## <a name="batch-metrics"></a>Métricas do Lote
 
@@ -38,7 +38,7 @@ Métricas são:
 * Geradas a cada 1 minuto
 * Não são persistidas automaticamente, mas têm um histórico de 30 dias. É possível persistir métricas de atividades como parte do log de diagnósticos.
 
-### <a name="view-metrics"></a>Exibir métricas
+### <a name="view-metrics"></a>Métricas de exibição
 
 Visualize as métricas para a conta do Lote no Portal do Azure. A **Visão Geral** da conta, por padrão, mostra as principais métricas de tarefa, núcleo e nó. 
 
@@ -109,7 +109,7 @@ Outros destinos opcionais para logs de diagnóstico:
 
     ![Diagnóstico do Lote](media/batch-diagnostics/diagnostics-portal.png)
 
-Outras opções para habilitar a coleção de logs incluem: use o Azure Monitor no portal para definir configurações de diagnóstico, use um [modelo do Resource Manager](../azure-monitor/platform/diagnostic-logs-stream-template.md) ou use o Azure PowerShell ou a CLI do Azure. consulte [Coletar e consumir dados de log dos recursos do Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+Outras opções para habilitar a coleção de logs incluem: use o Azure Monitor no portal para definir configurações de diagnóstico, use um [modelo do Resource Manager](../azure-monitor/platform/diagnostic-settings-template.md) ou use o Azure PowerShell ou a CLI do Azure. consulte [Coletar e consumir dados de log dos recursos do Azure](../azure-monitor/platform/resource-logs-overview.md).
 
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Acessar logs de diagnóstico no armazenamento
@@ -138,7 +138,7 @@ Abaixo está um exemplo de uma `PoolResizeCompleteEvent` entrada em um `PT1H.jso
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
 ```
 
-Para obter mais informações sobre o esquema de logs de diagnóstico na conta de armazenamento, consulte [Arquivar logs de diagnóstico do Azure](../azure-monitor/platform/archive-diagnostic-logs.md#schema-of-diagnostic-logs-in-the-storage-account). Para acessar os logs na conta de armazenamento programaticamente, use as APIs de Armazenamento. 
+Para obter mais informações sobre o esquema de logs de diagnóstico na conta de armazenamento, consulte [Arquivar logs de diagnóstico do Azure](../azure-monitor/platform/resource-logs-collect-storage.md#schema-of-resource-logs-in-storage-account). Para acessar os logs na conta de armazenamento programaticamente, use as APIs de Armazenamento. 
 
 ### <a name="service-log-events"></a>Eventos do Log de Serviço
 Logs de Serviço do Lote do Azure, se coletados, contêm eventos emitidos pelo serviço do Lote do Azure durante o tempo de vida de um recurso individual do Lote, como um pool ou uma tarefa. Cada evento emitido pelo Lote é registrado em formato JSON. Por exemplo, este é o corpo de um exemplo de **evento de criação de pool**:

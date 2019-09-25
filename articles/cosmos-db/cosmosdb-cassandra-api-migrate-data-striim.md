@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: ad690fa78f794b26b6cf496ea4485599486752b0
-ms.sourcegitcommit: b03516d245c90bca8ffac59eb1db522a098fb5e4
+ms.openlocfilehash: af99f369245d6006d0d4784e572020b820e406a3
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71146969"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266050"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-cassandra-api-account-using-striim"></a>Migrar dados para Azure Cosmos DB conta de API do Cassandra usando o Striim
 
@@ -41,7 +41,7 @@ Este artigo mostra como usar o Striim para migrar dados de um **Oracle Database*
 
 1. No painel **configurações de cluster do Striim** , escolha o tipo de implantação Striim e o tamanho da máquina virtual.
 
-   |Configuração | Valor | Descrição |
+   |Configuração | Valor | DESCRIÇÃO |
    | ---| ---| ---|
    |Tipo de implantação Striim |Autônomo | Striim pode ser executado em tipos de implantação **autônomos** ou de **cluster** . O modo autônomo implantará o servidor Striim em uma única máquina virtual e você poderá selecionar o tamanho das VMs dependendo do volume de dados. O modo de cluster implantará o servidor Striim em duas ou mais VMs com o tamanho selecionado. Ambientes de cluster com mais de 2 nós oferecem alta disponibilidade e failover automáticos.</br></br> Neste tutorial, você pode selecionar a opção autônomo. Use a VM de tamanho padrão "Standard_F4s". | 
    | Nome do cluster Striim|    < Striim_cluster_Name >|  Nome do cluster Striim.|
@@ -155,7 +155,7 @@ Nesta seção, você configurará a conta de API do Cassandra Azure Cosmos DB co
 
    ![Conectar-se ao destino](./media/cosmosdb-cassandra-api-migrate-data-striim/connect-to-target.png)
 
-1. Antes de configurar o destino, verifique se você adicionou um [certificado raiz Baltimore ao ambiente Java do Striim](/java/java-sdk-add-certificate-ca-store?view=azure-java-stable#to-add-a-root-certificate-to-the-cacerts-store).
+1. Antes de configurar o destino, verifique se você adicionou um [certificado raiz Baltimore ao ambiente Java do Striim](/azure/java/java-sdk-add-certificate-ca-store#to-add-a-root-certificate-to-the-cacerts-store).
 
 1. Insira as propriedades de configuração de sua instância de Azure Cosmos DB de destino e selecione **salvar** para continuar. Aqui estão os principais parâmetros a serem observados:
 

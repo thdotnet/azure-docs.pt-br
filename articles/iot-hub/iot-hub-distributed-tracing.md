@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: 302c382a7e19e9dcc4c979d31ddc0768655a1465
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e4403c245a3cae671f83260ae313ed400b0f7721
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60400728"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259363"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Rastrear mensagens de dispositivo para a nuvem do IoT do Azure com o rastreamento distribuído (versão prévia)
 
@@ -172,12 +172,12 @@ Essas instruções servem para compilar o exemplo no Windows. Para outros ambien
 
 ### <a name="workaround-for-third-party-clients"></a>Solução alternativa para clientes de terceiros
 
-Ele tem **não trivial** para visualizar o recurso de rastreamento distribuído sem usar o SDK de C. Portanto, essa abordagem não é recomendada.
+Não é **trivial** Visualizar o recurso de rastreamento distribuído sem usar o SDK do C. Portanto, essa abordagem não é recomendada.
 
-Primeiro, você deve implementar todas as primitivas de protocolo do IoT Hub em suas mensagens, seguindo o guia de desenvolvimento [criar e ler mensagens do Hub IoT](iot-hub-devguide-messages-construct.md). Em seguida, edite as propriedades de protocolo nas mensagens adicionar MQTT/AMQP `tracestate` como **propriedade do sistema**. Especificamente:
+Primeiro, você deve implementar todos os primitivos de protocolo do Hub IoT em suas mensagens seguindo o guia de desenvolvimento [criar e ler mensagens do Hub IOT](iot-hub-devguide-messages-construct.md). Em seguida, edite as propriedades de protocolo nas mensagens MQTT/AMQP `tracestate` para adicionar como **Propriedade do sistema**. Especificamente:
 
-* Para que o MQTT, adicione `%24.tracestate=timestamp%3d1539243209` para o tópico de mensagem, onde `1539243209` deve ser substituído com a hora de criação da mensagem no formato de carimbo de hora do unix. Por exemplo, se referem à implementação [no SDK do C](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761)
-* Para AMQP, adicione `key("tracestate")` e `value("timestamp=1539243209")` como anotação da mensagem. Para uma implementação de referência, consulte [aqui](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527).
+* Para MQTT, adicione `%24.tracestate=timestamp%3d1539243209` ao tópico da mensagem, onde `1539243209` deve ser substituído pelo horário de criação da mensagem no formato de carimbo de data/hora do UNIX. Por exemplo, consulte a implementação [no SDK do C](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761)
+* Para AMQP, adicione `key("tracestate")` e `value("timestamp=1539243209")` como anotação de mensagem. Para obter uma implementação de referência, consulte [aqui](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527).
 
 Para controlar a porcentagem de mensagens que contêm essa propriedade, implemente a lógica para ouvir eventos iniciados na nuvem, como atualizações gêmeas.
 
@@ -240,10 +240,10 @@ Para atualizar a configuração da amostragem do rastreamento distribuído para 
 }
 ```
 
-| Nome do elemento | Obrigatório | Type | DESCRIÇÃO |
+| Nome do elemento | Obrigatório | Tipo | Descrição |
 |-----------------|----------|---------|-----------------------------------------------------|
-| `sampling_mode` | Sim | Número inteiro | Atualmente, há suporte para dois valores de modo para ativar e desativar a amostragem. `1` está Habilitado e `2` está Desabilitado. |
-| `sampling_rate` | Sim | Número inteiro | Esse valor é uma porcentagem. Somente valores de `0` para `100` (inclusive) são permitidos.  |
+| `sampling_mode` | Sim | Integer | Atualmente, há suporte para dois valores de modo para ativar e desativar a amostragem. `1` está Habilitado e `2` está Desabilitado. |
+| `sampling_rate` | Sim | Integer | Esse valor é uma porcentagem. Somente valores de `0` para `100` (inclusive) são permitidos.  |
 
 ## <a name="query-and-visualize"></a>Consultar e visualizar
 
@@ -251,7 +251,7 @@ Para ver todos os rastreios registrados por um Hub IoT, consulte o armazenamento
 
 ### <a name="query-using-log-analytics"></a>Consulta usando o Log Analytics
 
-Se você tiver configurado o [Log Analytics com logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-stream-log-store.md), consulte procurando logs na categoria `DistributedTracing`. Por exemplo, esta consulta mostra todos os rastreamentos registrados:
+Se você tiver configurado o [Log Analytics com logs de diagnóstico](../azure-monitor/platform/resource-logs-collect-storage.md), consulte procurando logs na categoria `DistributedTracing`. Por exemplo, esta consulta mostra todos os rastreamentos registrados:
 
 ```Kusto
 // All distributed traces 
@@ -263,7 +263,7 @@ AzureDiagnostics
 
 Os logs de exemplo conforme mostrados pelo Log Analytics:
 
-| TimeGenerated | OperationName | Categoria | Nível | CorrelationId | DurationMs | propriedades |
+| TimeGenerated | OperationName | Categoria | Nível | CorrelationId | DurationMs | Properties |
 |--------------------------|---------------|--------------------|---------------|---------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | Informativo | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
 | 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | Informativo | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |

@@ -1,6 +1,6 @@
 ---
 title: Métricas do barramento de serviço do Azure no Azure Monitor | Microsoft Docs
-description: Usar o Azure Monitor para monitorar entidades de barramento de serviço
+description: Usar Azure Monitor para monitorar entidades do barramento de serviço
 services: service-bus-messaging
 documentationcenter: .NET
 author: axisc
@@ -10,12 +10,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 11/06/2018
 ms.author: aschhab
-ms.openlocfilehash: 80a4b1e60202b88f6ed3c1574bd4684575a9b153
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 6d25bdf6ff8e790466f3a28e3b6043e347d74198
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538065"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261851"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor"></a>Métricas do barramento de serviço do Azure no Azure Monitor
 
@@ -28,9 +28,9 @@ O Azure Monitor fornece interfaces de usuário unificadas para monitoramento ent
 
 ## <a name="access-metrics"></a>Métricas de acesso
 
-O Azure Monitor fornece várias maneiras de acessar as métricas. Você pode acessar as métricas por meio de [portal do Azure](https://portal.azure.com), ou usar as APIs do Azure Monitor (REST e .NET) e soluções de análise como logs do Azure Monitor e Hubs de eventos. Para obter mais informações, consulte [métricas no Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).
+O Azure Monitor fornece várias maneiras de acessar as métricas. Você pode acessar as métricas por meio do [portal do Azure](https://portal.azure.com)ou usar as APIs de Azure monitor (REST e .net) e as soluções de análise, como logs de Azure monitor e hubs de eventos. Para obter mais informações, consulte [métricas em Azure monitor](../azure-monitor/platform/data-platform-metrics.md).
 
-As métricas estão habilitadas por padrão e você pode acessar os dados dos últimos 30 dias. Se você precisar manter os dados por um período de tempo maior, você pode arquivar os dados de métrica em uma conta de Armazenamento do Azure. Esse valor pode ser configurado em [configurações de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) no Azure Monitor.
+As métricas estão habilitadas por padrão e você pode acessar os dados dos últimos 30 dias. Se você precisar manter os dados por um período de tempo maior, você pode arquivar os dados de métrica em uma conta de Armazenamento do Azure. Esse valor pode ser configurado em [configurações de diagnóstico](../azure-monitor/platform/diagnostic-settings.md) no Azure Monitor.
 
 ## <a name="access-metrics-in-the-portal"></a>Acessar as métricas no portal
 
@@ -38,7 +38,7 @@ As métricas estão habilitadas por padrão e você pode acessar os dados dos ú
 
 ![][1]
 
-Você também pode acessar as métricas diretamente por meio do namespace. Para fazer isso, selecione seu namespace e, em seguida, clique em **métricas**. Para exibir as métricas filtradas para o escopo da entidade, selecione a entidade e, em seguida, clique em **métricas**.
+Você também pode acessar as métricas diretamente por meio do namespace. Para fazer isso, selecione o namespace e clique em **métricas**. Para exibir as métricas filtradas para o escopo da entidade, selecione a entidade e clique em **métricas**.
 
 ![][2]
 
@@ -46,9 +46,9 @@ Para métricas com suporte para dimensões, você deve filtrar pelo valor da dim
 
 ## <a name="billing"></a>Cobrança
 
-Métricas e alertas no Azure Monitor são cobradas em uma base por alerta. Esses encargos devem estar disponíveis no portal quando o alerta está configurada e antes de ser salvo. 
+As métricas e alertas em Azure Monitor são cobrados por alerta. Esses encargos devem estar disponíveis no portal quando o alerta for configurado e antes de ser salvo. 
 
-Outras soluções que ingerem dados de métricas são cobradas diretamente por essas soluções. Por exemplo, você será cobrado pelo Armazenamento do Azure se você arquivar dados de métrica para uma conta de Armazenamento do Azure. Você também será cobrado pelo Log Analytics se você transmitir dados de métricas para o Log Analytics para análise avançada.
+Soluções adicionais que ingerir dados de métricas são cobradas diretamente por essas soluções. Por exemplo, você será cobrado pelo Armazenamento do Azure se você arquivar dados de métrica para uma conta de Armazenamento do Azure. Você também será cobrado pelo Log Analytics se você transmitir dados de métricas para o Log Analytics para análise avançada.
 
 As métricas a seguir oferecem uma visão geral da integridade do seu serviço. 
 
@@ -63,10 +63,10 @@ Conta o número de solicitações de gerenciamento de dados e de operações.
 
 | Nome da métrica | DESCRIÇÃO |
 | ------------------- | ----------------- |
-| Solicitações de entrada| O número de solicitações feitas ao serviço de Barramento de Serviço durante um período específico. <br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+| Solicitações de entrada| O número de solicitações feitas ao serviço de Barramento de Serviço durante um período específico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |Solicitações bem sucedidas|O número de solicitações bem-sucedidas feitas ao serviço de Barramento de Serviço durante um período específico.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|Erros do Servidor|O número de solicitações não processadas devido a um erro no serviço de Barramento de Serviço durante um período específico.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|Erros de usuário (consulte a subseção a seguir)|O número de solicitações não processadas devido a erros do usuário durante um período específico.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|Erros do Servidor|O número de solicitações não processadas devido a um erro no serviço de Barramento de Serviço durante um período específico.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|Erros do usuário (consulte a seguinte subseção)|O número de solicitações não processadas devido a erros do usuário durante um período específico.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 |Solicitações limitadas|O número de solicitações que foram restringidas porque o uso foi excedido.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 
 ### <a name="user-errors"></a>Erros do usuário
@@ -81,18 +81,18 @@ Os dois tipos de erros a seguir são classificados como erros do usuário:
 
 | Nome da métrica | DESCRIÇÃO |
 | ------------------- | ----------------- |
-|Mensagens de entrada|O número de eventos ou mensagens enviadas para o Barramento de Serviço durante um período específico.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-|Mensagens de saída|O número de eventos ou mensagens recebidas do Barramento de Serviço durante um período específico.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
-| Mensagens| Contagem de mensagens em uma fila/tópico. <br/><br/> Unidade: Count <br/> Tipo de agregação: Average <br/> Dimensão: EntityName |
-| ActiveMessages| Contagem de mensagens ativas em uma fila/tópico. <br/><br/> Unidade: Count <br/> Tipo de agregação: Average <br/> Dimensão: EntityName |
-| Mensagens mortas| Contagem de mensagens mortas em uma fila/tópico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Average <br/>Dimensão: EntityName |
-| Mensagens agendadas| Contagem de mensagens agendadas em uma fila/tópico. <br/><br/> Unidade: Count <br/> Tipo de agregação: Average  <br/> Dimensão: EntityName |
+|Mensagens de entrada|O número de eventos ou mensagens enviadas para o Barramento de Serviço durante um período específico.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|Mensagens de saída|O número de eventos ou mensagens recebidas do Barramento de Serviço durante um período específico.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+| Mensagens| Contagem de mensagens em uma fila/tópico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Average <br/> Dimensão: EntityName |
+| ActiveMessages| Contagem de mensagens ativas em uma fila/tópico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Average <br/> Dimensão: EntityName |
+| Mensagens inativas| Contagem de mensagens mortas em uma fila/tópico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Average <br/>Dimensão: EntityName |
+| Mensagens agendadas| Contagem de mensagens agendadas em uma fila/tópico. <br/><br/> Unidade: Contagem <br/> Tipo de agregação: Average  <br/> Dimensão: EntityName |
 
 ## <a name="connection-metrics"></a>Métricas de conexão
 
 | Nome da métrica | DESCRIÇÃO |
 | ------------------- | ----------------- |
-|ActiveConnections|O número de conexões ativas em um namespace, bem como em uma entidade.<br/><br/> Unidade: Count <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
+|ActiveConnections|O número de conexões ativas em um namespace, bem como em uma entidade.<br/><br/> Unidade: Contagem <br/> Tipo de agregação: Total <br/> Dimensão: EntityName|
 
 ## <a name="resource-usage-metrics"></a>Métricas de uso de recurso
 
@@ -101,8 +101,8 @@ Os dois tipos de erros a seguir são classificados como erros do usuário:
 
 | Nome da métrica | DESCRIÇÃO |
 | ------------------- | ----------------- |
-|Uso da CPU por namespace|A porcentagem de uso da CPU do namespace.<br/><br/> Unidade: Porcentagem <br/> Tipo de agregação: Máximo <br/> Dimensão: EntityName|
-|Uso do tamanho da memória por namespace|A porcentagem de uso de memória do namespace.<br/><br/> Unidade: Porcentagem <br/> Tipo de agregação: Máximo <br/> Dimensão: EntityName|
+|Uso da CPU por namespace|A porcentagem de uso da CPU do namespace.<br/><br/> Unidade: Percent <br/> Tipo de agregação: Máximo <br/> Dimensão: EntityName|
+|Uso do tamanho da memória por namespace|A porcentagem de uso de memória do namespace.<br/><br/> Unidade: Percent <br/> Tipo de agregação: Máximo <br/> Dimensão: EntityName|
 
 ## <a name="metrics-dimensions"></a>Dimensões das métricas
 
@@ -117,7 +117,7 @@ O Barramento de Serviço do Azure dá suporte às seguintes dimensões para mét
 1. Na guia **Métrica** da página **Namespace do barramento de serviço**, selecione **Configurar alertas**. 
 
     ![Página de métrica – Configurar o menu de alertas](./media/service-bus-metrics-azure-monitor/metrics-page-configure-alerts-menu.png)
-2. Selecione o **Selecionar destino** opção e fazer as seguintes ações na **selecionar um recurso** página: 
+2. Selecione a opção **Selecionar destino** e execute as seguintes ações na página **selecionar um recurso** : 
     1. Selecione **Namespaces de barramento de serviço** para o campo **Filtrar por tipo de recurso**. 
     2. Selecione a assinatura no campo **Filtrar por assinatura**.
     3. Selecione o **namespace de barramento de serviço** na lista. 
@@ -162,7 +162,7 @@ O Barramento de Serviço do Azure dá suporte às seguintes dimensões para mét
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [visão geral do Azure Monitor](../monitoring-and-diagnostics/monitoring-overview.md).
+Consulte a [visão geral do Azure monitor](../monitoring-and-diagnostics/monitoring-overview.md).
 
 [1]: ./media/service-bus-metrics-azure-monitor/service-bus-monitor1.png
 [2]: ./media/service-bus-metrics-azure-monitor/service-bus-monitor2.png

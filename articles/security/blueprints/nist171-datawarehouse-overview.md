@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/31/2018
 ms.author: jomolesk
-ms.openlocfilehash: 98eb3834efa6dc6ce5d53990f4bb530351660b8a
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: d5c7ab3cc8d4de788da5d18f31c6aacb31b5d551
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946703"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259892"
 ---
 # <a name="azure-security-and-compliance-blueprint---data-warehouse-for-nist-sp-800-171"></a>Blueprint de segurança e conformidade do Azure - Data Warehouse para NIST SP 800-171
 
@@ -50,7 +50,7 @@ A solução usa os serviços do Azure a seguir. Para obter mais informações, c
     - Testemunha e nós de cluster do SQL Server
 - Active Directory do Azure
 - Catálogo de Dados do Azure
-- Cofre de Chaves Azure
+- Azure Key Vault
 - Azure Monitor (logs)
 - Central de Segurança do Azure
 - Azure Load Balancer
@@ -158,7 +158,7 @@ Essa arquitetura de referência também usa a funcionalidade de [avaliação de 
 
 Os serviços do Azure registram em log de forma extensiva as atividades do sistema e do usuário, bem como a integridade do sistema:
 - **Logs de atividades**: Os [logs de atividades](../../azure-monitor/platform/activity-logs-overview.md) fornecem insights sobre as operações executadas em recursos em uma assinatura. Os logs de atividade podem ajudar a determinar o iniciador, o horário da ocorrência e o status de uma operação.
-- **Logs de diagnóstico**: Os [Logs de diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md) incluem todos os registros emitidos por todos os recursos. Esses logs são logs do sistema de eventos do Windows, logs de armazenamento, logs de auditoria do Key Vault e logs de acesso e firewall do Gateway de Aplicativo do Azure. Todos os logs de diagnóstico são gravados em uma conta de armazenamento do Azure centralizada e criptografada para arquivamento. Os usuários podem configurar um período de retenção de até 730 dias para atender às suas necessidades específicas.
+- **Logs de diagnóstico**: Os [Logs de diagnóstico](../../azure-monitor/platform/resource-logs-overview.md) incluem todos os registros emitidos por todos os recursos. Esses logs são logs do sistema de eventos do Windows, logs de armazenamento, logs de auditoria do Key Vault e logs de acesso e firewall do Gateway de Aplicativo do Azure. Todos os logs de diagnóstico são gravados em uma conta de armazenamento do Azure centralizada e criptografada para arquivamento. Os usuários podem configurar um período de retenção de até 730 dias para atender às suas necessidades específicas.
 
 **Logs do Azure Monitor**: Esses logs são consolidados em [logs de Azure monitor](https://azure.microsoft.com/services/log-analytics/) para processamento, armazenamento e relatórios de Dashboard. Depois que os dados são coletados, eles são organizados em tabelas separadas para cada tipo de dados nos espaços de trabalho do Log Analytics. Dessa forma, todos os dados podem ser analisados juntos, independentemente de sua fonte original. A central de segurança se integra aos logs de Azure Monitor. Os clientes podem usar consultas Kusto para acessar seus dados de eventos de segurança e combiná-los com dados de outros serviços.
 
@@ -205,7 +205,7 @@ O Azure oferece uma variedade de serviços para ajudar com o armazenamento e a p
 -   O [Azure Data Factory](https://docs.microsoft.com/azure/data-factory/introduction) é um serviço de nuvem gerenciado criado para projetos híbridos complexos de ETL (extrair, transformar e carregar) e de integração de dados. O Data Factory tem recursos para ajudar a rastrear e localizar os dados. Ferramentas de monitoramento e visualização identificam quando os dados chegam e de onde eles vieram. Os clientes podem criar e agendar fluxos de trabalhos orientados a dados, chamados pipelines, que ingerem dados provenientes de armazenamentos de dados diferentes. Eles podem usar os pipelines para ingerir dados de fontes internas e externas. Em seguida, os clientes podem processar e transformar os dados para saída em armazenamentos de dados, como o SQL Data Warehouse.
 - Os clientes podem arranjar os dados não estruturados no [Azure Data Lake Storage](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-overview) para capturar dados com qualquer tamanho, tipo e velocidade de ingestão em um único lugar para análises operacionais e exploratórias. O Azure Data Lake tem recursos que permitem a extração e a conversão de dados. O Data Lake Storage é compatível com a maioria dos componentes de software livre no ecossistema do Hadoop. Ele também se integra perfeitamente com outros serviços do Azure, como o SQL Data Warehouse.
 
-## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
+## <a name="disclaimer"></a>Isenção de responsabilidade
 
  - Este documento serve apenas para fins informativos. A MICROSOFT NÃO FORNECE NENHUMA GARANTIA, EXPRESSA, IMPLÍCITA OU REGULAMENTAR, QUANTO ÀS INFORMAÇÕES PRESENTES NESTE DOCUMENTO. Este documento é fornecido "no estado em que se encontra". As informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Os clientes que estão lendo este documento arcarão com o risco de usá-lo.
  - Este documento não fornece aos clientes nenhum direito legal a qualquer propriedade intelectual de qualquer produto ou solução da Microsoft.

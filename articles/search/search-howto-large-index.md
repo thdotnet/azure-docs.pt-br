@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 09/19/2019
 ms.author: heidist
-ms.openlocfilehash: e3240ca40b9dcf866c5e4a5cf570b5575b7586d8
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.openlocfilehash: aaf0d5edb91d60be85360746f76c4ca1f8db8978
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240349"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257025"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-search"></a>Como indexar grandes conjuntos de dados no Azure Search
 
@@ -25,9 +25,9 @@ As seções a seguir exploram três técnicas para indexar grandes quantidades d
 
 ## <a name="option-1-pass-multiple-documents"></a>Opção 1: Passar vários documentos
 
-Um dos mecanismos mais simples para indexação de um conjunto de dados maior é enviar vários documentos ou registros em uma única solicitação. Como a carga inteira é menor que 16 MB, uma solicitação pode manipular até 1000 documentos em uma operação de upload em massa. Esses limites se aplicam se você estiver usando a classe [Add Documents (REST)](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) ou [index](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) no SDK do .net. Para qualquer uma das APIs, você deve empacotar 1000 documentos no corpo de cada solicitação.
+Um dos mecanismos mais simples para indexação de um conjunto de dados maior é enviar vários documentos ou registros em uma única solicitação. Como a carga inteira é menor que 16 MB, uma solicitação pode manipular até 1000 documentos em uma operação de upload em massa. Esses limites se aplicam se você estiver usando a [API REST de adicionar documentos](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) ou o [método de índice](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.index?view=azure-dotnet) no SDK do .net. Para qualquer uma das APIs, você deve empacotar 1000 documentos no corpo de cada solicitação.
 
-A indexação de lotes é implementada em solicitações individuais usando REST, .NET ou por meio de indexadores. Alguns indexadores operam sob limites diferentes. Especificamente, a indexação de BLOb do Azure define o tamanho do lote em 10 documentos ao reconhecer o maior tamanho médio do documento. Para indexadores com base no [REST (criar indexador)](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer ), você pode definir o `BatchSize` argumento para personalizar essa configuração para corresponder melhor às características de seus dados. 
+A indexação de lotes é implementada em solicitações individuais usando REST, .NET ou por meio de indexadores. Alguns indexadores operam sob limites diferentes. Especificamente, a indexação de BLOb do Azure define o tamanho do lote em 10 documentos ao reconhecer o maior tamanho médio do documento. Para indexadores com base em [Criar o indexador do API REST](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer), pode-se definir o `BatchSize` argumento para personalizar essa configuração para corresponder melhor as características de seus dados. 
 
 > [!NOTE]
 > Para manter o tamanho do documento inativo, evite adicionar dados não consultáveis a um índice. Imagens e outros dados binários não podem ser diretamente consultados e não devem ser armazenados no índice. Para integrar dados que não podem ser consultados aos resultados da pesquisa, defina um campo não pesquisável que armazene uma referência uma URL para o recurso.
@@ -44,7 +44,7 @@ O aumento de réplicas e partições são eventos faturáveis que aumentam seu c
 
 + Agendadores permitem dividir a indexação em intervalos regulares para que se possa distribuí-la ao longo do tempo.
 + A indexação agendada pode retomar no último ponto de interrupção conhecido. Se uma fonte de dados não é rastreada totalmente dentro de uma janela de 24 horas, o indexador retomará a indexação no dia dois e em onde ela parou.
-+ A partição de dados em fontes de dados individuais menores habilita o processamento paralelo. Você pode dividir um conjunto de dados grande em conjuntos de dados menores em sua plataforma de dados de origem (como o armazenamento de BLOBs do Azure ou o Azure SQL Database) e, em seguida, criar vários [objetos de fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source) em Azure Search que podem ser indexados em paralelo.
++ A partição de dados em fontes de dados individuais menores habilita o processamento paralelo. Você pode dividir os dados de origem em componentes menores, como em vários contêineres no armazenamento de BLOBs do Azure e, em seguida, criar vários [objetos de fonte de dados](https://docs.microsoft.com/rest/api/searchservice/create-data-source) correspondentes no Azure Search que podem ser indexados em paralelo.
 
 > [!NOTE]
 > Os indexadores são fontes-de-dados-específicos, portanto, usar uma abordagem do indexador só é viável para fontes de dados selecionadas no Azure: [Banco de Dados SQL do Microsoft Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md), [armazenamento de BLOB](search-howto-indexing-azure-blob-storage.md), [armazenamento de tabelas](search-howto-indexing-azure-tables.md), [Cosmos DB](search-howto-index-cosmosdb.md).

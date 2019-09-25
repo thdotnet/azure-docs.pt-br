@@ -16,19 +16,19 @@ ms.workload: data-services
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: c8f2dba8ff30ceae4085d96640623a01b6784b1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ff6466ddc6b64dfe85ebfb190205859aeb39ad17
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822314"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260832"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Configurar logs de diagnóstico para um hub de eventos do Azure
 
 É possível exibir dois tipos de logs para os Hubs de Eventos do Azure:
 
 * **[Logs de atividade](../azure-monitor/platform/activity-logs-overview.md)** : Esses logs contém informações sobre as operações executadas em um trabalho. Os logs estão sempre habilitados.
-* **[Logs de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md)** : É possível configurar logs de diagnóstico para ter uma visão mais detalhada de tudo o que acontece com um trabalho. Os logs de diagnóstico abrangem atividades desde o momento em que o trabalho é criado até sua exclusão, incluindo atualizações e atividades que ocorrem durante a execução do trabalho.
+* **[Logs de diagnóstico](../azure-monitor/platform/resource-logs-overview.md)** : É possível configurar logs de diagnóstico para ter uma visão mais detalhada de tudo o que acontece com um trabalho. Os logs de diagnóstico abrangem atividades desde o momento em que o trabalho é criado até sua exclusão, incluindo atualizações e atividades que ocorrem durante a execução do trabalho.
 
 ## <a name="enable-diagnostic-logs"></a>Habilitar logs de diagnóstico
 
@@ -48,13 +48,13 @@ Os logs de diagnóstico estão desabilitados por padrão. Para habilitar logs de
 
     ![Alterar o status dos logs de diagnóstico](./media/event-hubs-diagnostic-logs/image3.png)
 
-5.  Definir o destino de arquivamento desejado; Por exemplo, uma conta de armazenamento, um hub de eventos ou do Azure Monitor registra em log.
+5.  Defina o destino de arquivo desejado; por exemplo, uma conta de armazenamento, um hub de eventos ou logs de Azure Monitor.
 
 6.  Salve as novas configurações de diagnóstico.
 
 As novas configurações terão efeito em aproximadamente 10 minutos. Depois disso, os logs aparecerão no destino de arquivamento configurado, no painel **Logs de diagnóstico**.
 
-Para saber mais sobre como configurar um diagnóstico, confira a [visão geral dos logs de diagnóstico do Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+Para saber mais sobre como configurar um diagnóstico, confira a [visão geral dos logs de diagnóstico do Azure](../azure-monitor/platform/resource-logs-overview.md).
 
 ## <a name="diagnostic-logs-categories"></a>Categorias dos logs de diagnóstico
 

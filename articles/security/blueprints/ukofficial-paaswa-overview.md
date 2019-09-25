@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: c0163b5280de942491f2174aa371fa7cc83d5984
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 1f6eeea85a348bb8e88a387fa0fc6bed55e41a5e
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946513"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262780"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Blueprint de Segurança e Conformidade do Azure: Hospedagem de Aplicativo Web de PaaS para carga de trabalho OFICIAL DO REINO UNIDO
 
@@ -99,7 +99,7 @@ O [Microsoft Antimalware](https://docs.microsoft.com/azure/security/fundamentals
 
 ### <a name="paas-services-in-this-blueprint"></a>Serviços de PaaS neste blueprint
 
-#### <a name="azure-app-service"></a>Serviço de Aplicativo do Azure
+#### <a name="azure-app-service"></a>Serviço de aplicativo do Azure
 
 O Serviço de Aplicativo do Azure fornece um ambiente para o aplicativo da web desenvolvido em Java, PHP, Node.js Python, HTML e C# sem a necessidade de gerenciar a infraestrutura de hospedagem da web totalmente gerenciada. Ele oferece dimensionamento automático e alta disponibilidade, compatível com Windows e Linux e permite implantações automatizadas do [Azure DevOps](https://azure.microsoft.com/services/visual-studio-team-services/) ou qualquer repositório baseado em Git.
 
@@ -113,7 +113,7 @@ Esse modelo implanta os seguintes recursos do Serviço de Aplicativo do Azure:
 - Multiple App Service [implantação de slots](https://docs.microsoft.com/azure/app-service/deploy-staging-slots): Dev, Versão Prévia, QA, UAT e Produção (slot padrão).
 - [Identidades gerenciadas dos recursos do Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity) para se conectar ao [Cofre de Chaves do Azure](https://azure.microsoft.com/services/key-vault/) (isso também pode ser usado para fornecer acesso ao [Banco de Dados SQL do Azure](https://azure.microsoft.com/services/sql-database/) 
 - Integração com o [Visual Studio Online Application Insights](../../azure-monitor/app/azure-web-apps.md) para monitorar o desempenho
-- [Logs de Diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md) 
+- [Logs de Diagnóstico](../../azure-monitor/platform/resource-logs-overview.md) 
 - Alertas de [métricas](../../azure-monitor/app/alerts.md) 
 - [Aplicativos de API do Azure](https://azure.microsoft.com/services/app-service/api/) 
 
@@ -156,7 +156,7 @@ Informações detalhadas sobre como proteger o Armazenamento do Microsoft Azure 
 
 ### <a name="secrets-management"></a>Gerenciamento de segredos
 
-#### <a name="azure-key-vault"></a>Cofre de Chaves Azure
+#### <a name="azure-key-vault"></a>Azure Key Vault
 
 [Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) é usado para proteger as chaves de aplicativo e segredos para garantir que eles não estejam acessíveis por terceiros. O Key Vault não deve ser usado como um repositório de senhas de usuário. O Key Vault permite que você crie vários contêineres seguros, chamado cofres. Esses cofres contam com HSMs (Módulos de Segurança de Hardware). Os cofres ajudam a reduzir a possibilidade de perda acidental de informações de segurança pela centralização do armazenamento de segredos do aplicativo. Os Key Vaults também controlam e registram o acesso a todas as coisas armazenadas neles. O Azure Key Vault pode tratar da solicitação e da renovação de certificados TLS, fornecendo os recursos necessários para uma solução de gerenciamento de ciclo de vida de certificados robusta.
 
@@ -243,7 +243,7 @@ Três abordagens foram fornecidas para a implantação; Uma simples "expressa" [
 
 O [Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) pode ser implementado como um controle para permitir que os usuários se registrem, criem uma identidade e habilitem a autorização e o controle de acesso para o aplicativo web público.
 
-## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
+## <a name="disclaimer"></a>Isenção de responsabilidade
 
 - Este documento serve apenas para fins informativos. A MICROSOFT NÃO FORNECE NENHUMA GARANTIA, EXPRESSA, IMPLÍCITA OU REGULAMENTAR, QUANTO ÀS INFORMAÇÕES PRESENTES NESTE DOCUMENTO. Este documento é fornecido "no estado em que se encontra". As informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Os clientes que estão lendo este documento arcarão com o risco de usá-lo.
 - Este documento não fornece aos clientes nenhum direito legal a qualquer propriedade intelectual de qualquer produto ou solução da Microsoft.

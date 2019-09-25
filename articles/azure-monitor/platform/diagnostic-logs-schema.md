@@ -8,16 +8,16 @@ ms.topic: reference
 ms.date: 10/11/2018
 ms.author: robb
 ms.subservice: logs
-ms.openlocfilehash: 468bcdb6aa688157196bb9cba8added623a857d3
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 362b696351e4faca02fa6ea8aed7e7447454cd34
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155299"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262034"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Serviços, esquemas e categorias com suporte para os logs de diagnóstico do Azure
 
-[Os logs de diagnóstico do Monitor do Azure](../../azure-monitor/platform/diagnostic-logs-overview.md) são registros emitidos pelos serviços do Azure que descrevem a operação desses serviços ou recursos. Todos os logs de diagnóstico disponíveis por meio do Azure Monitor compartilham um esquema comum de nível superior, com flexibilidade para cada serviço emitir propriedades exclusivas para seus próprios eventos.
+[Os logs de diagnóstico do Monitor do Azure](../../azure-monitor/platform/resource-logs-overview.md) são registros emitidos pelos serviços do Azure que descrevem a operação desses serviços ou recursos. Todos os logs de diagnóstico disponíveis por meio do Azure Monitor compartilham um esquema comum de nível superior, com flexibilidade para cada serviço emitir propriedades exclusivas para seus próprios eventos.
 
 Uma combinação do tipo de recurso (disponível na propriedade `resourceId`) e da `category` identifica exclusivamente um esquema. Este artigo descreve o esquema de nível superior para os logs de diagnóstico e os vínculos para o esquema de cada serviço.
 
@@ -25,29 +25,29 @@ Uma combinação do tipo de recurso (disponível na propriedade `resourceId`) e 
 
 | NOME | Obrigatório/Opcional | DESCRIÇÃO |
 |---|---|---|
-| tempo real | Obrigatório | O carimbo de data/hora (UTC) do evento. |
-| ResourceId | Obrigatório | A ID do recurso que emitiu o evento. Para serviços de locatário, isso é o /tenants/tenant-id/providers/provider-name do formulário. |
+| time | Obrigatório | O carimbo de data/hora (UTC) do evento. |
+| resourceId | Obrigatório | A ID do recurso que emitiu o evento. Para serviços de locatário, isso é o /tenants/tenant-id/providers/provider-name do formulário. |
 | tenantId | Necessário para os logs de locatário | A ID de locatário do que esse evento está vinculado ao locatário do Active Directory. Essa propriedade só é usada para logs de nível de locatário, ele não aparece nos logs de nível do recurso. |
 | operationName | Obrigatório | O nome da operação representada por esse evento. Se o evento representa uma operação RBAC, esse é o nome da operação RBAC (por exemplo, Microsoft.Storage/storageAccounts/blobServices/blobs/Read). Normalmente modeladas na forma de uma operação do Resource Manager, mesmo que não sejam as operações do Resource Manager documentadas reais (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
 | operationVersion | Opcional | A api-version associada à operação, se a operationName foi executada usando uma API (por exemplo, `http://myservice.windowsazure.net/object?api-version=2016-06-01`). Se não houver nenhuma API que corresponde a essa operação, a versão representará a versão dessa operação, caso as propriedades associadas à operação sejam alteradas no futuro. |
-| categoria | Obrigatório | A categoria de log do evento. Categoria é a granularidade na qual você pode habilitar ou desabilitar os logs em determinado recurso. As propriedades exibidas no blob de propriedades de um evento são as mesmas em uma categoria de log e um tipo de recurso específicos. As categorias de log típicas são “Auditoria”, “Operacional”, “Execução” e “Solicitação”. |
+| category | Obrigatório | A categoria de log do evento. Categoria é a granularidade na qual você pode habilitar ou desabilitar os logs em determinado recurso. As propriedades exibidas no blob de propriedades de um evento são as mesmas em uma categoria de log e um tipo de recurso específicos. As categorias de log típicas são “Auditoria”, “Operacional”, “Execução” e “Solicitação”. |
 | resultType | Opcional | O status do evento. Os valores típicos incluem Iniciado, Em Andamento, Com Êxito, Com Falha, Ativo e Resolvido. |
 | resultSignature | Opcional | O substatus do evento. Se essa operação corresponder a uma chamada à API REST, esse será o código de status HTTP da chamada REST correspondente. |
 | resultDescription | Opcional | A descrição de texto estático dessa operação, por exemplo, “Obter arquivo de armazenamento”. |
 | durationMs | Opcional | A duração da operação em milissegundos. |
 | callerIpAddress | Opcional | O endereço IP do chamador, caso a operação corresponda a uma chamada à API proveniente de uma entidade com um endereço IP disponível publicamente. |
 | correlationId | Opcional | Um GUID usado para agrupar um conjunto de eventos relacionados. Normalmente, se dois eventos têm o mesmo operationName, mas dois status diferentes (por exemplo, “Iniciado” e “Com Êxito”), eles compartilham a mesma ID de correlação. Isso também pode representar outras relações entre os eventos. |
-| identidade | Opcional | Um blob JSON que descreve a identidade do usuário ou do aplicativo que realizou a operação. Normalmente, isso inclui a autorização e as declarações/token JWT do Active Directory. |
+| identity | Opcional | Um blob JSON que descreve a identidade do usuário ou do aplicativo que realizou a operação. Normalmente, isso inclui a autorização e as declarações/token JWT do Active Directory. |
 | Nível | Opcional | O nível de severidade do evento. Precisa ser Informativo, Aviso, Erro ou Crítico. |
 | location | Opcional | A região do recurso que emite o evento, por exemplo, “Leste dos EUA” ou “Sul da França” |
-| propriedades | Opcional | As propriedades estendidas relacionadas a essa categoria específica de eventos. Todas as propriedades personalizadas/exclusivas precisam ser colocadas dentro desta “Parte B” do esquema. |
+| properties | Opcional | As propriedades estendidas relacionadas a essa categoria específica de eventos. Todas as propriedades personalizadas/exclusivas precisam ser colocadas dentro desta “Parte B” do esquema. |
 
 ## <a name="service-specific-schemas-for-resource-diagnostic-logs"></a>Esquemas específicos do serviço para logs de diagnóstico de recurso
 O esquema para os logs de diagnóstico de recurso varia dependendo do recurso e da categoria do log. Esta lista mostra todos os serviços que disponibilizam os logs de diagnóstico e os vínculos para o esquema específico do serviço e da categoria, quando disponíveis.
 
 | Serviço | Esquema e Documentos |
 | --- | --- |
-| Azure Active Directory | [Visão geral](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), [esquema de log de auditoria](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) e [esquema entradas](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
+| Active Directory do Azure | [Visão geral](../../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md), esquema de [log de auditoria](../../active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema.md) e [esquemas de entradas](../../active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md) |
 | Serviços de análise | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
 | Gerenciamento de API | [Logs de Diagnóstico de Gerenciamento de API](../../api-management/api-management-howto-use-azure-monitor.md#diagnostic-logs) |
 | Gateways do Aplicativo |[Log de diagnóstico do Gateway de Aplicativo](../../application-gateway/application-gateway-diagnostics.md) |
@@ -55,7 +55,7 @@ O esquema para os logs de diagnóstico de recurso varia dependendo do recurso e 
 | Lote do Azure |[Logs de diagnóstico do Lote do Azure](../../batch/batch-diagnostics.md) |
 | Banco de Dados do Azure para MySQL | [Banco de dados do Azure para logs de Diagnóstico do MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | Banco de Dados do Azure para PostgreSQL | [Banco de dados do Azure para logs de Diagnóstico do MySQL](../../postgresql/concepts-server-logs.md#diagnostic-logs) |
-| Serviços Cognitivos | [Log de diagnóstico para serviços Cognitivos do Azure](../../cognitive-services/diagnostic-logging.md) |
+| Serviços Cognitivos | [Log de diagnóstico para serviços cognitivas do Azure](../../cognitive-services/diagnostic-logging.md) |
 | Rede de Distribuição de Conteúdo | [Logs de diagnóstico do Azure para CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | CosmosDB | [Registro em log do Azure Cosmos DB](../../cosmos-db/logging.md) |
 | Data Factory | [Monitorar data factories usando o Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
@@ -70,11 +70,11 @@ O esquema para os logs de diagnóstico de recurso varia dependendo do recurso e 
 | Aplicativos Lógicos |[Esquema de controle personalizado dos Aplicativos Lógicos B2B](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | Grupos de segurança de rede |[Análise de logs para NSGs (grupos de segurança de rede)](../../virtual-network/virtual-network-nsg-manage-log.md) |
 | Proteção contra DDOS | [Gerenciar Proteção contra DDoS do Azure Standard](../../virtual-network/manage-ddos-protection.md) |
-| PowerBI Dedicated | [Log de diagnósticos para o Power BI Inserido no Azure](https://docs.microsoft.com/power-bi/developer/azure-pbie-diag-logs) |
+| Power BI dedicado | [Log de diagnóstico para Power BI Embedded no Azure](https://docs.microsoft.com/power-bi/developer/azure-pbie-diag-logs) |
 | Serviços de Recuperação | [Modelo de dados para os Backup do Azure](../../backup/backup-azure-reports-data-model.md)|
 | Search |[Habilitação e uso da análise de tráfego de pesquisa](../../search/search-traffic-analytics.md) |
 | Barramento de Serviço |[Logs de diagnóstico do Barramento de Serviço do Azure](../../service-bus-messaging/service-bus-diagnostic-logs.md) |
-| Banco de dados SQL | [Log de diagnósticos do Banco de Dados SQL do Azure](../../sql-database/sql-database-metrics-diag-logging.md) |
+| Banco de Dados SQL | [Log de diagnósticos do Banco de Dados SQL do Azure](../../sql-database/sql-database-metrics-diag-logging.md) |
 | Stream Analytics |[Logs de diagnóstico do trabalho](../../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
 | Gerenciador de Tráfego | [Esquema de log do Gerenciador de Tráfego](../../traffic-manager/traffic-manager-diagnostic-logs.md) |
 | Redes Virtuais | Esquema não disponível. |
@@ -205,7 +205,7 @@ O esquema para os logs de diagnóstico de recurso varia dependendo do recurso e 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Saiba mais sobre logs de diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md)
-* [Transmitir logs de diagnóstico de recurso os **Hubs de Eventos**](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
+* [Saiba mais sobre logs de diagnóstico](../../azure-monitor/platform/resource-logs-overview.md)
+* [Transmitir logs de diagnóstico de recurso os **Hubs de Eventos**](../../azure-monitor/platform/resource-logs-stream-event-hubs.md)
 * [Alterar as configurações de diagnóstico do recurso usando a API REST do Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings)
 * [Analisar logs do Armazenamento do Azure com o Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)

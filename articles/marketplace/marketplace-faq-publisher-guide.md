@@ -5,14 +5,14 @@ services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
 ms.service: marketplace
 ms.topic: article
-ms.date: 07/11/2019
+ms.date: 9/24/2019
 ms.author: ellacroi
-ms.openlocfilehash: 209905eaf90e006ded232be73ab2a3a428568eda
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 6b9cc80dfb397d5bf330d0be947f468e9b802139
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309014"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259951"
 ---
 # <a name="marketplace-faqs"></a>Perguntas frequentes sobre o Marketplace
 
@@ -35,7 +35,7 @@ O Azure Marketplace foi projetado para profissionais de TI e desenvolvedores de 
 O Azure Marketplace oferece serviços e soluções técnicas da Microsoft e de parceiros, criados para estender os serviços e os produtos do Azure. O catálogo de soluções abrange várias categorias, incluindo, entre outras:
 
 * sistemas operacionais de base
-* bancos de dados
+* databases
 * segurança
 * identity
 * Rede
@@ -219,7 +219,7 @@ Sim. Os créditos de assinatura do Azure ou fundos de compromisso monetário da 
 
 Uma informação de uso estimada pode ser encontrada no [portal do Azure]. As informações de uso estimado podem não incluir atividades recentes e podem basear-se em projeções derivadas de consumo passado. Durante a versão prévia pública, essa funcionalidade pode não estar disponível para todas as compras e variar de acordo com o tipo de produto.
 
-### <a name="customer-support"></a>Atendimento ao cliente
+### <a name="customer-support"></a>Suporte ao cliente
 
 **Quem devo contatar para falar sobre questões gerais de suporte com o Azure Marketplace?**
 
@@ -244,6 +244,14 @@ Entre em contato com o provedor do editor para todo o suporte técnico do produt
 As compras feitas do [Azure Marketplace](https://azuremarketplace.microsoft.com/) não podem ser retornadas, mas podem ser canceladas/excluídas. As ofertas baseadas em consumo são cobradas de acordo com o uso, portanto, quando ela é interrompida, as cobranças são interrompidas também. As assinaturas são canceladas e não serão cobradas após o período de cobrança atual. Se uma assinatura for cancelada logo após a compra (24 horas por mês e 14 dias para o anual), será fornecido um reembolso total.
 
 Os clientes devem entrar em contato diretamente com o distribuidor quanto a problemas técnicos relacionados à compra ou ao serviço do Marketplace. É possível encontrar informações de contato do distribuidor e/ou um link para o website de suporte na página de detalhes da solução no Azure Marketplace.
+
+**Como as adições de licenças são tratadas quando há um aumento no prazo médio?**
+
+As licenças adicionadas a uma assinatura existente são classificadas em tempo proporcional para o restante da duração da assinatura.
+
+**Como as remoções de licença são tratadas quando há um período médio?**
+
+As licenças canceladas estarão sujeitas à política de reembolso encontrada nestas perguntas frequentes.  Todas as licenças canceladas são removidas imediatamente da sua conta e não estarão mais disponíveis para uso.
 
 ## <a name="faq-for-publishers"></a>Perguntas frequentes para editores
 

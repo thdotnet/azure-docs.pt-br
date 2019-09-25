@@ -1,25 +1,25 @@
 ---
 title: Logs do servidor para Banco de Dados do Azure para MySQL
-description: Descreve os logs de consulta lenta disponíveis no banco de dados do Azure para MySQL e os parâmetros disponíveis para habilitar níveis de log diferentes.
+description: Descreve os logs de consulta lento disponíveis no banco de dados do Azure para MySQL e os parâmetros disponíveis para habilitar diferentes níveis de log.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.openlocfilehash: 1a8956d40ef30e8d52fbdded3448019e14ab16a5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d801ada8fd8a8b35c71601d3ca274f26afb24f6
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67062410"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262288"
 ---
-# <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logs de consulta lenta no banco de dados do Azure para MySQL
+# <a name="slow-query-logs-in-azure-database-for-mysql"></a>Logs de consulta lentos no banco de dados do Azure para MySQL
 No Banco de Dados do Azure para MySQL, o log de consultas lentas está disponível para os usuários. No entanto, não há suporte para acesso ao log de transação. O log de consultas lentas pode ser usado para identificar gargalos de desempenho para solução de problemas.
 
 Para obter mais informações sobre o log de consultas lentas do MySQL, consulte o manual de referência de MySQL [seção de log de consulta lenta](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
-## <a name="access-slow-query-logs"></a>Acessar logs de consulta lenta
-Você pode listar e baixar o banco de dados do Azure para logs de consulta lenta do MySQL usando o portal do Azure e a CLI do Azure.
+## <a name="access-slow-query-logs"></a>Acessar logs de consulta lentos
+Você pode listar e baixar logs de consulta lenta do banco de dados do Azure para MySQL usando o portal do Azure e o CLI do Azure.
 
 No Portal do Azure, selecione o servidor do Banco de Dados do Azure para MySQL. Sob o título **Monitoramento**, selecione a página **Logs do Servidor**.
 
@@ -43,10 +43,10 @@ Outros parâmetros que você pode ajustar incluem:
 Consulte a [documentação de log de consulta lenta](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) MySQL para descrições completas dos parâmetros de log de consultas lentas.
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
-O Banco de Dados do Azure para MySQL é integrado aos Logs de Diagnóstico do Monitor do Azure. Depois de habilitar logs de consulta lentos no servidor MySQL, você pode optar por fazer com que eles são emitidos para o armazenamento do Azure, Hubs de eventos ou logs do Azure Monitor. Para saber mais sobre como ativar logs de diagnóstico, consulte o como parte da [documentação registros de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md).
+O Banco de Dados do Azure para MySQL é integrado aos Logs de Diagnóstico do Monitor do Azure. Depois de habilitar os logs de consulta lentos em seu servidor MySQL, você pode optar por que eles sejam emitidos para Azure Monitor logs, hubs de eventos ou armazenamento do Azure. Para saber mais sobre como ativar logs de diagnóstico, consulte o como parte da [documentação registros de diagnóstico](../azure-monitor/platform/resource-logs-overview.md).
 
 > [!IMPORTANT]
-> Esse recurso de diagnóstico para logs do servidor só está disponível no uso geral e otimizado para memória [tipos de preço](concepts-pricing-tiers.md).
+> Esse recurso de diagnóstico para logs de servidor só está disponível nos [tipos de preço](concepts-pricing-tiers.md)uso geral e com otimização de memória.
 
 A tabela a seguir descreve o que está em cada log. Dependendo do método de saída, os campos incluídos e a ordem em que aparecem podem variar.
 
@@ -54,7 +54,7 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 |---|---|
 | `TenantId` | Sua ID de locatário |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Carimbo de data/hora quando o log foi gravado, em UTC |
+| `TimeGenerated`HORÁRIO | Carimbo de data/hora quando o log foi gravado, em UTC |
 | `Type` | Tipo do log. Sempre `AzureDiagnostics` |
 | `SubscriptionId` | GUID para a assinatura a que o servidor pertence |
 | `ResourceGroup` | Nome do grupo de recursos ao qual o servidor pertence |
@@ -65,7 +65,7 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Nome do servidor |
-| `start_time_t` [UTC] | Horário em que a consulta começou |
+| `start_time_t`HORÁRIO | Horário em que a consulta começou |
 | `query_time_s` | Tempo total que a consulta levou para executar |
 | `lock_time_s` | Tempo total em que a consulta foi bloqueada |
 | `user_host_s` | Nome de Usuário |
@@ -74,7 +74,7 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 | `last_insert_id_s` | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
 | `insert_id_s` | Inserir ID |
 | `sql_text_s` | Consulta completa |
-| `server_id_s` | ID do servidor |
+| `server_id_s` | A ID do servidor |
 | `thread_id_s` | ID do thread |
 | `\_ResourceId` | URI de recurso |
 

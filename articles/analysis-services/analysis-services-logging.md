@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6b311135832e1ec861cf6e14e5ad7e82574294bf
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: b158545390dafa36e7dad285953c78243f891f28
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70959061"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259426"
 ---
 # <a name="setup-diagnostic-logging"></a>Configurar o log de diagnósticos
 
-Uma parte importante de qualquer solução do Analysis Services é o monitoramento do desempenho de seus servidores. Com os [logs de diagnóstico de recursos do Azure](../azure-monitor/platform/diagnostic-logs-overview.md), é possível monitorar e enviar logs para o [Armazenamento do Microsoft Azure](https://azure.microsoft.com/services/storage/), transmiti-los para [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/), e exportá-los para os [los do Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
+Uma parte importante de qualquer solução do Analysis Services é o monitoramento do desempenho de seus servidores. Com os [logs de diagnóstico de recursos do Azure](../azure-monitor/platform/resource-logs-overview.md), é possível monitorar e enviar logs para o [Armazenamento do Microsoft Azure](https://azure.microsoft.com/services/storage/), transmiti-los para [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/), e exportá-los para os [los do Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
 
 ![Log de diagnósticos para Armazenamento, Hubs de Eventos ou logs do Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -27,7 +27,7 @@ Uma parte importante de qualquer solução do Analysis Services é o monitoramen
 
 Você pode selecionar as categorias **Mecanismo**, **Serviço** e **Métricas**.
 
-### <a name="engine"></a>Mecanismo
+### <a name="engine"></a>Motor
 
 Selecionar **Mecanismo** registra todos [xEvents](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Não é possível selecionar eventos individuais. 
 
@@ -141,7 +141,7 @@ Saiba como [alterar as configurações de diagnóstico usando a API REST do Azur
 
 ### <a name="resource-manager-template"></a>Modelo do Resource Manager
 
-Saiba como [habilitar as configurações de diagnóstico na criação de recursos usando um modelo do Resource Manager](../azure-monitor/platform/diagnostic-logs-stream-template.md). 
+Saiba como [habilitar as configurações de diagnóstico na criação de recursos usando um modelo do Resource Manager](../azure-monitor/platform/diagnostic-settings-template.md). 
 
 ## <a name="manage-your-logs"></a>Gerenciar seus logs
 
@@ -193,7 +193,7 @@ window
 | order by TimeGenerated asc 
 ```
 
-#### <a name="example-3"></a>Exemplo 3:
+#### <a name="example-3"></a>Exemplo 3
 
 A consulta a seguir retorna os contadores de desempenho de linhas lidas/s Analysis Services mecanismo para um servidor.
 
@@ -268,7 +268,7 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 -ResourceName awsales -ResourceType "Microsoft.AnalysisServices/servers"
 ```
 
-### <a name="enable-logging"></a>Habilite o registro em logs
+### <a name="enable-logging"></a>Habilitar o registro em log
 
 Para habilitar o registro em log, use o cmdlet Set-AzDiagnosticSetting junto com as variáveis para a nova conta de armazenamento, conta de servidor e a categoria. Execute o seguinte comando, definindo o sinalizador **-Enabled** como **$true**:
 
@@ -327,6 +327,6 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre [o registro em log de diagnóstico de recurso do Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+Saiba mais sobre [o registro em log de diagnóstico de recurso do Azure](../azure-monitor/platform/resource-logs-overview.md).
 
 Consulte [set-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) na ajuda do PowerShell.

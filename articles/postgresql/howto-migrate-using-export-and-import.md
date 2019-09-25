@@ -1,17 +1,17 @@
 ---
-title: Migrar um banco de dados usando Importar e exportar no banco de dados do Azure para PostgreSQL – servidor único
+title: Migrar um banco de dados usando importação e exportação no banco de dados do Azure para PostgreSQL-servidor único
 description: Descreve como extrair um banco de dados PostgreSQL para um arquivo de script e importar os dados para o banco de dados de destino desse arquivo.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: 785e9ec77dea749546e3f1d59007706eac14f2ea
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 09/24/2019
+ms.openlocfilehash: 0803f56312ca9b650987c2203c4271cff21df9f8
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067019"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260354"
 ---
 # <a name="migrate-your-postgresql-database-using-export-and-import"></a>Migrar seu banco de dados PostgreSQL usando exportar e importar
 Use [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) para extrair um banco de dados PostgreSQL para um arquivo de script, e [psql](https://www.postgresql.org/docs/current/static/app-psql.html) para importar os dados para o banco de dados de destino desse arquivo.
@@ -19,12 +19,12 @@ Use [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) pa
 ## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este guia de instruções, você precisa:
 - Um [Servidor de Banco de Dados do Azure para PostgreSQL](quickstart-create-server-database-portal.md) com regras de firewall a fim de permitir o acesso e um banco de dados sob ele.
-- O utilitário de linha de comando [pg_dump](https://www.postgresql.org/docs/9.6/static/app-pgdump.html) instalado
-- O utilitário de linha de comando [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html) instalado
+- O utilitário de linha de comando [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) instalado
+- O utilitário de linha de comando [psql](https://www.postgresql.org/docs/current/static/app-psql.html) instalado
 
 Execute estas etapas para exportar e importar o banco de dados PostgreSQL.
 
-## <a name="create-a-script-file-using-pgdump-that-contains-the-data-to-be-loaded"></a>Criar um arquivo de script usando pg_dump que contém os dados a serem carregados
+## <a name="create-a-script-file-using-pg_dump-that-contains-the-data-to-be-loaded"></a>Criar um arquivo de script usando pg_dump que contém os dados a serem carregados
 Para exportar seu banco de dados PostgreSQL existente localmente ou em uma VM para um arquivo de script sql, execute o seguinte comando em seu ambiente existente:
 ```bash
 pg_dump –-host=<host> --username=<name> --dbname=<database name> --file=<database>.sql

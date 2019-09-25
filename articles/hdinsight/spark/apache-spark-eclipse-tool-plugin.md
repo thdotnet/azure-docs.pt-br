@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
-ms.openlocfilehash: 1ebea83d87cd169f61c91a93f092fa277f5017a7
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 5336153a776f3324e5f73564ba2804389cd96938
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71203811"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257579"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Use o Azure Toolkit for Eclipse para criar aplicativos do Apache Spark para um cluster do HDInsight
 
@@ -75,23 +75,23 @@ Você pode vincular um cluster normal usando o nome de usuário gerenciado do Am
 
 1. Selecione **Vincular um cluster** no **Azure Explorer**.
 
-   ![menu de contexto para vincular cluster](./media/apache-spark-eclipse-tool-plugin/link-a-cluster-context-menu.png)
+   ![Menu de cluster de link do Azure Explorer](./media/apache-spark-eclipse-tool-plugin/link-a-cluster-context-menu.png)
 
 1. Digite **Nome do Cluster**, **Nome de usuário** e **Senha**, clique no botão OK para vincular o cluster. Opcionalmente, insira a Conta de Armazenamento, Chave de Armazenamento e, em seguida, selecione o Contêiner de Armazenamento para o Gerenciador de armazenamento trabalhar no modo de exibição de árvore à esquerda
 
-   ![caixa de diálogo para vincular cluster](./media/apache-spark-eclipse-tool-plugin/link-cluster-dialog1.png)
+   ![Caixa de diálogo Vincular novo cluster HDInsight](./media/apache-spark-eclipse-tool-plugin/link-cluster-dialog1.png)
 
    > [!NOTE]  
    > Usamos a chave de armazenamento vinculada, nome de usuário e senha, se o cluster registrou na assinatura do Azure e vinculou um cluster.
-   > ![gerenciador de armazenamento no Eclipse](./media/apache-spark-eclipse-tool-plugin/storage-explorer-in-Eclipse.png)
+   > ![Contas de armazenamento do Azure Explorer](./media/apache-spark-eclipse-tool-plugin/storage-explorer-in-Eclipse.png)
 
 1. Se as informações estiverem corretas, será possível ver um cluster vinculado no nó **HDInsight**, após clicar no botão OK. Agora, você pode enviar um aplicativo para esse cluster vinculado.
 
-   ![cluster vinculado](./media/apache-spark-eclipse-tool-plugin/hdinsight-linked-cluster.png)
+   ![Cluster vinculado do Azure Explorer HDI](./media/apache-spark-eclipse-tool-plugin/hdinsight-linked-cluster.png)
 
 1. Também é possível desvincular um cluster a partir do **Azure Explorer**.
 
-   ![cluster desvinculado](./media/apache-spark-eclipse-tool-plugin/hdi-unlinked-cluster.png)
+   ![Cluster desvinculado do Azure Explorer](./media/apache-spark-eclipse-tool-plugin/hdi-unlinked-cluster.png)
 
 ## <a name="set-up-a-spark-scala-project-for-an-hdinsight-spark-cluster"></a>Configurar um projeto Spark Scala para um cluster HDInsight Spark
 
@@ -103,7 +103,7 @@ Você pode vincular um cluster normal usando o nome de usuário gerenciado do Am
 
 1. O assistente de criação de projetos Scala detecta automaticamente se você instalou o plug-in Scala. Selecione **OK** para continuar a baixar o plug-in Scala e, em seguida, siga as instruções para reiniciar o Eclipse.
 
-   ![Verificação do Scala](./media/apache-spark-eclipse-tool-plugin/auto-installation-scala2.png)
+   ![Instalar verificação de escala de plugin ausente](./media/apache-spark-eclipse-tool-plugin/auto-installation-scala2.png)
 
 1. Na caixa de diálogo **Novo Projeto do HDInsight Scala**, forneça os seguintes valores e selecione **Avançar**:
    * Insira um nome para o projeto.
@@ -120,10 +120,10 @@ Você pode vincular um cluster normal usando o nome de usuário gerenciado do Am
 
 1. Na caixa de diálogo **Selecionar um assistente**, expanda **Assistentes Scala**, selecione **Objeto Scala** e selecione **Avançar**.
 
-   ![Selecione uma caixa de diálogo do assistente](./media/apache-spark-eclipse-tool-plugin/create-scala-project1.png)
+   ![Selecionar um assistente criar um objeto escalar](./media/apache-spark-eclipse-tool-plugin/create-scala-project1.png)
 1. Na caixa de diálogo **Criar Novo Arquivo**, insira um nome para o objeto e selecione **Concluir**.
 
-   ![Criar caixa de diálogo Novo Arquivo](./media/apache-spark-eclipse-tool-plugin/create-scala-project2.png)
+   ![Assistente de novo arquivo criar novo arquivo](./media/apache-spark-eclipse-tool-plugin/create-scala-project2.png)
 1. Cole o seguinte código no editor de texto:
 
     ```scala
@@ -156,11 +156,11 @@ Você pode vincular um cluster normal usando o nome de usuário gerenciado do Am
    * Na lista suspensa **Nome de classe principal**, o assistente de envio exibe todos os nomes de objeto do projeto. Selecione ou insira um que você deseja executar. Se tiver selecionado um artefato de um disco rígido, você deverá inserir o nome de classe principal manualmente. 
    * Como o código do aplicativo neste exemplo não exige argumentos de linha de comando ou JARs ou arquivos de referência, você pode deixar as caixas de texto restantes vazias.
 
-     ![Caixa de diálogo Envio do Spark](./media/apache-spark-eclipse-tool-plugin/create-scala-project3.png)
+     ![Caixa de diálogo Apache Spark envio](./media/apache-spark-eclipse-tool-plugin/create-scala-project3.png)
 
 1. A guia **Envio de Spark** deve começar a exibir o progresso. Você pode interromper o aplicativo selecionando o botão vermelho na janela **Envio do Spark**. Você também pode exibir os logs para essa execução de aplicativo específica selecionando o ícone de globo (indicado pela caixa azul na imagem).
 
-   ![Janela Envio do Spark](./media/apache-spark-eclipse-tool-plugin/create-scala-project4.png)
+   ![Apache Spark janela de envio](./media/apache-spark-eclipse-tool-plugin/create-scala-project4.png)
 
 ## <a name="access-and-manage-hdinsight-spark-clusters-by-using-hdinsight-tools-in-azure-toolkit-for-eclipse"></a>Acessar e gerenciar clusters HDInsight Spark usando as Ferramentas do HDInsight no Kit de Ferramentas do Azure para Eclipse
 
@@ -170,15 +170,15 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 
 1. No Azure Explorer, expanda **HDInsight**, expanda o nome do cluster Spark e escolha **Trabalhos**.
 
-   ![Nó de exibição de trabalho](./media/apache-spark-eclipse-tool-plugin/eclipse-job-view-node.png)
+   ![Nó de exibição de trabalho do Azure Explorer Eclipse](./media/apache-spark-eclipse-tool-plugin/eclipse-job-view-node.png)
 
-1. Selecione o nó **Trabalhos**. Se a versão do Java é menor do que **1.8**, as Ferramentas do HDInsight lembram você automaticamente de instalar o plug-in **E(fx)clipse**. Selecione **OK** para continuar e, em seguida, siga o assistente para instalá-lo do Eclipse Marketplace e reiniciar o Eclipse. 
+1. Selecione o nó **Trabalhos**. Se a versão do Java é menor do que **1.8**, as Ferramentas do HDInsight lembram você automaticamente de instalar o plug-in **E(fx)clipse**. Selecione **OK** para continuar e, em seguida, siga o assistente para instalá-lo do Eclipse Marketplace e reiniciar o Eclipse.
 
-   ![Instalar E(fx)clipse](./media/apache-spark-eclipse-tool-plugin/auto-install-efxclipse.png)
+   ![Instalar o plugin ausente E (FX) Clipse](./media/apache-spark-eclipse-tool-plugin/auto-install-efxclipse.png)
 
 1. Abra a Exibição de Trabalho do nó **Trabalhos**. No painel direito, a guia **Exibição de Trabalho do Spark** exibe todos os aplicativos que foram executados no cluster. Selecione o nome do aplicativo do qual você deseja ver mais detalhes.
 
-   ![Detalhes do aplicativo](./media/apache-spark-eclipse-tool-plugin/eclipse-view-job-logs.png)
+   ![Exibir detalhes dos logs de trabalho do Apache Eclipse](./media/apache-spark-eclipse-tool-plugin/eclipse-view-job-logs.png)
 
    Você pode executar uma das seguintes ações:
 
@@ -188,7 +188,7 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 
    * Selecione a guia **Log** para exibir logs usados frequentemente, como **Stderr do Driver**, **Stdout do Driver** e **Informações do diretório**.
 
-     ![Detalhes do log](./media/apache-spark-eclipse-tool-plugin/eclipse-job-log-info.png)
+     ![Informações de log de trabalho do Apache Spark Eclipse](./media/apache-spark-eclipse-tool-plugin/eclipse-job-log-info.png)
 
    * Abra a IU do histórico do Spark e a IU do Apache Hadoop YARN (no nível do aplicativo) selecionando os hiperlinks na parte superior da janela.
 
@@ -214,7 +214,7 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 
 1. Quando solicitado, insira as credenciais de administrador para o cluster. Elas foram especificadas no provisionamento do cluster.
 
-### <a name="manage-azure-subscriptions"></a>Gerenciar as assinaturas do Azure
+### <a name="manage-azure-subscriptions"></a>Gerenciar assinaturas do Azure
 
 Por padrão, a Ferramenta do HDInsight no Kit de Ferramentas do Azure para Eclipse lista os clusters Spark de todas as assinaturas do Azure. Se for necessário, você poderá especificar as assinaturas para as quais deseja acessar o cluster.
 
@@ -245,7 +245,7 @@ Para resolver esse erro, você deve [baixar o executável](https://public-repo-1
 
 1. O modelo adiciona um código de exemplo (**LogQuery**) na pasta **src** que pode ser executada localmente em seu computador.
 
-   ![Local do LogQuery](./media/apache-spark-eclipse-tool-plugin/local-scala-application.png)
+   ![Local do aplicativo escala de LogQuery local](./media/apache-spark-eclipse-tool-plugin/local-scala-application.png)
 
 1. Clique com botão direito do mouse no aplicativo **LogQuery**, aponte para **Executar como** e selecione **1 Aplicativo Scala**. Uma saída como essa é exibida na guia **Console**:
 
@@ -308,7 +308,7 @@ Quando os usuários enviam um trabalho a um cluster com permissão de função s
 
 Ao vincular um cluster, sugiro que você forneça credenciais de armazenamento.
 
-![Entrada interativa](./media/apache-spark-eclipse-tool-plugin/link-cluster-with-storage-credential-eclipse.png)
+![vincular cluster com a credencial de armazenamento Eclipse](./media/apache-spark-eclipse-tool-plugin/link-cluster-with-storage-credential-eclipse.png)
 
 Há dois modos para enviar os trabalhos. Se a credencial de armazenamento for fornecida, o modo de lote será usado para enviar o trabalho. Caso contrário, o modo interativo será usado. Se o cluster estiver ocupado, poderá receber o erro abaixo.
 

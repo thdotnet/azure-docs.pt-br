@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2017
 ms.author: mikeray
-ms.openlocfilehash: 175ea1c0c25a0c6dd41c68ea0a340cc1b18cc8b0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1d0bdfbbad7e811ac8f1eeffb1991cc5430483a6
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100595"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262902"
 ---
 # <a name="high-availability-and-disaster-recovery-for-sql-server-in-azure-virtual-machines"></a>Alta disponibilidade e recuperação de desastre para SQL Server nas Máquinas Virtuais do Azure
 
@@ -78,7 +78,11 @@ Você pode ter uma solução de recuperação de desastres para seus bancos de d
 VMs do Azure, armazenamento e rede têm características operacionais diferentes da infraestrutura de TI local, não virtualizada. Uma implementação bem-sucedida de uma solução HADR SQL Server no Azure requer que você compreenda essas diferenças e crie sua solução para acomodá-las.
 
 ### <a name="high-availability-nodes-in-an-availability-set"></a>Nós de alta disponibilidade em um conjunto de disponibilidade
-Conjuntos de disponibilidade no Azure permitem que você coloque os nós de alta disponibilidade em FDs (Domínios de Falha) e UDs (Domínios de Atualização) separados. Para que VMs do Azure sejam colocadas no mesmo conjunto de disponibilidade, você deve implantá-las no mesmo serviço de nuvem. Somente nós no mesmo serviço de nuvem podem participar do mesmo conjunto de disponibilidade. Para obter mais informações, consulte [Gerenciar a Disponibilidade de Máquinas Virtuais](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Conjuntos de disponibilidade no Azure permitem que você coloque os nós de alta disponibilidade em FDs (Domínios de Falha) e UDs (Domínios de Atualização) separados. Para cada máquina virtual em seu conjunto de disponibilidade, será atribuído um domínio de atualização e domínio de falha pela plataforma subjacente do Azure. Essa configuração em um datacenter garante que durante um evento de manutenção planejada ou não planejada, pelo menos uma máquina virtual estará disponível e atenderá os 99,95% SLA do Azure. Para configurar a configuração de alta disponibilidade, Coloque todas as máquinas virtuais do SQL participantes no mesmo conjunto de disponibilidade para evitar a perda de aplicativos ou dados durante um evento de manutenção. Somente nós no mesmo serviço de nuvem podem participar do mesmo conjunto de disponibilidade. Para obter mais informações, consulte [Gerenciar a Disponibilidade de Máquinas Virtuais](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+
+### <a name="high-availability-nodes-in-an-availability-zone"></a>Nós de alta disponibilidade em uma zona de disponibilidade
+As Zonas de Disponibilidade são locais físicos exclusivos em uma região do Azure. Cada zona é composta por um ou mais datacenters equipados com energia, resfriamento e rede independentes. A separação física de Zonas de Disponibilidade em uma região protege aplicativos e dados de falhas do datacenter, garantindo que pelo menos uma máquina virtual esteja disponível e atenda a 99,99% de SLA do Azure. Para configurar a alta disponibilidade, coloque as máquinas virtuais do SQL participantes espalhadas por Zonas de Disponibilidade disponíveis na região. Haverá encargos de transferência de dados adicionais de VM para VM entre Zona de Disponibilidade. Para obter mais informações, consulte [zonas de disponibilidade](/azure/availability-zones/az-overview). 
+
 
 ### <a name="failover-cluster-behavior-in-azure-networking"></a>Comportamento do cluster de failover na rede do Azure
 O serviço DHCP não compatível com RFC no Azure pode causar uma falha na criação de algumas configurações do cluster de failover, devido à atribuição do nome da rede de cluster a um endereço IP duplicado, por exemplo, o mesmo endereço IP de um dos nós do cluster. Isso é um problema quando você implementa Grupos de Disponibilidade, que dependem do recurso de cluster de failover do Windows.

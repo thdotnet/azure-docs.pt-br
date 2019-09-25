@@ -8,14 +8,13 @@ ms.service: search
 ms.workload: search
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: cmacdo
-ms.subservice: cognitive-search
-ms.openlocfilehash: 407fd246313e582a3d28a6cbb474edefecd7f0af
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.author: chalton
+ms.openlocfilehash: ddfb35cbfcfbc262f3eff0de67f5cedfc31ea27e
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183321"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265705"
 ---
 #   <a name="text-translation-cognitive-skill"></a>Habilidade cognitiva de tradução de texto
 
@@ -40,7 +39,7 @@ O tamanho máximo de um registro deve ser de 50.000 caracteres conforme medido p
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Entradas                | Descrição |
+| Entradas                | DESCRIÇÃO |
 |---------------------|-------------|
 | defaultToLanguageCode | Necessária O código de idioma para converter documentos em para documentos que não especificam o idioma explicitamente. <br/> Consulte [Lista completa dos idiomas com suporte](https://docs.microsoft.com/azure/cognitive-services/translator/language-support). |
 | defaultFromLanguageCode | Adicional O código de idioma para converter documentos do para documentos que não especificam o idioma explicitamente.  Se o defaultFromLanguageCode não for especificado, a detecção automática de idioma fornecida pelo API de Tradução de Texto será usada para determinar o idioma de. <br/> Consulte [Lista completa dos idiomas com suporte](https://docs.microsoft.com/azure/cognitive-services/translator/language-support). |
@@ -48,7 +47,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome de entrada     | Descrição |
+| Nome de entrada     | DESCRIÇÃO |
 |--------------------|-------------|
 | texto | O texto a ser traduzido.|
 | toLanguageCode    | Uma cadeia de caracteres que indica o idioma no qual o texto deve ser convertido. Se essa entrada não for especificada, o defaultToLanguageCode será usado para traduzir o texto. <br/>Consulte [Lista completa dos idiomas com suporte](https://docs.microsoft.com/azure/cognitive-services/translator/language-support)|
@@ -56,7 +55,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-outputs"></a>Saídas de habilidades
 
-| Nome de saída    | Descrição |
+| Nome de saída    | DESCRIÇÃO |
 |--------------------|-------------|
 | translatedText | O resultado da cadeia de caracteres da conversão de texto do translatedFromLanguageCode para o translatedToLanguageCode.|
 | translatedToLanguageCode  | Uma cadeia de caracteres que indica o código de idioma para o qual o texto foi traduzido. Útil se você estiver traduzindo para vários idiomas e quiser ser capaz de controlar qual texto é o idioma.|

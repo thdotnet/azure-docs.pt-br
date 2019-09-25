@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: d8a9963edd689a32ae0642ac6fa4a622c248bc5b
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: e43bc4b8eb1db91493f279f5c46681483e4b18c4
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232384"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261399"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Log de diagnósticos no Azure Cosmos DB 
 
@@ -251,7 +251,7 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 ```
 
 ### <a id="access"></a>Acessar seus logs
-Os logs de Azure Cosmos DB para a categoria **DataPlaneRequests** são armazenados no contêiner insights **-logs-DataPlaneRequests** na conta de armazenamento que você forneceu. 
+Os logs de Azure Cosmos DB para a categoria **DataPlaneRequests** são armazenados no contêiner **insights-logs-DataPlaneRequests** na conta de armazenamento que você forneceu. 
 
 Primeiro, crie uma variável para o nome do contêiner. A variável é usada em todo o passo a passo.
 
@@ -459,13 +459,13 @@ Os dados de diagnóstico armazenados no armazenamento do Azure e logs de Azure M
 
 A tabela a seguir descreve o conteúdo de cada entrada de log.
 
-| Propriedade ou campo de Armazenamento do Microsoft Azure | Propriedade de logs de Azure Monitor | Descrição |
+| Propriedade ou campo de Armazenamento do Microsoft Azure | Propriedade de logs de Azure Monitor | DESCRIÇÃO |
 | --- | --- | --- |
 | **time** | **TimeGenerated** | A data e hora (UTC) em que a operação ocorreu. |
 | **resourceId** | **Recurso** | A conta do Azure Cosmos DB na qual os logs estão habilitados.|
 | **category** | **Categoria** | Para os logs do Azure Cosmos DB, **DataPlaneRequests** é o único valor disponível. |
 | **operationName** | **OperationName** | Nome da operação. Esse valor pode ser uma das seguintes operações: Create, Update, Read, ReadFeed, Delete, Replace, Execute, SqlQuery, Query, JSQuery, Head, HeadFeed ou Upsert.   |
-| **properties** | N/D | O conteúdo desse campo é descrito nas linhas a seguir. |
+| **properties** | n/d | O conteúdo desse campo é descrito nas linhas a seguir. |
 | **activityId** | **activityId_g** | O GUID exclusivo da operação registrada. |
 | **userAgent** | **userAgent_s** | Uma cadeia de caracteres que especifica o agente do usuário cliente que executa a solicitação. O formato é {nome do agente do usuário}/{versão}.|
 | **requestResourceType** | **requestResourceType_s** | O tipo do recurso acessado. Esse valor pode ser um dos seguintes tipos de recursos: Database, Container, Document, Attachment, User, Permission, StoredProcedure, Trigger, UserDefinedFunction ou Offer. |
@@ -481,7 +481,7 @@ A tabela a seguir descreve o conteúdo de cada entrada de log.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para entender não apenas como habilitar o registro em log e também as métricas e as categorias de log com suporte nos vários serviços do Azure, leia os artigos [Visão geral das métricas no Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) e [Visão geral dos Logs de Diagnóstico do Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+- Para entender não apenas como habilitar o registro em log e também as métricas e as categorias de log com suporte nos vários serviços do Azure, leia os artigos [Visão geral das métricas no Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md) e [Visão geral dos Logs de Diagnóstico do Azure](../azure-monitor/platform/resource-logs-overview.md).
 - Leia estes artigos para saber mais sobre os hubs de eventos:
    - [O que é Hub de Eventos do Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
    - [Introdução aos Hubs de Evento](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)

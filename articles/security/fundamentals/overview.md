@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 4cabf2e7a1f0f1ff058f900ed823cc4df0ce80a6
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: c01931268642aebbf87c54080c292b105af15665
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70999197"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262771"
 ---
 # <a name="introduction-to-azure-security"></a>Introdução à Segurança do Azure
 ## <a name="overview"></a>Visão geral
@@ -93,7 +93,7 @@ O Application Insights cria gráficos e tabelas que mostram, por exemplo, em que
 Se houver travamentos, falhas ou problemas de desempenho, você pode pesquisar os dados de telemetria em detalhes para diagnosticar a causa. E o serviço enviará a você emails se houver alterações na disponibilidade e no desempenho de seu aplicativo. Assim, o Application Insight torna-se uma ferramenta de segurança importante, pois ajuda com a disponibilidade na tríade de segurança de disponibilidade, integridade e confidencialidade.
 
 ### <a name="azure-monitor"></a>Azure Monitor
-O [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) oferece a visualização, consulta, roteamento, alertas, dimensionamento automático e automação nos dados da infraestrutura do Azure ([Logs de Atividade](../../azure-monitor/platform/activity-logs-overview.md)) e de cada recurso individual do Azure( [Logs de Diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md)). Use o Azure Monitor para receber alertas sobre eventos relacionados à segurança que são gerados nos logs do Azure.
+O [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) oferece a visualização, consulta, roteamento, alertas, dimensionamento automático e automação nos dados da infraestrutura do Azure ([Logs de Atividade](../../azure-monitor/platform/activity-logs-overview.md)) e de cada recurso individual do Azure( [Logs de Diagnóstico](../../azure-monitor/platform/resource-logs-overview.md)). Use o Azure Monitor para receber alertas sobre eventos relacionados à segurança que são gerados nos logs do Azure.
 
 ### <a name="azure-monitor-logs"></a>Logs do Azure Monitor
 [Logs de Azure monitor](https://azure.microsoft.com/documentation/services/log-analytics/) – fornece uma solução de gerenciamento de ti para infraestrutura local e de terceiros baseada em nuvem (como AWS), além dos recursos do Azure. Os dados de Azure Monitor podem ser roteados diretamente para Azure Monitor logs para que você possa ver as métricas e os logs de todo o seu ambiente em um único lugar.
@@ -141,7 +141,7 @@ Você pode habilitar ou desabilitar os seguintes tipos de logs:
 
 -   Registro em Log de Servidor Web - informações sobre transações HTTP usando o formato de arquivo de log estendido W3C. Este é útil para determinar as métricas gerais do site, como o número de solicitações manipuladas e quantas solicitações existem vindas de um endereço IP específico.
 
-#### <a name="application-diagnostics"></a>Diagnóstico de aplicativos
+#### <a name="application-diagnostics"></a>Diagnóstico de aplicativo
 O [Diagnóstico de aplicativo](../../app-service/troubleshoot-diagnostic-logs.md) permite que você capture informações produzidas por um aplicativo Web. Os aplicativos ASP.NET podem usar a classe [Rastreamento.de.Diagnóstico.de.Sistema](https://msdn.microsoft.com/library/system.diagnostics.trace) para registrar informações no log de diagnóstico do aplicativo. No Application Diagnostics, há dois tipos principais de eventos: aqueles relacionados ao desempenho do aplicativo e aqueles relacionados a erros e falhas do aplicativo. As falhas e erros podem ser divididos em problemas de conectividade, segurança e de falha. Os problemas de falha normalmente estão relacionados a um problema com o código do aplicativo.
 
 No Application Diagnostics, você pode ver os eventos agrupados destas maneiras:
@@ -230,20 +230,20 @@ A rede do Azure dá suporte a vários cenários de acesso remoto seguro. Entre e
 ### <a name="vpn-gateway"></a>Gateway de VPN
 Para enviar o tráfego de rede entre sua Rede Virtual do Azure e seu site local, será necessário criar um gateway de VPN para sua Rede Virtual do Azure. Um [gateway de VPN](../../vpn-gateway/vpn-gateway-about-vpngateways.md) é um tipo de gateway de rede virtual que envia o tráfego criptografado em uma conexão pública. Você também pode usar gateways de VPN para enviar o tráfego entre as Redes Virtuais do Azure pela malha de rede do Azure.
 
-### <a name="express-route"></a>Rota Expressa
+### <a name="express-route"></a>ExpressRoute
 O Microsoft Azure [ExpressRoute](../../expressroute/expressroute-introduction.md) é uma conexão WAN dedicada que permite que você estenda suas redes locais até a nuvem da Microsoft por meio de uma conexão privada dedicada, facilitada por um provedor de conectividade.
 
-![Rota Expressa](./media/overview/azure-security-fig1.png)
+![ExpressRoute](./media/overview/azure-security-fig1.png)
 
 Com o ExpressRoute, você pode estabelecer conexões com os serviços de nuvem da Microsoft, como o Microsoft Azure, o Office 365 e o CRM Online. A conectividade pode ocorrer de uma rede “qualquer para qualquer” (VPN IP), uma rede Ethernet ponto a ponto ou uma conexão cruzada virtual por meio de um provedor de conectividade em uma colocalização.
 
 As conexões de ExpressRoute não passam pela Internet pública e, portanto, podem ser consideradas mais seguras do que soluções de VPN. Isso permite que as conexões de ExpressRoute ofereçam mais confiabilidade, mais velocidade, latências menores e muito mais segurança do que as conexões típicas pela Internet.
 
 
-### <a name="application-gateway"></a>Application Gateway
+### <a name="application-gateway"></a>Gateway de Aplicativo
 O [Gateway de Aplicativo do Microsoft  Azure](../../application-gateway/overview.md) fornece um [ADC (Controlador de Entrega de Aplicativos)](https://en.wikipedia.org/wiki/Application_delivery_controller) como um serviço, oferecendo vários recursos de balanceamento de carga de camada 7 para o aplicativo.
 
-![Application Gateway](./media/overview/azure-security-fig2.png)
+![Gateway de Aplicativo](./media/overview/azure-security-fig2.png)
 
 Ele permite que você otimize a produtividade do Web farm descarregando a terminação SSL com uso intensivo de CPU para o Gateway de Aplicativo (também conhecido como “descarregamento de SSL” ou “ponte SSL”). Ele também fornece outros recursos de roteamento de Camada 7, incluindo distribuição round robin do tráfego de entrada, afinidade de sessão, roteamento com base no caminho de URL e a capacidade de hospedar vários sites por trás de um único Gateway de Aplicativo baseado em cookie. O Gateway de Aplicativo do Azure é um balanceador de carga de camada 7.
 
@@ -251,7 +251,7 @@ Ele fornece o failover e solicitações HTTP de roteamento de desempenho entre d
 
 O aplicativo fornece muitos recursos do Controlador de Entrega de Aplicativos (ADC), incluindo o balanceamento de carga de HTTP, a afinidade de sessão baseada em cookies, o descarregamento de [Secure Sockets Layer (SSL)](../../application-gateway/tutorial-restrict-web-traffic-powershell.md), as sondas de integridade personalizadas, suporte para vários sites e muitos outros.
 
-### <a name="web-application-firewall"></a>Firewall de Aplicativo Web
+### <a name="web-application-firewall"></a>Firewall do Aplicativo Web
 O Firewall do aplicativo Web é um recurso do [Gateway de Aplicativo do Azure](../../application-gateway/overview.md) que fornece proteção para aplicativos Web que utilizam o gateway de aplicativo para as funções ADC (controle de entrega de aplicativos) padrão. O firewall do aplicativo Web faz isso protegendo-os contra a maioria das 10 vulnerabilidades mais comuns da Web segundo o OWASP.
 
 ![Firewall do Aplicativo Web](./media/overview/azure-security-fig1.png)
@@ -312,7 +312,7 @@ A autenticação e a criptografia não melhoram a segurança, a menos que as pr�
 ### <a name="virtual-machine-backup"></a>Backup de máquinas virtuais
 O [Backup do Azure](../../backup/backup-overview.md) é uma solução que protege os dados do seu aplicativo com zero investimento de capital e custos operacionais mínimos. Erros de aplicativo podem corromper seus dados e erros humanos podem introduzir bugs em seus aplicativos, o que pode causar problemas de segurança. Com o Backup do Azure, suas máquinas virtuais executando Windows e Linux estão protegidas.
 
-### <a name="azure-site-recovery"></a>do Azure Site Recovery
+### <a name="azure-site-recovery"></a>Azure Site Recovery
 Uma parte importante da estratégia de [BCDR (continuidade dos negócios/recuperação de desastre)](../../best-practices-availability-paired-regions.md) de sua organização é descobrir como manter as cargas de trabalho corporativas e aplicativos em execução durante interrupções planejadas e não planejadas. O [Azure Site Recovery](../../site-recovery/site-recovery-overview.md) ajuda a orquestrar a replicação, failover e recuperação dos aplicativos e cargas de trabalho para que eles estejam disponíveis a partir de um local secundário, caso o local principal fique inativo.
 
 ### <a name="sql-vm-tde"></a>TDE de VM do SQL

@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 08/28/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: 07969a92286837f8f72b533173ac8d170378d0ea
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 69e798601dc53ffb666aa9dcddd68980256fa3fc
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183389"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265447"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Habilidade cognitiva de Análise de Imagens
 
@@ -34,7 +33,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | Descrição |
+| Nome do parâmetro     | DESCRIÇÃO |
 |--------------------|-------------|
 | defaultLanguageCode   |  Uma cadeia de caracteres que indica o idioma para retornar. O serviço retorna resultados de reconhecimento no idioma especificado. Se este parâmetro não for especificado, o valor padrão é “en”. <br/><br/>Idiomas com suporte: <br/>*en* - inglês (padrão) <br/> *zh* - chinês Simplificado|
 |visualFeatures |   Uma matriz de cadeias de caracteres que indica os tipos de recurso visuais para retornar. Tipos de recurso válido visuais:  <ul><li> *categorias* – categoriza o conteúdo da imagem de acordo com uma taxonomia definida na documentação de [Pesquisa Visual computacional](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy)de serviços cognitivas. </li><li> *marcas* - marca a imagem com uma lista detalhada das palavras relacionadas ao conteúdo da imagem.</li><li>*Descrição* -descreve o conteúdo da imagem com uma frase do inglês completa.</li><li>*faces* – detecta se há faces presentes. Se estiverem, gera coordenadas de sexo e idade.</li><li>    *ImageType* – detecta se a imagem é uma clip-art ou um desenho de linha.</li><li>  *cor* -determina a cor de destaque, a cor dominante e se uma imagem é preta & branca.</li><li>*adulto* – detecta se a imagem é pornográfico por natureza (descreve nudez ou lei sexo). Conteúdo que sugere sexo também detectado.</li></ul> Nomes de recursos visuais diferenciam maiusculas de minúsculas.|
@@ -42,7 +41,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome de entrada      | Descrição                                          |
+| Nome de entrada      | DESCRIÇÃO                                          |
 |---------------|------------------------------------------------------|
 | imagem         | Tipo complexo. Atualmente só funciona com o campo "/document/normalized_images" produzido pelo indexador de BLOBs do Microsoft Azure quando ```imageAction``` é definido como um valor diferente de ```none```. Para obter mais informações, confira [este exemplo](#sample-output).|
 
@@ -494,7 +493,7 @@ Você pode definir mapeamentos de campo de saída para propriedades de nível in
 ## <a name="error-cases"></a>Casos de erro
 Nos casos de erro a seguir, nenhum elemento é extraído.
 
-| Código de Erro | Descrição |
+| Código do Erro | DESCRIÇÃO |
 |------------|-------------|
 | NotSupportedLanguage | O idioma fornecido não tem suporte. |
 | InvalidImageUrl | A URL da imagem está incorretamente formatada ou não está acessível.|

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/10/2019
+ms.date: 09/24/2019
 ms.author: barclayn
-ms.openlocfilehash: 3e745d5f38d5623aab17ef7a3e3fbfa2c616e6d4
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: b506c6f6101e8c5ce71231a8178f70fa5a0914d8
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984846"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262816"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Criptografia de dados em repouso no Azure
 
@@ -262,7 +262,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 |----------------------------------|--------------------|-----------------------------------------|--------------------|
 |                                  | **Lado do servidor usando chave de serviço gerenciado**     | **Lado do servidor usando chave gerenciada pelo cliente**             | **Lado do cliente usando gerenciado pelo cliente**      |
 | **IA e Machine Learning**      |                    |                    |                    |
-| Azure Search                     | Sim                | -                  | -                  |
+| Azure Search                     | Sim                | Visualizar            | -                  |
 | Serviço do Azure Machine Learning   | Sim                | -                  | -                  |
 | Azure Machine Learning Studio    | Sim                | Versão prévia, RSA de 2048 bits | -               |
 | Power BI                         | Sim                | Versão prévia, RSA de 2048 bits | -                  |
@@ -273,11 +273,11 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Catálogo de Dados do Azure               | Sim                | -                  | -                  |
 | Apache Kafka no Azure HDInsight  | Sim                | Todos os comprimentos RSA.   | -                  |
 | Azure Data Explorer              | Sim                | -                  | -                  |
-| Azure Data Factory               | Sim                | -                  | -                  |
-| Azure Data Lake Store            | Sim                | Sim, RSA 2048-bit  | -                  |
+| Fábrica de dados do Azure               | Sim                | -                  | -                  |
+| Repositório Azure Data Lake            | Sim                | Sim, RSA 2048-bit  | -                  |
 | **Contêineres**                   |                    |                    |                    |
 | Serviço de Kubernetes do Azure         | Sim                | -                  | -                  |
-| Registro de contêiner               | Sim                | -                  | -                  |
+| Registro de Contêiner               | Sim                | -                  | -                  |
 | **Computação**                      |                    |                    |                    |
 | Máquinas Virtuais                 | Sim                | Sim, RSA 2048-bit  | -                  |
 | Conjunto de Escalas da Máquina Virtual        | Sim                | Sim, RSA 2048-bit  | -                  |
@@ -299,17 +299,17 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Active Directory do Azure           | Sim                | -                  | -                  |
 | Azure Active Directory Domain Services | Sim          | Sim, RSA 2048-bit  | -                  |
 | **Integração**                  |                    |                    |                    |
-| Service Bus                      | Sim                | -                  | Sim                |
-| Grade do Evento                       | Sim                | -                  | -                  |
+| Barramento de Serviço                      | Sim                | -                  | Sim                |
+| Grade de Eventos                       | Sim                | -                  | -                  |
 | Gerenciamento de API                   | Sim                | -                  | -                  |
 | **Serviços de IoT**                 |                    |                    |                    |
 | Hub IoT                          | Sim                | -                  | Sim                |
 | **Gerenciamento e governança**    |                    |                    |                    |
-| do Azure Site Recovery              | Sim                | Sim, RSA 2048-bit  | Sim                |
+| Azure Site Recovery              | Sim                | Sim, RSA 2048-bit  | Sim                |
 | **Meio**                        |                    |                    |                    |
-| Serviços de Mídia                   | Sim                | -                  | Sim                |
+| Serviços de mídia                   | Sim                | -                  | Sim                |
 | **Armazenamento**                      |                    |                    |                    |
-| Armazenamento de Blob                     | Sim                | Sim, RSA 2048-bit  | Sim                |
+| Armazenamento de Blobs                     | Sim                | Sim, RSA 2048-bit  | Sim                |
 | Armazenamento em disco                     | Sim                | -                  | -                  |
 | Armazenamento em Managed Disks             | Sim                | -                  | -                  |
 | Armazenamento de Arquivos                     | Sim                | Sim, RSA 2048-bit  | -                  |
@@ -318,7 +318,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Azure NetApp Files               | Sim                | -                  | -                  |
 | Armazenamento de Arquivos                  | Sim                | Sim, RSA 2048-bit  | -                  |
 | StorSimple                       | Sim                | Sim, RSA 2048-bit  | Sim                |
-| Backup do Azure                     | Sim                | -                  | Sim                |
+| Serviço de Backup do Azure                     | Sim                | -                  | Sim                |
 | Data Box                         | Sim                | -                  | Sim                |
 
 ## <a name="conclusion"></a>Conclusão

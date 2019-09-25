@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: 8375d41e3ece3bdd97b218925a8b1b6d45fc327d
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: fe21477865b5bbad65f5e4639e8df253f12dc1b6
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70186372"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265414"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Habilidade cognitiva de detecção de idioma
 
@@ -41,13 +40,13 @@ O tamanho máximo de um registro deve ser de 50.000 caracteres conforme medido p
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Entradas     | Descrição |
+| Entradas     | DESCRIÇÃO |
 |--------------------|-------------|
 | texto | O texto a ser analisado.|
 
 ## <a name="skill-outputs"></a>Saídas de habilidades
 
-| Nome de saída    | Descrição |
+| Nome de saída    | DESCRIÇÃO |
 |--------------------|-------------|
 | languageCode | O código de idioma ISO 6391 para o idioma identificado. Por exemplo, “in” |
 | languagename | O nome do idioma. Por exemplo “inglês”. |

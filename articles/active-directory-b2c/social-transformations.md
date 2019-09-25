@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a25c5fed4fd88866f46a9ca254213cae5db893a4
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: cd4839e2c8ad6605a29f3c8b824375185384f78c
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063580"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258144"
 ---
 # <a name="social-accounts-claims-transformations"></a>Transformações de declarações de contas sociais
 
@@ -40,7 +40,7 @@ Este artigo fornece exemplos para usar as transformações de declarações da c
 
 Cria uma declaração JSON da propriedade alternativeSecurityId do usuário que pode ser usada em chamadas para o Azure Active Directory. Para obter mais informações, confira [Esquema do AlternativeSecurityId](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#alternativesecurityid-type).
 
-| Item | TransformationClaimType | Tipo de dados | Observações |
+| item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | key | cadeia de caracteres | O ClaimType que especifica o identificador de usuário único usado pelo provedor de identidade social. |
 | InputClaim | identityProvider | cadeia de caracteres | O ClaimType que especifica o nome do provedor de identidade de conta social, como facebook.com. |
@@ -51,7 +51,7 @@ Use essa transformação de declarações para gerar um ClaimType `alternativeSe
 ```XML
 <ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
   <InputClaims>
-    <InputClaim ClaimTypeReferenceId="socialIdpUserId" TransformationClaimType="key" />
+    <InputClaim ClaimTypeReferenceId="issuerUserId" TransformationClaimType="key" />
     <InputClaim ClaimTypeReferenceId="identityProvider" TransformationClaimType="identityProvider" />
   </InputClaims>
   <OutputClaims>
@@ -72,7 +72,7 @@ Use essa transformação de declarações para gerar um ClaimType `alternativeSe
 
 Adiciona um `AlternativeSecurityId` a uma declaração `alternativeSecurityIdCollection`.
 
-| Item | TransformationClaimType | Tipo de dados | Observações |
+| item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | item | cadeia de caracteres | O ClaimType a ser adicionado à declaração de saída. |
 | InputClaim | coleção | alternativeSecurityIdCollection | Os ClaimTypes usados pela transformação de declarações se disponíveis na política. Se fornecida, a transformação de declarações adiciona o `item` no final da coleção. |
@@ -109,7 +109,7 @@ O exemplo a seguir vincula uma nova identidade social com uma conta existente. P
 
 Retorna a lista de emissores da declaração **alternativeSecurityIdCollection** em uma nova declaração **stringCollection**.
 
-| Item | TransformationClaimType | Tipo de dados | Observações |
+| item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | alternativeSecurityIdCollection | alternativeSecurityIdCollection | O ClaimType a ser usado para obter a lista de provedores de identidade (emissor). |
 | OutputClaim | identityProvidersCollection | stringCollection | Os ClaimTypes produzidos depois de invocar este ClaimsTransformation. Lista de provedores de identidade associados com a declaração de entrada alternativeSecurityIdCollection |
@@ -136,7 +136,7 @@ A transformação de declarações a seguir lê a declaração **alternativeSecu
 
 Remove um **AlternativeSecurityId** de uma declaração **alternativeSecurityIdCollection**.
 
-| Item | TransformationClaimType | Tipo de dados | Observações |
+| item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | identityProvider | cadeia de caracteres | O ClaimType que contém o nome do provedor de identidade a ser removido da coleção. |
 | InputClaim | coleção | alternativeSecurityIdCollection | Os ClaimTypes usados pela transformação de declarações. A transformação de declarações remove o identityProvider da coleção. |

@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: 4949391aded58f27ba8acd5c9ec437e8933f9843
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c745375eb4f59208af79bbb03d45f8f0eea7f3ca
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243432"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260613"
 ---
 # <a name="get-started-with-roles-permissions-and-security-with-azure-monitor"></a>Introdução às funções, permissões e segurança com o Azure Monitor
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Muitas equipes precisam regular estritamente o acesso aos dados e configurações de monitoramento. Por exemplo, se você tiver membros da equipe que trabalham exclusivamente no monitoramento (engenheiros de suporte, engenheiros de DevOps) ou se você usar um provedor de serviço gerenciado, você talvez queira conceder-lhes acesso aos dados de monitoramento apenas enquanto restringe a capacidade de criar, modificar, ou Exclua recursos. Este artigo mostra como aplicar uma função interna de RBAC de monitoramento a um usuário no Azure rapidamente ou criar sua própria função personalizada para um usuário que precise de permissões limitadas de monitoramento. Em seguida, ele aborda considerações de segurança para os recursos relacionados ao Azure Monitor e como você pode limitar o acesso aos dados contidos nos mesmos.
+Muitas equipes precisam regular estritamente o acesso aos dados e configurações de monitoramento. Por exemplo, se você tiver membros da equipe que trabalham exclusivamente no monitoramento (engenheiros de suporte, engenheiros de DevOps) ou se usar um provedor de serviços gerenciados, talvez você queira conceder a eles acesso apenas aos dados de monitoramento e restringir sua capacidade de criar, modificar ou excluir recursos. Este artigo mostra como aplicar uma função interna de RBAC de monitoramento a um usuário no Azure rapidamente ou criar sua própria função personalizada para um usuário que precise de permissões limitadas de monitoramento. Em seguida, ele aborda considerações de segurança para os recursos relacionados ao Azure Monitor e como você pode limitar o acesso aos dados contidos nos mesmos.
 
 ## <a name="built-in-monitoring-roles"></a>Funções internas de monitoramento
 As funções internas do Azure Monitor são projetadas para ajudar a limitar o acesso aos recursos em uma assinatura, permitindo que as pessoas responsáveis pelo monitoramento da infra-estrutura obtenham e configurem os dados que precisam. O Azure Monitor fornece duas funções prontas para uso: Um Leitor de Monitoramento e um Colaborador de Monitoramento.
@@ -31,17 +31,17 @@ Pessoas atribuídas à função de Leitor de monitoramento podem exibir todos os
 * Exibir regras de alerta definidas nos [Alertas do Azure](alerts-overview.md)
 * Consultar métricas usando a [API REST do Azure Monitor](https://msdn.microsoft.com/library/azure/dn931930.aspx), [os cmdlets do PowerShell](powershell-quickstart-samples.md) ou a [CLI de plataforma cruzada](cli-samples.md).
 * Consultar o Log de atividades usando o portal, a API REST do Azure Monitor, os cmdlets do PowerShell ou a CLI de plataforma cruzada.
-* Exibir as [configurações de diagnóstico](diagnostic-logs-overview.md#diagnostic-settings) para um recurso.
+* Exibir as [configurações de diagnóstico](diagnostic-settings.md) para um recurso.
 * Exibir o [perfil de log](activity-log-export.md) para uma assinatura.
 * Exibir as configurações de autoescala.
 * Exibir as configurações e a atividade do alerta.
 * Acessar os dados do Application Insights e exiba os dados na Análise de AI.
 * Pesquisar dados do espaço de trabalho do Log Analytics, incluindo dados de uso do espaço de trabalho.
 * Exibir grupos de gerenciamento do Log Analytics.
-* Recupere o esquema de pesquisa no espaço de trabalho do Log Analytics.
-* Liste os pacotes de monitoramento no espaço de trabalho do Log Analytics.
-* Recuperar e executar pesquisas salvas no espaço de trabalho do Log Analytics.
-* Recupere a configuração de armazenamento do espaço de trabalho do Log Analytics.
+* Recupere o esquema de pesquisa no espaço de trabalho Log Analytics.
+* Liste pacotes de monitoramento no espaço de trabalho Log Analytics.
+* Recuperar e executar pesquisas salvas no espaço de trabalho Log Analytics.
+* Recupere a configuração de armazenamento do espaço de trabalho Log Analytics.
 
 > [!NOTE]
 > Essa função não concede acesso de leitura aos dados de log que foram transmitidos para um hub de eventos ou armazenados em uma conta de armazenamento. [Veja abaixo](#security-considerations-for-monitoring-data) para obter informações sobre como configurar o acesso a esses recursos.
@@ -52,16 +52,16 @@ Pessoas atribuídas à função de Leitor de monitoramento podem exibir todos os
 Pessoas atribuídas à função de Colaborador de monitoramento podem exibir todos os dados de monitoramento em uma assinatura e criar ou modificar as configurações de monitoramento, mas não podem modificar outros recursos. Essa função é um superconjunto da função Leitor de monitoramento e é apropriada para membros de uma equipe de monitoramento ou provedores de serviços gerenciados de uma organização que, além das permissões acima, também precisam ser capazes de:
 
 * Publicra os painéis de monitoramentos como um painel compartilhado.
-* Definir [configurações de diagnóstico](diagnostic-logs-overview.md#diagnostic-settings) para um recurso.\*
-* Defina as [perfil de log](activity-log-export.md) para uma assinatura.\*
+* Definir [configurações de diagnóstico](diagnostic-settings.md) para um recurso.\*
+* Defina o [perfil de log](activity-log-export.md) para uma assinatura.\*
 * Defina a atividade das regras de alerta e as configurações por meio dos [Alertas do Azure](alerts-overview.md).
 * Criar testes Web e componentes do Application Insights.
 * Listar as chaves compartilhadas do espaço de trabalho do Log Analytics.
-* Habilitar ou desabilitar os pacotes de monitoramento no espaço de trabalho do Log Analytics.
-* Criar e excluir e executar pesquisas salvas no espaço de trabalho do Log Analytics.
-* Criar e excluir a configuração de armazenamento do espaço de trabalho do Log Analytics.
+* Habilite ou desabilite pacotes de monitoramento no espaço de trabalho Log Analytics.
+* Crie e exclua e execute pesquisas salvas no espaço de trabalho Log Analytics.
+* Crie e exclua a configuração de armazenamento Log Analytics espaço de trabalho.
 
-\*usuário também separadamente deve ser concedido permissão de ListKeys no recurso de destino (armazenamento eventos ou conta namespace de hub) para definir um perfil de log ou a configuração de diagnóstico.
+\*o usuário também deve receber a permissão ListKeys no recurso de destino (conta de armazenamento ou namespace do hub de eventos) para definir um perfil de log ou uma configuração de diagnóstico.
 
 > [!NOTE]
 > Essa função não concede acesso de leitura aos dados de log que foram transmitidos para um hub de eventos ou armazenados em uma conta de armazenamento. [Veja abaixo](#security-considerations-for-monitoring-data) para obter informações sobre como configurar o acesso a esses recursos.
@@ -160,7 +160,7 @@ New-AzRoleDefinition -Role $role
 Um padrão semelhante pode ser seguido com hubs de eventos, mas primeiro você precisa criar uma regra de autorização de escuta dedicada. Se você deseja conceder acesso a um aplicativo que precisa apenas escutar os hubs de eventos relacionados ao monitoramento, faça o seguinte:
 
 1. Crie uma política de acesso compartilhado no(s) hubs de eventos que foram criados para transmitir dados de monitoramento com somente declarações de escuta. Isso pode ser feito no portal. Por exemplo, você pode chamá-la de "monitoringReadOnly." Se possível, dê essa chave diretamente ao consumidor e ignore a próxima etapa.
-2. Se o consumidor precisa ser capaz de obter a chave de ad-hoc, conceda ao usuário a ação ListKeys para esse hub de eventos. Isso é necessário também para os usuários que precisam ser capazes de definir uma configuração de diagnóstico ou de perfil de log para transmissão para hubs de eventos. Por exemplo, você pode criar uma regra RBAC:
+2. Se o consumidor precisar ser capaz de obter a chave ad hoc, conceda ao usuário a ação ListKeys para o Hub de eventos. Isso é necessário também para os usuários que precisam ser capazes de definir uma configuração de diagnóstico ou de perfil de log para transmissão para hubs de eventos. Por exemplo, você pode criar uma regra RBAC:
    
    ```powershell
    $role = Get-AzRoleDefinition "Reader"

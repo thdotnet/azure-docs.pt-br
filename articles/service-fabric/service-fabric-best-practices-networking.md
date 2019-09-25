@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: d221b828624e649a0d04a89c4394fe5a7fa857dd
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 317977af9d41163013545a6e5f60bee887da596c
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66237317"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262242"
 ---
 # <a name="networking"></a>Rede
 
@@ -60,7 +60,7 @@ A expansão da infraestrutura é necessária para habilitar a Rede Acelerada em 
 
 * Os clusters do Service Fabric podem ser implantados em uma rede virtual existente seguindo as etapas descritas em [Padrões de rede do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking).
 
-* Os NSGs (grupos de segurança de rede) são recomendados para tipos de nós que restringem o tráfego de entrada e saída para o cluster. Verifique se as portas necessárias estão abertas no NSG. Por exemplo:  ![Regras NSG do Service Fabric][NSGSetup]
+* Os NSGs (grupos de segurança de rede) são recomendados para tipos de nós que restringem o tráfego de entrada e saída para o cluster. Verifique se as portas necessárias estão abertas no NSG. Por exemplo: ![Regras NSG do Service Fabric][NSGSetup]
 
 * O tipo de nó primário, que contém os serviços do sistema do Service Fabric, não precisa ser exposto por meio do balanceador de carga externo e pode ser exposto por um [balanceador de carga interno](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking#internal-only-load-balancer)
 
@@ -70,7 +70,7 @@ A expansão da infraestrutura é necessária para habilitar a Rede Acelerada em 
 
 * Para executar cargas de trabalho de contêiner do Windows, use o [modo de rede aberto](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode) para facilitar a comunicação de serviço a serviço.
 
-* Use um proxy reverso, como o [Traefik](https://docs.traefik.io/configuration/backends/servicefabric/) ou o [proxy reverso do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy), para expor portas de aplicativo comuns, como 80 ou 443.
+* Use um proxy reverso, como o [Traefik](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/) ou o [proxy reverso do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy), para expor portas de aplicativo comuns, como 80 ou 443.
 
 * Para contêineres do Windows hospedados em computadores gapped que não podem efetuar pull de camadas base do armazenamento em nuvem do Azure, substitua o comportamento da camada estrangeira usando o sinalizador [--Allow-unredistributable-artefatos](https://docs.microsoft.com/virtualization/windowscontainers/about/faq#how-do-i-make-my-container-images-available-on-air-gapped-machines) no daemon do Docker.
 

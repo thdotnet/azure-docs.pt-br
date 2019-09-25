@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 09/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 726fc2d2f53e904fdf7f50be5aef7b274dcc51ac
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: f4eb1b69a1464cacaf666e49f4aff7422d63611d
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736147"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71264527"
 ---
 # <a name="azure-time-series-insights-preview-use-cases"></a>Casos de uso da Versão Prévia do Azure Time Series Insights
 
@@ -40,11 +40,15 @@ Explore e analise instantaneamente bilhões de eventos para identificar anomalia
 
 [![Data Explorer](media/v2-update-use-cases/data-explorer.svg)](media/v2-update-use-cases/data-explorer.svg#lightbox)
 
-A maioria dos clientes concorda que o tempo para insight está entre os ativos mais fortes do Time Series Insights. O Time Series Insights não exige nenhuma preparação de dados inicial. Ele funciona rapidamente para conectá-lo a bilhões de eventos em seu Hub IoT do Azure ou Hubs de Eventos do Azure em minutos. Uma vez conectado, você pode visualizar e analisar bilhões de eventos para detecção de anomalias e descobrir tendências ocultas em seus dados.
+A maioria dos clientes concorda que a quantidade mínima de tempo necessária para obter informações é um dos recursos Principals da Time Series Insights:
 
-O Time Series Insights é intuitivo e simples de usar. Você pode interagir com seus dados sem escrever uma única linha de código. Não há nenhuma nova linguagem a aprender também. O Time Series Insights fornece consulta granular baseada em texto para usuários avançados familiarizados com SQL. Também fornece exploração de seleção e clique para iniciantes.
+* O Time Series Insights não exige nenhuma preparação de dados inicial. 
+* Ele funciona rapidamente para conectá-lo a bilhões de eventos em seu Hub IoT do Azure ou Hubs de Eventos do Azure em minutos. 
+* Uma vez conectado, você pode visualizar e analisar bilhões de eventos para detecção de anomalias e descobrir tendências ocultas em seus dados.
 
-Os clientes aproveitam a velocidade para diagnosticar problemas relacionados ao ativo rapidamente. Eles podem executar DevOps para chegarem à causa raiz de um bug em uma solução de IoT. Também podem identificar áreas para investigar iniciativas de ciência de dados.  
+O Time Series Insights é intuitivo e simples de usar. Você pode interagir com seus dados sem escrever uma única linha de código. Também não há nenhuma nova linguagem que você precisa aprender, embora Time Series Insights forneça uma linguagem de consulta baseada em texto granular para usuários avançados que estão familiarizados com o SQL. Também fornece exploração de seleção e clique para iniciantes.
+
+Os clientes podem aproveitar a velocidade para diagnosticar problemas relacionados ao ativo rapidamente. Eles podem executar a análise de DevOps para chegar à causa raiz de um bug em uma solução de IoT. Eles também podem identificar áreas a serem sinalizadas para uma investigação mais aprofundada como parte de suas iniciativas de ciência de dados.  
 
 Há três maneiras principais de interagir com os dados armazenados no Time Series Insights:
 

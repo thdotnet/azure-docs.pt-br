@@ -1,6 +1,6 @@
 ---
-title: Logs de serviços de mídia do Azure diagnóstico esquemas – Azure
-description: Este artigo mostra os esquemas de logs de diagnóstico dos serviços de mídia do Azure.
+title: Esquemas de logs de diagnóstico dos serviços de mídia do Azure – Azure
+description: Este artigo mostra os esquemas dos logs de diagnóstico dos serviços de mídia do Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,42 +13,42 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: 394370738bc7996a221300540e68404986d91310
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f95258368664aabeb89426afb83854378c0e4429
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60322243"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71261094"
 ---
 # <a name="diagnostic-logs-schemas"></a>Esquemas de logs de diagnóstico
 
-[O Azure Monitor](../../azure-monitor/overview.md) habilita você a monitorar métricas e logs de diagnóstico que ajudam você a entende como estão o desempenho de seus aplicativos. Você pode monitorar os logs de diagnóstico dos serviços de mídia e criar alertas e notificações para os logs e métricas coletadas. Você pode enviar logs para [armazenamento do Azure](https://azure.microsoft.com/services/storage/), transmiti-los para [Hubs de eventos](https://azure.microsoft.com/services/event-hubs/)e exportá-los para [do Log Analytics](https://azure.microsoft.com/services/log-analytics/), ou usar os serviços de terceiros 3ª.
+[Azure monitor](../../azure-monitor/overview.md) permite que você monitore as métricas e os logs de diagnóstico que ajudam a entender como seus aplicativos estão sendo executados. Você pode monitorar os logs de diagnóstico dos serviços de mídia e criar alertas e notificações para as métricas e os logs coletados. Você pode enviar logs para o [armazenamento do Azure](https://azure.microsoft.com/services/storage/), transmiti-los para os [hubs de eventos do Azure](https://azure.microsoft.com/services/event-hubs/)e exportá-los para [log Analytics](https://azure.microsoft.com/services/log-analytics/)ou usar serviços de terceiros.
 
-Para obter informações detalhadas, consulte [métricas do Azure Monitor](../../azure-monitor/platform/data-platform.md) e [logs de diagnóstico do Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
+Para obter informações detalhadas, consulte [Azure monitor métricas](../../azure-monitor/platform/data-platform.md) e [Azure monitor logs de diagnóstico](../../azure-monitor/platform/resource-logs-overview.md).
 
-Este artigo descreve os esquemas de logs de diagnóstico dos serviços de mídia.
+Este artigo descreve os esquemas dos logs de diagnóstico dos serviços de mídia.
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Esquema de logs de diagnóstico de nível superior
 
-Para obter uma descrição detalhada do esquema de logs de diagnóstico de nível superior, consulte [com suporte a serviços, esquemas e categorias para os Logs de diagnóstico do Azure](../../azure-monitor/platform/tutorial-dashboards.md).
+Para obter uma descrição detalhada do esquema de logs de diagnóstico de nível superior, consulte [serviços, esquemas e categorias com suporte para logs de diagnóstico do Azure](../../azure-monitor/platform/tutorial-dashboards.md).
 
 ## <a name="key-delivery-log-schema"></a>Esquema do log de distribuição de chaves
 
-### <a name="properties"></a>propriedades
+### <a name="properties"></a>Properties
 
 Essas propriedades são específicas para o esquema de log de distribuição de chaves.
 
 |NOME|DESCRIÇÃO|
 |---|---|
 |keyId|A ID da chave solicitada.|
-|keyType|Pode ser um dos seguintes valores: "Limpar" (sem criptografia), "FairPlay", "PlayReady" ou "Widevine".|
-|policyName|O nome do Azure Resource Manager da política.|
+|keyType|Pode ser um dos seguintes valores: "Clear" (sem criptografia), "FairPlay", "PlayReady" ou "Widevine".|
+|policyName|O nome Azure Resource Manager da política.|
 |tokenType|O tipo de token.|
 |statusMessage|A mensagem de status.|
 
 ### <a name="examples"></a>Exemplos
 
-Propriedades do esquema de solicitações de distribuição de chaves.
+Propriedades do esquema de solicitações de entrega de chave.
 
 ```json
 {
@@ -110,4 +110,4 @@ Propriedades do esquema de solicitações de distribuição de chaves.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Monitorar logs de diagnóstico e métricas de serviços de mídia](media-services-metrics-diagnostic-logs.md)
+[Monitorar as métricas dos serviços de mídia e os logs de diagnóstico](media-services-metrics-diagnostic-logs.md)

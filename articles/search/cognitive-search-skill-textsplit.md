@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: fcde448c664ad85b78d275304dd01a1eedaca006
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: a6e46970b6c0fc91c464207049d2dedaaee1afdd
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183310"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265675"
 ---
 #   <a name="text-split-cognitive-skill"></a>Habilidade cognitiva do Text Split
 
@@ -31,7 +30,7 @@ Microsoft.Skills.Text.SplitSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | Descrição |
+| Nome do parâmetro     | DESCRIÇÃO |
 |--------------------|-------------|
 | textSplitMode      | "Páginas" ou "sentenças" | 
 | maximumPageLength | Se o textSplitMode for definido como "páginas", isso se refere ao comprimento máximo da página, conforme medido pelo `String.Length`. O valor mínimo é 100.  Se o textSplitMode for definido como "pages", o algoritmo tentará dividir o texto em partes com um tamanho de, no máximo, "maximumPageLength". Nesse caso, o algoritmo fará o melhor para quebrar a frase em um limite de orações, de modo que o tamanho da parte possa ser um pouco menor que "maximumPageLength". | 
@@ -40,14 +39,14 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome do parâmetro       | Descrição      |
+| Nome do parâmetro       | DESCRIÇÃO      |
 |----------------------|------------------|
 | texto  | O texto a ser dividido em subcadeias. |
 | languageCode  | (opcional) Código de idioma para o documento.  |
 
 ## <a name="skill-outputs"></a>Saídas de habilidades 
 
-| Nome do parâmetro     | Descrição |
+| Nome do parâmetro     | DESCRIÇÃO |
 |--------------------|-------------|
 | textItems | Uma matriz de subcadeias de caracteres que foram extraídos. |
 
@@ -79,7 +78,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 }
 ```
 
-##  <a name="sample-input"></a>Entrada de Exemplo
+##  <a name="sample-input"></a>Entrada de exemplo
 
 ```json
 {

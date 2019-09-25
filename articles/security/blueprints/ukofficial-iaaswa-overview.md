@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jomolesk
-ms.openlocfilehash: 602e4356ccd9eb45855462a7a25e0966dc176b4f
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4a30e496c96fcc90417e58b0f921717985b89693
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899934"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262792"
 ---
 # <a name="azure-security-and-compliance-blueprint---three-tier-iaas-web-application-for-uk-official"></a>Blueprint de conformidade e segurança do Azure - Aplicativo Web de IaaS de três camadas para OFICIAL DO REINO UNIDO
 
@@ -104,7 +104,7 @@ Conjuntos de Disponibilidade
 - (1) conjunto de VM de camada comercial - 2 VMs
 - (1) conjunto de VM de camada de dados - 2 VMs
 
-Balanceador de Carga
+Load Balancer
 - (1) balanceador de carga da camada da Web
 - (1) balanceador de carga da camada comercial
 - (1) balanceador de carga da camada de dados
@@ -172,7 +172,7 @@ Essas VNets ainda são gerenciados como recursos separados, mas aparecem como um
 
 **Logs de Atividades**: Configure os [Logs de Atividades do Azure](../../azure-monitor/platform/activity-logs-overview.md) para fornecer insights sobre as operações executadas nos recursos em sua assinatura.
 
-**Logs de Diagnóstico**: Os [Logs de Diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md) são todos os logs emitidos por um recurso. Esses logs podem incluir logs de eventos do sistema Windows, blobs, tabela e fila de logs.
+**Logs de Diagnóstico**: Os [Logs de Diagnóstico](../../azure-monitor/platform/resource-logs-overview.md) são todos os logs emitidos por um recurso. Esses logs podem incluir logs de eventos do sistema Windows, blobs, tabela e fila de logs.
 
 **Logs de Firewall**: O Gateway de Aplicativo fornece logs completos de diagnóstico e de acesso. Logs do firewall estão disponíveis para recursos de gateway de aplicativo que têm o WAF habilitado.
 
@@ -228,7 +228,7 @@ Além disso, a CSA (Cloud Security Alliance) publicou a Matriz de Controle de Nu
 
 Há dois métodos que os usuários de implantação podem usar para implantar essa automação do projeto. O primeiro método usa um script do PowerShell, enquanto o segundo método utiliza o portal do Azure para implantar a arquitetura de referência. As instruções detalhadas de implantação estão disponíveis [aqui](https://aka.ms/ukofficial-iaaswa-repo).
 
-## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
+## <a name="disclaimer"></a>Isenção de responsabilidade
 
  - Este documento serve apenas para fins informativos. A MICROSOFT NÃO FORNECE NENHUMA GARANTIA, EXPRESSA, IMPLÍCITA OU REGULAMENTAR, QUANTO ÀS INFORMAÇÕES PRESENTES NESTE DOCUMENTO. Este documento é fornecido "no estado em que se encontra". As informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Os clientes que estão lendo este documento arcarão com o risco de usá-lo.
  - Este documento não fornece aos clientes nenhum direito legal a qualquer propriedade intelectual de qualquer produto ou solução da Microsoft.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 9b4e7ce714d0a1f65e0a35b9c493e99200c668c6
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 925fed320359edc04ad6c91fe7a7d9bde5370254
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034857"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258479"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Exportar o log de atividades do Azure para o armazenamento ou hubs de eventos do Azure
 O [log de atividades do Azure](activity-logs-overview.md) fornece informações sobre eventos no nível da assinatura que ocorreram em sua assinatura do Azure. Além de exibir o log de atividades no portal do Azure ou copiá-lo para um espaço de trabalho Log Analytics onde ele pode ser analisado com outros dados coletados pelo Azure Monitor, você pode criar um perfil de log para arquivar o log de atividades em uma conta de armazenamento do Azure ou transmiti-lo para um  Hub de eventos.
@@ -60,13 +60,9 @@ O perfil de log define o seguinte.
 Se as políticas de retenção forem definidas, mas o armazenamento de logs em uma conta de armazenamento estiver desabilitado, as políticas de retenção não terão nenhum efeito. As políticas de retenção são aplicadas por dia, para que, ao final de um dia (UTC), os logs do dia após a política de retenção sejam excluídos. Por exemplo, se você tiver uma política de retenção de um dia, no início do dia de hoje, os logs de anteontem serão excluídos. A exclusão começa à meia-noite UTC, mas observe que pode levar até 24 horas para que os logs sejam excluídos da conta de armazenamento.
 
 
-
-> [!WARNING]
-> O formato dos dados de log na conta de armazenamento será alterado para Linhas JSON em 1º de novembro de 2018. [Confira este artigo para obter uma descrição do impacto e saber como atualizar suas ferramentas para manipular o novo formato.](diagnostic-logs-append-blobs.md)
-
-
 > [!IMPORTANT]
 > Você pode receber um erro ao criar um perfil de log se o provedor de recursos Microsoft. insights não estiver registrado. Consulte [provedores de recursos do Azure e tipos](../../azure-resource-manager/resource-manager-supported-services.md) para registrar este provedor.
+
 
 ### <a name="create-log-profile-using-the-azure-portal"></a>Criar perfil de log usando o portal do Azure
 
@@ -111,7 +107,7 @@ Se um perfil de log já existir, primeiro você precisará remover o perfil de l
     Add-AzLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus -RetentionInDays 90 -Category Write,Delete,Action
     ```
 
-    | Propriedade | Necessário | Descrição |
+    | Propriedade | Obrigatório | DESCRIÇÃO |
     | --- | --- | --- |
     | Name |Sim |Nome de seu perfil de log. |
     | StorageAccountId |Não |ID de recurso da conta de armazenamento em que o log de atividades deve ser salvo. |
@@ -154,7 +150,7 @@ Se um perfil de log já existir, primeiro será necessário remover o perfil de 
    az monitor log-profiles create --name "default" --location null --locations "global" "eastus" "westus" --categories "Delete" "Write" "Action"  --enabled false --days 0 --service-bus-rule-id "/subscriptions/<YOUR SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUB NAME SPACE>/authorizationrules/RootManageSharedAccessKey"
    ```
 
-    | Propriedade | Necessário | Descrição |
+    | Propriedade | Obrigatório | DESCRIÇÃO |
     | --- | --- | --- |
     | name |Sim |Nome de seu perfil de log. |
     | storage-account-id |Sim |A ID de Recurso da Conta de Armazenamento na qual os Logs de Atividades devem ser salvos. |
@@ -167,6 +163,9 @@ Se um perfil de log já existir, primeiro será necessário remover o perfil de 
 
 ## <a name="activity-log-schema"></a>Esquema do log de atividades
 Seja enviado para o armazenamento do Azure ou Hub de eventos, os dados do log de atividades serão gravados em JSON com o formato a seguir.
+
+
+> O formato dos dados do log de atividades gravados em uma conta de armazenamento alterado para linhas JSON em 1º de novembro de 2018. Consulte [preparar para o formato de alteração para Azure monitor logs de diagnóstico arquivados em uma conta de armazenamento](diagnostic-logs-append-blobs.md) para obter detalhes sobre essa alteração de formato.
 
 ``` JSON
 {
@@ -225,7 +224,7 @@ Seja enviado para o armazenamento do Azure ou Hub de eventos, os dados do log de
 ```
 Os elementos neste JSON são descritos na tabela a seguir.
 
-| Nome do elemento | Descrição |
+| Nome do elemento | DESCRIÇÃO |
 | --- | --- |
 | time |Carimbo de hora quando o evento foi gerado pelo serviço do Azure que está processando a solicitação correspondente ao evento. |
 | resourceId |ID de recurso do recurso afetado. |
@@ -238,8 +237,8 @@ Os elementos neste JSON são descritos na tabela a seguir.
 | correlationId |Geralmente, um GUID no formato de cadeia de caracteres. Os eventos que compartilham um correlationId pertencem à mesma ação superior. |
 | identity |Blob JSON que descreve a autorização e as declarações. |
 | authorization |Blob de propriedades RBAC do evento. Geralmente, inclui as propriedades "action", "role" e "scope". |
-| level |Nível do evento. Um dos seguintes valores: _Crítico_, _erro_, _aviso_,informativo e _detalhado_ |
-| localização |Região na qual ocorreu o local (ou global). |
+| level |Nível do evento. Um dos seguintes valores: _Crítico_, _erro_, _aviso_, _informativo_e _detalhado_ |
+| location |Região na qual ocorreu o local (ou global). |
 | properties |Conjunto de pares de `<Key, Value>` (ou seja, Dicionário) que descreve os detalhes do evento. |
 
 > [!NOTE]

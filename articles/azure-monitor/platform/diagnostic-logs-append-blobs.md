@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: ab5fba6bbbf6ade83c7699edec937ba02b222939
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a5589828570455c61f857dbeadc896e8fef27178
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60237652"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258395"
 ---
 # <a name="prepare-for-format-change-to-azure-monitor-diagnostic-logs-archived-to-a-storage-account"></a>Preparar a alteração de formato dos logs de diagnóstico do Azure Monitor arquivados em uma conta de armazenamento
 
@@ -24,16 +24,16 @@ ms.locfileid: "60237652"
 
 ## <a name="what-is-changing"></a>O que está mudando
 
-O Azure Monitor oferece um recurso que permite que você envie dados de diagnóstico de recursos e dados de log de atividade em uma conta de armazenamento do Azure, o namespace de Hubs de eventos, ou em um espaço de trabalho do Log Analytics no Azure Monitor. Para resolver um problema de desempenho do sistema, em **1º de novembro de 2018 às 24h (meia-noite) UTC**, o formato dos dados de log enviados para o armazenamento de blobs será alterado. Caso tenha ferramentas que leem dados fora do armazenamento de blobs, você precisará atualizá-las para que elas reconheçam o novo formato de dados.
+O Azure Monitor oferece uma funcionalidade que permite enviar dados de diagnóstico de recursos e dados de log de atividades para uma conta de armazenamento do Azure, namespace de hubs de eventos ou em um espaço de trabalho Log Analytics no Azure Monitor. Para resolver um problema de desempenho do sistema, em **1º de novembro de 2018 às 24h (meia-noite) UTC**, o formato dos dados de log enviados para o armazenamento de blobs será alterado. Caso tenha ferramentas que leem dados fora do armazenamento de blobs, você precisará atualizá-las para que elas reconheçam o novo formato de dados.
 
 * Na quinta-feira, 1º de novembro de 2018 às 24h (meia-noite) UTC, o formato de blob será alterado para [Linhas JSON](http://jsonlines.org/). Isso significa que cada registro será delimitado por uma nova linha, sem nenhuma matriz de registros externa e sem vírgulas entre os registros JSON.
 * O formato de blob é alterado para todas as configurações de diagnóstico em todas as assinaturas ao mesmo tempo. O primeiro arquivo PT1H.json emitido para 1º de novembro usará esse novo formato. Os nomes de blob e de contêiner permanecem os mesmos.
 * A definição de uma configuração de diagnóstico entre hoje e 1º de novembro continua emitindo os dados no formato atual até 1º de novembro.
-* Essa alteração ocorrerá ao mesmo tempo em todas as regiões de nuvem pública. A alteração ainda não ocorrerá nas nuvens do Azure China, Azure Alemanha ou Azure Governamental.
+* Essa alteração ocorrerá ao mesmo tempo em todas as regiões de nuvem pública. A alteração não ocorrerá no Microsoft Azure operado pelas nuvens da 21Vianet, do Azure Alemanha ou do Azure governamental ainda.
 * Essa alteração afeta os seguintes tipos de dados:
-  * [Logs de diagnóstico de recurso do Azure](./../../azure-monitor/platform/archive-diagnostic-logs.md) ([veja a lista de recursos aqui](./../../azure-monitor/platform/diagnostic-logs-schema.md))
-  * [Métricas de recursos do Azure exportadas pelas configurações de diagnóstico](./../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings)
-  * [Dados de Log de atividades do Azure exportados pelos perfis de log](./../../azure-monitor/platform/archive-activity-log.md)
+  * [Logs de diagnóstico de recurso do Azure](archive-diagnostic-logs.md) ([veja a lista de recursos aqui](diagnostic-logs-schema.md))
+  * [Métricas de recursos do Azure exportadas pelas configurações de diagnóstico](diagnostic-settings.md)
+  * [Dados de Log de atividades do Azure exportados pelos perfis de log](archive-activity-log.md)
 * Essa alteração não afeta:
   * Logs de fluxo de rede
   * Logs de serviço do Azure ainda não disponibilizados por meio do Azure Monitor (por exemplo, logs de diagnóstico do Serviço de Aplicativo do Azure, logs de análise de armazenamento)

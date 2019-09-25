@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: ad6689dad3789329ad202c82dd10847c618906a2
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 8610506b7d62542e9eb801b06dd49a5e130fa7fa
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183359"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265751"
 ---
 #   <a name="sentiment-cognitive-skill"></a>Habilidade cognitiva do Sentiment
 
@@ -44,14 +43,14 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-inputs"></a>Entradas de habilidades 
 
-| Nome de entrada | Descrição |
+| Nome de entrada | DESCRIÇÃO |
 |--------------------|-------------|
 | texto | O texto a ser analisado.|
 | languageCode  |  (opcional) Uma cadeia de caracteres que indica o idioma dos registros. Se este parâmetro não for especificado, o valor padrão é “en”. <br/>Consulte [Lista completa dos idiomas com suporte](../cognitive-services/text-analytics/text-analytics-supported-languages.md).|
 
 ## <a name="skill-outputs"></a>Saídas de habilidades
 
-| Nome de saída | Descrição |
+| Nome de saída | DESCRIÇÃO |
 |--------------------|-------------|
 | para seu app&#39;s | Um valor entre 0 e 1 que representa o sentimento do texto analisado. Valores próximos a 0 têm sentimento negativo, perto de 0,5, têm sentimento neutro, e valores próximo a 1 têm o sentimento positivo.|
 

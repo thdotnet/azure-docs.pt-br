@@ -5,17 +5,16 @@ services: search
 manager: nitinme
 author: luiscabrer
 ms.service: search
-ms.subservice: cognitive-search
 ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: 84109cf04588a5de6fb3fd946a89b5dfee4baa1b
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: c1fd5c4e5a3ac054a85bdcc11d95bc3c338ee3c2
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70259146"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265862"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Como processar e extrair informações de imagens em cenários da pesquisa cognitiva
 
@@ -31,7 +30,7 @@ Como parte da quebra do documento, há um novo conjunto de parâmetros de config
 
 Você não pode desativar a normalização de imagem. Habilidades que iteram sobre imagens esperam imagens normalizadas. Habilitar a normalização de imagem em um indexador requer que um conconhecimento seja anexado a esse indexador.
 
-| Parâmetro de configuração | Descrição |
+| Parâmetro de configuração | DESCRIÇÃO |
 |--------------------|-------------|
 | imageAction   | Definido como "none" se nenhuma ação puder ser tomada quando os arquivos de imagem ou imagens incorporadas forem encontrados. <br/>Defina como "generateNormalizedImages" para gerar uma matriz de imagens normalizadas como parte da quebra de documento.<br/>Defina como "generateNormalizedImagePerPage" para gerar uma matriz de imagens normalizadas na qual, para PDFs na fonte de dados, cada página é renderizada para uma imagem de saída.  A funcionalidade é a mesmo que "generateNormalizedImages" para tipos de arquivos que não são PDF.<br/>Para qualquer opção que não seja "none", essas imagens serão expostas no campo *normalized_images*. <br/>O padrão é "none". Essa configuração só é pertinente a fontes de dados de blob, quando "dataToExtract" é definido como "contentAndMetadata". <br/>Um máximo de 1000 imagens será extraído de um determinado documento. Se houver mais de 1000 imagens em um documento, o primeiro 1000 será extraído e um aviso será gerado. |
 |  normalizedImageMaxWidth | A largura máxima (em pixels) para as imagens normalizadas geradas. O padrão é 2000. O valor máximo permitido é 10000. | 
@@ -62,7 +61,7 @@ Especifique o imageAction na [definição do indexador](https://docs.microsoft.c
 
 Quando o campo *imageAction* for definido para qualquer valor diferente de "none", o novo campo *normalized_images* conterá uma matriz de imagens. Cada imagem é um tipo complexo que tem os seguintes membros:
 
-| Membro de imagem       | Descrição                             |
+| Membro de imagem       | DESCRIÇÃO                             |
 |--------------------|-----------------------------------------|
 | data               | Cadeia codificada em Base64 da imagem normalizada no formato JPEG.   |
 | width              | Largura da imagem normalizada em pixels. |

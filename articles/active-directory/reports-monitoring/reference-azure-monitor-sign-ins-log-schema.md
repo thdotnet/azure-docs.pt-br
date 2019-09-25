@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cc07ac2644ac9f97146e980a1961b9b84e7c561
-ms.sourcegitcommit: 07700392dd52071f31f0571ec847925e467d6795
+ms.openlocfilehash: c3a05a531fd03cbd77bf3460ec45300692764565
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70127058"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259148"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Interpretar o esquema de logs de entrada do Azure AD no Azure Monitor
 
@@ -143,10 +143,10 @@ Este artigo descreve o esquema de log de logon do Microsoft Azure Active Directo
 
 ## <a name="field-descriptions"></a>Descrições de campo
 
-| Nome do campo | Descrição |
+| Nome do campo | DESCRIÇÃO |
 |------------|-------------|
 | Time | Data e hora em UTC. |
-| resourceId | Esse valor não é mapeado e você pode ignorar esse campo com segurança.  |
+| ResourceId | Esse valor não é mapeado e você pode ignorar esse campo com segurança.  |
 | OperationName | Para inscrições, esse valor é sempre *Atividade de login*. |
 | OperationVersion | Versão da API REST solicitada pelo cliente. |
 | Categoria | Para inscrições, esse valor é sempre *Atividade de login*. | 
@@ -165,9 +165,9 @@ Este artigo descreve o esquema de log de logon do Microsoft Azure Active Directo
 | Identidade | A identidade do token que foi apresentada ao fazer a solicitação. Pode ser uma conta de usuário, conta do sistema ou principal de serviço. |
 | Nível | Fornece o tipo de mensagem. Para auditoria, é sempre *informativo*. |
 | Location | Fornece o local da atividade de entrada. |
-| Propriedades | Lista todas as propriedades que são associadas aos logins. Para obter mais informações, consulte [Referência de API do Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Esse esquema usa os mesmos nomes de atributos como no recurso de entrada, para legibilidade.
+| Properties | Lista todas as propriedades que são associadas aos logins. Para obter mais informações, consulte [Referência de API do Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Esse esquema usa os mesmos nomes de atributos como no recurso de entrada, para legibilidade.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Interpretar o esquema de logs de auditoria no Azure Monitor](reference-azure-monitor-audit-log-schema.md)
-* [Saiba mais sobre os Logs de Diagnóstico do Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
+* [Saiba mais sobre os Logs de Diagnóstico do Azure](../../azure-monitor/platform/resource-logs-overview.md)

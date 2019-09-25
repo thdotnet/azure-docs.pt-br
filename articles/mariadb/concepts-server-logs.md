@@ -6,20 +6,20 @@ ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.openlocfilehash: 7a517be49a249b0b73c901137381bd05946aa4cc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 10dbd4d7fa838ee7f8a3f70b3caadb570877d685
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065710"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71259961"
 ---
-# <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Logs de consulta lenta no banco de dados do Azure para MariaDB
+# <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Logs de consulta lentos no banco de dados do Azure para MariaDB
 No Banco de Dados do Azure para MariaDB, o log de consultas lentas está disponível para os usuários. No entanto, não há suporte para acesso ao log de transação. O log de consultas lentas pode ser usado para identificar gargalos de desempenho para solução de problemas.
 
 Para obter mais informações sobre o log de consulta lenta, leia a documentação do MariaDB para [log de consulta lenta](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
-## <a name="access-slow-query-logs"></a>Acessar logs de consulta lenta
-Você pode listar e baixar o banco de dados do Azure para logs de consulta lenta do MariaDB usando o portal do Azure e a CLI do Azure.
+## <a name="access-slow-query-logs"></a>Acessar logs de consulta lentos
+Você pode listar e baixar logs de consultas lentas do banco de dados do Azure para MariaDB usando o portal do Azure e o CLI do Azure.
 
 No portal do Azure, selecione o servidor do Banco de Dados do Azure para MariaDB. Sob o título **Monitoramento**, selecione a página **Logs do Servidor**.
 
@@ -43,10 +43,10 @@ Outros parâmetros que você pode ajustar incluem:
 Consulte a [documentação de log de consulta lenta](https://mariadb.com/kb/en/library/slow-query-log-overview/) do MariaDB para ver descrições completas dos parâmetros de log de consulta lenta.
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
-Banco de dados do Azure para MariaDB é integrado com os Logs de diagnóstico do Azure Monitor. Depois de habilitar logs de consulta lentos em seu servidor do MariaDB, você pode optar por fazer com que eles são emitidos para o armazenamento do Azure, Hubs de eventos ou logs do Azure Monitor. Para saber mais sobre como ativar logs de diagnóstico, consulte o como parte da [documentação registros de diagnóstico](../azure-monitor/platform/diagnostic-logs-overview.md).
+O banco de dados do Azure para MariaDB é integrado a logs de diagnóstico Azure Monitor. Depois de habilitar os logs de consulta lentos em seu servidor MariaDB, você pode optar por que eles sejam emitidos para Azure Monitor logs, hubs de eventos ou armazenamento do Azure. Para saber mais sobre como ativar logs de diagnóstico, consulte o como parte da [documentação registros de diagnóstico](../azure-monitor/platform/resource-logs-overview.md).
 
 > [!IMPORTANT]
-> Esse recurso de diagnóstico para logs do servidor só está disponível no uso geral e otimizado para memória [tipos de preço](concepts-pricing-tiers.md).
+> Esse recurso de diagnóstico para logs de servidor só está disponível nos [tipos de preço](concepts-pricing-tiers.md)uso geral e com otimização de memória.
 
 A tabela a seguir descreve o que está em cada log. Dependendo do método de saída, os campos incluídos e a ordem em que aparecem podem variar.
 
@@ -54,7 +54,7 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 |---|---|
 | `TenantId` | Sua ID de locatário |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Carimbo de data/hora quando o log foi gravado, em UTC |
+| `TimeGenerated`HORÁRIO | Carimbo de data/hora quando o log foi gravado, em UTC |
 | `Type` | Tipo do log. Sempre `AzureDiagnostics` |
 | `SubscriptionId` | GUID para a assinatura a que o servidor pertence |
 | `ResourceGroup` | Nome do grupo de recursos ao qual o servidor pertence |
@@ -65,7 +65,7 @@ A tabela a seguir descreve o que está em cada log. Dependendo do método de sa�
 | `Category` | `MySqlSlowLogs` |
 | `OperationName` | `LogEvent` |
 | `Logical_server_name_s` | Nome do servidor |
-| `start_time_t` [UTC] | Horário em que a consulta começou |
+| `start_time_t`HORÁRIO | Horário em que a consulta começou |
 | `query_time_s` | Tempo total que a consulta levou para executar |
 | `lock_time_s` | Tempo total em que a consulta foi bloqueada |
 | `user_host_s` | Nome de Usuário |

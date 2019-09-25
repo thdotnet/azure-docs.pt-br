@@ -9,13 +9,12 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.subservice: cognitive-search
-ms.openlocfilehash: eb196b9ff72201358982764f227ab7935489f05d
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: ad2fef96491c2d1a15ad9ff5f57d2911dfecaa36
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183414"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265800"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Habilidades cognitivas de reconhecimento de entidade
 
@@ -37,7 +36,7 @@ O tamanho máximo de um registro deve ser de 50.000 caracteres conforme medido p
 
 Os parâmetros diferenciam maiúsculas de minúsculas e são todos opcionais.
 
-| Nome do parâmetro     | Descrição |
+| Nome do parâmetro     | DESCRIÇÃO |
 |--------------------|-------------|
 | categories    | Matriz de categorias que devem ser extraídas.  Os tipos possíveis de categoria: `"Person"`, `"Location"`, `"Organization"`, `"Quantity"`, `"Datetime"`, `"URL"`, `"Email"`. Se nenhuma categoria for fornecida, todos os tipos são retornados.|
 |defaultLanguageCode |  Código de idioma do texto de entrada. Há suporte para vários idiomas: `de, en, es, fr, it`|
@@ -48,7 +47,7 @@ Essas são entidades que são bem conhecidas, mas não classificadas como parte 
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome de entrada      | Descrição                   |
+| Nome de entrada      | DESCRIÇÃO                   |
 |---------------|-------------------------------|
 | languageCode  | Opcional. O padrão é `"en"`.  |
 | texto          | O texto para analisar.          |
@@ -58,7 +57,7 @@ Essas são entidades que são bem conhecidas, mas não classificadas como parte 
 > [!NOTE]
 > Não há suporte para todas as categorias de entidade em todos os idiomas. Somente _en_, _es_ dão suporte à extração dos tipos `"Quantity"`, `"Datetime"`, `"URL"`, `"Email"`.
 
-| Nome de saída     | Descrição                   |
+| Nome de saída     | DESCRIÇÃO                   |
 |---------------|-------------------------------|
 | pessoas      | Uma matriz de cadeias de caracteres onde cada cadeia de caracteres representa o nome de uma pessoa. |
 | locations  | Uma matriz de cadeias de caracteres onde cada cadeia de caracteres representa um local. |

@@ -5,17 +5,16 @@ services: search
 manager: nitinme
 author: luiscabrer
 ms.service: search
-ms.subservice: cognitive-search
 ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.openlocfilehash: e4b94e7a6e41a5c6beaf94069c0fb6bed795ca6d
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 40559744f0650c64afb1dc63c38f56efaa0219d7
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183509"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265547"
 ---
 # <a name="how-to-reference-annotations-in-a-cognitive-search-skillset"></a>Como referenciar anotações em um conjunto de habilidades de pesquisa cognitiva
 
@@ -27,7 +26,7 @@ Os exemplos neste artigo são baseados campo *content* gerado automaticamente pe
 
 Antes de examinarmos a sintaxe, vamos rever alguns conceitos importantes para entender melhor os exemplos fornecidos mais adiante neste artigo.
 
-| Termo | Descrição |
+| Termo | DESCRIÇÃO |
 |------|-------------|
 | Documento enriquecido | Um documento enriquecido é uma estrutura interna criada e usada pelo pipeline para reter todas as anotações relacionadas a um documento. Pense em um documento enriquecido como uma árvore de anotações. Em geral, uma anotação criada de uma anotação anterior se torna seu filho.<p/>Documentos enriquecidos existem somente pela duração da execução do conjunto de habilidades. Após o conteúdo ser mapeado para o índice de pesquisa, o documento enriquecido deixará de ser necessário. Embora você não interaja diretamente com documentos enriquecidos, é útil ter um modelo mental dos documentos ao criar um conjunto de habilidades. |
 | Contexto de enriquecimento | O contexto em que o enriquecimento ocorre, em termos de qual elemento é enriquecido. Por padrão, o contexto de enriquecimento está no nível do `"/document"` e seu escopo são documentos individuais. Quando uma habilidade é executada, suas saídas se tornam [propriedades do contexto definido](#example-2).|

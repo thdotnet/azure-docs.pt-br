@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: memildin
-ms.openlocfilehash: 25e7262842de2bcf3823a51dfe6d97b5558b16fe
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: ce8aa0229d9a9b873a489209065ada588adbffff
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71201752"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257735"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Integrar soluções de segurança na Central de Segurança do Azure
 Este documento ajuda você a gerenciar soluções de segurança já conectadas à Central de Segurança do Azure e a adicionar novas.
@@ -84,7 +84,7 @@ O status de uma solução de parceiro pode ser:
 
    ![Detalhes da solução de parceiro](./media/security-center-partner-solutions/partner-solutions-detail.png)
 
-### <a name="discovered-solutions"></a>Soluções de descoberta
+### <a name="discovered-solutions"></a>Soluções descobertas
 
 A Central de Segurança detecta automaticamente as soluções de segurança em execução no Azure, mas não conectadas à Central de Segurança, e exibe as soluções na seção **Soluções descobertas**. Isso inclui soluções do Azure, como o [Azure AD Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection), bem como soluções de parceiros.
 
@@ -95,7 +95,7 @@ A Central de Segurança detecta automaticamente as soluções de segurança em e
 
 Selecione **CONNECT** em uma solução para integrá-la à Central de Segurança e ser notificado sobre alertas de segurança.
 
-![Soluções de descoberta](./media/security-center-partner-integration/security-center-partner-integration-fig5.png)
+![Soluções descobertas](./media/security-center-partner-integration/security-center-partner-integration-fig5.png)
 
 ### <a name="add-data-sources"></a>Adicionar fontes de dados
 
@@ -133,7 +133,7 @@ Consulte o seguinte artigo [log de atividades de fluxo para Hubs de Eventos](../
 
 Rotear dados de monitoramento para um Hub de Eventos com o Azure Monitor permite fácil integração com as ferramentas de monitoramento e o SIEM de parceiro.
 
-Consulte o link a seguir para ver a lista de [SIEMs de suporte](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#what-can-i-do-with-the-monitoring-data-being-sent-to-my-event-hub)
+Consulte o link a seguir para ver a lista de [SIEMs de suporte](../azure-monitor/platform/resource-logs-stream-event-hubs.md#what-you-can-do-with-resource-logs-sent-to-an-event-hub)
 
 ### <a name="example-for-querying-data"></a>Exemplo de consulta de dados 
 

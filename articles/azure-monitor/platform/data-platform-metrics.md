@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: ea95b91d57255db8f638e600d57a98db314cd80f
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: e534754e46e6f2ad9b99b67d24d9f7da63a51a4f
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70113531"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71258373"
 ---
 # <a name="metrics-in-azure-monitor"></a>Métricas no Azure Monitor
 
@@ -33,13 +33,13 @@ A tabela a seguir lista as diferentes maneiras que você pode usar dados de mét
 
 |  |  |
 |:---|:---|
-| Analisar | Use o [Metrics Explorer](metrics-charts.md) para analisar as métricas coletadas em um gráfico e comparar as métricas de recursos diferentes. |
+| Analise | Use o [Metrics Explorer](metrics-charts.md) para analisar as métricas coletadas em um gráfico e comparar as métricas de recursos diferentes. |
 | Visualizar | Fixe um gráfico do Metrics Explorer em um [painel do Azure](../learn/tutorial-app-dashboards.md).<br>Crie uma [pasta de trabalho](../app/usage-workbooks.md) para combinar com vários conjuntos de dados em um relatório interativo. Exporte os resultados de uma consulta para [Grafana](grafana-plugin.md) para aproveitar seu painel e combinar com outras fontes de dados. |
 | Alerta | Configurar uma [regra de alerta de métrica](alerts-metric.md) que envia uma notificação ou executa uma [ação automatizada](action-groups.md) quando o valor da métrica ultrapassa um limite. |
 | Automatizar |  Use o [dimensionamento automático](autoscale-overview.md) para aumentar ou diminuir os recursos com base em um valor de métrica que ultrapassa um limite. |
-| Exportar | [Direcione métricas para logs](diagnostic-logs-stream-log-store.md) para analisar dados em Azure monitor métricas junto com dados em logs de Azure monitor e para armazenar valores de métrica por mais de 93 dias.<br>Transmita métricas para um [Hub de eventos](stream-monitoring-data-event-hubs.md) para encaminhá-las a sistemas externos. |
+| Exportação | [Direcione métricas para logs](resource-logs-collect-storage.md) para analisar dados em Azure monitor métricas junto com dados em logs de Azure monitor e para armazenar valores de métrica por mais de 93 dias.<br>Transmita métricas para um [Hub de eventos](stream-monitoring-data-event-hubs.md) para encaminhá-las a sistemas externos. |
 | Recuperar | Acessar valores de métrica de uma linha de comando usando [cmdlets do PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights)<br>Acessar valores de métrica do aplicativo personalizado usando a [API REST](rest-api-walkthrough.md).<br>Acessar valores de métrica de uma linha de comando usando a [CLI](/cli/azure/monitor/metrics). |
-| Arquivar | [Arquive](..//learn/tutorial-archive-data.md) o histórico de desempenho ou integridade do recurso para fins de conformidade, auditoria ou geração de relatórios offline. |
+| Arquivo | [Arquive](..//learn/tutorial-archive-data.md) o histórico de desempenho ou integridade do recurso para fins de conformidade, auditoria ou geração de relatórios offline. |
 
 ## <a name="how-is-data-in-azure-monitor-metrics-structured"></a>Como os dados no Azure Monitor métricas são estruturados?
 Os dados coletados por métricas de Azure Monitor são armazenados em um banco de dados de série temporal que é otimizado para analisar o data com carimbo de hora. Cada conjunto de valores de métrica é uma série temporal com as seguintes propriedades:
@@ -52,7 +52,7 @@ Os dados coletados por métricas de Azure Monitor são armazenados em um banco d
 * Algumas métricas podem ter várias dimensões, conforme descrito em [métricas multidimensionais](#multi-dimensional-metrics). As métricas personalizadas podem ter até 10 dimensões.
 
 ## <a name="multi-dimensional-metrics"></a>Métricas multidimensionais
-Um dos desafios dos dados de métrica é que ele geralmente tem informações limitadas para fornecer contexto para valores coletados. Azure Monitor resolve esse desafio com métricas multidimensionais. Dimensões de uma métrica são pares nome-valor que contêm dados adicionais para descrever o valor da métrica. Por exemplo, um _espaço em disco disponível_ de métrica poderia ter uma dimensão chamada _drive_ com os valores _C:_, _D:_, que permitiria exibir o espaço em disco disponível em todas as unidades ou em cada unidade individualmente.
+Um dos desafios dos dados de métrica é que ele geralmente tem informações limitadas para fornecer contexto para valores coletados. Azure Monitor resolve esse desafio com métricas multidimensionais. Dimensões de uma métrica são pares nome-valor que contêm dados adicionais para descrever o valor da métrica. Por exemplo, um _espaço em disco disponível_ de métrica poderia ter uma dimensão chamada _drive_ com os valores _C:_ , _D:_ , que permitiria exibir o espaço em disco disponível em todas as unidades ou em cada unidade individualmente.
 
 O exemplo abaixo ilustra dois conjuntos de dados de uma métrica hipotética chamada _Taxa de Transferência de Rede_. O primeiro conjunto de dados não tem nenhuma dimensão. O segundo conjunto de dados mostra os valores com duas dimensões, _Endereço IP_ e _Direção_:
 
@@ -60,9 +60,9 @@ O exemplo abaixo ilustra dois conjuntos de dados de uma métrica hipotética cha
 
 | Carimbo de data/hora     | Valor da Métrica |
 | ------------- |:-------------|
-| 9/8/2017 8h14 | 1.331,8 Kbps |
-| 9/8/2017 8h15 | 1.141,4 Kbps |
-| 9/8/2017 8h16 | 1.110,2 Kbps |
+| 9/8/2017 8h14 | 1\.331,8 Kbps |
+| 9/8/2017 8h15 | 1\.141,4 Kbps |
+| 9/8/2017 8h16 | 1\.110,2 Kbps |
 
 Essa métrica não dimensional pode responder apenas a uma pergunta básica, como “qual era minha taxa de transferência de rede em determinado horário?”
 
@@ -110,7 +110,7 @@ Para a maioria dos recursos no Azure, as métricas são armazenadas por 93 dias.
 
 
 > [!NOTE]
-> Você pode [Enviar métricas de plataforma para Azure monitor recursos para um espaço de trabalho log Analytics](diagnostic-logs-stream-log-store.md) para tendência a longo prazo.
+> Você pode [Enviar métricas de plataforma para Azure monitor recursos para um espaço de trabalho log Analytics](resource-logs-collect-storage.md) para tendência a longo prazo.
 
 
 
