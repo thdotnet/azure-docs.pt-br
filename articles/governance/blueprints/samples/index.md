@@ -5,15 +5,15 @@ author: DCtheGeek
 manager: carmonm
 ms.service: blueprints
 ms.topic: sample
-ms.date: 09/04/2019
+ms.date: 09/24/2019
 ms.author: dacoulte
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ea2c56e35741a49d057f2261f7b53fb754a43f8b
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: d54d60728b9ad0cc72a6cbc81b380b2511d732a8
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967995"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71219816"
 ---
 # <a name="azure-blueprints-samples"></a>Exemplos do Azure Blueprints
 
@@ -31,6 +31,7 @@ A tabela a seguir contém links para exemplos do Azure Blueprints. Cada exemplo 
 | [Carga de trabalho do Ambiente do Serviço de Aplicativo/Banco de Dados SQL ISO 27001](./iso27001-ase-sql-workload/index.md) | Oferece infraestrutura adicional para o exemplo de blueprint dos [Serviços Compartilhados ISO 27001](./iso27001-shared/index.md). |
 | [NIST SP 800-53 R4](./nist-sp-800-53-rev4/index.md) | Fornece as diretrizes para a conformidade com o NIST SP 800-53 R4. |
 | [PCI-DSS v3.2.1](./pci-dss-3.2.1/index.md) | Fornece um conjunto de políticas para auxiliar em conformidade com PCI-DSS v3.2.1. |
+| [SWIFT CSP-CSCF v2020](./swift-2020/index.md) | Auxilia na conformidade com o SWIFT CSP-CSCF v2020. |
 | [Governança de NHS do Reino Unido e OFICIAL do Reino Unido](./ukofficial/index.md) | Oferece um conjunto de padrões de infraestrutura e proteções de política em conformidade que ajudam na certificação OFICIAL do Reuno Unido e da NHS do Reino Unido. |
 | [Base do CAF](./caf-foundation/index.md) | Fornece um conjunto de controles para ajudá-lo a gerenciar seu estado de nuvem em alinhamento com o [CAF (Cloud Adoption Framework da Microsoft para o Azure)](/azure/architecture/cloud-adoption/governance/journeys/index). |
 | [Zona de aterrissagem da Migração do CAF](./caf-migrate-landing-zone/index.md) | Fornece um conjunto de controles para ajudá-lo na configuração para migrar sua primeira carga de trabalho e gerenciar o estado de nuvem em alinhamento com o [CAF (Cloud Adoption Framework da Microsoft para o Azure)](/azure/architecture/cloud-adoption/migrate/index). |

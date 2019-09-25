@@ -1,4 +1,4 @@
-- name: Documentação da versão prévia do Azure Sentinel
+- name: Documentação do Azure Sentinel
   href: index.yml
 - name: Visão geral
   href: overview.md
@@ -11,12 +11,22 @@
       href: quickstart-get-visibility.md
 - name: Tutoriais
   items:
-    - name: Detecte ameaças suspeitas
-      href: tutorial-detect-threats.md
+    - name: Use a análise interna para detectar ameaças
+      href: tutorial-detect-threats-built-in.md
+    - name: Criar regras personalizadas para detectar ameaças
+      href: tutorial-detect-threats-custom.md
+    - name: Monitorar seus dados
+      href: tutorial-monitor-your-data.md
     - name: Investigar incidentes
       href: tutorial-investigate-cases.md
     - name: Responda às ameaças
       href: tutorial-respond-threats-playbook.md
+- name: Conceitos
+  items:
+    - name: Atribuir permissões usando funções
+      href: roles.md
+    - name: Detecção avançada de ataque multiestágio
+      href: fusion.md
 - name: Guias de instruções
   items:
     - name: Conectar fontes de dados
@@ -74,6 +84,10 @@
           href: connect-threat-intelligence.md
         - name: Conectar VMs do Azure Stack
           href: connect-azure-stack.md
+    - name: Vários locatários (MSSP)
+      href: multiple-tenants-service-providers.md
+    - name: Criar incidentes com base em alertas
+      href: create-incidents-from-alerts.md
     - name: Buscando
       href: hunting.md
       items:
@@ -81,8 +95,8 @@
           href: notebooks.md
         - name: Usar indicadores para buscar
           href: bookmarks.md
-    - name: Habilitar fusion
-      href: connect-fusion.md
+    - name: Remover o Azure Sentinel
+      href: offboard.md
 - name: Recursos
   items:
     - name: Recursos úteis
