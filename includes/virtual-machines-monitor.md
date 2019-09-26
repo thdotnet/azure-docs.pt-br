@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
-ms.openlocfilehash: ac400c86af8236ff5d67b8b6fbf99f6f4b1d36c9
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 11c9b2ea3ea054415f25f864651df28288aa0025
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171895"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266833"
 ---
 Você pode tirar proveito das várias oportunidades de monitorar suas VMs coletando, exibindo e analisando o diagnóstico e os dados de log. Para fazer um simples [monitoramento](../articles/azure-monitor/overview.md) da VM, você pode usar a tela Visão geral da VM no portal do Azure. Você pode usar [extensões](../articles/virtual-machines/windows/extensions-features.md) para configurar o diagnóstico em suas VMs a fim de coletar dados de métrica adicionais. Você também pode usar opções de monitoramentos mais avançadas, como o [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) e o [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -54,12 +54,12 @@ Algumas coisas que você pode fazer com o log de atividades incluem:
 
 Você também pode acessar os dados de log de atividade usando o [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/), a [CLI do Azure](https://docs.microsoft.com/cli/azure/monitor) ou as [APIs REST do Monitor](https://docs.microsoft.com/rest/api/monitor/).
 
-Os [Logs de diagnóstico do Azure](../articles/azure-monitor/platform/diagnostic-logs-overview.md) são logs emitidos pela sua VM que fornecem dados avançados e frequentes sobre sua operação. Os logs de diagnóstico diferem dos logs de atividade, pois fornecem informações sobre operações que foram executadas dentro da VM.
+[Os logs de recursos do Azure](../articles/azure-monitor/platform/resource-logs-overview.md) são logs emitidos por sua VM que fornecem dados avançados e frequentes sobre sua operação. Os logs de recursos diferem do log de atividades, fornecendo informações sobre as operações que foram executadas na VM.
 
 Algumas coisas que você pode fazer com os logs de diagnóstico incluem:
 
 - [Salve-os em uma conta de armazenamento](../articles/azure-monitor/platform/archive-diagnostic-logs.md) para auditoria ou inspeção manual. Você pode especificar o tempo de retenção (em dias) usando as Configurações de Diagnóstico do Recurso.
-- [Transmita-os para os Hubs de Eventos](../articles/azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) para consumo por um serviço de terceiros ou uma solução de análises personalizadas, como o PowerBI.
+- [Transmita-os para os Hubs de Eventos](../articles/azure-monitor/platform/resource-logs-stream-event-hubs.md) para consumo por um serviço de terceiros ou uma solução de análises personalizadas, como o PowerBI.
 - Analise-os com o [Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Monitoramento avançado

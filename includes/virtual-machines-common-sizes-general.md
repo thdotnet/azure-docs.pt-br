@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/08/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: a47589728bdbe3842790a7c13fe35d04dbbe6883
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 5d89feaa5225aea56af86aa7f70d3666994fdaec
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881640"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266884"
 ---
 Os tamanhos de VM para uso geral fornecem uma relação de CPU para memória equilibrada. Ideal para teste e desenvolvimento, bancos de dados pequenos a médios e servidores Web de tráfego baixo a médio. Este artigo fornece informações sobre o número de vCPUs, discos de dados e NICs, bem como a taxa de transferência de armazenamento para tamanhos neste agrupamento.
 
@@ -33,7 +33,7 @@ Os tamanhos de VM para uso geral fornecem uma relação de CPU para memória equ
   
 ## <a name="b-series"></a>Série B
 
-Armazenamento Premium:  Com suporte
+Armazenamento Premium:  Suportado
 
 Cache de armazenamento Premium:  Sem Suporte
 
@@ -42,7 +42,7 @@ As VMs expansíveis série B são ideais para cargas de trabalho que não precis
 Os exemplos de casos de uso incluem servidores de desenvolvimento e teste, servidores Web de tráfego baixo, bancos de dados pequenos, microsserviços, servidores para prova de conceito, servidores de build.
 
 
-| Tamanho             | vCPU  | Memória: GiB | Armazenamento temporário (SSD) GiB | Base de desempenho da CPU da VM | Máximo desempenho da CPU da VM | Créditos iniciais | Créditos armazenados/hora | Máximo de créditos armazenados | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs |          
+| Size             | vCPU  | Memória: GiB | Armazenamento temporário (SSD) GiB | Base de desempenho da CPU da VM | Máximo desempenho da CPU da VM | Créditos iniciais | Créditos armazenados/hora | Máximo de créditos armazenados | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs |          
 |---------------|-------------|----------------|----------------------------|-----------------------|--------------------|--------------------|--------------------|----------------|----------------------------------------|-------------------------------------------|-------------------------------------------|----------|
 | Standard_B1ls<sup>1</sup>  | 1           | 0,5              | 4                          | 5%                   | 100%                   | 30                   | 3                  | 72            | 2                                      | 200 / 10                                  | 160 / 10                                  | 2  |
 | Standard_B1s  | 1           | 1              | 4                          | 10%                   | 100%                   | 30                   | 6                  | 144            | 2                        | 400 / 10                                  | 320 / 10                                  | 2  |
@@ -61,14 +61,14 @@ Os exemplos de casos de uso incluem servidores de desenvolvimento e teste, servi
 
 ACU: 160-190
 
-Armazenamento Premium:  Com suporte
+Armazenamento Premium:  Suportado
 
-Cache de armazenamento Premium:  Com suporte
+Cache de armazenamento Premium:  Suportado
 
 Os tamanhos da série Dsv3 são baseados no processador Intel Xeon® E5-2673 v3 (Haswell) de 2.4 GHz ou no processador mais recente Intel XEON ® E5-2673 v4 (Broadwell) de 2.3 GHz que podem atingir 3.5 GHz com a Tecnologia Intel Turbo Boost 2.0, e utilizam armazenamento premium. Os tamanhos da série Dsv3 oferecem uma combinação de vCPU, memória e armazenamento temporário para a maioria das cargas de trabalho de produção.
 
 
-| Tamanho             | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
+| Size             | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |------------------|--------|-------------|----------------|----------------|-----------------------------------------------------------------------|-------------------------------------------|------------------------------------------------|
 | Standard_D2s_v3  | 2      | 8           | 16             | 4              | 4000/32 (50)                                                       | 3200 / 48                                | 2 / 1000                                   |
 | Standard_D4s_v3  | 4      | 16          | 32             | 8              | 8000/64 (100)                                                      | 6400 / 96                                | 2 / 2000                                   |
@@ -80,15 +80,17 @@ Os tamanhos da série Dsv3 são baseados no processador Intel Xeon® E5-2673 v3 
 
 <sup>1</sup> A tecnologia Intel® Hyper-Threading da VM série Dsv3
 
-## <a name="dasv3-series"></a>Série Dasv3
+## <a name="dasv3-series-preview"></a>Série Dasv3 (versão prévia)
 
-Armazenamento Premium: Com suporte
+Armazenamento Premium: Suportado
 
-Cache de armazenamento Premium: Com suporte
+Cache de armazenamento Premium: Suportado
 
-Os tamanhos da série Dasv3 são baseados no processador AMD EPYC<sup>TM</sup> de 2.35 GHz que pode alcançar um Fmax aumentado de 3.35 GHz e usar o armazenamento Premium. Os tamanhos da série Dasv3 oferecem uma combinação de vCPU, memória e armazenamento temporário para a maioria das cargas de trabalho de produção.
+Os tamanhos da série Dasv3 baseiam-se no processador AMD EPYC<sup>TM</sup> 7452 de 2.35 GHz que pode alcançar um Fmax aumentado de 3.35 GHz e usar o armazenamento Premium. Os tamanhos da série Dasv3 oferecem uma combinação de vCPU, memória e armazenamento temporário para a maioria das cargas de trabalho de produção.
 
-| Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD): GiB |
+[Clique aqui para se inscrever para a versão prévia](http://aka.ms/azureamdpreview).
+
+| Size | vCPU | Memória: GiB | Armazenamento temporário (SSD): GiB |
 |---|---|---|---|
 | Standard_D2as_v3  | 2  | 8   | 16  |
 | Standard_D4as_v3  | 4  | 16  | 32  |
@@ -123,15 +125,17 @@ O armazenamento do disco de dados é faturado separadamente das máquinas virtua
 
 <sup>1</sup> A tecnologia Intel® Hyper-Threading da VM série Dv3
 
-## <a name="dav3-series"></a>Série Dav3
+## <a name="dav3-series-preview"></a>Série Dav3 (versão prévia)
 
 Armazenamento Premium: Sem Suporte
 
 Cache de armazenamento Premium: Sem Suporte
 
-Os tamanhos da série Dav3 são baseados no processador AMD EPYC<sup>TM</sup> de 2.35 GHz que pode alcançar um Fmax aumentado de 3.35 GHz. Os tamanhos da série Dav3 oferecem uma combinação de vCPU, memória e armazenamento temporário para a maioria das cargas de trabalho de produção. O armazenamento do disco de dados é faturado separadamente das máquinas virtuais. Para usar discos de armazenamento Premium, use os tamanhos de Dasv3. Os medidores de cobrança e preço para os tamanhos de Dasv3 são os mesmos que os da série Dav3.
+Os tamanhos da série Dav3 são baseados no processador AMD EPYC<sup>TM</sup> 7452 de 2.35 GHz que pode alcançar um Fmax aumentado de 3.35 GHz. Os tamanhos da série Dav3 oferecem uma combinação de vCPU, memória e armazenamento temporário para a maioria das cargas de trabalho de produção. O armazenamento do disco de dados é faturado separadamente das máquinas virtuais. Para usar discos de armazenamento Premium, use os tamanhos de Dasv3. Os medidores de cobrança e preço para os tamanhos de Dasv3 são os mesmos que os da série Dav3.
 
-| Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD): GiB |
+[Clique aqui para se inscrever para a versão prévia](http://aka.ms/azureamdpreview).
+
+| Size | vCPU | Memória: GiB | Armazenamento temporário (SSD): GiB |
 |---|---|---|---|
 | Standard_D2a_v3  | 2  | 8   | 50   |
 | Standard_D4a_v3  | 4  | 16  | 100  |
@@ -145,11 +149,11 @@ Os tamanhos da série Dav3 são baseados no processador AMD EPYC<sup>TM</sup> de
 
 ACU: 210-250
 
-Armazenamento Premium:  Com suporte
+Armazenamento Premium:  Suportado
 
-Cache de armazenamento Premium:  Com suporte
+Cache de armazenamento Premium:  Suportado
 
-| Tamanho | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
+| Size | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Standard_DS1_v2 |1 |3.5 |7 |4 |4000 / 32 (43) |3200 / 48 |2 / 750 |
 | Standard_DS2_v2 |2 |7 |14 |8 |8000 / 64 (86) |6400 / 96 |2 / 1500 |
@@ -165,7 +169,7 @@ Armazenamento Premium:  Sem Suporte
 
 Cache de armazenamento Premium:  Sem Suporte
 
-| Tamanho           | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos | Taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
+| Size           | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos | Taxa IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |----------------|------|-------------|------------------------|------------------------------------------------------------|----------------|------------------|----------------------------------------------|
 | Standard_D1_v2 | 1    | 3.5         | 50                     | 3000 / 46 / 23                                             | 4              | 4x500            | 2 / 750                                      |
 | Standard_D2_v2 | 2    | 7           | 100                    | 6000 / 93 / 46                                             | 8              | 8 x 500            | 2 / 1500                                     |
@@ -182,7 +186,7 @@ Armazenamento Premium:  Sem Suporte
 Cache de armazenamento Premium:  Sem Suporte
 
 
-| Tamanho            | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) | 
+| Size            | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps de leitura / MBps de gravação | Discos de dados máximos / taxa de transferência: IOPS | Máximo de NICs/Largura de banda de rede esperado (Mbps) | 
 |-----------------|-----------|-------------|----------------|----------------------------------------------------------|-----------------------------------|------------------------------|
 | Standard_A1_v2  | 1         | 2           | 10             | 1000 / 20 / 10                                           | 2 / 2 x 500               | 2 / 250                 |
 | Standard_A2_v2  | 2         | 4           | 20             | 2000 / 40 / 20                                           | 4 / 4 x 500               | 2 / 500                 |
@@ -194,13 +198,13 @@ Cache de armazenamento Premium:  Sem Suporte
 
 ## <a name="dc-series"></a>Série DC
 
-Armazenamento Premium: Com suporte
+Armazenamento Premium: Suportado
 
-Cache de armazenamento Premium: Com suporte
+Cache de armazenamento Premium: Suportado
 
 
 
-| Tamanho          | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
+| Size          | vCPU | Memória: GiB | Armazenamento temporário (SSD) GiB | Discos de dados máximos | Taxa de transferência máxima de armazenamento temporário: IOPS / MBps (tamanho do cache em GiB) | Taxa de transferência de disco sem cache: IOPS / MBps | Máximo de NICs/Largura de banda de rede esperado (Mbps) |
 |---------------|------|-------------|------------------------|----------------|-------------------------------------------------------------------------|-------------------------------------------|----------------------------------------------|
 | Standard_DC2s | 2    | 8           | 100                    | 2              | 4000 / 32 (43)                                                          | 3200 /48                                  | 2 / 1500                                     |
 | Standard_DC4s | 4    | 16          | 200                    | 4              | 8000 / 64 (86)                                                          | 6400 /96                                  | 2 / 3000                                     |

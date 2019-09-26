@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 7e158b0ae27780eeecb1ee7948087bf59b1502e1
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 5e3b97faaed84f2c07ea70ddb73bd8e8c9efa71d
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721260"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212653"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-javascript"></a>Início Rápido: Reconhecer tinta digital com a API REST de Reconhecimento de Tinta Digital e JavaScript
 
@@ -23,9 +23,9 @@ Use este guia de início rápido para começar a usar a API de Reconhecimento de
 
 Embora o aplicativo seja escrito em Javascript e executado no navegador da Web, a API é um serviço Web RESTful compatível com a maioria das linguagens de programação.
 
-Normalmente você chamaria a API em um aplicativo de tinta digital. Este guia de início rápido envia dados do traço de tinta para o exemplo a seguir de um manuscrito de arquivo JSON.
+Normalmente você chamaria a API em um aplicativo de tinta digital. Este início rápido envia dados de traço de tinta para a amostra manuscrita a seguir de um arquivo JSON.
 
-![Imagem de um texto manuscrito](../media/handwriting-sample.jpg)
+![uma imagem de um texto manuscrito](../media/handwriting-sample.jpg)
 
 O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go.microsoft.com/fwlink/?linkid=2089905).
 
@@ -109,7 +109,7 @@ O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go
         
         ```javascript
         // Replace the below URL with the correct one for your subscription. 
-        // Your endpoint can be found in the Azure portal. For example: https://westus2.api.cognitive.microsoft.com
+        // Your endpoint can be found in the Azure portal. For example: "https://<your-custom-subdomain>.cognitiveservices.azure.com";
         var SERVER_ADDRESS = "YOUR-SUBSCRIPTION-URL";
         var ENDPOINT_URL = SERVER_ADDRESS + "/inkrecognizer/v1.0-preview/recognize";
         // Replace the subscriptionKey string value with your valid subscription key.
