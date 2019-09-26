@@ -472,6 +472,8 @@
         - name: Implantar discos com modelo
           displayName: 'Azure Resource Manager, ARM'
           href: using-managed-disks-template-deployments.md
+        - name: Carregar um vhd para um disco – CLI
+          href: disks-upload-vhd-to-managed-disk-cli.md
         - name: Redimensionar um disco
           href: expand-disks.md
         - name: Instantâneo de um disco
