@@ -10,23 +10,23 @@ ms.reviewer: klam
 ms.assetid: 3ef16fab-d18a-48ba-8e56-3f3e0a1bcb92
 ms.topic: conceptual
 ms.date: 08/18/2016
-ms.openlocfilehash: d701fba39685d781d1a4c2d8a6cf194ca7eb2908
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7e31f891cfd758b888e4045566ad2cd2d9ab6fb8
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60530931"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300945"
 ---
 # <a name="concepts-terminology-and-entities-in-azure-scheduler"></a>Conceitos, terminologia e entidades do Agendador do Azure
 
 > [!IMPORTANT]
-> [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está sendo desativado. Para agendar trabalhos, [experimente os Aplicativos Lógicos do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> O [aplicativo lógico do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está [sendo desativado](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Para continuar trabalhando com os trabalhos que você configurou no Agendador, [migre para o aplicativo lógico do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md) assim que possível.
 
 ## <a name="entity-hierarchy"></a>Hierarquia de entidades
 
 A API REST do Agendador do Azure expõe e usa essas entidades principais, ou recursos:
 
-| Entidade | DESCRIÇÃO |
+| Entidade | Descrição |
 |--------|-------------|
 | **Trabalho** | Define uma única ação recorrente com estratégias simples ou complexas para execução. As ações podem incluir solicitações HTTP, de fila de armazenamento, de fila de Barramento de Serviço ou de tópico do Barramento de Serviço. | 
 | **Coleção de trabalhos** | Contém um grupo de trabalhos e mantém as configurações, cotas e limites que são compartilhados pelos trabalhos na coleção. Como proprietário de uma assinatura do Azure, você pode criar coleções de trabalhos e trabalhos de grupo com base em limites de aplicativo ou uso. Uma coleção de trabalhos tem estes atributos: <p>– Restrita a uma região. <br>– Permite que você imponha cotas para que possa restringir o uso de todos os trabalhos em uma coleção. <br>– As cotas incluem MaxJobs e MaxRecurrence. | 
@@ -39,7 +39,7 @@ Em um alto nível, a API REST do Agendador expõe essas operações para gerenci
 
 ### <a name="job-management"></a>Gerenciamento de trabalhos
 
-Compatível com operações para criar e editar trabalhos. Todos os trabalhos devem pertencer a uma coleção de trabalhos existente, para que não haja criação implícita. Para obter mais informações, veja [API REST do Agendador – Trabalhos](https://docs.microsoft.com/rest/api/scheduler/jobs). Aqui está o endereço do URI para essas operações:
+Compatível com operações para criar e editar trabalhos. Todos os trabalhos devem pertencer a uma coleção de trabalhos existente, para que não haja criação implícita. Para obter mais informações, veja [API REST do Agendador – Trabalhos](https://docs.microsoft.com/rest/api/scheduler/jobs). Aqui está o endereço URI para essas operações:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}
@@ -47,7 +47,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-collection-management"></a>Gerenciamento de coleção de trabalhos
 
-Compatível com operações para criar e editar trabalhos e coleções de trabalhos, que são mapeados para cotas e configurações compartilhadas. Por exemplo, as cotas especificam o número máximo de trabalhos e o menor intervalo de recorrência. Para obter mais informações, veja [API REST do Agendador – Coleções de trabalhos](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Aqui está o endereço do URI para essas operações:
+Compatível com operações para criar e editar trabalhos e coleções de trabalhos, que são mapeados para cotas e configurações compartilhadas. Por exemplo, as cotas especificam o número máximo de trabalhos e o menor intervalo de recorrência. Para obter mais informações, veja [API REST do Agendador – Coleções de trabalhos](https://docs.microsoft.com/rest/api/scheduler/jobcollections). Aqui está o endereço URI para essas operações:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}
@@ -55,7 +55,7 @@ https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{reso
 
 ### <a name="job-history-management"></a>Gerenciamento de histórico de trabalhos
 
-Compatível com a operação GET para buscar 60 dias de histórico de execução do trabalho, por exemplo, o tempo decorrido do trabalho e os resultados da execução do trabalho. Inclui o suporte ao parâmetro de cadeia de caracteres consulta para filtrar com base no estado e status. Para obter mais informações, veja [API REST do Agendador – Trabalhos – Histórico de trabalhos de lista](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Aqui está o endereço do URI para esta operação:
+Compatível com a operação GET para buscar 60 dias de histórico de execução do trabalho, por exemplo, o tempo decorrido do trabalho e os resultados da execução do trabalho. Inclui o suporte ao parâmetro de cadeia de caracteres consulta para filtrar com base no estado e status. Para obter mais informações, veja [API REST do Agendador – Trabalhos – Histórico de trabalhos de lista](https://docs.microsoft.com/rest/api/scheduler/jobs/listjobhistory). Aqui está o endereço URI para esta operação:
 
 ```
 https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}/history
@@ -75,13 +75,13 @@ O Agendador do Azure é compatível com vários tipos de trabalho:
 Em alto nível, um trabalho do Agendador tem essas partes básicas:
 
 * A ação executada quando o temporizador do trabalho é disparado
-* Opcional: O tempo para executar o trabalho
+* Opcional: A hora para executar o trabalho
 * Opcional: Quando e com que frequência repetir o trabalho
-* Opcional: Uma ação de erro que será executada se a ação principal falhar
+* Opcional: Uma ação de erro que é executada se a ação principal falhar
 
 O trabalho também inclui os dados fornecidos pelo sistema, como tempo de execução agendada do próximo do trabalho. A definição do código desse trabalho é um objeto no formato JSON (JavaScript Object Notation), que tem estes elementos:
 
-| Elemento | Obrigatório | DESCRIÇÃO | 
+| Elemento | Necessário | Descrição | 
 |---------|----------|-------------| 
 | [**startTime**](#start-time) | Não | A hora de início do trabalho com um deslocamento de fuso horário em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | 
 | [**action**](#action) | Sim | Os detalhes para a ação principal, que podem incluir um objeto **errorAction** | 
@@ -227,7 +227,7 @@ Assim como **action** primária, você pode fazer com que a ação de erro use a
 
 <a name="recurrence"></a>
 
-## <a name="recurrence"></a>recurrence
+## <a name="recurrence"></a>recorrência
 
 Um trabalho se repetirá se a definição do JSON do trabalho incluir o objeto **recurrence**, por exemplo:
 
@@ -245,7 +245,7 @@ Um trabalho se repetirá se a definição do JSON do trabalho incluir o objeto *
 },
 ```
 
-| Propriedade | Necessário | Value | DESCRIÇÃO | 
+| Propriedade | Necessário | Value | Descrição | 
 |----------|----------|-------|-------------| 
 | **frequency** | Sim, quando **recurrence** é usado | "Minute", "Hour", "Day", "Week", "Month", "Year" | A unidade de tempo entre ocorrências | 
 | **interval** | Não | 1 a 1000, inclusive | Um inteiro positivo que determina o número de unidades de tempo entre cada ocorrência com base em **frequency** | 
@@ -275,7 +275,7 @@ Para o caso quando um trabalho do Agendador falhar, você pode configurar uma po
 },
 ```
 
-| Propriedade | Necessário | Value | DESCRIÇÃO | 
+| Propriedade | Necessário | Value | Descrição | 
 |----------|----------|-------|-------------| 
 | **retryType** | Sim | **Fixed**, **None** | Determina se você especifica uma política de repetição (**fixed**) ou não (**none**). | 
 | **retryInterval** | Não | PT30S | Especifica o intervalo e a frequência entre as tentativas de repetição no [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations). O valor mínimo é 15 segundos, enquanto o valor máximo é 18 meses. | 
@@ -286,7 +286,7 @@ Para obter mais informações, consulte [Alta disponibilidade e confiabilidade](
 
 <a name="status"></a>
 
-## <a name="state"></a>estado
+## <a name="state"></a>state
 
 O estado de um trabalho é **Enabled**, **Disabled**, **Completed** ou **Faulted**, por exemplo: 
 

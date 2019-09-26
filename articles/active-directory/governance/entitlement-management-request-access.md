@@ -16,12 +16,12 @@ ms.date: 04/19/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b5be74b0734a27b02030e2c6995b43ef0c02162
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 0c8a96a4557a500bd4726b8df44ada5df328b7c3
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562143"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71290881"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Solicitar acesso a um pacote de acesso no gerenciamento de direitos do Azure AD (versão prévia)
 
@@ -40,9 +40,9 @@ A primeira etapa é entrar no portal meu acesso, em que você pode solicitar ace
 
 **Função de pré-requisito:** Solicitante
 
-1. Procure um email ou uma mensagem do projeto ou gerente de negócios com o qual você está trabalhando. O email deve incluir um link para o pacote de acesso ao qual você precisará de acesso. O link será iniciado com:
-
-    `https://myaccess.microsoft.com`
+1. Procure um email ou uma mensagem do projeto ou gerente de negócios com o qual você está trabalhando. O email deve incluir um link para o pacote de acesso ao qual você precisará de acesso. O link começará com "myaccess", incluirá uma dica de diretório e terminará com uma ID de pacote de acesso semelhante à seguinte:
+ 
+    `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
 
 1. Abra o link.
 
@@ -65,7 +65,7 @@ Depois de encontrar o pacote de acesso no portal meu acesso, você pode enviar u
 
 1. Clique em **Solicitar acesso** para abrir o painel Solicitar acesso.
 
-1. Se a caixa de justificativa de **negócios** for exibida, digite uma justificativa para a necessidade de acesso.
+1. Se a caixa de **justificativa de negócios** for exibida, digite uma justificativa para a necessidade de acesso.
 
 1. Se **a solicitação de período específico** for habilitada, selecione **Sim** ou **não**.
 

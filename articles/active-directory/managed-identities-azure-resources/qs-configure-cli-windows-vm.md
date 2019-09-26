@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/10/2018
+ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c61313190615c2f30a7d37202bc0f9bcf14d800
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 272315346091bacb15aef02184e1cc72d64ed49d
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66112884"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309809"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-azure-cli"></a>Configurar identidades gerenciadas para recursos do Azure em uma VM do Azure usando a CLI do Azure
 
@@ -47,7 +47,7 @@ Neste artigo, usando a CLI do Azure, você aprenderá como executar as seguintes
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-## <a name="system-assigned-managed-identity"></a>Identidade gerenciada atribuída pelo sistema
+## <a name="system-assigned-managed-identity"></a>Identidade gerenciada atribuída ao sistema
 
 Nesta seção, você aprenderá como habilitar e desabilitar a identidade gerenciada atribuída ao sistema em uma VM do Azure usando a CLI do Azure.
 
@@ -107,8 +107,7 @@ Se você tiver uma máquina virtual que não precisa mais da identidade atribuí
 ```azurecli-interactive
 az vm update -n myVM -g myResourceGroup --set identity.type="none"
 ```
-> [!NOTE]
-> Se você tiver provisionado a identidade gerenciada para recursos do Azure extensão da VM (preterido), você precisará removê-lo usando [exclusão de extensão de vm az](https://docs.microsoft.com/cli/azure/vm/). Para obter mais informações, consulte [migrar da extensão de VM para o Azure IMDS para autenticação](howto-migrate-vm-extension.md).
+
 
 ## <a name="user-assigned-managed-identity"></a>Identidade gerenciada atribuída pelo usuário
 
@@ -131,7 +130,7 @@ Para atribuir uma identidade atribuída pelo usuário a uma VM durante sua cria�
    ```azurecli-interactive
    az identity create -g myResourceGroup -n myUserAssignedIdentity
    ```
-   A resposta contém detalhes para a identidade gerenciada atribuída ao usuário criada, semelhante à seguinte. O valor de ID do recurso atribuído para a identidade atribuída pelo usuário gerenciada é usado na etapa a seguir.
+   A resposta contém detalhes para a identidade gerenciada atribuída ao usuário criada, semelhante à seguinte. O valor da ID de recurso atribuído à identidade gerenciada atribuída pelo usuário é usado na etapa a seguir.
 
    ```json
    {
@@ -215,7 +214,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type='SystemAssigned' ide
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-- [Identidades gerenciadas para visão geral de recursos do Azure](overview.md)
+- [Identidades gerenciadas para visão geral dos recursos do Azure ](overview.md)
 - Para os guias de início rápido completos sobre VM do Azure, consulte: 
   - [Crie máquinas virtuais Windows com o CLI](../../virtual-machines/windows/quick-create-cli.md)  
   - [Crie máquinas virtuais Linux com o CLI](../../virtual-machines/linux/quick-create-cli.md) 

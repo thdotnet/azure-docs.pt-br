@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bdf04014d7b0382913c0a4094f7474686658441
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 7ab7c3699abdd5c094b1b14cd53f76023fa8c1ac
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086694"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309599"
 ---
 # <a name="web-app-that-signs-in-users---app-registration"></a>Aplicativo Web que entra em usuários – registro de aplicativo
 
@@ -39,25 +39,66 @@ Se você navegar até esse link, poderá criar a inicialização da criação de
 - [ASP.NET Core](https://aka.ms/aspnetcore2-1-aad-quickstart-v2)
 - [ASP.NET](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs)
 
-### <a name="register-an-app-using-azure-portal"></a>Registrar um aplicativo usando portal do Azure
+## <a name="register-an-app-using-azure-portal"></a>Registrar um aplicativo usando portal do Azure
 
 > [!NOTE]
 > o portal a ser usado é diferente dependendo de se seu aplicativo é executado na nuvem pública Microsoft Azure ou em uma nuvem nacional ou soberanas. Para obter mais informações, consulte [nuvens nacionais](./authentication-national-cloud.md#app-registration-endpoints)
 
+
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft. Como alternativa, entre na nuvem nacional portal do Azure de escolha.
 1. Se sua conta fornecer acesso a mais de um locatário, selecione sua conta no canto superior direito e defina sua sessão do portal para o locatário desejado do Azure AD.
 1. No painel de navegação à esquerda, selecione o serviço **Azure Active Directory** e, em seguida, selecione **registros de aplicativo** > **novo registro**.
-1. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
+
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+
+4. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
    1. escolha os tipos de conta com suporte para seu aplicativo (consulte [tipos de conta com suporte](./v2-supported-account-types.md))
    1. Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `AspNetCore-WebApp`.
    1. Em **URI de redirecionamento**, adicione o tipo de aplicativo e o destino do URI que aceitará respostas de token retornadas após a autenticação bem-sucedida. Por exemplo: `https://localhost:44321/`.  Selecione **Registrar**.
 1. Selecione o menu **Autenticação** e, em seguida, adicione as seguintes informações:
-   1. Em **URL de resposta**, `https://localhost:44321/signin-oidc`adicione.
+   1. Em **URL de resposta**, `https://localhost:44321/signin-oidc` adicione do tipo "Web".
    1. Na seção **Configurações avançadas**, defina **URL de Saída** como `https://localhost:44321/signout-oidc`.
    1. Sob **Concessão implícita**, marque **Tokens de ID**.
    1. Clique em **Salvar**.
 
-### <a name="register-an-app-using-powershell"></a>Registrar um aplicativo usando o PowerShell
+# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+
+4. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
+   1. escolha os tipos de conta com suporte para seu aplicativo (consulte [tipos de conta com suporte](./v2-supported-account-types.md))
+   - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `MailApp-openidconnect-v2`.
+   - Na seção URI de redirecionamento (opcional), selecione **Web** na caixa de combinação e insira os seguintes URIs de `https://localhost:44326/`redirecionamento:.
+1. Selecione **Registrar** para criar o aplicativo.
+1. Selecione o menu **Autenticação** e, em seguida, adicione as seguintes informações:
+   - Na seção de **concessão implícita** **configurações** | avançadas, verifique os **tokens de ID** , pois este exemplo requer que o fluxo de [concessão implícita](v2-oauth2-implicit-grant-flow.md) esteja habilitado para conectar o usuário.
+1. Clique em **Salvar**.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+4. Quando a **página registrar um aplicativo** for exibida, insira um nome amigável para o aplicativo, por exemplo, ' Java-webapp ', selecione "contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)" e selecione ' aplicativo Web /API ' como o *tipo de aplicativo*.
+1. Clique em **registrar** para registrar o aplicativo.
+1. No menu à esquerda, clique em **autenticação**e, em URIs de *redirecionamento*, selecione "Web". Você precisará inserir dois URIs de redirecionamento diferentes: um para a página de entrada e um para a página de usuários do Graph. Para ambos, você deve usar o mesmo número de host e porta, seguido por "/msal4jsample/Secure/AAD" para a página de entrada e "msal4jsample/grafo/usuários" para a página de usuários.
+ Por padrão, o exemplo usa: 
+
+    - `http://localhost:8080/msal4jsample/secure/aad`. 
+    - `http://localhost:8080/msal4jsample/graph/users`
+
+Clique em **salvar**.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+4. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
+   - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `python-webapp`.
+   - Altere os **tipos de conta com suporte** para **contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)** .
+   - Na seção URI de redirecionamento (opcional), selecione **Web** na caixa de combinação e insira os seguintes URIs de `http://localhost:5000/getAToken`redirecionamento:.
+1. Selecione **Registrar** para criar o aplicativo.
+1. Na página **Visão geral** do aplicativo, localize o valor de **ID do aplicativo (cliente)** e registre-o para uso posterior. Você precisará dela para configurar o arquivo de configuração do Visual Studio para este projeto.
+1. Na página Visão geral do aplicativo, selecione a seção **autenticação** .
+   - Na seção **Configurações avançadas** , defina **URL de logout** para`http://localhost:5000/logout`
+1. Clique em **Salvar**.
+
+---
+
+## <a name="register-an-app-using-powershell"></a>Registrar um aplicativo usando o PowerShell
 
 > [!NOTE]
 > Atualmente, o PowerShell do Azure AD cria apenas aplicativos com os seguintes tipos de conta com suporte:

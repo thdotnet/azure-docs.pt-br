@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/11/2019
 ms.author: barclayn
-ms.openlocfilehash: b574f7c4f30c3bce8bd7d0e234cb523c965772e1
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 3d6b1ed2a3800058acba9fe5df2137811afed74a
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727576"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300779"
 ---
 # <a name="security-recommendations-for-azure-marketplace-images"></a>Recomendações de segurança para as imagens do Azure Marketplace
 
@@ -56,7 +56,7 @@ Essas recomendações também podem ser úteis para organizações que não poss
 | Segurança                                                         | Use uma imagem de base segura do sistema operacional. O VHD usado para a origem de qualquer imagem baseada no Windows Server deve estar entre as imagens do sistema operacional do Windows Server fornecidas pelo Microsoft Azure. |
 | Segurança                                                         | Instale todas as últimas atualizações de segurança.                                                                                                                                     |
 | Segurança                                                         | Os aplicativos não devem ter uma dependência de nomes de usuário restritos, como Administrador, raiz e admin.                                                                |
-| Segurança                                                         | Não há suporte para Criptografia de Unidade de Disco BitLocker no disco rígido do sistema operacional. O BitLocker pode ser usado nos discos de dados.                                                            |
+| Segurança                                                         | O Criptografia de Unidade de Disco BitLocker está habilitado para discos rígidos de so e discos rígidos de dados.                                                             |
 | Segurança                                                         | Limite a superfície de ataque mantendo somente o volume mínimo necessário das funções, recursos, serviços e portas de rede do Windows Server habilitado.                         |
 | Segurança                                                         | Faça a verificação do código-fonte e da imagem da VM em relação à presença de malware.                                                                                                                     |
 | Segurança                                                         | Configure a atualização de segurança de imagens do Windows Server para atualização automática.                                                                                                                |

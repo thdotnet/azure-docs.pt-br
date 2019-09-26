@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: d97326430eebcaea64770e99c26ab593b51d5847
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: 55da4e3dc9c7f1c1f86a649a654ce41ef59ad839
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476747"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310110"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Criação de tabelas no SQL Data Warehouse do Azure
 
@@ -109,6 +109,9 @@ Para obter uma lista de recursos columnstore, confira [Quais são as novidades d
 ## <a name="statistics"></a>Estatísticas
 O otimizador de consulta usa estatísticas de nível de coluna quando cria o plano para executar uma consulta. Para melhorar o desempenho da consulta, é importante ter estatísticas em colunas individuais, especialmente colunas usadas em junções de consulta. A [criação de estatísticas](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) ocorre automaticamente.  No entanto, a atualização de estatísticas não ocorre automaticamente. Atualize as estatísticas depois que um número significativo de linhas for adicionado ou alterado. Por exemplo, atualize as estatísticas depois de uma carga. Para obter mais informações, confira [Diretrizes sobre estatísticas](sql-data-warehouse-tables-statistics.md).
 
+## <a name="primary-key-and-unique-key"></a>Chave primária e chave exclusiva
+Só há suporte para a chave primária quando não CLUSTERIZAdo e não imposto são usados.  Só há suporte para a restrição UNIQUE quando não imposta é usado.  Verifique [SQL data warehouse restrições de tabela](sql-data-warehouse-table-constraints.md).
+
 ## <a name="commands-for-creating-tables"></a>Comandos para a criação de tabelas
 Você pode criar uma tabela como uma nova tabela vazia. Você também pode criar e popular uma tabela com os resultados de uma instrução de seleção. A seguir estão os comandos T-SQL para criar uma tabela.
 
@@ -128,8 +131,7 @@ Se os dados são provenientes de vários armazenamentos de dados, você pode tra
 ## <a name="unsupported-table-features"></a>Recursos da tabela sem suporte
 O SQL Data Warehouse oferece suporte a muitos, mas não a todos, os recursos de tabela oferecidos por outros bancos de dados.  A lista a seguir mostra alguns dos recursos de tabela que não têm suporte no SQL Data Warehouse.
 
-- Chave primária, Chaves estrangeiras, Exclusiva: verifique as [restrições da tabela](/sql/t-sql/statements/alter-table-table-constraint-transact-sql)
-
+- Chave estrangeira, verificar [restrições de tabela](/sql/t-sql/statements/alter-table-table-constraint-transact-sql)
 - [Colunas Computadas](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql)
 - [Exibições Indexadas](/sql/relational-databases/views/create-indexed-views)
 - [Sequência](/sql/t-sql/statements/create-sequence-transact-sql)

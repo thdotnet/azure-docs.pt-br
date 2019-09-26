@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: 9aa8cda7d65d97d831a218be393581d0e5bf3a4a
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: c8d78473a1128dd4f96f2cfa0c14d2d3b1b2c1e9
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910178"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300554"
 ---
 # <a name="alert-and-monitor-data-factories-by-using-azure-monitor"></a>Alertar e monitorar fábricas de dados usando Azure Monitor
 
@@ -112,17 +112,17 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Propriedade | Tipo | Descrição |
+| Propriedade | type | Descrição |
 | --- | --- | --- |
 | **storageAccountId** |Cadeia | A ID de recurso da conta de armazenamento para a qual você deseja enviar os logs de diagnóstico. |
 | **serviceBusRuleId** |Cadeia | A ID da regra de barramento de serviço do namespace do barramento de serviço no qual você deseja que os hubs de eventos sejam criados para os logs de diagnóstico de streaming. A ID da regra tem o `{service bus resource ID}/authorizationrules/{key name}`formato.|
-| **workspaceId** | Tipo Complexo | Uma matriz de detalhamentos de tempo de métrica e suas políticas de retenção. O valor desta propriedade está vazio. |
+| **workspaceId** | Tipo complexo | Uma matriz de detalhamentos de tempo de métrica e suas políticas de retenção. O valor desta propriedade está vazio. |
 |**métricas**| Valores de parâmetro da execução do pipeline a serem passados para o pipeline invocado| Um objeto JSON que mapeia nomes de parâmetro para valores de argumento. |
-| **logs**| Tipo Complexo| O nome de uma categoria de log de diagnóstico para um tipo de recurso. Para obter a lista de categorias de log de diagnóstico para um recurso, execute uma operação obter diagnóstico-configurações. |
+| **logs**| Tipo complexo| O nome de uma categoria de log de diagnóstico para um tipo de recurso. Para obter a lista de categorias de log de diagnóstico para um recurso, execute uma operação obter diagnóstico-configurações. |
 | **category**| Cadeia| Uma matriz de categorias de log e suas políticas de retenção. |
 | **timeGrain** | Cadeia | A granularidade das métricas, que são capturadas no formato de duração ISO 8601. O valor da propriedade deve `PT1M`ser, que especifica um minuto. |
-| **habilitado**| Boolean | Especifica se a coleta da categoria de métrica ou de log está habilitada para este recurso. |
-| **retentionPolicy**| Tipo Complexo| Descreve a política de retenção para uma categoria de métrica ou de log. Esta propriedade é usada somente para contas de armazenamento. |
+| **habilitado**| Booliano | Especifica se a coleta da categoria de métrica ou de log está habilitada para este recurso. |
+| **retentionPolicy**| Tipo complexo| Descreve a política de retenção para uma categoria de métrica ou de log. Esta propriedade é usada somente para contas de armazenamento. |
 |**dias**| int| O número de dias para manter as métricas ou os logs. Se o valor da propriedade for 0, os logs serão mantidos para sempre. Esta propriedade é usada somente para contas de armazenamento. |
 
 ##### <a name="response"></a>Resposta
@@ -287,7 +287,7 @@ Para obter mais informações, consulte [configurações de diagnóstico](https:
 }
 ```
 
-| Propriedade | Tipo | Descrição | Exemplo |
+| Propriedade | type | Descrição | Exemplo |
 | --- | --- | --- | --- |
 | **Level** |Cadeia | O nível dos logs de diagnóstico. Para logs de execução de atividade, defina o valor da propriedade como 4. | `4` |
 | **correlationId** |Cadeia | A ID exclusiva para acompanhar uma solicitação específica. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
@@ -413,7 +413,7 @@ Log Analytics herda o esquema do monitor com as seguintes exceções:
     | $. Properties. Predecessores | Predecessores | Dinâmico |
     | $. Properties. Parâmetro | Parâmetros | Dinâmico |
     | $. Properties. Sistemaparameters | Sistemaparameters | Dinâmico |
-    | $. Properties. Sinalizadores | Marcas | Dinâmico |
+    | $. Properties. Sinalizadores | tags | Dinâmico |
     
 ## <a name="metrics"></a>metrics
 
@@ -425,10 +425,10 @@ Azure Data Factory versão 2 emite as métricas a seguir.
 |----------------------|---------------------------------|----------|----------------------|-------------------------------------------------------|
 | PipelineSucceededRuns | Métricas de execução do pipeline bem-sucedido | Contagem    | Total                | O número total de execuções de pipeline que tiveram êxito em uma janela de minuto. |
 | PipelineFailedRuns   | Métricas de execução do pipeline com falha    | Contagem    | Total                | O número total de execuções de pipeline que falharam em uma janela de minuto.    |
-| ActivitySucceededRuns | Métricas de execução de atividades bem-sucedidas | Count    | Total                | O número total de execuções de atividade que tiveram êxito em uma janela de minuto.  |
-| ActivityFailedRuns   | Métricas de execução de atividades com falha    | Count    | Total                | O número total de execuções de atividade que falharam em uma janela de minuto.     |
-| TriggerSucceededRuns | Métricas de execuções do gatilho bem-sucedidas  | Count    | Total                | O número total de execuções de gatilho que tiveram êxito em uma janela de minuto.   |
-| TriggerFailedRuns    | Métricas de execuções do gatilho com falha     | Count    | Total                | O número total de execuções de gatilho que falharam em uma janela de minuto.      |
+| ActivitySucceededRuns | Métricas de execução de atividades bem-sucedidas | Contagem    | Total                | O número total de execuções de atividade que tiveram êxito em uma janela de minuto.  |
+| ActivityFailedRuns   | Métricas de execução de atividades com falha    | Contagem    | Total                | O número total de execuções de atividade que falharam em uma janela de minuto.     |
+| TriggerSucceededRuns | Métricas de execuções do gatilho bem-sucedidas  | Contagem    | Total                | O número total de execuções de gatilho que tiveram êxito em uma janela de minuto.   |
+| TriggerFailedRuns    | Métricas de execuções do gatilho com falha     | Contagem    | Total                | O número total de execuções de gatilho que falharam em uma janela de minuto.      |
 
 Para acessar as métricas, conclua as instruções em [Azure monitor plataforma de dados](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics).
 
@@ -504,8 +504,6 @@ A instalação do Azure Data Factory Analytics cria um conjunto padrão de exibi
 - Estatísticas do ADF-3) duração máxima de execuções de pipeline
 
 ![Janela com "pastas de trabalho (visualização)" e "AzureDataFactoryAnalytics" realçadas](media/data-factory-monitor-oms/monitor-oms-image6.png)
-
-![Representação gráfica de execuções e erros](media/data-factory-monitor-oms/monitor-oms-image7.png)
 
 Você pode visualizar as métricas anteriores, examinar as consultas por trás dessas métricas, editar as consultas, criar alertas e executar outras ações.
 

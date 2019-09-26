@@ -10,17 +10,17 @@ ms.suite: infrastructure-services
 ms.assetid: 5c124986-9f29-4cbc-ad5a-c667b37fbe5a
 ms.topic: article
 ms.date: 11/14/2018
-ms.openlocfilehash: a413261d251c8dfc1de9209168ee8137b85009f1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 386284543cd8fb00cc49fea9a29d9eaee4ca4963
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60531822"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300977"
 ---
 # <a name="build-advanced-schedules-and-recurrences-for-jobs-in-azure-scheduler"></a>Criar agendamentos avançados e recorrências para trabalhos no Agendador do Azure
 
 > [!IMPORTANT]
-> Os [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) estão substituindo o Agendador do Azure, que está sendo desativado. Para agendar trabalhos, [experimente os Aplicativos Lógicos do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> O [aplicativo lógico do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está [sendo desativado](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Para continuar trabalhando com os trabalhos que você configurou no Agendador, [migre para o aplicativo lógico do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md) assim que possível.
 
 Dentro de um trabalho do [Agendador do Azure](../scheduler/scheduler-intro.md), a agenda é o núcleo que determina quando e como o serviço do Agendador executa o trabalho. É possível definir agendamentos recorrentes e únicos para um trabalho com o Agendador. Os agendamentos únicos são executados apenas uma vez no horário especificado e são basicamente agendamentos recorrentes que são executados apenas uma vez. Os agendamentos recorrentes são executados em uma frequência especificada. Com esta flexibilidade, é possível usar o Agendador para vários cenários empresariais, por exemplo:
 
@@ -63,7 +63,7 @@ Para criar um agendamento básico com a [API REST do Agendador do Azure](/rest/a
 
 Esta tabela fornece uma visão geral de alto nível para os principais elementos JSON que podem ser usados ao configurar recorrências e agendamentos para trabalhos. 
 
-| Elemento | Obrigatório | DESCRIÇÃO | 
+| Elemento | Necessário | Descrição | 
 |---------|----------|-------------|
 | **startTime** | Não | Um valor de cadeia de caracteres de DateTime em [formato ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) que especifica quando o trabalho é iniciado em um cronograma básico. <p>Para agendas complexas, o trabalho não inicia antes do **startTime**. | 
 | **recurrence** | Não | As regras de recorrência para quando o trabalho é executado. O objeto de **recorrência** tem suporte para estes elementos: **frequency**, **interval**, **schedule**, **count** e **endTime**. <p>Se você usar o elemento **recurrence**, também deverá usar o **frequency**, enquanto outros elementos **recurrence** são opcionais. |
@@ -159,7 +159,7 @@ Se você especificar mais de um elemento de agenda, a ordem de avaliação será
 
 A tabela a seguir descreve elementos schedule em detalhes:
 
-| Nome JSON | DESCRIÇÃO | Valores válidos |
+| Nome JSON | Descrição | Valores válidos |
 |:--- |:--- |:--- |
 | **minutos** |Minutos da hora em que o trabalho executa. |Uma matriz de inteiros. |
 | **horas** |Horas do dia em que o trabalho executa. |Uma matriz de inteiros. |
@@ -173,7 +173,7 @@ Os exemplos a seguir mostram vários agendamentos de recorrência. Os exemplos c
 
 Esses agendamentos assumem que **intervalo** está definido para 1\. Os exemplos também assumem os valores de **frequência** corretos para os valores na **agenda**. Por exemplo, não é possível usar uma **frequência** de "day" e ter uma modificação **monthDays** na **agenda**. Nós descrevemos essas restrições no início do artigo.
 
-| Exemplo | DESCRIÇÃO |
+| Exemplo | Descrição |
 |:--- |:--- |
 | `{"hours":[5]}` |Executar às 5:00 todos os dias.<br /><br />O Agendador corresponde a cada valor em "hours" com cada valor em "minutes", um a um, para criar uma lista de todos os horários em que o trabalho é executado. |
 | `{"minutes":[15], "hours":[5]}` |Executar às 5h15 todos os dias. |

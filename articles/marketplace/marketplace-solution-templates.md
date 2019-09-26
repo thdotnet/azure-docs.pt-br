@@ -6,14 +6,14 @@ author: ellacroi
 manager: nunoc
 ms.service: marketplace
 ms.topic: article
-ms.date: 11/15/2018
+ms.date: 9/25/2019
 ms.author: ellacroi
-ms.openlocfilehash: 8d02d942fce7bd51a116cc4c19eac9faca0060ef
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 725be2ee239a879be8200d33acaf566b1d42d446
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561495"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300332"
 ---
 # <a name="azure-applications-solution-template-offer-publishing-guide"></a>Aplicativos Azure: Guia de Publicação de Oferta com Modelo de Solução
 
@@ -21,7 +21,7 @@ Os modelos de solução são uma das principais formas de publicar uma solução
 
 Use o Azure App: oferta de modelo de solução quando a solução exigir mais automação de implantação e configuração do que um VM simples. Você pode automatizar o provisionamento de uma ou mais VMs usando Aplicativos do Azure: modelos de solução. Você também pode provisionar recursos de rede e armazenamento. O tipo de oferta Aplicativos do Azure: modelos de solução oferece benefícios de automação para VMs únicas e soluções inteiras baseadas em IaaS.
 
-Esses modelos de solução são ofertas de transação, que são implantados e faturados através do Marketplace. A chamada à ação que um usuário vê é "Obtenha agora".
+Esses modelos de solução não são ofertas de transações, mas podem ser usados para implantar ofertas de VM pagas cobradas por meio do Marketplace comercial da Microsoft. A chamada à ação que um usuário vê é "Obtenha agora".
 
 
 ## <a name="requirements-for-solution-templates"></a>Requisitos dos modelos de solução

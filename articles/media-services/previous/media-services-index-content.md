@@ -12,23 +12,24 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 09/22/2019
 ms.author: juliako
 ms.reviewer: johndeu
-ms.openlocfilehash: a51774a1db76086440742abd5aedce3fbd26c270
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: d1502b4e0e024a93db41a97589231eef1ed6696f
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69016096"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310162"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer"></a>Indexando arquivos de mídia com o Indexador de Mídia do Azure
+
+> [!NOTE]
+> O processador de mídia [Azure Media indexer](media-services-index-content.md) será desativado em 1º de outubro de 2020. Os [serviços de mídia do Azure Video indexer](https://docs.microsoft.com/azure/media-services/video-indexer/) substituem esse processador de mídia herdado. Para obter mais informações, consulte [migrar do Azure Media indexer e Azure Media indexer 2 para os serviços de mídia do Azure Video indexer](migrate-indexer-v1-v2.md).
+
 O Azure Media Indexer permite que você torne o conteúdo de seus arquivos de mídia pesquisável e gere uma transcrição de texto completo para legendas codificadas e palavras-chave. É possível processar um arquivo de mídia ou vários arquivos de mídia em um lote.  
 
-> [!IMPORTANT]
-> Ao indexar conteúdo, certifique-se de usar arquivos de mídia que tenham uma fala clara (sem música de fundo, ruído, efeitos ou chiado de microfone). Alguns exemplos de conteúdo apropriado são: reuniões, palestras e apresentações registradas. O seguinte conteúdo pode não ser adequado para indexação: filmes, programas de TV, tudo com áudio misto e efeitos de som, com conteúdo mal gravado com ruídos de fundo (assovio).
-> 
-> 
+Ao indexar conteúdo, certifique-se de usar arquivos de mídia que tenham uma fala clara (sem música de fundo, ruído, efeitos ou chiado de microfone). Alguns exemplos de conteúdo apropriado são: reuniões, palestras e apresentações registradas. O seguinte conteúdo pode não ser adequado para indexação: filmes, programas de TV, tudo com áudio misto e efeitos de som, com conteúdo mal gravado com ruídos de fundo (assovio).
 
 Um trabalho de indexação pode gerar as seguintes saídas:
 
@@ -151,7 +152,7 @@ Por padrão, um trabalho de indexação gera os seguintes arquivos de saída. Os
 
 Quando houver mais de um arquivo de mídia de entrada, o Indexador irá gerar um arquivo de manifesto para saídas do trabalho, nomeado 'JobResult.txt'. Para cada arquivo de mídia de entrada, os arquivos AIB, SAMI, TTML, WebVTT e os arquivos de palavra-chave resultantes são numerados em sequência usando o "Alias."
 
-| Nome do arquivo | Descrição |
+| Nome do Arquivo | Descrição |
 | --- | --- |
 | **InputFileName.aib** |Arquivo de blob de indexação de áudio. <br/><br/> O arquivo de Blob de Indexação de Áudio (AIB) é um arquivo binário que pode ser pesquisado no Microsoft SQL Server usando a pesquisa de texto completa.  O arquivo AIB é mais eficiente do que os arquivos de legenda simples, porque ele contém alternativas para cada palavra, permitindo uma experiência de pesquisa muito mais sofisticada. <br/> <br/>Ele requer a instalação do complemento do indexador SQL em um computador que execute o Microsoft SQL Server 2008 ou posterior. Pesquisando o AIB usando a pesquisa de texto completa do Microsoft SQL Server fornece resultados da pesquisa mais precisos que pesquisando os arquivos de legenda oculta codificada gerados pelo WAMI. Isso ocorre porque o AIB contém palavras alternativas que parecem familiares, enquanto os arquivos de legenda oculta codificados contêm a palavra com a confiança mais alta para cada segmento do áudio. Se a pesquisa de palavras faladas for de máxima importância, é recomendável usar o AIB em conjunto com o Microsoft SQL Server.<br/><br/> Para baixar o complemento, clique em <a href="https://aka.ms/indexersql">Complemento SQL do Indexador de Mídia do Azure</a>. <br/><br/>Também é possível utilizar outros mecanismos de pesquisa, como o Apache Lucene/Solr para simplesmente indexar o vídeo com base na legenda oculta e nos arquivos XML de palavra-chave, mas isso produzirá resultados de pesquisa menos precisos. |
 | **InputFileName.smi**<br/>**InputFileName.ttml**<br/>**InputFileName.vtt** |Arquivos de Legenda Oculta (CC) nos formatos SAMI, TTML e WebVTT.<br/><br/>Eles podem ser usados para tornar os arquivos de áudio e vídeo acessíveis para pessoas com deficiência auditiva.<br/><br/>Arquivos de legenda oculta incluem uma marca chamada <b>Recognizability</b>, que classifica um trabalho de indexação com base no quanto a fala é reconhecível no vídeo de origem.  Você pode usar o valor de <b>Reconhecimento</b> para mostrar os arquivos de saída na tela e facilitar o uso. Uma baixa pontuação significaria resultados de indexação fraca devido a qualidade do áudio. |
@@ -266,9 +267,9 @@ Em caso de erros, o Indexador de Mídia do Azure deverá relatar um dos seguinte
 | 2004 |Protocolo não suportado |Não há suporte para o protocolo de URL de mídia. |
 | 2005 |Tipo de arquivo sem suporte |Não há suporte para o tipo de arquivo de mídia de entrada. |
 | 2006 |Muitos arquivos de entrada |Há mais de 10 arquivos no manifesto de entrada. |
-| 3000 |Falha ao decodificar o arquivo de mídia |Codec de mídia sem suporte <br/>ou<br/> Arquivo de mídia corrompido <br/>ou<br/> Nenhum fluxo de áudio na mídia de entrada. |
+| 3000 |Falha ao decodificar o arquivo de mídia |Codec de mídia sem suporte <br/>ou o<br/> Arquivo de mídia corrompido <br/>ou o<br/> Nenhum fluxo de áudio na mídia de entrada. |
 | 4000 |Indexação de lotes parcialmente bem-sucedida |Alguns dos arquivos de mídia de entrada estão com falha para serem indexados. Para obter mais informações, consulte <a href="#output_files">Arquivos de saída</a>. |
-| outros |Erros internos |Entre em contato com a equipe de suporte. indexer@microsoft.com |
+| Outros |Erros internos |Entre em contato com a equipe de suporte. indexer@microsoft.com |
 
 ## <a id="supported_languages"></a>Idiomas com suporte
 Atualmente, há suporte para os idiomas inglês e espanhol. Para saber mais, consulte [a postagem no blog sobre a versão v1.2](https://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/).

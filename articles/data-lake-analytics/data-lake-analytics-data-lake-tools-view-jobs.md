@@ -1,20 +1,18 @@
 ---
-title: Usar o Navegador de Trabalhos e a Exibição de Trabalho para trabalhos do Azure Data Lake Analytics
+title: Usar o navegador de trabalhos & exibição de trabalho-Azure Data Lake Analytics
 description: Este artigo descrever como usar o Navegador de Trabalhos e a Exibição de Trabalho para trabalhos do Azure Data Lake Analytics.
-services: data-lake-analytics
 ms.service: data-lake-analytics
 author: jasonwhowell
 ms.author: jasonh
-ms.reviewer: jasonwhowell
 ms.assetid: bdf27b4d-6f58-4093-ab83-4fa3a99b5650
 ms.topic: conceptual
 ms.date: 08/02/2017
-ms.openlocfilehash: 905100f8a1444f6f6ee18d3bf9e9eab2ede8c805
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2d33a6ec5ff6b687913914e9433b85765aaa7aec
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60616046"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309943"
 ---
 # <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Usar o Navegador de Trabalhos e a Exibição de Trabalho para o Azure Data Lake Analytics
 O serviço Azure Data Lake Analytics arquiva trabalhos enviados em um repositório de consultas. Neste artigo, você aprende como usar o Navegador de Trabalhos e Exibição de Trabalho nas Ferramentas do Azure Data Lake para Visual Studio para localizar as informações de histórico do trabalho. 
@@ -34,7 +32,7 @@ A Exibição de Trabalho mostra as informações detalhadas de um trabalho. Para
 
 A Exibição de Trabalho contém:
 
-* Resumo do trabalho
+* Resumo do Trabalho
   
     Atualize a Exibição de Trabalho para ver as informações mais recentes sobre trabalhos em execução.
   
@@ -88,7 +86,7 @@ A Exibição de Trabalho contém:
     * SV1 Extract: o nome de um estágio, nomeado por um número e pelo método da operação.
     * 84 vértices: a contagem total de vértices neste estágio. O número indica em quantas partes o trabalho está dividido nesse estágio.
     * 12,9 s/vértice: o tempo de execução de vértice médio para este estágio. Esse número é calculado pela SOMA (tempo de execução de todos os vértices) / (contagem total de vértices). Isso significa que se você puder atribuir todos os vértices executados em paralelismo, o estágio inteiro será concluído em 12,9 s. Isso também significa que se todo o trabalho neste estágio for feito em série, o custo seria nº. de vértices * tempo MÉDIO.
-    * 850\.895 linhas gravadas: contagem total de linhas gravadas nesse estágio.
+    * 850.895 linhas gravadas: contagem total de linhas gravadas nesse estágio.
     * L/G: a quantidade de dados lidos/gravados nesse estágio, em bytes.
     * Cores: cores são usadas no estágio para indicar status de vértice diferentes.
       
@@ -141,7 +139,7 @@ A Exibição de Trabalho contém:
     O Histórico de Estado também é visualizado no Resumo do Trabalho, mas você pode obter mais detalhes aqui. Você pode encontrar informações mais detalhadas, por exemplo, quando o trabalho é preparado, colocado na fila, quando inicia a execução e quando encerra. Também é possível encontrar quantas vezes o trabalho foi compilado (o valor de CcsAttempts: 1), quando o trabalho é realmente expedido para o cluster (o valor de Detalhe: expedindo o trabalho para cluster), etc.
   
     ![Histórico de Estado de Exibição de Trabalho do Azure Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-view-jobs/data-lake-tools-job-view-state-history.png)
-* Diagnósticos
+* Diagnóstico
   
     A ferramenta diagnostica automaticamente a execução do trabalho. Você receberá alertas quando houver algum erro ou problemas de desempenho em seus trabalhos. Observe que você precisa baixar o Perfil para obter informações completas aqui. 
   

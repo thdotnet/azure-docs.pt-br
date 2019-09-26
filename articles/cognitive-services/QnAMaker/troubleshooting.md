@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 08/30/2019
+ms.date: 09/25/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 95b4978b66accce0182e58493cb9d600dbe5e35f
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: c0ceea5c86af8d733c838e19f77eaeadc8a12dbb
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277492"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300232"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Solução de problemas para QnA Maker
 
@@ -49,6 +49,8 @@ QnA Maker fornece um bot de **ajuda** dentro do portal de QnA Maker para ajudá-
 ## <a name="manage-the-knowledge-base"></a>Gerenciar a base de conhecimento
 
 ### <a name="i-accidentally-deleted-a-part-of-my-qna-maker-what-should-i-do"></a>Eu apaguei acidentalmente uma parte do meu QnA Maker, o que devo fazer? 
+
+Não exclua nenhum dos serviços do Azure criados junto com o QnA Maker recurso, como pesquisa ou aplicativo Web. Eles são necessários para que QnA Maker funcionem, se você excluir um, QnA Maker deixará de funcionar corretamente.
 
 Todas as exclusões são permanentes, incluindo pares de perguntas e respostas, arquivos, URLs, perguntas e respostas personalizadas, bases de conhecimento ou recursos do Azure. Certifique-se de exportar sua base de conhecimento da página **Configurações** antes de excluir qualquer parte de sua base de conhecimento. 
 

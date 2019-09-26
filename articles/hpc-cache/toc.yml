@@ -23,12 +23,15 @@
             - name: Pré-carregar novo armazenamento de blobs
               href: hpc-cache-ingest.md
             - name: Métodos de ingestão de dados alternativos
-            - name: Popular o cache com cópia paralela
-              href: hpc-cache-ingest-parallelcp.md
-            - name: Popular o cache com msrsync
-              href: hpc-cache-ingest-msrsync.md
-            - name: Popular o cache por cópia de arquivo manual
-              href: hpc-cache-ingest-manual.md
+              items:
+                - name: Popular o cache com cópia paralela
+                  href: hpc-cache-ingest-parallelcp.md
+                - name: Popular o cache com msrsync
+                  href: hpc-cache-ingest-msrsync.md
+                - name: Popular o cache por cópia de arquivo manual
+                  href: hpc-cache-ingest-manual.md
+    - name: Conectar-se ao cache
+      href: hpc-cache-mount.md
 - name: Recursos
   items:
     - name: Abra um tíquete de suporte

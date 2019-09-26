@@ -9,23 +9,23 @@ ms.reviewer: klam
 ms.assetid: 13a2be8c-dc14-46cc-ab7d-5075bfd4d724
 ms.topic: article
 ms.date: 08/18/2016
-ms.openlocfilehash: 3a8664497d3d082ec1c7f584188854991e872d50
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b63367ab9686eee66bf3f00dddc2e2efe4cb941
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720438"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300863"
 ---
 # <a name="plans-and-billing-for-azure-scheduler"></a>Planos e Cobrança do Agendador do Azure
 
 > [!IMPORTANT]
-> [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está sendo desativado. Para agendar trabalhos, [experimente os Aplicativos Lógicos do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> O [aplicativo lógico do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está [sendo desativado](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Para continuar trabalhando com os trabalhos que você configurou no Agendador, [migre para o aplicativo lógico do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md) assim que possível.
 
 ## <a name="job-collection-plans"></a>Planos de coleção de trabalhos
 
 No Agendador do Azure, uma coleção de trabalhos contém um número específico de trabalhos. A coleção de trabalhos é a entidade faturável e fornecida nos planos Standard, P10 Premium e P20 Premium, que são descritos aqui: 
 
-| Plano de coleção de trabalhos | Máximo de trabalhos por coleção | Recorrência máxima | Máximo de coleções de trabalhos por assinatura | limites | 
+| Plano de coleção de trabalhos | Máximo de trabalhos por coleção | Recorrência máxima | Máximo de coleções de trabalhos por assinatura | Limites | 
 |:--- |:--- |:--- |:--- |:--- |
 | **Standard** | 50 trabalhos por coleção | Um por minuto. Não pode executar trabalhos com mais frequência do que um por minuto. | Cada assinatura do Azure pode ter até 100 contas de coleções de trabalhos Standard. | Acesso ao conjunto de recursos completo do Agendador | 
 | **P10 Premium** | 50 trabalhos por coleção | Um por minuto. Não pode executar trabalhos com mais frequência do que um por minuto. | Cada assinatura do Azure pode ter até 10.000 contas de coleções de trabalhos P10 Premium. Para obter mais coleções, <a href="mailto:wapteams@microsoft.com">Contate-nos</a>. | Acesso ao conjunto de recursos completo do Agendador |

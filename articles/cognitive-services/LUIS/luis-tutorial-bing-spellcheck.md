@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 09/05/2019
+ms.date: 09/25/2019
 ms.author: diberry
-ms.openlocfilehash: 43cb2f0c3ef0f845afcd309dccb35bc632ffd324
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 3bde609c83425d660c867939e034247d7e6898c5
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390963"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300267"
 ---
 # <a name="correct-misspelled-words-with-bing-spell-check"></a>Corrigir palavras grafas incorretamente com a Verificação Ortográfica do Bing
 
@@ -89,7 +89,13 @@ A URL do ponto de extremidade tem vários valores que precisam ser passados corr
 ```
 
 ## <a name="ignore-spelling-mistakes"></a>Ignorar erros de ortografia
-Se você não quiser usar o serviço da API de Verificação Ortográfica do Bing v7, poderá rotular as declarações que apresentam erros de ortografia para que o LUIS possa aprender a ortografia correta, bem como erros de digitação. Essa opção exige mais esforço de aplicação de rótulos do que o uso de um verificador ortográfico.
+
+Se você não quiser usar o serviço do Verificação Ortográfica do Bing API v7, será necessário adicionar a grafia correta e incorreta. 
+
+Duas soluções são:
+
+* Exemplo de rótulo declarações que têm todas as diferentes ortografias para que o LUIS possa aprender a grafia adequada, bem como erros de digitação. Essa opção exige mais esforço de aplicação de rótulos do que o uso de um verificador ortográfico.
+* Crie uma lista de frases com todas as variações da palavra. Com essa solução, você não precisa rotular as variações de palavras no exemplo declarações. 
 
 ## <a name="publishing-page"></a>Página de publicação
 A página de [publicação](luis-how-to-publish-app.md) tem uma caixa de seleção **Habilitar o verificador ortográfico do Bing**. Isso é uma conveniência para criar a chave e entender como a URL de ponto de extremidade é alterada. Você ainda precisará usar os parâmetros de ponto de extremidade corretos para que a ortografia seja corrigida em cada declaração. 

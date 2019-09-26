@@ -9,16 +9,18 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 09/01/2019
-ms.openlocfilehash: dcb0fe4da968408a261e387c636cc548fa757a09
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: d397adfb6ed2d3aef93bd40d14eb0ad199cdb90c
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71036665"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309365"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Conectar-se a fontes de dados locais dos Aplicativos Lógicos do Azure
 
-Para acessar fontes de dados locais de seus aplicativos lógicos, crie um recurso de gateway de dados local no portal do Azure. Os aplicativos lógicos podem, então, usar os [conectores locais](../connectors/apis-list.md#on-premises-connectors). Este artigo mostra como criar o recurso de gateway do Azure *depois* de [baixar e instalar o gateway em um computador local](../logic-apps/logic-apps-gateway-install.md). Para obter mais informações sobre o gateway, consulte [como funciona o gateway](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service).
+Para acessar fontes de dados locais de seus aplicativos lógicos, crie um recurso de gateway de dados local no portal do Azure. Os aplicativos lógicos podem, então, usar os [conectores locais](../connectors/apis-list.md#on-premises-connectors). O aplicativo lógico do Azure dá suporte a operações de gravação, incluindo inserções e atualizações, por meio do gateway. No entanto, essas operações têm [limites de seu tamanho de carga](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+
+Este artigo mostra como criar o recurso de gateway do Azure *depois* de [baixar e instalar o gateway em um computador local](../logic-apps/logic-apps-gateway-install.md). Para obter mais informações sobre o gateway, consulte [como funciona o gateway](../logic-apps/logic-apps-gateway-install.md#gateway-cloud-service). 
 
 > [!TIP]
 > Para se conectar a redes virtuais do Azure, considere criar um [*ambiente de serviço de integração*](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). 
@@ -37,7 +39,7 @@ Para obter informações sobre como usar o gateway com outros serviços, consult
 Para aplicativos lógicos do Azure, o gateway de dados local dá suporte a [conectores locais](../connectors/apis-list.md#on-premises-connectors) para essas fontes de dados:
 
 * BizTalk Server 2016
-* Sistema de arquivos
+* Sistema de Arquivos
 * IBM DB2  
 * IBM Informix
 * IBM MQ

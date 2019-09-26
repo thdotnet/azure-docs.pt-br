@@ -1,5 +1,5 @@
 ---
-title: Limites e configuração – Aplicativos Lógicos do Azure | Microsoft Docs
+title: Limites e configuração – aplicativos lógicos do Azure
 description: Valores de limites e de configuração do serviço para os Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 07/19/2019
-ms.openlocfilehash: 401b33c28e4ba91a0da5e4ab38f920e173302ea1
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: 1479c6665b5d68e0fa16ece7e37f4e2a2457c69a
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70242361"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309786"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informações de limites e configuração para os Aplicativos Lógicos do Azure
 
@@ -119,13 +119,19 @@ Para ultrapassar esses limites no processamento normal ou executar um teste de c
 > [!NOTE]
 > A [SKU do desenvolvedor](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) não tem limites publicados, pois essa SKU não tem nenhum SLA (contrato de nível de serviço) ou recursos para escalar verticalmente. Use esta SKU somente para testes, desenvolvimento e teste, não para produção ou teste de desempenho.
 
+<a name="gateway-limits"></a>
+
+## <a name="gateway-limits"></a>Limites de gateway
+
+O aplicativo lógico do Azure dá suporte a operações de gravação, incluindo inserções e atualizações, por meio do gateway. No entanto, essas operações têm [limites de seu tamanho de carga](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+
 <a name="request-limits"></a>
 
 ## <a name="http-limits"></a>Limites do HTTP
 
 Estes são os limites para uma única solicitação HTTP ou chamada de conector síncrona:
 
-#### <a name="timeout"></a>Tempo limite
+#### <a name="timeout"></a>Tempo Limite
 
 Algumas operações de conector fazem chamadas assíncronas ou escutam solicitações de webhook, portanto o tempo limite para essas operações pode ter mais do que esses limites. Para obter mais informações, consulte os detalhes técnicos para o conector específico e também [Gatilhos e ações de fluxo de trabalho](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action).
 
@@ -144,7 +150,7 @@ Algumas operações de conector fazem chamadas assíncronas ou escutam solicita�
 | Limite de avaliação da expressão | 131.072 caracteres | 131.072 caracteres | As expressões `@concat()`, `@base64()`, `@string()` não podem ser maiores do que esse limite. |
 |||||
 
-#### <a name="retry-policy"></a>Política de novas tentativas
+#### <a name="retry-policy"></a>Política de repetição
 
 | Nome | Limite | Observações |
 | ---- | ----- | ----- |
@@ -287,7 +293,7 @@ Os Aplicativos Lógicos não permitem a conexão direta com a contas de Armazena
 | Leste do Canadá | 40.86.202.42, 52.229.125.57, 52.232.129.143, 52.232.133.109 |
 | Índia Central | 52.172.157.194, 52.172.184.192, 52.172.191.194, 104.211.73.195 |
 | EUA Central | 13.67.236.76, 40.77.31.87, 40.77.111.254, 104.43.243.39 |
-| Ásia Oriental | 13.75.89.159, 23.97.68.172, 40.83.98.194, 168.63.200.173 |
+| Leste da Ásia | 13.75.89.159, 23.97.68.172, 40.83.98.194, 168.63.200.173 |
 | East US | 40.117.99.79, 40.117.100.228, 137.116.126.165, 137.135.106.54 |
 | Leste dos EUA 2 | 40.70.27.253, 40.79.44.7, 40.84.25.234, 40.84.59.136 |
 | Leste do Japão | 13.71.146.140, 13.78.43.164, 13.78.62.130, 13.78.84.187 |
@@ -319,7 +325,7 @@ Os Aplicativos Lógicos não permitem a conexão direta com a contas de Armazena
 | Leste do Canadá | 40.86.203.228, 40.86.216.241, 40.86.217.241, 40.86.226.149, 40.86.228.93, 52.229.120.45, 52.229.126.25, 52.232.128.155 | 40.69.106.240 - 40.69.106.255, 52.242.35.152 |
 | Índia Central | 52.172.154.168, 52.172.185.79, 52.172.186.159, 104.211.74.145, 104.211.90.162, 104.211.90.169, 104.211.101.108, 104.211.102.62 | 104.211.81.192 - 104.211.81.207, 52.172.211.12 |
 | EUA Central | 13.67.236.125, 23.100.82.16, 23.100.86.139, 23.100.87.24, 23.100.87.56, 40.113.218.230, 40.122.170.198, 104.208.25.27 | 13.89.171.80 - 13.89.171.95, 52.173.245.164 |
-| Ásia Oriental | 13.75.94.173, 40.83.73.39, 40.83.75.165, 40.83.77.208, 40.83.100.69, 40.83.127.19, 52.175.33.254, 65.52.175.34 | 13.75.36.64 - 13.75.36.79, 52.175.23.169 |
+| Leste da Ásia | 13.75.94.173, 40.83.73.39, 40.83.75.165, 40.83.77.208, 40.83.100.69, 40.83.127.19, 52.175.33.254, 65.52.175.34 | 13.75.36.64 - 13.75.36.79, 52.175.23.169 |
 | East US | 13.92.98.111, 23.100.29.190, 23.101.132.208, 23.101.136.201, 23.101.139.153, 40.114.82.191, 40.121.91.41, 104.45.153.81 | 40.71.11.80 – 40.71.11.95, 40.71.249.205, 191.237.41.52 |
 | Leste dos EUA 2 | 40.70.26.154, 40.70.27.236, 40.70.29.214, 40.70.131.151, 40.84.30.147, 104.208.140.40, 104.208.155.200, 104.208.158.174 | 40.70.146.208 - 40.70.146.223, 52.232.188.154 |
 | Leste do Japão | 13.71.158.3, 13.71.158.120, 13.73.4.207, 13.78.18.168, 13.78.20.232, 13.78.21.155, 13.78.35.229, 13.78.42.223 | 13.78.108.0 - 13.78.108.15, 13.71.153.19 |

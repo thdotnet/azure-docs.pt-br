@@ -8,15 +8,15 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: heidist
-ms.openlocfilehash: 308eb90e7ae244442a603491044e90dc3b8d052a
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: c2d4cae1689701704c866833c99ca616bbd01ec5
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141143"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300668"
 ---
 # <a name="service-limits-in-azure-search"></a>Limites de serviço no Azure Search
-Os limites máximos de armazenamento, cargas de trabalho e quantidades de índices, documentos e outros objetos dependem de você [provisionar Azure Search](search-create-service-portal.md) nos tipos de preço **gratuito**, **básico**, **padrão**ou otimizado para **armazenamento** .
+Os limites máximos de armazenamento, cargas de trabalho e quantidades de índices, documentos e outros objetos dependem de você [provisionar Azure Search](search-create-service-portal.md) nos tipos de preço **gratuito**, **básico**, **padrão**ou **otimizado para armazenamento** .
 
 + **Gratuito** é um serviço compartilhado multilocatário fornecido com sua assinatura do Azure.
 
@@ -45,7 +45,7 @@ Os limites máximos de armazenamento, cargas de trabalho e quantidades de índic
 
 ## <a name="index-limits"></a>Limites de índice
 
-| Recurso | Gratuito | Básico&nbsp;<sup>1</sup>  | S1 | S2 | S3 | S3&nbsp;HD | L1 | L2 |
+| Resource | Gratuito | Básico&nbsp;<sup>1</sup>  | S1 | S2 | S3 | S3&nbsp;HD | L1 | L2 |
 | -------- | ---- | ------------------- | --- | --- | --- | --- | --- | --- |
 | Índices máximos |3 |5 ou 15 |50 |200 |200 |1000 por partição ou 3000 por serviço |10 |10 |
 | Máximo de campos simples por índice |1000 |100 |1000 |1000 |1000 |1000 |1000 |1000 |
@@ -62,18 +62,20 @@ Os limites máximos de armazenamento, cargas de trabalho e quantidades de índic
 
 ## <a name="document-limits"></a>Limites do documento 
 
-A partir de outubro de 2018, não haverá mais limites de documentos para novos serviços criados em qualquer camada faturável (Básica, S1, S2, S3, S3 HD), em qualquer região. Embora a maioria das regiões tenha contagens de documentos ilimitadas desde novembro/dezembro de 2017, havia cinco regiões que continuavam impondo limites de documentos. Dependendo de quando e onde você criou um serviço de pesquisa, talvez esteja executando um serviço ainda sujeito a limites de documentos.
+A partir de outubro de 2018, não há mais nenhum limite de documento<sup>1</sup> para qualquer novo serviço criado em qualquer camada faturável (básico, S1, S2, S3, S3 HD) em qualquer região. Embora a maioria das regiões tenha contagens de documentos ilimitadas desde novembro/dezembro de 2017, havia cinco regiões que continuavam impondo limites de documentos. Dependendo de quando e onde você criou um serviço de pesquisa, talvez esteja executando um serviço ainda sujeito a limites de documentos.
 
 Para determinar se o serviço tem limites de documentos, verifique o bloco Uso na página de visão geral do serviço. As contagens de documentos são ilimitadas ou estão sujeitas a um limite com base na camada.
 
   ![Bloco Uso](media/search-limits-quotas-capacity/portal-usage-tile.png)
+
+<sup>1</sup> mesmo que não haja nenhum limite de documento específico de SKU, cada índice ainda está sujeito a um limite de segurança máximo para garantir a estabilidade do serviço. Esse limite vem do Lucene. Cada documento de Azure Search é indexado internamente como um ou mais documentos do Lucene. O número de documentos do Lucene por documento do Azure Search depende do número total de elementos em campos de coleção complexos. Cada elemento é indexado como um documento Lucene separado. Por exemplo, um documento com 3 elementos em um campo de coleção complexo será indexado como quatro documentos Lucene-1 para o documento em si e 3 para os elementos. O número máximo de documentos Lucene é de aproximadamente 25.000.000.000 por índice.
 
 ### <a name="regions-previously-having-document-limits"></a>Regiões que anteriormente tinham limites de documentos
 
 Se o portal indicar um limite de documentos, significa que o serviço foi criado antes do final de 2017 ou foi criado em um datacenter usando clusters de baixa capacidade para hospedar serviços do Azure Search:
 
 + Leste da Austrália
-+ Ásia Oriental
++ Leste da Ásia
 + Índia Central
 + Oeste do Japão
 + Centro-oeste dos EUA
@@ -103,7 +105,7 @@ Para reduzir o tamanho do documento, lembre-se de excluir dados não consultáve
 Existem tempos de execução máximos para fornecer balanceamento e estabilidade ao serviço como um todo, mas conjuntos de dados maiores podem precisar de mais tempo de indexação do que o máximo permitido. Se um trabalho de indexação não puder ser concluído no tempo máximo permitido, tente executá-lo de forma agendada. O agendador mantém monitora o status da indexação. Se um trabalho de indexação agendado for interrompido por algum motivo, o indexador poderá continuar de onde parou na próxima execução agendada.
 
 
-| Recurso | Gratuito&nbsp;<sup>1</sup> | Básico&nbsp;<sup>2</sup>| S1 | S2 | S3 | S3&nbsp;HD&nbsp;<sup>3</sup>|L1 |L2 |
+| Resource | Gratuito&nbsp;<sup>1</sup> | Básico&nbsp;<sup>2</sup>| S1 | S2 | S3 | S3&nbsp;HD&nbsp;<sup>3</sup>|L1 |L2 |
 | -------- | ----------------- | ----------------- | --- | --- | --- | --- | --- | --- |
 | Indexadores máximos |3 |5 ou 15|50 |200 |200 |N/D |10 |10 |
 | Máximo de fontes de dados |3 |5 ou 15 |50 |200 |200 |N/D |10 |10 |
@@ -129,7 +131,7 @@ Existem tempos de execução máximos para fornecer balanceamento e estabilidade
 
 O número máximo de mapas de sinônimos permitido varia de acordo com o tipo de preço. Cada regra pode ter até 20 expansões, em que uma expansão é um termo equivalvent. Por exemplo, dado "gato", associação com "Kitty", "felinos" e "Felis" (o genus para gatos) contaria como 3 expansões.
 
-| Recurso | Gratuito | Basic | S1 | S2 | S3 | S3-HD |L1 | L2 |
+| Resource | Gratuito | Basic | S1 | S2 | S3 | S3-HD |L1 | L2 |
 | -------- | -----|------ |----|----|----|-------|---|----|
 | Máximo de mapas de sinônimo |3 |3|5 |10 |20 |20 | 10 | 10 |
 | Número máximo de regras por mapa |5\.000 |20000|20000 |20000 |20000 |20000 | 20000 | 20000  |

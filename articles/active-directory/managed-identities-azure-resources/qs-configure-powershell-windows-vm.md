@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/27/2017
+ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f76fef3d5e6515e9d546c709ace0a4a533c0a45
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ba8ce6fb8147736c8265148a9f3576390dcccc6
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66112700"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309772"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-powershell"></a>Configurar identidades gerenciadas para recursos do Azure em uma VM do Azure usando PowerShell
 
@@ -46,7 +46,7 @@ Nesta seção, você aprenderá como habilitar e desabilitar a identidade gerenc
 
 Para criar uma VM do Azure com a identidade gerenciada atribuída ao sistema habilitada, a conta precisará da atribuição de função [Colaborador da Máquina Virtual](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Nenhuma atribuição adicional de função de diretório do Azure Active Directory é necessária.
 
-1. Consulte um dos seguintes Azure VM inícios rápidos, Concluindo apenas as seções necessárias ("entrar no Azure", "Criar grupo de recursos", "Criar grupo rede", "cria a VM").
+1. Consulte um dos seguintes inícios rápidos de VM do Azure, concluindo apenas as seções necessárias ("entrar no Azure", "Criar grupo de recursos", "Criar grupo de rede", "criar a VM").
     
     Quando você chegar à seção "Criar a VM", faça uma pequena modificação na sintaxe do cmdlet [New-AzVMConfig](/powershell/module/az.compute/new-azvm). Certifique-se de adicionar um parâmetro `-AssignIdentity:$SystemAssigned` para provisionar a VM com a identidade atribuída ao sistema habilitada, por exemplo:
       
@@ -57,8 +57,7 @@ Para criar uma VM do Azure com a identidade gerenciada atribuída ao sistema hab
    - [Crie uma Máquina Virtual do Windows usando o PowerShell](../../virtual-machines/windows/quick-create-powershell.md)
    - [Crie uma Máquina Virtual do Linux usando o PowerShell](../../virtual-machines/linux/quick-create-powershell.md)
 
-> [!NOTE]
-> Opcionalmente, você pode provisionar as identidades de gerenciado para a extensão VM de recursos do Azure, mas ele será preterido em breve. É recomendável usar o ponto de extremidade do Azure Instance Metadata identidade para autenticação. Para obter mais informações, consulte [migrar da extensão de VM para o ponto de extremidade de IMDS do Azure para autenticação](howto-migrate-vm-extension.md).
+
 
 ### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-vm"></a>Habilitar identidade gerenciada atribuída ao sistema em uma VM do Azure existente
 
@@ -77,8 +76,7 @@ Para habilitar a identidade gerenciada atribuída ao sistema em uma VM que foi o
    Update-AzVM -ResourceGroupName myResourceGroup -VM $vm -AssignIdentity:$SystemAssigned
    ```
 
-> [!NOTE]
-> Opcionalmente, você pode provisionar as identidades de gerenciado para a extensão VM de recursos do Azure, mas ele será preterido em breve. É recomendável usar o ponto de extremidade do Azure Instance Metadata identidade para autenticação. Para obter mais informações, consulte [migrar da extensão de VM para o ponto de extremidade de IMDS do Azure para autenticação](howto-migrate-vm-extension.md).
+
 
 ### <a name="add-vm-system-assigned-identity-to-a-group"></a>Adicionar uma identidade atribuída pelo sistema de uma VM a um grupo
 
@@ -134,8 +132,7 @@ $vm = Get-AzVM -ResourceGroupName myResourceGroup -Name myVM
 Update-AzVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 ```
 
-> [!NOTE]
-> Se você tiver provisionado a identidade gerenciada para recursos do Azure extensão da VM (preterido), você precisará removê-lo usando o [AzVMExtension remover](/powershell/module/az.compute/remove-azvmextension). Para obter mais informações, consulte [migrar da extensão de VM para o Azure IMDS para autenticação](howto-migrate-vm-extension.md).
+
 
 ## <a name="user-assigned-managed-identity"></a>Identidade gerenciada atribuída pelo usuário
 
@@ -145,7 +142,7 @@ Nesta seção, você aprenderá como adicionar e remover uma identidade atribuí
 
 Para atribuir uma identidade atribuída pelo usuário a uma VM, sua conta precisa das atribuições de função [Contribuidor de Máquina Virtual](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) e [Operador de Identidade Gerenciada](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Nenhuma atribuição adicional de função de diretório do Azure Active Directory é necessária.
 
-1. Consulte um dos seguintes Azure VM inícios rápidos, Concluindo apenas as seções necessárias ("entrar no Azure", "Criar grupo de recursos", "Criar grupo rede", "cria a VM"). 
+1. Consulte um dos seguintes inícios rápidos de VM do Azure, concluindo apenas as seções necessárias ("entrar no Azure", "Criar grupo de recursos", "Criar grupo de rede", "criar a VM"). 
   
     Quando você chegar à seção "Criar a VM", faça uma pequena modificação na  [`New-AzVMConfig`](/powershell/module/az.compute/new-azvm)sintaxe do cmdlet. Adicione os parâmetros `-IdentityType UserAssigned` e `-IdentityID` para provisionar a VM com uma identidade atribuída ao usuário.  Substitua `<VM NAME>`,`<SUBSCRIPTION ID>`, `<RESROURCE GROUP>`, e `<USER ASSIGNED IDENTITY NAME>` pelos seus próprios valores.  Por exemplo:
     
@@ -156,8 +153,7 @@ Para atribuir uma identidade atribuída pelo usuário a uma VM, sua conta precis
     - [Crie uma Máquina Virtual do Windows usando o PowerShell](../../virtual-machines/windows/quick-create-powershell.md)
     - [Crie uma Máquina Virtual do Linux usando o PowerShell](../../virtual-machines/linux/quick-create-powershell.md)
 
-> [!NOTE]
-> Opcionalmente, você pode provisionar as identidades de gerenciado para a extensão VM de recursos do Azure, mas ele será preterido em breve. É recomendável usar o ponto de extremidade do Azure Instance Metadata identidade para autenticação. Para obter mais informações, consulte [migrar da extensão de VM para o ponto de extremidade de IMDS do Azure para autenticação](howto-migrate-vm-extension.md).
+
 
 ### <a name="assign-a-user-assigned-managed-identity-to-an-existing-azure-vm"></a>Atribuir uma identidade gerenciada usuário atribuído a uma VM existente do Azure
 
@@ -172,7 +168,7 @@ Para atribuir uma identidade atribuída pelo usuário a uma VM, sua conta precis
 2. Crie uma identidade gerenciada atribuída ao usuário, usando o cmdlet [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/new-azuserassignedidentity).  Observe o `Id` na saída porque isso será necessário na próxima etapa.
 
    > [!IMPORTANT]
-   > Criar identidades gerenciadas atribuída pelo usuário dá suporte apenas a alfanumérico, sublinhado e hífen (0-9 ou a-z ou A-Z, \_ ou -) caracteres. Além disso, o nome deve ser limitado de 3 a 128 caracteres para a atribuição de VM/VMSS funcione corretamente. Para mais informações, consulte [Perguntas frequentes e problemas conhecidos](known-issues.md)
+   > A criação de identidades gerenciadas atribuídas pelo usuário dá suporte apenas a caracteres alfanuméricos, sublinhados e hifens \_ (0-9 ou a-z ou a-z ou-). Além disso, o nome deve ser limitado de 3 a 128 de comprimento de caractere para que a atribuição a VM/VMSS funcione corretamente. Para mais informações, consulte [Perguntas frequentes e problemas conhecidos](known-issues.md)
 
    ```powershell
    New-AzUserAssignedIdentity -ResourceGroupName <RESOURCEGROUP> -Name <USER ASSIGNED IDENTITY NAME>
@@ -187,8 +183,7 @@ Para atribuir uma identidade atribuída pelo usuário a uma VM, sua conta precis
    Update-AzVM -ResourceGroupName <RESOURCE GROUP> -VM $vm -IdentityType UserAssigned -IdentityID "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESROURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>"
    ```
 
-> [!NOTE]
-> Opcionalmente, você pode provisionar as identidades de gerenciado para a extensão VM de recursos do Azure, mas ele será preterido em breve. É recomendável usar o ponto de extremidade do Azure Instance Metadata identidade para autenticação. Para obter mais informações, consulte [migrar da extensão de VM para o ponto de extremidade de IMDS do Azure para autenticação](howto-migrate-vm-extension.md).
+
 
 ### <a name="remove-a-user-assigned-managed-identity-from-an-azure-vm"></a>Remover uma identidade gerenciada atribuída pelo usuário de uma VM do Azure
 
@@ -215,7 +210,7 @@ Update-AzVm -ResourceGroupName myResourceGroup -VirtualMachine $vm -IdentityType
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Identidades gerenciadas para visão geral de recursos do Azure](overview.md)
+- [Identidades gerenciadas para visão geral dos recursos do Azure ](overview.md)
 - Para os guias de início rápido completos sobre VM do Azure, consulte:
   
   - [Crie uma máquina virtual Windows com o PowerShell](../../virtual-machines/windows/quick-create-powershell.md) 

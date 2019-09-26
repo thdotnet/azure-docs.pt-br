@@ -1,6 +1,6 @@
 ---
-title: Como configurar o sistema e identidades gerenciadas atribuída pelo usuário em uma escala de máquina virtual do Azure definido usando a CLI do Azure
-description: Passo a passo instruções para configurar o sistema e identidades gerenciadas atribuída pelo usuário em uma escala de máquina virtual do Azure definido, usando a CLI do Azure.
+title: Como configurar o sistema e identidades gerenciadas atribuídas pelo usuário em um conjunto de dimensionamento de máquinas virtuais do Azure usando o CLI do Azure
+description: Instruções passo a passo para a configuração de identidades gerenciadas atribuídas pelo usuário e pelo sistema em um conjunto de dimensionamento de máquinas virtuais do Azure, usando CLI do Azure.
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/15/2018
+ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04a3c9eba1f6498796a7e617b400649963c996d1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 895d914226014a0f43bc7f8ff24d3e7dff24ef37
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60290835"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310043"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-virtual-machine-scale-set-using-azure-cli"></a>Configurar identidades gerenciadas para recursos do Azure em um conjunto de dimensionamento de máquinas virtuais usando a CLI do Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "60290835"
 
 As identidades gerenciadas dos recursos do Azure fornecem aos serviços do Azure uma identidade gerenciada automaticamente no Azure Active Directory. Você pode usar essa identidade para autenticar em qualquer serviço que dá suporte à autenticação do Azure AD, incluindo o Key Vault, sem ter as credenciais no seu código. 
 
-Neste artigo, você aprenderá como realizar as seguintes identidades gerenciadas para operações de recursos do Azure em um conjunto de dimensionamento de máquina virtual do Azure, usando a CLI do Azure:
+Neste artigo, você aprende a executar as seguintes identidades gerenciadas para operações de recursos do Azure em um conjunto de dimensionamento de máquinas virtuais do Azure, usando o CLI do Azure:
 - Habilitar e desabilitar a identidade gerenciada atribuída ao sistema em um conjunto de dimensionamento de máquinas virtuais do Azure
 - Adicionar e remover uma identidade gerenciada atribuída ao usuário em um conjunto de dimensionamento de máquinas virtuais do Azure
 
@@ -44,7 +44,7 @@ Neste artigo, você aprenderá como realizar as seguintes identidades gerenciada
 
     - [Colaborador da Máquina Virtual](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) para criar um conjunto de dimensionamento de máquinas virtuais e habilitar e remover identidade gerenciada atribuída ao usuário e/ou ao sistema de um conjunto de dimensionamento de máquinas virtuais.
     - Função de [Colaborador de Identidade Gerenciada](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) para criar uma identidade gerenciada atribuída ao usuário.
-    - [Papel de Operador de Identidade Gerenciado](/azure/role-based-access-control/built-in-roles#managed-identity-operator) para atribuir e remover uma identidade gerenciada atribuída pelo usuário de e para um conjunto de dimensionamento de máquina virtual.
+    - Função de [Operador de Identidade Gerenciada](/azure/role-based-access-control/built-in-roles#managed-identity-operator) para atribuir e remover uma identidade gerenciada atribuída ao usuário de e para um conjunto de dimensionamento de máquinas virtuais.
 - Para executar os exemplos de script da CLI, você tem três opções:
     - Usar o [Azure Cloud Shell](../../cloud-shell/overview.md) no Portal do Azure (confira a próxima seção).
     - Usar o Azure Cloud Shell inserido por meio do botão "Experimentar", localizado no canto superior direito de cada bloco de código.
@@ -57,7 +57,7 @@ Neste artigo, você aprenderá como realizar as seguintes identidades gerenciada
 
 ## <a name="system-assigned-managed-identity"></a>Identidade gerenciada atribuída pelo sistema
 
-Nesta seção, você aprenderá a habilitar e desabilitar a identidade gerenciada atribuído pelo sistema para um dimensionamento de máquina virtual do Azure definido usando a CLI do Azure.
+Nesta seção, você aprenderá a habilitar e desabilitar a identidade gerenciada atribuída pelo sistema para um conjunto de dimensionamento de máquinas virtuais do Azure usando o CLI do Azure.
 
 ### <a name="enable-system-assigned-managed-identity-during-creation-of-an-azure-virtual-machine-scale-set"></a>Habilitar a identidade gerenciada atribuída ao sistema durante a criação de um conjunto de dimensionamento de máquinas virtuais do Azure
 
@@ -81,7 +81,7 @@ Para criar um conjunto de dimensionamento de máquinas virtuais com a identidade
    az vmss create --resource-group myResourceGroup --name myVMSS --image win2016datacenter --upgrade-policy-mode automatic --custom-data cloud-init.txt --admin-username azureuser --admin-password myPassword12 --assign-identity --generate-ssh-keys
    ```
 
-### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Ativar identidade gerenciada atribuída pelo sistema em um conjunto de dimensionamento de máquina virtual do Azure existente
+### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-virtual-machine-scale-set"></a>Habilitar identidade gerenciada atribuída ao sistema em um conjunto de dimensionamento de máquinas virtuais do Azure existente
 
 Se você precisar habilitar a identidade gerenciada atribuída ao sistema em um conjunto de dimensionamento de máquinas virtuais do Azure existente:
 
@@ -114,8 +114,7 @@ Se você tiver uma máquina virtual que não precise mais da identidade gerencia
 az vmss update -n myVM -g myResourceGroup --set identity.type="none"
 ```
 
-> [!NOTE]
-> Se você tiver provisionado a identidade gerenciada para recursos do Azure extensão da VM (preterido), você precisará removê-lo usando [exclusão de extensão az vmss](https://docs.microsoft.com/cli/azure/vm/). Para obter mais informações, consulte [migrar da extensão de VM para o Azure IMDS para autenticação](howto-migrate-vm-extension.md).
+
 
 ## <a name="user-assigned-managed-identity"></a>identidade gerenciada atribuída ao usuário
 
@@ -123,7 +122,7 @@ Nesta seção, você aprende como habilitar e remover uma identidade gerenciada 
 
 ### <a name="assign-a-user-assigned-managed-identity-during-the-creation-of-a-virtual-machine-scale-set"></a>Atribuir uma identidade gerenciada atribuída ao usuário durante a criação de um conjunto de dimensionamento de máquinas virtuais
 
-Esta seção orienta você por meio da criação de um conjunto de dimensionamento de máquina virtual e a atribuição de uma identidade gerenciada atribuída pelo usuário para o conjunto de dimensionamento de máquina virtual. Se você já tiver um conjunto de dimensionamento de máquina virtual que você deseja usar, ignore esta seção e vá para a próxima.
+Esta seção orienta a criação de um conjunto de dimensionamento de máquinas virtuais e a atribuição de uma identidade gerenciada atribuída pelo usuário ao conjunto de dimensionamento de máquinas virtuais. Se você já tiver um conjunto de dimensionamento de máquinas virtuais que deseja usar, pule esta seção e vá para a próxima.
 
 1. Se você já tiver um grupo de recursos e quiser usá-lo, ignore esta etapa. Crie um [grupo de recursos ](~/articles/azure-resource-manager/resource-group-overview.md#terminology) para independência e implantação da identidade gerenciada atribuída ao usuário, usando [ az group create ](/cli/azure/group/#az-group-create). Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<LOCATION>` pelos seus próprios valores. :
 
@@ -131,7 +130,7 @@ Esta seção orienta você por meio da criação de um conjunto de dimensionamen
    az group create --name <RESOURCE GROUP> --location <LOCATION>
    ```
 
-2. Crie uma identidade gerenciada atribuída ao usuário usando [az identity create](/cli/azure/identity#az-identity-create).  O parâmetro `-g` especifica o grupo de recursos em que a identidade gerenciada atribuída pelo usuário é criada e o parâmetro `-n` especifica o nome. Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<USER ASSIGNED IDENTITY NAME>` pelos seus próprios valores:
+2. Crie uma identidade gerenciada atribuída ao usuário usando [az identity create](/cli/azure/identity#az-identity-create).  O parâmetro `-g` especifica o grupo de recursos em que a identidade gerenciada atribuída ao usuário é criada e o parâmetro `-n` especifica o nome. Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<USER ASSIGNED IDENTITY NAME>` pelos seus próprios valores:
 
    [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
@@ -155,7 +154,7 @@ Esta seção orienta você por meio da criação de um conjunto de dimensionamen
    }
    ```
 
-3. Criar uma escala de máquina virtual definida usando [az vmss criar](/cli/azure/vmss/#az-vmss-create). O exemplo a seguir cria um conjunto de dimensionamento de máquina virtual associado com a nova identidade atribuída pelo usuário gerenciada, conforme especificado pelo `--assign-identity` parâmetro. Substitua os valores dos parâmetros `<RESOURCE GROUP>`, `<VMSS NAME>`, `<USER NAME>`, `<PASSWORD>` e `<USER ASSIGNED IDENTITY>` pelos seus próprios valores. 
+3. Crie um conjunto de dimensionamento de máquinas virtuais usando [AZ vmss Create](/cli/azure/vmss/#az-vmss-create). O exemplo a seguir cria um conjunto de dimensionamento de máquinas virtuais associado à nova identidade gerenciada atribuída pelo usuário, `--assign-identity` conforme especificado pelo parâmetro. Substitua os valores dos parâmetros `<RESOURCE GROUP>`, `<VMSS NAME>`, `<USER NAME>`, `<PASSWORD>` e `<USER ASSIGNED IDENTITY>` pelos seus próprios valores. 
 
    ```azurecli-interactive 
    az vmss create --resource-group <RESOURCE GROUP> --name <VMSS NAME> --image UbuntuLTS --admin-username <USER NAME> --admin-password <PASSWORD> --assign-identity <USER ASSIGNED IDENTITY>
@@ -163,7 +162,7 @@ Esta seção orienta você por meio da criação de um conjunto de dimensionamen
 
 ### <a name="assign-a-user-assigned-managed-identity-to-an-existing-virtual-machine-scale-set"></a>Atribuir uma identidade gerenciada atribuída ao usuário a um conjunto de dimensionamento de máquinas virtuais existente
 
-1. Crie uma identidade gerenciada atribuída ao usuário usando [az identity create](/cli/azure/identity#az-identity-create).  O parâmetro `-g` especifica o grupo de recursos em que a identidade gerenciada atribuída pelo usuário é criada e o parâmetro `-n` especifica o nome. Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<USER ASSIGNED IDENTITY NAME>` pelos seus próprios valores:
+1. Crie uma identidade gerenciada atribuída ao usuário usando [az identity create](/cli/azure/identity#az-identity-create).  O parâmetro `-g` especifica o grupo de recursos em que a identidade gerenciada atribuída ao usuário é criada e o parâmetro `-n` especifica o nome. Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<USER ASSIGNED IDENTITY NAME>` pelos seus próprios valores:
 
     ```azurecli-interactive
     az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
@@ -185,7 +184,7 @@ Esta seção orienta você por meio da criação de um conjunto de dimensionamen
    }
    ```
 
-2. Atribuir a identidade atribuída pelo usuário gerenciada para o dimensionamento de máquinas virtuais definido usando [identidade de vmss az atribuir](/cli/azure/vmss/identity). Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<VIRTUAL MACHINE SCALE SET NAME>` pelos seus próprios valores. O `<USER ASSIGNED IDENTITY>` é um recurso da identidade de usuário atribuída `name` propriedade, conforme criado na etapa anterior:
+2. Atribua a identidade gerenciada atribuída pelo usuário ao seu conjunto de dimensionamento de máquinas virtuais usando [AZ vmss Identity Assign](/cli/azure/vmss/identity). Substitua os valores de parâmetro `<RESOURCE GROUP>` e `<VIRTUAL MACHINE SCALE SET NAME>` pelos seus próprios valores. O `<USER ASSIGNED IDENTITY>` é um recurso da identidade de usuário atribuída `name` propriedade, conforme criado na etapa anterior:
 
     ```azurecli-interactive
     az vmss identity assign -g <RESOURCE GROUP> -n <VIRTUAL MACHINE SCALE SET NAME> --identities <USER ASSIGNED IDENTITY>
@@ -199,7 +198,7 @@ Para remover uma identidade gerenciada atribuída ao usuário de um conjunto de 
 az vmss identity remove -g <RESOURCE GROUP> -n <VIRTUAL MACHINE SCALE SET NAME> --identities <USER ASSIGNED IDENTITY>
 ```
 
-Se o seu conjunto de dimensionamento de máquina virtual não tiver uma identidade gerenciada atribuída pelo sistema e você quiser remover todas as identidades gerenciadas atribuídas pelo usuário, use o seguinte comando:
+Se o conjunto de dimensionamento de máquinas virtuais não tiver uma identidade gerenciada atribuída ao sistema e você quiser remover todas as identidades gerenciadas atribuídas ao usuário, use o comando a seguir:
 
 > [!NOTE]
 > O valor `none` diferencia maiúsculas de minúsculas. Deve estar em letras minúsculas.
@@ -216,7 +215,7 @@ az vmss update -n myVMSS -g myResourceGroup --set identity.type='SystemAssigned'
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Identidades gerenciadas para visão geral de recursos do Azure](overview.md)
+- [Identidades gerenciadas para visão geral dos recursos do Azure ](overview.md)
 - Para Início Rápido da criação do conjunto de dimensionamento de máquinas virtuais do Azure completo, consulte: 
 
   - [Criar um conjunto de dimensionamento de máquinas virtuais com CLI](../../virtual-machines/linux/tutorial-create-vmss.md#create-a-scale-set)

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 04/08/2019
 ms.author: helohr
-ms.openlocfilehash: 4f325d9fc512fd9f6776fcd799b720aaf60ce472
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: c6c7a57a2093445d3922f9349242c9a902df7370
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876754"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300712"
 ---
 # <a name="remote-desktop-client-connections"></a>Conexões do cliente da Área de Trabalho Remota
 
@@ -152,6 +152,11 @@ Siga estas instruções gerais de solução de problemas para códigos de erro d
 **Causa:** As VMs às quais o usuário está tentando se conectar não estão associadas ao domínio.
 
 **Soluciona** Ingresse todas as VMs que fazem parte de um pool de hosts no controlador de domínio.
+
+### <a name="error-connectionfailedusersidinformationmismatch"></a>Erro: ConnectionFailedUserSIDInformationMismatch
+**Causa:** O SID do token de Azure Active Directory (AD) do usuário não corresponde ao SID retornado pelo controlador de domínio ao tentar habilitar o usuário para entrada remota. Esse erro normalmente ocorre ao tentar entrar em um ambiente Azure Active Directory Domain Services (Azure AD DS) com um usuário originalmente originado de um AD do Windows Server.
+
+**Soluciona** Este cenário não tem suporte no momento. Somente os usuários originados de Azure Active Directory podem entrar em VMs de área de trabalho virtual do Windows conectadas ao Azure AD DS.
 
 ## <a name="user-connects-but-nothing-is-displayed-no-feed"></a>O usuário se conecta, mas nada é exibido (sem feed)
 

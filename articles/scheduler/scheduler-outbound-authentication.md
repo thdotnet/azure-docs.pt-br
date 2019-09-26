@@ -9,17 +9,17 @@ ms.reviewer: klam
 ms.assetid: 6707f82b-7e32-401b-a960-02aae7bb59cc
 ms.topic: article
 ms.date: 08/15/2016
-ms.openlocfilehash: 42d6ec93a3382f494b49fb574c4aee5e8eec142a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ea09330fb8d3d97da5fbc197dba9668f1a4f685
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64708953"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300858"
 ---
 # <a name="outbound-authentication-for-azure-scheduler"></a>Autenticação de saída para Agendador do Azure
 
 > [!IMPORTANT]
-> [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está sendo desativado. Para agendar trabalhos, [experimente Aplicativos Lógicos do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> O [aplicativo lógico do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está [sendo desativado](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Para continuar trabalhando com os trabalhos que você configurou no Agendador, [migre para o aplicativo lógico do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md) assim que possível.
 
 Os trabalhos do Agendador do Azure podem precisar chamar serviços que exigem autenticação, como outros serviços do Azure, Salesforce.com, Facebook e sites seguros personalizados. O serviço chamado pode determinar se o trabalho do Agendador poderá acessar seus recursos solicitados. 
 
@@ -44,7 +44,7 @@ O Agendador oferece suporte a esses modelos de autenticação:
 
 Ao adicionar a autenticação usando o modelo `ClientCertificate`, especifique estes elementos adicionais no corpo da solicitação.  
 
-| Elemento | Obrigatório | DESCRIÇÃO |
+| Elemento | Necessário | Descrição |
 |---------|----------|-------------|
 | **autenticação (elemento pai)** | Objeto de autenticação para usar um certificado de cliente SSL |
 | **type** | Sim | O tipo de autenticação. Para certificados de cliente SSL, o valor é `ClientCertificate`. |
@@ -56,7 +56,7 @@ Ao adicionar a autenticação usando o modelo `ClientCertificate`, especifique e
 
 Quando uma solicitação é enviada com as informações de autenticação, a resposta contém os elementos de autenticação.
 
-| Elemento | DESCRIÇÃO | 
+| Elemento | Descrição | 
 |---------|-------------| 
 | **autenticação (elemento pai)** | Objeto de autenticação para usar um certificado de cliente SSL |
 | **type** | O tipo de autenticação. Para certificados de cliente SSL, o valor é `ClientCertificate`. |
@@ -164,7 +164,7 @@ Date: Wed, 16 Mar 2016 19:04:23 GMT
 
 Ao adicionar a autenticação usando o modelo `Basic`, especifique estes elementos adicionais no corpo da solicitação.
 
-| Elemento | Obrigatório | DESCRIÇÃO |
+| Elemento | Necessário | Descrição |
 |---------|----------|-------------|
 | **autenticação (elemento pai)** | O objeto de autenticação para usar a autenticação básica | 
 | **type** | Sim | O tipo de autenticação. Para a autenticação básica, o valor é `Basic`. | 
@@ -176,7 +176,7 @@ Ao adicionar a autenticação usando o modelo `Basic`, especifique estes element
 
 Quando uma solicitação é enviada com as informações de autenticação, a resposta contém os elementos de autenticação.
 
-| Elemento | DESCRIÇÃO | 
+| Elemento | Descrição | 
 |---------|-------------|
 | **autenticação (elemento pai)** | O objeto de autenticação para usar a autenticação básica |
 | **type** | O tipo de autenticação. Para a autenticação básica, o valor é `Basic`. |
@@ -282,7 +282,7 @@ Date: Wed, 16 Mar 2016 19:05:06 GMT
 
 Ao adicionar a autenticação usando o modelo `ActiveDirectoryOAuth`, especifique estes elementos adicionais no corpo da solicitação.
 
-| Elemento | Obrigatório | DESCRIÇÃO |
+| Elemento | Necessário | Descrição |
 |---------|----------|-------------|
 | **autenticação (elemento pai)** | Sim | Objeto de autenticação para usar a autenticação ActiveDirectoryOAuth |
 | **type** | Sim | O tipo de autenticação. Para autenticação de ActiveDirectoryOAuth, o valor é `ActiveDirectoryOAuth`. |
@@ -296,7 +296,7 @@ Ao adicionar a autenticação usando o modelo `ActiveDirectoryOAuth`, especifiqu
 
 Quando uma solicitação é enviada com as informações de autenticação, a resposta contém os elementos de autenticação.
 
-| Elemento | DESCRIÇÃO |
+| Elemento | Descrição |
 |---------|-------------|
 | **autenticação (elemento pai)** | Objeto de autenticação para usar a autenticação ActiveDirectoryOAuth |
 | **type** | O tipo de autenticação. Para autenticação de ActiveDirectoryOAuth, o valor é `ActiveDirectoryOAuth`. | 

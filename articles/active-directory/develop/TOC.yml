@@ -344,6 +344,8 @@
               href: v2-permissions-and-consent.md
             - name: Estrutura de consentimento
               href: consent-framework.md
+            - name: Consentimento do administrador
+              href: v2-admin-consent.md
             - name: Experiências de consentimento de aplicativo
               href: application-consent-experience.md
         - name: Nuvens nacionais

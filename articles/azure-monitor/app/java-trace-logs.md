@@ -12,19 +12,37 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/18/2019
 ms.author: mbullwin
-ms.openlocfilehash: 2703c97dc78983ef294b3aa50f7ace879c96f66d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ac9bd6021b5fcec36e3aadfdf4c30020971f3be5
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061239"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299260"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Explore os logs de rastreamento de Java no Application Insights
 Se você estiver usando Logback ou Log4J (v 1.2 ou 2.0) para rastreamento, você pode enviar seus logs de rastreamento automaticamente para o Application Insights, no qual você pode explorá-los e pesquisar o conteúdo deles.
 
+## <a name="using-the-application-insights-java-agent"></a>Usando o agente Java Application Insights
+
+Você pode configurar o Application insights agente Java para capturar seus logs automaticamente, habilitando o recurso no `AI-Agent.xml` arquivo:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationInsightsAgent>
+   <Instrumentation>
+      <BuiltIn enabled="true">
+         <Logging enabled="true" />
+      </BuiltIn>
+   </Instrumentation>
+   <AgentLogger />
+</ApplicationInsightsAgent>
+```
+
+Como alternativa, você pode seguir as instruções abaixo.
+
 ## <a name="install-the-java-sdk"></a>Instalar o SDK do Java
 
-Siga as instruções para instalar o [SDK do Application Insights para Java][java] se ainda não tiver feito isso.
+Siga as instruções para instalar [Application insights SDK para Java][java], caso ainda não tenha feito isso.
 
 ## <a name="add-logging-libraries-to-your-project"></a>Adicionar bibliotecas de log ao seu projeto
 *Escolha o modo apropriado para seu projeto.*
@@ -100,7 +118,7 @@ Em seguida, atualize as dependências do projeto para obter os binários baixado
 #### <a name="otherwise-"></a>Caso contrário...
 Siga as orientações para instalar manualmente o SDK do Java do Application Insights, baixe o jar (após chegar na Página Central do Maven, clique no link para "jar" na seção de download) correspondente ao appender apropriado e adicione-o ao projeto.
 
-| Agente | Baixar | Biblioteca |
+| Agente | Download | Biblioteca |
 | --- | --- | --- |
 | Logback |[Jar do appender de Logback](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-logback%22) |applicationinsights-logging-logback |
 | Log4J v2.0 |[Jar do appender de Log4J v2](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22applicationinsights-logging-log4j2%22) |applicationinsights-logging-log4j2 |
@@ -156,14 +174,14 @@ Para começar a obter rastreamentos, mescle o snippet de código relevante ao ar
 Os appenders Application Insights podem ser referenciados por qualquer agente configurado e não necessariamente pelo agente raiz (conforme mostrado nos exemplos de código acima).
 
 ## <a name="explore-your-traces-in-the-application-insights-portal"></a>Explorar seus rastreamentos no portal do Application Insights
-Agora que você configurou o projeto para enviar os rastreamentos para o Application Insights, é possível exibir e pesquisar esses rastreamentos no portal do Application Insights, na folha [Pesquisa][diagnostic].
+Agora que você configurou seu projeto para enviar rastreamentos para Application Insights, você pode exibir e Pesquisar esses rastreamentos no portal de Application Insights, na folha [Pesquisar][diagnostic] .
 
 Exceções enviadas por meio de agentes serão exibidas no portal como Telemetria de exceção.
 
 ![No portal do Application Insights, abra a Pesquisa](./media/java-trace-logs/01-diagnostics.png)
 
 ## <a name="next-steps"></a>Próximas etapas
-[Usando a Pesquisa no Application Insights][diagnostic]
+[Pesquisa de diagnóstico][diagnostic]
 
 <!--Link references-->
 

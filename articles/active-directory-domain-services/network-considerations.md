@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/09/2019
 ms.author: iainfou
-ms.openlocfilehash: e18f990885a25b7e130dfeb5a0a3425530ee11e6
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 81d20a973454db600d8be9ce036f001dd41784e7
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086580"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71314998"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-ad-domain-services"></a>Considerações de design de rede virtual e opções de configuração para Azure AD Domain Services
 
@@ -46,7 +46,7 @@ Um domínio gerenciado do Azure AD DS se conecta a uma sub-rede em uma rede virt
 * O Azure AD DS deve ser implantado em sua própria sub-rede. Não use uma sub-rede existente ou uma sub-rede de gateway.
 * Um grupo de segurança de rede é criado durante a implantação de um domínio gerenciado AD DS do Azure. Esse grupo de segurança de rede contém as regras necessárias para a comunicação correta do serviço.
     * Não crie ou use um grupo de segurança de rede existente com suas próprias regras personalizadas.
-* O AD DS do Azure requer entre cinco e sete endereços IP. Verifique se o intervalo de endereços IP da sub-rede pode fornecer esse número de endereços.
+* O AD DS do Azure requer 3-5 endereços IP. Verifique se o intervalo de endereços IP da sub-rede pode fornecer esse número de endereços.
     * Restringir os endereços IP disponíveis pode impedir Azure AD Domain Services de manter dois controladores de domínio.
 
 O diagrama de exemplo a seguir descreve um design válido onde o Azure AD DS tem sua própria sub-rede, há uma sub-rede de gateway para conectividade externa e as cargas de trabalho do aplicativo estão em uma sub-rede conectada dentro da rede virtual:
@@ -105,7 +105,7 @@ Um [NSG (grupo de segurança de rede)](https://docs.microsoft.com/azure/virtual-
 
 As regras do grupo de segurança de rede a seguir são necessárias para que o Azure AD DS forneça serviços de autenticação e gerenciamento. Não edite ou exclua essas regras de grupo de segurança de rede para a sub-rede da rede virtual em que o domínio gerenciado do Azure AD DS está implantado.
 
-| Número da porta | Protocol | Origem                             | Destino | Ação | Necessário | Finalidade |
+| Número da porta | Protocol | Origem                             | Destination | Ação | Necessário | Finalidade |
 |:-----------:|:--------:|:----------------------------------:|:-----------:|:------:|:--------:|:--------|
 | 443         | TCP      | AzureActiveDirectoryDomainServices | Any         | Allow  | Sim      | Sincronização com seu locatário do Azure AD. |
 | 3389        | TCP      | CorpNetSaw                         | Any         | Allow  | Sim      | Gerenciamento do seu domínio. |

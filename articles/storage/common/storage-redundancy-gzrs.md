@@ -8,12 +8,12 @@ ms.date: 08/13/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 9019e6f72944823d7c256fa5f6b99b0aca84c845
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 321866279e076bfa77d1892e64deaf4b16c08366
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70036335"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300642"
 ---
 # <a name="build-highly-available-azure-storage-applications-with-geo-zone-redundant-storage-gzrs-preview"></a>Crie aplicativos de armazenamento do Azure altamente disponíveis com GZRS (armazenamento com redundância de zona geográfica) (visualização)
 
@@ -29,7 +29,11 @@ Somente as contas de armazenamento de uso geral v2 dão suporte a GZRS e RA-GZRS
 
 GZRS e RA-GZRS estão disponíveis atualmente para visualização nas seguintes regiões:
 
+- Norte da Europa
+- Europa Ocidental
 - Leste dos EUA
+- Leste dos EUA 2
+- Centro dos EUA
 
 A Microsoft continua a habilitar GZRS e RA-GZRS em regiões adicionais do Azure. Verifique a página  [atualizações de serviço do Azure](https://azure.microsoft.com/updates/)regularmente para obter informações sobre as regiões com suporte.
 
@@ -99,7 +103,7 @@ Há duas opções para migrar para GZRS ou RA-GZRS de uma conta LRS, GRS ou RA-G
 
 Se você precisar que a migração seja concluída em uma determinada data, considere executar uma migração manual. Uma migração manual fornece mais flexibilidade do que uma migração ao vivo. Com uma migração manual, você está no controle do tempo.
 
-Para migrar manualmente os dados de uma conta existente para uma conta GZRS ou RA-GZRS, use uma ferramenta que possa copiar dados com eficiência. Eis alguns exemplos:
+Para migrar manualmente os dados de uma conta existente para uma conta GZRS ou RA-GZRS, use uma ferramenta que possa copiar dados com eficiência. Alguns exemplos incluem:
 
 - Use um utilitário como o AzCopy ou uma ferramenta de terceiros confiável. Para obter informações sobre AzCopy, consulte Introdução [ao AzCopy](storage-use-azcopy-v10.md).
 - Se você estiver familiarizado com o Hadoop ou o HDInsight, anexe as contas de armazenamento de origem e de destino ao cluster. Em seguida, paralelizar o processo de cópia de dados com uma ferramenta como DistCp.
@@ -107,7 +111,7 @@ Para migrar manualmente os dados de uma conta existente para uma conta GZRS ou R
 
 #### <a name="perform-a-live-migration"></a>Executar uma migração ao vivo
 
-Uma migração manual pode resultar em tempo de inatividade do aplicativo. Se o seu aplicativo exigir alta disponibilidade, a Microsoft também oferece uma opção de migração ao vivo. Uma migração ao vivo é uma migração in-loco sem tempo de inatividade.
+Uma migração manual pode resultar em tempo de inatividade do aplicativo. Se o seu aplicativo exigir alta disponibilidade, a Microsoft também oferece uma opção de migração ao vivo. Uma migração ao vivo é uma migração no local sem tempo de inatividade.
 
 Durante uma migração ao vivo, você pode usar sua conta de armazenamento enquanto os dados são migrados entre as contas de armazenamento de origem e de destino. Durante o processo de migração ao vivo, sua conta continua a atender seu SLA quanto à durabilidade e disponibilidade. Não há nenhum tempo de inatividade ou perda de dados causado pela migração ao vivo.
 
@@ -131,14 +135,14 @@ Para solicitar uma migração ao vivo, use o [portal do Azure](https://ms.porta
 
 1. Selecione **nova solicitação de suporte**.
 2. Conclua os **conceitos básicos** com base nas informações da sua conta. Na seção **serviço** , selecione **Gerenciamento** de conta de armazenamento e especifique a conta a ser migrada.
-3. Selecione **Avançar**.
+3. Selecione  **Avançar**.
 4. Especifique os valores a seguir na seção **problema** :
     - **Gravidade**: Deixe o valor padrão como-está.
     - **Tipo de problema**: Selecione **migração de dados**.
     - **Categoria**: Selecione **migrar para (ra-) GZRS em uma região**.
     - **Título**: Digite um título descritivo, por exemplo, **(ra-) GZRS de migração de conta**.
     - **Detalhes**: Digite detalhes adicionais na caixa de **detalhes** , por exemplo, "Eu gostaria de migrar para GZRS de [lRS, \_ \_ grs] na região". ou "Eu gostaria de migrar para o \_ \_ ra-GZRS de [lRS, ra-grs] na região".
-5. Selecione **Avançar**.
+5. Selecione  **Avançar**.
 6. Verifique se as informações de contato estão corretas na folha **informações** de contato.
 7. Selecione **Criar**.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Guia de programação: Hubs de Eventos do Azure | Microsoft Docs'
+title: Guia de programação .NET – hubs de eventos do Azure | Microsoft Docs
 description: Este artigo fornece informações sobre como criar código para os Hubs de Eventos do Azure usando o SDK do .NET do Azure.
 services: event-hubs
 documentationcenter: na
@@ -7,16 +7,16 @@ author: ShubhaVijayasarathy
 ms.service: event-hubs
 ms.custom: seodec18
 ms.topic: article
-ms.date: 12/06/2018
+ms.date: 09/25/2019
 ms.author: shvija
-ms.openlocfilehash: 28b5c2db0f347b27beb31d427c7f189d74903dff
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.openlocfilehash: c2e23c38abbec5fd0e6010bdfc0feca882a6180d
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70913973"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71309824"
 ---
-# <a name="programming-guide-for-azure-event-hubs"></a>Guia de programação para Hubs de Eventos do Azure
+# <a name="net-programming-guide-for-azure-event-hubs"></a>Guia de programação do .NET para hubs de eventos do Azure
 Este artigo descreve alguns cenários comuns de produção de código usando os Hubs de Eventos do Azure. Ele supõe uma compreensão preliminar de Hubs de Eventos. Para obter uma visão geral conceitual dos Hubs de Eventos, confira [Visão geral dos Hubs de Eventos](event-hubs-what-is-event-hubs.md).
 
 ## <a name="event-publishers"></a>Editores de eventos

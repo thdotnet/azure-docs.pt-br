@@ -10,17 +10,17 @@ ms.reviewer: klam
 ms.assetid: e69542ec-d10f-4f17-9b7a-2ee441ee7d68
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.openlocfilehash: 3b2cfc932c6322df8237ec7cdf820fc4242bfa72
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 48e03f41fa0a39642330288fc05ef709179b4c62
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60531926"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300986"
 ---
 # <a name="create-and-schedule-your-first-job-with-azure-scheduler---azure-portal"></a>Criar e agendar o primeiro trabalho com o Agendador do Azure – portal do Azure
 
 > [!IMPORTANT]
-> [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está sendo desativado. Para agendar trabalhos, [experimente os Aplicativos Lógicos do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md). 
+> O [aplicativo lógico do Azure](../logic-apps/logic-apps-overview.md) está substituindo o Agendador do Azure, que está [sendo desativado](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Para continuar trabalhando com os trabalhos que você configurou no Agendador, [migre para o aplicativo lógico do Azure](../scheduler/migrate-from-scheduler-to-logic-apps.md) assim que possível.
 
 Este tutorial mostra como você pode criar e agendar um trabalho e, em seguida, monitorar e gerenciar facilmente esse trabalho. 
 
@@ -38,16 +38,16 @@ Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.co
 
 1. Em **Trabalho do Agendador**, insira estas informações:
 
-   | Propriedade | Valor de exemplo | DESCRIÇÃO |
+   | Propriedade | Valor de exemplo | Descrição |
    |----------|---------------|-------------| 
-   | **Nome** | getMicrosoft | O nome de seu trabalho | 
+   | **Name** | getMicrosoft | O nome de seu trabalho | 
    | **Coleção de trabalhos** | <*job-collection-name*> | Crie uma coleção de trabalhos ou selecione uma coleção existente. | 
    | **Assinatura** | <*Azure-subscription-name*> | O nome e a ID da assinatura do Azure | 
    |||| 
 
 1. Selecione **Configurações de ação – configurar**, forneça essas informações e, em seguida, escolha **OK** quando você terminar:
 
-   | Propriedade | Valor de exemplo | DESCRIÇÃO |
+   | Propriedade | Valor de exemplo | Descrição |
    |----------|---------------|-------------| 
    | **Ação** | **Http** | O tipo de ação a ser executada | 
    | **Método** | **Get** | O método a ser chamado | 
@@ -60,7 +60,7 @@ Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.co
 
    Embora você possa criar um trabalho de ocorrência única, este exemplo configura um agendamento de recorrência.
 
-   | Propriedade | Valor de exemplo | DESCRIÇÃO |
+   | Propriedade | Valor de exemplo | Descrição |
    |----------|---------------|-------------| 
    | **Recorrência** | **Recorrente** | Um trabalho de ocorrência única ou recorrente | 
    | **Iniciar em** | <*Data de hoje*> | A data de início do trabalho | 
@@ -93,7 +93,7 @@ Para obter mais informações sobre essas áreas, selecione uma área:
 
 <a name="properties"></a>
 
-### <a name="properties"></a>propriedades
+### <a name="properties"></a>Properties
 
 Para exibir as propriedades somente leitura que descrevem os metadados de gerenciamento para o seu trabalho, selecione **Propriedades**.
 
@@ -107,17 +107,17 @@ Para alterar as configurações avançadas do seu trabalho, selecione **Configur
 
 ![Examinar as configurações de ação](./media/scheduler-get-started-portal/scheduler-v2-portal-job-action-settings.png)
 
-| Tipo de ação | DESCRIÇÃO | 
+| Tipo de ação | Descrição | 
 |-------------|-------------| 
 | Todos os tipos | Você pode alterar as configurações de **Política de repetição** e **Ação de erro**. | 
 | HTTP e HTTPS | Você pode alterar o **Método** para qualquer método permitido. Você também pode adicionar, excluir ou alterar os cabeçalhos e informações de autenticação básica. | 
 | Fila de armazenamento| Você pode alterar a conta de armazenamento, o nome da fila, o token SAS e o corpo. | 
-| Barramento de Serviço | Você pode alterar o namespace, o caminho de fila ou tópico, as configurações de autenticação, o tipo de transporte, a propriedades de mensagem e o corpo da mensagem. | 
+| Service Bus | Você pode alterar o namespace, o caminho de fila ou tópico, as configurações de autenticação, o tipo de transporte, a propriedades de mensagem e o corpo da mensagem. | 
 ||| 
 
 <a name="schedule"></a>
 
-### <a name="schedule"></a>Agenda
+### <a name="schedule"></a>Cronograma
 
 Se você configurar um agendamento por meio do assistente de trabalho, você poderá alterar essa agenda, como data e hora de início, o agendamento de recorrência e a data e a hora de término para trabalhos recorrentes.
 Você também pode criar [agendamentos mais complexos e recorrências avançadas](scheduler-advanced-complexity.md).

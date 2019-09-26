@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: v-erkell
-ms.openlocfilehash: 217f976d53a7be8931be9f8d21b000549a9ed68a
-ms.sourcegitcommit: a19bee057c57cd2c2cd23126ac862bd8f89f50f5
+ms.openlocfilehash: e1ca6fa4ea1ae4a5bf5996e88d32e1e00416f067
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71180998"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299983"
 ---
 # <a name="azure-hpc-cache-preview-data-ingest---manual-copy-method"></a>Ingestão de dados do cache HPC do Azure (visualização)-método de cópia manual
 
@@ -23,7 +23,7 @@ Para saber mais sobre como mover dados para o armazenamento de BLOBs para o cach
 
 Você pode criar manualmente uma cópia com vários threads em um cliente executando mais de um comando de cópia ao mesmo tempo em segundo plano em relação a conjuntos predefinidos de arquivos ou caminhos.
 
-O comando ``cp`` UNIX/Linux inclui o argumento ``-p`` para preservar a propriedade e os metadados mtime. Adicionar esse argumento aos comandos a seguir é opcional. (Adicionar o argumento aumenta o número de chamadas do sistema de arquivos enviada do cliente para o sistema de arquivos de destino para modificação de metadados.)
+O comando ``cp`` UNIX/Linux inclui o argumento ``-p`` para preservar a propriedade e os metadados mtime. Adicionar esse argumento aos comandos a seguir é opcional. (Adicionar o argumento aumenta o número de chamadas do sistema de arquivos enviadas do cliente para o sistema de arquivos de destino para modificação de metadados.)
 
 Este exemplo simples copia dois arquivos em paralelo:
 
@@ -81,7 +81,7 @@ cp -R /mnt/source/dir1/dir1d /mnt/destination/dir1/ &
 
 ## <a name="when-to-add-mount-points"></a>Quando adicionar pontos de montagem
 
-Depois de ter threads paralelos suficientes em um ponto de montagem do sistema de arquivos de destino único, haverá um ponto em adicionar mais threads não dará mais taxa de transferência. (A taxa de transferência será medida em arquivos/segundo ou bytes/segundo, dependendo do tipo de dados.) Ou, pior ainda, excesso de threading às vezes pode causar uma degradação da taxa de transferência.  
+Depois que você tiver threads paralelos suficientes indo para um único ponto de montagem do sistema de arquivos de destino, haverá um ponto em que a adição de mais threads não oferece mais taxa de transferência. (A taxa de transferência será medida em arquivos/segundo ou bytes/segundo, dependendo do tipo de dados.) Ou, pior ainda, excesso de threading às vezes pode causar uma degradação da taxa de transferência.  
 
 Quando isso acontece, você pode adicionar pontos de montagem do lado do cliente a outros endereços de montagem de cache do Azure HPC, usando o mesmo caminho de montagem do sistema de arquivos remoto:
 
@@ -136,7 +136,7 @@ Client4: cp -R /mnt/source/dir3/dir3d /mnt/destination/dir3/ &
 
 ## <a name="create-file-manifests"></a>Criar manifestos de arquivista
 
-Depois de entender as abordagens acima (vários threads de cópia por destino, vários destinos por cliente, vários clientes por sistema de arquivos de origem acessível pela rede), considere esta recomendação: compile manifestos de arquivo e, em seguida, use-os com comandos de cópia em vários clientes.
+Depois de entender as abordagens acima (vários threads de cópia por destino, vários destinos por cliente, vários clientes por sistema de arquivos de origem acessível por rede), considere esta recomendação: compile manifestos de arquivo e, em seguida, use-os com comandos de cópia em vários clientes.
 
 Esse cenário usa o comando ``find`` do UNIX para criar manifestos de arquivos ou diretórios:
 
