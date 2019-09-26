@@ -11,16 +11,16 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: 8180fc4db10019a3183af40cf21d9d92b0102201
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: c25d37a4d1695ab94cc0667a13e36e4da640e12a
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567897"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71262143"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Use o log de diagnóstico de desempenho do Banco de Dados SQL do Azure com Intelligent Insights
 
-Esta página apresenta informações sobre como usar o log de diagnóstico de desempenho do Banco de Dados SQL do Azure gerado pelo [Intelligent Insights](sql-database-intelligent-insights.md), seu formato e os dados que ele contém para suas necessidades desenvolvimento personalizadas. Você pode enviar esse log de diagnóstico para [Azure monitor logs](../azure-monitor/insights/azure-sql.md), [hubs de eventos do Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [armazenamento do Azure](sql-database-metrics-diag-logging.md#stream-into-storage)ou uma solução de terceiros para recursos personalizados de alertas e relatórios de DevOps.
+Esta página apresenta informações sobre como usar o log de diagnóstico de desempenho do Banco de Dados SQL do Azure gerado pelo [Intelligent Insights](sql-database-intelligent-insights.md), seu formato e os dados que ele contém para suas necessidades desenvolvimento personalizadas. Você pode enviar esse log de diagnóstico para [Azure monitor logs](../azure-monitor/insights/azure-sql.md), [hubs de eventos do Azure](../azure-monitor/platform/resource-logs-stream-event-hubs.md), [armazenamento do Azure](sql-database-metrics-diag-logging.md#stream-into-storage)ou uma solução de terceiros para recursos personalizados de alertas e relatórios de DevOps.
 
 ## <a name="log-header"></a>Cabeçalho do log
 
@@ -80,7 +80,7 @@ Dependendo do problema de desempenho detectado, os detalhes gerados no arquivo d
 | Atingindo os limites do recurso | <li>Recursos afetados</li><li>Hashes de consulta</li><li>Percentual do consumo de recurso</li> |
 | Aumento da Carga de Trabalho | <li>Número de consultas cuja execução aumentou</li><li>Hashes de consulta das consultas com a maior contribuição para o aumento da carga de trabalho</li> |
 | Demanda de Memória | <li>Administrador de memória</li> |
-| Bloqueando | <li>Hashes de consulta afetados</li><li>Bloqueio de hashes de consulta</li> |
+| Bloqueio | <li>Hashes de consulta afetados</li><li>Bloqueio de hashes de consulta</li> |
 | Aumento de MAXDOP | <li>Hashes de consulta</li><li>Tempos de espera CXP</li><li>Tempos de espera</li> |
 | Contenção de pagelatch | <li>Hashes de consulta das consultas que causam contenção</li> |
 | Índice Ausente | <li>Hashes de consulta</li> |
