@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: 3b1b31da68d821ff27fa30e75ec1522b9d4875c8
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 94f019205959d63a05ed3d90ede59fece3c05901
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70307422"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316345"
 ---
 # <a name="language-and-region-support-for-luis"></a>Suporte de idioma e região para o LUIS
 
@@ -34,18 +34,18 @@ O LUIS compreende declarações nos seguintes idiomas:
 |--|--|:--:|:--:|:--:|:--:|
 | Inglês americano |`en-US` | ✔ | ✔  |✔|✔|
 | *[Chinês](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
-| Holandês |`nl-NL` |-|  -   |-|✔|
-| Francês (França) |`fr-FR` |-| ✔ |✔ |✔|
+| Holandês |`nl-NL` |✔|  -   |-|✔|
+| Francês (França) |`fr-FR` |✔| ✔ |✔ |✔|
 | Francês (Canadá) |`fr-CA` |-|   -   |-|✔|
-| Alemão |`de-DE` |-| ✔ |✔ |✔|
+| Alemão |`de-DE` |✔| ✔ |✔ |✔|
 | Híndi | `hi-IN`|-|-|-|-|
-| Italiano |`it-IT` |-| ✔ |✔|✔|
-| *[Japonês](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Somente frase principal|
-| Coreano |`ko-KR` |-|   -   |-|Somente frase principal|
-| Português (Brasil) |`pt-BR` |-| ✔ |✔ |nem todas as subculturas|
-| Espanhol (Espanha) |`es-ES` |-| ✔ |✔|✔|
+| Italiano |`it-IT` |✔| ✔ |✔|✔|
+| *[Japonês](#japanese-support-notes) |`ja-JP` |✔| ✔ |✔|Somente frase principal|
+| Coreano |`ko-KR` |✔|   -   |-|Somente frase principal|
+| Português (Brasil) |`pt-BR` |✔| ✔ |✔ |nem todas as subculturas|
+| Espanhol (Espanha) |`es-ES` |✔| ✔ |✔|✔|
 | Espanhol (México)|`es-MX` |-|  -   |✔|✔|
-| Turco | `tr-TR` |-|-|-|Sentimento, somente|
+| Turco | `tr-TR` |✔|-|-|Sentimento, somente|
 
 
 O suporte aos idiomas varia para [entidades predefinidas](luis-reference-prebuilt-entities.md) e [domínios predefinidos](luis-reference-prebuilt-domains.md).
@@ -101,7 +101,7 @@ Para executar o aprendizado de máquina, o LUIS divide uma declaração em [toke
 
 As seguintes culturas têm versões de criador personalizadas:
 
-|Cultura|Version|Finalidade|
+|Cultura|Versão|Finalidade|
 |--|--|--|
 |Alemão<br>`de-de`|1.0.0|Cria tokens palavras dividindo-as usando um criador baseado em Machine Learning que tenta dividir palavras compostas em seus componentes únicos.<br>Se um usuário inserir `Ich fahre einen krankenwagen` como um expressão, ele será `Ich fahre einen kranken wagen`ativado. Permitir a marcação de `kranken` e `wagen` de forma independente como entidades diferentes.|
 |Alemão<br>`de-de`|1.0.2|Cria tokens palavras dividindo-as em espaços.<br> se um usuário inserir `Ich fahre einen krankenwagen` como um expressão, ele permanecerá como um único token. Portanto `krankenwagen` , é marcado como uma única entidade. |

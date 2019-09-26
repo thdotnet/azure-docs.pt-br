@@ -1,21 +1,17 @@
 ---
-title: Práticas recomendadas para gerenciar assemblies do U-SQL em um pipeline de CI/CD para o Azure Data Lake
+title: Gerenciar assemblies U-SQL em um pipeline de CI/CD-Azure Data Lake
 description: Conheça as práticas recomendadas para gerenciar assemblies de C# do U-SQL em um pipeline de CI/CD com o Azure DevOps.
-services: data-lake-analytics
 author: yanancai
 ms.author: yanacai
-ms.reviewer: ''
-ms.assetid: ''
 ms.service: data-lake-analytics
 ms.topic: conceptual
-ms.workload: big-data
 ms.date: 10/30/2018
-ms.openlocfilehash: 27a873fac8bf2b53ee06780b8a348eaaa5c94e97
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e6de10ed712688e4ee9dccc22176e81ad5e574ca
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60334132"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71315843"
 ---
 # <a name="best-practices-for-managing-u-sql-assemblies-in-a-cicd-pipeline"></a>Práticas recomendadas para gerenciar assemblies do U-SQL em um pipeline de CI/CD
 
@@ -58,7 +54,7 @@ Siga estas etapas para criar projetos e adicionar referências.
 
 7. Adicione **Dependências Gerenciadas** e **Arquivos Adicionais**, se houver. Ao adicionar arquivos adicionais, a ferramenta usará o caminho relativo para garantir que encontrará os assemblies no computador local e no computador de build.
 
-**\@_DeployTempDirectory** no editor de janela na parte inferior é uma variável predefinida que aponta a ferramenta para a pasta de saída de compilação. Na pasta de saída de compilação, cada assembly possui uma subpasta nomeada com o nome do assembly. Todas as DLLs e arquivos adicionais estão na subpasta.
+_DeployTempDirectory na janela do editor na parte inferior é uma variável predefinida que aponta a ferramenta para a pasta de saída da compilação.  **\@** Na pasta de saída de compilação, cada assembly possui uma subpasta nomeada com o nome do assembly. Todas as DLLs e arquivos adicionais estão na subpasta.
 
 ## <a name="build-a-u-sql-database-project"></a>Compilar um projeto de banco de dados U-SQL
 

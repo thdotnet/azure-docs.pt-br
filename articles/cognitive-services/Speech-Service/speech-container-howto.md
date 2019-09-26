@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/18/2019
+ms.date: 09/24/2019
 ms.author: dapine
-ms.openlocfilehash: 4b8ea102c7acc55acec05234303ff4c215a4bc0f
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: c8efc416555996ef9a1abd79ec5aafcb65186d6f
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105154"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316675"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres de serviço de fala
 
@@ -108,7 +108,7 @@ A marca a seguir é um exemplo do formato:
 
 A tabela a seguir lista as localidades com suporte para a **conversão de fala em texto** na versão 1.2.0 do contêiner:
 
-|Localidade do idioma|Marcas|
+|Localidade do idioma|tags|
 |--|--|
 |Chinês|`zh-cn`|
 |Inglês |`en-us`<br>`en-gb`<br>`en-au`<br>`en-in`|
@@ -136,7 +136,7 @@ A marca a seguir é um exemplo do formato:
 
 A tabela a seguir lista as localidades com suporte para **conversão de texto em fala** na versão 1.2.0 do contêiner:
 
-|Localidade do idioma|Marcas|Vozes com suporte|
+|Localidade do idioma|tags|Vozes com suporte|
 |--|--|--|
 |Chinês|`zh-cn`|huihuirus<br>kangkang-Apollo<br>yaoyao-Apollo|
 |Inglês |`en-au`|catherine<br>hayleyrus|
@@ -270,7 +270,9 @@ O contêiner fornece APIs de ponto de extremidade REST que podem ser encontradas
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Quando você executa o contêiner, ele usa **StdOut** e **stderr** para gerar informações úteis para solucionar problemas que ocorrem durante a inicialização ou a execução do contêiner.
+Se você executar o contêiner com uma [montagem](speech-container-configuration.md#mount-settings) de saída e o registro em log habilitado, o contêiner gerará arquivos de log que são úteis para solucionar problemas que ocorrem durante a inicialização ou execução do contêiner.
+
+[!INCLUDE [Cognitive Services FAQ note](../containers/includes/cognitive-services-faq-note.md)]
 
 ## <a name="billing"></a>Cobrança
 

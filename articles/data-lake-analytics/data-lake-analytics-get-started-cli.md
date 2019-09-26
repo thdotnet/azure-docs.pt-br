@@ -1,19 +1,18 @@
 ---
-title: Introdução ao Azure Data Lake Analytics usando a CLI do Azure
+title: Criar & Azure Data Lake Analytics de consulta-CLI do Azure
 description: Aprenda a usar a Interface de linha de comando do Azure para criar uma conta do Azure Data Lake Analytics e enviar uma tarefa do U-SQL.
 ms.service: data-lake-analytics
-services: data-lake-analytics
 author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: 2af6d499bafb0e00b31d0379baac6a390bd6ca3f
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: 94399490453c6a2774f71ef527fd24d543e2a7e2
+ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626231"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71316566"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Introdução ao Azure Data Lake Analytics usando a CLI do Azure
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -66,7 +65,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 
 * **Nome da conta do Data Lake Analytics**. Cada conta do Data Lake Analytics tem um nome.
 * **Local**. Use um dos datacenters do Azure que dá suporte ao Data Lake Analytics.
-* **Conta padrão Data Lake Store**: Cada conta do Data Lake Analytics requer uma conta padrão do Data Lake Store.
+* **Conta de data Lake Store padrão**: Cada conta do Data Lake Analytics requer uma conta padrão do Data Lake Store.
 
 Para listar a conta existente do Data Lake Store:
 
