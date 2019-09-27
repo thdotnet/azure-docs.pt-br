@@ -99,7 +99,7 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 
 | Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
-| apiVersion | 01-10-2018 | date |
+| apiVersion | 2018-10-01 | date |
 | publisher | Microsoft.Powershell.DSC | string |
 | type | DSC | string |
 | typeHandlerVersion | 2.77 | int |
