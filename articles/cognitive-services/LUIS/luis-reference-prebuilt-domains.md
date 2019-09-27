@@ -426,5 +426,5 @@ Entidade LUIS | Tipo de entidade | Descrição | Exemplos
 ------------|-------------|-------------|---------
 SearchEngine | Lista | O usuário do mecanismo de pesquisa deseja usar. | Bing <br> Google
 ProcurarTexto | simples, padrão. Outro | O usuário de texto deseja pesquisar. <br> _Marque "amigos no Facebook" como ProcurarTexto se o site após "in" não for um mecanismo de pesquisa. A URL também deve marcar como ProcurarTexto._ | Filme <br> Aprendizado <br> Tom de cruzeiro
-Link | url | O link do site. | www.twitter.com
+Link | url | O link do site. | [www.twitter.com](www.twitter.com)
 
