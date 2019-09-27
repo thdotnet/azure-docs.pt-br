@@ -145,7 +145,7 @@ Usando `AADClientCertificate`:
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
 | type | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0,1, 1,1 | int |
+| typeHandlerVersion | 0.1, 1.1 | int |
 | (esquema 0,1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
 | (esquema 0,1) AADClientSecret | password | string |
 | (esquema 0,1) AADClientCertificate | thumbprint | string |
@@ -154,9 +154,9 @@ Usando `AADClientCertificate`:
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | KeyVaultURL | url | string |
-| adicional Senha | password | string | 
+| adicional Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |
-| VolumeType | Sistema operacional, Dados, Tudo | string |
+| VolumeType | OS, Data, All | string |
 
 ## <a name="template-deployment"></a>Implantação de modelo
 Para obter um exemplo de implantação de modelo, consulte [Criar uma nova VM do Windows criptografada de imagem da galeria](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).
