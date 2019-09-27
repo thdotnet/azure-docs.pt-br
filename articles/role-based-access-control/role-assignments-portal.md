@@ -1,5 +1,5 @@
 ---
-title: Gerenciar o acesso aos recursos do Azure usando o portal do Azure e o RBAC | Microsoft Docs
+title: Gerenciar o acesso aos recursos do Azure usando o RBAC e o portal do Azure | Microsoft Docs
 description: Saiba como gerenciar o acesso aos recursos do Azure para usuários, grupos, entidades de serviço e identidades gerenciadas usando o controle de acesso baseado em função (RBAC) e o portal do Azure. Isso inclui como listar o acesso, conceder o acesso e remover o acesso.
 services: active-directory
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.workload: identity
 ms.date: 02/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: bb23cbc275e01eab5361504c547c020b0a29f4c3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1e9a53c41535c17de2d56227012160c7f6eb25c6
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60533171"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71337617"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Gerenciar o acesso aos recursos do Azure usando o RBAC e o portal do Azure
 
-O [RBAC (controle de acesso baseado em função)](overview.md) serve para gerenciar o acesso aos recursos do Azure. Este artigo descreve como gerenciar o acesso usando o portal do Azure. Se você precisar gerenciar o acesso ao Azure Active Directory, consulte [modo de exibição e atribuir funções de administrador no Azure Active Directory](../active-directory/users-groups-roles/directory-manage-roles-portal.md).
+O [RBAC (controle de acesso baseado em função)](overview.md) serve para gerenciar o acesso aos recursos do Azure. Este artigo descreve como gerenciar o acesso usando o portal do Azure. Se você precisar gerenciar o acesso a Azure Active Directory, consulte [Exibir e atribuir funções de administrador no Azure Active Directory](../active-directory/users-groups-roles/directory-manage-roles-portal.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -33,37 +33,37 @@ Para adicionar e remover as atribuições de função, você deve ter:
 
 ## <a name="overview-of-access-control-iam"></a>Visão geral do controle de acesso (IAM)
 
-**Controle de acesso (IAM)** é a folha que você pode usar para gerenciar o acesso aos recursos do Azure. Ele também é conhecido como gerenciamento de identidade e acesso e aparece em vários locais no portal do Azure. O exemplo a seguir mostra um exemplo de folha de controle (IAM) de acesso para uma assinatura.
+O **controle de acesso (iam)** é a folha que você usa para gerenciar o acesso aos recursos do Azure. Ele também é conhecido como gerenciamento de identidade e acesso e aparece em vários locais na portal do Azure. O exemplo a seguir mostra um exemplo de folha de controle (IAM) de acesso para uma assinatura.
 
 ![Folha IAM (controle) de acesso para uma assinatura](./media/role-assignments-portal/access-control-numbers.png)
 
 A tabela a seguir descreve o que alguns dos elementos são usados para:
 
-| # | Elemento | O que você usá-lo para |
+| # | Elemento | O que você usa para |
 | --- | --- | --- |
-| 1 | Recursos em que o controle de acesso (IAM) é aberto | Identifique o escopo (assinatura neste exemplo) |
-| 2 | **Adicionar** botão | Adicionar atribuições de função |
-| 3 | **Verificar acesso** guia | Exibir as atribuições de função para um único usuário |
-| 4 | **As atribuições de função** guia | Exibir as atribuições de função no escopo atual |
-| 5 | **Funções** guia | Exibir todas as funções e permissões |
+| 1 | Recurso em que o IAM (controle de acesso) é aberto | Identificar o escopo (assinatura neste exemplo) |
+| 2 | Botão **Adicionar** | Adicionar atribuições de função |
+| 3 | Guia **verificar acesso** | Exibir as atribuições de função para um único usuário |
+| 4 | Guia **atribuições de função** | Exibir as atribuições de função no escopo atual |
+| 5 | Guia **funções** | Exibir todas as funções e permissões |
 
-Para ser mais eficiente com a folha IAM (controle) de acesso, é útil se você pode responder as três perguntas a seguir quando você está tentando gerenciar o acesso:
+Para ser o mais eficaz com a folha de controle de acesso (IAM), ele ajuda se você pode responder às três perguntas a seguir ao tentar gerenciar o acesso:
 
 1. **Quem precisa de acesso?**
 
-    Quem se refere a um usuário, o grupo, a entidade de serviço ou a identidade gerenciada. Isso também é chamado de um *entidade de segurança*.
+    Quem se refere a um usuário, grupo, entidade de serviço ou identidade gerenciada. Isso também é chamado de *entidade de segurança*.
 
-1. **Quais permissões eles precisam?**
+1. **Quais permissões são necessárias?**
 
     As permissões são agrupadas em funções. Você pode selecionar em uma lista de várias funções internas.
 
-1. **Em que eles precisam acesso?**
+1. **Onde eles precisam de acesso?**
 
-    Em que se refere ao conjunto de recursos que o acesso se aplica à. Onde pode ser um grupo de gerenciamento, assinatura, grupo de recursos ou um único recurso, como uma conta de armazenamento. Isso é chamado de *escopo*.
+    Em que se refere ao conjunto de recursos ao qual o acesso se aplica. Onde pode ser um grupo de gerenciamento, uma assinatura, um grupo de recursos ou um único recurso, como uma conta de armazenamento. Isso é chamado de *escopo*.
 
 ## <a name="open-access-control-iam"></a>Abra o controle de acesso (IAM)
 
-A primeira coisa que você precisa decidir é onde abrir a folha IAM (controle) de acesso. Depende de quais recursos você deseja gerenciar o acesso. Você deseja gerenciar o acesso para tudo em um grupo de gerenciamento, tudo em uma assinatura, tudo em um grupo de recursos ou um único recurso?
+A primeira coisa que você precisa decidir é onde abrir a folha de controle de acesso (IAM). Depende de quais recursos você deseja gerenciar o acesso. Você deseja gerenciar o acesso para tudo em um grupo de gerenciamento, tudo em uma assinatura, tudo em um grupo de recursos ou um único recurso?
 
 1. No portal do Azure, clique em **todos os serviços** e, em seguida, selecione o escopo. Por exemplo, você pode selecionar **grupos de gerenciamento**, **assinaturas**, **grupos de recursos**, ou um recurso.
 
@@ -71,19 +71,19 @@ A primeira coisa que você precisa decidir é onde abrir a folha IAM (controle) 
 
 1. Clique em **Controle de acesso (IAM)** .
 
-    O exemplo a seguir mostra um exemplo de folha de controle (IAM) de acesso para uma assinatura. Se você fizer qualquer alteração de controle de acesso aqui, eles seriam aplica a toda a assinatura.
+    O exemplo a seguir mostra um exemplo de folha de controle (IAM) de acesso para uma assinatura. Se você fizer alterações de controle de acesso aqui, elas se aplicarão à assinatura inteira.
 
     ![Folha IAM (controle) de acesso para uma assinatura](./media/role-assignments-portal/access-control-subscription.png)
 
-## <a name="view-roles-and-permissions"></a>Modo de exibição de funções e permissões
+## <a name="view-roles-and-permissions"></a>Exibir funções e permissões
 
-Uma definição de função é uma coleção de permissões que podem ser usadas para atribuições de função. O Azure tem mais de 70 [funções internas para recursos do Azure](built-in-roles.md). Siga estas etapas para exibir as permissões e funções disponíveis.
+Uma definição de função é uma coleção de permissões que podem ser usadas para atribuições de função. O Azure tem mais de 70 [funções internas para recursos do Azure](built-in-roles.md). Siga estas etapas para exibir as funções e permissões disponíveis.
 
-1. Abra **controle de acesso (IAM)** em qualquer escopo.
+1. **Controle de acesso aberto (iam)** em qualquer escopo.
 
 1. Clique na guia **Funções** para ver uma lista de todas as funções integradas e personalizadas.
 
-   Você pode ver o número de usuários e grupos que são atribuídos a cada função no escopo atual.
+   Você pode ver o número de usuários e grupos atribuídos a cada função no escopo atual.
 
    ![Lista de funções](./media/role-assignments-portal/roles-list.png)
 
@@ -93,7 +93,7 @@ Uma definição de função é uma coleção de permissões que podem ser usadas
 
 ## <a name="view-role-assignments"></a>Exibir atribuições de função
 
-Ao gerenciar o acesso, você deseja saber quem tem acesso, quais são suas permissões e em qual escopo. Para acesso de lista para um usuário, grupo, entidade de serviço ou uma identidade gerenciada, você exibir suas atribuições de função.
+Ao gerenciar o acesso, você deseja saber quem tem acesso, quais são suas permissões e em qual escopo. Para listar o acesso de um usuário, grupo, entidade de serviço ou identidade gerenciada, você vê suas atribuições de função.
 
 ### <a name="view-role-assignments-for-a-single-user"></a>Ver atribuições de função para um único usuário
 
@@ -208,4 +208,4 @@ No RBAC, para remover o acesso, você deve remover uma atribuição de função.
 * [Tutorial: Conceder acesso aos recursos do Azure para um usuário usando o RBAC e o portal do Azure](quickstart-assign-role-user-portal.md)
 * [Tutorial: Conceder acesso aos recursos do Azure para um usuário usando o RBAC e o Azure PowerShell](tutorial-role-assignments-user-powershell.md)
 * [Solução de problemas com o RBAC para recursos do Azure](troubleshooting.md)
-* [Organizar seus recursos com grupos de gerenciamento do Azure](../governance/management-groups/index.md)
+* [Organizar seus recursos com grupos de gerenciamento do Azure](../governance/management-groups/overview.md)

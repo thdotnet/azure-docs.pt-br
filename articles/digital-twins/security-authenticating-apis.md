@@ -1,29 +1,32 @@
 ---
-title: Entenda a autenticação da API dos Gêmeos Digitais do Azure | Microsoft Docs
-description: Use os Gêmeos Digitais do Azure para se conectar e autenticar nas APIs
+title: Entender a autenticação de API usando o gêmeos digital do Azure | Microsoft Docs
+description: Saiba como se conectar e autenticar com APIs usando o gêmeos digital do Azure.
 author: lyrana
 manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: lyhughes
-ms.openlocfilehash: c0b4b6a13143f613bec64c8507f1726e2450be44
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: ad51fbe7d2f8e8f115adf03d6333c0747765ee43
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815558"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338597"
 ---
-# <a name="connect-and-authenticate-to-apis"></a>Conecte e autentique as APIs
+# <a name="connect-to-and-authenticate-with-apis"></a>Conectar e autenticar com APIs
 
 O Gêmeos Digitais do Azure usa o Active Directory do Azure (Azure AD) para autenticar usuários e proteger aplicativos. O Microsoft Azure Active Directory oferece suporte à autenticação para diversas arquiteturas modernas. Todos eles são baseados nos protocolos padrão da indústria OAuth 2.0 ou OpenID Connect. Além disso, os desenvolvedores podem usar o Microsoft Azure Active Directory para criar aplicativos de locatário único e de linha de negócios (LOB). Os desenvolvedores também podem usar o  Microsoft Azure Active Directory para desenvolver aplicativos multilocatários.
 
-Para obter uma visão geral do Microsoft Azure Active Directory, visite a [página de fundamentos](https://docs.microsoft.com/azure/active-directory/fundamentals/index) para obter guias passo a passo, conceitos e iniciações rápidas.
+Para obter uma visão geral do Microsoft Azure Active Directory, visite a [página de fundamentos](https://docs.microsoft.com/azure/active-directory/fundamentals/) para obter guias passo a passo, conceitos e iniciações rápidas.
 
-Para integrar um aplicativo ou serviço ao Azure AD, um desenvolvedor deve primeiro registrar o aplicativo no Azure AD. Para instruções detalhadas e screenshots, veja [este início rápido](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app).
+> [!TIP]
+> Siga o [tutorial](tutorial-facilities-setup.md) para configurar e executar um aplicativo de exemplo gêmeos digital do Azure.
 
-[Cinco cenários de aplicativos principais](https://docs.microsoft.com/azure/active-directory/develop/v2-app-types) são suportados pelo Microsoft Azure Active Directory:
+Para integrar um aplicativo ou serviço ao Azure AD, um desenvolvedor deve primeiro registrar o aplicativo no Azure AD. Para instruções detalhadas e screenshots, veja [este início rápido](../active-directory/develop/quickstart-register-app.md).
+
+[Cinco cenários de aplicativos principais](../active-directory/develop/v2-app-types.md) são suportados pelo Microsoft Azure Active Directory:
 
 * Aplicativo de página única (SPA): Um usuário precisa entrar em um aplicativo de página única protegido pelo Azure AD.
 * Navegador da Web para aplicativo Web: Um usuário precisa entrar em um aplicativo Web protegido pelo Azure AD.
@@ -31,7 +34,7 @@ Para integrar um aplicativo ou serviço ao Azure AD, um desenvolvedor deve prime
 * Aplicativo Web para API da Web: um aplicativo Web precisa obter recursos de uma API Web protegida pelo Azure AD.
 * Aplicativo de daemon ou de servidor para API da Web: Um aplicativo daemon ou um aplicativo de servidor sem interface do usuário da Web precisa obter recursos de uma API Web protegida pelo Azure AD.
 
-A biblioteca de autenticação do Microsoft Azure oferece várias maneiras para adquirir tokens do Active Directory. Para detalhes sobre a biblioteca e amostras de código, veja [este artigo](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki).
+A biblioteca de autenticação do Microsoft Azure oferece várias maneiras para adquirir tokens do Active Directory. Para obter detalhes sobre a biblioteca e exemplos de código, consulte [o wiki do Adal.net](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki).
 
 ## <a name="call-digital-twins-from-a-middle-tier-web-api"></a>Chame os Gêmeos Digitais do Azure de uma API da web de camada intermediária
 

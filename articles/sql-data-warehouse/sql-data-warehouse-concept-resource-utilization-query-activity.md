@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 08/09/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 7f7575daa91cef5cb5be6274a699323fafe67a68
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 786ae1f18d52c6763b60f5019ecfe365f1cd540a
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71334097"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-sql-data-warehouse"></a>Monitorando a atividade de consulta e a utilização de recursos no SQL Data Warehouse do Azure
 O SQL Data Warehouse do Azure oferece uma rica experiência de monitoramento no portal do Azure para gerar insights para sua carga de trabalho do data warehouse. O portal do Azure é a ferramenta recomendada ao monitorar seu data warehouse, pois ele fornece períodos de retenção configuráveis, alertas, recomendações e gráficos e painéis personalizáveis para métricas e logs. O portal também permite que você integre com outros serviços de monitoramento do Azure, como o OMS (Operations Management Suite) e Azure Monitor (logs) para fornecer uma experiência de monitoramento holística para não apenas seus data warehouse, mas também toda a análise do Azure plataforma para uma experiência de monitoramento integrada. Esta documentação descreve quais recursos de monitoramento estão disponíveis para otimizar e gerenciar sua plataforma de análise com o SQL Data Warehouse. 
@@ -27,10 +27,10 @@ As seguintes métricas estão disponíveis no portal do Azure para SQL Data Ware
 | Nome da Métrica             | Descrição                                                  | Tipo de agregação |
 | ----------------------- | ------------------------------------------------------------ | ---------------- |
 | Percentual de CPU          | Utilização da CPU em todos os nós para o data warehouse      | Máximo          |
-| Porcentagem de E/S de dados      | Utilização de E/S em todos os nós para o data warehouse       | Máximo          |
+| Percentual de E/S de dados      | Utilização de E/S em todos os nós para o data warehouse       | Máximo          |
 | Percentual de memória       | Utilização de memória (SQL Server) em todos os nós para o data warehouse | Máximo          |
 | Conexões Bem-sucedidas  | Número de conexões bem-sucedidas com os dados                 | Total            |
-| Conexões com Falha      | Número de conexões com falha com o data warehouse           | Total            |
+| Falha de Conexões      | Número de conexões com falha com o data warehouse           | Total            |
 | Bloqueado por Firewall     | Número de logons para o data warehouse que foram bloqueados     | Total            |
 | Limite de DWU               | Objetivo de nível de serviço do data warehouse                | Máximo          |
 | Porcentagem de DWU          | Máximo entre o percentual de CPU e o percentual de E/S de dados        | Máximo          |
@@ -42,6 +42,8 @@ As seguintes métricas estão disponíveis no portal do Azure para SQL Data Ware
 > Itens a serem considerados ao exibir métricas e definir alertas:
 >
 > - Conexões com falha e bem-sucedidas são relatadas para um determinado data warehouse-não para o servidor lógico
+> - A porcentagem de memória reflete a utilização mesmo que a data warehouse esteja no estado ocioso-ela não reflete o consumo de memória de carga de trabalho ativa. Use e acompanhe essa métrica junto com outras pessoas (tempdb, cache Gen2) para tomar uma decisão holística se o dimensionamento da capacidade de cache adicional aumentará o desempenho da carga de trabalho para atender às suas necessidades.
+
 
 ## <a name="query-activity"></a>Atividade de consulta
 Para uma experiência de programação ao monitorar o SQL Data Warehouse por meio do T-SQL, o serviço fornece um conjunto de DMVs (Exibições de Gerenciamento Dinâmico). Essas exibições são úteis ao ativamente resolver problemas e identificar gargalos de desempenho com sua carga de trabalho.

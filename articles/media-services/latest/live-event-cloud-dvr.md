@@ -1,5 +1,5 @@
 ---
-title: Evento ao vivo dos Serviços de Mídia do Azure e um DVR em nuvem | Microsoft Docs
+title: Usando o tempo de mudança dos serviços de mídia do Azure e o Live-to-VOD (vídeo sob demanda) | Microsoft Docs
 description: Este artigo explica o que é a Saída ao Vivo e como usar um DVR em nuvem.
 services: media-services
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 08/27/2019
 ms.author: juliako
-ms.openlocfilehash: a10c76dd7fb4ef1e9a45666ff3a3ca0d937d2c94
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: ffcd279830cb49b64ddbb58a888ad7d653918b1b
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70231215"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338833"
 ---
-# <a name="using-a-cloud-digital-video-recorder-dvr"></a>Usando um DVR (gravador de vídeo digital) na nuvem
+# <a name="using-time-shifting-and-live-to-vod-video-on-demand"></a>Usando a mudança de tempo e o Live-to-VOD (vídeo sob demanda)
 
 Nos serviços de mídia do Azure, um objeto de [saída ao vivo](https://docs.microsoft.com/rest/api/media/liveoutputs) é como um gravador de vídeo digital que detectará e registrará sua transmissão ao vivo em um ativo em sua conta de serviços de mídia. O conteúdo gravado é mantido no contêiner definido pelo recurso de [ativo](https://docs.microsoft.com/rest/api/media/assets) (o contêiner está na conta de armazenamento do Azure anexada à sua conta). A saída ao vivo também permite que você controle algumas propriedades da transmissão ao vivo de saída, como quanto do fluxo é mantido na gravação de arquivo morto (por exemplo, a capacidade do DVR de nuvem) e se os visualizadores podem ou não assistir à transmissão ao vivo. O arquivo morto em disco é uma "janela" de arquivo circular que mantém apenas a quantidade de conteúdo especificada na propriedade **archiveWindowLength** da saída em tempo real. O conteúdo que fica fora dessa janela é automaticamente descartado do contêiner de armazenamento e não é recuperável. O valor archiveWindowLength representa uma duração ISO-8601 TimeSpan (por exemplo, PTHH: MM: SS), que especifica a capacidade do DVR e pode ser definido de um mínimo de 3 minutos para um máximo de 25 horas.
 

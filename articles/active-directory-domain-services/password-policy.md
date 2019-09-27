@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: iainfou
-ms.openlocfilehash: 45fb2daaeaf9ee788207d43d805e070320372ca0
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 19a618bd576687fcb0d92f8e35613e4cdc749e70
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69617170"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71320455"
 ---
 # <a name="password-and-account-lockout-policies-on-managed-domains"></a>Políticas de senha e de bloqueio de conta em domínios gerenciados
 
@@ -30,13 +30,13 @@ Para concluir este artigo, você precisa dos seguintes recursos e privilégios:
 
 * Uma assinatura ativa do Azure.
   * Se você não tiver uma assinatura do Azure, [crie uma conta](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Um locatário Azure Active Directory associado à sua assinatura, seja sincronizado com um diretório local ou um diretório somente em nuvem.
-  * Se necessário, [crie um locatário Azure Active Directory][create-azure-ad-tenant] ou [associe uma assinatura do Azure à sua conta][associate-azure-ad-tenant].
-* Um Azure Active Directory Domain Services domínio gerenciado habilitado e configurado em seu locatário do Azure AD.
+* Um locatário do Azure Active Directory associado com a assinatura, sincronizado com um diretório local ou somente em nuvem.
+  * Se necessário, [crie um locatário do Azure Active Directory][create-azure-ad-tenant] ou [associe uma assinatura do Azure à sua conta][associate-azure-ad-tenant].
+* Um domínio gerenciado do Azure Active Directory Domain Services habilitado e configurado no locatário do Azure AD.
   * Se necessário, conclua o tutorial para [criar e configurar uma instância de Azure Active Directory Domain Services][create-azure-ad-ds-instance].
 * Uma VM de gerenciamento do Windows Server que é unida ao domínio gerenciado AD DS do Azure.
   * Se necessário, conclua o tutorial para [criar uma VM de gerenciamento][tutorial-create-management-vm].
-* Uma conta de usuário que é membro do grupo de *Administradores de DC do Azure ad* em seu locatário do Azure AD.
+* Uma conta de usuário que é membro do grupo de *administradores do Azure AD DC* no locatário do Azure AD.
 
 ## <a name="fine-grained-password-policies-fgpp-overview"></a>Visão geral das políticas de senha refinadas (FGPP)
 
@@ -90,6 +90,9 @@ Para criar uma política de senha refinada, use as ferramentas administrativas A
 1. Na tela iniciar, selecione **Ferramentas administrativas**. É mostrada uma lista de ferramentas de gerenciamento disponíveis que foram instaladas no tutorial para [criar uma VM de gerenciamento][tutorial-create-management-vm].
 1. Para criar e gerenciar UOs, selecione **centro administrativo do Active Directory** na lista de ferramentas administrativas.
 1. No painel esquerdo, escolha seu domínio gerenciado AD DS do Azure, como *contoso.com*.
+1. Abra o contêiner do **sistema** e o contêiner **configurações de senha** .
+
+    Um FGPP interno para o domínio gerenciado AD DS do Azure é mostrado. Não é possível modificar essa FGPP interna. Em vez disso, crie um novo FGPP personalizado para substituir o FGPP padrão.
 1. No painel **tarefas** à direita, selecione **novo > configurações de senha**.
 1. Na caixa de diálogo **criar configurações de senha** , insira um nome para a política, como *MyCustomFGPP*. Defina a precedência como adequadamente para substituir o FGPP padrão (que é *200*), como *1*.
 

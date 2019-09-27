@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 41ea6222689516f224fc23ce6a658d17f7f81866
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dc3aa502dccdd4eb4e8bd1a82456656e5d389160
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60240835"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327429"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Fontes de dados de syslog no Azure Monitor
 O Syslog é um protocolo de registro de eventos em log que é comum para o Linux. Os aplicativos enviarão mensagens que podem ser armazenadas no computador local ou entregues a um coletor de Syslog. Quando o agente do Log Analytics para Linux é instalado, ele configura o daemon do Syslog local para encaminhar mensagens para o agente. O agente envia a mensagem ao Azure Monitor, onde um registro correspondente é criado.  
@@ -30,15 +30,15 @@ O Syslog é um protocolo de registro de eventos em log que é comum para o Linux
 
 ![Coleção do Syslog](media/data-sources-syslog/overview.png)
 
-Os recursos a seguir são compatíveis com o coletor de Syslog:
+Os seguintes recursos têm suporte com o coletor de syslog:
 
-* kerning
+* Kern
 * usuário
-* mail
+* email
 * daemon
 * auth
 * syslog
-* lpr
+* LPR
 * news
 * uucp
 * cron
@@ -46,7 +46,7 @@ Os recursos a seguir são compatíveis com o coletor de Syslog:
 * ftp
 * local0-local7
 
-Para qualquer outro recurso [configurar uma fonte de dados de Logs personalizados](data-sources-custom-logs.md) no Azure Monitor.
+Para qualquer outro recurso, [Configure uma fonte de dados de logs personalizados](data-sources-custom-logs.md) no Azure monitor.
  
 ## <a name="configuring-syslog"></a>Configurando Syslog
 O agente do Log Analytics para Linux coletará apenas eventos com as instalações e as severidades especificadas na configuração. Você pode configurar o Syslog por meio do Portal do Azure ou gerenciando arquivos de configuração em seus agentes do Linux.
@@ -58,7 +58,7 @@ Você pode adicionar um novo recurso, digitando seu nome e clicando em **+** . P
 
 ![Configurar Syslog](media/data-sources-syslog/configure.png)
 
-Por padrão, todas as alterações de configuração são automaticamente envidas por push para todos os agentes. Se você quiser configurar o Syslog manualmente em cada agente do Linux, desmarque a caixa *Aplicar as configurações abaixo aos computadores Linux*.
+Por padrão, todas as alterações de configuração são automaticamente envidas por push para todos os agentes. Se você quiser configurar o syslog manualmente em cada agente do Linux, desmarque a caixa *aplicar configuração abaixo a meus computadores*.
 
 ### <a name="configure-syslog-on-linux-agent"></a>Configurar o Syslog no agente do Linux
 Quando o [agente do Log Analytics é instalado em um cliente Linux](../../azure-monitor/learn/quick-collect-linux-computer.md), ele instala um arquivo de configuração syslog padrão que define o recurso e a severidade das mensagens coletadas. Você pode modificar esse arquivo para alterar a configuração. O arquivo de configuração é diferente, dependendo do daemon do Syslog que o cliente tem instalado.
@@ -201,9 +201,9 @@ Após concluir as alterações, será necessário reiniciar o Syslog e o serviç
 ## <a name="syslog-record-properties"></a>Propriedades de registro do syslog
 Os registros do syslog têm um tipo de **Syslog** e têm as propriedades na tabela a seguir.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |:--- |:--- |
-| Computador |Computador do qual o evento foi coletado. |
+| Computer |Computador do qual o evento foi coletado. |
 | Recurso |Define a parte do sistema que gerou a mensagem. |
 | HostIP |Endereço IP do sistema que envia a mensagem. |
 | HostName |Nome do sistema enviando a mensagem. |
@@ -215,9 +215,9 @@ Os registros do syslog têm um tipo de **Syslog** e têm as propriedades na tabe
 ## <a name="log-queries-with-syslog-records"></a>Consultas do log com registros do Syslog
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros do Syslog.
 
-| Consulta | DESCRIÇÃO |
+| Consulta | Descrição |
 |:--- |:--- |
-| syslog |Todos os Syslogs. |
+| Syslog |Todos os Syslogs. |
 | Syslog &#124; where SeverityLevel == "error" |Todos os registros do Syslog com a severidade de erro. |
 | Syslog &#124; summarize AggregatedValue = count() by Computer |Contagem de registros do Syslog por computador. |
 | Syslog &#124; summarize AggregatedValue = count() by Facility |Contagem de registros do Syslog por recurso. |

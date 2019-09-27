@@ -1,323 +1,263 @@
 ---
 title: Tarefas do gerenciador de grupos de Processo de Ciência de Dados de Equipe
-description: Uma descrição das tarefas para um gerente de grupo sobre um projeto de equipe de ciência de dados.
+description: Uma explicação detalhada das tarefas para um gerente de grupo em um projeto de equipe de ciência de dados.
 author: marktab
 manager: cgronlun
 editor: cgronlun
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 11/13/2017
+ms.date: 09/24/2019
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 85a4aca0c4b80eaab1f43bcbec33dc9cf37aa655
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f95bb30f547e863fc7a796e69fffe1e2334e489c
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65950106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326803"
 ---
-# <a name="tasks-for-a-group-manager-on-a-data-science-team-project"></a>Tarefas para um gerente do grupo em um projeto de equipe de ciência de dados
+# <a name="team-data-science-process-group-manager-tasks"></a>Tarefas do gerenciador de grupos de Processo de Ciência de Dados de Equipe
 
-Este tópico descreve as tarefas que um gerente de grupo deve concluir para sua organização de ciência de dados. O objetivo é estabelecer um ambiente de grupo colaborativo que padronize o TDSP ([Processo de Ciência de Dados da Equipe](overview.md)). Para obter uma descrição das funções pessoais e das tarefas associadas que são tratadas por uma equipe de ciência de dados com padronização nesse processo, consulte [Tarefas e funções do Processo de Ciência de Dados da Equipe](roles-tasks.md).
+Este artigo descreve as tarefas que um *gerente de grupo* conclui para uma organização de ciência de dados. O gerente de grupo gerencia toda a unidade de ciência de dados em uma empresa. Uma unidade de ciência de dados pode ter várias equipes, cada uma delas trabalhando em vários projetos de ciência de dados em verticais de negócios distintas. O objetivo do gerente do grupo é estabelecer um ambiente de grupo colaborativo que padronize o TDSP ( [processo de ciência de dados de equipe](overview.md) ). Para obter uma descrição de todas as funções de pessoal e tarefas associadas tratadas por uma equipe de ciência de dados padronizando no TDSP, consulte [funções e tarefas do processo de ciência de dados de equipe](roles-tasks.md).
 
-O **Gerente de Grupo** é o gerente de toda a unidade de ciência de dados em uma empresa. Uma unidade de ciência de dados pode ter várias equipes, cada uma delas trabalhando em vários projetos de ciência de dados em áreas comerciais distintas. Um Gerente de Grupo pode delegar suas tarefas a um substituto, mas as tarefas associadas à função são as mesmas. Há seis tarefas principais, conforme mostrado no diagrama a seguir:
+O diagrama a seguir mostra as seis tarefas principais de instalação do Gerenciador de grupos. Os gerentes de grupo podem delegar suas tarefas a substitutos, mas as tarefas associadas à função não são alteradas.
 
-![0](./media/group-manager-tasks/tdsp-group-manager.png)
+![Tarefas do gerente de grupo](./media/group-manager-tasks/tdsp-group-manager.png)
 
+1. Configure uma **organização DevOps do Azure** para o grupo.
+2. Crie o **projeto GroupCommon** padrão na organização DevOps do Azure.
+3. Crie o repositório **GroupProjectTemplate** no Azure repos.
+4. Crie o repositório **GroupUtilities** no Azure repos.
+5. Importe o conteúdo dos repositórios **ProjectTemplate** e **Utilities** da equipe do Microsoft TDSP para os repositórios comuns do grupo.
+6. Configure a **Associação** e **as permissões** para que os membros da equipe acessem o grupo.
 
-> [!NOTE] 
-> Vamos descrever as etapas necessárias para configurar um ambiente de grupo TDSP usando o Azure DevOps Services nas instruções a seguir. Especificamos como executar essas tarefas com o Azure DevOps Services, pois esse é o modo de implementar o TDSP na Microsoft. Se outra plataforma de hospedagem de código for usada para o grupo, as tarefas que precisarão ser concluídas pelo gerente de grupo geralmente não mudam. Mas a maneira de concluir essas tarefas será diferente.
-
-1. Configure o **Azure DevOps Services** para o grupo.
-2. Crie um **projeto de grupo** no Azure DevOps Services (para usuários do Azure DevOps Services)
-3. Criar o repositório **GroupProjectTemplate**
-4. Criar o repositório **GroupUtilities**
-5. Propague os repositórios **GroupProjectTemplate** e **GroupUtilities** para o Azure DevOps Services com conteúdo de repositórios do TDSP.
-6. Configure os **controles de segurança** para membros da equipe acessarem os repositórios GroupProjectTemplate e GroupUtilities.
-
-Cada uma das etapas anteriores é descrita em detalhes. Mas primeiro vamos nos familiarizar com as abreviações e discutir os pré-requisitos para trabalhar com repositórios.
-
-### <a name="abbreviations-for-repositories-and-directories"></a>Abreviações para repositórios e diretórios
-
-Este tutorial usa nomes abreviados para repositórios e diretórios. Essas definições facilitam o seguimento das operações entre os repositórios e os diretórios. Esta notação é usada nas seções a seguir:
-
-- **G1**: O repositório do modelo de projeto desenvolvido e gerenciado pela equipe de TDSP da Microsoft.
-- **G2**: O repositório de utilitários desenvolvido e gerenciado pela equipe de TDSP da Microsoft.
-- **R1**: O repositório GroupProjectTemplate no Git que você configurou no servidor do grupo Azure DevOps.
-- **R2**: O repositório GroupUtilities no Git que você configurou no servidor do grupo Azure DevOp.
-- **LG1** e **LG2**: Os diretórios locais no computador que você clona G1 e G2 para, respectivamente.
-- **LR1** e **LR2**: Os diretórios locais no computador para os quais você clona R1 e R2, respectivamente.
-
-### <a name="pre-requisites-for-cloning-repositories-and-checking-code-in-and-out"></a>Pré-requisitos para clonar repositórios e fazer check-in e check-out de código
-
-- O Git deve estar instalado em seu computador. Se você estiver usando uma DSVM (Máquina Virtual de Ciência de Dados), o Git já terá sido previamente instalado e você estará pronto para começar. Caso contrário, consulte o [apêndice Plataformas e ferramentas](platforms-and-tools.md#appendix).
-- Se você estiver usando uma **DSVM do Windows**, você precisará ter o [GCM (Gerenciador de Credenciais Git)](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) instalado em seu computador. No arquivo README.md, role para baixo até a seção **Baixar e Instalar** e clique no *instalador mais recente*. Essa etapa o leva para a última página do instalador. Baixe o instalador .exe nessa página e execute-o.
-- Se você estiver usando uma **DSVM do Linux**, crie uma chave pública SSH na DSVM e adicione-a ao Azure DevOps Services de grupo. Para obter mais informações sobre SSH, consulte a seção **Criar chave pública SSH** no [apêndice Plataformas e ferramentas](platforms-and-tools.md#appendix).
-
-
-## <a name="1-create-account-on-azure-devops-services"></a>1. Criar uma conta no Azure DevOps Services
-
-O Azure DevOps Services hospeda os repositórios a seguir:
-
-- **repositórios comuns do grupo**: Repositórios de uso geral que podem ser adotados por várias equipes em um grupo para vários projetos de ciência de dados. Por exemplo, os repositórios *GroupProjectTemplate* e *GroupUtilities*.
-- **repositórios de equipe**:  Repositórios para equipes específicas dentro de um grupo. Esses repositórios são específicos para as necessidades da equipe e podem ser adotados por vários projetos executados por essa equipe, mas não são gerais o bastante para serem úteis para várias equipes em um grupo de ciência de dados.
-- **repositórios de projetos**: Repositórios disponíveis para projetos específicos. Esses repositórios podem não ser gerais o bastante para que sejam úteis para vários projetos executados por uma equipe e para várias equipes em um grupo de ciência de dados.
-
-
-### <a name="setting-up-the-azure-devops-services-sign-into-your-microsoft-account"></a>Configurar o Logon do Azure DevOps Services em sua conta Microsoft
-
-Vá para [Visual Studio Online](https://www.visualstudio.com/), clique em **Entrar** no canto superior direito e entre em sua conta da Microsoft.
-
-![1](./media/group-manager-tasks/login.PNG)
-
-Se você não tiver uma conta da Microsoft, clique em **Inscrever-se agora** para criar uma conta da Microsoft e, em seguida, entre usando essa conta.
-
-Se a sua organização tiver uma assinatura do Visual Studio/MSDN, clique na caixa verde **Entre com sua conta corporativa ou de estudante** e entre com as credenciais associadas a essa assinatura.
-
-![2](./media/group-manager-tasks/signin.PNG)
-
-
-
-Depois de entrar, clique em **Criar Nova Conta** no canto superior direito, conforme mostrado na imagem a seguir:
-
-![3](./media/group-manager-tasks/create-account-1.PNG)
-
-Preencha as informações para o Azure DevOps Services que você deseja criar no assistente **Criar sua conta** com os seguintes valores:
-
-- **URL do Servidor**: Substitua *mysamplegroup* pelo seu próprio *nome do servidor*. A URL do servidor será: *https://\<servername\>.visualstudio.com*.
-- **Gerenciar código usando:** Selecione **_Git_** .
-- **Nome do projeto:** Insira *GroupCommon*.
-- **Organizar o trabalho usando:** Escolha *Agile*.
-- **Hospedar os projetos em:** Escolha uma localização geográfica. Neste exemplo, escolhemos *Centro-Sul dos EUA*.
-
-![4](./media/group-manager-tasks/fill-in-account-information.png)
+O tutorial a seguir percorre as etapas em detalhes. 
 
 > [!NOTE] 
-> Se você encontrar a seguinte janela pop-up depois de clicar em **Criar nova conta**, clique em **Alterar detalhes** para exibir todos os campos itemizados.
-
-![5](./media/group-manager-tasks/create-account-2.png)
-
-
-Clique em **Continuar**.
-
-## <a name="2-groupcommon-project"></a>2. Projeto GroupCommon
-
-A página **GroupCommon** (*https://\<servername\>.visualstudio.com/GroupCommon*) é aberta depois que o Azure DevOps Services é criado.
-
-![6](./media/group-manager-tasks/server-created-2.PNG)
-
-## <a name="3-create-the-grouputilities-r2-repository"></a>3. Criar o repositório GroupUtilities (R2)
-
-Para criar o repositório **GroupUtilities** (R2) no Azure DevOps Services:
-
-- Para abrir o assistente **Criar um novo repositório**, clique em **Novo repositório** na guia **Controle de Versão** de seu projeto.
-
-  ![7](./media/group-manager-tasks/create-grouputilities-repo-1.png)
-
-- Selecione *Git* como o **Tipo** e digite *GroupUtilities* como o **Nome** e, em seguida, clique em **Criar**.
-
-  ![8](./media/group-manager-tasks/create-grouputilities-repo-2.png)
-
-Agora você deve ver dois repositórios Git **GroupProjectTemplate** e **GroupUtilities** na coluna esquerda da página **Controle de Versão**:
-
-![9](./media/group-manager-tasks/two-repo-under-groupCommon.PNG)
-
-
-## <a name="4-create-the-groupprojecttemplate-r1-repository"></a>4. Crie o repositório GroupProjectTemplate (R1)
-
-A configuração dos repositórios para o servidor de grupo do Azure DevOps consiste em duas tarefas:
-
-- Renomeie o repositório **GroupCommon** padrão ***GroupProjectTemplate***.
-- Crie o repositório **GroupUtilities** no Azure DevOps Services no projeto **GroupCommon**.
-
-Instruções para a primeira tarefa são apresentadas nesta seção após comentários sobre as convenções de nomenclatura ou nossos repositórios e diretórios. As instruções para a segunda tarefa estão contidas na seção a seguir para a etapa 4.
-
-### <a name="rename-the-default-groupcommon-repository"></a>Renomeie o repositório GroupCommon padrão
-
-Para renomear o repositório **GroupCommon** padrão como *GroupProjectTemplate* (conhecido como **R1** neste tutorial):
-
-- Clique em **Colaborar em código** na página do projeto **GroupCommon**. Isso leva você para a página de repositório do Git padrão do projeto **GroupCommon**. No momento, este repositório Git está vazio.
-
-  ![10](./media/group-manager-tasks/rename-groupcommon-repo-3.png)
-
-- Clique em **GroupCommon** no canto superior esquerdo (realçado com uma caixa vermelha na figura a seguir) na página de repositório Git do **GroupCommon** e selecione **Gerenciar repositórios** (realçado com uma caixa verde na figura a seguir). Esse procedimento abre o **PAINEL DE CONTROLE**.
-- Selecione a guia **Controle de Versão** de seu projeto.
-
-  ![11](./media/group-manager-tasks/rename-groupcommon-repo-4.png)
-
-- Clique em **…** à direita do repositório **GroupCommon** no painel esquerdo e selecione **Renomear repositório**.
-
-  ![12](./media/group-manager-tasks/rename-groupcommon-repo-5.png)
-
-- No assistente **Renomear o repositório GroupCommon** que se abre em pop-up, insira *GroupProjectTemplate* na caixa **Nome do repositório** e, em seguida, clique em **Renomear**.
-
-  ![13](./media/group-manager-tasks/rename-groupcommon-repo-6.png)
-
-
-
-## <a name="5-seed-the-r1--r2-repositories-on-the-azure-devops-services"></a>5. Propague os repositórios R1 & R2 no Azure DevOps Services
-
-Nesta etapa do procedimento, você deve propagar os repositórios *GroupProjectTemplate* (R1) e *GroupUtilities* (R2) configurados na seção anterior. Esses repositórios são propagados com os repositórios ***ProjectTemplate*** (**G1**) e ***utilitários*** (**G2**) gerenciados pela Microsoft para o Processo de Ciência de Dados da Equipe. Quando a propagação tiver sido concluída:
-
-- o repositório R1 terá o mesmo conjunto de diretórios e modelos de documento que o G1
-- o repositório R2 terá o conjunto de utilitários de ciência de dados desenvolvidos pela Microsoft.
-
-O procedimento de propagação usa os diretórios na DSVM local como sites de preparo intermediários. Aqui estão as etapas que você executa nesta seção:
-
-- G1 e G2 – clonados para -> LG1 e LG2
-- R1 e R2 – clonados para -> LR1 e LR2
-- LG1 e LG2 – arquivos copiados em -> LR1 e LR2
-- (Opcional) personalização de LR1 e LR2
-- LR1 e LR2 – conteúdo a adicionar a -> R1 e R2
-
-
-### <a name="clone-g1--g2-repositories-to-your-local-dsvm"></a>Clonar os repositórios G1 e G2 para sua DSVM local
-
-Nesta etapa, você clona o repositório ProjectTemplate (G1) do TDSP (Processo de Ciência de Dados de Equipe) e Utilitários (G2) dos repositórios GitHub do TDSP para pastas na DSVM local como LG1 e LG2:
-
-- Crie um diretório para servir como o diretório raiz para hospedar todos os seus clones dos repositórios.
-  -  Na DSVM Windows, crie um diretório *C:\GitRepos\TDSPCommon*.
-  -  Na DSVM Linux, crie um diretório *GitRepos\TDSPCommon* em seu diretório base.
-
-- Execute o seguinte conjunto de comandos do diretório *GitRepos\TDSPCommon*.
-
-  `git clone https://github.com/Azure/Azure-TDSP-ProjectTemplate`<br>
-  `git clone https://github.com/Azure/Azure-TDSP-Utilities`
-
-  ![14](./media/group-manager-tasks/two-folder-cloned-from-TDSP-windows.PNG)
-
-- Usando nossos nomes de repositório abreviados, isto é o que estes scripts realizaram:
-    - G1 – clonado em -> LG1
-    - G2 – clonado em -> LG2
-- Após a clonagem estar concluída, você deverá ver dois diretórios, _ProjectTemplate_ e _Utilitários_ no diretório **GitRepos\TDSPCommon**.
-
-### <a name="clone-r1--r2-repositories-to-your-local-dsvm"></a>Clonar os repositórios R1 e R2 para sua DSVM local
-
-Nesta etapa, você clona o repositório GroupProjectTemplate (R1) e o repositório GroupUtilities (R2) em diretórios locais (conhecidos como LR1 e LR2, respectivamente) em **GitRepos\GroupCommon** na sua DSVM.
-
-- Para obter as URLs dos repositórios R1 e R2, vá para a página inicial **GroupCommon** no Azure DevOps Services. Isso geralmente tem a URL *https://\<Seu Nome do Azure DevOps Services\>.visualstudio.com/GroupCommon*.
-- Clique em **CÓDIGO**.
-- Escolha os repositórios **GroupProjectTemplate** e **GroupUtilities**. Copie e salve cada uma das URLs (HTTPS para Windows; SSH para Linux) do elemento **Clone da URL**, em etapas, para uso nos scripts a seguir:
-
-  ![15](./media/group-manager-tasks/find_https_ssh_2.PNG)
-
-- Alterar para o diretório **GitRepos\GroupCommon** na sua DSVM Windows ou Linux e execute um dos seguintes conjuntos de comandos para clonar R1 e R2 para o diretório.
-
-Aqui estão os scripts do Windows e do Linux:
-
-    # Windows DSVM
-
-    git clone <the HTTPS URL of the GroupProjectTemplate repository>
-    git clone <the HTTPS URL of the GroupUtilities repository>
-
-![16](./media/group-manager-tasks/clone-two-empty-group-reo-windows-2.PNG)
-
-    # Linux DSVM
-
-    git clone <the SSH URL of the GroupProjectTemplate repository>
-    git clone <the SSH URL of the GroupUtilities repository>
-
-![17](./media/group-manager-tasks/clone-two-empty-group-reo-linux-2.PNG)
-
-> [!NOTE] 
-> Espere receber mensagens de aviso informando que LR1 e LR2 estão vazios.
-
-- Usando nossos nomes de repositório abreviados, isto é o que estes scripts realizaram:
-    - R1 – clonado em -> LR1
-    - R2 – clonado em -> LR2   
-
-
-### <a name="seed-your-groupprojecttemplate-lr1-and-grouputilities-lr2"></a>Propague GroupProjectTemplate (LR1) e GroupUtilities (LR2)
-
-Em seguida, no seu computador local, copie o conteúdo dos diretórios ProjectTemplate e Utilitários (exceto pelos metadados nos diretórios .git) em GitRepos\TDSPCommon para seus diretórios GroupProjectTemplate e GroupUtilities em **GitRepos\ GroupCommon**. Aqui estão as duas tarefas para concluir esta etapa:
-
-- Copie os arquivos no GitRepos\TDSPCommon\ProjectTemplate (**LG1**) para GitRepos\GroupCommon\GroupProjectTemplate (**LR1**)
-- Copie os arquivos no GitRepos\TDSPCommon\Utilities (**LG2** para GitRepos\GroupCommon\Utilities (**LR2**).
-
-Para realizar essas duas tarefas, execute os seguintes scripts no console do PowerShell (Windows) ou no console de script Shell (Linux). Você será solicitado a inserir caminhos completos para LG1, LR1, LG2 e LR2. Os caminhos inseridos são validados. Se você inserir um diretório que não exista, será solicitado a inserir novamente.
-
-    # Windows DSVM
-    
-    wget "https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/TDSP/tdsp_local_copy_win.ps1" -outfile "tdsp_local_copy_win.ps1"
-    .\tdsp_local_copy_win.ps1 1
-
-![18](./media/group-manager-tasks/copy-two-folder-to-group-folder-windows-2.PNG)
-
-Agora você pode ver que arquivos nos diretórios LG1 e LG1 (exceto os arquivos no diretório .git) foram copiados para LR1 e LR2, respectivamente.
-
-![19](./media/group-manager-tasks/copy-two-folder-to-group-folder-windows.PNG)
-
-    # Linux DSVM
-
-    wget "https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/TDSP/tdsp_local_copy_linux.sh"
-    bash tdsp_local_copy_linux.sh 1
-
-![20](./media/group-manager-tasks/copy-two-folder-to-group-folder-linux-2.PNG)
-
-Agora você verá que os arquivos em duas pastas (exceto os arquivos no diretório .git) são copiados para GroupProjectTemplate e GroupUtilities, respectivamente.
-
-![21](./media/group-manager-tasks/copy-two-folder-to-group-folder-linux.PNG)
-
-- Usando nossos nomes de repositório abreviados, isto é o que estes scripts realizaram:
-    - LG1 – arquivos copiados em -> LR1
-    - LG2 – arquivos copiados em -> LR2
-
-### <a name="option-to-customize-the-contents-of-lr1--lr2"></a>Opção para personalizar o conteúdo de LR1 e LR2
-    
-Se você quiser personalizar o conteúdo de LR1 e LR2 para atender às necessidades específicas do seu grupo, este é o estágio do procedimento apropriado para isso. Você pode modificar os documentos de modelo, alterar a estrutura de diretório e adicionar utilitários existentes que seu grupo desenvolveu ou que são úteis para todo o grupo.
-
-### <a name="add-the-contents-in-lr1--lr2-to-r1--r2-on-group-server"></a>Adicionar o conteúdo em LR1 e LR2 a R1 e R2 no servidor de grupo
-
-Agora, você precisa adicionar o conteúdo em LR1 e LR2 a repositórios R1 e R2. Estes são os comandos de bash git que você pode executar em Windows PowerShell ou Linux.
-
-Execute os seguintes comandos do diretório GitRepos\GroupCommon\GroupProjectTemplate:
-
-    git status
-    git add .
-    git commit -m"push from DSVM"
-    git push
-
-A opção -m permite definir uma mensagem para a confirmação git.
-
-![22](./media/group-manager-tasks/push-to-group-server-2.PNG)
-
-Você pode ver que, no Azure DevOps Services do grupo, no repositório GroupProjectTemplate, os arquivos são sincronizados imediatamente.
-
-![23](./media/group-manager-tasks/push-to-group-server-showed-up-2.PNG)
-
-Por fim, altere para o diretório **GitRepos\GroupCommon\GroupUtilities** e execute o mesmo conjunto de comandos bash git:
-
-    git status
-    git add .
-    git commit -m"push from DSVM"
-    git push
-
-> [!NOTE] 
-> Se essa for a primeira vez em que você confirma um repositório Git, será necessário configurar os parâmetros globais *user.name* e *user.email* antes de executar o comando `git commit`. Execute os dois comandos a seguir:
->
->  `git config --global user.name <your name>`  
->  `git config --global user.email <your email address>`
->
-> Se você estiver confirmando em vários repositórios Git, use o mesmo nome e endereço de email ao confirmar cada um deles. Usar o mesmo nome e endereço de email é conveniente posteriormente quando você criar painéis do PowerBI para acompanhar as atividades de Git em vários repositórios.
-
-
-- Usando nossos nomes de repositório abreviados, isto é o que estes scripts realizaram:
-    - LR1 – conteúdo a adicionar a -> R1
-    - LR2 – conteúdo a adicionar a -> R2
-
-## <a name="6-add-group-members-to-the-group-server"></a>6. Adicionar membros do grupo ao servidor de grupo
-
-Na home page do Azure DevOps Services do grupo, clique no **ícone de engrenagem** ao lado do seu nome de usuário no canto superior direito e selecione a guia **Segurança**. Você pode adicionar membros ao seu grupo aqui com várias permissões.
-
-![24](./media/group-manager-tasks/add_member_to_group.PNG)
-
+> Este artigo usa o Azure DevOps para configurar um ambiente de grupo TDSP, pois é como implementar TDSP na Microsoft. Se o seu grupo usa outras plataformas de Hospedagem de código ou de desenvolvimento, as tarefas do gerente do grupo são as mesmas, mas a maneira de concluí-las pode ser diferente.
+
+## <a name="create-an-organization-and-project-in-azure-devops"></a>Criar uma organização e um projeto no Azure DevOps
+
+1. Acesse [VisualStudio.Microsoft.com](https://visualstudio.microsoft.com), selecione **entrar** no canto superior direito e entre em seu conta Microsoft. 
+   
+   ![Entre na sua conta da Microsoft](./media/group-manager-tasks/signinvs.png)
+   
+   Se você não tiver um conta Microsoft, selecione **inscrever-se agora**, criar um conta Microsoft e entrar usando essa conta. Se sua organização tiver uma assinatura do Visual Studio, entre com as credenciais para essa assinatura.
+   
+1. Depois de entrar, no canto superior direito na página DevOps do Azure, selecione **criar nova organização**.
+   
+   ![Criar nova organização](./media/group-manager-tasks/create-organization.png)
+   
+1. Se você for solicitado a concordar com os termos de serviço, a política de privacidade e o código de conduta, selecione **continuar**.
+   
+1. Na caixa de diálogo de inscrição, nomeie sua organização do DevOps do Azure e aceite a atribuição de região do host ou selecione uma região diferente. Depois selecione **Continuar**. 
+
+1. Em **criar um projeto para**começar, insira *GroupCommon*e, em seguida, selecione **criar projeto**. 
+   
+   ![Criar projeto](./media/group-manager-tasks/create-project.png)
+
+A página de **Resumo** do projeto **GroupCommon** é aberta. A URL da página é *https: \/ @ no__t-2 @ no__t-3servername >/\<organization-name >/GroupCommon*.
+
+![Página Resumo do projeto](./media/group-manager-tasks/project-summary.png)
+
+## <a name="set-up-the-group-common-repositories"></a>Configurar os repositórios comuns do grupo
+
+Azure Repos hospeda os seguintes tipos de repositórios para seu grupo:
+
+- **Repositórios comuns de grupo**: Repositórios de uso geral que várias equipes dentro de uma unidade de ciência de dados podem adotar para muitos projetos de ciência de dados. 
+- **Repositórios de equipe**:  Repositórios para equipes específicas em uma unidade de ciência de dados. Esses repositórios são específicos para as necessidades de uma equipe e podem ser usados para vários projetos dentro dessa equipe, mas não são gerais o suficiente para serem usados em várias equipes em uma unidade de ciência de dados.
+- **Repositórios do projeto**: Repositórios para projetos específicos. Esses repositórios podem não ser gerais o suficiente para vários projetos dentro de uma equipe ou para outras equipes em uma unidade de ciência de dados.
+
+Para configurar os repositórios comuns de grupo em seu projeto, você: 
+- Renomeie o repositório **GroupCommon** padrão para **GroupProjectTemplate**
+- Criar um novo repositório **GroupUtilities**
+
+### <a name="rename-the-default-project-repository-to-groupprojecttemplate"></a>Renomeie o repositório de projeto padrão para GroupProjectTemplate
+
+Para renomear o repositório de projeto **GroupCommon** padrão para **GroupProjectTemplate**:
+
+1. Na página **Resumo** do projeto **GroupCommon** , selecione **repositórios**. Essa ação leva você para o repositório **GroupCommon** padrão do projeto GroupCommon, que está vazio no momento.
+   
+1. Na parte superior da página, solte a seta ao lado de **GroupCommon** e selecione **gerenciar repositórios**.
+   
+   ![Gerenciar repositórios](./media/group-manager-tasks/rename-groupcommon-repo-3.png)
+   
+1. Na página **configurações do projeto** , selecione **...** ao lado de **GroupCommon**e, em seguida, selecione **renomear repositório**. 
+   
+   ![Selecionar... e, em seguida, selecione Renomear repositório](./media/group-manager-tasks/rename-groupcommon-repo-4.png)
+   
+1. Em **renomear o** pop-up repositório GroupCommon, digite *GroupProjectTemplate*e, em seguida, selecione **renomear**. 
+   
+   ![Renomear repositório](./media/group-manager-tasks/rename-groupcommon-repo-6.png)
+
+### <a name="create-the-grouputilities-repository"></a>Criar o repositório GroupUtilities
+
+Para criar o repositório **GroupUtilities** :
+
+1. Na página **Resumo** do projeto **GroupCommon** , selecione **repositórios**. 
+   
+1. Na parte superior da página, solte a seta ao lado de **GroupProjectTemplate** e selecione **novo repositório**.
+   
+   ![Selecionar novo repositório](./media/group-manager-tasks/create-grouputilities-repo-1.png)
+   
+1. Na caixa de diálogo **criar um novo repositório** , selecione **git** como o **tipo**, insira *GroupUtilities* como o nome do **repositório**e, em seguida, selecione **criar**.
+   
+   ![Criar repositório GroupUtilities](./media/group-manager-tasks/create-grouputilities-repo-2.png)
+   
+1. Na página **configurações do projeto** , selecione **repositórios** em **repositórios** no painel de navegação esquerdo para ver os dois repositórios de Grupo: **GroupProjectTemplate** e **GroupUtilities**.
+   
+   ![Dois repositórios de grupo](./media/group-manager-tasks/two-repositories.png)
+
+## <a name="import-the-microsoft-tdsp-team-repositories"></a>Importar os repositórios da equipe do Microsoft TDSP
+
+Nesta parte do tutorial, você importa o conteúdo dos repositórios **ProjectTemplate** e **Utilities** gerenciados pela equipe do Microsoft TDSP em seus repositórios **GroupProjectTemplate** e **GroupUtilities** . 
+
+Para importar os repositórios da equipe do TDSP:
+
+1. No home page do projeto **GroupCommon** , selecione **repositórios** no painel de navegação esquerdo. O repositório **GroupProjectTemplate** padrão é aberto. 
+   
+1. Na página **GroupProjectTemplate está vazia** , selecione **importar**. 
+   
+   ![Selecionar importação](./media/group-manager-tasks/import-repo.png)
+   
+1. Na caixa de diálogo **importar um repositório git** , selecione **git** como o **tipo de origem**e digite *https: \//GitHub. com/Azure/Azure-TDSP-ProjectTemplate. git* para a **URL de clone**. Em seguida, selecione **importar**. O conteúdo do repositório ProjectTemplate da equipe do Microsoft TDSP é importado para seu repositório do GroupProjectTemplate. 
+   
+   ![Importar repositório da equipe do Microsoft TDSP](./media/group-manager-tasks/import-repo-2.png)
+   
+1. Na parte superior da página **repositórios** , clique no menu suspenso e selecione o repositório **GroupUtilities** .
+   
+1. Repita o processo de importação para importar o conteúdo do repositório de **utilitários** de equipe do Microsoft TDSP, *https: \//github. com/Azure/Azure-TDSP-Utilities. git*, em seu repositório **GroupUtilities** . 
+   
+Cada um dos seus repositórios de dois grupos agora contém todos os arquivos, exceto aqueles no diretório *. git* , do repositório correspondente do Microsoft TDSP Team. 
+
+## <a name="customize-the-contents-of-the-group-repositories"></a>Personalizar o conteúdo dos repositórios de grupo
+
+Se você quiser personalizar o conteúdo de seus repositórios de grupo para atender às necessidades específicas do seu grupo, você pode fazer isso agora. Você pode modificar os arquivos, alterar a estrutura do diretório ou adicionar arquivos que seu grupo desenvolveu ou que sejam úteis para seu grupo.
+
+### <a name="make-changes-in-azure-repos"></a>Fazer alterações no Azure Repos
+
+Para personalizar o conteúdo do repositório:
+
+1. Na página **Resumo** do projeto **GroupCommon** , selecione **repositórios**. 
+   
+1. Na parte superior da página, selecione o repositório que você deseja personalizar.
+
+1. Na estrutura de diretório do repositório, navegue até a pasta ou o arquivo que você deseja alterar. 
+   
+   - Para criar novas pastas ou arquivos, selecione a seta ao lado de **novo**. 
+     
+     ![Criar novo arquivo](./media/group-manager-tasks/new-file.png)
+     
+   - Para carregar arquivos, selecione **carregar arquivo (s)** . 
+     
+     ![Carregar arquivos](./media/group-manager-tasks/upload-files.png)
+     
+   - Para editar os arquivos existentes, navegue até o arquivo e, em seguida, selecione **Editar**. 
+     
+     ![Editar um arquivo](./media/group-manager-tasks/edit-file.png)
+     
+1. Depois de adicionar ou editar arquivos, selecione **confirmar**.
+   
+   ![Confirmar alterações](./media/group-manager-tasks/commit.png)
+
+### <a name="make-changes-using-your-local-machine-or-dsvm"></a>Fazer alterações usando seu computador local ou DSVM
+
+Se você quiser fazer alterações usando seu computador local ou DSVM e enviar as alterações por push para os repositórios de grupo, verifique se você tem os pré-requisitos para trabalhar com git e DSVMs:
+
+- Uma assinatura do Azure, se você quiser criar um DSVM.
+- Git instalado em seu computador. Se você estiver usando um DSVM, o git será pré-instalado. Caso contrário, consulte o [apêndice Plataformas e ferramentas](platforms-and-tools.md#appendix).
+- Se você quiser usar um DSVM, o DSVM do Windows ou Linux criado e configurado no Azure. Para obter mais informações e instruções, consulte a [documentação do máquina virtual de ciência de dados](/azure/machine-learning/data-science-virtual-machine/).
+- Para um DSVM do Windows, o [Gerenciador de credenciais do git (GCM)](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) instalado em seu computador. No arquivo *README.MD* , role para baixo até a seção **baixar e instalar** e selecione o **instalador mais recente**. Baixe o instalador *. exe* da página do instalador e execute-o. 
+- Para um DSVM do Linux, uma chave pública SSH configurada em seu DSVM e adicionada no Azure DevOps. Para obter mais informações e instruções, consulte a seção **criar chave pública SSH** no [Apêndice plataformas e ferramentas](platforms-and-tools.md#appendix). 
+
+Primeiro, copie ou *clone* o repositório em seu computador local. 
+   
+1. Na página **Resumo** do projeto **GroupCommon** , selecione **repositórios**e, na parte superior da página, selecione o repositório que você deseja clonar.
+   
+1. Na página repositório, selecione **clonar** no canto superior direito.
+   
+1. Na caixa de diálogo **clonar repositório** , selecione **https** para uma conexão http ou **SSH** para uma conexão SSH e copie a URL de clone na **linha de comando** para a área de transferência.
+   
+   ![Clonar repositório](./media/group-manager-tasks/clone.png)
+   
+1. Em seu computador local, crie os seguintes diretórios:
+   
+   - Para Windows: **C:\GitRepos\GroupCommon**
+   - Para Linux, **$/GitRepos/GroupCommon** em seu diretório base 
+   
+1. Altere para o diretório que você criou.
+   
+1. No git bash, execute o comando `git clone <clone URL>.`
+   
+   Por exemplo, qualquer um dos comandos a seguir clona o repositório **GroupUtilities** para o diretório *GroupCommon* em seu computador local. 
+   
+   **Conexão HTTPS:**
+   
+   ```bash
+   git clone https://DataScienceUnit@dev.azure.com/DataScienceUnit/GroupCommon/_git/GroupUtilities
+   ```
+   
+   **Conexão SSH:**
+   
+   ```bash
+   git clone git@ssh.dev.azure.com:v3/DataScienceUnit/GroupCommon/GroupUtilities
+   ```
+
+Depois de fazer quaisquer alterações desejadas no clone local do repositório, você pode enviar por push as alterações para os repositórios comuns do grupo compartilhado. 
+
+Execute os seguintes comandos do git bash em seu diretório local **GroupProjectTemplate** ou **GroupUtilities** .
+
+```bash
+git add .
+git commit -m "push from local"
+git push
+```
+
+> [!NOTE]
+> Se esta for a primeira vez que você se compromete a um repositório git, talvez seja necessário configurar os parâmetros globais *User.Name* e *User. email* antes de `git commit` executar o comando. Execute os dois comandos a seguir:
+> 
+> `git config --global user.name <your name>`
+> 
+> `git config --global user.email <your email address>`
+> 
+> Se você estiver confirmando vários repositórios git, use o mesmo nome e endereço de email para todos eles. Usar o mesmo nome e endereço de email é conveniente ao criar Power BI Dashboards para controlar suas atividades git em vários repositórios.
+
+## <a name="add-group-members-and-configure-permissions"></a>Adicionar membros do grupo e configurar permissões
+
+Para adicionar membros ao grupo:
+
+1. No Azure DevOps, no projeto do **GroupCommon** Home Page, selecione **configurações do projeto** no painel de navegação esquerdo. 
+   
+1. Nas **configurações do projeto** navegação à esquerda, selecione **equipes**e, em seguida, na página **equipes** , selecione a **equipe GroupCommon**. 
+   
+   ![Configurar equipes](./media/group-manager-tasks/teams.png)
+   
+1. Na página **perfil da equipe** , selecione **Adicionar**.
+   
+   ![Adicionar à equipe do GroupCommon](./media/group-manager-tasks/add-to-team.png)
+   
+1. Na caixa de diálogo **Adicionar usuários e grupos** , procure e selecione Membros para adicionar ao grupo e, em seguida, selecione **salvar alterações**. 
+   
+   ![Adicionar usuários e grupos](./media/group-manager-tasks/add-users.png)
+   
+
+Para configurar permissões para membros:
+
+1. Nas **configurações do projeto** navegação à esquerda, selecione **permissões**. 
+   
+1. Na página **permissões** , selecione o grupo ao qual você deseja adicionar membros. 
+   
+1. Na página desse grupo, selecione **Membros**e, em seguida, selecione **Adicionar**. 
+   
+1. No pop-up **convidar Membros** , procure e selecione Membros para adicionar ao grupo e, em seguida, selecione **salvar**. 
+   
+   ![Conceder permissões a membros](./media/group-manager-tasks/grant-permissions.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Aqui estão os links para as descrições mais detalhadas das funções e tarefas definidas pelo Processo de Ciência de Dados da Equipe:
+Aqui estão os links para descrições detalhadas das outras funções e tarefas no processo de ciência de dados de equipe:
 
-- [Group Manager tasks for a data science team](group-manager-tasks.md) (Tarefas do gerente de grupo para uma equipe de ciência de dados)
 - [Team Lead tasks for a data science team](team-lead-tasks.md) (Tarefas do líder de equipe para uma equipe de ciência de dados)
 - [Project Lead tasks for a data science team](project-lead-tasks.md) (Tarefas do líder de projeto para uma equipe de ciência de dados)
-- [Project Individual Contributors for a data science team](project-ic-tasks.md) (Colaboradores individuais do projeto para uma equipe de ciência de dados)
+- [Projetar tarefas de colaborador individuais para uma equipe de ciência de dados](project-ic-tasks.md)

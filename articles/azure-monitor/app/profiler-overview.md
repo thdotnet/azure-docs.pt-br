@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: c07b325f3de6cd2cf3aaa436736786d2cdc42881
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: debc30a368a0f9ef7be9b0cda0b1238f8e2bc2e3
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60306287"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338070"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Aplicativos de produção de perfil no Azure com o Application Insights
 ## <a name="enable-application-insights-profiler-for-your-application"></a>Habilitar o Application Insights Profiler para o aplicativo
@@ -30,13 +30,13 @@ O Profiler trabalha com aplicativos .NET implantados nos serviços do Azure a se
 * [Serviços de Nuvem do Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Máquinas Virtuais do Azure e Conjuntos de Dimensionamento de Máquinas Virtuais](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
-* [**VISUALIZAÇÃO** aplicativos do ASP.NET Core Web de Linux do Azure](profiler-aspnetcore-linux.md?toc=/azure/azure-monitor/toc.json) 
+* [Versão **prévia** ASP.NET Core aplicativos Web Linux do Azure](profiler-aspnetcore-linux.md?toc=/azure/azure-monitor/toc.json) 
 
 Se você habilitou o Profiler, mas não está vendo os rastreamentos, verifique nosso [Guia de solução de problemas](profiler-troubleshooting.md?toc=/azure/azure-monitor/toc.json).
 
 ## <a name="view-profiler-data"></a>Exibir dados do Profiler
 
-Para que o Profiler carregue rastreios, o aplicativo precisa estar manipulando ativamente as solicitações. Se você estiver fazendo uma experiência, poderá gerar solicitações para seu aplicativo Web usando [testes de desempenho do Application Insights](https://docs.microsoft.com/vsts/load-test/app-service-web-app-performance-test). Se você tiver ativado recentemente o Profiler, poderá executar um teste de carga curta. Enquanto o teste de carga estiver em execução, selecione o botão **Criar Perfil Agora** no painel [**Configurações do Profiler**](profiler-settings.md#profiler-settings-pane). Depois que o Profiler estiver em execução, ele será exibido de forma aleatória por uma duração de dois minutos, aproximadamente uma vez a cada hora. Se o aplicativo estiver lidando com um fluxo constante de solicitações, o Profiler carregará rastreamentos a cada hora.
+Para que o Profiler carregue rastreios, o aplicativo precisa estar manipulando ativamente as solicitações. Se você estiver fazendo uma experiência, poderá gerar solicitações para seu aplicativo Web usando [testes de desempenho do Application Insights](https://docs.microsoft.com/vsts/load-test/app-service-web-app-performance-test). Se você tiver ativado recentemente o Profiler, poderá executar um teste de carga curta. Enquanto o teste de carga estiver em execução, selecione o botão **Criar Perfil Agora** no painel [**Configurações do Profiler**](profiler-settings.md). Depois que o Profiler estiver em execução, ele será exibido de forma aleatória por uma duração de dois minutos, aproximadamente uma vez a cada hora. Se o aplicativo estiver lidando com um fluxo constante de solicitações, o Profiler carregará rastreamentos a cada hora.
 
 Depois que seu aplicativo receber algum tráfego e o Profiler tiver tido tempo de fazer o upload dos rastreamentos, você deverá ter rastreamentos para exibir. Esse processo pode levar de 5 a 10 minutos. Para exibir os rastreios, acesse o painel **Desempenho**, selecione **Executar Ações** e, em seguida, selecione o botão **Rastreamentos do Profiler**.
 
@@ -95,9 +95,9 @@ Método como **SqlCommand.Execute** indicam que o código está aguardando a con
 
 **BLOCKED_TIME** indica que o código está aguardando até que outro recurso esteja disponível. Por exemplo, ele pode estar aguardando até que um objeto de sincronização, que um thread esteja disponível ou que a solicitação seja concluída.
 
-### <a name="unmanaged-async"></a>Async não gerenciado
+### <a name="unmanaged-async"></a>Assíncrono Não Gerenciado
 
-.NET framework emite eventos ETW e passa as ids de atividade entre threads para que as chamadas assíncronas podem ser controladas entre threads. Código não gerenciado (código nativo) e alguns estilos mais antigos do código assíncrono não têm esses eventos e ids de atividade, portanto, o criador de perfil não pode determinar qual thread e quais funções estão em execução no thread. Isso é rotulado 'Async não gerenciada' na pilha de chamadas. Se você baixar o arquivo ETW, você poderá usar [PerfView](https://github.com/Microsoft/perfview/blob/master/documentation/Downloading.md) para obter mais informações sobre o que está acontecendo.
+O .NET Framework emite eventos ETW e passa IDs de atividade entre threads para que as chamadas assíncronas possam ser controladas entre threads. O código não gerenciado (código nativo) e alguns estilos mais antigos de código assíncrono estão sem esses eventos e IDs de atividade, portanto, o criador de perfil não pode informar o thread e quais funções estão em execução no thread. Isso é rotulado como ' async não gerenciado ' na pilha de chamadas. Se você baixar o arquivo ETW, talvez seja possível usar o [Perfview](https://github.com/Microsoft/perfview/blob/master/documentation/Downloading.md) para obter mais informações sobre o que está acontecendo.
 
 ### <a id="cpu"></a>Tempo de CPU
 

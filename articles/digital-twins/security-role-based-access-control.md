@@ -1,19 +1,19 @@
 ---
-title: Entenda o controle de acesso baseado em função dos Gêmeos Digitais do Azure | Microsoft Docs
-description: Aprenda a autenticação em gêmeos digitais com controle de acesso baseado em função.
+title: Entender o controle de acesso baseado em função – gêmeos digital do Azure | Microsoft Docs
+description: Saiba mais sobre o controle de acesso baseado em função e o gerenciamento de permissões no Azure digital gêmeos.
 author: lyrana
 manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/17/2019
 ms.author: lyhughes
-ms.openlocfilehash: 6602a4df2c6e313156010102780240ba19fbac95
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 4e29cb488c9b491ec551ead1873e8cfd2d33a93b
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815575"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336727"
 ---
 # <a name="role-based-access-control-in-azure-digital-twins"></a>Controle de acesso baseado em função em Gêmeos Digitais do Azure
 
@@ -49,20 +49,20 @@ Um desenvolvedor pode usar o RBAC para:
 
 ### <a name="role-definitions"></a>Definições de função
 
-Uma definição de função é uma coleção de permissões e outros atributos que constituem uma função. Uma definição de função lista as operações permitidas, que incluem *CRIAR*, *LER*, *ATUALIZAR* e *EXCLUIR* que qualquer objeto com essa função pode executar. Também especifica para quais tipos de objetos as permissões são aplicáveis.
+Uma definição de função é uma coleção de permissões e outros atributos que constituem uma função. Uma definição de função lista as operações permitidas, que incluem *CRIAR*, *LER*, *ATUALIZAR* e *EXCLUIR* que qualquer objeto com essa função pode executar. Ele também especifica a quais tipos de objeto as permissões se aplicam.
 
 [!INCLUDE [digital-twins-roles](../../includes/digital-twins-roles.md)]
 
 >[!NOTE]
 > Para recuperar as definições completas para funções anteriores, consulte as sistema/funções de API.
-> Saiba mais, lendo [Criar e gerenciar atribuições de função](./security-create-manage-role-assignments.md#all).
+> Saiba mais, lendo [Criar e gerenciar atribuições de função](./security-create-manage-role-assignments.md#retrieve-all-roles).
 
 ### <a name="object-identifier-types"></a>Tipos de identificador de objeto
 
 [!INCLUDE [digital-twins-object-types](../../includes/digital-twins-object-id-types.md)]
 
 >[!TIP]
-> Saiba como conceder permissões à entidade de serviço, lendo [Criar e gerenciar atribuição de função](./security-create-manage-role-assignments.md#grant).
+> Saiba como conceder permissões à entidade de serviço, lendo [Criar e gerenciar atribuição de função](./security-create-manage-role-assignments.md#grant-permissions-to-your-service-principal).
 
 Os seguintes artigos de documentação de referência descrevem:
 

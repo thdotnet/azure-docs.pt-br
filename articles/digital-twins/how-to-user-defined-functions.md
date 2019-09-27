@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: 6853ebf16c1a9d6b0d363277b22c7dd2583d37e5
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: 8a39a79f4b3aeacd267a0c4b9351d2400f11d1ff
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69013964"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336902"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Como criar funções definidas pelo usuário em Gêmeos Digitais do Azure
 
@@ -197,7 +197,7 @@ Para obter um exemplo de código de função mais complexo definido pelo usuári
 
 Crie uma atribuição de função para que a função definida pelo usuário seja executada. Se não houver nenhuma atribuição de função para a função definida pelo usuário, ela não terá as permissões corretas para interagir com a API de Gerenciamento ou para ter acesso para executar ações nos objetos de grafo. As ações que a função definida pelo usuário pode executar são especificadas por meio do controle de acesso baseado em função nas APIs do Gerenciamento de Gêmeos Digitais do Azure. Por exemplo, funções definidas pelo usuário podem ser limitadas no escopo, especificando determinadas funções ou certos caminhos de controle de acesso. Para obter mais informações, consulte a documentação de [controle de acesso baseado em função](./security-role-based-access-control.md).
 
-1. [Consulte a API do sistema](./security-create-manage-role-assignments.md#all) de todas as funções para obter a ID da função que você deseja atribuir à sua função definida pelo usuário. Faça isso, executando uma solicitação HTTP GET autenticada para:
+1. [Consulte a API do sistema](./security-create-manage-role-assignments.md#retrieve-all-roles) de todas as funções para obter a ID da função que você deseja atribuir à sua função definida pelo usuário. Faça isso, executando uma solicitação HTTP GET autenticada para:
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/system/roles

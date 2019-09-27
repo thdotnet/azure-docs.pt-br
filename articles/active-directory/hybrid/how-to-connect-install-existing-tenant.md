@@ -16,12 +16,12 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1495c14ae4c588661452aa3696019da00be47548
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3636b88b14cf7e76e4fb023434316e7ee31ded04
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571364"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336814"
 ---
 # <a name="azure-ad-connect-when-you-have-an-existent-tenant"></a>Azure AD Connect: Quando você tem um locatário existente
 A maioria dos tópicos sobre como usar o Azure AD Connect pressupõe que você inicie com um novo locatário do Azure AD e que não exista nenhum usuário nem outros objetos. Mas, se você tiver começado com um locatário do Azure AD, o preencheu com usuários e outros objetos, e agora deseja usar o Connect, este tópico é para você.
@@ -59,12 +59,13 @@ Para uma nova instalação do Connect, não há nenhuma diferença prática entr
 ### <a name="other-objects-than-users"></a>Outros objetos que não são usuários
 Para grupos habilitados para email e contatos, você pode fazer uma correspondência dinâmica com base no proxyAddresses. Correspondência fixa não se aplica, já que só é possível atualizar o sourceAnchor/immutableID (usando o PowerShell) em Usuários. Para grupos que não estão habilitados para email, no momento não há suporte para correspondência dinâmica nem fixa.
 
-### <a name="admin-role-considerations"></a>Considerações da função de administrador
-Para impedir que usuários não confiáveis em locais de correspondência com um usuário de nuvem que tenha qualquer função de administrador, o Azure AD Connect não corresponderá a objetos de usuário local com objetos que têm uma função de administrador. Isso é por padrão. Solução alternativa para esse comportamento, você pode fazer o seguinte:
+### <a name="admin-role-considerations"></a>Considerações de função de administrador
+Para impedir que usuários locais não confiáveis façam a correspondência com um usuário de nuvem que tenha qualquer função de administrador, Azure AD Connect não corresponderá a objetos de usuário locais com objetos que têm uma função de administrador. Isso é por padrão. Para solucionar esse comportamento, você pode fazer o seguinte:
 
-1.  Remova as funções de diretório do objeto usuário somente na nuvem
-2.  Disparar uma sincronização
-3.  Opcionalmente, adicione as funções de diretório para o objeto de usuário na nuvem depois que a correspondência ocorreu.
+1.  Remova as funções de diretório do objeto de usuário somente em nuvem.
+2.  Se houvesse uma falha na tentativa de sincronização do usuário, exclua o objeto em quarentena na nuvem.
+3.  Disparar uma sincronização.
+4.  Opcionalmente, adicione as funções de diretório de volta ao objeto de usuário na nuvem assim que a correspondência tiver ocorrido.
 
 
 

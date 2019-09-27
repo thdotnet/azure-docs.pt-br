@@ -7,17 +7,17 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: 569bc021d978714472bf40bcf39f7134fec95970
-ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
+ms.openlocfilehash: b3f809a21dab86ac50fcf7c194c886b05977e15e
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71130341"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327114"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Criar um ponto de extremidade privado usando Azure PowerShell
 Um ponto de extremidade privado é o bloco de construção fundamental para o link privado no Azure. Ele permite que os recursos do Azure, como VMs (máquinas virtuais), se comuniquem de forma privada com recursos de link privado. 
 
-Neste guia de início rápido, você aprenderá a criar uma VM em uma rede virtual do Azure, um servidor de banco de dados SQL com um ponto de extremidade privado do Azure usando Azure PowerShell. Em seguida, você pode acessar com segurança o servidor do banco de dados SQL da VM.
+Neste guia de início rápido, você aprenderá a criar uma VM em uma rede virtual do Azure, um servidor do banco de dados SQL com um ponto de extremidade privado do Azure usando o Azure PowerShell. Em seguida, você pode acessar com segurança o servidor do banco de dados SQL da VM.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -189,13 +189,13 @@ mstsc /v:<publicIpAddress>
   > [!NOTE]
   > Talvez seja necessário selecionar mais escolhas > usar uma conta diferente, para especificar as credenciais inseridas quando você criou a VM. 
   
-3. Selecione **OK**. 
+3. Selecione  **OK**. 
 4. Você pode receber um aviso de certificado. Se você fizer isso, selecione **Sim** ou **continuar**. 
 
 ## <a name="access-sql-database-server-privately-from-the-vm"></a>Acessar o servidor do banco de dados SQL privadamente da VM
 
 1. No Área de Trabalho Remota do myVM, abra o PowerShell.
-2. Insira `nslookup myserver.database.windows.net`. 
+2. Insira  `nslookup myserver.database.windows.net`. 
 
     Você receberá uma mensagem semelhante a esta:
     ```azurepowershell

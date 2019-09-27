@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
-ms.openlocfilehash: 6767644e037c6abb3e3044c8707e923a9137a01c
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 772f6cdde575a9ac669c73ecca039914357ffe2f
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019541"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338893"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Gerenciar os custos e o uso do AWS no Azure
 
@@ -83,14 +83,14 @@ A tabela a seguir descreve as dimensões disponíveis para agrupar e filtrar por
 | Medir categoria | lineItem/ProductCode | Todas |   |
 | Medidor de subcategoria | LineItem/UsageType | Todas |   |
 | Operação | lineItem/operação | Todas |   |
-| Recurso | lineItem/ResourceId | Todas |   |
+| Resource | lineItem/ResourceId | Todas |   |
 | Tipo de recurso | produto/InstanceType | Todas | Se Product/InstanceType for NULL, lineItem/UsageType será usado. |
 | ResourceGuid | N/D | Todas | GUID do medidor do Azure. |
 | Nome do serviço | produto/NomeDoProduto | Todas | Se Product/ProductName for NULL, lineItem/ProductCode será usado. |
 | Camada de serviço |   |   |   |
 | ID da assinatura | lineItem/UsageAccountId | Conta consolidada e grupo de gerenciamento |   |
 | Nome de assinatura | N/D | Conta consolidada e grupo de gerenciamento | Os nomes de conta são coletados usando a API da organização AWS. |
-| Marca | resourceTags/\* | Todas | O prefixo _User:_ é removido das marcas definidas pelo usuário para permitir marcas de nuvem cruzada. O prefixo _AWS:_ permanece intacto. |
+| Marcação | resourceTags/\* | Todas | O prefixo _User:_ é removido das marcas definidas pelo usuário para permitir marcas de nuvem cruzada. O prefixo _AWS:_ permanece intacto. |
 | ID da conta de cobrança | bill/PayerAccountId | Grupo de gerenciamento |   |
 | Nome da conta de cobrança | N/D | Grupo de gerenciamento | Os nomes de conta são coletados usando a API da organização AWS. |
 | Provedor | N/D | Grupo de gerenciamento | AWS ou o Azure. |
@@ -183,4 +183,4 @@ Esse erro está relacionado à definição do relatório de uso e custo de AWS, 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Se você ainda não tiver configurado seu ambiente do Azure com grupos de gerenciamento, consulte [configuração inicial dos grupos de gerenciamento](../governance/management-groups/index.md#initial-setup-of-management-groups).
+- Se você ainda não tiver configurado seu ambiente do Azure com grupos de gerenciamento, consulte [configuração inicial dos grupos de gerenciamento](../governance/management-groups/overview.md#initial-setup-of-management-groups).

@@ -6,16 +6,16 @@ services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
-ms.date: 06/16/2019
+ms.topic: conceptual
+ms.date: 09/26/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: cd31215f578062548c67f8d14e724dc49f73b21c
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: d6519ad5a130eee25ab17135e26d7207047dcf7a
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774999"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327268"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Suporte a linguagem natural nos Serviços Cognitivos do Azure
 
@@ -38,7 +38,7 @@ Os seguintes idiomas de núcleo têm suporte em todos os Serviços Cognitivos do
 * Espanhol
 
 > [!NOTE]
-> ¹ LUIS e Video Indexer: Não há suporte para Conversão de fala em texto.
+> Não há suporte para ¹ LUIS, Video Indexer, Análise de Texto e Speech-to-Text.
 
 ## <a name="additional-language-availability-by-service"></a>Disponibilidade de idiomas adicionais por serviço
 
@@ -71,7 +71,7 @@ Estas tabelas destacam a disponibilidade de idiomas por categoria de serviço, e
 | [Tradução de Texto](https://docs.microsoft.com/azure/cognitive-services/translator/languages) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Análise de Texto](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
 
-### <a name="search"></a>Pesquisar
+### <a name="search"></a>Pesquisa
 
 | | Árabe | Búlgaro | Catalão | Croata | Tcheco | Dinamarquês | Holandês | Estoniano | Finlandês | Grego | Híndi | Húngaro | Islandês | Indonésio | Letão | Lituano | Malaio | Norueguês | Polonês | Romeno | Russo | Sérvio | Eslovaco | Esloveno | Sueco | Tâmil | Tailandês | Turco | Ucraniano | Vietnamita |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c357cba8ce2fbe2ad902d5c215f8adbfc99a9f0a
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: 63176c325fd42c46e988ab3798f46089a43e70bf
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70813017"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326781"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Tutorial: Configurar o Workday para provisionamento automático do usuário
 
@@ -97,7 +97,8 @@ Esta seção cobre os seguintes aspectos de planejamento:
 
 O cenário descrito neste tutorial pressupõe que você já tem os seguintes itens:
 
-* Uma assinatura do Azure AD Premium P1 ou superior válida com acesso de administrador global
+* Uma licença de assinatura Azure AD Premium P1 ou superior válida para cada usuário que será originada do workday e provisionada no Active Directory local ou Azure Active Directory.
+* Acesso de administrador global do Azure AD para configurar o agente de provisionamento
 * Um locatário de implementação do Workday para fins de integração e teste
 * Permissões de administrador no Workday para criar um usuário de integração de sistema e fazer alterações para testar dados do funcionário para fins de teste
 * Para provisionamento do usuário no Active Directory, é necessário um servidor executando o Windows Server 2012 ou superior com tempo de execução .NET 4.7.1+ para hospedar o [agente de provisionamento local](https://go.microsoft.com/fwlink/?linkid=847801)
@@ -439,7 +440,7 @@ Após ter implantado o .NET 4.7.1+, você poderá baixar o **[agente de provisio
 
 8. Conclua a seção **Credenciais de Administrador**, conforme a seguir:
 
-   * **Nome de Usuário Administrador**  – digite o nome de usuário da conta do sistema de integração do Workday com o nome de domínio do locatário acrescentado. Ele deve ser semelhante a: **username\@tenant_name**
+   * **Nome de Usuário Administrador**  – digite o nome de usuário da conta do sistema de integração do Workday com o nome de domínio do locatário acrescentado. Ele deve ser semelhante a: **username @ no__t-1tenant_name**
 
    * **Senha do administrador –** digite a senha da conta do sistema de integração do Workday
 
@@ -539,7 +540,7 @@ Nesta seção, você irá configurar o fluxo de dados de usuário do Workday par
 | ---------- | ---------- | ---------- | ---------- |
 | **WorkerID**  |  EmployeeID | **Sim** | Gravado na criação somente |
 | **PreferredNameData**    |  cn    |   |   Gravado na criação somente |
-| **SelectUniqueValue (junção ("\@", junção (".", \[nome\], \[sobrenome\]), "contoso.com"), junção ("\@", junção (".", mid (\[FirstName\], 1, 1), \[LastName\]), "contoso.com"), junção ("\@", junção (".", mid (\[FirstName\], 1, 2), \[LastName\]), "contoso.com"))**   | userPrincipalName     |     | Gravado na criação somente 
+| **SelectUniqueValue (Join ("\@", Join (".", \[FirstName @ no__t-3, \[LastName @ no__t-5), "contoso.com"), junção ("\@", junção (".", mid (\[FirstName @ no__t-8, 1, 1), \[LastName @ no__t-10), "contoso.com") e Join ("@no__ t-11 ", junção (". ", mid (2FirstName @ no__t-13, 1, 2), 4LastName @ no__t-15)," contoso.com "))**   | userPrincipalName     |     | Gravado na criação somente 
 | **Replace(Mid(Replace(\[UserID\], , "(\[\\\\/\\\\\\\\\\\\\[\\\\\]\\\\:\\\\;\\\\\|\\\\=\\\\,\\\\+\\\\\*\\\\?\\\\&lt;\\\\&gt;\])", , "", , ), 1, 20), , "([\\\\.)\*\$](file:///\\.)*$)", , "", , )**      |    sAMAccountName            |     |         Gravado na criação somente |
 | **Switch(\[Active\], , "0", "True", "1", "False")** |  accountDisabled      |     | Criar + atualizar |
 | **FirstName**   | givenName       |     |    Criar + atualizar |
@@ -692,7 +693,7 @@ Siga estas instruções para configurar o Write-back de endereços de email do u
 
 8. Conclua a seção **Credenciais de Administrador**, conforme a seguir:
 
-   * **Nome de Usuário Administrador**  – Digite o nome de usuário da conta do sistema de integração do Workday com o nome de domínio do locatário acrescentado. Deve ser semelhante a: *username\@contoso4*
+   * **Nome de Usuário Administrador**  – Digite o nome de usuário da conta do sistema de integração do Workday com o nome de domínio do locatário acrescentado. Deve ser semelhante a: *username @ no__t-1contoso4*
 
    * **Senha do administrador –** digite a senha da conta do sistema de integração do Workday
 
@@ -1079,7 +1080,7 @@ Esta seção cobre os seguintes aspectos de solução de problemas:
 
 Quando uma nova contratação no Workday é detectada (digamos com ID de Funcionário *21023*), o serviço de provisionamento do Azure AD tenta criar uma nova conta de usuário do AD para o trabalhador e, durante esse processo, cria 4 registros de log de auditoria conforme descrito abaixo:
 
-  [![Operações de criação de log de auditoria](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
+  [operações de criação de log de @no__t 1Audit](media/workday-inbound-tutorial/wd_audit_logs_02.png)](media/workday-inbound-tutorial/wd_audit_logs_02.png#lightbox)
 
 Quando você clica em qualquer um dos registros de log de auditoria, a página **Detalhes da atividade** abre. Aqui está o que a página **Detalhes da atividade** exibe para cada tipo de registro de log.
 
@@ -1147,7 +1148,7 @@ Quando você clica em qualquer um dos registros de log de auditoria, a página *
 
 O atributo gerente é um atributo de referência no AD. O serviço de provisionamento não define o atributo gerente como parte da operação de criação de usuário. Em vez disso, o atributo gerente é definido como parte de uma operação *atualizar* depois que a conta do AD é criada para o usuário. Expandindo o exemplo acima, digamos que uma nova contratação com ID de Funcionário “21451” é ativada no Workday e o gerente da nova contratação (*21023*) já tem uma conta do AD. Nesse cenário, pesquisar os Logs de auditoria para o usuário 21451 mostra 5 entradas.
 
-  [![Atualização do Gerenciador](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
+  [Atualização do ![Manager](media/workday-inbound-tutorial/wd_audit_logs_03.png)](media/workday-inbound-tutorial/wd_audit_logs_03.png#lightbox)
 
 Os 4 primeiros registros são aqueles que exploramos como parte da operação de criação do usuário. O quinto registro é a exportação associada à atualização do atributo de gerente. O registro de log exibe o resultado da operação de atualização do gerente de conta do AD, que é executada usando o atributo *objectGuid* do gerente.
 
@@ -1241,7 +1242,7 @@ Para fazer essa alteração, você deve usar o [Workday Studio](https://communit
 
 7. Defina **Operação** como **Get_Workers**
 
-8.  Clique no pequeno link **configurar** abaixo dos painéis de Solicitação/Resposta para definir suas credenciais do Workday. Marque a opção **Autenticação** e, em seguida, insira o nome de usuário e senha da sua conta do sistema de integração do Workday. Certifique-se de Formatar o nome de usuário\@como locatário de nome e deixe a opção **WS-Security UserNameToken** selecionada.
+8.  Clique no pequeno link **configurar** abaixo dos painéis de Solicitação/Resposta para definir suas credenciais do Workday. Marque a opção **Autenticação** e, em seguida, insira o nome de usuário e senha da sua conta do sistema de integração do Workday. Certifique-se de Formatar o nome de usuário como nome @ no__t-0tenant e deixe a opção **WS-Security UserNameToken** selecionada.
 
     ![Workday Studio](./media/workday-inbound-tutorial/wdstudio2.png)
 

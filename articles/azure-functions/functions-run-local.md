@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: fc77ef6786fbd16ecfeb34397ead11be8b107176
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.openlocfilehash: 45bc55141c9f338ae2f69cf4ccefae3d2492b239
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70207273"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71336945"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Trabalhar com o Azure Functions Core Tools
 
@@ -97,19 +97,37 @@ As etapas a seguir usma [APT](https://wiki.debian.org/Apt) para instalar as ferr
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
     ```
 
-1. Verifique se seu servidor Ubuntu está executando uma das versões adequadas da tabela abaixo. Para adicionar a fonte apt, execute:
+1. Configure a lista de origem de desenvolvimento do .NET antes de fazer uma atualização de APT.
+
+   Para configurar a lista de origem APT para o Ubuntu, execute este comando:
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
-    sudo apt-get update
     ```
 
-    | Distribuição Linux | Version |
+   Para configurar a lista de origem APT para Debian, execute este comando:
+
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/debian/$(lsb_release -rs)/prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    ```
+
+1. Verifique o arquivo `/etc/apt/sources.list.d/dotnetdev.list` para uma das cadeias de caracteres de versão do Linux apropriadas listadas abaixo:
+
+    | Distribuição Linux | Versão |
     | --------------- | ----------- |
+    | Debian 10 | `buster` |
+    | Debian 9 | `stretch` |
+    | Debian 8 | `jessie` |
     | Ubuntu 18.10    | `cosmic`    |
     | Ubuntu 18.04    | `bionic`    |
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
+
+1. Inicie a atualização da fonte APT:
+
+    ```bash
+    sudo apt-get update
+    ```
 
 1. Instale o pacote de ferramentas principais:
 
@@ -182,7 +200,7 @@ Os valores de configuração do aplicativo de funções também podem ser lidos 
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
-Quando nenhuma cadeia de conexão de armazenamento válida é [`AzureWebJobsStorage`] definida para e o emulador não está sendo usado, a seguinte mensagem de erro é mostrada:
+Quando nenhuma cadeia de conexão de armazenamento válida é definida para [`AzureWebJobsStorage`] e o emulador não está sendo usado, a seguinte mensagem de erro é mostrada:
 
 > Valor ausente para AzureWebJobsStorage em local.settings.json. Isso é necessário para todos os gatilhos diferentes de HTTP. É possível executar o func azure functionapp fetch-app-settings \<functionAppName\>' ou especificar uma cadeia de conexão em local.settings.json.
 
@@ -297,7 +315,7 @@ npm start
 
 ### <a name="version-1x"></a>Versão 1.x
 
-A versão 1. x do tempo de execução do `host` Functions requer o comando, como no exemplo a seguir:
+A versão 1. x do tempo de execução do Functions requer o comando `host`, como no exemplo a seguir:
 
 ```command
 func host start
@@ -411,19 +429,19 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 
 ## <a name="publish"></a>Publicar no Azure
 
-O Azure Functions Core Tools dá suporte a dois tipos de implantação: Implantando arquivos de projeto de função diretamente em seu aplicativo de funções por meio da [implantação de zip](functions-deployment-technologies.md#zip-deploy) e implantando [um contêiner do Docker personalizado](functions-deployment-technologies.md#docker-container). Você já deve ter [criado um aplicativo de funções em sua assinatura do Azure](functions-cli-samples.md#create), no qual você implantará seu código. Os projetos que exigem build devem ser compilados para que os binários possam ser implantados.
+O Azure Functions Core Tools dá suporte a dois tipos de implantação: Implantando arquivos de projeto de função diretamente em seu aplicativo de funções por meio da [implantação de zip](functions-deployment-technologies.md#zip-deploy) e [implantando um contêiner do Docker personalizado](functions-deployment-technologies.md#docker-container). Você já deve ter [criado um aplicativo de funções em sua assinatura do Azure](functions-cli-samples.md#create), no qual você implantará seu código. Os projetos que exigem build devem ser compilados para que os binários possam ser implantados.
 
 Uma pasta de projeto pode conter arquivos e diretórios específicos do idioma que não devem ser publicados. Itens excluídos são listados em um arquivo. funcignore na pasta raiz do projeto.     
 
 ### <a name="project-file-deployment"></a>Implantação (arquivos de projeto)
 
-Para publicar seu código local em um aplicativo de funções no Azure, use `publish` o comando:
+Para publicar seu código local em um aplicativo de funções no Azure, use o comando `publish`:
 
 ```bash
 func azure functionapp publish <FunctionAppName>
 ```
 
-Esse comando publica a um aplicativo de funções existente no Azure. Você receberá um erro se tentar publicar em um `<FunctionAppName>` que não existe em sua assinatura. Para saber como criar um aplicativo de funções pelo prompt de comando ou pela janela do terminal usando a CLI do Azure, consulte [Criar um aplicativo de funções para execução sem servidor](./scripts/functions-cli-create-serverless.md). Por padrão, esse comando implanta seu aplicativo para [executar a partir do pacote de implantação](run-functions-from-deployment-package.md). Para desabilitar esse modo de implantação recomendado, use `--nozip` a opção.
+Esse comando publica a um aplicativo de funções existente no Azure. Você receberá um erro se tentar publicar em um `<FunctionAppName>` que não existe em sua assinatura. Para saber como criar um aplicativo de funções pelo prompt de comando ou pela janela do terminal usando a CLI do Azure, consulte [Criar um aplicativo de funções para execução sem servidor](./scripts/functions-cli-create-serverless.md). Por padrão, esse comando implanta seu aplicativo para [executar a partir do pacote de implantação](run-functions-from-deployment-package.md). Para desabilitar esse modo de implantação recomendado, use a opção `--nozip`.
 
 >[!IMPORTANT]
 > Quando você cria um aplicativo de funções no portal do Azure, ele usa a versão 2.x do tempo de execução do Core Tools por padrão. Para que o aplicativo de funções use a versão 1.x do tempo de execução, siga as instruções em [Executar na versão 1.x](functions-versions.md#creating-1x-apps).
@@ -488,7 +506,7 @@ Você pode exibir um fluxo de arquivos de log que estão sendo gerados por suas 
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-Esse tipo de logs de streaming requer que você habilite a [integração de Application insights](#enable-application-insights-integration) para seu aplicativo de funções.   
+Esse tipo de logs de streaming requer que você [habilite a integração de Application insights](#enable-application-insights-integration) para seu aplicativo de funções.   
 
 
 ## <a name="next-steps"></a>Próximas etapas

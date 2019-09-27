@@ -1,17 +1,17 @@
 ---
 title: Revogar uma assinatura de compartilhamento na visualização do compartilhamento de dados do Azure
 description: Revogar uma assinatura de compartilhamento
-author: madams0013
+author: joannapea
+ms.author: joanpo
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.author: jasonh
-ms.openlocfilehash: dc14bb121d18179091aa5f6f2854b391e72632f1
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 08a48202c26df1c24216572b1a52ac45506c6229
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258617"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326527"
 ---
 # <a name="how-to-revoke-a-consumers-share-subscription-in-azure-data-share-preview"></a>Como revogar a assinatura de compartilhamento de um consumidor na versão prévia do compartilhamento de dados do Azure
 

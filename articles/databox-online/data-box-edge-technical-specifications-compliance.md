@@ -6,18 +6,37 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 09/11/2019
+ms.date: 09/26/2019
 ms.author: alkohli
-ms.openlocfilehash: f1199748782c40b2527a8778417588891b84f9fc
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 365507f482217bd804bbd5017d4dbbaf8c187ad2
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910133"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71326889"
 ---
 # <a name="azure-data-box-edge-technical-specifications"></a>Especificações técnicas de Azure Data Box Edge
 
 Os componentes de hardware de seu Microsoft Azure Data Box Edge dispositivo aderem às especificações técnicas e aos padrões regulatórios descritos neste artigo. As especificações técnicas descrevem as unidades de fonte de alimentação (PSUs), a capacidade de armazenamento, os compartimentos e os padrões ambientais. 
+
+## <a name="compute-memory-specifications"></a>Computação, especificações de memória
+
+O dispositivo Data Box Edge tem as seguintes especificações para computação e memória:
+
+| Especificação           | Valor                  |
+|-------------------------|----------------------------|
+| CPU    | CPU de 2 X 10 núcleos                     |
+| Memória              | 128 GB de RAM                  |
+
+
+## <a name="fpga-specifications"></a>Especificações do FPGA
+
+Uma FPGA (matriz de Gate programável) de campo é incluída em cada dispositivo de Data Box Edge que habilita cenários de Machine Learning (ML). 
+
+| Especificação           | Valor                  |
+|-------------------------|----------------------------|
+| FPGA   | Intel Arria 10 <br> Os modelos de DNN (rede neural profunda) disponíveis são os mesmos [suportados pelas instâncias do Cloud FPGA](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
+
 
 ## <a name="power-supply-unit-specifications"></a>Especificações da unidade de fonte de alimentação
 

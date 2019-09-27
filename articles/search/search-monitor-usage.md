@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: heidist
-ms.openlocfilehash: e83e84cc8627be468ce0074b35549d5ea7def4f5
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: d0c93d941047413c5056b3718f57b360357affbd
+ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640525"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71327149"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Monitorar a atividade de consulta e o consumo de recursos no Azure Search
 
@@ -56,18 +56,18 @@ O Azure Search não armazena nenhum dado além dos objetos que ele gerencia, o q
 
 A tabela a seguir compara as opções para armazenar logs, adicionar monitoramento detalhado das operações de serviço e consultar cargas de trabalho por meio do Application Insights.
 
-| Recurso | Utilizado para |
+| Resource | Usado para |
 |----------|----------|
 | [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) | Eventos registrados em log e métricas de consulta, com base nos esquemas abaixo, correlacionados com eventos de usuário em seu aplicativo. Essa é a única solução que considera as ações ou os sinais do usuário, os eventos de mapeamento de pesquisas iniciadas pelo usuário, ao invés das solicitações de filtro enviadas pelo código do aplicativo. Para usar essa abordagem, copie e cole o código de instrumentação em seus arquivos de origem para direcionar as informações de solicitação para o Application Insights. Para saber mais, confira [Análise de tráfego de pesquisa](search-traffic-analytics.md). |
 | [Logs do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview) | Eventos registrados e métricas de consulta, com base nos esquemas abaixo. Os eventos são registrados em um espaço de trabalho Log Analytics. É possível executar as consultas em um workspace para retornar informações detalhadas do log. Para obter mais informações, consulte Introdução [aos logs de Azure monitor](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata) |
 | [Armazenamento de Blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) | Eventos registrados e métricas de consulta, com base nos esquemas abaixo. Os eventos são registrados em um contêiner de blob e armazenados em arquivos JSON. Use um editor de JSON para exibir o conteúdo do arquivo.|
 | [Hub de Evento](https://docs.microsoft.com/azure/event-hubs/) | Eventos registrados em log e métricas de consulta, com base nos esquemas documentados neste artigo. Escolha esta opção como um serviço de coleta de dados alternativo para logs muito grandes. |
 
-Os logs de Azure Monitor e o armazenamento de BLOBs estão disponíveis como um serviço compartilhado gratuito para que você possa experimentá-lo gratuitamente pelo tempo de vida da sua assinatura do Azure. O Application Insights é gratuito para se inscrever e usar, desde que o tamanho de dados do aplicativo esteja abaixo de certos limites (confira a [página de preços](https://azure.microsoft.com/pricing/details/monitor/) para saber mais).
+Os logs de Azure Monitor e o armazenamento de BLOBs estão disponíveis como um serviço gratuito para que você possa experimentá-lo gratuitamente pelo tempo de vida da sua assinatura do Azure. O Application Insights é gratuito para se inscrever e usar, desde que o tamanho de dados do aplicativo esteja abaixo de certos limites (confira a [página de preços](https://azure.microsoft.com/pricing/details/monitor/) para saber mais).
 
 A próxima seção o orienta sobre as etapas de ativação e uso do armazenamento de blobs do Azure para coletar e acessar dados de log criados por operações do Azure Search.
 
-## <a name="enable-logging"></a>Habilite o registro em logs
+## <a name="enable-logging"></a>Habilitar registro em log
 
 O registro em log para cargas de trabalho de indexação e consulta está desativado por padrão e depende das soluções de complemento para a infraestrutura de log e o armazenamento externo de longo prazo. Por si só, os únicos dados persistentes no Azure Search são os objetos que ele cria e gerencia, portanto, os logs devem ser armazenados em outro lugar.
 
@@ -96,7 +96,7 @@ O registro em log é habilitado após salvar o perfil. Os contêineres são cria
 * insights-logs-operationlogs: para logs de tráfego de pesquisa
 * insights-metrics-pt1m: para métrica
 
-**Leva uma hora antes que os contêineres apareçam no armazenamento de BLOBs. Há um blob, por hora, por contêiner.**
+**It leva uma hora antes que os contêineres apareçam no armazenamento de BLOBs. Há um blob, por hora, por contêiner.**
 
 Você pode usar o [Visual Studio Code](#download-and-open-in-visual-studio-code) ou outro editor de JSON para exibir os arquivos. 
 
@@ -119,11 +119,11 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 | resultType |cadeia de caracteres |"Success" |Valores possíveis: Êxito ou Falha |
 | resultSignature |int |200 |Código do resultado HTTP |
 | durationMS |int |50 |Duração da operação em milissegundos |
-| properties |objeto |confira a seguinte tabela |Objeto que contém os dados específicos da operação |
+| properties |object |confira a seguinte tabela |Objeto que contém os dados específicos da operação |
 
 **Esquema de propriedades**
 
-| Nome | Tipo | Exemplo | Observações |
+| Nome | type | Exemplo | Observações |
 | --- | --- | --- | --- |
 | Descrição |cadeia de caracteres |"GET /indexes('content')/docs" |Ponto de extremidade da operação |
 | Consultar |cadeia de caracteres |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Parâmetros da consulta |
@@ -134,7 +134,7 @@ Os blobs que contêm os logs de tráfego do serviço de pesquisa são estruturad
 
 As métricas são capturadas para solicitações de consulta.
 
-| Nome | Tipo | Exemplo | Observações |
+| Nome | type | Exemplo | Observações |
 | --- | --- | --- | --- |
 | resourceId |cadeia de caracteres |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |id do recurso |
 | metricName |cadeia de caracteres |"Latency" |o nome da métrica |
