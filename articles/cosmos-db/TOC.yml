@@ -691,6 +691,8 @@
       items:
         - name: Habilitar os notebooks
           href: enable-notebooks.md
+        - name: Usar comandos de notebook interno
+          href: use-notebook-features-and-commands.md
     - name: Programação do lado do servidor
       items:
         - name: 'Gravar procedimentos armazenados, gatilhos e UDFs'

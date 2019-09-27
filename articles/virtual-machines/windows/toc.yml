@@ -474,6 +474,8 @@
           href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: Redimensionar um disco
           href: expand-os-disk.md
+        - name: Usar Gerenciador de Armazenamento para gerenciar discos
+          href: disks-use-storage-explorer-managed-disks.md
         - name: Instantâneo de um disco
           href: snapshot-copy-managed-disk.md
         - name: Criar um instantâneo incremental

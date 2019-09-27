@@ -58,6 +58,8 @@
         - name: Migrar do Codificador de Mídia do Microsoft Azure
           href: migrate-windows-azure-media-encoder.md
           displayName: WAME
+        - name: Migrar do Indexador v1 e v2
+          href: migrate-indexer-v1-v2.md
     - name: Gerenciar
       items:
         - name: Contas

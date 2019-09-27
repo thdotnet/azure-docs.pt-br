@@ -15,6 +15,8 @@
   items:
     - name: Suporte a contêiner
       href: cognitive-services-container-support.md
+    - name: Perguntas frequentes sobre o contêiner
+      href: ./containers/container-faq.md
     - name: Receitas de contêiner
       items:
         - name: Reutilização de contêiner

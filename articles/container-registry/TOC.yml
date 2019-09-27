@@ -71,6 +71,8 @@
           items:
             - name: Excluir dados de imagem – CLI
               href: container-registry-delete.md
+            - name: Política de retenção para manifestos não marcados (versão prévia)
+              href: container-registry-retention-policy.md
             - name: Limpar automaticamente as marcas e os manifestos (versão prévia)
               href: container-registry-auto-purge.md
         - name: Atualizar um registro Clássico
