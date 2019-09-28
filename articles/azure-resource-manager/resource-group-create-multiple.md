@@ -5,18 +5,18 @@ services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 09/27/2019
 ms.author: tomfitz
-ms.openlocfilehash: b349576f5e9f5410afc29f48e40c38e12168252d
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.openlocfilehash: 3a0761fad32b2cfb0387cca79b6c1c0dc83c8e98
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345410"
 ---
 # <a name="resource-property-or-variable-iteration-in-azure-resource-manager-templates"></a>Recurso, propriedade ou iteração de variável em modelos de Azure Resource Manager
 
-Este artigo mostra como criar mais de uma instância de um recurso, variável ou propriedade em seu modelo de Azure Resource Manager. Para criar várias instâncias, adicione o `copy` objeto ao seu modelo.
+Este artigo mostra como criar mais de uma instância de um recurso, variável ou propriedade em seu modelo de Azure Resource Manager. Para criar várias instâncias, adicione o objeto `copy` ao seu modelo.
 
 Quando usado com um recurso, o objeto de cópia tem o seguinte formato:
 
@@ -49,7 +49,7 @@ Caso precise especificar se um recurso é ou não implantado, confira [Elemento 
 
 Para especificar o número de iterações, você fornece um valor para a propriedade Count. A contagem não pode exceder 800.
 
-A contagem não pode ser um número negativo. Se você implantar um modelo com Azure PowerShell 2,6 ou posterior, ou a versão de API REST **2019-05-10** ou posterior, poderá definir Count como zero. As versões anteriores do PowerShell e a API REST não dão suporte a zero para contagem. Atualmente, CLI do Azure não dá suporte a zero para Count, mas esse suporte será adicionado em uma versão futura.
+A contagem não pode ser um número negativo. Se você implantar um modelo com Azure PowerShell 2,6 ou posterior, CLI do Azure 2.0.74 ou posterior, ou a API REST versão **2019-05-10** ou posterior, poderá definir Count como zero. As versões anteriores do PowerShell, da CLI e da API REST não dão suporte a zero para contagem.
 
 Tenha cuidado ao usar a [implantação do modo completo](deployment-modes.md) com a cópia. Se você reimplantar com o modo completo em um grupo de recursos, todos os recursos que não forem especificados no modelo após a resolução do loop de cópia serão excluídos.
 
@@ -113,25 +113,25 @@ Cria estes nomes:
 A operação de cópia é útil ao trabalhar com matrizes porque você pode percorrer cada elemento da matriz. Use a função `length` na matriz para especificar a contagem de iterações e `copyIndex` para recuperar o índice atual na matriz. Assim, o seguinte exemplo:
 
 ```json
-"parameters": { 
-  "org": { 
-    "type": "array", 
-    "defaultValue": [ 
-      "contoso", 
-      "fabrikam", 
-      "coho" 
-    ] 
+"parameters": {
+  "org": {
+    "type": "array",
+    "defaultValue": [
+      "contoso",
+      "fabrikam",
+      "coho"
+    ]
   }
-}, 
-"resources": [ 
-  { 
-    "name": "[concat('storage', parameters('org')[copyIndex()])]", 
-    "copy": { 
-      "name": "storagecopy", 
-      "count": "[length(parameters('org'))]" 
-    }, 
+},
+"resources": [
+  {
+    "name": "[concat('storage', parameters('org')[copyIndex()])]",
+    "copy": {
+      "name": "storagecopy",
+      "count": "[length(parameters('org'))]"
+    },
     ...
-  } 
+  }
 ]
 ```
 
@@ -184,7 +184,7 @@ Para criar mais de um valor para uma propriedade em um recurso, inclua uma matri
 
 * nome - o nome da propriedade para criar vários valores para
 * Contagem – o número de valores para criar.
-* entrada - um objeto que contém os valores para atribuir à propriedade  
+* entrada - um objeto que contém os valores para atribuir à propriedade
 
 O exemplo a seguir mostra como aplicar `copy` para a propriedade dataDisks em uma máquina virtual:
 
@@ -450,9 +450,9 @@ Você especifica que um recurso é implantado após outro recurso usando o eleme
       }
     },
     {
-      "apiVersion": "2015-06-15", 
-      "type": "Microsoft.Compute/virtualMachines", 
-      "name": "[concat('VM', uniqueString(resourceGroup().id))]",  
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[concat('VM', uniqueString(resourceGroup().id))]",
       "dependsOn": ["storagecopy"],
       ...
     }
@@ -488,7 +488,7 @@ Por exemplo, suponha que você normalmente defina um conjunto de dados como um r
 
 Para criar mais de um conjunto de dados, mova-o para fora do data factory. O conjunto de dados deve estar no mesmo nível que a data factory, mas ainda é um recurso filho da data factory. Você preserva a relação entre um conjunto de dados e o data factory por meio das propriedades de tipo e nome. Como o tipo não pode ser inferido de sua posição no modelo, você deve fornecer o tipo totalmente qualificado no formato: `{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`.
 
-Para estabelecer uma relação pai/filho com uma instância da data factory, forneça um nome para o conjunto de dados que inclui o nome do recurso pai. Use o formato: `{parent-resource-name}/{child-resource-name}`.  
+Para estabelecer uma relação pai/filho com uma instância da data factory, forneça um nome para o conjunto de dados que inclui o nome do recurso pai. Use o formato: `{parent-resource-name}/{child-resource-name}`.
 
 O exemplo a seguir mostra a implementação:
 

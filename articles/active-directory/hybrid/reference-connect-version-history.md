@@ -16,12 +16,12 @@ ms.date: 09/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66e53298625e2388e102b5a4e835fe22a9c81a21
-ms.sourcegitcommit: 9fba13cdfce9d03d202ada4a764e574a51691dcd
+ms.openlocfilehash: 467fbc421cdd681d0aab52faf75a4987ee849b15
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71314971"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71345515"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: Histórico de lançamento de versões
 A equipe do Azure AD (Azure Active Directory) atualiza regularmente o Azure AD Connect com novos recursos e funcionalidades. Nem todas as adições são aplicáveis a todos os públicos.
@@ -43,14 +43,14 @@ Download | [Baixar o Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=6
 Enquanto passarmos por esse processo, o número de versão da versão será mostrado com um "X" na posição do número de liberação secundária, como em "1.3. X. 0" – isso indica que as notas de versão deste documento são válidas para todas as versões que começam com "1,3.". Assim que finalizamos o processo de liberação, o número de versão de lançamento será atualizado para a versão lançada mais recentemente e o status da versão será atualizado para "liberado para download e atualização automática".
 Nem todas as versões do Azure AD Connect serão disponibilizadas para atualização automática. O status da versão indicará se uma versão foi disponibilizada para atualização automática ou apenas para baixar. Se a atualização automática foi habilitada no seu servidor do Azure AD Connect, então esse servidor atualizará automaticamente para a versão mais recente do Azure AD Connect que é liberado para atualização automática. Observe que nem todas as configurações do Azure AD Connect estão qualificadas para atualização automática. Siga este link para ler mais sobre [atualização automática](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade)
 
-## <a name="14x0"></a>1.4. X. 0
+## <a name="14180"></a>1.4.18.0
 
 >[!IMPORTANT]
 >Com esta versão do Azure AD Connect alguns clientes podem ver que alguns ou todos os seus dispositivos Windows desaparecem do Azure AD. Isso não é uma causa de preocupação, pois essas identidades de dispositivo não são usadas pelo AD do Azure durante a autorização de acesso condicional. Para obter mais informações, consulte [Understanding Azure ad Connect 1.4. XX. x Device disappearnce](reference-connect-device-disappearance.md)
 
 
 ### <a name="release-status"></a>Status de liberação
-9/10/2019: Liberado somente para atualização automática
+9/25/2019: Liberado para atualização e download automáticos
 
 ### <a name="new-features-and-improvements"></a>Novos recursos e aprimoramentos
 - Novas ferramentas de solução de problemas ajudam a solucionar os cenários "usuário não sincronizando", "grupo não sincronizando" ou "membros do grupo não sincronizando".
@@ -451,7 +451,7 @@ Bloqueie o acesso à conta do AD DS implementando as seguintes alterações de p
 *   Remova todas as ACEs no objeto especificado, exceto as ACEs específicas ao SELF. Queremos manter as permissões padrão intactas quando se trata do SELF.
 *   Atribua essas permissões específicas:
 
-type     | Nome                          | Access               | Aplica-se a
+Tipo     | Nome                          | Access               | Aplica-se a
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Controle Total         | Este objeto  |
 Allow    | Administradores Corporativos             | Controle Total         | Este objeto  |

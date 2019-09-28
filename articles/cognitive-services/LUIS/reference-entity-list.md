@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 07/24/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: ca9f8b570ee28b1913c8ec81c66a5b70827c04d6
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2a9e3d16f745e8f51d1d375a774d7c687e987efe
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350810"
 ---
 # <a name="list-entity"></a>Entidade de lista 
 
@@ -61,6 +61,10 @@ Na declaração anterior, a palavra `paris` é mapeada para o item paris como pa
 ]
 ```
 
+|Objeto de dados|Nome da entidade|Valor|
+|--|--|--|
+|Listar entidade|`Cities`|`paris`|
+
 Outra declaração de exemplo, que usa um sinônimo para Paris:
 
 `book 2 tickets to roissy`
@@ -83,7 +87,7 @@ Outra declaração de exemplo, que usa um sinônimo para Paris:
 
 |Objeto de dados|Nome da entidade|Valor|
 |--|--|--|
-|Entidade simples|`Customer`|`bob jones`|
+|Listar entidade|`Cities`|`roissy`|
 
 ## <a name="next-steps"></a>Próximas etapas
 
