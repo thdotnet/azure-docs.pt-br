@@ -1,6 +1,6 @@
 ---
 title: ReliableConcurrentQueue no Azure Service Fabric
-description: ReliableConcurrentQueue é uma fila de alta taxa de transferência que permite enfileirar e remover da fila de modo paralelo.
+description: ReliableConcurrentQueue é uma fila de alta taxa de transferência que permite filas paralelas e remover filas.
 services: service-fabric
 documentationcenter: .net
 author: athinanthny
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 5/1/2017
 ms.author: atsenthi
-ms.openlocfilehash: 8cb35d6265bafe2b259774a55119d33f8ae94fe9
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 776d330e36e6bcafe610bbab54e13ff6c41e2edf
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599248"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350282"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Introdução a ReliableConcurrentQueue no Azure Service Fabric
 Fila Simultânea Confiável é uma fila assíncrona, transacional e replicada quais apresenta alta simultaneidade para operações de enfileirar e remover da fila. Ele é projetado para oferecer alta taxa de transferência e baixa latência flexibilizando a rígida ordenação de PEPS fornecida pela [Fila Confiável](https://msdn.microsoft.com/library/azure/dn971527.aspx) e, em vez disso, fornece uma ordenação de melhor esforço.
@@ -45,12 +45,19 @@ Um exemplo de caso de uso para o ReliableConcurrentQueue é o cenário [Fila de 
 * A fila não assegura a ordenação PEPS estrita.
 * A fila não lê suas próprias gravações. Se um item for enfileirado em uma transação, ele não será visível para uma operação de remover da fila na mesma transação.
 * As operações de remover da fila não são isoladas umas das outras. Se o item *A* for removido da fila na transação *txnA*, embora *txnA* não esteja confirmado, o item *A* não ficará visível a uma transação simultânea *txnB*.  Se *txnA* for anulada, *A* ficará visível a *txnB* imediatamente.
-* O comportamento *TryPeekAsync* pode ser implementado usando um *TryDequeueAsync* e, em seguida, anulando a transação. Um exemplo disso pode ser encontrado na seção de Padrões de Programação.
+* O comportamento *TryPeekAsync* pode ser implementado usando um *TryDequeueAsync* e, em seguida, anulando a transação. Um exemplo desse comportamento pode ser encontrado na seção padrões de programação.
 * A contagem é não transacional. Você pode usá-la para ter uma ideia do número de elementos na fila, mas representa um ponto no tempo e não é confiável.
-* Processamento dispendioso nos itens de remoção da fila não deve ser executado enquanto a transação estiver ativa para evitar transações de execução longa que podem afetar o desempenho do sistema.
+* O processamento dispendioso nos itens da fila não deve ser executado enquanto a transação estiver ativa, para evitar transações de longa execução que podem ter um impacto no desempenho do sistema.
 
 ## <a name="code-snippets"></a>Snippets de código
 Vamos analisar alguns snippets de código e suas saídas esperadas. O tratamento de exceção é ignorado nesta seção.
+
+### <a name="instantiation"></a>Instanciação
+A criação de uma instância de uma fila simultânea confiável é semelhante a qualquer outra coleção confiável.
+
+```csharp
+IReliableConcurrentQueue<int> queue = await this.StateManager.GetOrAddAsync<IReliableConcurrentQueue<int>>("myQueue");
+```
 
 ### <a name="enqueueasync"></a>EnqueueAsync
 Aqui estão alguns snippets de código para usar EnqueueAsync seguidos por suas saídas esperadas.
@@ -174,7 +181,7 @@ O mesmo é verdadeiro para todos os casos em que a transação não foi *Confirm
 Nesta seção, vamos analisar alguns padrões de programação que podem ser úteis no uso de ReliableConcurrentQueue.
 
 ### <a name="batch-dequeues"></a>Remoções de fila em lote
-O padrão de programação recomendado é a tarefa de consumidor realizar remoções da fila em lote, em vez de executar uma remoção da fila por vez. O usuário pode optar por restringir atrasos entre cada lote ou o tamanho do lote. O snippet de código a seguir mostra esse modelo de programação.  Observe que, neste exemplo, o processamento é feito depois que a transação é confirmada, portanto, se ocorrer uma falha durante o processamento, os itens não processados serão perdidos sem terem sido processados.  Como alternativa, o processamento pode ser feito no escopo da transação, no entanto, isso pode ter um impacto negativo no desempenho e requer tratamento dos itens já processados.
+O padrão de programação recomendado é a tarefa de consumidor realizar remoções da fila em lote, em vez de executar uma remoção da fila por vez. O usuário pode optar por restringir atrasos entre cada lote ou o tamanho do lote. O snippet de código a seguir mostra esse modelo de programação. Lembre-se, neste exemplo, que o processamento é feito depois que a transação é confirmada, portanto, se ocorrer uma falha durante o processamento, os itens não processados serão perdidos sem terem sido processados.  Como alternativa, o processamento pode ser feito dentro do escopo da transação, no entanto, ele pode ter um impacto negativo no desempenho e requer o tratamento dos itens já processados.
 
 ```
 int batchSize = 5;
@@ -268,9 +275,9 @@ while(!cancellationToken.IsCancellationRequested)
 ```
 
 ### <a name="best-effort-drain"></a>Drenagem de melhor esforço
-Uma drenagem da fila não pode ser garantida devido à natureza simultânea da estrutura de dados.  É possível que, mesmo que nenhuma operação de usuário na fila esteja em andamento, uma chamada específica para TryDequeueAsync não retorne um item que foi anteriormente enfileirado e confirmado.  É garantido que o item enfileirado *acabará* ficando visível à remoção da fila, porém, sem um mecanismo de comunicação fora da banda, um consumidor independente não tem como saber que a fila atingiu um estado estável mesmo que todos os produtores tenham sido interrompidos e nenhuma nova operação de enfileiramento seja permitida. Portanto, a operação de drenagem é o melhor esforço conforme implementado abaixo.
+Uma drenagem da fila não pode ser garantida devido à natureza simultânea da estrutura de dados.  É possível que, mesmo que nenhuma operação de usuário na fila esteja em andamento, uma chamada específica para TryDequeueAsync pode não retornar um item que foi anteriormente enfileirado e confirmado.  É garantido que o item enfileirado *acabará* ficando visível à remoção da fila, porém, sem um mecanismo de comunicação fora da banda, um consumidor independente não tem como saber que a fila atingiu um estado estável mesmo que todos os produtores tenham sido interrompidos e nenhuma nova operação de enfileiramento seja permitida. Portanto, a operação de drenagem é o melhor esforço conforme implementado abaixo.
 
-O usuário deve interromper todas as outras tarefas de produtor e consumidor e esperar qualquer transação em andamento ser confirmada ou anulada antes de tentar drenar a fila.  Se o usuário souber qual é o número esperado de itens na fila, ele poderá configurar uma notificação que sinalize que todos os itens foram removidos da fila.
+O usuário deve interromper todas as outras tarefas de produtor e consumidor e esperar qualquer transação em andamento ser confirmada ou anulada antes de tentar drenar a fila.  Se o usuário souber o número esperado de itens na fila, ele poderá configurar uma notificação que sinalizará que todos os itens foram removidas da fila.
 
 ```
 int numItemsDequeued;
@@ -306,7 +313,7 @@ do
 } while (ret.HasValue);
 ```
 
-### <a name="peek"></a>Espiar
+### <a name="peek"></a>Espiada
 ReliableConcurrentQueue não fornece a API *TryPeekAsync*. Os usuários podem obter a semântica da espiada usando um *TryDequeueAsync* e, em seguida, anulando a transação. Neste exemplo, remoções da fila serão processadas somente se o valor do item for maior do que *10*.
 
 ```
@@ -337,7 +344,7 @@ using (var txn = this.StateManager.CreateTransaction())
 ```
 
 ## <a name="must-read"></a>Deve ler
-* [Início rápido de Reliable Services](service-fabric-reliable-services-quick-start.md)
+* [Início Rápido dos Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Trabalhando com Reliable Collections](service-fabric-work-with-reliable-collections.md)
 * [Notificações do Reliable Services](service-fabric-reliable-services-notifications.md)
 * [Backup e restauração de Reliable Services (recuperação de desastre)](service-fabric-reliable-services-backup-restore.md)

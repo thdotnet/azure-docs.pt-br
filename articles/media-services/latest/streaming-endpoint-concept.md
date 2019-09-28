@@ -11,14 +11,14 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/11/2019
 ms.author: juliako
-ms.openlocfilehash: 831ba217e99d1610383320ddf5706c6acfcdf48a
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: cd1dc7b55060e8262b300022f5ffd1b4da5f7922
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67848898"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350356"
 ---
-# <a name="streaming-endpoints"></a>Ponto de extremidade de streaming 
+# <a name="streaming-endpoints"></a>Extremidades de Streaming 
 
 No Serviços de Mídia do Microsoft Azure, um [ponto de extremidade de streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints) representa um serviço de empacotamento e origem (just-in-time) dinâmico que pode entregar seu conteúdo ao vivo e sob demanda diretamente a um aplicativo de player de cliente, usando uma das mídias de streaming comuns protocolos (HLS ou DASH). Além disso, o **ponto de extremidade de streaming** fornece criptografia dinâmica (just-in-time) para a DRMs líder do setor.
 
@@ -31,9 +31,14 @@ Quando você cria uma conta de Serviços de Mídia, um Ponto de Extremidade de S
 
 ## <a name="naming-convention"></a>Convenção de nomenclatura
 
-Para o ponto de extremidade padrão: `{AccountName}-{DatacenterAbbreviation}.streaming.media.azure.net`
+O formato do nome de host da URL de streaming é: `{servicename}-{accountname}-{regionname}.streaming.media.azure.net`, em que `servicename` = o nome do ponto de extremidade de streaming ou o nome do evento ao vivo. 
 
-Para pontos de extremidade adicionais: `{EndpointName}-{AccountName}-{DatacenterAbbreviation}.streaming.media.azure.net`
+Ao usar o ponto de extremidade de streaming padrão, `servicename` é omitido para que a URL seja: `{accountname}-{regionname}.streaming.azure.net`. 
+
+### <a name="limitations"></a>Limitações
+
+* O nome do ponto de extremidade de streaming tem um valor máximo de 24 caracteres.
+* O nome deve seguir este padrão de [Regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) : `^[a-zA-Z0-9]+(-*[a-zA-Z0-9])*$`.
 
 ## <a name="types"></a>Tipos  
 
@@ -41,7 +46,7 @@ Há dois tipos de **Ponto de extremidade de streaming**: **Padrão** (visualiza�
 
 A tabela descreve os tipos:  
 
-|Tipo|Unidades de escala|DESCRIÇÃO|
+|Tipo|Unidades de escala|Descrição|
 |--------|--------|--------|  
 |**Standard**|0|O ponto de extremidade de streaming padrão é um tipo **padrão** , pode ser alterado para o tipo `scaleUnits`Premium ajustando.|
 |**Premium**|>0|**Premium** Os pontos de extremidade de streaming são adequados para cargas de trabalho avançadas, fornecendo capacidade de largura de banda dedicada e escalonável. Você passa para um tipo **Premium** ajustando `scaleUnits` (unidades de streaming). `scaleUnits` fornece capacidade de saída dedicada que pode ser comprada em incrementos de 200 Mbps. Ao usar o tipo **Premium**, cada unidade habilitada fornece capacidade adicional de largura de banda ao aplicativo. |
@@ -60,14 +65,14 @@ CDN|Azure CDN, CDN de terceiros ou sem CDN.|Azure CDN, CDN de terceiros ou sem C
 A cobrança é rateada| Diariamente|Diariamente
 Criptografia dinâmica|Sim|Sim
 Empacotamento dinâmico|Sim|Sim
-Escala|Escala verticalmente automaticamente com a taxa de transferência de destino.|SUs adicional
+Dimensionar|Escala verticalmente automaticamente com a taxa de transferência de destino.|SUs adicional
 Filtragem de IP/G20/host personalizado <sup>1</sup>|Sim|Sim
 Download progressivo|Sim|Sim
 Uso recomendado |Recomendado para a grande maioria dos cenários de streaming.|Uso profissional.
 
 <sup>1</sup> é usado somente diretamente no ponto de extremidade de streaming quando a CDN não está habilitada no ponto de extremidade.<br/>
 
-## <a name="properties"></a>Propriedades 
+## <a name="properties"></a>Properties 
 
 Esta seção fornece detalhes sobre algumas das propriedades do ponto de extremidade de streaming. Para exemplos de como criar um novo ponto de extremidade de streaming e descrições de todas as propriedades, consulte [Ponto de Extremidade de Streaming](https://docs.microsoft.com/rest/api/media/streamingendpoints/create). 
 
@@ -128,7 +133,7 @@ Na maioria dos casos, é necessário ter a CDN habilitada. No entanto, se você 
 
 ### <a name="considerations"></a>Considerações
 
-* O ponto de extremidade de streaming `hostname` e a URL de streaming permanecem os mesmos, independentemente de você habilitar a CDN ou não.
+* O ponto de extremidade de streaming `hostname` e a URL de streaming permanecem os mesmos, independentemente de você habilitar ou não a CDN.
 * Se você precisar da capacidade de testar o conteúdo com ou sem CDN, poderá criar outro ponto de extremidade de streaming que não esteja habilitado para CDN.
 
 ### <a name="detailed-explanation-of-how-caching-works"></a>Explicação detalhada de como o armazenamento em cache funciona

@@ -11,12 +11,12 @@ author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
 ms.date: 07/18/2019
-ms.openlocfilehash: 6b1b706e68b090090ed4268b70b7c9d254f8b629
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 095ecc360e5639a5d47dff4bc4675fc237cf81da
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596704"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71348928"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault-bring-your-own-key-support"></a>Azure SQL Transparent Data Encryption com chaves gerenciadas pelo cliente no Azure Key Vault: Suporte Bring Your Own Key
 
@@ -93,7 +93,7 @@ Quando o TDE é configurado pela primeira vez para usar um protetor de TDE do Ke
    > [!NOTE]
    > Para fins de teste, é possível criar uma chave com o Azure Key Vault, no entanto, essa chave não pode ser garantida porque a chave privada nunca pode sair do cofre de chaves.  Sempre faça backup e armazene as chaves usadas para criptografar os dados de produção, pois a perda da chave (exclusão acidental no cofre de chaves, expiração, etc.) resulta em perda permanente de dados.
 
-- Se você usar uma chave com uma data de expiração – implemente um sistema de aviso de expiração para girar a chave antes de ela expirar: **depois que a chave expirar, os bancos de dados criptografados perderão o acesso ao seu protetor TDE e** ficarão inacessíveis e todos os logons serão negados até a chave foi girada para uma nova chave e selecionada como a nova chave e o protetor de TDE padrão para o SQL Server lógico.
+- Se você usar uma chave com uma data de expiração – implemente um sistema de aviso de expiração para girar a chave antes de ela expirar: **depois que a chave expirar, os bancos de dados criptografados perderão o acesso ao seu protetor TDE e ficarão inacessíveis** e todos os logons serão negados até a chave foi girada para uma nova chave e selecionada como a nova chave e o protetor de TDE padrão para o SQL Server lógico.
 - Certifique-se de que a chave esteja habilitada e tenha permissões para executar as operações *get*, *codificar chave* e *decodificar chave*.
 - Crie um backup de chave do Azure Key Vault antes de usar a chave no Azure Key Vault pela primeira vez. Saiba mais sobre o comando [backup-AzKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey) .
 - Crie um novo backup sempre que forem feitas alterações na chave (por exemplo, adicionar ACLs, adicionar marcas, adicionar atributos de chave).
@@ -149,7 +149,7 @@ A seção a seguir descreverá as etapas de configuração e configuração em m
 - Crie dois Azure Key Vaults em duas regiões diferentes usando o [PowerShell para habilitar a propriedade "exclusão reversível"](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell) nos cofres de chaves (essa opção ainda não está disponível no Portal do AKV, mas é exigida pelo SQL).
 - Ambos os Azure Key Vaults devem estar localizados nas duas regiões disponíveis na mesma área geográfica do Azure para que o backup e a restauração das chaves funcionem.  Se você precisar que os dois cofre de chaves estejam localizados em diferentes áreas geográficas para atender aos requisitos de Geo-DR de SQL, siga o [Processo de BYOK](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys) que permite que as chaves sejam importadas de um HSM local.
 - Crie uma nova chave no primeiro cofre de chaves:  
-  - Chave RSA/RSA-HSA 2048
+  - Chave RSA/RSA-HSM 2048
   - Sem datas de validade
   - A chave está habilitada e tem permissões para executar operações get, codificar chave e decodificar chave
 - Faça backup da chave primária e restaure a chave para o segundo cofre de chaves.  Consulte [BackupAzureKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey) e [Restore-AzKeyVaultKey](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey).

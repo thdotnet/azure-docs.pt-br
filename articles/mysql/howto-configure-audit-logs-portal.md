@@ -1,24 +1,24 @@
 ---
-title: Configurar e acessar os logs de auditoria do banco de dados do Azure para MySQL no portal do Azure
+title: Configurar e acessar logs de auditoria-banco de dados do Azure para MySQL
 description: Este artigo descreve como configurar e acessar os logs de auditoria no banco de dados do Azure para MySQL no portal do Azure.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.openlocfilehash: a2f44b52c6d34adb1bebf666ff8453b17f7778a5
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2a2d2a697f0e41fb296c61c01909a814678f8277
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448478"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350401"
 ---
-# <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Configurar e acessar logs de auditoria no portal do Azure
+# <a name="configure-and-access-audit-logs-for-azure-database-for-mysql-in-the-azure-portal"></a>Configurar e acessar os logs de auditoria do banco de dados do Azure para MySQL no portal do Azure
 
-Você pode configurar o [banco de dados do Azure para logs de auditoria do MySQL](concepts-audit-logs.md) e configurações de diagnóstico do portal do Azure.
+Você pode configurar os [logs de auditoria do banco de dados do Azure para MySQL](concepts-audit-logs.md) e as configurações de diagnóstico do portal do Azure.
 
 > [!IMPORTANT]
-> Funcionalidade de log de auditoria está atualmente em visualização.
+> A funcionalidade de log de auditoria está atualmente em visualização.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -28,45 +28,45 @@ Para seguir este guia de instruções, você precisa:
 
 ## <a name="configure-audit-logging"></a>Configurar o log de auditoria
 
-Habilitar e configurar o log de auditoria.
+Habilite e configure o log de auditoria.
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 
 1. Selecione seu servidor de Banco de Dados do Azure para MySQL.
 
-1. Sob o **as configurações** seção na barra lateral, selecione **parâmetros de servidor**.
-    ![Parâmetros de servidor](./media/howto-configure-audit-logs-portal/server-parameters.png)
+1. Na seção **configurações** na barra lateral, selecione **parâmetros do servidor**.
+    ![Parâmetros do servidor](./media/howto-configure-audit-logs-portal/server-parameters.png)
 
-1. Atualizar o **audit_log_enabled** parâmetro como ON.
-    ![Habilitar logs de auditoria](./media/howto-configure-audit-logs-portal/audit-log-enabled.png)
+1. Atualize o parâmetro **audit_log_enabled** para on.
+    logs de auditoria do ![Enable @ no__t-1
 
-1. Selecione o [tipos de evento](concepts-audit-logs.md#configure-audit-logging) a ser registrada, atualizando o **audit_log_events** parâmetro.
-    ![Eventos de log de auditoria](./media/howto-configure-audit-logs-portal/audit-log-events.png)
+1. Selecione os [tipos de eventos](concepts-audit-logs.md#configure-audit-logging) a serem registrados atualizando o parâmetro **audit_log_events** .
+    eventos de log do ![Audit @ no__t-1
 
-1. Adicionar quaisquer usuários do MySQL a serem excluídas do registro em log, atualizando o **audit_log_exclude_users** parâmetro. Especifique os usuários, fornecendo seu nome de usuário do MySQL.
-    ![Excluir usuários de log de auditoria](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
+1. Adicione qualquer usuário do MySQL a ser excluído do registro em log atualizando o parâmetro **audit_log_exclude_users** . Especifique os usuários fornecendo seu nome de usuário do MySQL.
+    log de ![Audit excluir usuários @ no__t-1
 
 1. Depois que você alterar os parâmetros, clique em **Salvar**. Ou então, você pode **Descartar** suas alterações.
     ![Salvar](./media/howto-configure-audit-logs-portal/save-parameters.png)
 
 ## <a name="set-up-diagnostic-logs"></a>Configuração dos logs de diagnóstico
 
-1. Sob o **Monitoring** seção na barra lateral, selecione **configurações de diagnóstico**.
+1. Na seção **monitoramento** na barra lateral, selecione **configurações de diagnóstico**.
 
-1. Clique em "+ Adicionar configuração de diagnóstico" ![Adicionar configuração de diagnóstico](./media/howto-configure-audit-logs-portal/add-diagnostic-setting.png)
+1. Clique em "+ adicionar configuração de diagnóstico" @no__t-configuração de diagnóstico 0Add @ no__t-1
 
 1. Forneça um nome de configuração de diagnóstico.
 
-1. Especifique quais dados coletores para enviar os logs de auditoria (conta de armazenamento, hub de eventos e/ou espaço de trabalho do Log Analytics).
+1. Especifique quais coletores de dados enviar os logs de auditoria (conta de armazenamento, Hub de eventos e/ou espaço de trabalho Log Analytics).
 
 1. Selecione "MySqlAuditLogs" como o tipo de log.
-![Definir configuração de diagnóstico](./media/howto-configure-audit-logs-portal/configure-diagnostic-setting.png)
+configuração de diagnóstico ![Configure @ no__t-1
 
-1. Depois de ter configurado os coletores de dados para redirecionar os logs de auditoria, você pode clicar em **salvar**.
-![Salvar configuração de diagnóstico](./media/howto-configure-audit-logs-portal/save-diagnostic-setting.png)
+1. Depois de configurar os coletores de dados para canalizar os logs de auditoria, você pode clicar em **salvar**.
+configuração de diagnóstico ![Save @ no__t-1
 
-1. Acesse os logs de auditoria, explorando-os no Coletores de dados que você configurou. Ele pode levar até 10 minutos para que os logs sejam exibidos.
+1. Acesse os logs de auditoria explorando-os nos coletores de dados que você configurou. Pode levar até 10 minutos para que os logs sejam exibidos.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [logs de auditoria](concepts-audit-logs.md) no banco de dados do Azure para MySQL.
+- Saiba mais sobre [os logs de auditoria](concepts-audit-logs.md) no banco de dados do Azure para MySQL.

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e6cfc18f01bb23d0b318ac1b924cf8cbb9f7a2b6
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 5a0f2922763f8fccb9f3eec8bab4d6eddee7e446
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71259987"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350600"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configurar experimentos de ML automatizados em Python
 
@@ -42,7 +42,7 @@ Antes de iniciar o experimento, determine o tipo de problema de aprendizado de m
 
 O aprendizado de máquina automatizado é compatível com os seguintes algoritmos durante o processo de automação e ajuste. Como usuário, não há necessidade de especificar o algoritmo.
 
-classificação | Regressão | Previsão de série temporal
+Classificação | Regressão | Previsão de série temporal
 |-- |-- |--
 [Regressão logística](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Rede elástica](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Rede elástica](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
 [GBM claro](https://lightgbm.readthedocs.io/en/latest/index.html)|[GBM claro](https://lightgbm.readthedocs.io/en/latest/index.html)|[GBM claro](https://lightgbm.readthedocs.io/en/latest/index.html)
@@ -179,7 +179,7 @@ Os três valores `task` de parâmetro diferentes (o terceiro tipo de tarefa `for
 ### <a name="primary-metric"></a>Métrica principal
 A métrica primária determina a métrica a ser usada durante o treinamento do modelo para otimização. As métricas disponíveis que você pode selecionar são determinadas pelo tipo de tarefa que você escolher e a tabela a seguir mostra métricas primárias válidas para cada tipo de tarefa.
 
-|classificação | Regressão | Previsão de série temporal
+|Classificação | Regressão | Previsão de série temporal
 |-- |-- |--
 |accuracy| spearman_correlation | spearman_correlation
 |AUC_weighted | normalized_root_mean_squared_error | normalized_root_mean_squared_error
@@ -328,7 +328,7 @@ Você pode exibir os resultados de treinamento em um widget ou embutido se estiv
 
 Qualquer modelo produzido usando o ML automatizado inclui as seguintes etapas:
 + Engenharia automatizada de recursos (se pré-processar = true)
-+ Dimensionamento/normalização e algoritmo com valores de hipermedidor
++ Dimensionamento/normalização e algoritmo com valores de hiperparâmetro
 
 Tornamos transparente para obter essas informações da saída do fitted_model do ML automatizado.
 
@@ -410,7 +410,7 @@ Use essas duas APIs na primeira etapa do modelo ajustado para entender mais.  Co
    |EngineeringFeatureCount|Número de recursos gerados por meio de transformações automatizadas de engenharia de recursos.|
    |Transformações|Lista de transformações aplicadas aos recursos de entrada para gerar recursos de engenharia.|
 
-### <a name="scalingnormalization-and-algorithm-with-hypermeter-values"></a>Dimensionamento/normalização e algoritmo com valores de hipermedidor:
+### <a name="scalingnormalization-and-algorithm-with-hyperparameter-values"></a>Dimensionamento/normalização e algoritmo com valores de hiperparâmetro:
 
 Para entender os valores de dimensionamento/normalização e de algoritmo/hiperparâmetro para um pipeline, use fitted_model. Steps. [Saiba mais sobre dimensionamento/normalização](concept-automated-ml.md#preprocess). Aqui está uma amostra de saída:
 

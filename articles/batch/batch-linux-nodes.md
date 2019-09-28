@@ -14,12 +14,12 @@ ms.workload: na
 ms.date: 06/01/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fc1e80433a09d8a56f2900ab6b24dd3804db56ac
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 18df43ebf3a20547917ddd372d922741b4cee849
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086768"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350112"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Provisionar os nós de computação do Linux em pools do Lote
 
@@ -38,7 +38,8 @@ Ao criar um pool de nós de computação no Lote, você tem duas opções das qu
 **Virtual Machine Configuration** fornece imagens do Linux e do Windows para os nós de computação. Os tamanhos de nó de computação disponíveis estão relacionados em [Tamanhos das máquinas virtuais no Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Linux) e em [Tamanhos das máquinas virtuais no Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Windows). Ao criar um pool que contém nós de Configuração da Máquina Virtual, você deve especificar o tamanho dos nós, a referência da imagem da máquina virtual e a SKU do agente de nó do Lote a ser instalada nos nós.
 
 ### <a name="virtual-machine-image-reference"></a>Referência da imagem da máquina virtual
-O serviço de Lote usa [Conjuntos de Dimensionamento de Máquinas Virtuais](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) para fornecer nós de computação na Configuração de máquina virtual. Você pode especificar uma imagem do [Azure Marketplace][vm_marketplace]ou fornecer uma imagem personalizada que você preparou. Para obter mais detalhes sobre imagens personalizadas, confira [Criar um pool com uma imagem personalizada](batch-custom-images.md).
+
+O serviço de Lote usa [Conjuntos de Dimensionamento de Máquinas Virtuais](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) para fornecer nós de computação na Configuração de máquina virtual. Você pode especificar uma imagem do [Azure Marketplace][vm_marketplace]ou fornecer uma imagem personalizada que você preparou. Para obter mais detalhes sobre imagens personalizadas, consulte [criar um pool com a Galeria de imagens compartilhadas](batch-sig-images.md).
 
 Quando você configura uma referência de imagem de máquina virtual, especifica as propriedades de uma imagem de máquina virtual. As propriedades a seguir são necessárias ao criar uma referência de imagem de máquina virtual:
 

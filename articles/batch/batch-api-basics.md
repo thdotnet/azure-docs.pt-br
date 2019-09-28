@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 08/29/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: bd630fec16ddfb269ead5f1f62af882f52501a86
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 364861e57f37192a3ae454e27fedf732ee8d513e
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350175"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolva soluções de computação paralela em larga escala com o Lote
 
@@ -95,7 +95,7 @@ Você pode associar uma conta de armazenamento à sua conta do Lote durante a cr
 
 Um nó de computação é uma máquina virtual (VM) do Azure ou VM do serviço de nuvem que é dedicada ao processamento de uma parte da carga de trabalho do aplicativo. O tamanho de um nó determina o número de núcleos de CPU, a capacidade da memória e o tamanho do sistema de arquivos local alocado para o nó. Você pode criar pools de nós do Windows ou Linux usando os serviços de nuvem do Azure, imagens do [Marketplace de máquinas virtuais do Azure][vm_marketplace]ou imagens personalizadas que você prepara. Consulte o seguinte seção [Pool](#pool) para obter mais informações sobre essas opções.
 
-Os nós podem executar qualquer executável ou script que tenha suporte no ambiente do sistema operacional do nó. Os executáveis ou scripts \*incluem scripts. \*exe,. \*cmd,. bat e PowerShell para Windows – e binários, Shell e scripts do Python para Linux.
+Os nós podem executar qualquer executável ou script que tenha suporte no ambiente do sistema operacional do nó. Os executáveis ou scripts incluem \*. exe, \*. cmd, @no__t -2. bat e scripts do PowerShell para Windows-e binários, Shell e scripts do Python para Linux.
 
 Todos os nós de computação no Lote também incluem:
 
@@ -149,9 +149,9 @@ Quando você cria um pool, precisa selecionar o **nodeAgentSkuId** apropriado, d
 
 #### <a name="custom-images-for-virtual-machine-pools"></a>Imagens personalizadas para pools de máquina virtual
 
-Para usar uma imagem personalizada, você precisará preparar a imagem generalizando-a. Para obter informações sobre como preparar imagens personalizadas do Linux de VMs do Azure, consulte [Como criar uma imagem de uma máquina virtual ou de um VHD](../virtual-machines/linux/capture-image.md). Para obter informações sobre como preparar imagens personalizadas do Windows de VMs do Azure, confira [Criar uma imagens gerenciada de uma VM generalizada no Azure](../virtual-machines/windows/capture-image-resource.md). 
+Para saber como criar um pool com imagens personalizadas, consulte [usar a Galeria de imagens compartilhadas para criar um pool personalizado](batch-sig-images.md).
 
-Para obter requisitos e etapas detalhadas, consulte [Usar uma imagem personalizada para criar um pool de máquinas virtuais](batch-custom-images.md).
+Como alternativa, você pode criar um pool personalizado de máquinas virtuais usando um recurso de [imagem gerenciada](batch-custom-images.md) . Para obter informações sobre como preparar imagens personalizadas do Linux de VMs do Azure, consulte [Como criar uma imagem de uma máquina virtual ou de um VHD](../virtual-machines/linux/capture-image.md). Para obter informações sobre como preparar imagens personalizadas do Windows de VMs do Azure, confira [Criar uma imagens gerenciada de uma VM generalizada no Azure](../virtual-machines/windows/capture-image-resource.md).
 
 #### <a name="container-support-in-virtual-machine-pools"></a>Suporte de contêiner em pools de Máquina Virtual
 
@@ -214,7 +214,7 @@ Você pode especificar [pacotes de aplicativos](#application-packages) para impl
 >
 >
 
-### <a name="network-configuration"></a>Configuração de rede
+### <a name="network-configuration"></a>Configuração da rede
 
 Você pode especificar a sub-rede de uma [rede virtual (VNet)](../virtual-network/virtual-networks-overview.md) do Azure em que nós de computação do pool devem ser criados. Confira a seção Configuração da rede do pool para obter mais informações.
 
@@ -245,7 +245,7 @@ O plano de trabalho em pools é independente. Entre pools diferentes, não é ga
 
 ### <a name="scheduled-jobs"></a>Trabalhos agendados
 
-As [agendas de trabalho][rest_job_schedules] permitem que você crie trabalhos recorrentes no serviço de lote. Um plano de trabalho especifica quando executar trabalhos e inclui as especificações para os trabalhos a serem executados. Você pode especificar a duração do agendamento - quanto tempo e quando o agendamento entra em vigor – e com que frequência os trabalhos são criados durante o período agendado.
+As agendas de [trabalho][rest_job_schedules] permitem que você crie trabalhos recorrentes no serviço de lote. Um plano de trabalho especifica quando executar trabalhos e inclui as especificações para os trabalhos a serem executados. Você pode especificar a duração do agendamento - quanto tempo e quando o agendamento entra em vigor – e com que frequência os trabalhos são criados durante o período agendado.
 
 ## <a name="task"></a>Tarefa
 
@@ -379,7 +379,7 @@ O diretório raiz contém a seguinte estrutura de diretório:
 
 * **WorkItems**: Esse diretório contém os diretórios para trabalhos e suas tarefas no nó de computação.
 
-* **Tarefas**: No diretório **WorkItems** , um diretório é criado para cada tarefa executada no nó. Ele é acessado referenciando a variável de `AZ_BATCH_TASK_DIR` ambiente.
+* **Tarefas**: No diretório **WorkItems** , um diretório é criado para cada tarefa executada no nó. Ele é acessado referenciando a variável de ambiente `AZ_BATCH_TASK_DIR`.
 
     Em cada diretório de tarefas, o serviço Lote cria um diretório de trabalho (`wd`) cujo caminho exclusivo é especificado pela variável de ambiente `AZ_BATCH_TASK_WORKING_DIR`. Esse diretório oferece acesso de leitura/gravação à tarefa. A tarefa pode criar, ler, atualizar e excluir arquivos contidos nesse diretório. Esse diretório é mantido com base na restrição *RetentionTime* especificada para a tarefa.
 
@@ -519,7 +519,7 @@ Se for necessário restringir ou desabilitar o acesso RDP ou SSH para nós de co
 
 Em situações em que algumas das tarefas falham, o aplicativo cliente ou o serviço de Lote pode examinar os metadados das tarefas com falha para identificar um nó com comportamento inadequado. Cada nó em um pool tem uma ID exclusiva, e o nó no qual uma tarefa é executada é incluído nos metadados da tarefa. Após identificar um nó com problemas, você poderá executar várias ações nele:
 
-* **Reinicializar o nó** ([REST][rest_reboot] | [.net][net_reboot])
+* **Reinicialize o nó** ([REST][rest_reboot] | [.net][net_reboot])
 
     Às vezes, reiniciar o nó pode corrigir problemas latentes, como processos bloqueados ou com falha. Se o pool usar uma tarefa de início ou seu trabalho usar uma tarefa de preparação de trabalho, eles serão executados quando o nó for reiniciado.
 * Refazer **a imagem do nó** ([REST][rest_reimage] | [.net][net_reimage])
@@ -533,7 +533,7 @@ Em situações em que algumas das tarefas falham, o aplicativo cliente ou o serv
     Isso efetivamente coloca o nó offline para que nenhuma tarefa adicional seja atribuída a ele, mas permite que o nó permaneça em execução e no pool. Isso o habilita a continuar a investigar a causa das falhas sem perder os dados da tarefa com falha e sem que o nó cause falhas de tarefas adicionais. Por exemplo, você pode desabilitar o agendamento de tarefas no nó e [fazer logon remotamente](#connecting-to-compute-nodes) para examinar os logs de evento do nó ou solucionar outros problemas. Depois de concluir sua investigação, você pode colocar o nó online novamente habilitando o agendamento de tarefas ([REST][rest_online] | [.net][net_online]) ou executar uma das outras ações discutidas anteriormente.
 
 > [!IMPORTANT]
-> Com cada ação descrita nesta seção – reinicializar, refazer a imagem, remover e desabilitar o agendamento de tarefas – é possível especificar como as tarefas atualmente em execução no nó são lidadas quando você executa a ação. Por exemplo, quando você desabilita o agendamento de tarefas em um nó usando a biblioteca de cliente .NET do lote, você pode especificar um valor de enumeração [DisableComputeNodeSchedulingOption][net_offline_option] para especificar se deseja **encerrar** as tarefas em execução, **reenfileira** -las para agendamento em outros nós ou permitir que as tarefas em execução sejam concluídas antes de executar a ação (**TaskCompletion**).
+> Com cada ação descrita nesta seção – reinicializar, refazer a imagem, remover e desabilitar o agendamento de tarefas – é possível especificar como as tarefas atualmente em execução no nó são lidadas quando você executa a ação. Por exemplo, quando você desabilita o agendamento de tarefas em um nó usando a biblioteca de cliente .NET do lote, você pode especificar um valor de enumeração [DisableComputeNodeSchedulingOption][net_offline_option] para especificar se deseja **encerrar** as tarefas em execução, reenfileira-las para agendamento em outros nós ou permitir que as tarefas em execução sejam concluídas antes de executar a ação (**TaskCompletion**).
 >
 >
 

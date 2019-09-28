@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 1e7d64aabba19f04fb98bd208389dc0b2077bfe4
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 8b089a1b32ee70479072522372c060713108957c
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70094709"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350102"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Cotas e limites de serviço do Lote
 
@@ -52,7 +52,7 @@ Os limites de tamanho do pool são definidos pelo serviço de lote. Ao contrári
 | **Nós de computação em [pool de computação entre nós habilitado](batch-mpi.md)**  ||
 | Modo de alocação de pool de serviço de Lote | 100 |
 | Modo de alocação de pool de assinatura do Lote | 80 |
-| **Nós de computação dedicados em [pool criado com imagem de VM personalizada](batch-custom-images.md)** <sup>1</sup> ||
+| **Nós de computação no [pool criado com um recurso de imagem gerenciada](batch-custom-images.md)** <sup>1</sup> ||
 | Nós dedicados | 2000 |
 | Nós de baixa prioridade | 1000 |
 

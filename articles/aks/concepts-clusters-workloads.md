@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: mlearned
-ms.openlocfilehash: e606b4fee2c46f66f13c45586bcc25577bd90a1f
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 6120eee5bbd2f385fa8e76da093f7fadccb4904e
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71348978"
 ---
 # <a name="kubernetes-core-concepts-for-azure-kubernetes-service-aks"></a>Conceitos de Kubernetes para o serviço de Kubernetes do Azure (AKS)
 
@@ -72,14 +72,30 @@ O tamanho da VM do Azure para seus nós define quantas CPUs, quanto de memória 
 
 No AKS, a imagem de VM para os nós no cluster está atualmente baseada no Ubuntu Linux ou no Windows Server 2019. Quando você cria um cluster AKS ou aumenta o número de nós, a plataforma do Azure cria o número solicitado de VMs e as configura. Não há nenhuma configuração manual a ser executada. Os nós de agente são cobrados como máquinas virtuais padrão, portanto, os descontos que você tem no tamanho da VM que você está usando (incluindo as [reservas do Azure][reservation-discounts]) são aplicados automaticamente.
 
-Se você precisar usar um sistema operacional host diferente, tempo de execução de contêiner ou incluir pacotes personalizados, poderá implantar seu próprio cluster kubernetes usando o [AKs-Engine][aks-engine]. O `aks-engine` upstream libera recursos e fornece opções de configuração antes que eles tenham suporte oficial nos clusters do AKS. Por exemplo, se você quiser usar um tempo de execução de contêiner diferente de Moby, poderá `aks-engine` usar o para configurar e implantar um cluster kubernetes que atenda às suas necessidades atuais.
+Se você precisar usar um sistema operacional host diferente, tempo de execução de contêiner ou incluir pacotes personalizados, poderá implantar seu próprio cluster kubernetes usando o [AKs-Engine][aks-engine]. O `aks-engine` upstream libera recursos e fornece opções de configuração antes que eles tenham suporte oficial nos clusters do AKS. Por exemplo, se você quiser usar um tempo de execução de contêiner diferente de Moby, poderá usar `aks-engine` para configurar e implantar um cluster kubernetes que atenda às suas necessidades atuais.
 
 ### <a name="resource-reservations"></a>Reservas de recursos
 
-Você não precisa gerenciar os componentes principais do Kubernetes em cada nó, como o *kubelet*, *kube-proxy* e *kube-dns*, mas eles não consumir alguns dos recursos de computação disponíveis. Para manter o desempenho e a funcionalidade do nó, os seguintes recursos de computação são reservados em cada nó:
+Os recursos de nó são utilizados pelo AKS para fazer a função de nó como parte do cluster. Isso pode criar um discrepency entre os recursos totais do seu nó e os recursos que se encontram quando usados em AKS. Isso é importante para observar ao definir solicitações e limites para os pods implantados.
 
-- **CPU** – 60 ms
-- **Memory** - 20% de até 4 GiB
+Para localizar os recursos de localização de um nó, execute:
+```kubectl
+kubectl describe node [NODE_NAME] | grep Allocatable -B 4 -A 3
+
+```
+
+Para manter o desempenho e a funcionalidade do nó, os recursos de computação a seguir são reservados em cada nó. À medida que um nó cresce mais em recursos, a reserva de recursos aumenta devido a uma quantidade maior de pods implantados pelo usuário que precisam de gerenciamento.
+
+>[!NOTE]
+> O uso de Complementos, como OMS, consumirá recursos de nó adicionais.
+
+- Dependente de **CPU** no tipo de nó
+
+| Núcleos de CPU no host | 1 | 2 | 4 | 8 | 16 | 32|64|
+|---|---|---|---|---|---|---|---|
+|Kubelet (milicores)|60|100|140|180|260|420|740|
+
+- **Memória** -20% da memória disponível, até 4 GiB máx.
 
 Essas reservas significam que a quantidade de CPU e memória disponíveis para seus aplicativos pode parecer menor do que o próprio nó contém. Se houver restrições de recursos devido ao número de aplicativos que você executa, essas reservas garantem que a CPU e a memória permaneçam disponíveis para os componentes principais do Kubernetes. As reservas de recursos não podem ser alteradas.
 
@@ -182,7 +198,7 @@ spec:
 
 Aplicativos mais complexos podem ser criados incluindo também serviços como balanceadores de carga no manifesto YAML.
 
-Para obter mais informações, consulte implantações do [kubernetes][kubernetes-deployments].
+Para obter mais informações, consulte [implantações do kubernetes][kubernetes-deployments].
 
 ### <a name="package-management-with-helm"></a>Gerenciamento de pacotes com Helm
 
@@ -224,7 +240,7 @@ Como StatefulSets, um DaemonSet é definido como parte de uma definição YAML u
 Para obter mais informações, consulte [kubernetes DaemonSets][kubernetes-daemonset].
 
 > [!NOTE]
-> Se você estiver usando o complemento de [nós virtuais](virtual-nodes-cli.md#enable-virtual-nodes-addon), o DaemonSets não criará pods no nó virtual.
+> Se você estiver usando o [complemento de nós virtuais](virtual-nodes-cli.md#enable-virtual-nodes-addon), o DaemonSets não criará pods no nó virtual.
 
 ## <a name="namespaces"></a>Namespaces
 
@@ -238,7 +254,7 @@ Quando você cria um cluster do AKS, os namespaces a seguir estão disponíveis:
 - *kube-system* - Este namespace é o local onde os recursos principais existem, como recursos de rede como DNS e proxy, ou o painel do Kubernetes. Normalmente, você não implantar seus próprios aplicativos para esse namespace.
 - *kube-public* – esse namespace normalmente não é usado, mas pode ser usado para que os recursos sejam visíveis em todo o cluster e possam ser visualizados por todos os usuários.
 
-Para obter mais informações, consulte Namespaces do [kubernetes][kubernetes-namespaces].
+Para obter mais informações, consulte [namespaces do kubernetes][kubernetes-namespaces].
 
 ## <a name="next-steps"></a>Próximas etapas
 

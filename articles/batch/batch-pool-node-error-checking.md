@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/23/2019
 ms.topic: conceptual
-ms.openlocfilehash: d115b7d56609b95f2ea10b3fee2f8900102b94e4
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 3c8e189e84e0a467125995b3e2d633c285eb7367
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70012482"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350055"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Verificar erros no pool e nos nós
 
@@ -42,7 +42,7 @@ As causas comuns para erros de redimensionamento incluem:
 - Recursos insuficientes quando um [pool está em uma rede virtual](https://docs.microsoft.com/azure/batch/batch-virtual-network)
   - É possível criar recursos como grupos de segurança de rede, IPs públicos e grupo de segurança de rede na mesma assinatura que a conta do lote. Verifique se as cotas de assinatura para esses recursos são suficientes.
 - Grandes pools com imagens de VM personalizadas
-  - Grandes pools que usam imagens personalizadas de VM podem demorar mais para alocar, e podem ocorrer tempos limite de redimensionamento.  Consulte [Usar uma imagem personalizada para criar um pool de máquinas virtuais](https://docs.microsoft.com/azure/batch/batch-custom-images) para obter recomendações sobre limites e configuração.
+  - Grandes pools que usam imagens personalizadas de VM podem demorar mais para alocar, e podem ocorrer tempos limite de redimensionamento.  Consulte [criar um pool com a Galeria de imagens compartilhadas](batch-sig-images.md) para obter recomendações sobre limites e configurações.
 
 ### <a name="automatic-scaling-failures"></a>Falhas de dimensionamento automático
 
@@ -84,17 +84,17 @@ As tarefas iniciais devem ser reentrante novamente, pois é possível que a tare
 
 Você pode especificar um ou mais pacotes de aplicativos de um pool. O lote baixa os arquivos de pacote especificados para cada nó e descompacta os arquivos após o nó ser iniciado, mas antes que as tarefas sejam agendadas. É comum usar uma linha de comando de tarefa inicial em conjunto com pacotes de aplicativos. Por exemplo, para copiar arquivos para um local diferente ou para executar a instalação.
 
-A propriedade de [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) de nó relata uma falha ao baixar e cancelar a compactação de um pacote de aplicativos; o estado do nó é definidocomo inutilizável.
+A propriedade de [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) de nó relata uma falha ao baixar e cancelar a compactação de um pacote de aplicativos; o estado do nó é definido como **inutilizável**.
 
 ### <a name="container-download-failure"></a>Falha no download do contêiner
 
-Você pode especificar uma ou mais referências de contêiner em um pool. O lote baixa os contêineres especificados para cada nó. A propriedade de [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) de nó relata uma falha ao baixar um contêiner e define o estado do nó como inutilizável.
+Você pode especificar uma ou mais referências de contêiner em um pool. O lote baixa os contêineres especificados para cada nó. A propriedade de [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) de nó relata uma falha ao baixar um contêiner e define o estado do nó como **inutilizável**.
 
 ### <a name="node-in-unusable-state"></a>Nó em estado inutilizável
 
 O Lote do Microsoft Azure pode definir o [estado do nó](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodestate) pode ser definido como **inutilizável** por muitos motivos. Com o estado do nó definido como **inutilizável**, as tarefas não podem ser agendadas para o nó, mas ainda incorrerá em encargos.
 
-Nós em um estado inutilizável, mas sem [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) significa que o lote não pode se comunicar com a VM. Nesse caso, o lote sempre tenta recuperar a VM. O lote não tentará automaticamente recuperar as VMs que falharam ao instalar pacotes de aplicativos ou contêineres,mesmo que seu estado seja inutilizável.
+Nós em um estado **inutilizável** , mas sem [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) significa que o lote não pode se comunicar com a VM. Nesse caso, o lote sempre tenta recuperar a VM. O lote não tentará automaticamente recuperar as VMs que falharam ao instalar pacotes de aplicativos ou contêineres, mesmo que seu estado seja **inutilizável**.
 
 Se o lote poder determinar a causa, a propriedade do nó [erros](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) irá reportá-lo.
 

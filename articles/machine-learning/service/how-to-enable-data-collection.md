@@ -11,14 +11,17 @@ ms.author: marthalc
 author: marthalc
 ms.date: 07/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: d836b600a39b73f60c0847c5a9642f396fb70d17
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 3c747f25b92d9f165bfeb4468a0e263f102976f9
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71002852"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350578"
 ---
 # <a name="collect-data-for-models-in-production"></a>Coletar dados para modelos em produção
+
+>[!IMPORTANT]
+> Este SDK está sendo desativado em breve e será substituído pelo monitoramento de dados simplificado [com o Application insights](https://docs.microsoft.com/azure/machine-learning/service/how-to-enable-app-insights). 
 
 Neste artigo, você pode aprender a coletar dados de modelo de entrada de Azure Machine Learning implantado no AKS (cluster kubernetes do Azure) em um armazenamento de BLOBs do Azure. 
 
@@ -50,7 +53,7 @@ O caminho para os dados de saída no blob segue esta sintaxe:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree) hoje.
+- Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente hoje mesmo a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree).
 
 - Um workspace do Azure Machine Learning, um diretório local contendo seus scripts e o SDK de Aprendizado de Máquina do Azure para Python instalado. Aprenda como obter esses pré-requisitos usando o documento [Como configurar um ambiente de desenvolvimento](how-to-configure-environment.md).
 

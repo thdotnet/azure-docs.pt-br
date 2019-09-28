@@ -11,12 +11,12 @@ ms.author: tedway
 author: tedway
 ms.date: 07/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 929ca8e16db73be5cfa226b5d55a30dbb7b2bc99
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 9c3c844ba7044f8e1c9c313f1ac63b94310ea322
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71034461"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350543"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>O que são FPGA (matrizes de portão programável por campo) e como implantar
 
@@ -89,7 +89,7 @@ Você pode implantar um modelo como um serviço Web no FPGAs com Azure Machine L
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
-- Uma assinatura do Azure.  Se você não tiver uma, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree) hoje.
+- Uma assinatura do Azure.  Se você não tiver uma, crie uma conta gratuita antes de começar. Experimente hoje mesmo a [versão gratuita ou paga do Azure Machine Learning](https://aka.ms/AMLFree).
 
 - Cota de FPGA. Use o CLI do Azure para verificar se você tem cota:
 
@@ -324,9 +324,10 @@ Para implantar o modelo como um serviço Web de produção em larga escala, use 
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget
 
-# Specify the Standard_PB6s Azure VM
-prov_config = AksCompute.provisioning_configuration(vm_size="Standard_PB6s",
-                                                    agent_count=1)
+# Specify the Standard_PB6s Azure VM and location. Values for location may be "eastus", "southeastasia", "westeurope", or "westus2”. If no value is specified, the default is "eastus".
+prov_config = AksCompute.provisioning_configuration(vm_size = "Standard_PB6s",
+                                                    agent_count = 1,
+                                                    location = "eastus")
 
 aks_name = 'my-aks-cluster'
 # Create the cluster

@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: be6c0f9a8874507433606903bcbd58c7723d6a8a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b5eaaa6d41b9dae97a2d6219ffa44fb75ed67e61
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62118680"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350053"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Recursos de renderização de Lote do Azure
 
@@ -30,15 +30,15 @@ Há uma imagem do Windows 2016 e uma imagem do CentOS.  No [Azure Marketplace](h
 
 Para um exemplo de configuração do pool, consulte o [tutorial de renderização de CLI do Azure](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).  O portal do Azure e o Explorador de lotes fornecem ferramentas de GUI para selecionar uma imagem de VM de renderização quando você cria um pool.  Se você estiver usando uma API de lotes, especifique os seguintes valores de propriedade para [ImageReference](https://docs.microsoft.com/rest/api/batchservice/pool/add#imagereference) ao criar um pool:
 
-| Publicador | Oferta | Sku | Version |
+| Publicador | Oferta | Sku | Versão |
 |---------|---------|---------|--------|
-| lote | rendering-centos73 | renderização | mais recente |
-| lote | rendering-windows2016 | renderização | mais recente |
+| lote | rendering-centos73 | renderização | latest |
+| lote | rendering-windows2016 | renderização | latest |
 
 Outras opções estão disponíveis se aplicativos adicionais forem necessários nas VMs do pool:
 
-* Uma imagem personalizada com base em uma imagem do Marketplace padrão:
-  * Usando essa opção, você pode configurar sua VM exatamente com os aplicativos e as versões específicas de que você precisa. Para obter mais informações, consulte [Use uma imagem personalizada para criar um pool de máquinas virtuais](https://docs.microsoft.com/azure/batch/batch-custom-images). A Autodesk e o Chaos Group modificaram o Arnold e o V-Ray, respectivamente, para validar o serviço de licenciamento do Azure Batch. Certifique-se de ter as versões desses aplicativos com esse suporte, caso contrário, o licenciamento de pagamento por uso não funcionará. As versões atuais do Maya ou do 3ds Max não exigem um servidor de licenças durante a execução sem cabeça (no modo de lote / linha de comando). Entre em contato com o suporte do Azure se você não tiver certeza de como proceder com essa opção.
+* Uma imagem personalizada da Galeria de imagens compartilhadas:
+  * Usando essa opção, você pode configurar sua VM exatamente com os aplicativos e as versões específicas de que você precisa. Para obter mais informações, consulte [criar um pool com a Galeria de imagens compartilhadas](batch-sig-images.md). A Autodesk e o Chaos Group modificaram o Arnold e o V-Ray, respectivamente, para validar o serviço de licenciamento do Azure Batch. Certifique-se de ter as versões desses aplicativos com esse suporte, caso contrário, o licenciamento de pagamento por uso não funcionará. As versões atuais do Maya ou do 3ds Max não exigem um servidor de licenças durante a execução sem cabeça (no modo de lote / linha de comando). Entre em contato com o suporte do Azure se você não tiver certeza de como proceder com essa opção.
 * [Pacotes de aplicativos](https://docs.microsoft.com/azure/batch/batch-application-packages):
   * Empacote os arquivos do aplicativo usando um ou mais arquivos ZIP, faça o upload por meio do portal do Azure e especifique o pacote na configuração do pool. Quando as VMs do pool são criadas, os arquivos ZIP são baixados e os arquivos extraídos.
 * Arquivos de recurso:
@@ -62,7 +62,7 @@ Se for feita uma tentativa de usar um aplicativo, mas o aplicativo não tiver si
 
 Para poder criar a linha de comando para tarefas de renderização, o local de instalação dos executáveis do aplicativo de renderização deve ser especificado.  As variáveis de ambiente do sistema foram criadas nas imagens da VM do Azure Marketplace, que podem ser usadas em vez de precisar especificar caminhos reais.  Essas variáveis de ambiente são adicionais às [variáveis de ambiente padrão do lote](https://docs.microsoft.com/azure/batch/batch-compute-node-environment-variables) criadas para cada tarefa.
 
-|Aplicativo|Executável de aplicativo|Variável de ambiente|
+|Aplicativo|Executável de aplicativo|Variável de Ambiente|
 |---------|---------|---------|
 |Autodesk 3ds Max 2018|3dsmaxcmdio.exe|3DSMAX_2018_EXEC|
 |Autodesk 3ds Max 2019|3dsmaxcmdio.exe|3DSMAX_2019_EXEC|

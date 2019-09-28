@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 2/14/2018
 ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: ada62fbfa51604a6b3188c27d5c14da40c8ac116
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 886eb8578e004eba3b6fabc1deb42db0fb7fac70
+ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66400199"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71350252"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Exemplos de início rápido do PowerShell do Azure Monitor
 Este artigo mostra exemplos de comandos do PowerShell que ajudarão você a acessar os recursos do Azure Monitor.
@@ -42,7 +42,7 @@ Você verá uma tela de entrada. Quando entrar, sua Conta, sua TenantID e a ID d
 Get-AzSubscription
 ```
 
-Para ver o contexto de trabalho (qual assinatura sua comandos são executados em), use o seguinte comando:
+Para ver seu contexto de trabalho (em que assinatura seus comandos são executados), use o seguinte comando:
 
 ```powershell
 Get-AzContext
@@ -55,9 +55,9 @@ Set-AzContext -SubscriptionId <subscriptionid>
 
 
 ## <a name="retrieve-activity-log-for-a-subscription"></a>Recuperar o log de atividade para uma assinatura
-Use o [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) cmdlet.  A seguir, temos alguns exemplos comuns. O Log de atividades contém os últimos 90 dias de operações. Usando datas antes neste momento resulta em uma mensagem de erro.  
+Use o cmdlet [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) .  A seguir, temos alguns exemplos comuns. O log de atividades contém os últimos 90 dias de operações. O uso de datas antes dessa hora resulta em uma mensagem de erro.  
 
-Veja quais são os de data/hora atual para verificar o que o tempo para usar os comandos a seguir:
+Veja qual é a data/hora atual para verificar quais horários usar nos comandos abaixo:
 ```powershell
 Get-Date
 ```
@@ -101,7 +101,7 @@ Get-AzLog -MaxRecord 10
 `Get-AzLog` dá suporte a muitos outros parâmetros. Para saber mais, consulte a referência `Get-AzLog` .
 
 > [!NOTE]
-> `Get-AzLog` fornece apenas 15 dias de histórico. Usando o **- MaxRecords** parâmetro permite que você consulte os últimos N eventos, além de 15 dias. Para eventos de acesso que ocorreram há mais 15 dias, use a API REST ou o SDK (exemplo em C# usando o SDK). Se você não incluir **StartTime**, o valor padrão será **EndTime** menos uma hora. Se você não incluir **EndTime**, o valor padrão será a hora atual. Todas as horas estão no padrão UTC.
+> `Get-AzLog` fornece apenas 15 dias de histórico. O uso do parâmetro **-MaxRecords** permite consultar os últimos N eventos, além de 15 dias. Para eventos de acesso que ocorreram há mais 15 dias, use a API REST ou o SDK (exemplo em C# usando o SDK). Se você não incluir **StartTime**, o valor padrão será **EndTime** menos uma hora. Se você não incluir **EndTime**, o valor padrão será a hora atual. Todas as horas estão no padrão UTC.
 > 
 > 
 
@@ -152,7 +152,7 @@ A tabela a seguir descreve os parâmetros e valores usados para criar um alerta 
 
 | parâmetro | value |
 | --- | --- |
-| NOME |simpletestdiskwrite |
+| Nome |simpletestdiskwrite |
 | Local desta regra de alerta |East US |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |
@@ -317,7 +317,7 @@ Para buscar os perfis de log existentes, use o cmdlet `Get-AzLogProfile` .
 
 ### <a name="add-a-log-profile-without-data-retention"></a>Adicionar um perfil de log sem retenção de dados
 ```powershell
-Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia
+Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Location global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia
 ```
 
 ### <a name="remove-a-log-profile"></a>Remover um perfil de log
@@ -329,14 +329,14 @@ Remove-AzLogProfile -name my_log_profile_s1
 Você pode especificar a propriedade **-RetentionInDays** com o número de dias, como um inteiro positivo, em que os dados são mantidos.
 
 ```powershell
-Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia -RetentionInDays 90
+Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Location global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia -RetentionInDays 90
 ```
 
 ### <a name="add-log-profile-with-retention-and-eventhub"></a>Adicionar perfil de log com retenção e Hub de eventos
 Além de encaminhar seus dados para a conta de armazenamento, você também pode transmiti-los para um Hub de eventos. Nessa versão prévia a configuração da conta de armazenamento é obrigatória, mas a configuração do Hub de eventos é opcional.
 
 ```powershell
-Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia -RetentionInDays 90
+Add-AzLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus,northeurope,westeurope,eastasia,southeastasia,japaneast,japanwest,northcentralus,southcentralus,eastus2,centralus,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia -RetentionInDays 90
 ```
 
 ## <a name="configure-diagnostics-logs"></a>Configurar logs de diagnóstico
