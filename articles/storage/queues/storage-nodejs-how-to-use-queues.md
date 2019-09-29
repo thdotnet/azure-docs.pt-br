@@ -9,14 +9,14 @@ ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 83aecc9c05fec5869a82930f2d687ac907981c00
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 9eee7f6b321a5ba660e1a0a5a48771c599746bcb
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70858674"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673091"
 ---
-# <a name="how-to-use-queue-storage-from-nodejs"></a>Como usar o Armazenamento de Fila do Node.js
+# <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Usar o serviço fila do Azure para criar e excluir filas do node. js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-check-out-samples-all](../../../includes/storage-check-out-samples-all.md)]
@@ -63,7 +63,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Configurar uma conexão de armazenamento do Azure
 O módulo do Azure lerá as variáveis de ambiente AZURE\_STORAGE\_ACCOUNT e AZURE\_STORAGE\_ACCESS\_KEY ou AZURE\_STORAGE\_CONNECTION\_STRING para obter as informações necessárias para se conectar à sua conta de armazenamento do Azure. Se essas variáveis de ambiente não estiverem definidas, você deverá especificar as informações da conta ao chamar **createQueueService**.
 
-## <a name="how-to-create-a-queue"></a>Como: Criar uma Fila
+## <a name="how-to-create-a-queue"></a>Como: criar uma fila
 O código a seguir cria um objeto **QueueService** , permitindo que você trabalhe com filas.
 
 ```javascript

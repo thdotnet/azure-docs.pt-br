@@ -10,41 +10,41 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: f9620cc5f135dd7b10da5528e5dec0f5baa70350
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 79cf87cef4e58cf4e5a2039f30289d55038c8b92
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226244"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671962"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
 Este artigo fornece limites de limitação para a API de Tradução de Texto. Os serviços incluem tradução, transliteração, detecção de comprimento de frase, detecção de idioma e traduções alternativas.
 
-## <a name="character-and-array-limits-per-request"></a>Limites de matriz e de caractere por solicitação
+## <a name="character-and-array-limits-per-request"></a>Limites de caracteres e de matriz por solicitação
 
-Cada solicitação de traduzir é limitada a 5.000 caracteres. Você é cobrado por personagem, não pelo número de solicitações. É recomendável para enviar solicitações mais curtas.
+Cada solicitação de conversão é limitada a 5.000 caracteres. Você é cobrado por personagem, não pelo número de solicitações. É recomendável enviar solicitações mais curtas.
 
-As seguinte tabela listas matriz elemento e o caractere de limites para cada operação de API de tradução de texto.
+A tabela a seguir lista os limites de elemento e de caracteres de matriz para cada operação do API de Tradução de Texto.
 
-| Operação | Tamanho máximo do elemento de matriz |   Número máximo de elementos de matriz |  Tamanho do máximo de solicitação (caracteres) |
+| Operação | Tamanho máximo do elemento de matriz |   Número máximo de elementos da matriz |  Tamanho máximo da solicitação (caracteres) |
 |:----|:----|:----|:----|
-| Translate | 5\.000 | 100   | 5\.000 |
+| Transladar | 5\.000 | 100   | 5\.000 |
 | Transliterate | 5\.000 | 10    | 5\.000 |
-| Detect | 10.000 | 100 |   50.000 |
-| BreakSentence | 10.000    | 100 | 5,0000 |
+| Detectar | 10.000 | 100 |   50.000 |
+| BreakSentence | 10.000    | 100 | 50.000 |
 | Pesquisa no dicionário| 100 |  10  | 1\.000 |
-| Exemplos de dicionário | 100 para texto e 100 para tradução (total de 200)| 10|   2\.000 |
+| Exemplos de dicionário | 100 para texto e 100 para conversão (total de 200)| 10|   2\.000 |
 
 ## <a name="character-limits-per-hour"></a>Limites de caractere por hora
 
 Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. 
 
-A cota por hora deve ser consumida uniformemente ao longo da hora. Por exemplo, no limite da camada F0 2 milhões de caracteres por hora, caracteres devem ser consumidos não mais rápido do que aproximadamente 33,300 caracteres por minuto (2 milhões de caracteres divididos por 60 minutos) de janela deslizante.
+A cota por hora deve ser consumida uniformemente durante a hora. Por exemplo, no limite da camada F0 de 2 milhões caracteres por hora, os caracteres devem ser consumidos não mais rápido do que aproximadamente 33.300 caracteres por minuto janela deslizante (2 milhões caracteres divididos por 60 minutos).
 
-Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. Não há nenhum limite nas solicitações simultâneas.
+Se você atingir ou ultrapassar esses limites, ou enviar um grande número de uma parte da cota em um curto período de tempo, provavelmente receberá uma resposta de cota insuficiente. Não há limites em solicitações simultâneas.
 
-| Camada | Limite de caracteres |
+| Tipo | Limite de caracteres |
 |------|-----------------|
 | F0 | 2 milhões de caracteres por hora |
 | S1 | 40 milhões de caracteres por hora |
@@ -52,13 +52,13 @@ Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte 
 | S3 / C3 | 120 milhões de caracteres por hora |
 | S4 / C4 | 200 milhões de caracteres por hora |
 
-Limites para [multi-Service assinaturas](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) são o mesmo que a camada S1.
+Os limites para [assinaturas de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) são os mesmos da camada S1.
 
-Esses limites são restritos aos modelos de tradução padrão da Microsoft. Modelos de conversão personalizada que usam o conversor personalizado são limitados a 1.800 caracteres por segundo.
+Esses limites são restritos aos modelos de tradução padrão da Microsoft. Os modelos de tradução personalizados que usam o tradutor personalizado são limitados a 1.800 caracteres por segundo.
 
-## <a name="latency"></a>Latency
+## <a name="latency"></a>Latência
 
-A API de tradução de texto tem uma latência máxima de 15 segundos usando os modelos padrão. Usando modelos personalizados de tradução tem uma latência máxima de 25 segundos. Nesse momento você vai ter recebido um resultado ou uma resposta de tempo limite. Normalmente, as respostas são retornadas em 150 milissegundos para 300 milissegundos. Tempos de resposta variará com base no tamanho do par de solicitação e de idioma. Se você não receber uma tradução ou um [resposta de erro](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors) nesse período de tempo, você deve verificar sua conexão de rede e tente novamente.
+A API de Tradução de Texto tem uma latência máxima de 15 segundos usando modelos padrão. A conversão usando modelos personalizados tem uma latência máxima de 25 segundos. Nesse momento você vai ter recebido um resultado ou uma resposta de tempo limite. Normalmente, as respostas são retornadas em 150 milissegundos para 300 milissegundos. Os tempos de resposta variam de acordo com o tamanho da solicitação e do par de idiomas. Se você não receber uma conversão ou uma [resposta de erro](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors) dentro desse período, verifique sua conexão de rede e tente novamente.
 
 ## <a name="sentence-length-limits"></a>Limites de duração de sentença
 

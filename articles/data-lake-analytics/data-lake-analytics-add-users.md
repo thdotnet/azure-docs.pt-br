@@ -1,6 +1,6 @@
 ---
 title: Adicionar usuários a uma conta do Azure Data Lake Analytics
-description: Saiba como adicionar usuários à conta do Data Lake Analytics de forma correta
+description: Saiba como adicionar usuários corretamente à sua conta de Data Lake Analytics usando o assistente para Adicionar usuário e Azure PowerShell.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: db35f16e-1565-4873-a851-bd987accdc58
 ms.topic: conceptual
 ms.date: 05/24/2018
-ms.openlocfilehash: 8323c4e1b236444f55dab826d2567491f5f0f736
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 16c503fe2d584d5f8256c65bfc49825b300f6a36
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60629315"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672721"
 ---
 # <a name="adding-a-user-in-the-azure-portal"></a>Adicionar um usuário ao portal do Azure
 
@@ -34,7 +34,7 @@ Conceda "R-X" ou "RWX", conforme necessário, nas pastas que contêm dados de en
 ## <a name="optionally-add-the-user-to-the-azure-data-lake-storage-gen1-role-reader-role"></a>Opcionalmente, adicione o usuário à função **Leitor** da função de Armazenamento do Microsoft Data Lake Gen1.
 1.  Localize sua conta do Azure Data Lake armazenamento Gen1.
 2.  Clique em **Usuários**.
-3. Clique em **Adicionar**.
+3. Clique em **Adicionar** .
 4.  Selecione uma função de RBAC do Azure para atribuir esse grupo.
 5.  Atribua à função Leitor. Essa função tem o conjunto mínimo de permissões necessárias para procurar/gerenciar dados armazenados em ADLSGen1. Atribua a essa função se o grupo não for destinado a gerenciar os serviços do Azure.
 6.  Digite o nome do grupo.

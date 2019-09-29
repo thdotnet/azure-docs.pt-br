@@ -1,6 +1,6 @@
 ---
 title: Gerenciar políticas do Azure Data Lake Analytics
-description: Saiba como usar políticas para controlar o uso de uma conta do Data Lake Analytics.
+description: Saiba como usar políticas para controlar o uso de uma conta de Data Lake Analytics, como máximo de AUs e máximo de trabalhos.
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: saveenr
@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: 0a6102d1-7554-4df2-b487-4dae9a7287b6
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 64095f6706bb978cd33b8fe7833fe4e65fc3b0f8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97b736d854661600a847b1d698af8f15ae58d237
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813417"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672855"
 ---
 # <a name="manage-azure-data-lake-analytics-using-policies"></a>Gerenciar o Azure Data Lake Analytics usando políticas
 
@@ -68,8 +68,8 @@ Com as políticas no nível do trabalho, você pode controlar o máximo de AUs e
 
 O Data Lake Analytics tem duas políticas que podem ser definidas no nível do trabalho:
 
-* **Limite de AU por trabalho**: Os usuários apenas podem enviar trabalhos que tenham até esse número de AUs. Por padrão, esse limite é o mesmo que o limite máximo de AUs da conta.
-* **Prioridade**: Os usuários só podem enviar trabalhos que têm uma prioridade menor do que ou igual a esse valor. Um número maior indica uma prioridade mais baixa. Por padrão, esse limite é definido como 1, que é a prioridade mais alta possível.
+* **Limite de au por trabalho**: Os usuários só podem enviar trabalhos que tenham até esse número de AUs. Por padrão, esse limite é o mesmo que o limite máximo de AUs da conta.
+* **Prioridade**: Os usuários só podem enviar trabalhos que tenham uma prioridade menor ou igual a esse valor. Um número maior indica uma prioridade mais baixa. Por padrão, esse limite é definido como 1, que é a prioridade mais alta possível.
 
 Há uma política padrão definida em cada conta. A política padrão aplica-se a todos os usuários da conta. Você pode definir políticas adicionais para usuários e grupos específicos. 
 
@@ -83,9 +83,9 @@ Há uma política padrão definida em cada conta. A política padrão aplica-se 
 2. Clique em **Propriedades**.
 3. Em **Limites de Envio de Trabalho**, clique no botão **Adicionar Política**. Em seguida, selecione ou insira as seguintes configurações:
     1. **Nome da política de computação**: Insira um nome de política para lembrá-lo da finalidade da política.
-    2. **Selecionar usuário ou grupo**: Selecione o usuário ou grupo que esta política é aplicável.
-    3. **Definir o limite de AU do trabalho**: Defina o limite de AU aplica-se para o usuário ou grupo selecionado.
-    4. **Definir o limite de prioridade**: Defina o limite de prioridade que se aplica para o usuário ou grupo selecionado.
+    2. **Selecionar usuário ou grupo**: Selecione o usuário ou grupo ao qual esta política se aplica.
+    3. **Definir o limite de au do trabalho**: Defina o limite de AU que se aplica ao usuário ou grupo selecionado.
+    4. **Defina o limite de prioridade**: Defina o limite de prioridade que se aplica ao usuário ou grupo selecionado.
 
 4. Clique em **OK**.
 

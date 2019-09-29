@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 08/30/2019
-ms.openlocfilehash: cde42dda47d54c03c50895bc625f99c9350b53e3
-ms.sourcegitcommit: d470d4e295bf29a4acf7836ece2f10dabe8e6db2
+ms.openlocfilehash: ad21ddffdb22f7abf999bfa12f4a8ed86f42cfa2
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "70210683"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673437"
 ---
 # <a name="mapping-data-flow-json-handling"></a>Mapeando manipulação de JSON de fluxo de dados
 
@@ -22,11 +22,11 @@ ms.locfileid: "70210683"
 Adicionar uma coluna complexa ao fluxo de dados é mais fácil por meio do editor de expressão de coluna derivada. Depois de adicionar uma nova coluna e abrir o editor, há duas opções: Insira a estrutura JSON manualmente ou use a interface do usuário para adicionar Subcolunas de forma interativa.
 
 #### <a name="interactive-ui-json-design"></a>Design JSON de interface do usuário interativa
-No painel do lado do esquema de saída, novas Subcolunas podem ser adicionadas usando o `+` menu: ![Adicionar subcoluna](media/data-flow/addsubcolumn.png "Adicionar subcoluna")
+No painel do lado do esquema de saída, novas Subcolunas podem ser adicionadas usando o menu `+`: ![Adicionar subcoluna](media/data-flow/addsubcolumn.png "Adicionar subcoluna")
 
 A partir daí, novas colunas e Subcolunas podem ser adicionadas da mesma maneira. Para cada campo não complexo, uma expressão pode ser adicionada no editor de expressão à direita.
 
-![Coluna complexa](media/data-flow/complexcolumn.png "Coluna complexa")
+(media/data-flow/complexcolumn.png "Coluna complexa") de ![coluna complexa]
 
 #### <a name="manual-json-design"></a>Design de JSON manual
 Para adicionar manualmente uma estrutura JSON, adicione uma nova coluna e insira a expressão no editor. A expressão segue o seguinte formato geral:
@@ -144,7 +144,7 @@ File3.json
 { "json": "record 3" }
 ```
 
-# <a name="higher-order-functions"></a>Funções de ordem superior
+## <a name="higher-order-functions"></a>Funções de ordem superior
 ## <a name="filter"></a>filter
 Filtra elementos da matriz que não atendem ao predicado fornecido. O filtro espera uma referência a um elemento na função de predicado como #item.
 
@@ -163,7 +163,7 @@ map([1, 2, 3, 4], #item + 2) => [3, 4, 5, 6]
 map(['a', 'b', 'c', 'd'], #item + '_processed') => ['a_processed', 'b_processed', 'c_processed', 'd_processed']
 ```
 
-## <a name="reduce"></a>diminu
+## <a name="reduce"></a>Diminu
 Acumula elementos em uma matriz. A redução espera uma referência a um acumulador e um elemento na primeira função de expressão como #acc e #item e espera que o valor resultante como #result seja usado na segunda função de expressão.
 
 ### <a name="examples"></a>Exemplos

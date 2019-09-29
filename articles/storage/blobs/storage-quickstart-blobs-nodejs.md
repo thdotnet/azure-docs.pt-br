@@ -8,14 +8,14 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 8fada27f82fea557d7d078f06b5c05e7d1db906d
-ms.sourcegitcommit: 65131f6188a02efe1704d92f0fd473b21c760d08
+ms.openlocfilehash: 8d0afc5a224e752bdd745ab4df0473a134b4180b
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70861243"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671345"
 ---
-# <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-nodejs-v2"></a>Como carregar, baixar e listar blobs usando a biblioteca de clientes para Node.js v2
+# <a name="upload-download-and-list-blobs-using-the-client-library-for-nodejs"></a>Carregar, baixar e listar BLOBs usando a biblioteca de cliente para node. js
 
 Neste guia prático, você aprende como usar a biblioteca de clientes para Node.js v2 para carregar, baixar e listar blobs com o armazenamento do Azure Blob.
 
@@ -109,7 +109,7 @@ const blobService = storage.createBlobService();
 
 Na implementação a seguir, cada uma das funções *blobService* é encapsulada em uma *Promise*, que permite o acesso à função *async* do JavaScript e ao operador *await* para simplificar a natureza de retorno de chamada da [API do Armazenamento do Azure](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest). Quando uma resposta bem-sucedida é retornada para cada função, a promessa é resolvida com dados relevantes, juntamente com uma mensagem específica para a ação.
 
-### <a name="list-containers"></a>Listar contêineres
+### <a name="list-containers"></a>Listar os contêineres
 
 A função *listContainers* chama [listContainersSegmented](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest), que retorna coleções de contêineres em grupos.
 

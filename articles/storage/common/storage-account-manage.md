@@ -4,15 +4,15 @@ description: Saiba como gerenciar as configurações de conta de armazenamento n
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: tamram
-ms.openlocfilehash: 66bdc4bd1e17347419a6eccd7c9532db17b33001
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 60104496006e790887dd9c4b3e4c3196e0ef6444
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303487"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671367"
 ---
 # <a name="manage-storage-account-settings-in-the-azure-portal"></a>Gerenciar configurações de conta de armazenamento no portal do Azure
 
@@ -20,9 +20,9 @@ Há uma variedade de configurações para sua conta de armazenamento disponívei
 
 ## <a name="access-control"></a>Controle de acesso
 
-O armazenamento do Azure oferece suporte à autorização com o Azure Active Directory para o armazenamento de BLOBs e armazenamento de fila por meio do controle de acesso baseado em função (RBAC). Para obter mais informações sobre a autorização com o Azure AD, consulte [autorizar o acesso ao Azure blobs e filas usando o Azure Active Directory](storage-auth-aad.md).
+O armazenamento do Azure dá suporte à autorização com Azure Active Directory para armazenamento de BLOBs e armazenamento de fila por meio do controle de acesso baseado em função (RBAC). Para obter mais informações sobre autorização com o Azure AD, consulte [autorizar o acesso a BLOBs e filas do Azure usando o Azure Active Directory](storage-auth-aad.md).
 
-As configurações de **Controle de acesso** no portal do Azure oferecem uma maneira simples de atribuir funções de RBAC a usuários, grupos, entidades de serviço e identidades gerenciadas. Para obter mais informações sobre como atribuir funções RBAC, consulte [gerenciar direitos de acesso a dados de blob e fila com RBAC](storage-auth-aad-rbac.md).
+As configurações de **Controle de acesso** no portal do Azure oferecem uma maneira simples de atribuir funções de RBAC a usuários, grupos, entidades de serviço e identidades gerenciadas. Para obter mais informações sobre como atribuir funções RBAC, consulte [gerenciar direitos de acesso a BLOB e dados de fila com o RBAC](storage-auth-aad-rbac.md).
 
 ## <a name="tags"></a>tags
 
@@ -40,7 +40,7 @@ Quando você cria uma conta de armazenamento, o Azure gera duas chaves de acesso
 
 [!INCLUDE [storage-recommend-azure-ad-include](../../../includes/storage-recommend-azure-ad-include.md)]
 
-### <a name="view-account-keys-and-connection-string"></a>Exibir chaves de conta e a cadeia de caracteres de conexão
+### <a name="view-account-keys-and-connection-string"></a>Exibir chaves de conta e cadeia de conexão
 
 [!INCLUDE [storage-view-keys-include](../../../includes/storage-view-keys-include.md)]
 

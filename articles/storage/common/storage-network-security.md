@@ -4,17 +4,17 @@ description: Configure a segurança de rede em camadas para sua conta de armazen
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 00e69d9222444e3b700fca10e3f15b4b110e0c60
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.openlocfilehash: b474e090db48b792ade81e8d0f5be0b69f6f109c
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70241733"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673176"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure
 
@@ -373,8 +373,8 @@ Se você habilitar a exceção **Permitir serviços Microsoft confiáveis...** ,
 | Serviço do Azure Machine Learning | Microsoft.MachineLearningServices | Os espaços de trabalho Azure Machine Learning autorizados gravam a saída, os modelos e os logs do experimento no armazenamento de BLOBs. [Saiba mais](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace).                                                               
 | Azure Monitor            | Microsoft.insights         | Permite a gravação de dados de monitoramento para uma conta de armazenamento protegida [Saiba mais](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).                                                                                                                                                                        |
 | Rede do Azure         | Microsoft.Network          | Armazenar e analisar os logs de tráfego de rede. [Saiba mais](/azure/network-watcher/network-watcher-packet-capture-overview).                                                                                                                                                                                                        |
-| do Azure Site Recovery      | Microsoft.SiteRecovery     | Configure a recuperação de desastre, habilitando a replicação para máquinas virtuais IaaS do Azure. Isso é necessário se você estiver usando a conta de armazenamento de cache de firewall habilitado ou a conta de armazenamento de origem ou a conta de armazenamento de destino.  [Saiba mais](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
-| SQL Data Warehouse do Azure | Microsoft.Sql              | Permite cenários de importação e exportação de instâncias específicas de bancos de dados SQL usando o polybase. [Saiba mais](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).                                                                                                                                                 |
+| Azure Site Recovery      | Microsoft.SiteRecovery     | Configure a recuperação de desastre, habilitando a replicação para máquinas virtuais IaaS do Azure. Isso é necessário se você estiver usando a conta de armazenamento de cache de firewall habilitado ou a conta de armazenamento de origem ou a conta de armazenamento de destino.  [Saiba mais](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
+| Azure SQL Data Warehouse | Microsoft.Sql              | Permite cenários de importação e exportação de instâncias específicas de bancos de dados SQL usando o polybase. [Saiba mais](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).                                                                                                                                                 |
 | Stream Analytics do Azure   | Microsoft.StreamAnalytics  | Permite que os dados de um trabalho de streaming sejam gravados no armazenamento de BLOBs. Observe que esse recurso está atualmente em versão prévia. [Saiba mais](../../stream-analytics/blob-output-managed-identity.md).                                                                                                                                        |
 
 ### <a name="storage-analytics-data-access"></a>Acesso a dados de análise de armazenamento

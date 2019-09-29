@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.custom: mvc
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: e72f8c3ed0658765827c4a9b0669c08fefd9044f
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: 338ba468fb1442488da78f09fc72a22186cd0a51
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69016325"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673214"
 ---
 # <a name="create-a-storage-account"></a>Criar uma conta de armazenamento
 
@@ -138,8 +138,8 @@ Para criar uma conta de armazenamento de uso geral V2 com uma opção de replica
 |Opção de replicação  |Parâmetro SkuName  |
 |---------|---------|
 |Armazenamento com redundância local (LRS)     |LRS_Padrão         |
-|ZRS (armazenamento com redundância de zona)     |Standard_ZRS         |
-|GRS (armazenamento com redundância geográfica)     |Standard_GRS         |
+|Armazenamento com redundância de zona (ZRS)     |Standard_ZRS         |
+|Armazenamento com redundância geográfica (GRS)     |Standard_GRS         |
 |Armazenamento com redundância geográfica com acesso de leitura (GRS)     |Standard_RAGRS         |
 |Armazenamento com redundância de zona geográfica (GZRS) (visualização)    |Standard_GZRS         |
 |Armazenamento com redundância de zona geográfica com acesso de leitura (RA-GZRS) (visualização)    |Standard_RAGZRS         |
@@ -178,8 +178,8 @@ Para criar uma conta de armazenamento de uso geral V2 com uma opção de replica
 |Opção de replicação  |Parâmetro sku  |
 |---------|---------|
 |Armazenamento com redundância local (LRS)     |LRS_Padrão         |
-|ZRS (armazenamento com redundância de zona)     |Standard_ZRS         |
-|GRS (armazenamento com redundância geográfica)     |Standard_GRS         |
+|Armazenamento com redundância de zona (ZRS)     |Standard_ZRS         |
+|Armazenamento com redundância geográfica (GRS)     |Standard_GRS         |
 |Armazenamento com redundância geográfica com acesso de leitura (GRS)     |Standard_RAGRS         |
 |Armazenamento com redundância de zona geográfica (GZRS) (visualização)    |Standard_GZRS         |
 |Armazenamento com redundância de zona geográfica com acesso de leitura (RA-GZRS) (visualização)    |Standard_RAGZRS         |

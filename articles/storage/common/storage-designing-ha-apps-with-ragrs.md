@@ -4,17 +4,17 @@ description: Como usar o armazenamento RA-GZRS ou RA-GRS do Azure para arquiteta
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/14/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 1a5d80d6cd31621f8c3931b1845050f0a212ef08
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: a6d724f834fb8a4c54cd613c61ca90a77a36bdea
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036603"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673125"
 ---
 # <a name="designing-highly-available-applications-using-read-access-geo-redundant-storage"></a>Criando aplicativos altamente disponíveis usando o armazenamento com redundância geográfica com acesso de leitura
 
@@ -102,7 +102,7 @@ A biblioteca de cliente de armazenamento do Azure ajuda a determinar quais erros
 
 ### <a name="read-requests"></a>Solicitações de leitura
 
-Solicitações de leitura poderão ser redirecionadas para o armazenamento secundário, se houver um problema no armazenamento primário. Conforme observado acima em [Usando dados eventualmente consistentes](#using-eventually-consistent-data), deve ser aceitável que o aplicativo potencialmente leia dados obsoletos. Se você estiver usando a biblioteca de cliente de armazenamento para acessar dados do secundário, poderá especificar o comportamento de repetição de uma solicitação de leitura definindo um valor para a propriedade locationmode como um dos seguintes:
+Solicitações de leitura poderão ser redirecionadas para o armazenamento secundário, se houver um problema no armazenamento primário. Conforme observado acima em [Usando dados eventualmente consistentes](#using-eventually-consistent-data), deve ser aceitável que o aplicativo potencialmente leia dados obsoletos. Se você estiver usando a biblioteca de cliente de armazenamento para acessar dados do secundário, poderá especificar o comportamento de repetição de uma solicitação de leitura definindo um valor para a propriedade **locationmode** como um dos seguintes:
 
 * **PrimaryOnly** (o padrão)
 
@@ -199,15 +199,15 @@ O armazenamento com redundância geográfica funciona replicando as transações
 
 A tabela a seguir mostra um exemplo do que pode acontecer quando você atualiza os detalhes de um funcionário para torná-los membros da função *Administradores* . Para este exemplo, isso requer que você atualize a entidade **funcionário** e atualize uma entidade **função de administrador** com uma contagem do número total de administradores. Observe como as atualizações são aplicadas fora de ordem na região secundária.
 
-| **Time** | **Transação**                                            | **Replicação**                       | **Hora da Última Sincronização** | **Resultado** |
+| **Hora** | **Transação**                                            | **Replicação**                       | **Hora da Última Sincronização** | **Resultado** |
 |----------|------------------------------------------------------------|---------------------------------------|--------------------|------------| 
 | T0       | Transação A: <br> Inserir funcionário <br> entidade no principal |                                   |                    | Transação A inserida no primário,<br> ainda não replicada. |
 | T1       |                                                            | Transação A <br> replicada para<br> secundário | T1 | A transação A foi replicada para o secundário. <br>Hora da Última Sincronização atualizada.    |
-| T2       | Transação B:<br>Atualização<br> entidade de funcionário<br> no principal  |                                | T1                 | Transação B gravada no principal,<br> ainda não replicada.  |
-| T3       | Transação C:<br> Atualização <br>administrador<br>entidade de função em<br>primary |                    | T1                 | Transação C gravada no principal,<br> ainda não replicada.  |
+| T2       | Transação B:<br>Atualizar<br> entidade de funcionário<br> no principal  |                                | T1                 | Transação B gravada no principal,<br> ainda não replicada.  |
+| T3       | Transação C:<br> Atualizar <br>administrador<br>entidade de função em<br>primary |                    | T1                 | Transação C gravada no principal,<br> ainda não replicada.  |
 | *T4*     |                                                       | Transação C <br>replicada para<br> secundário | T1         | Transação C replicada para o secundário.<br>LastSyncTime não atualizado porque <br>a transação B ainda não foi replicada.|
 | *T5*     | Ler entidades <br>de secundário                           |                                  | T1                 | Você obtém o valor obsoleto para a entidade de funcionário <br> porque a transação B não foi <br> replicada ainda. Você obtém o novo valor para<br> a entidade de função de administrador porque C foi<br> replicada. A Hora da Última Sincronização ainda não<br> foi atualizada porque a transação B<br> não foi replicada. Você pode ver que a<br>entidade da função de administrador está inconsistente <br>porque a data/hora da entidade é posterior <br>à Hora da Última Sincronização. |
-| *T6*     |                                                      | Transação B<br> replicada para<br> secundária | T6                 | *T6* – todas as transações até C <br>foram replicadas; a Hora da Última Sincronização<br> foi atualizada. |
+| *T6*     |                                                      | Transação B<br> replicada para<br> secundário | T6                 | *T6* – todas as transações até C <br>foram replicadas; a Hora da Última Sincronização<br> foi atualizada. |
 
 Neste exemplo, suponha que o cliente alterne para leitura da região secundária em T5. Ele pode ler com êxito a entidade de **função de administrador** nesse momento, mas a entidade contém um valor para a contagem de administradores que não é consistente com o número de entidades **funcionário** que são marcadas como administradores na região secundária nesse momento. O cliente simplesmente pode exibir esse valor, com o risco de que se trata de informações inconsistentes. Como alternativa, o cliente pode tentar determinar que a **função de administrador** está em um estado potencialmente inconsistente porque as atualizações ocorreram fora de ordem e informar esse fato ao usuário.
 
@@ -235,7 +235,7 @@ $lastSyncTime = $(Get-AzStorageAccount -ResourceGroupName <resource-group> `
 
 ### <a name="azure-cli"></a>CLI do Azure
 
-Para obter a hora da última sincronização para a conta de armazenamento usando CLI do Azure, verifique a propriedade **geoReplicationStats. lastSyncTime** da conta de armazenamento. Use o `--expand` parâmetro para retornar valores para as propriedades aninhadas em **geoReplicationStats**. Lembre-se de substituir os valores de espaço reservado pelos seus próprios valores:
+Para obter a hora da última sincronização para a conta de armazenamento usando CLI do Azure, verifique a propriedade **geoReplicationStats. lastSyncTime** da conta de armazenamento. Use o parâmetro `--expand` para retornar valores para as propriedades aninhadas em **geoReplicationStats**. Lembre-se de substituir os valores de espaço reservado pelos seus próprios valores:
 
 ```azurecli
 $lastSyncTime=$(az storage account show \

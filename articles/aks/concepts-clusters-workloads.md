@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: mlearned
-ms.openlocfilehash: 6120eee5bbd2f385fa8e76da093f7fadccb4904e
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 3792eed170d3e3e1cdd267c0c88d2d2d6c520733
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71348978"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672806"
 ---
 # <a name="kubernetes-core-concepts-for-azure-kubernetes-service-aks"></a>Conceitos de Kubernetes para o serviço de Kubernetes do Azure (AKS)
 
@@ -76,39 +76,34 @@ Se você precisar usar um sistema operacional host diferente, tempo de execuçã
 
 ### <a name="resource-reservations"></a>Reservas de recursos
 
-Os recursos de nó são utilizados pelo AKS para fazer a função de nó como parte do cluster. Isso pode criar um discrepency entre os recursos totais do seu nó e os recursos que se encontram quando usados em AKS. Isso é importante para observar ao definir solicitações e limites para os pods implantados.
+Os recursos de nó são utilizados pelo AKS para fazer a função de nó como parte do cluster. Isso pode criar um discrepency entre os recursos totais do seu nó e os recursos que se encontram quando usados em AKS. Isso é importante para observar ao definir solicitações e limites para pods implantados pelo usuário.
 
 Para localizar os recursos de localização de um nó, execute:
 ```kubectl
-kubectl describe node [NODE_NAME] | grep Allocatable -B 4 -A 3
+kubectl describe node [NODE_NAME]
 
 ```
 
-Para manter o desempenho e a funcionalidade do nó, os recursos de computação a seguir são reservados em cada nó. À medida que um nó cresce mais em recursos, a reserva de recursos aumenta devido a uma quantidade maior de pods implantados pelo usuário que precisam de gerenciamento.
+Para manter o desempenho e a funcionalidade do nó, os recursos são reservados em cada nó por AKS. À medida que um nó cresce mais em recursos, a reserva de recursos aumenta devido a uma quantidade maior de pods implantados pelo usuário que precisam de gerenciamento.
 
 >[!NOTE]
 > O uso de Complementos, como OMS, consumirá recursos de nó adicionais.
 
-- Dependente de **CPU** no tipo de nó
+- A CPU reservada para **CPU** depende do tipo de nó e da configuração de cluster, o que pode causar menos inlocalizável de CPU devido à execução de recursos adicionais
 
 | Núcleos de CPU no host | 1 | 2 | 4 | 8 | 16 | 32|64|
 |---|---|---|---|---|---|---|---|
-|Kubelet (milicores)|60|100|140|180|260|420|740|
+|Kube-reservado (milicores)|60|100|140|180|260|420|740|
 
-- **Memória** -20% da memória disponível, até 4 GiB máx.
+- A reserva de **memória** da memória segue uma taxa progressiva
+  - 25% dos primeiros 4 GB de memória
+  - 20% dos próximos 4 GB de memória (até 8 GB)
+  - 10% dos próximos 8 GB de memória (até 16 GB)
+  - 6% dos próximos 112 GB de memória (até 128 GB)
+  - 2% de qualquer memória acima de 128 GB
 
 Essas reservas significam que a quantidade de CPU e memória disponíveis para seus aplicativos pode parecer menor do que o próprio nó contém. Se houver restrições de recursos devido ao número de aplicativos que você executa, essas reservas garantem que a CPU e a memória permaneçam disponíveis para os componentes principais do Kubernetes. As reservas de recursos não podem ser alteradas.
 
-Por exemplo:
-
-- **Padrão DS2 v2** tamanho do nó contém 2 vCPU e 7 GiB de memória
-    - 20% da memória de 7 GiB = 1,4 GiB
-    - Um total de *(7-1.4) = 5.6 GiB* memória está disponível para o nó
-    
-- O tamanho de nó **padrão do E4s v3** contém 4 vCPU e 32 GiB de memória
-    - 20% de 32 GiB de memória = 6.4 GiB, mas o AKS reserva um máximo de 4 GiB
-    - Um total de *(32 - 4) = 28 GiB* está disponível para o nó
-    
 O SO do nó subjacente também requer uma certa quantidade de recursos de CPU e memória para concluir suas próprias funções principais.
 
 Para obter as práticas recomendadas associadas, consulte [práticas recomendadas para recursos básicos do Agendador no AKs][operator-best-practices-scheduler].

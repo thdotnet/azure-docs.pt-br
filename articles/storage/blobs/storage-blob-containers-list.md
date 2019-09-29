@@ -4,16 +4,16 @@ description: Saiba como listar contêineres de BLOB em sua conta de armazenament
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: e0197d59cdadd5e9462daf879d915ac2520bc149
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 06454798deb4a5bc5064e28535a837f73c083e1c
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985653"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71671297"
 ---
 # <a name="list-blob-containers-with-net"></a>Listar contêineres de blob com .NET
 
@@ -44,7 +44,7 @@ Para filtrar a lista de contêineres, especifique uma cadeia de `prefix` caracte
 
 Para retornar metadados de contêiner com os resultados, especifique o valor de **metadados** para a enumeração [ContainerListDetails](/dotnet/api/microsoft.azure.storage.blob.containerlistingdetails) . O armazenamento do Azure inclui metadados com cada contêiner retornado, portanto, você também não precisa chamar um dos métodos fetchattributes para recuperar os metadados do contêiner.
 
-## <a name="example-list-containers"></a>Exemplo: Listar contêineres
+## <a name="example-list-containers"></a>Exemplo: Listar os contêineres
 
 O exemplo a seguir lista de forma assíncrona os contêineres em uma conta de armazenamento que começam com um prefixo especificado. O exemplo lista os contêineres em incrementos de 5 resultados por vez e usa o token de continuação para obter o próximo segmento de resultados. O exemplo também retorna metadados de contêiner com os resultados.
 

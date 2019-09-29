@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 59450fc93052a1e169d13fab5b80cbc57c169e0f
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: dafc78e49cb0118181bae4522d4cb456509ea2cb
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70909776"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71673417"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Associação dinâmica do Azure Active Directory para grupos
 
@@ -64,7 +64,7 @@ user.department -eq "Sales"
 
 Parênteses são opcionais para uma única expressão. O comprimento total do corpo da sua regra de associação não pode exceder 2048 caracteres.
 
-# <a name="constructing-the-body-of-a-membership-rule"></a>Construção do corpo de uma regra de associação
+## <a name="constructing-the-body-of-a-membership-rule"></a>Construção do corpo de uma regra de associação
 
 Uma regra de associação que preenche automaticamente um grupo de usuários ou dispositivos é uma expressão binária que resulta em um resultado verdadeiro ou falso. As três partes de uma regra simples são:
 
@@ -78,7 +78,7 @@ A ordem das partes dentro de uma expressão é importante para evitar erros de s
 
 Há três tipos de propriedades que podem ser usadas para construir uma regra de associação.
 
-- Boolean
+- Booliano
 - String
 - Coleção de Cadeias de Caracteres
 
@@ -86,14 +86,14 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 
 ### <a name="properties-of-type-boolean"></a>Propriedades de tipo booliano
 
-| Properties | Valores Permitidos | Uso |
+| Properties | Valores permitidos | Uso |
 | --- | --- | --- |
 | accountEnabled |true, false |user.accountEnabled -eq true |
 | dirSyncEnabled |true, false |user.dirSyncEnabled -eq true |
 
 ### <a name="properties-of-type-string"></a>Propriedades do tipo cadeia de caracteres
 
-| Properties | Valores Permitidos | Uso |
+| Properties | Valores permitidos | Uso |
 | --- | --- | --- |
 | city |Qualquer valor de cadeia de caracteres ou *null* |(user.city -eq "valor") |
 | country |Qualquer valor de cadeia de caracteres ou *null* |(user.country -eq "valor") |
@@ -124,7 +124,7 @@ Estas são todas as propriedades do usuário que você pode usar para criar uma 
 
 ### <a name="properties-of-type-string-collection"></a>Propriedades de coleção de cadeias de caracteres de tipo
 
-| Properties | Valores Permitidos | Uso |
+| Properties | Valores permitidos | Uso |
 | --- | --- | --- |
 | otherMails |Um valor de cadeia de caracteres. |(user.otherMails -contains "alias@domain") |
 | proxyAddresses |SMTP:alias@domainsmtp:alias@domain |(user.proxyAddresses -contains "SMTP: alias@domain") |
@@ -138,14 +138,14 @@ A tabela a seguir lista os operadores com suporte e sua sintaxe para uma única 
 | Operator | Sintaxe |
 | --- | --- |
 | Não é igual a |-ne |
-| Igual a |-eq |
+| Igual |-eq |
 | Não começa com |-notStartsWith |
 | Começa com |-startsWith |
 | Não contém |-notContains |
 | Contém |-contains |
 | Não corresponde |-notMatch |
 | Corresponde |-match |
-| Em | -in |
+| No | -in |
 | Não está em | -notIn |
 
 ### <a name="using-the--in-and--notin-operators"></a>Usando os operadores -in e -notIn
