@@ -38,7 +38,7 @@ A maioria dos requisitos em uma exibição padrão ainda se aplica a uma exibiç
 |Exibir conteúdo                    | Gerado toda vez que o modo de exibição é usado.   | Pré-processado e armazenado no Azure data warehouse durante a criação do modo de exibição. Atualizado à medida que os dados são adicionados às tabelas subjacentes.                                             
 |Atualização dedados                    | Sempre atualizado                               | Sempre atualizado                          
 |Velocidade para recuperar dados de exibição de consultas complexas     | Prejudicar                                         | Rápido  
-|Armazenamento extra                   | Não                                           | Sim                             
+|Armazenamento extra                   | Não                                            | Sim                             
 |Sintaxe                          | CRIAR MODO DE EXIBIÇÃO                                  | CRIAR EXIBIÇÃO MATERIALIZADA COMO SELECT           
      
 ## <a name="benefits-of-using-materialized-views"></a>Benefícios do uso de exibições materializadas
