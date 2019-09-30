@@ -11,25 +11,25 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: diberry
-ms.openlocfilehash: f5810a813b6c54f190d95061e79914457f51d19c
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 7e2b5c5c5d2ca4c0d6ab820866341c5f30082c5f
+ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067608"
+ms.lasthandoff: 09/29/2019
+ms.locfileid: "71672783"
 ---
 # <a name="prebuilt-domain-reference-for-your-luis-app"></a>Referência de domínio predefinida para seu aplicativo LUIS
 Esta referência contém informações sobre o [domínios pré-compilada](luis-how-to-use-prebuilt-domains.md), que são conjuntos predefinidos de entidades que oferece LUÍS e tentativas.
 
 [Domínios personalizados](luis-how-to-start-new-app.md), por outro lado, iniciar sem tentativas e modelos. Você pode adicionar quaisquer tentativas de domínio pré-compilada e entidades a um modelo personalizado.
 
-# <a name="supported-domains-across-cultures"></a>Domínios com suporte entre culturas
+## <a name="supported-domains-across-cultures"></a>Domínios com suporte entre culturas
 
 A tabela a seguir resume os domínios com suporte no momento. O suporte para inglês geralmente é mais completo do que outros. 
 
-| Tipo de entidade       | EN-US      | ZH-CN   | DE    | FR     | ES    | IT      | PT-BR |  JP  |      KO |        NL |    TR |
+| Tipo de Entidade       | EN-US      | ZH-CN   | DE    | FR     | ES    | IT      | PT-BR |  JP  |      KO |        NL |    TR |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:| :-------:| :-------:| :-------:| :-------:|  :-------:| 
-| [Calendar](#calendar)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
+| [Calendário](#calendar)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
 | [Comunicação](#communication)   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
 | [Email](#email)           | ✓    | ✓       | ✓   | ✓     | ✓     | ✓  | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
 | [HomeAutomation](#homeautomation)           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓  | ✓  | ✓      | ✓    | ✓    | ✓     | ✓  |
@@ -47,8 +47,8 @@ A tabela a seguir resume os domínios com suporte no momento. O suporte para ing
 * Híndi
 * Mexicano espanhol
 
-# <a name="description-for-luis-prebuilt-domains"></a>Descrição para domínios predefinidos do LUIS
-## <a name="calendar"></a>**Calendar**
+## <a name="description-for-luis-prebuilt-domains"></a>Descrição para domínios predefinidos do LUIS
+## <a name="calendar"></a>**Calendário**
 O calendário é algo sobre reuniões pessoais e compromissos, não com evento público (por exemplo, o World Cup Schedules, o calendário de eventos de Seattle) ou o calendário genérico (por exemplo, que dia é hoje, o que começa, quando é dia do trabalho).
 ### <a name="intents"></a>**Tentativas**
 Nome da intenção | Descrição | Exemplos
@@ -76,7 +76,7 @@ ShowNext | Verifique o próximo evento. <br> _**Aviso**: Consulte o domínio de 
  TimeRemaining | Verifique o tempo restante até o próximo evento. | Exibir quanto tempo eu tenho antes das minhas reuniões. <br> Exibir a quantidade de tempo que tenho antes da minha próxima reunião começar.
  
 ### <a name="entities"></a>**Contabilidade**
-Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
+Nome da entidade | Tipo de Entidade | Descrição | Exemplos | Slots
 -------|-----------------------|-------------|---------|--------
 ContactName | personName | O nome de um participante de contato ou de reunião. | Conheça com **Betsy**. <br>  Conheça com **Aubrey** em 3 de julho às 19h | Betsy <br> Aubrey <br> Amy 
 DestinationCalendar | Único | O nome do calendário de destino. | almoço com o MOM Tuesday 12 **pessoal** <br> Usar meu **Google** agenda como meu calendário padrão. <br> Atualizar a classe Yoga para Mon qua às 15:00 lista no calendário **pessoal** . | Google <br> Pessoais <br> negócios <br> Principal
@@ -98,7 +98,7 @@ Slotattribute | Único | O usuário de atributo deseja consultar ou editar. | al
 StartDate | datetime | Data de início de uma reunião ou um compromisso. | Criar uma reunião na **quarta-feira** às 4 horas | Quarta-feira 
 StartTime | datetime | Hora de início de uma reunião ou um compromisso. | criar uma reunião na quarta-feira às **4 horas** | 4 p.m.
 Subject | simples, padrão. Outro | Assunto, como título de uma reunião ou um compromisso. | Qual é a hora da reunião de **preparação de terceiros** ? | Do dentista <br> Almoçar com Julia 
-Mensagem | simples, padrão. Outro | A mensagem a ser enviada aos participantes. | Alertar os participantes da reunião de jantar que vou **atrasar**. | Vou atrasar
+Message | simples, padrão. Outro | A mensagem a ser enviada aos participantes. | Alertar os participantes da reunião de jantar que vou **atrasar**. | Vou atrasar
 
 ## <a name="communication"></a>**Comunicação**
 Solicitações para fazer chamadas, enviar textos/IMs, localizar/adicionar contatos e várias outras solicitações relacionadas à comunicação (geralmente de saída). _Somente o nome do contato_ declarações não pertence ao domínio de comunicação.
@@ -147,9 +147,9 @@ TurnSpeakerOff | Desligue o viva-voz. | Tire-me do alto-falante. <br>   Desative
 TurnSpeakerOn | Ativar o viva-voz. | Modo de viva-voz. <br>   Coloque viva-voz em.
 
 ### <a name="entities"></a>**Contabilidade**
-Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
+Nome da entidade | Tipo de Entidade | Descrição | Exemplos | Slots
 ------|-------|----------|--------------|---------------
-Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
+Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | arquivo <br> Doc
 AudioDeviceType | Único | Tipo de dispositivo de áudio (palestrante, headset, microfone, etc.). | Responda usando as **mãos gratuitas**. <br> Disque novamente no **telefone do viva-voz**. | locutor <br> Sem intervenção <br> Tecnologia
 Categoria | Único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
 ContactAttribute | Único | Um atributo do contato sobre as consultas do usuário.| Algum **aniversário** no mês que eu devo saber? | aniversário <br> endereço <br> Número de telefone
@@ -162,7 +162,7 @@ Chave | Único | O usuário principal deseja pressionar. | Pressione a tecla de 
 Linha | Único | O usuário de linha deseja usar para enviar um email ou um texto do. | Leia meu último email do **hotmail** . <br> Ligue para Peter por **celular**. <br> Chame o Dad usando minha linha de **trabalho** .| hotmail <br> Skype <br> Célula Britânica
 SenderName | personName | O nome do remetente. | Leia o email de **David** <br> Emails de Chanda | Davi <br> Chanda
 FromRelationshipName | Único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
-Mensagem | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
+Message | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
 OrderReference | Único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> Versões <br> mais recente
 PositionReference | simples, ordinal | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado.| Qual foi a **primeira** mensagem que enviei? <br> O **terceiro** .| First <br> testa
 phoneNumber | phoneNumber | O usuário do número de telefone deseja chamar ou enviar um texto para. | enviar um texto para **4 1 5 6 8 4 5 2 8 4** | 3525214446
@@ -192,16 +192,16 @@ QueryLastText | Consulte o último email. | Quem enviou email para mim? <br> Que
 
 
 ### <a name="entities"></a>**Contabilidade**
-Nome da Entidade | Tipo de entidade | Descrição | Exemplos | Slots
+Nome da entidade | Tipo de Entidade | Descrição | Exemplos | Slots
 ------|-------|----------|--------------|---------------
-Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | Arquivo <br> Doc
+Attachment | Único | O anexo que o usuário deseja enviar por texto ou email. | Enviar um **arquivo** por email do OneNote. <br> Envie meu **Doc** de manutenção para Katie. | arquivo <br> Doc
 ContactName | personName  | O nome de um destinatário de mensagem ou contato. | Enviar o email para **Stevens** | Stevens
 Date | datetime | Data de um email recebido. | Leia os emails de **hoje** <br> Quem me e-Mailu **hoje**? | hoje
 EmailAddress | email | O usuário de endereço de email deseja enviar ou consultar. | Enviar email paraMegan.Flynn@MKF.com<br> abc@outlook.com 
 EmailSubject | simples, padrão. Outro | O texto usado como a linha de assunto de um email. | Redigir o email para David com o assunto **Ei**  | RE: história interessante
 SenderName | personName | O nome do remetente. | Leia o email de **David** <br> Emails de Chanda | Davi <br> Chanda
 FromRelationshipName | Único | O nome do relacionamento do remetente. | Ler mensagem do **pai**. <br> Você pode ler todas as mensagens de texto do **Mom**? | Papai <br> Mom 
-Mensagem | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
+Message | simples, padrão. Outro |  A mensagem a enviar um email ou texto.  | Enviar email dizendo "Estou**ocupado**". | Estou ocupado
 Categoria | Único | A categoria de uma mensagem ou email, a categoria deve ter uma definição clara no sistema de email, como "não lido", "sinalizador". Descrição c/o limpar definição, por exemplo, "novo" e "recente" não são categorias. | Marcar todos os emails como **lidos**  <br> Novo email de **alta prioridade** para Paul | importante <br> prioridade alta <br> ler
 OrderReference | Único | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado. | Qual foi a **última** mensagem que enviei? <br> Leia email da Nokia **mais recente** . <br> Ler **novas** mensagens de texto. | last <br> latest <br> Versões <br> mais recente
 PositionReference | simples, ordinal | A posição ordinal ou relativa em uma lista, identificando um item a ser recuperado.| Qual foi a **primeira** mensagem que enviei? <br> O **terceiro** .| First <br> testa
@@ -232,18 +232,18 @@ Nome da intenção | Descrição | Exemplos
  TurnUp | Ative as configurações ou o brilho dos dispositivos. | Clarear as luzes em 75 por cento. <br> O brilho aqui em 10%.  <br> Torne-o mais quente na sala de vida.
  TurnDown | Desligar mas não desligar um dispositivo, seja por meio de esmaecimento, da temperatura ou do brilho das luzes. | Desative a biblioteca por 44%. <br> Esmaecer as luzes. <br> Torne a sala mais fria.
 ### <a name="entities"></a>**Contabilidade**
-Nome da Entidade | Tipo de entidade | Descrição | Exemplos
+Nome da entidade | Tipo de Entidade | Descrição | Exemplos
 -------|----------|--------------|---------------
-DeviceName | Lista | Texto definido pelo usuário para seus dispositivos. | Azul<br> Natal <br> Escritório
-DeviceType | Lista | Dispositivos com suporte. | Noturna <br> Condicionador de ar <br> nightlight
+DeviceName | List | Texto definido pelo usuário para seus dispositivos. | Azul<br> Natal <br> Escritório
+DeviceType | List | Dispositivos com suporte. | Noturna <br> Condicionador de ar <br> nightlight
 Location | Único | Local ou sala no qual o dispositivo está. | Estrelas<br> Cybercafé <br> Quartos
 NumericalChange | Único | Quantidade pela qual uma configuração é aumentada ou diminuída. <br> <br> _O slot aparece apenas com as intenções turn_up e turn_down._ | 3<br> 50%<br>
 OrderReference | ordinal | A finalidade desse slot é capturar a seleção dos itens. Indica a posição do item em uma lista. | First<br> Segundo
-Quantificador | Lista | Quantificador indica quantas instâncias de uma determinada entidade são referenciadas. Por exemplo, "todos", "a cada", etc. | Todas<br> Cada<br> Tudo
+Quantificador | List | Quantificador indica quantas instâncias de uma determinada entidade são referenciadas. Por exemplo, "todos", "a cada", etc. | Todas<br> Cada<br> Tudo
 Configuração | Simples | A configuração para o qual o usuário deseja definir seu dispositivo, que inclui cena, nível, intensidade, cor, modo, temperatura, estado do dispositivo. | Azul<br> 72 <br> Mapa 
-SettingType | Lista | A configuração do dispositivo em que o usuário está interessado. | Temperatura<br> 
+SettingType | List | A configuração do dispositivo em que o usuário está interessado. | Temperatura<br> 
 Data/hora |  datetime | Hora e duração da operação de um dispositivo| 5 minutos <br> 3 p.m.
-Unidade | Lista | Para marcar palavras como ' graus ', ' percent ', "Fahrenheit", "Celsius", cada termo de unidade deve ser marcado separadamente. | Graus<br> Percent
+Unidade | List | Para marcar palavras como ' graus ', ' percent ', "Fahrenheit", "Celsius", cada termo de unidade deve ser marcado separadamente. | Graus<br> Percent
 
 
 ## <a name="notes"></a>**Observações**
@@ -252,23 +252,23 @@ Observação o domínio facilita a criação de anotações e a gravação de it
 Nome da intenção | Descrição | Exemplos
 ---------|----------|---------
 AddToNote | Adicione informações a uma nota aberta. | Adicione à minha nota de planejamento para entrar em contato com meu chefe sobre o projeto.
-Clear | Limpar todos os itens de uma nota pré-existente. | Remover todos os itens da minha nota de férias. <br>Limpar tudo da minha anotação de leitura.
+Limpar | Limpar todos os itens de uma nota pré-existente. | Remover todos os itens da minha nota de férias. <br>Limpar tudo da minha anotação de leitura.
 Confirmar | Confirme uma ação relacionada a uma nota. <br> ***Aviso**: Essa tentativa inclui principalmente a ação "confirmar" para o cenário de observação. Se você precisar de mais expressões gerais em "Confirm", aproveite a intenção de "confirmar" no domínio de **utilitários** . * | Ele está OK para esta observação. <br>Estou confirmando a manutenção de todos os itens nas listas.
 Criar | Crie um novo bloco de anotações. | Crie uma observação. <br>Observação para lembrar que Jason está na cidade da primeira semana de maio. 
 Excluir | Exclua toda a anotação. | Excluir minha nota de férias. <br>Excluir minha nota de compras.
 ReadAloud | Leia uma observação em voz alta. | Leia-me a primeira observação. <br>Leia-me os detalhes.
-Fechar | Feche a nota atual. | Feche a observação. <br>Feche a nota atual.
-Abrir | Abra uma nota pré-existente. | Abra minha nota de chamada. <br>Abra a nota "planejamento".
+Feche | Feche a nota atual. | Feche a observação. <br>Feche a nota atual.
+Aberto | Abra uma nota pré-existente. | Abra minha nota de chamada. <br>Abra a nota "planejamento".
 RemoveSentence | Remova uma frase para uma nota. | Remova a última frase. <br>Exclua os chips da minha nota de supermercado. <br>Remover canetas da minha nota de compra da escola
 ChangeTitle | Altere o título da nota. | Nomeado esta observação como "planejamento".
 
 ### <a name="entities"></a>**Contabilidade**
-Nome da Entidade | Tipo de entidade | Descrição | Exemplos 
+Nome da entidade | Tipo de Entidade | Descrição | Exemplos 
 ------- | ------- | ------- | -------
-Texto | simples, padrão. Outro | O texto de uma nota ou lembrete. | esticar antes de caminhar <br> longo prazo amanhã
+Text | simples, padrão. Outro | O texto de uma nota ou lembrete. | esticar antes de caminhar <br> longo prazo amanhã
 Título | simples, padrão. Outro | Título de uma nota. | mantimentos <br> pessoas para ligar <br> tarefas pendentes
 CreationDate | datetimeV2 | Este slot é para quando o usuário solicita anotações criadas em uma determinada janela de data/hora. | 
-Quantificador | Lista | Quando um usuário pede para executar uma ação nos itens ' all', ' a cada ' ou ' qualquer ' ou todo o texto em uma nota. | tudo <br> qualquer <br> Cada
+Quantificador | List | Quando um usuário pede para executar uma ação nos itens ' all', ' a cada ' ou ' qualquer ' ou todo o texto em uma nota. | tudo <br> qualquer <br> Cada
 OrderReference | ordinal | O usuário deseja fazer ações com os itens ' primeiro ', ' último ', ' Avançar ', etc. | first <br> last
 
 
@@ -291,16 +291,16 @@ RatePlace | Classificar um local. | avaliação de 4 estrelas para pizza de máx
 AddFavoritePlace | O usuário deseja adicionar um local à sua lista de favoritos ou MVP. | Salvar este local em meus favoritos. <br> Adicionar melhor compra aos meus favoritos.
 
 ### <a name="entities"></a>**Contabilidade**
-Entidades LUIS | Tipo de entidade | Descrição | Exemplos | Exemplos de expressão
+Entidades LUIS | Tipo de Entidade | Descrição | Exemplos | Exemplos de expressão
 --------------|-------------|-------------|----------|-------------------
 AbsoluteLocation | Único | A localização ou endereço de um local. | Palo Alto <br> 300 112th Ave SE <br> Seattle | **1020 Middlefield Rd.** no **Palo Alto** <br> lojas de semente de pássaro em **Seattle** <br> Obtenha a distância daqui a **300 112Th ave se**.
 Facilidades | Único | As características e os benefícios do objetivo de um local público. | beira <br> estacionamento grátis | Kirkland **orla marítima** frutos do mar. <br> Há algum **estacionamento livre** perto de mim?
 Cozinha | Único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês <br> Italiano <br> Sushi <br> Noodle <br> | Ajude-me a encontrar um restaurante **chinês** . <br> Quais são as horas de abertura do restaurante **sushi** ? <br> Onde está a casa **Steak** mais próxima?
 Date | datetime | DateTime ou Duration para a data do local de destino. | amanhã <br> hoje <br> 18:00 | Que tempo aquário fechar **amanhã**? <br> a oficina de bicicletas mais próxima que é aberta após **6 p.m.**
 Distância | dimensão | A distância para um local público da posição currenct do usuário. | 15 milhas <br> 10 milhas | uma loja de roupas dentro de **15 milhas** <br> Um restaurante de crianças com apenas **10 milhas** de distância
-Tipo de Refeição | Lista | Tipo de refeição como da manhã ou almoçar. | Café da manhã <br> Refeição | Pesquisar **café da manhã** Greenwood Seattle <br> Encontre-me um lugar para fazer meu **almoço**.
-Vizinha | Lista | Descreva um local próximo sem localização ou endereço absoluto. | mais próximo <br> nesta área <br> em nosso lugar | Encontre o restaurante indiano **mais próximo** . <br> Onde está meu Wetherspoon **local** ? <br> Um bom restaurantes **em nosso lugar**?
-OpenStatus | Lista | Indica se um local é aberto ou fechado. | abrir <br> fechada | Que tempo o yogurt Land **fechou** hoje? <br> Quais são as horas de **abertura** para Costco?
+Tipo de Refeição | List | Tipo de refeição como da manhã ou almoçar. | Café da manhã <br> Refeição | Pesquisar **café da manhã** Greenwood Seattle <br> Encontre-me um lugar para fazer meu **almoço**.
+Vizinha | List | Descreva um local próximo sem localização ou endereço absoluto. | mais próximo <br> nesta área <br> em nosso lugar | Encontre o restaurante indiano **mais próximo** . <br> Onde está meu Wetherspoon **local** ? <br> Um bom restaurantes **em nosso lugar**?
+OpenStatus | List | Indica se um local é aberto ou fechado. | abrir <br> fechada | Que tempo o yogurt Land **fechou** hoje? <br> Quais são as horas de **abertura** para Costco?
 Colocar nome | Único | O nome de um destino que é uma empresa, um restaurante, uma atração pública ou uma instituição. O nome do local pode conter um LocalType se for usado em comum. | Central Park <br> Safeway <br> Walmart| Que tempo o **Safeway** farmácia abre? <br> O **Walmart** está aberto?
 PlaceType | Único | O tipo de destino que é uma empresa local, um restaurante, uma atração pública ou uma instituição. | restaurante <br> ópera <br> cinema | **cinemas** em Cambridge <br> Há um **restaurante** ao meu redor?
 PriceRange | Único | A faixa de preço dos produtos ou serviço do local. | baratos <br> econômico <br> caro | Encontrar reparo de dispositivo **acessível** <br> O que é um lugar de pizza **barato** que está aberto agora?
@@ -323,12 +323,12 @@ FindReservationWhen | Verificar a hora exata da reserva | Quando é a reserva de
 Rejeitar | O usuário rejeita o assistente virtual proposto no gerenciamento de uma reserva. <br> ***Observe**:P concessão consulte o domínio de **utilitários** para mais rejeitar declarações geral. * | Não é necessário definir o evento. | Não, não quero alterar a reserva. <br> Não, não o desmarque, fiz um erro.
 
 ### <a name="entities"></a>**Contabilidade**
-Entidade LUIS | Tipo de entidade | Descrição | Exemplos
+Entidade LUIS | Tipo de Entidade | Descrição | Exemplos
 -------|------|---------|-------------------
 Endereço | Único | Um local de evento ou endereço para uma reserva. | Palo Alto<br>300 112th Ave SE<br>Seattle
-Atmosfera | Lista | Uma descrição da atmosfera de um restaurante. | romântico<br>casual<br>bom para grupos<br>Bom
+Atmosfera | List | Uma descrição da atmosfera de um restaurante. | romântico<br>casual<br>bom para grupos<br>Bom
 Cozinha | Único | Um tipo de comida, cozinha ou nacionalidade culinária. | Chinês<br>Italiano<br>Mexicana<br>Sushi<br>Noodle<br>steak
-Tipo de Refeição | Lista | Um tipo de refeição associado a uma reserva. | Café da manhã<br>Refeição<br>Almoçar<br>Supper
+Tipo de Refeição | List | Um tipo de refeição associado a uma reserva. | Café da manhã<br>Refeição<br>Almoçar<br>Supper
 Colocar nome | Único | O nome de um restaurante | Zucca<br>Fábrica de cheesecake<br>Lobster vermelho
 Classificação | Único | A classificação de um lugar ou restaurante. | 5 estrelas<br>3 estrelas<br>4-estrelas
 NumberPeople | Único | Número de pessoas para reserva | 3<br>seis
@@ -350,12 +350,12 @@ Inpreviouspagetype | Mostrar itens de lista na página anterior do usuário. | M
 Tarefas pendentes | Mostrar todos os itens na lista de tarefas pendentes. | Mostrar minha lista de compras. <br> Mostrar minha lista de compras.
 
 ### <a name="entities"></a>**Contabilidade**
-Entidade LUIS | Tipo de entidade | Descrição | Exemplos
+Entidade LUIS | Tipo de Entidade | Descrição | Exemplos
 -------|------|---------|-------------------
 ContainsAll | Único | Representar todos ou todos os itens na lista de tarefas | Você pode ajudar a remover **todas as** tarefas. <br> Conclua **tudo**.
 ordinal | ordinal | Uma referência ordinal ou numérica a um item. | Marque a **terceira** como concluída. <br> Excluir a **primeira** tarefa.
 ListType | Único | Tipo de lista de tarefas.  | Adicionar sapatos à minha lista de **compras** .
-FoodOfGrocery | Lista | Detectar uma lista de itens de alimentos | Lembre-me de comprar o **leite**. <br> Adicione **reforçar** à minha lista de compras.
+FoodOfGrocery | List | Detectar uma lista de itens de alimentos | Lembre-me de comprar o **leite**. <br> Adicione **reforçar** à minha lista de compras.
 TaskContent | simples, padrão. any | Detectar o conteúdo de uma tarefa. | Lembre-me de **telefonar para minha mãe** . <br> Adicione o **aniversário de comemoração de João** à minha lista de tarefas pendentes
 
 
@@ -369,7 +369,7 @@ Nome da intenção | Descrição | Exemplos
  Rejeitar | O usuário rejeita o assistente virtual proposto. | Não
  FinishTask | Conclua uma tarefa que o usuário iniciou. | Estou pronto. <br> Isso é tudo. <br> Terminar.
  GoBack | Volte um passo ou retorne a um passo anterior. | Volte uma etapa. <br> Voltar.
- Ajuda | Peça ajuda. | Ajuda. <br> Abra a ajuda.
+ Help | Peça ajuda. | Ajuda. <br> Abra a ajuda.
  Repetir | Repita uma ação. | Diga-o novamente.
  ShowNext | Mostrar ou informar o próximo item (ns). | Mostre o outro.
  ShowPrevious | Mostrar o item anterior de uma série. | Mostrar anterior.
@@ -382,7 +382,7 @@ Nome da intenção | Descrição | Exemplos
  ReadAloud | Leia algo em voz alta para o usuário. | Leia esta página. <br> Leia em voz alta.
 
 ### <a name="entities"></a>**Contabilidade**
-Entidade LUIS | Tipo de entidade | Descrição | Exemplos
+Entidade LUIS | Tipo de Entidade | Descrição | Exemplos
 ------------|-------------|-------------|---------
 ordinal | ordinal | Uma referência ordinal ou numérica a um item. | O **segundo** . <br> **Próximo** .
 número | número | Quantidade de itens que o usuário deseja | Os próximos **3** itens
@@ -400,7 +400,7 @@ Nome da intenção | Descrição | Exemplos
  GetWeatherAdvisory | Obtenha comunicados meteorológicos ou alertas de um local específico. | Há comunicados meteorológicos em Memphis? <br> Há alertas meteorológicos para minha área?
 
 ### <a name="entities"></a>**Contabilidade**
-Entidade LUIS | Tipo de entidade | Descrição | Exemplos
+Entidade LUIS | Tipo de Entidade | Descrição | Exemplos
 ------------|-------------|-------------|---------
 Location | geografia | O local absoluto ou implícito para uma solicitação do clima. | Palo Alto<br>Xangai<br>Seattle<br>Delvina<br>
 Date/Time   | datetime | DateTime ou Duration para consultar o clima. | Novembro<br>por hora<br>manhã<br>Este fim de semana<br>10 dias<br>
@@ -422,9 +422,9 @@ Nome da intenção | Descrição | Exemplos
  Pesquisa da | Uma solicitação para navegar para um site especificado ou Pesquisar em um mecanismo de pesquisa. | Superfície de pesquisa no google.com. <br> Localizar música de aniversário feliz na Web <br> Vá para www.twitter.com.
 
 ### <a name="entities"></a>**Contabilidade**
-Entidade LUIS | Tipo de entidade | Descrição | Exemplos
+Entidade LUIS | Tipo de Entidade | Descrição | Exemplos
 ------------|-------------|-------------|---------
-SearchEngine | Lista | O usuário do mecanismo de pesquisa deseja usar. | Bing <br> Google
+SearchEngine | List | O usuário do mecanismo de pesquisa deseja usar. | Bing <br> Google
 ProcurarTexto | simples, padrão. Outro | O usuário de texto deseja pesquisar. <br> _Marque "amigos no Facebook" como ProcurarTexto se o site após "in" não for um mecanismo de pesquisa. A URL também deve marcar como ProcurarTexto._ | Filme <br> Aprendizado <br> Tom de cruzeiro
 Link | url | O link do site. | [www.twitter.com](www.twitter.com)
 
