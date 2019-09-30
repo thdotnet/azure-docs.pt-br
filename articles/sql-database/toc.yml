@@ -448,6 +448,8 @@
           href: sql-database-geo-replication-portal.md
         - name: Configurar segurança para réplicas geográficas
           href: sql-database-geo-replication-security-config.md
+        - name: Configurar um grupo de failover
+          href: sql-database-configure-failover-group.md
         - name: Experimente os recursos de memória
           href: sql-database-in-memory-sample.md
         - name: Habilitar o ajuste automático

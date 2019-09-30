@@ -24,10 +24,12 @@
   items:
     - name: Conectar-se a recursos de Área de Trabalho Virtual do Windows
       items:
-        - name: Conectar-se do Windows 10 ou Windows 7
+        - name: Conectar-se ao Cliente de Área de Trabalho do Windows
           href: connect-windows-7-and-10.md
-        - name: Conectar-se com um navegador da Web
+        - name: Conectar-se ao cliente Web
           href: connect-web.md
+        - name: Conectar-se ao cliente Android
+          href: connect-android.md
         - name: Conectar-se ao cliente macOS
           href: connect-macos.md
         - name: Conectar-se ao cliente iOS
@@ -72,6 +74,8 @@
       href: partners.md
     - name: Perguntas frequentes sobre o Windows 10 Enterprise de várias sessões
       href: windows-10-multisession-faq.md
+    - name: Localizações de dados
+      href: data-locations.md
 - name: Solucionar problemas
   items:
     - name: 'Visão geral da solução de problemas, comentários e suporte'

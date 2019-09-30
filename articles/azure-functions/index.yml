@@ -1,121 +1,162 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Documentação do Azure Functions
+summary: O Azure Functions é um serviço de computação sem servidor que permite a você executar código disparado por eventos sem precisar provisionar explicitamente ou gerenciar a infraestrutura.
 metadata:
-  document_id: 83ceabb5-fb4f-a709-3fd2-37d024409f31
-  title: Documentação do Azure Functions - Tutoriais | Microsoft Docs
-  meta.description: Learn how to develop and deploy functions in the language of your choice to run tasks in the background or on a schedule without special infrastructure.
-  services: functions
-  author: georgewallace
-  manager: gwallace
+  title: Documentação do Azure Functions
+  description: O Azure Functions é um serviço de computação sem servidor que permite a você executar código disparado por eventos sem precisar provisionar explicitamente ou gerenciar a infraestrutura.
   ms.service: azure-functions
   ms.topic: landing-page
-  ms.date: 08/09/2018
-  ms.author: gwallace
-abstract:
-  description: 'O Azure Functions é um serviço de computação <a href="https://azure.microsoft.com/solutions/serverless/">sem servidor</a> que permite executar o código sob demanda sem precisar provisionar explicitamente ou gerenciar a infraestrutura. Use o Azure Functions para executar um script ou parte do código em resposta a uma variedade de eventos. Saiba como usar o Azure Functions com nossos guias de início rápido, tutoriais e exemplos.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: media/index/video-thumb-get-started.png
-      width: 250
-    title: 'Introdução ao Azure Functions. (2:39)'
-    href: 'https://azure.microsoft.com/resources/videos/get-started-with-azure-functions/'
-    width: 250
-sections:
-  - title: Guia de início rápido de 5 minutos
-    items:
-      - type: paragraph
-        text: 'Saiba como criar funções que são executadas com base em eventos criados por meio de:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_http.svg'
-            text: http
-            href: /azure/azure-functions/functions-create-first-azure-function
-          - image:
-              src: media/index/stopwatch.svg
-            text: Timer
-            href: /azure/azure-functions/functions-create-scheduled-function
-          - image:
-              src: media/index/cosmosdb.svg
-            text: Azure Cosmos DB
-            href: /azure/azure-functions/functions-create-cosmos-db-triggered-function
-          - image:
-              src: media/index/blob.svg
-            text: Blob
-            href: /azure/azure-functions/functions-create-storage-blob-triggered-function
-          - image:
-              src: media/index/storage.svg
-            text: Fila
-            href: /azure/azure-functions/functions-create-storage-queue-triggered-function
-      - type: paragraph
-        text: 'Saiba como desenvolver e depurar localmente:'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-            text: Visual Studio
-            href: /azure/azure-functions/functions-create-your-first-function-visual-studio
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Visual Studio Code
-            href: /azure/azure-functions/functions-create-first-function-vs-code
-  - title: Tutoriais Passo a Passo
-    items:
-      - type: paragraph
-        text: 'Saiba como criar e gerenciar o Azure Functions:'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/azure-functions/functions-twitter-email">Criar uma função que se integra nos Aplicativos Lógicos do Azure</a>
-          - html: <a href="/azure/azure-functions/functions-create-serverless-api">Criar uma API sem servidor usando o Azure Functions</a>
-          - html: <a href="/azure/azure-functions/functions-openapi-definition">Criar uma definição de OpenAPI para uma função</a>
-          - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event">Automatizar o redimensionamento de imagens carregadas usando a Grade de Eventos</a>
-          - html: '<a href="https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database">Criar um aplicativo web sem servidor para armazenar imagens com metadados</a>'
-  - title: Exemplos
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/azure-functions/functions-cli-samples">CLI do Azure</a>
-          - html: <a href="/sandbox/functions-recipes/">Receitas do Azure Functions</a>
-  - title: Desenvolva suas habilidades com o Microsoft Learn
-    items:
-      - type: list
-        style: cards
-        className: cardsFTitle
-        items:
-          - title: Criar lógica sem servidor com o Azure Functions
-            href: /learn/modules/create-serverless-logic-with-azure-functions/
-            image:
-              src: /learn/achievements/create-serverless-logic-with-azure-functions.svg
-              href: /learn/modules/create-serverless-logic-with-azure-functions/
-          - title: Executar uma função do Azure com gatilhos
-            href: /learn/modules/execute-azure-function-with-triggers/
-            image:
-              src: /learn/achievements/execute-azure-function-with-triggers.svg
-              href: /learn/modules/execute-azure-function-with-triggers/
-          - title: Encadear o Azure Functions e os dados usando as vinculações de entrada e saída
-            href: /learn/modules/chain-azure-functions-data-using-bindings/
-            image:
-              src: /learn/achievements/chain-azure-functions-data-using-bindings.svg
-              href: /learn/modules/chain-azure-functions-data-using-bindings/
-      - type: paragraph
-        text: <a href="/learn/browse/?products=azure-functions">Mais aprendizado interativo...</a>
-  - title: Referência
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: Linha de comando
-            html: <p><a href="/cli/azure">CLI do Azure</a></p>
-          - title: REST
-            html: <p><a href="/azure/azure-functions/functions-api-definition">OpenAPI</a></p>
-          - title: Associações
-            html: <p><a href="/azure/azure-functions/functions-bindings-storage-blob">Armazenamento de Blobs</a></p><p><a href="/azure/azure-functions/functions-bindings-documentdb">Azure Cosmos DB</a></p><p><a href="/azure/azure-functions/functions-bindings-event-hubs">Hub de Evento</a></p><p><a href="/azure/azure-functions/functions-bindings-http-webhook">HTTP e webhooks</a></p><p><a href="/azure/azure-functions/functions-bindings-mobile-apps">Aplicativos Móveis</a></p><p><a href="/azure/azure-functions/functions-bindings-notification-hubs">Hubs de Notificação</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-queue">Armazenamento de filas</a></p><p><a href="/azure/azure-functions/functions-bindings-sendgrid">SendGrid</a></p><p><a href="/azure/azure-functions/functions-bindings-service-bus">Barramento de Serviço</a></p><p><a href="/azure/azure-functions/functions-bindings-signalr-service">Serviço SignalR</a></p><p><a href="/azure/azure-functions/functions-bindings-storage-table">Armazenamento de tabelas</a></p><p><a href="/azure/azure-functions/functions-bindings-timer">Timer</a></p><p><a href="/azure/azure-functions/functions-bindings-twilio">Associação de saída do Twilio</a></p>
+  author: ggailey777
+  ms.author: azfundocs
+  ms.date: 09/17/2019
+  ms.openlocfilehash: fe554b2e7a146ccb3c0b593ffc7e8bef66e55ef2
+  ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71349914"
+landingContent:
+- title: Sobre o Azure Functions
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é o Azure Functions?
+      url: functions-overview.md
+    - text: Comparar opções sem servidor
+      url: functions-compare-logic-apps-ms-flow-webjobs.md
+  - linkListType: concept
+    links:
+    - text: Opções de hospedagem
+      url: functions-scale.md
+  - linkListType: learn
+    links:
+    - text: Escolher uma opção de computação sem servidor
+      url: /learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/index
+  - linkListType: video
+    links:
+    - text: Onde devo hospedar meu código?
+      url: https://azure.microsoft.com/resources/videos/build-2019-where-should-i-host-my-code-choosing-between-kubernetes-containers-and-serverless/
+- title: Introdução
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Crie sua primeira função (C#)
+      url: functions-create-your-first-function-visual-studio.md
+    - text: Crie sua primeira função (Java)
+      url: functions-create-first-java-maven.md
+    - text: Crie sua primeira função (JavaScript)
+      url: functions-create-first-function-vs-code.md
+    - text: Crie sua primeira função (PowerShell)
+      url: functions-create-first-function-powershell.md
+    - text: Crie sua primeira função (Python)
+      url: functions-create-first-function-python.md
+  - linkListType: learn
+    links:
+    - text: Criar lógica sem servidor
+      url: /learn/modules/create-serverless-logic-with-azure-functions/
+  - linkListType: video
+    links:
+    - text: Veja como começar
+      url: https://azure.microsoft.com/resources/videos/get-started-with-azure-functions/
+- title: Desenvolver funções
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Guia do desenvolvedor
+      url: functions-reference.md
+    - text: Idiomas com suporte
+      url: supported-languages.md
+  - linkListType: how-to-guide
+    links:
+    - text: Desenvolvimento local
+      url: functions-develop-local.md
+    - text: Testar funções
+      url: functions-test-a-function.md
+    - text: Tratamento de erros
+      url: functions-bindings-error-pages.md
+  - linkListType: learn
+    links:
+    - text: Desenvolver/testar/implantar com o Visual Studio
+      url: /learn/modules/develop-test-deploy-azure-functions-with-visual-studio/index
+  - linkListType: video
+    links:
+    - text: Desenvolver com o Visual Studio Code
+      url: https://azure.microsoft.com/resources/videos/build-nodejs-apis-using-serverless/
+- title: Conectar-se a serviços
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Gatilhos acionados por eventos
+      url: functions-triggers-bindings.md
+    - text: Opções de rede
+      url: functions-networking-options.md
+  - linkListType: tutorial
+    links:
+    - text: Integrar aos Aplicativos Lógicos
+      url: functions-twitter-email.md
+    - text: Consumir eventos da Grade de Eventos
+      url: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
+  - linkListType: learn
+    links:
+    - text: Encadear funções com associações
+      url: /learn/modules/chain-azure-functions-data-using-bindings/index
+    - text: Conectar ao webhook do GitHub
+      url: /learn/modules/monitor-github-events-with-a-function-triggered-by-a-webhook/index
+- title: Implantar funções
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Opções de implantação
+      url: functions-deployment-technologies.md
+    - text: Slots de implantação
+      url: functions-deployment-slots.md
+    - text: Automatizar implantação de recursos
+      url: functions-infrastructure-as-code.md
+  - linkListType: how-to-guide
+    links:
+    - text: Configurar a implantação contínua
+      url: functions-continuous-deployment.md
+    - text: Criar e implantar usando o Azure Pipelines
+      url: functions-how-to-azure-devops.md
+    - text: Implantar usando o plug-in do Jenkins
+      url: /azure/jenkins/jenkins-azure-functions-deploy
+- title: Desempenho e monitoramento
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Monitorar funções
+      url: functions-monitoring.md
+    - text: Otimizar desempenho
+      url: functions-best-practices.md
+    - text: Considerações de rede
+      url: functions-networking-options.md
+  - linkListType: how-to-guide
+    links:
+    - text: solução de problemas
+      url: functions-recover-storage-account.md
+- title: Funções de longa execução
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Plano de hospedagem Premium
+      url: functions-premium-plan.md
+    - text: Funções duráveis
+      url: durable/durable-functions-overview.md
+  - linkListType: learn
+    links:
+    - text: Criar um fluxo de trabalho sem servidor de longa execução
+      url: /learn/modules/create-long-running-serverless-workflow-with-durable-functions/index
+- title: Exemplos
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Exemplos do Azure Functions
+      url: /samples/browse/?products=azure-functions
+    - text: Azure Serverless Community Library
+      url: https://www.serverlesslibrary.net/
+    - text: Modelos do Azure Resource Manager
+      url: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Web&term=functions
+  - linkListType: how-to-guide
+    links:
+    - text: Exemplos da CLI do Azure
+      url: functions-cli-samples.md

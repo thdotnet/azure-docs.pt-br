@@ -1,68 +1,205 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Gerenciamento do Azure – Governança
+### YamlMime:Hub
+title: Documentação da Governança do Azure
+summary: Obtenha o conjunto mais avançado de funcionalidades de governança dos principais provedores de nuvem.
+brand: azure
 metadata:
-  title: Gerenciamento do Azure – Governança
-  description: 'Saiba mais sobre os conceitos e os serviços do Azure disponíveis para gerenciar seu ambiente com uniformidade, por meio de design e regras explícitas, e sobre como fazer a auditoria de conformidade.'
-  author: DCtheGeek
-  manager: carmonm
+  title: Documentação da Governança do Azure
+  description: Obtenha o conjunto mais avançado de funcionalidades de governança dos principais provedores de nuvem.
   ms.service: governance
-  ms.topic: landing-page
-  ms.date: 05/07/2019
+  ms.topic: hub-page
+  ms.collection: collection
+  author: DCtheGeek
   ms.author: dacoulte
-abstract:
-  description: 'A Governança do Azure é uma coleção de conceitos e serviços projetados para habilitar o gerenciamento de seus diversos recursos do Azure em escala. Esses serviços possibilitam organizar e estruturar suas assinaturas de forma lógica; criar e implantar pacotes de recursos nativos reutilizáveis e do Azure; definir, fazer auditorias e corrigir seus recursos e muito mais. Use esta página para saber mais sobre esses conceitos e serviços e sobre como habilitar e usar cada um deles em seu ambiente atualmente.'
-  aside:
-    image:
-      alt: null
-      height: 225
-      src: ./media/video.png
-      width: 250
-    title: 'Tenha velocidade e controle sobre os recursos com a Governança do Azure (1:47)'
-    href: 'https://www.youtube.com/watch?v=MhGbKjlmuRs'
-    width: 250
-sections:
-  - title: Componentes e serviços
-  - items:
-      - type: list
-        style: cards
-        className: cardsD
-        columns: 2
-        items:
-          - href: ./management-groups/overview
-            html: <p>Saiba mais sobre como agrupar e organizar suas assinaturas em uma hierarquia lógica que dá suporte à implantação de outros serviços de Governança de maneira estruturada.<br /></p>
-            image:
-              alt: Grupos de Gerenciamento
-              src: ./media/management-groups-illustration.svg
-            title: Grupos de Gerenciamento
-          - href: ./resource-graph/
-            html: <p>Use uma avançada ferramenta de linha de comando (com suporte para a CLI do Azure e o Azure PowerShell) para consultar rapidamente detalhes complexos sobre seus recursos do Azure. Encontre e exponha informações que anteriormente exigiam scripts complexos e iterativos para descobrir esses recursos em escala.</p>
-            image:
-              alt: Resource Graph
-              src: ./media/resource-graph-illustration.svg
-            title: Resource Graph
-          - href: ./policy/
-            html: '<p>Defina e aplique padrões para recursos em seu ambiente. Impeça a criação de recursos indesejados, aprimore novos recursos com elementos adicionais e faça auditorias e corrija recursos que já estão em seu ambiente.</p>'
-            image:
-              alt: Política
-              src: ./media/policy-illustration.svg
-            title: Política
-          - href: ./blueprints/
-            html: '<p>Crie um pacote nativo do Azure com <i>artefatos</i> (grupos de recursos, políticas, atribuições de função, modelos do Resource Manager e muito mais) que podem ser implantados dinamicamente em assinaturas para criar ambientes uniformes e reproduzíveis.</p>'
-            image:
-              alt: Blueprints
-              src: ./media/blueprints-illustration.svg
-            title: Blueprints
-  - title: Cloud Adoption Framework
-  - items:
-      - type: list
-        style: cards
-        className: cardsZ
-        columns: 3
-        items:
-          - href: /azure/architecture/cloud-adoption/index?toc=/azure/governance/toc.json
-            html: '<p>A estrutura de adoção de nuvem fornece orientações técnicas relacionadas ao Microsoft Azure. Já que os clientes ainda estão no processo de escolher um fornecedor de nuvem, esta estrutura fornece diretrizes independentes de nuvem para facilitar as decisões de níveis superiores, quando possível.</p>'
-            title: Visão geral
-          - href: /azure/architecture/cloud-adoption/governance/index?toc=/azure/governance/toc.json
-            html: '<p>Para organizações com as políticas existentes que regem ambientes de TI locais, governança de nuvem deve completar essas políticas empresariais.<br /><br /></p>'
-            title: Visão geral de governança
+  ms.date: 09/10/2019
+  ms.openlocfilehash: 07db40943ae0ff9978cedcef6a42ba0b83f5f2cc
+  ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 09/27/2019
+  ms.locfileid: "71337730"
+highlightedContent:
+  items:
+  - title: Visão geral de governança
+    itemType: overview
+    url: ./azure-management.md
+  - title: Canal do YouTube de Governança
+    itemType: video
+    url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
+  - title: Governança no Cloud Adoption Framework
+    itemType: architecture
+    url: /azure/architecture/cloud-adoption/governance
+  - title: Aplicar e monitorar padrões de infraestrutura com o Azure Policy
+    itemType: learn
+    url: /learn/modules/intro-to-governance/
+productDirectory:
+  title: Componentes e serviços
+  items:
+  - title: Grupos de Gerenciamento do Azure
+    imageSrc: ./media/management-groups.svg
+    links:
+    - url: ./management-groups/overview.md
+      text: Visão geral
+    - url: ./management-groups/index.yml
+      text: Veja mais >
+  - title: Azure Policy
+    imageSrc: ./media/azure-policy.svg
+    links:
+    - url: ./policy/overview.md
+      text: Visão geral
+    - url: ./policy/how-to/get-compliance-data.md
+      text: Avaliar a conformidade
+    - url: ./policy/concepts/rego-for-aks.md
+      text: Gerenciar configuração do AKS
+    - url: ./policy/concepts/guest-configuration.md
+      text: Gerenciar configuração da VM
+    - url: ./policy/index.yml
+      text: Veja mais >
+  - title: Azure Blueprints
+    imageSrc: ./media/azure-blueprints.svg
+    links:
+    - url: ./blueprints/overview.md
+      text: Visão geral
+    - url: ./blueprints/tutorials/protect-new-resources.md
+      text: Proteger recursos
+    - url: ./blueprints/index.yml
+      text: Veja mais >
+  - title: Gráfico de Recursos do Azure
+    imageSrc: ./media/azure-resource-graph.svg
+    links:
+    - url: ./resource-graph/overview.md
+      text: Visão geral
+    - url: ./resource-graph/concepts/explore-resources.md
+      text: Explore os recursos do Azure
+    - url: ./resource-graph/how-to/get-resource-changes.md
+      text: Controle de alterações
+    - url: ./resource-graph/index.yml
+      text: Veja mais >
+  - title: Gerenciamento de Custos
+    imageSrc: ./media/cost-management.svg
+    links:
+    - url: ../cost-management/overview-cost-mgt.md
+      text: Visão geral
+    - url: ../cost-management/aws-integration-manage.md
+      text: Gerenciar o uso e o custo do AWS
+    - url: ../cost-management/index.yml
+      text: Veja mais >
+tools:
+  title: Exemplos
+  summary: Definições de política, blueprints de conformidade, consultas de recursos e muito mais
+  items:
+  - title: Azure Policy
+    imageSrc: ./media/azure-policy.svg
+    url: ./policy/samples/index.md
+  - title: Azure Blueprints
+    imageSrc: ./media/azure-blueprints.svg
+    url: ./blueprints/samples/index.md
+  - title: Gráfico de Recursos do Azure
+    imageSrc: ./media/azure-resource-graph.svg
+    url: ./resource-graph/samples/starter.md
+  - title: Gerenciamento de Custos
+    imageSrc: ./media/cost-management.svg
+    url: https://github.com/Azure-Samples/Cost-Management-Samples
+additionalContent:
+  sections:
+  - title: Recursos para desenvolvedores
+    items:
+    - title: Grupos de Gerenciamento
+      links:
+      - text: CLI do Azure
+        url: /cli/azure/ext/managementgroups/?view=azure-cli-latest
+      - text: Azure PowerShell
+        url: /powershell/module/az.resources/#resources
+      - text: SDK do Azure para .NET
+        url: /dotnet/api/overview/azure/managementgroups
+      - text: SDK do Azure para Node
+        url: /javascript/api/azure-arm-resource/managementgroups
+    - title: Azure Policy
+      links:
+      - text: CLI do Azure
+        url: /cli/azure/policy
+      - text: Azure PowerShell
+        url: /powershell/module/az.resources/#policies
+        note: (Política)
+      - text: Azure PowerShell
+        url: /powershell/module/az.policyinsights#policy_insights
+        note: (Informações sobre a política)
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.GuestConfiguration
+        note: (Configuração de convidado)
+      - text: SDK do Azure para .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+        note: (Atribuições)
+      - text: SDK do Azure para .NET
+        url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+        note: (Definições de Política)
+      - text: REST
+        url: /rest/api/policy-insights/
+        note: (Informações sobre a política)
+      - text: REST
+        url: /rest/api/resources/policyassignments
+        note: (Atribuições)
+      - text: REST
+        url: /rest/api/resources/policydefinitions
+        note: (Definições)
+      - text: REST
+        url: /rest/api/resources/policysetdefinitions
+        note: (Iniciativas)
+      - text: REST
+        url: /rest/api/guestconfiguration/
+        note: (Configuração de convidado)
+      - text: Modelos do Gerenciador de Recursos
+        url: /azure/templates/microsoft.authorization
+    - title: Azure Blueprints
+      links:
+      - text: Funções de blueprint
+        url: ./blueprints/reference/blueprint-functions.md
+      - text: Azure PowerShell
+        url: /powershell/module/az.blueprint/#blueprint
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.Blueprint
+        note: (Módulo da galeria do PS)
+      - text: SDK do Azure para .NET
+        url: /dotnet/api/overview/azure/blueprints/management
+      - text: REST
+        url: /rest/api/blueprints/
+    - title: Gráfico de Recursos do Azure
+      links:
+      - text: CLI do Azure
+        url: /cli/azure/ext/resource-graph/graph
+      - text: Azure PowerShell
+        url: /powershell/module/az.resourcegraph/
+      - text: Azure PowerShell
+        url: https://www.powershellgallery.com/packages/Az.ResourceGraph
+        note: (Módulo da galeria do PS)
+      - text: SDK do Azure para .NET
+        url: /dotnet/api/Microsoft.Azure.Management.ResourceGraph
+      - text: SDK do Azure para .NET
+        url: https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceGraph/
+        note: (NuGet)
+      - text: SDK do Azure para linguagem Go
+        url: https://godoc.org/github.com/Azure/azure-sdk-for-go/services/resourcegraph/mgmt/2019-04-01/resourcegraph
+      - text: SDK do Azure para Java
+        url: /java/api/overview/azure/resourcegraph/management?view=azure-java-stable
+      - text: SDK do Azure para Java
+        url: https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar
+        note: (Maven)
+      - text: SDK do Azure para Node
+        url: /javascript/api/@azure/arm-resourcegraph
+      - text: SDK do Azure para Python
+        url: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph
+      - text: SDK do Azure para Ruby
+        url: https://rubygems.org/gems/azure_mgmt_resourcegraph
+        note: (Gem)
+      - text: REST
+        url: /rest/api/azureresourcegraph/resources/resources
+    - title: Gerenciamento de Custos
+      links:
+      - text: REST
+        url: /rest/api/cost-management
+        note: (Gerenciamento de Custos)
+      - text: REST
+        url: /rest/api/consumption
+        note: (Consumo)
+      - text: Modelos do Gerenciador de Recursos
+        url: /azure/templates/microsoft.consumption/budgets
+  footer: '[UserVoice](https://feedback.azure.com/forums/915958-azure-governance) | [Comunidade Microsoft Tech – Governança do Azure](https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance) | [Suporte do Azure](https://azure.microsoft.com/support/create-ticket/)'
