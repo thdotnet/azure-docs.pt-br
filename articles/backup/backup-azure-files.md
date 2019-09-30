@@ -7,12 +7,12 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: d5702576b3353bbc779601c7a5fe91417d73c7a1
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 44a2b0feab19d042de58359a7ea13814415e6c9e
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624346"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129556"
 ---
 # <a name="back-up-and-restore-azure-file-shares"></a>Fazer backup e restaurar compartilhamentos de arquivos do Azure
 Este artigo explica como usar o Portal do Azure para fazer backup e restaurar [compartilhamentos de arquivos do Azure](../storage/files/storage-files-introduction.md) no Azure.
@@ -86,13 +86,15 @@ Ocasionalmente, talvez você queira gerar um instantâneo de backup ou um ponto 
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/list-of-azure-files-backup-items.png)
 
-3. Na lista de compartilhamentos de arquivos do Azure, selecione o compartilhamento de arquivo desejado. O menu Item de Backup do compartilhamento de arquivo selecionado é aberto.
+3. Na lista de compartilhamentos de arquivos do Azure, selecione o compartilhamento de arquivo desejado. Os detalhes de **Item de Backup** são exibidos. No menu **Item de Backup**, clique em **Fazer Backup agora**. Como esse é um trabalho de backup sob demanda, não há nenhuma política de retenção associada ao ponto de recuperação.
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/backup-item-menu.png)
 
-4. No menu Item de Backup, clique em **Fazer Backup Agora**. Como esse é um trabalho de backup sob demanda, não há nenhuma política de retenção associada ao ponto de recuperação. A caixa de diálogo **Fazer Backup Agora** é aberta. Especifique até que dia deseja manter o ponto de recuperação escolhendo o último dia.
+4. A caixa de diálogo **Fazer Backup Agora** é aberta. Especifique até que dia deseja manter o ponto de recuperação escolhendo o último dia.
 
    ![Clique em Backup para associar o compartilhamento de arquivos do Azure ao cofre](./media/backup-file-shares/backup-now-menu.png)
+
+5. Clique em **OK** para confirmar o trabalho de backup sob demanda.
 
 ## <a name="restore-from-backup-of-azure-file-share"></a>Restaurar a partir do backup do compartilhamento de arquivos do Azure
 Quer você precise restaurar um compartilhamento de arquivo inteiro, arquivos individuais ou pastas de um Ponto de Restauração, vá até o Item de Backup, conforme detalhado na seção anterior. Escolha **Restaurar Compartilhamento** para restaurar um compartilhamento de arquivo inteiro de um ponto no tempo. Na lista de Pontos de Restauração que aparece, selecione um para ser capaz de Substituir o compartilhamento de arquivos atual ou restaurá-lo para um compartilhamento de arquivo alternativo na mesma região.

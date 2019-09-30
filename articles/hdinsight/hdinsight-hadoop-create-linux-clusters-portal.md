@@ -1,19 +1,19 @@
 ---
 title: Criar clusters Apache Hadoop usando um navegador da Web, Azure HDInsight
-description: Saiba como criar clusters Apache Hadoop, Apache HBase, Apache Storm ou Apache Spark no Linux para HDInsight, usando um navegador da Web e a Versão Prévia do Portal do Azure.
+description: Saiba como criar clusters Apache Hadoop, Apache HBase, Apache Storm ou Apache Spark no Linux para HDInsight usando um navegador da Web e o portal do Azure.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/29/2019
-ms.openlocfilehash: b2a5168cbda209d1d975db5e5f1c810a798ddb97
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.date: 09/28/2019
+ms.openlocfilehash: 687fde2e203ed471e2f0164f1f4a670de4afc74e
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71098703"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677095"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Criar clusters baseados em Linux no HDInsight usando o portal do Azure
 
@@ -36,13 +36,13 @@ O portal do Azure expõe a maioria das propriedades do cluster. Usando modelos d
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
-1. No menu esquerdo, selecione **+ Criar um recurso**.
-
-1. Em **Azure Marketplace**, selecione **Análises**.
-
-1. Na opção **Em destaque**, selecione **HDInsight**.
+1. No menu esquerdo, navegue até **+ Criar um recurso** >  **Análise** > **HDInsight**.
 
     ![Criar um novo cluster no portal do Azure](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster.png "Criar um novo cluster no portal do Azure")
+
+1. Na página **criar cluster HDInsight** , selecione **ir para a experiência de criação clássica**.
+
+    ![Ir para a experiência de criação clássica](./media/hdinsight-hadoop-create-linux-clusters-portal/azure-portal-cluster-create-classic.png)
 
 1. Na página **HDInsight**, selecione **Personalizado (tamanho, configurações, aplicativos)** .
 
@@ -71,13 +71,13 @@ O portal do Azure expõe a maioria das propriedades do cluster. Usando modelos d
 
     * Selecione **Próximo** para ir para a próxima página.
 
-4. Em **2 Segurança + rede**, é possível conectar o cluster a uma rede virtual, usando o menu suspenso fornecido. Selecione uma rede virtual do Azure e a sub-rede se você desejar colocar o cluster em uma rede virtual. Para obter informações sobre como usar o HDInsight com uma rede virtual, consulte [planejar uma implantação de rede virtual para clusters do Azure HDInsight](hdinsight-plan-virtual-network-deployment.md). O artigo inclui requisitos de configuração específicos para a rede virtual. 
+1. Em **2 Segurança + rede**, é possível conectar o cluster a uma rede virtual, usando o menu suspenso fornecido. Selecione uma rede virtual do Azure e a sub-rede se você desejar colocar o cluster em uma rede virtual. Para obter informações sobre como usar o HDInsight com uma rede virtual, consulte [planejar uma implantação de rede virtual para clusters do Azure HDInsight](hdinsight-plan-virtual-network-deployment.md). O artigo inclui requisitos de configuração específicos para a rede virtual.
 
     Se você quiser usar o **Enterprise Security Package**, siga estas instruções: [Configurar um cluster HDInsight com o Enterprise Security Package usando o Azure Active Directory Domain Services](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds).
 
     Selecione **Próximo** para ir para a próxima página.
 
-5. Em **3 Armazenamento**, especifique se prefere o Armazenamento do Azure ou o Azure Data Lake Storage como o armazenamento padrão. Para obter mais informações, confira a tabela a seguir.
+1. Em **3 Armazenamento**, especifique se prefere o Armazenamento do Azure ou o Azure Data Lake Storage como o armazenamento padrão. Para obter mais informações, confira a tabela a seguir.
 
      ![HDInsight criar armazenamento de cluster](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-storage.png "Criando um novo cluster no portal do Azure")
 
@@ -92,11 +92,11 @@ O portal do Azure expõe a maioria das propriedades do cluster. Usando modelos d
 
      Selecione **Próximo** para ir para a próxima página.
 
-6. Em **4 Aplicativos (opcional)** , selecione os aplicativos desejados. Você, a Microsoft ou os fornecedores independentes de software (ISVs)  podem desenvolver esses aplicativos. Para obter mais informações, consulte [Instalar aplicativos durante a criação do cluster](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).
+1. Em **4 Aplicativos (opcional)** , selecione os aplicativos desejados. Você, a Microsoft ou os fornecedores independentes de software (ISVs)  podem desenvolver esses aplicativos. Para obter mais informações, consulte [Instalar aplicativos durante a criação do cluster](hdinsight-apps-install-applications.md#install-applications-during-cluster-creation).
 
     Selecione **Próximo** para ir para a próxima página.
 
-6. **5 Tamanho do cluster** mostra informações sobre os nós usados para esse cluster. Defina o número de nós de trabalho que você precisa para o cluster. O custo estimado de executar o cluster também é mostrado.
+1. **5 Tamanho do cluster** mostra informações sobre os nós usados para esse cluster. Defina o número de nós de trabalho que você precisa para o cluster. O custo estimado de executar o cluster também é mostrado.
 
     ![Criar nós de cluster do HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-nodes.png "Especificar o número de nós de cluster")
 
@@ -107,18 +107,18 @@ O portal do Azure expõe a maioria das propriedades do cluster. Usando modelos d
 
     Selecione **Próximo** para ir para a próxima página.
 
-8. Em **6 Ações de script**, você pode personalizar um cluster para instalar componentes personalizados. Essa opção funcionará se você quiser usar um script personalizado para personalizar um cluster, enquanto o cluster estiver sendo criado. Para obter mais informações sobre ações de script, consulte [Personalizar clusters HDInsight baseados em Linux usando ações de script](hdinsight-hadoop-customize-cluster-linux.md).
+1. Em **6 Ações de script**, você pode personalizar um cluster para instalar componentes personalizados. Essa opção funcionará se você quiser usar um script personalizado para personalizar um cluster, enquanto o cluster estiver sendo criado. Para obter mais informações sobre ações de script, consulte [Personalizar clusters HDInsight baseados em Linux usando ações de script](hdinsight-hadoop-customize-cluster-linux.md).
 
    Selecione **Próximo** para ir para a próxima página.
 
-9. Em **7 Resumo**, verifique as informações inseridas anteriormente. Em seguida, selecione **Criar**.
+1. Em **7 Resumo**, verifique as informações inseridas anteriormente. Em seguida, selecione **Criar**.
 
      ![Resumo de criação de cluster do HDInsight](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-summary.png "Especificar o número de nós de cluster")
     
     > [!NOTE]  
     > Levará algum tempo para que o cluster seja criado, geralmente, cerca de 20 minutos. Monitore as **Notificações** para conferir o processo de provisionamento.
 
-10. Após o término do processo de criação, selecione **Ir para Recurso** na notificação **Implantação com êxito**. A janela do cluster fornece as informações a seguir.
+1. Após o término do processo de criação, selecione **Ir para Recurso** na notificação **Implantação com êxito**. A janela do cluster fornece as informações a seguir.
 
     ![Visão geral do cluster de portal do Azure de HDI](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-completed.png "Propriedades do cluster")
 
@@ -169,4 +169,3 @@ Você criou com êxito um cluster HDInsight. Saiba agora como trabalhar com o cl
 * [Executar trabalhos remotamente em um cluster Apache Spark usando Apache Livy](spark/apache-spark-livy-rest-interface.md)
 * [Apache Spark com BI: Executar análise de dados interativa usando o Spark no HDInsight com ferramentas de BI](spark/apache-spark-use-bi-tools.md)
 * [Apache Spark com Machine Learning: usar o Spark no HDInsight para prever resultados da inspeção de alimentos](spark/apache-spark-machine-learning-mllib-ipython.md)
-

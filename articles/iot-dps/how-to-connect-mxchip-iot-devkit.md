@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: b1aac19885e2b640063e4840f047916ad51e9656
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2731bbcd6a6b0c8f7d82334c022c017d5eae35f0
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855740"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677014"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Use o provisionamento automático do Serviço de Provisionamento de Dispositivos no Hub IoT do Azure para registrar o MXChip IoT DevKit com o Hub IoT
 
@@ -91,9 +91,6 @@ No código de dispositivo, você precisará especificar o [ponto de extremidade 
 ## <a name="generate-x509-certificate"></a>Gerar certificado X.509
 
 O [mecanismo de atestado](/azure/iot-dps/concepts-device#attestation-mechanism) usado por este exemplo é o certificado X.509. Você precisa usar um utilitário para gerá-lo.
-
-> [!NOTE]
-> O gerador de certificado x. 509 só dá suporte ao Windows agora.
 
 1. No VS Code, clique em `F1`, digite e selecione **abrir Terminal novo** para abrir a janela de terminal.
 

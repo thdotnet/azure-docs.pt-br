@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 7f913eebb2dd3926165a36c37dcb356aa05f2de4
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.openlocfilehash: 8c346b75b30737645721d8b39a655a85ed446fae
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172047"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71229538"
 ---
 # <a name="tutorial-create-and-configure-an-azure-active-directory-domain-services-instance"></a>Tutorial: Criar e configurar uma instância do Azure Active Directory Domain Services
 
@@ -64,6 +64,15 @@ Ao criar uma instância do Azure AD DS, você especifica um nome DNS. Eis alguma
 * **Nome de domínio interno:** Por padrão, o nome de domínio interno do diretório é usado (com sufixo *.onmicrosoft.com*). Se quiser habilitar o acesso LDAP seguro ao domínio gerenciado pela Internet, você não poderá criar um certificado digital para proteger a conexão com esse domínio padrão. A Microsoft é proprietária do domínio *.onmicrosoft.com*, portanto, nenhuma AC (Autoridade de Certificação) emitirá um certificado.
 * **Nomes de domínio personalizados:** A abordagem mais comum é especificar um nome de domínio personalizado, normalmente um que você já tenha e seja roteável. Quando você usa um domínio roteável personalizado, o tráfego pode fluir corretamente conforme necessário para dar suporte aos seus aplicativos.
 * **Sufixos de domínio não roteáveis:** De modo geral, recomendamos que você evite sufixos de nome de domínio não roteáveis, tal como *contoso.local*. O sufixo *.local* não é roteável e pode causar problemas com a resolução do DNS.
+
+> [!TIP]
+> Se você criar um nome de domínio personalizado, tome cuidado com os namespaces DNS existentes. É recomendável incluir um prefixo exclusivo para o nome de domínio. Por exemplo, se o nome DNS raiz for *contoso.com*, crie um domínio gerenciado do Azure AD DS com o nome de domínio personalizado *corp.contoso.com* ou *ds.contoso.com*. Em um ambiente híbrido com um ambiente do AD DS local, esses prefixos já podem estar em uso. Use um prefixo exclusivo para o Azure AD DS.
+>
+> Você pode usar o nome DNS raiz para o domínio gerenciado do Azure AD DS, mas talvez precise criar alguns registros DNS adicionais para outros serviços no ambiente. Por exemplo, se você executar um servidor Web que hospeda um site usando o nome DNS raiz, poderá haver conflitos de nomenclatura que exigem entradas DNS adicionais.
+>
+> Nesses tutoriais e artigos de instruções, o domínio personalizado *contoso.com* é usado como um breve exemplo. Em todos os comandos, especifique seu próprio nome de domínio, que pode incluir um prefixo exclusivo.
+>
+> Para obter mais informações, confira [Selecionar um prefixo de nomenclatura para o domínio][naming-prefix].
 
 As seguintes restrições de nome DNS também se aplicam:
 
@@ -228,3 +237,6 @@ Para ver esse domínio gerenciado em ação, crie e una uma máquina virtual ao 
 [on-prem-sync]: tutorial-configure-password-hash-sync.md
 [configure-sspr]: ../active-directory/authentication/quickstart-sspr.md
 [password-hash-sync-process]: ../active-directory/hybrid/how-to-connect-password-hash-synchronization.md#password-hash-sync-process-for-azure-ad-domain-services
+
+<!-- EXTERNAL LINKS -->
+[naming-prefix]: /windows-server/identity/ad-ds/plan/selecting-the-forest-root-domain#selecting-a-prefix

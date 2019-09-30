@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: f2868610bf9215b1414ea3ba342e3064b9c54f63
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: cb97cc5b0004442e00b970202dd01f76aa971a2a
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933498"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677583"
 ---
 # <a name="number-prebuilt-entity-for-a-luis-app"></a>Entidade numérica predefinida para um aplicativo LUIS
 Há muitas maneiras de usar os valores numéricos para quantificar, expressar e descrever informações. Este artigo aborda apenas alguns dos exemplos possíveis. O LUIS interpreta as variações em enunciados do usuário e retorna valores numéricos consistentes. Uma vez que essa entidade já está treinada, não é necessário adicionar enunciados de exemplo contendo número às intenções do aplicativo. 
@@ -43,7 +43,7 @@ O LUIS inclui o valor reconhecido de uma entidade **`builtin.number`** no campo 
 ## <a name="resolution-for-prebuilt-number"></a>Resolução para número predefinido
 
 
-### <a name="api-version-2x"></a>Versão da API 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Resposta de ponto de extremidade de previsão v2](#tab/V2)
 
 O exemplo a seguir mostra uma resposta JSON de LUIS, que inclui a resolução do valor de 24, para o enunciado "duas dúzias".
 
@@ -83,9 +83,9 @@ O exemplo a seguir mostra uma resposta JSON de LUIS, que inclui a resolução do
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Resposta de ponto de extremidade de previsão v3](#tab/V3)
 
-O JSON a seguir é com `verbose` o parâmetro definido `false`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `false`:
 
 ```json
 {
@@ -107,7 +107,7 @@ O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 }
 ```
 
-O JSON a seguir é com `verbose` o parâmetro definido `true`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `true`:
 
 ```json
 {
@@ -141,6 +141,10 @@ O JSON a seguir é com `verbose` o parâmetro definido `true`como:
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ponto de extremidade de previsão v3](luis-migration-api-v3.md).
 
 Saiba mais sobre [moeda](luis-reference-prebuilt-currency.md), [ordinal](luis-reference-prebuilt-ordinal.md) e [percentual](luis-reference-prebuilt-percentage.md). 

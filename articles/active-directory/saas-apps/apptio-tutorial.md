@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao Apptio | Microsoft Docs'
+title: 'Tutorial: Integração do SSO (logon único) do Azure Active Directory ao Apptio | Microsoft Docs'
 description: Saiba como configurar o logon único entre o Azure Active Directory e o Apptio.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/08/2019
+ms.date: 08/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0ac86dcdb698c554c40325d6a20d6d27de908f8
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: a421afc736399472a513dfc145321ba33ef6fdca
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104380"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71129720"
 ---
-# <a name="tutorial-integrate-apptio-with-azure-active-directory"></a>Tutorial: Integrar o Apptio ao Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-apptio"></a>Tutorial: Integração do SSO (logon único) do Azure Active Directory ao Apptio
 
 Neste tutorial, você aprenderá a integrar o Apptio ao Azure AD (Azure Active Directory). Ao integrar o Apptio ao Azure AD, você poderá:
 
@@ -46,6 +46,9 @@ Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente d
 
 * O Apptio é compatível com SSO iniciado por **IDP**
 
+> [!NOTE]
+> O identificador desse aplicativo é um valor de cadeia de caracteres fixo; portanto apenas uma instância pode ser configurada em um locatário.
+
 ## <a name="adding-apptio-from-the-gallery"></a>Adicionando o Apptio por meio da galeria
 
 Para configurar a integração do Apptio ao Azure AD, você precisa adicionar o Apptio à lista de aplicativos SaaS gerenciados por meio da galeria.
@@ -57,7 +60,6 @@ Para configurar a integração do Apptio ao Azure AD, você precisa adicionar o 
 1. Na seção **Adicionar por meio da galeria**, digite **Apptio** na caixa de pesquisa.
 1. Selecione **Apptio** no painel de resultados e, em seguida, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
-
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-apptio"></a>Configurar e testar logon único do Azure AD para o Apptio
 
 Configure e teste o SSO do Azure AD com o Apptio usando um usuário de teste chamado **B.Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Apptio.
@@ -67,56 +69,31 @@ Para configurar e testar o SSO do Azure AD com o Apptio, conclua os seguintes bl
 1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** – para permitir que os usuários usem esse recurso.
     1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
     1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
-2. **[Configurar o SSO do Apptio](#configure-apptio-sso)** – para definir as configurações de logon único no lado do aplicativo.
+1. **[Configurar o SSO do Apptio](#configure-apptio-sso)** – para definir as configurações de logon único no lado do aplicativo.
     1. **[Criar um usuário de teste do Apptio](#create-apptio-test-user)** – para ter um equivalente de B.Fernandes no Apptio que esteja vinculado à representação de usuário no Azure AD.
-3. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
+1. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
 
 ## <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
 Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **Apptio**, localize a seção **Gerenciar** e selecione **Logon único**.
-1. Na página **Escolher um método de logon único**, escolha **SAML**.
-1. Na página **Configurar o Logon Único com SAML**, clique no ícone editar/de caneta da **Configuração Básica de SAML** para editar as configurações.
+1. Na página **Selecionar um método de logon único**, escolha **SAML**.
+1. Na página **Configurar o logon único com o SAML**, clique no ícone de edição/caneta da **Configuração Básica do SAML** para editar as configurações.
 
    ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-1. Na seção **Configuração básica de SAML**, realize as seguintes etapas:
+1. Na seção **Configuração Básica do SAML**, insira os valores para os seguintes campos:
 
-    Na caixa de texto **Identificador**, digite o valor: `urn:federation:apptio`
+    Na caixa de texto **Identificador**, digite uma URL: `urn:federation:apptio`
 
-5. Seu aplicativo Apptio espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
+1. A declaração de função é pré-configurada, portanto, você não precisa configurá-la, mas ainda precisará criá-la no Azure AD usando este [artigo](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management).
 
-    ![image](common/edit-attribute.png)
-
-    > [!NOTE]
-    > Clique [aqui](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management) para saber como configurar a **Função** no Azure AD
-
-6. Além do indicado acima, o aplicativo Apptio espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção Declarações de Usuário da caixa de diálogo Atributos de Usuário, execute as seguintes etapas para adicionar o atributo de token SAML, conforme mostrado na tabela abaixo: 
-
-    | NOME |  Atributo de Origem|
-    | -------------- | -------------------- |
-    | fullname       | user.displayname |
-    | mail           | user.mail |
-    | função           | user.assignedrole |
-
-    a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
-
-    b. Na caixa de texto **Nome** , digite o nome do atributo mostrado para essa linha.
-
-    c. Deixe o **Namespace** em branco.
-
-    d. Escolha Origem como **Atributo**.
-
-    e. Na lista **Atributo de origem**, digite o valor do atributo mostrado para essa linha.
-
-    f. Clique em **Save** (Salvar).
-
-4. Na página **Configurar o Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, localize **XML de Metadados de Federação** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
+1. Na página **Configurar o logon único com o SAML**, na seção **Certificado de Autenticação SAML**, localize **XML de Metadados de Federação** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
 
     ![O link de download do Certificado](common/metadataxml.png)
 
-6. Na seção **Configurar o Apptio**, copie as URLs apropriadas de acordo com suas necessidades.
+1. Na seção **Configurar o Apptio**, copie as URLs apropriadas de acordo com suas necessidades.
 
     ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
@@ -127,10 +104,10 @@ Nesta seção, você criará um usuário de teste no portal do Azure chamado B.F
 1. No painel esquerdo do portal do Azure, escolha **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
 1. Selecione **Novo usuário** na parte superior da tela.
 1. Nas propriedades do **Usuário**, siga estas etapas:
-    1. No campo **Nome**, insira `B.Simon`.  
-    1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `B.Simon@contoso.com`.
-    1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
-    1. Clique em **Criar**.
+   1. No campo **Nome**, insira `B.Simon`.  
+   1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `B.Simon@contoso.com`.
+   1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+   1. Clique em **Criar**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
@@ -140,7 +117,7 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 1. Na lista de aplicativos, selecione **Apptio**.
 1. Na página de visão geral do aplicativo, localize a seção **Gerenciar** e escolha **Usuários e grupos**.
 
-    ![O link “Usuários e grupos”](common/users-groups-blade.png)
+   ![O link “Usuários e grupos”](common/users-groups-blade.png)
 
 1. Escolha **Adicionar usuário** e, em seguida, **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
@@ -156,7 +133,7 @@ Para configurar o logon único no lado do **Apptio**, é necessário enviar o **
 
 ### <a name="create-apptio-test-user"></a>Criar um usuário de teste do Apptio
 
-Nesta seção, você criará um usuário chamado B.Fernandes no Apptio. Trabalhe com a [equipe de suporte do Apptio](https://www.apptio.com/about/contact) para adicionar os usuários à plataforma Apptio. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado B.Fernandes no Apptio. Trabalhe com a  [equipe de suporte do Apptio](https://www.apptio.com/about/contact) para adicionar os usuários à plataforma Apptio. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ## <a name="test-sso"></a>Testar o SSO 
 
@@ -172,3 +149,4 @@ Ao clicar no bloco do Apptio no Painel de Acesso, você deverá ser conectado au
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Experimentar o Apptio com o Azure AD](https://aad.portal.azure.com/)

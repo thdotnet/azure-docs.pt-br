@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 75b900ecb37ae8d092d4e37129b7f39f801c470d
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: ccded68cfaa00e6e13e2bb32e114b81108742829
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066437"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686680"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Conectar um aplicativo cliente genérico ao aplicativo Azure IoT Central (Node.js)
 
@@ -36,7 +36,7 @@ No aplicativo IoT Central do Azure, você precisa de um modelo de dispositivo co
 
 Adicione a seguinte telemetria na página **medidas** :
 
-| Nome para exibição | Nome do Campo  | Unidades | Min. | Máx | Casas Decimais |
+| Nome para exibição | Nome do Campo  | Unidades | Mín. | Máx | Casas Decimais |
 | ------------ | ----------- | ----- | --- | --- | -------------- |
 | Temperatura  | temperatura | F     | 60  | 110 | 0              |
 | Umidade     | umidade    | %     | 0   | 100 | 0              |
@@ -64,7 +64,7 @@ Insira os nomes dos campos exatamente como mostrado na tabela no modelo de dispo
 
 Adicione o seguinte evento na página **medidas** :
 
-| Nome para exibição | Nome do Campo  | Severidade |
+| Nome para exibição | Nome do Campo  | severity |
 | ------------ | ----------- | -------- |
 | Superaquecimento  | overheat    | Erro    |
 
@@ -90,7 +90,7 @@ Adicione as seguintes propriedades de dispositivo na página **Propriedades** :
 | Nome para exibição        | Nome do Campo        | Tipo de dados |
 | ------------------- | ----------------- | --------- |
 | Número de Série       | serialNumber      | texto      |
-| Fabricante do dispositivo | fabricante      | texto      |
+| Fabricante do dispositivo | manufacturer      | texto      |
 
 Insira os nomes de campo exatamente conforme mostrado na tabela no modelo de dispositivo. Se os nomes de campo não corresponderem aos nomes de propriedade no código de dispositivo correspondente, as propriedades não poderão ser exibidas no aplicativo.
 
@@ -98,7 +98,7 @@ Insira os nomes de campo exatamente conforme mostrado na tabela no modelo de dis
 
 Adicione as seguintes configurações de **número** na página **configurações** :
 
-| Nome para exibição    | Nome do Campo     | Unidades | Decimais | Min. | Máx  | Initial |
+| Nome para exibição    | Nome do Campo     | Unidades | Decimais | Mín. | Máx  | Initial |
 | --------------- | -------------- | ----- | -------- | --- | ---- | ------- |
 | Velocidade da ventoinha       | fanSpeed       | rpm   | 0        | 0   | 3000 | 0       |
 | Temperatura definida | setTemperature | F     | 0        | 20  | 200  | 80      |
@@ -111,7 +111,7 @@ Adicione o seguinte comando na página **comandos** :
 
 | Nome para exibição    | Nome do Campo     | Tempo Limite Padrão | Tipo de dados |
 | --------------- | -------------- | --------------- | --------- |
-| Contagem regressiva       | contagem regressiva      | 30              | número    |
+| Contagem regressiva       | Contagem regressiva      | 30              | número    |
 
 Adicione o seguinte campo de entrada ao comando de contagem regressiva:
 
@@ -164,7 +164,7 @@ As etapas a seguir mostram como criar um aplicativo cliente que implementa o dis
     var provisioningHost = 'global.azure-devices-provisioning.net';
     var idScope = '{your Scope ID}';
     var registrationId = '{your Device ID}';
-    var symmetricKey = '{your Primary Key};
+    var symmetricKey = '{your Primary Key}';
     var provisioningSecurityClient = new SymmetricKeySecurityClient(registrationId, symmetricKey);
     var provisioningClient = ProvisioningDeviceClient.create(provisioningHost, idScope, new ProvisioningTransport(), provisioningSecurityClient);
     var hubClient;

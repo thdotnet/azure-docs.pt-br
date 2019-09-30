@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/09/2019
-ms.openlocfilehash: e5666a64e4160964e2c1b35707a0f064edb72460
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.date: 09/22/2019
+ms.openlocfilehash: 619c36257f9166492e98d88335d767f358e3feca
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706897"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71179129"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-online-using-dms"></a>Tutorial: Migrar o SQL Server para um banco de dados individual ou em pool no Banco de Dados SQL do Azure online usando o DMS
 
@@ -78,16 +78,16 @@ Para concluir este tutorial, você precisará:
 - Se alguma tabela não tiver uma chave primária, habilite a CDA (Captura de Dados de Alterações) no banco de dados e nas tabelas específicas.
     > [!NOTE]
     > Você pode usar o script a seguir para encontrar todas as tabelas que não têm chaves primárias.
-
+    
     ```sql
     USE <DBName>;
     go
     SELECT is_tracked_by_cdc, name AS TableName
     FROM sys.tables WHERE type = 'U' and is_ms_shipped = 0 AND
     OBJECTPROPERTY(OBJECT_ID, 'TableHasPrimaryKey') = 0;
-     ```
+    ```
 
-    >Se os resultados mostram uma ou mais tabelas com 'is_tracked_by_cdc' como '0', habilite a captura de alteração para o banco de dados e as tabelas específicas usando o processo descrito no artigo [Habilitar e desabilitar a Captura de Dados de Alterações (SQL Server)](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-2017).
+    Se os resultados mostram uma ou mais tabelas com 'is_tracked_by_cdc' como '0', habilite a captura de alteração para o banco de dados e as tabelas específicas usando o processo descrito no artigo [Habilitar e desabilitar a Captura de Dados de Alterações (SQL Server)](https://docs.microsoft.com/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?view=sql-server-2017).
 
 - Configure a função de distribuidor para o SQL Server de origem.
 
@@ -132,12 +132,12 @@ Para avaliar um banco de dados local, execute as seguintes etapas:
 1. No AMD, selecione o ícone Novo (+) e selecione o tipo de projeto **Avaliação**.
 2. Especifique um nome de projeto, na caixa de texto **Tipo de servidor de origem**, selecione **SQL Server**, na caixa de texto**Tipo de servidor de destino**, selecione **Banco de Dados SQL do Azure** e, em seguida, selecione **Criar** para criar o projeto.
 
-    Quando você estiver avaliando o banco de dados do SQL Server de origem migrando para um banco de dados individual ou em pool no Banco de Dados SQL do Azure, poderá escolher um ou ambos os seguintes tipos de relatórios de avaliação:
+   Quando você estiver avaliando o banco de dados do SQL Server de origem migrando para um banco de dados individual ou em pool no Banco de Dados SQL do Azure, poderá escolher um ou ambos os seguintes tipos de relatórios de avaliação:
 
    - Determinar compatibilidade do banco de dados
    - Verificação de paridade de recursos
 
-     Ambos os tipos de relatório são selecionados por padrão.
+   Ambos os tipos de relatório são selecionados por padrão.
 
 3. No AMD, na tela **Opções**, selecione **Avançar**.
 4. No **selecione fontes** tela, o **conectar a um servidor** caixa de diálogo, forneça os detalhes de conexão ao SQL Server e, em seguida, selecione **conectar**.

@@ -3,9 +3,9 @@ title: Enviar notificações para dispositivos específicos (Plataforma Universa
 description: Use os Hubs de Notificação do Azure com marcações no registro para enviar as últimas notícias para um aplicativo da Plataforma Universal do Windows.
 services: notification-hubs
 documentationcenter: windows
-author: jwargo
-manager: patniko
-editor: spelluru
+author: sethmanheim
+manager: femila
+editor: jwargo
 ms.assetid: 994d2eed-f62e-433c-bf65-4afebf1c0561
 ms.service: notification-hubs
 ms.workload: mobile
@@ -14,13 +14,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
-ms.author: jowargo
-ms.openlocfilehash: 9cfe5f490ef4063e02d9407f23130c1a216961ed
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.author: sethm
+ms.reviewer: jowargo
+ms.lastreviewed: 03/22/2019
+ms.openlocfilehash: efe668e42e04942cc0d9fc99670057ab5bdd302a
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402449"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212131"
 ---
 # <a name="tutorial-push-notifications-to-specific-windows-devices-running-universal-windows-platform-applications"></a>Tutorial: Enviar notificações por push para dispositivos específicos do Windows que executam aplicativos de Plataforma Universal do Windows
 
@@ -47,7 +49,7 @@ Neste tutorial, você deve executar as seguintes etapas:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Conclua o [Tutorial: Enviar notificações a aplicativos de Plataforma Universal do Windows usando Hubs de Notificação do Azure][get-started] antes de iniciar este tutorial.  
+Conclua o [Tutorial: Enviar notificações aos aplicativos da Plataforma Universal do Windows usando os Hubs de Notificação do Azure][get-started] antes de iniciar este tutorial.  
 
 ## <a name="add-category-selection-to-the-app"></a>Adicionar a seleção de categorias ao aplicativo
 

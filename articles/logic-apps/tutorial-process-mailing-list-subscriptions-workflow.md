@@ -1,6 +1,6 @@
 ---
-title: Criar fluxos de trabalho de aprovação para processar solicitações de lista de endereçamento - Aplicativos Lógicos do Azure | Microsoft Docs
-description: 'Tutorial: Como criar fluxos de trabalho de aprovação automáticos para processar assinaturas da lista de endereçamento com Aplicativos Lógicos do Azure'
+title: Criar fluxos de trabalho automatizados baseados em aprovação – Aplicativos Lógicos do Azure
+description: Tutorial – Criar um fluxo de trabalho automatizado baseado em aprovação que processa as assinaturas da lista de endereçamento usando os Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -10,18 +10,17 @@ ms.manager: carmonm
 ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/12/2018
-ms.openlocfilehash: 016d004a538a1313ca31f36b46e961098051785c
-ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
+ms.date: 09/20/2019
+ms.openlocfilehash: 734a6be81a8052b2894f4c27b165bb8dc4f14caf
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70051714"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71171655"
 ---
-# <a name="manage-mailing-list-requests-with-azure-logic-apps"></a>Gerenciar solicitações da lista de endereçamento com os Aplicativos Lógicos do Azure
+# <a name="tutorial-create-automated-approval-based-workflows-by-using-azure-logic-apps"></a>Tutorial: Criar fluxos de trabalho automatizados baseados em aprovação usando os Aplicativos Lógicos do Azure
 
-Os Aplicativos Lógicos do Azure ajudam a automatizar fluxos de trabalho e a integrar os dados entre os serviços do Azure, os serviços da Microsoft, outros aplicativos SaaS (software como serviço) e sistemas locais. Este tutorial mostra como você pode criar um [aplicativo lógico](../logic-apps/logic-apps-overview.md) que processa solicitações de assinatura para uma lista de endereçamento gerenciado pelo serviço [MailChimp](https://mailchimp.com/).
-Este aplicativo lógico monitora uma conta de email para essas solicitações, envia essas solicitações para aprovação e adiciona membros aprovados para a lista de endereçamento.
+Este tutorial mostra como criar um [aplicativo lógico](../logic-apps/logic-apps-overview.md) que automatiza um fluxo de trabalho baseado em aprovação. Especificamente, este aplicativo lógico processa as solicitações de assinatura para uma lista de endereçamento gerenciada pelo serviço [MailChimp](https://mailchimp.com/). Este aplicativo lógico monitora uma conta de email para essas solicitações, envia essas solicitações para aprovação e adiciona membros aprovados para a lista de endereçamento.
 
 Neste tutorial, você aprenderá como:
 
@@ -38,13 +37,13 @@ Quando terminar, o aplicativo lógico ficará parecido com este fluxo de trabalh
 
 ![Aplicativo lógico concluído em alto nível](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-overview.png)
 
-Caso você não tenha uma assinatura do Azure, [crie uma conta gratuita do Azure](https://azure.microsoft.com/free/) antes de começar.
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma conta do MailChimp. Crie uma lista chamada "test-members-ML" em que o aplicativo lógico pode adicionar endereços de email para membros aprovados. Se você não tiver uma conta, [inscreva-se em uma conta gratuita](https://login.mailchimp.com/signup/) e saiba [como criar uma lista](https://us17.admin.mailchimp.com/lists/#). 
+* Uma assinatura do Azure. Caso você não tenha uma assinatura, [crie uma conta gratuita do Azure](https://azure.microsoft.com/free/) antes de começar.
 
-* Uma conta de email com o Outlook do Office 365 ou o Outlook.com, que tem suporte para fluxos de trabalho de aprovação. Este artigo usa o Outlook do Office 365. Se você usar uma conta de email diferente, as etapas gerais serão as mesmas, mas a interface do usuário poderá parecer um pouco diferente.
+* Uma conta do MailChimp que contém e uma lista chamada "test-members-ML", à qual o aplicativo lógico pode adicionar endereços de email para membros aprovados. Se você não tiver uma conta, [inscreva-se em uma conta gratuita](https://login.mailchimp.com/signup/) e, em seguida, saiba [como criar uma lista do MailChimp](https://us17.admin.mailchimp.com/lists/#).
+
+* Uma conta de email no Office 365 Outlook ou no Outlook.com, que dê suporte aos fluxos de trabalho de aprovação. Este artigo usa o Outlook do Office 365. Se você usar uma conta de email diferente, as etapas gerais serão as mesmas, mas a interface do usuário poderá parecer um pouco diferente.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Entre no Portal do Azure
 
@@ -52,250 +51,266 @@ Entre no [portal do Azure](https://portal.azure.com) com suas credenciais da con
 
 ## <a name="create-your-logic-app"></a>Criar seu aplicativo lógico
 
-1. No menu principal do Azure, escolha **Criar um recurso** > **Enterprise Integration** > **Aplicativo Lógico**.
+1. No menu principal do Azure, selecione **Criar um recurso** > **Integração** > **Aplicativo Lógico**.
 
    ![Criar aplicativo lógico](./media/tutorial-process-mailing-list-subscriptions-workflow/create-logic-app.png)
 
-2. Em **Criar aplicativo lógico**, forneça essas informações sobre seu aplicativo lógico, como mostrado e descrito. Quando tiver concluído, escolha **Fixar no painel** > **Criar**.
+1. Em **Criar aplicativo lógico**, forneça essas informações sobre seu aplicativo lógico, como mostrado e descrito. Quando terminar, selecione **Criar**.
 
    ![Fornecer informações de aplicativo lógico](./media/tutorial-process-mailing-list-subscriptions-workflow/create-logic-app-settings.png)
 
-   | Configuração | Valor | DESCRIÇÃO | 
-   | ------- | ----- | ----------- | 
-   | **Nome** | LA-MailingList | O nome do seu aplicativo lógico | 
-   | **Assinatura** | <*nome-da-sua-assinatura-do-Azure*> | O nome e a ID da assinatura do Azure | 
-   | **Grupo de recursos** | LA-MailingList-RG | O nome do [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) usado para organizar os recursos relacionados | 
-   | **Localidade** | Leste dos EUA 2 | A região na qual armazenar informações sobre o seu aplicativo lógico | 
-   | **Log Analytics** | Desativar | Mantenha a configuração **Desligado** para o log de diagnósticos. | 
-   |||| 
+   | Propriedade | Valor | DESCRIÇÃO |
+   |----------|-------|-------------|
+   | **Nome** | LA-MailingList | O nome do seu aplicativo lógico, que pode conter apenas letras, números, hifens (`-`), sublinhados (`_`), parênteses (`(`, `)`) e pontos (`.`). Este exemplo usa "LA-MailingList". |
+   | **Assinatura** | <*nome-da-sua-assinatura-do-Azure*> | Seu nome da assinatura do Azure |
+   | **Grupo de recursos** | LA-MailingList-RG | O nome do [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md), usado para organizar os recursos relacionados. Este exemplo usa "LA-MailingList-RG". |
+   | **Localidade** | Oeste dos EUA | A região em que as informações de seu aplicativo lógico são armazenadas. Este exemplo usa "Leste dos EUA". |
+   | **Log Analytics** | Desativar | Mantenha a configuração **Desligado** para o log de diagnósticos. |
+   ||||
 
-3. Depois que o Azure implanta o aplicativo, o Designer de Aplicativos Lógicos é exibido e mostra uma página com um vídeo introdutório e modelos de padrões de aplicativo lógico comuns. Em **Modelos**, escolha **Aplicativo lógico em branco**.
+1. Depois que o Azure implanta seu aplicativo, na barra de ferramentas do Azure, selecione **Notificações** > **Ir para o recurso** para seu aplicativo lógico implantado.
 
-   ![Escolha o modelo de aplicativo lógico em branco](./media/tutorial-process-mailing-list-subscriptions-workflow/choose-logic-app-template.png)
+   ![Ir para o recurso](./media/tutorial-process-mailing-list-subscriptions-workflow/go-to-logic-app.png)
 
-Em seguida, adicione um [gatilho](../logic-apps/logic-apps-overview.md#logic-app-concepts) que escuta emails de entrada com solicitações de assinatura.
-Cada aplicativo lógico deve começar com um gatilho, que é disparado quando um evento específico ocorre ou quando novos dados atendem a uma condição específica. Para saber mais, confira [Criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+   Ou você pode encontrar e selecionar seu aplicativo lógico digitando o nome na caixa de pesquisa.
+
+   O Designer de Aplicativos Lógicos é aberto e mostra uma página com um vídeo de introdução e os gatilhos e padrões de aplicativo lógico normalmente usados. Em **Modelos**, selecione **Aplicativo lógico em branco**.
+
+   ![Selecione o modelo de aplicativo lógico em branco](./media/tutorial-process-mailing-list-subscriptions-workflow/select-logic-app-template.png)
+
+Em seguida, adicione um [gatilho](../logic-apps/logic-apps-overview.md#logic-app-concepts) que escuta emails de entrada com solicitações de assinatura. Cada aplicativo lógico deve começar com um gatilho, que é disparado quando um evento específico ocorre ou quando novos dados atendem a uma condição específica. Para saber mais, confira [Criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="add-trigger-to-monitor-emails"></a>Adiciona gatilho para monitorar emails
 
-1. No designer, digite "quando o email chega" na caixa de pesquisa. Selecione esse disparador para seu provedor de email:  **< *seu-provedor-de-email*> - Quando um novo email é recebido**
-   
-   ![Selecione esse gatilho para o provedor de email: "Quando um novo email é recebido"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-new-email.png)
+1. No Designer de Aplicativos Lógicos, na caixa de pesquisa, insira `when email arrives` como o filtro. Na lista **Gatilhos**, selecione o gatilho **Quando um novo email é recebido** para o seu provedor de email.
+
+   Este exemplo usa o gatilho do Office 365 Outlook:
+
+   ![Selecionar o gatilho "Quando um novo email é recebido" para o provedor de email](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-new-email.png)
 
    * Para as contas corporativas ou de estudante do Azure, selecione o Outlook do Office 365.
    * Para contas pessoais da Microsoft, selecione Outlook.com.
 
-2. Se forem solicitadas credenciais, entre na sua conta de email para que os Aplicativos Lógicos possam uma conexão à sua conta de email.
+1. Se solicitado, entre em sua conta de email com suas credenciais, de modo que os Aplicativos Lógicos possam criar uma conexão com a sua conta de email.
 
-3. Agora, especifique os critérios que o gatilho verifica em todos os novos emails.
+1. No gatilho, forneça os critérios para verificar todos os novos emails.
 
    1. Especifique a pasta, o intervalo e a frequência de verificação de emails.
 
       ![Especificar a pasta, intervalo e frequência de verificação de emails](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-set-up-email.png)
 
-      | Configuração | Valor | DESCRIÇÃO | 
-      | ------- | ----- | ----------- | 
-      | **Pasta** | Caixa de Entrada | A pasta de email a ser monitorada | 
-      | **Intervalo** | 1 | O número de intervalos de espera entre as verificações | 
-      | **Frequência** | Hora | A unidade de tempo para cada intervalo entre verificações  | 
-      |  |  |  | 
+      | Propriedade | Valor | DESCRIÇÃO |
+      |----------|-------|-------------|
+      | **Pasta** | `Inbox` | A pasta de email a ser monitorada |
+      | **Intervalo** | `1` | O número de intervalos de espera entre as verificações |
+      | **Frequência** | `Hour` | A unidade de tempo a ser usada para a recorrência |
+      ||||
 
-   2. Escolha **Mostrar opções avançadas**. Na caixa **Filtro de Assunto**, digite este texto para o disparador localizar no assunto do email:```subscribe-test-members-ML```
+   1. Agora adicione outra propriedade ao gatilho, de modo que você possa filtrar por linha do assunto de email. Abra a **lista Adicionar novo parâmetro** e selecione a propriedade **Filtro de Assunto**.
 
-      ![Definir opções avançadas](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-set-advanced-options.png)
+      ![Adicionar novo parâmetro](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-add-properties.png)
 
-4. Por enquanto, para ocultar os detalhes do gatilho, clique na barra de título do gatilho.
+      Para obter mais informações sobre as propriedades desse gatilho, confira a [referência do conector do Office 365 Outlook](https://docs.microsoft.com/connectors/office365/) ou a [referência do conector do Outlook.com](https://docs.microsoft.com/connectors/outlook/).
+
+   1. Depois que a propriedade for exibida no gatilho, insira este texto: `subscribe-test-members-ML`
+
+      ![Inserir o novo parâmetro textAdd do filtro de assunto](./media/tutorial-process-mailing-list-subscriptions-workflow/add-trigger-subject-filter-property.png)
+
+1. Por enquanto, para ocultar os detalhes do gatilho, clique na barra de título do gatilho.
 
    ![Recolher forma para ocultar detalhes](./media/tutorial-process-mailing-list-subscriptions-workflow/collapse-trigger-shape.png)
 
-5. Salve seu aplicativo lógico. Clique em **Salvar** na barra de ferramentas do designer.
+1. Salve seu aplicativo lógico. Selecione **Salvar** na barra de ferramentas do designer.
 
-   Seu aplicativo lógico agora está ativo, mas ele não faz nada além de verificar o recebimento de emails. 
-   Portanto, adicione uma ação que responde quando o gatilho é acionado.
+Seu aplicativo lógico agora está ativo, mas ele não faz nada além de verificar o recebimento de emails. Portanto, adicione uma ação que responde quando o gatilho é acionado.
 
 ## <a name="send-approval-email"></a>Enviar email de aprovação
 
-Agora que você tem um gatilho, adicione uma [ação](../logic-apps/logic-apps-overview.md#logic-app-concepts) que envia um email para aprovar ou rejeitar a solicitação. 
+Agora que você tem um gatilho, adicione uma [ação](../logic-apps/logic-apps-overview.md#logic-app-concepts) que envia um email para aprovar ou rejeitar a solicitação.
 
-1. No gatilho, escolha **+ Nova etapa** > **Adicionar uma ação**. Pesquise "aprovação" e selecione esta ação:  **< *seu provedor de email*>-Enviar email de aprovação**
+1. No gatilho, selecione **Nova etapa**. 
 
-   ![Escolher "<seu-provedor-email> - Enviar email de aprovação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-send-approval-email.png)
+1. Em **Escolher uma ação**, na caixa de pesquisa, insira `approval` como o filtro. Na lista de ações, selecione a ação **Enviar email de aprovação** para o seu provedor de email. 
 
-2. Forneça informações para essa ação, como mostrado e descrito: 
+   Este exemplo usa a ação do Office 365 Outlook:
 
-   ![Definir configurações de email de aprovação](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-approval-email-settings.png)
+   ![Selecionar a ação "Enviar um email de aprovação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-send-approval-email.png)
 
-   | Configuração | Valor | DESCRIÇÃO | 
-   | ------- | ----- | ----------- | 
-   | **Para** | <*approver-email-address*> | Endereço de email do aprovador. Para fins de teste, você pode usar seu próprio endereço. | 
-   | **Opções de Usuário** | Aprovar, Rejeitar | As opções de resposta que o aprovador pode escolher. Por padrão, o aprovador pode escolher "Aprovar" ou "Rejeitar" como resposta. | 
-   | **Assunto** | Aprovar solicitação de membro para test-members-ML | Um assunto de email descritivo | 
-   |  |  |  | 
+1. Forneça as informações sobre essa ação, conforme descrito: 
 
-   Por enquanto, ignore a lista de conteúdo dinâmico ou a lista de parâmetros embutidos que aparece quando você clica em caixas de edição específicas. 
-   A lista permite selecionar os parâmetros de ações anteriores que você pode usar como entradas no seu fluxo de trabalho. 
-   A largura do navegador determina a lista exibida. 
+   ![Propriedades de Enviar email de aprovação](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-approval-email-settings.png)
+
+   | Propriedade | Valor | DESCRIÇÃO |
+   |----------|-------|-------------|
+   | **Para** | <*your-email-address*> | Endereço de email do aprovador. Para fins de teste, você pode usar seu próprio endereço. Este exemplo usa o endereço de email fictício "sophia.owen@fabrikam.com". |
+   | **Assunto** | `Approve member request for test-members-ML` | Um assunto de email descritivo |
+   | **Opções de Usuário** | `Approve, Reject` | As opções de resposta que podem ser selecionadas pelo aprovador. Por padrão, o aprovador pode selecionar "Aprovar" ou "Rejeitar" como resposta. |
+   ||||
+
+   Por enquanto, ignore a lista de conteúdo dinâmico que é exibida quando você clica em caixas de edição específicas. A lista permite selecionar a saída disponível das ações anteriores que você pode usar como entradas no fluxo de trabalho.
+
+   Para obter mais informações sobre as propriedades dessa ação, confira a [referência do conector do Office 365 Outlook](https://docs.microsoft.com/connectors/office365/) ou a [referência do conector do Outlook.com](https://docs.microsoft.com/connectors/outlook/).
  
-4. Salve seu aplicativo lógico.
+1. Salve seu aplicativo lógico.
 
-Em seguida, adicione uma condição para verificar a resposta escolhida do aprovador.
+Em seguida, adicione uma condição para verificar a resposta selecionada do aprovador.
 
 ## <a name="check-approval-response"></a>Verificar resposta de aprovação
 
-1. Na ação **Enviar email de aprovação**, escolha **+ Nova etapa** > **Adicionar uma condição**.
+1. Na ação **Enviar email de aprovação**, selecione **Nova etapa**".
 
-   A forma da condição é exibida, juntamente com os parâmetros disponíveis que você pode incluir como entrada para o fluxo de trabalho. 
+1. Em **Escolha uma ação**, selecione **Interno**. Na caixa de pesquisa, insira `condition` como o filtro. Na lista de ações, selecione a ação **Condição**.
 
-2. Renomeie a condição com uma descrição melhor.
+   ![Selecionar "Condição"](./media/tutorial-process-mailing-list-subscriptions-workflow/select-condition.png)
 
-   1. Na barra de título da condição, escolha o botão de **reticências** ( **...** ) > **Renomear**.
+1. Renomeie a condição com uma descrição melhor.
 
-      Por exemplo, se seu navegador estiver na exibição estreita:
+   1. Na barra de título da condição, selecione o botão de **reticências** ( **...** ) > **Renomear**.
 
-      ![Renomear condição](./media/tutorial-process-mailing-list-subscriptions-workflow/condition-rename.png)
+      ![Renomear condição](./media/tutorial-process-mailing-list-subscriptions-workflow/rename-condition.png)
 
-      Se seu navegador estiver na exibição ampla e a lista de conteúdo dinâmico bloquear o acesso ao botão de reticências, feche a lista escolhendo **Adicionar conteúdo dinâmico** dentro da condição.
+   1. Renomeie sua condição com esta descrição:`If request approved`
 
-   2. Renomeie sua condição com esta descrição:```If request approved```
+1. Crie uma condição que verifica se o aprovador selecionou **Aprovar**.
 
-3. Crie uma condição que verifica se o aprovador selecionou **Aprovar**:
+   1. Na condição, clique dentro da caixa **Escolher um valor** no lado esquerdo da condição.
 
-   1. Dentro da condição, clique na caixa **Escolha um valor**, que está à esquerda (exibição de navegador ampla) ou na parte superior (exibição de navegador estreita).
-   Na lista de parâmetros ou na lista de conteúdo dinâmico, selecione o campo **SelectedOption** em **Enviar email de aprovação**.
-
-      Por exemplo, se você estiver trabalhando na exibição ampla, sua condição será semelhante a este exemplo:
+   1. Na lista de conteúdo dinâmico exibida, em **Enviar email de aprovação**, selecione a propriedade **SelectedOption**.
 
       ![Em "Enviar email de aprovação", selecionar "SelectedOption"](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response.png)
 
-   2. Na caixa de operador de comparação, selecione este operador: **é igual a**
+   1. Na caixa de comparação intermediária, selecione o operador **é igual a**.
 
-   3. Na caixa à direita (exibição ampla) ou na parte inferior (exibição estreita) **Escolha um valor**, insira este limite:```Approve```
+   1. Na caixa **Escolher um valor** no lado direito da condição, insira este texto: `Approve`
 
-      Ao concluir, a sua condição será semelhante a este exemplo:
+      Quando terminar, a condição será semelhante a este exemplo:
 
-      ![Condição completa](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response-2.png)
+      ![Condição concluída](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-approval-response-2.png)
 
-4. Salve seu aplicativo lógico.
+1. Salve seu aplicativo lógico.
 
 Em seguida, especifique a ação que seu aplicativo lógico executará quando o revisor aprovar a solicitação. 
 
 ## <a name="add-member-to-mailchimp-list"></a>Adicionar membros à lista do MailChimp
 
-Agora, adicione uma ação que adiciona o membro aprovado à sua lista de endereçamento.
+Agora adicione uma ação que adiciona o membro aprovado à sua lista de endereçamento.
 
-1. Na ramificação **Se verdadeiro** da condição, escolha **Adicionar uma ação**.
-Pesquise "mailchimp" e selecione esta ação: **MailChimp – Adicionar membro à lista**
+1. No branch **Se verdadeiro** da condição, selecione **Adicionar uma ação**.
 
-   ![Selecionar "MailChimp - Adicionar membro à lista"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-mailchimp-add-member.png)
+1. Em **Escolher uma ação**, insira `mailchimp` como o filtro e selecione a ação **Adicionar membro à lista**.
 
-3. Se você for solicitado a entrar na conta do MailChimp, entre com suas credenciais do MailChimp.
+   ![Selecionar a ação "Adicionar membro à lista"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-mailchimp-add-member.png)
 
-4. Forneça informações para essa ação, como mostrado e descrito aqui:
+1. Caso precise acessar sua conta do MailChimp, entre com suas credenciais do MailChimp.
+
+1. Forneça informações sobre essa ação, conforme mostrado e descrito aqui:
 
    ![Fornecer informações para "Adicionar membros à lista"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-mailchimp-add-member-settings.png)
 
-   | Configuração | Valor | DESCRIÇÃO | 
-   | ------- | ----- | ----------- | 
-   | **ID da lista** | test-members-ML | O nome da lista de endereçamento do MailChimp | 
-   | **Status** | subscribed | O status da assinatura para o novo membro. Para saber mais, confira [Gerenciar assinantes com a API do MailChimp](https://developer.mailchimp.com/documentation/mailchimp/guides/manage-subscribers-with-the-mailchimp-api/). | 
-   | **Endereço de Email** | <*new-member-email-address*> | Na lista de parâmetros ou na lista de conteúdo dinâmico, selecione **De** em **Quando um novo email é recebido**, que transmite o endereço de email para o novo membro. 
-   |  |  |  | 
+   | Propriedade | Obrigatório | Value | DESCRIÇÃO |
+   |----------|----------|-------|-------------|
+   | **ID da lista** | Sim | `test-members-ML` | O nome da lista de endereçamento do MailChimp. Este exemplo usa "test-members-ML". |
+   | **Status** | Sim | `subscribed` | Selecione o status da assinatura para o novo membro. Este exemplo usa "subscribed". <p>Para saber mais, confira [Gerenciar assinantes com a API do MailChimp](https://developer.mailchimp.com/documentation/mailchimp/guides/manage-subscribers-with-the-mailchimp-api/). |
+   | **Endereço de Email** | Sim | <*new-member-email-address*> | Na lista de conteúdo dinâmico, selecione **De** em **Quando um novo email é recebido**, que passa o endereço de email para o novo membro. |
+   ||||
 
-5. Salve seu aplicativo lógico.
+   Para obter mais informações sobre as propriedades dessa ação, confira a [referência do conector do MailChimp](https://docs.microsoft.com/connectors/mailchimp/).
+
+1. Salve seu aplicativo lógico.
 
 Em seguida, adicione uma condição para que você possa verificar se o novo membro ingressou na lista de endereçamento com êxito. Dessa forma, seu aplicativo lógico notifica se essa operação for bem-sucedida ou apresentou falha.
 
 ## <a name="check-for-success-or-failure"></a>Verificar êxito ou falha
 
-1. Na ramificação **If true** da ação **Adicionar membro à lista**, escolha **Mais...**   >  **Adicionar uma condição**.
+1. No branch **Se verdadeiro**, na ação **Adicionar membro à lista**, selecione **Adicionar uma ação**.
 
-2. Renomeie a condição com esta descrição:```If add member succeeded```
+1. Em **Escolha uma ação**, selecione **Interno**. Na caixa de pesquisa, insira `condition` como o filtro. Na lista de ações, selecione **Condição**.
 
-3. Crie uma condição que verifica se o membro aprovado teve êxito ou falha ao ingressar na lista de endereçamento:
+1. Renomeie a condição com esta descrição:`If add member succeeded`
 
-   1. Dentro da condição, clique na caixa **Escolha um valor**, que está à esquerda (exibição de navegador ampla) ou na parte superior (exibição de navegador estreita).
-   Na lista de parâmetros ou na lista de conteúdo dinâmico, selecione o campo **Status** em **Adicionar membro à lista**.
+1. Crie uma condição que verifica se o membro aprovado teve êxito ou falha ao ingressar na lista de endereçamento:
 
-      Por exemplo, se você estiver trabalhando na exibição ampla, sua condição será semelhante a este exemplo:
+   1. Na condição, clique dentro da caixa **Escolher um valor**, que está no lado esquerdo da condição. Na lista conteúdo dinâmico, em **Adicionar membro à lista**, selecione a propriedade **Status**.
+
+      Por exemplo, sua condição é semelhante a este exemplo:
 
       ![Em "Adicionar membro à lista", selecionar "Status"](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-added-member.png)
 
-   2. Na caixa de operador de comparação, selecione este operador: **é igual a**
+   1. Na caixa de comparação intermediária, selecione o operador **é igual a**.
 
-   3. Na caixa à direita (exibição ampla) ou na parte inferior (exibição estreita) **Escolha um valor**, insira este limite:```subscribed```
+   1. Na caixa **Escolher um valor** no lado direito da condição, insira este texto: `subscribed`
 
-   Ao concluir, a sua condição será semelhante a este exemplo:
+      Quando terminar, a condição será semelhante a este exemplo:
 
-   ![Condição concluída](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-added-member-2.png)
+      ![Condição concluída](./media/tutorial-process-mailing-list-subscriptions-workflow/build-condition-check-added-member-2.png)
 
 Em seguida, configure os emails para envio quando o membro aprovado tem êxito ou falha ao ingressar na lista de endereçamento.
 
 ## <a name="send-email-if-member-added"></a>Enviar email se o membro foi adicionado
 
-1. Na ramificação **If true** para a condição **Se adicionar membro foi bem-sucedido**, escolha **Adicionar uma ação**.
+1. Na condição **Se adicionar membro foi bem-sucedido**, no branch **Se verdadeiro**, selecione **Adicionar uma ação**.
 
-   ![Na ramificação "If true" para a condição, escolha "Adicionar uma ação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success.png)
+   ![No branch "Se verdadeiro" da condição, selecione "Adicionar uma ação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success.png)
 
-2. Pesquise "envio de email do outlook" e selecione a ação:  **< *seu-provedor-de-email*> - Enviar um email**
+1. Em **Escolher uma ação**, na caixa de pesquisa, insira `outlook send email` como o filtro e selecione a ação **Enviar um email**.
 
-   ![Adicionar ação para "Enviar um email"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success-2.png)
+   ![Adicionar uma ação "Enviar um email"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success-2.png)
 
-3. Renomeie a ação com esta descrição:```Send email on success```
+1. Renomeie a ação com esta descrição:`Send email on success`
 
-4. Forneça informações para essa ação, como mostrado e descrito:
+1. Forneça informações para essa ação, como mostrado e descrito:
 
    ![Fornecer informações de email de êxito](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-success-settings.png)
 
-   | Configuração | Valor | DESCRIÇÃO | 
-   | ------- | ----- | ----------- | 
-   | **Para** | <*your-email-address*> | O endereço de email para onde enviar o email de êxito. Para fins de teste, você pode usar seu próprio endereço de email. | 
-   | **Assunto** | <*subject-for-success-email*> | O assunto do email de êxito. Para este tutorial, insira este texto e selecione o campo especificado em **Adicionar membros à lista** na lista de parâmetros ou na lista dinâmica de conteúdo: <p>“Sucesso! Membro adicionado a 'test-members-ML': **Endereço de Email**" | 
-   | **Corpo** | <*body-for-success-email*> | O conteúdo do corpo do email de êxito. Para este tutorial, insira este texto e selecione os campos especificados em **Adicionar membros à lista** na lista de parâmetros ou na lista dinâmica de conteúdo:  <p>"O novo membro entrou para 'test-members-ML': **Endereço de Email**"</br>"Status de aceitação do membro: **Status**" | 
-   | | | | 
+   | Propriedade | Obrigatório | Value | DESCRIÇÃO |
+   |----------|----------|-------|-------------|
+   | **Para** | Sim | <*your-email-address*> | O endereço de email para onde enviar o email de êxito. Para fins de teste, você pode usar seu próprio endereço de email. |
+   | **Assunto** | Sim | <*subject-for-success-email*> | O assunto do email de êxito. Para este tutorial, digite este texto: <p>`Success! Member added to "test-members-ML": ` <p>Na lista conteúdo dinâmico, em **Adicionar membro à lista**, selecione a propriedade **Endereço de Email**. |
+   | **Corpo** | Sim | <*body-for-success-email*> | O conteúdo do corpo do email de êxito. Para este tutorial, digite este texto: <p>`New member has joined "test-members-ML":` <p>Na lista conteúdo dinâmico, selecione a propriedade **Endereço de Email**. <p>Na próxima linha, insira este texto: `Member opt-in status: ` <p> Na lista conteúdo dinâmico, em **Adicionar membro à lista**, selecione a propriedade **Status**. |
+   |||||
 
-5. Salve seu aplicativo lógico.
+1. Salve seu aplicativo lógico.
 
 ## <a name="send-email-if-member-not-added"></a>Enviar email se membro não foi adicionado
 
-1. Na ramificação **If false** para a condição **Se adicionar membro foi bem-sucedido**, escolha **Adicionar uma ação**.
+1. Na condição **Se adicionar membro foi bem-sucedido**, no branch **Se falso**, selecione **Adicionar uma ação**.
 
-   ![Na ramificação "If false" para a condição, escolha "Adicionar uma ação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed.png)
+   ![No branch "Se falso" da condição, selecione "Adicionar uma ação"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed.png)
 
-2. Pesquise "envio de email do outlook" e selecione a ação:  **< *seu-provedor-de-email*> - Enviar um email**
+1. Em **Escolher uma ação**, na caixa de pesquisa, insira `outlook send email` como o filtro e selecione a ação **Enviar um email**.
 
    ![Adicionar ação para "Enviar um email"](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed-2.png)
 
-3. Renomeie a ação com esta descrição:```Send email on failure```
+1. Renomeie a ação com esta descrição:`Send email on failure`
 
-4. Forneça informações para essa ação, como mostrado e descrito aqui:
+1. Forneça informações sobre essa ação, conforme mostrado e descrito aqui:
 
    ![Fornecer informações de email de falha](./media/tutorial-process-mailing-list-subscriptions-workflow/add-action-email-failed-settings.png)
 
-   | Configuração | Valor | DESCRIÇÃO | 
-   | ------- | ----- | ----------- | 
-   | **Para** | <*your-email-address*> | O endereço de email para onde enviar o email de falha. Para fins de teste, você pode usar seu próprio endereço de email. | 
-   | **Assunto** | <*subject-for-failure-email*> | O assunto do email de falha. Para este tutorial, insira este texto e selecione o campo especificado em **Adicionar membros à lista** na lista de parâmetros ou na lista dinâmica de conteúdo: <p>"Falha; membro não adicionado a 'test-members-ML': **Endereço de Email**" | 
-   | **Corpo** | <*body-for-failure-email*> | O conteúdo do corpo do email de falha. Para este tutorial, digite este texto: <p>"O membro talvez já exista. Verifique sua conta do MailChimp." | 
-   | | | | 
+   | Propriedade | Obrigatório | Value | DESCRIÇÃO |
+   |----------|----------|-------|-------------|
+   | **Para** | Sim | <*your-email-address*> | O endereço de email para onde enviar o email de falha. Para fins de teste, você pode usar seu próprio endereço de email. |
+   | **Assunto** | Sim | <*subject-for-failure-email*> | O assunto do email de falha. Para este tutorial, digite este texto: <p>`Failed, member not added to "test-members-ML": ` <p>Na lista conteúdo dinâmico, em **Adicionar membro à lista**, selecione a propriedade **Endereço de Email**. |
+   | **Corpo** | Sim | <*body-for-failure-email*> | O conteúdo do corpo do email de falha. Para este tutorial, digite este texto: <p>`Member might already exist. Check your MailChimp account.` |
+   |||||
 
-5. Salve seu aplicativo lógico. 
+1. Salve seu aplicativo lógico. 
 
 Em seguida, teste seu aplicativo lógico, que agora se parece com este exemplo:
 
- ![Aplicativo lógico concluído](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-complete.png)
+![Aplicativo lógico concluído](./media/tutorial-process-mailing-list-subscriptions-workflow/tutorial-complete.png)
 
 ## <a name="run-your-logic-app"></a>Executar seu aplicativo lógico
 
-1. Envie uma solicitação de email a si mesmo para ingressar na lista de endereçamento.
-Aguarde até que a solicitação seja exibida na caixa de entrada.
+1. Envie uma solicitação de email a si mesmo para ingressar na lista de endereçamento. Aguarde até que a solicitação seja exibida na caixa de entrada.
 
-3. Para executar manualmente o aplicativo lógico, escolha **Executar** na barra de ferramentas do designer. 
+1. Para executar manualmente o aplicativo lógico, selecione **Executar** na barra de ferramentas do designer. 
 
    Se seu email tiver uma entidade que corresponde ao filtro de assunto do disparador, o aplicativo lógico envia um email para aprovar a solicitação de assinatura.
 
-4. No email de aprovação, escolha **Aprovar**.
+1. No email de aprovação, selecione **Aprovar**.
 
-5. Se o endereço de email do assinante não existe na sua lista de endereçamento, o aplicativo lógico adiciona o endereço de email dessa pessoa e envia um email como neste exemplo:
+1. Se o endereço de email do assinante não existe na sua lista de endereçamento, o aplicativo lógico adiciona o endereço de email dessa pessoa e envia um email como neste exemplo:
 
    ![Email de êxito](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-success.png)
 
@@ -303,22 +318,21 @@ Aguarde até que a solicitação seja exibida na caixa de entrada.
 
    ![Email de falha](./media/tutorial-process-mailing-list-subscriptions-workflow/add-member-failed.png)
 
-   Se você não receber nenhum email, verifique a pasta de Lixo eletrônico. 
-   O filtro de lixo de email pode redirecionar esses tipos de mensagens. 
-   Caso contrário, se você não tiver certeza de que seu aplicativo lógico foi executado corretamente, confira [Solução de problemas do aplicativo lógico](../logic-apps/logic-apps-diagnosing-failures.md).
+   Se você não receber nenhum email, verifique a pasta de Lixo eletrônico. O filtro de lixo de email pode redirecionar esses tipos de mensagens. Caso contrário, se você não tiver certeza de que seu aplicativo lógico foi executado corretamente, confira [Solução de problemas do aplicativo lógico](../logic-apps/logic-apps-diagnosing-failures.md).
 
 Parabéns, você criou e executou um aplicativo lógico que integra informações entre serviços Azure, Microsoft e outros aplicativos SaaS.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando não for mais necessário, exclua o grupo de recursos que contém o aplicativo lógico e os recursos relacionados. No menu principal do Azure, vá para **Grupos de recursos** e selecione o grupo de recursos do seu aplicativo lógico. Selecione **Excluir grupo de recursos**. Insira o nome do grupo de recursos como confirmação e escolha **Excluir**.
+Quando você não precisar mais do aplicativo lógico de exemplo, exclua o grupo de recursos que contém o aplicativo lógico e os recursos relacionados. 
 
-![“Visão Geral” > “Excluir grupo de recursos”.](./media/tutorial-process-mailing-list-subscriptions-workflow/delete-resource-group.png)
+1. No menu principal do Azure, vá para **Grupos de recursos** e selecione o grupo de recursos do seu aplicativo lógico.
 
-## <a name="get-support"></a>Obtenha suporte
+1. No menu do grupo de recursos, selecione **Visão Geral** > **Excluir grupo de recursos**. 
 
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
+   ![“Visão Geral” > “Excluir grupo de recursos”.](./media/tutorial-process-mailing-list-subscriptions-workflow/delete-resource-group.png)
+
+1. Insira o nome do grupo de recursos como confirmação e selecione **Excluir**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

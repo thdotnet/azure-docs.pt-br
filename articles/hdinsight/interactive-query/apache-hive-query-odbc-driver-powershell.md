@@ -3,17 +3,17 @@ title: Consultar Apache Hive com driver ODBC e PowerShell – Azure HDInsight
 description: Use o driver ODBC do Microsoft Hive e o PowerShell para consultar clusters do Apache Hive no Azure HDInsight.
 keywords: hive,odbc do hive,powershell
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 06/27/2019
-ms.author: hrasheed
-ms.openlocfilehash: b02c865e953861b5ac396538fdd0f0623b0e5428
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 04771ddc633c210ce8c7b3c42a9e46cb2f1ed349
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486059"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71122167"
 ---
 # <a name="tutorial-query-apache-hive-with-odbc-and-powershell"></a>Tutorial: Consultar o Apache Hive com ODBC e PowerShell
 
@@ -70,7 +70,7 @@ As etapas a seguir mostram como criar uma fonte de dados ODBC do Apache Hive.
    |  Linhas buscadas por bloco |Ao buscar uma grande quantidade de registros, o ajuste desse parâmetro poderá ser necessário para garantir o desempenho ideal. |
    |  Comprimento de coluna de cadeia de caracteres padrão, Comprimento da coluna binária e Escala da coluna decimal |Os tamanhos e as precisões dos tipos de dados podem afetar a maneira como os dados são retornados. Eles farão com que informações incorretas sejam retornadas devido à perda de precisão e truncamento. |
 
-    ![Opções avançadas](./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png "Opções de configuração de DSN avançadas")
+    ![Opções avançadas de configuração de DSN](./media/apache-hive-query-odbc-driver-powershell/odbc-data-source-advanced-options.png "Advanced DSN configuration options")
 
 1. Selecione **Testar** para testar a fonte de dados. Quando a fonte de dados estiver configurada corretamente, o resultado do teste mostrará **SUCESSO**.  
 

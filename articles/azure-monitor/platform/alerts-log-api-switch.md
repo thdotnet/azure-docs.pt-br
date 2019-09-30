@@ -1,19 +1,19 @@
 ---
 title: Mudar da API herdada de alertas do Log Analytics para a nova API de alertas do Azure
 description: Visão geral do savedSearch herdado com base Log Analytics API de alerta e processo para alternar as regras de alerta para a nova API ScheduledQueryRules, com detalhes que abordam as preocupações comuns dos clientes.
-author: msvijayn
+author: yanivlavi
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.author: vinagara
+ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 8f23d19b06152b633df6688489753498c86aee27
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: 7b3a09c9227110d6dba205987903a2c97dccf1b8
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034777"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677800"
 ---
 # <a name="switch-api-preference-for-log-alerts"></a>Mudar preferência de API para os Alertas de Log
 
@@ -33,7 +33,7 @@ Há várias vantagens em criar e gerenciar alertas usando a [API scheduledQueryR
 - Alertas de log criados usando a [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) podem ter um período definido de até 48 horas e buscar dados por um período mais longo que antes
 - Criar regras de alerta de uma só vez como um único recurso sem a necessidade de criar três níveis de recursos como ocorre com a [API herdada de alerta do Log Analytics](api-alerts.md)
 - Interface de programação única para todas as variantes de alertas de log baseados em consulta no Azure – a nova [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) pode ser usada para gerenciar regras do Log Analytics, bem como do Application Insights
-- Gerenciar seus alertas de log usando cmdlets do [PowerShell](alerts-log.md#managing-log-alerts-using-powershell)
+- Gerenciar seus alertas de log usando [cmdlets do PowerShell](alerts-log.md#managing-log-alerts-using-powershell)
 - Todas as novas funcionalidades de alertas de log e de desenvolvimento futuro estarão disponíveis somente por meio da nova [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules)
 
 ## <a name="process-of-switching-from-legacy-log-alerts-api"></a>Processo de mudar da API herdada de alertas de log
@@ -44,7 +44,7 @@ Os impactos da mudança de preferência para a API scheduledQueryRules são comp
 
 - Todas as interações feitas para gerenciar alertas de log por meio de interfaces programáticas agora devem ser feitas usando a [scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). Para obter mais informações, consulte [exemplo de uso por meio do modelo de recurso do Azure](alerts-log.md#managing-log-alerts-using-azure-resource-template) e [uso de exemplo por meio do PowerShell](alerts-log.md#managing-log-alerts-using-powershell)
 - Qualquer regra de alerta de log nova criada no portal do Azure será criada usando somente a [scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) e permitirá que os usuários usem a [funcionalidade adicional da nova API](#benefits-of-switching-to-new-azure-api) por meio do portal do Azure também
-- A severidade das regras de alerta de log mudará de: *Crítico, aviso &* informativo, para *valores de severidade de 0, 1 & 2*. Junto com a opção de criar/atualizar regras de alerta com a severidade 3 e 4 também.
+- A severidade das regras de alerta de log mudará de: *Crítico, aviso & informativo*, para *valores de severidade de 0, 1 & 2*. Junto com a opção de criar/atualizar regras de alerta com a severidade 3 e 4 também.
 
 O processo de mudar as regras de alerta da [API herdada de alertas do Log Analytics](api-alerts.md) não envolve a mudança da definição, consulta ou configuração do alerta de nenhuma maneira. Suas regras de alerta e o monitoramento não são afetados e os alertas não serão interrompidos ou não serão interrompidos durante ou após o comutador. A única alteração é uma alteração na preferência da API e o acesso às suas regras por meio de uma nova API.
 

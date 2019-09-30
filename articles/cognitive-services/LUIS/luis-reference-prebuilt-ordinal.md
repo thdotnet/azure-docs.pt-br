@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 51f1082034a710ed9d0f78b79bc6ae469771459e
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: d1d69b256c4fc7e7b9d1c84b7c409d01a9f8ce52
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933477"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677535"
 ---
 # <a name="ordinal-prebuilt-entity-for-a-luis-app"></a>Entidade ordinal predefinida para um aplicativo LUIS
 Número ordinal é uma representação numérica de um objeto dentro de um conjunto: `first`, `second`, `third`. Uma vez que essa entidade já está treinada, não é necessário adicionar enunciados de exemplo contendo ordinal às intenções do aplicativo. A entidade ordinal é compatível com [muitas culturas](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ A entidade ordinal é gerenciada por meio do repositório do GitHub [Recognizers
 
 ## <a name="resolution-for-prebuilt-ordinal-entity"></a>Resolução para entidade ordinal predefinida
 
-### <a name="api-version-2x"></a>Versão da API 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Resposta de ponto de extremidade de previsão v2](#tab/V2)
 
 O exemplo a seguir mostra a resolução da entidade **builtin.ordinal**.
 
@@ -61,9 +61,9 @@ O exemplo a seguir mostra a resolução da entidade **builtin.ordinal**.
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Resposta de ponto de extremidade de previsão v3](#tab/V3)
 
-O JSON a seguir é com `verbose` o parâmetro definido `false`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `false`:
 
 ```json
 {
@@ -88,7 +88,7 @@ O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 }
 ```
 
-O JSON a seguir é com `verbose` o parâmetro definido `true`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `true`:
 
 ```json
 {
@@ -128,6 +128,10 @@ O JSON a seguir é com `verbose` o parâmetro definido `true`como:
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ponto de extremidade de previsão v3](luis-migration-api-v3.md).
 
 Saiba mais sobre as entidades [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [número de telefone](luis-reference-prebuilt-phonenumber.md)e [temperatura](luis-reference-prebuilt-temperature.md) . 

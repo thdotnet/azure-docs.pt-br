@@ -11,25 +11,25 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: sharadag
-ms.openlocfilehash: 5f76df0045fc3939392759ed0edd266380295a85
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 229706ff91b776363d3e9de080e02cee5edf9c77
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71260166"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677905"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door-service"></a>Monitoramento de métricas e logs no serviço de porta frontal do Azure
 
 Usando o serviço de porta frontal do Azure, você pode monitorar os recursos das seguintes maneiras:
 
-- **Métricas**. O Gateway de Aplicativo atualmente tem sete métricas para exibir os contadores de desempenho.
+- **Métricas**. Atualmente, a porta frontal do Azure tem sete métricas para exibir os contadores de desempenho.
 - **Logs**. Os logs de atividade e diagnóstico permitem que o desempenho, o acesso e outros dados sejam salvos ou consumidos de um recurso para fins de monitoramento.
 
 ### <a name="metrics"></a>metrics
 
 As métricas são um recurso para determinados recursos do Azure que permitem Exibir contadores de desempenho no Portal. A seguir estão as métricas de porta frontal disponíveis:
 
-| Métrica | Nome de exibição da métrica | Unidade | Dimensões | DESCRIÇÃO |
+| Métrica | Nome de exibição da métrica | Unidade | Dimensões | Descrição |
 | --- | --- | --- | --- | --- |
 | RequestCount | Contagem de solicitações | Contagem | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | O número de solicitações de cliente atendidas pelo Front Door.  |
 | RequestSize | Tamanho da solicitação | Bytes | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | O número de bytes enviados como solicitações de clientes para o Front Door. |
@@ -73,7 +73,7 @@ Para configurar os logs de diagnóstico para o serviço de porta frontal:
 
 O serviço de porta frontal atualmente fornece logs de diagnóstico (em lote). Os logs de diagnóstico fornecem solicitações de API individuais com cada entrada com o seguinte esquema:
 
-| Propriedade  | DESCRIÇÃO |
+| Propriedade  | Descrição |
 | ------------- | ------------- |
 | ClientIp | Endereço IP do cliente que fez a solicitação. |
 | clientPort | A porta IP do cliente que fez a solicitação. |

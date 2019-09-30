@@ -7,20 +7,18 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: fe45adc3eb65631c0b127872240f8d76400f9102
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 5e52275cc7215f6c54c2ff6a11faf82114c414b4
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899673"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676608"
 ---
 # <a name="fslogix-profile-containers-and-azure-files"></a>Contêineres de perfil FSLogix e arquivos do Azure
 
-O serviço de visualização de área de trabalho virtual do Windows recomenda contêineres de perfil FSLogix como uma solução de perfil de usuário. O FSLogix é projetado para perfis de roaming em ambientes de computação remota, como área de trabalho virtual do Windows. Ele armazena um perfil de usuário completo em um único contêiner. Ao entrar, esse contêiner é dinamicamente anexado ao ambiente de computação usando o VHD (disco rígido virtual) com suporte nativo e o VHDX (disco rígido virtual) do Hyper-V. O perfil do usuário fica imediatamente disponível e aparece no sistema exatamente como um perfil de usuário nativo.
+O serviço de área de trabalho virtual do Windows recomenda contêineres de perfil FSLogix como uma solução de perfil de usuário. O FSLogix é projetado para perfis de roaming em ambientes de computação remota, como área de trabalho virtual do Windows. Ele armazena um perfil de usuário completo em um único contêiner. Ao entrar, esse contêiner é dinamicamente anexado ao ambiente de computação usando o VHD (disco rígido virtual) com suporte nativo e o VHDX (disco rígido virtual) do Hyper-V. O perfil do usuário fica imediatamente disponível e aparece no sistema exatamente como um perfil de usuário nativo. Este artigo descreve como os contêineres de perfil FSLogix usados com os arquivos do Azure funcionam na área de trabalho virtual do Windows.
 
-Neste artigo, descreveremos os contêineres de perfil FSLogix usados com os arquivos do Azure. As informações estão no contexto da área de trabalho virtual do Windows, que foi [anunciada em 3/21](https://www.microsoft.com/microsoft-365/blog/2019/03/21/windows-virtual-desktop-public-preview/).
-
-## <a name="user-profiles"></a>Perfis do usuário
+## <a name="user-profiles"></a>Perfis de usuário
 
 Um perfil de usuário contém elementos de dados sobre um indivíduo, incluindo informações de configuração, como configurações de área de trabalho, conexões de rede persistentes e configurações de aplicativo. Por padrão, o Windows cria um perfil de usuário local totalmente integrado ao sistema operacional.
 
@@ -48,14 +46,14 @@ A tabela a seguir mostra os benefícios e as limitações das tecnologias de per
 | Tecnologia | Configurações modernas | Configurações do Win32 | Configurações do so | Dados do usuário | Com suporte no SKU do servidor | Armazenamento de back-end no Azure | Armazenamento de back-end local | Suporte à versão | Hora de entrada subsequente |Observações|
 | ---------- | :-------------: | :------------: | :---------: | --------: | :---------------------: | :-----------------------: | :--------------------------: | :-------------: | :---------------------: |-----|
 | **Discos de perfil do usuário (UPD)** | Sim | Sim | Sim | Sim | sim | Não | Sim | Win 7 + | Sim | |
-| **Perfil de usuário de roaming (RUP), modo de manutenção** | Não | Sim | Sim | Sim | sim| Não | Sim | Win 7 + | Não | |
+| **Perfil de usuário de roaming (RUP), modo de manutenção** | Não | sim | Sim | Sim | sim| Não | Sim | Win 7 + | Não | |
 | **Enterprise State Roaming (ESR)** | Sim | Não | Sim | Não | Consulte as observações | Sim | Não | Win 10 | Não | Funções no SKU do servidor, mas sem interface do usuário de suporte |
 | **User Experience Virtualization (UE-V)** | Sim | Sim | sim | Não | Sim | Não | Sim | Win 7 + | Não |  |
 | **Arquivos de nuvem do OneDrive** | Não | Não | Não | Sim | Consulte as observações | Consulte as observações  | Consulte as observações | Win 10 RS3 | Não | Não testado no SKU do servidor. O armazenamento de back-end no Azure depende do cliente de sincronização. O armazenamento de back-end no local precisa de um cliente de sincronização. |
 
 #### <a name="performance"></a>Desempenho
 
-O UPD requer [espaços de armazenamento diretos (S2D)](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment) para resolver os requisitos de desempenho. O UPD usa o protocolo SMB. Ele copia o perfil para a VM na qual o usuário está sendo registrado. O UPD com S2D foi a solução recomendada pela equipe de RDS para a área de trabalho virtual do Windows durante a visualização do serviço.  
+O UPD requer [espaços de armazenamento diretos (S2D)](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment) para resolver os requisitos de desempenho. O UPD usa o protocolo SMB. Ele copia o perfil para a VM na qual o usuário está sendo registrado. O UPD com S2D é a solução que recomendamos para a área de trabalho virtual do Windows.  
 
 #### <a name="cost"></a>Custo
 
@@ -81,7 +79,7 @@ O desempenho e os recursos dos contêineres de perfil do FSLogix aproveitam a nu
 
 ## <a name="best-practices-for-windows-virtual-desktop"></a>Práticas recomendadas para área de trabalho virtual do Windows
 
-A área de trabalho virtual do Windows oferece controle total sobre o tamanho, o tipo e a contagem de VMs que estão sendo usadas pelos clientes. Para obter mais informações, consulte [o que é a visualização da área de trabalho virtual do Windows?](overview.md).
+A área de trabalho virtual do Windows oferece controle total sobre o tamanho, o tipo e a contagem de VMs que estão sendo usadas pelos clientes. Para obter mais informações, consulte [o que é a área de trabalho virtual do Windows?](overview.md).
 
 Para garantir que seu ambiente de área de trabalho virtual do Windows siga as práticas recomendadas:
 

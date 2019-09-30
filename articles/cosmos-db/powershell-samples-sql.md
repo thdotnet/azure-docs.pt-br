@@ -4,18 +4,20 @@ description: Amostras do Azure PowerShell para o Azure Cosmos DB – API do SQL 
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 07/03/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: e0a918d9a72fa27b4ab31808b02bd05666e43d64
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: d3d2bea0eafa0a15424cad288f03392fec8ea9eb
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566000"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155377"
 ---
-# <a name="azure-powershell-samples-for-azure-cosmos-db-sql-core-api"></a>Amostras do Azure PowerShell para o Azure Cosmos DB – API do SQL (Core)
+# <a name="azure-powershell-samples-for-azure-cosmos-db---sql-core-api"></a>Amostras do Azure PowerShell para o Azure Cosmos DB – API do SQL (Core)
 
-A tabela a seguir inclui links para scripts do Azure PowerShell comumente usados no Azure Cosmos DB para a API do SQL (Core). Para obter uma listagem completa de todos os scripts do PowerShell, confira [Amostras do Cosmos DB PowerShell para a API do SQL (Core) no GitHub](https://github.com/Azure/azure-docs-powershell-samples/tree/master/cosmosdb/sql)
+A tabela a seguir inclui links para scripts do Azure PowerShell comumente usados no Azure Cosmos DB para a API do SQL (Core). Caso deseje criar fork dessas amostras do PowerShell para o Cosmos DB em nosso repositório GitHub, visite [Amostras do PowerShell para o Cosmos DB no GitHub](https://github.com/Azure/azure-docs-powershell-samples/tree/master/cosmosdb).
+
+Para obter mais amostras do PowerShell para o Cosmos DB para a API do SQL (Core) e a documentação, confira [Gerenciar recursos da API do SQL do Azure Cosmos DB usando o PowerShell](manage-with-powershell.md). Para obter amostras do PowerShell para o Cosmos DB para outras APIs, confira [API do Cassandra](powershell-samples-cassandra.md), [API do MongoDB](powershell-samples-mongodb.md), [API do Gremlin](powershell-samples-gremlin.md) e [API de Tabela](powershell-samples-table.md).
 
 | | |
 |---|---|
@@ -24,8 +26,9 @@ A tabela a seguir inclui links para scripts do Azure PowerShell comumente usados
 |[Listar ou obter bancos de dados ou contêineres](scripts/powershell/sql/ps-sql-list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Liste ou obtenha um banco de dados ou contêineres. |
 |[Obter RU/s](scripts/powershell/sql/ps-sql-ru-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Obtenha as RU/s de um banco de dados ou um contêiner. |
 |[Atualizar RU/s](scripts/powershell/sql/ps-sql-ru-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Atualize as RU/s para um banco de dados ou um contêiner. |
-|[Adicionar uma região](scripts/powershell/common/ps-account-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Obtenha uma conta do Azure Cosmos e adicione uma região para a lista de locais. |
 |[Criar um contêiner sem a política de índice](scripts/powershell/sql/ps-sql-container-create-index-none.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Crie um contêiner do Azure Cosmos com uma política de índice desativada.|
-|[Alterar a prioridade de failover](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Altere a prioridade de failover de uma conta do Azure Cosmos com um gatilho de failover manual. |
-|[Tarefas de chaves de conta e cadeia de conexão](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Obtenha as cadeias de conexão para uma conta do Azure Cosmos. Obtenha as chaves primárias e secundárias de uma conta do Azure Cosmos. Regenere a chave de conta. |
+|[Atualizar uma conta ou adicionar uma região](scripts/powershell/common/ps-account-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Adicione uma região a uma conta do Cosmos. Também pode ser usado para modificar outras propriedades da conta, mas essas alterações precisam ser separadas das alterações nas regiões. |
+|[Alterar a prioridade de failover ou disparar um failover](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Altere a prioridade de failover regional de uma conta do Azure Cosmos ou dispare um failover manual. |
+|[Chaves de conta ou cadeias de conexão](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Obtenha chaves primárias e secundárias, cadeias de conexão ou regenere uma chave de conta de uma conta do Azure Cosmos. |
+|[Criar uma conta do Cosmos com o firewall de IP](scripts/powershell/common/ps-account-firewall-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Crie uma conta do Azure Cosmos com o firewall de IP habilitado. |
 |||

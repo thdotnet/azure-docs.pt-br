@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/03/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 9c7f920c6b66995d53ef742a9faf574286a51d69
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: cf4eade598de24e323a8c8647a64921f8797e3a2
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390439"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686747"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Use as referências do Key Vault para o serviço de aplicativo e as funções do Azure (visualização)
 
@@ -188,7 +188,7 @@ Um exemplo de psuedo-template para um aplicativo de função pode ser semelhante
 
 ## <a name="troubleshooting-key-vault-references"></a>Solucionando problemas de referências de Key Vault
 
-Se uma referência não for resolvida corretamente, o valor de referência será usado em seu lugar. Isso significa que, para as configurações do aplicativo, uma variável de ambiente seria criada cujo `@Microsoft.KeyVault(...)` valor tem a sintaxe. Isso pode fazer com que o aplicativo gere erros, pois estava esperando um segredo de uma determinada estrutura.
+Se uma referência não for resolvida corretamente, o valor de referência será usado em seu lugar. Isso significa que, para as configurações do aplicativo, uma variável de ambiente seria criada cujo valor tem a sintaxe `@Microsoft.KeyVault(...)`. Isso pode fazer com que o aplicativo gere erros, pois estava esperando um segredo de uma determinada estrutura.
 
 Normalmente, isso se deve a uma configuração incorreta da [política de acesso de Key Vault](#granting-your-app-access-to-key-vault). No entanto, também pode ser devido a um segredo não mais existente ou a um erro de sintaxe na própria referência.
 
@@ -197,7 +197,7 @@ Se a sintaxe estiver correta, você poderá exibir outras causas de erro verific
 ### <a name="using-the-detector-for-app-service"></a>Usando o detector para o serviço de aplicativo
 
 1. No portal, navegue até seu aplicativo.
-2. Selecione **diagnosticar e resolver prolems**.
+2. Selecione **diagnosticar e resolver problemas**.
 3. Escolha **disponibilidade e desempenho** e selecione **aplicativo Web inativo.**
 4. Encontre **Key Vault diagnóstico de configurações do aplicativo** e clique em **mais informações**.
 
@@ -206,6 +206,6 @@ Se a sintaxe estiver correta, você poderá exibir outras causas de erro verific
 
 1. No portal, navegue até seu aplicativo.
 2. Navegue até **recursos da plataforma.**
-3. Selecione **diagnosticar e resolver prolems**.
+3. Selecione **diagnosticar e resolver problemas**.
 4. Escolha **disponibilidade e desempenho** e selecione **aplicativo de funções ou relatando erros.**
 5. Clique em **Key Vault configurações do aplicativo diagnósticos.**

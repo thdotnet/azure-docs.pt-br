@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 07/04/2019
-ms.openlocfilehash: baf3c372d0c84d4daf439fdc92fa6eeac5d12d0b
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.date: 09/25/2019
+ms.openlocfilehash: 96540a8ea40efcc3a2d115980999c8d470b85180
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501012"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71265942"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Tutorial: Migração offline do MongoDB para a API do Azure Cosmos DB para MongoDB usando o DMS
 
@@ -116,6 +116,9 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
 ## <a name="specify-source-details"></a>Especifique as configurações de origem
 
 1. Na tela **Detalhes da origem**, especifique os detalhes da conexão do servidor de origem do MongoDB.
+
+   > [!IMPORTANT]
+   > O Serviço de Migração de Banco de Dados do Azure não dá suporte ao Azure Cosmos DB como origem.
 
     Há três modos para se conectar a uma origem:
    * O **modo padrão**, que aceita um nome de domínio totalmente qualificado ou um endereço IP, o número da porta e as credenciais de conexão.

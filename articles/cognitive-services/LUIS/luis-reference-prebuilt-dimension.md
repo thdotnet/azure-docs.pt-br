@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 37b9ca071ca5b2e423d7efd93e4089e3a77b4e50
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 15ba8ad4d3bcf00024a0c7b14b004de08d37621a
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933599"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677657"
 ---
 # <a name="dimension-prebuilt-entity-for-a-luis-app"></a>Entidade de dimensão predefinida para um aplicativo LUIS
 A entidade de dimensão predefinida detecta vários tipos de dimensões, independentemente da cultura do aplicativo do LUIS. Como essa entidade já está treinada, não é necessário adicionar expressões contendo dimensões às intenções do aplicativo. A entidade de dimensão tem suporte em [muitas culturas](luis-reference-prebuilt-entities.md). 
@@ -28,7 +28,7 @@ A dimensão é gerenciada por meio do repositório do GitHub [Recognizers-text](
 
 ## <a name="resolution-for-dimension-entity"></a>Resolução para entidade de dimensão
 
-### <a name="api-version-2x"></a>Versão da API 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Resposta de ponto de extremidade de previsão v2](#tab/V2)
 
 O exemplo a seguir mostra a resolução da entidade **builtin.dimension**.
 
@@ -60,9 +60,10 @@ O exemplo a seguir mostra a resolução da entidade **builtin.dimension**.
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
 
-O JSON a seguir é com `verbose` o parâmetro definido `false`como:
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Resposta de ponto de extremidade de previsão v3](#tab/V3)
+
+O JSON a seguir é com o parâmetro `verbose` definido como `false`:
 
 ```json
 {
@@ -87,7 +88,7 @@ O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 }
 ```
 
-O JSON a seguir é com `verbose` o parâmetro definido `true`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `true`:
 
 ```json
 {
@@ -124,6 +125,10 @@ O JSON a seguir é com `verbose` o parâmetro definido `true`como:
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ponto de extremidade de previsão v3](luis-migration-api-v3.md).
 
 Saiba mais sobre as entidades [email](luis-reference-prebuilt-email.md), [número](luis-reference-prebuilt-number.md) e [ordinal](luis-reference-prebuilt-ordinal.md). 

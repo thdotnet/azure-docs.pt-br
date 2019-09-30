@@ -4,14 +4,14 @@ description: Script de exemplo do Azure PowerShell – Operações da chave de c
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/20/2019
+ms.date: 09/20/2019
 ms.author: mjbrown
-ms.openlocfilehash: 55f28ef6c6ff82f0b82b10ac1dd7931ac46aa2fc
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 1eb9cc4c35584b94d3d16654b1bec253e21a91ff
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602501"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71154756"
 ---
 # <a name="connection-string-and-account-key-operations-for-an-azure-cosmos-account-using-powershell"></a>Operações da cadeia de conexão e da chave de conta para uma conta do Azure Cosmos usando o PowerShell
 
@@ -21,7 +21,8 @@ ms.locfileid: "67602501"
 
 ## <a name="sample-script"></a>Script de exemplo
 
-Esta amostra exige a existência do grupo de recursos e da conta. Use uma amostra de criação existente do PowerShell para provisionar uma conta primeiro.
+> [!NOTE]
+> Esta amostra descreve como usar uma conta da API do SQL (Core). Para usar essa amostra em outras APIs, copie as propriedades relacionadas e aplique-as ao script específico da API
 
 [!code-powershell[main](../../../../../powershell_scripts/cosmosdb/common/ps-account-keys-connection-strings.ps1 "Connection strings and account keys for Azure Cosmos account")]
 

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 05/23/2019
 ms.author: helohr
-ms.openlocfilehash: de849701365438b21244d1e46ae657495d16c307
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: b6a78fbf2fcb12962b42537965deea6c7912315d
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816394"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676541"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Diagnosticar problemas de desempenho de gráficos no Área de Trabalho Remota
 
@@ -101,6 +101,6 @@ Se os recursos do cliente estiverem causando o afunilamento, tente uma das segui
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para criar uma máquina virtual do Azure otimizada para GPU, consulte [Configurar a aceleração GPU (unidade de processamento gráfico) para o ambiente de visualização de área de trabalho virtual do Windows](https://docs.microsoft.com/azure/virtual-desktop/configure-vm-gpu).
+- Para criar uma máquina virtual do Azure otimizada para GPU, consulte [Configurar a aceleração da GPU (unidade de processamento gráfico) para o ambiente de área de trabalho virtual do Windows](https://docs.microsoft.com/azure/virtual-desktop/configure-vm-gpu).
 - Para obter uma visão geral das faixas de solução de problemas e escalonamento, consulte [visão geral da solução de problemas, comentários e suporte](https://docs.microsoft.com/azure/virtual-desktop/troubleshoot-set-up-overview).
-- Para saber mais sobre o serviço de visualização, consulte [ambiente do Windows Desktop Preview](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
+- Para saber mais sobre o serviço, consulte [ambiente de área de trabalho do Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).

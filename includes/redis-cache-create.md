@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: wesmc
 ms.custom: include file
-ms.openlocfilehash: 0f1decae5fb3ec4a07f01c5bff7475f3d73a3cbb
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f059f23031c2cdd74daaa856213d7e06f87dc27c
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171728"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71273903"
 ---
 1. Para criar um cache, primeiro entre no [portal do Azure](https://portal.azure.com). Em seguida, selecione **Criar um recurso** > **Bancos de dados** > **Cache do Azure para Redis**.
 
-    ![Novo cache](media/redis-cache-create/redis-cache-new-cache-menu.png)
+    ![Menu Novo Cache Redis do Azure](media/redis-cache-create/redis-cache-new-cache-menu.png)
 
 2. Em **Novo Cache do Azure para Redis**, defina as configurações para o novo cache.
 
@@ -30,11 +30,11 @@ ms.locfileid: "67171728"
     | **[Tipo de preço](https://azure.microsoft.com/pricing/details/cache/)** |  C0 Básico (cache de 250 MB) |  O tipo de preço determina o tamanho, o desempenho e os recursos disponíveis para o cache. Para obter mais informações, confira [Visão geral do Cache do Azure para Redis](../articles/azure-cache-for-redis/cache-overview.md). |
     | **Fixar no painel** |  Selecionado | Fixe o novo cache ao seu painel para facilitar sua localização. |
 
-    ![Criar o cache](media/redis-cache-create/redis-cache-cache-create.png) 
+    ![Criar um Cache Redis do Azure](media/redis-cache-create/redis-cache-cache-create.png) 
 
 3. Depois que as novas configurações de cache estiverem configuradas, selecione **Criar**. 
 
     Pode levar alguns minutos para que o cache seja criado. Para verificar o status, você pode monitorar o progresso no painel. Depois de o cache ter sido criado, ele mostra o status **Executando** e está pronto para uso.
 
-    ![Cache criado](media/redis-cache-create/redis-cache-cache-created.png)
+    ![Cache Redis do Azure criado](media/redis-cache-create/redis-cache-cache-created.png)
 

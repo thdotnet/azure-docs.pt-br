@@ -8,13 +8,13 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 08/28/2019
-ms.openlocfilehash: 9a80cb7ba44c86d449e4ff4178a2982db302a717
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.date: 09/20/2019
+ms.openlocfilehash: 6feeab9b48715a8fe1f6c6fe11ae90b6be71a57a
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70138337"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71173488"
 ---
 # <a name="use-terraform-to-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image"></a>Use o Terraform para criar um conjunto de dimensionamento de máquinas virtuais do Azure com base em uma imagem personalizada Packer
 
@@ -42,9 +42,9 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Crie três novos arquivos em um diretório vazio com os seguintes nomes:
 
-- ```variables.tf``` Esse arquivo contém os valores das variáveis usadas no modelo.
-- ```output.tf``` Esse arquivo descreve as configurações que são exibidas após a implantação.
-- ```vmss.tf``` Esse arquivo contém o código da infraestrutura que você está implantando.
+- `variables.tf`: Esse arquivo contém os valores das variáveis usadas no modelo.
+- `output.tf`: Esse arquivo descreve as configurações que são exibidas após a implantação.
+- `vmss.tf`: Esse arquivo contém o código da infraestrutura que você está implantando.
 
 ##  <a name="create-the-variables"></a>Criar as variáveis 
 
@@ -52,7 +52,7 @@ Nesta etapa, você definirá as variáveis que personalizam os recursos criados 
 
 Edite o arquivo `variables.tf`, copie o código a seguir e salve as alterações.
 
-```tf 
+```hcl
 variable "location" {
   description = "The location where resources are created"
   default     = "East US"
@@ -70,7 +70,7 @@ variable "resource_group_name" {
 
 Salve o arquivo.
 
-Quando você implanta o modelo do Terraform, obtenha o nome de domínio totalmente qualificado que é usado para acessar o aplicativo. Use o tipo de recurso ```output``` do Terraform e obtenha a propriedade ```fqdn``` do recurso. 
+Quando você implanta o modelo do Terraform, obtenha o nome de domínio totalmente qualificado que é usado para acessar o aplicativo. Use o tipo de recurso `output` do Terraform e obtenha a propriedade `fqdn` do recurso. 
 
 Edite o arquivo `output.tf` e copie o código a seguir para expor o nome de domínio totalmente qualificado para as máquinas virtuais. 
 
@@ -89,9 +89,9 @@ Nesta etapa, você criará a seguinte infraestrutura de rede em um novo grupo de
 
 Você também precisa de um grupo de recursos no qual todos os recursos são criados. 
 
-Edite e copie o seguinte código no arquivo ```vmss.tf```: 
+Edite e copie o seguinte código no arquivo `vmss.tf`: 
 
-```tf 
+```hcl
 
 resource "azurerm_resource_group" "vmss" {
   name     = "${var.resource_group_name}"
@@ -145,7 +145,7 @@ Inicialize o ambiente de Terraform executando o seguinte comando no diretório e
 terraform init 
 ```
  
-Os plug-ins do provedor são baixados do Registro do Terraform para a pasta ```.terraform``` no diretório em que você executou o comando.
+Os plug-ins do provedor são baixados do Registro do Terraform para a pasta `.terraform` no diretório em que você executou o comando.
 
 Execute o comando a seguir para implantar a infraestrutura no Azure.
 
@@ -185,8 +185,7 @@ Nesta etapa, você criará os seguintes recursos na rede implantada anteriorment
 
 Adicione o seguinte código ao final do arquivo `vmss.tf`.
 
-```tf
-
+```hcl
 
 resource "azurerm_lb" "vmss" {
   name                = "vmss-lb"
@@ -303,7 +302,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
 
 Personalize a implantação adicionando o seguinte código ao `variables.tf`:
 
-```tf 
+```hcl
 variable "application_port" {
     description = "The port that you want to expose to the external load balancer"
     default     = 80

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: c4e83ed15c2b15ccb3339ff775b08c8d2dab4c32
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 4f46efaeddb0bfe789ef752abdd133c14da514da
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68932512"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677701"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Entidade DatetimeV2 predefinida para um aplicativo LUIS
 
@@ -57,7 +57,7 @@ A resposta JSON de exemplo a seguir tem uma entidade `datetimeV2` com um subtipo
 |startIndex|**int** – o índice no enunciado em que a entidade começa.|
 |endIndex|**int** – o índice no enunciado em que a entidade termina.|
 |resolução|Tem uma matriz `values` com um, dois ou quatro [valores de resolução](#values-of-resolution).|
-|end|O valor final de uma hora ou intervalo de datas no mesmo formato que `value`. Usado somente se `type` for `daterange`, `timerange` ou `datetimerange`|
+|encerrar|O valor final de uma hora ou intervalo de datas no mesmo formato que `value`. Usado somente se `type` for `daterange`, `timerange` ou `datetimerange`|
 
 ## <a name="subtypes-of-datetimev2"></a>Subtipos de datetimeV2
 
@@ -82,7 +82,7 @@ Cada elemento da matriz `values` pode ter os seguintes campos:
 |Nome da propriedade|Descrição da propriedade|
 |--|--|
 |timex|hora, data ou intervalo de datas expressado no formato TIMEX que segue o [padrão ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) e os atributos TIMEX3 para anotação usando a linguagem TimeML. Essa anotação é descrita nas [diretrizes TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|type|O subtipo, `datetime`que pode ser um dos seguintes itens: `date` `time`,,, `set` `daterange` `timerange` `datetimerange`,,, `duration`,.|
+|type|O subtipo, que pode ser um dos seguintes itens: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
 |value|**Opcional** Um objeto datetime no formato yyyy:MM:dd (date), HH:mm:ss (time) yyyy:MM:dd HH:mm:ss (datetime). Se `type` for `duration`, o valor será o número de segundos (duration) <br/> Usado somente se `type` for `datetime` ou `date`, `time` ou `duration.|
 
 ## <a name="valid-date-values"></a>Valores de data válidos
@@ -185,6 +185,8 @@ A matriz de valores terá dois elementos de tempo se o tempo ou o intervalo de t
 
 O exemplo a seguir mostra como o LUIS usa **datetimeV2** para resolver o enunciado que tem um intervalo de tempo.
 
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Resposta de ponto de extremidade de previsão v2](#tab/V2)
+
 ```json
   "entities": [
     {
@@ -206,15 +208,15 @@ O exemplo a seguir mostra como o LUIS usa **datetimeV2** para resolver o enuncia
   ]
 ```
 
-## <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Resposta de ponto de extremidade de previsão v3](#tab/V3)
 
 A resposta JSON DatetimeV2 foi alterada na API v3. 
 
 Alterações da API v2:
-* `datetimeV2.timex.type`a propriedade não é mais retornada porque é retornada no nível pai, `datetimev2.type`. 
-* A `datetimeV2.timex` Propriedade foi renomeada para `datetimeV2.value`.
+* a propriedade `datetimeV2.timex.type` não é mais retornada porque é retornada no nível pai, `datetimev2.type`. 
+* A propriedade `datetimeV2.timex` foi renomeada para `datetimeV2.value`.
 
-Para o expressão, `8am on may 2nd 2017`, a versão V3 do DatetimeV2 é:
+Para o expressão, `8am on may 2nd 2017`, a versão v3 de DatetimeV2 é:
 
 ```JSON
 {
@@ -244,7 +246,7 @@ Para o expressão, `8am on may 2nd 2017`, a versão V3 do DatetimeV2 é:
 }
 ```
 
-O JSON a seguir é com `verbose` o parâmetro definido `false`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `false`:
 
 ```json
 {
@@ -289,6 +291,9 @@ O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 }
 ```
 
+
+* * * 
+
 ## <a name="deprecated-prebuilt-datetime"></a>Datetime predefinido preterido
 
 A entidade pré-compilada `datetime` é reprovada e substituída por **datetimeV2**. 
@@ -301,6 +306,8 @@ Para substituir `datetime` por `datetimeV2` em seu aplicativo LUIS, conclua as s
 4. Selecione **datetimeV2** e clique em **Salvar**.
 
 ## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ponto de extremidade de previsão v3](luis-migration-api-v3.md).
 
 Saiba mais sobre as entidades [dimensão](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) e [número](luis-reference-prebuilt-number.md). 
 

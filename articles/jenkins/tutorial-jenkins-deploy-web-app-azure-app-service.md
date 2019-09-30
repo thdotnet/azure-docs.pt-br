@@ -8,19 +8,19 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 06f1c0123d6bdf56b5182605016d2feb80adf18b
-ms.sourcegitcommit: ee61ec9b09c8c87e7dfc72ef47175d934e6019cc
+ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: c4e4a984adc0ec6af99667ff36c009ca730acf48
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70172976"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172807"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Tutorial: Implantar do GitHub para o Serviço de Aplicativo do Azure com implantação e integração contínua do Jenkins
 
 Este tutorial implanta um aplicativo Web Java de exemplo do GitHub no [Serviço de Aplicativo do Azure no Linux](/azure/app-service/containers/app-service-linux-intro) configurando a CI (integração contínua) e a CD (implantação contínua) no Jenkins. Ao atualizar o aplicativo efetuando push das atualizações para o GitHub, o Jenkins criará e republicará seu aplicativo automaticamente no Serviço de Aplicativo do Azure. O aplicativo de exemplo neste tutorial foi desenvolvido usando a estrutura [Spring Boot](https://projects.spring.io/spring-boot/). 
 
-![Visão geral](media/tutorial-jenkins-deploy-web-app-azure-app-service/overview.png)
+![Visão geral da implantação do GitHub para o Serviço de Aplicativo do Azure](media/tutorial-jenkins-deploy-web-app-azure-app-service/azure-continuous-integration-deployment-overview.png)
 
 Neste tutorial, você concluirá estas tarefas:
 
@@ -97,19 +97,19 @@ Para que o Jenkins monitore o GitHub e responda quando novas confirmações fore
 
 1. Na página **Gerenciar o Jenkins**, escolha **Configurar Sistema**. 
 
-   ![Configurar sistema](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-jenkins-configure-system.png)
+   ![Configurar o sistema no Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-jenkins-configure-system.png)
 
 1. Na seção **GitHub**, forneça detalhes sobre seu servidor do GitHub. Na lista **Adicionar Servidor GitHub**, escolha **Servidor GitHub**. 
 
-   ![Adicionar servidor GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/add-GitHub-server.png)
+   ![Adicionar servidor GitHub no Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/add-GitHub-server.png)
 
 1. Se a propriedade **Gerenciar ganchos** não estiver marcada, marque-a. Selecione **Avançado** para poder especificar outras configurações. 
 
-   ![Escolher "Avançado" para obter mais configurações](media/tutorial-jenkins-deploy-web-app-azure-app-service/advanced-GitHub-settings.png)
+   ![Especificar configurações avançadas do Jenkins para o servidor GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/advanced-GitHub-settings.png)
 
 1. Na lista **Gerenciar ações adicionais do GitHub**, escolha **Converter logon e senha em token**.
 
-   ![Escolher "Gerenciar ações adicionais do GitHub"](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-additional-actions.png)
+   ![Converter o logon e a senha em um token para o GitHub](media/tutorial-jenkins-deploy-web-app-azure-app-service/manage-additional-actions.png)
 
 1. Escolha **Com base em logon e senha** para poder inserir seu nome de usuário e senha do GitHub. Quando terminar, selecione **Criar credenciais de token**, que cria um [PAT (token de acesso pessoal) do GitHub](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).   
 
@@ -181,11 +181,11 @@ No Jenkins, crie o trabalho de pipeline para criar e implantar seu aplicativo.
 
 1. Retorne à home page do Jenkins e escolha **Novo Item**. 
 
-   ![Selecione “Novo Item”](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-new-item.png)
+   ![Crie um pipeline do Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-new-item.png)
 
 1. Forneça um nome para seu trabalho de pipeline, por exemplo, "My-Java-Web-App", e escolha **Pipeline**. Na parte inferior, selecione **OK**.  
 
-   ![Escolher "Pipeline"](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-pipeline.png)
+   ![Nomear o trabalho de pipeline do Jenkins](media/tutorial-jenkins-deploy-web-app-azure-app-service/jenkins-select-pipeline.png)
 
 1. Configure o Jenkins com sua entidade de serviço para que o Jenkins possa implantar no Azure sem usar suas próprias credenciais.
 
@@ -199,7 +199,7 @@ No Jenkins, crie o trabalho de pipeline para criar e implantar seu aplicativo.
       WEB_APP=yourWebAppName
       ```
 
-      ![Escolher "Preparar um ambiente para execução" e definir variáveis de ambiente](media/tutorial-jenkins-deploy-web-app-azure-app-service/prepare-environment-for-run.png)
+      ![Preparar um ambiente para a execução e definir as variáveis de ambiente](media/tutorial-jenkins-deploy-web-app-azure-app-service/prepare-environment-for-jenkins-run.png)
 
 1. Quando terminar, selecione **Salvar**.
 
@@ -254,7 +254,7 @@ Agora, especifique o script de compilação e implantação que você deseja que
 
 1. No Jenkins, escolha o trabalho de pipeline criado anteriormente. 
 
-   ![Escolher o trabalho de pipeline para o aplicativo Web](media/tutorial-jenkins-deploy-web-app-azure-app-service/select-pipeline-job.png)
+   ![Selecionar o trabalho de pipeline do Jenkins para seu aplicativo Web](media/tutorial-jenkins-deploy-web-app-azure-app-service/select-pipeline-job.png)
 
 1. No menu esquerdo, escolha **Configurar**.
 
@@ -272,7 +272,7 @@ Agora, especifique o script de compilação e implantação que você deseja que
 
    Quando terminar, sua definição de pipeline se parecerá com este exemplo: 
 
-   ![Apontar o pipeline para o script](media/tutorial-jenkins-deploy-web-app-azure-app-service/set-up-jenkins-github.png)
+   ![Apontar o pipeline do Jenkins para o script](media/tutorial-jenkins-deploy-web-app-azure-app-service/set-up-jenkins-github.png)
 
 1. Quando terminar, selecione **Salvar**.
 

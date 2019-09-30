@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: aschhab
-ms.openlocfilehash: a78409a15acb4e60fc4200778d0f33b3fb566e85
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9aaada1ede8912b8b70f37c628ec918eca9be9d2
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60403934"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676275"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>Transferências de mensagem, bloqueios e liquidação
 
@@ -98,9 +98,13 @@ Com um cliente AMQP de baixo nível, o Barramento de Serviço também aceita tra
 
 Para operações de recebimento, os clientes da API do Barramento de Serviço habilitam dois modos explícitos diferentes: *Receive-and-Delete* e *Peek-Lock*.
 
+### <a name="receiveanddelete"></a>ReceiveAndDelete
+
 O modo [Receive-and-Delete](/dotnet/api/microsoft.servicebus.messaging.receivemode) diz ao agente para considerar todas as mensagens que ele envia para o cliente destinatário como liquidadas quando enviadas. Isso significa que a mensagem é considerada consumida assim que o agente a envia. Se a transferência de mensagem falhar, a mensagem será perdida.
 
 A vantagem desse modo é que o destinatário não precisa realizar outra ação em relação à mensagem e também não sofre atraso por causa do resultado da liquidação. Se os dados contidos nas mensagens individuais têm valor baixo e/ou só são úteis por um período muito curto, esse modo é uma opção razoável.
+
+### <a name="peeklock"></a>PeekLock
 
 O modo [Peek-Lock](/dotnet/api/microsoft.servicebus.messaging.receivemode) diz ao agente que o cliente destinatário deseja liquidar as mensagens recebidas explicitamente. A mensagem é disponibilizada para o destinatário para ser processada enquanto é mantida em um bloqueio exclusivo no serviço, de forma que outros destinatários concorrentes não possam vê-la. A duração do bloqueio é inicialmente definida no nível da assinatura ou da fila e pode ser estendida pelo cliente proprietário do bloqueio por meio da operação [RenewLock](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.renewlockasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_RenewLockAsync_System_String_).
 
@@ -121,6 +125,14 @@ As operações **Complete** ou **DeadLetter**, bem como a operação **RenewLock
 Se **Complete** falhar, o que ocorre normalmente no final do tratamento das mensagens e, em alguns casos, após alguns minutos de processamento, o aplicativo destinatário poderá decidir se preserva o estado do trabalho e ignora a mesma mensagem quando ela é entregue pela segunda vez, ou se ele descarta o resultado do trabalho e tenta novamente quando a mensagem é entregue da segunda vez.
 
 O mecanismo típico para identificar as entregas de mensagem duplicada é verificando a identificação da mensagem, que pode e deve ser definida pelo remetente como um valor exclusivo, possivelmente alinhado com um identificador do processo de origem. Um agendador provavelmente definiria a ID de mensagem do identificador da tarefa que ele está tentando atribuir a um trabalho, e o trabalho ignoraria a segunda ocorrência da atribuição de tarefa se ela já estiver concluída.
+
+> [!IMPORTANT]
+> É importante observar que o bloqueio que o PeekLock adquire na mensagem é volátil e pode ser perdido nas seguintes condições
+>   * Atualização de serviço
+>   * Atualização do so
+>   * Alterando propriedades na entidade (fila, tópico, assinatura) enquanto mantém o bloqueio.
+>
+> Quando o bloqueio for perdido, o barramento de serviço do Azure irá gerar um LockLostException que será exibido no código do aplicativo cliente. Nesse caso, a lógica de repetição padrão do cliente deve iniciar automaticamente e tentar a operação novamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

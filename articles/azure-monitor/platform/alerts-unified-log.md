@@ -1,19 +1,19 @@
 ---
 title: Alertas de log no Azure Monitor
 description: Dispare emails, notificações, chame URLs de sites (webhooks) ou automação quando as condições de consulta analítica especificadas forem atendidas para os Alertas do Azure.
-author: msvijayn
+author: yanivlavi
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 5/31/2019
-ms.author: vinagara
+ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: ae35c735cffeb8cd85af1f32bb2d14ede6dc6b69
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f78f7c37fafd7f0b29f76220206b9adfb62f52c9
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427420"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677744"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Alertas de log no Azure Monitor
 
@@ -27,13 +27,13 @@ O Alerta de Log consiste em regras de Pesquisa de Logs criadas para o [Azure Mon
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Regra de alerta de pesquisa de log - definição e tipos
 
-As regras de pesquisa de log são criadas pelos Alertas do Azure para executar consultas de log automaticamente em intervalos regulares.  Se os resultados da consulta de log corresponderem a critérios específicos, um registro de alerta será criado. A regra pode executar automaticamente uma ou mais ações usando os [Grupos de Ação](../../azure-monitor/platform/action-groups.md). A função [Colaborador do Monitoramento do Azure](../../azure-monitor/platform/roles-permissions-security.md) pode ser necessária para criar, modificar e atualizar alertas de log e direitos de acesso e execução de consulta para os destinos de análise na regra de alerta ou na consulta de alerta. No caso de criação de usuário não tem acesso a todos os destinos de análise na regra de alerta ou consulta de alerta - a criação da regra pode falhar ou a regra de alerta do log será executada com resultados parciais.
+As regras de pesquisa de log são criadas pelos Alertas do Azure para executar consultas de log automaticamente em intervalos regulares.  Se os resultados da consulta de log corresponderem a critérios específicos, um registro de alerta será criado. A regra pode executar automaticamente uma ou mais ações usando os [Grupos de Ação](../../azure-monitor/platform/action-groups.md). A função [Colaborador do Monitoramento do Azure](../../azure-monitor/platform/roles-permissions-security.md) pode ser necessária para criar, modificar e atualizar alertas de log e direitos de acesso e execução de consulta para os destinos de análise na regra de alerta ou na consulta de alerta. Caso o usuário que está criando não tenha acesso a todos os destinos de análise na regra de alerta ou consulta de alerta-a criação da regra pode falhar ou a regra de alerta de log será executada com resultados parciais.
 
 As regras de pesquisa de log são definidas pelos detalhes a seguir:
 
 - **Consulta de log**.  A consulta que é executada cada vez que a regra de alerta é acionada.  Os registros retornados por essa consulta são usados para determinar se um alerta é disparado. A consulta do Analytics pode ser para um workspace específico do Log Analytics ou para um aplicativo do Application Insights e, até mesmo, abranger [vários recursos do Log Analytics e do Application Insights](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights), desde que o usuário tenha direitos de acesso, bem como de consulta a todos os recursos. 
     > [!IMPORTANT]
-    > [consulta de recursos cruzados](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) suporte em alertas de log para o Application Insights e log de alertas para [configurado usando scheduledQueryRules API do Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) apenas.
+    > suporte [a consultas entre recursos](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) em alertas de log para Application insights e alertas de log para [log Analytics configurados usando apenas a API scheduledQueryRules](../../azure-monitor/platform/alerts-log-api-switch.md) .
 
     Alguns comandos e combinações de análise são incompatíveis com o uso em alertas de log; para obter mais detalhes, confira [Consultas de alertas de log no Azure Monitor](../../azure-monitor/platform/alerts-log-query.md).
 
@@ -76,7 +76,7 @@ Alerta deve executar a consulta a cada 5 minutos, com 30 minutos de dados - proc
 
 ### <a name="metric-measurement-alert-rules"></a>Regras de alerta com medição métrica
 
-**Medição métrica** regras de alerta criar um alerta para cada objeto em uma consulta com um valor que excede um limite especificado e as condições de gatilho especificadas. Diferentemente **número de resultados** regras de alerta **medição métrica** regras de alerta funcionam quando o resultado da análise fornece uma série de tempo. Eles têm as diferenças distintas a seguir em relação às regras de alerta de **Número de resultados**.
+As regras de alerta de **medição de métrica** criam um alerta para cada objeto em uma consulta com um valor que exceda um limite especificado e uma condição de gatilho especificada. Ao contrário **do número de resultados de regras de** alerta, as regras de alerta de **medição métrica** funcionam quando o resultado da análise fornece uma série temporal. Eles têm as diferenças distintas a seguir em relação às regras de alerta de **Número de resultados**.
 
 - **Função de agregação**: Determina o cálculo que será realizado e, potencialmente, um campo numérico a agregar.  Por exemplo, **count()** retornará o número de registros na consulta e **avg(CounterValue)** retornará a média do campo CounterValue durante o intervalo. Função de agregação na consulta deve ser nomeada/chamada: AggregatedValue e fornecer um valor numérico. 
 
@@ -102,13 +102,13 @@ Considere um cenário em que você deseje um alerta se qualquer computador exced
 - **Período de Tempo:** 30 minutos<br>
 - **Frequência de alerta:** cinco minutos<br>
 - **Lógica de alerta – condição e limite:** Maior do que 90<br>
-- **Campo Grupo (agregar em):** Computador
+- **Campo Grupo (agregar em):** Computer
 - **Disparar alerta com base em:** Total de violações maior que 2<br>
 
 A consulta criaria um valor médio para cada computador em intervalos de cinco minutos.  Essa consulta seria executada cada cinco minutos para os dados coletados durante os 30 minutos anteriores. Uma vez que o campo de grupo (agregar em) escolhido é o 'Computador' colunar – o AggregatedValue é dividido para vários valores de 'Computador' e utilização média do processador para cada computador é determinada para um compartimento temporal de 5 minutos.  O resultado da consulta de exemplo para (digamos) três computadores seria conforme mostrado abaixo.
 
 
-|TimeGenerated [UTC] |Computador  |AggregatedValue  |
+|TimeGenerated [UTC] |Computer  |AggregatedValue  |
 |---------|---------|---------|
 |20xx-xx-xxT01:00:00Z     |   srv01.contoso.com      |    72     |
 |20xx-xx-xxT01:00:00Z     |   srv02.contoso.com      |    91     |
@@ -127,16 +127,16 @@ Já que o alerta é configurado para disparar com base em um total de violaçõe
 
 ## <a name="log-search-alert-rule---firing-and-state"></a>Regra de alerta de pesquisa de logs – acionamento e estado
 
-A regra de alerta de pesquisa de logs funciona com a lógica definida pelo usuário, de acordo com a configuração e a consulta de análise personalizada usada. Desde a lógica de monitoramento incluindo a condição exata ou o motivo por que a regra de alerta deve disparar é encapsulado em uma consulta do analytics - que pode ser diferente em cada regra de alerta do log. Alertas do Azure tem informações escassos da causa raiz subjacente específica (ou) cenário que está sendo avaliada quando a condição de regra de alerta de pesquisa de log de limite é atingida ou excedida. Portanto, alertas de log são conhecidos como sem estado. E regras de alerta do log serão manter disparando, desde que a condição de alerta é atendida pelo resultado da consulta de análise personalizada fornecida. Sem o alerta cada obtendo resolvido, como a lógica a causa exata da falha de monitoramento é mascarada dentro da consulta do analytics fornecida pelo usuário. Existir no momento, nenhum mecanismo para alertas do Azure Monitor conclusivamente deduzir a causa raiz que está sendo resolvida.
+A regra de alerta de pesquisa de logs funciona com a lógica definida pelo usuário, de acordo com a configuração e a consulta de análise personalizada usada. Como a lógica de monitoramento, incluindo a condição exata ou o motivo pelo qual a regra de alerta deve disparar, é encapsulada em uma consulta de análise, que pode ser diferente em cada regra de alerta de log. Os alertas do Azure têm informações escassa do cenário de causa raiz (ou) subjacente específico que está sendo avaliado quando a condição de limite da regra de alerta de pesquisa de logs é atendida ou excedida. Assim, os alertas de log são conhecidos como sem estado. E as regras de alerta de log continuarão sendo acionadas, desde que a condição de alerta seja atendida pelo resultado da consulta de análise personalizada fornecida. Sem o alerta a cada ser resolvido, como a lógica da causa raiz exata da falha de monitoramento é mascarada dentro da consulta de análise fornecida pelo usuário. Atualmente, não há nenhum mecanismo para alertas de Azure Monitor para deduzir conclusivamente a causa raiz que está sendo resolvida.
 
-Nos permite ver os mesmos, com um exemplo prático. Suponha que você tenha uma regra de alerta de log chamada *alerta do Log de Contoso*, de acordo com a configuração na [exemplo fornecido para o alerta de log do tipo de número de resultados](#example-of-number-of-records-type-log-alert) – em que a consulta de alerta personalizada foi projetada para procurar por 500 código de resultado nos logs.
+Vamos ver o mesmo com um exemplo prático. Suponha que tenhamos uma regra de alerta de log chamada *contoso-log-Alert*, de acordo com a configuração no [exemplo fornecido para o número de resultados de alerta de log](#example-of-number-of-records-type-log-alert) -em que a consulta de alerta personalizada foi criada para procurar o código de resultado 500 nos logs.
 
-- Em 1:05 PM quando o alerta do Log de Contoso foi executado pelos alertas do Azure, o resultado da pesquisa de log gerou zero registro com o código de resultado com 500. Uma vez que o zero está abaixo do limite e o alerta não é disparado.
-- Na próxima iteração em 1:10 PM quando o alerta do Log de Contoso foi executado pelos alertas do Azure, o resultado da pesquisa de log fornecido cinco registros com o código de resultado como 500. Uma vez que cinco excede o limite e o alerta é disparado com as ações associadas será disparado.
-- Em 1:15 PM quando o alerta do Log de Contoso foi executado pelos alertas do Azure, o resultado da pesquisa de log fornecida dois registros com o código de resultado de 500. Uma vez que dois excede o limite e o alerta é disparado com as ações associadas será disparado.
-- Agora na próxima iteração em 1:20 PM quando o alerta do Log de Contoso foi executado por um alerta do Azure, o resultado da pesquisa de log fornecida novamente zero registro com o código de resultado de 500. Uma vez que o zero está abaixo do limite e o alerta não é disparado.
+- Às 1:05 PM quando contoso-log-Alert foi executado pelos alertas do Azure, o resultado da pesquisa de log gerou zero registros com o código de resultado de 500. Como zero está abaixo do limite e o alerta não é acionado.
+- Na próxima iteração às 1:10, quando contoso-log-Alert foi executado pelos alertas do Azure, o resultado da pesquisa de logs forneceu cinco registros com o código de resultado como 500. Como cinco excede o limite e o alerta é acionado com as ações associadas disparadas.
+- Às 1:15 PM quando contoso-log-Alert foi executado por alertas do Azure, o resultado da pesquisa de logs forneceu dois registros com código de resultado 500. Como dois excedem o limite e o alerta é acionado com as ações associadas disparadas.
+- Agora, na próxima iteração às 1:20, quando contoso-log-Alert foi executado pelo alerta do Azure, o resultado da pesquisa de log forneceu novamente zero registros com o código de resultado 500. Como zero está abaixo do limite e o alerta não é acionado.
 
-Mas, no caso de listados acima, a 1:15 PM - alertas do Azure não podem determinar que os problemas subjacentes vistos em 1:10 persistirem e se há novas falhas net. Como a consulta fornecida pelo usuário pode levando em conta os registros anteriores - alertas do Azure podem ter certeza. Desde que a lógica para o alerta é encapsulada na consulta de alerta - portanto, os dois registros com o código de resultado 500 visto em 1:15 PM podem ou não podem ser vistos já às 1: 22H. Portanto, para err com cautela, quando o alerta de Log Contoso é executado no 1:15 PM, ação configurada é acionada novamente. Agora em 1:20 PM quando zero registro são vistos com código de resultado 500 - alertas do Azure não podem ter certeza de que a causa do código de resultado 500 visto em 1: 22H00 e 1:15 PM agora está resolvida e alertas do Azure Monitor com confiança podem deduzir os problemas de 500 Erro não ocorrerá pela mesma razão s novamente. Portanto, o alerta do Log de Contoso será não alterado para resolvido no painel de alerta do Azure e/ou as notificações enviadas informando que a resolução do alerta. Em vez disso, o usuário que compreende a condição exata ou o motivo para a lógica inserida na consulta do analytics, é possível [marcar alerta como fechado](alerts-managing-alert-states.md) conforme necessário.
+Mas, no caso listado acima, às 1:15 PM-os alertas do Azure não podem determinar que os problemas subjacentes vistos em 1:10 persistam e se há novas falhas na rede. Como a consulta fornecida pelo usuário pode estar levando em conta registros anteriores – os alertas do Azure podem ter certeza. Como a lógica do alerta é encapsulada na consulta de alerta, portanto, os dois registros com o código de resultado 500 visto às 1:15 PM podem ou não ser vistos na 1:10 PM. Portanto, para o erro no lado do cuidado, quando contoso-log-Alert for executado às 1:15 PM, a ação configurada será disparada novamente. Agora às 1:20, quando zero registros são vistos com o código de resultado de 500, os alertas do Azure não podem ter certeza de que a causa do código de resultado 500 visto às 1:10 e a 1:15 PM agora está resolvida e Azure Monitor alertas pode deduzir com segurança que os problemas de erro de 500 não ocorrerão pelo mesmo motivo s novamente. Portanto, o contoso-log-Alert não será alterado para resolvido no painel de alerta do Azure e/ou as notificações enviadas informando a resolução do alerta. Em vez disso, o usuário que entende a condição ou o motivo exato da lógica incorporada na consulta de análise pode [marcar o alerta como fechado](alerts-managing-alert-states.md) , conforme necessário.
 
 ## <a name="pricing-and-billing-of-log-alerts"></a>Preços e cobrança dos Alertas de Log
 
@@ -155,7 +155,7 @@ Remova os recursos ocultos scheduleQueryRules criados para cobrança de regras d
 - Qualquer usuário pode [alternar a preferência de API para as regras de alerta no workspace do Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) e sem perda de suas regras de alerta ou movimentação de monitoramento para a [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) em conformidade com o Azure Resource Manager. Isso elimina a necessidade de regras de pseudoalerta ocultas para cobrança.
 - Ou se o usuário não desejar mudar a preferência de API, ele precisará **excluir** a agenda original e a ação de alerta usando a [API herdada do Log Analytics](api-alerts.md) ou excluir no [portal do Azure a regra de alerta de log original](../../azure-monitor/platform/alerts-log.md#view--manage-log-alerts-in-azure-portal)
 
-Além para recursos ocultos scheduleQueryRules criados para cobrança de regras de alerta usando [API herdada do Log Analytics](api-alerts.md), qualquer operação de modificação, como PUT falhará. Como o `microsoft.insights/scheduledqueryrules` regras de tipo de pseudo são para fins de cobrança criadas usando as regras de alerta [API herdada do Log Analytics](api-alerts.md). Qualquer modificação da regra de alerta deve ser feita usando [API herdada do Log Analytics](api-alerts.md) (ou), o usuário pode [alternar preferência de API para as regras de alerta](../../azure-monitor/platform/alerts-log-api-switch.md) usar [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) em vez disso.
+Além disso, para os recursos ocultos do scheduleQueryRules criados para a cobrança de regras de alerta usando a [API de log Analytics herdada](api-alerts.md), qualquer operação de modificação como Put falhará. Como as pseudovariáveis de tipo `microsoft.insights/scheduledqueryrules` são para fins de cobrança das regras de alerta criadas usando a [API de log Analytics herdada](api-alerts.md). Qualquer modificação de regra de alerta deve ser feita usando a [API de log Analytics herdada](api-alerts.md) (ou) o usuário pode [alternar a preferência de API para que as regras de alerta usem a](../../azure-monitor/platform/alerts-log-api-switch.md) [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) em vez disso.
 
 ## <a name="next-steps"></a>Próximas etapas
 

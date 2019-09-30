@@ -4,14 +4,14 @@ description: Lista os tipos de recursos do Azure que podem ser movidos para um n
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 09/06/2019
+ms.date: 09/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9dc86fe7876a050fe67ec73a665be6141a4b98da
-ms.sourcegitcommit: b7b0d9f25418b78e1ae562c525e7d7412fcc7ba0
+ms.openlocfilehash: b34c244708c52ec7324c766286aff8ee9340db0b
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2019
-ms.locfileid: "70801355"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71687132"
 ---
 # <a name="move-operation-support-for-resources"></a>Mover o suporte de operação para recursos
 Este artigo lista se um tipo de recurso do Azure é compatível com a operação de movimentação. Ele também fornece informações sobre condições especiais a serem consideradas ao mover um recurso.
@@ -72,7 +72,6 @@ Ir para um namespace do provedor de recursos:
 > - [Microsoft.Devices](#microsoftdevices)
 > - [Microsoft.DevSpaces](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
-> - [microsoft.dns](#microsoftdns)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
 > - [Microsoft.DomainRegistration](#microsoftdomainregistration)
 > - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
@@ -542,7 +541,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Grupo de recursos | Assinatura |
 > | ------------- | ----------- | ---------- |
-> | services | Não | Não |
+> | serviços | Não | Não |
 > | serviços/projetos | Não | Não |
 > | slots | Não | Não |
 
@@ -610,21 +609,6 @@ Ir para um namespace do provedor de recursos:
 > | laboratórios/VirtualMachines | Sim | Não |
 > | schedules | Sim | Sim |
 
-## <a name="microsoftdns"></a>microsoft.dns
-
-> [!div class="mx-tableFixed"]
-> | Tipo de recurso | Grupo de recursos | Assinatura |
-> | ------------- | ----------- | ---------- |
-> | dnszones | Não | Não |
-> | dnszones/a | Não | Não |
-> | dnszones/aaaa | Não | Não |
-> | dnszones/CNAME | Não | Não |
-> | dnszones/MX | Não | Não |
-> | dnszones/PTR | Não | Não |
-> | dnszones/SRV | Não | Não |
-> | dnszones/txt | Não | Não |
-> | trafficmanagerprofiles | Não | Não |
-
 ## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
 
 > [!div class="mx-tableFixed"]
@@ -644,7 +628,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Grupo de recursos | Assinatura |
 > | ------------- | ----------- | ---------- |
-> | services | Sim | Sim |
+> | serviços | Sim | Sim |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
@@ -694,7 +678,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Grupo de recursos | Assinatura |
 > | ------------- | ----------- | ---------- |
-> | services | Sim | Sim |
+> | serviços | Sim | Sim |
 
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
@@ -737,7 +721,7 @@ Ir para um namespace do provedor de recursos:
 > | pastas de trabalho | Sim | Sim |
 
 > [!IMPORTANT]
-> Certifique-se de que a mudança para a nova assinatura não exceda as [cotas de assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Certifique-se de que a mudança para a nova assinatura não exceda as cotas de [assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 
@@ -981,7 +965,7 @@ Ir para um namespace do provedor de recursos:
 > | workspaces | Sim | Sim |
 
 > [!IMPORTANT]
-> Certifique-se de que a mudança para a nova assinatura não exceda as [cotas de assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Certifique-se de que a mudança para a nova assinatura não exceda as cotas de [assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
@@ -1251,7 +1235,7 @@ Ir para um namespace do provedor de recursos:
 > | ------------- | ----------- | ---------- |
 > | environments | Não | Não |
 > | ambientes/EventSources | Não | Não |
-> | Instâncias | Não | Não |
+> | instâncias | Não | Não |
 > | instâncias/ambientes | Não | Não |
 > | instâncias/ambientes/EventSources | Não | Não |
 

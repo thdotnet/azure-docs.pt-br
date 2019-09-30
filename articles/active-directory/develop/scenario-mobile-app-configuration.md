@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7b731c9936ab85b19428687330044a46c563c49
-ms.sourcegitcommit: 263a69b70949099457620037c988dc590d7c7854
+ms.openlocfilehash: 168fbb275f70acd229dfd8f2e3f0d4c325db0f94
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71268363"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71678013"
 ---
 # <a name="mobile-app-that-calls-web-apis---code-configuration"></a>Aplicativo móvel que chama as APIs da Web-configuração de código
 
@@ -30,7 +30,7 @@ Depois de criar seu aplicativo, você aprenderá a configurar o código usando o
 
 As bibliotecas da Microsoft que dão suporte a aplicativos móveis são:
 
-  Biblioteca MSAL | DESCRIÇÃO
+  Biblioteca MSAL | Descrição
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Para desenvolver aplicativos portáteis. As plataformas com suporte do MSAL.NET para criar um aplicativo móvel são UWP, Xamarin. iOS e Xamarin. Android.
   ![MSAL.iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL.iOS | Para desenvolver aplicativos iOS nativos com Objective-C ou Swift
@@ -155,9 +155,13 @@ No Android e no iOS, os agentes habilitam:
 - Identificação do dispositivo. Habilita as políticas de acesso condicional relacionadas ao dispositivo do Azure AD, acessando o certificado do dispositivo que foi criado no dispositivo quando ele foi ingressado no local de trabalho.
 - Verificação da identificação do aplicativo. Quando um aplicativo chama o agente, ele passa sua URL de redirecionamento e o agente o verifica.
 
-### <a name="enable-the-brokers-on-xamarin"></a>Habilitar os agentes no Xamarin
+### <a name="enable-the-broker-on-xamarin"></a>Habilitar o agente no Xamarin
 
 Para habilitar um desses recursos, use o `WithBroker()` parâmetro ao chamar o `PublicClientApplicationBuilder.CreateApplication` método. `.WithBroker()`é definido como true por padrão. Siga as etapas abaixo para o [Xamarin. Ios](#brokered-authentication-for-xamarinios).
+
+### <a name="enable-the-broker-for-msal-for-android"></a>Habilitar o agente para MSAL para Android
+
+Consulte [autenticação orientada no Android](brokered-auth.md) para obter informações sobre como habilitar um agente no Android. 
 
 ### <a name="enable-the-broker-for-msal-for-ios-and-macos"></a>Habilitar o agente para MSAL para iOS e macOS
 

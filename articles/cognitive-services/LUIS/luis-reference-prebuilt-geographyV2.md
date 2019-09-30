@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: e28b541c1b5aa8f733c9f4ed44fd2ea5296b34d8
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 04bc3019a55920351b0e91c87e63b8309d94e34c
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933533"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677604"
 ---
 # <a name="geographyv2-prebuilt-entity-for-a-luis-app"></a>Entidade GeographyV2 predefinida para um aplicativo LUIS
 A entidade geographyV2 predefinida detecta locais. Como essa entidade já está treinada, não é necessário adicionar enunciados contendo GeographyV2 às intenções do aplicativo. Há suporte para a entidade GeographyV2 na [cultura](luis-reference-prebuilt-entities.md) de inglês.
@@ -35,7 +35,7 @@ As localizações geográficas têm subtipos:
 
 ## <a name="resolution-for-geographyv2-entity"></a>Resolução para a entidade GeographyV2
 
-### <a name="api-version-2x"></a>Versão da API 2. x
+#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Resposta de ponto de extremidade de previsão v2](#tab/V2)
 
 O exemplo a seguir mostra a resolução da entidade **builtin.geographyV2**.
 
@@ -93,9 +93,9 @@ O exemplo a seguir mostra a resolução da entidade **builtin.geographyV2**.
 } 
 ```
 
-### <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
+#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Resposta de ponto de extremidade de previsão v3](#tab/V3)
 
-O JSON a seguir é com `verbose` o parâmetro definido `false`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `false`:
 
 ```json
 {
@@ -121,7 +121,7 @@ O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 }
 ```
 
-O JSON a seguir é com `verbose` o parâmetro definido `true`como:
+O JSON a seguir é com o parâmetro `verbose` definido como `true`:
 
 ```json
 {
@@ -191,6 +191,10 @@ O JSON a seguir é com `verbose` o parâmetro definido `true`como:
 }
 ```
 
+* * * 
+
 ## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ponto de extremidade de previsão v3](luis-migration-api-v3.md).
 
 Saiba mais sobre as entidades [email](luis-reference-prebuilt-email.md), [número](luis-reference-prebuilt-number.md) e [ordinal](luis-reference-prebuilt-ordinal.md). 

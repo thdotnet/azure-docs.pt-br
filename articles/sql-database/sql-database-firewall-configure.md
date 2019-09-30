@@ -11,12 +11,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: cebf5e80ea59a29efed984097a4157f5238fad5c
-ms.sourcegitcommit: 86d49daccdab383331fc4072b2b761876b73510e
+ms.openlocfilehash: e3e65a6deadfbcad563a6b64c0a9f48182cdd571
+ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70744971"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71686465"
 ---
 # <a name="azure-sql-database-and-azure-sql-data-warehouse-ip-firewall-rules"></a>Regras de firewall de IP do banco de dados SQL do Azure e do Azure SQL Data Warehouse
 
@@ -38,7 +38,7 @@ As tentativas de conexão da Internet e do Azure devem passar pelo firewall ante
 
 ### <a name="server-level-ip-firewall-rules"></a>Regras de firewall de IP no nível de servidor
 
-  Essas regras permitem que os clientes acessem todo o Azure SQL Server, ou seja, todos os bancos dentro do mesmo servidor do Banco de Dados SQL. As regras são armazenadas no banco de dados *mestre* .
+  Essas regras permitem que os clientes acessem todo o Azure SQL Server, ou seja, todos os bancos dentro do mesmo servidor do Banco de Dados SQL. As regras são armazenadas no banco de dados *mestre* . Você pode ter um máximo de 128 regras de firewall de IP no nível de servidor para uma SQL Server do Azure.
   
   Você pode configurar regras de firewall de IP no nível de servidor usando as instruções portal do Azure, PowerShell ou Transact-SQL.
   - Para usar o portal ou o PowerShell, você deve ser o proprietário da assinatura ou um colaborador da assinatura.
@@ -151,7 +151,7 @@ A página Visão geral do servidor é aberta. Ele mostra o nome do servidor tota
 | [sp_delete_firewall_rule](https://msdn.microsoft.com/library/dn270024.aspx) |Servidor |Remove as regras de firewall de IP no nível de servidor |
 | [sys.database_firewall_rules](https://msdn.microsoft.com/library/dn269982.aspx) |Banco de Dados |Exibe as regras de firewall de IP atuais no nível de banco de dados |
 | [sp_set_database_firewall_rule](https://msdn.microsoft.com/library/dn270010.aspx) |Banco de Dados |Cria ou atualiza as regras de firewall de IP no nível de banco de dados |
-| [sp_delete_database_firewall_rule](https://msdn.microsoft.com/library/dn270030.aspx) |Bancos de dados |Remove as regras de firewall de IP no nível de banco de dados |
+| [sp_delete_database_firewall_rule](https://msdn.microsoft.com/library/dn270030.aspx) |Bancos de Dados |Remove as regras de firewall de IP no nível de banco de dados |
 
 O exemplo a seguir revisa as regras existentes, habilita um intervalo de endereços IP no servidor *contoso*e exclui uma regra de firewall IP:
 

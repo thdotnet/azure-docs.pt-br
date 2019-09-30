@@ -1,19 +1,19 @@
 ---
 title: 'Tutorial: Processar dados dos Hubs de Eventos do Azure com Apache Spark no HDInsight'
 description: Tutorial – Conectar-se ao Apache Spark no Azure HDInsight para Hubs de Eventos do Azure e processar dados de streaming.
-ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
+ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/24/2019
-ms.openlocfilehash: 2483ba22d3d502479e87ae385bcc837ec87a103c
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: be21b809272a132ee6e63582036c36ad5dcdf4ad
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70735345"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266203"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Tutorial: Processar tweets usando Hubs de Eventos do Azure e Apache Spark no HDInsight
 
@@ -252,7 +252,7 @@ Com o HDInsight, os dados são armazenados no Armazenamento do Microsoft Azure o
 
 Abra o cluster no portal do Azure e selecione **Excluir**.
 
-![Excluir o cluster HDInsight](./media/apache-spark-load-data-run-query/hdinsight-azure-portal-delete-cluster.png "Excluir o cluster HDInsight")
+![Excluir o cluster HDInsight no portal do Azure](./media/apache-spark-load-data-run-query/hdinsight-azure-portal-delete-cluster.png "Excluir o cluster HDInsight")
 
 Também é possível selecionar o nome do grupo de recursos para abrir a página do grupo de recursos, e depois selecionar **Excluir grupo de recursos**. Ao excluir o grupo de recursos, você exclui o cluster Spark do HDInsight e a conta de armazenamento padrão.
 

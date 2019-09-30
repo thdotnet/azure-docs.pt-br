@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/25/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 0d77622e22c297cc29c93a5421da5043e396b929
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 66cdedb402392340d38ab9a72f6f19012c359664
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933574"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677635"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Entidades por cultura em seu modelo do LUIS
 
@@ -42,7 +42,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```zh-CN``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -64,7 +64,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```nl-NL``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [Horário](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -86,7 +86,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```en-US``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -108,7 +108,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```fr-FR``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -130,7 +130,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```fr-CA``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -152,7 +152,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```de-DE``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -174,7 +174,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```it-IT``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [Horário](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -196,7 +196,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```ja-JP``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [Horário](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -218,7 +218,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```ko-KR``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    -   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    -   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    -   |
 [Horário](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    -   | 
@@ -240,7 +240,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```pt-BR``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -262,7 +262,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```es-ES``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    ✔   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    ✔   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    ✔   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    ✔   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    ✔   | 
@@ -284,7 +284,7 @@ Há suporte para as seguintes entidades:
 
 |Entidade predefinida|```es-MX``` |
 ------|:------:|
-[Idade](luis-reference-prebuilt-age.md):<br>ano<br>mês<br>semana<br>dia   |    -   |
+[Idade](luis-reference-prebuilt-age.md):<br>year<br>mês<br>semana<br>dia   |    -   |
 [Moeda (dinheiro)](luis-reference-prebuilt-currency.md):<br>dólar<br>unidade fracionária (ex: centavo)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    -   | 
 [Dimensão](luis-reference-prebuilt-dimension.md):<br>volume<br>área<br>peso<br>informação (ex: bit/byte)<br>comprimento (ex: medidor)<br>velocidade (ex: milhas por hora)  |    -   | 

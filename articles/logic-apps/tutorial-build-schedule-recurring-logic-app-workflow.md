@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/12/2019
-ms.openlocfilehash: 9392cfc9c789a757c3ad533a3dbd4719f5292be5
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: 809d76791522fa135932baaf6e237570ab0af35a
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931573"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71172171"
 ---
 # <a name="tutorial-create-automated-schedule-based-recurring-workflows-by-using-azure-logic-apps"></a>Tutorial: Criar fluxos de trabalho automatizados, recorrentes e com base em agendamento usando Aplicativos Lógicos do Azure
 
@@ -235,7 +235,7 @@ Em seguida, adicione uma condição que verifica se o tempo de viagem atual é m
 
 1. Na ação anterior, selecione **Nova etapa**.
 
-1. Em **Escolha uma ação**, selecione **Interno** e pesquise "condição" e selecione a ação **Condição**.
+1. Em **Escolha uma ação**, selecione **Interno**. Na caixa de pesquisa, insira "condição" como o filtro. Na lista de ações, selecione a ação **Condição**.
 
    ![Selecione a ação "Condição"](./media/tutorial-build-scheduled-recurring-logic-app-workflow/select-condition-action.png)
 
@@ -243,19 +243,19 @@ Em seguida, adicione uma condição que verifica se o tempo de viagem atual é m
 
 1. Crie uma condição que verifica se o valor da propriedade **travelTime** excede o limite especificado, como descrito e mostrado aqui:
 
-   1. Dentro da condição, clique dentro da caixa **Escolha um valor** no lado esquerdo da condição.
+   1. Na condição, clique dentro da caixa **Escolher um valor** no lado esquerdo da condição.
 
-   1. Quando a lista de conteúdo dinâmico for exibida, em **Variáveis**, selecione a propriedade **travelTime**.
+   1. Na lista de conteúdo dinâmico exibida, em **Variáveis**, selecione a propriedade **travelTime**.
 
       ![Lado esquerdo da condição do build](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-left-side.png)
 
-   1. Na caixa de comparação, selecione este operador: **é maior que**
+   1. Na caixa de comparação intermediária, selecione o operador **é maior que**.
 
    1. Na caixa **Escolha um valor** à direita da condição, insira este limite: `15`
 
       Quando terminar, a condição será semelhante a este exemplo:
 
-      ![Condição da compilação](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
+      ![Condição concluída](./media/tutorial-build-scheduled-recurring-logic-app-workflow/build-condition-check-travel-time.png)
 
 1. Salve seu aplicativo lógico.
 

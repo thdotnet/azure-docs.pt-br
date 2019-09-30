@@ -1,18 +1,18 @@
 ---
 title: Criar, exibir e gerenciar alertas do log de atividades no Azure Monitor
 description: Crie alertas do log de atividades usando o portal do Azure, um modelo de Azure Resource Manager e Azure PowerShell.
-author: msvijayn
+author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/25/2019
-ms.author: vinagara
-ms.openlocfilehash: a7f80698791831b3d4404ea0f687a75c660c2222
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.author: robb
+ms.openlocfilehash: e93b6f9c74bb44cb7341f5763261ecb699432ae2
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852753"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71675271"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Criar, exibir e gerenciar alertas do log de atividades usando Azure Monitor  
 
@@ -59,7 +59,7 @@ Use o procedimento a seguir.
 
      **Exibição de exemplo do destino de alerta**
 
-     ![Selecionar o destino](media/alerts-activity-log/select-target.png)
+     ![Selecionar destino](media/alerts-activity-log/select-target.png)
 
    - Em **critérios de destino**, selecione **Adicionar critérios**. Todos os sinais disponíveis para o destino são exibidos, o que os inclui de várias categorias de **log de atividades**. O nome da categoria é anexado ao nome do **serviço monitor** .
 

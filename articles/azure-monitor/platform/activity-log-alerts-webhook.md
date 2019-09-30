@@ -1,19 +1,19 @@
 ---
 title: Noções básicas sobre o esquema de webhook usado em alertas do log de atividades
 description: Saiba mais sobre o esquema JSON que é enviado para uma URL de webhook quando um alerta do log de atividades é ativado.
-author: johnkemnetz
+author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/31/2017
-ms.author: johnkem
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: c91c1badaa4b1bc055859d700857cfd4d062babd
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: b9ba809baa8fc4adddfad1344d6f36375cb361c4
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491507"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71675207"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Webhook para alertas de log de atividades do Azure
 Como parte da definição de um grupo de ações, você pode configurar pontos de extremidade de webhook para receber notificações de alerta do log de atividades. Os webhooks permitem rotear uma notificação de alerta do Azure para outros sistemas para pós-processamento ou notificações personalizadas. Este artigo mostra a aparência do conteúdo para o HTTP POST para um webhook.
@@ -23,7 +23,7 @@ Para saber mais sobre alertas do log de atividades, veja como [Criar alertas do 
 Para saber mais sobre grupos de ações, veja como [criar grupos de ações](../../azure-monitor/platform/action-groups.md).
 
 > [!NOTE]
-> Você também pode usar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs), que fornece a vantagem de ter um único extensível e conteúdo de alerta unificado em todo o alerta de serviços no Azure Monitor para suas integrações de webhook. [Saiba mais sobre as definições de alerta de esquema comuns.](https://aka.ms/commonAlertSchemaDefinitions)
+> Você também pode usar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs), que fornece a vantagem de ter uma única carga de alerta extensível e unificada em todos os serviços de alerta no Azure monitor, para suas integrações de webhook. [Saiba mais sobre as definições de esquema de alerta comuns.](https://aka.ms/commonAlertSchemaDefinitions)
 
 
 ## <a name="authenticate-the-webhook"></a>Autenticar o webhook
@@ -132,7 +132,7 @@ O conteúdo JSON contida na operação POST difere com base no campo de data.con
 }
 ```
 
-### <a name="recommendation"></a>Recomendações
+### <a name="recommendation"></a>Recomendação
 
 ```json
 {
@@ -258,7 +258,7 @@ Para obter detalhes de esquema específico sobre alertas de log de atividades de
 }
 ```
 
-| Nome do elemento | DESCRIÇÃO |
+| Nome do elemento | Descrição |
 | --- | --- |
 | status |Usado para alertas de métrica. Sempre definido como "ativado" para alertas do log de atividades. |
 | context |Contexto do evento. |
@@ -269,9 +269,9 @@ Para obter detalhes de esquema específico sobre alertas de log de atividades de
 | description |Descrição do alerta definida quando o alerta é criado. |
 | subscriptionId |Id de assinatura do Azure. |
 | timestamp |Hora quando o evento foi gerado pelo serviço do Azure que processou a solicitação. |
-| ResourceId |ID de recurso do recurso afetado. |
+| resourceId |ID de recurso do recurso afetado. |
 | resourceGroupName |Nome do grupo de recursos do recurso afetado. |
-| propriedades |Conjunto de pares `<Key, Value>` (ou seja, `Dictionary<String, String>`) que inclui detalhes sobre o evento. |
+| properties |Conjunto de pares `<Key, Value>` (ou seja, `Dictionary<String, String>`) que inclui detalhes sobre o evento. |
 | evento |Elemento que contém metadados sobre o evento. |
 | authorization |As propriedades de Controle de Acesso Baseado em Função do evento. Essas propriedades geralmente incluem a ação, função e escopo. |
 | category |Categoria do evento. Os valores com suporte são: Administrativo, Alerta, Segurança, ServiceHealth e Recomendação. |
@@ -284,7 +284,7 @@ Para obter detalhes de esquema específico sobre alertas de log de atividades de
 | level |Um dos seguintes valores: Crítico, Erro, Aviso e Informativo. |
 | operationId |Geralmente um GUID compartilhado entre os eventos correspondentes a uma única operação. |
 | operationName |Nome da operação. |
-| propriedades |Propriedades do evento. |
+| properties |Propriedades do evento. |
 | status |Cadeia de caracteres. Status da operação. Os valores comuns incluem: Iniciado, Em Andamento, Êxito, Falha, Ativo, Resolvido. |
 | subStatus |Geralmente inclui o código de status HTTP da chamada REST correspondente. Também pode incluir outras cadeias de caracteres que descrevam um substatus. Os valores de substatus comuns incluem OK (código de status HTTP: 200), Criado (código de status HTTP: 201), Aceito (Código de Status HTTP: 202), Sem Conteúdo (Código de Status HTTP: 204) Solicitação Incorreta (Código de Status HTTP: 400) Não Localizado (Código de Status HTTP: 404) Conflito (código de status HTTP: 409) Erro Interno do Servidor (Código de Status HTTP: 500) Serviço não disponível (código de status HTTP: 503) e Tempo limite de gateway (código de status HTTP: 504). |
 

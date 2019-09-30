@@ -4,14 +4,14 @@ description: Descreve a estrutura e as propriedades dos modelos do Azure Resourc
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 09/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 4a5c1a99911c31f539d4f55adefb2c5f06243dd0
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 6b027acc5a8a8b7660d5640ff4af335e51fd2dbf
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984088"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71676872"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Noções básicas de estrutura e sintaxe dos modelos do Azure Resource Manager
 
@@ -75,7 +75,7 @@ As propriedades disponíveis para um parâmetro são:
 | Nome do elemento | Necessário | Descrição |
 |:--- |:--- |:--- |
 | nome do parâmetro |Sim |Nome do parâmetro. Deve ser um identificador JavaScript válido. |
-| type |Sim |Tipo do valor do parâmetro. Os valores e tipos permitidos são **cadeia de caracteres**, **securestring**, **int**, **bool**, **objeto**, **secureObject**, e **matriz**. |
+| type |Sim |Tipo do valor do parâmetro. Os valores e tipos permitidos são **cadeia de caracteres**, **securestring**, **int**, **bool**, **objeto**, **secureObject**, e **matriz**. Consulte [tipos de dados](#data-types). |
 | defaultValue |Não |Valor padrão do parâmetro, se nenhum valor for fornecido para o parâmetro. |
 | allowedValues |Não |Matriz de valores permitidos para o parâmetro para garantir que o valor correto seja fornecido. |
 | minValue |Não |O valor mínimo para parâmetros de tipo int, esse valor é inclusivo. |
@@ -85,6 +85,18 @@ As propriedades disponíveis para um parâmetro são:
 | description |Não |Descrição do parâmetro exibido aos usuários pelo portal. Para obter mais informações, confira [Comentários em modelos](#comments). |
 
 Para obter exemplos de como usar parâmetros, consulte [parâmetros em modelos de Azure Resource Manager](template-parameters.md).
+
+### <a name="data-types"></a>Tipos de dados
+
+Os tipos de inteiros podem variar de-2147483648 a 2147483647. No entanto, os tipos de recursos podem aplicar um limite inferior para uma propriedade de número inteiro.
+
+Ao especificar valores Boolianos e inteiros em seu modelo, não coloque o valor entre aspas. Comece e termine valores de cadeia de caracteres com aspas duplas.
+
+Os objetos começam com uma chave esquerda e terminam com uma chave direita. As matrizes começam com um colchete esquerdo e terminam com um colchete direito.
+
+Cadeias de caracteres seguras e objetos seguros não podem ser lidos após a implantação de recursos.
+
+Para obter exemplos de formatação de tipos de dados, consulte [formatos de tipo de parâmetro](resource-manager-parameter-files.md#parameter-type-formats).
 
 ## <a name="variables"></a>Variáveis
 
@@ -123,7 +135,7 @@ Para obter exemplos de como usar variáveis, consulte [variáveis no modelo Azur
 
 ## <a name="functions"></a>Funções
 
-Dentro de seu modelo, você pode criar suas próprias funções. Essas funções estão disponíveis para uso em seu modelo. Normalmente, você define a expressão complexa que não deseja repetir em todo o seu modelo. Você cria as funções definidas pelo usuário de expressões e [funções](resource-group-template-functions.md) que têm suporte em modelos.
+Dentro de seu modelo, você pode criar suas próprias funções. Essas funções estão disponíveis para uso em seu modelo. Normalmente, você define expressões complicadas que não deseja repetir em todo o modelo. Você cria as funções definidas pelo usuário de expressões e [funções](resource-group-template-functions.md) que têm suporte em modelos.
 
 Ao definir uma função de usuário, há algumas restrições:
 
@@ -233,14 +245,14 @@ Você define recursos com a seguinte estrutura:
 | type |Sim |Tipo do recurso. Esse valor é uma combinação do namespace do provedor de recursos e do tipo de recurso (como **Microsoft.Storage/storageAccounts**). Para determinar os valores disponíveis, consulte [referência de modelo](/azure/templates/). Para um recurso filho, o formato do tipo depende de se ele está aninhado dentro do recurso pai ou definido fora do recurso pai. Confira [Definir o nome e o tipo de recursos filho](child-resource-name-type.md). |
 | name |Sim |Nome do recurso. O nome deve seguir as restrições de componente URI definidas em RFC3986. Os serviços do Azure que expõem o nome do recurso a partes externas validam o nome para verificar se não há uma tentativa de falsificar outra identidade. Para um recurso filho, o formato do nome depende se ele está aninhado dentro do recurso pai ou definido fora do recurso pai. Confira [Definir o nome e o tipo de recursos filho](child-resource-name-type.md). |
 | localização |Varia |Locais geográficos com suporte do recurso fornecido. Você pode selecionar qualquer uma das localizações disponíveis, mas geralmente faz sentido escolher um que esteja perto de seus usuários. Normalmente, também faz sentido colocar recursos que interagem entre si na mesma região. A maioria dos tipos de recurso exige um local, ao contrário de alguns deles (como uma atribuição de função). Consulte [definir local do recurso](resource-location.md). |
-| marcações |Não |Marcas que são associadas ao recurso. Aplique marcas para organizar recursos logicamente em toda a sua assinatura. |
+| marcas |Não |Marcas que são associadas ao recurso. Aplique marcas para organizar recursos logicamente em toda a sua assinatura. |
 | comentários |Não |Suas anotações para documentar os recursos no modelo. Para obter mais informações, confira [Comentários em modelos](resource-group-authoring-templates.md#comments). |
 | copiar |Não |Se mais de uma instância for necessária, o número de recursos a serem criados. O modo padrão é paralelo. Especifica o modo serial quando você não deseja que todos os recursos sejam implantados ao mesmo tempo. Para obter mais informações, consulte [Criar várias instâncias de recursos no Azure Resource Manager](resource-group-create-multiple.md). |
 | dependsOn |Não |Recursos que devem ser implantados antes deste recurso. O Gerenciador de Recursos avalia as dependências entre os recursos e os implanta na ordem correta. Quando os recursos não dependem uns dos outros, eles são implantados em paralelo. O valor pode ser uma lista separada por vírgulas de nomes de recursos ou identificadores exclusivos de recursos. Somente lista recursos que são implantados neste modelo. Os recursos que não são definidos neste modelo já devem existir. Evite adicionar dependências desnecessárias, pois elas podem reduzir sua implantação e criar dependências circulares. Para obter orientação sobre como configurar as dependências, confira [Definir as dependências nos modelos do Azure Resource Manager](resource-group-define-dependencies.md). |
 | properties |Não |Definições de configuração específicas do recurso. Os valores para as propriedades são iguais aos valores que você fornece no corpo da solicitação para a operação da API REST (método PUT) para criar o recurso. Especifique também uma matriz de cópia para criar várias instâncias de uma propriedade. Para determinar os valores disponíveis, consulte [referência de modelo](/azure/templates/). |
 | SKU | Não | Alguns recursos permitem que os valores definam a SKU para implantar. Por exemplo, você pode especificar o tipo de redundância para uma conta de armazenamento. |
-| kind | Não | Alguns recursos permitem que um valor defina o tipo de recurso que você implantar. Por exemplo, você pode especificar o tipo de Cosmos DB para criar. |
-| plan | Não | Alguns recursos permitem que um valor defina o plano para implantar. Por exemplo, você pode especificar a imagem do marketplace para uma máquina virtual. | 
+| tipo | Não | Alguns recursos permitem que um valor defina o tipo de recurso que você implantar. Por exemplo, você pode especificar o tipo de Cosmos DB para criar. |
+| plano | Não | Alguns recursos permitem que um valor defina o plano para implantar. Por exemplo, você pode especificar a imagem do marketplace para uma máquina virtual. | 
 | recursos |Não |Recursos filho que dependem do recurso que está sendo definido. Forneça apenas os tipos de recurso permitidos pelo esquema do recurso pai. A dependência do recurso pai não é implícita. Você deve definir explicitamente essa dependência. Confira [Definir o nome e o tipo de recursos filho](child-resource-name-type.md). |
 
 ## <a name="outputs"></a>Saídas

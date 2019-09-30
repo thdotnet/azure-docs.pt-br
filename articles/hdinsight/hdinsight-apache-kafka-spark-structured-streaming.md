@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,seodec18
 ms.topic: tutorial
 ms.date: 05/22/2019
 ms.author: hrasheed
-ms.openlocfilehash: 32e47f688150333ac78091589d8a252641d4c7d6
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: bcf1b967cf8eeab7aae4b720683785309689858e
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076988"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71204238"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Tutorial: Usar o fluxo estruturado do Apache Spark com o Apache Kafka no HDInsight
 
@@ -186,12 +186,15 @@ Este exemplo demonstra como usar o Streaming Estruturado do Spark com o Kafka no
 
 4. Carregue os pacotes usados pelo Notebook inserindo as informações a seguir em uma célula do Notebook. Execute o comando usando **CTRL + ENTER**.
 
+O streaming do Spark tem microenvio em lote, o que significa que os dados são recebidos como lotes e os executores são executados nos lotes de dados. Se o executor tiver um tempo limite de ociosidade menor que o tempo necessário para processar o lote, os executores serão constantemente adicionados e removidos. Se o tempo limite de ociosidade dos executores for maior que a duração do lote, o executor nunca será removido. Portanto, **recomendamos que você desabilite a alocação dinâmica definindo spark.dynamicAllocation.enabled como falso ao executar aplicativos de streaming.**
+
     ```
     %%configure -f
     {
         "conf": {
             "spark.jars.packages": "org.apache.spark:spark-sql-kafka-0-10_2.11:2.2.0",
-            "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.11"
+            "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.11",
+            "spark.dynamicAllocation.enabled": false
         }
     }
     ```

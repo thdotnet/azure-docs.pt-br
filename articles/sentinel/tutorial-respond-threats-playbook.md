@@ -1,5 +1,5 @@
 ---
-title: Executar um guia estratégico na versão prévia do Azure Sentinel | Microsoft Docs
+title: Executar um guia estratégico no Azure Sentinel | Microsoft Docs
 description: Este artigo descreve como executar um guia estratégico no Azure Sentinel.
 services: sentinel
 documentationcenter: na
@@ -14,20 +14,18 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 8/21/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 08c88df2f8ccc69f213687209d1d003f3bb1c7b8
-ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
+ms.openlocfilehash: 7ab4c4ba4553e7e5f15e563c67c845758a53766f
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70018795"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71229505"
 ---
-# <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel-preview"></a>Tutorial: Configurar respostas de ameaças automatizado na visualização do Azure Sentinel
+# <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel"></a>Tutorial: Configurar respostas de ameaças automatizadas no Azure Sentinel
 
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Este tutorial ajuda você a usar os Guias estratégicos de segurança no Azure Sentinel para definir as respostas de ameaças automatizadas para problemas relacionados à segurança detectados pelo Azure Sentinel.
 
@@ -78,7 +76,9 @@ Siga estas etapas para criar um novo guia estratégico de segurança no Azure Se
 
 6. Você será direcionado para o Designer do aplicativo lógico no qual você pode criar novo ou editar o modelo. Para obter mais informações sobre como criar um Guia estratégico com [Aplicativos Lógicos do Azure](../logic-apps/logic-apps-create-logic-apps-from-templates.md).
 
-7. Se você estiver criando um Guia estratégico em branco, no campo **Pesquisar todos os conectores e gatilhos**, digite *Azure Sentinel* e selecione **Quando uma resposta a um alerta do Azure Sentinel é acionada**. <br>Depois que é criado, o novo Guia estratégico aparecerá na lista de **Guias estratégicos**. Se isso não aparecer, clique no botão **Atualizar**. 
+7. Se você estiver criando um Guia estratégico em branco, no campo **Pesquisar todos os conectores e gatilhos**, digite *Azure Sentinel* e selecione **Quando uma resposta a um alerta do Azure Sentinel é acionada**. <br>Depois que é criado, o novo Guia estratégico aparecerá na lista de **Guias estratégicos**. Se isso não aparecer, clique no botão **Atualizar**.
+
+1. Use as funções **Obter entidades**, que permitem que você obtenha as entidades relevantes na lista **Entidades**, como contas, endereços IP e hosts. Isso permitirá executar ações em entidades específicas.
 
 7. Agora você pode definir o que acontece ao adicionar o manual. Você pode adicionar uma ação, uma condição lógica, condições de caso de alternância ou loops.
 

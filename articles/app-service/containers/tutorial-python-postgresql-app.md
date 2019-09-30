@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b5a21bd144558459ac60ae2da405f9ea57ca2fd1
-ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
+ms.openlocfilehash: 1fc322cf7e425e35751369ab8daf1ef1809d5f07
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70020197"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203268"
 ---
 # <a name="build-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Criar um aplicativo Web Python (Django) com PostgreSQL no Serviço de Aplicativo do Azure
 
@@ -37,7 +37,7 @@ Neste tutorial, você aprenderá como:
 > [!NOTE]
 > Antes de criar um Banco de Dados do Azure para PostgreSQL, verifique [qual geração da computação está disponível em sua região](https://docs.microsoft.com/azure/postgresql/concepts-pricing-tiers#compute-generations-and-vcores).
 
-Você pode seguir as etapas deste artigo no macOS. As instruções do Linux e do Windows são as mesmas na maioria dos casos, mas as diferenças não são detalhadas neste tutorial.
+Você pode seguir as etapas deste artigo no macOS. As instruções para Linux e Windows são as mesmas na maioria dos casos, mas as diferenças não são detalhadas neste tutorial.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 09/17/2019
+ms.date: 09/30/2019
 ms.author: dalek
-ms.openlocfilehash: 62f2ea36468e30b20ef08bde21bfde961faae8f9
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 448469d4c1ff15ed2ba814dfaa653c4d3c7e3452
+ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067026"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71677811"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gerenciar o uso e os custos do Application Insights
 
@@ -30,7 +30,7 @@ Se tiver dúvidas sobre como os preços são aplicados ao Application Insights, 
 
 ## <a name="pricing-model"></a>Modelo de preços
 
-O preço do [aplicativo Azure insights][start] é baseado no volume de dados ingerido. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
+Os preços do [aplicativo Azure insights][start] baseiam-se no volume de dados ingerido e, opcionalmente, para a retenção de dados mais longa. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
 
 ### <a name="data-volume-details"></a>Detalhes do volume de dados
 
@@ -47,7 +47,7 @@ Há uma cobrança adicional para [testes na Web de várias etapas](../../azure-m
 
 Não há nenhuma cobrança separada para *testes de ping* de uma única página. A telemetria de testes de ping e de testes de várias etapas é cobrada da mesma forma que outras telemetrias do seu aplicativo.
 
-## <a name="review-usage-and-estimate-costs"></a>Revisar uso e estimar custos
+## <a name="understand-your-usage-and-estimate-costs"></a>Entenda seu uso e calcule os custos
 
 O Application Insights facilita a compreensão de quais são seus custos com base nos padrões de uso recentes. Para começar, no portal do Azure, do recurso Application Insights, acesse a página **Uso e custos estimados**:
 
@@ -110,11 +110,17 @@ Veja abaixo o que é possível fazer para reduzir o volume de dados:
 * Divida a telemetria em chaves de instrumentação separadas. 
 * Métricas de pré-agregação. Se tiver feito chamadas para o TrackMetric no seu aplicativo, você poderá reduzir o tráfego usando a sobrecarga que aceita o cálculo do desvio médio e padrão de um lote de medições. Ou você pode usar um [pacote de pré-agregação](https://www.myget.org/gallery/applicationinsights-sdk-labs).
 
-## <a name="manage-the-maximum-daily-data-volume"></a>Gerenciar o volume de dados diário máximo
+## <a name="manage-your-maximum-daily-data-volume"></a>Gerenciar seu volume máximo de dados diário
 
 Você pode usar o limite de volume diário para limitar os dados coletados. No entanto, se o limite for atingido, ocorrerá uma perda de toda a telemetria enviada do seu aplicativo no restante do dia. *Não é aconselhável* deixar o aplicativo atingir o limite diário. Não será possível rastrear a integridade e o desempenho do seu aplicativo após ele atingir o limite diário.
 
 Em vez de usar o limite de volume diário, use a [amostragem](../../azure-monitor/app/sampling.md) para ajustar o volume de dados para o nível desejado. Em seguida, use o limite diário apenas como um "último recurso", no caso de seu aplicativo inesperadamente começar a enviar volumes muito mais altos de telemetria.
+
+### <a name="identify-what-daily-data-limit-to-define"></a>Identificar o limite diário de dados a definir
+
+Examine Application Insights uso e custos estimados para entender a tendência de ingestão de dados e qual é o limite de volume diário a ser definido. Considere-o com cuidado, pois não será possível monitorar os recursos depois que o limite for alcançado. 
+
+### <a name="set-the-daily-cap"></a>Definir o limite diário
 
 Para alterar o limite diário, na seção **Configurar** do recurso de Application insights, na página **uso e custos estimados** , selecione **limite diário**.
 
@@ -122,7 +128,7 @@ Para alterar o limite diário, na seção **Configurar** do recurso de Applicati
 
 Para [alterar o limite diário por meio de Azure Resource Manager](../../azure-monitor/app/powershell.md), a propriedade a ser `dailyQuota`alterada é.  Por meio de Azure Resource Manager você também pode `dailyQuotaResetTime` definir o e o `warningThreshold`limite diário. 
 
-## <a name="sampling"></a>amostragem
+## <a name="sampling"></a>Amostragem
 [Amostragem](../../azure-monitor/app/sampling.md) é um método de redução da taxa em que a telemetria é enviada para o seu aplicativo, enquanto mantém a capacidade de encontrar eventos relacionados durante as pesquisas de diagnóstico. Você também mantém contagens de eventos corretas.
 
 A amostragem é uma maneira eficiente de reduzir encargos e permanecer dentro de sua cota mensal. O algoritmo de amostragem mantém itens de telemetria relacionados, para que, por exemplo, quando Pesquisar for utilizado, você possa encontrar a solicitação relacionada a uma exceção específica. O algoritmo também mantém contagens corretas, para que você veja os valores corretos no Metrics Explorer referentes a taxas de solicitação, taxas de exceção e outras contagens.
@@ -160,6 +166,10 @@ Para alterar a retenção, de seu Application Insights recurso, vá para a pági
 ![Ajustar o limite de volume de telemetria diário](./media/pricing/pricing-005.png)
 
 Quando a cobrança está habilitada para maior retenção, os dados mantidos por mais de 90 dias serão cobrados como a mesma taxa que é cobrada no momento para a retenção de dados do Azure Log Analytics. Saiba mais na [página de preços do Azure monitor](https://azure.microsoft.com/pricing/details/monitor/). Mantenha-se atualizado sobre o progresso da retenção de variáveis [votando essa sugestão](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031). 
+
+## <a name="data-transfer-charges-using-application-insights"></a>Cobranças de transferência de dados usando Application Insights
+
+Enviar dados para Application Insights pode incorrer em encargos de largura de banda de dados. Conforme descrito na [página de preços de largura de banda do Azure](https://azure.microsoft.com/pricing/details/bandwidth/), a transferência de dados entre os serviços do Azure localizados em duas regiões cobradas como transferência de dados de saída na taxa normal. A transferência de dados de entrada é gratuita. No entanto, esse encargo é muito pequeno (alguns%) em comparação com os custos de ingestão de dados de log Application Insights. Consequentemente, controlar os custos de Log Analytics precisa se concentrar no volume de dados ingerido e temos diretrizes para ajudar a entender isso [aqui](https://docs.microsoft.com/azure/azure-monitor/app/pricing#managing-your-data-volume).   
 
 ## <a name="limits-summary"></a>Resumo de limites
 
