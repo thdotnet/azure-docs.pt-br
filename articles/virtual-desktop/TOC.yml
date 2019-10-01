@@ -38,6 +38,8 @@
       href: create-host-pools-arm-template.md
     - name: Criar um pool de host com o PowerShell
       href: create-host-pools-powershell.md
+    - name: Implantar uma máquina virtual do Windows 7 na Área de Trabalho Virtual do Windows
+      href: deploy-windows-7-virtual-machine.md
     - name: Aplicar licença do Windows a hosts da sessão da Área de Trabalho Virtual do Windows
       href: apply-windows-license.md
     - name: Criar um contêiner de perfil para um pool de hosts usando um compartilhamento de arquivo
@@ -86,6 +88,8 @@
       href: troubleshoot-set-up-issues.md
     - name: Configuração da máquina virtual do host da sessão
       href: troubleshoot-vm-configuration.md
+    - name: Solucionar problemas de máquinas virtuais do Windows 7 na Área de Trabalho Virtual do Windows
+      href: troubleshoot-windows-7-vm.md
     - name: Conexões do cliente da Área de Trabalho Remota
       href: troubleshoot-client-connection.md
     - name: PowerShell da Área de Trabalho Virtual do Windows

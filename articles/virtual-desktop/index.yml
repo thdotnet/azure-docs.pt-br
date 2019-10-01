@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Documentação da Versão Prévia da Área de Trabalho Virtual do Windows
+title: Documentação da Área de Trabalho Virtual do Windows
 metadata:
-  title: 'Documentação da Versão Prévia da Área de Trabalho Virtual do Windows – Tutoriais, guias de início rápido, referências de API | Microsoft Docs'
-  description: A Versão Prévia da Área de Trabalho Virtual do Windows para Azure é uma experiência multiusuário virtualizada do Windows 10 Enterprise na nuvem.
+  title: 'Documentação da Área de Trabalho Virtual do Windows – Tutoriais, inícios rápidos, referências da API | Microsoft Docs'
+  description: A Área de Trabalho Virtual do Windows para Azure é uma experiência multiusuário do Windows 10 Enterprise virtualizada na nuvem.
   author: Heidilohr
   manager: daveba
   ms.service: virtual-desktop
@@ -17,11 +17,11 @@ sections:
   - title: Visão geral
     items:
       - type: paragraph
-        text: 'Conheça a Versão Prévia da Área de Trabalho Virtual do Windows e saiba como usá-la. Tutoriais, guias de instruções, conteúdo de referência e muito mais mostram como configurar locatários e pools de host e atribuir funções aos usuários para o seu ambiente de Área de Trabalho Virtual do Windows.'
+        text: 'Saiba mais sobre a Área de Trabalho Virtual do Windows e como usá-la. Tutoriais, guias de instruções, conteúdo de referência e muito mais mostram como configurar locatários e pools de host e atribuir funções aos usuários para o seu ambiente de Área de Trabalho Virtual do Windows.'
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure/virtual-desktop/overview">O que é a Versão Prévia da Área de Trabalho Virtual do Windows?</a>
+          - html: <a href="/azure/virtual-desktop/overview">O que é a Área de Trabalho Virtual do Windows?</a>
   - title: Tutoriais Passo a Passo
     items:
       - type: paragraph
