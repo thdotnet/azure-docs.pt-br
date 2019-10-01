@@ -9,19 +9,16 @@ ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: lyhughes
 ms.custom: seodec18
-ms.openlocfilehash: 968ae62344f99edf8eb46eb62a4cf13f300c868f
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 2c43dd7c0700efdd2fbf2f16c57c9c9dc69d3c6b
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815634"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703362"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Criar e gerenciar atribuições de função nos Gêmeos Digitais do Azure
 
 Os Gêmeos Digitais do Azure usam [RBAC](./security-role-based-access-control.md) (controle de acesso baseado em função) para gerenciar o acesso aos recursos.
-
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="role-assignments-overview"></a>Visão geral das atribuições de função
 
@@ -63,7 +60,7 @@ Anteriormente, o atributo **objectIdType** foi introduzido.
 
 Os Gêmeos Digitais do Azure oferecem suporte para operações *CREATE*, *READ* e *DELETE* completas para atribuições de função. As operações *UPDATE* são tratadas pela adição de atribuições de função, remoção de atribuições de função, ou modificação de nós [Spatial Intelligence Graph](./concepts-objectmodel-spatialgraph.md) aos quais as atribuições de função concedem acesso.
 
-![Ponto de extremidade de atribuição de função][1]
+[1Role-pontos de extremidade de atribuição de @no__t](media/security-roles/roleassignments.png)](media/security-roles/roleassignments.png#lightbox)
 
 A documentação de referência do Swagger fornecida contém informações adicionais sobre todos os pontos de extremidade disponíveis, operações de solicitação e definições da API.
 
@@ -71,23 +68,28 @@ A documentação de referência do Swagger fornecida contém informações adici
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
-<div id="grant"></div>
-
 ### <a name="grant-permissions-to-your-service-principal"></a>Conceder permissões para a entidade de serviço
 
 Conceder permissões à entidade de serviço geralmente é uma das primeiras etapas que você usará ao trabalhar com os Gêmeos Digitais do Azure. Isso envolve:
 
-1. Fazer logon na sua instância do Azure por meio do PowerShell.
+1. Fazer logon em sua instância do Azure por meio do [CLI do Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) ou do [PowerShell](https://docs.microsoft.com/powershell/azure/).
 1. Adquirir informações da sua entidade de serviço.
 1. Atribuir a função desejada para sua entidade de serviço.
 
 Sua ID de aplicativo é fornecida no Azure Active Directory. Para saber mais informações sobre como configurar e provisionar um Gêmeos Digitais do Azure no Active Directory, leia o [Início Rápido](./quickstart-view-occupancy-dotnet.md).
 
-Após criar a ID do aplicativo, execute os seguintes comandos do PowerShell:
+Depois de ter a ID do aplicativo, execute um dos comandos a seguir. Em CLI do Azure:
 
-```shell
+```azurecli
+az login
+az ad sp show --id <ApplicationId>
+```
+
+No PowerShell:
+
+```powershell
 Login-AzAccount
-Get-AzADServicePrincipal -ApplicationId  <ApplicationId>
+Get-AzADServicePrincipal -ApplicationId <ApplicationId>
 ```
 
 Um usuário com a função **Admin** pode então atribuir a função Administrador de Espaço para um usuário, fazendo uma solicitação HTTP POST autenticada para a URL:
@@ -108,11 +110,9 @@ Com o corpo JSON a seguir:
 }
 ```
 
-<div id="all"></div>
-
 ### <a name="retrieve-all-roles"></a>Recuperar todas as funções
 
-![Funções do sistema][2]
+[funções ![System](media/security-roles/system.png)](media/security-roles/system.png#lightbox)
 
 Para listar todas as funções disponíveis (definições de função), faça uma solicitação HTTP GET autenticada para:
 
@@ -153,8 +153,6 @@ Uma solicitação com êxito retornará uma matriz JSON com as entradas para cad
 ]
 ```
 
-<div id="check"></div>
-
 ### <a name="check-a-specific-role-assignment"></a>Verificar uma atribuição de função específica
 
 Para verificar uma atribuição de função específica, faça uma solicitação HTTP GET autenticada para:
@@ -165,10 +163,10 @@ YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH
 
 | **Valor de parâmetro** | **Necessária** |  **Tipo** |  **Descrição** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  verdadeiro | Cadeia |   A objectId para o UserId objectIdType. |
-| YOUR_PATH | verdadeiro | Cadeia |   O caminho escolhido para verificar o acesso. |
-| YOUR_ACCESS_TYPE |  verdadeiro | Cadeia |   O tipo de acesso para verificar. |
-| YOUR_RESOURCE_TYPE | verdadeiro | Cadeia |  O recurso para verificar. |
+| YOUR_USER_ID |  True | Cadeia |   A objectId para o UserId objectIdType. |
+| YOUR_PATH | True | Cadeia |   O caminho escolhido para verificar o acesso. |
+| YOUR_ACCESS_TYPE |  True | Cadeia |   O tipo de acesso para verificar. |
+| YOUR_RESOURCE_TYPE | True | Cadeia |  O recurso para verificar. |
 
 Uma solicitação bem-sucedida retornará um booliano `true` ou `false` para indicar se o tipo de acesso foi atribuído ao usuário para o caminho especificado e o recurso determinado.
 
@@ -210,7 +208,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments/YOUR_ROLE_ASSIGNMENT_ID
 | --- | --- |
 | *YOUR_ROLE_ASSIGNMENT_ID* | A **id** da atribuição de função a ser removida |
 
-Uma solicitação DELETE com êxito retornará um status de resposta 204. Verifique se a remoção da atribuição de função pela [verificação](#check) ainda mantém a atribuição de função.
+Uma solicitação DELETE com êxito retornará um status de resposta 204. Verifique se a remoção da atribuição de função pela [verificação](#check-a-specific-role-assignment) ainda mantém a atribuição de função.
 
 ### <a name="create-a-role-assignment"></a>Criar uma atribuição de função
 
@@ -282,7 +280,3 @@ Os exemplos a seguir demonstram como configurar o corpo JSON em vários cenário
 - Para examinar o controle de acesso baseado em função dos Gêmeos Digitais do Azure, leia [Controle de acesso baseado em função](./security-authenticating-apis.md).
 
 - Para saber mais sobre a autenticação da API dos Gêmeos Digitais do Azure, leia [Autenticação de API](./security-authenticating-apis.md).
-
-<!-- Images -->
-[1]: media/security-roles/roleassignments.png
-[2]: media/security-roles/system.png

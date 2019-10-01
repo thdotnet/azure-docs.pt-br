@@ -6,14 +6,14 @@ services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 05/15/2018
-ms.author: anantr
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: e0bef0fc4f4b61add24c243af0dac64933ad5bab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 08657163eb170b8d3185ce15bd724f1f55bbe2bd
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60346308"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702868"
 ---
 # <a name="smart-groups"></a>Grupos inteligentes
 Um desafio comum enfrentado ao lidar com alertas é ignorar o ruído para descobrir o que realmente importa – grupos inteligentes devem ser a solução para esse problema.  
@@ -29,7 +29,7 @@ O estado do grupo inteligente é um conceito semelhante para o estado de alerta,
 
 Os seguintes estados de grupo inteligente são compatíveis.
 
-| Estado | DESCRIÇÃO |
+| Estado | Descrição |
 |:---|:---|
 | Novo | O problema acaba de ser detectado e ainda não foi analisado. |
 | Confirmado | Um administrador examinou o grupo inteligente e começou a trabalhar nele. |
@@ -49,7 +49,7 @@ A página de detalhes do grupo inteligente é exibida aos selecionar um grupo in
 
 A página de detalhes do grupo inteligente inclui as seções a seguir.
 
-| `Section` | DESCRIÇÃO |
+| `Section` | Descrição |
 |:---|:---|
 | Alertas | Lista os alertas individuais que estão incluídos no grupo inteligente. Selecione um alerta para abrir a página de detalhes do alerta. |
 | Histórico | Lista cada ação tomada pelo grupo inteligente e quaisquer alterações feitas no grupo. Atualmente, isso se limita a alterações de estado e alterações de associação do alerta. |

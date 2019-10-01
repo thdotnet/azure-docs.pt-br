@@ -1,80 +1,80 @@
 ---
-title: Esquema comum de alerta para alertas do Azure monitor
-description: Noções básicas sobre o esquema de alerta comuns, por que você deve usar a ele e como habilitá-lo
+title: Esquema de alerta comum para alertas do Azure monitor
+description: Compreendendo o esquema de alerta comum, por que você deve usá-lo e como habilitá-lo
 author: anantr
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.author: anantr
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 91ec5aa42367f6caaa93aaf808fde504e92fbc04
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 9b142e00543d425b73c4102914bba2dd92c75b8b
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594332"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702902"
 ---
 # <a name="common-alert-schema"></a>Esquema comum de alertas
 
-Este artigo descreve o que é o esquema de alerta comuns, os benefícios de usar a ele e como habilitá-lo.
+Este artigo descreve o que é o esquema de alerta comum, os benefícios de usá-lo e como habilitá-lo.
 
-## <a name="what-is-the-common-alert-schema"></a>O que é o esquema de alerta comuns?
+## <a name="what-is-the-common-alert-schema"></a>O que é o esquema de alerta comum?
 
-O esquema de alerta comuns padroniza a experiência de consumo para notificações de alerta no Azure hoje mesmo. Historicamente, os três tipos de alertas no Azure hoje (métrica, log e log de atividades) tiveram seus próprios modelos de email, esquemas de webhook, etc. Com o esquema de alerta comuns, agora você pode receber notificações de alerta com um esquema consistente.
+O esquema de alerta comum padroniza a experiência de consumo para notificações de alerta no Azure hoje. Historicamente, os três tipos de alertas no Azure hoje (métrica, log e log de atividades) tiveram seus próprios modelos de email, esquemas de webhook, etc. Com o esquema de alerta comum, agora você pode receber notificações de alerta com um esquema consistente.
 
 Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa do alerta**, e essas instâncias são descritas no esquema comum nas seções a seguir:
-* **Essentials**: Um conjunto de **padronizado campos**, comuns em todos os tipos de alerta, que descrevem **quais recursos** o alerta está nos juntamente com metadados adicionais de comuns alerta (por exemplo, severidade ou descrição). 
-* **Contexto de alerta**: Um conjunto de campos que descrevem os **causar do alerta**, com campos que variam de acordo **com base no tipo de alerta**. Por exemplo, um alerta de métrica teria os campos como o nome da métrica e o valor da métrica no contexto de alerta, enquanto que um alerta do log de atividades teria informações sobre o evento que gerou o alerta. 
+* **Conceitos básicos**: Um conjunto de **campos padronizados**, comum em todos os tipos de alertas, que descrevem em **qual recurso** o alerta está junto com os metadados de alerta comuns adicionais (por exemplo, severidade ou descrição). 
+* **Contexto do alerta**: Um conjunto de campos que descrevem a **causa do alerta**, com campos que variam de acordo **com o tipo de alerta**. Por exemplo, um alerta de métrica teria campos como o nome da métrica e o valor da métrica no contexto do alerta, enquanto um alerta do log de atividades teria informações sobre o evento que gerou o alerta. 
 
-Os cenários de integração comuns que ouvimos de nossos clientes envolvem o roteamento da instância de alerta para a equipe em questão com base em alguma dinâmica (por exemplo, grupo de recursos), após o qual a equipe responsável começa a trabalhar nele. Com o esquema de alerta comuns, você pode ter padronizado lógica de roteamento em tipos de alerta, aproveitando os campos essenciais, deixando os campos de contexto como está para as equipes em questão para investigar mais.
+Os cenários de integração típicos que ouvimos dos clientes envolvem o roteamento da instância de alerta para a equipe preocupada com base em alguma tabela dinâmica (por exemplo, grupo de recursos), após a qual a equipe responsável começa a trabalhar nela. Com o esquema de alerta comum, você pode ter uma lógica de roteamento padronizada em tipos de alertas aproveitando os campos essenciais, deixando os campos de contexto como estão para as equipes interessadas investigarem ainda mais.
 
-Isso significa que você pode potencialmente ter menos de integrações, tornando o processo de gerenciamento e manutenção uma _muito_ tarefa mais simples. Além disso, aprimoramentos de conteúdo de alerta futuras (por exemplo, personalização, enriquecimento de diagnóstico, etc.) serão apenas superficial para cima no esquema comum.
+Isso significa que você pode potencialmente ter menos integrações, tornando o processo de gerenciamento e manutenção de uma tarefa _muito_ mais simples. Além disso, futuros aprimoramentos de carga de alerta (por exemplo, personalização, enriquecimento de diagnóstico, etc.) só serão exibidos no esquema comum.
 
-## <a name="what-enhancements-does-the-common-alert-schema-bring"></a>Que aprimoramentos colocar o esquema de alerta comuns?
+## <a name="what-enhancements-does-the-common-alert-schema-bring"></a>Quais aprimoramentos o esquema de alerta comum traz?
 
-O esquema de alerta comuns principalmente se manifestará em suas notificações de alerta. Os aprimoramentos que você verá estão listados abaixo:
+O esquema de alerta comum se manifestará principalmente em suas notificações de alerta. Os aprimoramentos que você verá serão listados abaixo:
 
-| Action | Melhorias|
+| Ação | Melhorias|
 |:---|:---|
-| sms | Um modelo consistente de SMS para todos os tipos de alerta. |
-| Email | Um modelo de email consistente e detalhadas, permitindo que você diagnosticar facilmente problemas rapidamente. Links profundo inseridos para a instância de alerta no portal e os recursos afetados Certifique-se de que você pode ir rapidamente para o processo de correção. |
-| Runbook de automação/função de aplicativo/Azure Webhook/lógica | Uma JSON estrutura consistente para todos os tipos de alerta, que permite que você crie facilmente as integrações entre os diferentes tipos de alerta. |
+| SMS | Um modelo de SMS consistente para todos os tipos de alerta. |
+| Email | Um modelo de email consistente e detalhado, permitindo que você diagnostique facilmente os problemas rapidamente. Inseridos em profundidade – links para a instância de alerta no portal e o recurso afetado garantem que você possa ir rapidamente para o processo de correção. |
+| Aplicativo webhook/lógico/Azure function/Automation runbook | Uma estrutura JSON consistente para todos os tipos de alertas, que permite que você crie facilmente integrações em diferentes tipos de alertas. |
 
-O novo esquema também habilitará uma experiência mais rica de consumo de alerta no portal do Azure e o aplicativo móvel do Azure em um futuro imediato. 
+O novo esquema também permitirá uma experiência de consumo de alerta mais rica em ambos os portal do Azure e no aplicativo móvel do Azure no futuro imediato. 
 
-[Saiba mais sobre as definições de esquema para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica.](https://aka.ms/commonAlertSchemaDefinitions)
-
-> [!NOTE]
-> As seguintes ações não dão suporte o esquema comum de alerta: Conector ITSM.
-
-## <a name="how-do-i-enable-the-common-alert-schema"></a>Como habilitar o alerta esquema comum?
-
-Você pode aceitar ou recusar no esquema comum do alerta por meio de grupos de ação sobre o portal e a API REST. A alternância para alternar para o novo esquema existe em um nível de ação. Por exemplo, você precisa aceitar separadamente para uma ação de email e uma ação de webhook.
+[Saiba mais sobre as definições de esquema para os Runbooks/aplicativos lógicos/Azure Functions/automação.](https://aka.ms/commonAlertSchemaDefinitions)
 
 > [!NOTE]
-> 1. Os seguintes tipos de alertas dão suporte a esquema comum por padrão (sem aceitar necessário):
+> As seguintes ações não dão suporte ao esquema de alerta comum: Conector ITSM.
+
+## <a name="how-do-i-enable-the-common-alert-schema"></a>Como fazer habilitar o esquema de alerta comum?
+
+Você pode aceitar ou recusar o esquema de alerta comum por meio de grupos de ação, tanto no portal quanto na API REST. A alternância para alternar para o novo esquema existe em um nível de ação. Por exemplo, você precisa aceitar separadamente uma ação de email e uma ação de webhook.
+
+> [!NOTE]
+> 1. Os seguintes tipos de alerta dão suporte ao esquema comum por padrão (não é necessário aceitar):
 >     * Alertas de detecção inteligente
-> 1. Os seguintes tipos de alerta atualmente não dão suporte a esquema comum:
->     * Alertas gerados por [Azure Monitor para VMs](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)
->     * Alertas gerados por [o gerenciamento de custos do Azure](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
+> 1. Atualmente, os seguintes tipos de alertas não dão suporte ao esquema comum:
+>     * Alertas gerados pelo [Azure monitor para VMs](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)
+>     * Alertas gerados pelo [Gerenciamento de custos do Azure](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
 
-### <a name="through-the-azure-portal"></a>No portal do Azure
+### <a name="through-the-azure-portal"></a>Por meio do portal do Azure
 
-![Aceitar o esquema comum de alerta](media/alerts-common-schema/portal-opt-in.png)
+![Aceitar o esquema de alerta comum](media/alerts-common-schema/portal-opt-in.png)
 
-1. Abra qualquer existente ou uma nova ação em um grupo de ação. 
-1. Selecione 'Sim' para a alternância habilitar o esquema de alerta comuns, conforme mostrado.
+1. Abra qualquer ação existente ou nova em um grupo de ações. 
+1. Selecione ' Sim ' para ativar/desativar o esquema de alerta comum, conforme mostrado.
 
-### <a name="through-the-action-groups-rest-api"></a>Por meio de grupos de ação de API REST
+### <a name="through-the-action-groups-rest-api"></a>Por meio da API REST dos grupos de ação
 
-Você também pode usar o [API de grupos de ação](https://docs.microsoft.com/rest/api/monitor/actiongroups) para aceitar o esquema de alerta comuns. Utilizando o [criar ou atualizar](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) chamada à API REST, você pode definir o sinalizador "useCommonAlertSchema" como 'true' (para aceitar) ou 'falso' (a recusa) para qualquer uma das seguintes ações - runbook de automação de função/email/webhook/lógica de aplicativo e do Azure.
+Você também pode usar a [API de grupos de ação](https://docs.microsoft.com/rest/api/monitor/actiongroups) para aceitar o esquema de alerta comum. Ao fazer a chamada [criar ou atualizar](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) a API REST, você pode definir o sinalizador "useCommonAlertSchema" como "true" (para aceitar) ou "false" (para recusar) para qualquer um dos seguintes ações: email/webhook/aplicativo lógico/Azure function/Automation runbook.
 
-Por exemplo, a solicitação a seguir corpo feito para o [criar ou atualizar](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) API REST fará o seguinte:
+Por exemplo, o corpo da solicitação a seguir feita para [criar ou atualizar](https://docs.microsoft.com/rest/api/monitor/actiongroups/createorupdate) a API REST fará o seguinte:
 
-* Habilitar o esquema de alerta comuns para a ação de email "Email de John Doe"
-* Desabilitar o esquema de alerta comuns para a ação de email "Email de Jane Smith"
-* Habilitar o esquema de alerta comuns para a ação de webhook "Webhook de exemplo"
+* Habilite o esquema de alerta comum para a ação de email "email de João da Silva"
+* Desabilite o esquema de alerta comum para a ação de email "email de Jane Smith"
+* Habilitar o esquema de alerta comum para a ação de webhook "exemplo de webhook"
 
 ```json
 {
@@ -124,8 +124,8 @@ Por exemplo, a solicitação a seguir corpo feito para o [criar ou atualizar](ht
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Definições de alerta de esquema comuns para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica.](https://aka.ms/commonAlertSchemaDefinitions)
-- [Saiba como criar um aplicativo lógico que utiliza o esquema de alerta comum para lidar com todos os alertas.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
+- [Definições comuns de esquema de alerta para WebHooks/aplicativos lógicos/Azure Functions/Runbooks de automação.](https://aka.ms/commonAlertSchemaDefinitions)
+- [Saiba como criar um aplicativo lógico que aproveita o esquema de alerta comum para lidar com todos os seus alertas.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
 
 
 

@@ -1,21 +1,21 @@
 ---
-title: Configurar e acessar logs de consulta lenta do banco de dados do Azure para MySQL no portal do Azure
-description: Este artigo descreve como configurar e acessar os logs lento no banco de dados do Azure para MySQL no portal do Azure.
-author: rachel-msft
-ms.author: raagyema
+title: Configurar e acessar logs de consulta lentos para o banco de dados do Azure para MySQL no portal do Azure
+description: Este artigo descreve como configurar e acessar os logs lentos no banco de dados do Azure para MySQL no portal do Azure.
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 05/29/2019
-ms.openlocfilehash: b16ac525d41eb2423828a647fdb75fd3f4a80a31
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 09/30/2019
+ms.openlocfilehash: b3986c19ec008437f3230b3674ce60d1dfba2024
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052724"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703433"
 ---
-# <a name="configure-and-access-slow-query-logs-in-the-azure-portal"></a>Configurar e logs de consulta lenta de acesso no portal do Azure
+# <a name="configure-and-access-slow-query-logs-in-the-azure-portal"></a>Configurar e acessar logs de consulta lentos no portal do Azure
 
-Você pode configurar, listar e baixar o [banco de dados do Azure para logs de consulta lenta do MySQL](concepts-server-logs.md) do portal do Azure.
+Você pode configurar, listar e baixar os [logs de consulta lenta do banco de dados do Azure para MySQL](concepts-server-logs.md) do portal do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este guia de instruções, você precisa:
@@ -42,7 +42,7 @@ Configure o acesso aos logs de consulta lenta do MySQL.
 6. Retorne para a lista de logs clicando no **botão Fechar** (ícone de X) na página **Parâmetros do servidor**.
 
 ## <a name="view-list-and-download-logs"></a>Exibir a lista e baixar os logs
-Depois que o log começa, você pode exibir uma lista de logs de consulta lentos disponíveis e baixar arquivos de log individuais no painel de Logs do servidor.
+Depois que o log for iniciado, você poderá exibir uma lista de logs de consultas lentas disponíveis e baixar arquivos de log individuais no painel logs do servidor.
 
 1. Abra o portal do Azure.
 
@@ -61,7 +61,25 @@ Depois que o log começa, você pode exibir uma lista de logs de consulta lentos
 
    ![Clique no ícone download](./media/howto-configure-server-logs-in-portal/5-download.png)
 
+## <a name="set-up-diagnostic-logs"></a>Configuração dos logs de diagnóstico
+
+1. Na seção **monitoramento** na barra lateral, selecione **configurações de diagnóstico**.
+
+1. Clique em "+ adicionar configuração de diagnóstico" @no__t-configuração de diagnóstico 0Add @ no__t-1
+
+1. Forneça um nome de configuração de diagnóstico.
+
+1. Especifique quais coletores de dados enviarão os logs de consulta lentos (conta de armazenamento, Hub de eventos e/ou espaço de trabalho Log Analytics).
+
+1. Selecione "MySqlSlowLogs" como o tipo de log.
+configuração de diagnóstico ![Configure @ no__t-1
+
+1. Depois de configurar os coletores de dados para canalizar os logs de consulta lentos, você pode clicar em **salvar**.
+configuração de diagnóstico ![Save @ no__t-1
+
+1. Acesse os logs de consulta lento explorando-os nos coletores de dados que você configurou. Pode levar até 10 minutos para que os logs sejam exibidos.
+
 ## <a name="next-steps"></a>Próximas etapas
-- Ver [Logs de consulta lenta de acesso na CLI](howto-configure-server-logs-in-cli.md) para saber como baixar logs de consulta lentos programaticamente.
-- Saiba mais sobre [lento do logs de consulta](concepts-server-logs.md) no banco de dados do Azure para MySQL.
+- Consulte [acessar logs de consulta lentos na CLI](howto-configure-server-logs-in-cli.md) para saber como baixar logs de consulta lentos programaticamente.
+- Saiba mais sobre [logs de consulta lentos](concepts-server-logs.md) no banco de dados do Azure para MySQL.
 - Para obter mais informações sobre as definições de parâmetros e o registro em log no MySQL, consulte a documentação do MySQL em [Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).

@@ -1,21 +1,21 @@
 ---
-title: Gerenciar alertas do SCOM, do Zabbix e do Nagios no Azure Monitor
-description: Gerenciar alertas do SCOM, do Zabbix e do Nagios no Azure Monitor
+title: Gerenciar alertas de System Center Operations Manager, Zabbix e Nagios no Azure Monitor
+description: Gerenciar alertas de System Center Operations Manager, Zabbix e Nagios no Azure Monitor
 author: anantr
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: anantr
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: 48fb9d8eaf2003834a420b48d649c830c608fd6e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6730402348069df7c2597aa0d73a4211669c2d66
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60712969"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702826"
 ---
-# <a name="manage-alerts-from-scom-zabbix-and-nagios-in-azure-monitor"></a>Gerenciar alertas do SCOM, do Zabbix e do Nagios no Azure Monitor
+# <a name="manage-alerts-from-system-center-operations-manager-zabbix-and-nagios-in-azure-monitor"></a>Gerenciar alertas de System Center Operations Manager, Zabbix e Nagios no Azure Monitor
 
 Agora você pode exibir os alertas do Nagios, do Zabbix e do System Center Operations Manager no [Azure Monitor](https://aka.ms/azure-alerts-overview). Esses alertas provenientes de integrações com servidores Nagios/Zabbix ou o System Center Operations Manager para o Log Analytics. 
 
@@ -28,8 +28,8 @@ Os registros do repositório do Log Analytics com um tipo de Alerta serão impor
 Depois de configurar a importação para o Log Analytics, comece a exibir instâncias de alerta desses serviços de monitoramento no [Azure Monitor](https://aka.ms/azure-alerts-overview). Quando eles estiverem presentes no Azure Monitor, você poderá [gerenciar suas instâncias de alerta](https://aka.ms/managing-alert-instances), [gerenciar grupos inteligentes criados nesses alertas](https://aka.ms/managing-smart-groups) e [alterar o estado dos alertas e dos grupos inteligentes](https://aka.ms/managing-alert-smart-group-states).
 
 > [!NOTE]
->  1. Essa solução só permite que você exiba instâncias de alerta disparadas pelo SCOM/Zabbix/Nagios no Azure Monitor. A configuração de regra de alerta só pode ser exibida/editada nas respectivas ferramentas de monitoramento. 
+>  1. Essa solução só permite que você exiba as instâncias de alerta System Center Operations Manager/Zabbix/Nagios acionadas no Azure Monitor. A configuração de regra de alerta só pode ser exibida/editada nas respectivas ferramentas de monitoramento. 
 >  1. Todas as instâncias de alerta disparadas estarão disponíveis no Azure Monitor e no Azure Log Analytics. Atualmente, não há nenhuma maneira de escolher entre os dois ou ingerir somente os alertas disparados específicos.
->  1. Todos os alertas do SCOM, do Zabbix e do Nagios têm o tipo de sinal "Desconhecido", pois o tipo de telemetria subjacente não está disponível.
+>  1. Todos os alertas de System Center Operations Manager, Zabbix e Nagios têm o tipo de sinal "Unknown", pois o tipo de telemetria subjacente não está disponível.
 >  1. Os alertas do Nagios não têm estado – por exemplo, a [condição de monitoramento](https://aka.ms/azure-alerts-overview) de um alerta não mudará de "Disparado" para "Resolvido". Em vez disso, "Disparado" e "Resolvido" são exibidos como instâncias de alerta separadas. 
 

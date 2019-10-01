@@ -11,12 +11,12 @@ ms.date: 09/14/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c216512aef117a332d3aabfc83ec5615b70b202c
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: a8e35254a79ac43b35f45d1a20f3d1f6815f32be
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033825"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702815"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Acessando os logs de auditoria do Microsoft Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ A categoria **B2C** nos logs de auditoria contém os seguintes tipos de atividad
 |Diretório |Atividades relacionadas aos atributos de diretório recuperados quando um administrador entra usando o portal do Azure. |
 |Aplicativo | Operações CRUD (criar, ler, atualizar e excluir) em aplicativos B2C. |
 |Chave |Operações CRUD em chaves armazenadas em um contêiner de chave B2C. |
-|Recurso |Operações CRUD em recursos do B2C. Por exemplo, políticas e provedores de identidade.
+|Resource |Operações CRUD em recursos do B2C. Por exemplo, políticas e provedores de identidade.
 |Autenticação |Validação de credenciais de usuário e emissão de tokens.|
 
 Para atividades CRUD do objeto de usuário, consulte a categoria **Diretório Principal**.
@@ -50,7 +50,7 @@ Esta imagem de exemplo da portal do Azure mostra os dados capturados quando um u
 
 O painel detalhes da atividade contém as seguintes informações relevantes:
 
-|Seção|Campo|Descrição|
+|`Section`|Campo|Descrição|
 |-------|-----|-----------|
 | Atividade | Nome | Qual atividade ocorreu. Por exemplo, *emita um id_token para o aplicativo*, que conclui a entrada do usuário real. |
 | Iniciado por (ator) | ObjectId | A **ID de objeto** do aplicativo B2C ao qual o usuário está se conectando. Esse identificador não é visível no portal do Azure, mas pode ser acessado por meio da API do Microsoft Graph. |
@@ -90,34 +90,32 @@ Os logs de auditoria são publicados para o mesmo pipeline como outras atividade
 Para permitir o acesso baseado em script ou aplicativo à API de relatórios do Azure AD, você precisa de um aplicativo Azure Active Directory registrado em seu locatário Azure AD B2C com as seguintes permissões de API:
 
 * Microsoft Graph
-  * Aplicativo Ler todos os dados de log de auditoria
+  * Aplicativo Ler todos os dados do log de auditoria
 
 Você pode habilitar essas permissões em um registro de aplicativo Azure Active Directory existente em seu locatário B2C ou criar um novo especificamente para uso com a automação do log de auditoria.
 
-Para criar um novo aplicativo, atribua as permissões de API necessárias e crie um segredo do cliente, execute as seguintes etapas:
+Siga estas etapas para registrar um aplicativo, conceda a ele as permissões de API de Microsoft Graph necessárias e, em seguida, crie um segredo do cliente.
 
-1. Registrar aplicativo no Azure Active Directory
-    1. Entre no [portal do Azure](https://portal.azure.com) e alterne para o diretório que contém o locatário Azure ad B2C.
-    1. Selecione **Azure Active Directory** (*não* Azure ad B2C) no menu à esquerda. Ou então, selecione **todos os serviços**e, em seguida, procure e selecione **Azure Active Directory**.
-    1. Em **gerenciar** no menu à esquerda, selecione **registros de aplicativo (Herdado)** .
-    1. Selecione **novo registro de aplicativo**
-    1. Insira um nome para o aplicativo. Por exemplo, *aplicativo de log de auditoria*.
-    1. Insira qualquer URL válida na **URL de logon**. Por exemplo, *https://localhost* . Esse ponto de extremidade não precisa estar acessível, mas precisa ser uma URL válida.
-    1. Selecione **Criar**.
-    1. Registre a **ID do aplicativo** que aparece na página do **aplicativo registrado** . Você precisa desse valor para autenticação em scripts de automação, como o exemplo de script do PowerShell mostrado em uma seção posterior.
-1. Atribuir permissões de acesso à API
-    1. Na página Visão geral do **aplicativo registrado** , selecione **configurações**.
-    1. Em **acesso à API**, selecione **permissões necessárias**.
-    1. Selecione **Adicionar**e, em seguida, **Selecione uma API**.
-    1. Selecione **Microsoft Graph**e, em seguida, **selecione**.
-    1. Em **permissões do aplicativo**, selecione **ler todos os dados do log de auditoria**.
-    1. Selecione o botão **selecionar** e, em seguida, selecione **concluído**.
-    1. Selecione **Conceder permissões** e, em seguida, selecione **Sim**.
-1. Criar segredo do cliente
-    1. Em **acesso à API**, selecione **chaves**.
-    1. Insira uma descrição para a chave na caixa **Descrição da chave** . Por exemplo, a *chave do log de auditoria*.
-    1. Selecione uma **duração**de validade e, em seguida, selecione **salvar**.
-    1. Registre o **valor**da chave. Você precisa desse valor para autenticação em scripts de automação, como o exemplo de script do PowerShell mostrado em uma seção posterior.
+### <a name="register-application-in-azure-active-directory"></a>Registrar aplicativo no Azure Active Directory
+
+[!INCLUDE [active-directory-b2c-appreg-mgmt](../../includes/active-directory-b2c-appreg-mgmt.md)]
+
+### <a name="assign-api-access-permissions"></a>Atribuir permissões de acesso à API
+
+1. Na página Visão geral do **aplicativo registrado** , selecione **configurações**.
+1. Em **acesso à API**, selecione **permissões necessárias**.
+1. Selecione **Adicionar**e, em seguida, **Selecione uma API**.
+1. Selecione **Microsoft Graph**e, em seguida, **selecione**.
+1. Em **permissões do aplicativo**, selecione **ler todos os dados do log de auditoria**.
+1. Selecione o botão **selecionar** e, em seguida, selecione **concluído**.
+1. Selecione **Conceder permissões** e, em seguida, selecione **Sim**.
+
+### <a name="create-client-secret"></a>Criar segredo do cliente
+
+1. Em **acesso à API**, selecione **chaves**.
+1. Insira uma descrição para a chave na caixa **Descrição da chave** . Por exemplo, a *chave do log de auditoria*.
+1. Selecione uma **duração**de validade e, em seguida, selecione **salvar**.
+1. Registre o **valor**da chave. Você precisa desse valor para autenticação em scripts de automação, como o exemplo de script do PowerShell mostrado em uma seção posterior.
 
 Agora você tem um aplicativo com o acesso necessário à API, uma ID do aplicativo e uma chave que você pode usar em seus scripts de automação. Consulte a seção script do PowerShell mais adiante neste artigo para obter um exemplo de como você pode obter eventos de atividade com um script.
 

@@ -12,12 +12,12 @@ ms.date: 10/22/2018
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4951984d05e75b0271cf6592c77c54ad13678994
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6bd746e79bc9d70be23771f97b1757f090f6375f
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476548"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709280"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Configurar o modo como os usuários finais consentem em um aplicativo no Active Directory do Azure
 Aprenda a configurar a maneira como os usuários consentem com as permissões do aplicativo. Você pode simplificar a experiência do usuário concedendo o consentimento do administrador. Este artigo fornece as diferentes maneiras de configurar o consentimento do usuário. Os métodos se aplicam a todos os usuários finais do locatário do Azure AD (Azure Active Directory). 
@@ -38,8 +38,8 @@ Para conceder o consentimento do administrador a um aplicativo corporativo:
 2. Clique em **Todos os serviços** na parte superior do menu de navegação à esquerda. A **Extensão do Active Directory do Azure** é aberta.
 3. Na caixa de pesquisa de filtros, digite **"Azure Active Directory"** e selecione o item **Active Directory do Azure**.
 4. No menu de navegação, clique em **Aplicativos corporativos**.
-5. Selecione o aplicativo de consentimento.
-6. Selecione **permissões** e, em seguida, clique em **conceder consentimento do administrador**. Você será solicitado a entrar para administrar o aplicativo.
+5. Selecione o aplicativo para consentimento.
+6. Selecione **permissões** e clique em **conceder consentimento do administrador**. Você será solicitado a entrar para administrar o aplicativo.
 7. Faça login com uma conta que tenha permissões para conceder o consentimento do administrador para o aplicativo. 
 8. Consentimento para as permissões do aplicativo.
 
@@ -63,13 +63,14 @@ Para conceder o consentimento do administrador ao registrar um aplicativo:
 
 Para conceder o consentimento do administrador por meio de uma solicitação de URL:
 
-1. Construa uma solicitação para *login.microsoftonline.com* com as configurações do aplicativo e acrescente `&prompt=admin_consent`. 
+1. Construa uma solicitação para *login.microsoftonline.com* com as configurações do aplicativo e acrescente `&prompt=admin_consent`. Esta URL terá a seguinte aparência: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=admin_consent`
 2. Após entrar com credenciais de administrador, o aplicativo recebe consentimento para todos os usuários.
 
 
 ## <a name="force-user-consent-through-a-url-request"></a>Forçar o consentimento do usuário por meio de uma solicitação de URL
 
 Para exigir que os usuários finais consintam com um aplicativo sempre que autenticarem, anexe `&prompt=consent` ao URL de solicitação de autenticação.
+Esta URL terá a seguinte aparência: `https://login.microsoftonline.com/<tenant-id>/oauth2/authorize?client_id=<client id>&response_type=code&redirect_uri=<Your-Redirect-URI-Https-Encoded>&nonce=1234&resource=<your-resource-Https-encoded>&prompt=consent`
 
 ## <a name="next-steps"></a>Próximas etapas
 

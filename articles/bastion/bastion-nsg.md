@@ -1,22 +1,22 @@
 ---
-title: Trabalhando com máquinas virtuais e NSGs no Azure bastiões | Microsoft Docs
-description: Este artigo descreve como incorporar o acesso NSG com o Azure bastiões
+title: Trabalhando com VMs e NSGs na bastiões do Azure | Microsoft Docs
+description: Este artigo descreve como incorporar o acesso NSG com a bastiões do Azure
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 09/30/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5312ad2593e732f4c84eb67ed263bc9e4666a67a
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 4f99b24435998fc4d0c7ab724c66a318586a80d4
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594187"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694941"
 ---
-# <a name="working-with-nsg-access-and-azure-bastion-preview"></a>Trabalhando com acesso NSG e de bastiões do Azure (visualização)
+# <a name="working-with-nsg-access-and-azure-bastion-preview"></a>Trabalhando com o acesso NSG e a bastiões do Azure (visualização)
 
-Ao trabalhar com o Azure bastião, você pode usar grupos de segurança de rede (NSGs). Para obter mais informações, consulte [grupos de segurança](../virtual-network/security-overview.md). 
+Ao trabalhar com a bastiões do Azure, você pode usar NSGs (grupos de segurança de rede). Para obter mais informações, consulte [grupos de segurança](../virtual-network/security-overview.md). 
 
 > [!IMPORTANT]
 > Essa versão prévia pública é fornecida sem um SLA e não deve ser usada para cargas de trabalho de produção. Determinados recursos podem não ter suporte, podem ter restrição ou podem não estar disponíveis em todos os locais do Azure. Veja os [Termos de Uso Adicionais para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) para obter detalhes.
@@ -26,28 +26,28 @@ Ao trabalhar com o Azure bastião, você pode usar grupos de segurança de rede 
 
 Neste diagrama:
 
-* O host de bastiões é implantado na rede virtual.
-* O usuário se conecta ao portal do Azure usando qualquer navegador de HTML5.
-* O usuário seleciona a máquina virtual para se conectar ao.
+* O host Bastion é implantado na rede virtual.
+* O usuário se conecta ao portal do Azure usando qualquer navegador HTML5.
+* O usuário seleciona a máquina virtual a qual se conectar.
 * Com um único clique, a sessão RDP/SSH é aberta no navegador.
 * Nenhum IP público é necessário na VM do Azure.
 
 ## <a name="nsg"></a>Grupos de segurança de rede
 
-* **AzureBastionSubnet:** Bastiões do Azure é implantado no AzureBastionSubnet específico.  
-    * **Tráfego de entrada da internet pública:** O Azure bastiões criará um IP público que precisa da porta 443 habilitada no IP público para o tráfego de entrada. A porta 3389/22 não precisarão ser abertas no AzureBastionSubnet.
-    * **Tráfego de saída para VMs de destino:** Bastiões do Azure entrará nas VMs de destino por endereço IP privado. Os NSGs precisam permitir o tráfego de saída para outras sub-redes VM de destino.
-* **Subrede VM de destino:** Essa é a sub-rede que contém a máquina virtual de destino que você deseja RDP/SSH para.
-    * **Tráfego de entrada do Azure bastiões:** Azure bastiões chegarão para a VM de destino por endereço IP privado. Portas RDP/SSH (portas 3389 e 22, respectivamente) precisam ser abertas no lado da VM de destino por endereço IP privado.
+* **AzureBastionSubnet:** A bastiões do Azure é implantada no AzureBastionSubnet específico.  
+    * **Tráfego de entrada da Internet pública:** A bastiões do Azure criará um IP público que precisa da porta 443 habilitada no IP público para o tráfego de entrada. A porta 3389/22 não precisa ser aberta no AzureBastionSubnet.
+    * **Tráfego de saída para VMs de destino:** A bastiões do Azure alcançará as VMs de destino sobre o IP privado. O NSGs precisa permitir o tráfego de saída para outras sub-redes de VM de destino.
+* **Sub-rede VM de destino:** Essa é a sub-rede que contém a máquina virtual de destino para a qual você deseja RDP/SSH.
+    * **Tráfego de entrada da bastiões do Azure:** A bastiões do Azure alcançará a VM de destino sobre o IP privado. As portas RDP/SSH (portas 3389 e 22, respectivamente) precisam ser abertas no lado da VM de destino sobre o IP privado.
 
 ## <a name="apply"></a>Aplicar NSGs a AzureBastionSubnet
 
-Se você aplicar NSGs para o **AzureBastionSubnet**, permitir que as seguintes duas marcas de serviço para plano de controle do Azure e a infraestrutura:
+Se você aplicar NSGs ao **AzureBastionSubnet**, permita as duas marcas de serviço a seguir para a infraestrutura e o plano de controle do Azure:
 
-* **GatewayManager (somente Resource Manager)** : Essa tag indica os prefixos de endereço do serviço do Gerenciador de Gateway do Azure. Se você especificar GatewayManager para o valor, o tráfego é permitido ou negado para GatewayManager.  Se você estiver criando NSGs no AzureBastionSubnet, habilite a marca GatewayManager para tráfego de entrada.
+* **Gatewaymanager (somente no Gerenciador de recursos)** : Essa tag indica os prefixos de endereço do serviço do Gerenciador de Gateway do Azure. Se você especificar Gatewaymanager para o valor, o tráfego será permitido ou negado ao Gatewaymanager.  Se você estiver criando NSGs no AzureBastionSubnet, habilite a marca Gatewaymanager para o tráfego de entrada.
 
-* **AzureCloud (somente Resource Manager)** : Essa marca denota o espaço de endereço IP para o Azure, incluindo todos os endereços IP públicos de datacenter. Se você especificar AzureCloud para o valor, o tráfego é permitido ou negado para endereços IP públicos do Azure. Se você quiser permitir acesso apenas às AzureCloud em uma região específica, você pode especificar a região. Por exemplo, se você quiser permitir acesso apenas às AzureCloud do Azure na região Leste dos EUA, você poderia especificar AzureCloud.EastUS como uma marca de serviço. Se você estiver criando NSGs no AzureBastionSubnet, habilite a marca AzureCloud para tráfego de saída.
+* **AzureCloud (somente no Gerenciador de recursos)** : Essa marca denota o espaço de endereço IP do Azure, incluindo todos os endereços IP públicos do datacenter. Se você especificar AzureCloud para o valor, o tráfego será permitido ou negado aos endereços IP públicos do Azure. Se você quiser permitir o acesso somente a AzureCloud em uma região específica, poderá especificar a região. Por exemplo, se você quiser permitir o acesso somente ao Azure AzureCloud na região leste dos EUA, poderá especificar AzureCloud. Eastus como uma marca de serviço. Se você estiver criando NSGs no AzureBastionSubnet, habilite a marca AzureCloud para o tráfego de saída. Se você abrir a porta 443 para entrada na Internet, não precisará habilitar a marca AzureCloud para o tráfego de entrada.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre o Azure bastiões, consulte o [perguntas Frequentes](bastion-faq.md)
+Para obter mais informações sobre a bastiões do Azure, consulte as [perguntas frequentes](bastion-faq.md)

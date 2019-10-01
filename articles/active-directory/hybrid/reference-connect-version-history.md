@@ -16,12 +16,12 @@ ms.date: 09/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 467fbc421cdd681d0aab52faf75a4987ee849b15
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: e7555dc44e533945d360a3d2e4120f71f953a6d2
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345515"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709351"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect: Histórico de lançamento de versões
 A equipe do Azure AD (Azure Active Directory) atualiza regularmente o Azure AD Connect com novos recursos e funcionalidades. Nem todas as adições são aplicáveis a todos os públicos.
@@ -84,9 +84,7 @@ Nem todas as versões do Azure AD Connect serão disponibilizadas para atualiza�
 - Diagnóstico aprimorado e solução de problemas em relação a diretivas de grupo que não permitem que o serviço ADSync seja iniciado quando inicialmente instalado.
 - Corrigido um bug em que o nome de exibição de um computador com Windows foi gravado incorretamente.
 - Corrija um bug em que o tipo de so para um computador Windows foi gravado incorretamente.
-- Corrigido um bug em que computadores não Windows 10 estavam sincronizando inesperadamente. Observe que o efeito dessa alteração é que computadores não Windows-10 que foram previamente sincronizados agora serão excluídos. Isso não afeta nenhum recurso, pois a sincronização de computadores com Windows é usada somente para ingresso no domínio híbrido do Azure AD, que funciona apenas para dispositivos Windows-10. 
-- Corrija um bug em que o nome de exibição de um computador com Windows foi gravado incorretamente.
-- Corrija um bug em que o tipo de so para um computador Windows foi gravado incorretamente.
+- Corrigido um bug em que computadores não Windows 10 estavam sincronizando inesperadamente. Observe que o efeito dessa alteração é que computadores não Windows-10 que foram previamente sincronizados agora serão excluídos. Isso não afeta nenhum recurso, pois a sincronização de computadores com Windows é usada somente para ingresso no domínio híbrido do Azure AD, que funciona apenas para dispositivos Windows-10.
 - Foram adicionados vários cmdlets (internos) novos ao módulo do PowerShell do ADSync.
 
 
@@ -451,7 +449,7 @@ Bloqueie o acesso à conta do AD DS implementando as seguintes alterações de p
 *   Remova todas as ACEs no objeto especificado, exceto as ACEs específicas ao SELF. Queremos manter as permissões padrão intactas quando se trata do SELF.
 *   Atribua essas permissões específicas:
 
-Tipo     | Nome                          | Access               | Aplica-se a
+type     | Nome                          | Access               | Aplica-se a
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Controle Total         | Este objeto  |
 Allow    | Administradores Corporativos             | Controle Total         | Este objeto  |

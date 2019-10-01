@@ -7,16 +7,16 @@ author: stephbaron
 ms.author: stbaron
 ms.service: service-health
 ms.date: 06/11/2019
-ms.openlocfilehash: 91f8ae72d1926c8b7ce9097947afe5ca99a153c3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8a902fab7cfea574c9eb2a3e9411d3cca0920f56
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073533"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709901"
 ---
 # <a name="azure-status-overview"></a>Visão geral do status do Azure
 
-O [status do Azure](https://status.azure.com/status/) fornece uma exibição global da integridade dos serviços e regiões do Azure. Com o status do Azure, você pode obter informações atualizadas sobre a disponibilidade do serviço. O status do Azure está disponível para todas as pessoas e exibe todos os serviços que relatam sua integridade de serviço, além de incidentes com impacto abrangente. Se você for um usuário do Azure atual, no entanto, recomendamos fortemente que você use a experiência personalizada da [Integridade do Serviço do Azure](https://aka.ms/azureservicehealth). A Integridade do Serviço do Azure inclui todas as interrupções, atividades de manutenção planejada futura e comunicados de serviços.
+O [status do Azure](https://status.azure.com/status/) fornece uma exibição global da integridade dos serviços e regiões do Azure. Com o status do Azure, você pode obter informações sobre a disponibilidade do serviço. O status do Azure está disponível para todas as pessoas e exibe todos os serviços que relatam sua integridade de serviço, além de incidentes com impacto abrangente. Se você for um usuário do Azure atual, no entanto, recomendamos fortemente que você use a experiência personalizada da [Integridade do Serviço do Azure](https://aka.ms/azureservicehealth). A Integridade do Serviço do Azure inclui todas as interrupções, atividades de manutenção planejada futura e comunicados de serviços.
 
 ![Página de status do Azure](./media/azure-status-overview/azure-status.PNG)
 

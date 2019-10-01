@@ -1,5 +1,5 @@
 ---
-title: Conectar-se ao servidor SFTP com SSH - aplicativos lógicos do Azure
+title: Conectar-se ao servidor SFTP com SSH-aplicativos lógicos do Azure
 description: Automatize tarefas que monitoram, criam, gerenciam, enviam e recebem arquivos para um servidor SFTP usando o SSH e os Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
@@ -10,12 +10,12 @@ ms.reviewer: divswa, klam, LADocs
 ms.topic: article
 ms.date: 06/18/2019
 tags: connectors
-ms.openlocfilehash: 7479be6a14c7d1ace5d60defad0eda51d2aa814b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 33c6007ebc429bb0d95d702ae9b90f9ac411a88c
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296559"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71695203"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>Monitore, crie e gerencie arquivos SFTP usando SSH e os Aplicativos Lógicos do Azure
 
@@ -29,17 +29,17 @@ Para automatizar tarefas que monitoram, criam, enviam e recebem arquivos em um s
 
 Você pode usar gatilhos que monitoram eventos em seu servidor SFTP e disponibilizam a saída para outras ações. Você pode usar ações que executam várias tarefas em seu servidor SFTP. Você também pode ter outras ações em seu aplicativo lógico usando a saída das ações do SFTP. Por exemplo, se você recuperar regularmente arquivos do servidor SFTP, poderá enviar alertas por email sobre esses arquivos e seu conteúdo usando o conector do Office 365 Outlook ou o conector Outlook.com. Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é o Aplicativo Lógico do Azure?](../logic-apps/logic-apps-overview.md)
 
-As diferenças entre o conector SFTP SSH e o conector SFTP, examine os [comparar SFTP SSH versus SFTP](#comparison) seção mais adiante neste tópico.
+Para obter diferenças entre o conector SFTP-SSH e o conector SFTP, examine a seção [comparar SFTP-SSH versus SFTP](#comparison) mais adiante neste tópico.
 
-## <a name="limits"></a>limites
+## <a name="limits"></a>Limites
 
-* Por padrão, as ações de SFTP SSH podem ler ou gravar arquivos que são *1 GB ou menor* , mas somente no *15 MB* partes por vez. Para lidar com arquivos maiores do que 15 MB, suporte a ações SFTP-SSH [mensagem agrupamento](../logic-apps/logic-apps-handle-large-messages.md), exceto para a ação de cópia de arquivo, que pode manipular apenas os arquivos 15 MB. O **obter conteúdo do arquivo** ação usa implicitamente o agrupamento de mensagem. 
+* Por padrão, as ações de SFTP-SSH podem ler ou gravar arquivos que são de *1 GB ou menores* , mas apenas em partes de *15 MB* por vez. Para lidar com arquivos com mais de 15 MB, as ações SFTP-SSH dão suporte ao [agrupamento de mensagens](../logic-apps/logic-apps-handle-large-messages.md), exceto para a ação copiar arquivo, que pode manipular apenas 15 arquivos. A ação **obter conteúdo do arquivo** usa implicitamente o agrupamento de mensagens.
 
-* Gatilhos de SFTP SSH não dão suporte a agrupamento. Ao solicitar o conteúdo do arquivo, disparadores selecione somente os arquivos que são 15 MB ou menor. Para obter os arquivos mais de 15 MB, siga esse padrão em vez disso:
+* Os gatilhos SFTP-SSH não dão suporte ao agrupamento. Ao solicitar o conteúdo do arquivo, os gatilhos selecionam apenas os arquivos que são 15 MB ou menores. Para obter arquivos com mais de 15 MB, siga este padrão em vez disso:
 
-  * Usar um SFTP SSH gatilho que retorna propriedades de arquivo, como **quando um arquivo é adicionado ou modificado (somente propriedades)** .
+  * Use um gatilho SFTP-SSH que retorne Propriedades de arquivo, como **quando um arquivo é adicionado ou modificado (somente Propriedades)** .
 
-  * Siga o gatilho com o SFTP-SSH **obter conteúdo do arquivo** ação, que lê o arquivo completo e usa implicitamente o agrupamento de mensagem.
+  * Siga o gatilho com a ação SFTP-SSH **Get file Content** , que lê o arquivo completo e usa implicitamente o agrupamento de mensagens.
 
 <a name="comparison"></a>
 
@@ -47,17 +47,9 @@ As diferenças entre o conector SFTP SSH e o conector SFTP, examine os [comparar
 
 Aqui estão outras diferenças importantes entre o conector SFTP-SSH e o conector SFTP, onde o conector SFTP-SSH tem esses recursos:
 
-* Usa o [biblioteca SSH.NET](https://github.com/sshnet/SSH.NET), que é uma biblioteca de SSH (Secure Shell) do código-fonte aberto que dá suporte ao .NET.
+* Usa a [biblioteca SSH.net](https://github.com/sshnet/SSH.NET), que é uma biblioteca de Secure Shell de código aberto (SSH) que dá suporte ao .net.
 
-  > [!NOTE]
-  >
-  > O conector SFTP-SSH suporta *somente* essas chaves privadas, formatos, algoritmos e impressões digitais:
-  >
-  > * **Formatos de chave privada**: chaves RSA (Rivest Shamir Adleman) e DSA (Algoritmo de Assinatura Digital) nos formatos OpenSSH e ssh.com
-  > * **Algoritmos de criptografia**: DES-EDE3-CBC, DES-EDE3-CFB, DES-CBC, AES-128-CBC, AES-192-CBC e AES-256-CBC
-  > * **Impressão digital**: MD5
-
-* Por padrão, as ações de SFTP SSH podem ler ou gravar arquivos que são *1 GB ou menor* , mas somente no *15 MB* partes por vez. Para lidar com arquivos maiores do que 15 MB, ações de SFTP SSH podem usar [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md). No entanto, a ação de cópia de arquivo dá suporte apenas 15 MB arquivos porque essa ação não dá suporte ao agrupamento de mensagem. Gatilhos de SFTP SSH não dão suporte a agrupamento.
+* Por padrão, as ações de SFTP-SSH podem ler ou gravar arquivos que são de *1 GB ou menores* , mas apenas em partes de *15 MB* por vez. Para lidar com arquivos com mais de 15 MB, as ações do SFTP-SSH podem usar o [agrupamento de mensagens](../logic-apps/logic-apps-handle-large-messages.md). No entanto, a ação copiar arquivo dá suporte a apenas 15 arquivos, pois essa ação não dá suporte ao agrupamento de mensagens. Os gatilhos SFTP-SSH não dão suporte ao agrupamento.
 
 * Fornece a ação **Criar pasta**, que cria uma pasta no caminho especificado no servidor SFTP.
 
@@ -75,21 +67,22 @@ Aqui estão outras diferenças importantes entre o conector SFTP-SSH e o conecto
   >
   > O conector SFTP-SSH suporta *somente* estes formatos de chave privada, algoritmos e impressões digitais:
   >
-  > * **Formatos de chave privada**: chaves RSA (Rivest Shamir Adleman) e DSA (Algoritmo de Assinatura Digital) nos formatos OpenSSH e ssh.com
+  > * **Formatos de chave privada**: Chaves RSA (Rivest Shamir Adleman) e DSA (algoritmo de assinatura digital) nos formatos OpenSSH e ssh.com. Se sua chave privada estiver no formato de arquivo de reversões (. PPK), primeiro [converta a chave para o formato de arquivo OpenSSH (. pem)](#convert-to-openssh).
+  >
   > * **Algoritmos de criptografia**: DES-EDE3-CBC, DES-EDE3-CFB, DES-CBC, AES-128-CBC, AES-192-CBC e AES-256-CBC
+  >
   > * **Impressão digital**: MD5
   >
-  > Ao criar seu aplicativo lógico, depois de adicionar o acionador ou a ação SFTP-SSH desejada, você precisará fornecer informações de conexão para o servidor SFTP. 
-  > Se você estiver usando uma chave privada SSH, certifique-se de ***copiar*** a chave do arquivo de chave privada SSH e ***colar*** essa chave nos detalhes da conexão, ***não insira ou edite manualmente a chave***, o que pode causar falha na conexão. 
-  > Para mais informações, consulte as etapas posteriores neste artigo.
+  > Depois de adicionar o gatilho SFTP-SSH ou a ação que você deseja ao seu aplicativo lógico, você precisa fornecer informações de conexão para seu servidor SFTP. Ao fornecer sua chave privada SSH para essa conexão, ***não insira ou edite manualmente a chave***, o que pode causar falha na conexão. Em vez disso, certifique-se de ***copiar a chave*** de seu arquivo de chave privada SSH e ***Cole*** essa chave nos detalhes da conexão. 
+  > Para obter mais informações, consulte a seção [conectar-se ao SFTP com SSH](#connect) posteriormente neste artigo.
 
 * Conhecimento básico sobre [como criar aplicativos lógicos](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * O aplicativo lógico no qual você deseja acessar a conta SFTP. Para começar com um acionador SFTP-SSH, [crie um aplicativo lógico em branco](../logic-apps/quickstart-create-first-logic-app-workflow.md). Para usar uma ação SFTP-SSH, inicie seu aplicativo lógico com outro acionador, por exemplo, o acionador **Recorrência**.
 
-## <a name="how-sftp-ssh-triggers-work"></a>Como funcionam os gatilhos de SFTP SSH
+## <a name="how-sftp-ssh-triggers-work"></a>Como os gatilhos de SFTP-SSH funcionam
 
-Gatilhos de SFTP SSH funcionam no sistema de arquivos SFTP de sondagem e procurando por qualquer arquivo que foi alterado desde a última sondagem. Algumas ferramentas permitem preservar o registro de data e hora quando os arquivos são alterados. Nesses casos, você precisa desativar esse recurso para que seu gatilho funcione. Aqui estão algumas configurações comuns:
+SFTP-os gatilhos SSH funcionam sondando o sistema de arquivos SFTP e procurando por qualquer arquivo que tenha sido alterado desde a última sondagem. Algumas ferramentas permitem preservar o registro de data e hora quando os arquivos são alterados. Nesses casos, você precisa desativar esse recurso para que seu gatilho funcione. Aqui estão algumas configurações comuns:
 
 | Cliente SFTP | Ação |
 |-------------|--------|
@@ -98,6 +91,44 @@ Gatilhos de SFTP SSH funcionam no sistema de arquivos SFTP de sondagem e procura
 |||
 
 Quando um gatilho encontra um novo arquivo, o gatilho verifica se ele está concluído e não gravado parcialmente. Por exemplo, um arquivo pode ter alterações em andamento quando o gatilho verifica o servidor de arquivos. Para evitar o retorno de um arquivo gravado parcialmente, o gatilho observa o carimbo de data/hora do arquivo que tem alterações recentes, mas não retorna o arquivo imediatamente. O gatilho retorna o arquivo apenas ao executar a sondagem do servidor novamente. Às vezes, esse comportamento pode causar um atraso que é até duas vezes o intervalo de sondagem do gatilho.
+
+<a name="convert-to-openssh"></a>
+
+## <a name="convert-putty-based-key-to-openssh"></a>Converter chave baseada em saída para OpenSSH
+
+Se sua chave privada estiver no formato de reversões, que usa a extensão de nome de arquivo. PPK (chave privada de saída), primeiro converta a chave para o formato OpenSSH, que usa a extensão de nome de arquivo. PEM (Privacy Enhanced Mail).
+
+### <a name="unix-based-os"></a>Sistema operacional baseado em UNIX
+
+1. Se as ferramentas de saída ainda não estiverem instaladas no sistema, faça isso agora, por exemplo:
+
+   `sudo apt-get install -y putty`
+
+1. Execute este comando, que cria um arquivo que você pode usar com o conector SFTP-SSH:
+
+   `puttygen <path-to-private-key-file-in-PuTTY-format> -O private-openssh -o <path-to-private-key-file-in-OpenSSH-format>`
+
+   Por exemplo:
+
+   `puttygen /tmp/sftp/my-private-key-putty.ppk -O private-openssh -o /tmp/sftp/my-private-key-openssh.pem`
+
+### <a name="windows-os"></a>Sistema Operacional Windows
+
+1. Se você ainda não fez isso, [Baixe a ferramenta mais recente do gerador de geração (puttygen. exe)](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)e, em seguida, inicie a ferramenta.
+
+1. Nessa tela, selecione **carregar**.
+
+   ![Selecione "carregar"](./media/connectors-sftp-ssh/puttygen-load.png)
+
+1. Navegue até o arquivo de chave privada no formato de saída e selecione **abrir**.
+
+1. No menu **conversões** , selecione **Exportar chave OpenSSH**.
+
+   ![Selecione "Exportar chave OpenSSH"](./media/connectors-sftp-ssh/export-openssh-key.png)
+
+1. Salve o arquivo de chave privada com a extensão de nome de arquivo `.pem`.
+
+<a name="connect"></a>
 
 ## <a name="connect-to-sftp-with-ssh"></a>Conectar-se ao SFTP com SSH
 
@@ -117,14 +148,13 @@ Quando um gatilho encontra um novo arquivo, o gatilho verifica se ele está conc
 
    > [!IMPORTANT]
    >
-   > Ao inserir sua chave privada SSH na propriedade **chave privada SSH**, siga estas etapas adicionais, que ajudam a fornecer o valor completo e correto para essa propriedade. 
-   > Uma chave inválida faz com que a conexão falhe.
+   > Ao inserir sua chave privada SSH na propriedade **chave privada SSH**, siga estas etapas adicionais, que ajudam a fornecer o valor completo e correto para essa propriedade. Uma chave inválida faz com que a conexão falhe.
 
    Embora você possa usar qualquer editor de texto, aqui estão etapas de exemplo que mostram como copiar e colar corretamente a chave usando o Notepad.exe como exemplo.
 
    1. Abra seu arquivo de chave privada SSH em um editor de texto. Essas etapas usam o bloco de notas do exemplo.
 
-   1. Sobre o bloco de notas **edite** menu, selecione **Selecionar tudo**.
+   1. No menu **Editar** do bloco de notas, selecione **selecionar tudo**.
 
    1. Selecione **Editar** > **Copiar**.
 

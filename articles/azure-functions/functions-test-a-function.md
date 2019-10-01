@@ -10,12 +10,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 0bd6222a6f2a2582fb715dbaf364fe23e41630d5
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ff3d7d1272f9067f6bf9791c7964f8bf5f71945b
+ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70085120"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71709330"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Estratégias para testar seu código no Azure Functions
 
@@ -54,7 +54,7 @@ Cada função usa uma instância do [ILogger](https://docs.microsoft.com/dotnet/
 
 A classe `ListLogger` deve implementar a interface `ILogger` e manter uma lista interna de mensagens para avaliação durante um teste.
 
-**Clique com o botão direito do mouse** no aplicativo Functions *. Test* e selecione **Adicionar > classe**, nomeie-o **NullScope.cs** e insira o código a seguir:
+**Clique com o botão direito do mouse** no aplicativo *functions. Test* e selecione **Adicionar > classe**, nomeie-o **NullScope.cs** e insira o código a seguir:
 
 ```csharp
 using System;
@@ -110,7 +110,7 @@ namespace Functions.Tests
 
 A classe `ListLogger` implementará os seguintes membros, conforme contratado pela interface `ILogger`:
 
-- **BeginScope**: Define o escopo de adicionar contexto do log. Nesse caso, o teste apenas aponta para a instância estática na `NullScope` classe para permitir que o teste funcione.
+- **BeginScope**: Define o escopo de adicionar contexto do log. Nesse caso, o teste apenas aponta para a instância estática na classe `NullScope` para permitir que o teste funcione.
 
 - **IsEnabled**: Um valor padrão de `false` é fornecido.
 
@@ -311,7 +311,7 @@ module.exports = {
 ```
 Esse módulo implementa a propriedade `IsPastDue` como uma instância de temporizador falsa.
 
-Em seguida, use a extensão de funções do VS Code para [criar uma função HTTP do JavaScript](https://code.visualstudio.com/tutorials/functions-extension/getting-started) e nomeie-a *HttpTrigger*. Após a criação da função, adicione um novo arquivo à mesma pasta de nome **index.test.js** e adicione o seguinte código:
+Em seguida, use a extensão de funções do VS Code para [criar uma função HTTP do JavaScript](/azure/javascript/tutorial-vscode-serverless-node-01) e nomeie-a *HttpTrigger*. Após a criação da função, adicione um novo arquivo à mesma pasta de nome **index.test.js** e adicione o seguinte código:
 
 ```javascript
 const httpFunction = require('./index');

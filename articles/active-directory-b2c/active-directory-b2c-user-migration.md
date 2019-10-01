@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/31/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c922799b650de7f921cc0493eb3feb2ad90b9d92
-ms.sourcegitcommit: 7a6d8e841a12052f1ddfe483d1c9b313f21ae9e6
+ms.openlocfilehash: 20c8fbd1626adaf67b790d500d8bfdeff6f27841
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70183154"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71702165"
 ---
 # <a name="azure-active-directory-b2c-user-migration"></a>Azure Active Directory B2C: migração de usuário
 
@@ -49,38 +49,15 @@ Você cria a conta de usuário do Azure AD B2C por meio da API do Graph (com a s
 
 ### <a name="step-11-register-your-application-in-your-tenant"></a>Etapa 1.1: Registrar seu aplicativo em seu locatário
 
-Para se comunicar com a API do Graph, primeiro, você precisa ter uma conta de serviço com privilégios administrativos. No Azure AD, você registra um aplicativo e a autenticação para o Azure AD. As credenciais do aplicativo são **ID do Aplicativo** e **Segredo do Aplicativo**. O aplicativo atua em nome próprio e não como usuário, para chamar a API do Graph.
+Para se comunicar com a API do Graph, primeiro, você precisa ter uma conta de serviço com privilégios administrativos. No Azure AD, você registra um aplicativo e habilita o acesso de gravação para o diretório. As credenciais do aplicativo são a **ID do aplicativo** e o segredo do **aplicativo**. O aplicativo atua em nome próprio e não como usuário, para chamar a API do Graph.
 
-Primeiro, registre seu aplicativo de migração no Azure AD. Em seguida, crie uma chave de aplicativo (segredo do aplicativo) e defina o aplicativo com os privilégios de gravação.
+Primeiro, registre um aplicativo que você possa usar para tarefas de gerenciamento como migração de usuário.
 
-1. Entre no [Portal do Azure][Portal].
-1. Selecione o **diretório +** filtro de assinatura na seção superior direita do Portal.
-1. Selecione o diretório que contém seu locatário Azure AD B2C.
-1. No menu à esquerda, selecione **Azure Active Directory** (*não* Azure ad B2C). Para encontrá-lo, talvez seja necessário selecionar **todos os serviços**.
-1. Selecione **registros de aplicativo (Herdado)** .
-1. Selecione **Novo registro de aplicativo**.
+[!INCLUDE [active-directory-b2c-appreg-mgmt](../../includes/active-directory-b2c-appreg-mgmt.md)]
 
-   ![Azure Active Directory e Registros de aplicativo itens de menu realçados](media/active-directory-b2c-user-migration/pre-migration-app-registration.png)
+### <a name="step-12-grant-administrative-permission-to-your-application"></a>Etapa 1.2: Conceder permissão administrativa ao seu aplicativo
 
-1. Crie um novo aplicativo fazendo o seguinte:
-
-   - Para **Nome**, use *B2CUserMigration* ou qualquer outro nome que desejar.
-   - Para **tipo de aplicativo**, selecione **aplicativo Web/API**.
-   - Para **URL de logon**, use `https://localhost` (não é relevante para este aplicativo).
-   - Selecione **Criar**.
-
-    Depois que o aplicativo é criado, a página do **aplicativo registrado** é exibida mostrando suas propriedades.
-1. Copie a ID do **aplicativo**do aplicativo e salve-a para mais tarde.
-
-### <a name="step-12-create-the-application-secret"></a>Etapa 1.2: Criar o segredo do aplicativo
-
-1. Na página do **aplicativo registrado** , selecione **configurações**.
-1. Selecione **Chaves**.
-1. Em **senhas**, adicione uma nova chave (também conhecida como um segredo do cliente) chamada *MyClientSecret* ou outro nome de sua escolha, selecione uma janela de expiração, selecione **salvar**e, em seguida, copie o valor da chave para uso posterior.
-
-    ![Item de menu chaves e valor de ID do aplicativo realçado em portal do Azure](media/active-directory-b2c-user-migration/pre-migration-app-id-and-key.png)
-
-### <a name="step-13-grant-administrative-permission-to-your-application"></a>Etapa 1.3: Conceder permissão administrativa ao seu aplicativo
+Em seguida, conceda ao aplicativo o Azure AD API do Graph permissões necessárias para gravar no diretório.
 
 1. No menu **configurações** , selecione **permissões necessárias**.
 1. Selecione **Microsoft Azure Active Directory**.
@@ -89,11 +66,21 @@ Primeiro, registre seu aplicativo de migração no Azure AD. Em seguida, crie um
 
    ![Caixa de seleção ler/gravar diretório, salvar e conceder permissões realçadas](media/active-directory-b2c-user-migration/pre-migration-app-registration-permissions.png)
 
-Agora, você tem um aplicativo com permissões para criar, ler e atualizar usuários de seu locatário do Azure AD B2C.
+### <a name="step-13-create-the-application-secret"></a>Etapa 1.3: Criar o segredo do aplicativo
+
+Crie um segredo do cliente (chave) para uso pelo aplicativo de migração do usuário que você configurar em uma etapa posterior.
+
+1. Na página do **aplicativo registrado** , selecione **configurações**.
+1. Selecione **Chaves**.
+1. Em **senhas**, adicione uma nova chave (também conhecida como um segredo do cliente) chamada *MyClientSecret* ou outro nome de sua escolha, selecione uma janela de expiração, selecione **salvar**e, em seguida, copie o valor da chave para uso posterior.
+
+    ![Item de menu chaves e valor de ID do aplicativo realçado em portal do Azure](media/active-directory-b2c-user-migration/pre-migration-app-id-and-key.png)
+
+Agora você tem um aplicativo com permissões para criar, ler e atualizar usuários em seu locatário Azure AD B2C.
 
 ### <a name="step-14-optional-environment-cleanup"></a>Etapa 1.4: (Opcional) Limpeza de ambiente
 
-A permissão de ler e gravar dados de diretório *não* inclui o direito de excluir usuários. Para permitir que seu aplicativo exclua os usuários (para limpar o ambiente), você deve executar uma etapa extra, que envolve a execução do PowerShell para definir permissões de Administrador da Conta de Usuário. Caso contrário, você pode pular para a próxima seção.
+A permissão *ler e gravar dados do diretório* *não* inclui o direito de excluir usuários. Para permitir que seu aplicativo exclua os usuários (para limpar o ambiente), você deve executar uma etapa extra, que envolve a execução do PowerShell para definir permissões de Administrador da Conta de Usuário. Caso contrário, você pode pular para a próxima seção.
 
 > [!IMPORTANT]
 > Você precisa usar uma conta de administrador de locatário B2C que seja *local* para o locatário B2C. A sintaxe do nome da conta é *admin\@contosob2c.onmicrosoft.com*.
@@ -139,9 +126,9 @@ Altere o valor `$AppId` pela **ID do Aplicativo** do Azure AD.
 
 ## <a name="step-2-pre-migration-application-sample"></a>Etapa 2: Exemplo de aplicativo pré-migração
 
-Você pode encontrar o exemplo de código de pré-migração no repositório GitHub mantido `azure-ad-b2c/user-migration` pela Comunidade:
+Você pode encontrar o exemplo de código de pré-migração no repositório GitHub `azure-ad-b2c/user-migration` mantido na Comunidade:
 
-[Azure-ad-B2C/migração de usuário/pré-migração][UserMigrationSample-code] GitHub
+[Azure-ad-B2C/usuário-migração/pré-migração][UserMigrationSample-code] (github)
 
 ### <a name="step-21-edit-the-migration-data-file"></a>Etapa 2.1: Editar o arquivo de dados de migração
 
@@ -239,7 +226,7 @@ Para obter o link para sua política de redefinição de senha, siga estas etapa
 1. Selecione seu aplicativo na lista suspensa **Selecionar aplicativo** .
 
     > [!NOTE]
-    > **Executar agora** requer que pelo menos um aplicativo seja registrado em seu locatário. Para saber como registrar aplicativos, consulte [o tutorial: Registrar um aplicativo no Azure Active Directory B2C][B2C-AppRegister].
+    > **Executar agora** requer que pelo menos um aplicativo seja registrado em seu locatário. Para saber como registrar aplicativos, consulte [Tutorial: Registrar um aplicativo no Azure Active Directory B2C @ no__t-0.
 
 1. Copie a URL mostrada na caixa de texto **ponto de extremidade executar agora** e, em seguida, envie-a para os usuários.
 
@@ -270,7 +257,7 @@ Para acompanhar a alteração da senha, você deve usar a tabela do Azure. Quand
 ### <a name="41-update-your-application-setting"></a>4.1: atualizar a configuração de aplicativo
 
 1. Para testar a demonstração da API RESTful, abra `AADB2C.UserMigration.sln` no Visual Studio.
-1. No projeto, abra o arquivo *Web. config.* `AADB2C.UserMigration.API` Substitua a configuração por aquela configurada na [Etapa 2.2](#step-22-configure-the-application-settings):
+1. No projeto `AADB2C.UserMigration.API`, abra o arquivo *Web. config* . Substitua a configuração por aquela configurada na [Etapa 2.2](#step-22-configure-the-application-settings):
 
     ```json
     {
@@ -287,7 +274,7 @@ No Gerenciador de Soluções, clique com o botão direito do mouse em `AADB2C.Us
 
 1. No Gerenciador de Soluções, expanda "Itens de solução" e abra o arquivo de política *TrustFrameworkExtensions.xml*.
 1. Altere os campos `TenantId`, `PublicPolicyUri` e `<TenantId>` de `yourtenant.onmicrosoft.com` para o nome do seu locatário.
-1. No elemento, substitua todas as instâncias do `ProxyIdentityExperienceFrameworkAppId` e `IdentityExperienceFrameworkAppId` pelas IDs de aplicativo configuradas em [introdução às políticas personalizadas.][B2C-GetStartedCustom] `<TechnicalProfile Id="login-NonInteractive">`
+1. No elemento `<TechnicalProfile Id="login-NonInteractive">`, substitua todas as instâncias de `ProxyIdentityExperienceFrameworkAppId` e `IdentityExperienceFrameworkAppId` pelas IDs de aplicativo configuradas na [introdução às políticas personalizadas][B2C-GetStartedCustom].
 1. No nó `<ClaimsProviders>`, encontre o seguinte snippet de código XML. Altere o valor de `ServiceUrl` para apontar para a URL do Serviço de Aplicativo do Azure.
 
     ```XML

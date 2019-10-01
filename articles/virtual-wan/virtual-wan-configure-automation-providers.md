@@ -5,14 +5,14 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 09/30/2019
 ms.author: cherylmc
-ms.openlocfilehash: f286c02e0eb6e801f62d4f2e16f1197a1e9d44ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 72493f084b89d41c1e0d6ff60c35afa3491b0eda
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304575"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703455"
 ---
 # <a name="virtual-wan-partners"></a>Parceiros de WAN Virtual
 
@@ -36,9 +36,10 @@ Um dispositivo de branch (um dispositivo VPN local do cliente ou CPE SDWAN) norm
   1. Normalmente, um usuário de WAN virtual começará o processo criando um recurso de WAN Virtual.
   2. O usuário configurará o acesso ao grupo de recursos com base em uma entidade de serviço para o sistema local (seu controlador de branch ou software de provisionamento de dispositivo VPN) para gravar informações sobre o branch na WAN Virtual do Azure.
   3. Nesse momento, o usuário poderá decidir fazer logon em sua interface do usuário e configurar as credenciais da entidade de serviço. Assim que isso estiver concluído, o controlador poderá carregar informações do branch com a automação fornecida por você. O equivalente manual disso no lado do Azure é "Criar Site".
-  4. Assim que as informações do Site (dispositivo de branch) estiverem disponíveis no Azure, o usuário associará o site a um hub. Um hub virtual é uma rede virtual gerenciada pela Microsoft. O hub contém vários pontos de extremidade de serviço para habilitar a conectividade de sua rede local (vpnsite). O hub é o núcleo da sua rede em uma região. Pode haver apenas um hub por região do Azure, e o ponto de extremidade de vpn (vpngateway) dentro dele é criado durante esse processo. O gateway de VPN é um gateway escalonável que dimensiona apropriadamente com base nas necessidades de largura de banda e conexão. Você pode optar por automatizar o hub virtual e a criação de vpngateway no painel do controlador de dispositivo de seu branch.
+  4. Depois que as informações de site (dispositivo de ramificação) estiverem disponíveis no Azure, o usuário irá conectar o site a um Hub. Um hub virtual é uma rede virtual gerenciada pela Microsoft. O hub contém vários pontos de extremidade de serviço para habilitar a conectividade de sua rede local (vpnsite). O hub é o núcleo da sua rede em uma região. Pode haver apenas um hub por região do Azure, e o ponto de extremidade de vpn (vpngateway) dentro dele é criado durante esse processo. O gateway de VPN é um gateway escalonável que dimensiona apropriadamente com base nas necessidades de largura de banda e conexão. Você pode optar por automatizar o hub virtual e a criação de vpngateway no painel do controlador de dispositivo de seu branch.
   5. Após a associação do Hub virtual ao site, um arquivo de configuração será gerado para download manual do usuário. É aqui que sua automação entre em cena e torna a experiência do usuário perfeita. Em vez de o usuário precisar baixar e configurar manualmente o dispositivo de branch, você pode definir a automação e fornecer uma experiência mínima de cliques em sua interface do usuário, atenuando problemas comuns de conectividade, como a incompatibilidade de chave compartilhada, do parâmetro de IPSec, legibilidade do arquivo de configuração etc.
   6. No final desta etapa em sua solução, o usuário terá uma conexão site a site perfeita entre o dispositivo de branch e um hub virtual. Você também pode configurar conexões adicionais em outros hubs. Cada conexão é um túnel ativo-ativo. Seu cliente pode optar por usar um ISP diferente para cada um dos links para o túnel.
+  7. Considere fornecer recursos de monitoramento e solução de problemas na interface de gerenciamento do CPE. Os cenários típicos incluem "o cliente não pode acessar os recursos do Azure devido a um problema de CPE", "mostrar parâmetros de IPsec no lado da CPE" etc.
 
 ## <a name ="understand"></a>Compreender os detalhes da automação
 
@@ -64,7 +65,7 @@ Esta etapa envolve o download da configuração do Azure e configuração da con
 **Notas de configuração**
 
   * Se VNets do Azure estiverem anexadas ao hub virtual, elas aparecerão como ConnectedSubnets.
-  * A conectividade VPN usa a configuração baseada em rota e IKEv2/IKEv1.
+  * A conectividade VPN usa a configuração baseada em rota e dá suporte aos protocolos IKEv1 e IKEv2.
 
 #### <a name="understanding-the-device-configuration-file"></a>Entender o arquivo de configuração do dispositivo
 

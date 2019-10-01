@@ -1,21 +1,21 @@
 ---
-title: Configurar e acessar logs do servidor do banco de dados do Azure para MariaDB no portal do Azure
-description: Este artigo descreve como configurar e acessar os logs de servidor no banco de dados do Azure para MariaDB do portal do Azure.
-author: rachel-msft
-ms.author: raagyema
+title: Configurar e acessar logs de servidor para o banco de dados do Azure para MariaDB no portal do Azure
+description: Este artigo descreve como configurar e acessar os logs de servidor no banco de dados do Azure para MariaDB no portal do Azure.
+author: ajlam
+ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 06/11/2019
-ms.openlocfilehash: 3dbf7064e409230916668e62ef861c0ce149fdbb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 09/30/2019
+ms.openlocfilehash: c8be9519d3393330b3022fadd2de6a49e58ecdcf
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065633"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703510"
 ---
 # <a name="configure-and-access-server-logs-in-the-azure-portal"></a>Configurar e acessar os logs de servidor no Portal do Azure
 
-Você pode configurar, listar e baixar o [banco de dados do Azure para logs de consulta lentos MariaDB](concepts-server-logs.md) do portal do Azure.
+Você pode configurar, listar e baixar o [banco de dados do Azure para MariaDB logs de consulta lentos](concepts-server-logs.md) do portal do Azure.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para seguir este guia de instruções, você precisa:
@@ -42,7 +42,7 @@ Configure o acesso ao log de consultas lentas.
 6. Retorne para a lista de logs clicando no **botão Fechar** (ícone de X) na página **Parâmetros do servidor**.
 
 ## <a name="view-list-and-download-logs"></a>Exibir a lista e baixar os logs
-Depois que o log começa, você pode exibir uma lista de logs de consulta lentos disponíveis e baixar arquivos de log individuais no painel de Logs do servidor. 
+Depois que o log for iniciado, você poderá exibir uma lista de logs de consultas lentas disponíveis e baixar arquivos de log individuais no painel logs do servidor. 
 
 1. Abra o portal do Azure.
 
@@ -61,8 +61,25 @@ Depois que o log começa, você pode exibir uma lista de logs de consulta lentos
 
    ![Clique no ícone download](./media/howto-configure-server-logs-portal/5-download.png)
 
-## <a name="next-steps"></a>Próximas etapas
-- Saiba mais sobre [lento do Logs de consulta](concepts-server-logs.md) no banco de dados do Azure para MariaDB.
-- Para obter mais informações sobre as definições de parâmetros e o registro, consulte a documentação do MariaDB em [Logs](https://mariadb.com/kb/en/library/slow-query-log-overview/).
+## <a name="set-up-diagnostic-logs"></a>Configuração dos logs de diagnóstico
 
-<!--- See [Access Server Logs in CLI](howto-configure-server-logs-in-cli.md) to learn how to download logs programmatically. -->
+1. Na seção **monitoramento** na barra lateral, selecione **configurações de diagnóstico**.
+
+1. Clique em "+ adicionar configuração de diagnóstico" @no__t-configuração de diagnóstico 0Add @ no__t-1
+
+1. Forneça um nome de configuração de diagnóstico.
+
+1. Especifique quais coletores de dados enviarão os logs de consulta lentos (conta de armazenamento, Hub de eventos e/ou espaço de trabalho Log Analytics).
+
+1. Selecione "MySqlSlowLogs" como o tipo de log.
+configuração de diagnóstico ![Configure @ no__t-1
+
+1. Depois de configurar os coletores de dados para canalizar os logs de consulta lentos, você pode clicar em **salvar**.
+configuração de diagnóstico ![Save @ no__t-1
+
+1. Acesse os logs de consulta lento explorando-os nos coletores de dados que você configurou. Pode levar até 10 minutos para que os logs sejam exibidos.
+
+## <a name="next-steps"></a>Próximas etapas
+- Consulte [acessar logs de consulta lentos na CLI](howto-configure-server-logs-cli.md) para saber como baixar logs de consulta lentos programaticamente.
+- Saiba mais sobre [logs de consulta lentos](concepts-server-logs.md) no banco de dados do Azure para MariaDB.
+- Para obter mais informações sobre as definições de parâmetros e o registro, consulte a documentação do MariaDB em [Logs](https://mariadb.com/kb/en/library/slow-query-log-overview/).
