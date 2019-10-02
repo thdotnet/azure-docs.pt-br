@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: f565d95f8270612a8d83dd44a1e1bb895d1a4373
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: 11b626c0033814f0886ac76fff0c5d4087a80554
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662780"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71720234"
 ---
 # <a name="guidelines-for-responsible-implementation-of-personalizer"></a>Diretrizes para a implementação responsável do Personalizador
 
@@ -63,7 +63,8 @@ Ao escolher casos de uso para o Personalizador:
 
 * Inicie o processo de criação considerando como a personalização ajuda os seus usuários.
 * Considere as consequências negativas no mundo real se alguns itens não forem classificados para os usuários devido a padrões ou à exploração da personalização.
-* Considere ciclos de profecia autocumprida. Isso poderá acontecer se uma recompensa de personalização treinar um modelo para que ele possa excluir subsequentemente ainda mais um grupo demográfico do acesso ao conteúdo relevante. Por exemplo, a maioria das pessoas em um bairro de baixa renda não obtém uma oferta de seguro premium, e praticamente ninguém no bairro tende a ver a oferta.
+* Considere se o seu caso de uso constitui o processamento automatizado, que afeta significativamente os assuntos de dados que são regulamentados em [GDPR](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679) artigo 22 ou outras leis.
+* Considere ciclos de profecia autocumprida. Isso poderá acontecer se uma recompensa de personalização treinar um modelo para que ele possa excluir subsequentemente ainda mais um grupo demográfico do acesso ao conteúdo relevante. Por exemplo, a maioria das pessoas em um ambiente de baixa renda não obtém uma oferta de seguro Premium, e ninguém mais lento na vizinhança tende a ver a oferta se não houver exploração suficiente.
 * Salve cópias de modelos e políticas de aprendizado caso seja necessário reproduzir o Personalizador no futuro. É possível fazer isso periodicamente ou a cada período de atualização do modelo.
 * Considere o nível de exploração adequado para o espaço e como usá-lo como uma ferramenta para mitigar os efeitos de “câmara de ressonância”.
 

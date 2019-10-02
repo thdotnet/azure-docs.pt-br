@@ -8,24 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 09/26/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: c0ceea5c86af8d733c838e19f77eaeadc8a12dbb
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 00d3d63ff1a5b4d5dab0534e039145b97091af87
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300232"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71802163"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Solução de problemas para QnA Maker
 
 A lista organizada das perguntas mais frequentes sobre o serviço de QnA Maker ajudará você a adotar o serviço mais rapidamente e com melhores resultados.
 
+<a name="how-to-get-the-qnamaker-service-hostname"></a>
 
-## <a name="how-to-get-the-qnamaker-service-hostname"></a>Como obter o nome de host de serviço do QnAMaker
+## <a name="how-to-get-the-qnamaker-service-endpoint"></a>Como obter o ponto de extremidade de serviço QnAMaker
 
-O nome do host de serviço do QnAMaker será útil para finalidades de depuração quando você contatar o Suporte do QnAMaker ou UserVoice. O nome do host é uma URL neste formato: https:// *{hostname}* . azurewebsites.net.
+O ponto de extremidade do serviço QnAMaker é útil para fins de depuração quando você entra em contato com o suporte do QnAMaker ou UserVoice. O ponto de extremidade é uma URL neste formato: https://your-resource-name.azurewebsites.net.
     
 1. Acesse o serviço do QnAMaker (grupo de recursos) no [portal do Azure](https://portal.azure.com)
 
@@ -35,9 +36,9 @@ O nome do host de serviço do QnAMaker será útil para finalidades de depuraç�
 
      ![Selecione o Serviço de Aplicativo do QnAMaker](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-appservice.png)
 
-1. A URL do nome do host está disponível na seção Visão Geral
+1. A URL do ponto de extremidade está disponível na seção visão geral
 
-    ![Nome do host do QnAMaker](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-gethostname.png)
+    ![Ponto de extremidade QnAMaker](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-gethostname.png)
     
 
 ## <a name="use-the-help-bot-in-the-qna-maker-portal"></a>Usar o bot de ajuda no portal de QnA Maker
@@ -173,7 +174,7 @@ Siga as instruções [nesta](./Tutorials/create-qna-bot.md) documentação para 
 Você precisa ter as seguintes informações sobre sua base de dados de conhecimento:
 
 * ID da base de dados de conhecimento.
-* Nome do host do ponto de extremidade publicado da base de dados de conhecimento-encontrado na página de **configurações** após a publicação.
+* O nome de subdomínio personalizado do ponto de extremidade publicado da base de dados de conhecimento, conhecido como `host`, encontrado na página de **configurações** após a publicação.
 * Chave de ponto de extremidade publicada da base de dados de conhecimento-encontrada na página de **configurações** após a publicação. 
 
 Com essas informações, vá para o serviço de aplicativo do bot no portal do Azure. Em **configurações-> configuração – > configurações do aplicativo**, altere esses valores.  

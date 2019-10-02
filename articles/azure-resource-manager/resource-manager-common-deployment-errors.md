@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.topic: troubleshooting
 ms.date: 08/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: fc6fdde4daa2d671b9d93673c2a78c2d9d85963c
-ms.sourcegitcommit: 32242bf7144c98a7d357712e75b1aefcf93a40cc
+ms.openlocfilehash: 0e03cd3747fe6770be7dddaf36d634547ed75b39
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70275735"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718948"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Solução de erros comuns de implantação do Azure com o Azure Resource Manager
 
@@ -23,7 +23,7 @@ Se você estiver procurando informações sobre um código de erro e se essas in
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="error-codes"></a>Códigos de erro
+## <a name="error-codes"></a>Códigos do Erro
 
 | Código de erro | Atenuação | Mais informações |
 | ---------- | ---------- | ---------------- |
@@ -36,7 +36,7 @@ Se você estiver procurando informações sobre um código de erro e se essas in
 | Conflito | Você está solicitando uma operação não permitida no estado atual do recurso. Por exemplo, o redimensionamento do disco é permitido apenas ao criar uma VM ou quando a VM é desalocada. | |
 | DeploymentActive | Aguarde a conclusão da implantação simultânea nesse grupo de recursos. | |
 | DeploymentFailed | O erro DeploymentFailed é um erro geral que não fornece os detalhes necessários para resolvê-lo. Examine os detalhes do erro em busca de um código de erro que fornece mais informações. | [Encontrar código do erro](#find-error-code) |
-| DeploymentQuotaExceeded | Caso você atinja o limite de 800 implantações por grupo de recursos, exclua do histórico as implantações que não são mais necessárias. Exclua entradas do histórico com [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete) na CLI do Azure ou [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) no PowerShell. A exclusão de uma entrada do histórico de implantações não afeta os recursos de implantação. | |
+| DeploymentQuotaExceeded | Caso você atinja o limite de 800 implantações por grupo de recursos, exclua do histórico as implantações que não são mais necessárias. | [Resolver erro quando a contagem de implantação exceder 800](deployment-quota-exceeded.md) |
 | DnsRecordInUse | O nome do registro DNS deve ser exclusivo. Insira um nome diferente. | |
 | ImageNotFound | Verifique as configurações de imagem da VM. |  |
 | InUseSubnetCannotBeDeleted | Você pode receber esse erro ao tentar atualizar um recurso, e a solicitação é processada excluindo e criando o recurso. Certifique-se de especificar todos os valores inalterados. | [Atualizar recurso](/azure/architecture/building-blocks/extending-templates/update-resource) |
@@ -248,6 +248,6 @@ Ou, vamos supor que você esteja enfrentando erros de implantação, os quais vo
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Para passar por um tutorial de solução de problemas [, consulte Tutorial: Solucionar problemas de implantações de modelos do Resource Manager](./resource-manager-tutorial-troubleshoot.md)
+* Para percorrer um tutorial de solução de problemas, consulte [Tutorial: Solucionar problemas de implantações de modelos do Resource Manager](./resource-manager-tutorial-troubleshoot.md)
 * Para saber sobre as ações de auditoria, consulte [Auditar operações com o Gerenciador de Recursos](resource-group-audit.md).
 * Para saber sobre as ações para determinar os erros durante a implantação, consulte [Exibir operações de implantação](resource-manager-deployment-operations.md).

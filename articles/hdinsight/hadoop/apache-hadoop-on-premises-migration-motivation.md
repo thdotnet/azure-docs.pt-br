@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3c122a68e9f28772be4e3a17a21e5457aa187ce6
-ms.sourcegitcommit: 97605f3e7ff9b6f74e81f327edd19aefe79135d2
+ms.openlocfilehash: a65b775a516bfccac2dee5ce00bc7d6495df256d
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70736106"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71718372"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---motivation-and-benefits"></a>Migrar clusters do Apache Hadoop local para o Azure HDInsight – motivação e benefícios
 
@@ -53,7 +53,7 @@ O Azure HDInsight é uma distribuição de nuvem dos componentes do Hadoop. O Az
 
 - **Extensibilidade com ferramentas personalizadas ou aplicativos de terceiros** – clusters do HDInsight podem ser estendidos com componentes instalados e também podem ser integrados com outras soluções de Big Data usando implantações com [um único clique](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) do Azure Marketplace.
 
-- **Gerenciamento, administração e monitoramento fáceis** – o Azure HDInsight integra-se com [os logs](../hdinsight-hadoop-oms-log-analytics-tutorial.md) de Azure monitor para fornecer uma única interface com a qual você pode monitorar todos os seus clusters.
+- **Gerenciamento, administração e monitoramento fáceis** – o Azure HDInsight integra-se aos [logs de Azure monitor](../hdinsight-hadoop-oms-log-analytics-tutorial.md) To fornecem uma única interface com a qual você pode monitorar todos os seus clusters.
 
 - **Integração com outros serviços do Azure** – o HDInsight pode ser facilmente integrado a outros serviços populares do Azure, como os seguintes:
 
@@ -61,7 +61,7 @@ O Azure HDInsight é uma distribuição de nuvem dos componentes do Hadoop. O Az
     - Armazenamento de Blob do Azure
     - Azure Data Lake Storage Gen2
     - Azure Cosmos DB
-    - Banco de Dados SQL do Azure
+    - Banco de dados SQL do Azure
     - Azure Analysis Services
 
 - **Processos e componentes de autorrecuperação** – o HDInsight verifica constantemente os componentes de infraestrutura e software livre usando sua própria infraestrutura de monitoramento. Ele também recupera automaticamente de falhas críticas, como de não disponibilidade de nós e de componentes de software livre. Os alertas serão disparados no Ambari se qualquer componente do OSS falhar.
@@ -128,7 +128,7 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Trabalhos do Spark Streaming|5 trabalhos – a cada 3 minutos||
 |Trabalhos de Streaming estruturados|5 trabalhos – a cada minuto||
 |Trabalhos de treinamento do Modelo de ML|2 trabalhos – uma vez por semana||
-|Linguagens de programação|Python, Scala, Java||
+|Linguagens de Programação|Python, Scala, Java||
 |Script|Shell do Python||
 |**Tópico**: **Dados**|||
 |Fontes de dados|Arquivos simples, JSON, Kafka, RDBMS||
@@ -137,10 +137,10 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Destinos de dados|HDFS, RDBMS, Kafka, MPP ||
 |**Tópico**: **Metadados**|||
 |Tipo de banco de dados do Hive|Mysql, Postgres||
-|Nº de metastores do Hive|2||
-|Nº de tabelas do Hive|100||
-|Nº de políticas do Ranger|20||
-|Nº de fluxos de trabalho do Oozie|100||
+|Número de metastores do hive|2||
+|Número de tabelas do hive|100||
+|Número de políticas de Ranger|20||
+|Número de fluxos de trabalho do Oozie|100||
 |**Tópico**: **Escala**|||
 |Volume de dados incluindo Replicação|100 TB||
 |Volume diário de ingestão|50 GB||
@@ -152,11 +152,11 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Espaço em disco usado|75%||
 |% média de rede usada|25%
 |**Tópico**: **Equipe**|||
-|Nº de Administradores|2||
-|Nº de Desenvolvedores|10||
-|Nº de usuários finais|100||
+|Número de administradores|2||
+|Número de desenvolvedores|10||
+|Número de usuários finais|100||
 |Habilidades|Hadoop, Spark||
-|Nº de recursos disponíveis para esforços de Migração|2||
+|Número de recursos disponíveis para os esforços de migração|2||
 |**Tópico**: **Limitações**|||
 |Limitações atuais|A latência é alta||
 |Desafios atuais|Problema de simultaneidade||
@@ -180,7 +180,7 @@ Esta seção apresenta questionários de modelo para ajudar a coletar informaç�
 |Pipeline de dados privados e protegidos?|Sim||
 |Cluster de domínio ingressado (ESP)?|     Sim||
 |Sincronização do AD Local com a Nuvem?|     Sim||
-|Nº de usuários do AD a sincronizar?|          100||
+|Número de usuários do AD a serem sincronizados?|          100||
 |OK sincronizar senhas com a nuvem?|    Sim||
 |Somente usuários de nuvem?|                 Sim||
 |MFA necessária?|                       Não|| 

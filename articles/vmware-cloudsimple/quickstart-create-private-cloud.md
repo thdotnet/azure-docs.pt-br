@@ -8,22 +8,26 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: bbb5b90ffac4a89c14a4a6df51022bb61b10fbb0
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: e5cea36760746eaa63451c9e9955368c71ba4472
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845502"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71816140"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Início rápido-configurar um ambiente de nuvem privada
 
 Neste artigo, saiba como criar uma nuvem privada do CloudSimple e configurar seu ambiente de nuvem privada.
 
+## <a name="before-you-begin"></a>Antes de começar
+
+Examine os [pré-requisitos de rede](cloudsimple-network-checklist.md).
+
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
 Entre no Portal do Azure em [https://portal.azure.com](https://portal.azure.com).
 
-## <a name="create-a-private-cloud"></a>Criar uma nuvem privada
+## <a name="create-a-private-cloud"></a>Criar uma Nuvem Privada
 
 Uma nuvem privada é uma pilha VMware isolada que dá suporte a hosts ESXi, vCenter, vSAN e NSX.
 
@@ -151,7 +155,7 @@ Agora você pode entrar no vCenter para configurar máquinas virtuais e polític
 
 1. Para acessar o vCenter, inicie no portal do CloudSimple. Na Home Page, em **tarefas comuns**, clique em **Iniciar vSphere cliente**.  Selecione a nuvem privada e clique em **Iniciar vSphere cliente** na nuvem privada.
 
-    ![Iniciar cliente do vSphere](media/launch-vcenter-from-cloudsimple-portal.png)
+    ![Iniciar Cliente vSphere](media/launch-vcenter-from-cloudsimple-portal.png)
 
 2. Selecione seu cliente vSphere preferencial para acessar o vCenter e entrar com seu nome de usuário e senha.  Os padrões são:
     * Nome de usuário: **CloudOwner@cloudsimple.local**

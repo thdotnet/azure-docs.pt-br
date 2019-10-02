@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
-ms.openlocfilehash: 2118f137f2c0d32f891a170c3509bceee7ba13ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b1f02e01fef95bdd06930aa30479dd16d40675ce
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60764932"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71812563"
 ---
 # <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Coletar dados do CollectD em agentes do Linux no Azure Monitor
 O [CollectD](https://collectd.org/) é um daemon do Linux de software livre que coleta periodicamente métricas de desempenho de aplicativos e informações de nível de sistema. Exemplos de aplicativos incluem a Máquina Virtual Java (JVM), o MySQL Server e o Nginx. Este artigo fornece informações sobre como coletar dados de desempenho do CollectD no Azure Monitor.
@@ -69,6 +69,8 @@ O agente do Log Analytics para Linux também escuta métricas do CollectD na por
       type filter_collectd
     </filter>
 
+> [!NOTE]
+> Coletado por padrão é definido para ler valores em um [intervalo](https://collectd.org/wiki/index.php/Interval)de 10 segundos. Como isso afeta diretamente o volume de dados enviados aos logs de Azure Monitor, talvez seja necessário ajustar esse intervalo dentro da configuração coletada para um bom equilíbrio entre os requisitos de monitoramento e os custos associados e o uso dos logs de Azure Monitor.
 
 ## <a name="versions-supported"></a>Versões com suporte
 - Atualmente, o Azure Monitor dá suporte ao CollectD versão 4.8 e superior.
@@ -112,13 +114,13 @@ Para manter um modelo familiar entre as métricas de infraestrutura já coletada
 
 | Campo Métrica do CollectD | Campo do Azure Monitor |
 |:--|:--|
-| `host` | Computador |
-| `plugin` | Nenhum |
+| `host` | Computer |
+| `plugin` | Nenhuma |
 | `plugin_instance` | Nome da Instância<br>Se **plugin_instance** é *null*, então InstanceName=" *_Total*" |
 | `type` | ObjectName |
 | `type_instance` | CounterName<br>Se **type_instance** é *null*, então CounterName=**blank** |
 | `dsnames[]` | CounterName |
-| `dstypes` | Nenhum |
+| `dstypes` | Nenhuma |
 | `values[]` | CounterValue |
 
 ## <a name="next-steps"></a>Próximas etapas

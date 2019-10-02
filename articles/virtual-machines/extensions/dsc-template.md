@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 10/05/2018
 ms.author: robreed
-ms.openlocfilehash: 458ba61adba294af99f2265e4907e874ed3a6956
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 59f8035aa69f21196a2134bf6bc1b12f3e5b34c4
+ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70084589"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71815702"
 ---
 # <a name="desired-state-configuration-extension-with-azure-resource-manager-templates"></a>Extensão de configuração de estado desejado com os modelos do Azure Resource Manager
 
@@ -177,7 +177,7 @@ Para obter uma lista de argumentos disponíveis para o script de configuração 
 
 ## <a name="details"></a>Detalhes
 
-| Nome da propriedade | Tipo | Descrição |
+| Nome da propriedade | type | Descrição |
 | --- | --- | --- |
 | settings.wmfVersion |string |Especifica a versão do Windows Management Framework (WMF) que deve ser instalada em sua VM. Configurar essa propriedade como **latest** instala a versão mais recente de WMF. Atualmente, os únicos valores possíveis para essa propriedade são **4.0**, **5.0**, **5.1** e **o mais recente**. Esses valores possíveis estão sujeitos a atualizações. O valor padrão é **latest**. |
 | settings.configuration.url |string |Especifica o local da URL de onde baixar seu arquivo .zip de configuração DSC. Se a URL fornecida exigir um token SAS para acesso, defina a propriedade **protectedSettings.configurationUrlSasToken** como o valor do seu token de SAS. Esta propriedade será necessária se **settings.configuration.script** ou **settings.configuration.function** estiverem definidas. Se nenhum valor for fornecido para essas propriedades, a extensão chama o script de configuração padrão para definir os metadados do LCM (Location Configuration Manager) e os argumentos devem ser fornecidos. |
@@ -236,8 +236,10 @@ Os argumentos de configuração são passados para o script de configuração pa
 
 ```json
 "settings": {
-    "RegistrationUrl" : "[parameters('registrationUrl1')]",
-    "NodeConfigurationName" : "nodeConfigurationNameValue1"
+    "configurationArguments": {
+        "RegistrationUrl" : "[parameters('registrationUrl1')]",
+        "NodeConfigurationName" : "nodeConfigurationNameValue1"
+    }
 },
 "protectedSettings": {
     "configurationArguments": {
@@ -253,7 +255,7 @@ Os argumentos de configuração são passados para o script de configuração pa
 
 O exemplo a seguir é da [visão geral de manipulador de extensão de DSC](dsc-overview.md).
 Este exemplo usa modelos do Resource Manager, em vez de cmdlets para implantar a extensão.
-Salve a configuração IisInstall. ps1, coloque-a em um arquivo. zip (exemplo `iisinstall.zip`:) e, em seguida, carregue o arquivo em uma URL acessível.
+Salve a configuração IisInstall. ps1, coloque-a em um arquivo. zip (exemplo: `iisinstall.zip`) e, em seguida, carregue o arquivo em uma URL acessível.
 Este exemplo usa o Armazenamento de Blobs do Azure, mas você pode baixar os arquivos .zip de qualquer local aleatório.
 
 No modelo do Resource Manager, o código a seguir instrui a VM a baixar o arquivo correto e, em seguida, executar a função apropriada do PowerShell:

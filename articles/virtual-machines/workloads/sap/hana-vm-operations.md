@@ -12,15 +12,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/10/2019
+ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ceefb565a82301d2ddedf70d12c0fc564b801229
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d3c810746218e9761ae4c821dc22fef921e62a60
+ms.sourcegitcommit: a19f4b35a0123256e76f2789cd5083921ac73daf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101215"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71719059"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Configurações e operações de infraestrutura do SAP HANA no Azure
 Este documento fornece orientação para configurar a infraestrutura do Azure e operar sistemas SAP HANA que são implantados em máquinas virtuais nativas (VMs) do Azure. O documento também inclui informações de configuração de expansão para a SKU de VM M128s do SAP HANA. Este documento não pretende substituir a documentação padrão do SAP, que inclui o seguinte conteúdo:
@@ -67,7 +67,7 @@ Implante as VMs no Azure usando:
 Você também pode implantar uma plataforma completa de SAP HANA instalada nos serviços de VM do Azure por meio da [plataforma SAP Cloud](https://cal.sap.com/). O processo de instalação está descrito em [Implantar SAP S/4HANA ou BW/4HANA no Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h) ou com a automação liberada [aqui](https://github.com/AzureCAT-GSI/SAP-HANA-ARM).
 
 >[!IMPORTANT]
-> Para usar VMs M208xx_v2, você precisa ter cuidado ao selecionar a imagem do SUSE Linux na Galeria de imagens de VM do Azure. Para ler os detalhes, leia o artigo tamanhos de [máquina virtual com otimização de memória](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series). O Red Hat ainda não tem suporte para usar o HANA em VMs da família Mv2. O planejamento atual é fornecer suporte para versões do Red Hat que executam o HANA na família de VMs Mv2 no T4/CY2019 
+> Para usar VMs M208xx_v2, você precisa ter cuidado ao selecionar a imagem do Linux na Galeria de imagens de VM do Azure. Para ler os detalhes, leia o artigo tamanhos de [máquina virtual com otimização de memória](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series). 
 > 
 
 
@@ -139,10 +139,8 @@ Da certificação de scale-out de 16 nós
 >Em implantações de expansão de VM do Azure não há nenhuma possibilidade de usar um nó em espera
 >
 
-O motivo para não ser capaz de configurar um nó em espera são duplos:
+Embora o Azure tenha um serviço NFS nativo com o [Azure NetApp files](https://azure.microsoft.com/services/netapp/), o serviço NFS, embora tenha suporte para a camada de aplicativo SAP, ainda não foi certificado para SAP Hana. Como resultado, os compartilhamentos NFS ainda precisam ser configurados com a ajuda de uma funcionalidade de terceiros. 
 
-- O Azure neste momento não possui nenhum serviço NFS nativo. Como resultado, os compartilhamentos do NFS precisam ser configurados com a ajuda de funcionalidades de terceiros.
-- Nenhuma das configurações de NFS de terceiros é capaz de atender aos critérios de latência de armazenamento do SAP HANA com suas soluções implantadas no Azure.
 
 Como resultado, **hana/data** e **hana/log** volumes não podem ser compartilhados. Não compartilhar esses volumes dos nós únicos, impede o uso de um nó de espera do SAP HANA em uma configuração de scale-out.
 
@@ -152,11 +150,15 @@ Como resultado, o design básico de um único nó em uma configuração de scale
 
 A configuração básica de um nó de VM para scale-out do SAP HANA é semelhante a:
 
-- Para **/hana/shared**, você cria um cluster NFS altamente disponível com base no SUSE Linux 12 SP3. Esse cluster hospeda os compartilhamentos NFS **/Hana/Shared** de sua configuração de expansão e os serviços centrais do SAP NetWeaver ou BW/4HANA. Documentação para criar essa configuração está disponível no artigo [alta disponibilidade para NFS em VMs do Azure no SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs)
+- Para **/Hana/Shared**, você precisa criar um compartilhamento NFS altamente disponível. Até agora, existem diferentes possibilidades para chegar a um compartilhamento desse tipo altamente disponível. Eles estão documentados em conjunto com o SAP NetWeaver:
+    - [Alta disponibilidade para NFS em VMs do Azure no SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs)
+    - [GlusterFS em VMs do Azure no Red Hat Enterprise Linux para SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-glusterfs)
+    - [Alta disponibilidade para SAP NetWeaver em VMs do Azure em SUSE Linux Enterprise Server com Azure NetApp Files para aplicativos SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
+    - [Alta disponibilidade de máquinas virtuais do Azure para SAP NetWeaver em Red Hat Enterprise Linux com Azure NetApp Files para aplicativos SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files)
 - Todos os outros volumes de disco **NÃO** são compartilhados entre os diferentes nós e **NÃO** são com base no NFS. As configurações de instalação e as etapas para instalações HANA escaláveis com **/hana/data** e **/hana/log** não compartilhados são fornecidas mais abaixo neste documento.
 
 >[!NOTE]
->O cluster NFS altamente disponível, conforme exibido nos gráficos até o momento, é suportado apenas pelo SUSE Linux. Uma solução NFS altamente disponível com base no Red Hat será aconselhada posteriormente.
+>O cluster NFS altamente disponível, conforme exibido nos gráficos, é documentado em [alta disponibilidade para NFS em VMs do Azure em SuSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs). Outras possibilidades estão documentadas na lista acima.
 
 O dimensionamento dos volumes para os nós é o mesmo que para scale-up, exceto **/hana/shared**. A SKU de VM M128s, os tipos e tamanhos sugeridos de aparência:
 
