@@ -12,15 +12,15 @@ ms.subservice: msi
 ms.devlang: ''
 ms.topic: overview
 ms.custom: mvc
-ms.date: 06/19/2019
+ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c4f670f3bb14610e7f29a9201b357e73dacf09b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 596da9cfe0e914183bd3b2603ffa1047f1d9352b
+ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293228"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310017"
 ---
 # <a name="what-is-managed-identities-for-azure-resources"></a>O que são identidades gerenciadas para recursos do Azure?
 
@@ -68,28 +68,29 @@ O diagrama abaixo mostra como as identidades de serviço gerenciadas funcionam c
 ### <a name="how-a-system-assigned-managed-identity-works-with-an-azure-vm"></a>Como uma identidade gerenciada atribuída pelo sistema funciona com uma VM do Azure
 
 1. O Azure Resource Manager recebe uma solicitação para habilitar a identidade gerenciada atribuída pelo sistema em uma VM.
+
 2. O Azure Resource Manager cria uma entidade de serviço no Azure AD para a identidade da VM. A entidade de serviço é criada no locatário do Azure AD confiado pela assinatura.
-3. O Azure Resource Manager configura a identidade na máquina virtual:
-    1. Atualiza o ponto de extremidade de identidade do Serviço de Metadados de Instância com o certificado e a ID do cliente da entidade de serviço.
-    1. Provisiona a extensão da VM (programada para ser preterida em janeiro de 2019) e adiciona o certificado e a ID de cliente da entidade de serviço. (Esta etapa está programada para reprovação.)
+
+3. O Azure Resource Manager configura a identidade na VM atualizando o ponto de extremidade de identidade do Serviço de Metadados de Instância do Azure com o certificado e a ID do cliente da entidade de serviço.
+
 4. Depois que a máquina virtual ganhar uma identidade, use as informações da entidade de serviço para conceder acesso aos recursos do Microsoft Azure à VM. Para chamar o Azure Resource Manager, use o RBAC (controle de acesso baseado em função) no Azure AD para atribuir a função apropriada à entidade de serviço da VM. Para chamar o Key Vault, conceda o acesso de código para o segredo ou chave específica no Key Vault.
+
 5. O código que está em execução na VM pode solicitar um token do ponto de extremidade de serviço de Metadados de Instância do Azure, acessível somente a partir da VM: `http://169.254.169.254/metadata/identity/oauth2/token`
     - O parâmetro de recurso especifica o serviço ao qual o token é enviado. Para se autenticar no Azure Resource Manager, use `resource=https://management.azure.com/`.
     - O parâmetro de versão de API Especifica a versão IMDS, use a versão da API = 2018-02-01 ou superior.
 
-> [!NOTE]
-> O código também pode solicitar um token do ponto de extremidade da extensão da VM, mas isso está previsto para ser preterido em breve. Para obter mais informações sobre a extensão da VM, consulte [Migrar da extensão da VM para IMDS do Azure para autenticação ](howto-migrate-vm-extension.md).
-
 6. A chamada é feita ao Azure AD para solicitar acesso ao token (conforme especificado na etapa 5) usando a ID do cliente e o certificado configurados na etapa 3. O Azure AD retorna um token de acesso do JSON Web Token (JWT).
+
 7. Seu código envia o token de acesso em uma chamada para um serviço que dá suporte à autenticação do Azure AD.
 
 ### <a name="how-a-user-assigned-managed-identity-works-with-an-azure-vm"></a>Como uma identidade gerenciada atribuída pelo usuário funciona com uma VM do Azure
 
 1. O Azure Resource Manager recebe uma solicitação para criar uma identidade gerenciada atribuída pelo usuário.
+
 2. O Azure Resource Manager cria uma entidade de serviço no Azure AD para a identidade gerenciada atribuída pelo usuário. A entidade de serviço é criada no locatário do Azure AD confiado pela assinatura.
-3. O Azure Resource Manager recebe uma solicitação para criar uma identidade gerenciada atribuída pelo usuário em uma VM:
-    1. Atualiza o ponto de extremidade de identidade do Serviço de Metadados de Instância do Azure com o certificado e a ID do cliente da entidade de serviço de identidade gerenciada.
-    1. Provisiona a extensão da VM e adiciona o certificado e a ID de cliente da entidade de serviço de identidade gerenciada atribuída pelo usuário. (Esta etapa está programada para reprovação.)
+
+3. O Azure Resource Manager recebe uma solicitação para configurar a identidade gerenciada atribuída pelo usuário em uma VM e atualiza o ponto de extremidade de identidade do Serviço de Metadados de Instância do Azure com o certificado e a ID do cliente da entidade de serviço de identidade gerenciada atribuída pelo usuário.
+
 4. Depois que a identidade gerenciada atribuída pelo usuário for criada, use as informações da entidade de serviço para conceder o acesso de identidade aos recursos do Azure. Para chamar o Azure Resource Manager, use RBAC no Azure AD para atribuir a função apropriada à entidade de serviço da identidade atribuída pelo usuário. Para chamar o Key Vault, conceda o acesso de código para o segredo ou chave específica no Key Vault.
 
    > [!Note]
@@ -99,9 +100,6 @@ O diagrama abaixo mostra como as identidades de serviço gerenciadas funcionam c
     - O parâmetro de recurso especifica o serviço ao qual o token é enviado. Para se autenticar no Azure Resource Manager, use `resource=https://management.azure.com/`.
     - O parâmetro de ID de cliente especifica a identidade para a qual o token é solicitado. Esse valor é necessário para eliminar a ambiguidade quando mais de uma identidade atribuída pelo usuário está em uma mesma VM.
     - O parâmetro de versão da API especifica a versão do Serviço de Metadados de Instância do Azure. Use `api-version=2018-02-01` ou superior.
-
-> [!NOTE]
-> O código também pode solicitar um token do ponto de extremidade da extensão da VM, mas isso está previsto para ser preterido em breve. Para obter mais informações sobre a extensão da VM, consulte [Migrar da extensão da VM para IMDS do Azure para autenticação ](howto-migrate-vm-extension.md).
 
 6. A chamada é feita ao Azure AD para solicitar acesso ao token (conforme especificado na etapa 5) usando a ID do cliente e o certificado configurados na etapa 3. O Azure AD retorna um token de acesso do JSON Web Token (JWT).
 7. Seu código envia o token de acesso em uma chamada para um serviço que dá suporte à autenticação do Azure AD.

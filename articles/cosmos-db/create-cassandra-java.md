@@ -8,13 +8,13 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.custom: seo-java-august2019
-ms.openlocfilehash: 6463a578d514a7bcc9fb703e34f94381e1e9cf65
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 5b1eacb1d0121f2dd0d97807f07042e828fe7932
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981764"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266011"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data"></a>Início Rápido: Criar um aplicativo Java para gerenciar os dados de API do Cassandra do Azure Cosmos DB
 
@@ -152,9 +152,9 @@ Agora, volte ao portal do Azure para obter informações sobre a cadeia de conex
 
 1. No [portal do Azure](https://portal.azure.com/), selecione **Cadeia de Conexão**. 
 
-    ![Exibir e copiar um nome de usuário do Portal do Azure, página Cadeia de Conexão](./media/create-cassandra-java/keys.png)
+    ![Exibir e copiar um nome de usuário do Portal do Azure, página Cadeia de Conexão](./media/create-cassandra-java/copy-username-connection-string-azure-portal.png)
 
-2. Use o ![botão Copiar](./media/create-cassandra-java/copy.png) no lado direito da tela para copiar o valor do PONTO DE CONTATO.
+2. Use o ![botão Copiar](./media/create-cassandra-java/copy-button-azure-portal.png) no lado direito da tela para copiar o valor do PONTO DE CONTATO.
 
 3. Abra o arquivo `config.properties` da pasta `C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources`. 
 
@@ -208,7 +208,7 @@ Agora, volte ao portal do Azure para obter informações sobre a cadeia de conex
 
 4. No portal do Azure, abra **Data Explorer** para consultar, modificar e trabalhar com esses novos dados. 
 
-    ![Exibir os dados no Data Explorer](./media/create-cassandra-java/data-explorer.png)
+    ![Exibir os dados no Data Explorer – Azure Cosmos DB](./media/create-cassandra-java/view-data-explorer-java-app.png)
 
 ## <a name="review-slas-in-the-azure-portal"></a>Examinar SLAs no Portal do Azure
 

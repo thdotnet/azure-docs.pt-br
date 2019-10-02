@@ -1,38 +1,38 @@
 ---
-title: Criar uma zona privada do DNS do Azure usando a CLI do Azure
-description: Neste procedimento, você pode cria e testar uma zona DNS e registro no DNS do Azure. Este é uma guia passo a passo para criar e gerenciar sua primeira zona e registro de DNS privado usando a CLI do Azure.
+title: Início Rápido – Criar uma zona DNS privada do Azure usando a CLI do Azure
+description: Neste início rápido, você cria e testa uma zona e um registro DNS privados no DNS do Azure. Este é uma guia passo a passo para criar e gerenciar sua primeira zona e registro de DNS privado usando a CLI do Azure.
 services: dns
 author: vhorne
 ms.service: dns
-ms.topic: article
-ms.date: 6/13/2019
+ms.topic: quickstart
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: d882a9c40efc5e9bcb1a5e1c02f1ac73970d57db
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 8aee640d8648abb623fe5ead0b21e3ae3084424a
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076423"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162131"
 ---
-# <a name="create-an-azure-dns-private-zone-using-the-azure-cli"></a>Criar uma zona privada do DNS do Azure usando a CLI do Azure
+# <a name="quickstart-create-an-azure-private-dns-zone-using-the-azure-cli"></a>Início Rápido: Criar uma zona DNS privada do Azure usando a CLI do Azure
 
 [!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
 
-Esse procedimento explicará as etapas para criar sua primeira zona DNS privada e o registro usando a CLI do Azure.
+Este início rápido explica as etapas para criar sua primeira zona e registro DNS privados usando a CLI do Azure.
 
-Uma zona DNS é usada para hospedar os registros DNS para um domínio específico. Para iniciar a hospedagem do seu domínio no DNS do Azure, você precisará criar uma zona DNS para esse nome de domínio. Cada registro DNS para seu domínio é criado dentro dessa zona DNS. Para publicar uma zona de DNS privado em sua rede virtual, você deve especificar a lista de redes virtuais que podem resolver registros na zona.  Eles são chamados *vinculado* redes virtuais. Quando o registro automático estiver habilitado, o DNS do Azure também atualiza os registros da zona sempre que uma máquina virtual é criada, alterações de seu ' endereço IP, ou é excluída.
+Uma zona DNS é usada para hospedar os registros DNS para um domínio específico. Para iniciar a hospedagem do seu domínio no DNS do Azure, você precisará criar uma zona DNS para esse nome de domínio. Cada registro DNS para seu domínio é criado dentro dessa zona DNS. Para publicar uma zona de DNS privado em sua rede virtual, você deve especificar a lista de redes virtuais que podem resolver registros na zona.  Elas são chamadas de redes virtuais *vinculadas*. Quando o registro automático estiver habilitado, o DNS do Azure também atualizará os registros de zona sempre que ocorrer a criação de uma máquina virtual, o endereço IP dela mudar ou ela for excluída.
 
-Neste procedimento, você aprenderá como:
+Neste guia de início rápido, você aprende a:
 
 > [!div class="checklist"]
-> * Criar uma zona de DNS privado
+> * Criar uma zona DNS privada
 > * Criar máquinas virtuais de teste
 > * Criar um registro DNS adicional
 > * Testar a zona privada
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-Se preferir, você poderá concluir este procedimento usando o [Azure PowerShell](private-dns-getstarted-powershell.md).
+Se preferir, poderá concluir este início rápido usando o [Azure PowerShell](private-dns-getstarted-powershell.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -44,9 +44,9 @@ Primeiro, crie um grupo de recursos para conter a zona DNS:
 az group create --name MyAzureResourceGroup --location "East US"
 ```
 
-## <a name="create-a-dns-private-zone"></a>Criar uma zona de DNS privado
+## <a name="create-a-private-dns-zone"></a>Criar uma zona DNS privada
 
-O exemplo a seguir cria uma rede virtual denominada **myAzureVNet**. Em seguida, ele cria uma zona DNS chamada **private.contoso.com** na **MyAzureResourceGroup** grupo de recursos, vincula-se a zona DNS para o **MyAzureVnet** rede virtual, e Habilita o registro automático.
+O seguinte exemplo cria uma rede virtual chamada **myAzureVNet**. Em seguida, ele cria uma zona DNS chamada **private.contoso.com** no grupo de recursos **MyAzureResourceGroup**, vincula a zona DNS à rede virtual **MyAzureVnet** e habilita o registro automático.
 
 ```azurecli
 az network vnet create \
@@ -64,7 +64,7 @@ az network private-dns link vnet create -g MyAzureResourceGroup -n MyDNSLink \
    -z private.contoso.com -v myAzureVNet -e true
 ```
 
-Se você quiser criar uma zona apenas para a resolução de nome (nenhum registro automático de nome de host), você pode usar o `-e false` parâmetro.
+Se você quiser criar uma zona apenas para a resolução de nomes (sem registro de nome do host automático), poderá usar o parâmetro `-e false`.
 
 ### <a name="list-dns-private-zones"></a>Listar zonas de DNS privado
 
@@ -206,7 +206,7 @@ Repita para myVM02.
 
 ## <a name="delete-all-resources"></a>Excluir todos os recursos
 
-Quando não for mais necessário, exclua o **MyAzureResourceGroup** grupo de recursos para excluir os recursos criados neste procedimento.
+Quando não for mais necessário, exclua o grupo de recursos **MyAzureResourceGroup** para excluir os recursos criados neste início rápido.
 
 ```azurecli
 az group delete --name MyAzureResourceGroup
@@ -214,8 +214,6 @@ az group delete --name MyAzureResourceGroup
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste procedimento, você implantado uma zona DNS privada, criada um registro DNS e testou a zona.
-Agora você pode aprender mais sobre zonas DNS privadas.
-
 > [!div class="nextstepaction"]
-> [Usando o DNS do Azure para domínios privados](private-dns-overview.md)
+> [Cenários de Zonas Privadas do DNS do Azure](private-dns-scenarios.md)
+

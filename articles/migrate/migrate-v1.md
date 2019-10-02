@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: b3607f0b462efceab322e6eaf616268a34b02fb0
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 2c63d63e57a23963f17b6773f244973b051b57eb
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70142074"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162465"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Trabalhar com a versão anterior das Migrações para Azure
 
@@ -78,7 +78,7 @@ O modo de exibição da preparação para o Azure na avaliação mostra o status
 
 **Preparação** | **State** | **Detalhes**
 --- | --- | ---
-Pronto para o Azure | Sem problemas de compatibilidade. O computador pode ser migrado no estado em que se encontra para o Azure e será inicializado no Azure com suporte completo do Azure. | Para VMs que estão prontas, o Migrações para Azure recomenda um tamanho de VM no Azure.
+Pronto para o Azure | Sem problemas de compatibilidade. O computador pode ser migrado no estado em que se encontra para o Azure e será inicializado no Azure com Suporte do Azure completo. | Para VMs que estão prontas, o Migrações para Azure recomenda um tamanho de VM no Azure.
 Condicionalmente pronta para o Azure | O computador pode ser inicializado no Azure, mas poderá não ter suporte completo do Azure. Por exemplo, um computador com uma versão mais antiga do Windows Server que não tenha suporte no Azure. | As Migrações para Azure explicam os problemas de preparação e fornecem etapas de correção.
 Não pronta para o Azure |  A VM não é inicializada no Azure. Por exemplo, se uma VM tiver um disco com mais de 4 TB, ela não poderá ser hospedada no Azure. | As Migrações para Azure explicam os problemas de preparação e fornecem etapas de correção.
 Preparação desconhecida | As Migrações para Azure não podem identificar a Preparação para o Azure, geralmente porque os dados não estão disponíveis.
@@ -91,7 +91,7 @@ A preparação leva em consideração uma série de propriedades da VM para iden
 **Propriedade** | **Detalhes** | **Preparação**
 --- | --- | ---
 **Tempo de inicialização** | BIOS com suporte. UEFI sem suporte. | Condicionalmente pronto se o tipo de inicialização for UEFI.
-**Núcleos** | Núcleo dos computadores < = o número máximo de núcleos (128) com suporte para uma VM do Azure.<br/><br/> Se o histórico de desempenho estiver disponível, as Migrações para Azure considerarão os núcleos utilizados.<br/>Se um <br/>fator de conforto for especificado nas configurações de avaliação, o número de núcleos utilizados será multiplicado pelo fator de conforto.<br/><br/> Se não houver histórico de desempenho, as Migrações para Azure usarão os núcleos alocados, sem aplicar o fator de conforto. | Pronto, se for menor que ou igual aos limites.
+**Núcleos** | Núcleo dos computadores < = o número máximo de núcleos (128) com suporte para uma VM do Azure.<br/><br/> Se o histórico de desempenho estiver disponível, as Migrações para Azure considerarão os núcleos utilizados.<br/>Se um fator de conforto for especificado nas configurações de avaliação, o número de núcleos utilizados será multiplicado pelo fator de conforto.<br/><br/> Se não houver histórico de desempenho, as Migrações para Azure usarão os núcleos alocados, sem aplicar o fator de conforto. | Pronto, se for menor que ou igual aos limites.
 **Memória** | O tamanho da memória do computador < = a memória máxima (3892 GB no Azure M series Standard_M128m&nbsp;<sup>2</sup>) para uma VM do Azure. [Saiba mais](https://docs.microsoft.com/azure/virtual-machines/windows/sizes).<br/><br/> Se o histórico de desempenho estiver disponível, as Migrações para Azure considerarão a memória utilizada.<br/><br/>Se um fator de conforto for especificado, a memória utilizada será multiplicada pelo fator de conforto.<br/><br/> Se não houver histórico, a memória alocada será usada sem a aplicação do fator de conforto.<br/><br/> | Se estiver pronto dentro dos limites.
 **Disco de armazenamento** | O tamanho alocado de um disco deve ser de 4 TB (4096 GB) ou menos.<br/><br/> O número de discos anexados à máquina deve ser de 65 ou menos, incluindo o disco do sistema operacional. | Se estiver pronto dentro dos limites.
 **Rede** | Um computador deve ter 32 NICs ou menos conectados a ele. | Se estiver pronto dentro dos limites.

@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4d03e5ee5faf39425e1bf927a3c0557b0ad01b82
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: e629cbdce55f236e095f606f56adec453b0b17c7
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68840113"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299857"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Tutorial: Criar e implantar módulos do IoT Edge personalizados
 
@@ -27,7 +27,7 @@ O hub do IoT Edge facilita a comunicação de módulo para módulo. Usar o hub d
 Queremos que o dispositivo IoT Edge realize quatro coisas para nós:
 
 * Receber dados de dispositivos folha
-* Prever a RUL do dispositivo que envia os dados
+* Prever a RUL (vida útil restante) do dispositivo que enviou os dados
 * Enviar uma mensagem com apenas uma RUL do dispositivo para o Hub IoT (essa função pode ser modificada para apenas enviar os dados se o RUL cair para abaixo de algum nível)
 * Salvar os dados do dispositivo folha para um arquivo local no dispositivo IoT Edge. Esse arquivo de dados é carregado periodicamente para o Hub IoT por meio de upload de arquivo para refinar o treinamento do modelo de machine learning. Usar o upload de arquivos em vez do streaming de mensagens constantes é mais econômico.
 
@@ -56,7 +56,7 @@ As etapas deste artigo normalmente são realizadas por um desenvolvedor de nuvem
 
 ## <a name="create-a-new-iot-edge-solution"></a>Criar uma solução do IoT Edge
 
-Durante a execução do segundo dos nossos dois Azure Notebooks, criamos e publicamos uma imagem de contêiner que contém nosso modelo de RUL. O Azure Machine Learning, como parte do processo de criação da imagem, foi criado nas partes para tornar a imagem implantável como um módulo do Azure IoT Edge. Nesta etapa, criaremos uma solução do Azure IoT Edge usando o módulo do “Azure Machine Learning” e apontaremos o módulo para a imagem que publicamos usando o Azure Notebooks.
+Durante a execução do segundo dos nossos dois Azure Notebooks, criamos e publicamos uma imagem de contêiner que contém nosso modelo de RUL. O Azure Machine Learning, como parte do processo de criação da imagem, empacotou esse modelo para tornar a imagem implantável como um módulo do Azure IoT Edge. Nesta etapa, criaremos uma solução do Azure IoT Edge usando o módulo do “Azure Machine Learning” e apontaremos o módulo para a imagem que publicamos usando o Azure Notebooks.
 
 1. Abra uma sessão da área de trabalho remota para seu computador de desenvolvimento.
 

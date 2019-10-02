@@ -3,18 +3,18 @@ title: Visão geral dos Gêmeos Digitais do Azure | Microsoft Docs
 description: Saiba mais sobre os Gêmeos Digitais do Azure, uma solução de IoT do Azure para inteligência espacial.
 author: julieseto
 ms.author: jseto
-ms.date: 08/01/2019
+ms.date: 09/17/2019
 ms.topic: overview
 ms.service: digital-twins
 services: digital-twins
 manager: bertvanhoof
 ms.custom: mvc
-ms.openlocfilehash: 6bd4e3bb688e92d30a21c39599e2e5bdb7b17dba
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 2b80d0b364330a0effa7b89c620bd935157de290
+ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736960"
+ms.lasthandoff: 09/22/2019
+ms.locfileid: "71178285"
 ---
 # <a name="overview-of-azure-digital-twins"></a>Visão geral dos Gêmeos Digitais do Azure
 
@@ -33,7 +33,7 @@ Os Gêmeos Digitais do Azure se aplicam a todos os tipos de ambientes, como, dep
 - Analisar os níveis de ocupação de um prédio.
 - Localizar a caixa registradora mais usada na sua loja.
 
-Seja qual for seu cenário comercial, é provável que uma instância digital correspondente possa ser provisionada com os Gêmeos Digitais do Azure.
+Seja qual for seu cenário empresarial, é provável que uma instância digital correspondente possa ser provisionada com os Gêmeos Digitais do Azure.
 
 O vídeo a seguir examina mais detalhadamente os Gêmeos Digitais do Azure.
 
@@ -45,13 +45,13 @@ Os Gêmeos Digitais do Azure tem estes recursos principais.
 
 ### <a name="spatial-intelligence-graph"></a>Grafo de inteligência espacial
 
-O [*grafo de inteligência espacial*](./concepts-objectmodel-spatialgraph.md#graph), ou *grafo espacial*, é uma representação virtual do ambiente físico. Você pode usá-lo para modelar as relações entre pessoas, lugares e dispositivos.
+O [*grafo de inteligência espacial*](./concepts-objectmodel-spatialgraph.md#spatial-intelligence-graph), ou *grafo espacial*, é uma representação virtual do ambiente físico. Você pode usá-lo para modelar as relações entre pessoas, lugares e dispositivos.
 
 Pense em um aplicativo de serviços essenciais inteligente que envolva vários medidores de uso de energia conectados em uma vizinhança. A empresa de serviços essenciais inteligente deve monitorar e prever o uso e a cobrança de uso de energia com precisão. Cada dispositivo e sensor deve ser modelado com contexto sobre o local e o cliente que está sendo cobrado. Você pode usar o grafo de inteligência espacial para modelar esses tipos de relações complexas.
 
 ### <a name="digital-twin-object-models"></a>Modelos de objeto dos Gêmeos Digitais
 
-Os [modelos de objeto dos Gêmeos Digitais](./concepts-objectmodel-spatialgraph.md#model) são protocolos de dispositivo e esquema de dados predefinidos. Eles se alinham às necessidades específicas do domínio de sua solução para acelerar e simplificar o desenvolvimento.
+Os [modelos de objeto dos Gêmeos Digitais](./concepts-objectmodel-spatialgraph.md#digital-twins-object-models) são protocolos de dispositivo e esquema de dados predefinidos. Eles se alinham às necessidades específicas do domínio de sua solução para acelerar e simplificar o desenvolvimento.
 
 Por exemplo, um aplicativo de ocupação de espaço pode usar tipos predefinidos de espaço, como campus, prédio, andar e sala.
 
@@ -93,9 +93,9 @@ Os Gêmeos Digitais do Azure são úteis para representar o mundo físico e suas
 
 Os Gêmeos Digitais do Azure usam o Hub IoT do Azure para conectar os dispositivos de IoT e os sensores que mantêm tudo atualizado com o mundo físico. O diagrama abaixo mostra como os Gêmeos Digitais do Azure se relacionam com outros serviços de IoT do Azure.
 
-![Os Gêmeos Digitais do Azure são um serviço baseado no Hub IoT do Azure][1]
+[![Os Gêmeos Digitais do Azure são um serviço baseado no Hub IoT do Azure](media/overview/azure-digital-twins-in-iot-ecosystem.png)](media/overview/azure-digital-twins-in-iot-ecosystem.png#lightbox)
 
-Para obter mais informações sobre o IoT, confira [Tecnologias e soluções de IoT do Azure](https://docs.microsoft.com/azure/iot-fundamentals/iot-services-and-technologies).
+Para obter mais informações sobre o IoT, confira [Tecnologias e soluções de IoT do Azure](../iot-fundamentals/iot-services-and-technologies.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -113,6 +113,3 @@ Saiba mais sobre os principais conceitos dos Gêmeos Digitais do Azure:
 
 >[!div class="nextstepaction"]
 >[Noções básicas sobre modelo de objeto e grafo de inteligência espacial dos Gêmeos Digitais](./concepts-objectmodel-spatialgraph.md)
-
-<!-- Images -->
-[1]: media/overview/azure-digital-twins-in-iot-ecosystem.png

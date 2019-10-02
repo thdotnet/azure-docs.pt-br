@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/11/2019
 ms.author: allensu
-ms.openlocfilehash: fb7c0c31ad91bfdb6ea360c1909a216f0779ebde
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 349d8afd46a06455edcd25e2a7ea48f407d285ef
+ms.sourcegitcommit: 2ed6e731ffc614f1691f1578ed26a67de46ed9c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274610"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71130426"
 ---
 # <a name="what-is-azure-load-balancer"></a>O que é o Azure Load Balancer?
 
@@ -171,6 +171,7 @@ Para obter informações sobre o SLA do Load Balancer Standard, visite a página
 
 - O Load Balancer é um produto de TCP ou UDP para balanceamento de carga e encaminhamento de porta para esses protocolos IP específicos.  As regras de balanceamento de carga e as regras de NAT de entrada são compatíveis com TCP e UDP, mas não com outros protocolos IP, incluindo ICMP. O Load Balancer não encerra, responde ou, de outra forma, interage com a carga de um fluxo UDP ou TCP. Ele não é um proxy. A validação bem-sucedida da conectividade com um front-end deve ocorrer na banda, com o mesmo protocolo usado em uma regra de NAT de entrada ou de balanceamento de carga (TCP ou UDP) _e_ pelo menos uma de suas máquinas virtuais deve gerar uma resposta para um cliente para ver uma resposta de um front-end.  Não receber uma resposta na banda do front-end do Load Balancer indica que nenhuma máquina virtual foi capaz de responder.  Não é possível interagir com um front-end do Load Balancer sem que uma máquina virtual possa responder.  Isso também se aplica a conexões de saída em que o [SNAT de representação de porta](load-balancer-outbound-connections.md#snat) é compatível apenas com TCP e UDP; outros protocolos IP, incluindo ICMP, também falharão.  Atribua um endereço IP público em nível da instância para mitigar esse problema.
 - Diferente dos Load Balancers públicos que fornecem [conexões de saída](load-balancer-outbound-connections.md) durante a transição de endereços IP privados dentro da rede virtual para endereços IP públicos, os Load Balancers internos não convertem conexões originárias da saída para o front-end de um Load Balancer interno, uma vez que ambos estão em um espaço de endereços IP privado.  Isso evita o potencial de esgotamento da porta SNAT dentro do espaço de endereço IP interno exclusivo, onde a tradução não é necessária.  O efeito colateral é que, se um fluxo de saída de uma VM no pool de back-end tentar estabelecer um fluxo para o front-end do Load Balancer interno no pool em que reside _e_ for mapeado de volta para si mesmo, os dois lados do fluxo não serão correspondentes e o fluxo falhará.  Se o fluxo não tiver sido mapeado de volta para a mesma VM no pool de back-end que criou o fluxo para o front-end, ele será bem-sucedido.   Quando o fluxo é mapeado de volta para si mesmo, o fluxo de saída parece ser originado da VM para o front-end e o fluxo de entrada correspondente parece ser originado da VM para si mesmo. Do ponto de vista do SO convidado, as partes de entrada e de saída do mesmo fluxo não são correspondentes dentro da máquina virtual. A pilha TCP não reconhece essas metades do mesmo fluxo como parte do mesmo fluxo, pois a origem e o destino não são correspondentes.  Quando o fluxo é mapeado para qualquer outra VM no pool de back-end, as metades do fluxo são correspondentes e a VM pode responder ao fluxo com êxito.  O sintoma para esse cenário é tempos limite de conexão de intermitente quando o fluxo retorna para o mesmo back-end que originou o fluxo. Há diversas soluções alternativas comuns para alcançar este cenário de forma confiável (fluxos de origem de um pool de back-end para os respectivos pools de back-end internos do Load Balancer) que incluem a inserção de uma camada proxy atrás do Load Balancer interno ou [usando regras de estilo DSR](load-balancer-multivip-overview.md).  Os clientes podem combinar um Load Balancer interno com qualquer proxy de terceiros ou substituir o [Application Gateway](../application-gateway/application-gateway-introduction.md) interno por cenários de proxy limitados a HTTP / HTTPS. Embora você possa usar um balanceador de carga público para mitigar esse problema, o cenário resultante será propenso ao [esgotamento de SNAT](load-balancer-outbound-connections.md#snat) e deverá ser evitado, a menos que seja gerenciado atentamente.
+- Em geral, o encaminhamento de fragmentos IP ou a execução de fragmentação de IP de pacotes UDP e TCP não têm suporte em regras de balanceamento de carga.  [As regras de balanceamento de carga das portas de HA](load-balancer-ha-ports-overview.md) são uma exceção a essa instrução geral e podem ser usadas para encaminhar os fragmentos de IP existentes.
 
 ## <a name="next-steps"></a>Próximas etapas
 

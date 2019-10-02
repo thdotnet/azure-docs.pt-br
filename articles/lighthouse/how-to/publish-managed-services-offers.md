@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.date: 09/19/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: 4a1adf1be8798f4bb21b89ff0654287a2958146e
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 4781126bc4fcfb6391db42a75553a13e0e4cc4f9
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105255"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155144"
 ---
 # <a name="publish-a-managed-services-offer-to-azure-marketplace"></a>Publicar uma oferta de serviços gerenciados no Azure Marketplace
 
@@ -24,6 +24,8 @@ Neste artigo, você aprenderá a publicar uma oferta pública ou privada de serv
 > Se não quiser publicar uma oferta no Azure Marketplace, você poderá integrar os clientes manualmente usando modelos do Azure Resource Manager. Para saber mais, confira [Integrar um cliente no gerenciamento de recursos delegados do Azure](onboard-customer.md).
 
 A publicação de uma oferta de Serviços Gerenciados é semelhante à publicação de qualquer outro tipo de oferta no Azure Marketplace. Para saber mais sobre esse processo, confira o [Guia de publicação do Azure Marketplace e do AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) e [Gerenciar ofertas do Azure Marketplace e do AppSource](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers). Você também deve examinar as [políticas de certificação do mercado comercial](https://docs.microsoft.com/legal/marketplace/certification-policies), especialmente a seção [Serviços Gerenciados](https://docs.microsoft.com/legal/marketplace/certification-policies#700-managed-services).
+
+Quando um cliente adiciona sua oferta, ele poderá delegar uma ou mais assinaturas ou grupos de recursos específicos que serão [integrados no gerenciamento de recursos delegados do Azure](#the-customer-onboarding-process). Observe que antes que uma assinatura (ou grupo de recursos dentro de uma assinatura) possa ser integrada, ela deve ser autorizada para integração ao ser registrada manualmente no provedor de recursos **Microsoft.ManagedServices**.
 
 > [!IMPORTANT]
 > Cada plano em uma oferta de serviços gerenciados inclui uma seção **Detalhes do Manifesto**, na qual você define as entidades do Azure AD (Azure Active Directory) em seu locatário que terão acesso aos grupos de recursos delegados e/ou às assinaturas para os clientes que comprarem o plano. É importante estar ciente de que qualquer grupo (ou entidade de serviço ou usuário) que você incluir aqui terá as mesmas permissões para cada cliente que comprar o plano. Para atribuir grupos diferentes ao trabalho com cada cliente, você precisará publicar um plano privado separado que seja exclusivo de cada cliente.

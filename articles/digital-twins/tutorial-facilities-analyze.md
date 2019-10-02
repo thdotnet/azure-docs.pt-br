@@ -6,14 +6,14 @@ author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 08/05/2019
+ms.date: 09/23/2019
 ms.author: alinast
-ms.openlocfilehash: 0244d6ac51b7cad6b74139c39914223928e2b627
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: db62d2209207a807570e971ef4af5f9b10b06cb8
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827840"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300073"
 ---
 # <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Tutorial: Visualizar e analisar eventos de espaços dos Gêmeos Digitais do Azure usando o Time Series Insights
 
@@ -38,6 +38,9 @@ Este tutorial pressupõe que você [configurou](tutorial-facilities-setup.md) e 
 - Os [exemplos de C# dos Gêmeos Digitais](https://github.com/Azure-Samples/digital-twins-samples-csharp) baixados e extraídos do seu computador de trabalho.
 - [SDK do .NET Core versão 2.1.403 ou posterior](https://www.microsoft.com/net/download) no computador de desenvolvimento para executar o exemplo. Execute `dotnet --version` para verificar se a versão instalada é a correta.
 
+> [!TIP]
+> Use um nome de instância dos Gêmeos Digitais exclusivo quando estiver provisionando uma nova instância.
+
 ## <a name="stream-data-by-using-event-hubs"></a>Transmitir dados por streaming usando os Hubs de Eventos
 
 Você pode usar o serviço [Hubs de Eventos](../event-hubs/event-hubs-about.md) para criar um pipeline para transmitir os dados. Esta seção mostra como criar seu hub de eventos como o conector entre os Gêmeos Digitais do Azure e as instâncias do Time Series Insights.
@@ -54,10 +57,10 @@ Você pode usar o serviço [Hubs de Eventos](../event-hubs/event-hubs-about.md) 
 
 1. Na implantação de namespace dos Hubs de eventos, selecione o painel **Visão geral** e, em seguida, selecione **Ir para o recurso**.
 
-    ![Namespace dos Hubs de Eventos após a implantação](./media/tutorial-facilities-analyze/open-event-hub-ns.png)
+    [![Namespace dos Hubs de Eventos após a implantação](./media/tutorial-facilities-analyze/open-event-hub-ns.png)](./media/tutorial-facilities-analyze/open-event-hub-ns.png#lightbox)
 
 1. No painel **Visão geral** do namespace dos Hubs de Eventos, selecione o botão **Hub de Eventos** na parte superior.
-    ![Botão Adicionar Hub de Eventos](./media/tutorial-facilities-analyze/create-event-hub.png)
+    [![Botão Hub de Eventos](./media/tutorial-facilities-analyze/create-event-hub.png)](./media/tutorial-facilities-analyze/create-event-hub.png#lightbox)
 
 1. Insira um **Nome** para o seu hub de eventos e selecione **Criar**.
 
@@ -65,13 +68,13 @@ Você pode usar o serviço [Hubs de Eventos](../event-hubs/event-hubs-about.md) 
 
 1. Selecione o botão **Grupo de consumidores** na parte superior e digite um nome, como **tsievents**, para o grupo de consumidores. Selecione **Criar**.
 
-    ![Grupo de consumidores do Hub de Eventos](./media/tutorial-facilities-analyze/event-hub-consumer-group.png)
+    [![Grupo de consumidores do Hub de Eventos](./media/tutorial-facilities-analyze/event-hub-consumer-group.png)](./media/tutorial-facilities-analyze/event-hub-consumer-group.png#lightbox)
 
    Depois de criado, o grupo de consumidores aparecerá na lista, na parte inferior do painel **Visão geral** do hub de eventos.
 
 1. Abra o painel **Políticas de acesso compartilhadas** do hub de eventos e selecione o botão **Adicionar**. Insira **ManageSend** como o nome da política, verifique se todas as caixas de seleção estão selecionadas e selecione **Criar**.
 
-    ![Cadeia de conexão do Hub de Eventos](./media/tutorial-facilities-analyze/event-hub-connection-strings.png)
+    [![Cadeias de conexão do Hub de Eventos](./media/tutorial-facilities-analyze/event-hub-connection-strings.png)](./media/tutorial-facilities-analyze/event-hub-connection-strings.png#lightbox)
 
 1. Abra a política ManageSend que você criou e copie os valores da **Cadeia de conexão – chave primária** e **Cadeia de conexão – chave secundária** para um arquivo temporário. Você precisará desses valores para criar um ponto de extremidade para o hub de eventos na próxima seção.
 
@@ -124,21 +127,21 @@ Você pode usar o serviço [Hubs de Eventos](../event-hubs/event-hubs-about.md) 
 
    Ele cria dois pontos de extremidade para seu hub de eventos.
 
-   ![Pontos de extremidade para os Hubs de Eventos](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png)
+   [![Pontos de extremidade para os Hubs de Eventos](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png)](./media/tutorial-facilities-analyze/dotnet-create-endpoints.png#lightbox)
 
 ## <a name="analyze-with-time-series-insights"></a>Analisar com o Time Series Insights
 
 1. No painel esquerdo do [portal do Azure](https://portal.azure.com), selecione **Criar um recurso**. 
 
-1. Pesquise e selecione um novo recurso do **Time Series Insights**. Selecione **Criar**.
+1. Pesquise e selecione um recurso de GA (disponibilidade geral) do **Time Series Insights**. Selecione **Criar**.
 
 1. Insira um **Nome** para a instância do Time Series Insights e selecione a **Assinatura**. Selecione o **Grupo de recursos** que você usou para a instância dos Gêmeos Digitais e seu **Local**. Selecione **Avançar: Botão Origem do evento** ou a guia **Origem do evento**.
 
-    ![Seleções para criar uma instância do Time Series Insights](./media/tutorial-facilities-analyze/create-tsi.png)
+    [![Seleções para criar uma instância do Time Series Insights](./media/tutorial-facilities-analyze/create-tsi.png)](./media/tutorial-facilities-analyze/create-tsi.png#lightbox)
 
 1. Na guia **Origem do evento**, insira um **nome**, selecione **Hub de eventos** como o **Tipo de fonte** e verifique se os outros valores estão selecionados corretamente. Selecione **ManageSend** como o **Nome de política de acesso do hub de eventos** e selecione o grupo de consumidores criado na seção anterior como o **Grupo de consumidores do hub de eventos**. Selecione **Examinar + criar**.
 
-    ![Seleções para criar uma fonte de evento](./media/tutorial-facilities-analyze/tsi-event-source.png)
+    [![Seleções para criar uma fonte de evento](./media/tutorial-facilities-analyze/tsi-event-source.png)](./media/tutorial-facilities-analyze/tsi-event-source.png#lightbox)
 
 1. No painel **Revisar + criar**, examine as informações inseridas e selecione **Criar**.
 
@@ -150,13 +153,13 @@ Você pode usar o serviço [Hubs de Eventos](../event-hubs/event-hubs-about.md) 
 
 1. Depois de alguns eventos simulados serem gerados, volte para o explorador do Time Series Insights e selecione o botão Atualizar na parte superior. Você deve ver gráficos analíticos sendo criados para seus dados de sensor simulado. 
 
-    ![Gráfico no explorador do Time Series Insights](./media/tutorial-facilities-analyze/tsi-explorer.png)
+    [![Gráfico no Gerenciador do Time Series Insights](./media/tutorial-facilities-analyze/tsi-explorer.png)](./media/tutorial-facilities-analyze/tsi-explorer.png#lightbox)
 
 1. No explorer do Time Series Insights, é possível gerar gráficos e mapas de calor para diferentes eventos e dados de suas salas, sensores e outros recursos. No lado esquerdo, use as listas suspensas **MEDIDA** e **DIVIDIR POR** para criar suas próprias visualizações. 
 
    Por exemplo, selecione **Eventos** como **MEDIDA** e **DigitalTwins-SensorHardwareId** como **DIVIDIR POR** para gerar um mapa de calor para cada um dos sensores. O mapa de calor será semelhante à seguinte imagem:
 
-   ![Mapa de calor no explorador do Time Series Insights](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png)
+   [![Mapa de calor no Gerenciador do Time Series Insights](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png)](./media/tutorial-facilities-analyze/tsi-explorer-heatmap.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

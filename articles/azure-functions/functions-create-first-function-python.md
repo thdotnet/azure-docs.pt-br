@@ -3,28 +3,28 @@ title: Criar uma função disparada por HTTP no Azure
 description: Aprenda a criar sua primeira função Python no Azure usando o Azure Functions Core Tools e a CLI do Azure.
 author: ggailey777
 ms.author: glenga
-ms.date: 04/24/2019
+ms.date: 09/11/2019
 ms.topic: quickstart
 ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: gwallace
-ms.openlocfilehash: 28169bfb8dead65c543a3752a709f33487854e60
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 03b8e12d63ba84b4e20d7263f1c2ecb8d912936d
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844736"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203172"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Criar uma função disparada por HTTP no Azure
 
-Este artigo mostra como usar ferramentas de linha de comando para criar um projeto do Python executado no Azure Functions. A função que será criada é disparada por solicitações HTTP. Por fim, você publicará seu projeto para ser executado como uma [função sem servidor](functions-scale.md#consumption-plan) no Azure.
+Este artigo mostra como usar ferramentas de linha de comando para criar um projeto do Python executado no Azure Functions. Também é possível criar uma função disparada por uma solicitação HTTP. Por fim, você publicará seu projeto para ser executado como uma [função sem servidor](functions-scale.md#consumption-plan) no Azure.
 
-Este artigo é o primeiro de dois inícios rápidos do Azure Functions. Depois de concluir este artigo, você [adicionará uma associação de saída de fila do Armazenamento do Azure](functions-add-output-binding-storage-queue-python.md) à sua função.
+Este artigo é o primeiro de dois inícios rápidos do Python para o Azure Functions. Depois de concluir este início rápido, você poderá [adicionar uma associação de saída de fila do Armazenamento do Azure](functions-add-output-binding-storage-queue-python.md) à sua função.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de começar, é necessário ter o seguinte:
+Antes de começar, é necessário:
 
 + Instale o [Python 3.6.x](https://www.python.org/downloads/).
 
@@ -32,121 +32,132 @@ Antes de começar, é necessário ter o seguinte:
 
 + Instalar a [CLI do Azure](/cli/azure/install-azure-cli) versão 2.x ou posterior.
 
-+ Uma assinatura ativa do Azure.
++ Ter uma assinatura ativa do Azure.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+    [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="create-and-activate-a-virtual-environment-optional"></a>Criar e ativar um ambiente virtual (opcional)
 
-Para desenvolver e testar as funções do Python localmente, é recomendável usar um ambiente do Python 3.6. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`. 
+Você deve usar um ambiente Python 3.6.x para desenvolver localmente funções do Python. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`.
 
 > [!NOTE]
 > Se o Python não instalou o venv em sua distribuição do Linux, você pode instalá-lo usando o seguinte comando:
 > ```command
 > sudo apt-get install python3-venv
->
 
 ### <a name="bash"></a>Bash:
 
 ```bash
-python3.6 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 ```
 
 ### <a name="powershell-or-a-windows-command-prompt"></a>PowerShell ou um prompt de comando do Windows:
 
 ```powershell
-py -3.6 -m venv .venv
+py -m venv .venv
 .venv\scripts\activate
 ```
 
-Os comandos restantes são executados no ambiente virtual.
+Agora que você ativou o ambiente virtual, execute os comandos restantes nele. Para sair do ambiente virtual, execute `deactivate`.
 
-## <a name="create-a-local-functions-project"></a>Criar um projeto de funções local
+## <a name="create-a-local-functions-project"></a>Criar um projeto local do Functions
 
 Um projeto do Functions é o equivalente a um aplicativo de funções no Azure. Ele pode conter várias funções que compartilham as mesmas configurações locais e de hospedagem.
 
-No ambiente virtual, execute o comando a seguir, escolhendo **Python** como o tempo de execução do trabalho.
+1. No ambiente virtual, execute o seguinte comando:
 
-```console
-func init MyFunctionProj
-```
+    ```console
+    func init MyFunctionProj
+    ```
 
-Uma pasta chamada _MyFunctionProj_ será criada, que contém os três seguintes arquivos:
+1. Selecione **python** como seu runtime de trabalho.
 
-* `local.settings.json` é usado para armazenar as configurações do aplicativo e as cadeias de conexão durante a execução local. Esse arquivo não é publicado no Azure.
-* `requirements.txt` contém a lista de pacotes a serem instalados durante a publicação no Azure.
-* `host.json` contém opções de configuração global que afetam todas as funções em um aplicativo de funções. Esse arquivo é publicado do Azure.
+    O comando cria uma pasta _MyFunctionProj_. Ela contém estes três arquivos:
 
-Navegue até a nova pasta MyFunctionProj:
+    * *local.settings.json*: usado para armazenar as configurações do aplicativo e as cadeias de conexão durante a execução local. Esse arquivo não é publicado no Azure.
+    * *requirements.txt*: contém a lista de pacotes que o sistema instalará na publicação no Azure.
+    * *host.json*: contém opções de configuração global que afetam todas as funções em um aplicativo de funções. Esse arquivo é publicado do Azure.
 
-```console
-cd MyFunctionProj
-```
+1. Navegue até a nova pasta *MyFunctionProj*:
+
+    ```console
+    cd MyFunctionProj
+    ```
 
 ## <a name="create-a-function"></a>Criar uma função
 
-Para adicionar uma função ao projeto, execute o seguinte comando:
+Adicionar uma função ao novo projeto.
 
-```console
-func new
-```
+1. Para adicionar uma função ao projeto, execute o seguinte comando:
 
-Escolha o modelo **gatilho HTTP**, digite `HttpTrigger` como o nome da função e, em seguida, pressione Enter.
+    ```console
+    func new
+    ```
 
-Uma subpasta chamada _HttpTrigger_ será criada, que contém os seguintes arquivos:
+1. Use a seta para baixo para selecionar o modelo do **gatilho HTTP**.
 
-* **function.json**: arquivo de configuração que define a função, o gatilho e outras associações. Examine esse arquivo e veja que o valor de `scriptFile` aponta para o arquivo que contém a função, enquanto o gatilho de invocação e as associações são definidos na matriz `bindings`.
+1. Quando for solicitado um nome de função, digite *HttpTrigger* e pressione Enter.
 
-  Cada associação exige uma direção, um tipo e um nome exclusivo. O gatilho HTTP tem uma associação de entrada do tipo [`httpTrigger`](functions-bindings-http-webhook.md#trigger) e uma associação de saída do tipo [`http`](functions-bindings-http-webhook.md#output).
+Esses comandos criam uma subpasta chamada _HttpTrigger_. Ele contém os seguintes arquivos:
 
-* **\_\_init\_\_.py**: arquivo de script que é a função disparada por HTTP. Examine esse script e veja que ele contém um `main()` padrão. Os dados HTTP do gatilho são passados para essa função usando o parâmetro de associação nomeada `req`. Definido em function.json, `req` é uma instância da [classe azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
+* *function.json*: arquivo de configuração que define a função, o gatilho e outras associações. Veja que, nesse arquivo, o valor de `scriptFile` aponta para o arquivo que contém a função, enquanto o gatilho de invocação e as associações são definidos na matriz `bindings`.
 
-    O objeto de retorno, definido como `$return` em function.json, é uma instância da [classe azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Para saber mais, confira [Gatilhos e associações HTTP do Azure Functions](functions-bindings-http-webhook.md).
+    Cada associação exige uma direção, um tipo e um nome exclusivo. O gatilho HTTP tem uma associação de entrada do tipo [`httpTrigger`](functions-bindings-http-webhook.md#trigger) e uma associação de saída do tipo [`http`](functions-bindings-http-webhook.md#output).
+
+* *\_\_init\_\_.py*: arquivo de script que é a função disparada por HTTP. Observe que esse script tem um `main()` padrão. Os dados HTTP do gatilho passam para a função usando o `req` chamado `binding parameter`. O `req`, que é definido em function.json, é uma instância da [classe azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
+
+    O objeto de retorno, definido como `$return` em *function.json*, é uma instância da [classe azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Para saber mais, confira [Gatilhos e associações HTTP do Azure Functions](functions-bindings-http-webhook.md).
 
 ## <a name="run-the-function-locally"></a>Executar a função localmente
 
-O comando a seguir inicia o aplicativo de funções, que é executado localmente usando o mesmo Azure Functions Runtime encontrado no Azure.
+A função é executada localmente usando o Azure Functions Runtime.
 
-```console
-func host start
-```
+1. Esse comando inicia o aplicativo de funções:
 
-Quando o host do Functions é iniciado, ele escreve algo parecido com a seguinte saída, que foi truncada para facilitar a leitura:
+    ```console
+    func host start
+    ```
 
-```output
+    Quando o host do Azure Functions é iniciado, ele escreve algo parecido com a seguinte saída. Ele está truncado aqui para que você possa ler melhor:
 
-                  %%%%%%
-                 %%%%%%
-            @   %%%%%%    @
-          @@   %%%%%%      @@
-       @@@    %%%%%%%%%%%    @@@
-     @@      %%%%%%%%%%        @@
-       @@         %%%%       @@
-         @@      %%%       @@
-           @@    %%      @@
-                %%
-                %
+    ```output
+    
+                      %%%%%%
+                     %%%%%%
+                @   %%%%%%    @
+              @@   %%%%%%      @@
+           @@@    %%%%%%%%%%%    @@@
+         @@      %%%%%%%%%%        @@
+           @@         %%%%       @@
+             @@      %%%       @@
+               @@    %%      @@
+                    %%
+                    %
+    
+    ...
+    
+    Content root path: C:\functions\MyFunctionProj
+    Now listening on: http://0.0.0.0:7071
+    Application started. Press Ctrl+C to shut down.
+    
+    ...
+    
+    Http Functions:
+    
+            HttpTrigger: http://localhost:7071/api/HttpTrigger
+    
+    [8/27/2018 10:38:27 PM] Host started (29486ms)
+    [8/27/2018 10:38:27 PM] Job host started
+    ```
 
-...
+1. Copie a URL da função `HttpTrigger` da saída do tempo de execução de função e cole-a na barra de endereços do navegador.
 
-Content root path: C:\functions\MyFunctionProj
-Now listening on: http://0.0.0.0:7071
-Application started. Press Ctrl+C to shut down.
+1. Acrescente o valor de cadeia de consulta `?name=<yourname>` a essa URL e execute a solicitação. A captura de tela a seguir mostra a resposta no navegador à solicitação GET retornada pela função local:
 
-...
+    ![Verificar localmente no navegador](./media/functions-create-first-function-python/function-test-local-browser.png)
 
-Http Functions:
-
-        HttpTrigger: http://localhost:7071/api/HttpTrigger
-
-[8/27/2018 10:38:27 PM] Host started (29486ms)
-[8/27/2018 10:38:27 PM] Job host started
-```
-
-Copie a URL da função `HttpTrigger` da saída do tempo de execução de função e cole-a na barra de endereços do navegador. Acrescente o valor de cadeia de consulta `?name=<yourname>` a essa URL e execute a solicitação. O exemplo a seguir mostra a resposta no navegador à solicitação GET retornada pela função local:
-
-![Testar localmente no navegador](./media/functions-create-first-function-python/function-test-local-browser.png)
+1. Selecione CTRL + C para desligar seu aplicativo de funções.
 
 Agora que você executou a função localmente, poderá criar o aplicativo de funções e outros recursos necessários no Azure.
 
@@ -158,31 +169,32 @@ Agora que você executou a função localmente, poderá criar o aplicativo de fu
 
 Um aplicativo de funções fornece um ambiente para execução do código de função. Ele permite que você agrupe funções como uma unidade lógica para facilitar o gerenciamento, a implantação e o compartilhamento de recursos.
 
-Execute o comando a seguir usando um nome de aplicativo de funções exclusivo no lugar do espaço reservado `<APP_NAME>` e o nome da conta de armazenamento de `<STORAGE_NAME>`. O `<APP_NAME>` também é o domínio do DNS padrão para o aplicativo de funções. O nome precisa ser exclusivo em todos os aplicativos no Azure.
+Execute o comando a seguir. Substitua `<APP_NAME>` por um nome de aplicativo de funções exclusivo. Substitua `<STORAGE_NAME>` pelo nome da conta de armazenamento. O `<APP_NAME>` também é o domínio do DNS padrão para o aplicativo de funções. O nome precisa ser exclusivo em todos os aplicativos no Azure.
+
+> [!NOTE]
+> Você não pode hospedar aplicativos Windows e Linux no mesmo grupo de recursos. Se você tiver um grupo de recursos chamado `myResourceGroup` com um aplicativo de funções ou um aplicativo Web do Windows, você precisará usar um grupo de recursos diferente.
 
 ```azurecli-interactive
 az functionapp create --resource-group myResourceGroup --os-type Linux \
 --consumption-plan-location westeurope  --runtime python \
 --name <APP_NAME> --storage-account  <STORAGE_NAME>
 ```
-> [!NOTE]
-> Os aplicativos do Linux e do Windows não podem ser hospedados no mesmo grupo de recursos. Se você tiver um grupo de recursos chamado `myResourceGroup` com um aplicativo de funções ou um aplicativo Web do Windows, você precisará usar um grupo de recursos diferente.
 
-Esse comando também provisionará uma instância do Azure Application Insights associada no mesmo grupo de recursos que pode ser usado para monitorar e exibir logs.
+O comando anterior também provisiona uma instância do Aplicativo Azure insights associada no mesmo grupo de recursos. Você pode usar essa instância para monitorar seu aplicativo de funções e exibir logs.
 
 Agora você está pronto para publicar seu projeto de funções local no aplicativo de funções no Azure.
 
 ## <a name="deploy-the-function-app-project-to-azure"></a>Implantar o projeto de aplicativo de funções no Azure
 
-Depois que o aplicativo de funções for criado no Azure, você poderá usar o comando do Core Tools [`func azure functionapp publish`](functions-run-local.md#project-file-deployment) para implantar o código do projeto no Azure. Nestes exemplos, substitua `<APP_NAME>` pelo nome do seu aplicativo da etapa anterior.
+Depois que o aplicativo de funções for criado no Azure, você poderá usar o comando do Core Tools [func azure functionapp publish](functions-run-local.md#project-file-deployment) para implantar o código do projeto no Azure. Nesse exemplo, substitua `<APP_NAME>` pelo nome de seu aplicativo.
 
-```command
+```console
 func azure functionapp publish <APP_NAME> --build remote
 ```
 
 A opção `--build remote` cria seu projeto do Python remotamente no Azure usando os arquivos no pacote de implantação. 
 
-Você verá a saída semelhante à seguinte, que foi truncada para facilitar a leitura:
+Você verá uma saída semelhante ao exemplo a seguir. Ele está truncado aqui para que você possa ler melhor:
 
 ```output
 Getting site publishing info...
@@ -198,12 +210,12 @@ Functions in myfunctionapp:
         Invoke url: https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....
 ```
 
-Copie o valor `Invoke url` para seu `HttpTrigger`, que você agora poderá usar para testar sua função no Azure. A URL contém um valor da cadeia de caracteres de consulta `code` que é sua chave de função. Essa chave dificulta para outras pessoas chamarem seu ponto de extremidade de gatilho HTTP no Azure.
+Você pode copiar o valor `Invoke url` para seu `HttpTrigger` e usá-lo para verificar sua função no Azure. A URL contém um valor de cadeia de caracteres de consulta `code` que é sua tecla de função, o que dificulta para outras pessoas chamarem seu ponto de extremidade de gatilho HTTP no Azure.
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
 
 > [!NOTE]
-> Para exibir logs quase em tempo real para um aplicativo do Python publicado, é recomendável usar o [Application Insights Live Metrics Stream](functions-monitoring.md#streaming-logs)
+> Para exibir logs quase em tempo real para um aplicativo do Python publicado, use o [Application Insights Live Metrics Stream](functions-monitoring.md#streaming-logs).
 
 ## <a name="next-steps"></a>Próximas etapas
 

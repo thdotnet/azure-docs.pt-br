@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b7665caad60a5135da5780da242772af3c0a05a4
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: fef3daf6e9e535736002e309e3d27491364dc553
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70984892"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71260299"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Início Rápido: Criar e gerenciar compartilhamentos de arquivos do Azure com o portal do Azure 
 [Arquivos do Azure](storage-files-introduction.md) é o sistema de arquivos de nuvem fácil de usar da Microsoft. Os compartilhamentos de arquivos do Azure podem ser montados no Windows, no Linux e no macOS. Este guia percorre os fundamentos de trabalhar com compartilhamentos de arquivos do Azure usando o [Portal do Azure](https://portal.azure.com/).
@@ -29,7 +29,7 @@ Para criar um compartilhamento de arquivos do Azure:
 2. Na página da conta de armazenamento, na seção **Serviços**, selecione **Arquivos**.
     ![Uma captura de tela da seção de serviços da conta de armazenamento; selecione o Serviço de arquivos](media/storage-how-to-use-files-portal/create-file-share-1.png)
 
-3. No menu na parte superior da página **Serviço de arquivos**, clique em **+ Compartilhamento de arquivos**. O menu suspenso da página **Novo compartilhamento de arquivos**.
+3. No menu na parte superior da página **Arquivo de serviço**, clique em **Compartilhamento de arquivo**. O menu suspenso da página **Novo compartilhamento de arquivos**.
 4. Em **Nome**, digite *myshare*.
 5. Clique em **OK** para criar o compartilhamento de arquivos do Azure.
 

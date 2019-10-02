@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 69c63d4eb2e0bfd04bb232cb0cf39965a5b77193
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: be82ab1597021d7198d7936ecd24e4bec64fdf25
+ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104215"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71266901"
 ---
 ## <a name="benefits-of-managed-disks"></a>Benefícios dos discos gerenciados
 
@@ -43,15 +43,21 @@ Para proteger contra desastres regionais, o [Backup do Azure](../articles/backup
 
 É possível usar o [RBAC (Controle de acesso baseado em função) do Azure](../articles/role-based-access-control/overview.md) para atribuir permissões específicas de um disco gerenciado a um ou mais usuários. Os discos gerenciados expõem uma variedade de operações, incluindo leitura, gravação (criar/atualizar), exclusão e recuperação de um [URI de SAS (assinatura de acesso compartilhado)](../articles/storage/common/storage-dotnet-shared-access-signature-part-1.md) para o disco. Conceda acesso somente às operações que uma pessoa necessita para executar seu trabalho. Por exemplo, se não quiser que uma pessoa copie um disco gerenciado em uma conta de armazenamento, opte por não conceder acesso à ação de exportação para esse disco gerenciado. Da mesma forma, se não quiser que uma pessoa use um URI de SAS para copiar um disco gerenciado, opte por não conceder essa permissão ao disco gerenciado.
 
+### <a name="upload-your-vhd"></a>Faça upload do seu VHD
+
+ O upload direto facilita a transferência do VHD para um disco gerenciado do Azure. Anteriormente, você precisava seguir um processo mais envolvido que incluía preparar seus dados em uma conta de armazenamento. Agora, há menos etapas. É mais fácil fazer upload das VMs locais para o Azure e para grandes discos gerenciados. Além disso, o processo de backup e de restauração foi simplificado. Isso também reduz o custo ao permitir que você faça upload dos dados para discos gerenciados diretamente sem anexá-los às VMs. É possível usar o upload direto para carregar VHDs de até 32 TiB de tamanho.
+
+ Para saber como transferir seu VHD para o Azure, confira os artigos da [CLI](../articles/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli.md) ou do [PowerShell](../articles/virtual-machines/windows/disks-upload-vhd-to-managed-disk-powershell.md).
+
 ## <a name="encryption"></a>Criptografia
 
-Os discos gerenciados oferecem dois tipos diferentes de criptografia. O primeiro é o SSE (Criptografia do Serviço de Armazenamento), que é executado pelo serviço de armazenamento. O segundo é o Azure Disk Encryption, que pode ser habilitado nos discos do sistema operacional e de dados das VMs.
+Os discos gerenciados oferecem dois tipos diferentes de criptografia. O primeiro é o SSE (Criptografia do Serviço de Armazenamento), que é executado pelo serviço de armazenamento. O segundo é o ADE (Azure Disk Encryption), que pode ser habilitado nos discos do sistema operacional e de dados das VMs.
 
 ### <a name="storage-service-encryption-sse"></a>SSE (Criptografia do Serviço de Armazenamento)
 
 A [Criptografia do Serviço de Armazenamento do Azure](../articles/storage/common/storage-service-encryption.md) fornece criptografia em repouso e protege seus dados para atender aos compromissos de conformidade e segurança da organização. O SSE está habilitado por padrão para todos os discos gerenciados, instantâneos e imagens em todas as regiões nas quais os discos gerenciados estão disponíveis. Visite o [página de Perguntas frequentes do Managed Disks](../articles/virtual-machines/windows/faq-for-disks.md#managed-disks-and-storage-service-encryption) para obter mais detalhes.
 
-### <a name="azure-disk-encryption-ade"></a>ADE (Azure Disk Encryption)
+### <a name="azure-disk-encryption"></a>Azure Disk Encryption
 
 O Azure Disk Encryption permite criptografar os discos do sistema operacional e os discos de dados usados por uma Máquina Virtual IaaS. Essa criptografia inclui discos gerenciados. No Windows, as unidades são criptografadas usando a tecnologia de criptografia BitLocker padrão do setor. No Linux, os discos são criptografados usando a tecnologia DM-Crypt. Esse processo de criptografia é integrado ao Azure Key Vault para permitir que você controle e gerencie as chaves de criptografia de disco. Para saber mais, confira [Azure Disk Encryption para VMs IaaS](../articles/security/azure-security-disk-encryption-overview.md).
 

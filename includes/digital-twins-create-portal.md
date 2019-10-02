@@ -5,21 +5,21 @@ services: digital-twins
 author: dsk-2015
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/16/2019
+ms.date: 09/24/2019
 ms.author: dkshir
 ms.custom: include file
-ms.openlocfilehash: 87599c6e0c4bd4313eac154b4d07110cbe4389a0
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 5b88e3f17c1bbf60d38763f7fb349302ae4a920b
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622996"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71310502"
 ---
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
 1. No painel esquerdo, selecione **Criar um recurso**. Pesquise **gêmeos digitais** e selecione **Gêmeos Digitais**. Selecione **Criar** para iniciar o processo de implantação.
 
-   ![Seleções para criar uma nova instância dos Gêmeos Digitais](./media/create-digital-twins-portal/create-digital-twins.png)
+   [![Seleções para criar uma nova instância dos Gêmeos Digitais](./media/create-digital-twins-portal/create-digital-twins.png)](./media/create-digital-twins-portal/create-digital-twins.png#lightbox)
 
 1. No painel **Gêmeos Digitais**, insira as seguintes informações:
    * **Nome do Recurso**: Criar um nome exclusivo para sua instância de Gêmeos Digitais.
@@ -27,7 +27,7 @@ ms.locfileid: "69622996"
    * **Grupo de recursos**: Selecione ou crie um [grupo de recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) para a instância de Gêmeos Digitais.
    * **Localização**: selecione a localização mais próxima de seus dispositivos.
 
-     ![Painel Gêmeos Digitais com informações inseridas](./media/create-digital-twins-portal/create-digital-twins-param.png)
+     [![Painel Gêmeos Digitais com informações inseridas](./media/create-digital-twins-portal/create-digital-twins-param.png)](./media/create-digital-twins-portal/create-digital-twins-param.png#lightbox)
 
 1. Examine as informações de Gêmeos Digitais e, em seguida, selecione **Criar**. Sua instância de Gêmeos Digitais pode levar alguns minutos para ser criada. Você pode monitorar o progresso no painel **Notificações**.
 
@@ -37,4 +37,4 @@ ms.locfileid: "69622996"
 
     Modifique a URL da **API de Gerenciamento** para este formato `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Seu aplicativo usará a URL modificada como a URL base para acessar a instância. Copie esta URL modificada para um arquivo temporário. Você precisará disso nas próximas seções.
 
-    ![API de gerenciamento](./media/create-digital-twins-portal/digital-twins-management-api.png)
+    [![API de Gerenciamento](./media/create-digital-twins-portal/digital-twins-management-api.png)](./media/create-digital-twins-portal/digital-twins-management-api.png#lightbox)

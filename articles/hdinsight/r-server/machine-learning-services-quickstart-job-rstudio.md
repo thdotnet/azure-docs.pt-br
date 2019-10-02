@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 06/19/2019
 ms.author: hrasheed
 ms.custom: mvc
-ms.openlocfilehash: ecb173a31e6c61991eba1bb7525f6b978d9fff72
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.openlocfilehash: e2fcdeb91517b048766d59a9714346f76091a8c8
+ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70960055"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71123118"
 ---
 # <a name="quickstart-execute-an-r-script-on-an-ml-services-cluster-in-azure-hdinsight-using-rstudio-server"></a>Início Rápido: Executar um script R em um cluster de serviços de ML no Azure HDInsight usando o RStudio Server
 
@@ -37,7 +37,7 @@ Na primeira vez em que você fizer logon, precisará autenticar duas vezes. No p
 
 Quando você estiver conectado, sua tela deve ser semelhante à captura de tela a seguir:
 
-![Detalhes básicos do cluster](./media/ml-services-quickstart-job-rstudio/connect-to-r-studio1.png)
+![Visões gerais do console Web do R Studio](./media/ml-services-quickstart-job-rstudio/connect-to-r-studio1.png)
 
 ## <a name="use-a-compute-context"></a>Use um contexto de computação
 

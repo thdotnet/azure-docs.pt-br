@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 3da22d11dce1e535763476d906ac45f3da22bc8d
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 01e932caf5edc91d5556b60d33e4d100574f93f5
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70141281"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71170042"
 ---
 # <a name="sample-explore-an-image-processing-app-with-c"></a>Exemplo: Explorar um aplicativo de processamento de imagens com o C#
 
@@ -80,7 +80,7 @@ Você pode executar o aplicativo de amostra para ver como ele interage com você
    ![Página de gerenciamento de chaves de assinatura](../Images/Vision_UI_Subscription.PNG)  
 1. Digite sua chave de assinatura na **Chave de assinatura**.
 1. Insira a URL do ponto de extremidade no **Ponto de extremidade**.  
-   Por exemplo, se você estiver usando a chave de assinatura na avaliação gratuita da Pesquisa Visual Computacional, insira a seguinte URL de ponto de extremidade: `https://westcentralus.api.cognitive.microsoft.com`
+   Por exemplo, se você estiver usando a chave de assinatura na avaliação gratuita da Pesquisa Visual Computacional, insira a seguinte URL de ponto de extremidade: `https://westcentralus.api.cognitive.microsoft.com`  
    [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 1. Se você não quiser inserir sua chave de assinatura e o URL do endpoint na próxima vez que executar o aplicativo de amostra, escolha **Save Setting** para salvar a chave de assinatura e o URL do endpoint em seu computador. Se você deseja excluir sua chave de assinatura e URL de ponto de extremidade previamente salvas, escolha **Excluir configuração**.
 

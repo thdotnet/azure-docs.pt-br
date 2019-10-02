@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: overview
-ms.openlocfilehash: cdbbe9006f57c8b29e19fda85eefc0795da95a00
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 0269b4e611432093ea677e2ea7e429c84ce9db87
+ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595497"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71257663"
 ---
 # <a name="what-is-custom-translator"></a>O que é o Tradutor Personalizado?
 
@@ -40,7 +40,7 @@ O Tradutor Personalizado fornece recursos diferentes para criar e acessar um sis
 
 O Microsoft Translator lançou a [NMT (Tradução Automática Neural)](https://blogs.msdn.microsoft.com/translation/2016/11/15/microsoft-translator-launching-neural-network-based-translations-for-all-its-speech-languages/) em 2016. A NMT viabilizou grandes avanços na qualidade das traduções em relação à tecnologia [SMT (Tradução Automática estatística)](https://en.wikipedia.org/wiki/Statistical_machine_translation) padrão do setor. Como a NMT compreende melhor o contexto de frases completas antes de traduzi-las, ela fornece as traduções mais humanas e mais fluentes, com melhor qualidade. O [Tradutor Personalizado](https://portal.customtranslator.azure.ai) fornece NMT para seus modelos personalizados, resultando em uma tradução com melhor qualidade.
 
-Você pode usar documentos traduzidos anteriormente para criar um sistema de tradução. Esses documentos incluem terminologia e estilo específicos do domínio, melhor do que um sistema genérico de tradução. Os usuários podem carregar documentos ALIGN, PDF, LCL, HTML, HTM, XLF, TMX, XLIFF, TXT, DOCX e XLSX.
+Você pode usar documentos traduzidos anteriormente para criar um sistema de tradução. Esses documentos incluem terminologia e estilo específicos do domínio, melhor do que um sistema padrão de tradução. Os usuários podem carregar documentos ALIGN, PDF, LCL, HTML, HTM, XLF, TMX, XLIFF, TXT, DOCX e XLSX.
 
 O Tradutor Personalizado também aceita dados que estão paralelos ao nível do documento para tornar a preparação e a coleta de dados mais eficiente. Se os usuários tiverem acesso às versões do mesmo conteúdo em vários idiomas, mas em documentos separados, o Tradutor Personalizado conseguirá criar automaticamente a correspondência de frases entre os documentos.
 

@@ -1,12 +1,11 @@
 ---
-title: Início Rápido do Azure Sentinel – Introdução à versão prévia do Azure Sentinel | Microsoft Docs
+title: Início Rápido do Azure Sentinel – Introdução ao Azure Sentinel | Microsoft Docs
 description: Início Rápido do Azure Sentinel – Introdução ao Azure Sentinel
 services: sentinel
 documentationcenter: na
 author: rkarlin
 manager: rkarlin
 editor: ''
-ms.assetid: 5a4ae93c-d648-41fb-8fb8-96a025d2f73e
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
@@ -14,23 +13,21 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/20/2019
+ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: c6434b4f5808c349d5e0ab04dafc5233f6ec63ac
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: c81f4cacd4c93d681122f3c8cd692ca8645288af
+ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780476"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71240082"
 ---
-# <a name="quickstart-get-started-with-azure-sentinel-preview"></a>Início Rápido: Introdução à versão prévia do Azure Sentinel
-
-> [!IMPORTANT]
-> No momento, o Azure Sentinel está em versão prévia pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="quickstart-get-started-with-azure-sentinel"></a>Início Rápido: Introdução ao Azure Sentinel
 
 
-Neste guia de início rápido, você aprenderá a ser rapidamente capaz de exibir e monitorar o que está acontecendo em seu ambiente usando o Azure Sentinel. Depois de conectar suas fontes de dados ao Azure Sentinel, você obtém visualização e análise instantâneas de dados para que possa saber o que está acontecendo em todas as suas fontes de dados conectadas. O Azure Sentinela oferece painéis que oferecem toda a potência de ferramentas já disponíveis no Azure, assim como tabelas e gráficos feitos para fornecer análise para seus logs e consultas. Você pode usar painéis internos ou criar um novo painel com facilidade, seja do zero ou com base em um painel existente. 
+
+
+Neste guia de início rápido, você aprenderá como poder exibir e monitorar rapidamente o que está acontecendo em seu ambiente usando o Azure Sentinel. Depois de conectar suas fontes de dados ao Azure Sentinel, você obtém visualização e análise instantâneas de dados para que possa saber o que está acontecendo em todas as suas fontes de dados conectadas. O Azure Sentinel oferece pastas de trabalho que oferecem toda a potência de ferramentas já disponíveis no Azure, assim como tabelas e gráficos feitos para fornecer análise para seus logs e consultas. É possível usar pastas de trabalho internas ou criar uma pasta de trabalho facilmente, do zero ou com base em uma pasta de trabalho existente. 
 
 ## <a name="get-visualization"></a>Obter visualização
 
@@ -59,43 +56,43 @@ O corpo principal da página de visão geral fornece insight rápido sobre o sta
 
    ![Mapa do Azure Sentinel](./media/qs-get-visibility/anomolies.png)
 
-## Use painéis internos<a name="dashboards"></a>
+## Usar pastas de trabalho internas<a name="dashboards"></a>
 
-Painéis internos oferecem dados integrados de suas fontes de dados conectadas para permitir que você examine os eventos gerados nesses serviços. Os painéis internos incluem a ID do Azure, eventos de atividades do Azure e locais, que podem ser dados de eventos do Windows de servidores, alertas de primeiros, de qualquer terceiro, incluindo logs de tráfego do firewall, Office 365 e protocolos inseguros com base em eventos do Windows.
+Pastas de trabalho internas oferecem dados integrados de suas fontes de dados conectadas para permitir que você examine os eventos gerados nesses serviços. As pastas de trabalho internas incluem a ID do Azure, eventos de atividades do Azure e locais, que podem ser dados de eventos do Windows de servidores, de alertas internos, de terceiros, incluindo logs de tráfego do firewall, Office 365 e protocolos inseguros com base em eventos do Windows. As pastas de trabalho são baseadas em Pastas de Trabalho do Azure Monitor para fornecer a você melhores personalização e flexibilidade na criação de sua própria pasta de trabalho. Para saber mais, confira [Pastas de Trabalho](../azure-monitor/app/usage-workbooks.md).
 
-1. Em **Configurações**, selecione **Painéis**. Em **Instalados**, você pode ver todos os painéis instalados. Em **Todos**, é possível ver a galeria inteira de painéis internos que estão disponíveis para instalação. 
-2. Pesquise um painel específico ver a lista inteira e a descrição do que cada um oferece. 
-3. Supondo que você usa o Azure AD, para começar a usar o Azure Sentinel, recomendamos que instale pelo menos os painéis a seguir:
+1. Em **Configurações**, selecione **Pastas de Trabalho**. Em **Instalados**, é possível ver todas as pastas de trabalho instaladas. Em **Todos**, é possível ver toda a galeria de pastas de trabalho internas disponíveis para instalação. 
+2. Pesquise uma pasta de trabalho específica ver a lista inteira e a descrição do que cada uma oferece. 
+3. Supondo que você usa o Azure AD, para começar a usar o Azure Sentinel, recomendamos que instale pelo menos as pastas de trabalho a seguir:
    - **Azure AD**: Use uma ou ambas as opções a seguir:
-       - **As entradas do Azure AD** analisam as entradas ao longo do tempo para ver se há anomalias. Esse painel fornece entradas com falha por aplicativos, dispositivos e locais para que você possa perceber rapidamente se acontecer algo incomum. Preste atenção a várias entradas com falha. 
+       - **As entradas do Azure AD** analisam as entradas ao longo do tempo para ver se há anomalias. Esta pasta de trabalho fornece entradas com falha por aplicativos, dispositivos e locais para que você possa perceber rapidamente se acontecer algo incomum. Preste atenção a várias entradas com falha. 
        - **Os logs de auditoria do Azure AD** analisam as atividades administrativas, como alterações em usuários (adicionar, remover etc.), criação de grupo e modificações.  
 
-   - Adicione um painel para seu firewall. Por exemplo, adicione o painel Palo Alto. O painel analisa o tráfego do firewall, fornecendo correlações entre eventos de ameaças e dados do firewall, além de realçar os eventos suspeitos em entidades. Os painéis fornecem informações sobre tendências no tráfego e permitem fazer busca detalhada e filtrar os resultados. 
+   - Adicione uma pasta de trabalho para seu firewall. Por exemplo, adicione a pasta de trabalho Palo Alto. A pasta de trabalho analisa o tráfego do firewall, fornecendo correlações entre eventos de ameaças e dados do firewall, além de realçar os eventos suspeitos em entidades. As pastas de trabalho fornecem informações sobre tendências no tráfego e permitem fazer busca detalhada e filtrar os resultados. 
 
       ![Painel Pal Alto](./media/qs-get-visibility/palo-alto-week-query.png)
 
 
-Para personalizar os painéis, edite a consulta principal ![botão](./media/qs-get-visibility/edit-query-button.png). É possível clicar no botão ![botão](./media/qs-get-visibility/go-to-la-button.png) para acessar o [Log Analytics e editar a consulta encontrada](../azure-monitor/log-query/get-started-portal.md). Você também pode selecionar as reticências (...) e selecionar **Personalizar dados do bloco**, o que permite editar o filtro de tempo principal ou remover os blocos específicos do painel.
+Para personalizar as pastas de trabalho, edite a consulta principal ![botão](./media/qs-get-visibility/edit-query-button.png). É possível clicar no botão ![botão](./media/qs-get-visibility/go-to-la-button.png) para acessar o [Log Analytics e editar a consulta encontrada](../azure-monitor/log-query/get-started-portal.md). Também é possível selecionar as reticências (...) e **Personalizar dados do bloco**, o que permite editar o filtro de tempo principal ou remover os blocos específicos da pasta de trabalho.
 
 Para obter mais informações sobre como trabalhar com consultas, confira [Tutorial: Dados visuais no Log Analytics](../azure-monitor/learn/tutorial-logs-dashboards.md)
 
 ### <a name="add-a-new-tile"></a>Adicionar um novo bloco
 
-Se quiser adicionar um novo bloco, você poderá adicioná-lo a um painel existente, seja um criado por você ou um painel interno do Azure Sentinel. 
+Se desejar adicionar um novo bloco, será possível adicioná-lo a uma pasta de trabalho existente, seja um criado por você ou uma pasta de trabalho interna do Azure Sentinel. 
 1. No Log Analytics, crie um bloco usando as instruções encontradas em [Tutorial: Dados visuais no Log Analytics](../azure-monitor/learn/tutorial-logs-dashboards.md). 
-2. Após a criação do bloco, em **Fixar**, selecione o painel em que deseja que o bloco apareça.
+2. Após a criação do bloco, em **Fixar**, selecione a pasta de trabalho em que deseja que o bloco apareça.
 
-## <a name="create-new-dashboards"></a>Criar novos painéis
-Você pode criar um novo painel do zero ou usar um painel interno como base para o novo painel.
+## <a name="create-new-workbooks"></a>Criar pastas de trabalho
+É possível criar uma pasta de trabalho do zero ou usar uma interna como a base da sua nova pasta de trabalho.
 
-1. Para criar um novo painel do zero, selecione **Painéis** e, em seguida, **+Novo painel**.
-2. Selecione a assinatura em que o painel foi criado e lhe dê um nome descritivo. Cada painel é um recurso do Azure como qualquer outro. Você pode atribuir funções (RBAC) para definir e limitar quem pode acessar. 
-3. Para permitir que apareça em seus painéis para fixar visualizações, você precisa compartilhá-lo. Clique em **Compartilhar** e em **Gerenciar usuários**. 
+1. Para criar uma pasta de trabalho do zero, selecione **Pastas de Trabalho** e, em seguida, **+Nova pasta de trabalho**.
+2. Selecione a assinatura em que a pasta de trabalho foi criada e lhe dê um nome descritivo. Cada pasta de trabalho é um recurso do Azure como qualquer outro. É possível atribuir funções (RBAC) para definir e limitar quem pode acessar. 
+3. Para permitir que ela apareça em suas pastas de trabalho para fixar visualizações, é necessário compartilhá-la. Clique em **Compartilhar** e em **Gerenciar usuários**. 
  
-1. Use **Verificar acesso** e **Atribuições de função** como faria para qualquer outro recurso do Azure. Para obter mais informações, confira [Compartilhar painéis do Azure usando RBAC](../azure-portal/azure-portal-dashboard-share-access.md).
+1. Use **Verificar acesso** e **Atribuições de função** como faria para qualquer outro recurso do Azure. Para obter mais informações, confira [Compartilhar pastas de trabalho do Azure usando RBAC](../azure-portal/azure-portal-dashboard-share-access.md).
 
 
-## <a name="new-dashboard-examples"></a>Exemplos de novos painéis
+## <a name="new-workbook-examples"></a>Novos exemplos de pasta de trabalho
 
 A consulta de exemplo a seguir permite que você compare as tendências de tráfego de diferentes semanas. Você pode alternar facilmente em qual fornecedor do dispositivo e fonte de dados executa a consulta. Este exemplo usa o SecurityEvent do Windows. É possível mudá-lo para ser executado no AzureActivity ou no CommonSecurityLog em qualquer outro firewall.
 
@@ -117,7 +114,7 @@ Talvez você queira criar uma consulta que incorpore dados de várias fontes. Vo
     | project OperationName, RoleAssignmentTime = TimeGenerated, user = Caller) on user
     | project-away user1
 
-Você pode criar painéis diferentes com base na função da pessoa que examina os dados e em que ela está procurando. Pode, por exemplo, criar um painel para seu administrador de rede que inclua os dados do firewall. Também pode criar painéis com base na frequência com a qual deseja observá-los, se há coisas que você deseja revisar diariamente e outros itens que deseja verificar uma vez por hora, por exemplo. É possível que queira examinar as entradas no Azure AD a cada hora em busca de anomalias. 
+É possível criar pastas de trabalho diferentes com base na função da pessoa que examina os dados e em que ela está procurando. É possível, por exemplo, criar uma pasta de trabalho para seu administrador de rede que inclua os dados do firewall. Também é possível criar pastas de trabalho com base na frequência com a qual deseja observá-las, se há coisas que você deseja revisar diariamente e outros itens que deseja verificar uma vez por hora, por exemplo. Talvez convenha examinar as entradas no Azure AD a cada hora em busca de anomalias. 
 
 ## <a name="create-new-detections"></a>Criar detecções
 
@@ -125,18 +122,14 @@ Gere detecções nas [fontes de dados que você conectou ao Azure Sentinel](conn
 
 Quando você criar uma detecção, aproveite as detecções internas criadas por pesquisadores de segurança da Microsoft que são personalizadas para as fontes de dados conectadas.
 
-1. [Na comunidade do GitHub](https://github.com/Azure/Azure-Sentinel/tree/master/Detections), acesse a pasta **Detecções** e selecione as pastas relevantes.
-   ![pastas relevantes](./media/qs-get-visibility/detection-folders.png)
- 
-3.  Acesse a guia **Análise** e selecione **Adicionar**.
-   ![criar regra no Log Analytics](./media/qs-get-visibility/query-params.png)
+Para exibir todas as detecções prontas para uso, acesse **Análise** e **Modelos de regra**. Esta guia contém todas as regras internas do Azure Sentinel.
 
-3.  Copie todos os parâmetros para a regra e clique em **Criar**.
-   ![criar regra de alerta](./media/qs-get-visibility/create-alert-rule.png)
+   ![Usar detecções internas para encontrar ameaças com o Azure Sentinel](media/tutorial-detect-built-in/view-oob-detections.png)
 
+Para obter mais informações sobre como obter detecções prontas para uso, confira [Tutorial: obter análise interna](tutorial-detect-threats-built-in.md).
  
 ## <a name="next-steps"></a>Próximas etapas
-Neste início rápido, você aprendeu como começar a usar o Azure Sentinel. Continue com o tutorial sobre [como detectar ameaças](tutorial-detect-threats.md).
+Neste início rápido, você aprendeu como começar a usar o Azure Sentinel. Continue com o tutorial sobre [como detectar ameaças](tutorial-detect-threats-built-in.md).
 > [!div class="nextstepaction"]
-> [Detecte ameaças](tutorial-detect-threats.md) para automatizar suas respostas às ameaças.
+> [Crie regras de detecção personalizadas](tutorial-detect-threats-custom.md) para automatizar suas respostas a ameaças.
 

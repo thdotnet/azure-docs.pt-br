@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 8827aa660d348ef9e42c617067c2837b8697ba6e
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 440ebfffec9378e0dad1fd04e0880c90571bb0f1
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69876773"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71301008"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>O que é a Versão Prévia da Área de Trabalho Virtual do Windows? 
 
@@ -76,6 +76,8 @@ A infraestrutura precisa dos seguintes itens para dar suporte à Área de Trabal
 * Um Windows Server Active Directory em sincronia com o Azure Active Directory. Isso pode ser habilitado por meio do:
   * Azure AD Connect
   * Azure AD Domain Services
+  >[!NOTE]
+  >A Área de Trabalho Virtual do Windows dá suporte apenas a usuários dos Azure AD Domain Services originados do Azure Active Directory. Usuários originados do AD do Windows Server não têm suporte no momento.
 * Uma assinatura do Azure, contendo uma rede virtual que contenha o Windows Server Active Directory ou que esteja conectada a ele
   
 As máquinas virtuais do Azure criadas para a Área de Trabalho Virtual do Windows precisam ser:

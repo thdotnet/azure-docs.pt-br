@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: 6a1b4ab43a7d87ac1162a7f0a3556d6bc3bfbfab
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 86e69d75c067159a4daa637984a392a393dc46fa
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721253"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71211794"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Início Rápido: Reconhecer tinta digital com a API REST de Reconhecimento de Tinta Digital e o C#
 
@@ -60,7 +60,7 @@ O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go
     using Newtonsoft.Json.Linq;
     ```
 
-2. Crie variáveis para a chave de assinatura e o ponto de extremidade. Veja abaixo o URI que você pode usar para o reconhecimento de tinta. Ele será acrescentado ao ponto de extremidade de serviço posteriormente para criar a URL de solicitação da API.
+2. Crie variáveis para a chave de assinatura e o ponto de extremidade. Substitua o ponto de extremidade abaixo por um gerado para seu recurso de Reconhecimento de Tinta Digital. Acrescente-o ao URI do Reconhecimento de Tinta Digital para se conectar à API.
 
     ```csharp
     // Replace the subscriptionKey string with your valid subscription key.
@@ -70,7 +70,7 @@ O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go
     const string dataPath = @"PATH-TO-INK-STROKE-DATA"; 
 
     // URI information for ink recognition:
-    const string endpoint = "https://api.cognitive.microsoft.com";
+    const string endpoint = "https://<your-custom-subdomain>.cognitiveservices.azure.com";
     const string inkRecognitionUrl = "/inkrecognizer/v1.0-preview/recognize";
     ```
 

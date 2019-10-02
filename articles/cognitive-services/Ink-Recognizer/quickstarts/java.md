@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 09/23/2019
 ms.author: aahi
-ms.openlocfilehash: b1c739b6355d3b32063e5289720ed1d191611e65
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 36ff0fe4550b140a722ed25f4e372f7c88581211
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721234"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212692"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Início Rápido: Reconhecer tinta digital com a API REST de Reconhecimento de Tinta Digital e o Java
 
@@ -58,7 +58,7 @@ O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go
     import java.nio.file.Paths;
     ```
 
-2. Crie variáveis para a chave de assinatura e o ponto de extremidade. Veja abaixo o URI que você pode usar para o reconhecimento de tinta. Ele será acrescentado ao ponto de extremidade de serviço posteriormente para criar a URL de solicitação da API.
+2. Crie variáveis para a chave de assinatura e o ponto de extremidade. Substitua o ponto de extremidade abaixo por um gerado para seu recurso de Reconhecimento de Tinta Digital. Acrescente-o ao URI do Reconhecimento de Tinta Digital para se conectar à API.
 
     ```java
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -66,13 +66,13 @@ O código-fonte deste Início Rápido pode ser encontrado no [GitHub](https://go
     // Replace the dataPath string with a path to the JSON formatted ink stroke data file.
     static final String dataPath = "PATH_TO_INK_STROKE_DATA";
     
-    static final String endpoint = "https://api.cognitive.microsoft.com";
+    static final String endpoint = "https://<your-custom-subdomain>.cognitiveservices.azure.com";
     static final String inkRecognitionUrl = "/inkrecognizer/v1.0-preview/recognize";
     ```
 
 ## <a name="create-a-function-to-send-requests"></a>Criar uma função para enviar solicitações
 
-1. Crie uma função chamada `sendRequest()` que usa as variáveis criadas acima. Em seguida, siga estas etapas.
+1. Crie uma função chamada `sendRequest()` que use as variáveis criadas anteriormente. Em seguida, siga estas etapas.
 
 2. Crie um objeto `CloseableHttpClient` que pode enviar solicitações à API. Envie a solicitação para um objeto de solicitação `HttpPut` combinando o ponto de extremidade e a URL de Reconhecimento de Tinta Digital.
 

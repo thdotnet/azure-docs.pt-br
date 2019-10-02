@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: 507ad62a917120689bee3f1e293e23c9ab8b0f66
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: f2f5b2ecf096d7dc8babb79a38d00158a2120688
+ms.sourcegitcommit: 3fa4384af35c64f6674f40e0d4128e1274083487
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "68598104"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71218082"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Obter custos e uso de reserva do Contrato Enterprise
 
@@ -57,18 +57,20 @@ Outras informações disponíveis nos dados de uso do Azure foram alteradas:
 - Prazo – 12 meses ou 36 meses.
 - RINormalizationRatio – disponível em AdditionalInfo. Essa é a razão em que a reserva é aplicada ao registro de uso. Se a flexibilidade de tamanho da instância estiver habilitada para sua reserva, ela poderá se aplicar a outros tamanhos. O valor mostra a razão em que a reserva foi aplicada para o registro de uso.
 
+[Alterar definição de campo](https://docs.microsoft.com/rest/api/consumption/usagedetails/list#definitions)
+
 ## <a name="get-azure-consumption-and-reservation-usage-data-using-api"></a>Obter dados de consumo e de uso de reserva do Azure usando API
 
 Você pode obter os dados usando a API ou baixá-los do portal do Azure.
 
-Chame a [API de Detalhes de Uso](/rest/api/consumption/usagedetails/list) com a versão da API &quot;2019-04-01-preview&quot; para obter os novos dados. Para obter detalhes sobre a terminologia, confira [termos de uso](billing-understand-your-usage.md). O chamador deve ser um administrador corporativo do Contrato Enterprise usando o [Portal do EA](https://ea.azure.com). Administradores corporativos somente leitura também podem obter os dados.
+Chame a [API de Detalhes de Uso](/rest/api/consumption/usagedetails/list) para obter os novos dados. Para obter detalhes sobre a terminologia, confira [termos de uso](billing-understand-your-usage.md). O chamador deve ser um administrador corporativo do Contrato Enterprise usando o [Portal do EA](https://ea.azure.com). Administradores corporativos somente leitura também podem obter os dados.
 
 Os dados não estão disponíveis nas [APIs de Relatório para clientes Enterprise – Detalhes de uso](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail).
 
 Veja uma chamada de exemplo à API:
 
 ```
-https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-04-01-preview&amp;$filter={filter}
+https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-05-01&amp;$filter={filter}
 ```
 
 Para obter mais informações sobre {enrollmentId} e {billingPeriodId}, confira o artigo da API [Detalhes de Uso – Lista](https://docs.microsoft.com/rest/api/consumption/usagedetails/list).

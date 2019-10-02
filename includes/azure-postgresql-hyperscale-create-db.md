@@ -5,15 +5,15 @@ author: jonels-msft
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: include
-ms.date: 05/14/2019
+ms.date: 09/12/2019
 ms.author: jonels
 ms.custom: include file
-ms.openlocfilehash: c07e352288d7dc1d0bf198fd74c8baaded3a2d23
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: fadbcf04f1cd474cf2d23963e88016d240272263
+ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172165"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71279880"
 ---
 Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
 
@@ -38,27 +38,20 @@ Siga estas etapas para criar um Banco de Dados do Azure para o servidor PostgreS
    > A senha de administrador do servidor que você especificar aqui é necessária para fazer logon no servidor e nos bancos de dados. Lembre-se ou registre essas informações para o uso posterior.
 
 5. Clique em **Configurar grupo de servidores**. Deixe as configurações nessa seção inalteradas e clique em **Salvar**.
-6. Clique em **Examinar + criar** e, em seguida, **Criar** para provisionar o servidor. O provisionamento demora alguns minutos.
-7. A página será redirecionada para monitorar a implantação. Quando o status em tempo real mudar de **Sua implantação está em andamento** para **Sua implantação está concluída**, clique no item de menu **Saídas** no lado esquerdo da página.
-8. A página de saídas conterá um nome do host do coordenador com um botão ao lado dele para copiar o valor para a área de transferência. Registre essas informações para uso posterior.
+6. Clique em **Avançar: Rede >** na parte inferior da tela.
 
-## <a name="configure-a-server-level-firewall-rule"></a>Configurar uma regra de firewall no nível de servidor
-
-O serviço do Banco de Dados do Azure para PostgreSQL – Hyperscale (Citus) (visualização) usa um firewall no nível do servidor. Por padrão, o firewall impede que aplicativos e ferramentas externos se conectam ao nó coordenador e a qualquer banco de dados interno. É necessário adicionar uma regra para abrir o firewall para um intervalo de endereços IP específico.
-
-1. Na seção **Saídas** em que você copiou anteriormente o nome do host do nó coordenador, clique em novamente no item de menu **Visão geral**.
-
-2. Localize o nome do grupo de servidores da implantação e clique nele. (O nome do grupo de servidores *não* terá um sufixo. Itens com nomes que terminam em, por exemplo, "-c", "-w0" ou "-w1" não são o grupo de servidores).
-
-3. Clique em **Firewall** em **Segurança** no menu à esquerda.
-
-4. Clique no link **+ Adicionar regra de firewall para o endereço IP do cliente atual**.
-
-5. Por fim, clique no botão **Salvar**.
+7. Na guia **Rede**, clique no botão de opção **Ponto de extremidade público**.
+   ![Ponto de extremidade público selecionado](./media/azure-postgresql-hyperscale-create-db/network-public-endpoint.png)
+8. Clique no link **+ Adicionar endereço IP do cliente atual**.
+   ![IP do cliente adicionado](./media/azure-postgresql-hyperscale-create-db/network-add-client-ip.png)
 
    > [!NOTE]
    > O servidor PostgreSQL do Azure se comunica pela porta 5432. Se você estiver tentando se conectar de dentro de uma rede corporativa, o tráfego de saída pela porta 5432 talvez não seja permitido pelo firewall de sua rede. Se isso acontecer, você não poderá conectar o servidor do Banco de Dados SQL do Azure, a menos que o departamento de TI abra a porta 5432.
    >
+
+9. Clique em **Examinar + criar** e, em seguida, **Criar** para provisionar o servidor. O provisionamento demora alguns minutos.
+10. A página será redirecionada para monitorar a implantação. Quando o status em tempo real mudar de **Sua implantação está em andamento** para **Sua implantação está concluída**, clique no item de menu **Saídas** no lado esquerdo da página.
+11. A página de saídas conterá um nome do host do coordenador com um botão ao lado dele para copiar o valor para a área de transferência. Registre essas informações para uso posterior.
 
 ## <a name="connect-to-the-database-using-psql"></a>Conectar-se ao banco de dados usando psql
 

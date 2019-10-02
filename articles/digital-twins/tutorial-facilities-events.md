@@ -6,14 +6,14 @@ author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 08/05/2019
+ms.date: 09/23/2019
 ms.author: alinast
-ms.openlocfilehash: 30d43831b73edc52b461512faecac369f6bf00b0
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: fe2eb357ef89d70512e85db24d22f95cac1bd0ac
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827820"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300084"
 ---
 # <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Tutorial: Receber notificações de espaços dos Gêmeos Digitais do Azure usando Aplicativos Lógicos
 
@@ -39,6 +39,9 @@ Este tutorial pressupõe que você [configurou](tutorial-facilities-setup.md) e 
 - [SDK do .NET Core versão 2.1.403 ou posterior](https://www.microsoft.com/net/download) no computador de desenvolvimento para executar o exemplo. Execute `dotnet --version` para verificar se a versão instalada é a correta.
 - Uma conta do Office 365 para enviar e-mails de notificação.
 
+> [!TIP]
+> Use um nome de instância dos Gêmeos Digitais exclusivo quando estiver provisionando uma nova instância.
+
 ## <a name="integrate-events-with-event-grid"></a>Integrar eventos à Grade de Eventos
 
 Nesta seção, você configura uma [Grade de Eventos](../event-grid/overview.md) para coletar eventos da instância dos Gêmeos Digitais do Azure e os redireciona para um [manipulador de eventos](../event-grid/event-handlers.md) como o Aplicativo Lógico.
@@ -55,13 +58,13 @@ Os [tópicos da grade de eventos](../event-grid/concepts.md#topics) fornecem uma
 
 1. Insira um **Nome** para o tópico da grade de eventos e escolha a **Assinatura**. Selecione o **Grupo de recursos** usado ou criado para sua instância dos Gêmeos Digitais e o **Local**. Selecione **Criar**. 
 
-    ![Criar um tópico de grade de eventos](./media/tutorial-facilities-events/create-event-grid-topic.png)
+    [![Criar um tópico de grade de eventos](./media/tutorial-facilities-events/create-event-grid-topic.png)](./media/tutorial-facilities-events/create-event-grid-topic.png#lightbox)
 
 1. Navegue até o tópico da grade de eventos a partir do grupo de recursos, selecione **Visão Geral** e copie o valor de **Ponto de Extremidade do Tópico** em um arquivo temporário. Você precisará dessa URL nas próximas seções. 
 
 1. Selecione **Chaves de acesso** e copie **YOUR_KEY_1** e **YOUR_KEY_2** para um arquivo temporário. Você precisará desses valores para criar o ponto de extremidade na próxima seção.
 
-    ![Chaves da Grade de Eventos](./media/tutorial-facilities-events/event-grid-keys.png)
+    [![Chaves da Grade de Eventos](./media/tutorial-facilities-events/event-grid-keys.png)](./media/tutorial-facilities-events/event-grid-keys.png#lightbox)
 
 ### <a name="create-an-endpoint-for-the-event-grid-topic"></a>Criar um ponto de extremidade para o tópico da grade de eventos
 
@@ -98,7 +101,7 @@ Os [tópicos da grade de eventos](../event-grid/concepts.md#topics) fornecem uma
 
    Este comando cria o ponto de extremidade para a Grade de Eventos. 
 
-   ![Pontos de extremidade para a Grade de Eventos](./media/tutorial-facilities-events/dotnet-create-endpoints.png)
+   [![Pontos de extremidade da Grade de Eventos](./media/tutorial-facilities-events/dotnet-create-endpoints.png)](./media/tutorial-facilities-events/dotnet-create-endpoints.png#lightbox)
 
 ## <a name="notify-events-with-logic-apps"></a>Notificar eventos com o Aplicativo Lógico
 
@@ -110,7 +113,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
 1. Insira um **Nome** para o recurso de aplicativo lógico e selecione a **Assinatura**, o **Grupo de recursos** e o **Local**. Selecione **Criar**.
 
-    ![Criar um recurso do Aplicativo Lógico](./media/tutorial-facilities-events/create-logic-app.png)
+    [![Criar um recurso dos Aplicativos Lógicos](./media/tutorial-facilities-events/create-logic-app.png)](./media/tutorial-facilities-events/create-logic-app.png#lightbox)
 
 1. Abra o recurso do Aplicativo Lógico quando for implantado e abra o painel **Designer de Aplicativo Lógico**. 
 
@@ -124,7 +127,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
    c. Selecione o recurso Grade de Eventos na lista suspensa do **Nome do Recurso**.
 
-   ![Painel de Designer do Aplicativo Lógico](./media/tutorial-facilities-events/logic-app-resource-event.png)
+   [![Painel de Designer do Aplicativo Lógico](./media/tutorial-facilities-events/logic-app-resource-event.png)](./media/tutorial-facilities-events/logic-app-resource-event.png#lightbox)
 
 1. Selecione o botão **Nova etapa**.
 
@@ -156,7 +159,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
     Essa carga tem valores fictícios. O Aplicativo Lógico usa essa carga de exemplo para gerar um *esquema*.
 
-    ![Janela de análise de JSON do Aplicativo Lógico para a Grade de Eventos](./media/tutorial-facilities-events/logic-app-parse-json.png)
+    [![Janela de análise de JSON dos Aplicativos Lógicos para a Grade de Eventos](./media/tutorial-facilities-events/logic-app-parse-json.png)](./media/tutorial-facilities-events/logic-app-parse-json.png#lightbox)
 
 1. Selecione o botão **Nova etapa**.
 
@@ -168,7 +171,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
    c. Na segunda caixa de texto **Escolher um valor**, insira `UdfCustom`.
 
-   ![Condições selecionadas](./media/tutorial-facilities-events/logic-app-condition.png)
+   [![Condições selecionadas](./media/tutorial-facilities-events/logic-app-condition.png)](./media/tutorial-facilities-events/logic-app-condition.png#lightbox)
 
 1. Na janela **Se verdadeiro**:
 
@@ -180,7 +183,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
    d. Em **Corpo** na mesma janela, insira um texto semelhante a este: **Má qualidade do ar detectada em uma sala; a temperatura precisa ser ajustada**. Você pode elaborar mais usando elementos da lista **Conteúdo dinâmico**.
 
-   ![Seleções de "Enviar um email" do Aplicativo Lógico](./media/tutorial-facilities-events/logic-app-send-email.png)
+   [![Seleções de "Enviar um email" dos Aplicativos Lógicos](./media/tutorial-facilities-events/logic-app-send-email.png)](./media/tutorial-facilities-events/logic-app-send-email.png#lightbox)
 
 1. Selecione o botão **Salvar** na parte superior do painel **Designer do Aplicativo Lógico**.
 
@@ -188,7 +191,7 @@ Você pode usar o serviço [Aplicativos Lógicos do Azure](../logic-apps/logic-a
 
 Em alguns minutos, você deve começar a receber notificações por email do recurso do Aplicativo Lógico. 
 
-   ![Notificação por email](./media/tutorial-facilities-events/logic-app-notification.png)
+   [![Notificação por email](./media/tutorial-facilities-events/logic-app-notification.png)](./media/tutorial-facilities-events/logic-app-notification.png#lightbox)
 
 Para interromper o recebimento desses emails, vá para o recurso do Aplicativo Lógico no portal e selecione o painel **Visão Geral**. Selecione **Desabilitar**.
 

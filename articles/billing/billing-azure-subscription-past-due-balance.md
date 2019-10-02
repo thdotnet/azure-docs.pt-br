@@ -15,14 +15,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: banders
-ms.openlocfilehash: 8f2dbc84fe09c825d8ef25aabafba7a672220192
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: cd3c29c4b65f45863647599ae2447584845f27c8
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71121720"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300297"
 ---
 # <a name="resolve-past-due-balance-for-your-azure-subscription"></a>Resolver o saldo vencido de sua assinatura do Azure
+
+Este artigo se aplica a clientes que têm uma conta do Programa Microsoft Online Services.
 
 Caso seu pagamento não seja recebido ou caso não seja possível processar seu pagamento, você poderá receber um email ou ver um alerta no portal do Azure ou no Centro de Contas.
 Se você for o [Administrador da Conta](billing-subscription-transfer.md#whoisaa), poderá liquidar os encargos pendentes no [portal do Azure](https://portal.azure.com). Se você estiver em um modo de pagamento de fatura, envie o pagamento para o local indicado na parte inferior da fatura.
@@ -43,6 +45,13 @@ Se você for o [Administrador da Conta](billing-subscription-transfer.md#whoisaa
 1. Se a forma de pagamento selecionada também tiver encargos pendentes para serviços da Microsoft, isso se refletirá no saldo total pendente. Também é necessário pagar esses encargos pendentes.
 1. Clique em **Pagar**.
 
+## <a name="troubleshoot-declined-credit-card"></a>Solucionar problemas de cartão de crédito recusado
+
+Se a cobrança em seu cartão de crédito for recusada pela instituição financeira, entre em contato com a instituição financeira para resolver o problema. Verifique com o banco para se certificar de que:
+- Transações internacionais estão habilitadas no cartão.
+- O cartão tem limite de crédito ou fundos suficientes para liquidar o saldo.
+- Pagamentos recorrentes estão habilitados no cartão.
+
 ## <a name="not-getting-billing-email-notifications"></a>Não está recebendo notificações de email de cobrança?
 
 Se você for o Administrador da Conta, [verifique qual endereço de email é usado para notificações](billing-how-to-change-azure-account-profile.md). Recomendamos que você use um endereço de email que é verificado regularmente. Se o email estiver correto, verifique a pasta de spam.
@@ -52,6 +61,7 @@ Se você for o Administrador da Conta, [verifique qual endereço de email é usa
 O serviço será cancelado e seus recursos não estarão mais disponíveis. Todos os seus dados do Azure serão excluídos 90 dias após o encerramento do serviço. Para saber mais, consulte a [Central de Confiabilidade da Microsoft – Como gerenciamos seus dados](https://go.microsoft.com/fwLink/p/?LinkID=822930&clcid=0x409).
 
 Caso esteja ciente de que o pagamento foi processado, mas sua assinatura ainda estiver desabilitada, entre em contato com o [Suporte do Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 

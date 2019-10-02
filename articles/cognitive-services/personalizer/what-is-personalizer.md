@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 09/03/2019
+ms.date: 09/19/2019
 ms.author: diberry
-ms.openlocfilehash: 3132d31e9e45718fa95c39a1b8160ea303ded25d
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: e2af5cb193653736a0d75b4194e09d42282d2fa6
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70883671"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203793"
 ---
 # <a name="what-is-personalizer"></a>O que é o Personalizador?
 
@@ -39,7 +39,7 @@ O Personalizador usa modelos de machine learning para descobrir qual ação deve
 1. Crie e configure uma instância do Serviço de Personalização no portal do Azure. Cada instância é um Loop do Personalizador.
 1. Use o SDK para chamar o Personalizador com informações (_recursos_) sobre os usuários e o conteúdo (_ações_). Você não precisa fornecer dados limpos e rotulados antes de usar o Personalizador. 
 1. No aplicativo cliente, mostre ao usuário a ação selecionada pelo Personalizador.
-1. Use o SDK para fornecer comentários ao Personalizador, indicando se o usuário selecionou a ação do Personalizador. Essa é uma _pontuação de recompensa_, normalmente entre -1 e 1.
+1. Use o SDK para fornecer comentários ao Personalizador, indicando se o usuário selecionou a ação do Personalizador. Essa é uma _[pontuação de recompensa](concept-rewards.md)_ .
 1. Exiba a análise no portal do Azure para avaliar como o sistema está funcionando e como seus dados estão ajudando a personalização.
 
 ## <a name="where-can-i-use-personalizer"></a>Em que situações posso usar o Personalizador?
@@ -53,14 +53,14 @@ Por exemplo, seu aplicativo cliente pode adicionar o Personalizador para:
 * Escolher uma resposta do chatbot para esclarecer a intenção do usuário ou sugerir uma ação.
 * Priorizar as sugestões do que um usuário deve fazer como a próxima etapa em um processo empresarial.
 
-O Personalizador não é um serviço destinado a persistir e gerenciar informações de perfil do usuário nem para registrar as preferências ou o histórico de usuários individuais. O Personalizador aprende com os recursos de cada interação na ação um contexto de um único modelo que pode obter recompensas máximas quando ocorrem recursos semelhantes. 
+O Personalizador não é um serviço destinado a persistir e gerenciar informações de perfil do usuário nem para registrar as preferências ou o histórico de usuários individuais. O Personalizador aprende com os recursos de cada interação na ação de um contexto de um único modelo que pode obter recompensas máximas quando ocorrem recursos semelhantes. 
 
 ## <a name="personalization-for-developers"></a>Personalização para desenvolvedores
 
 O serviço Personalizador tem duas APIs:
 
 * Enviar informações (_recursos_) sobre os usuários e o conteúdo (_ações_) para personalização. O Personalizador responde com a ação principal.
-* Enviar comentários ao Personalizador sobre se a classificação funcionou bem como um número, normalmente entre 0 e 1 (a seção anterior indicou -1 e 1). 
+* Envie comentários para o Personalizador sobre o quão bem a classificação funcionou como uma [pontuação de recompensa](concept-rewards.md). 
 
 ![Sequência básica de eventos para personalização](media/what-is-personalizer/personalization-intro.png)
 

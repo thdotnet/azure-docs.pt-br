@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: overview
 ms.date: 09/16/2019
 ms.author: kumud
-ms.openlocfilehash: fc3ae87ce5c4547526ae50f371684ac14dfcf266
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 0c5541d7a80c3b6157ccadd979412163122ca8a2
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71104652"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300741"
 ---
 # <a name="what-is-azure-private-link-preview"></a>O que é o Link Privado do Azure? (Visualização)
 O Link Privado do Azure te habilita a acessar os serviços de PaaS do Azure (por exemplo, Armazenamento do Azure e Banco de Dados SQL) e serviços de parceiros/clientes hospedados no Azure em um [Ponto de Extremidade Privado](private-endpoint-overview.md) em sua rede virtual. O tráfego entre a rede virtual e o serviço percorre a rede de backbone da Microsoft, eliminando a exposição da Internet pública. Também é possível criar seu próprio [Serviço de Link Privado](private-link-service-overview.md) em sua VNet (rede virtual) e fornecê-lo de forma privada aos seus clientes. A experiência de configuração e consumo usando o Link Privado do Azure é consistente entre os serviços de parceiro de PaaS do Azure, de propriedade do cliente e de parceiros compartilhados.
@@ -40,11 +40,11 @@ O Link Privado do Azure fornece os seguintes benefícios:
 
 |Cenário  |Serviços com suporte   |Regiões disponíveis | Status   |
 |---------|---------|---------|---------|
-|Link Privado para serviços de propriedade do cliente|Serviços de Link Privado atrás do Standard Load Balancer |Centro-oeste dos EUA; WestUS; Centro-Sul dos EUA; Leste dos EUA; Norte dos EUA  |  Visualização  |
+|Link Privado para serviços de propriedade do cliente|Serviços de Link Privado atrás do Standard Load Balancer |Centro-oeste dos EUA; Oeste dos EUA; Centro-Sul dos EUA; Leste dos EUA; Centro-Norte dos EUA  |  Visualização  |
 |Link Privado para os serviços de PaaS do Azure   | Armazenamento do Azure        |  Leste dos EUA, Oeste dos EUA, Centro-oeste dos EUA       | Visualização         |
 |  | Azure Data Lake Storage Gen2        |  Leste dos EUA, Oeste dos EUA, Centro-oeste dos EUA       | Visualização         |
-|  |  Banco de Dados SQL do Azure         | Centro-oeste dos EUA; WestUS; Centro-Sul dos EUA; Leste dos EUA; Norte dos EUA       |   Visualização      |
-||SQL Data Warehouse do Azure| Centro-oeste dos EUA; WestUS; Centro-Sul dos EUA; Leste dos EUA; Norte dos EUA |Visualização|
+|  |  Banco de Dados SQL do Azure         | Centro-oeste dos EUA; Oeste dos EUA; Centro-Sul dos EUA; Leste dos EUA; Centro-Norte dos EUA      |   Visualização      |
+||SQL Data Warehouse do Azure| Centro-oeste dos EUA; Oeste dos EUA; Centro-Sul dos EUA; Leste dos EUA; Centro-Norte dos EUA |Visualização|
 
 Para obter as notificações mais recentes, confira a página [Atualizações de rede virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network). 
 

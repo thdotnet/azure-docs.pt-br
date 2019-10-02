@@ -8,12 +8,12 @@ ms.date: 06/13/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: fd3b5766ec2bd8d1babf847598f1fbe5b6511ce7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 1db94e683a0dfb3b60b12bc5ac205c766d405d0a
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67432841"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71299837"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Tutorial: Configurar um ambiente para aprendizado de máquina no IoT Edge
 
@@ -26,7 +26,7 @@ Este artigo do tutorial de ponta a ponta do Azure Machine Learning no IoT Edge a
 
 Esta etapa normalmente é executada por um desenvolvedor de nuvem. Alguns dos softwares também podem ser úteis para um cientista de dados.
 
-No decorrer deste artigo, executaremos várias tarefas de desenvolvedor, incluindo a codificação, a compilação, a configuração e a implantação de módulos do IoT Edge e de dispositivos de IoT. Para facilidade de uso, criamos um script do PowerShell que cria uma máquina virtual do Azure com muitos dos pré-requisitos já configurados. A VM criada precisa ser capaz de lidar com a [virtualização aninhada](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization), que é o motivo pelo qual escolhemos o tamanho da máquina DS8V3.
+No decorrer deste artigo, executaremos várias tarefas de desenvolvedor, incluindo a codificação, a compilação, a configuração e a implantação de módulos do IoT Edge e de dispositivos de IoT. Para facilidade de uso, criamos um script do PowerShell que cria uma máquina virtual do Azure com muitos dos pré-requisitos já configurados. A VM criada precisa ser capaz de lidar com a [virtualização aninhada](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization), que é o motivo de termos escolhido o tamanho [Standard_D8s_v3](../virtual-machines/windows/sizes-general.md#dsv3-series-1).
 
 A VM de desenvolvimento será configurada com:
 

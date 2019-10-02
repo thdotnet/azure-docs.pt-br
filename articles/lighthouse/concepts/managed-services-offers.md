@@ -4,15 +4,15 @@ description: As ofertas de serviços gerenciados permitem que os provedores de s
 author: JnHs
 ms.service: lighthouse
 ms.author: jenhayes
-ms.date: 07/11/2019
+ms.date: 09/19/2019
 ms.topic: overview
 manager: carmonm
-ms.openlocfilehash: a6fcf5f1d0ac194d60f834fb8d26db019c538410
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 0a6371a1020182650d83d5e7ec9bb2378b44b557
+ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67810870"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71155265"
 ---
 # <a name="managed-services-offers-in-azure-marketplace"></a>Ofertas de Serviços Gerenciados no Azure Marketplace
 
@@ -20,9 +20,9 @@ Este artigo descreve o novo tipo de oferta **Serviços Gerenciados** no [Azure M
 
 ## <a name="understand-managed-services-offers"></a>Noções básicas sobre ofertas de serviços gerenciados
 
-As ofertas de serviços gerenciados simplificam o processo de integrar clientes para o gerenciamento de recursos delegados do Azure. Depois que um cliente adquire uma oferta no Azure Marketplace, ele poderá especificar quais assinaturas e/ou grupos de recursos devem ser integrados para que os usuários especificados em sua organização possam executar tarefas de administração para o cliente de dentro do locatário da sua organização.
+As ofertas de serviços gerenciados simplificam o processo de integrar clientes para o gerenciamento de recursos delegados do Azure. Quando um cliente adquire uma oferta no Azure Marketplace, ele pode especificar quais assinaturas e/ou grupos de recursos devem ser integrados. Observe que a assinatura deve ser autorizada para integração ao ser registrada manualmente no provedor de recursos **Microsoft.ManagedServices**.
 
-Depois disso, nenhuma ação adicional é exigida pelo cliente ou pelo provedor de serviços para que o cliente seja integrado. Isso ocorre porque, ao definir a oferta no [Portal do Cloud Partner](https://cloudpartner.azure.com/), você cria um manifesto que especifica os usuários, grupos e princípios de serviço do Azure AD que terão acesso aos recursos do cliente usando o gerenciamento de recursos delegados do Azure. junto com funções que definem o nível de acesso dele. Ao atribuir permissões a um grupo do Azure AD em vez de uma série de contas individuais de usuário ou de aplicativo, é possível adicionar ou remover usuários individuais quando seus requisitos de acesso mudam.
+Depois disso, os usuários em sua organização poderão executar tarefas de administração para esses recursos de dentro do locatário da sua organização, de acordo com o acesso que você definiu ao criar a oferta no [Portal do Cloud Partner](https://cloudpartner.azure.com/). Isso ocorre por meio de um manifesto que especifica os usuários, grupos e entidades de serviço do Azure AD que terão acesso aos recursos do cliente usando o gerenciamento de recursos delegados do Azure, junto com funções que definem o nível de acesso. Ao atribuir permissões a um grupo do Azure AD em vez de uma série de contas individuais de usuário ou de aplicativo, é possível adicionar ou remover usuários individuais quando seus requisitos de acesso mudam.
 
 ## <a name="public-and-private-offers"></a>Ofertas públicas e privadas
 

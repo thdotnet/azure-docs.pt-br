@@ -12,19 +12,21 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/19/2019
+ms.date: 09/20/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: e1a04cad7fe5c9c95397ffad2faa80c7d657d0f8
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: ab55583d72297f2a1c72bac21e4414919f31b91b
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273807"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71161376"
 ---
-# <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-by-using-an-azure-resource-manager-template"></a>Início Rápido: Criar um Standard Load Balancer para balancear a carga de VMs usando um modelo do Azure Resource Manager
+# <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-by-using-azure-resource-manager-template"></a>Início Rápido: Criar um Standard Load Balancer para balancear carga de VMs usando o modelo do Azure Resource Manager
 
-O balanceamento de carga fornece um nível mais alto de disponibilidade e escala com a distribuição das solicitações recebidas entre várias VMs (máquinas virtuais). Este início rápido mostra como implantar um modelo do Azure Resource Manager que cria um Standard Load Balancer para balancear a carga de VMs.
+O balanceamento de carga fornece um nível mais alto de disponibilidade e escala com a distribuição das solicitações recebidas entre várias VMs (máquinas virtuais). Este início rápido mostra como implantar um modelo do Azure Resource Manager que cria um Standard Load Balancer para balancear a carga de VMs. Usar o modelo do Resource Manager leva menos etapas em comparação com outros métodos de implantação.
+
+O [modelo do Resource Manager](../azure-resource-manager/template-deployment-overview.md) é um arquivo JSON (JavaScript Object Notation) que define a infraestrutura e a configuração do projeto. O modelo usa a sintaxe declarativa, que permite declarar o que você pretende implantar sem precisar gravar a sequência de comandos de programação para criá-lo. Caso deseje saber mais sobre como desenvolver modelos do Resource Manager, confira a [documentação do Resource Manager](/azure/azure-resource-manager/) e a [referência de modelos](/azure/templates/microsoft.network/loadbalancers).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -32,9 +34,22 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 O Standard Load Balancer oferece suporte a apenas um endereço IP público padrão. Ao criar um Standard Load Balancer, você também precisa criar um novo endereço IP público padrão configurado como o front-end do Standard Load Balancer.
 
-Você pode usar vários métodos para criar um Standard Load Balancer. Neste início rápido, você usará o Azure PowerShell para implantar um [modelo do Resource Manager](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json). Os modelos do Resource Manager são arquivos JSON que definem os recursos necessários para implantar sua solução.
+O modelo usado neste início rápido é um [Modelo de início rápido](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-load-balancer-standard-create/azuredeploy.json).
 
-Para entender os conceitos associados à implantação e ao gerenciamento de soluções do Azure, confira a [documentação do Azure Resource Manager](/azure/azure-resource-manager/). Para encontrar mais modelos relacionados ao Azure Load Balancer, confira [Modelos de Início Rápido do Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
+[!code-json[<Azure Resource Manager template create standard load balancer>](~/quickstart-templates/101-load-balancer-standard-create/azuredeploy.json)]
+
+Vários recursos do Azure foram definidos no modelo:
+
+- **Microsoft.Network/loadBalancers**
+- **Microsoft.Network/publicIPAddresses**: para o balanceador de carga.
+- **Microsoft.Network/networkSecurityGroups**
+- **Microsoft.Network/virtualNetworks**
+- **Microsoft.Compute/virutalMachines** (três deles)
+- **Microsoft.Network/publicIPAddresses** (três deles): para cada uma das três máquinas virtuais.
+- **Microsoft.Network/networkInterfaces** (três deles)
+- **Microsoft.Compute/virtualMachine/extensions** (três deles): use para configurar o IIS e as páginas da Web
+
+Para encontrar mais modelos relacionados ao Azure Load Balancer, confira [Modelos de Início Rápido do Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Network&pageNumber=1&sort=Popular).
 
 1. Clique em **Experimentar** no bloco de código a seguir para abrir o Azure Cloud Shell e então acompanhe as instruções para entrar no Azure.
 
@@ -65,7 +80,11 @@ Para entender os conceitos associados à implantação e ao gerenciamento de sol
 
    O nome do grupo de recursos é o nome do projeto com o acréscimo de **rg**. Você precisará do nome do grupo de recursos na seção a seguir.
 
-A implantação do modelo leva cerca de 10 minutos.
+A implantação do modelo leva cerca de 10 minutos. Quando tiver concluído, a saída deverá ser semelhante a:
+
+![Saída de implantação do PowerShell do modelo do Resource Manager do Azure Standard Load Balancer](./media/quickstart-load-balancer-standard-public-template/azure-standard-load-balancer-resource-manager-template-powershell-output.png)
+
+O Azure PowerShell é usado para implantar o modelo. Além do Azure PowerShell, você também pode usar o portal do Azure, a CLI do Azure e a API REST. Para saber mais sobre outros métodos de implantação, confira [Implantar modelos](../azure-resource-manager/resource-group-template-deploy-portal.md).
 
 ## <a name="test-the-load-balancer"></a>Testar o balanceador de carga
 
@@ -77,9 +96,13 @@ A implantação do modelo leva cerca de 10 minutos.
 
 1. Escolha o balanceador de carga. O nome padrão é o nome do projeto com o acréscimo de **-lb**.
 
-1. Copie apenas a parte do endereço IP do endereço IP público e cole-a na barra de endereço do seu navegador. O navegador exibe a página padrão do servidor da Web dos Serviços de Informações da Internet (IIS).
+1. Copie apenas a parte do endereço IP do endereço IP público e cole-a na barra de endereço do seu navegador.
 
-   ![Servidor Web do IIS](./media/tutorial-load-balancer-standard-zonal-portal/load-balancer-test.png)
+   ![IP público do modelo do Resource Manager do Azure Standard Load Balancer](./media/quickstart-load-balancer-standard-public-template/azure-standard-load-balancer-resource-manager-template-deployment-public-ip.png)
+
+    O navegador exibe a página padrão do servidor da Web dos Serviços de Informações da Internet (IIS).
+
+   ![Servidor Web do IIS](./media/quickstart-load-balancer-standard-public-template/load-balancer-test-web-page.png)
 
 Para ver o balanceador de carga distribuir o tráfego entre todas as três VMs, você poderá forçar a atualização de seu navegador da Web no computador cliente.
 
@@ -95,4 +118,3 @@ Para saber mais, continue com os tutoriais do Load Balancer.
 
 > [!div class="nextstepaction"]
 > [Tutoriais do Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md)
- 

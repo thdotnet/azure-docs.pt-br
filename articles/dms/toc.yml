@@ -2,49 +2,49 @@
   href: index.yml
 - name: Visão geral
   items:
-    - name: O que é o DMS (Serviço de Migração de Banco de Dados)?
+    - name: O que é o Serviço de Migração de Banco de Dados do Azure?
       href: dms-overview.md
 - name: Guia de início rápido
   items:
-    - name: Criar Serviço – Portal
+    - name: Criar serviço – Portal
       href: quickstart-create-data-migration-service-portal.md
 - name: Tutoriais
   items:
-    - name: Migrar SQL Server para Azure SQL DB offline
+    - name: Migrar o SQL Server para o banco de dados individual do BD SQL do Azure offline
       href: tutorial-sql-server-to-azure-sql.md
-    - name: Migrar SQL Server para Azure SQL DB online
+    - name: Migrar o SQL Server para o banco de dados individual do BD SQL do Azure online
       href: tutorial-sql-server-azure-sql-online.md
-    - name: Migrar SQL Server para Instância Gerenciada do Azure SQL DB offline
+    - name: Migrar o SQL Server para a instância gerenciada do BD SQL do Azure offline
       href: tutorial-sql-server-to-managed-instance.md
-    - name: Migrar o SQL Server para Instância Gerenciada do Banco de Dados SQL do Azure online
+    - name: Migrar o SQL Server para a instância gerenciada do BD SQL do Azure online
       href: tutorial-sql-server-managed-instance-online.md
-    - name: Migrar o SQL Server RDS para o BD SQL do Azure ou para uma Instância Gerenciada do BD SQL do Azure online
+    - name: Migrar o RDS SQL Server para o banco de dados individual do BD SQL do Azure ou a instância gerenciada do BD SQL do Azure online
       href: tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md
     - name: Migrar MySQL para Azure DB do MySQL online
       href: tutorial-mysql-azure-mysql-online.md
     - name: Migrar RDS MySQL para Azure DB do MySQL online
       href: tutorial-rds-mysql-server-azure-db-for-mysql-online.md
-    - name: Migrar PostgreSQL para Azure DB do PostgreSQL online
+    - name: Migrar o PostgreSQL para o BD do Azure do PostgreSQL – Servidor único online
       href: tutorial-postgresql-azure-postgresql-online.md
-    - name: Migrar RDS PostgreSQL para Azure DB do PostgreSQL online
+    - name: Migrar o RDS PostgreSQL para o BD do Azure do PostgreSQL – Servidor único online
       href: tutorial-rds-postgresql-server-azure-db-for-postgresql-online.md
     - name: Migrar MongoDB para API do Mongo do Azure Cosmos DB offline
       href: tutorial-mongodb-cosmos-db.md
     - name: Migrar MongoDB para API do Mongo do Azure Cosmos DB online
       href: tutorial-mongodb-cosmos-db-online.md
-    - name: Migrar Oracle para Banco de Dados do Azure para PostgreSQL online
+    - name: Migrar o Oracle para o Banco de Dados do Azure para PostgreSQL – Servidor único online
       href: tutorial-oracle-azure-postgresql-online.md
 - name: Guias de instruções
   items:
-    - name: Usar o PowerShell para migrar o SQL Server para o Azure SQL DB
+    - name: Usar o PowerShell para migrar o SQL Server para o banco de dados individual do BD SQL do Azure
       href: howto-sql-server-to-azure-sql-powershell.md
-    - name: Usar o PowerShell para migrar o SQL Server para a MI do Azure SQL DB
+    - name: Usar o PowerShell para migrar o SQL Server para a instância gerenciada do BD SQL do Azure
       href: howto-sql-server-to-azure-sql-mi-powershell.md
     - name: Monitorar a atividade de migração
       href: how-to-monitor-migration-activity.md
-    - name: Migrar pacotes do SSIS para o Banco de Dados SQL do Azure
+    - name: Reimplantar pacotes do SSIS no banco de dados individual do Banco de Dados SQL do Azure
       href: how-to-migrate-ssis-packages.md
-    - name: Migrar pacotes do SSIS para uma instância gerenciada do Banco de Dados SQL do Azure
+    - name: Reimplantar pacotes do SSIS em uma instância gerenciada do Banco de Dados SQL do Azure
       href: how-to-migrate-ssis-packages-managed-instance.md
 - name: Recursos
   expanded: true
@@ -53,7 +53,7 @@
       href: resource-scenario-status.md
     - name: Visão geral dos pré-requisitos
       href: pre-reqs.md
-    - name: Topologias de rede para migrações de instância gerenciada do banco de dados do Azure SQL
+    - name: Topologias de rede para migrações de instância gerenciada do BD SQL do Azure
       href: resource-network-topologies.md
     - name: Solução de problemas e problemas conhecidos
       items:
@@ -61,11 +61,11 @@
           href: known-issues-troubleshooting-dms-source-connectivity.md
         - name: Solucionar problemas e erros comuns
           href: known-issues-troubleshooting-dms.md
-        - name: Problemas Conhecidos – migração online para Azure SQL DB
+        - name: Problemas conhecidos – Migração online para o banco de dados individual do BD SQL do Azure
           href: known-issues-azure-sql-online.md
         - name: Problemas Conhecidos – migração online para banco de dados do Azure para MySQL
           href: known-issues-azure-mysql-online.md
-        - name: Problemas conhecidos – Migração online para Azure DB do PostgreSQL
+        - name: Problemas conhecidos – Migração online para o BD do Azure para PostgreSQL – Servidor único
           href: known-issues-azure-postgresql-online.md
     - name: vídeos
       items:
@@ -89,7 +89,7 @@
       items:
         - name: Serviço e ferramentas disponíveis para cenários de migração de dados
           href: dms-tools-matrix.md
-        - name: Guia de migração de banco de dados
+        - name: Guia de Migração de Banco de Dados do Azure
           href: 'https://aka.ms/datamigration'
         - name: Assistente de Migração de Dados
           href: 'https://aka.ms/dma'
@@ -97,6 +97,8 @@
           href: 'https://aka.ms/ssma'
         - name: Assistente para Experimentos de Banco de Dados
           href: 'https://aka.ms/dea-docs'
+        - name: Kit de ferramentas de migração de acesso a dados
+          href: 'https://marketplace.visualstudio.com/items?itemName=ms-databasemigration.data-access-migration-toolkit'
     - name: Perguntas frequentes
       href: faq.md
     - name: Comentários de voz do usuário

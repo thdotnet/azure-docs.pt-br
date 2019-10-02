@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: vanto, carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: d13ee8c46df9433530df1d26a86978daab709a52
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 27b554159fca2043fbd0c853e260a66294c10387
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883063"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162306"
 ---
 # <a name="quickstart-create-a-server-level-firewall-rule-for-single-and-pooled-databases-using-the-azure-portal"></a>Início Rápido: Criar uma regra de firewall no nível do servidor para bancos de dados individuais e em pool usando o portal do Azure
 
@@ -54,7 +54,7 @@ Execute essas etapas para criar uma regra de firewall de IP no nível do servido
 4. Escolha **Adicionar IP do cliente** na barra de ferramentas para adicionar seu endereço IP atual a uma nova regra de firewall de IP no nível do servidor. Uma regra de firewall de IP no nível do servidor pode abrir a porta 1433 para um único endereço IP ou um intervalo de endereços IP.
 
    > [!IMPORTANT]
-   > Por padrão, o acesso através do firewall do Banco de Dados SQL está habilitado para todos os serviços do Azure. Selecione **DESATIVAR** nessa página para desabilitar todos os serviços do Azure.
+   > Por padrão, o acesso pelo firewall do Banco de Dados SQL está desabilitado para todos os serviços do Azure. Escolha **ATIVAR** nesta página se desejar habilitar o acesso para todos os serviços do Azure.
    >
 
 5. Clique em **Salvar**. Uma regra de firewall de IP no nível do servidor é criada para o endereço IP atual que abre a porta 1433 no servidor do Banco de Dados SQL.

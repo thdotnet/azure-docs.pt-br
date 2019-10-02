@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58e3254d499e013dc686bf6b7d53f919a457c901
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 7a863c8fe81a08f00385cb267bf360994918fe82
+ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58371275"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71212111"
 ---
 # <a name="quickstart-self-service-password-reset"></a>Início Rápido: Redefinição de senha de autoatendimento
 
@@ -31,20 +31,20 @@ Neste início rápido, você passa pela configuração da redefinição de senha
 
 ## <a name="enable-self-service-password-reset"></a>Habilitar a redefinição de senha por autoatendimento
 
-> [!VIDEO https://www.youtube.com/embed/Pa0eyqjEjvQ]
+[Exibir este processo como um vídeo no YouTube](https://youtu.be/Pa0eyqjEjvQ)
 
 1. A partir do seu locatário existente do Azure AD, no **Portal do Azure** em **Azure Active Directory** selecione **Redefinição de senha**.
 
 2. Na página **Propriedades**, na opção **Redefinição da Senha de Autoatendimento Habilitada**, escolha **Selecionado**.
     * Em **Selecionar grupo**, escolha o grupo piloto criado como parte da seção de pré-requisitos deste artigo.
-    * Clique em **Salvar**.
+    * Clique em **Save** (Salvar).
 
 3. Na página **Métodos de autenticação**, escolha o seguinte:
    * Número de métodos necessários para redefinir: **1**
    * Métodos disponíveis para os usuários:
       * **Email**
       * **Código de aplicativo móvel (versão prévia)**
-   * Clique em **Salvar**.
+   * Clique em **Save** (Salvar).
 
      ![Escolhendo métodos de autenticação para SSPR][Authentication]
 

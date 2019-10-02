@@ -1,21 +1,18 @@
 ---
-title: 'Início Rápido: Configurar a Inteligência Artificial Geográfica'
-titleSuffix: Azure Data Science Virtual Machine
-description: Saiba como criar e configurar a Máquina Virtual de Ciência de Dados de AI Geográfica. A Máquina Virtual de Ciência de Dados de AI Geográfica fornece as ferramentas para criar soluções de ML e AI usando dados geográficos.
-keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise Geoespacial
-services: machine-learning
+title: 'Início Rápido: Criar uma DSVM de IA geográfica'
+description: Configure e crie uma Máquina Virtual de Ciência de Dados de IA Geográfica no Azure para realizar a análise geoespacial e o aprendizado de máquina.
 ms.service: machine-learning
 ms.subservice: data-science-vm
-author: vijetajo
-ms.author: vijetaj
+author: gvashishtha
+ms.author: gopalv
 ms.topic: quickstart
-ms.date: 03/05/2018
-ms.openlocfilehash: 7afeec3f71cd1af30093801fedabf3f0357ae3d0
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.date: 09/13/2019
+ms.openlocfilehash: 6b32d1f76091d7bbb8f870402020d0ac247d425b
+ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2019
-ms.locfileid: "70208066"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71170730"
 ---
 # <a name="quickstart-set-up-a-geo-artificial-intelligence-virtual-machine-on-azure"></a>Início Rápido: Configurar uma Máquina Virtual de Inteligência Artificial Geográfica no Azure 
 

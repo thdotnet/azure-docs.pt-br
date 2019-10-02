@@ -1,20 +1,20 @@
 ---
-title: Criar uma zona privada do DNS do Azure usando o Azure PowerShell
-description: Neste artigo, você cria e testa uma zona DNS privada e registro no DNS do Azure. Este é uma guia passo a passo para criar e gerenciar sua primeira zona e registro DNS privado usando o Azure PowerShell.
+title: Início Rápido – Criar uma zona DNS privada do Azure usando o Azure PowerShell
+description: Neste artigo, você cria e testa uma zona e um registro DNS privados no DNS do Azure. Este é uma guia passo a passo para criar e gerenciar sua primeira zona e registro DNS privado usando o Azure PowerShell.
 services: dns
 author: vhorne
 ms.service: dns
-ms.topic: article
-ms.date: 06/14/2019
+ms.topic: quickstart
+ms.date: 09/20/2019
 ms.author: victorh
-ms.openlocfilehash: 6603929fa7b4c597a846fc299577a9682d8f54e0
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
-ms.translationtype: MT
+ms.openlocfilehash: cf9ca1070461effc69d67614a11b1abd05363310
+ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854126"
+ms.lasthandoff: 09/20/2019
+ms.locfileid: "71162117"
 ---
-# <a name="create-an-azure-dns-private-zone-using-azure-powershell"></a>Criar uma zona privada do DNS do Azure usando o Azure PowerShell
+# <a name="quickstart-create-an-azure-private-dns-zone-using-azure-powershell"></a>Início Rápido: Criar uma zona DNS privada do Azure usando o Azure PowerShell
 
 [!INCLUDE [private-dns-public-preview-notice](../../includes/private-dns-public-preview-notice.md)]
 
@@ -27,7 +27,7 @@ Uma zona DNS é usada para hospedar os registros DNS para um domínio específic
 Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
-> * Criar uma zona de DNS privado
+> * Criar uma zona DNS privada
 > * Criar máquinas virtuais de teste
 > * Criar um registro DNS adicional
 > * Testar a zona privada
@@ -36,7 +36,7 @@ Neste artigo, você aprenderá a:
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-Se preferir, você pode concluir este procedimento usando a [CLI do Azure](private-dns-getstarted-cli.md).
+Se preferir, poderá concluir este início rápido usando a [CLI do Azure](private-dns-getstarted-cli.md).
 
 ## <a name="create-the-resource-group"></a>Criar o grupo de recursos
 
@@ -46,11 +46,11 @@ Primeiro, crie um grupo de recursos para conter a zona DNS:
 New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 ```
 
-## <a name="create-a-dns-private-zone"></a>Criar uma zona de DNS privado
+## <a name="create-a-private-dns-zone"></a>Criar uma zona DNS privada
 
 Uma zona DNS é criada usando o cmdlet `New-AzPrivateDnsZone` .
 
-O exemplo a seguir cria uma rede virtual chamada **myAzureVNet**. Em seguida, ele cria uma zona DNS chamada **Private.contoso.com** no grupo de recursos **MyAzureResourceGroup** , vincula a zona DNS à rede virtual **MyAzureVnet** e habilita o registro automático.
+O seguinte exemplo cria uma rede virtual chamada **myAzureVNet**. Em seguida, ele cria uma zona DNS chamada **private.contoso.com** no grupo de recursos **MyAzureResourceGroup**, vincula a zona DNS à rede virtual **MyAzureVnet** e habilita o registro automático.
 
 ```azurepowershell
 Install-Module -Name Az.PrivateDns -force
@@ -70,7 +70,7 @@ $link = New-AzPrivateDnsVirtualNetworkLink -ZoneName private.contoso.com `
   -VirtualNetworkId $vnet.id -EnableRegistration
 ```
 
-Se você quiser criar uma zona apenas para a resolução de nomes (sem registro de nome de host automático), `-EnableRegistration` poderá omitir o parâmetro.
+Se você quiser criar uma zona apenas para a resolução de nomes (sem registro de nome do host automático), poderá omitir o parâmetro `-EnableRegistration`.
 
 ### <a name="list-dns-private-zones"></a>Listar zonas de DNS privado
 
@@ -141,7 +141,7 @@ Agora você pode testar a resolução de nome para a zona privada **private.cont
 Você pode usar o comando ping para testar a resolução de nome. Portanto, configure o firewall em ambas as máquinas virtuais para permitir pacotes ICMP de entrada.
 
 1. Conecte-se a myVM01 e abra uma janela do Windows PowerShell com privilégios de administrador.
-2. Execute o seguinte comando:
+2. Execute o comando a seguir:
 
    ```powershell
    New-NetFirewallRule –DisplayName “Allow ICMPv4-In” –Protocol ICMPv4
@@ -209,7 +209,5 @@ Remove-AzResourceGroup -Name MyAzureResourceGroup
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você implantou uma zona DNS privada, criou um registro DNS e testou a zona.
-Agora você pode aprender mais sobre zonas DNS privadas.
-
-* [Usando o DNS do Azure para domínios privados](private-dns-overview.md)
+> [!div class="nextstepaction"]
+> [Cenários de Zonas Privadas do DNS do Azure](private-dns-scenarios.md)

@@ -7,16 +7,16 @@ ms.subservice: managed-instance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
-author: jovanpop-msft
-ms.author: jovanpop
+author: danimir
+ms.author: danil
 ms.reviewer: sstein, carlrab
 ms.date: 05/07/2019
-ms.openlocfilehash: 0344fc834cb1ef29c91bc52239d1df2706d1ca81
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: 9eae757642c2a833b60c0c22a8984e83909e772c
+ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71101687"
+ms.lasthandoff: 09/26/2019
+ms.locfileid: "71300823"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Início Rápido: Criar uma instância gerenciada do Banco de Dados SQL do Azure
 
@@ -33,88 +33,133 @@ Entre no [Portal do Azure](https://portal.azure.com/).
 
 ## <a name="create-a-managed-instance"></a>Criar uma instância gerenciada
 
-As etapas a seguir mostram como criar uma instância gerenciada.
+As etapas a seguir mostram como criar uma instância gerenciada:
 
-1. Selecione **SQL do Azure** no menu à esquerda do portal do Azure. Se o SQL do Azure não estiver na lista, selecione **Todos os serviços** e, em seguida, digite *SQL do Azure* na caixa de pesquisa.
-2. Selecione **+Adicionar** para abrir a página **Selecionar opção de implantação do SQL**. Exiba informações adicionais sobre a instância gerenciada do Banco de Dados SQL do Azure selecionando **Mostrar detalhes** no bloco **Instâncias gerenciadas**.
-3. Selecione **Criar**:
+1. No menu esquerdo do portal do Azure, selecione **SQL do Azure**. Se **SQL do Azure** não estiver na lista, selecione **Todos os serviços** e, em seguida, digite **SQL do Azure** na caixa de pesquisa.
+2. Selecione **+Adicionar** para abrir a página **Selecionar opção de implantação do SQL**. É possível exibir informações adicionais sobre uma instância gerenciada do Banco de Dados SQL do Azure selecionando **Mostrar detalhes** no bloco **Instâncias gerenciadas**.
+3. Selecione **Criar**.
 
    ![Criar uma instância gerenciada](./media/sql-database-managed-instance-get-started/create-managed-instance.png)
 
-4. Preencha o formulário da **instância gerenciada do SQL** com as informações solicitadas usando as informações da tabela a seguir.
+4. Use as guias no formulário de provisionamento **Criar Instância Gerenciada do Banco de Dados SQL do Azure** para adicionar informações necessárias e opcionais. As seções a seguir descrevem essas guias.
 
-   | Configuração| Valor sugerido | DESCRIÇÃO |
-   | ------ | --------------- | ----------- |
-   | **Assinatura** | Sua assinatura. | Uma assinatura que concede a você permissão para criar recursos. |
-   |**Nome da Instância Gerenciada**|Qualquer nome válido.|Para ver os nomes válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
-   |**Logon de administrador da Instância Gerenciada**|Qualquer nome de usuário válido.|Para ver os nomes válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). Não use "serveradmin", pois essa é uma função reservada no nível de servidor.|
-   |**Senha**|Qualquer senha válida.|A senha deve ter no mínimo 16 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).|
-   |**Fuso horário**|O fuso horário a ser observado pela instância gerenciada.|Para obter mais informações, confira [Fusos horários](sql-database-managed-instance-timezone.md).|
-   |**Ordenação**|A ordenação que você deseja usar para a instância gerenciada.|Se estiver migrando bancos de dados do SQL Server, verifique a ordenação de origem usando `SELECT SERVERPROPERTY(N'Collation')` e use esse valor. Para obter informações sobre ordenações, confira [Definir ou alterar a ordenação do servidor](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation).|
-   |**Localidade**|A localização na qual você deseja criar a instância gerenciada.|Para obter mais informações sobre as regiões, confira [Regiões do Azure](https://azure.microsoft.com/regions/).|
-   |**Rede virtual**|Selecione a **Criar nova rede virtual** ou uma rede virtual e uma sub-rede válidas.| Se uma rede ou uma sub-rede não estiver disponível, ela precisará ser [modificada para atender aos requisitos de rede](sql-database-managed-instance-configure-vnet-subnet.md) antes de ser selecionada como um destino para a nova instância gerenciada. Para obter mais informações sobre os requisitos de configuração do ambiente de rede para uma instância gerenciada, confira [Configurar uma rede virtual para uma instância gerenciada](sql-database-managed-instance-connectivity-architecture.md). |
-   |**Habilitar o ponto de extremidade público**   |Marque essa opção para habilitar o ponto de extremidade público   |Para que a instância gerenciada esteja acessível por meio do ponto de extremidade de dados público, a opção **Habilitar o ponto de extremidade público** precisa ser marcada.| 
-   |**Permitir acesso de**   |Selecione uma das opções: <ul> <li>**Serviços do Azure**</li> <li>**Internet**</li> <li>**Sem acesso**</li></ul>   |A experiência do portal permite configurar o grupo de segurança com o ponto de extremidade público. </br> </br> De acordo com o seu cenário, selecione uma das seguintes opções: </br> <ul> <li>Serviços do Azure – recomendados ao conectar-se do Power BI ou de outro serviço multilocatário. </li> <li> Internet – use para fins de teste quando desejar criar rapidamente uma instância gerenciada. Não recomendada para uso em ambientes de produção. </li> <li> Sem acesso – essa opção cria uma regra de segurança de negação. Você precisará modificar essa regra para tornar a instância gerenciada acessível por meio do ponto de extremidade público. </li> </ul> </br> Para obter mais informações sobre a segurança do ponto de extremidade público, confira [Como usar a instância gerenciada do Banco de Dados SQL do Azure de forma segura com o ponto de extremidade público](sql-database-managed-instance-public-endpoint-securely.md).|
-   |**Tipo de conexão**|Escolha entre um tipo de conexão de Proxy e Redirecionamento.|Para obter mais informações sobre tipos de conexão, confira [Política de conexão do Banco de Dados SQL do Azure](sql-database-connectivity-architecture.md#connection-policy).|
-   |**Grupo de recursos**|Um grupo de recursos novo ou existente.|Para ver os nomes do grupo de recursos válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
+### <a name="basics"></a>Noções básicas
 
-   ![Formulário da instância gerenciada](./media/sql-database-managed-instance-get-started/managed-instance-create-form.png)
+Preencha as informações necessárias na guia **Básico** usando a tabela a seguir. Este é um conjunto mínimo de informações para provisionar uma instância gerenciada.
 
-5. Para usar a instância gerenciada como um grupo de failover de instância secundário, selecione o check-out e especifique a instância gerenciada do DnsAzurePartner. 
-6. Selecione **Tipo de preço** para dimensionar os recursos de computação e armazenamento e examinar as opções de tipo de preço. O tipo de preço de Uso Geral com 32 GB de memória e 16 vCores é o valor padrão.
-7. Use os controles deslizantes ou as caixas de texto para especificar a quantidade de armazenamento e o número de núcleos virtuais.
-8. Quando terminar, selecione **Aplicar** para salvar a seleção. 
-9. Selecione **Criar** para implantar a instância gerenciada.
-10. Selecione o ícone **Notificações** para exibir o status da implantação.
+![Guia "Básico" para a criação de uma instância gerenciada](./media/sql-database-managed-instance-get-started/tabs/mi-create-tab-basics.png)
 
-    ![Progresso da implantação da instância gerenciada](./media/sql-database-managed-instance-get-started/deployment-progress.png)
+| Configuração| Valor sugerido | DESCRIÇÃO |
+| ------ | --------------- | ----------- |
+| **Assinatura** | Sua assinatura. | Uma assinatura que concede a você permissão para criar recursos. |
+| **Grupo de recursos** | Um grupo de recursos novo ou existente.|Para ver os nomes do grupo de recursos válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
+| **Nome da Instância Gerenciada** | Qualquer nome válido.|Para ver os nomes válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
+| **Região** |A região na qual você deseja criar a instância gerenciada.|Para obter mais informações sobre as regiões, confira [Regiões do Azure](https://azure.microsoft.com/regions/).|
+| **Logon de administrador da Instância Gerenciada** | Qualquer nome de usuário válido. | Para ver os nomes válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). Não use "serveradmin", pois essa é uma função reservada no nível de servidor.|
+| **Senha** | Qualquer senha válida.| A senha deve ter no mínimo 16 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).|
 
-11. Selecione **Implantação em andamento** para abrir a janela de instância gerenciada e monitorar melhor o progresso da implantação. 
+Selecione **Configurar Instância Gerenciada** para dimensionar os recursos de computação e armazenamento e examinar os tipos de preço. Use os controles deslizantes ou as caixas de texto para especificar a quantidade de armazenamento e o número de núcleos virtuais. Quando terminar, selecione **Aplicar** para salvar a seleção. 
+
+![Formulário da instância gerenciada](./media/sql-database-managed-instance-get-started/tabs/mi-create-tab-configure-performance.png)
+
+Para revisar suas escolhas antes de criar uma instância gerenciada, você pode selecionar **Revisar + criar**. Ou configure as opções de rede selecionando **Avançar: Rede**.
+
+### <a name="networking"></a>Rede
+
+Preencha as informações opcionais na guia **Rede** usando a tabela a seguir. Se você omitir essas informações, o portal aplicará as configurações padrão.
+
+![Guia "Rede" para a criação de uma instância gerenciada](./media/sql-database-managed-instance-get-started/tabs/mi-create-tab-networking.png)
+
+| Configuração| Valor sugerido | DESCRIÇÃO |
+| ------ | --------------- | ----------- |
+| **Rede virtual** | Selecione a **Criar nova rede virtual** ou uma rede virtual e uma sub-rede válidas.| Se uma rede ou uma sub-rede não estiver disponível, ela precisará ser [modificada para atender aos requisitos de rede](sql-database-managed-instance-configure-vnet-subnet.md) antes de ser selecionada como um destino para a nova instância gerenciada. Para obter mais informações sobre os requisitos de configuração do ambiente de rede para uma instância gerenciada, confira [Configurar uma rede virtual para uma instância gerenciada](sql-database-managed-instance-connectivity-architecture.md). |
+| **Tipo de conexão** | Escolha entre um tipo de conexão de proxy e redirecionamento.|Para obter mais informações sobre tipos de conexão, confira [Política de conexão do Banco de Dados SQL do Azure](sql-database-connectivity-architecture.md#connection-policy).|
+| **Ponto de extremidade público**  | Selecione **Habilitar**. | Para que a instância gerenciada esteja acessível por meio do ponto de extremidade de dados público, você precisa habilitar essa opção. | 
+| **Permitir o acesso de** (se o **Ponto de extremidade público** estiver habilitado) | Selecione uma das opções.   |A experiência do portal permite configurar um grupo de segurança com um ponto de extremidade público. </br> </br> De acordo com o seu cenário, selecione uma das seguintes opções: </br> <ul> <li>**Serviços do Azure**: recomendamos essa opção quando você estiver se conectando de Power BI ou de outro serviço multilocatário. </li> <li> **Internet**: use para fins de teste quando desejar criar rapidamente uma instância gerenciada. Não a recomendamos para ambientes de produção. </li> <li> **Sem acesso**: esta opção cria a regra de segurança **Negar**. Modifique essa regra para tornar uma instância gerenciada acessível por meio de um ponto de extremidade público. </li> </ul> </br> Para obter mais informações sobre a segurança do ponto de extremidade público, confira [Usando uma instância gerenciada do Banco de Dados SQL do Azure de forma segura com um ponto de extremidade público](sql-database-managed-instance-public-endpoint-securely.md).|
+
+Selecione **Revisar + criar** para revisar suas escolhas antes de criar uma instância gerenciada. Ou defina mais configurações personalizadas selecionando **Avançar: configurações adicionais**.
+
+### <a name="additional-settings"></a>Configurações adicionais
+
+Preencha as informações opcionais na guia **Configurações adicionais** usando a tabela a seguir. Se você omitir essas informações, o portal aplicará as configurações padrão.
+
+![Guia "Configurações adicionais" para a criação de uma instância gerenciada](./media/sql-database-managed-instance-get-started/tabs/mi-create-tab-additional-settings.png)
+
+| Configuração| Valor sugerido | DESCRIÇÃO |
+| ------ | --------------- | ----------- |
+| **Ordenação** | Escolha a ordenação que deseja usar para a instância gerenciada. Se estiver migrando bancos de dados do SQL Server, verifique a ordenação de origem usando `SELECT SERVERPROPERTY(N'Collation')` e use esse valor.| Para obter informações sobre ordenações, confira [Definir ou alterar a ordenação do servidor](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-server-collation).|   
+| **Fuso horário** | Selecione o fuso horário que sua instância gerenciada observará.|Para obter mais informações, confira [Fusos horários](sql-database-managed-instance-timezone.md).|
+| **Usar como secundário de failover** | Selecione **Sim**. | Habilite esta opção para usar a instância gerenciada como o secundário de um grupo de failover.|
+| **Instância gerenciada primária** (se **Usar como secundário de failover** estiver definido como **Sim**) | Escolha uma instância gerenciada primária existente que será ingressada na mesma zona DNS que a instância gerenciada que você está criando. | Esta etapa habilitará a configuração pós-criação do grupo de failover. Para obter mais informações, confira [Tutorial: Adicionar uma instância gerenciada do Banco de Dados SQL a um grupo de failover](sql-database-managed-instance-failover-group-tutorial.md).|
+
+### <a name="review--create"></a>Examinar + criar
+
+1. Selecione a guia **Revisar + criar** para revisar suas escolhas antes de criar uma instância gerenciada.
+
+   ![Guia para revisar e criar uma instância gerenciada](./media/sql-database-managed-instance-get-started/tabs/mi-create-tab-review-create.png)
+
+1. Selecione **Criar** para iniciar o provisionamento da instância gerenciada.
 
 > [!IMPORTANT]
-> Para a primeira instância em uma sub-rede, o tempo de implantação é normalmente muito maior do em instâncias subsequentes. Não cancele a operação de implantação porque ela dura mais que o esperado.
+> A implantação de uma instância gerenciada é uma operação de execução longa. A implantação da primeira instância na sub-rede normalmente demora muito mais do que a implantação em uma sub-rede com instâncias gerenciadas existentes. Para ver tempos de provisionamento médios, confira [Operações de gerenciamento da instância gerenciada](sql-database-managed-instance.md#managed-instance-management-operations).
 
-## <a name="review-resources-and-retrieve-your-fully-qualified-server-name"></a>Examinar os recursos e recuperar o nome do servidor totalmente qualificado
+### <a name="monitor-deployment-progress"></a>Monitorar o progresso da implantação
 
-Depois que a implantação for bem-sucedida, examine os recursos criados e recupere o nome do servidor totalmente qualificado para uso em Inícios Rápidos posteriores.
+1. Selecione o ícone **Notificações** para exibir o status da implantação.
 
-1. Abra o grupo de recursos da instância gerenciada. Exiba os recursos criados para você no Início Rápido [Criar uma instância gerenciada](#create-a-managed-instance).
+    ![Progresso da implantação de uma instância gerenciada](./media/sql-database-managed-instance-get-started/in-progress/mi-create-deployment-in-progress.png)
+
+1. Selecione **Implantação em andamento** na notificação para abrir a janela da instância gerenciada e monitorar melhor o progresso da implantação. 
+
+> [!TIP]
+> Se tiver fechado o navegador da Web ou saído da tela de progresso da implantação, siga estas etapas para localizar a tela:
+> 1. No portal do Azure, abra o grupo de recursos (na guia **Básico**) no qual você está implantando uma instância gerenciada.
+> 2. Selecione **Implantações**.
+> 3. Selecione a operação de implantação de instância gerenciada em andamento.
+
+## <a name="review-resources-and-retrieve-your-host-name"></a>Revise os recursos e recupere o nome do host
+
+Após a implantação ser bem-sucedida:
+
+1. Abra o grupo de recursos da instância gerenciada. Exiba os recursos criados para você no início rápido [Criar uma instância gerenciada](#create-a-managed-instance).
 
    ![Recursos da instância gerenciada](./media/sql-database-managed-instance-get-started/resources.png)
 
-2. Selecione a tabela de rotas para examinar a tabela de UDR (rota definida pelo usuário) criada para você.
+2. Selecione a tabela de rotas para revisar a UDR (rota definida pelo usuário) criada para você.
 
    ![Tabela de rotas](./media/sql-database-managed-instance-get-started/route-table.png)
 
-3. Na tabela de rotas, examine as entradas para rotear o tráfego de/para a rede virtual de instância gerenciada. Se você criar ou configurar a tabela de rotas manualmente, crie essas entradas na tabela de rotas.
+3. Na tabela de rotas, revise as entradas para rotear o tráfego de/para a rede virtual da instância gerenciada. Se você criar ou configurar a tabela de rotas manualmente, crie essas entradas na tabela de rotas.
 
    ![Entrada para uma sub-rede da instância gerenciada para o local](./media/sql-database-managed-instance-get-started/udr.png)
 
-4. Retorne ao grupo de recursos e selecione o grupo de segurança de rede para examinar as regras de segurança.
+4. Retorne ao grupo de recursos e selecione o grupo de segurança de rede.
 
    ![Grupo de segurança de rede](./media/sql-database-managed-instance-get-started/network-security-group.png)
 
-5. Examine as regras de segurança de entrada e saída. Se você tiver configurado pontos de extremidade públicos para sua instância gerenciada, confira o artigo [Configurar o ponto de extremidade público](sql-database-managed-instance-public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group) para obter mais informações.
+5. Examine as regras de segurança de entrada e saída. Se você tiver configurado pontos de extremidade públicos para sua instância gerenciada, confira o artigo [Configurar um ponto de extremidade público](sql-database-managed-instance-public-endpoint-configure.md#allow-public-endpoint-traffic-on-the-network-security-group) para obter mais informações.
 
    ![Regras de segurança](./media/sql-database-managed-instance-get-started/security-rules.png)
 
-6. Retorne ao grupo de recursos e selecione a instância gerenciada.
+6. Retorne ao grupo de recursos e selecione sua instância gerenciada.
 
-   ![Instância gerenciada](./media/sql-database-managed-instance-get-started/managed-instance.png)
+   ![Instância gerenciada no grupo de recursos](./media/sql-database-managed-instance-get-started/managed-instance.png)
 
-7. Na guia **Visão Geral**, localize a propriedade **Host**. Copie o endereço do host totalmente qualificado da instância gerenciada para uso no próximo Início Rápido.
+7. Na guia **Visão Geral**, localize a propriedade **Host**. Copie o nome do host da instância gerenciada para uso no próximo início rápido.
 
    ![Nome do host](./media/sql-database-managed-instance-get-started/host-name.png)
 
-   O nome será semelhante a **nome_do_seu_computador.a1b2c3d4e5f6.database.windows.net**.
+   O nome do host também é chamado de FQDN (nome de domínio totalmente qualificado). Ele é semelhante a *nome_do_seu_computador.a1b2c3d4e5f6.database.windows.net*.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para saber mais sobre como se conectar a uma instância gerenciada:
-  - Para obter uma visão geral das opções de conexão para aplicativos, confira [Conectar seus aplicativos a uma instância gerenciada](sql-database-managed-instance-connect-app.md).
-  - Para obter um Início Rápido que mostra como se conectar a uma instância gerenciada em uma máquina virtual do Azure, confira [Configurar uma conexão com uma máquina virtual do Azure](sql-database-managed-instance-configure-vm.md).
-  - Para obter um Início Rápido que mostra como se conectar a uma instância gerenciada em um computador cliente local usando uma conexão ponto a site, confira [Configurar uma conexão ponto a site](sql-database-managed-instance-configure-p2s.md).
-- Para restaurar um banco de dados existente do SQL Server do local para uma instância gerenciada: 
-    - Use o [DMS (Serviço de Migração de Banco de Dados do Azure) para migração](../dms/tutorial-sql-server-to-managed-instance.md) para fazer a restauração de um arquivo de backup de banco de dados. 
-    - Use o [comando T-SQL RESTORE](sql-database-managed-instance-get-started-restore.md) para fazer a restauração de um arquivo de backup de banco de dados.
-- Para o monitoramento avançado do desempenho de banco de dados de instância gerenciada com inteligência de solução de problemas interna, confira [Monitorar o Banco de Dados SQL do Azure usando a Análise de SQL do Azure](../azure-monitor/insights/azure-sql.md).
+Para saber mais sobre como se conectar a uma instância gerenciada:
+- Para obter uma visão geral das opções de conexão para aplicativos, confira [Conectar seus aplicativos a uma instância gerenciada](sql-database-managed-instance-connect-app.md).
+- Para obter um Início Rápido que mostra como se conectar a uma instância gerenciada em uma máquina virtual do Azure, confira [Configurar uma conexão com uma máquina virtual do Azure](sql-database-managed-instance-configure-vm.md).
+- Para obter um Início Rápido que mostra como se conectar a uma instância gerenciada em um computador cliente local usando uma conexão ponto a site, confira [Configurar uma conexão ponto a site](sql-database-managed-instance-configure-p2s.md).
+
+Para restaurar um banco de dados existente do SQL Server do local para uma instância gerenciada: 
+- Use o [Serviço de Migração de Banco de Dados do Azure para migração](../dms/tutorial-sql-server-to-managed-instance.md) para fazer a restauração de um arquivo de backup de banco de dados. 
+- Use o [comando T-SQL RESTORE](sql-database-managed-instance-get-started-restore.md) para fazer a restauração de um arquivo de backup de banco de dados.
+
+Para o monitoramento avançado do desempenho de banco de dados de instância gerenciada com inteligência de solução de problemas interna, confira [Monitorar o Banco de Dados SQL do Azure usando a Análise de SQL do Azure](../azure-monitor/insights/azure-sql.md).

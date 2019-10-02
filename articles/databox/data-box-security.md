@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 09/24/2018
+ms.date: 09/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 3e871b8d4de8ff83e260aded89e09ad5b17b3297
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 678bef1b18d60679be6c296a1fd7beef42f721b7
+ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799236"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71203831"
 ---
 # <a name="azure-data-box-security-and-data-protection"></a>Segurança e proteção de dados do Azure Data Box
 
@@ -58,7 +58,7 @@ Os dados que entram e saem do Data Box são protegidos pelos seguintes recursos:
 
 - Criptografia de 256 bits AES para dados em repouso.
 - Protocolos criptografados podem ser usados para dados em trânsito.
-- Eliminação segura de dados do dispositivo após a conclusão do upload no Azure. A eliminação de dados cumpre os padrões do NIST 800-88r1. O evento de apagamento de dados é registrado no [histórico de pedidos](data-box-logs.md#download-order-history).
+- Eliminação segura de dados do dispositivo após a conclusão do upload no Azure. A eliminação de dados está de acordo com as diretrizes no [Apêndice A para unidades de disco rígido ATA nos padrões NIST 800-88r1](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf). O evento de apagamento de dados é registrado no [histórico de pedidos](data-box-logs.md#download-order-history).
 
 ### <a name="data-box-service-protection"></a>Proteção de serviço do Data Box
 
@@ -106,7 +106,7 @@ As seguintes diretrizes de segurança são implementadas no Data Box:
 |[ISTA 2A](https://ista.org/docs/2Aoverview.pdf)     | Para durabilidade em condições adversas de transporte          |
 |[NIST SP 800-147](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-147.pdf)      | Para atualização de firmware segura         |
 |[FIPS 140-2 Nível 2](https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402.pdf)      | Para proteção de dados         |
-|[NIST SP 800-88r1](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf)      | Para limpeza de dados         |
+|Apêndice A para unidades de disco rígido ATA em [NIST SP 800-88r1](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf)      | Para limpeza de dados         |
 
 ## <a name="next-steps"></a>Próximas etapas
 
