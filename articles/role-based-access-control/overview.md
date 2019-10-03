@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/11/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e7113508ff7fe5d3471b193bb8dadb7cdab5a7ca
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: ff539311139d7e9823a2d7db2f5d8ee56f9231b6
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995315"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338654"
 ---
 # <a name="what-is-role-based-access-control-rbac-for-azure-resources"></a>O que é o RBAC (controle de acesso baseado em função) para recursos do Azure?
 
@@ -80,7 +80,7 @@ O Azure tem operações de dados que permitem a você conceder acesso a dados em
 
 *Escopo* é o conjunto de recursos ao qual o acesso se aplica. Quando você atribui uma função, você pode limitar ainda mais as ações permitidas definindo um escopo. Isso será útil se você quiser tornar alguém um [colaborador do site](built-in-roles.md#website-contributor), mas apenas para um grupo de recursos.
 
-No Azure, você pode especificar um escopo em vários níveis: [grupo de gerenciamento](../governance/management-groups/index.md), assinatura, grupo de recursos ou recurso. Os escopos são estruturados em uma relação pai-filho.
+No Azure, você pode especificar um escopo em vários níveis: [grupo de gerenciamento](../governance/management-groups/overview.md), assinatura, grupo de recursos ou recurso. Os escopos são estruturados em uma relação pai-filho.
 
 ![Escopo para uma atribuição de função](./media/overview/rbac-scope.png)
 

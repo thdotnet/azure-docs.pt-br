@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 473e16c610e7dee0b2838cb1a54ef7cd98958889
-ms.sourcegitcommit: 2aefdf92db8950ff02c94d8b0535bf4096021b11
+ms.openlocfilehash: 225f5cfe36daaafb7f6ab5d64e77c626e52edaac
+ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70232976"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71338188"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Início Rápido: Definir e atribuir um blueprint no portal
 
@@ -223,7 +223,7 @@ Depois que um blueprint for publicado, ele poderá ser atribuído a uma assinatu
 
    1. Selecione a **Oferta** disponível na lista suspensa.
 
-   1. Use o botão de reticências para selecionar o [grupo de gerenciamento](../management-groups/index.md) do qual a assinatura será um filho.
+   1. Use o botão de reticências para selecionar o [grupo de gerenciamento](../management-groups/overview.md) do qual a assinatura será um filho.
 
    1. Selecione **Criar** na parte inferior da página.
 
