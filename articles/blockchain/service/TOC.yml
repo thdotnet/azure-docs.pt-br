@@ -47,6 +47,8 @@
       href: manage-cli.md
     - name: Gerenciar o consórcio usando o PowerShell
       href: manage-consortium-powershell.md
+    - name: Usar Aplicativos Lógicos
+      href: ethereum-logic-app.md
 - name: Recursos
   items:
     - name: API REST do Blockchain

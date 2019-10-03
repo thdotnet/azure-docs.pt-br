@@ -113,7 +113,7 @@
       href: concept-generating-thumbnails.md
     - name: Reconhecimento de texto impresso e manuscrito
       href: concept-recognizing-text.md
-    - name: Detecção de conteúdo para adulto e de conteúdo obsceno
+    - name: Detecção de conteúdo para adulto
       href: concept-detecting-adult-content.md
 - name: Guias de instruções
   items:

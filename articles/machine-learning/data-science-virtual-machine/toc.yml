@@ -4,10 +4,12 @@
 - name: Visão geral
   expanded: true
   items:
-    - name: O que é uma Máquina Virtual de Ciência de Dados?
+    - name: O que é uma DSVM (Máquina Virtual de Ciência de Dados)?
       href: overview.md
     - name: O que é a DSVM de IA Geográfica?
       href: geo-ai-dsvm-overview.md
+    - name: Ferramentas incluídas no DSVM
+      href: tools-included.md
 - name: Guia de início rápido
   expanded: true
   items:
