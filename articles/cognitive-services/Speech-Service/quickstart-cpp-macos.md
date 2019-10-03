@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: d7d35c251848af5cfd5852080d01831085401227
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 12abb7fb6d5e93e226ae539f8161566e3c30bd65
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68554135"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71803321"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-macos-by-using-the-speech-sdk"></a>Início Rápido: Reconhecer fala em C++ no macOS usando o SDK de Fala
 
@@ -30,8 +30,6 @@ Você precisa de uma chave de assinatura dos Serviços de Fala para concluir est
 ## <a name="install-speech-sdk"></a>Instalar SDK de Fala
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
-
-A versão atual do SDK de Fala dos Serviços Cognitivos é `1.6.0`.
 
 O SDK de Fala para o macOS pode ser baixado como um pacote compactado da estrutura de https://aka.ms/csspeech/macosbinary.
 

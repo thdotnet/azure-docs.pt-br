@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 9/25/2019
-ms.openlocfilehash: fc635be68c87d29b21c41bb70aac4e3cbe34bcd3
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: 3615157543d826050b8adf0e6ae59bf62ad9cb1b
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71274913"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827313"
 ---
 # <a name="update-rus-for-a-cassandra-keyspace-and-table-using-azure-cli"></a>Atualizar RU/s para um keyspace e uma tabela do Cassandra usando a CLI do Azure
 
@@ -44,7 +44,7 @@ Este script usa os seguintes comandos. Cada comando da tabela é vinculado à do
 | [az cosmosdb create](/cli/azure/cosmosdb#az-cosmosdb-create) | Cria uma conta do Banco de Dados Cosmos do Azure. |
 | [az cosmosdb cassandra keyspace create](/cli/azure/cosmosdb/cassandra/keyspace#az-cosmosdb-cassandra-keyspace-create) | Cria um keyspace do Cassandra do Azure Cosmos. |
 | [az cosmosdb cassandra table create](/cli/azure/cosmosdb/cassandra/table#az-cosmosdb-cassandra-table-create) | Cria uma tabela do Cassandra do Azure Cosmos. |
-| [az cosmosdb cassandra keyspace throughput update](/cli/azure/cosmosdb/cassandra/keyspace/throughputaz-cosmosdb-cassandra-keyspace-throughput-update) | Atualizar RU/s para um keyspace do Cassandra do Azure Cosmos. |
+| [az cosmosdb cassandra keyspace throughput update](/cli/azure/cosmosdb/cassandra/keyspace/throughput?view=azure-cli-latest#az-cosmosdb-cassandra-keyspace-throughput-update) | Atualizar RU/s para um keyspace do Cassandra do Azure Cosmos. |
 | [az cosmosdb cassandra table throughput update](/cli/azure/cosmosdb/cassandra/table/throughput#az-cosmosdb-cassandra-table-throughput-update) | Atualizar RU/s para uma tabela do Cassandra do Azure Cosmos. |
 | [az group delete](/cli/azure/resource#az-resource-delete) | Exclui um grupo de recursos, incluindo todos os recursos aninhados. |
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 87d46fad1c0a5494910a8218c4e40994fc140386
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: fd4bf602cb5ca409b957e9dbd6f963d88428a63f
+ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71103393"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71694638"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Tutorial: Permitir acesso a uma ASP.NET Web API usando o Azure Active Directory B2C
 
@@ -54,23 +54,13 @@ Os recursos da API Web precisam ser registrados no seu locatário antes de poder
 
 Os escopos fornecem uma maneira de controlar o acesso a recursos protegidos. Escopos são usados pela API Web para implementar o controle de acesso com base em escopo. Por exemplo, os usuários da API Web podem ter tanto acesso de leitura quanto de gravação ou somente acesso de leitura. Neste tutorial, você usa escopos para definir as permissões de leitura e gravação da API Web.
 
-1. Selecione **Aplicativos** e selecione *webapi1*.
-2. Selecione **Escopos publicados**.
-3. Em **escopo**, insira `Hello.Read` e, na descrição, insira `Read access to hello`.
-4. Em **escopo**, insira `Hello.Write` e, na descrição, insira `Write access to hello`.
-5. Clique em **Save** (Salvar).
-
-Os escopos publicados podem ser usados para conceder uma permissão de aplicativo cliente à API Web.
+[!INCLUDE [active-directory-b2c-scopes](../../includes/active-directory-b2c-scopes.md)]
 
 ## <a name="grant-permissions"></a>Conceder permissões
 
 Para chamar uma API Web protegida de um aplicativo, é necessário conceder permissões de aplicativo à API. No tutorial de pré-requisito, você criou um aplicativo Web no Azure AD B2C chamado *webapp1*. Use este aplicativo para chamar a API Web.
 
-1. Selecione **Aplicativos** e, em seguida, selecione *webapp1*.
-2. Selecione **Acesso à API** e, em seguida, selecione **Adicionar**.
-3. No menu suspenso **Selecionar API**, selecione *webapi1*.
-4. No menu suspenso **Selecionar Escopos**, selecione os escopos **Hello.Read** e **Hello.Write** definidos anteriormente.
-5. Clique em **OK**.
+[!INCLUDE [active-directory-b2c-permissions-api](../../includes/active-directory-b2c-permissions-api.md)]
 
 Seu aplicativo é registrado para chamar a API Web protegida. Um usuário autentica-se com o Azure AD B2C para usar o aplicativo. O aplicativo obtém uma concessão de autorização do Azure AD B2C para acessar a API Web protegida.
 
@@ -79,8 +69,6 @@ Seu aplicativo é registrado para chamar a API Web protegida. Um usuário autent
 Agora que a API Web está registrada e você tem escopos definidos, configure a API Web para usar o locatário do Azure AD B2C. Neste tutorial, você configura uma API Web de exemplo. A API Web de exemplo está inclusa no projeto que você baixou no tutorial de pré-requisito.
 
 Há dois projetos na solução de exemplo:
-
-A seguir, há dois projetos estão na solução de exemplo:
 
 * **TaskWebApp** – Crie e edite uma lista de tarefas. O exemplo usa o fluxo de usuário de **inscrição ou conexão** para inscrever ou conectar usuários.
 * **TaskService** – Dá suporte à funcionalidade de criar, ler, atualizar e excluir a lista de tarefas. A API é protegida pelo Azure AD B2C e chamada pelo TaskWebApp.
@@ -99,8 +87,8 @@ A seguir, há dois projetos estão na solução de exemplo:
 
     ```csharp
     <add key="api:ApiIdentifier" value="https://<Your tenant name>.onmicrosoft.com/api/" />
-    <add key="api:ReadScope" value="Hello.Read" />
-    <add key="api:WriteScope" value="Hello.Write" />
+    <add key="api:ReadScope" value="demo.read" />
+    <add key="api:WriteScope" value="demo.write" />
     ```
 
 ### <a name="configure-the-web-api"></a>Configurar a API Web
@@ -128,8 +116,8 @@ A seguir, há dois projetos estão na solução de exemplo:
 1. Configure os escopos de configuração para corresponder aos criados no portal.
 
     ```csharp
-    <add key="api:ReadScope" value="Hello.Read" />
-    <add key="api:WriteScope" value="Hello.Write" />
+    <add key="api:ReadScope" value="demo.read" />
+    <add key="api:WriteScope" value="demo.write" />
     ```
 
 ## <a name="run-the-sample"></a>Execute o exemplo

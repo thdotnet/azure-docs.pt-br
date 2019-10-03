@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7cbddc4b7af546396a1a5a4c86d349a96054a6f3
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 4c065e1970a01f7e3737f8bd99672c84f2019bfe
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726265"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71822332"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Apêndice para Azure Disk Encryption 
 
@@ -104,17 +104,17 @@ Antes de começar, veja o artigo [Pré-requisitos](azure-security-disk-encryptio
      ```
 
 ### <a name="bkmk_prereq-script"></a> Usando o script do PowerShell de pré-requisitos do Azure Disk Encryption
-Se você já estiver familiarizado com os pré-requisitos do Azure Disk Encryption, use o [script do PowerShell de pré-requisitos do Azure Disk Encryption](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Para obter um exemplo de como usar esse script do PowerShell, confira o [Guia de início rápido para criptografar uma VM](azure-disk-encryption-linux-powershell-quickstart.md). Você pode remover os comentários de uma seção do script, começando na linha 211, para criptografar todos os discos de VMs existentes em um grupo de recursos existente. 
+Se você já estiver familiarizado com os pré-requisitos do Azure Disk Encryption, use o [script do PowerShell de pré-requisitos do Azure Disk Encryption](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Para obter um exemplo de como usar esse script do PowerShell, confira o [Guia de início rápido para criptografar uma VM](../virtual-machines/linux/disk-encryption-powershell-quickstart.md). Você pode remover os comentários de uma seção do script, começando na linha 211, para criptografar todos os discos de VMs existentes em um grupo de recursos existente. 
 
 A tabela a seguir mostra quais parâmetros podem ser usados no script do PowerShell: 
 
 
 |Parâmetro|Descrição|É obrigatório|
 |------|------|------|
-|$resourceGroupName| Nome do grupo de recursos ao qual o KeyVault pertence.  Um grupo de recursos com esse nome será criado caso ele ainda não exista.| verdadeiro|
-|$keyVaultName|Nome do KeyVault no qual as chaves de criptografia devem ser colocadas. Um cofre com esse nome será criado caso ele ainda não exista.| verdadeiro|
-|$location|Local do KeyVault. Verifique se o KeyVault e as VMs a serem criptografadas estão no mesmo local. Obtenha uma lista de locais com `Get-AzLocation`.|verdadeiro|
-|$subscriptionId|Identificador da assinatura do Azure a ser usada.  Você pode obter sua ID de assinatura com `Get-AzSubscription`.|verdadeiro|
+|$resourceGroupName| Nome do grupo de recursos ao qual o KeyVault pertence.  Um grupo de recursos com esse nome será criado caso ele ainda não exista.| True|
+|$keyVaultName|Nome do KeyVault no qual as chaves de criptografia devem ser colocadas. Um cofre com esse nome será criado caso ele ainda não exista.| True|
+|$location|Local do KeyVault. Verifique se o KeyVault e as VMs a serem criptografadas estão no mesmo local. Obtenha uma lista de locais com `Get-AzLocation`.|True|
+|$subscriptionId|Identificador da assinatura do Azure a ser usada.  Você pode obter sua ID de assinatura com `Get-AzSubscription`.|True|
 |$aadAppName|Nome do aplicativo do Azure AD que será usado para gravar segredos no KeyVault. Será criado um novo aplicativo com esse nome caso ele não exista. Se esse aplicativo já existir, passe o parâmetro aadClientSecret para o script.|False|
 |$aadClientSecret|Segredo do cliente do aplicativo do Azure AD que já foi criado.|False|
 |$keyEncryptionKeyName|Nome da chave de criptografia da chave opcional no KeyVault. Uma chave com esse nome será criada caso ela ainda não exista.|False|
@@ -206,7 +206,7 @@ Use o comando [`manage-bde`](https://technet.microsoft.com/library/ff829849.aspx
 
 ### <a name="prerequisites-for-os-disk-encryption"></a>Pré-requisitos para a criptografia de disco do sistema operacional
 
-* A VM deve usar uma distribuição compatível com a criptografia de disco do [sistema operacional, conforme listado no Azure Disk Encryption sistemas operacionais com suporte: Linux](azure-security-disk-encryption-prerequisites.md#linux) 
+* A VM deve usar uma distribuição compatível com a criptografia de disco do sistema operacional, conforme listado nos sistemas operacionais com suporte à criptografia de disco [Azure: Linux](azure-security-disk-encryption-prerequisites.md#linux) 
 * A VM deve ser criada com base na imagem do Marketplace no Azure Resource Manager.
 * VM do Azure com, no mínimo, 4 GB de RAM (o tamanho recomendável é de 7 GB).
 * (Para RHEL e CentOS) Desabilite o SELinux. Para desabilitar SELinux, confira "4.4.2. Desabilitando o SELinux" no [Guia do Administrador e Usuário do SELinux](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Working_with_SELinux-Changing_SELinux_Modes.html#sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux) na VM.
@@ -353,7 +353,7 @@ Configure a criptografia para trabalhar com o Azure, executando as seguintes eta
     fi
    ```
 
-2. Altere a configuração de criptografia em */etc/crypttab*. Ele deve ter esta aparência:
+2. Altere a configuração de criptografia em */etc/crypttab*. O resultado deve ser assim:
    ```
     xxx_crypt uuid=xxxxxxxxxxxxxxxxxxxxx none luks,discard,keyscript=/usr/local/sbin/azure_crypt_key.sh
     ```

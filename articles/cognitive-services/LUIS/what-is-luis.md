@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 06/11/2019
+ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 41c5e2f01678996406c586eb20043516beaf2184
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3d4251613ac2a00ddc56d5e573b49ced01adf61c
+ms.sourcegitcommit: 6fe40d080bd1561286093b488609590ba355c261
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563196"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71703107"
 ---
 # <a name="what-is-language-understanding-luis"></a>O que é Reconhecimento Vocal (LUIS)?
 
@@ -123,7 +123,7 @@ Exemplos usando o LUIS:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Crie um novo aplicativo LUIS com um domínio [predefinido](luis-get-started-create-app.md) ou [personalizado](luis-quickstart-intents-only.md). [Consulte o ponto de extremidade de previsão](luis-get-started-cs-get-intent.md) de um aplicativo de IoT público.
+Crie um novo aplicativo LUIS com um domínio [predefinido](luis-get-started-create-app.md) ou [personalizado](luis-quickstart-intents-only.md). [Consulte o ponto de extremidade de previsão](luis-get-started-get-intent-from-browser.md) de um aplicativo de IoT público.
 
 [bot-framework]: https://docs.microsoft.com/bot-framework/
 [flow]: https://docs.microsoft.com/connectors/luis/

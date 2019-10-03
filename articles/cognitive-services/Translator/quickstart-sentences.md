@@ -11,20 +11,18 @@ ms.topic: quickstart
 ms.date: 09/05/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 97db9e145c290e97dbda63a6207f5101a80d67ec
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: fc2d75c47cb9a1f4011e6147f46ec2df31216482
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393924"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827434"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length"></a>Início Rápido: Usar a API de Tradução de Texto para determinar o comprimento de frase
 
 Neste início rápido, você aprenderá a determinar o comprimento de frases usando a API de Tradução de Texto.
 
 Este início rápido requer uma [Conta dos Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) com um recurso de Tradução de Texto. Se não tiver uma conta, você poderá usar a [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/) para obter uma chave de assinatura.
-
-[!INCLUDE [Custom subdomains notice](../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ::: zone pivot="programming-language-csharp"
 
