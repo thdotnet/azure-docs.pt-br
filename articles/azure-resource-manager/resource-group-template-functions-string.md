@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: tomfitz
-ms.openlocfilehash: c30bb47f3f35663a6ffcfc0126758eb82c9dec4e
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: b558e046f3402fdfa127192788d7d3ee1307ddeb
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194766"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937028"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Funções de cadeia de caracteres para modelos do Azure Resource Manager
 
@@ -407,12 +407,12 @@ A saída do exemplo anterior com os valores padrão é:
 
 | Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| stringTrue | Bool | verdadeiro |
-| stringFalse | Bool | False |
-| objectTrue | Bool | verdadeiro |
-| objectFalse | Bool | False |
-| arrayTrue | Bool | verdadeiro |
-| arrayFalse | Bool | False |
+| stringTrue | Bool | True |
+| stringFalse | Booleano | False |
+| objectTrue | Booleano | True |
+| objectFalse | Booleano | False |
+| arrayTrue | Booleano | True |
+| arrayFalse | Booleano | False |
 
 ## <a name="datauri"></a>dataUri
 
@@ -585,9 +585,9 @@ A saída do exemplo anterior com os valores padrão é:
 
 | Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| arrayEmpty | Bool | verdadeiro |
-| objectEmpty | Bool | verdadeiro |
-| stringEmpty | Bool | verdadeiro |
+| arrayEmpty | Booleano | True |
+| objectEmpty | Booleano | True |
+| stringEmpty | Booleano | True |
 
 ## <a name="endswith"></a>endsWith
 
@@ -648,12 +648,12 @@ A saída do exemplo anterior com os valores padrão é:
 
 | Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| startsTrue | Bool | verdadeiro |
-| startsCapTrue | Bool | True |
-| startsFalse | Bool | False |
-| endsTrue | Bool | verdadeiro |
-| endsCapTrue | Bool | verdadeiro |
-| endsFalse | Bool | False |
+| startsTrue | Booleano | True |
+| startsCapTrue | Booleano | True |
+| startsFalse | Booleano | False |
+| endsTrue | Booleano | True |
+| endsCapTrue | Booleano | True |
+| endsFalse | Booleano | False |
 
 ## <a name="first"></a>first
 
@@ -1471,12 +1471,12 @@ A saída do exemplo anterior com os valores padrão é:
 
 | Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| startsTrue | Bool | verdadeiro |
-| startsCapTrue | Bool | True |
-| startsFalse | Bool | False |
-| endsTrue | Bool | verdadeiro |
-| endsCapTrue | Bool | verdadeiro |
-| endsFalse | Bool | False |
+| startsTrue | Booleano | True |
+| startsCapTrue | Booleano | True |
+| startsFalse | Booleano | False |
+| endsTrue | Booleano | True |
+| endsCapTrue | Booleano | True |
+| endsFalse | Booleano | False |
 
 ## <a name="string"></a>cadeia de caracteres
 
@@ -1824,7 +1824,7 @@ A saída do exemplo anterior com os valores padrão é:
 
 | Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| return | Cadeia | um dois três |
+| retorno | Cadeia | um dois três |
 
 ## <a name="uniquestring"></a>uniqueString
 
@@ -1914,10 +1914,26 @@ Cria um URI absoluto, combinando o baseUri e a cadeia de caracteres relativeUri.
 
 | Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
-| baseUri |Sim |cadeia de caracteres |Cadeia de caracteres do URI de base. |
+| baseUri |Sim |cadeia de caracteres |Cadeia de caracteres do URI de base. Tome cuidado para observar o comportamento em relação à manipulação da barra à direita ('/'), conforme descrito a seguir nesta tabela.  |
 | relativeUri |Sim |cadeia de caracteres |Cadeia de caracteres de uri relativo para adicionar a cadeia de caracteres do uri de base. |
 
-O valor para o parâmetro **baseUri** pode incluir um arquivo específico, mas apenas o caminho base é usado ao construir a URI. Por exemplo, transmitir `http://contoso.com/resources/azuredeploy.json` como parâmetro baseUri resultará em uma URI base de `http://contoso.com/resources/`.
+* Se **BaseUri** terminar em uma barra à direita, o resultado será simplesmente **BaseUri** seguido por **relativeUri**.
+
+* Se **BaseUri** não terminar em uma barra à direita, uma das duas coisas ocorrerá.  
+
+   * Se **BaseUri** não tiver nenhuma barra (além da "//" próxima à frente), o resultado será simplesmente **BaseUri** seguido por **relativeUri**.
+
+   * Se **BaseUri** tiver algumas barras, mas não terminar com uma barra, tudo da última barra em diante será removido do **BaseUri** e o resultado será **BaseUri** seguido por **relativeUri**.
+     
+Estes são alguns exemplos:
+
+```
+uri('http://contoso.org/firstpath', 'myscript.sh') -> http://contoso.org/myscript.sh
+uri('http://contoso.org/firstpath/', 'myscript.sh') -> http://contoso.org/firstpath/myscript.sh
+uri('http://contoso.org/firstpath/azuredeploy.json', 'myscript.sh') -> http://contoso.org/firstpath/myscript.sh
+uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://contoso.org/firstpath/azuredeploy.json/myscript.sh
+```
+Para obter detalhes completos, os parâmetros **BaseUri** e **relativeUri** são resolvidos conforme especificado na [RFC 3986, seção 5](https://tools.ietf.org/html/rfc3986#section-5).
 
 ### <a name="return-value"></a>Valor retornado
 
@@ -2088,7 +2104,7 @@ Retorna o valor DateTime (UTC) atual no formato especificado. Se nenhum formato 
 
 | Parâmetro | Necessário | Tipo | Descrição |
 |:--- |:--- |:--- |:--- |
-| format |Não |cadeia de caracteres |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use cadeias de caracteres de [formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou cadeias de [caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format |Não |cadeia de caracteres |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use cadeias de caracteres de [formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou [cadeias de caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Comentários
 

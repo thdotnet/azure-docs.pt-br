@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/13/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5dee0ef768180057452a232436fc295b36fd756c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 4893025b7d54dad1f1da6c5967d3c1dec99b499b
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68963747"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71826916"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Solucionar problemas de políticas personalizadas do Azure AD B2C e da Estrutura de Experiência de Identidade
 
@@ -52,17 +52,15 @@ Os erros comuns de validação incluem o seguinte:
 
 > Snippet de código de erro: `Reason: User is currently logged as a user of 'yourtenant.onmicrosoft.com' tenant. In order to manage 'yourtenant.onmicrosoft.com', please login as a user of 'yourtenant.onmicrosoft.com' tenant`
 
-* Verifique se o valor de tenantid nos `<TrustFrameworkPolicy\>` elementos `<BasePolicy\>` e corresponde ao seu locatário de Azure ad B2C de destino.
+* Verifique se o valor de Tenantid nos elementos `<TrustFrameworkPolicy\>` e `<BasePolicy\>` correspondem ao seu locatário de Azure AD B2C de destino.
 
 ## <a name="troubleshoot-the-runtime"></a>Solucionar problemas de tempo de execução
 
-* Use **executar agora** e `https://jwt.ms` para testar suas políticas independentemente de seu aplicativo Web ou móvel. Este site funciona como um aplicativo de terceira parte confiável. Ele exibe o conteúdo do JWT (Token Web JSON) que é gerado pela sua política do Azure AD B2C. Para criar um aplicativo de teste, navegue até **Azure ad B2C** \> **aplicativos** na portal do Azure e adicione um aplicativo com os seguintes valores:
+* Use **executar agora** e `https://jwt.ms` para testar suas políticas independentemente de seu aplicativo Web ou móvel. Este site funciona como um aplicativo de terceira parte confiável. Ele exibe o conteúdo do JSON Web token (JWT) que é gerado pela sua política de Azure AD B2C.
 
-  * **Nome**: TestApp
-  * **Aplicativo Web/API Web**: Não
-  * **Cliente nativo**: Não
+    Para criar um aplicativo de teste que possa redirecionar para `https://jwt.ms` para inspeção de token:
 
-  Em seguida, `https://jwt.ms` adicione como uma **URL de resposta**.
+    [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 
 * Para rastrear a troca de mensagens entre o navegador do cliente e o Azure AD B2C, use [Fiddler](https://www.telerik.com/fiddler). Ele pode ajudá-lo a obter uma indicação de onde sua jornada de usuário está falhando nas etapas de orquestração.
 

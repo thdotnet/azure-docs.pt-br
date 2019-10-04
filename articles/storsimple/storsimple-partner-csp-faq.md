@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 4750ba55c08ebac244e7515cae4e998155a79599
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 893e8de5efc523df34e2c1e139082d2b471cb63e
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60628858"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828538"
 ---
 # <a name="storsimple-for-cloud-solutions-provider-program-frequently-asked-questions"></a>StorSimple para Programa de Provedores de Soluções de Nuvem: Perguntas frequentes
 
@@ -50,7 +50,7 @@ Sim. O modelo é um modelo de desconto no atacado assim como outros serviços ba
 Os mesmos SKUs que estão disponíveis com os serviços de StorSimple autônomo. 
 
 ### <a name="is-there-any-difference-between-the-storsimple-directly-purchased-from-microsoft-under-ea-and-storsimple-as-a-part-of-csp"></a>Existe alguma diferença entre o StorSimple e StorSimple adquirido diretamente da Microsoft em EA como parte do CSP?
-Não. No CSP, os clientes também podem comprar outros serviços oferecidos pelo parceiro CSP juntamente com StorSimple Virtual Array (SVA) em uma fatura. Observe que para adquirir o dispositivo físico da série StorSimple 8000, os clientes ainda precisam percorrer a rota EA. 
+Nº No CSP, os clientes também podem comprar outros serviços oferecidos pelo parceiro CSP juntamente com StorSimple Virtual Array (SVA) em uma fatura. Observe que para adquirir o dispositivo físico da série StorSimple 8000, os clientes ainda precisam percorrer a rota EA. 
 
 ### <a name="in-which-markets-is-storsimple-available-for-csp-at-launch"></a>Em qual mercados, está StorSimple disponível para CSP no lançamento?
 StorSimple Array Virtual para o CSP está disponível em todos os mercados de onde o StorSimple está disponível atualmente. Para saber mais, vá para a [lista de regiões em que o StorSimple está disponível](https://azure.microsoft.com/regions/services/).
@@ -75,7 +75,7 @@ Você pode adicionar assinaturas de matriz Virtual StorSimple a conta de seus cl
 Sim. StorSimple Array Virtual para CSP, a melhor maneira de parceiros acessar o portal do Azure deve ser por meio de [Partner Center](https://partnercenter.microsoft.com/) onde é possível gerenciar os clientes e assinaturas. Para gerenciar assinaturas de StorSimple, o parceiro ou cliente (dependendo das permissões concedidas) deve fazer logon portal do Azure. 
 
 ### <a name="is-microsoft-shipping-a-new-portal-for-storsimple-for-csp"></a>É o Microsoft envio um novo portal para StorSimple para CSP? 
-Não. Você será capaz de administrar StorSimple Array Virtual no CSP por meio do portal do Azure.
+Nº Você será capaz de administrar StorSimple Array Virtual no CSP por meio do portal do Azure.
 
 ### <a name="i-have-provisioned-a-standalone-storsimple-subscription-for-my-customer-do-i-have-to-use-the-azure-portal-to-administer-my-device"></a>Posso ter provisionado um assinatura de StorSimple para meu cliente autônomo. É necessário usar o portal do Azure para administrar o meu dispositivo? 
 Sim. 
@@ -89,7 +89,7 @@ Sim. O executivo de vendas de parceiros e a equipe de conta do cliente para o cl
 Você pode visitar o StorSimple no Fórum do CSP para obter respostas para perguntas frequentes. Você precisa unir a [grupo Yammer, consultores Azure](https://www.yammer.com/azureadvisors) primeiro. Em seguida procure e ingressar no grupo - **StorSimple parceiro consultores**.
 
 ### <a name="how-does-the-support-work-for-storsimple-for-csp"></a>Como o suporte funciona para StorSimple para CSP? 
-O modelo de suporte para StorSimple em CSP é o mesmo que outros serviços do Azure no CSP. Para saber mais, vá para [Atendimento ao cliente para CSP](https://msdn.microsoft.com/partner-center/customer-support). 
+O modelo de suporte para StorSimple em CSP é o mesmo que outros serviços do Azure no CSP. Para saber mais, vá para [Atendimento ao cliente para CSP](/partner-center/csp-overview).
 
 Para saber mais sobre o StorSimple para CSP, vá para:
 

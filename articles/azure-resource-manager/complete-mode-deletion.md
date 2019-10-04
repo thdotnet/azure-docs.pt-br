@@ -4,14 +4,14 @@ description: Mostra como os tipos de recurso lidam com a exclusão de modo compl
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 10/03/2019
 ms.author: tomfitz
-ms.openlocfilehash: d8238dddee041573d9b122e62cec66118c681ef6
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.openlocfilehash: cdc00ccc61e20865e993a18c72b930d9570896f2
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70995259"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937043"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Exclusão de recursos do Azure para implantações do modo completo
 
@@ -43,7 +43,6 @@ Ir para um namespace do provedor de recursos:
 > - [Microsoft.Batch](#microsoftbatch)
 > - [Microsoft. billing](#microsoftbilling)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
 > - [Microsoft.Blockchain](#microsoftblockchain)
 > - [Microsoft.Blueprint](#microsoftblueprint)
 > - [Microsoft.BotService](#microsoftbotservice)
@@ -126,6 +125,7 @@ Ir para um namespace do provedor de recursos:
 > - [Microsoft.NetApp](#microsoftnetapp)
 > - [Microsoft.Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
+> - [Microsoft. ObjectStore](#microsoftobjectstore)
 > - [Microsoft. OffAzure](#microsoftoffazure)
 > - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
 > - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
@@ -201,7 +201,7 @@ Ir para um namespace do provedor de recursos:
 > | logs | Não |
 > | Relatórios | Não |
 > | servicehealthmetrics | Não |
-> | services | Não |
+> | serviços | Não |
 
 ## <a name="microsoftadvisor"></a>Microsoft.Advisor
 
@@ -210,7 +210,7 @@ Ir para um namespace do provedor de recursos:
 > | ------------- | ----------- |
 > | configurações | Não |
 > | generateRecommendations | Não |
-> | metadados | Não |
+> | metadata | Não |
 > | recomendações | Não |
 > | suppressions | Não |
 
@@ -396,6 +396,7 @@ Ir para um namespace do provedor de recursos:
 > | billingAccounts/clientes | Não |
 > | billingAccounts/clientes/billingSubscriptions | Não |
 > | billingAccounts/clientes/initiateTransfer | Não |
+> | billingAccounts/clientes/políticas | Não |
 > | billingAccounts/clientes/produtos | Não |
 > | billingAccounts/clientes/transações | Não |
 > | billingAccounts/clientes/transferências | Não |
@@ -443,13 +444,6 @@ Ir para um namespace do provedor de recursos:
 > | ------------- | ----------- |
 > | mapApis | Sim |
 > | updateCommunicationPreference | Não |
-
-## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
-
-> [!div class="mx-tableFixed"]
-> | Tipo de recurso | Exclusão completa de modo |
-> | ------------- | ----------- |
-> | BizTalk | Sim |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
@@ -637,10 +631,10 @@ Ir para um namespace do provedor de recursos:
 > | diskEncryptionSets | Sim |
 > | discos | Sim |
 > | galleries | Sim |
-> | galerias/aplicativos | Sim |
-> | galerias/aplicativos/versões | Sim |
-> | galleries/images | Sim |
-> | galleries/images/versions | Sim |
+> | galerias/aplicativos | Não |
+> | galerias/aplicativos/versões | Não |
+> | galleries/images | Não |
+> | galleries/images/versions | Não |
 > | Hosts | Sim |
 > | Hosts/hosts | Sim |
 > | imagens | Sim |
@@ -648,13 +642,11 @@ Ir para um namespace do provedor de recursos:
 > | restorePointCollections | Sim |
 > | restorePointCollections/restorePoints | Não |
 > | sharedVMImages | Sim |
-> | sharedVMImages/versions | Sim |
+> | sharedVMImages/versions | Não |
 > | instantâneos | Sim |
 > | virtualMachines | Sim |
 > | virtualMachines/extensions | Sim |
 > | virtualMachines/metricDefinitions | Não |
-> | virtualMachines/scriptJobs | Não |
-> | virtualMachines/softwareUpdateDeployments | Não |
 > | virtualMachineScaleSets | Sim |
 > | virtualMachines/extensions | Não |
 > | virtualMachineScaleSets/networkInterfaces | Não |
@@ -683,7 +675,7 @@ Ir para um namespace do provedor de recursos:
 > | ReservationRecommendations | Não |
 > | ReservationSummaries | Não |
 > | ReservationTransactions | Não |
-> | Marcas | Não |
+> | tags | Não |
 > | tenants | Não |
 > | Termos | Não |
 > | UsageDetails | Não |
@@ -869,9 +861,8 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Exclusão completa de modo |
 > | ------------- | ----------- |
-> | services | Sim |
+> | serviços | Sim |
 > | services/projects | Sim |
-> | slots | Sim |
 
 ## <a name="microsoftdatashare"></a>Microsoft. DataShare
 
@@ -923,6 +914,9 @@ Ir para um namespace do provedor de recursos:
 > | serverGroups | Sim |
 > | servidores | Sim |
 > | servers/advisors | Não |
+> | servidores/privateEndpointConnectionProxies | Não |
+> | servidores/privateEndpointConnections | Não |
+> | servidores/privateLinkResources | Não |
 > | servers/queryTexts | Não |
 > | servers/recoverableServers | Não |
 > | servers/topQueryStatistics | Não |
@@ -1027,7 +1021,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Exclusão completa de modo |
 > | ------------- | ----------- |
-> | services | Sim |
+> | serviços | Sim |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 
@@ -1127,7 +1121,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Exclusão completa de modo |
 > | ------------- | ----------- |
-> | services | Sim |
+> | serviços | Sim |
 
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
@@ -1203,6 +1197,7 @@ Ir para um namespace do provedor de recursos:
 > | clusters/databases | Não |
 > | clusters/databases/dataconnections | Não |
 > | clusters/databases/eventhubconnections | Não |
+> | clusters/sharedidentities | Não |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 
@@ -1282,7 +1277,7 @@ Ir para um namespace do provedor de recursos:
 > [!div class="mx-tableFixed"]
 > | Tipo de recurso | Exclusão completa de modo |
 > | ------------- | ----------- |
-> | offers | Não |
+> | ofertas | Não |
 > | offerTypes | Não |
 > | offerTypes/publishers | Não |
 > | offerTypes/publishers/offers | Não |
@@ -1367,11 +1362,13 @@ Ir para um namespace do provedor de recursos:
 > | Tipo de recurso | Exclusão completa de modo |
 > | ------------- | ----------- |
 > | netAppAccounts | Sim |
+> | netAppAccounts/backupPolicies | Sim |
 > | netAppAccounts/capacityPools | Sim |
 > | netAppAccounts/capacityPools/volumes | Sim |
+> | netAppAccounts/capacityPools/volumes/backups | Não |
 > | netAppAccounts/capacityPools/volumes/mountTargets | Sim |
 > | netAppAccounts/capacityPools/volumes/instantâneos | Sim |
-
+> | netAppAccounts/cofres | Não |
 ## <a name="microsoftnetwork"></a>Microsoft.Network
 
 > [!div class="mx-tableFixed"]
@@ -1464,6 +1461,13 @@ Ir para um namespace do provedor de recursos:
 > | ------------- | ----------- |
 > | namespaces | Sim |
 > | namespaces/notificationHubs | Sim |
+
+## <a name="microsoftobjectstore"></a>Microsoft. ObjectStore
+
+> [!div class="mx-tableFixed"]
+> | Tipo de recurso | Exclusão completa de modo |
+> | ------------- | ----------- |
+> | osNamespaces | Sim |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
 
@@ -1596,7 +1600,7 @@ Ir para um namespace do provedor de recursos:
 > | childResources | Não |
 > | eventos | Não |
 > | impactedResources | Não |
-> | metadados | Não |
+> | metadata | Não |
 > | notificações | Não |
 
 ## <a name="microsoftresources"></a>Microsoft.Resources
@@ -1618,7 +1622,6 @@ Ir para um namespace do provedor de recursos:
 > | subscriptions/resources | Não |
 > | subscriptions/tagnames | Não |
 > | subscriptions/tagNames/tagValues | Não |
-> | marcações | Não |
 > | tenants | Não |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
@@ -1682,6 +1685,7 @@ Ir para um namespace do provedor de recursos:
 > | securityStatusesSummaries | Não |
 > | serverVulnerabilityAssessments | Não |
 > | configurações | Não |
+> | subavaliações | Não |
 > | tarefas | Não |
 > | topologies | Não |
 > | workspaceSettings | Não |

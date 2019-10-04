@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 03/15/2019
+ms.date: 09/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: da3cb81eaeaa3b1609ffe67b2aea92a69b6bb47a
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 07db6c5cecf2b8dec803e73d5775edef3f8906fa
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726261"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828623"
 ---
 # <a name="azure-disk-encryption-prerequisites-previous-release"></a>Pré-requisitos do Azure Disk Encryption (versão anterior)
 
@@ -53,15 +53,17 @@ As distribuições do servidor Linux que não são endossadas pelo Azure não d�
 | Ubuntu | 18.04| SO e disco de dados |
 | Ubuntu | 16.04| SO e disco de dados |
 | Ubuntu | 14.04.5</br>[com kernel ajustado para Azure atualizado para 4.15 ou posterior](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | SO e disco de dados |
+| RHEL | 7,7 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7.6 | Sistema operacional e disco de dados (veja a observação abaixo) |
-| RHEL | 7.5 | Sistema operacional e disco de dados (veja a observação abaixo) |
+| RHEL | 7,5 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7.4 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7.3 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 7,2 | Sistema operacional e disco de dados (veja a observação abaixo) |
 | RHEL | 6,8 | Disco de dados (veja a observação abaixo) |
 | RHEL | 6.7 | Disco de dados (veja a observação abaixo) |
+| CentOS | 7,7 | SO e disco de dados |
 | CentOS | 7.6 | SO e disco de dados |
-| CentOS | 7.5 | SO e disco de dados |
+| CentOS | 7,5 | SO e disco de dados |
 | CentOS | 7.4 | SO e disco de dados |
 | CentOS | 7.3 | SO e disco de dados |
 | CentOS | 7.2n | SO e disco de dados |

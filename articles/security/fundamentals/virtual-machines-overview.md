@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 7b33484084b4ada5aeaf89eb90167658ade15ad8
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 4aca2a4495d4b6c3669982b2e7757b7252d70f6a
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899792"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828567"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Visão geral de segurança de máquinas virtuais do Azure
 Este artigo fornece uma visão geral dos principais recursos de segurança do Azure que podem ser usados com máquinas virtuais.
@@ -102,7 +102,7 @@ A solução é integrada ao Azure Key Vault para ajudá-lo a controlar e gerenci
 Saiba mais:
 
 * [Azure Disk Encryption para VMs de IaaS](/azure/security/azure-security-disk-encryption-overview)
-* [Início Rápido: Criptografar uma VM de IaaS do Windows com o Azure PowerShell](../azure-disk-encryption-linux-powershell-quickstart.md)
+* [Início Rápido: Criptografar uma VM de IaaS do Windows com o Azure PowerShell](../../virtual-machines/linux/disk-encryption-powershell-quickstart.md)
 
 ## <a name="virtual-machine-backup"></a>Backup de máquinas virtuais
 
@@ -113,7 +113,7 @@ Saiba mais:
 * [O que é o Backup do Azure?](/azure/backup/backup-introduction-to-azure-backup)
 * [Perguntas frequentes sobre o serviço Backup do Azure](/azure/backup/backup-azure-backup-faq)
 
-## <a name="azure-site-recovery"></a>do Azure Site Recovery
+## <a name="azure-site-recovery"></a>Azure Site Recovery
 
 Uma parte importante da estratégia de BCDR de sua organização é descobrir como manter cargas de trabalho e aplicativos corporativos em execução durante interrupções planejadas e não planejadas. O Azure Site Recovery ajuda a orquestrar a replicação, o failover e a recuperação de cargas de trabalho e aplicativos, de modo que eles estejam disponíveis em um local secundário, caso o local primário fique inativo.
 

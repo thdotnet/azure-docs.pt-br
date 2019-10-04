@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c0625a233b3b4a949feff2e289361a26fc8dc5a
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
-ms.translationtype: MT
+ms.openlocfilehash: 8e7681afe3f5361b17670312c8391349c650a89d
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835348"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936783"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Como: Personalizar declarações emitidas no token SAML para aplicativos empresariais
 
@@ -31,7 +31,7 @@ Hoje, o Azure Active Directory (Azure AD) dá suporte ao SSO (logon único) com 
 
 Uma *declaração* são informações que um provedor de identidade declara sobre um usuário dentro do token que emite para esse usuário. No [Token SAML](https://en.wikipedia.org/wiki/SAML_2.0), esses dados normalmente estão contidos na Instrução de Atributo SAML. A ID única do usuário é normalmente representada na SAML Subject, também denominada Identificador de Nome.
 
-Por padrão, o Azure ad emite um token SAML para seu aplicativo que contém `NameIdentifier` uma declaração com um valor de nome de usuário (também conhecido como o nome principal do usuário) no Azure AD, que pode identificar exclusivamente o usuário. O token SAML também contém declarações adicionais com o endereço de email, nome e sobrenome do usuário.
+Por padrão, o Azure AD emite um token SAML para seu aplicativo que contém uma declaração `NameIdentifier` com um valor de nome de usuário (também conhecido como o nome UPN) no Azure AD, que pode identificar exclusivamente o usuário. O token SAML também contém declarações adicionais com o endereço de email, nome e sobrenome do usuário.
 
 Para exibir ou editar as declarações emitidas no token SAML para o aplicativo, abra o aplicativo no Portal do Azure. Em seguida, abra a seção **atributos de usuário & declarações** .
 
@@ -39,7 +39,7 @@ Para exibir ou editar as declarações emitidas no token SAML para o aplicativo,
 
 Há dois possíveis motivos para você precisar editar as declarações emitidas no token SAML:
 
-* O aplicativo exige que `NameIdentifier` a declaração ou NameID seja algo diferente do nome de usuário (ou nome UPN) armazenado no Azure AD.
+* O aplicativo exige que a declaração `NameIdentifier` ou NameID seja algo diferente do nome de usuário (ou nome UPN) armazenado no Azure AD.
 * O aplicativo foi escrito para exigir um conjunto diferente de URIs ou valores de declaração.
 
 ## <a name="editing-nameid"></a>Editando NameID
@@ -65,7 +65,6 @@ Na lista suspensa **escolher formato do identificador de nome** , você pode sel
 | **Persistente** | O Azure AD usará persistente como o formato NameID. |
 | **EmailAddress** | O Azure AD usará EmailAddress como o formato NameID. |
 | **Não especificado** | O AD do Azure usará não especificado como o formato NameID. |
-| **Transitório** | O Azure AD usará transitório como o formato NameID. |
 
 Para saber mais sobre o atributo NameIDPolicy, consulte [protocolo SAML de logon único](single-sign-on-saml-protocol.md).
 
@@ -83,7 +82,7 @@ Selecione a fonte desejada para a declaração `NameIdentifier` (ou NameID). Voc
 | Extensões de diretório | Extensões de diretório [sincronizadas do Active Directory local usando a Sincronização do Azure AD Connect](../hybrid/how-to-connect-sync-feature-directory-extensions.md) |
 | Atributos de Extensão 1-15 | Atributos de extensão locais usados para estender o esquema do Azure AD |
 
-Para obter mais informações, [consulte a tabela 3: Valores de ID válidos por](active-directory-claims-mapping.md#table-3-valid-id-values-per-source)origem.
+Para obter mais informações, consulte [Table 3: Valores de ID válidos por origem @ no__t-0.
 
 ### <a name="special-claims---transformations"></a>Declarações especiais – transformações
 
@@ -114,7 +113,7 @@ Você também pode usar as funções de transformações de declarações.
 | **Join()** | Cria um novo valor unindo dois atributos. Opcionalmente, você pode usar um separador entre os dois atributos. |
 | **ToLower()** | Converte os caracteres do atributo selecionado em caracteres minúsculos. |
 | **ToUpper()** | Converte os caracteres do atributo selecionado em caracteres maiúsculos. |
-| **Contains ()** | Gera um atributo ou constante se a entrada corresponde ao valor especificado. Caso contrário, você poderá especificar outra saída se não houver correspondência.<br/>Por exemplo, se você quiser emitir uma declaração em que o valor é o endereço de email do usuário, se ele contiver@contoso.como domínio "", caso contrário, você deseja gerar o nome UPN. Para fazer isso, configure os seguintes valores:<br/>*Parâmetro 1 (entrada)* : user. email<br/>*Valor*: "@contoso.com"<br/>Parâmetro 2 (saída): user. email<br/>Parâmetro 3 (saída se não houver correspondência): user. UserPrincipalName |
+| **Contains ()** | Gera um atributo ou constante se a entrada corresponde ao valor especificado. Caso contrário, você poderá especificar outra saída se não houver correspondência.<br/>Por exemplo, se você quiser emitir uma declaração em que o valor é o endereço de email do usuário, se ele contiver o domínio "@contoso.com", caso contrário, você desejará gerar o nome principal do usuário. Para fazer isso, configure os seguintes valores:<br/>*Parâmetro 1 (entrada)* : user. email<br/>*Valor*: "@contoso.com"<br/>Parâmetro 2 (saída): user. email<br/>Parâmetro 3 (saída se não houver correspondência): user. UserPrincipalName |
 | **EndWith()** | Gera um atributo ou constante se a entrada termina com o valor especificado. Caso contrário, você poderá especificar outra saída se não houver correspondência.<br/>Por exemplo, se você quiser emitir uma declaração em que o valor é o EmployeeID do usuário se o EmployeeID terminar com "000", caso contrário, você desejará gerar um atributo de extensão. Para fazer isso, configure os seguintes valores:<br/>*Parâmetro 1 (entrada)* : user. EmployeeID<br/>*Valor*: "000"<br/>Parâmetro 2 (saída): user. EmployeeID<br/>Parâmetro 3 (saída se não houver correspondência): user. extensionAttribute1 |
 | **StartWith()** | Gera um atributo ou constante se a entrada começa com o valor especificado. Caso contrário, você poderá especificar outra saída se não houver correspondência.<br/>Por exemplo, se você quiser emitir uma declaração em que o valor é o EmployeeID do usuário, se o país/região começar com "US", caso contrário, você deseja gerar um atributo de extensão. Para fazer isso, configure os seguintes valores:<br/>*Parâmetro 1 (entrada)* : user. Country<br/>*Valor*: DIGAMOS<br/>Parâmetro 2 (saída): user. EmployeeID<br/>Parâmetro 3 (saída se não houver correspondência): user. extensionAttribute1 |
 | **Extract ()-após correspondência** | Retorna a subcadeia de caracteres depois que ela corresponde ao valor especificado.<br/>Por exemplo, se o valor da entrada for "Finance_BSimon", o valor correspondente será "Finance_", então a saída da declaração será "BSimon". |

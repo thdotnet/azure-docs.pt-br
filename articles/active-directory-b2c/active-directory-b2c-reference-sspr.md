@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e8137bc0e75595b5f548584bb2d1644de2e0fecd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7903ec669772c3a3858a9c1d514ab3e6de6a2bd4
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508919"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936824"
 ---
 # <a name="set-up-self-service-password-reset-for-your-customers"></a>Configure a redefinição de senha de autoatendimento para seus clientes
 
@@ -30,6 +30,7 @@ Por padrão, o diretório não tem a redefinição de senha de autoatendimento a
 
 1. Entre no [portal do Azure](https://portal.azure.com/) como o Administrador da Assinatura. Essa é a mesma conta corporativa, de estudante ou da Microsoft que você usou para criar o diretório.
 2. Abra o **Azure Active Directory** (na barra de navegação à esquerda).
+3. Role para baixo na folha opções e selecione **redefinição de senha**.
 4. Configure a **Redefinição de senha de autoatendimento habilitada** como **Tudo**. 
 5. Clique em **Salvar** na parte superior da página. Pronto!
 

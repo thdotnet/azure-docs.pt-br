@@ -5,15 +5,15 @@ services: digital-twins
 author: kingdomofends
 ms.service: digital-twins
 ms.topic: include
-ms.date: 08/12/2019
+ms.date: 10/02/2019
 ms.author: v-adgera
 ms.custom: include file
-ms.openlocfilehash: f9b1b32775393196a77bef3aa2257f6fb66afdcb
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.openlocfilehash: 76a05817ae91bb49240e5d72988c776ce67ec1c0
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "69012030"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71845515"
 ---
 > [!NOTE]
 > Normalmente, solicitações com várias partes requerem três partes:
@@ -26,7 +26,7 @@ ms.locfileid: "69012030"
 >
 > **Content-Type** e **Content-Disposition** variam dependendo do cenário de uso.
 
-Solicitações com várias partes podem ser feitas de forma programática (usando C#), por meio de um cliente REST ou de uma ferramenta como [Postman](https://docs.microsoft.com/azure/digital-twins/how-to-configure-postman#multi). Ferramentas de cliente REST podem ter diferentes níveis de suporte para solicitações com várias partes complexas. As definições de configuração também podem variar ligeiramente de uma ferramenta para outra. Verifique qual ferramenta é mais adequada às suas necessidades.
+Solicitações com várias partes podem ser feitas de forma programática (usando C#), por meio de um cliente REST ou de uma ferramenta como [Postman](https://docs.microsoft.com/azure/digital-twins/how-to-configure-postman#make-a-multipart-post-request). Ferramentas de cliente REST podem ter diferentes níveis de suporte para solicitações com várias partes complexas. As definições de configuração também podem variar ligeiramente de uma ferramenta para outra. Verifique qual ferramenta é mais adequada às suas necessidades.
 
 > [!IMPORTANT]
 > As solicitações com várias partes feitas para as APIs de Gerenciamento dos Gêmeos Digitais do Azure normalmente são divididas em duas partes:

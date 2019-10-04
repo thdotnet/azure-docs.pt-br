@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 10/02/2019
 ms.author: cherylmc
-ms.openlocfilehash: 98d8c2f6870be16f3eb92219fc3d02f988390a41
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: bc2ec2b952b4f0c6e61fc4953559fa882edfff09
+ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295461"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71841135"
 ---
 # <a name="configure-an-always-on-vpn-device-tunnel"></a>Configurar um túnel de dispositivo VPN Always On
 
@@ -32,12 +32,7 @@ O túnel de dispositivo e o túnel de usuário operam de forma independente com 
 
 Configure o gateway de VPN para usar a autenticação IKEv2 e com base em certificado usando este [artigo de ponto a site](vpn-gateway-howto-point-to-site-resource-manager-portal.md).
 
-## <a name="2-configure-the-user-tunnel"></a>2. Configurar o túnel do usuário
-
-1. Instale certificados de cliente no cliente do Windows 10, conforme mostrado neste [artigo de cliente VPN ponto a site](point-to-site-how-to-vpn-client-install-azure-cert.md). O certificado precisa estar no repositório do usuário atual
-2. Configure o cliente VPN Always On por meio do PowerShell, SCCM ou Intune usando [estas instruções](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections).
-
-## <a name="3-configure-the-device-tunnel"></a>3. Configurar o túnel do dispositivo
+## <a name="2-configure-the-device-tunnel"></a>2. Configurar o túnel do dispositivo
 
 Os requisitos a seguir devem ser atendidos para estabelecer com êxito um túnel de dispositivo:
 
@@ -160,7 +155,7 @@ Depois de configurar o gateway de rede virtual e instalar o certificado do clien
    ![Rasphone](./media/vpn-gateway-howto-always-on-device-tunnel/rasphone.png)
 1. Procure a entrada **MachineCertTest** e clique em **conectar**.
 
-   ![Connect](./media/vpn-gateway-howto-always-on-device-tunnel/connect.png)
+   ![Conectar](./media/vpn-gateway-howto-always-on-device-tunnel/connect.png)
 1. Se a conexão for realizada com sucesso, reinicialize o computador. O túnel será conectado automaticamente.
 
 ## <a name="cleanup"></a>Limpeza

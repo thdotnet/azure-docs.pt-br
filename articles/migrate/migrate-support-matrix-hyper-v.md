@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: raynew
-ms.openlocfilehash: 0d0329be0b7f864edbfc3c2aabc08f1742359670
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 004010983b87c333adeb4b20abbe851581917a3a
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066771"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937446"
 ---
 # <a name="support-matrix-for-hyper-v-assessment-and-migration"></a>Matriz de suporte para avaliação e migração do Hyper-V
 
@@ -50,7 +50,7 @@ Geografia | Você pode criar projetos de migrações para Azure em uma série de
   França | Centro da França
   Índia | Índia central ou sul da Índia
   Japão |  Leste do Japão ou oeste do Japão
-  Coreia do Sul | Coreia central ou sul da Coreia
+  Coreia | Coreia central ou sul da Coreia
   Reino Unido | Sul do Reino Unido ou Oeste do Reino Unido
   Estados Unidos | EUA Central ou oeste dos EUA 2
 
@@ -145,7 +145,8 @@ Você pode selecionar até 10 VMs de uma só vez para replicação. Se você qui
 | **Integration Services**       | Os [Integration Services do Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services) devem estar em execução em VMs que você avaliar, a fim de capturar informações do sistema operacional. |
 | **Alterações necessárias para o Azure** | Algumas VMs podem exigir alterações para que possam ser executadas no Azure. As migrações para Azure fazem essas alterações automaticamente para os seguintes sistemas operacionais:<br/> -Red Hat Enterprise Linux 6.5 +, 7.0 +<br/> -CentOS 6.5 +, 7.0 +</br> - SUSE Linux Enterprise Server 12 SP1+<br/> -Ubuntu 14.04 LTS, 16.04 LTS, 18.04 LTS<br/> -Debian 7, 8<br/><br/> Para outros sistemas operacionais, você precisa fazer ajustes manualmente antes da migração. Os artigos relevantes contêm instruções sobre como fazer isso. |
 | **Inicialização do Linux**                 | Se/boot estiver em uma partição dedicada, ele deverá residir no disco do sistema operacional e não poderá ser distribuído em vários discos.<br/> Se/boot fizer parte da partição raiz (/), a partição '/' deverá estar no disco do sistema operacional e não poderá abranger outros discos. |
-| **Inicialização UEFI**                  | As VMs com inicialização UEFI não têm suporte para migração.  |
+| **Inicialização UEFI**                  | A VM migrada no Azure será convertida automaticamente em uma VM de inicialização do BIOS. A VM deve estar executando apenas o Windows Server 2012 e posterior. O disco do sistema operacional deve ter até cinco partições ou menos e o tamanho do disco do sistema operacional deve ser inferior a 300 GB.
+  |
 | **Tamanho do disco**                  | 2 TB para o disco do sistema operacional, 4 TB para discos de dados.
 | **Número do disco** | Um máximo de 16 discos por VM.
 | **Discos/volumes criptografados**    | Sem suporte para migração. |

@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: e52ce4411a2fa1969db196ba2e32bb485f71f8b6
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
-ms.translationtype: MT
+ms.openlocfilehash: 2dbb900d297f1acf05e77dca3e1753745e9b2b38
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931236"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937412"
 ---
 # <a name="ingest-data-from-event-hub-into-azure-data-explorer"></a>Ingerir dados do Hub de Eventos no Azure Data Explorer
 
@@ -129,7 +129,8 @@ Agora você se conecta ao hub de eventos no Azure Data Explorer. Quando essa con
     | | |
 
     > [!NOTE]
-    > Escolha **Meus dados incluem informações de roteamento** para usar o roteamento dinâmico no qual os dados incluem as informações de roteamento necessárias, como visto nos comentários do [exemplo de aplicativo](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Se as propriedades estáticas e dinâmicas estiverem definidas, as propriedades dinâmicas substituirão as estáticas. 
+    > * Escolha **Meus dados incluem informações de roteamento** para usar o roteamento dinâmico no qual os dados incluem as informações de roteamento necessárias, como visto nos comentários do [exemplo de aplicativo](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Se as propriedades estáticas e dinâmicas estiverem definidas, as propriedades dinâmicas substituirão as estáticas. 
+    > * Somente os eventos enfileirados após a criação da conexão de dados são ingeridos.
 
 ## <a name="copy-the-connection-string"></a>Copiar a cadeia de conexão
 
@@ -137,7 +138,7 @@ Quando você executa o [aplicativo de exemplo](https://github.com/Azure-Samples/
 
 1. Sob o namespace do hub de eventos que você criou, selecione **Políticas de acesso compartilhado** e, em seguida, **RootManageSharedAccessKey**.
 
-    ![Políticas de acesso compartilhadas](media/ingest-data-event-hub/shared-access-policies.png)
+    ![Políticas de acesso compartilhado](media/ingest-data-event-hub/shared-access-policies.png)
 
 1. Cópia **cadeia de Conexão – chave primária**. Você pode colá-lo na próxima seção.
 
@@ -197,7 +198,7 @@ Se você não planeja usar seu hub de eventos novamente, limpe **test-hub-rg** p
 
 1. No portal do Azure, selecione **Grupos de recursos** na extremidade esquerda, depois selecione o recurso de grupo que você criou.  
 
-    Se o menu à esquerda estiver recolhido, selecione ![botão Expandir](media/ingest-data-event-hub/expand.png) para expandi-lo.
+    Se o menu à esquerda estiver recolhido, selecione ![Botão Expandir](media/ingest-data-event-hub/expand.png) para expandi-lo.
 
    ![Selecione o grupo de recursos para excluir](media/ingest-data-event-hub/delete-resources-select.png)
 

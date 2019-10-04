@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.openlocfilehash: cbe9aa2ea664d97df6008de05d6cb84da9771bcc
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
-ms.translationtype: MT
+ms.openlocfilehash: 83f5339dbc4f093ba0b7287b53c053e319f928c9
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70166544"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937382"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer-preview"></a>Ingerir dados do Hub IoT para o Azure Data Explorer (versão prévia)
 
@@ -76,11 +76,11 @@ Agora você se conecta ao Hub IoT do Azure Data Explorer. Quando essa conexão �
 
     **Configuração** | **Descrição do campo**
     |---|---|
-    | Nome da conexão de dados | O nome da conexão que você deseja criar no Azure Data Explorer
-    | Hub IoT | Nome do Hub IoT |
-    | Política de acesso compartilhado | O nome da política de acesso compartilhado. Deve ter permissões de leitura |
-    | Grupo de consumidores |  O grupo de consumidores definido no ponto de extremidade interno do Hub IoT |
-    | Propriedades do sistema de eventos | As propriedades do sistema de eventos do Hub IoT |
+    | Nome da conexão de dados | O nome da conexão que você deseja criar no Azure Data Explorer.
+    | Hub IoT | Nome do Hub IoT. |
+    | Política de acesso compartilhado | O nome da política de acesso compartilhado. Deve ter permissões de leitura. |
+    | Grupo de consumidores |  O grupo de consumidores definido no ponto de extremidade interno do Hub IoT. |
+    | Propriedades do sistema de eventos | As propriedades do sistema de eventos do Hub IoT. Caso haja vários registros por mensagem de evento, as propriedades do sistema serão adicionadas ao primeiro. |
     | | 
 
     > [!NOTE]
@@ -98,8 +98,9 @@ Agora você se conecta ao Hub IoT do Azure Data Explorer. Quando essa conexão �
     | Mapeamento de coluna | *TestMapping* | O mapeamento que você criou em **TestDB**, que MAPEIA dados JSON de entrada para os nomes de coluna e tipos de dados de **TestDB**. Necessário para JSON, JSON MULTILINHA e AVRO, e opcional para outros formatos.|
     | | |
 
-    > [!TIP]
-    > Escolha **Meus dados incluem informações de roteamento** para usar o roteamento dinâmico no qual os dados incluem as informações de roteamento necessárias, como visto nos comentários do [exemplo de aplicativo](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Se as propriedades estáticas e dinâmicas estiverem definidas, as propriedades dinâmicas substituirão as estáticas. 
+    > [!NOTE]
+    > * Escolha **Meus dados incluem informações de roteamento** para usar o roteamento dinâmico no qual os dados incluem as informações de roteamento necessárias, como visto nos comentários do [exemplo de aplicativo](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Se as propriedades estáticas e dinâmicas estiverem definidas, as propriedades dinâmicas substituirão as estáticas. 
+    > * Somente os eventos enfileirados após a criação da conexão de dados são ingeridos.
 
 ## <a name="generate-sample-data-for-testing"></a>Gerar dados de exemplo para teste
 
@@ -111,7 +112,7 @@ O aplicativo de dispositivo simulado se conecta a um ponto de extremidade espec�
 
 1. Abra o arquivo **SimulatedDevice.cs** em seu editor de texto preferido.
 
-    Substitua o valor da `s_connectionString` variável pela cadeia de conexão do dispositivo de [registrar um dispositivo no Hub IOT](#register-a-device-to-the-iot-hub). Salve as alterações no arquivo **SimulatedDevice.cs**.
+    Substitua o valor da variável `s_connectionString` pela cadeia de conexão do dispositivo de [registrar um dispositivo no Hub IOT](#register-a-device-to-the-iot-hub). Salve as alterações no arquivo **SimulatedDevice.cs**.
 
 1. Na janela de terminal local, execute os seguintes comandos para instalar os pacotes necessários para o aplicativo de dispositivo simulado:
 
@@ -164,7 +165,7 @@ Se você não planeja usar o Hub IoT novamente, limpe **Test-Hub-RG**para evitar
 
 1. No portal do Azure, selecione **Grupos de recursos** na extremidade esquerda, depois selecione o recurso de grupo que você criou.  
 
-    Se o menu à esquerda estiver recolhido, selecione ![botão Expandir](media/ingest-data-event-hub/expand.png) para expandi-lo.
+    Se o menu à esquerda estiver recolhido, selecione ![Botão Expandir](media/ingest-data-event-hub/expand.png) para expandi-lo.
 
    ![Selecione o grupo de recursos para excluir](media/ingest-data-event-hub/delete-resources-select.png)
 

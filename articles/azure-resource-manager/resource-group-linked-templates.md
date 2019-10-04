@@ -4,20 +4,20 @@ description: Descreve como usar modelos vinculados em um modelo do Gerenciador d
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 10/02/2019
 ms.author: tomfitz
-ms.openlocfilehash: b48988c04f6b387a8124a812a836e2b92a9d3ada
-ms.sourcegitcommit: 532335f703ac7f6e1d2cc1b155c69fc258816ede
+ms.openlocfilehash: 59af553f4080ca86e964b75234e4d812297d8541
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70194389"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827342"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Usando modelos vinculados e aninhados ao implantar os recursos do Azure
 
-Para implantar sua solução, você pode usar um único modelo, ou um modelo principal com muitos modelos relacionados. O modelo relacionado pode ser um arquivo separado que é vinculado a partir do modelo principal ou um modelo que está aninhado dentro do modelo principal.
+Para implantar sua solução, você pode usar um único modelo, ou um modelo principal com muitos modelos relacionados. Os modelos relacionados podem ser arquivos separados que estão vinculados ao do modelo principal ou modelos que são aninhados no modelo principal.
 
-Para pequenas e médias soluções, um único modelo é mais fácil de entender e manter. Você pode ver todos os recursos e valores em um único arquivo. Para cenários avançados, modelos vinculados permitem dividir a solução em componentes desejados e reutilizar modelos.
+Para pequenas e médias soluções, um único modelo é mais fácil de entender e manter. Você pode ver todos os recursos e valores em um único arquivo. Para cenários avançados, os modelos vinculados permitem dividir a solução em componentes de destino. Você pode facilmente reutilizar esses modelos para outros cenários.
 
 Ao usar modelos vinculados, você cria um modelo principal que recebe os valores de parâmetros durante a implantação. O modelo principal contém todos os modelos vinculados e passa valores para esses modelos, conforme necessário.
 
@@ -27,7 +27,7 @@ Para obter um tutorial, consulte [Tutorial: criar modelos vinculados do Azure Re
 > Para modelos vinculados ou aninhados, você só pode usar o modo de implantação [Incremental](deployment-modes.md).
 >
 
-## <a name="link-or-nest-a-template"></a>Vincular ou aninhar um modelo
+## <a name="deployments-resource"></a>Recurso de implantações
 
 Para vincular a outro modelo, adicione um recurso de **implantações** no seu modelo principal.
 
@@ -47,7 +47,7 @@ Para vincular a outro modelo, adicione um recurso de **implantações** no seu m
 
 As propriedades que você fornece para o recurso de implantação variam dependendo se você está vinculando a um modelo externo ou aninhando um modelo in-line no modelo principal.
 
-### <a name="nested-template"></a>Modelo aninhado
+## <a name="nested-template"></a>Modelo aninhado
 
 Para aninhar o modelo no modelo principal, use a propriedade **modelo** e especifique a sintaxe do modelo.
 
@@ -94,9 +94,17 @@ Para aninhar o modelo no modelo principal, use a propriedade **modelo** e especi
 
 O modelo aninhado requer as [mesmas propriedades](resource-group-authoring-templates.md) como um modelo padrão.
 
-### <a name="external-template-and-external-parameters"></a>Modelo externo e parâmetros externos
+## <a name="external-template"></a>Modelo externo
 
-Para vincular a um arquivo de parâmetro e o modelo externo, use **templateLink** e **parametersLink**. Ao vincular a um modelo, o do Gerenciador de Recursos deve ser capaz de acessá-lo. Não é possível especificar um arquivo local ou um arquivo que esteja disponível apenas em sua rede local. Você só pode fornecer um valor de URI que inclua **http** ou **https**. Uma opção é colocar o modelo vinculado em uma conta de armazenamento e usar o URI do item.
+Para vincular a um modelo externo, use a propriedade **templateLink** . Não é possível especificar um arquivo local ou um arquivo que esteja disponível apenas em sua rede local. Você só pode fornecer um valor de URI que inclua **http** ou **https**. O Gerenciador de recursos deve ser capaz de acessar o modelo.
+
+Uma opção é colocar o modelo vinculado em uma conta de armazenamento e usar o URI do item.
+
+Você pode fornecer os parâmetros para o modelo externo em um arquivo externo ou embutido.
+
+### <a name="external-parameters"></a>Parâmetros externos
+
+Ao fornecer um arquivo de parâmetro externo, use a propriedade **parametersLink** :
 
 ```json
 "resources": [
@@ -105,15 +113,15 @@ Para vincular a um arquivo de parâmetro e o modelo externo, use **templateLink*
     "apiVersion": "2018-05-01",
     "name": "linkedTemplate",
     "properties": {
-    "mode": "Incremental",
-    "templateLink": {
+      "mode": "Incremental",
+      "templateLink": {
         "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.json",
         "contentVersion":"1.0.0.0"
-    },
-    "parametersLink": {
+      },
+      "parametersLink": {
         "uri":"https://mystorageaccount.blob.core.windows.net/AzureTemplates/newStorageAccount.parameters.json",
         "contentVersion":"1.0.0.0"
-    }
+      }
     }
   }
 ]
@@ -121,11 +129,11 @@ Para vincular a um arquivo de parâmetro e o modelo externo, use **templateLink*
 
 Você não precisa fornecer a propriedade `contentVersion` para o modelo ou parâmetros. Se você não fornecer um valor de versão do conteúdo, a versão atual do modelo é implantada. Se você fornecer um valor para a versão do conteúdo, ele deve corresponder à versão do modelo vinculado; caso contrário, a implantação falhará com um erro.
 
-### <a name="external-template-and-inline-parameters"></a>Modelo externo e parâmetros embutidos
+### <a name="inline-parameters"></a>Parâmetros embutidos
 
 Ou, você pode fornecer o parâmetro embutido. Você não pode usar os dois parâmetros inline e um link para um arquivo de parâmetros. A implementação falha com um erro quando `parametersLink` e `parameters` são especificados.
 
-Para passar um valor do modelo principal para o modelo vinculado, use **parâmetros**.
+Para passar um valor do modelo principal para o modelo vinculado, use a propriedade **Parameters** .
 
 ```json
 "resources": [
@@ -269,7 +277,7 @@ O modelo principal implanta o modelo vinculado e obtém o valor retornado. Obser
 }
 ```
 
-Assim como outros tipos de recurso, você pode definir dependências entre o modelo vinculado e outros recursos. Portanto, quando outros recursos exigirem um valor de saída do modelo vinculado,certifique-se de que o modelo vinculado foi implantado antes deles. Ou, quando o modelo vinculado depender de outros recursos, certifique-se que outros recursos foram implantados antes do modelo vinculado.
+Assim como outros tipos de recurso, você pode definir dependências entre o modelo vinculado e outros recursos. Quando outros recursos exigirem um valor de saída do modelo vinculado, verifique se o modelo vinculado está implantado antes deles. Ou, quando o modelo vinculado depender de outros recursos, certifique-se que outros recursos foram implantados antes do modelo vinculado.
 
 O exemplo a seguir mostra um modelo que implanta um endereço IP público e retorna a ID do recurso:
 

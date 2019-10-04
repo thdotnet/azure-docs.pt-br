@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03c09a751119c1d6effa5795f2dbf7da422b7806
-ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+ms.openlocfilehash: 48f3109b4c87e25444629ca25411894eab8a9d56
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70135791"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71827137"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Sincronização do Azure AD Connect: impedir exclusões acidentais
 Este tópico descreve o recurso de prevenção contra exclusões acidentais (que impede exclusões acidentais) no Azure AD Connect.
@@ -58,8 +58,9 @@ Caso isso não seja esperado, investigue e tome medidas corretivas. Para ver qua
 
 ![Pesquisar Espaço do Conector](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
-[!NOTE] Se você não tiver certeza de que todas as exclusões são desejadas e deseja descer uma rota mais segura. Você pode usar o cmdlet do PowerShell `Enable-ADSyncExportDeletionThreshold` : para definir um novo limite em vez de desabilitar o limite que pode permitir exclusões indesejadas. 
+[!NOTE] Se você não tiver certeza de que todas as exclusões são desejadas e deseja descer uma rota mais segura. Você pode usar o cmdlet do PowerShell: `Enable-ADSyncExportDeletionThreshold` para definir um novo limite em vez de desabilitar o limite que pode permitir exclusões indesejadas. 
 
+## <a name="if-all-deletes-are-desired"></a>Se todas as exclusões forem desejadas
 Se todas as exclusões forem desejadas, siga este procedimento:
 
 1. Para recuperar o limite atual de exclusão, execute o cmdlet `Get-ADSyncExportDeletionThreshold` do PowerShell. Forneça uma conta e senha de Administrador Global do Azure AD. O valor padrão é 500.

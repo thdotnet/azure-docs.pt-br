@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 83379cc194f23ebff977babc7124a7bc90f4bc60
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 77f0b196777ae0f2ff0b870eac0a01b11854190b
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71063450"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71936803"
 ---
 # <a name="string-claims-transformations"></a>Transformações de declarações de cadeias de caracteres
 
@@ -30,7 +30,7 @@ Compare duas declarações e lance uma exceção se não forem iguais de acordo 
 | Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | Tipo da primeira declaração, que será comparado. |
-| inputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
+| InputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
 | InputParameter | stringComparison | cadeia de caracteres | comparação de cadeia de caracteres, um dos valores: Ordinal, OrdinalIgnoreCase. |
 
 A transformação de declarações **AssertStringClaimsAreEqual** é sempre executada a partir um [perfil técnico de validação](validation-technical-profile.md) que é chamado por um [perfil técnico autodeclarado](self-asserted-technical-profile.md). Os metadados do perfil técnico autodeclarado **UserMessageIfClaimsTransformationStringsAreNotEqual** controlam a mensagem de erro é apresentada ao usuário.
@@ -155,7 +155,7 @@ Determine se uma declaração de cadeia de caracteres é igual à outra. O resul
 | Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | cadeia de caracteres | Tipo da primeira declaração, que será comparado. |
-| inputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
+| InputClaim | inputClaim2 | cadeia de caracteres | Tipo da segunda declaração, que será comparado. |
 | InputParameter | operator | cadeia de caracteres | Valores possíveis: `EQUAL` ou `NOT EQUAL`. |
 | InputParameter | ignoreCase | boolean | Especifica se essa comparação deve ignorar maiúsculas e minúsculas das cadeias de caracteres que estão sendo comparadas. |
 | OutputClaim | outputClaim | boolean | O ClaimType que é produzido depois de invocar esta transformação de declarações. |

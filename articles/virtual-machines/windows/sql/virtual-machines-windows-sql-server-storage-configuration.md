@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/05/2017
 ms.author: mathoma
-ms.openlocfilehash: 2705b42849922ce7e3650162b8f1ff78723685c2
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: 57a325dd297955296a94db134b6a2a6d58a37f03
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70309234"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828607"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>Configuração de armazenamento para VMs do SQL Server
 
@@ -42,9 +42,28 @@ As seções a seguir descrevem como configurar o armazenamento para novas máqui
 
 ### <a name="azure-portal"></a>Portal do Azure
 
-Ao provisionar uma VM do Azure usando uma imagem da galeria do SQL Server, você pode optar por configurar automaticamente o armazenamento para sua nova VM. Você especificar o tamanho do armazenamento, limites de desempenho e o tipo de carga de trabalho. A captura de tela a seguir mostra a folha de Configuração de armazenamento usada durante o provisionamento da VM do SQL.
+Ao provisionar uma VM do Azure usando uma imagem da Galeria de SQL Server, selecione **Alterar configuração** na guia **configurações de SQL Server** para abrir a página de configuração de armazenamento otimizado para desempenho. Você pode deixar os valores em padrão ou modificar o tipo de configuração de disco que melhor atenda às suas necessidades com base em sua carga de trabalho. 
 
 ![Configuração de armazenamento da VM do SQL Server durante o provisionamento](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-provisioning.png)
+
+Selecione o tipo de carga de trabalho que você está implantando seu SQL Server para a **otimização de armazenamento**. Com a opção de otimização **geral** , por padrão, você terá um disco de dados com IOPS máximo de 5000 e usará essa mesma unidade para os dados, o log de transações e o armazenamento de tempdb. Selecionar o OLTP ( **processamento transacional** ) ou o **data warehousing** criará um disco separado para os dados, um disco separado para o log de transações e usará o SSD local para tempdb. Não há nenhuma diferença de armazenamento entre o **processamento transacional** e o **data warehousing**, mas ele altera a [configuração do stripe e os sinalizadores de rastreamento](#workload-optimization-settings). Escolher armazenamento Premium define o cache para *ReadOnly* para a unidade de dados e *nenhum* para a unidade de log de acordo com [SQL Server práticas recomendadas de desempenho da VM](virtual-machines-windows-sql-performance.md). 
+
+![Configuração de armazenamento da VM do SQL Server durante o provisionamento](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration.png)
+
+A configuração de disco é totalmente personalizável para que você possa configurar a topologia de armazenamento, o tipo de disco e o IOPs necessários para sua carga de trabalho de VM SQL Server. Você também terá a capacidade de usar UltraSSD (visualização) como uma opção para o **tipo de disco** se sua VM SQL Server estiver em uma das regiões com suporte (leste dos EUA 2, sudeste asiático e Europa setentrional) e se tiver habilitado [ultra disks para sua assinatura](/azure/virtual-machines/windows/disks-enable-ultra-ssd).  
+
+Além disso, você tem a capacidade de definir o cache para os discos. As VMs do Azure têm uma tecnologia de cache de várias camadas chamada [cache de BLOBs](/azure/virtual-machines/windows/premium-storage-performance#disk-caching) quando usadas com [discos Premium](/azure/virtual-machines/windows/disks-types#premium-ssd). O cache de BLOBs usa uma combinação da RAM da máquina virtual e do SSD local para cache. 
+
+O cache de disco para SSD Premium pode ser *ReadOnly*, *ReadWrite* ou *None*. 
+
+- O cache *ReadOnly* é altamente benéfico para SQL Server arquivos de dados armazenados no armazenamento Premium. O cache *ReadOnly* traz baixa latência de leitura, IOPS de leitura alta e taxa de transferência como, leituras são realizadas do cache, qual sistema operacional na memória da VM e SSD local. Essas leituras são muito mais rápidas do que as leituras do disco de dados, que é do armazenamento de BLOBs do Azure. O armazenamento Premium não conta as leituras servidas do cache para a IOPS e a taxa de transferência do disco. Portanto, o aplicável é capaz de alcançar uma taxa de transferência de Ant de IOPS total mais alta. 
+- *Nenhuma* configuração de cache deve ser usada para os discos que hospedam SQL Server arquivo de log, pois o arquivo de log é gravado sequencialmente e não se beneficia do cache *ReadOnly* . 
+- O cache *ReadWrite* não deve ser usado para hospedar SQL Server arquivos, pois SQL Server não oferece suporte à consistência de dados com o cache *ReadWrite* . Grava a capacidade de desperdício do cache de blob *ReadOnly* e as latências são ligeiramente aumentadas se as gravações passarem por camadas de cache de blob *ReadOnly* . 
+
+
+   > [!TIP]
+   > Certifique-se de que sua configuração de armazenamento corresponda às limitações impostas pelo tamanho da VM selecionada. Escolher parâmetros de armazenamento que excedem o limite de desempenho do tamanho da VM resultará em erro: `The desired performance might not be reached due to the maximum virtual machine disk performance cap.`. Diminua o IOPs alterando o tipo de disco ou aumente a limitação do limite de desempenho aumentando o tamanho da VM. 
+
 
 Com base em suas opções, o Azure realiza as seguintes tarefas de configuração de armazenamento depois de criar a VM:
 
@@ -64,6 +83,13 @@ Se você usar os modelos do Resource Manager a seguir, dois discos de dados prem
 * [Criar VM com aplicação de patch automatizada](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-sql-full-autopatching)
 * [Criar VM com integração de AKV](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-sql-full-keyvault)
 
+### <a name="quickstart-template"></a>Modelo de início rápido
+
+Você pode usar o modelo de início rápido a seguir para implantar uma VM SQL Server usando a otimização de armazenamento. 
+
+* [Criar VM com otimização de armazenamento](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-vm-new-storage/)
+* [Criar VM usando UltraSSD](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-vm-new-storage-ultrassd)
+
 ## <a name="existing-vms"></a>VMs existentes
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
@@ -79,32 +105,11 @@ Para modificar as configurações de armazenamento, selecione **definir** em **c
 
 ![Configurar o armazenamento para a VM do SQL Server existente](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-existing.png)
 
-As opções de configuração que você vê variam de acordo com o uso se desse recurso anteriormente. Ao usar pela primeira vez, você pode especificar os requisitos de armazenamento para uma nova unidade. Se você tiver usado esse recurso para criar uma unidade, opte por estender o armazenamento da unidade.
+Você pode modificar as configurações de disco para as unidades que foram configuradas durante o processo de criação de VM SQL Server. A seleção de **estender unidade** abre a página de modificação da unidade, permitindo que você altere o tipo de disco, bem como adicione discos adicionais. 
 
-### <a name="use-for-the-first-time"></a>Uso pela primeira vez
+![Configurar o armazenamento para a VM do SQL Server existente](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-extend-drive.png)
 
-Se esta for a primeira vez que você usa esse recurso, especifique os limites de tamanho e desempenho de armazenamento para uma nova unidade. Essa experiência é semelhante ao que você veria no tempo de provisionamento. A principal diferença é que você não tem permissão para especificar o tipo de carga de trabalho. Essa restrição impede a interrupção de quaisquer configurações existentes do SQL Server na máquina virtual.
 
-O Azure cria uma nova unidade com base em suas especificações. Nesse cenário, o Azure realiza as seguintes tarefas de configuração de armazenamento:
-
-* Cria e anexa os discos de dados de armazenamento premium à máquina virtual.
-* Configura os discos de dados para serem acessíveis ao SQL Server.
-* Configura os discos de dados em um pool de armazenamento com base nos requisitos de tamanho e desempenho (IOPS e taxa de transferência) especificados.
-* Associa o pool de armazenamento a uma nova unidade na máquina virtual.
-
-Para obter mais detalhes sobre como o Azure define as configurações de armazenamento, confira a [Seção de configuração de armazenamento](#storage-configuration).
-
-### <a name="add-a-new-drive"></a>Adicionar uma nova unidade
-
-Se você já tiver configurado o armazenamento na sua VM do SQL Server, a expansão do armazenamento apresenta duas opções novas. A primeira opção é adicionar uma nova unidade, que pode aumentar o nível de desempenho da VM.
-
-No entanto, depois de adicionar a unidade, você deve executar alguma configuração manual extra para alcançar o aumento de desempenho.
-
-### <a name="extend-the-drive"></a>Estender a unidade
-
-A outra opção para expandir o armazenamento é estender a unidade existente. Essa opção aumenta o armazenamento disponível para sua unidade, mas ele não aumenta o desempenho. Com os pools de armazenamento, você não pode alterar o número de colunas após a criação do pool de armazenamento. O número de colunas determina o número de gravações paralelas, que podem ser distribuídas entre os discos de dados. Portanto, os discos de dados não podem aumentar o desempenho. Eles só podem fornecer mais armazenamento para os dados que estão sendo gravados. Essa limitação também significa que, ao estender a unidade, o número de colunas determina o número mínimo de discos de dados que você pode adicionar. Então se você criar um pool de armazenamento com quatro discos de dados, o número de colunas também será quatro. Sempre que você estender o armazenamento, deverá adicionar pelo menos quatro discos de dados.
-
-![Estender uma unidade para uma VM do SQL](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-extend-a-drive.png)
 
 ## <a name="storage-configuration"></a>Configuração de armazenamento
 
@@ -123,7 +128,7 @@ O Azure usa as configurações a seguir para criar o pool de armazenamento em VM
 | --- | --- |
 | Tamanho da distribuição |256 KB (Data warehouse); 64 KB (Transacional) |
 | Tamanhos do disco |1 TB cada |
-| Cache |Ler |
+| Cache |Leitura |
 | Tamanho da alocação |Tamanho da unidade de alocação de NTFS de 64 KB |
 | Inicialização de arquivo instantânea |Enabled |
 | Bloquear páginas na memória |Enabled |
@@ -141,7 +146,7 @@ A tabela a seguir descreve as três opções de tipo de carga de trabalho dispon
 
 | Tipo de carga de trabalho | Descrição | Otimizações |
 | --- | --- | --- |
-| **Geral** |Configuração padrão que oferece suporte à maioria das cargas de trabalho |Nenhum |
+| **Geral** |Configuração padrão que oferece suporte à maioria das cargas de trabalho |Nenhuma |
 | **Processamento transacional** |Otimiza o armazenamento para cargas de trabalho OLTP tradicionais do banco de dados |Sinalizador de Rastreamento 1117<br/>Sinalizador de Rastreamento 1118 |
 | **Data warehouse** |Otimiza o armazenamento para as cargas de trabalho de análise e emissão de relatórios |Sinalizador de Rastreamento 610<br/>Sinalizador de Rastreamento 1117 |
 

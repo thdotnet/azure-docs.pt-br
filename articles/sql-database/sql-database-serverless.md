@@ -11,12 +11,12 @@ author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 ms.date: 09/06/2019
-ms.openlocfilehash: 04e3881b553f639bb2df948b6ad1154f86f1c9da
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: 86c03554f5faa1ebb40faa20b6a271f5310ccd4f
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123098"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828228"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Banco de dados SQL do Azure sem servidor (visualização)
 
@@ -157,21 +157,21 @@ A criação de um novo banco de dados ou a movimentação de um banco de dados e
 
    |Nome do objetivo de serviço|Camada de serviço|Geração de hardware|Máx. vCores|
    |---|---|---|---|
-   |GP_S_Gen5_1|Uso Geral|Gen5|1|
-   |GP_S_Gen5_2|Uso Geral|Gen5|2|
-   |GP_S_Gen5_4|Uso Geral|Gen5|4|
-   |GP_S_Gen5_6|Uso Geral|Gen5|6|
-   |GP_S_Gen5_8|Uso Geral|Gen5|8|
-   |GP_S_Gen5_10|Uso Geral|Gen5|10|
-   |GP_S_Gen5_12|Uso Geral|Gen5|12|
-   |GP_S_Gen5_14|Uso Geral|Gen5|14|
-   |GP_S_Gen5_16|Uso Geral|Gen5|16|
+   |GP_S_Gen5_1|Objetivo Geral|Gen5|1|
+   |GP_S_Gen5_2|Objetivo Geral|Gen5|2|
+   |GP_S_Gen5_4|Objetivo Geral|Gen5|4|
+   |GP_S_Gen5_6|Objetivo Geral|Gen5|6|
+   |GP_S_Gen5_8|Objetivo Geral|Gen5|8|
+   |GP_S_Gen5_10|Objetivo Geral|Gen5|10|
+   |GP_S_Gen5_12|Objetivo Geral|Gen5|12|
+   |GP_S_Gen5_14|Objetivo Geral|Gen5|14|
+   |GP_S_Gen5_16|Objetivo Geral|Gen5|16|
 
 2. Opcionalmente, especifique o mínimo de vCores e o atraso de autopausa para alterar seus valores padrão. A tabela a seguir mostra os valores disponíveis para esses parâmetros.
 
    |Parâmetro|Opções de valor|Valor padrão|
    |---|---|---|---|
-   |VCores mín.|{0,5, 1, 2, 4} sem exceder o máximo de vCores|vCores de 0,5|
+   |vCores mínimos|Depende do máximo de vCores configurado-consulte [limites de recursos](sql-database-vCore-resource-limits-single-databases.md#general-purpose-service-tier-for-serverless-compute).|vCores de 0,5|
    |Atraso de pausa automática|Mínimo: 60 minutos (1 hora)<br>Maior 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|60 minutos|
 
 > [!NOTE]

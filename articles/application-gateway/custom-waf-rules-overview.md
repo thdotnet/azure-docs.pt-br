@@ -7,12 +7,12 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: 9c04f805cf410d2306eda76c84a201a67b022b84
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 154317e558c2c9a22f569f569684cced467900d5
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716615"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937475"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2"></a>Regras personalizadas para o Firewall do aplicativo Web v2
 
@@ -37,7 +37,7 @@ Também há suporte para expressões regulares em regras personalizadas, assim c
 
 Permitir e bloquear o tráfego é simples com regras personalizadas. Por exemplo, você pode bloquear todo o tráfego proveniente de um intervalo de endereços IP. Você pode fazer outra regra para permitir o tráfego se a solicitação vier de um navegador específico.
 
-Para permitir algo, verifique se o `-Action` parâmetro está definido como **permitir**. Para bloquear algo, verifique se o `-Action` parâmetro está definido como **Bloquear**.
+Para permitir algo, verifique se o parâmetro `-Action` está definido como **permitir**. Para bloquear algo, verifique se o parâmetro `-Action` está definido como **Bloquear**.
 
 ```azurepowershell
 $AllowRule = New-AzApplicationGatewayFirewallCustomRule `
@@ -55,7 +55,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Os mapas `$BlockRule` anteriores para a seguinte regra personalizada no Azure Resource Manager:
+Os `$BlockRule` anteriores mapeiam para a seguinte regra personalizada no Azure Resource Manager:
 
 ```json
 "customRules": [
@@ -96,8 +96,8 @@ Este é o nome da regra. Esse nome aparece nos logs.
 
 ### <a name="priority-required"></a>Prioridade [obrigatório]
 
-- Determina a ordem em que as regras são avaliadas. Quanto menor o valor, mais cedo a avaliação da regra.
--Deve ser exclusivo entre todas as regras personalizadas. Uma regra com prioridade 100 será avaliada antes de uma regra com prioridade 200.
+- Determina a ordem em que as regras são avaliadas. Quanto menor o valor, mais cedo a avaliação da regra. O intervalo permitido é de 1-100. 
+- Deve ser exclusivo entre todas as regras personalizadas. Uma regra com prioridade 40 será avaliada antes de uma regra com prioridade 80.
 
 ### <a name="rule-type-required"></a>Tipo de regra [obrigatório]
 
@@ -143,7 +143,7 @@ Nega a condição atual.
 
 Uma lista de cadeias de caracteres com nomes de transformações a serem realizadas antes da tentativa de correspondência. Elas podem ser as seguintes transformações:
 
-- Minúsculas
+- Letras minúsculas
 - Cortar
 - UrlDecode
 - UrlEncode 

@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
 ms.date: 07/11/2019
-ms.openlocfilehash: 9508ce927ef03c83f1c4ef7bf28d2fc02b831a99
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: f877306170b45d65a52a4c76afd7f064e83f240a
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879938"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937301"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Migração de uma Instância do SQL Server para uma Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -169,7 +169,7 @@ Como resultado, você deve comparar os parâmetros de desempenho com a linha de 
 O resultado da comparação de desempenho pode ser:
 - O desempenho da carga de trabalho na Instância Gerenciada é alinhado ou melhor que o desempenho da carga de trabalho no SQL Server. Nesse caso, você confirmou com êxito que a migração foi bem-sucedida.
 - A maioria dos parâmetros de desempenho e as consultas na carga de trabalho funcionam bem, com algumas exceções com desempenho degradado. Nesse caso, você precisaria identificar as diferenças e sua importância. Se houver algumas consultas importantes com desempenho degradado, você deverá investigar se os planos SQL subjacentes foram alterados ou se as consultas estão atingindo alguns limites de recursos. Nesse caso, a mitigação pode ser aplicar algumas dicas sobre as consultas críticas (por exemplo, nível de compatibilidade alterado, avaliador de cardinalidade herdado) diretamente ou usando guias de plano, recompilar ou criar estatísticas e índices que possam afetar os planos. 
-- A maioria das consultas é mais lenta em Instância Gerenciada em comparação com o SQL Server de origem. Nesse caso, tente identificar as causas raiz da diferença, como [atingir um limite de recursos]( sql-database-managed-instance-resource-limits.md#instance-level-resource-limits) , como limites de e/s, limite de memória, limite de taxa de log de instância, etc. Se não houver nenhum limite de recurso que possa causar a diferença, tente alterar o nível de compatibilidade do banco de dados ou alterar as configurações do banco de dados, como estimativa de cardinalidade herdada e reiniciar o teste. Examine as recomendações fornecidas pelas exibições Instância Gerenciada ou Repositório de Consultas para identificar as consultas que retornaram o desempenho.
+- A maioria das consultas é mais lenta em Instância Gerenciada em comparação com o SQL Server de origem. Nesse caso, tente identificar as causas raiz da diferença, como [atingir um limite de recursos]( sql-database-managed-instance-resource-limits.md#service-tier-characteristics) , como limites de e/s, limite de memória, limite de taxa de log de instância, etc. Se não houver nenhum limite de recurso que possa causar a diferença, tente alterar o nível de compatibilidade do banco de dados ou alterar as configurações do banco de dados, como estimativa de cardinalidade herdada e reiniciar o teste. Examine as recomendações fornecidas pelas exibições Instância Gerenciada ou Repositório de Consultas para identificar as consultas que retornaram o desempenho.
 
 > [!IMPORTANT]
 > O Instância Gerenciada tem o recurso interno de correção de plano automático que está habilitado por padrão. Esse recurso garante que as consultas que funcionaram bem na colagem não sejam prejudicadas no futuro. Verifique se esse recurso está habilitado e se você executou a carga de trabalho por tempo suficiente com as configurações antigas antes de alterar as novas configurações para permitir que Instância Gerenciada saiba mais sobre o desempenho e os planos de linha de base.

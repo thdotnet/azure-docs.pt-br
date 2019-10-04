@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: f892857d74150ee42cc2ea4b5c996feac3d1cfa2
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 19e1a5f1534d09246ca85029f45ee918ec57e51f
+ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695624"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71828422"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Expandir discos rígidos virtuais em uma VM do Linux com a CLI do Azure
 
@@ -133,7 +133,7 @@ Para usar um disco expandido, expanda a partição subjacente e o sistema de arq
     sudo mount /dev/sdc1 /datadrive
     ```
 
-1. Para verificar se o disco de dados foi redimensionado, `df -h`use. A seguinte saída de exemplo mostra a unidade de dados */dev/sdc1* agora é de 200 GB:
+1. Para verificar se o disco de dados foi redimensionado, use `df -h`. A seguinte saída de exemplo mostra a unidade de dados */dev/sdc1* agora é de 200 GB:
 
     ```bash
     Filesystem      Size   Used  Avail Use% Mounted on
@@ -142,4 +142,4 @@ Para usar um disco expandido, expanda a partição subjacente e o sistema de arq
 
 ## <a name="next-steps"></a>Próximas etapas
 * Se precisar de armazenamento adicional, você também pode [adicionar discos de dados a uma VM Linux](add-disk.md). 
-* Para obter mais informações sobre a criptografia de disco, consulte [Criptografar discos em uma VM do Linux usando a CLI do Azure](encrypt-disks.md).
+* Para obter mais informações sobre criptografia de disco, consulte [Azure Disk Encryption para VMs do Linux](disk-encryption-overview.md).

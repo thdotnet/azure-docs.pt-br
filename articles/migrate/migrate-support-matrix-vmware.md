@@ -8,12 +8,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 09/17/2019
 ms.author: raynew
-ms.openlocfilehash: a0ca483005cf1f5aaadcd7a6107b092d581d6773
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 949595b35c6d989be62dbda43a3b8ccb1608a23d
+ms.sourcegitcommit: f2d9d5133ec616857fb5adfb223df01ff0c96d0a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71067764"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71937568"
 ---
 # <a name="support-matrix-for-vmware-assessment-and-migration"></a>Matriz de suporte para avaliação e migração da VMware
 
@@ -49,7 +49,7 @@ Europa | Europa Setentrional ou Europa Ocidental
 França | Centro da França
 Índia | Índia central ou sul da Índia
 Japão |  Leste do Japão ou oeste do Japão
-Coreia do Sul | Coreia central ou sul da Coreia
+Coreia | Coreia central ou sul da Coreia
 Reino Unido | Sul do Reino Unido ou Oeste do Reino Unido
 Estados Unidos | EUA Central ou oeste dos EUA 2
 
@@ -108,7 +108,7 @@ http://aka.ms/latestapplianceservices<br/><br/> https://download.microsoft.com/d
 **Dispositivo** | **Conexão**
 --- | ---
 Dispositivo | Conexões de entrada na porta TCP 3389 para permitir conexões de área de trabalho remota para o dispositivo.<br/><br/> Conexões de entrada na porta 44368 para acessar remotamente o aplicativo de gerenciamento de dispositivo usando a URL:```https://<appliance-ip-or-name>:44368``` <br/><br/>Conexões de saída na porta 443, 5671 e 5672 para enviar metadados de descoberta e desempenho para migrações para Azure.
-vCenter Server | Conexões de entrada na porta TCP 443 para permitir que o dispositivo colete metadados de configuração e desempenho para avaliações. <br/><br/> O dispositivo se conecta ao vCenter na porta 443 por padrão. Se o servidor vCenter escutar em uma porta diferente, você poderá modificar a porta ao configurar a descoberta.
+Servidor vCenter | Conexões de entrada na porta TCP 443 para permitir que o dispositivo colete metadados de configuração e desempenho para avaliações. <br/><br/> O dispositivo se conecta ao vCenter na porta 443 por padrão. Se o servidor vCenter escutar em uma porta diferente, você poderá modificar a porta ao configurar a descoberta.
 
 ## <a name="migration---limitations"></a>Migração-limitações
 Você pode selecionar até 10 VMs de uma só vez para replicação. Se você quiser migrar mais máquinas, faça a replicação em grupos de 10. Para a migração sem agente do VMware, você pode executar até 100 replicações simultaneamente.
@@ -119,7 +119,7 @@ Esta tabela resume o suporte de avaliação e as limitações para servidores de
 
 **Suporte** | **Detalhes**
 --- | ---
-Servidor vCenter | Versão 5,5, 6,0, 6,5 ou 6,7.
+vCenter Server | Versão 5,5, 6,0, 6,5 ou 6,7.
 VMware vSphere | Versão 5,5, 6,0, 6,5 ou 6,7,
 
 ## <a name="agentless-migration-vcenter-server-permissions"></a>Migração sem agente-permissões de vCenter Server
@@ -196,7 +196,7 @@ http://aka.ms/latestapplianceservices<br/><br/> https://download.microsoft.com/d
 **Dispositivo** | **Conexão**
 --- | ---
 Dispositivo | Conexões de saída na porta 443 para carregar dados replicados no Azure e para se comunicar com os serviços de migração do Azure orquestrando a replicação e a migração.
-vCenter Server | Conexões de entrada na porta 443 para permitir que o dispositivo coordene a replicação-criar instantâneos, copiar dados, liberar instantâneos
+Servidor vCenter | Conexões de entrada na porta 443 para permitir que o dispositivo coordene a replicação-criar instantâneos, copiar dados, liberar instantâneos
 host vSphere/ESXI | Entrada na porta TCP 902 para o dispositivo replicar dados de instantâneos.
 
 
@@ -206,7 +206,7 @@ Esta tabela resume o suporte de avaliação e as limitações para servidores de
 
 **Suporte** | **Detalhes**
 --- | ---
-Servidor vCenter | Versão 5,5, 6,0, 6,5 ou 6,7.
+vCenter Server | Versão 5,5, 6,0, 6,5 ou 6,7.
 VMware vSphere | Versão 5,5, 6,0, 6,5 ou 6,7.
 
 ### <a name="agent-based-migration-vcenter-server-permissions"></a>Migração baseada em agente-permissões de vCenter Server
@@ -350,7 +350,7 @@ VHD compartilhado | Não compatível. | A verificação falha se não tiver supo
 Disco FC | Não compatível. | A verificação falha se não tiver suporte.
 BitLocker | Não compatível. | O BitLocker precisa ser desabilitado antes de habilitar a replicação em um computador.
 Nome da VM | De 1 a 63 caracteres.<br/> Restrito a letras, números e hifens.<br/><br/> O nome do computador precisa começar e terminar com uma letra ou um número. |  Atualize o valor nas propriedades do computador no Site Recovery.
-Conectar após a migração-Windows | Para se conectar às VMs do Azure que executam o Windows após a migração:<br/> -Antes de a migração habilitar o RDP na VM local. Certifique-se de que as regras TCP e UDP são adicionadas ao perfil **Público** e que o RDP é permitido no **Firewall do Windows** > **Aplicativos Permitidos** para todos os perfis.<br/> Para acesso VPN site a site, habilite o RDP e permita que o RDP no **Firewall** -> do Windows tenha**aplicativos e recursos permitidos** para redes privadas e de **domínio** . Além disso, verifique se a política de SAN do sistema operacional está definida como **OnlineAll**. [Saiba mais](https://support.microsoft.com/kb/3031135). |
+Conectar após a migração-Windows | Para se conectar às VMs do Azure que executam o Windows após a migração:<br/> -Antes de a migração habilitar o RDP na VM local. Certifique-se de que as regras TCP e UDP são adicionadas ao perfil **Público** e que o RDP é permitido no **Firewall do Windows** > **Aplicativos Permitidos** para todos os perfis.<br/> Para acesso VPN site a site, habilite o RDP e permita que o RDP no **Firewall** -> do Windows tenha**aplicativos e recursos permitidos** para redes privadas e de **domínio** . Além disso, verifique se a política de SAN do sistema operacional está definida como **OnlineAll**. [Saiba mais](prepare-for-migration.md). |
 Conectar após a migração-Linux | Para se conectar às VMs do Azure após a migração usando SSH:<br/> Antes da migração, no computador local, verifique se o serviço Secure Shell está definido como iniciar e se as regras de firewall permitem uma conexão SSH.<br/> Após o failover, na VM do Azure, permita conexões de entrada para a porta SSH para as regras do grupo de segurança de rede na VM com failover e para a sub-rede do Azure à qual ela está conectada. Além disso, adicione um endereço IP público para a VM. |  
 
 
