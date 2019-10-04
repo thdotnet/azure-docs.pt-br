@@ -1,19 +1,19 @@
 ---
-title: Processamento de dados e funções definidas pelo usuário com Gêmeos Digitais do Azure | Microsoft Docs
+title: Processamento de dados e funções definidas pelo usuário – gêmeos digital do Azure | Microsoft Docs
 description: Visão geral do processamento de dados, dos correspondentes e das funções definidas pelo usuário com os Gêmeos Digitais do Azure.
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 07facf06702a63df8ea93d43b9896b72322b209f
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: b8ea5c54afd4b1e2c212422417688e528367d44f
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178259"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949983"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Processamento de dados e funções definidas pelo usuário
 
@@ -23,7 +23,7 @@ O recurso Gêmeos Digitais do Azure oferece funcionalidades de computação avan
 
 Depois que os dispositivos enviam dados de telemetria para o Azure Digital Twins, os desenvolvedores podem processar dados em quatro fases: *validar*, *corresponder*, *computar*, e *despachar*.
 
-[![Fluxo de processamento de dados do Azure digital gêmeos](media/concepts/digital-twins-data-processing-flow.png)](media/concepts/digital-twins-data-processing-flow.png#lightbox)
+[fluxo de processamento de dados do 1Azure digital gêmeos @no__t](media/concepts/digital-twins-data-processing-flow.png)](media/concepts/digital-twins-data-processing-flow.png#lightbox)
 
 1. A fase de validação transforma a mensagem de telemetria recebida em um formato de objeto de transferência de dados [comumente entendido](https://docs.microsoft.com/aspnet/web-api/overview/data/using-web-api-with-entity-framework/part-5). Essa fase também executa validação de dispositivo e sensor.
 1. A fase corresponder localiza as funções definidas pelo usuário a serem executadas. Os correspondentes predefinidos descobrirão as funções definidas pelo usuário com base em informações de dispositivo, sensor e espaço da mensagem de telemetria de entrada.
@@ -34,7 +34,7 @@ Depois que os dispositivos enviam dados de telemetria para o Azure Digital Twins
 
 O processamento de dados no Gêmeos Digitais do Azure consiste na definição de três objetos: *correspondentes*, *funções definidas pelo usuário* e *atribuições de funções*.
 
-[![Objetos de processamento de dados do gêmeos digital do Azure](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
+[objetos de processamento de dados 1Azure digital gêmeos @no__t](media/concepts/digital-twins-user-defined-functions.png)](media/concepts/digital-twins-user-defined-functions.png#lightbox)
 
 ### <a name="matchers"></a>Correspondências
 

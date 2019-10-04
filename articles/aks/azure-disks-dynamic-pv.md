@@ -1,18 +1,18 @@
 ---
-title: Criar dinamicamente um volume de Disco para vários pods no AKS (Serviço de Kubernetes do Azure)
-description: Saiba como criar dinamicamente um volume persistente com discos do Azure para uso com vários pods simultâneos no AKS (Serviço de Kubernetes do Azure)
+title: Criar e usar dinamicamente um volume persistente com discos do Azure no AKS (Serviço de Kubernetes do Azure)
+description: Saiba como criar dinamicamente um volume persistente com discos do Azure no serviço kubernetes do Azure (AKS)
 services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: mlearned
-ms.openlocfilehash: 0641d613da86aeffa0c4abb0f82ce93c38283156
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 84c06c0ac45a5005646cf7b4fb1e274d0347593c
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67616089"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958499"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Criar e usar dinamicamente um volume persistente com discos do Azure no AKS (Serviço de Kubernetes do Azure)
 
@@ -40,7 +40,7 @@ Cada cluster AKS inclui duas classes de armazenamento criadas previamente, ambas
 * A classe de armazenamento *managed-premium* provisiona um disco premium do Azure.
     * Os discos Premium são apoiados por disco de baixa latência e alto desempenho baseado em SSD. Perfeitos para VMs que executam carga de trabalho de produção. Se os nós do AKS no cluster usarem o armazenamento premium, selecione a classe *managed-premium*.
     
-Essas classes de armazenamento padrão não permitem que você atualize o tamanho do volume depois de criado. Para habilitar essa capacidade, adicione a linha *allowVolumeExpansion: true* a uma das classes de armazenamento padrão ou crie sua própria classe de armazenamento personalizada. Você pode editar uma classe de armazenamento existente usando `kubectl edit sc` o comando. Para obter mais informações sobre classes de armazenamento e criação de youor, consulte [Opções de armazenamento para aplicativos em AKs][storage-class-concepts].
+Essas classes de armazenamento padrão não permitem que você atualize o tamanho do volume depois de criado. Para habilitar essa capacidade, adicione a linha *allowVolumeExpansion: true* a uma das classes de armazenamento padrão ou crie sua própria classe de armazenamento personalizada. Você pode editar uma classe de armazenamento existente usando o comando `kubectl edit sc`. Para obter mais informações sobre classes de armazenamento e criação de youor, consulte [Opções de armazenamento para aplicativos em AKs][storage-class-concepts].
 
 Use o comando [kubectl Get SC][kubectl-get] para ver as classes de armazenamento criadas previamente. A exemplo a seguir mostra as classes de armazenamento criadas previamente disponíveis dentro de um cluster do AKS:
 

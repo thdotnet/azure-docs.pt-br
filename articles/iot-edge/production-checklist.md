@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 29a771b93e1d686f7972e7dc4d9e78e5858644d6
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: 36465f016eeb066c0e12f6434deb98fd7b10966a
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899394"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958749"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Prepare-se para implantar sua solução IoT Edge em produção
 
@@ -83,7 +83,7 @@ Depois que o dispositivo IoT Edge se conectar, certifique-se de continuar config
 
 ### <a name="be-consistent-with-upstream-protocol"></a>Seja consistente com o protocolo upstream
 
-Se você tiver configurado o agente de IoT Edge em seu dispositivo de IoT Edge para usar um protocolo diferente do AMQP padrão, deverá declarar o mesmo protocolo em todas as implantações futuras. Por exemplo, se o seu dispositivo IoT Edge estiver atrás de um servidor proxy que bloqueia portas AMQP, você provavelmente configurou o dispositivo para conectar-se por AMQP sobre WebSocket (AMQPWS). Ao implantar módulos no dispositivo, configure o mesmo protocolo APQPWS para o agente de IoT Edge e IoT Edge Hub ou, caso contrário, o AMQP padrão substituirá as configurações e impedirá que você se conecte novamente. 
+Se você tiver configurado o agente de IoT Edge em seu dispositivo de IoT Edge para usar um protocolo diferente do AMQP padrão, deverá declarar o mesmo protocolo em todas as implantações futuras. Por exemplo, se o seu dispositivo IoT Edge estiver atrás de um servidor proxy que bloqueia portas AMQP, você provavelmente configurou o dispositivo para conectar-se por AMQP sobre WebSocket (AMQPWS). Ao implantar módulos no dispositivo, configure o mesmo protocolo AMQPWS para o agente de IoT Edge e IoT Edge Hub ou, caso contrário, o AMQP padrão substituirá as configurações e impedirá que você se conecte novamente. 
 
 Você só precisa configurar a variável de ambiente UpstreamProtocol para os módulos agente de IoT Edge e IoT Edge Hub. Quaisquer módulos adicionais adotam qualquer protocolo que esteja configurado nos módulos de tempo de execução. 
 
@@ -205,9 +205,9 @@ Ao testar uma implantação do IoT Edge, você geralmente pode acessar seus disp
 
 Por padrão, o mecanismo de contêiner Moby não define limites de tamanho de log de contêiner. Com o tempo, isso pode levar ao dispositivo que está se enchendo com os logs e ficando sem espaço em disco. Considere as seguintes opções para evitar isso:
 
-**Option Definir limites globais que se aplicam a todos os módulos de contêiner**
+**Option: Definir limites globais que se aplicam a todos os módulos de contêiner @ no__t-0
 
-Você pode limitar o tamanho de todos os arquivos de log de contêiner nas opções de registro do mecanismo de contêiner. O exemplo a seguir define o driver de `json-file` log para (recomendado) com limites de tamanho e número de arquivos:
+Você pode limitar o tamanho de todos os arquivos de log de contêiner nas opções de registro do mecanismo de contêiner. O exemplo a seguir define o driver de log para `json-file` (recomendado) com limites de tamanho e número de arquivos:
 
 ```JSON
 {
@@ -228,7 +228,7 @@ Adicione (ou acrescente) essas informações a um arquivo chamado `daemon.json` 
 
 O mecanismo de contêiner deve ser reiniciado para que as alterações entrem em vigor.
 
-**Option Ajustar as configurações de log para cada módulo de contêiner**
+**Option: Ajustar as configurações de log para cada módulo de contêiner @ no__t-0
 
 Você pode fazer isso em **criaroptions** de cada módulo. Por exemplo:
 
@@ -248,7 +248,7 @@ Você pode fazer isso em **criaroptions** de cada módulo. Por exemplo:
 
 **Opções adicionais em sistemas Linux**
 
-* Configure o mecanismo de contêiner para enviar logs `systemd` ao [diário](https://docs.docker.com/config/containers/logging/journald/) , `journald` definindo como o driver de log padrão. 
+* Configure o mecanismo de contêiner para enviar logs para o [diário](https://docs.docker.com/config/containers/logging/journald/) `systemd` definindo `journald` como o driver de log padrão. 
 
 * Remova periodicamente os logs antigos do seu dispositivo instalando uma ferramenta logrotate. Use a seguinte especificação de arquivo: 
 

@@ -1,19 +1,19 @@
 ---
 title: Ativar aplicativos de vários usuários com os Gêmeos Digitais do Azure| Microsoft Docs
 description: Como configurar aplicativos multilocatário do Azure Active Directory para os Gêmeos Digitais do Azure.
-author: mavoge
+ms.author: alinast
+author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/12/2019
-ms.author: mavoge
-ms.openlocfilehash: 2ee3681640f68839c32e2963b34d5547abb6943b
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.date: 10/02/2019
+ms.openlocfilehash: 070b04b27982b84f101ee4d6f85f4e5b82760092
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976892"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958765"
 ---
 # <a name="enable-multitenant-applications-with-azure-digital-twins"></a>Ativar aplicativos de vários usuários com Gêmeos Digitais do Azure
 
@@ -57,20 +57,16 @@ Para resolver o cenário de problema anterior, as seguintes ações são necess�
   1. Abrir **assinaturas**.
   1. Selecione a assinatura que tem um locatário do Azure Active Directory a ser usado no aplicativo do **DEVELOPER**.
 
-     ![Assinaturas do Azure Active Directory][1]
+     [assinaturas de Active Directory @no__t 1Azure](media/multitenant/ad-subscriptions.png)](media/multitenant/ad-subscriptions.png#lightbox)
 
   1. Selecione **Provedores de Recursos**.
   1. Pesquise **Microsoft.IoTSpaces**.
   1. Selecione **Registrar**.
 
-     ![Provedores de recursos do Azure Active Directory][2]
+     [![Azure Active Directory provedores de recursos](media/multitenant/ad-resource-providers.png)](media/multitenant/ad-resource-providers.png#lightbox)
   
 ## <a name="next-steps"></a>Próximas etapas
 
 - Para saber mais sobre como usar funções definidas pelo usuário com os Gêmeos Digitais do Azure, leia [Como criar funções definidas pelo usuário dos Gêmeos Digitais do Azure](./how-to-user-defined-functions.md).
 
 - Para saber como usar o controle de acesso baseado em função para proteger ainda mais o aplicativo com as atribuições de função, leia [Como criar e gerenciar controle de acesso baseado em função dos Gêmeos Digitais do Azure](./security-create-manage-role-assignments.md).
-
-<!-- Images -->
-[1]: media/multitenant/ad-subscriptions.png
-[2]: media/multitenant/ad-resource-providers.png

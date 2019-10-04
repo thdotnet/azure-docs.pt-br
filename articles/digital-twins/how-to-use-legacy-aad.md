@@ -1,19 +1,19 @@
 ---
 title: Usar o registro de aplicativo do AAD herdado para o gêmeos digital do Azure | Microsoft Docs
 description: Este artigo mostra como usar o método herdado de criação de registro de aplicativo com Azure Active Directory para a configuração do gêmeos digital do Azure.
+ms.author: alinast
 author: alinamstanciu
-manager: philmea
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.author: alinast
-ms.openlocfilehash: e9689c71c881c7f5f29ac05fea53bb2c27f75591
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 204b048dad348e37d44399025c5cd7a9526dbd2d
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624747"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949946"
 ---
 # <a name="register-your-azure-digital-twins-app-with-azure-active-directory-legacy"></a>Registrar seu aplicativo gêmeos digital do Azure com Azure Active Directory herdado
 

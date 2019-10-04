@@ -54,7 +54,7 @@
     - name: Lidar com realce de ocorrências
       href: hit-highlighting.md
     - name: Percorrer resultados
-      href: paging-webpages.md
+      href: paging-search-results.md
     - name: Miniaturas de redimensionamento e corte
       href: resize-and-crop-thumbnails.md
     - name: Atualizar de v5 para v7

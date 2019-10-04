@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: iainfou
-ms.openlocfilehash: 5c6d7b3403209710c9086b90abcb0e2ce61a0e8a
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 6fe959a661f23673bb5d3e6df630ef4ee25128f7
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612621"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958558"
 ---
 # <a name="administer-group-policy-in-an-azure-ad-domain-services-managed-domain"></a>Administrar Política de Grupo em um domínio Azure AD Domain Services gerenciado
 
@@ -31,31 +31,34 @@ Para concluir este artigo, você precisa dos seguintes recursos e privilégios:
 
 * Uma assinatura ativa do Azure.
     * Se você não tiver uma assinatura do Azure, [crie uma conta](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Um locatário Azure Active Directory associado à sua assinatura, seja sincronizado com um diretório local ou um diretório somente em nuvem.
-    * Se necessário, [crie um locatário Azure Active Directory][create-azure-ad-tenant] ou [associe uma assinatura do Azure à sua conta][associate-azure-ad-tenant].
-* Um Azure Active Directory Domain Services domínio gerenciado habilitado e configurado em seu locatário do Azure AD.
+* Um locatário do Azure Active Directory associado com a assinatura, sincronizado com um diretório local ou somente em nuvem.
+    * Se necessário, [crie um locatário do Azure Active Directory][create-azure-ad-tenant] ou [associe uma assinatura do Azure à sua conta][associate-azure-ad-tenant].
+* Um domínio gerenciado do Azure Active Directory Domain Services habilitado e configurado no locatário do Azure AD.
     * Se necessário, conclua o tutorial para [criar e configurar uma instância de Azure Active Directory Domain Services][create-azure-ad-ds-instance].
 * Uma VM de gerenciamento do Windows Server que é unida ao domínio gerenciado AD DS do Azure.
     * Se necessário, conclua o tutorial para [criar uma VM do Windows Server e associá-la a um domínio gerenciado][create-join-windows-vm].
-* Uma conta de usuário que é membro do grupo de *Administradores de DC do Azure ad* em seu locatário do Azure AD.
+* Uma conta de usuário que é membro do grupo de *administradores do Azure AD DC* no locatário do Azure AD.
+
+> [!NOTE]
+> Como não há [acesso aos controladores de domínio no Azure AD DS](faqs.md#can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop), você não pode criar e usar um repositório central para modelos administrativos de diretiva de grupo em um domínio gerenciado. O [SYSVOL não está incluído na sincronização de Azure ad Connect local](synchronization.md#what-isnt-synchronized-to-azure-ad-ds), portanto, você também não pode criar um repositório central local e sincronizá-lo para o Azure AD DS por meio do Azure AD.
 
 ## <a name="install-group-policy-management-tools"></a>Instalar ferramentas de gerenciamento de Política de Grupo
 
 Para criar e configurar o objeto de Política de Grupo (GPOs), você precisa instalar as ferramentas de gerenciamento de Política de Grupo. Essas ferramentas podem ser instaladas como um recurso no Windows Server. Para obter mais informações sobre como instalar as ferramentas administrativas em um cliente Windows, consulte instalar o [ferramentas de administração de servidor remoto (RSAT)][install-rsat].
 
 1. Entre na sua VM de gerenciamento. Para obter as etapas sobre como se conectar usando o portal do Azure, consulte [conectar-se a uma VM do Windows Server][connect-windows-server-vm].
-1. **Gerenciador do servidor** deve abrir por padrão quando você entra na VM. Se não estiver, no menu **Iniciar** , selecione **Gerenciador do servidor**.
-1. No painel painel da janela **Gerenciador do servidor** , selecione **adicionar funções e recursos**.
-1. Na página **antes de começar** do *Assistente para adicionar funções e recursos*, selecione **Avançar**.
-1. Para o *tipo de instalação*, deixe a opção de instalação baseada em **função ou recurso** marcada e selecione **Avançar**.
-1. Na página **seleção de servidor** , escolha a VM atual no pool de servidores, como *MyVM.contoso.com*, e selecione **Avançar**.
+1. O **Gerenciador do Servidor** deve abrir por padrão ao entrar na VM. Caso contrário, no menu **Iniciar**, selecione **Gerenciador do Servidor**.
+1. No painel *Dashboard* da janela **Gerenciador do Servidor**, selecione **Adicionar Funções e Recursos**.
+1. Na página **Antes de Você Começar** do *Assistente de Adição de Funções e Recursos*, selecione **Avançar**.
+1. Para o *Tipo de Instalação*, deixe a opção **Instalação baseada em função ou recurso** marcada e selecione **Avançar**.
+1. Na página **Seleção de servidor**, escolha a VM atual no pool de servidores, como *myvm.contoso.com* e, em seguida, selecione **Avançar**.
 1. Na página **Funções do Servidor**, clique em **Avançar**.
 1. Na página **Recursos**, selecione o recurso **Gerenciamento de Política de Grupo**.
 
     ![Instalar o ' Gerenciamento de Política de Grupo ' na página de recursos](./media/active-directory-domain-services-admin-guide/install-rsat-server-manager-add-roles-gp-management.png)
 
-1. Na página **confirmação** , selecione **instalar**. Pode levar um minuto ou dois para instalar as ferramentas de gerenciamento de Política de Grupo.
-1. Quando a instalação do recurso estiver concluída, selecione **fechar** para sair do assistente **adicionar funções e recursos** .
+1. Na página **Confirmação**, selecione **Instalar**. Pode levar um minuto ou dois para instalar as ferramentas de gerenciamento de Política de Grupo.
+1. Quando a instalação do recurso for concluída, selecione **Fechar** para sair do **Assistente de Adição de Funções e Recursos**.
 
 ## <a name="open-the-group-policy-management-console-and-edit-an-object"></a>Abrir o Console de Gerenciamento de Política de Grupo e editar um objeto
 

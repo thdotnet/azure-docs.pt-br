@@ -1,19 +1,19 @@
 ---
-title: Entrada de telemetria e de conectividade do dispositivo com Gêmeos Digitais do Azure | Microsoft Docs
+title: Conectividade do dispositivo e entrada de telemetria-Azure digital gêmeos | Microsoft Docs
 description: Visão geral de como levar um dispositivo a bordo com os Gêmeos Digitais do Azure
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 22ae7aeeff4542bee764e131f58eb115026a4fb3
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 6c61bc6075b3f0713dd790f1b3aa1a47af9d8e6c
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71177112"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950030"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Conectividade do dispositivo e entrada de telemetria
 

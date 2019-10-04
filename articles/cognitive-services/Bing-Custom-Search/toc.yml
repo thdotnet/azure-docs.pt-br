@@ -60,8 +60,9 @@
     - name: Lidar com realce de ocorrências
       href: ../Bing-Web-Search/hit-highlighting.md
       maintainContext: true
-    - name: Percorrer páginas da Web
-      href: page-webpages.md
+    - name: Percorrer a página dos resultados da pesquisa
+      href: ../Bing-Web-Search/paging-search-results.md
+      maintainContext: true
 - name: Referência
   items:
     - name: Referência da API de Sugestão Automática Personalizada do Bing

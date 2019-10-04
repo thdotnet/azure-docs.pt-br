@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: c566dc28338a47c1bf24066436c21544eb7c5c7d
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9c97723687484e8af82d63b6fb4999401a69fb2c
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70072442"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958542"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Como implementar a recuperação de desastre usando o backup de serviço e restaurar no Gerenciamento de API no Azure
 
@@ -147,12 +147,12 @@ Para fazer backup de um serviço de Gerenciamento de API, execute a seguinte sol
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-em que:
+onde:
 
 -   `subscriptionId` – ID da assinatura que contém o serviço de Gerenciamento de API do qual você está tentando fazer backup
 -   `resourceGroupName` -nome do grupo de recursos do seu serviço de Gerenciamento de API do Azure
 -   `serviceName` - o nome do serviço de Gerenciamento de API que você está fazendo um backup em específico, no momento de sua criação
--   `api-version`-substituir por`2018-06-01-preview`
+-   `api-version`-substituir por `2018-06-01-preview`
 
 No corpo da solicitação, especifique o nome da conta de armazenamento de destino do Azure, a chave de acesso, o nome do contêiner Blob e o nome de backup:
 
@@ -188,12 +188,12 @@ Para restaurar um serviço de Gerenciamento de API de um backup criado anteriorm
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-em que:
+onde:
 
 -   `subscriptionId` - ID da assinatura que contém o serviço de Gerenciamento de API que você está restaurando um backup em
 -   `resourceGroupName` – nome do grupo de recursos que contém o serviço de Gerenciamento de API do Azure em que você está restaurando um backup
 -   `serviceName` - o nome do serviço de Gerenciamento de API para o qual está sendo realizada a restauração especificada no momento de sua criação
--   `api-version`-substituir por`2018-06-01-preview`
+-   `api-version`-substituir por `2018-06-01-preview`
 
 No corpo da solicitação, especifique o local do arquivo de backup. Ou seja, adicione o nome da conta de armazenamento do Azure, chave de acesso, nome do contêiner de blob e nome de backup:
 
@@ -218,7 +218,7 @@ Restaure uma operação longa de execução que pode levar até 30 minutos ou ma
 <!-- Dummy comment added to suppress markdown lint warning -->
 
 > [!NOTE]
-> As operações de backup e restauração também podem ser executadas com os comandos _backup-AzApiManagement_ e _Restore-AzApiManagement_ do PowerShell, respectivamente.
+> As operações de backup e restauração também podem ser executadas com os comandos [_backup-AzApiManagement_](/powershell/module/az.apimanagement/backup-azapimanagement) e [_Restore-AzApiManagement_](/powershell/module/az.apimanagement/restore-azapimanagement) do PowerShell, respectivamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

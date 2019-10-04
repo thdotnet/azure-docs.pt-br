@@ -49,8 +49,8 @@
     - name: Lidar com realce de ocorrências
       href: ../Bing-Web-Search/hit-highlighting.md
       maintainContext: true
-    - name: Notícias para página
-      href: paging-news.md
+    - name: Percorrer a página dos resultados da pesquisa
+      href: ../Bing-Web-Search/paging-search-results.md
     - name: Miniaturas de redimensionamento e corte
       maintainContext: true
       href: ../bing-web-search/resize-and-crop-thumbnails.md

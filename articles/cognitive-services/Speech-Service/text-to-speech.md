@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: erhopf
-ms.openlocfilehash: 3d2c3e2bf693f763db13d90961a31e871aa25235
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d12b952d298b41c8d06f0fcac141a45749de9051
+ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68558869"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71799952"
 ---
 # <a name="what-is-text-to-speech"></a>O que é conversão de texto em fala?
 
@@ -55,7 +55,7 @@ Todas as entradas de texto enviadas ao serviço de conversão de texto em fala d
 Ao usar o serviço de conversão de texto em fala, você será cobrado por cada caractere convertido em fala, incluindo pontuação. Embora o documento SSML em si não seja Faturável, elementos opcionais usados para ajustar como o texto é convertido em fala, como fonemas e pitch, são contados como caracteres faturáveis. Aqui está uma lista do que é Faturável:
 
 * Texto passado para o serviço de conversão de texto em fala no corpo de SSML da solicitação
-* Todas as marcações dentro do campo de texto do corpo da solicitação no formato SSML, `<speak>` exceto `<voice>` para marcas e
+* Toda a marcação dentro do campo de texto do corpo da solicitação no formato SSML, com exceção das marcas `<speak>` e `<voice>`
 * Letras, pontuação, espaços, tabulações, marcação e todos os caracteres de espaço em branco
 * Cada ponto de código definido no Unicode
 
@@ -71,13 +71,13 @@ Esta tabela lista os principais recursos para conversão de texto em fala:
 | Caso de uso | SDK | REST |
 |----------|-----|------|
 | Converter texto em fala. | Sim | Sim |
-| Carregar conjuntos de valores para adaptação de voz. | Não | Sim\* |
-| Crie e gerencie modelos de fonte de voz. | Não | Sim\* |
-| Crie e gerencie implantações de fontes de voz. | Não | Sim\* |
-| Criar e gerenciar testes de fonte de voz. | Não | Sim\* |
-| Gerenciar assinaturas. | Não | Sim\* |
+| Carregar conjuntos de valores para adaptação de voz. | Não  | Sim\* |
+| Crie e gerencie modelos de fonte de voz. | Não  | Sim\* |
+| Crie e gerencie implantações de fontes de voz. | Não  | Sim\* |
+| Criar e gerenciar testes de fonte de voz. | Não  | Sim\* |
+| Gerenciar assinaturas. | Não  | Sim\* |
 
-\**Esses serviços estão disponíveis usando o ponto de extremidade Cris.ai. Consulte [referência do Swagger](https://westus.cris.ai/swagger/ui/index). Essas APIs de treinamento e gerenciamento de voz personalizadas implementam a limitação que limita as solicitações a 25 por 5 segundos, enquanto a própria API de síntese de fala implementa a limitação que permite 200 solicitações por segundo como a mais alta. Quando a limitação ocorrer, você será notificado por meio de cabeçalhos de mensagem.*
+os serviços \* *These estão disponíveis usando o ponto de extremidade cris.ai. Consulte [referência do Swagger](https://westus.cris.ai/swagger/ui/index). Essas APIs de treinamento e gerenciamento de voz personalizadas implementam a limitação que limita as solicitações a 25 por 5 segundos, enquanto a própria API de síntese de fala implementa a limitação que permite 200 solicitações por segundo como a mais alta. Quando a limitação ocorrer, você será notificado por meio de cabeçalhos de mensagem. *
 
 ## <a name="get-started-with-text-to-speech"></a>Introdução ao texto para fala
 
@@ -87,20 +87,27 @@ Oferecemos guias de início rápido projetados para que você execute códigos e
 
 | Início rápido (SDK) | Plataforma | Referência da API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-text-to-speech-dotnetcore.md) | Windows | [Procurar](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) | Windows | [Procurar](https://aka.ms/csspeech/csharpref) |
-| [C#, UWP](quickstart-text-to-speech-csharp-uwp.md) | Windows | [Procurar](https://aka.ms/csspeech/csharpref) |
-| [C#, Unity](quickstart-text-to-speech-csharp-unity.md) | Windows, Android | [Procurar](https://aka.ms/csspeech/csharpref) |
-| [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Procurar](https://aka.ms/csspeech/cppref) |
-| [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Procurar](https://aka.ms/csspeech/cppref) |
+| [C#, .NET Core](quickstart-text-to-speech-dotnetcore.md) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET Framework](quickstart-text-to-speech-dotnet-windows.md) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C#, UWP](quickstart-text-to-speech-csharp-uwp.md) | Windows | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C#, Unity](quickstart-text-to-speech-csharp-unity.md) | Windows, Android | [Browse](https://aka.ms/csspeech/csharpref) |
+| [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Browse](https://aka.ms/csspeech/cppref) |
+| [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Browse](https://aka.ms/csspeech/cppref) |
+| [Java](quickstart-text-to-speech-java-jre.md) | Windows, Linux, macOS | [Browse](https://aka.ms/csspeech/javaref) |
+| [Java](quickstart-text-to-speech-java-android.md) | Android | [Browse](https://aka.ms/csspeech/javaref) |
+| [Objective-C](quickstart-text-to-speech-objectivec-macos.md) | macOS | [Browse](https://aka.ms/csspeech/objectivecref) |
+| [Objective-C](quickstart-text-to-speech-objectivec-ios.md) | iOS | [Browse](https://aka.ms/csspeech/objectivecref) |
+| [Swift](quickstart-text-to-speech-swift-macos.md) | macOS | [Browse](https://aka.ms/csspeech/objectivecref) |
+| [Swift](quickstart-text-to-speech-swift-ios.md) | iOS | [Browse](https://aka.ms/csspeech/objectivecref) |
+| [Python](quickstart-text-to-speech-python.md) | Janela, Linux, macOS | [Browse](https://aka.ms/csspeech/pythonref) |
 
 ### <a name="rest-quickstarts"></a>Guias de início rápido do REST
 
 | Início rápido (REST) | Plataforma | Referência da API |
 |------------|----------|---------------|
-| [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Procurar](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
-| [Node.js](quickstart-nodejs-text-to-speech.md) | Windows, macOS, Linux | [Procurar](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
-| [Python](quickstart-python-text-to-speech.md) | Windows, macOS, Linux | [Procurar](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [C#, .NET Core](quickstart-dotnet-text-to-speech.md) | Windows, macOS, Linux | [Browse](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [Node.js](quickstart-nodejs-text-to-speech.md) | Windows, macOS, Linux | [Browse](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
+| [Python](quickstart-python-text-to-speech.md) | Windows, macOS, Linux | [Browse](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) |
 
 ## <a name="sample-code"></a>Código de exemplo
 

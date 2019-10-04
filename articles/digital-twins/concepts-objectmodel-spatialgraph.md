@@ -1,19 +1,19 @@
 ---
-title: Noções básicas sobre modelos de objeto e grafos de inteligência espacial dos Gêmeos Digitais | Microsoft Docs
+title: Entender os modelos de objeto gêmeos do Azure e o grafo de inteligência espacial | Microsoft Docs
 description: Use o serviço Gêmeos Digitais do Azure para modelar as relações entre pessoas, locais e dispositivos
+ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.author: alinast
-ms.openlocfilehash: 37f2afbd9bae4ca6bccc5062515f166687d8913c
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 67a4aceb157ee3fe1b1d1553efd587a0f2838d88
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71177060"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71950003"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Noções básicas sobre modelos de objeto e grafos de inteligência espacial dos Gêmeos Digitais
 
@@ -23,7 +23,7 @@ Os modelos de objeto de Gêmeos Digitais descrevem conceitos, categorias e propr
 
 Com os modelos de objeto de Gêmeos Digitais e uma ontologia implantada, é possível preencher um _grafo espacial_. Gráficos espaciais são representações virtuais das muitas relações entre espaços, dispositivos e pessoas que são relevantes para uma solução de IoT. Este diagrama mostra um exemplo de um gráfico espacial que usa a ontologia de construção inteligente.
 
-[![Criação de grafo espacial digital gêmeos](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
+[compilação de grafo espacial de @no__t 1Digital gêmeos](media/concepts/digital-twins-spatial-graph-building.png)](media/concepts/digital-twins-spatial-graph-building.png#lightbox)
 
 O grafo espacial reúne usuários, dispositivos, sensores e espaços. Cada um está interligado de forma que modela o mundo real. Nesse exemplo, o local 43 tem quatro andares, cada um com muitas áreas diferentes. Os usuários estão associados às estações de trabalho e recebem acesso a partes do grafo. Um administrador tem os direitos para fazer alterações no grafo espacial, enquanto um visitante tem direitos para exibir apenas determinados dados de construção.
 

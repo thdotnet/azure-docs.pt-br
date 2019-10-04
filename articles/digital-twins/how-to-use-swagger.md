@@ -1,20 +1,20 @@
 ---
 title: Noções básicas sobre como usar Swagger de referência de Gêmeos Digitais do Azure | Microsoft Docs
 description: Noções básicas sobre como usar a documentação de referência do Swagger de Gêmeos Digitais do Azure.
-author: kingdomofends
-manager: alinast
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/16/2019
-ms.author: v-adgera
+ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1344b86b9fa922dc22870dda495ff367a511b8ca
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 06cbdf6fbba89b6666e6fe3162fd591e93dffecd
+ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640257"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71958882"
 ---
 # <a name="azure-digital-twins-swagger-reference-documentation"></a>Documentação de referência do Swagger de Gêmeos Digitais do Azure
 
@@ -42,15 +42,15 @@ O material de referência do Swagger gerado automaticamente fornece uma visão g
 
 Um resumo descreve a API.
 
-[![Topo do Swagger](media/how-to-use-swagger/swagger-management-top-img.png)](media/how-to-use-swagger/swagger-management-top-img.png#lightbox)
+[![Swagger superior](media/how-to-use-swagger/swagger-management-top-img.png)](media/how-to-use-swagger/swagger-management-top-img.png#lightbox)
 
 Os modelos de objeto da API de Gerenciamento também são listados.
 
-[![Modelos do Swagger](media/how-to-use-swagger/swagger-management-models-img.png)](media/how-to-use-swagger/swagger-management-models-img.png#lightbox)
+[modelos de @no__t 1Swagger](media/how-to-use-swagger/swagger-management-models-img.png)](media/how-to-use-swagger/swagger-management-models-img.png#lightbox)
 
 Você pode selecionar cada modelo de objeto listados para um resumo detalhado dos atributos de chave.
 
-[![Modelo do Swagger](media/how-to-use-swagger/swagger-management-model-img.png)](media/how-to-use-swagger/swagger-management-model-img.png#lightbox)
+[modelo de @no__t 1Swagger](media/how-to-use-swagger/swagger-management-model-img.png)](media/how-to-use-swagger/swagger-management-model-img.png#lightbox)
 
 Os modelos de objeto Swagger gerados são convenientes para ver todos os [objetos e APIs](./concepts-objectmodel-spatialgraph.md) dos Gêmeos Digitais do Azure. Os desenvolvedores podem usar esse recurso ao criarem soluções nos Gêmeos Digitais do Azure.
 
@@ -64,7 +64,7 @@ Cada terminal listado também inclui as informações de solicitação necessár
 * Tipos de dados de parâmetro necessários.
 * Método HTTP para acessar o recurso.
 
-[![Pontos de extremidade do Swagger](media/how-to-use-swagger/swagger-management-endpoints-img.png)](media/how-to-use-swagger/swagger-management-endpoints-img.png#lightbox)
+[1Swagger-pontos de extremidade de @no__t](media/how-to-use-swagger/swagger-management-endpoints-img.png)](media/how-to-use-swagger/swagger-management-endpoints-img.png#lightbox)
 
 Para ver uma visão geral mais detalhada, selecione cada recurso.
 
@@ -74,11 +74,11 @@ Uma das funcionalidades poderosas que o Swagger oferece é a capacidade de testa
 
 Depois de selecionar um endpoint específico, você verá **Try it out**.
 
-[![Try do Swagger](media/how-to-use-swagger/swagger-management-try-img.png)](media/how-to-use-swagger/swagger-management-try-img.png#lightbox)
+[tentativa de @no__t 1Swagger](media/how-to-use-swagger/swagger-management-try-img.png)](media/how-to-use-swagger/swagger-management-try-img.png#lightbox)
 
 Expanda essa seção para exibir os campos de entrada para cada parâmetro obrigatório e opcional. Insira os valores corretos e selecione **Executar**.
 
-[![Tentativa de Swagger](media/how-to-use-swagger/swagger-management-tried-img.png)](media/how-to-use-swagger/swagger-management-tried-img.png#lightbox)
+[![Swagger tentado](media/how-to-use-swagger/swagger-management-tried-img.png)](media/how-to-use-swagger/swagger-management-tried-img.png#lightbox)
 
 Depois de executar o teste, você pode validar os dados de resposta.
 
@@ -86,7 +86,7 @@ Depois de executar o teste, você pode validar os dados de resposta.
 
 Cada ponto de extremidade listado também inclui dados de corpo de resposta para validar seu desenvolvimento e testes. Esses exemplos incluem os códigos de status e o JSON que você deseja ver para solicitações HTTP bem-sucedidas.
 
-[![Resposta do Swagger](media/how-to-use-swagger/swagger-management-response-img.png)](media/how-to-use-swagger/swagger-management-response-img.png#lightbox)
+[1Swagger-resposta de @no__t](media/how-to-use-swagger/swagger-management-response-img.png)](media/how-to-use-swagger/swagger-management-response-img.png#lightbox)
 
 Os exemplos também incluem os códigos de erro para ajudar a depurar ou melhorar os testes com falha.
 
@@ -110,17 +110,17 @@ Os exemplos também incluem os códigos de erro para ajudar a depurar ou melhora
 
 Depois de concluir o registro de Azure Active Directory:
 
-1. Selecione o botão autorizar na sua página do Swagger.
+1. Selecione o botão **autorizar** na sua página do Swagger.
 
-    [![Selecione o botão autorizar do Swagger](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
+    [![Select o botão autorizar do Swagger](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
 
 1. Cole a ID do aplicativo no campo **client_id** .
 
-    [![Campo client_id do Swagger](media/how-to-use-swagger/swagger-auth-form.png)](media/how-to-use-swagger/swagger-auth-form.png#lightbox)
+    [campo de client_id de @no__t 1Swagger](media/how-to-use-swagger/swagger-auth-form.png)](media/how-to-use-swagger/swagger-auth-form.png#lightbox)
 
 1. Em seguida, você será redirecionado para o seguinte modal com êxito.
 
-    [![Modal de redirecionamento do Swagger](media/how-to-use-swagger/swagger-auth-redirect-img.png)](media/how-to-use-swagger/swagger-auth-redirect-img.png#lightbox)
+    [![Swagger redirecionamento modal](media/how-to-use-swagger/swagger-auth-redirect-img.png)](media/how-to-use-swagger/swagger-auth-redirect-img.png#lightbox)
 
 Para saber mais sobre solicitações de teste interativas protegidas pelo OAuth 2.0, consulte a [documentação oficial](https://swagger.io/docs/specification/authentication/oauth2/).
 

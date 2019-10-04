@@ -9,18 +9,18 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 5103526956b5041771a1d8e4abb5e8800b971059
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: a4aac8afb7974be402ee98bb65c920133d4c118f
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595376"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71947696"
 ---
 # <a name="what-is-a-dictionary"></a>O que é um dicionário?
 
-Um dicionário é um par de documentos alinhados que especifica uma lista de frases ou sentenças e suas respectivas traduções. Use um dicionário no seu treinamento, quando quiser que o Microsoft Translator sempre traduza quaisquer instâncias da frase ou sentença de origem, usando a tradução que você forneceu no dicionário. Dicionários são às vezes chamados de glossários ou bases de termos. Você pode pensar no dicionário como uma força bruta “copiar e substituir” para todos os termos listados.
+Um dicionário é um par de documentos alinhados que especifica uma lista de frases ou sentenças e suas respectivas traduções. Use um dicionário no seu treinamento, quando quiser que o Microsoft Translator sempre traduza quaisquer instâncias da frase ou sentença de origem, usando a tradução que você forneceu no dicionário. Dicionários são às vezes chamados de glossários ou bases de termos. Você pode pensar no dicionário como uma força bruta “copiar e substituir” para todos os termos listados. Além disso, o serviço Tradutor personalizado da Microsoft cria e usa seus próprios dicionários de uso geral para melhorar a qualidade de sua tradução. No entanto, um dicionário fornecido pelo cliente usa o precedente e será pesquisado primeiro em palavras ou sentenças de pesquisa.
 
-Os dicionários funcionam apenas para projetos em pares de idiomas que possuem um sistema NMT (Microsoft neural machine translation) totalmente suportado por trás deles. [Exiba a lista completa de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization).
+Os dicionários só funcionam para projetos em pares de idiomas que tenham um modelo de rede neural geral da Microsoft totalmente compatível por trás deles. [Exiba a lista completa de idiomas](https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization).
 
 ## <a name="phrase-dictionary"></a>Dicionário de frase
 Quando você inclui um dicionário de frases no treinamento do seu modelo, qualquer palavra ou frase listada é traduzida da maneira que você especificou. O resto da frase é traduzido como de costume. Você pode usar um dicionário de frases para especificar frases que não devem ser traduzidas, fornecendo a mesma frase não traduzida no arquivo de origem e de destino no dicionário.
@@ -36,11 +36,11 @@ Você pode treinar um modelo usando apenas dados do dicionário. Para fazer isso
 
 ## <a name="recommendations"></a>Recomendações
 
-- Os dicionários não substituem um modelo treinado com dados de treinamento.  Dicionários essencialmente encontrar e substituir palavras ou frases.  Deixar o sistema aprender com seu material de treinamento em sentenças completas é geralmente uma escolha melhor do que usar um dicionário.
-- O dicionário de frase deve ser usado com moderação. Quando uma frase dentro de uma frase é substituída, o contexto dentro dessa frase é perdido ou limitado para traduzir o resto da sentença. O resultado é que, enquanto a frase ou palavra dentro da sentença será traduzida de acordo com o dicionário de frases, a qualidade geral da tradução da frase frequentemente sofrerá.
-- O dicionário de frases funciona bem para nomes compostos como nomes de produtos (“Microsoft SQL Server”), nomes próprios (“Cidade de Hamburgo”) ou recursos do produto (“tabela dinâmica”). Ele não funciona igualmente bem para verbos ou adjetivos, porque estes são tipicamente altamente flexionados na origem ou no idioma de destino. Evite entradas de dicionário de frase para qualquer coisa, exceto substantivos compostos.
-- Ao usar um dicionário, a capitalização e a pontuação em suas traduções refletem as letras maiúsculas e a pontuação fornecidas no arquivo de destino. A capitalização e a pontuação são ignoradas ao tentar identificar correspondências entre sua sentença de entrada e as sentenças de origem em seu arquivo de dicionário. Por exemplo, digamos que treinamos um sistema de inglês para espanhol que usasse um dicionário que especificasse "Cidade de Hamburgo" no arquivo de origem e "Cidade de Hamburgo" no arquivo de destino. Se eu solicitasse a tradução de uma sentença que incluísse a frase “cidade de Hamburgo”, então “cidade de Hamburgo” corresponderia ao meu arquivo de dicionário para a entrada “Cidade de Hamburgo”, e mapearia para “Ciudad de hamburg” na minha final tradução.
-- Se uma palavra aparecer mais de uma vez em um arquivo de dicionário, o sistema sempre usará a última entrada fornecida. O dicionário não deve conter várias traduções da mesma palavra.
+- Os dicionários não são um substituto para treinar um modelo usando dados de treinamento. É recomendável evitá-los e permitir que o sistema Aprenda com seus dados de treinamento. No entanto, quando frases ou substantivos compostos devem ser renderizados como estão, use um dicionário.
+- O dicionário de frase deve ser usado com moderação. Então, lembre-se de que, quando uma frase dentro de uma sentença é substituída, o contexto dentro dessa sentença é perdido ou limitado para a tradução do restante da sentença. O resultado é que, embora a frase ou palavra dentro da frase seja traduzida de acordo com o dicionário fornecido, a qualidade geral da tradução da sentença geralmente será prejudicada.
+- O dicionário de frases funciona bem para nomes compostos como nomes de produtos (“Microsoft SQL Server”), nomes próprios (“Cidade de Hamburgo”) ou recursos do produto (“tabela dinâmica”). Ele não funciona igualmente bem para verbos ou adjetivos, porque estes são tipicamente altamente flexionados na origem ou no idioma de destino. As práticas recomendadas são evitar entradas de dicionário de frase para qualquer coisa, exceto os substantivos compostos.
+- Ao usar um dicionário, a capitalização e a pontuação são importantes. As entradas de dicionário só corresponderão a palavras e frases que tenham a mesma capitalização e pontuação que a entrada encontrada no dicionário. Suas traduções refletirão a capitalização e a pontuação fornecidas no lado de destino do arquivo de dicionário. Por exemplo, você treinou um modelo em inglês para espanhol usando um dicionário que especificou "Olá" no arquivo de origem a ser convertido em "Buenos dias" no arquivo de destino. Quando você solicitar tradução de uma frase que inclua "Olá", o sistema pesquisará seu dicionário primeiro e encontrará uma correspondência ("Olá") e retornaria "Buenos dias" na tradução final.
+- Se uma palavra aparecer mais de uma vez em um arquivo de dicionário, o sistema sempre usará a última entrada fornecida. Portanto, o dicionário não deve conter várias traduções da mesma palavra.
 
 ## <a name="next-steps"></a>Próximas etapas
 

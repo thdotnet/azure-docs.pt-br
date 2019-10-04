@@ -3,7 +3,7 @@ title: Insights do Aplicativo do Azure - Funções do Azure Recursos Suportados 
 description: Recursos suportados do Application Insights para funções do Azure
 services: application-insights
 documentationcenter: .net
-author: MS-TimothyMothra
+author: TimothyMothra
 manager: ''
 ms.service: application-insights
 ms.workload: TBD
@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
 ms.author: tilee
-ms.openlocfilehash: 0199d8f0c4a76a10fffcab7cf2819643d0ac2d68
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cf39c8b5e204493380c095519e0ff25c3ce19f68
+ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075353"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71959893"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Recursos suportados do Application Insights para o Azure Functions
 
@@ -25,7 +25,7 @@ O Azure Functions oferece [integração interna](https://docs.microsoft.com/azur
 
 ## <a name="supported-features"></a>Recursos com suporte
 
-| Funções do Azure                       | V1                | V2 (2018 do Ignite)  | 
+| Verificação de                       | V1                | V2 (2018 do Ignite)  | 
 |-----------------------------------    |---------------    |------------------ |
 | **SDK .NET do Application Insights**   | **2.5.0**       | **2.9.1**         |
 | | | | 
@@ -53,7 +53,7 @@ O Azure Functions oferece [integração interna](https://docs.microsoft.com/azur
 | &bull;Totalmente configurável.<br/>Ver [Azure Functions](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852) para obter instruções.<br/>Ver [Asp.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) para todas as opções.               |                   | Sim                   | 
 
 
-## <a name="performance-counters"></a>Contadores de desempenho
+## <a name="performance-counters"></a>Contadores de Desempenho
 
 A coleta automática de contadores de desempenho só funciona em máquinas Windows.
 
@@ -62,13 +62,13 @@ A coleta automática de contadores de desempenho só funciona em máquinas Windo
 
 Os critérios de filtro personalizados especificados são enviados para o componente de Métricas em tempo real no SDK do Application Insights. Os filtros podem conter informações confidenciais, como customerIDs. Torne o canal seguro com uma chave de API secreta. Confira [Proteger o canal de controle](https://docs.microsoft.com/azure/azure-monitor/app/live-stream#secure-the-control-channel) para obter instruções.
 
-## <a name="sampling"></a>amostragem
+## <a name="sampling"></a>Amostragem
 
 As funções do Azure ativam a amostragem por padrão em suas configurações. Para obter mais informações, consulte [configurar amostragem](https://docs.microsoft.com/azure/azure-functions/functions-monitoring#configure-sampling).
 
-Se seu projeto usa uma dependência no SDK do Application Insights para fazer o acompanhamento de telemetria manual, você pode enfrentar um comportamento estranho se sua configuração de amostragem é diferente de configuração de amostragem do Functions. 
+Se o seu projeto usar uma dependência no SDK do Application Insights para fazer o acompanhamento manual de telemetria, você poderá enfrentar um comportamento estranho se a configuração de amostragem for diferente da configuração de amostragem das funções. 
 
-É recomendável usar a mesma configuração como funções. Com o **Functions v2**, você pode obter a mesma configuração usando a injeção de dependência em seu construtor:
+É recomendável usar a mesma configuração que as funções. Com o **Functions v2**, você pode obter a mesma configuração usando a injeção de dependência em seu construtor:
 
 ```csharp
 using Microsoft.ApplicationInsights;

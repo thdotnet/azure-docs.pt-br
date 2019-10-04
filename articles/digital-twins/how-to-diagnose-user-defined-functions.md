@@ -1,20 +1,20 @@
 ---
 title: Como depurar UDFs nos Gêmeos Digitais do Azure | Microsoft Docs
 description: Diretrizes sobre como depurar UDFs em Gêmeos Digitais do Azure.
-author: kingdomofends
-manager: alinast
+ms.author: alinast
+author: alinamstanciu
+manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 10/01/2019
-ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: df12d6866f5e9e6bf492e228e32b0b10f7266eb4
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
-ms.translationtype: HT
+ms.openlocfilehash: 7b122df279ecde8ed9ed49b5a89251073f3feda7
+ms.sourcegitcommit: 4f7dce56b6e3e3c901ce91115e0c8b7aab26fb72
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71843855"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71949899"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Como depurar funções definidas pelo usuário em Gêmeos Digitais do Azure
 
@@ -63,7 +63,7 @@ AzureDiagnostics
 | order by CorrelationId desc
 ```
 
-Se você habilitar o registro em log para a função definida pelo usuário, esses logs aparecerão na instância do log `UserDefinedFunction`Analytics com a categoria. Para recuperá-los, insira a seguinte condição de consulta no log Analytics:
+Se você habilitar o registro em log para a função definida pelo usuário, esses logs aparecerão na instância do log Analytics com a categoria `UserDefinedFunction`. Para recuperá-los, insira a seguinte condição de consulta no log Analytics:
 
 ```Kusto
 AzureDiagnostics
