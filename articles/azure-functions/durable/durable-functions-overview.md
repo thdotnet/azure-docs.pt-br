@@ -19,7 +19,7 @@ ms.locfileid: "71299435"
 ---
 # <a name="what-are-durable-functions"></a>O que são as Durable Functions?
 
-As *Durable Functions* são uma extensão do [Azure Functions](../functions-overview.md) que permite escrever funções com estado em um ambiente de computação serverless. A extensão permite definir fluxos de trabalho com estado pela escrita de [*funções orquestradoras*](durable-functions-orchestrations.md) e entidades com estado pela escrita de [*entity functions*](durable-functions-entities.md) usando o modelo de programação do Azure Functions. Nos bastidores, a extensão gerencia o estado, os pontos de verificação e as reinicializações para você, permitindo que você se concentre na lógica de negócios.
+As *Durable Functions* são uma extensão do [Azure Functions](../functions-overview.md) que permite escrever funções com estado em um ambiente de computação sem servidor. A extensão permite definir fluxos de trabalho com estado pela escrita de [*funções de orquestrador*](durable-functions-orchestrations.md) e entidades com estado pela escrita de [*funções de entidade*](durable-functions-entities.md) usando o modelo de programação do Azure Functions. Nos bastidores, a extensão gerencia o estado, os pontos de verificação e as reinicializações para você, permitindo que você se concentre na lógica de negócios.
 
 ## <a name="language-support"></a>Linguagens compatíveis
 
@@ -159,7 +159,7 @@ O ponto de verificação automático que ocorre na chamada `await` ou `yield` em
 
 ### <a name="async-http"></a>Padrão 3: APIs HTTP assíncronas
 
-O padrão de API HTTP assíncrona trata do problema de coordenar o estado de operações de execução longa com clientes externos. Uma maneira comum de implementar esse padrão é fazer com que um *endpoint* HTTP dispare a ação de execução longa. Em seguida, redirecione o cliente para um ponto de extremidade de status que é sondado pelo para saber quando a operação é concluída.
+O padrão de API HTTP assíncrona trata do problema de coordenar o estado de operações de execução longa com clientes externos. Uma maneira comum de implementar esse padrão é fazer com que um ponto de extremidade HTTP dispare a ação de execução longa. Em seguida, redirecione o cliente para um ponto de extremidade de status que é sondado pelo cliente para saber quando a operação é concluída.
 
 ![Um diagrama do padrão de API HTTP](./media/durable-functions-concepts/async-http-api.png)
 
@@ -198,7 +198,7 @@ Para obter mais informações, confira o artigo [Recursos HTTP](durable-function
 
 ### <a name="monitoring"></a>Padrão 4: Monitoramento
 
-O padrão de monitor refere-se a um processo recorrente e flexível em um fluxo de trabalho. Um exemplo é fazer uma sondagem até que condições específicas sejam atendidas. Você pode usar um [time trigger](../functions-bindings-timer.md) habitual para lidar com um cenário básico, como um trabalho de limpeza periódico, mas seu intervalo é estático e o gerenciamento do tempo de vida da instância torna-se complexo. Use as Durable Functions para criar intervalos de recorrência flexíveis, gerenciar os tempos de vida de tarefas e criar vários processos de monitor com base em uma única orquestração.
+O padrão de monitor refere-se a um processo recorrente e flexível em um fluxo de trabalho. Um exemplo é fazer uma sondagem até que condições específicas sejam atendidas. Você pode usar um [gatilho de temporizador](../functions-bindings-timer.md) normal para lidar com um cenário básico, como um trabalho de limpeza periódico, mas seu intervalo é estático e o gerenciamento do tempo de vida da instância torna-se complexo. Use as Durable Functions para criar intervalos de recorrência flexíveis, gerenciar os tempos de vida de tarefas e criar vários processos de monitor com base em uma única orquestração.
 
 Um exemplo do padrão de monitor é reverter o cenário de API HTTP assíncrona anterior. Em vez de expor um ponto de extremidade para um cliente externo monitorar uma operação de execução longa, o monitor de execução longa consome um ponto de extremidade externo e, em seguida, aguarda uma alteração de estado.
 
@@ -266,7 +266,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-Quando uma solicitação é recebida, uma nova instância de orquestração é criada para essa ID do trabalho. A instância sonda um status até que uma condição seja atendida e o loop seja encerrado. Um *durable timer* controla o intervalo de sondagem. Em seguida, mais trabalho pode ser realizado ou a orquestração pode ser encerrada. Quando o `context.CurrentUtcDateTime` (.NET) ou o `context.df.currentUtcDateTime` (JavaScript) excede o valor `expiryTime`, o monitor é encerrado.
+Quando uma solicitação é recebida, uma nova instância de orquestração é criada para essa ID do trabalho. A instância sonda um status até que uma condição seja atendida e o loop seja encerrado. Um temporizador durável controla o intervalo de sondagem. Em seguida, mais trabalho pode ser realizado ou a orquestração pode ser encerrada. Quando o `context.CurrentUtcDateTime` (.NET) ou o `context.df.currentUtcDateTime` (JavaScript) excede o valor `expiryTime`, o monitor é encerrado.
 
 ### <a name="human"></a>Padrão 5: Interação humana
 
@@ -329,7 +329,7 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-Para criar o *durable timer*, chame `context.CreateTimer` (.NET) ou `context.df.createTimer` (JavaScript). A notificação é recebida pelo `context.WaitForExternalEvent` (.NET) ou `context.df.waitForExternalEvent` (JavaScript). Em seguida, `Task.WhenAny` (.NET) ou `context.df.Task.any` (JavaScript) é chamado para decidir se o próximo passo é escalonar (o tempo limite ocorre primeiro) ou processar a aprovação (a aprovação é recebida antes do tempo limite).
+Para criar o temporizador durável, chame `context.CreateTimer` (.NET) ou `context.df.createTimer` (JavaScript). A notificação é recebida pelo `context.WaitForExternalEvent` (.NET) ou `context.df.waitForExternalEvent` (JavaScript). Em seguida, `Task.WhenAny` (.NET) ou `context.df.Task.any` (JavaScript) é chamado para decidir se o próximo passo é escalonar (o tempo limite ocorre primeiro) ou processar a aprovação (a aprovação é recebida antes do tempo limite).
 
 Um cliente externo pode entregar a notificação de eventos para uma função de orquestrador em espera usando as [APIs HTTP internas](durable-functions-http-api.md#raise-event) ou a API [DurableOrchestrationClient.RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_System_String_System_String_System_Object_) em outra função:
 
@@ -364,9 +364,9 @@ O sexto padrão trata da agregação de dados de evento durante um período em u
 
 ![Diagrama do agregador](./media/durable-functions-concepts/aggregator.png)
 
-A complexidade de tentar implementar esse padrão com as funções normais sem estado é que o controle de concorrência se torna um grande desafio. Além de se preocupar com vários threads modificando os mesmos dados ao mesmo tempo, você precisa se preocupar em garantir que o agregador só seja executado em uma única VM por vez.
+A complexidade de tentar implementar esse padrão com as funções normais sem estado é que o controle de simultaneidade se torna um grande desafio. Além de se preocupar com vários threads modificando os mesmos dados ao mesmo tempo, você precisa se preocupar em garantir que o agregador só seja executado em uma única VM por vez.
 
-Usando uma [*Durable Entity Function*](durable-functions-preview.md#entity-functions), é possível implementar esse padrão com facilidade como uma única função.
+Usando uma [função de Entidade Durável](durable-functions-preview.md#entity-functions), é possível implementar esse padrão com facilidade como uma única função.
 
 ```csharp
 [FunctionName("Counter")]
@@ -392,7 +392,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 }
 ```
 
-As *Durable Entities* também podem ser modeladas como classes .NET. Esse modelo pode ser útil se a lista de operações é fixa e se torna grande. O exemplo a seguir é uma implementação equivalente da entidade `Counter` usando métodos e classes .NET.
+As Entidades Duráveis também podem ser modeladas como classes .NET. Esse modelo pode ser útil se a lista de operações é fixa e se torna grande. O exemplo a seguir é uma implementação equivalente da entidade `Counter` usando métodos e classes .NET.
 
 ```csharp
 public class Counter
@@ -412,7 +412,7 @@ public class Counter
 }
 ```
 
-Os clientes podem enfileirar *operações* de uma *entity function* (também conhecido como "sinalização") usando a [associação do cliente de entidade](durable-functions-bindings.md#entity-client).
+Os clientes podem enfileirar *operações* de uma função de entidade (também conhecido como "sinalização") usando a [associação do cliente de entidade](durable-functions-bindings.md#entity-client).
 
 ```csharp
 [FunctionName("EventHubTriggerCSharp")]
@@ -429,14 +429,14 @@ public static async Task Run(
 }
 ```
 
-Os proxies gerados dinamicamente também estão disponíveis para sinalizar entidades para torná-las fortemente tipadas. Além da sinalização, os clientes também podem consultar o estado de uma *entity function* usando [métodos fortemente tipados](durable-functions-bindings.md#entity-client-usage) na associação do cliente de orquestração.
+Os proxies gerados dinamicamente também estão disponíveis para sinalizar entidades para torná-las fortemente tipadas. Além da sinalização, os clientes também podem consultar o estado de uma função de entidade usando [métodos fortemente tipados](durable-functions-bindings.md#entity-client-usage) na associação do cliente de orquestração.
 
 > [!NOTE]
-> Atualmente, as *entity functions* só estão disponíveis no .NET como parte da [versão prévia das Durable Functions 2.0](durable-functions-preview.md).
+> Atualmente, as funções de entidade só estão disponíveis no .NET como parte da [versão prévia das Durable Functions 2.0](durable-functions-preview.md).
 
 ## <a name="the-technology"></a>A tecnologia
 
-Nos bastidores, a extensão Durable Functions baseia-se na [Durable Task Framework](https://github.com/Azure/durabletask), uma biblioteca open-source no GitHub usada para a criação de fluxos de trabalho em código. Assim como o Azure Functions é a evolução serverless do Azure WebJobs, as Durable Functions são a serverless da Durable Task Framework. A Microsoft e outras organizações usam a Durable Task Framework extensivamente para automatizar processos críticos. Ele é uma opção natural para o ambiente serverless do Azure Functions.
+Nos bastidores, a extensão Durable Functions baseia-se na [Durable Task Framework](https://github.com/Azure/durabletask), uma biblioteca open-source no GitHub usada para a criação de fluxos de trabalho em código. Assim como o Azure Functions é a evolução sem servidor do Azure WebJobs, as Durable Functions são a evolução sem servidor da Durable Task Framework. A Microsoft e outras organizações usam a Durable Task Framework extensivamente para automatizar processos críticos. Ele é uma opção natural para o ambiente sem servidor do Azure Functions.
 
 ## <a name="code-constraints"></a>Restrições de código
 
@@ -444,7 +444,7 @@ Para fornecer garantias de execução confiáveis e de execução longa, as fun�
 
 ## <a name="billing"></a>Cobrança
 
-As Durable Functions são cobradas da mesma forma que o Azure Functions. Para saber mais, confira [Preços do Azure Functions](https://azure.microsoft.com/pricing/details/functions/). Ao executar funções orquestradoras no [plano de Consumo](../functions-scale.md#consumption-plan) do Azure Functions, há alguns comportamentos de cobrança para sua informação. Para obter mais informações sobre esses comportamentos, confira o artigo [Cobrança das Durable Functions](durable-functions-billing.md).
+As Durable Functions são cobradas da mesma forma que o Azure Functions. Para saber mais, confira [Preços do Azure Functions](https://azure.microsoft.com/pricing/details/functions/). Ao executar funções de orquestrador no [plano de Consumo](../functions-scale.md#consumption-plan) do Azure Functions, há alguns comportamentos de cobrança para sua informação. Para obter mais informações sobre esses comportamentos, confira o artigo [Cobrança das Durable Functions](durable-functions-billing.md).
 
 ## <a name="jump-right-in"></a>Comece a usar agora
 
